@@ -1,0 +1,75 @@
+[@gtsc/core](../README.md) / [Exports](../modules.md) / Base64
+
+# Class: Base64
+
+Class to help with base64 Encoding/Decoding.
+Sourced from https://github.com/beatgammit/base64-js.
+
+## Table of contents
+
+### Constructors
+
+- [constructor](Base64.md#constructor)
+
+### Methods
+
+- [decode](Base64.md#decode)
+- [encode](Base64.md#encode)
+
+## Constructors
+
+### constructor
+
+• **new Base64**(): [`Base64`](Base64.md)
+
+#### Returns
+
+[`Base64`](Base64.md)
+
+## Methods
+
+### decode
+
+▸ **decode**(`base64`): `Uint8Array`
+
+Convert the base 64 string to a byte array.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `base64` | `string` | The base64 string to convert. |
+
+#### Returns
+
+`Uint8Array`
+
+The byte array.
+
+#### Defined in
+
+[packages/core/src/encoding/base64.ts:106](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/encoding/base64.ts#L106)
+
+___
+
+### encode
+
+▸ **encode**(`bytes`): `string`
+
+Convert a byte array to base 64.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `bytes` | `Uint8Array` | The byte array to convert. |
+
+#### Returns
+
+`string`
+
+The data as bas64 string.
+
+#### Defined in
+
+[packages/core/src/encoding/base64.ts:155](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/encoding/base64.ts#L155)

@@ -2,46 +2,8 @@
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# Introduction
 
-Let's discover **Docusaurus in less than 5 minutes**.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam imperdiet lorem in eros interdum, sit amet sodales eros iaculis. Pellentesque eget nulla eros. Etiam tempor mauris turpis, ut condimentum mauris finibus non. Suspendisse potenti. Nunc lorem est, sodales at lobortis ut, luctus non nisi. Sed in hendrerit mi, non dapibus diam. Phasellus tristique at libero et pulvinar. Ut nec dictum odio. Sed fermentum mi nisi, a congue orci pulvinar a. Nulla facilisi. Vestibulum quis justo mauris. Fusce ultrices nulla eu orci tempus dictum.
 
-## Getting Started
-
-Get started by **creating a new site**.
-
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
-
-### What you'll need
-
-- [Node.js](https://nodejs.org/en/download/) version 18.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
-
-## Generate a new site
-
-Generate a new Docusaurus site using the **classic template**.
-
-The classic template will automatically be added to your project after you run the command:
-
-```bash
-npm init docusaurus@latest my-website classic
-```
-
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
-
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
-
-```bash
-cd my-website
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+Pellentesque venenatis ac diam nec egestas. Sed accumsan feugiat euismod. Maecenas a neque sollicitudin, bibendum arcu ut, ultrices leo. Fusce sagittis euismod ex, et aliquet erat bibendum sed. Ut quis nisi nec ex blandit venenatis ac at metus. Quisque faucibus gravida nunc, quis lobortis turpis auctor ut. In semper lectus eget justo accumsan, quis mollis neque varius. Nulla at elit dictum, suscipit ligula eget, volutpat nibh. Aliquam augue leo, venenatis non vestibulum vel, venenatis condimentum lectus. Nunc sem urna, dictum id varius id, aliquet vitae ante. Nullam a hendrerit ligula. Integer convallis, odio et fermentum varius, odio diam laoreet libero, varius bibendum quam mi id leo. Curabitur consequat venenatis eleifend. Ut rhoncus elementum lectus, eget malesuada tellus convallis vel. Fusce molestie, sem et viverra tempor, velit nisl placerat velit, vehicula dictum neque orci egestas odio.
