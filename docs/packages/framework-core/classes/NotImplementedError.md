@@ -1,5 +1,3 @@
-[@gtsc/core](../README.md) / [Exports](../modules.md) / NotImplementedError
-
 # Class: NotImplementedError
 
 Class to handle errors.

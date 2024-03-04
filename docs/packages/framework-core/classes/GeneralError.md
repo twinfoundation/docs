@@ -1,5 +1,3 @@
-[@gtsc/core](../README.md) / [Exports](../modules.md) / GeneralError
-
 # Class: GeneralError
 
 Class to handle errors.

@@ -1,5 +1,3 @@
-[@gtsc/core](README.md) / Exports
-
 # @gtsc/core
 
 ## Table of contents

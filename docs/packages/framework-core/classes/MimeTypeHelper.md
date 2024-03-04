@@ -1,5 +1,3 @@
-[@gtsc/core](../README.md) / [Exports](../modules.md) / MimeTypeHelper
-
 # Class: MimeTypeHelper
 
 Class to help with mime types.

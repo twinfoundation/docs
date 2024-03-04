@@ -1,5 +1,3 @@
-[@gtsc/core](../README.md) / [Exports](../modules.md) / FilenameHelper
-
 # Class: FilenameHelper
 
 Class to help with filenames.

@@ -1,5 +1,3 @@
-[@gtsc/core](../README.md) / [Exports](../modules.md) / StringHelper
-
 # Class: StringHelper
 
 Class to help with string.

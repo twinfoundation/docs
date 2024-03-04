@@ -1,5 +1,3 @@
-[@gtsc/core](../README.md) / [Exports](../modules.md) / IValidationFailure
-
 # Interface: IValidationFailure
 
 Interface describing the reason a validation failed.

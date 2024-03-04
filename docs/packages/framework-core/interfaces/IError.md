@@ -1,5 +1,3 @@
-[@gtsc/core](../README.md) / [Exports](../modules.md) / IError
-
 # Interface: IError
 
 Model to describe serialized error.

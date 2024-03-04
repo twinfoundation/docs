@@ -1,5 +1,3 @@
-[@gtsc/core](../README.md) / [Exports](../modules.md) / Url
-
 # Class: Url
 
 Class to help with urls.

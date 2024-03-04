@@ -1,5 +1,3 @@
-[@gtsc/core](../README.md) / [Exports](../modules.md) / Base64
-
 # Class: Base64
 
 Class to help with base64 Encoding/Decoding.

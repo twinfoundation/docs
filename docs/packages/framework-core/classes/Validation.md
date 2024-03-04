@@ -1,5 +1,3 @@
-[@gtsc/core](../README.md) / [Exports](../modules.md) / Validation
-
 # Class: Validation
 
 Class to handle validation operations.

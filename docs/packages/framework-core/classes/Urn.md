@@ -1,5 +1,3 @@
-[@gtsc/core](../README.md) / [Exports](../modules.md) / Urn
-
 # Class: Urn
 
 Class to help with urns.

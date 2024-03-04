@@ -1,5 +1,3 @@
-[@gtsc/core](../README.md) / [Exports](../modules.md) / IUrlParts
-
 # Interface: IUrlParts
 
 Model to describe the parts of a url.

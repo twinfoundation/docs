@@ -1,5 +1,3 @@
-[@gtsc/core](../README.md) / [Exports](../modules.md) / ObjectHelper
-
 # Class: ObjectHelper
 
 Class to help with objects.

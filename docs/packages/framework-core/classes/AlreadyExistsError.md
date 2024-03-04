@@ -1,5 +1,3 @@
-[@gtsc/core](../README.md) / [Exports](../modules.md) / AlreadyExistsError
-
 # Class: AlreadyExistsError
 
 Class to handle errors which are triggered by data already existing.

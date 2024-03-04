@@ -1,5 +1,3 @@
-[@gtsc/core](../README.md) / [Exports](../modules.md) / GuardError
-
 # Class: GuardError
 
 Class to handle errors which are triggered by data guards.

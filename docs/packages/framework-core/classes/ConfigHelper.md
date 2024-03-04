@@ -1,5 +1,3 @@
-[@gtsc/core](../README.md) / [Exports](../modules.md) / ConfigHelper
-
 # Class: ConfigHelper
 
 Class to help with configuration object.

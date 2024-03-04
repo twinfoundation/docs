@@ -1,5 +1,3 @@
-[@gtsc/core](../README.md) / [Exports](../modules.md) / NotSupportedError
-
 # Class: NotSupportedError
 
 Class to handle errors when a feature is unsupported.

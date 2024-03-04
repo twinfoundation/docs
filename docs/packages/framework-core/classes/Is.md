@@ -1,5 +1,3 @@
-[@gtsc/core](../README.md) / [Exports](../modules.md) / Is
-
 # Class: Is
 
 Class to check types of objects.

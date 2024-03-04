@@ -1,5 +1,3 @@
-[@gtsc/core](../README.md) / [Exports](../modules.md) / Guards
-
 # Class: Guards
 
 Class to handle guard operations for parameters.

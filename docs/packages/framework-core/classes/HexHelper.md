@@ -1,5 +1,3 @@
-[@gtsc/core](../README.md) / [Exports](../modules.md) / HexHelper
-
 # Class: HexHelper
 
 Helper methods for hex conversions.

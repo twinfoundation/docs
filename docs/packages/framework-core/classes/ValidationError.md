@@ -1,5 +1,3 @@
-[@gtsc/core](../README.md) / [Exports](../modules.md) / ValidationError
-
 # Class: ValidationError
 
 Class to handle errors which are triggered by entity validation.

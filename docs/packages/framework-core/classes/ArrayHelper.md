@@ -1,5 +1,3 @@
-[@gtsc/core](../README.md) / [Exports](../modules.md) / ArrayHelper
-
 # Class: ArrayHelper
 
 Class to help with arrays.

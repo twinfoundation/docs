@@ -1,5 +1,3 @@
-[@gtsc/core](../README.md) / [Exports](../modules.md) / IKeyValue
-
 # Interface: IKeyValue\<T\>
 
 Interface describing a key/value pair.

@@ -1,5 +1,3 @@
-[@gtsc/core](../README.md) / [Exports](../modules.md) / Coerce
-
 # Class: Coerce
 
 Coerce an object from one type to another.

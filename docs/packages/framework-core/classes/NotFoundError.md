@@ -1,5 +1,3 @@
-[@gtsc/core](../README.md) / [Exports](../modules.md) / NotFoundError
-
 # Class: NotFoundError
 
 Class to handle errors which are triggered by data not being found.

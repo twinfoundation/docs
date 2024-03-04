@@ -1,5 +1,3 @@
-[@gtsc/core](../README.md) / [Exports](../modules.md) / RandomHelper
-
 # Class: RandomHelper
 
 Class to help with random generation.

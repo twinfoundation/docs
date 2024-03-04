@@ -1,5 +1,3 @@
-[@gtsc/core](../README.md) / [Exports](../modules.md) / UnauthorizedError
-
 # Class: UnauthorizedError
 
 Class to handle errors which are triggered by access not being unauthorized.
