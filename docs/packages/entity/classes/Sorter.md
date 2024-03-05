@@ -41,7 +41,3 @@ Compare two properties.
 `number`
 
 The result of the comparison.
-
-#### Defined in
-
-[utils/sorter.ts:19](https://github.com/gtscio/framework/blob/ed1186b/packages/entity/src/utils/sorter.ts#L19)
