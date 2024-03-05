@@ -23,10 +23,10 @@ const sidebars: SidebarsConfig = {
 			type: 'category',
 			label: 'Framework',
 			items: [
-				generatePackageItems("Core"),
-				generatePackageItems("Entity"),
-				generatePackageItems("NameOf"),
-				generatePackageItems("NameOf-Transformer")
+				generatePackageItems("nameof-transformer"),
+				generatePackageItems("nameof"),
+				generatePackageItems("core"),
+				generatePackageItems("entity"),
 			],
 		},
 	],

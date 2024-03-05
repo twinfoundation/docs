@@ -35,7 +35,7 @@ The camel case version of the input.
 
 #### Defined in
 
-[packages/core/src/utils/stringHelper.ts:94](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/utils/stringHelper.ts#L94)
+[packages/core/src/utils/stringHelper.ts:94](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/utils/stringHelper.ts#L94)
 
 ___
 
@@ -60,7 +60,7 @@ The kebab case version of the input.
 
 #### Defined in
 
-[packages/core/src/utils/stringHelper.ts:39](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/utils/stringHelper.ts#L39)
+[packages/core/src/utils/stringHelper.ts:39](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/utils/stringHelper.ts#L39)
 
 ___
 
@@ -85,7 +85,7 @@ The pascal case version of the input.
 
 #### Defined in
 
-[packages/core/src/utils/stringHelper.ts:75](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/utils/stringHelper.ts#L75)
+[packages/core/src/utils/stringHelper.ts:75](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/utils/stringHelper.ts#L75)
 
 ___
 
@@ -109,7 +109,7 @@ The input with any interface prefix stripped.
 
 #### Defined in
 
-[packages/core/src/utils/stringHelper.ts:134](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/utils/stringHelper.ts#L134)
+[packages/core/src/utils/stringHelper.ts:134](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/utils/stringHelper.ts#L134)
 
 ___
 
@@ -134,7 +134,7 @@ The title case version of the input.
 
 #### Defined in
 
-[packages/core/src/utils/stringHelper.ts:56](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/utils/stringHelper.ts#L56)
+[packages/core/src/utils/stringHelper.ts:56](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/utils/stringHelper.ts#L56)
 
 ___
 
@@ -158,7 +158,7 @@ The trimmed value.
 
 #### Defined in
 
-[packages/core/src/utils/stringHelper.ts:26](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/utils/stringHelper.ts#L26)
+[packages/core/src/utils/stringHelper.ts:26](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/utils/stringHelper.ts#L26)
 
 ___
 
@@ -182,7 +182,7 @@ The trimmed value.
 
 #### Defined in
 
-[packages/core/src/utils/stringHelper.ts:14](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/utils/stringHelper.ts#L14)
+[packages/core/src/utils/stringHelper.ts:14](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/utils/stringHelper.ts#L14)
 
 ___
 
@@ -207,7 +207,7 @@ The path version of the input.
 
 #### Defined in
 
-[packages/core/src/utils/stringHelper.ts:117](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/utils/stringHelper.ts#L117)
+[packages/core/src/utils/stringHelper.ts:117](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/utils/stringHelper.ts#L117)
 
 ___
 
@@ -231,4 +231,4 @@ The string split into words.
 
 #### Defined in
 
-[packages/core/src/utils/stringHelper.ts:150](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/utils/stringHelper.ts#L150)
+[packages/core/src/utils/stringHelper.ts:150](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/utils/stringHelper.ts#L150)

@@ -18,7 +18,7 @@ The label for the item.
 
 #### Defined in
 
-[packages/core/src/models/ILabelledValue.ts:10](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/models/ILabelledValue.ts#L10)
+[packages/core/src/models/ILabelledValue.ts:10](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/models/ILabelledValue.ts#L10)
 
 ___
 
@@ -30,4 +30,4 @@ The value for the item.
 
 #### Defined in
 
-[packages/core/src/models/ILabelledValue.ts:15](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/models/ILabelledValue.ts#L15)
+[packages/core/src/models/ILabelledValue.ts:15](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/models/ILabelledValue.ts#L15)

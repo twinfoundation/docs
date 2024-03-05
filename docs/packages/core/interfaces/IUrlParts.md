@@ -12,7 +12,7 @@ The hash for the url.
 
 #### Defined in
 
-[packages/core/src/models/IUrlParts.ts:36](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/models/IUrlParts.ts#L36)
+[packages/core/src/models/IUrlParts.ts:36](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/models/IUrlParts.ts#L36)
 
 ___
 
@@ -24,7 +24,7 @@ The host for the url.
 
 #### Defined in
 
-[packages/core/src/models/IUrlParts.ts:16](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/models/IUrlParts.ts#L16)
+[packages/core/src/models/IUrlParts.ts:16](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/models/IUrlParts.ts#L16)
 
 ___
 
@@ -36,7 +36,7 @@ The params for the url.
 
 #### Defined in
 
-[packages/core/src/models/IUrlParts.ts:31](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/models/IUrlParts.ts#L31)
+[packages/core/src/models/IUrlParts.ts:31](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/models/IUrlParts.ts#L31)
 
 ___
 
@@ -48,7 +48,7 @@ The path for the url.
 
 #### Defined in
 
-[packages/core/src/models/IUrlParts.ts:26](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/models/IUrlParts.ts#L26)
+[packages/core/src/models/IUrlParts.ts:26](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/models/IUrlParts.ts#L26)
 
 ___
 
@@ -60,7 +60,7 @@ The port for the url.
 
 #### Defined in
 
-[packages/core/src/models/IUrlParts.ts:21](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/models/IUrlParts.ts#L21)
+[packages/core/src/models/IUrlParts.ts:21](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/models/IUrlParts.ts#L21)
 
 ___
 
@@ -72,4 +72,4 @@ The schema for the url.
 
 #### Defined in
 
-[packages/core/src/models/IUrlParts.ts:11](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/models/IUrlParts.ts#L11)
+[packages/core/src/models/IUrlParts.ts:11](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/models/IUrlParts.ts#L11)

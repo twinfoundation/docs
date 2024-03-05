@@ -34,7 +34,7 @@ Append failures to the parent for a child object.
 
 #### Defined in
 
-[packages/core/src/utils/validation.ts:617](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/utils/validation.ts#L617)
+[packages/core/src/utils/validation.ts:617](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/utils/validation.ts#L617)
 
 ___
 
@@ -66,7 +66,7 @@ True if the value is an array.
 
 #### Defined in
 
-[packages/core/src/utils/validation.ts:434](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/utils/validation.ts#L434)
+[packages/core/src/utils/validation.ts:434](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/utils/validation.ts#L434)
 
 ___
 
@@ -99,7 +99,7 @@ True if the value is one of the items in the options.
 
 #### Defined in
 
-[packages/core/src/utils/validation.ts:485](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/utils/validation.ts#L485)
+[packages/core/src/utils/validation.ts:485](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/utils/validation.ts#L485)
 
 ___
 
@@ -131,7 +131,7 @@ True if the value is an array with at least one element.
 
 #### Defined in
 
-[packages/core/src/utils/validation.ts:459](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/utils/validation.ts#L459)
+[packages/core/src/utils/validation.ts:459](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/utils/validation.ts#L459)
 
 ___
 
@@ -159,7 +159,7 @@ ValidationError From the converted failures.
 
 #### Defined in
 
-[packages/core/src/utils/validation.ts:601](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/utils/validation.ts#L601)
+[packages/core/src/utils/validation.ts:601](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/utils/validation.ts#L601)
 
 ___
 
@@ -185,7 +185,7 @@ True if the value is a boolean.
 
 #### Defined in
 
-[packages/core/src/utils/validation.ts:168](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/utils/validation.ts#L168)
+[packages/core/src/utils/validation.ts:168](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/utils/validation.ts#L168)
 
 ___
 
@@ -211,7 +211,7 @@ True if the value is a date.
 
 #### Defined in
 
-[packages/core/src/utils/validation.ts:193](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/utils/validation.ts#L193)
+[packages/core/src/utils/validation.ts:193](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/utils/validation.ts#L193)
 
 ___
 
@@ -237,7 +237,7 @@ True if the value is a date.
 
 #### Defined in
 
-[packages/core/src/utils/validation.ts:229](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/utils/validation.ts#L229)
+[packages/core/src/utils/validation.ts:229](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/utils/validation.ts#L229)
 
 ___
 
@@ -263,7 +263,7 @@ True if the value is a date/time.
 
 #### Defined in
 
-[packages/core/src/utils/validation.ts:265](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/utils/validation.ts#L265)
+[packages/core/src/utils/validation.ts:265](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/utils/validation.ts#L265)
 
 ___
 
@@ -289,7 +289,7 @@ True if the value is a valid looking e-mail.
 
 #### Defined in
 
-[packages/core/src/utils/validation.ts:576](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/utils/validation.ts#L576)
+[packages/core/src/utils/validation.ts:576](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/utils/validation.ts#L576)
 
 ___
 
@@ -315,7 +315,7 @@ True if the value is a empty.
 
 #### Defined in
 
-[packages/core/src/utils/validation.ts:18](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/utils/validation.ts#L18)
+[packages/core/src/utils/validation.ts:18](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/utils/validation.ts#L18)
 
 ___
 
@@ -341,7 +341,7 @@ True if the value is a number.
 
 #### Defined in
 
-[packages/core/src/utils/validation.ts:143](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/utils/validation.ts#L143)
+[packages/core/src/utils/validation.ts:143](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/utils/validation.ts#L143)
 
 ___
 
@@ -367,7 +367,7 @@ True if the value is valid JSON.
 
 #### Defined in
 
-[packages/core/src/utils/validation.ts:547](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/utils/validation.ts#L547)
+[packages/core/src/utils/validation.ts:547](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/utils/validation.ts#L547)
 
 ___
 
@@ -393,7 +393,7 @@ True if the value is a timestamp in milliseconds.
 
 #### Defined in
 
-[packages/core/src/utils/validation.ts:337](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/utils/validation.ts#L337)
+[packages/core/src/utils/validation.ts:337](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/utils/validation.ts#L337)
 
 ___
 
@@ -419,7 +419,7 @@ True if the value is a not empty.
 
 #### Defined in
 
-[packages/core/src/utils/validation.ts:43](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/utils/validation.ts#L43)
+[packages/core/src/utils/validation.ts:43](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/utils/validation.ts#L43)
 
 ___
 
@@ -445,7 +445,7 @@ True if the value is a number.
 
 #### Defined in
 
-[packages/core/src/utils/validation.ts:118](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/utils/validation.ts#L118)
+[packages/core/src/utils/validation.ts:118](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/utils/validation.ts#L118)
 
 ___
 
@@ -477,7 +477,7 @@ True if the value is a object.
 
 #### Defined in
 
-[packages/core/src/utils/validation.ts:409](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/utils/validation.ts#L409)
+[packages/core/src/utils/validation.ts:409](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/utils/validation.ts#L409)
 
 ___
 
@@ -503,7 +503,7 @@ True if the value is a timestamp in seconds.
 
 #### Defined in
 
-[packages/core/src/utils/validation.ts:373](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/utils/validation.ts#L373)
+[packages/core/src/utils/validation.ts:373](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/utils/validation.ts#L373)
 
 ___
 
@@ -529,7 +529,7 @@ True if the value is a string.
 
 #### Defined in
 
-[packages/core/src/utils/validation.ts:68](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/utils/validation.ts#L68)
+[packages/core/src/utils/validation.ts:68](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/utils/validation.ts#L68)
 
 ___
 
@@ -555,7 +555,7 @@ True if the value is a string.
 
 #### Defined in
 
-[packages/core/src/utils/validation.ts:93](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/utils/validation.ts#L93)
+[packages/core/src/utils/validation.ts:93](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/utils/validation.ts#L93)
 
 ___
 
@@ -581,7 +581,7 @@ True if the value is a time.
 
 #### Defined in
 
-[packages/core/src/utils/validation.ts:301](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/utils/validation.ts#L301)
+[packages/core/src/utils/validation.ts:301](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/utils/validation.ts#L301)
 
 ___
 
@@ -605,7 +605,7 @@ The failures mapped to their properties.
 
 #### Defined in
 
-[packages/core/src/utils/validation.ts:642](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/utils/validation.ts#L642)
+[packages/core/src/utils/validation.ts:642](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/utils/validation.ts#L642)
 
 ___
 
@@ -631,4 +631,4 @@ True if the value is a Uint8Array.
 
 #### Defined in
 
-[packages/core/src/utils/validation.ts:522](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/utils/validation.ts#L522)
+[packages/core/src/utils/validation.ts:522](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/utils/validation.ts#L522)

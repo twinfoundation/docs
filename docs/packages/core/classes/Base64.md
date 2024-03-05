@@ -35,7 +35,7 @@ The byte array.
 
 #### Defined in
 
-[packages/core/src/encoding/base64.ts:106](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/encoding/base64.ts#L106)
+[packages/core/src/encoding/base64.ts:106](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/encoding/base64.ts#L106)
 
 ___
 
@@ -59,4 +59,4 @@ The data as bas64 string.
 
 #### Defined in
 
-[packages/core/src/encoding/base64.ts:155](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/encoding/base64.ts#L155)
+[packages/core/src/encoding/base64.ts:155](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/encoding/base64.ts#L155)

@@ -35,7 +35,7 @@ Create a new instance of AlreadyExistsError.
 
 #### Defined in
 
-[packages/core/src/errors/alreadyExistsError.ts:22](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/errors/alreadyExistsError.ts#L22)
+[packages/core/src/errors/alreadyExistsError.ts:22](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/errors/alreadyExistsError.ts#L22)
 
 ## Properties
 
@@ -65,7 +65,7 @@ The inner error if there was one.
 
 #### Defined in
 
-[packages/core/src/errors/baseError.ts:25](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/errors/baseError.ts#L25)
+[packages/core/src/errors/baseError.ts:25](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/errors/baseError.ts#L25)
 
 ___
 
@@ -117,7 +117,7 @@ Any additional information for the error.
 
 #### Defined in
 
-[packages/core/src/errors/baseError.ts:20](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/errors/baseError.ts#L20)
+[packages/core/src/errors/baseError.ts:20](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/errors/baseError.ts#L20)
 
 ___
 
@@ -133,7 +133,7 @@ The source of the error.
 
 #### Defined in
 
-[packages/core/src/errors/baseError.ts:15](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/errors/baseError.ts#L15)
+[packages/core/src/errors/baseError.ts:15](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/errors/baseError.ts#L15)
 
 ___
 
@@ -161,7 +161,7 @@ Runtime name for the class.
 
 #### Defined in
 
-[packages/core/src/errors/alreadyExistsError.ts:13](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/errors/alreadyExistsError.ts#L13)
+[packages/core/src/errors/alreadyExistsError.ts:13](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/errors/alreadyExistsError.ts#L13)
 
 ## Methods
 
@@ -189,7 +189,7 @@ The error model.
 
 #### Defined in
 
-[packages/core/src/errors/baseError.ts:222](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/errors/baseError.ts#L222)
+[packages/core/src/errors/baseError.ts:222](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/errors/baseError.ts#L222)
 
 ___
 
@@ -217,7 +217,7 @@ The first level error.
 
 #### Defined in
 
-[packages/core/src/errors/baseError.ts:133](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/errors/baseError.ts#L133)
+[packages/core/src/errors/baseError.ts:133](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/errors/baseError.ts#L133)
 
 ___
 
@@ -245,7 +245,7 @@ The list of all internal errors.
 
 #### Defined in
 
-[packages/core/src/errors/baseError.ts:113](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/errors/baseError.ts#L113)
+[packages/core/src/errors/baseError.ts:113](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/errors/baseError.ts#L113)
 
 ___
 
@@ -273,7 +273,7 @@ The new instance.
 
 #### Defined in
 
-[packages/core/src/errors/baseError.ts:66](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/errors/baseError.ts#L66)
+[packages/core/src/errors/baseError.ts:66](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/errors/baseError.ts#L66)
 
 ___
 
@@ -302,7 +302,7 @@ True if the error has the code.
 
 #### Defined in
 
-[packages/core/src/errors/baseError.ts:180](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/errors/baseError.ts#L180)
+[packages/core/src/errors/baseError.ts:180](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/errors/baseError.ts#L180)
 
 ___
 
@@ -331,7 +331,7 @@ True if the error has the name.
 
 #### Defined in
 
-[packages/core/src/errors/baseError.ts:167](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/errors/baseError.ts#L167)
+[packages/core/src/errors/baseError.ts:167](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/errors/baseError.ts#L167)
 
 ___
 
@@ -360,7 +360,7 @@ True if the error has the name.
 
 #### Defined in
 
-[packages/core/src/errors/baseError.ts:154](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/errors/baseError.ts#L154)
+[packages/core/src/errors/baseError.ts:154](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/errors/baseError.ts#L154)
 
 ___
 
@@ -389,7 +389,7 @@ True if the error has the name.
 
 #### Defined in
 
-[packages/core/src/errors/baseError.ts:213](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/errors/baseError.ts#L213)
+[packages/core/src/errors/baseError.ts:213](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/errors/baseError.ts#L213)
 
 ___
 
@@ -418,7 +418,7 @@ True if the error has the name.
 
 #### Defined in
 
-[packages/core/src/errors/baseError.ts:203](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/errors/baseError.ts#L203)
+[packages/core/src/errors/baseError.ts:203](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/errors/baseError.ts#L203)
 
 ___
 
@@ -447,4 +447,4 @@ True if the error has the name.
 
 #### Defined in
 
-[packages/core/src/errors/baseError.ts:193](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/errors/baseError.ts#L193)
+[packages/core/src/errors/baseError.ts:193](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/errors/baseError.ts#L193)

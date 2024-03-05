@@ -23,7 +23,7 @@ Create a new instance of Urn.
 
 #### Defined in
 
-[packages/core/src/types/urn.ts:38](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/types/urn.ts#L38)
+[packages/core/src/types/urn.ts:38](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/types/urn.ts#L38)
 
 ## Methods
 
@@ -41,7 +41,7 @@ The namespace identifier.
 
 #### Defined in
 
-[packages/core/src/types/urn.ts:194](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/types/urn.ts#L194)
+[packages/core/src/types/urn.ts:194](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/types/urn.ts#L194)
 
 ___
 
@@ -59,7 +59,7 @@ The namespace specific.
 
 #### Defined in
 
-[packages/core/src/types/urn.ts:202](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/types/urn.ts#L202)
+[packages/core/src/types/urn.ts:202](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/types/urn.ts#L202)
 
 ___
 
@@ -83,7 +83,7 @@ The formatted urn.
 
 #### Defined in
 
-[packages/core/src/types/urn.ts:211](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/types/urn.ts#L211)
+[packages/core/src/types/urn.ts:211](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/types/urn.ts#L211)
 
 ___
 
@@ -107,7 +107,7 @@ The urn with a prefix.
 
 #### Defined in
 
-[packages/core/src/types/urn.ts:129](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/types/urn.ts#L129)
+[packages/core/src/types/urn.ts:129](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/types/urn.ts#L129)
 
 ___
 
@@ -131,7 +131,7 @@ The formatted urn.
 
 #### Defined in
 
-[packages/core/src/types/urn.ts:114](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/types/urn.ts#L114)
+[packages/core/src/types/urn.ts:114](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/types/urn.ts#L114)
 
 ___
 
@@ -155,7 +155,7 @@ A new Id in URN format.
 
 #### Defined in
 
-[packages/core/src/types/urn.ts:51](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/types/urn.ts#L51)
+[packages/core/src/types/urn.ts:51](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/types/urn.ts#L51)
 
 ___
 
@@ -183,7 +183,7 @@ GuardError If the value does not match the assertion.
 
 #### Defined in
 
-[packages/core/src/types/urn.ts:145](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/types/urn.ts#L145)
+[packages/core/src/types/urn.ts:145](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/types/urn.ts#L145)
 
 ___
 
@@ -208,7 +208,7 @@ True if the namespace matches.
 
 #### Defined in
 
-[packages/core/src/types/urn.ts:61](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/types/urn.ts#L61)
+[packages/core/src/types/urn.ts:61](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/types/urn.ts#L61)
 
 ___
 
@@ -232,7 +232,7 @@ The formatted urn or undefined if the value is not a urn.
 
 #### Defined in
 
-[packages/core/src/types/urn.ts:81](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/types/urn.ts#L81)
+[packages/core/src/types/urn.ts:81](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/types/urn.ts#L81)
 
 ___
 
@@ -258,4 +258,4 @@ The formatted urn.
 
 #### Defined in
 
-[packages/core/src/types/urn.ts:162](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/types/urn.ts#L162)
+[packages/core/src/types/urn.ts:162](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/types/urn.ts#L162)

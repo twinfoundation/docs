@@ -22,7 +22,7 @@ Const defining the maximum value for a 256 bit int.
 
 #### Defined in
 
-[packages/core/src/utils/hexHelper.ts:11](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/utils/hexHelper.ts#L11)
+[packages/core/src/utils/hexHelper.ts:11](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/utils/hexHelper.ts#L11)
 
 ## Methods
 
@@ -46,7 +46,7 @@ The hex with the prefix.
 
 #### Defined in
 
-[packages/core/src/utils/hexHelper.ts:56](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/utils/hexHelper.ts#L56)
+[packages/core/src/utils/hexHelper.ts:56](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/utils/hexHelper.ts#L56)
 
 ___
 
@@ -70,7 +70,7 @@ The hex encoded big int.
 
 #### Defined in
 
-[packages/core/src/utils/hexHelper.ts:20](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/utils/hexHelper.ts#L20)
+[packages/core/src/utils/hexHelper.ts:20](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/utils/hexHelper.ts#L20)
 
 ___
 
@@ -94,7 +94,7 @@ True if the hex string has the prefix.
 
 #### Defined in
 
-[packages/core/src/utils/hexHelper.ts:65](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/utils/hexHelper.ts#L65)
+[packages/core/src/utils/hexHelper.ts:65](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/utils/hexHelper.ts#L65)
 
 ___
 
@@ -118,7 +118,7 @@ The stripped hex without the prefix.
 
 #### Defined in
 
-[packages/core/src/utils/hexHelper.ts:47](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/utils/hexHelper.ts#L47)
+[packages/core/src/utils/hexHelper.ts:47](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/utils/hexHelper.ts#L47)
 
 ___
 
@@ -142,4 +142,4 @@ The big int.
 
 #### Defined in
 
-[packages/core/src/utils/hexHelper.ts:32](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/utils/hexHelper.ts#L32)
+[packages/core/src/utils/hexHelper.ts:32](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/utils/hexHelper.ts#L32)

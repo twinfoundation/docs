@@ -34,4 +34,4 @@ The safe filename.
 
 #### Defined in
 
-[packages/core/src/utils/filenameHelper.ts:16](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/utils/filenameHelper.ts#L16)
+[packages/core/src/utils/filenameHelper.ts:16](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/utils/filenameHelper.ts#L16)

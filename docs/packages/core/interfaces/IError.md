@@ -16,7 +16,7 @@ The inner error if there was one.
 
 #### Defined in
 
-[packages/core/src/models/IError.ts:36](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/models/IError.ts#L36)
+[packages/core/src/models/IError.ts:36](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/models/IError.ts#L36)
 
 ___
 
@@ -28,7 +28,7 @@ The message for the error.
 
 #### Defined in
 
-[packages/core/src/models/IError.ts:16](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/models/IError.ts#L16)
+[packages/core/src/models/IError.ts:16](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/models/IError.ts#L16)
 
 ___
 
@@ -40,7 +40,7 @@ The name for the error.
 
 #### Defined in
 
-[packages/core/src/models/IError.ts:11](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/models/IError.ts#L11)
+[packages/core/src/models/IError.ts:11](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/models/IError.ts#L11)
 
 ___
 
@@ -56,7 +56,7 @@ Any additional information for the error.
 
 #### Defined in
 
-[packages/core/src/models/IError.ts:26](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/models/IError.ts#L26)
+[packages/core/src/models/IError.ts:26](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/models/IError.ts#L26)
 
 ___
 
@@ -68,7 +68,7 @@ The source of the error.
 
 #### Defined in
 
-[packages/core/src/models/IError.ts:21](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/models/IError.ts#L21)
+[packages/core/src/models/IError.ts:21](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/models/IError.ts#L21)
 
 ___
 
@@ -80,4 +80,4 @@ The stack trace for the error.
 
 #### Defined in
 
-[packages/core/src/models/IError.ts:31](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/models/IError.ts#L31)
+[packages/core/src/models/IError.ts:31](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/models/IError.ts#L31)

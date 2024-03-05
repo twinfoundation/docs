@@ -40,7 +40,7 @@ True if the value is an array.
 
 #### Defined in
 
-[packages/core/src/utils/is.ts:224](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/utils/is.ts#L224)
+[packages/core/src/utils/is.ts:224](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/utils/is.ts#L224)
 
 ___
 
@@ -71,7 +71,7 @@ True if the value is an element from the options array.
 
 #### Defined in
 
-[packages/core/src/utils/is.ts:243](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/utils/is.ts#L243)
+[packages/core/src/utils/is.ts:243](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/utils/is.ts#L243)
 
 ___
 
@@ -101,7 +101,7 @@ True if the value is an array with at least one element.
 
 #### Defined in
 
-[packages/core/src/utils/is.ts:233](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/utils/is.ts#L233)
+[packages/core/src/utils/is.ts:233](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/utils/is.ts#L233)
 
 ___
 
@@ -125,7 +125,7 @@ True if the value is a boolean.
 
 #### Defined in
 
-[packages/core/src/utils/is.ts:106](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/utils/is.ts#L106)
+[packages/core/src/utils/is.ts:106](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/utils/is.ts#L106)
 
 ___
 
@@ -149,7 +149,7 @@ True if the value is a date.
 
 #### Defined in
 
-[packages/core/src/utils/is.ts:115](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/utils/is.ts#L115)
+[packages/core/src/utils/is.ts:115](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/utils/is.ts#L115)
 
 ___
 
@@ -173,7 +173,7 @@ True if the value is an empty date.
 
 #### Defined in
 
-[packages/core/src/utils/is.ts:127](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/utils/is.ts#L127)
+[packages/core/src/utils/is.ts:127](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/utils/is.ts#L127)
 
 ___
 
@@ -197,7 +197,7 @@ True if the value is a string in ISO 8601 date format.
 
 #### Defined in
 
-[packages/core/src/utils/is.ts:139](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/utils/is.ts#L139)
+[packages/core/src/utils/is.ts:139](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/utils/is.ts#L139)
 
 ___
 
@@ -221,7 +221,7 @@ True if the value is a string in ISO 8601 date/time format.
 
 #### Defined in
 
-[packages/core/src/utils/is.ts:151](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/utils/is.ts#L151)
+[packages/core/src/utils/is.ts:151](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/utils/is.ts#L151)
 
 ___
 
@@ -245,7 +245,7 @@ True if the value is a string.
 
 #### Defined in
 
-[packages/core/src/utils/is.ts:279](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/utils/is.ts#L279)
+[packages/core/src/utils/is.ts:279](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/utils/is.ts#L279)
 
 ___
 
@@ -269,7 +269,7 @@ True if the value is a empty.
 
 #### Defined in
 
-[packages/core/src/utils/is.ts:33](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/utils/is.ts#L33)
+[packages/core/src/utils/is.ts:33](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/utils/is.ts#L33)
 
 ___
 
@@ -293,7 +293,7 @@ True if the value is a function.
 
 #### Defined in
 
-[packages/core/src/utils/is.ts:270](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/utils/is.ts#L270)
+[packages/core/src/utils/is.ts:270](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/utils/is.ts#L270)
 
 ___
 
@@ -317,7 +317,7 @@ True if the value is a number.
 
 #### Defined in
 
-[packages/core/src/utils/is.ts:97](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/utils/is.ts#L97)
+[packages/core/src/utils/is.ts:97](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/utils/is.ts#L97)
 
 ___
 
@@ -341,7 +341,7 @@ True if the value is a date.
 
 #### Defined in
 
-[packages/core/src/utils/is.ts:188](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/utils/is.ts#L188)
+[packages/core/src/utils/is.ts:188](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/utils/is.ts#L188)
 
 ___
 
@@ -365,7 +365,7 @@ True if the value is a not empty.
 
 #### Defined in
 
-[packages/core/src/utils/is.ts:42](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/utils/is.ts#L42)
+[packages/core/src/utils/is.ts:42](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/utils/is.ts#L42)
 
 ___
 
@@ -389,7 +389,7 @@ True if the value is a empty.
 
 #### Defined in
 
-[packages/core/src/utils/is.ts:24](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/utils/is.ts#L24)
+[packages/core/src/utils/is.ts:24](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/utils/is.ts#L24)
 
 ___
 
@@ -413,7 +413,7 @@ True if the value is a number.
 
 #### Defined in
 
-[packages/core/src/utils/is.ts:88](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/utils/is.ts#L88)
+[packages/core/src/utils/is.ts:88](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/utils/is.ts#L88)
 
 ___
 
@@ -443,7 +443,7 @@ True if the value is a object.
 
 #### Defined in
 
-[packages/core/src/utils/is.ts:201](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/utils/is.ts#L201)
+[packages/core/src/utils/is.ts:201](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/utils/is.ts#L201)
 
 ___
 
@@ -473,7 +473,7 @@ True if the value is a object.
 
 #### Defined in
 
-[packages/core/src/utils/is.ts:210](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/utils/is.ts#L210)
+[packages/core/src/utils/is.ts:210](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/utils/is.ts#L210)
 
 ___
 
@@ -497,7 +497,7 @@ True if the value is a date.
 
 #### Defined in
 
-[packages/core/src/utils/is.ts:175](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/utils/is.ts#L175)
+[packages/core/src/utils/is.ts:175](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/utils/is.ts#L175)
 
 ___
 
@@ -521,7 +521,7 @@ True if the value is a string.
 
 #### Defined in
 
-[packages/core/src/utils/is.ts:51](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/utils/is.ts#L51)
+[packages/core/src/utils/is.ts:51](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/utils/is.ts#L51)
 
 ___
 
@@ -545,7 +545,7 @@ True if the value is a hex string.
 
 #### Defined in
 
-[packages/core/src/utils/is.ts:69](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/utils/is.ts#L69)
+[packages/core/src/utils/is.ts:69](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/utils/is.ts#L69)
 
 ___
 
@@ -570,7 +570,7 @@ True if the value is a hex string of required length.
 
 #### Defined in
 
-[packages/core/src/utils/is.ts:79](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/utils/is.ts#L79)
+[packages/core/src/utils/is.ts:79](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/utils/is.ts#L79)
 
 ___
 
@@ -594,7 +594,7 @@ True if the value is a string.
 
 #### Defined in
 
-[packages/core/src/utils/is.ts:60](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/utils/is.ts#L60)
+[packages/core/src/utils/is.ts:60](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/utils/is.ts#L60)
 
 ___
 
@@ -618,7 +618,7 @@ True if the value is a string in ISO 8601 time format.
 
 #### Defined in
 
-[packages/core/src/utils/is.ts:163](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/utils/is.ts#L163)
+[packages/core/src/utils/is.ts:163](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/utils/is.ts#L163)
 
 ___
 
@@ -642,7 +642,7 @@ True if the value is a Uint8Array.
 
 #### Defined in
 
-[packages/core/src/utils/is.ts:261](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/utils/is.ts#L261)
+[packages/core/src/utils/is.ts:261](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/utils/is.ts#L261)
 
 ___
 
@@ -666,4 +666,4 @@ True if the value is a empty.
 
 #### Defined in
 
-[packages/core/src/utils/is.ts:15](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/utils/is.ts#L15)
+[packages/core/src/utils/is.ts:15](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/utils/is.ts#L15)

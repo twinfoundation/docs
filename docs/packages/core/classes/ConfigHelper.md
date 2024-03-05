@@ -34,7 +34,7 @@ The configuration content with comments stripped.
 
 #### Defined in
 
-[packages/core/src/utils/configHelper.ts:23](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/utils/configHelper.ts#L23)
+[packages/core/src/utils/configHelper.ts:23](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/utils/configHelper.ts#L23)
 
 ___
 
@@ -65,4 +65,4 @@ The updated configuration object.
 
 #### Defined in
 
-[packages/core/src/utils/configHelper.ts:34](https://github.com/gtscio/framework/blob/ed1186b/packages/core/src/utils/configHelper.ts#L34)
+[packages/core/src/utils/configHelper.ts:34](https://github.com/gtscio/framework/blob/e3dfdc9/packages/core/src/utils/configHelper.ts#L34)
