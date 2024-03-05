@@ -29,5 +29,5 @@ jobs:
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
           VERCEL_SCOPE: ${{ secrets.VERCEL_SCOPE }}
-          PR_PREVIEW_DOMAIN: ${{ secrets.DOMAIN_PROD }}
+          ALIAS_DOMAINS: ${{ secrets.DOMAIN_PROD }}
           PRODUCTION: true
