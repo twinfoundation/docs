@@ -26,4 +26,4 @@ This command generates static content into the `build` directory and can be serv
 
 ## Deployment
 
-The `next` version is deployed to vercel when you perform changes on a branch. When the changes are merged to `main` the production version is deployed.
+The `preview` version is deployed to vercel when you perform changes on a branch. When the changes are merged to `main` the production version is deployed.
