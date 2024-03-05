@@ -53,11 +53,12 @@ jobs:
 
       - name: Create Pull Request
         run: |
-          git checkout -b docs/update-${{ env.GITHUB_SHA }}
+          git checkout -b docs/update-${{ github.sha }}
           git config --global user.name 'GTSC'
           git config --global user.email 'ci@gtsc.io'
           git commit -am "Update Packages Documentation"
-          git push --set-upstream origin docs/update-${{ env.GITHUB_SHA }}
-          gh pr create -B main -H docs/update-${{ env.GITHUB_SHA }} --title 'Merge packages documentation into main' --body 'Created by Github action'
+          git push --set-upstream origin docs/update-${{ github.sha }}
+          # Allow GitHub Actions to create and approve pull requests under Settings > Actions
+          gh pr create -B main -H docs/update-${{ github.sha }} --title 'Merge packages documentation into main' --body 'Created by Github action'
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PAT }}
