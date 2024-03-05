@@ -59,6 +59,6 @@ jobs:
           git push --set-upstream origin docs/update-${{ github.sha }}
           # Enable GitHub Actions Read and write permissions under Settings > Actions
           # Allow GitHub Actions to create and approve pull requests under Settings > Actions
-          gh pr create -B main -H docs/update-${{ github.sha }} --title 'Merge packages documentation into main' --body 'Created by Github action'
+          gh pr create -B main -H docs/update-${{ github.sha }} --title 'Merge packages documentation into main' --body 'Merges the dist docs from the packages into main'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
