@@ -1,6 +1,4 @@
-# @gtsc/nameof-transformer - Examples
-
-## Configuration
+# @gtsc/nameof-transformer - Configuration
 
 The TypeScript compilation process reads the code from the .ts files and generates JavaScript .js from them.
 
