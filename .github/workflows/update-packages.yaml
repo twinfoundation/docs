@@ -56,3 +56,5 @@ jobs:
           # Enable GitHub Actions Read and write permissions under Settings > Actions
           # Allow GitHub Actions to create and approve pull requests under Settings > Actions
           gh pr create -B main -H docs/update-${{ github.sha }} --title 'Merge packages documentation into main' --body 'Created by Github action'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
