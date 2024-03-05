@@ -58,6 +58,7 @@ jobs:
           git config --global user.email 'ci@gtsc.io'
           git commit -am "Update Packages Documentation"
           git push --set-upstream origin docs/update-${{ github.sha }}
+          # Enable GitHub Actions Read and write permissions under Settings > Actions
           # Allow GitHub Actions to create and approve pull requests under Settings > Actions
           gh pr create -B main -H docs/update-${{ github.sha }} --title 'Merge packages documentation into main' --body 'Created by Github action'
         env:
