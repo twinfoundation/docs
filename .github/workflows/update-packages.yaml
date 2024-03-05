@@ -37,10 +37,27 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.GH_PAT }}
 
-      - name: Copy Docs to Framework
+      - name: Copy Framework to Docs
         run: |
           rm -rf framework/docs/packages/nameof
           cp -r framework/packages/nameof/dist/docs/* docs/packages/nameof
+          rm -rf framework/docs/packages/nameof-transformer
+          cp -r framework/packages/nameof-transformer/dist/docs/* docs/packages/nameof-transformer
+          rm -rf framework/docs/packages/core
+          cp -r framework/packages/core/dist/docs/* docs/packages/core
+          rm -rf framework/docs/packages/entity
+          cp -r framework/packages/entity/dist/docs/* docs/packages/entity
 
       - name: Build
         run: npm run build
+
+      - name: Create Pull Request
+        run: |
+          git checkout -b docs/update-${{ env.GITHUB_SHA }}
+          git config --global user.name 'GTSC'
+          git config --global user.email 'ci@gtsc.io'
+          git commit -am "Update Packages Documentation"
+          git push --set-upstream origin docs/update-${{ env.GITHUB_SHA }}
+          gh pr create -B main -H docs/update-${{ env.GITHUB_SHA }} --title 'Merge packages documentation into main' --body 'Created by Github action'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
