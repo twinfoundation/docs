@@ -1,22 +1,18 @@
-name: Deploy Next
+name: Deploy Production
 
 on:
   pull_request:
     branches:
-      - "!main"
+      - main
   push:
     branches:
-      - "!main"
+      - main
   workflow_dispatch:
 
 permissions:
   contents: read
   pull-requests: write
   deployments: write
-
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
 
 jobs:
   deploy:
@@ -33,5 +29,5 @@ jobs:
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
           VERCEL_SCOPE: ${{ secrets.VERCEL_SCOPE }}
-          ALIAS_DOMAINS: ${{ secrets.ALIAS_DOMAIN_NEXT }}
-          PRODUCTION: false
+          PR_PREVIEW_DOMAIN: ${{ secrets.DOMAIN_PROD }}
+          PRODUCTION: true
