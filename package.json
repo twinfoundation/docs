@@ -12,7 +12,12 @@
 		"serve": "docusaurus serve",
 		"write-translations": "docusaurus write-translations",
 		"write-heading-ids": "docusaurus write-heading-ids",
-		"typecheck": "tsc"
+		"typecheck": "tsc",
+		"format": "prettier --config .prettierrc --write .",
+		"lint:format": "prettier --config .prettierrc --check .",
+		"lint:markdown": "markdownlint docs/**/*.md --ignore docs/packages/**/*",
+		"lint:spell": "cspell **/*.md --no-progress",
+		"lint": "npm run lint:format && npm run lint:markdown && npm run lint:spell"
 	},
 	"dependencies": {
 		"@docusaurus/core": "3.1.1",
@@ -27,6 +32,9 @@
 		"@docusaurus/module-type-aliases": "3.1.1",
 		"@docusaurus/tsconfig": "3.1.1",
 		"@docusaurus/types": "3.1.1",
+		"cspell": "^8.6.0",
+		"markdownlint-cli": "^0.39.0",
+		"prettier": "^3.2.5",
 		"typescript": "~5.2.2"
 	},
 	"browserslist": {

@@ -1,4 +1,4 @@
-import type { SidebarsConfig } from '@docusaurus/plugin-content-docs';
+import type { SidebarsConfig } from "@docusaurus/plugin-content-docs";
 import path from "path";
 import fs from "fs";
 
@@ -14,46 +14,46 @@ import fs from "fs";
  */
 const sidebars: SidebarsConfig = {
 	// By default, Docusaurus generates a sidebar from the docs folder structure
-	introductionSidebar: ['intro'],
+	introductionSidebar: ["intro"],
 
 	// But you can create a sidebar manually
 	packagesSidebar: [
-		'packages/overview',
+		"packages",
 		{
-			type: 'category',
-			label: 'Framework',
+			type: "category",
+			label: "Framework",
 			items: [
 				generatePackageItems("nameof-transformer"),
 				generatePackageItems("nameof"),
 				generatePackageItems("core"),
-				generatePackageItems("entity"),
-			],
-		},
-	],
+				generatePackageItems("entity")
+			]
+		}
+	]
 };
 
 function generatePackageItems(packageName: string): any {
 	return {
-		type: 'category',
+		type: "category",
 		label: packageName,
 		items: [
 			fileExists(packageName, "overview", "Overview"),
 			fileExists(packageName, "examples", "Examples"),
 			fileExists(packageName, "configuration", "Configuration"),
 			{
-				type: 'category',
-				label: 'Reference',
+				type: "category",
+				label: "Reference",
 				link: {
-					type: 'doc',
-					id: `packages/${packageName.toLowerCase()}/modules`,
+					type: "doc",
+					id: `packages/${packageName.toLowerCase()}/modules`
 				},
 				items: [
 					dirExists(packageName, "enums", "Enums"),
 					dirExists(packageName, "classes", "Classes"),
-					dirExists(packageName, "interfaces", "Interfaces"),
+					dirExists(packageName, "interfaces", "Interfaces")
 				].filter(Boolean)
 			}
-		].filter(Boolean),
+		].filter(Boolean)
 	};
 }
 
@@ -66,13 +66,12 @@ function fileExists(packageName: string, id: string, label: string): any {
 
 		if (st.isFile()) {
 			return {
-				type: 'doc',
+				type: "doc",
 				id: dirName,
 				label
 			};
 		}
-
-	} catch { }
+	} catch {}
 }
 
 function dirExists(packageName: string, id: string, label: string): any {
@@ -88,21 +87,18 @@ function dirExists(packageName: string, id: string, label: string): any {
 			files.sort();
 
 			return {
-				type: 'category',
+				type: "category",
 				label,
-				items:
-					files.map((f) => {
-						return {
-							type: "doc",
-							label: f.replace(".md", ""),
-							id: `${dirName}/${f.replace(".md", "")}`
-						};
-					})
-
+				items: files.map((f) => {
+					return {
+						type: "doc",
+						label: f.replace(".md", ""),
+						id: `${dirName}/${f.replace(".md", "")}`
+					};
+				})
 			};
 		}
-
-	} catch { }
+	} catch {}
 }
 
 // console.log(JSON.stringify(sidebars, undefined, "\t"))
