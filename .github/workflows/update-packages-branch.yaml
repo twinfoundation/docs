@@ -1,0 +1,65 @@
+name: Update Documentation from Packages Dev
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Docs
+        uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Restore root node_modules from cache
+        id: node-cache
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: node-modules-${{ hashFiles('package-lock.json') }}
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Checkout Framework
+        uses: actions/checkout@v4
+        with:
+          repository: gtscio/framework
+          path: framework
+          ref: dev
+          fetch-depth: 0
+          token: ${{ secrets.GH_PAT }}
+
+      - name: Copy Framework to Docs
+        run: |
+          rm -rf framework/docs/packages/nameof
+          cp -r framework/packages/nameof/dist/docs/* docs/packages/nameof
+          rm -rf framework/docs/packages/nameof-transformer
+          cp -r framework/packages/nameof-transformer/dist/docs/* docs/packages/nameof-transformer
+          rm -rf framework/docs/packages/core
+          cp -r framework/packages/core/dist/docs/* docs/packages/core
+          rm -rf framework/docs/packages/entity
+          cp -r framework/packages/entity/dist/docs/* docs/packages/entity
+
+      - name: Build
+        run: npm run build
+
+      - name: Create Pull Request
+        run: |
+          git checkout -b docs/update-dev-${{ github.sha }}
+          git config --global user.name 'GTSC'
+          git config --global user.email 'ci@gtsc.io'
+          git commit -am "Update Packages Documentation"
+          git push --set-upstream origin docs/update-dev-${{ github.sha }}
+          # Enable GitHub Actions Read and write permissions under Settings > Actions
+          # Allow GitHub Actions to create and approve pull requests under Settings > Actions
+          gh pr create -B dev -H docs/update-dev-${{ github.sha }} --title 'Merge packages documentation into dev' --body 'Merges the docs from the packages into dev'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

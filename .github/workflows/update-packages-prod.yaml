@@ -1,4 +1,4 @@
-name: Update Packages
+name: Update Documentation from Packages Production
 
 on:
   workflow_dispatch:
@@ -52,13 +52,13 @@ jobs:
 
       - name: Create Pull Request
         run: |
-          git checkout -b docs/update-${{ github.sha }}
+          git checkout -b docs/update-main-${{ github.sha }}
           git config --global user.name 'GTSC'
           git config --global user.email 'ci@gtsc.io'
           git commit -am "Update Packages Documentation"
-          git push --set-upstream origin docs/update-${{ github.sha }}
+          git push --set-upstream origin docs/update-main-${{ github.sha }}
           # Enable GitHub Actions Read and write permissions under Settings > Actions
           # Allow GitHub Actions to create and approve pull requests under Settings > Actions
-          gh pr create -B main -H docs/update-${{ github.sha }} --title 'Merge packages documentation into main' --body 'Merges the dist docs from the packages into main'
+          gh pr create -B main -H docs/update-main-${{ github.sha }} --title 'Merge packages documentation into main' --body 'Merges the docs from the packages into main'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
