@@ -1,9 +1,9 @@
-name: Deploy Branch
+name: Deploy Dev
 
 on:
   pull_request:
-    branches-ignore:
-      - main
+    branches:
+      - dev
   workflow_dispatch:
 
 permissions:
