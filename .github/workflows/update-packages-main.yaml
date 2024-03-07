@@ -1,4 +1,7 @@
-name: Update Documentation from Packages Production
+name: Update Documentation from Packages Main
+
+env:
+  gha-branch: main
 
 on:
   workflow_dispatch:
@@ -10,9 +13,12 @@ permissions:
 jobs:
   update:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout Docs
         uses: actions/checkout@v4
+        with:
+          ref: ${{ env.gha-branch }}
 
       - uses: actions/setup-node@v4
         with:
@@ -33,6 +39,7 @@ jobs:
         with:
           repository: gtscio/framework
           path: framework
+          ref: ${{ env.gha-branch }}
           fetch-depth: 0
           token: ${{ secrets.GH_PAT }}
 
@@ -52,13 +59,13 @@ jobs:
 
       - name: Create Pull Request
         run: |
-          git checkout -b docs/update-main-${{ github.sha }}
+          git checkout -b docs/update-${{ env.gha-branch }}-${{ github.sha }}
           git config --global user.name 'GTSC'
           git config --global user.email 'ci@gtsc.io'
           git commit -am "Update Packages Documentation"
-          git push --set-upstream origin docs/update-main-${{ github.sha }}
+          git push --set-upstream origin docs/update-${{ env.gha-branch }}-${{ github.sha }}
           # Enable GitHub Actions Read and write permissions under Settings > Actions
           # Allow GitHub Actions to create and approve pull requests under Settings > Actions
-          gh pr create -B main -H docs/update-main-${{ github.sha }} --title 'Merge packages documentation into main' --body 'Merges the docs from the packages into main'
+          gh pr create -B ${{ env.gha-branch }} -H docs/update-${{ env.gha-branch }}-${{ github.sha }} --title 'Merge packages documentation into ${{ env.gha-branch }}' --body 'Merges the docs from the packages into ${{ env.gha-branch }}'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
