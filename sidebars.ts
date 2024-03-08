@@ -47,8 +47,7 @@ function generatePackageItems(packageName: string): any {
 			fileExists(packageName, "examples", "Examples"),
 			fileExists(packageName, "configuration", "Configuration"),
 			fileExists(packageName, "changelog", "Changelog"),
-			referenceItems.length > 0 &&
-			{
+			referenceItems.length > 0 && {
 				type: "category",
 				label: "Reference",
 				link: {
