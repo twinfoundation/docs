@@ -48,9 +48,9 @@ jobs:
           rm -rf docs/packages/nameof
           cp -r framework/packages/nameof/docs docs/packages/nameof
           rm -rf docs/packages/nameof-transformer
-          cp -r packages/nameof-transformer/docs docs/packages/nameof-transformer
-          rm -rf framework/docs/packages/core
-          cp -r packages/core/docs docs/packages/core
+          cp -r framework/packages/nameof-transformer/docs docs/packages/nameof-transformer
+          rm -rf docs/packages/core
+          cp -r framework/packages/core/docs docs/packages/core
           rm -rf docs/packages/entity
           cp -r framework/packages/entity/docs docs/packages/entity
 
