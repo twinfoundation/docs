@@ -34,9 +34,9 @@ const sidebars: SidebarsConfig = {
 
 function generatePackageItems(packageName: string): any {
 	const referenceItems = [
-		dirExists(packageName, "enums", "Enums"),
-		dirExists(packageName, "classes", "Classes"),
-		dirExists(packageName, "interfaces", "Interfaces")
+		dirExists(packageName, "reference/enums", "Enums"),
+		dirExists(packageName, "reference/classes", "Classes"),
+		dirExists(packageName, "reference/interfaces", "Interfaces")
 	].filter(Boolean);
 
 	return {
@@ -46,7 +46,6 @@ function generatePackageItems(packageName: string): any {
 			fileExists(packageName, "overview", "Overview"),
 			fileExists(packageName, "examples", "Examples"),
 			fileExists(packageName, "configuration", "Configuration"),
-			fileExists(packageName, "changelog", "Changelog"),
 			referenceItems.length > 0 && {
 				type: "category",
 				label: "Reference",
@@ -55,7 +54,8 @@ function generatePackageItems(packageName: string): any {
 					id: `packages/${packageName.toLowerCase()}/reference/modules`
 				},
 				items: referenceItems
-			}
+			},
+			fileExists(packageName, "changelog", "Changelog"),
 		].filter(Boolean)
 	};
 }
