@@ -40,6 +40,7 @@ function generatePackageItems(packageName: string): any {
 			fileExists(packageName, "overview", "Overview"),
 			fileExists(packageName, "examples", "Examples"),
 			fileExists(packageName, "configuration", "Configuration"),
+			fileExists(packageName, "changelog", "Changelog"),
 			{
 				type: "category",
 				label: "Reference",

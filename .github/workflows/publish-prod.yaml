@@ -1,4 +1,4 @@
-name: Deploy Main
+name: Publish Production
 
 env:
   gha-branch: main
