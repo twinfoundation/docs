@@ -55,7 +55,7 @@ function generatePackageItems(packageName: string): any {
 				},
 				items: referenceItems
 			},
-			fileExists(packageName, "changelog", "Changelog"),
+			fileExists(packageName, "changelog", "Changelog")
 		].filter(Boolean)
 	};
 }
