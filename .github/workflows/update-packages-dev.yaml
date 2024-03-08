@@ -54,7 +54,7 @@ jobs:
           ls -R framework/packages/core/docs
           cp -r framework/packages/core/docs docs/packages/core
           rm -rf docs/packages/entity
-          ls -R framework/packages/core/entity
+          ls -R framework/packages/entity/docs
           cp -r framework/packages/entity/docs docs/packages/entity
           ls -R docs
 
