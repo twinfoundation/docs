@@ -1,4 +1,4 @@
-name: Deploy Dev
+name: Publish Next
 
 env:
   gha-branch: dev
