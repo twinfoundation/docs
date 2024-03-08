@@ -6,9 +6,6 @@ env:
   gha-domain: ${{ secrets.DOMAIN_PREVIEW }}
 
 on:
-  push:
-    branches:
-      - dev
   workflow_dispatch:
 
 permissions:
