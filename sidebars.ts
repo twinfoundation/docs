@@ -46,7 +46,7 @@ function generatePackageItems(packageName: string): any {
 				label: "Reference",
 				link: {
 					type: "doc",
-					id: `packages/${packageName.toLowerCase()}/modules`
+					id: `packages/${packageName.toLowerCase()}/reference/modules`
 				},
 				items: [
 					dirExists(packageName, "enums", "Enums"),
