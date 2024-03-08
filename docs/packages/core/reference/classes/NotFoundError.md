@@ -1,20 +1,20 @@
-# Class: UnauthorizedError
+# Class: NotFoundError
 
-Class to handle errors which are triggered by access not being unauthorized.
+Class to handle errors which are triggered by data not being found.
 
 ## Hierarchy
 
 - [`BaseError`](BaseError.md)
 
-  ↳ **`UnauthorizedError`**
+  ↳ **`NotFoundError`**
 
 ## Constructors
 
 ### constructor
 
-• **new UnauthorizedError**(`source`, `message`, `inner?`): [`UnauthorizedError`](UnauthorizedError.md)
+• **new NotFoundError**(`source`, `message`, `notFoundId?`, `inner?`): [`NotFoundError`](NotFoundError.md)
 
-Create a new instance of UnauthorizedError.
+Create a new instance of NotFoundError.
 
 #### Parameters
 
@@ -22,11 +22,12 @@ Create a new instance of UnauthorizedError.
 | :------ | :------ | :------ |
 | `source` | `string` | The source of the error. |
 | `message` | `string` | The message as a code. |
+| `notFoundId?` | `string` | The id for the item. |
 | `inner?` | `unknown` | The inner error if we have wrapped another error. |
 
 #### Returns
 
-[`UnauthorizedError`](UnauthorizedError.md)
+[`NotFoundError`](NotFoundError.md)
 
 #### Overrides
 
@@ -210,7 +211,7 @@ Construct an error from an existing one.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `err` | `unknown` | The exising error. |
+| `err` | `unknown` | The existing error. |
 
 #### Returns
 

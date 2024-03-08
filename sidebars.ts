@@ -33,6 +33,12 @@ const sidebars: SidebarsConfig = {
 };
 
 function generatePackageItems(packageName: string): any {
+	const referenceItems = [
+		dirExists(packageName, "reference/enums", "Enums"),
+		dirExists(packageName, "reference/classes", "Classes"),
+		dirExists(packageName, "reference/interfaces", "Interfaces")
+	].filter(Boolean);
+
 	return {
 		type: "category",
 		label: packageName,
@@ -40,19 +46,16 @@ function generatePackageItems(packageName: string): any {
 			fileExists(packageName, "overview", "Overview"),
 			fileExists(packageName, "examples", "Examples"),
 			fileExists(packageName, "configuration", "Configuration"),
-			{
+			referenceItems.length > 0 && {
 				type: "category",
 				label: "Reference",
 				link: {
 					type: "doc",
-					id: `packages/${packageName.toLowerCase()}/modules`
+					id: `packages/${packageName.toLowerCase()}/reference/modules`
 				},
-				items: [
-					dirExists(packageName, "enums", "Enums"),
-					dirExists(packageName, "classes", "Classes"),
-					dirExists(packageName, "interfaces", "Interfaces")
-				].filter(Boolean)
-			}
+				items: referenceItems
+			},
+			fileExists(packageName, "changelog", "Changelog")
 		].filter(Boolean)
 	};
 }

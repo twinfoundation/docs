@@ -1,20 +1,20 @@
-# Class: ConflictError
+# Class: AlreadyExistsError
 
-Class to handle errors which are triggered by conflicting data.
+Class to handle errors which are triggered by data already existing.
 
 ## Hierarchy
 
 - [`BaseError`](BaseError.md)
 
-  ↳ **`ConflictError`**
+  ↳ **`AlreadyExistsError`**
 
 ## Constructors
 
 ### constructor
 
-• **new ConflictError**(`source`, `message`, `conflictId?`, `conflicts?`, `inner?`): [`ConflictError`](ConflictError.md)
+• **new AlreadyExistsError**(`source`, `message`, `existingId?`, `inner?`): [`AlreadyExistsError`](AlreadyExistsError.md)
 
-Create a new instance of ConflictError.
+Create a new instance of AlreadyExistsError.
 
 #### Parameters
 
@@ -22,13 +22,12 @@ Create a new instance of ConflictError.
 | :------ | :------ | :------ |
 | `source` | `string` | The source of the error. |
 | `message` | `string` | The message as a code. |
-| `conflictId?` | `string` | The id that has conflicts. |
-| `conflicts?` | `string`[] | The conflicts that occured. |
+| `existingId?` | `string` | The id for the item. |
 | `inner?` | `unknown` | The inner error if we have wrapped another error. |
 
 #### Returns
 
-[`ConflictError`](ConflictError.md)
+[`AlreadyExistsError`](AlreadyExistsError.md)
 
 #### Overrides
 
@@ -212,7 +211,7 @@ Construct an error from an existing one.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `err` | `unknown` | The exising error. |
+| `err` | `unknown` | The existing error. |
 
 #### Returns
 

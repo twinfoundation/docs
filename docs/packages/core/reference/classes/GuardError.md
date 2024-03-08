@@ -1,20 +1,20 @@
-# Class: GeneralError
+# Class: GuardError
 
-Class to handle errors.
+Class to handle errors which are triggered by data guards.
 
 ## Hierarchy
 
 - [`BaseError`](BaseError.md)
 
-  ↳ **`GeneralError`**
+  ↳ **`GuardError`**
 
 ## Constructors
 
 ### constructor
 
-• **new GeneralError**(`source`, `message`, `properties?`, `inner?`): [`GeneralError`](GeneralError.md)
+• **new GuardError**(`source`, `message`, `propertyName`, `propertyValue`, `propertyOptions?`): [`GuardError`](GuardError.md)
 
-Create a new instance of GeneralError.
+Create a new instance of GuardError.
 
 #### Parameters
 
@@ -22,12 +22,13 @@ Create a new instance of GeneralError.
 | :------ | :------ | :------ |
 | `source` | `string` | The source of the error. |
 | `message` | `string` | The message as a code. |
-| `properties?` | `Object` | Any additional information for the error. |
-| `inner?` | `unknown` | The inner error if we have wrapped another error. |
+| `propertyName` | `string` | The property which triggered the guard error for the item. |
+| `propertyValue` | `unknown` | The property value which triggered the guard error for the item. |
+| `propertyOptions?` | `string` | The property options which might be allowed. |
 
 #### Returns
 
-[`GeneralError`](GeneralError.md)
+[`GuardError`](GuardError.md)
 
 #### Overrides
 
@@ -211,7 +212,7 @@ Construct an error from an existing one.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `err` | `unknown` | The exising error. |
+| `err` | `unknown` | The existing error. |
 
 #### Returns
 

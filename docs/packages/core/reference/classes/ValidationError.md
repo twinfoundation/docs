@@ -1,32 +1,32 @@
-# Class: NotSupportedError
+# Class: ValidationError
 
-Class to handle errors when a feature is unsupported.
+Class to handle errors which are triggered by entity validation.
 
 ## Hierarchy
 
 - [`BaseError`](BaseError.md)
 
-  ↳ **`NotSupportedError`**
+  ↳ **`ValidationError`**
 
 ## Constructors
 
 ### constructor
 
-• **new NotSupportedError**(`source`, `message`, `inner?`): [`NotSupportedError`](NotSupportedError.md)
+• **new ValidationError**(`source`, `validationObject`, `validationFailures`): [`ValidationError`](ValidationError.md)
 
-Create a new instance of NotSupportedError.
+Create a new instance of ValidationError.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `source` | `string` | The source of the error. |
-| `message` | `string` | The message as a code. |
-| `inner?` | `unknown` | The inner error if we have wrapped another error. |
+| `validationObject` | `string` | The object that failed validation. |
+| `validationFailures` | [`IValidationFailure`](../interfaces/IValidationFailure.md)[] | The validation failures. |
 
 #### Returns
 
-[`NotSupportedError`](NotSupportedError.md)
+[`ValidationError`](ValidationError.md)
 
 #### Overrides
 
@@ -124,7 +124,7 @@ ___
 
 ▪ `Static` `Readonly` **CLASS\_NAME**: `string`
 
-Runtime name for the class.
+Runtime name for the class.s
 
 ## Methods
 
@@ -210,7 +210,7 @@ Construct an error from an existing one.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `err` | `unknown` | The exising error. |
+| `err` | `unknown` | The existing error. |
 
 #### Returns
 

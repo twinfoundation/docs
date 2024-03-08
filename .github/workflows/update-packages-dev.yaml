@@ -40,19 +40,19 @@ jobs:
           repository: gtscio/framework
           path: framework
           ref: ${{ env.gha-branch }}
-          fetch-depth: 0
           token: ${{ secrets.GH_PAT }}
 
       - name: Copy Framework to Docs
         run: |
-          rm -rf framework/docs/packages/nameof
-          cp -r framework/packages/nameof/dist/docs/* docs/packages/nameof
-          rm -rf framework/docs/packages/nameof-transformer
-          cp -r framework/packages/nameof-transformer/dist/docs/* docs/packages/nameof-transformer
-          rm -rf framework/docs/packages/core
-          cp -r framework/packages/core/dist/docs/* docs/packages/core
-          rm -rf framework/docs/packages/entity
-          cp -r framework/packages/entity/dist/docs/* docs/packages/entity
+          rm -rf docs/packages/nameof
+          cp -r framework/packages/nameof/docs docs/packages/nameof
+          rm -rf docs/packages/nameof-transformer
+          cp -r framework/packages/nameof-transformer/docs docs/packages/nameof-transformer
+          rm -rf docs/packages/core
+          cp -r framework/packages/core/docs docs/packages/core
+          rm -rf docs/packages/entity
+          cp -r framework/packages/entity/docs docs/packages/entity
+          rm -r framework
 
       - name: Build
         run: npm run build
@@ -62,6 +62,7 @@ jobs:
           git checkout -b docs/update-${{ env.gha-branch }}-${{ github.sha }}
           git config --global user.name 'GTSC'
           git config --global user.email 'ci@gtsc.io'
+          git add .
           git commit -am "Update Packages Documentation"
           git push --set-upstream origin docs/update-${{ env.gha-branch }}-${{ github.sha }}
           # Enable GitHub Actions Read and write permissions under Settings > Actions

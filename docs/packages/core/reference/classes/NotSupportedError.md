@@ -1,20 +1,20 @@
-# Class: NotFoundError
+# Class: NotSupportedError
 
-Class to handle errors which are triggered by data not being found.
+Class to handle errors when a feature is unsupported.
 
 ## Hierarchy
 
 - [`BaseError`](BaseError.md)
 
-  ↳ **`NotFoundError`**
+  ↳ **`NotSupportedError`**
 
 ## Constructors
 
 ### constructor
 
-• **new NotFoundError**(`source`, `message`, `notFoundId?`, `inner?`): [`NotFoundError`](NotFoundError.md)
+• **new NotSupportedError**(`source`, `message`, `inner?`): [`NotSupportedError`](NotSupportedError.md)
 
-Create a new instance of NotFoundError.
+Create a new instance of NotSupportedError.
 
 #### Parameters
 
@@ -22,12 +22,11 @@ Create a new instance of NotFoundError.
 | :------ | :------ | :------ |
 | `source` | `string` | The source of the error. |
 | `message` | `string` | The message as a code. |
-| `notFoundId?` | `string` | The id for the item. |
 | `inner?` | `unknown` | The inner error if we have wrapped another error. |
 
 #### Returns
 
-[`NotFoundError`](NotFoundError.md)
+[`NotSupportedError`](NotSupportedError.md)
 
 #### Overrides
 
@@ -211,7 +210,7 @@ Construct an error from an existing one.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `err` | `unknown` | The exising error. |
+| `err` | `unknown` | The existing error. |
 
 #### Returns
 

@@ -1,34 +1,31 @@
-# Class: GuardError
+# Class: NotImplementedError
 
-Class to handle errors which are triggered by data guards.
+Class to handle errors.
 
 ## Hierarchy
 
 - [`BaseError`](BaseError.md)
 
-  ↳ **`GuardError`**
+  ↳ **`NotImplementedError`**
 
 ## Constructors
 
 ### constructor
 
-• **new GuardError**(`source`, `message`, `propertyName`, `propertyValue`, `propertyOptions?`): [`GuardError`](GuardError.md)
+• **new NotImplementedError**(`source`, `method`): [`NotImplementedError`](NotImplementedError.md)
 
-Create a new instance of GuardError.
+Create a new instance of NotImplementedError.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `source` | `string` | The source of the error. |
-| `message` | `string` | The message as a code. |
-| `propertyName` | `string` | The property which triggered the guard error for the item. |
-| `propertyValue` | `unknown` | The property value which triggered the guard error for the item. |
-| `propertyOptions?` | `string` | The property options which might be allowed. |
+| `method` | `string` | The method for the error. |
 
 #### Returns
 
-[`GuardError`](GuardError.md)
+[`NotImplementedError`](NotImplementedError.md)
 
 #### Overrides
 
@@ -212,7 +209,7 @@ Construct an error from an existing one.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `err` | `unknown` | The exising error. |
+| `err` | `unknown` | The existing error. |
 
 #### Returns
 

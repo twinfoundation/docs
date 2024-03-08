@@ -1,4 +1,4 @@
-# Class: NotImplementedError
+# Class: GeneralError
 
 Class to handle errors.
 
@@ -6,26 +6,28 @@ Class to handle errors.
 
 - [`BaseError`](BaseError.md)
 
-  ↳ **`NotImplementedError`**
+  ↳ **`GeneralError`**
 
 ## Constructors
 
 ### constructor
 
-• **new NotImplementedError**(`source`, `method`): [`NotImplementedError`](NotImplementedError.md)
+• **new GeneralError**(`source`, `message`, `properties?`, `inner?`): [`GeneralError`](GeneralError.md)
 
-Create a new instance of NotImplementedError.
+Create a new instance of GeneralError.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `source` | `string` | The source of the error. |
-| `method` | `string` | The method for the error. |
+| `message` | `string` | The message as a code. |
+| `properties?` | `Object` | Any additional information for the error. |
+| `inner?` | `unknown` | The inner error if we have wrapped another error. |
 
 #### Returns
 
-[`NotImplementedError`](NotImplementedError.md)
+[`GeneralError`](GeneralError.md)
 
 #### Overrides
 
@@ -209,7 +211,7 @@ Construct an error from an existing one.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `err` | `unknown` | The exising error. |
+| `err` | `unknown` | The existing error. |
 
 #### Returns
 

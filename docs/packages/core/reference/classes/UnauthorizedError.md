@@ -1,20 +1,20 @@
-# Class: AlreadyExistsError
+# Class: UnauthorizedError
 
-Class to handle errors which are triggered by data already existing.
+Class to handle errors which are triggered by access not being unauthorized.
 
 ## Hierarchy
 
 - [`BaseError`](BaseError.md)
 
-  ↳ **`AlreadyExistsError`**
+  ↳ **`UnauthorizedError`**
 
 ## Constructors
 
 ### constructor
 
-• **new AlreadyExistsError**(`source`, `message`, `existingId?`, `inner?`): [`AlreadyExistsError`](AlreadyExistsError.md)
+• **new UnauthorizedError**(`source`, `message`, `inner?`): [`UnauthorizedError`](UnauthorizedError.md)
 
-Create a new instance of AlreadyExistsError.
+Create a new instance of UnauthorizedError.
 
 #### Parameters
 
@@ -22,12 +22,11 @@ Create a new instance of AlreadyExistsError.
 | :------ | :------ | :------ |
 | `source` | `string` | The source of the error. |
 | `message` | `string` | The message as a code. |
-| `existingId?` | `string` | The id for the item. |
 | `inner?` | `unknown` | The inner error if we have wrapped another error. |
 
 #### Returns
 
-[`AlreadyExistsError`](AlreadyExistsError.md)
+[`UnauthorizedError`](UnauthorizedError.md)
 
 #### Overrides
 
@@ -211,7 +210,7 @@ Construct an error from an existing one.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `err` | `unknown` | The exising error. |
+| `err` | `unknown` | The existing error. |
 
 #### Returns
 

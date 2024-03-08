@@ -1,4 +1,4 @@
-name: Deploy Main
+name: Publish Production
 
 env:
   gha-branch: main
@@ -6,9 +6,6 @@ env:
   gha-domain: ${{ secrets.DOMAIN_PROD }}
 
 on:
-  push:
-    branches:
-      - main
   workflow_dispatch:
 
 permissions:
