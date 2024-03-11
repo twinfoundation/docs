@@ -44,14 +44,14 @@ jobs:
 
       - name: Copy Framework to Docs
         run: |
-          rm -rf docs/packages/nameof
-          cp -r import-packages/framework/packages/nameof/docs docs/packages/nameof
-          rm -rf docs/packages/nameof-transformer
-          cp -r import-packages/framework/packages/nameof-transformer/docs docs/packages/nameof-transformer
-          rm -rf docs/packages/core
-          cp -r import-packages/framework/packages/core/docs docs/packages/core
-          rm -rf docs/packages/entity
-          cp -r import-packages/framework/packages/entity/docs docs/packages/entity
+          PACKAGES=('nameof' 'nameof-transformer' 'core' 'entity' 'crypto')
+
+          for pkg in "${PACKAGES[@]}"
+          do
+            rm -rf docs/packages/$pkg
+            cp -r import-packages/framework/packages/$pkg/docs docs/packages/$pkg
+          done
+
           cp import-packages/framework/docs/packages.json docs/packages/framework.json
           rm -r import-packages/framework
 
