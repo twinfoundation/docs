@@ -52,6 +52,7 @@ jobs:
           cp -r import-packages/framework/packages/core/docs docs/packages/core
           rm -rf docs/packages/entity
           cp -r import-packages/framework/packages/entity/docs docs/packages/entity
+          cp import-packages/framework/docs/packages.json docs/packages/framework.json
           rm -r import-packages/framework
 
       - name: Build
