@@ -17,6 +17,10 @@
 		{
 			"name": "entity",
 			"description": "Helpers for defining and working with entities."
+		},
+		{
+			"name": "crypto",
+			"description": "Contains helper methods and classes which implement cryptographic functions."
 		}
 	]
 }
