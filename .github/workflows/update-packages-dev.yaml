@@ -46,10 +46,13 @@ jobs:
         run: |
           PACKAGES=$(jq -r '.packages | map(.name) | "'\''" + join("'\'' '\''") + "'\''"' import-packages/framework/docs/packages.json)
           echo $PACKAGES
+          PACKAGES2="'nameof-transformer' 'nameof' 'core' 'entity' 'crypto' 'image' 'qr'"
+          echo $PACKAGES
 
-          for pkg in "${PACKAGES[@]}"
+          for pkg in "${PACKAGESs[@]}"
           do
             rm -rf docs/packages/$pkg
+            ls -al import-packages/framework/packages/$pkg
             cp -r import-packages/framework/packages/$pkg/docs docs/packages/$pkg
           done
 
