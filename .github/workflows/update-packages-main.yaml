@@ -44,7 +44,7 @@ jobs:
 
       - name: Copy Framework to Docs
         run: |
-          PACKAGES=('nameof' 'nameof-transformer' 'core' 'entity' 'crypto')
+          PACKAGES=$(jq -r .packages[].name ./import-packages/framework/docs/packages.json)
 
           for pkg in "${PACKAGES[@]}"
           do
