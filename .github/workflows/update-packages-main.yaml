@@ -44,7 +44,7 @@ jobs:
 
       - name: Copy Framework to Docs
         run: |
-          PACKAGES=$(jq -r '.packages | map(.name) | ("\"" + join("\" \"")' + "\"") import-packages/framework/docs/packages.json)
+          PACKAGES=$(jq -r '.packages | map(.name) | "\"" + join("\" \"") + "\""' import-packages/framework/docs/packages.json)
 
           for pkg in "${PACKAGES[@]}"
           do
