@@ -52,6 +52,8 @@ jobs:
           cp -r import-packages/framework/packages/core/docs docs/packages/core
           rm -rf docs/packages/entity
           cp -r import-packages/framework/packages/entity/docs docs/packages/entity
+          rm -rf docs/packages/crypto
+          cp -r import-packages/framework/packages/crypto/docs docs/packages/crypto
           cp import-packages/framework/docs/packages.json docs/packages/framework.json
           rm -r import-packages/framework
 
