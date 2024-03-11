@@ -44,11 +44,7 @@ jobs:
 
       - name: Copy Framework to Docs
         run: |
-          PACKAGES=$(jq -r '.packages | map(.name) | "'\''" + join("'\'' '\''") + "'\''"' import-packages/framework/docs/packages.json)
-          echo $PACKAGES
-
-          for pkg in "${PACKAGES[@]}"
-          do
+          jq -r '.packages[].name' import-packages/framework/docs/packages.json | while read pkg; do
             rm -rf docs/packages/$pkg
             cp -r import-packages/framework/packages/$pkg/docs docs/packages/$pkg
           done
