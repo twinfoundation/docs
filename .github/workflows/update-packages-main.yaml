@@ -38,21 +38,22 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: gtscio/framework
-          path: framework
+          path: import-packages/framework
           ref: ${{ env.gha-branch }}
           token: ${{ secrets.GH_PAT }}
 
       - name: Copy Framework to Docs
         run: |
           rm -rf docs/packages/nameof
-          cp -r framework/packages/nameof/docs docs/packages/nameof
+          cp -r import-packages/framework/packages/nameof/docs docs/packages/nameof
           rm -rf docs/packages/nameof-transformer
-          cp -r framework/packages/nameof-transformer/docs docs/packages/nameof-transformer
+          cp -r import-packages/framework/packages/nameof-transformer/docs docs/packages/nameof-transformer
           rm -rf docs/packages/core
-          cp -r framework/packages/core/docs docs/packages/core
+          cp -r import-packages/framework/packages/core/docs docs/packages/core
           rm -rf docs/packages/entity
-          cp -r framework/packages/entity/docs docs/packages/entity
-          rm -r framework
+          cp -r import-packages/framework/packages/entity/docs docs/packages/entity
+          cp import-packages/framework/docs/packages.json docs/packages/framework.json
+          rm -r import-packages/framework
 
       - name: Build
         run: npm run build

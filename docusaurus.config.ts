@@ -20,6 +20,8 @@ const config: Config = {
 		locales: ["en"]
 	},
 
+	plugins: ["./plugins/package-index.ts"],
+
 	presets: [
 		[
 			"classic",

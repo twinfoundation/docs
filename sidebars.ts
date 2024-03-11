@@ -17,20 +17,32 @@ const sidebars: SidebarsConfig = {
 	introductionSidebar: ["intro"],
 
 	// But you can create a sidebar manually
-	packagesSidebar: [
-		"packages",
-		{
-			type: "category",
-			label: "Framework",
-			items: [
-				generatePackageItems("nameof-transformer"),
-				generatePackageItems("nameof"),
-				generatePackageItems("core"),
-				generatePackageItems("entity")
-			]
-		}
-	]
+	packagesSidebar: ["packages", ...buildPackages()]
 };
+
+function buildPackages(): any {
+	try {
+		const packageGroupsFilename = path.join(__dirname, "docs", "packages", "package-groups.json");
+		const packageGroupsContent = fs.readFileSync(packageGroupsFilename, "utf-8");
+		const packageGroups = JSON.parse(packageGroupsContent);
+
+		const groups = [];
+
+		for (const packageGroup of packageGroups) {
+			const packageFilename = path.join(__dirname, "docs", "packages", `${packageGroup}.json`);
+			const packageContent = fs.readFileSync(packageFilename, "utf-8");
+			groups.push(JSON.parse(packageContent));
+		}
+
+		return groups.map((pkg) => ({
+			type: "category",
+			label: pkg.label,
+			items: pkg.packages.map((p) => generatePackageItems(p.name))
+		}));
+	} catch {}
+
+	return [];
+}
 
 function generatePackageItems(packageName: string): any {
 	const referenceItems = [
@@ -103,7 +115,5 @@ function dirExists(packageName: string, id: string, label: string): any {
 		}
 	} catch {}
 }
-
-// console.log(JSON.stringify(sidebars, undefined, "\t"))
 
 export default sidebars;
