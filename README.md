@@ -32,4 +32,4 @@ The `preview` version is deployed to vercel when you perform changes on a branch
 
 To add a new package group modify `docs/packages/package-groups.json`
 
-You should also update the `.github/workflows/update-packages-dev.yaml` and `.github/workflows/update-packages-main.yaml` and include a new `Copy x to Docs` section for your new package group.
+You should also update the `.github/workflows/update-packages-dev.yaml` and `.github/workflows/update-packages-main.yaml` files to include a new `Copy x to Docs` section for your new package group.
