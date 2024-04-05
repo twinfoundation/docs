@@ -1,0 +1,14 @@
+{
+	"category": "wallet",
+	"label": "Wallet",
+	"packages": [
+		{
+			"name": "wallet-provider-models",
+			"description": "Models which define the structure of the provider implementations."
+		},
+		{
+			"name": "wallet-provider-iota",
+			"description": "Wallet provider implementation using IOTA."
+		}
+	]
+}
