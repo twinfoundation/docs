@@ -9,5 +9,7 @@ This is the overview of the packages.
 - [core](packages/core/overview) - Helper methods/classes for data type checking/validation/guarding/error handling.
 - [entity](packages/entity/overview) - Helpers for defining and working with entities.
 - [crypto](packages/crypto/overview) - Contains helper methods and classes which implement cryptographic functions.
+- [services](packages/services/overview) - Contains definitions and helpers for services.
+- [schema](packages/schema/overview) - Contains definitions and helpers for schemas.
 - [image](packages/image/overview) - Contains classes for processing images.
 - [qr](packages/qr/overview) - Contains classes for generating QR codes.

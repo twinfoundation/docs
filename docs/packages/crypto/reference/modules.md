@@ -1,10 +1,15 @@
 # @gtsc/crypto
 
+## Enumerations
+
+- [KeyType](enums/KeyType.md)
+
 ## Classes
 
 - [Bech32](classes/Bech32.md)
 - [Bip32Path](classes/Bip32Path.md)
 - [Bip39](classes/Bip39.md)
+- [Bip44](classes/Bip44.md)
 - [Blake2b](classes/Blake2b.md)
 - [ChaCha20](classes/ChaCha20.md)
 - [ChaCha20Poly1305](classes/ChaCha20Poly1305.md)
@@ -24,3 +29,7 @@
 - [Totp](classes/Totp.md)
 - [X25519](classes/X25519.md)
 - [Zip215](classes/Zip215.md)
+
+## Interfaces
+
+- [IKeyPair](interfaces/IKeyPair.md)
