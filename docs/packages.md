@@ -13,3 +13,14 @@ This is the overview of the packages.
 - [schema](packages/schema/overview) - Contains definitions and helpers for schemas.
 - [image](packages/image/overview) - Contains classes for processing images.
 - [qr](packages/qr/overview) - Contains classes for generating QR codes.
+
+## Wallet
+
+- [wallet-provider-models](packages/wallet-provider-models/overview) - Models which define the structure of the provider implementations.
+- [wallet-provider-iota](packages/wallet-provider-iota/overview) - Wallet provider implementation using IOTA.
+
+## Identity
+
+- [identity-provider-models](packages/identity-provider-models/overview) - Models which define the structure of the provider implementations.
+- [identity-service-models](packages/identity-service-models/overview) - Models which define the structure of the service implementations.
+- [identity-provider-iota](packages/identity-provider-iota/overview) - Identity provider implementation using IOTA.
