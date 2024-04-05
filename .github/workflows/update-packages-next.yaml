@@ -1,7 +1,7 @@
-name: Update Documentation from Packages Dev
+name: Update Documentation from Packages Next
 
 env:
-  gha-branch: dev
+  gha-branch: next
 
 on:
   workflow_dispatch:
@@ -34,7 +34,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Checkout Framework
+      - name: Checkout framework
         uses: actions/checkout@v4
         with:
           repository: gtscio/framework
@@ -42,7 +42,7 @@ jobs:
           ref: ${{ env.gha-branch }}
           token: ${{ secrets.GH_PAT }}
 
-      - name: Copy Framework to Docs
+      - name: Copy framework to Docs
         run: |
           jq -r '.packages[].name' import-packages/framework/docs/packages.json | while read pkg; do
             rm -rf docs/packages/$pkg
@@ -51,6 +51,42 @@ jobs:
 
           cp import-packages/framework/docs/packages.json docs/packages/framework.json
           rm -r import-packages/framework
+
+      - name: Checkout wallet
+        uses: actions/checkout@v4
+        with:
+          repository: gtscio/wallet
+          path: import-packages/wallet
+          ref: ${{ env.gha-branch }}
+          token: ${{ secrets.GH_PAT }}
+
+      - name: Copy wallet to Docs
+        run: |
+          jq -r '.packages[].name' import-packages/wallet/docs/packages.json | while read pkg; do
+            rm -rf docs/packages/$pkg
+            cp -r import-packages/wallet/packages/$pkg/docs docs/packages/$pkg
+          done
+
+          cp import-packages/wallet/docs/packages.json docs/packages/wallet.json
+          rm -r import-packages/wallet
+
+      - name: Checkout identity
+        uses: actions/checkout@v4
+        with:
+          repository: gtscio/identity
+          path: import-packages/identity
+          ref: ${{ env.gha-branch }}
+          token: ${{ secrets.GH_PAT }}
+
+      - name: Copy identity to Docs
+        run: |
+          jq -r '.packages[].name' import-packages/identity/docs/packages.json | while read pkg; do
+            rm -rf docs/packages/$pkg
+            cp -r import-packages/identity/packages/$pkg/docs docs/packages/$pkg
+          done
+
+          cp import-packages/identity/docs/packages.json docs/packages/identity.json
+          rm -r import-packages/identity
 
       - name: Build
         run: npm run build
