@@ -36,9 +36,9 @@ jobs:
 
       - name: Remove old docs
         run: |
-          mv docs/packages/package-groups.json import-packages/package-groups.json
+          mv docs/packages/package-groups.json ./package-groups.json
           rm -rf docs/packages/*
-          mv import-packages/package-groups.json docs/packages/package-groups.json
+          mv ./package-groups.json docs/packages/package-groups.json
 
       ########### tools
       - name: Checkout tools
