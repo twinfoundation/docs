@@ -27,13 +27,7 @@ module.exports = async function packageIndexPlugin() {
 			const groups = [];
 
 			try {
-				const packageGroupsFilename = path.join(
-					__dirname,
-					"..",
-					"docs",
-					"packages",
-					"package-groups.json"
-				);
+				const packageGroupsFilename = path.join(__dirname, "..", "docs", "packages.json");
 				const packageGroupsContent = fs.readFileSync(packageGroupsFilename, "utf-8");
 				const packageGroups = JSON.parse(packageGroupsContent);
 
