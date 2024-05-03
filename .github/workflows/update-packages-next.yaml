@@ -1,7 +1,7 @@
 name: Update Next Docs from Packages
 
 env:
-  gha-branch: main
+  gha-branch: next
 
 on:
   workflow_dispatch:
