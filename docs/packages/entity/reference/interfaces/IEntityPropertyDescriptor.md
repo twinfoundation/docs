@@ -38,15 +38,7 @@ ___
 
 • `Optional` **itemType**: `string`
 
-The type of the item (only applies when type is either `list` or `structure`).
-
-___
-
-### name
-
-• **name**: keyof `T`
-
-The name of the property.
+The type of the item (only applies when type is either `list` or `object`).
 
 ___
 
@@ -55,6 +47,14 @@ ___
 • `Optional` **optional**: `boolean`
 
 Is the property optional.
+
+___
+
+### property
+
+• **property**: keyof `T`
+
+The name of the property.
 
 ___
 
@@ -68,7 +68,7 @@ ___
 
 ### sortDirection
 
-• `Optional` **sortDirection**: ``"desc"`` \| ``"asc"``
+• `Optional` **sortDirection**: [`SortDirection`](../enums/SortDirection.md)
 
 Default sort direction for this column, leave empty if not sortable.
 

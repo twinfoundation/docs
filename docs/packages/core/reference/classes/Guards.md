@@ -105,6 +105,30 @@ GuardError If the value does not match the assertion.
 
 ___
 
+### bigint
+
+▸ **bigint**(`source`, `property`, `value`): asserts value is bigint
+
+Is the property a bigint.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `source` | `string` | The source of the error. |
+| `property` | `string` | The name of the property. |
+| `value` | `unknown` | The value to test. |
+
+#### Returns
+
+asserts value is bigint
+
+**`Throws`**
+
+GuardError If the value does not match the assertion.
+
+___
+
 ### boolean
 
 ▸ **boolean**(`source`, `property`, `value`): asserts value is boolean
@@ -227,30 +251,6 @@ GuardError If the value does not match the assertion.
 
 ___
 
-### milliseconds
-
-▸ **milliseconds**(`source`, `property`, `value`): asserts value is number
-
-Is the property a timestamp in milliseconds.
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `source` | `string` | The source of the error. |
-| `property` | `string` | The name of the property. |
-| `value` | `unknown` | The value to test. |
-
-#### Returns
-
-asserts value is number
-
-**`Throws`**
-
-GuardError If the value does not match the assertion.
-
-___
-
 ### number
 
 ▸ **number**(`source`, `property`, `value`): asserts value is number
@@ -335,11 +335,11 @@ GuardError If the value does not match the assertion.
 
 ___
 
-### seconds
+### string
 
-▸ **seconds**(`source`, `property`, `value`): asserts value is number
+▸ **string**(`source`, `property`, `value`): asserts value is string
 
-Is the property a timestamp in seconds.
+Is the property a string.
 
 #### Parameters
 
@@ -351,7 +351,7 @@ Is the property a timestamp in seconds.
 
 #### Returns
 
-asserts value is number
+asserts value is string
 
 **`Throws`**
 
@@ -359,11 +359,35 @@ GuardError If the value does not match the assertion.
 
 ___
 
-### string
+### stringBase64
 
-▸ **string**(`source`, `property`, `value`): asserts value is string
+▸ **stringBase64**(`source`, `property`, `value`): asserts value is string
 
-Is the property a string.
+Is the property a base64 string.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `source` | `string` | The source of the error. |
+| `property` | `string` | The name of the property. |
+| `value` | `unknown` | The value to test. |
+
+#### Returns
+
+asserts value is string
+
+**`Throws`**
+
+GuardError If the value does not match the assertion.
+
+___
+
+### stringBase64Url
+
+▸ **stringBase64Url**(`source`, `property`, `value`): asserts value is string
+
+Is the property a base64 url string.
 
 #### Parameters
 
@@ -449,6 +473,54 @@ Is the property a string with a value.
 #### Returns
 
 asserts value is string
+
+**`Throws`**
+
+GuardError If the value does not match the assertion.
+
+___
+
+### timestampMilliseconds
+
+▸ **timestampMilliseconds**(`source`, `property`, `value`): asserts value is number
+
+Is the property a timestamp in milliseconds.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `source` | `string` | The source of the error. |
+| `property` | `string` | The name of the property. |
+| `value` | `unknown` | The value to test. |
+
+#### Returns
+
+asserts value is number
+
+**`Throws`**
+
+GuardError If the value does not match the assertion.
+
+___
+
+### timestampSeconds
+
+▸ **timestampSeconds**(`source`, `property`, `value`): asserts value is number
+
+Is the property a timestamp in seconds.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `source` | `string` | The source of the error. |
+| `property` | `string` | The name of the property. |
+| `value` | `unknown` | The value to test. |
+
+#### Returns
+
+asserts value is number
 
 **`Throws`**
 

@@ -1,30 +1,28 @@
-# Interface: IComparator
+# Interface: IComparator\<T\>
 
-Interface defining comparison operator.
+Interface defining comparator operator.
+
+## Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | `unknown` |
 
 ## Properties
 
-### comparison
+### operator
 
-• **comparison**: [`ComparisonType`](../enums/ComparisonType.md)
+• **operator**: [`ComparisonOperator`](../enums/ComparisonOperator.md)
 
-The comparison to perform.
-
-___
-
-### logicalOperator
-
-• `Optional` **logicalOperator**: [`LogicalOperator`](../enums/LogicalOperator.md)
-
-The logical operator to use.
+The check to perform.
 
 ___
 
 ### property
 
-• **property**: `string`
+• **property**: keyof `T`
 
-The name of the property in the object to compare.
+The name of the property in the object to check.
 
 ___
 
@@ -32,4 +30,4 @@ ___
 
 • **value**: `unknown`
 
-The value of the property to compare.
+The value of the property to check.
