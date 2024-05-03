@@ -13,7 +13,6 @@ permissions:
 jobs:
   update:
     runs-on: ubuntu-latest
-    needs: checkout
 
     strategy:
       max-parallel: 1
