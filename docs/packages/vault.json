@@ -1,0 +1,14 @@
+{
+	"category": "vault",
+	"label": "Vault",
+	"packages": [
+		{
+			"name": "vault-provider-models",
+			"description": "Models which define the structure of the vault provider implementations."
+		},
+		{
+			"name": "vault-provider-memory",
+			"description": "Vault provider implementation using in memory storage."
+		}
+	]
+}

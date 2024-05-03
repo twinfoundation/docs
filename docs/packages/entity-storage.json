@@ -1,0 +1,18 @@
+{
+	"category": "entity-storage",
+	"label": "Entity Storage",
+	"packages": [
+		{
+			"name": "entity-storage-provider-models",
+			"description": "Models which define the structure of the entity storage provider implementations."
+		},
+		{
+			"name": "entity-storage-provider-memory",
+			"description": "Entity Storage provider implementation using in-memory storage."
+		},
+		{
+			"name": "entity-storage-provider-file",
+			"description": "Entity Storage provider implementation using file storage."
+		}
+	]
+}

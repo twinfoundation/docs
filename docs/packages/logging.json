@@ -1,0 +1,14 @@
+{
+	"category": "logging",
+	"label": "Logging",
+	"packages": [
+		{
+			"name": "logging-provider-models",
+			"description": "Models which define the structure of the logging provider implementations."
+		},
+		{
+			"name": "logging-provider-console",
+			"description": "Logging provider implementation using the console."
+		}
+	]
+}
