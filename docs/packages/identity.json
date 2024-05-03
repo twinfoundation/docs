@@ -3,16 +3,20 @@
 	"label": "Identity",
 	"packages": [
 		{
-			"name": "identity-provider-models",
-			"description": "Models which define the structure of the provider implementations."
+			"name": "identity-models",
+			"description": "Models which define the structure of the contracts and connectors."
 		},
 		{
-			"name": "identity-service-models",
-			"description": "Models which define the structure of the service implementations."
+			"name": "identity-connector-entity-storage",
+			"description": "Identity connector implementation using entity storage."
 		},
 		{
-			"name": "identity-provider-iota",
-			"description": "Identity provider implementation using IOTA."
+			"name": "identity-connector-iota",
+			"description": "Identity connector implementation using IOTA."
+		},
+		{
+			"name": "identity-service",
+			"description": "Implementation of the Identity service."
 		}
 	]
 }

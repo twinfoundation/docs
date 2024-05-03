@@ -1,0 +1,18 @@
+{
+	"category": "entity-storage",
+	"label": "Entity Storage",
+	"packages": [
+		{
+			"name": "entity-storage-models",
+			"description": "Models which define the structure of the entity storage contracts and connectors."
+		},
+		{
+			"name": "entity-storage-connector-memory",
+			"description": "Entity Storage connector implementation using in-memory storage."
+		},
+		{
+			"name": "entity-storage-connector-file",
+			"description": "Entity Storage connector implementation using file storage."
+		}
+	]
+}

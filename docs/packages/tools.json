@@ -1,0 +1,14 @@
+{
+	"category": "tools",
+	"label": "Tools",
+	"packages": [
+		{
+			"name": "nameof-transformer",
+			"description": "A TypeScript transformer which converts types and properties to their actual name for use at runtime."
+		},
+		{
+			"name": "nameof",
+			"description": "Provides the definitions for the methods which are processed by the nameof-transformer."
+		}
+	]
+}
