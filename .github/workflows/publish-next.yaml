@@ -42,7 +42,8 @@ jobs:
         run: npm run lint
 
       - name: Deploy to Vercel
-        uses: BetaHuhn/deploy-to-vercel-action@v1
+        uses: iFixit/deploy-to-vercel-action@master
+        # uses: BetaHuhn/deploy-to-vercel-action@v1
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
