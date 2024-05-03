@@ -1,6 +1,6 @@
 {
 	"category": "standards",
-	"label": "standards",
+	"label": "Standards",
 	"packages": [
 		{
 			"name": "standards-w3c-did",

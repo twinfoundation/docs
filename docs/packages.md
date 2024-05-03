@@ -18,7 +18,7 @@ This is the overview of the packages.
 - [qr](packages/qr/overview) - Contains classes for generating QR codes.
 - [web](packages/web/overview) - Contains classes for use with web operations.
 
-## standards
+## Standards
 
 - [standards-w3c-did](packages/standards-w3c-did/overview) - Models which define the structure of W3C DID Standard.
 
@@ -34,7 +34,7 @@ This is the overview of the packages.
 
 ## Logging
 
-- [logging-models](packages/logging-models/overview) - Models which define the structure of the logging connectors and contracts.
+- [logging-models](packages/logging-models/overview) - Models which define the structure of the logging contracts and connectors.
 - [logging-connector-console](packages/logging-connector-console/overview) - Logging connector implementation using the console.
 - [logging-connector-entity-storage](packages/logging-connector-entity-storage/overview) - Logging connector implementation using entity storage.
 - [logging-service](packages/logging-service/overview) - Logging contract implementation and REST endpoint definitions.
