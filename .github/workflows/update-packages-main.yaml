@@ -1,4 +1,4 @@
-name: Update Documentation from Packages Main
+name: Update Main Docs from Packages
 
 env:
   gha-branch: main
