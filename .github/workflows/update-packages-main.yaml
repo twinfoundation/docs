@@ -34,6 +34,12 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Remove old docs
+        run: |
+          mv docs/packages/package-groups.json import-packages/package-groups.json
+          rm -rf docs/packages/*
+          mv import-packages/package-groups.json docs/packages/package-groups.json
+
       ########### tools
       - name: Checkout tools
         uses: actions/checkout@v4
