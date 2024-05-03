@@ -14,38 +14,17 @@ jobs:
   update:
     runs-on: ubuntu-latest
 
-    strategy:
-      max-parallel: 1
-      matrix:
-        package:
-          [
-            checkout,
-            tools,
-            framework,
-            standards,
-            api,
-            entity-storage,
-            logging,
-            vault,
-            wallet,
-            identity,
-            create-pr
-          ]
-
     steps:
       - name: Checkout Docs
-        if: matrix.package == 'checkout'
         uses: actions/checkout@v4
         with:
           ref: ${{ env.gha-branch }}
 
       - uses: actions/setup-node@v4
-        if: matrix.package == 'checkout'
         with:
           node-version: 20
 
       - name: Restore root node_modules from cache
-        if: matrix.package == 'checkout'
         id: node-cache
         uses: actions/cache@v4
         with:
@@ -53,35 +32,184 @@ jobs:
           key: node-modules-${{ hashFiles('package-lock.json') }}
 
       - name: Install dependencies
-        if: matrix.package == 'checkout'
         run: npm ci
 
-      - name: Checkout ${{ matrix.package }}
-        if: matrix.package != 'checkout' && matrix.package != 'create-pr'
+      ########### tools
+      - name: Checkout tools
         uses: actions/checkout@v4
         with:
-          repository: gtscio/${{ matrix.package }}
-          path: import-packages/${{ matrix.package }}
+          repository: gtscio/tools
+          path: import-packages/tools
           ref: ${{ env.gha-branch }}
           token: ${{ secrets.GH_PAT }}
 
-      - name: Copy ${{ matrix.package }} to Docs
-        if: matrix.package != 'checkout' && matrix.package != 'create-pr'
+      - name: Copy tools to Docs
         run: |
-          jq -r '.packages[].name' import-packages/${{ matrix.package }}/docs/packages.json | while read pkg; do
+          jq -r '.packages[].name' import-packages/tools/docs/packages.json | while read pkg; do
             rm -rf docs/packages/$pkg
-            cp -r import-packages/${{ matrix.package }}/packages/$pkg/docs docs/packages/$pkg
+            cp -r import-packages/tools/packages/$pkg/docs docs/packages/$pkg
           done
 
-          cp import-packages/${{ matrix.package }}/docs/packages.json docs/packages/${{ matrix.package }}.json
-          rm -r import-packages/${{ matrix.package }}
+          cp import-packages/tools/docs/packages.json docs/packages/tools.json
+          rm -r import-packages/tools
 
+      ########### framework
+      - name: Checkout framework
+        uses: actions/checkout@v4
+        with:
+          repository: gtscio/framework
+          path: import-packages/framework
+          ref: ${{ env.gha-branch }}
+          token: ${{ secrets.GH_PAT }}
+
+      - name: Copy framework to Docs
+        run: |
+          jq -r '.packages[].name' import-packages/framework/docs/packages.json | while read pkg; do
+            rm -rf docs/packages/$pkg
+            cp -r import-packages/framework/packages/$pkg/docs docs/packages/$pkg
+          done
+
+          cp import-packages/framework/docs/packages.json docs/packages/framework.json
+          rm -r import-packages/framework
+
+      ########### standards
+      - name: Checkout standards
+        uses: actions/checkout@v4
+        with:
+          repository: gtscio/standards
+          path: import-packages/standards
+          ref: ${{ env.gha-branch }}
+          token: ${{ secrets.GH_PAT }}
+
+      - name: Copy standards to Docs
+        run: |
+          jq -r '.packages[].name' import-packages/standards/docs/packages.json | while read pkg; do
+            rm -rf docs/packages/$pkg
+            cp -r import-packages/standards/packages/$pkg/docs docs/packages/$pkg
+          done
+
+          cp import-packages/standards/docs/packages.json docs/packages/standards.json
+          rm -r import-packages/standards
+
+      ########### api
+      - name: Checkout api
+        uses: actions/checkout@v4
+        with:
+          repository: gtscio/api
+          path: import-packages/api
+          ref: ${{ env.gha-branch }}
+          token: ${{ secrets.GH_PAT }}
+
+      - name: Copy api to Docs
+        run: |
+          jq -r '.packages[].name' import-packages/api/docs/packages.json | while read pkg; do
+            rm -rf docs/packages/$pkg
+            cp -r import-packages/api/packages/$pkg/docs docs/packages/$pkg
+          done
+
+          cp import-packages/api/docs/packages.json docs/packages/api.json
+          rm -r import-packages/api
+
+      ########### entity-storage
+      - name: Checkout entity-storage
+        uses: actions/checkout@v4
+        with:
+          repository: gtscio/entity-storage
+          path: import-packages/entity-storage
+          ref: ${{ env.gha-branch }}
+          token: ${{ secrets.GH_PAT }}
+
+      - name: Copy entity-storage to Docs
+        run: |
+          jq -r '.packages[].name' import-packages/entity-storage/docs/packages.json | while read pkg; do
+            rm -rf docs/packages/$pkg
+            cp -r import-packages/entity-storage/packages/$pkg/docs docs/packages/$pkg
+          done
+
+          cp import-packages/entity-storage/docs/packages.json docs/packages/entity-storage.json
+          rm -r import-packages/entity-storage
+
+      ########### logging
+      - name: Checkout logging
+        uses: actions/checkout@v4
+        with:
+          repository: gtscio/logging
+          path: import-packages/logging
+          ref: ${{ env.gha-branch }}
+          token: ${{ secrets.GH_PAT }}
+
+      - name: Copy logging to Docs
+        run: |
+          jq -r '.packages[].name' import-packages/logging/docs/packages.json | while read pkg; do
+            rm -rf docs/packages/$pkg
+            cp -r import-packages/logging/packages/$pkg/docs docs/packages/$pkg
+          done
+
+          cp import-packages/logging/docs/packages.json docs/packages/logging.json
+          rm -r import-packages/logging
+
+      ########### vault
+      - name: Checkout vault
+        uses: actions/checkout@v4
+        with:
+          repository: gtscio/vault
+          path: import-packages/vault
+          ref: ${{ env.gha-branch }}
+          token: ${{ secrets.GH_PAT }}
+
+      - name: Copy vault to Docs
+        run: |
+          jq -r '.packages[].name' import-packages/vault/docs/packages.json | while read pkg; do
+            rm -rf docs/packages/$pkg
+            cp -r import-packages/vault/packages/$pkg/docs docs/packages/$pkg
+          done
+
+          cp import-packages/vault/docs/packages.json docs/packages/vault.json
+          rm -r import-packages/vault
+
+      ########### wallet
+      - name: Checkout wallet
+        uses: actions/checkout@v4
+        with:
+          repository: gtscio/wallet
+          path: import-packages/wallet
+          ref: ${{ env.gha-branch }}
+          token: ${{ secrets.GH_PAT }}
+
+      - name: Copy wallet to Docs
+        run: |
+          jq -r '.packages[].name' import-packages/wallet/docs/packages.json | while read pkg; do
+            rm -rf docs/packages/$pkg
+            cp -r import-packages/wallet/packages/$pkg/docs docs/packages/$pkg
+          done
+
+          cp import-packages/wallet/docs/packages.json docs/packages/wallet.json
+          rm -r import-packages/wallet
+
+      ########### identity
+      - name: Checkout identity
+        uses: actions/checkout@v4
+        with:
+          repository: gtscio/identity
+          path: import-packages/identity
+          ref: ${{ env.gha-branch }}
+          token: ${{ secrets.GH_PAT }}
+
+      - name: Copy identity to Docs
+        run: |
+          jq -r '.packages[].name' import-packages/identity/docs/packages.json | while read pkg; do
+            rm -rf docs/packages/$pkg
+            cp -r import-packages/identity/packages/$pkg/docs docs/packages/$pkg
+          done
+
+          cp import-packages/identity/docs/packages.json docs/packages/identity.json
+          rm -r import-packages/identity
+
+      ########### common
       - name: Build
-        if: matrix.package == 'create-pr'
         run: npm run build
 
       - name: Create Pull Request
-        if: matrix.package == 'create-pr'
         run: |
           git checkout -b docs/update-${{ env.gha-branch }}-${{ github.sha }}
           git config --global user.name 'GTSC'
