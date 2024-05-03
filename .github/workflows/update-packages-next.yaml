@@ -39,12 +39,14 @@ jobs:
     needs: checkout
 
     strategy:
+      max-parallel: 1
       matrix:
         package:
-          [tools, framework, standards, api, entity-storage, logging, vault, wallet, identity]
+          [checkout, tools, framework, standards, api, entity-storage, logging, vault, wallet, identity, create-pr]
 
     steps:
       - name: Checkout ${{ matrix.package }}
+        if: matrix.package == 'checkout'
         uses: actions/checkout@v4
         with:
           repository: gtscio/${{ matrix.package }}
@@ -53,6 +55,7 @@ jobs:
           token: ${{ secrets.GH_PAT }}
 
       - name: Copy ${{ matrix.package }} to Docs
+        if: matrix.package != 'checkout' && matrix.package != 'create-pr'
         run: |
           jq -r '.packages[].name' import-packages/${{ matrix.package }}/docs/packages.json | while read pkg; do
             rm -rf docs/packages/$pkg
@@ -62,15 +65,12 @@ jobs:
           cp import-packages/${{ matrix.package }}/docs/packages.json docs/packages/${{ matrix.package }}.json
           rm -r import-packages/${{ matrix.package }}
 
-  pr:
-    runs-on: ubuntu-latest
-    needs: update
-
-    steps:
       - name: Build
+        if: matrix.package == 'create-pr'
         run: npm run build
 
       - name: Create Pull Request
+        if: matrix.package == 'create-pr'
         run: |
           git checkout -b docs/update-${{ env.gha-branch }}-${{ github.sha }}
           git config --global user.name 'GTSC'
