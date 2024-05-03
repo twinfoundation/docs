@@ -1,5 +1,11 @@
 [
+	"tools",
 	"framework",
+	"standards",
+	"api",
+	"entity-storage",
+	"logging",
+	"vault",
 	"wallet",
 	"identity"
 ]
