@@ -10,7 +10,7 @@ Model for the entity storage identity vault key.
 
 The JSON stringified version of the DID document.
 
----
+___
 
 ### id
 
@@ -18,7 +18,7 @@ The JSON stringified version of the DID document.
 
 The identity of the document.
 
----
+___
 
 ### signature
 

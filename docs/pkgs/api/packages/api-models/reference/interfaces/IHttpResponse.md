@@ -10,7 +10,7 @@ Model used when a REST route wants to return custom response.
 
 Data to return as the main payload.
 
----
+___
 
 ### headers
 
@@ -18,7 +18,7 @@ Data to return as the main payload.
 
 Additional response headers.
 
----
+___
 
 ### options
 
@@ -30,7 +30,7 @@ Additional options.
 
 ▪ [id: `string`]: `string` \| `number` \| `boolean`
 
----
+___
 
 ### statusCode
 

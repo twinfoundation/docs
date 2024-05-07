@@ -17,7 +17,7 @@
 
 Entity description for a IVaultKey.
 
----
+___
 
 ### VaultSecretDescriptor
 

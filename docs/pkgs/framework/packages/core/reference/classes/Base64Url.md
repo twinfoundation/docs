@@ -23,8 +23,8 @@ Convert the base 64 string to a byte array.
 
 #### Parameters
 
-| Name        | Type     | Description                       |
-| :---------- | :------- | :-------------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `base64Url` | `string` | The base64 url string to convert. |
 
 #### Returns
@@ -33,7 +33,7 @@ Convert the base 64 string to a byte array.
 
 The byte array.
 
----
+___
 
 ### encode
 
@@ -43,8 +43,8 @@ Convert a byte array to base 64 url.
 
 #### Parameters
 
-| Name    | Type         | Description                |
-| :------ | :----------- | :------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `bytes` | `Uint8Array` | The byte array to convert. |
 
 #### Returns

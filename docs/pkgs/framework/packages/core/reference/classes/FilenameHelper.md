@@ -22,8 +22,8 @@ Replaces any unsafe characters in the filename.
 
 #### Parameters
 
-| Name       | Type      | Description                |
-| :--------- | :-------- | :------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `filename` | `unknown` | The filename to make safe. |
 
 #### Returns

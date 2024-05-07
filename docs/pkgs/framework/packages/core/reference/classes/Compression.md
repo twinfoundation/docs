@@ -22,10 +22,10 @@ Compress bytes using GZIP.
 
 #### Parameters
 
-| Name    | Type                                               | Description                     |
-| :------ | :------------------------------------------------- | :------------------------------ |
-| `bytes` | `Uint8Array`                                       | The bytes to compress.          |
-| `type`  | [`CompressionType`](../modules.md#compressiontype) | The type of compression to use. |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `bytes` | `Uint8Array` | The bytes to compress. |
+| `type` | [`CompressionType`](../modules.md#compressiontype) | The type of compression to use. |
 
 #### Returns
 
@@ -33,7 +33,7 @@ Compress bytes using GZIP.
 
 The compressed bytes.
 
----
+___
 
 ### decompress
 
@@ -43,10 +43,10 @@ Decompress a gzipped compressed byte array.
 
 #### Parameters
 
-| Name              | Type                                               | Description                     |
-| :---------------- | :------------------------------------------------- | :------------------------------ |
-| `compressedBytes` | `Uint8Array`                                       | The compressed bytes.           |
-| `type`            | [`CompressionType`](../modules.md#compressiontype) | The type of compression to use. |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `compressedBytes` | `Uint8Array` | The compressed bytes. |
+| `type` | [`CompressionType`](../modules.md#compressiontype) | The type of compression to use. |
 
 #### Returns
 

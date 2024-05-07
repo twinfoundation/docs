@@ -10,7 +10,7 @@ Get the verifiable credential application requirements.
 
 The identity of the verifiable credential requirements.
 
----
+___
 
 ### verifiableCredentialType
 

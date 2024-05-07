@@ -25,12 +25,12 @@ Encode the image with the given quality.
 
 #### Parameters
 
-| Name        | Type         | Description                         |
-| :---------- | :----------- | :---------------------------------- |
-| `width`     | `number`     | The width of the image to encode.   |
-| `height`    | `number`     | The height of the image to encode.  |
-| `imageData` | `Uint8Array` | The data for the image.             |
-| `quality`   | `number`     | The quality to encode the image at. |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `width` | `number` | The width of the image to encode. |
+| `height` | `number` | The height of the image to encode. |
+| `imageData` | `Uint8Array` | The data for the image. |
+| `quality` | `number` | The quality to encode the image at. |
 
 #### Returns
 

@@ -12,12 +12,12 @@ Create a new instance of color.
 
 #### Parameters
 
-| Name    | Type     | Description                     |
-| :------ | :------- | :------------------------------ |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `alpha` | `number` | The alpha element of the color. |
-| `red`   | `number` | The red element of the color.   |
+| `red` | `number` | The red element of the color. |
 | `green` | `number` | The green element of the color. |
-| `blue`  | `number` | The blue element of the color.  |
+| `blue` | `number` | The blue element of the color. |
 
 #### Returns
 
@@ -37,7 +37,7 @@ Get the alpha element.
 
 The alpha element.
 
----
+___
 
 ### argb
 
@@ -51,7 +51,7 @@ Get color as argb.
 
 The color as argb.
 
----
+___
 
 ### blue
 
@@ -65,7 +65,7 @@ Get the blue element.
 
 The blue element.
 
----
+___
 
 ### green
 
@@ -79,7 +79,7 @@ Get the green element.
 
 The green element.
 
----
+___
 
 ### hex
 
@@ -93,7 +93,7 @@ Get color as hex no alpha.
 
 The color as hex with no alpha component.
 
----
+___
 
 ### hexWithAlpha
 
@@ -107,7 +107,7 @@ Get color as hex with alpha.
 
 The color as hex with with alpha component.
 
----
+___
 
 ### red
 
@@ -121,7 +121,7 @@ Get the red element.
 
 The red element.
 
----
+___
 
 ### rgbText
 
@@ -135,7 +135,7 @@ Get color as rgb text.
 
 The color as rgb.
 
----
+___
 
 ### rgba
 
@@ -149,7 +149,7 @@ Get color as rgba.
 
 The color as rgba.
 
----
+___
 
 ### rgbaText
 
@@ -163,7 +163,7 @@ Get color as rgba text.
 
 The color as rgba.
 
----
+___
 
 ### coerce
 
@@ -173,8 +173,8 @@ Coerce an unknown type to a color.
 
 #### Parameters
 
-| Name    | Type      | Description                   |
-| :------ | :-------- | :---------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `value` | `unknown` | The value to try and convert. |
 
 #### Returns
@@ -183,7 +183,7 @@ Coerce an unknown type to a color.
 
 The color if one can be created.
 
----
+___
 
 ### fromHex
 
@@ -193,8 +193,8 @@ Construct a color from a hex string.
 
 #### Parameters
 
-| Name  | Type     | Description              |
-| :---- | :------- | :----------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `hex` | `string` | The hex string to parse. |
 
 #### Returns

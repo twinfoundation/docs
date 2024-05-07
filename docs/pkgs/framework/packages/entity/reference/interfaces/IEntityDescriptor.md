@@ -5,8 +5,8 @@ Definition of an entity field.
 ## Type parameters
 
 | Name |
-| :--- |
-| `T`  |
+| :------ |
+| `T` |
 
 ## Properties
 
@@ -16,7 +16,7 @@ Definition of an entity field.
 
 Does the entity contain dynamic unknown properties.
 
----
+___
 
 ### name
 
@@ -24,7 +24,7 @@ Does the entity contain dynamic unknown properties.
 
 The name of the entity type that the descriptor is for.
 
----
+___
 
 ### properties
 

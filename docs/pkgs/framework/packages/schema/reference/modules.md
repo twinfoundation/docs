@@ -31,7 +31,7 @@ Schema validation error.
 
 Factory for creating handlers for data types.
 
----
+___
 
 ### IdentifierHandlerFactory
 

@@ -18,13 +18,13 @@ Create a new instance of FetchError.
 
 #### Parameters
 
-| Name          | Type                                    | Description                                       |
-| :------------ | :-------------------------------------- | :------------------------------------------------ |
-| `source`      | `string`                                | The source of the error.                          |
-| `message`     | `string`                                | The message as a code.                            |
-| `httpStatus`  | [`HttpStatusCodes`](HttpStatusCodes.md) | The http status code.                             |
-| `properties?` | `Object`                                | Any additional information for the error.         |
-| `inner?`      | `unknown`                               | The inner error if we have wrapped another error. |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `source` | `string` | The source of the error. |
+| `message` | `string` | The message as a code. |
+| `httpStatus` | [`HttpStatusCodes`](HttpStatusCodes.md) | The http status code. |
+| `properties?` | `Object` | Any additional information for the error. |
+| `inner?` | `unknown` | The inner error if we have wrapped another error. |
 
 #### Returns
 
@@ -44,7 +44,7 @@ BaseError.constructor
 
 BaseError.cause
 
----
+___
 
 ### inner
 
@@ -56,7 +56,7 @@ The inner error if there was one.
 
 BaseError.inner
 
----
+___
 
 ### message
 
@@ -66,7 +66,7 @@ BaseError.inner
 
 BaseError.message
 
----
+___
 
 ### name
 
@@ -76,7 +76,7 @@ BaseError.message
 
 BaseError.name
 
----
+___
 
 ### properties
 
@@ -92,7 +92,7 @@ Any additional information for the error.
 
 BaseError.properties
 
----
+___
 
 ### source
 
@@ -104,7 +104,7 @@ The source of the error.
 
 BaseError.source
 
----
+___
 
 ### stack
 
@@ -114,11 +114,11 @@ BaseError.source
 
 BaseError.stack
 
----
+___
 
-### CLASS_NAME
+### CLASS\_NAME
 
-▪ `Static` `Readonly` **CLASS_NAME**: `string`
+▪ `Static` `Readonly` **CLASS\_NAME**: `string`
 
 Runtime name for the class.
 
@@ -132,8 +132,8 @@ Serialize the error to the error model.
 
 #### Parameters
 
-| Name            | Type      | Description                     |
-| :-------------- | :-------- | :------------------------------ |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `includeStack?` | `boolean` | Include the stack in the error. |
 
 #### Returns
@@ -146,7 +146,7 @@ The error model.
 
 BaseError.toJsonObject
 
----
+___
 
 ### expand
 
@@ -156,8 +156,8 @@ Expand an error tree.
 
 #### Parameters
 
-| Name     | Type                      | Description                   |
-| :------- | :------------------------ | :---------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `errors` | `undefined` \| `IError`[] | The list of errors to expand. |
 
 #### Returns
@@ -170,7 +170,7 @@ The first level error.
 
 BaseError.expand
 
----
+___
 
 ### flatten
 
@@ -180,8 +180,8 @@ Flatten an error tree.
 
 #### Parameters
 
-| Name  | Type      | Description         |
-| :---- | :-------- | :------------------ |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `err` | `unknown` | The starting error. |
 
 #### Returns
@@ -194,7 +194,7 @@ The list of all internal errors.
 
 BaseError.flatten
 
----
+___
 
 ### fromError
 
@@ -204,8 +204,8 @@ Construct an error from an existing one.
 
 #### Parameters
 
-| Name  | Type      | Description         |
-| :---- | :-------- | :------------------ |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `err` | `unknown` | The existing error. |
 
 #### Returns
@@ -218,7 +218,7 @@ The new instance.
 
 BaseError.fromError
 
----
+___
 
 ### isErrorCode
 
@@ -228,10 +228,10 @@ Test to see if the error has the specified error code.
 
 #### Parameters
 
-| Name    | Type                 | Description            |
-| :------ | :------------------- | :--------------------- |
-| `error` | `unknown`            | The error to test.     |
-| `code`  | `string` \| `RegExp` | The code to check for. |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `error` | `unknown` | The error to test. |
+| `code` | `string` \| `RegExp` | The code to check for. |
 
 #### Returns
 
@@ -243,7 +243,7 @@ True if the error has the code.
 
 BaseError.isErrorCode
 
----
+___
 
 ### isErrorMessage
 
@@ -253,9 +253,9 @@ Test to see if the error has the specified error message.
 
 #### Parameters
 
-| Name      | Type                 | Description               |
-| :-------- | :------------------- | :------------------------ |
-| `error`   | `unknown`            | The error to test.        |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `error` | `unknown` | The error to test. |
 | `message` | `string` \| `RegExp` | The message to check for. |
 
 #### Returns
@@ -268,7 +268,7 @@ True if the error has the name.
 
 BaseError.isErrorMessage
 
----
+___
 
 ### isErrorName
 
@@ -278,10 +278,10 @@ Test to see if the error has the specified error name.
 
 #### Parameters
 
-| Name    | Type                 | Description            |
-| :------ | :------------------- | :--------------------- |
-| `error` | `unknown`            | The error to test.     |
-| `name`  | `string` \| `RegExp` | The name to check for. |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `error` | `unknown` | The error to test. |
+| `name` | `string` \| `RegExp` | The name to check for. |
 
 #### Returns
 
@@ -293,7 +293,7 @@ True if the error has the name.
 
 BaseError.isErrorName
 
----
+___
 
 ### someErrorCode
 
@@ -303,10 +303,10 @@ Test to see if any of the errors or children have the given error code.
 
 #### Parameters
 
-| Name    | Type                 | Description            |
-| :------ | :------------------- | :--------------------- |
-| `error` | `unknown`            | The error to test.     |
-| `code`  | `string` \| `RegExp` | The code to check for. |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `error` | `unknown` | The error to test. |
+| `code` | `string` \| `RegExp` | The code to check for. |
 
 #### Returns
 
@@ -318,7 +318,7 @@ True if the error has the name.
 
 BaseError.someErrorCode
 
----
+___
 
 ### someErrorMessage
 
@@ -328,9 +328,9 @@ Test to see if any of the errors or children have the given error message.
 
 #### Parameters
 
-| Name      | Type                 | Description               |
-| :-------- | :------------------- | :------------------------ |
-| `error`   | `unknown`            | The error to test.        |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `error` | `unknown` | The error to test. |
 | `message` | `string` \| `RegExp` | The message to check for. |
 
 #### Returns
@@ -343,7 +343,7 @@ True if the error has the name.
 
 BaseError.someErrorMessage
 
----
+___
 
 ### someErrorName
 
@@ -353,10 +353,10 @@ Test to see if any of the errors or children have the given error name.
 
 #### Parameters
 
-| Name    | Type                 | Description            |
-| :------ | :------------------- | :--------------------- |
-| `error` | `unknown`            | The error to test.     |
-| `name`  | `string` \| `RegExp` | The name to check for. |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `error` | `unknown` | The error to test. |
+| `name` | `string` \| `RegExp` | The name to check for. |
 
 #### Returns
 

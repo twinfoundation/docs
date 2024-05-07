@@ -23,11 +23,11 @@ Encode the image frames to png.
 
 #### Parameters
 
-| Name      | Type            | Description                  |
-| :-------- | :-------------- | :--------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `buffers` | `ArrayBuffer`[] | The frame buffers to encode. |
-| `w`       | `number`        | The image width.             |
-| `h`       | `number`        | The image height.            |
+| `w` | `number` | The image width. |
+| `h` | `number` | The image height. |
 
 #### Returns
 

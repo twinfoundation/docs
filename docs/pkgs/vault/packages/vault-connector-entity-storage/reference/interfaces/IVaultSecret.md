@@ -10,7 +10,7 @@ Interface describing a vault secret.
 
 The JSON stringified data for the secret.
 
----
+___
 
 ### id
 

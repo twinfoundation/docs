@@ -14,7 +14,7 @@ Model to describe serialized error.
 
 The inner error if there was one.
 
----
+___
 
 ### message
 
@@ -22,7 +22,7 @@ The inner error if there was one.
 
 The message for the error.
 
----
+___
 
 ### name
 
@@ -30,7 +30,7 @@ The message for the error.
 
 The name for the error.
 
----
+___
 
 ### properties
 
@@ -42,7 +42,7 @@ Any additional information for the error.
 
 ▪ [id: `string`]: `unknown`
 
----
+___
 
 ### source
 
@@ -50,7 +50,7 @@ Any additional information for the error.
 
 The source of the error.
 
----
+___
 
 ### stack
 

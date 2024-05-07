@@ -12,12 +12,12 @@ The request payload.
 
 #### Type declaration
 
-| Name            | Type                                                                 | Description                                            |
-| :-------------- | :------------------------------------------------------------------- | :----------------------------------------------------- |
-| `rejectedCode?` | `string`                                                             | The reason for the rejection if that is the new state. |
-| `state`         | [`VerifiableCredentialState`](../enums/VerifiableCredentialState.md) | The new state of the credential.                       |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `rejectedCode?` | `string` | The reason for the rejection if that is the new state. |
+| `state` | [`VerifiableCredentialState`](../enums/VerifiableCredentialState.md) | The new state of the credential. |
 
----
+___
 
 ### verifiableCredentialId
 

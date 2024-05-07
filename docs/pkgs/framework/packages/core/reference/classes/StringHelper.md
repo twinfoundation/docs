@@ -22,10 +22,10 @@ Camel case all the words.
 
 #### Parameters
 
-| Name                   | Type      | Default value | Description               |
-| :--------------------- | :-------- | :------------ | :------------------------ |
-| `input`                | `string`  | `undefined`   | The input to convert.     |
-| `stripInterfacePrefix` | `boolean` | `true`        | Strip interface prefixes. |
+| Name | Type | Default value | Description |
+| :------ | :------ | :------ | :------ |
+| `input` | `string` | `undefined` | The input to convert. |
+| `stripInterfacePrefix` | `boolean` | `true` | Strip interface prefixes. |
 
 #### Returns
 
@@ -33,7 +33,7 @@ Camel case all the words.
 
 The camel case version of the input.
 
----
+___
 
 ### kebabCase
 
@@ -43,10 +43,10 @@ Convert the input string to kebab case.
 
 #### Parameters
 
-| Name                   | Type      | Default value | Description               |
-| :--------------------- | :-------- | :------------ | :------------------------ |
-| `input`                | `string`  | `undefined`   | The input to convert.     |
-| `stripInterfacePrefix` | `boolean` | `true`        | Strip interface prefixes. |
+| Name | Type | Default value | Description |
+| :------ | :------ | :------ | :------ |
+| `input` | `string` | `undefined` | The input to convert. |
+| `stripInterfacePrefix` | `boolean` | `true` | Strip interface prefixes. |
 
 #### Returns
 
@@ -54,7 +54,7 @@ Convert the input string to kebab case.
 
 The kebab case version of the input.
 
----
+___
 
 ### pascalCase
 
@@ -64,10 +64,10 @@ Pascal case all the words.
 
 #### Parameters
 
-| Name                   | Type      | Default value | Description               |
-| :--------------------- | :-------- | :------------ | :------------------------ |
-| `input`                | `string`  | `undefined`   | The input to convert.     |
-| `stripInterfacePrefix` | `boolean` | `true`        | Strip interface prefixes. |
+| Name | Type | Default value | Description |
+| :------ | :------ | :------ | :------ |
+| `input` | `string` | `undefined` | The input to convert. |
+| `stripInterfacePrefix` | `boolean` | `true` | Strip interface prefixes. |
 
 #### Returns
 
@@ -75,7 +75,7 @@ Pascal case all the words.
 
 The pascal case version of the input.
 
----
+___
 
 ### stripPrefix
 
@@ -85,8 +85,8 @@ Strip interface prefix if there is one.
 
 #### Parameters
 
-| Name    | Type     | Description         |
-| :------ | :------- | :------------------ |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `input` | `string` | The input to strip. |
 
 #### Returns
@@ -95,7 +95,7 @@ Strip interface prefix if there is one.
 
 The input with any interface prefix stripped.
 
----
+___
 
 ### titleCase
 
@@ -105,10 +105,10 @@ Title case all the words.
 
 #### Parameters
 
-| Name                   | Type      | Default value | Description               |
-| :--------------------- | :-------- | :------------ | :------------------------ |
-| `input`                | `string`  | `undefined`   | The input to convert.     |
-| `stripInterfacePrefix` | `boolean` | `true`        | Strip interface prefixes. |
+| Name | Type | Default value | Description |
+| :------ | :------ | :------ | :------ |
+| `input` | `string` | `undefined` | The input to convert. |
+| `stripInterfacePrefix` | `boolean` | `true` | Strip interface prefixes. |
 
 #### Returns
 
@@ -116,7 +116,7 @@ Title case all the words.
 
 The title case version of the input.
 
----
+___
 
 ### trimLeadingSlashes
 
@@ -126,8 +126,8 @@ Trim leading slashes from a string.
 
 #### Parameters
 
-| Name    | Type                    | Description        |
-| :------ | :---------------------- | :----------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `value` | `undefined` \| `string` | The value to trim. |
 
 #### Returns
@@ -136,7 +136,7 @@ Trim leading slashes from a string.
 
 The trimmed value.
 
----
+___
 
 ### trimTrailingSlashes
 
@@ -146,8 +146,8 @@ Trim trailing slashes from a string.
 
 #### Parameters
 
-| Name    | Type                    | Description        |
-| :------ | :---------------------- | :----------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `value` | `undefined` \| `string` | The value to trim. |
 
 #### Returns
@@ -156,7 +156,7 @@ Trim trailing slashes from a string.
 
 The trimmed value.
 
----
+___
 
 ### wordPath
 
@@ -166,10 +166,10 @@ Convert the words to a path.
 
 #### Parameters
 
-| Name                   | Type      | Default value | Description               |
-| :--------------------- | :-------- | :------------ | :------------------------ |
-| `input`                | `string`  | `undefined`   | The input to convert.     |
-| `stripInterfacePrefix` | `boolean` | `true`        | Strip interface prefixes. |
+| Name | Type | Default value | Description |
+| :------ | :------ | :------ | :------ |
+| `input` | `string` | `undefined` | The input to convert. |
+| `stripInterfacePrefix` | `boolean` | `true` | Strip interface prefixes. |
 
 #### Returns
 
@@ -177,7 +177,7 @@ Convert the words to a path.
 
 The path version of the input.
 
----
+___
 
 ### words
 
@@ -187,8 +187,8 @@ Split a string into words.
 
 #### Parameters
 
-| Name    | Type     | Description         |
-| :------ | :------- | :------------------ |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `input` | `string` | The input to split. |
 
 #### Returns

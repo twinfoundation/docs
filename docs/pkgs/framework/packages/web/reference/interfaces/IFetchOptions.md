@@ -12,7 +12,7 @@ Options for call to the fetch helper.
 
 The headers for the request.
 
----
+___
 
 ### includeCredentials
 
@@ -20,7 +20,7 @@ The headers for the request.
 
 Include credentials in the requests.
 
----
+___
 
 ### retryCount
 
@@ -28,7 +28,7 @@ Include credentials in the requests.
 
 The number of times to retry fetching defaults to no retries.
 
----
+___
 
 ### retryDelayMs
 
@@ -36,7 +36,7 @@ The number of times to retry fetching defaults to no retries.
 
 The number of milliseconds we should delay before any retry.
 
----
+___
 
 ### timeoutMs
 

@@ -22,12 +22,12 @@ Derive a key from the parameters using Sha256.
 
 #### Parameters
 
-| Name         | Type         | Description                          |
-| :----------- | :----------- | :----------------------------------- |
-| `password`   | `Uint8Array` | The password to derive the key from. |
-| `salt`       | `Uint8Array` | The salt for the derivation.         |
-| `iterations` | `number`     | Number of iterations to perform.     |
-| `keyLength`  | `number`     | The length of the key to derive.     |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `password` | `Uint8Array` | The password to derive the key from. |
+| `salt` | `Uint8Array` | The salt for the derivation. |
+| `iterations` | `number` | Number of iterations to perform. |
+| `keyLength` | `number` | The length of the key to derive. |
 
 #### Returns
 
@@ -35,7 +35,7 @@ Derive a key from the parameters using Sha256.
 
 The derived key.
 
----
+___
 
 ### sha512
 
@@ -45,12 +45,12 @@ Derive a key from the parameters using Sha512.
 
 #### Parameters
 
-| Name         | Type         | Description                          |
-| :----------- | :----------- | :----------------------------------- |
-| `password`   | `Uint8Array` | The password to derive the key from. |
-| `salt`       | `Uint8Array` | The salt for the derivation.         |
-| `iterations` | `number`     | Number of iterations to perform.     |
-| `keyLength`  | `number`     | The length of the key to derive.     |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `password` | `Uint8Array` | The password to derive the key from. |
+| `salt` | `Uint8Array` | The salt for the derivation. |
+| `iterations` | `number` | Number of iterations to perform. |
+| `keyLength` | `number` | The length of the key to derive. |
 
 #### Returns
 

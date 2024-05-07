@@ -10,7 +10,7 @@ Configuration for the File Entity Storage Connector.
 
 The base filename to use for stored items.
 
----
+___
 
 ### directory
 

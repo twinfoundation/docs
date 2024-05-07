@@ -12,11 +12,11 @@ The request payload.
 
 #### Type declaration
 
-| Name              | Type                                                          | Description                                                 |
-| :---------------- | :------------------------------------------------------------ | :---------------------------------------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `requiredClaims?` | [`IIdentityClaimRequirement`](IIdentityClaimRequirement.md)[] | The requisites needed to apply for a verifiable credential. |
 
----
+___
 
 ### identity
 
@@ -24,7 +24,7 @@ The request payload.
 
 The identity of the verifiable credential requirements.
 
----
+___
 
 ### verifiableCredentialType
 

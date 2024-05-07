@@ -22,10 +22,10 @@ Render the QR code data as text.
 
 #### Parameters
 
-| Name       | Type                                                            | Description                    |
-| :--------- | :-------------------------------------------------------------- | :----------------------------- |
-| `cellData` | [`QRCellData`](../modules.md#qrcelldata)                        | The cell data for the QR code. |
-| `options?` | [`ITextRendererOptions`](../interfaces/ITextRendererOptions.md) | The options for rendering.     |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `cellData` | [`QRCellData`](../modules.md#qrcelldata) | The cell data for the QR code. |
+| `options?` | [`ITextRendererOptions`](../interfaces/ITextRendererOptions.md) | The options for rendering. |
 
 #### Returns
 

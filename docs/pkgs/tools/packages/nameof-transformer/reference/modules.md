@@ -10,15 +10,15 @@ Renames and re-exports [factory](modules.md#factory)
 
 ### name
 
-• `Const` **name**: `"@gtsc/nameof-transformer"`
+• `Const` **name**: ``"@gtsc/nameof-transformer"``
 
 Exports the factory name.
 
----
+___
 
 ### version
 
-• `Const` **version**: `"0.0.3"`
+• `Const` **version**: ``"0.0.3"``
 
 Exports the factory version.
 
@@ -36,7 +36,7 @@ Exports the factory.
 
 The factory.
 
----
+___
 
 ### manual
 
@@ -46,8 +46,8 @@ Replace the transformers manually.
 
 #### Parameters
 
-| Name      | Type     | Description                                 |
-| :-------- | :------- | :------------------------------------------ |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `content` | `string` | The content to replace the transformers in. |
 
 #### Returns
@@ -56,7 +56,7 @@ Replace the transformers manually.
 
 The content with the transformers replace.
 
----
+___
 
 ### tsTransformersPreProcess
 
@@ -70,6 +70,6 @@ Return a function that can be used as a svelte preprocessor.
 
 The preprocessor.
 
-| Name     | Type      |
-| :------- | :-------- |
+| Name | Type |
+| :------ | :------ |
 | `markup` | `unknown` |

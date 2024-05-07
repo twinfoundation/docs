@@ -16,30 +16,30 @@ Class to encode and decode JSON Web Tokens.
 
 ### decode
 
-▸ **decode**\<`U`, `T`\>(`token`): `Promise`\<\{ `header?`: `U` ; `payload?`: `T` ; `signature?`: `Uint8Array` }\>
+▸ **decode**\<`U`, `T`\>(`token`): `Promise`\<\{ `header?`: `U` ; `payload?`: `T` ; `signature?`: `Uint8Array`  }\>
 
 Decode a token.
 
 #### Type parameters
 
-| Name | Type                                                  |
-| :--- | :---------------------------------------------------- |
-| `U`  | extends [`IJwtHeader`](../interfaces/IJwtHeader.md)   |
-| `T`  | extends [`IJwtPayload`](../interfaces/IJwtPayload.md) |
+| Name | Type |
+| :------ | :------ |
+| `U` | extends [`IJwtHeader`](../interfaces/IJwtHeader.md) |
+| `T` | extends [`IJwtPayload`](../interfaces/IJwtPayload.md) |
 
 #### Parameters
 
-| Name    | Type     | Description          |
-| :------ | :------- | :------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `token` | `string` | The token to decode. |
 
 #### Returns
 
-`Promise`\<\{ `header?`: `U` ; `payload?`: `T` ; `signature?`: `Uint8Array` }\>
+`Promise`\<\{ `header?`: `U` ; `payload?`: `T` ; `signature?`: `Uint8Array`  }\>
 
 The decoded payload.
 
----
+___
 
 ### defaultSigner
 
@@ -49,11 +49,11 @@ The default signer for the JWT.
 
 #### Parameters
 
-| Name      | Type                                           | Description           |
-| :-------- | :--------------------------------------------- | :-------------------- |
-| `alg`     | [`JwtAlgorithms`](../modules.md#jwtalgorithms) | The algorithm to use. |
-| `key`     | `Uint8Array`                                   | The key to sign with. |
-| `payload` | `Uint8Array`                                   | The payload to sign.  |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `alg` | [`JwtAlgorithms`](../modules.md#jwtalgorithms) | The algorithm to use. |
+| `key` | `Uint8Array` | The key to sign with. |
+| `payload` | `Uint8Array` | The payload to sign. |
 
 #### Returns
 
@@ -61,7 +61,7 @@ The default signer for the JWT.
 
 The signature.
 
----
+___
 
 ### defaultVerifier
 
@@ -71,12 +71,12 @@ The default verifier for the JWT.
 
 #### Parameters
 
-| Name        | Type                                           | Description              |
-| :---------- | :--------------------------------------------- | :----------------------- |
-| `alg`       | [`JwtAlgorithms`](../modules.md#jwtalgorithms) | The algorithm to use.    |
-| `key`       | `Uint8Array`                                   | The key to verify with.  |
-| `payload`   | `Uint8Array`                                   | The payload to verify.   |
-| `signature` | `Uint8Array`                                   | The signature to verify. |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `alg` | [`JwtAlgorithms`](../modules.md#jwtalgorithms) | The algorithm to use. |
+| `key` | `Uint8Array` | The key to verify with. |
+| `payload` | `Uint8Array` | The payload to verify. |
+| `signature` | `Uint8Array` | The signature to verify. |
 
 #### Returns
 
@@ -84,7 +84,7 @@ The default verifier for the JWT.
 
 True if the signature was verified.
 
----
+___
 
 ### encode
 
@@ -94,19 +94,19 @@ Encode a token.
 
 #### Type parameters
 
-| Name | Type                                                  |
-| :--- | :---------------------------------------------------- |
-| `U`  | extends [`IJwtHeader`](../interfaces/IJwtHeader.md)   |
-| `T`  | extends [`IJwtPayload`](../interfaces/IJwtPayload.md) |
+| Name | Type |
+| :------ | :------ |
+| `U` | extends [`IJwtHeader`](../interfaces/IJwtHeader.md) |
+| `T` | extends [`IJwtPayload`](../interfaces/IJwtPayload.md) |
 
 #### Parameters
 
-| Name      | Type                                                                                                                                              | Description                                                            |
-| :-------- | :------------------------------------------------------------------------------------------------------------------------------------------------ | :--------------------------------------------------------------------- |
-| `header`  | `U`                                                                                                                                               | The header to encode.                                                  |
-| `payload` | `T`                                                                                                                                               | The payload to encode.                                                 |
-| `key?`    | `Uint8Array`                                                                                                                                      | The key for signing the token, can be omitted if a signer is provided. |
-| `signer?` | (`alg`: [`JwtAlgorithms`](../modules.md#jwtalgorithms), `key`: `undefined` \| `Uint8Array`, `payload`: `Uint8Array`) => `Promise`\<`Uint8Array`\> | Custom signer method.                                                  |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `header` | `U` | The header to encode. |
+| `payload` | `T` | The payload to encode. |
+| `key?` | `Uint8Array` | The key for signing the token, can be omitted if a signer is provided. |
+| `signer?` | (`alg`: [`JwtAlgorithms`](../modules.md#jwtalgorithms), `key`: `undefined` \| `Uint8Array`, `payload`: `Uint8Array`) => `Promise`\<`Uint8Array`\> | Custom signer method. |
 
 #### Returns
 
@@ -114,36 +114,36 @@ Encode a token.
 
 The encoded token.
 
----
+___
 
 ### verify
 
-▸ **verify**\<`U`, `T`\>(`token`, `key`, `verifier?`): `Promise`\<\{ `header?`: `U` ; `payload?`: `T` ; `signature?`: `Uint8Array` ; `verified`: `boolean` }\>
+▸ **verify**\<`U`, `T`\>(`token`, `key`, `verifier?`): `Promise`\<\{ `header?`: `U` ; `payload?`: `T` ; `signature?`: `Uint8Array` ; `verified`: `boolean`  }\>
 
 Verify a token.
 
 #### Type parameters
 
-| Name | Type                                                  |
-| :--- | :---------------------------------------------------- |
-| `U`  | extends [`IJwtHeader`](../interfaces/IJwtHeader.md)   |
-| `T`  | extends [`IJwtPayload`](../interfaces/IJwtPayload.md) |
+| Name | Type |
+| :------ | :------ |
+| `U` | extends [`IJwtHeader`](../interfaces/IJwtHeader.md) |
+| `T` | extends [`IJwtPayload`](../interfaces/IJwtPayload.md) |
 
 #### Parameters
 
-| Name        | Type                                                                                                                                                                      | Description                     |
-| :---------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | :------------------------------ |
-| `token`     | `string`                                                                                                                                                                  | The token to verify.            |
-| `key`       | `undefined` \| `Uint8Array`                                                                                                                                               | The key for verifying the token |
-| `verifier?` | (`alg`: [`JwtAlgorithms`](../modules.md#jwtalgorithms), `key`: `undefined` \| `Uint8Array`, `payload`: `Uint8Array`, `signature`: `Uint8Array`) => `Promise`\<`boolean`\> | Custom verification method.     |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `token` | `string` | The token to verify. |
+| `key` | `undefined` \| `Uint8Array` | The key for verifying the token |
+| `verifier?` | (`alg`: [`JwtAlgorithms`](../modules.md#jwtalgorithms), `key`: `undefined` \| `Uint8Array`, `payload`: `Uint8Array`, `signature`: `Uint8Array`) => `Promise`\<`boolean`\> | Custom verification method. |
 
 #### Returns
 
-`Promise`\<\{ `header?`: `U` ; `payload?`: `T` ; `signature?`: `Uint8Array` ; `verified`: `boolean` }\>
+`Promise`\<\{ `header?`: `U` ; `payload?`: `T` ; `signature?`: `Uint8Array` ; `verified`: `boolean`  }\>
 
 The decoded payload.
 
----
+___
 
 ### verifySignature
 
@@ -153,20 +153,20 @@ Verify a token by parts.
 
 #### Type parameters
 
-| Name | Type                                                  |
-| :--- | :---------------------------------------------------- |
-| `U`  | extends [`IJwtHeader`](../interfaces/IJwtHeader.md)   |
-| `T`  | extends [`IJwtPayload`](../interfaces/IJwtPayload.md) |
+| Name | Type |
+| :------ | :------ |
+| `U` | extends [`IJwtHeader`](../interfaces/IJwtHeader.md) |
+| `T` | extends [`IJwtPayload`](../interfaces/IJwtPayload.md) |
 
 #### Parameters
 
-| Name         | Type                                                                                                                                                                      | Description                                                              |
-| :----------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | :----------------------------------------------------------------------- |
-| `header?`    | `U`                                                                                                                                                                       | The header to verify.                                                    |
-| `payload?`   | `T`                                                                                                                                                                       | The payload to verify.                                                   |
-| `signature?` | `Uint8Array`                                                                                                                                                              | The signature to verify.                                                 |
-| `key?`       | `Uint8Array`                                                                                                                                                              | The key for verifying the token, if not provided no verification occurs. |
-| `verifier?`  | (`alg`: [`JwtAlgorithms`](../modules.md#jwtalgorithms), `key`: `undefined` \| `Uint8Array`, `payload`: `Uint8Array`, `signature`: `Uint8Array`) => `Promise`\<`boolean`\> | Custom verification method.                                              |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `header?` | `U` | The header to verify. |
+| `payload?` | `T` | The payload to verify. |
+| `signature?` | `Uint8Array` | The signature to verify. |
+| `key?` | `Uint8Array` | The key for verifying the token, if not provided no verification occurs. |
+| `verifier?` | (`alg`: [`JwtAlgorithms`](../modules.md#jwtalgorithms), `key`: `undefined` \| `Uint8Array`, `payload`: `Uint8Array`, `signature`: `Uint8Array`) => `Promise`\<`boolean`\> | Custom verification method. |
 
 #### Returns
 

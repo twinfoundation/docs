@@ -12,6 +12,6 @@ The response payload.
 
 #### Type declaration
 
-| Name | Type     | Description                                   |
-| :--- | :------- | :-------------------------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `id` | `string` | The identifier for the verifiable credential. |

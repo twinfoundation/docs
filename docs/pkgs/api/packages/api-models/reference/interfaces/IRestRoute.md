@@ -22,17 +22,17 @@ The handler module.
 
 ##### Parameters
 
-| Name             | Type              | Description                                                     |
-| :--------------- | :---------------- | :-------------------------------------------------------------- |
-| `requestContext` | `IRequestContext` | The request context.                                            |
-| `request`        | `any`             | The request object, combined query param, path params and body. |
-| `body?`          | `unknown`         | Body as standalone if it's a data request.                      |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `requestContext` | `IRequestContext` | The request context. |
+| `request` | `any` | The request object, combined query param, path params and body. |
+| `body?` | `unknown` | Body as standalone if it's a data request. |
 
 ##### Returns
 
 `Promise`\<`any`\>
 
----
+___
 
 ### method
 
@@ -40,7 +40,7 @@ The handler module.
 
 The http method.
 
----
+___
 
 ### operationId
 
@@ -52,7 +52,7 @@ The id of the operation.
 
 [IBaseRoute](IBaseRoute.md).[operationId](IBaseRoute.md#operationid)
 
----
+___
 
 ### path
 
@@ -64,15 +64,15 @@ The path to use for routing.
 
 [IBaseRoute](IBaseRoute.md).[path](IBaseRoute.md#path)
 
----
+___
 
 ### requestContentType
 
-• `Optional` **requestContentType**: \{ `description`: `string` ; `mimeType`: `string` }[]
+• `Optional` **requestContentType**: \{ `description`: `string` ; `mimeType`: `string`  }[]
 
 The request can have alternative content mime types.
 
----
+___
 
 ### requestType
 
@@ -80,23 +80,23 @@ The request can have alternative content mime types.
 
 The type of the request object.
 
----
+___
 
 ### responseContentType
 
-• `Optional` **responseContentType**: \{ `description`: `string` ; `mimeType`: `string` }[]
+• `Optional` **responseContentType**: \{ `description`: `string` ; `mimeType`: `string`  }[]
 
 The response can have alternative content mime types.
 
----
+___
 
 ### responseType
 
-• `Optional` **responseType**: `string` \| \{ `statusCode`: `HttpStatusCodes` ; `type`: `string` }[]
+• `Optional` **responseType**: `string` \| \{ `statusCode`: `HttpStatusCodes` ; `type`: `string`  }[]
 
 The type of the response object.
 
----
+___
 
 ### skipSubjectAuth
 
@@ -108,7 +108,7 @@ Skips the subject authentication for this route.
 
 [IBaseRoute](IBaseRoute.md).[skipSubjectAuth](IBaseRoute.md#skipsubjectauth)
 
----
+___
 
 ### skipTenantAuth
 
@@ -120,7 +120,7 @@ Skips the tenant authentication for this route.
 
 [IBaseRoute](IBaseRoute.md).[skipTenantAuth](IBaseRoute.md#skiptenantauth)
 
----
+___
 
 ### summary
 
@@ -128,7 +128,7 @@ Skips the tenant authentication for this route.
 
 Summary of what task the operation performs.
 
----
+___
 
 ### tag
 

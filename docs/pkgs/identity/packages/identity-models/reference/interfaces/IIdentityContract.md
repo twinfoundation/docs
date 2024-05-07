@@ -18,8 +18,8 @@ Bootstrap the service by creating and initializing any resources it needs.
 
 #### Parameters
 
-| Name             | Type              | Description                            |
-| :--------------- | :---------------- | :------------------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `requestContext` | `IRequestContext` | The request context for bootstrapping. |
 
 #### Returns
@@ -32,51 +32,51 @@ Nothing.
 
 IService.bootstrap
 
----
+___
 
 ### identityCreate
 
-▸ **identityCreate**(`requestContext`, `role`, `properties?`): `Promise`\<\{ `identity`: `string` }\>
+▸ **identityCreate**(`requestContext`, `role`, `properties?`): `Promise`\<\{ `identity`: `string`  }\>
 
 Create a new identity.
 
 #### Parameters
 
-| Name             | Type                                       | Description                  |
-| :--------------- | :----------------------------------------- | :--------------------------- |
-| `requestContext` | `IRequestContext`                          | The context for the request. |
-| `role`           | [`IdentityRole`](../enums/IdentityRole.md) | The role for the identity.   |
-| `properties?`    | `IProperty`[]                              | The profile properties.      |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `requestContext` | `IRequestContext` | The context for the request. |
+| `role` | [`IdentityRole`](../enums/IdentityRole.md) | The role for the identity. |
+| `properties?` | `IProperty`[] | The profile properties. |
 
 #### Returns
 
-`Promise`\<\{ `identity`: `string` }\>
+`Promise`\<\{ `identity`: `string`  }\>
 
 The created identity details.
 
----
+___
 
 ### itemGet
 
-▸ **itemGet**(`requestContext`, `identity`, `propertyNames?`): `Promise`\<\{ `properties?`: `IProperty`[] ; `role`: [`IdentityRole`](../enums/IdentityRole.md) }\>
+▸ **itemGet**(`requestContext`, `identity`, `propertyNames?`): `Promise`\<\{ `properties?`: `IProperty`[] ; `role`: [`IdentityRole`](../enums/IdentityRole.md)  }\>
 
 Get an item by identity.
 
 #### Parameters
 
-| Name             | Type              | Description                                          |
-| :--------------- | :---------------- | :--------------------------------------------------- |
-| `requestContext` | `IRequestContext` | The context for the request.                         |
-| `identity`       | `string`          | The identity of the item to get.                     |
-| `propertyNames?` | `string`[]        | The properties to get for the item, defaults to all. |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `requestContext` | `IRequestContext` | The context for the request. |
+| `identity` | `string` | The identity of the item to get. |
+| `propertyNames?` | `string`[] | The properties to get for the item, defaults to all. |
 
 #### Returns
 
-`Promise`\<\{ `properties?`: `IProperty`[] ; `role`: [`IdentityRole`](../enums/IdentityRole.md) }\>
+`Promise`\<\{ `properties?`: `IProperty`[] ; `role`: [`IdentityRole`](../enums/IdentityRole.md)  }\>
 
 The items properties.
 
----
+___
 
 ### itemUpdate
 
@@ -86,11 +86,11 @@ Update an item.
 
 #### Parameters
 
-| Name             | Type              | Description                                                                   |
-| :--------------- | :---------------- | :---------------------------------------------------------------------------- |
-| `requestContext` | `IRequestContext` | The context for the request.                                                  |
-| `identity`       | `string`          | The identity to update.                                                       |
-| `properties`     | `IProperty`[]     | Properties for the profile, set a properties value to undefined to remove it. |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `requestContext` | `IRequestContext` | The context for the request. |
+| `identity` | `string` | The identity to update. |
+| `properties` | `IProperty`[] | Properties for the profile, set a properties value to undefined to remove it. |
 
 #### Returns
 
@@ -98,54 +98,54 @@ Update an item.
 
 Nothing.
 
----
+___
 
 ### list
 
-▸ **list**(`requestContext`, `role`, `propertyNames?`, `cursor?`, `pageSize?`): `Promise`\<\{ `cursor?`: `string` ; `identities`: \{ `identity`: `string` ; `properties?`: `IProperty`[] }[] ; `pageSize?`: `number` ; `totalEntities`: `number` }\>
+▸ **list**(`requestContext`, `role`, `propertyNames?`, `cursor?`, `pageSize?`): `Promise`\<\{ `cursor?`: `string` ; `identities`: \{ `identity`: `string` ; `properties?`: `IProperty`[]  }[] ; `pageSize?`: `number` ; `totalEntities`: `number`  }\>
 
 Get a list of the requested types.
 
 #### Parameters
 
-| Name             | Type                                       | Description                                                            |
-| :--------------- | :----------------------------------------- | :--------------------------------------------------------------------- |
-| `requestContext` | `IRequestContext`                          | The context for the request.                                           |
-| `role`           | [`IdentityRole`](../enums/IdentityRole.md) | The role type to lookup.                                               |
-| `propertyNames?` | `string`[]                                 | The properties to get for the identities, default to all if undefined. |
-| `cursor?`        | `string`                                   | The cursor for paged requests.                                         |
-| `pageSize?`      | `number`                                   | The maximum number of items in a page.                                 |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `requestContext` | `IRequestContext` | The context for the request. |
+| `role` | [`IdentityRole`](../enums/IdentityRole.md) | The role type to lookup. |
+| `propertyNames?` | `string`[] | The properties to get for the identities, default to all if undefined. |
+| `cursor?` | `string` | The cursor for paged requests. |
+| `pageSize?` | `number` | The maximum number of items in a page. |
 
 #### Returns
 
-`Promise`\<\{ `cursor?`: `string` ; `identities`: \{ `identity`: `string` ; `properties?`: `IProperty`[] }[] ; `pageSize?`: `number` ; `totalEntities`: `number` }\>
+`Promise`\<\{ `cursor?`: `string` ; `identities`: \{ `identity`: `string` ; `properties?`: `IProperty`[]  }[] ; `pageSize?`: `number` ; `totalEntities`: `number`  }\>
 
 The list of items and cursor for paging.
 
----
+___
 
 ### signData
 
-▸ **signData**(`requestContext`, `identity`, `bytes`, `verificationMethod`): `Promise`\<\{ `signatureType`: `string` ; `signatureValue`: `string` }\>
+▸ **signData**(`requestContext`, `identity`, `bytes`, `verificationMethod`): `Promise`\<\{ `signatureType`: `string` ; `signatureValue`: `string`  }\>
 
 Sign arbitrary data with the specified verification method.
 
 #### Parameters
 
-| Name                 | Type              | Description                               |
-| :------------------- | :---------------- | :---------------------------------------- |
-| `requestContext`     | `IRequestContext` | The context for the request.              |
-| `identity`           | `string`          | The identity to create the signature for. |
-| `bytes`              | `Uint8Array`      | The data bytes to sign.                   |
-| `verificationMethod` | `string`          | The verification method to use.           |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `requestContext` | `IRequestContext` | The context for the request. |
+| `identity` | `string` | The identity to create the signature for. |
+| `bytes` | `Uint8Array` | The data bytes to sign. |
+| `verificationMethod` | `string` | The verification method to use. |
 
 #### Returns
 
-`Promise`\<\{ `signatureType`: `string` ; `signatureValue`: `string` }\>
+`Promise`\<\{ `signatureType`: `string` ; `signatureValue`: `string`  }\>
 
 The signature type and value.
 
----
+___
 
 ### start
 
@@ -163,7 +163,7 @@ Nothing.
 
 IService.start
 
----
+___
 
 ### stop
 
@@ -181,7 +181,7 @@ Nothing.
 
 IService.stop
 
----
+___
 
 ### verifiableCredential
 
@@ -192,15 +192,15 @@ Gets a verifiable credential.
 #### Type parameters
 
 | Name |
-| :--- |
-| `T`  |
+| :------ |
+| `T` |
 
 #### Parameters
 
-| Name                     | Type              | Description                          |
-| :----------------------- | :---------------- | :----------------------------------- |
-| `requestContext`         | `IRequestContext` | The context for the request.         |
-| `verifiableCredentialId` | `string`          | The id of the verifiable credential. |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `requestContext` | `IRequestContext` | The context for the request. |
+| `verifiableCredentialId` | `string` | The id of the verifiable credential. |
 
 #### Returns
 
@@ -208,31 +208,31 @@ Gets a verifiable credential.
 
 The verifiable credential if successful.
 
----
+___
 
 ### verifiableCredentialApplications
 
-▸ **verifiableCredentialApplications**(`requestContext`, `identity`, `identityIsIssuer?`, `state?`, `cursor?`): `Promise`\<\{ `applications`: [`IIdentityVerifiableCredentialApplication`](IIdentityVerifiableCredentialApplication.md)[] ; `cursor?`: `string` }\>
+▸ **verifiableCredentialApplications**(`requestContext`, `identity`, `identityIsIssuer?`, `state?`, `cursor?`): `Promise`\<\{ `applications`: [`IIdentityVerifiableCredentialApplication`](IIdentityVerifiableCredentialApplication.md)[] ; `cursor?`: `string`  }\>
 
 Gets all the verifiable credential applications for an identity.
 
 #### Parameters
 
-| Name                | Type                                                                 | Description                                                     |
-| :------------------ | :------------------------------------------------------------------- | :-------------------------------------------------------------- |
-| `requestContext`    | `IRequestContext`                                                    | The context for the request.                                    |
-| `identity`          | `string`                                                             | The identity to get the verifiable credential applications for. |
-| `identityIsIssuer?` | `boolean`                                                            | The identity is the issuer not the subject.                     |
-| `state?`            | [`VerifiableCredentialState`](../enums/VerifiableCredentialState.md) | The state of the verifiable application credentials to get.     |
-| `cursor?`           | `string`                                                             | The cursor for paged requests.                                  |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `requestContext` | `IRequestContext` | The context for the request. |
+| `identity` | `string` | The identity to get the verifiable credential applications for. |
+| `identityIsIssuer?` | `boolean` | The identity is the issuer not the subject. |
+| `state?` | [`VerifiableCredentialState`](../enums/VerifiableCredentialState.md) | The state of the verifiable application credentials to get. |
+| `cursor?` | `string` | The cursor for paged requests. |
 
 #### Returns
 
-`Promise`\<\{ `applications`: [`IIdentityVerifiableCredentialApplication`](IIdentityVerifiableCredentialApplication.md)[] ; `cursor?`: `string` }\>
+`Promise`\<\{ `applications`: [`IIdentityVerifiableCredentialApplication`](IIdentityVerifiableCredentialApplication.md)[] ; `cursor?`: `string`  }\>
 
 The verifiable credential applications details.
 
----
+___
 
 ### verifiableCredentialCheck
 
@@ -243,14 +243,14 @@ Checks a verifiable credential.
 #### Type parameters
 
 | Name |
-| :--- |
-| `T`  |
+| :------ |
+| `T` |
 
 #### Parameters
 
-| Name                   | Type                              | Description                                 |
-| :--------------------- | :-------------------------------- | :------------------------------------------ |
-| `requestContext`       | `IRequestContext`                 | The context for the request.                |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `requestContext` | `IRequestContext` | The context for the request. |
 | `verifiableCredential` | `IDidVerifiableCredential`\<`T`\> | The verifiable credential details to check. |
 
 #### Returns
@@ -259,7 +259,7 @@ Checks a verifiable credential.
 
 The verifiable credential check details.
 
----
+___
 
 ### verifiableCredentialCreate
 
@@ -269,13 +269,13 @@ Create a verifiable credential.
 
 #### Parameters
 
-| Name                       | Type              | Description                                                                     |
-| :------------------------- | :---------------- | :------------------------------------------------------------------------------ |
-| `requestContext`           | `IRequestContext` | The context for the request.                                                    |
-| `issuer`                   | `string`          | The entity they want to create the verifiable credential with.                  |
-| `subject`                  | `string`          | The identity that is the subject of the verifiable credential.                  |
-| `verifiableCredentialType` | `string`          | The type of verifiable credential to perform.                                   |
-| `claims?`                  | `IProperty`[]     | The completed claims providing information to create the verifiable credential. |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `requestContext` | `IRequestContext` | The context for the request. |
+| `issuer` | `string` | The entity they want to create the verifiable credential with. |
+| `subject` | `string` | The identity that is the subject of the verifiable credential. |
+| `verifiableCredentialType` | `string` | The type of verifiable credential to perform. |
+| `claims?` | `IProperty`[] | The completed claims providing information to create the verifiable credential. |
 
 #### Returns
 
@@ -283,29 +283,29 @@ Create a verifiable credential.
 
 The id of the verification credential generated, may not be immediately valid.
 
----
+___
 
 ### verifiableCredentialRequirementsGet
 
-▸ **verifiableCredentialRequirementsGet**(`requestContext`, `identity`, `verifiableCredentialType`): `Promise`\<\{ `matchDomains?`: `string` ; `requiredClaims?`: [`IIdentityClaimRequirement`](IIdentityClaimRequirement.md)[] }\>
+▸ **verifiableCredentialRequirementsGet**(`requestContext`, `identity`, `verifiableCredentialType`): `Promise`\<\{ `matchDomains?`: `string` ; `requiredClaims?`: [`IIdentityClaimRequirement`](IIdentityClaimRequirement.md)[]  }\>
 
 Get the requirements for a verifiable credential.
 
 #### Parameters
 
-| Name                       | Type              | Description                                                |
-| :------------------------- | :---------------- | :--------------------------------------------------------- |
-| `requestContext`           | `IRequestContext` | The context for the request.                               |
-| `identity`                 | `string`          | The identity to get the requirements for.                  |
-| `verifiableCredentialType` | `string`          | The type of verifiable credential to get the requirements. |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `requestContext` | `IRequestContext` | The context for the request. |
+| `identity` | `string` | The identity to get the requirements for. |
+| `verifiableCredentialType` | `string` | The type of verifiable credential to get the requirements. |
 
 #### Returns
 
-`Promise`\<\{ `matchDomains?`: `string` ; `requiredClaims?`: [`IIdentityClaimRequirement`](IIdentityClaimRequirement.md)[] }\>
+`Promise`\<\{ `matchDomains?`: `string` ; `requiredClaims?`: [`IIdentityClaimRequirement`](IIdentityClaimRequirement.md)[]  }\>
 
 The requirements for creating the verifiable credential.
 
----
+___
 
 ### verifiableCredentialRequirementsSet
 
@@ -315,12 +315,12 @@ Set the requirements for a verifiable credential.
 
 #### Parameters
 
-| Name                       | Type                                                          | Description                                                  |
-| :------------------------- | :------------------------------------------------------------ | :----------------------------------------------------------- |
-| `requestContext`           | `IRequestContext`                                             | The context for the request.                                 |
-| `identity`                 | `string`                                                      | The identity the to store the requirements for.              |
-| `verifiableCredentialType` | `string`                                                      | The type of verifiable credential requirements being stored. |
-| `requiredClaims?`          | [`IIdentityClaimRequirement`](IIdentityClaimRequirement.md)[] | The claims needed to create the verifiable credential.       |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `requestContext` | `IRequestContext` | The context for the request. |
+| `identity` | `string` | The identity the to store the requirements for. |
+| `verifiableCredentialType` | `string` | The type of verifiable credential requirements being stored. |
+| `requiredClaims?` | [`IIdentityClaimRequirement`](IIdentityClaimRequirement.md)[] | The claims needed to create the verifiable credential. |
 
 #### Returns
 
@@ -328,7 +328,7 @@ Set the requirements for a verifiable credential.
 
 Nothing.
 
----
+___
 
 ### verifiableCredentialUpdate
 
@@ -338,12 +338,12 @@ Update a verifiable credential.
 
 #### Parameters
 
-| Name                     | Type                                                                 | Description                          |
-| :----------------------- | :------------------------------------------------------------------- | :----------------------------------- |
-| `requestContext`         | `IRequestContext`                                                    | The context for the request.         |
-| `verifiableCredentialId` | `string`                                                             | The verifiable credential to update. |
-| `state`                  | [`VerifiableCredentialState`](../enums/VerifiableCredentialState.md) | The state to update to.              |
-| `rejectedCode?`          | `string`                                                             | The code for any rejections.         |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `requestContext` | `IRequestContext` | The context for the request. |
+| `verifiableCredentialId` | `string` | The verifiable credential to update. |
+| `state` | [`VerifiableCredentialState`](../enums/VerifiableCredentialState.md) | The state to update to. |
+| `rejectedCode?` | `string` | The code for any rejections. |
 
 #### Returns
 
@@ -351,7 +351,7 @@ Update a verifiable credential.
 
 The updated application.
 
----
+___
 
 ### verifyData
 
@@ -361,14 +361,14 @@ Verify arbitrary data with the specified verification method.
 
 #### Parameters
 
-| Name                 | Type              | Description                               |
-| :------------------- | :---------------- | :---------------------------------------- |
-| `requestContext`     | `IRequestContext` | The context for the request.              |
-| `identity`           | `string`          | The identity to verify the signature for. |
-| `bytes`              | `Uint8Array`      | The data bytes to sign.                   |
-| `verificationMethod` | `string`          | The verification method to use.           |
-| `signatureType`      | `string`          | The type of the signature for the proof.  |
-| `signatureValue`     | `string`          | The value of the signature for the proof. |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `requestContext` | `IRequestContext` | The context for the request. |
+| `identity` | `string` | The identity to verify the signature for. |
+| `bytes` | `Uint8Array` | The data bytes to sign. |
+| `verificationMethod` | `string` | The verification method to use. |
+| `signatureType` | `string` | The type of the signature for the proof. |
+| `signatureValue` | `string` | The value of the signature for the proof. |
 
 #### Returns
 

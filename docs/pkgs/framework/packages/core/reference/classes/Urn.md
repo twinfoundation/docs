@@ -12,10 +12,10 @@ Create a new instance of Urn.
 
 #### Parameters
 
-| Name                  | Type     | Description                         |
-| :-------------------- | :------- | :---------------------------------- |
-| `namespaceIdentifier` | `string` | The identifier for the namespace.   |
-| `namespaceSpecific`   | `string` | The specific part of the namespace. |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `namespaceIdentifier` | `string` | The identifier for the namespace. |
+| `namespaceSpecific` | `string` | The specific part of the namespace. |
 
 #### Returns
 
@@ -35,7 +35,7 @@ Get the namespace identifier.
 
 The namespace identifier.
 
----
+___
 
 ### namespaceSpecific
 
@@ -49,7 +49,7 @@ Get the namespace specific.
 
 The namespace specific.
 
----
+___
 
 ### parts
 
@@ -59,8 +59,8 @@ Get the individual parts of the urn.
 
 #### Parameters
 
-| Name          | Type      | Description                           |
-| :------------ | :-------- | :------------------------------------ |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `omitPrefix?` | `boolean` | Omit the urn: prefix from the string. |
 
 #### Returns
@@ -69,7 +69,7 @@ Get the individual parts of the urn.
 
 The parts of the urn.
 
----
+___
 
 ### toString
 
@@ -79,8 +79,8 @@ Convert the parts in to a full string.
 
 #### Parameters
 
-| Name          | Type      | Description                           |
-| :------------ | :-------- | :------------------------------------ |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `omitPrefix?` | `boolean` | Omit the urn: prefix from the string. |
 
 #### Returns
@@ -89,7 +89,7 @@ Convert the parts in to a full string.
 
 The formatted urn.
 
----
+___
 
 ### addPrefix
 
@@ -99,8 +99,8 @@ Add a urn: prefix if there isn't one already.
 
 #### Parameters
 
-| Name  | Type      | Description                        |
-| :---- | :-------- | :--------------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `urn` | `unknown` | The urn string to add a prefix to. |
 
 #### Returns
@@ -109,7 +109,7 @@ Add a urn: prefix if there isn't one already.
 
 The urn with a prefix.
 
----
+___
 
 ### fromValidString
 
@@ -119,8 +119,8 @@ Construct a urn from a string that has already been validated.
 
 #### Parameters
 
-| Name  | Type     | Description       |
-| :---- | :------- | :---------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `urn` | `string` | The urn to parse. |
 
 #### Returns
@@ -129,7 +129,7 @@ Construct a urn from a string that has already been validated.
 
 The formatted urn.
 
----
+___
 
 ### generateRandom
 
@@ -139,8 +139,8 @@ Generate a random identifier with 32 byte id.
 
 #### Parameters
 
-| Name        | Type     | Description             |
-| :---------- | :------- | :---------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `namespace` | `string` | The prefix for the urn. |
 
 #### Returns
@@ -149,7 +149,7 @@ Generate a random identifier with 32 byte id.
 
 A new Id in URN format.
 
----
+___
 
 ### guard
 
@@ -159,11 +159,11 @@ Parse a string into the urn parts.
 
 #### Parameters
 
-| Name       | Type      | Description               |
-| :--------- | :-------- | :------------------------ |
-| `source`   | `string`  | The source of the error.  |
-| `property` | `string`  | The name of the property. |
-| `value`    | `unknown` | The urn to parse.         |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `source` | `string` | The source of the error. |
+| `property` | `string` | The name of the property. |
+| `value` | `unknown` | The urn to parse. |
 
 #### Returns
 
@@ -173,7 +173,7 @@ asserts value is string
 
 GuardError If the value does not match the assertion.
 
----
+___
 
 ### hasNamespace
 
@@ -183,9 +183,9 @@ Does the provided urn match the namespace.
 
 #### Parameters
 
-| Name        | Type     | Description             |
-| :---------- | :------- | :---------------------- |
-| `urn`       | `string` | The urn to check.       |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `urn` | `string` | The urn to check. |
 | `namespace` | `string` | The namespace to match. |
 
 #### Returns
@@ -194,7 +194,7 @@ Does the provided urn match the namespace.
 
 True if the namespace matches.
 
----
+___
 
 ### tryParseExact
 
@@ -204,8 +204,8 @@ Try and parse a string into the urn parts it must start with urn:.
 
 #### Parameters
 
-| Name  | Type      | Description       |
-| :---- | :-------- | :---------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `urn` | `unknown` | The urn to parse. |
 
 #### Returns
@@ -214,7 +214,7 @@ Try and parse a string into the urn parts it must start with urn:.
 
 The formatted urn or undefined if the value is not a urn.
 
----
+___
 
 ### validate
 
@@ -224,11 +224,11 @@ Validate a string as a Urn.
 
 #### Parameters
 
-| Name       | Type                                                          | Description                                        |
-| :--------- | :------------------------------------------------------------ | :------------------------------------------------- |
-| `property` | `string`                                                      | Throw an exception if the urn property is invalid. |
-| `value`    | `unknown`                                                     | The urn to parse.                                  |
-| `failures` | [`IValidationFailure`](../interfaces/IValidationFailure.md)[] | The list of failures to add to.                    |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `property` | `string` | Throw an exception if the urn property is invalid. |
+| `value` | `unknown` | The urn to parse. |
+| `failures` | [`IValidationFailure`](../interfaces/IValidationFailure.md)[] | The list of failures to add to. |
 
 #### Returns
 

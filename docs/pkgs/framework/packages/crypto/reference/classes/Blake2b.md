@@ -13,10 +13,10 @@ Create a new instance of Blake2b.
 
 #### Parameters
 
-| Name     | Type         | Description                           |
-| :------- | :----------- | :------------------------------------ |
-| `outLen` | `number`     | Output length between 1 and 64 bytes. |
-| `key?`   | `Uint8Array` | Optional key.                         |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `outLen` | `number` | Output length between 1 and 64 bytes. |
+| `key?` | `Uint8Array` | Optional key. |
 
 #### Returns
 
@@ -24,25 +24,25 @@ Create a new instance of Blake2b.
 
 ## Properties
 
-### SIZE_160
+### SIZE\_160
 
-▪ `Static` **SIZE_160**: `number` = `20`
+▪ `Static` **SIZE\_160**: `number` = `20`
 
 Blake2b 160.
 
----
+___
 
-### SIZE_256
+### SIZE\_256
 
-▪ `Static` **SIZE_256**: `number` = `32`
+▪ `Static` **SIZE\_256**: `number` = `32`
 
 Blake2b 256.
 
----
+___
 
-### SIZE_512
+### SIZE\_512
 
-▪ `Static` **SIZE_512**: `number` = `64`
+▪ `Static` **SIZE\_512**: `number` = `64`
 
 Blake2b 512.
 
@@ -60,7 +60,7 @@ Completes a BLAKE2b streaming hash.
 
 The final data.
 
----
+___
 
 ### init
 
@@ -70,10 +70,10 @@ Creates a BLAKE2b hashing context.
 
 #### Parameters
 
-| Name           | Type         | Description                           |
-| :------------- | :----------- | :------------------------------------ |
-| `outputLength` | `number`     | Output length between 1 and 64 bytes. |
-| `key?`         | `Uint8Array` | Optional key.                         |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `outputLength` | `number` | Output length between 1 and 64 bytes. |
+| `key?` | `Uint8Array` | Optional key. |
 
 #### Returns
 
@@ -83,7 +83,7 @@ Creates a BLAKE2b hashing context.
 
 Error if the output length is not between 1 and 64 bytes.
 
----
+___
 
 ### update
 
@@ -93,15 +93,15 @@ Updates a BLAKE2b streaming hash.
 
 #### Parameters
 
-| Name    | Type         | Description       |
-| :------ | :----------- | :---------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `input` | `Uint8Array` | The data to hash. |
 
 #### Returns
 
 `void`
 
----
+___
 
 ### sum160
 
@@ -111,9 +111,9 @@ Perform Sum 160 on the data.
 
 #### Parameters
 
-| Name   | Type         | Description                |
-| :----- | :----------- | :------------------------- |
-| `data` | `Uint8Array` | The data to operate on.    |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `data` | `Uint8Array` | The data to operate on. |
 | `key?` | `Uint8Array` | Optional key for the hash. |
 
 #### Returns
@@ -122,7 +122,7 @@ Perform Sum 160 on the data.
 
 The sum 160 of the data.
 
----
+___
 
 ### sum256
 
@@ -132,9 +132,9 @@ Perform Sum 256 on the data.
 
 #### Parameters
 
-| Name   | Type         | Description                |
-| :----- | :----------- | :------------------------- |
-| `data` | `Uint8Array` | The data to operate on.    |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `data` | `Uint8Array` | The data to operate on. |
 | `key?` | `Uint8Array` | Optional key for the hash. |
 
 #### Returns
@@ -143,7 +143,7 @@ Perform Sum 256 on the data.
 
 The sum 256 of the data.
 
----
+___
 
 ### sum512
 
@@ -153,9 +153,9 @@ Perform Sum 512 on the data.
 
 #### Parameters
 
-| Name   | Type         | Description                |
-| :----- | :----------- | :------------------------- |
-| `data` | `Uint8Array` | The data to operate on.    |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `data` | `Uint8Array` | The data to operate on. |
 | `key?` | `Uint8Array` | Optional key for the hash. |
 
 #### Returns

@@ -12,11 +12,11 @@ The data for the request.
 
 #### Type declaration
 
-| Name          | Type          | Description                  |
-| :------------ | :------------ | :--------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `properties?` | `IProperty`[] | Properties for the identity. |
 
----
+___
 
 ### identity
 

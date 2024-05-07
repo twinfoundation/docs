@@ -22,9 +22,9 @@ Do the two arrays match.
 
 #### Parameters
 
-| Name   | Type      | Description       |
-| :----- | :-------- | :---------------- |
-| `arr1` | `unknown` | The first array.  |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `arr1` | `unknown` | The first array. |
 | `arr2` | `unknown` | The second array. |
 
 #### Returns

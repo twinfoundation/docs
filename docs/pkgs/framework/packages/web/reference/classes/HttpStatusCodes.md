@@ -20,31 +20,31 @@ Standard HTTP status codes.
 
 Accepted status code.
 
----
+___
 
-### ALREADY_REPORTED
+### ALREADY\_REPORTED
 
-▪ `Static` **ALREADY_REPORTED**: `number` = `208`
+▪ `Static` **ALREADY\_REPORTED**: `number` = `208`
 
 Already Reported status code.
 
----
+___
 
-### BAD_GATEWAY
+### BAD\_GATEWAY
 
-▪ `Static` **BAD_GATEWAY**: `number` = `502`
+▪ `Static` **BAD\_GATEWAY**: `number` = `502`
 
 Bad Gateway status code.
 
----
+___
 
-### BAD_REQUEST
+### BAD\_REQUEST
 
-▪ `Static` **BAD_REQUEST**: `number` = `400`
+▪ `Static` **BAD\_REQUEST**: `number` = `400`
 
 Bad Request status code.
 
----
+___
 
 ### CONFLICT
 
@@ -52,7 +52,7 @@ Bad Request status code.
 
 Conflict status code.
 
----
+___
 
 ### CONTINUE
 
@@ -60,7 +60,7 @@ Conflict status code.
 
 Continue status code.
 
----
+___
 
 ### CREATED
 
@@ -68,31 +68,31 @@ Continue status code.
 
 Created status code.
 
----
+___
 
-### EARLY_HINTS
+### EARLY\_HINTS
 
-▪ `Static` **EARLY_HINTS**: `number` = `103`
+▪ `Static` **EARLY\_HINTS**: `number` = `103`
 
 Early Hints status code.
 
----
+___
 
-### EXPECTATION_FAILED
+### EXPECTATION\_FAILED
 
-▪ `Static` **EXPECTATION_FAILED**: `number` = `417`
+▪ `Static` **EXPECTATION\_FAILED**: `number` = `417`
 
 Expectation Failed status code.
 
----
+___
 
-### FAILED_DEPENDENCY
+### FAILED\_DEPENDENCY
 
-▪ `Static` **FAILED_DEPENDENCY**: `number` = `424`
+▪ `Static` **FAILED\_DEPENDENCY**: `number` = `424`
 
 Failed Dependency status code.
 
----
+___
 
 ### FORBIDDEN
 
@@ -100,7 +100,7 @@ Failed Dependency status code.
 
 Forbidden status code.
 
----
+___
 
 ### FOUND
 
@@ -108,15 +108,15 @@ Forbidden status code.
 
 Found status code.
 
----
+___
 
-### GATEWAY_TIMEOUT
+### GATEWAY\_TIMEOUT
 
-▪ `Static` **GATEWAY_TIMEOUT**: `number` = `504`
+▪ `Static` **GATEWAY\_TIMEOUT**: `number` = `504`
 
 Gateway Timeout status code.
 
----
+___
 
 ### GONE
 
@@ -124,55 +124,55 @@ Gateway Timeout status code.
 
 Gone status code.
 
----
+___
 
-### HTTP_VERSION_NOT_SUPPORTED
+### HTTP\_VERSION\_NOT\_SUPPORTED
 
-▪ `Static` **HTTP_VERSION_NOT_SUPPORTED**: `number` = `505`
+▪ `Static` **HTTP\_VERSION\_NOT\_SUPPORTED**: `number` = `505`
 
 HTTP Version Not Supported status code.
 
----
+___
 
-### IM_A_TEAPOT
+### IM\_A\_TEAPOT
 
-▪ `Static` **IM_A_TEAPOT**: `number` = `418`
+▪ `Static` **IM\_A\_TEAPOT**: `number` = `418`
 
 I'm a teapot status code.
 
----
+___
 
-### IM_USED
+### IM\_USED
 
-▪ `Static` **IM_USED**: `number` = `226`
+▪ `Static` **IM\_USED**: `number` = `226`
 
 IM Used status code.
 
----
+___
 
-### INSUFFICIENT_STORAGE
+### INSUFFICIENT\_STORAGE
 
-▪ `Static` **INSUFFICIENT_STORAGE**: `number` = `507`
+▪ `Static` **INSUFFICIENT\_STORAGE**: `number` = `507`
 
 Insufficient Storage status code.
 
----
+___
 
-### INTERNAL_SERVER_ERROR
+### INTERNAL\_SERVER\_ERROR
 
-▪ `Static` **INTERNAL_SERVER_ERROR**: `number` = `500`
+▪ `Static` **INTERNAL\_SERVER\_ERROR**: `number` = `500`
 
 Internal Server Error status code.
 
----
+___
 
-### LENGTH_REQUIRED
+### LENGTH\_REQUIRED
 
-▪ `Static` **LENGTH_REQUIRED**: `number` = `411`
+▪ `Static` **LENGTH\_REQUIRED**: `number` = `411`
 
 Length Required status code.
 
----
+___
 
 ### LOCKED
 
@@ -180,119 +180,119 @@ Length Required status code.
 
 Locked status code.
 
----
+___
 
-### LOOP_DETECTED
+### LOOP\_DETECTED
 
-▪ `Static` **LOOP_DETECTED**: `number` = `508`
+▪ `Static` **LOOP\_DETECTED**: `number` = `508`
 
 Loop Detected status code.
 
----
+___
 
-### METHOD_NOT_ALLOWED
+### METHOD\_NOT\_ALLOWED
 
-▪ `Static` **METHOD_NOT_ALLOWED**: `number` = `405`
+▪ `Static` **METHOD\_NOT\_ALLOWED**: `number` = `405`
 
 Method Not Allowed status code.
 
----
+___
 
-### MISDIRECTED_REQUEST
+### MISDIRECTED\_REQUEST
 
-▪ `Static` **MISDIRECTED_REQUEST**: `number` = `421`
+▪ `Static` **MISDIRECTED\_REQUEST**: `number` = `421`
 
 Misdirected Request status code.
 
----
+___
 
-### MOVED_PERMANENTLY
+### MOVED\_PERMANENTLY
 
-▪ `Static` **MOVED_PERMANENTLY**: `number` = `301`
+▪ `Static` **MOVED\_PERMANENTLY**: `number` = `301`
 
 Moved Permanently status code.
 
----
+___
 
-### MULTIPLE_CHOICES
+### MULTIPLE\_CHOICES
 
-▪ `Static` **MULTIPLE_CHOICES**: `number` = `300`
+▪ `Static` **MULTIPLE\_CHOICES**: `number` = `300`
 
 Multiple Choices status code.
 
----
+___
 
-### MULTI_STATUS
+### MULTI\_STATUS
 
-▪ `Static` **MULTI_STATUS**: `number` = `207`
+▪ `Static` **MULTI\_STATUS**: `number` = `207`
 
 Multi-Status status code.
 
----
+___
 
-### NETWORK_AUTHENTICATION_REQUIRED
+### NETWORK\_AUTHENTICATION\_REQUIRED
 
-▪ `Static` **NETWORK_AUTHENTICATION_REQUIRED**: `number` = `511`
+▪ `Static` **NETWORK\_AUTHENTICATION\_REQUIRED**: `number` = `511`
 
 Network Authentication Required status code.
 
----
+___
 
-### NON_AUTHORITATIVE_INFORMATION
+### NON\_AUTHORITATIVE\_INFORMATION
 
-▪ `Static` **NON_AUTHORITATIVE_INFORMATION**: `number` = `203`
+▪ `Static` **NON\_AUTHORITATIVE\_INFORMATION**: `number` = `203`
 
 Non-Authoritative Information status code.
 
----
+___
 
-### NOT_ACCEPTABLE
+### NOT\_ACCEPTABLE
 
-▪ `Static` **NOT_ACCEPTABLE**: `number` = `406`
+▪ `Static` **NOT\_ACCEPTABLE**: `number` = `406`
 
 Not Acceptable status code.
 
----
+___
 
-### NOT_EXTENDED
+### NOT\_EXTENDED
 
-▪ `Static` **NOT_EXTENDED**: `number` = `510`
+▪ `Static` **NOT\_EXTENDED**: `number` = `510`
 
 Not Extended status code.
 
----
+___
 
-### NOT_FOUND
+### NOT\_FOUND
 
-▪ `Static` **NOT_FOUND**: `number` = `404`
+▪ `Static` **NOT\_FOUND**: `number` = `404`
 
 Not Found status code.
 
----
+___
 
-### NOT_IMPLEMENTED
+### NOT\_IMPLEMENTED
 
-▪ `Static` **NOT_IMPLEMENTED**: `number` = `501`
+▪ `Static` **NOT\_IMPLEMENTED**: `number` = `501`
 
 Not Implemented status code.
 
----
+___
 
-### NOT_MODIFIED
+### NOT\_MODIFIED
 
-▪ `Static` **NOT_MODIFIED**: `number` = `304`
+▪ `Static` **NOT\_MODIFIED**: `number` = `304`
 
 Not Modified status code.
 
----
+___
 
-### NO_CONTENT
+### NO\_CONTENT
 
-▪ `Static` **NO_CONTENT**: `number` = `204`
+▪ `Static` **NO\_CONTENT**: `number` = `204`
 
 No Content status code.
 
----
+___
 
 ### OK
 
@@ -300,55 +300,55 @@ No Content status code.
 
 OK status code.
 
----
+___
 
-### PARTIAL_CONTENT
+### PARTIAL\_CONTENT
 
-▪ `Static` **PARTIAL_CONTENT**: `number` = `206`
+▪ `Static` **PARTIAL\_CONTENT**: `number` = `206`
 
 Partial Content status code.
 
----
+___
 
-### PAYLOAD_TOO_LARGE
+### PAYLOAD\_TOO\_LARGE
 
-▪ `Static` **PAYLOAD_TOO_LARGE**: `number` = `413`
+▪ `Static` **PAYLOAD\_TOO\_LARGE**: `number` = `413`
 
 Payload Too Large status code.
 
----
+___
 
-### PAYMENT_REQUIRED
+### PAYMENT\_REQUIRED
 
-▪ `Static` **PAYMENT_REQUIRED**: `number` = `402`
+▪ `Static` **PAYMENT\_REQUIRED**: `number` = `402`
 
 Payment Required status code.
 
----
+___
 
-### PERMANENT_REDIRECT
+### PERMANENT\_REDIRECT
 
-▪ `Static` **PERMANENT_REDIRECT**: `number` = `308`
+▪ `Static` **PERMANENT\_REDIRECT**: `number` = `308`
 
 Permanent Redirect status code.
 
----
+___
 
-### PRECONDITION_FAILED
+### PRECONDITION\_FAILED
 
-▪ `Static` **PRECONDITION_FAILED**: `number` = `412`
+▪ `Static` **PRECONDITION\_FAILED**: `number` = `412`
 
 Precondition Failed status code.
 
----
+___
 
-### PRECONDITION_REQUIRED
+### PRECONDITION\_REQUIRED
 
-▪ `Static` **PRECONDITION_REQUIRED**: `number` = `428`
+▪ `Static` **PRECONDITION\_REQUIRED**: `number` = `428`
 
 Precondition Required status code.
 
----
+___
 
 ### PROCESSING
 
@@ -356,95 +356,95 @@ Precondition Required status code.
 
 Processing status code.
 
----
+___
 
-### PROXY_AUTHENTICATION_REQUIRED
+### PROXY\_AUTHENTICATION\_REQUIRED
 
-▪ `Static` **PROXY_AUTHENTICATION_REQUIRED**: `number` = `407`
+▪ `Static` **PROXY\_AUTHENTICATION\_REQUIRED**: `number` = `407`
 
 Proxy Authentication Required status code.
 
----
+___
 
-### RANGE_NOT_SATISFIABLE
+### RANGE\_NOT\_SATISFIABLE
 
-▪ `Static` **RANGE_NOT_SATISFIABLE**: `number` = `416`
+▪ `Static` **RANGE\_NOT\_SATISFIABLE**: `number` = `416`
 
 Range Not Satisfiable status code.
 
----
+___
 
-### REQUEST_HEADER_FIELDS_TOO_LARGE
+### REQUEST\_HEADER\_FIELDS\_TOO\_LARGE
 
-▪ `Static` **REQUEST_HEADER_FIELDS_TOO_LARGE**: `number` = `431`
+▪ `Static` **REQUEST\_HEADER\_FIELDS\_TOO\_LARGE**: `number` = `431`
 
 Request Header Fields Too Large status code.
 
----
+___
 
-### REQUEST_TIMEOUT
+### REQUEST\_TIMEOUT
 
-▪ `Static` **REQUEST_TIMEOUT**: `number` = `408`
+▪ `Static` **REQUEST\_TIMEOUT**: `number` = `408`
 
 Request Timeout status code.
 
----
+___
 
-### RESET_CONTENT
+### RESET\_CONTENT
 
-▪ `Static` **RESET_CONTENT**: `number` = `205`
+▪ `Static` **RESET\_CONTENT**: `number` = `205`
 
 Reset Content status code.
 
----
+___
 
-### SEE_OTHER
+### SEE\_OTHER
 
-▪ `Static` **SEE_OTHER**: `number` = `303`
+▪ `Static` **SEE\_OTHER**: `number` = `303`
 
 See Other status code.
 
----
+___
 
-### SERVICE_UNAVAILABLE
+### SERVICE\_UNAVAILABLE
 
-▪ `Static` **SERVICE_UNAVAILABLE**: `number` = `503`
+▪ `Static` **SERVICE\_UNAVAILABLE**: `number` = `503`
 
 Service Unavailable status code.
 
----
+___
 
-### SWITCHING_PROTOCOLS
+### SWITCHING\_PROTOCOLS
 
-▪ `Static` **SWITCHING_PROTOCOLS**: `number` = `101`
+▪ `Static` **SWITCHING\_PROTOCOLS**: `number` = `101`
 
 Switching Protocols status code.
 
----
+___
 
-### TEMPORARY_REDIRECT
+### TEMPORARY\_REDIRECT
 
-▪ `Static` **TEMPORARY_REDIRECT**: `number` = `307`
+▪ `Static` **TEMPORARY\_REDIRECT**: `number` = `307`
 
 Temporary Redirect status code.
 
----
+___
 
-### TOO_EARLY
+### TOO\_EARLY
 
-▪ `Static` **TOO_EARLY**: `number` = `425`
+▪ `Static` **TOO\_EARLY**: `number` = `425`
 
 Too Early status code.
 
----
+___
 
-### TOO_MANY_REQUESTS
+### TOO\_MANY\_REQUESTS
 
-▪ `Static` **TOO_MANY_REQUESTS**: `number` = `429`
+▪ `Static` **TOO\_MANY\_REQUESTS**: `number` = `429`
 
 Too Many Requests status code.
 
----
+___
 
 ### UNAUTHORIZED
 
@@ -452,58 +452,58 @@ Too Many Requests status code.
 
 Unauthorized status code.
 
----
+___
 
-### UNAVAILABLE_FOR_LEGAL_REASONS
+### UNAVAILABLE\_FOR\_LEGAL\_REASONS
 
-▪ `Static` **UNAVAILABLE_FOR_LEGAL_REASONS**: `number` = `451`
+▪ `Static` **UNAVAILABLE\_FOR\_LEGAL\_REASONS**: `number` = `451`
 
 Unavailable For Legal Reasons status code.
 
----
+___
 
-### UNPROCESSABLE_ENTITY
+### UNPROCESSABLE\_ENTITY
 
-▪ `Static` **UNPROCESSABLE_ENTITY**: `number` = `422`
+▪ `Static` **UNPROCESSABLE\_ENTITY**: `number` = `422`
 
 Unprocessable Entity status code.
 
----
+___
 
-### UNSUPPORTED_MEDIA_TYPE
+### UNSUPPORTED\_MEDIA\_TYPE
 
-▪ `Static` **UNSUPPORTED_MEDIA_TYPE**: `number` = `415`
+▪ `Static` **UNSUPPORTED\_MEDIA\_TYPE**: `number` = `415`
 
 Unsupported Media Type status code.
 
----
+___
 
-### UPGRADE_REQUIRED
+### UPGRADE\_REQUIRED
 
-▪ `Static` **UPGRADE_REQUIRED**: `number` = `426`
+▪ `Static` **UPGRADE\_REQUIRED**: `number` = `426`
 
 Upgrade Required status code.
 
----
+___
 
-### URI_TOO_LONG
+### URI\_TOO\_LONG
 
-▪ `Static` **URI_TOO_LONG**: `number` = `414`
+▪ `Static` **URI\_TOO\_LONG**: `number` = `414`
 
 URI Too Long status code.
 
----
+___
 
-### USE_PROXY
+### USE\_PROXY
 
-▪ `Static` **USE_PROXY**: `number` = `305`
+▪ `Static` **USE\_PROXY**: `number` = `305`
 
 Use Proxy status code.
 
----
+___
 
-### VARIANT_ALSO_NEGOTIATES
+### VARIANT\_ALSO\_NEGOTIATES
 
-▪ `Static` **VARIANT_ALSO_NEGOTIATES**: `number` = `506`
+▪ `Static` **VARIANT\_ALSO\_NEGOTIATES**: `number` = `506`
 
 Variant Also Negotiates status code.

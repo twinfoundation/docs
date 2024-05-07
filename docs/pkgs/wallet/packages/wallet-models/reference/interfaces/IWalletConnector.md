@@ -18,8 +18,8 @@ Bootstrap the service by creating and initializing any resources it needs.
 
 #### Parameters
 
-| Name             | Type              | Description                            |
-| :--------------- | :---------------- | :------------------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `requestContext` | `IRequestContext` | The request context for bootstrapping. |
 
 #### Returns
@@ -32,7 +32,7 @@ Nothing.
 
 IService.bootstrap
 
----
+___
 
 ### create
 
@@ -42,8 +42,8 @@ Create a new wallet.
 
 #### Parameters
 
-| Name             | Type              | Description                  |
-| :--------------- | :---------------- | :--------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `requestContext` | `IRequestContext` | The context for the request. |
 
 #### Returns
@@ -52,7 +52,7 @@ Create a new wallet.
 
 Nothing.
 
----
+___
 
 ### ensureBalance
 
@@ -62,12 +62,12 @@ Ensure the balance for an address in a wallet.
 
 #### Parameters
 
-| Name                | Type              | Description                                                 |
-| :------------------ | :---------------- | :---------------------------------------------------------- |
-| `requestContext`    | `IRequestContext` | The context for the request.                                |
-| `address`           | `string`          | The bech32 encoded address.                                 |
-| `ensureBalance`     | `bigint`          | The balance to ensure on the address.                       |
-| `timeoutInSeconds?` | `number`          | The timeout in seconds to wait for the funding to complete. |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `requestContext` | `IRequestContext` | The context for the request. |
+| `address` | `string` | The bech32 encoded address. |
+| `ensureBalance` | `bigint` | The balance to ensure on the address. |
+| `timeoutInSeconds?` | `number` | The timeout in seconds to wait for the funding to complete. |
 
 #### Returns
 
@@ -75,7 +75,7 @@ Ensure the balance for an address in a wallet.
 
 True if the balance has been ensured.
 
----
+___
 
 ### getBalance
 
@@ -85,10 +85,10 @@ Get the balance for an address in a wallet.
 
 #### Parameters
 
-| Name             | Type              | Description                  |
-| :--------------- | :---------------- | :--------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `requestContext` | `IRequestContext` | The context for the request. |
-| `address`        | `string`          | The bech32 encoded address.  |
+| `address` | `string` | The bech32 encoded address. |
 
 #### Returns
 
@@ -96,7 +96,7 @@ Get the balance for an address in a wallet.
 
 The balance of the wallet address.
 
----
+___
 
 ### getStorageCosts
 
@@ -106,10 +106,10 @@ Get the storage costs for an address in a wallet.
 
 #### Parameters
 
-| Name             | Type              | Description                  |
-| :--------------- | :---------------- | :--------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `requestContext` | `IRequestContext` | The context for the request. |
-| `address`        | `string`          | The bech32 encoded address.  |
+| `address` | `string` | The bech32 encoded address. |
 
 #### Returns
 
@@ -117,7 +117,7 @@ Get the storage costs for an address in a wallet.
 
 The storage costs for the address.
 
----
+___
 
 ### start
 
@@ -135,7 +135,7 @@ Nothing.
 
 IService.start
 
----
+___
 
 ### stop
 
@@ -153,7 +153,7 @@ Nothing.
 
 IService.stop
 
----
+___
 
 ### transfer
 
@@ -163,11 +163,11 @@ Transfer funds to an address.
 
 #### Parameters
 
-| Name             | Type              | Description                                      |
-| :--------------- | :---------------- | :----------------------------------------------- |
-| `requestContext` | `IRequestContext` | The context for the request.                     |
-| `address`        | `string`          | The bech32 encoded address to send the funds to. |
-| `amount`         | `bigint`          | The amount to transfer.                          |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `requestContext` | `IRequestContext` | The context for the request. |
+| `address` | `string` | The bech32 encoded address to send the funds to. |
+| `amount` | `bigint` | The amount to transfer. |
 
 #### Returns
 

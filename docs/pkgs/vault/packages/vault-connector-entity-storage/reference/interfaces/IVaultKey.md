@@ -10,7 +10,7 @@ Interface describing a vault key.
 
 The id.
 
----
+___
 
 ### privateKey
 
@@ -18,7 +18,7 @@ The id.
 
 The private key in base64 format.
 
----
+___
 
 ### publicKey
 
@@ -26,10 +26,10 @@ The private key in base64 format.
 
 The public key in base64 format.
 
----
+___
 
 ### type
 
-• **type**: `"Ed25519"`
+• **type**: ``"Ed25519"``
 
 The type of the key e.g. Ed25519.

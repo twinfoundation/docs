@@ -12,8 +12,8 @@ Create a new instance of Url.
 
 #### Parameters
 
-| Name  | Type     | Description     |
-| :---- | :------- | :-------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `url` | `string` | The url string. |
 
 #### Returns
@@ -34,7 +34,7 @@ Get the parts of the url.
 
 The parts of the url.
 
----
+___
 
 ### toString
 
@@ -48,7 +48,7 @@ Convert the parts in to a full string.
 
 The formatted url.
 
----
+___
 
 ### fromParts
 
@@ -58,8 +58,8 @@ Construct a url from valid parts.
 
 #### Parameters
 
-| Name       | Type                                      | Description                       |
-| :--------- | :---------------------------------------- | :-------------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `urlParts` | [`IUrlParts`](../interfaces/IUrlParts.md) | The url to create the parts from. |
 
 #### Returns
@@ -68,7 +68,7 @@ Construct a url from valid parts.
 
 The formatted url.
 
----
+___
 
 ### fromURLToParts
 
@@ -78,8 +78,8 @@ Construct a url from a URL.
 
 #### Parameters
 
-| Name  | Type  | Description                |
-| :---- | :---- | :------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `url` | `URL` | The url to construct from. |
 
 #### Returns
@@ -88,7 +88,7 @@ Construct a url from a URL.
 
 The formatted url.
 
----
+___
 
 ### guard
 
@@ -98,11 +98,11 @@ Parse a string into the url parts.
 
 #### Parameters
 
-| Name       | Type      | Description               |
-| :--------- | :-------- | :------------------------ |
-| `source`   | `string`  | The source of the error.  |
-| `property` | `string`  | The name of the property. |
-| `value`    | `unknown` | The url to parse.         |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `source` | `string` | The source of the error. |
+| `property` | `string` | The name of the property. |
+| `value` | `unknown` | The url to parse. |
 
 #### Returns
 
@@ -112,7 +112,7 @@ asserts value is string
 
 GuardError If the value does not match the assertion.
 
----
+___
 
 ### tryParseExact
 
@@ -122,8 +122,8 @@ Try and parse a string into the url parts.
 
 #### Parameters
 
-| Name  | Type      | Description       |
-| :---- | :-------- | :---------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `url` | `unknown` | The url to parse. |
 
 #### Returns
@@ -132,7 +132,7 @@ Try and parse a string into the url parts.
 
 The formatted url or undefined if the value is not a url.
 
----
+___
 
 ### validate
 
@@ -142,11 +142,11 @@ Validate a string as a Url.
 
 #### Parameters
 
-| Name       | Type                                                          | Description                                        |
-| :--------- | :------------------------------------------------------------ | :------------------------------------------------- |
-| `property` | `string`                                                      | Throw an exception if the url property is invalid. |
-| `value`    | `unknown`                                                     | The url to parse.                                  |
-| `failures` | [`IValidationFailure`](../interfaces/IValidationFailure.md)[] | The list of failures to add to.                    |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `property` | `string` | Throw an exception if the url property is invalid. |
+| `value` | `unknown` | The url to parse. |
+| `failures` | [`IValidationFailure`](../interfaces/IValidationFailure.md)[] | The list of failures to add to. |
 
 #### Returns
 

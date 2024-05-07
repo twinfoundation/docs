@@ -14,7 +14,7 @@ Additional properties for the validation failure.
 
 ▪ [id: `string`]: `unknown`
 
----
+___
 
 ### property
 
@@ -22,7 +22,7 @@ Additional properties for the validation failure.
 
 The property that failed validation.
 
----
+___
 
 ### reason
 

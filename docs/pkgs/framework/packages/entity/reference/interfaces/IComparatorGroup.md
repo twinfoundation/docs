@@ -4,9 +4,9 @@ Interface defining condition group operator.
 
 ## Type parameters
 
-| Name | Type      |
-| :--- | :-------- |
-| `T`  | `unknown` |
+| Name | Type |
+| :------ | :------ |
+| `T` | `unknown` |
 
 ## Properties
 
@@ -16,7 +16,7 @@ Interface defining condition group operator.
 
 The conditions to join in a group.
 
----
+___
 
 ### logicalOperator
 

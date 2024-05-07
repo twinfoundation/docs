@@ -12,11 +12,11 @@ Additional response headers.
 
 #### Type declaration
 
-| Name       | Type     | Description                                  |
-| :--------- | :------- | :------------------------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `location` | `string` | The location where the resource was created. |
 
----
+___
 
 ### statusCode
 

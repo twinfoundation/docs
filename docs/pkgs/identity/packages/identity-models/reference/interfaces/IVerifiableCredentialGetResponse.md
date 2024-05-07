@@ -5,8 +5,8 @@ The response to get verifiable credential applications request.
 ## Type parameters
 
 | Name |
-| :--- |
-| `T`  |
+| :------ |
+| `T` |
 
 ## Properties
 

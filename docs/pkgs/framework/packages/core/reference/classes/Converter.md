@@ -22,8 +22,8 @@ Convert a base64 string to bytes.
 
 #### Parameters
 
-| Name     | Type     | Description        |
-| :------- | :------- | :----------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `base64` | `string` | The base64 string. |
 
 #### Returns
@@ -32,7 +32,7 @@ Convert a base64 string to bytes.
 
 The bytes.
 
----
+___
 
 ### base64UrlToBytes
 
@@ -42,8 +42,8 @@ Convert a base64 url string to bytes.
 
 #### Parameters
 
-| Name        | Type     | Description            |
-| :---------- | :------- | :--------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `base64Url` | `string` | The base64 url string. |
 
 #### Returns
@@ -52,7 +52,7 @@ Convert a base64 url string to bytes.
 
 The bytes.
 
----
+___
 
 ### binaryToBytes
 
@@ -62,8 +62,8 @@ Convert a binary string to bytes.
 
 #### Parameters
 
-| Name     | Type     | Description        |
-| :------- | :------- | :----------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `binary` | `string` | The binary string. |
 
 #### Returns
@@ -72,7 +72,7 @@ Convert a binary string to bytes.
 
 The bytes.
 
----
+___
 
 ### bytesToBase64
 
@@ -82,8 +82,8 @@ Convert bytes to base64 string.
 
 #### Parameters
 
-| Name    | Type         | Description           |
-| :------ | :----------- | :-------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `bytes` | `Uint8Array` | The bytes to convert. |
 
 #### Returns
@@ -92,7 +92,7 @@ Convert bytes to base64 string.
 
 A base64 string of the bytes.
 
----
+___
 
 ### bytesToBase64Url
 
@@ -102,8 +102,8 @@ Convert bytes to base64 url string.
 
 #### Parameters
 
-| Name    | Type         | Description           |
-| :------ | :----------- | :-------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `bytes` | `Uint8Array` | The bytes to convert. |
 
 #### Returns
@@ -112,7 +112,7 @@ Convert bytes to base64 url string.
 
 A base64 url string of the bytes.
 
----
+___
 
 ### bytesToBinary
 
@@ -122,8 +122,8 @@ Convert bytes to binary string.
 
 #### Parameters
 
-| Name    | Type         | Description           |
-| :------ | :----------- | :-------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `bytes` | `Uint8Array` | The bytes to convert. |
 
 #### Returns
@@ -132,7 +132,7 @@ Convert bytes to binary string.
 
 A binary string of the bytes.
 
----
+___
 
 ### bytesToHex
 
@@ -142,13 +142,13 @@ Encode a raw array to hex string.
 
 #### Parameters
 
-| Name            | Type                    | Default value | Description                                |
-| :-------------- | :---------------------- | :------------ | :----------------------------------------- |
-| `array`         | `ArrayLike`\<`number`\> | `undefined`   | The bytes to encode.                       |
-| `includePrefix` | `boolean`               | `false`       | Include the 0x prefix on the returned hex. |
-| `startIndex?`   | `number`                | `undefined`   | The index to start in the bytes.           |
-| `length?`       | `number`                | `undefined`   | The length of bytes to read.               |
-| `reverse?`      | `boolean`               | `undefined`   | Reverse the combine direction.             |
+| Name | Type | Default value | Description |
+| :------ | :------ | :------ | :------ |
+| `array` | `ArrayLike`\<`number`\> | `undefined` | The bytes to encode. |
+| `includePrefix` | `boolean` | `false` | Include the 0x prefix on the returned hex. |
+| `startIndex?` | `number` | `undefined` | The index to start in the bytes. |
+| `length?` | `number` | `undefined` | The length of bytes to read. |
+| `reverse?` | `boolean` | `undefined` | Reverse the combine direction. |
 
 #### Returns
 
@@ -156,7 +156,7 @@ Encode a raw array to hex string.
 
 The array formatted as hex.
 
----
+___
 
 ### bytesToUtf8
 
@@ -166,11 +166,11 @@ Encode a raw array to UTF8 string.
 
 #### Parameters
 
-| Name          | Type                    | Description                      |
-| :------------ | :---------------------- | :------------------------------- |
-| `array`       | `ArrayLike`\<`number`\> | The bytes to encode.             |
-| `startIndex?` | `number`                | The index to start in the bytes. |
-| `length?`     | `number`                | The length of bytes to read.     |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `array` | `ArrayLike`\<`number`\> | The bytes to encode. |
+| `startIndex?` | `number` | The index to start in the bytes. |
+| `length?` | `number` | The length of bytes to read. |
 
 #### Returns
 
@@ -178,7 +178,7 @@ Encode a raw array to UTF8 string.
 
 The array formatted as UTF8.
 
----
+___
 
 ### hexToBytes
 
@@ -188,9 +188,9 @@ Decode a hex string to raw array.
 
 #### Parameters
 
-| Name       | Type      | Description                      |
-| :--------- | :-------- | :------------------------------- |
-| `hex`      | `string`  | The hex to decode.               |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `hex` | `string` | The hex to decode. |
 | `reverse?` | `boolean` | Store the characters in reverse. |
 
 #### Returns
@@ -199,7 +199,7 @@ Decode a hex string to raw array.
 
 The array.
 
----
+___
 
 ### hexToUtf8
 
@@ -209,8 +209,8 @@ Convert the hex text to text.
 
 #### Parameters
 
-| Name  | Type     | Description         |
-| :---- | :------- | :------------------ |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `hex` | `string` | The hex to convert. |
 
 #### Returns
@@ -219,7 +219,7 @@ Convert the hex text to text.
 
 The UTF8 version of the bytes.
 
----
+___
 
 ### utf8ToBytes
 
@@ -229,8 +229,8 @@ Convert a UTF8 string to raw array.
 
 #### Parameters
 
-| Name   | Type     | Description         |
-| :----- | :------- | :------------------ |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `utf8` | `string` | The text to decode. |
 
 #### Returns
@@ -239,7 +239,7 @@ Convert a UTF8 string to raw array.
 
 The array.
 
----
+___
 
 ### utf8ToHex
 
@@ -249,10 +249,10 @@ Convert the UTF8 to hex.
 
 #### Parameters
 
-| Name            | Type      | Default value | Description                                |
-| :-------------- | :-------- | :------------ | :----------------------------------------- |
-| `utf8`          | `string`  | `undefined`   | The text to convert.                       |
-| `includePrefix` | `boolean` | `false`       | Include the 0x prefix on the returned hex. |
+| Name | Type | Default value | Description |
+| :------ | :------ | :------ | :------ |
+| `utf8` | `string` | `undefined` | The text to convert. |
+| `includePrefix` | `boolean` | `false` | Include the 0x prefix on the returned hex. |
 
 #### Returns
 
