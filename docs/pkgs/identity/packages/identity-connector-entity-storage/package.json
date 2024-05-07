@@ -1,0 +1,73 @@
+{
+	"name": "@gtsc/identity-connector-entity-storage",
+	"version": "0.0.3-next.4",
+	"description": "Identity connector implementation using entity storage",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/gtscio/identity.git",
+		"directory": "packages/identity-connector-entity-storage"
+	},
+	"author": "martyn.janes@iota.org",
+	"license": "Apache-2.0",
+	"type": "module",
+	"engines": {
+		"node": ">=20.0.0"
+	},
+	"scripts": {
+		"clean": "rimraf dist coverage docs/reference",
+		"build": "tspc",
+		"test": "vitest --run --config ./vitest.config.ts",
+		"coverage": "vitest --run --coverage --config ./vitest.config.ts",
+		"bundle:esm": "rollup --config rollup.config.mjs --environment MODULE:esm",
+		"bundle:cjs": "rollup --config rollup.config.mjs --environment MODULE:cjs",
+		"bundle": "npm run bundle:esm && npm run bundle:cjs",
+		"docs:clean": "rimraf docs/reference",
+		"docs:generate": "typedoc",
+		"docs:finalise": "rimraf docs/reference/README.md",
+		"docs": "npm run docs:clean && npm run docs:generate && npm run docs:finalise",
+		"dist": "npm run clean && npm run build && npm run test && npm run bundle && npm run docs"
+	},
+	"dependencies": {
+		"@gtsc/core": "next",
+		"@gtsc/crypto": "next",
+		"@gtsc/entity-storage-connector-memory": "next",
+		"@gtsc/identity-models": "0.0.3-next.4",
+		"@gtsc/nameof": "^0.0.4",
+		"@gtsc/vault-models": "next",
+		"@gtsc/vault-connector-entity-storage": "next",
+		"@gtsc/web": "next"
+	},
+	"devDependencies": {
+		"@gtsc/nameof-transformer": "^0.0.4",
+		"@vitest/coverage-v8": "^1.5.3",
+		"copyfiles": "^2.4.1",
+		"dotenv": "^16.4.5",
+		"rimraf": "^5.0.5",
+		"rollup": "^4.17.2",
+		"rollup-plugin-copy": "^3.5.0",
+		"rollup-plugin-typescript2": "^0.36.0",
+		"ts-patch": "^3.1.2",
+		"typedoc": "^0.25.13",
+		"typedoc-plugin-markdown": "^3.17.1",
+		"typescript": "^5.4.5",
+		"vitest": "^1.5.3"
+	},
+	"main": "./dist/cjs/index.cjs",
+	"module": "./dist/esm/index.mjs",
+	"types": "./dist/types/index.d.ts",
+	"exports": {
+		".": {
+			"require": "./dist/cjs/index.cjs",
+			"import": "./dist/esm/index.mjs",
+			"types": "./dist/types/index.d.ts"
+		},
+		"./locales": "./locales"
+	},
+	"files": [
+		"dist/cjs",
+		"dist/esm",
+		"dist/types",
+		"locales",
+		"docs"
+	]
+}
