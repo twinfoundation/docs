@@ -48,9 +48,10 @@ jobs:
           jq -r '.packages[].name' import-packages/tools/docs/packages.json | while read pkg; do
             rm -rf docs/packages/$pkg
             cp -r import-packages/tools/packages/$pkg/docs docs/packages/$pkg
+            cp -r import-packages/tools/packages/$pkg/package.json docs/packages/tools/$pkg/package.json
           done
 
-          cp import-packages/tools/docs/packages.json docs/packages/tools.json
+          cp import-packages/tools/package.json docs/packages/tools/package.json
           rm -r import-packages/tools
 
       ########### framework
@@ -67,9 +68,10 @@ jobs:
           jq -r '.packages[].name' import-packages/framework/docs/packages.json | while read pkg; do
             rm -rf docs/packages/$pkg
             cp -r import-packages/framework/packages/$pkg/docs docs/packages/$pkg
+            cp -r import-packages/framework/packages/$pkg/package.json docs/packages/framework/$pkg/package.json
           done
 
-          cp import-packages/framework/docs/packages.json docs/packages/framework.json
+          cp import-packages/framework/package.json docs/packages/framework/package.json
           rm -r import-packages/framework
 
       ########### standards
@@ -86,9 +88,10 @@ jobs:
           jq -r '.packages[].name' import-packages/standards/docs/packages.json | while read pkg; do
             rm -rf docs/packages/$pkg
             cp -r import-packages/standards/packages/$pkg/docs docs/packages/$pkg
+            cp -r import-packages/standards/packages/$pkg/package.json docs/packages/standards/$pkg/package.json
           done
 
-          cp import-packages/standards/docs/packages.json docs/packages/standards.json
+          cp import-packages/standards/package.json docs/packages/standards/package.json
           rm -r import-packages/standards
 
       ########### api
@@ -105,9 +108,10 @@ jobs:
           jq -r '.packages[].name' import-packages/api/docs/packages.json | while read pkg; do
             rm -rf docs/packages/$pkg
             cp -r import-packages/api/packages/$pkg/docs docs/packages/$pkg
+            cp -r import-packages/api/packages/$pkg/package.json docs/packages/api/$pkg/package.json
           done
 
-          cp import-packages/api/docs/packages.json docs/packages/api.json
+          cp import-packages/tools/package.json docs/packages/api/package.json
           rm -r import-packages/api
 
       ########### entity-storage
@@ -124,9 +128,10 @@ jobs:
           jq -r '.packages[].name' import-packages/entity-storage/docs/packages.json | while read pkg; do
             rm -rf docs/packages/$pkg
             cp -r import-packages/entity-storage/packages/$pkg/docs docs/packages/$pkg
+            cp -r import-packages/entity-storage/packages/$pkg/package.json docs/packages/entity-storage/$pkg/package.json
           done
 
-          cp import-packages/entity-storage/docs/packages.json docs/packages/entity-storage.json
+          cp import-packages/entity-storage/package.json docs/packages/entity-storage/package.json
           rm -r import-packages/entity-storage
 
       ########### logging
@@ -143,9 +148,10 @@ jobs:
           jq -r '.packages[].name' import-packages/logging/docs/packages.json | while read pkg; do
             rm -rf docs/packages/$pkg
             cp -r import-packages/logging/packages/$pkg/docs docs/packages/$pkg
+            cp -r import-packages/logging/packages/$pkg/package.json docs/packages/logging/$pkg/package.json
           done
 
-          cp import-packages/logging/docs/packages.json docs/packages/logging.json
+          cp import-packages/logging/package.json docs/packages/logging/package.json
           rm -r import-packages/logging
 
       ########### vault
@@ -162,9 +168,10 @@ jobs:
           jq -r '.packages[].name' import-packages/vault/docs/packages.json | while read pkg; do
             rm -rf docs/packages/$pkg
             cp -r import-packages/vault/packages/$pkg/docs docs/packages/$pkg
+            cp -r import-packages/vault/packages/$pkg/package.json docs/packages/vault/$pkg/package.json
           done
 
-          cp import-packages/vault/docs/packages.json docs/packages/vault.json
+          cp import-packages/vault/package.json docs/packages/vault/package.json
           rm -r import-packages/vault
 
       ########### wallet
@@ -181,9 +188,10 @@ jobs:
           jq -r '.packages[].name' import-packages/wallet/docs/packages.json | while read pkg; do
             rm -rf docs/packages/$pkg
             cp -r import-packages/wallet/packages/$pkg/docs docs/packages/$pkg
+            cp -r import-packages/wallet/packages/$pkg/package.json docs/packages/wallet/$pkg/package.json
           done
 
-          cp import-packages/wallet/docs/packages.json docs/packages/wallet.json
+          cp import-packages/wallet/package.json docs/packages/wallet/package.json
           rm -r import-packages/wallet
 
       ########### identity
@@ -200,9 +208,10 @@ jobs:
           jq -r '.packages[].name' import-packages/identity/docs/packages.json | while read pkg; do
             rm -rf docs/packages/$pkg
             cp -r import-packages/identity/packages/$pkg/docs docs/packages/$pkg
+            cp -r import-packages/identity/packages/$pkg/package.json docs/packages/identity/$pkg/package.json
           done
 
-          cp import-packages/identity/docs/packages.json docs/packages/identity.json
+          cp import-packages/identity/package.json docs/packages/identity/package.json
           rm -r import-packages/identity
 
       ########### common
