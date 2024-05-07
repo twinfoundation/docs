@@ -23,7 +23,11 @@ function buildGroupContent(packageGroup) {
 		__dirname,
 		"..",
 		"docs",
+<<<<<<< HEAD
 		"ref",
+=======
+		"packages",
+>>>>>>> next
 		packageGroup,
 		"package.json"
 	);
@@ -53,9 +57,14 @@ function buildPackageContent(packageGroup, pkg) {
 		__dirname,
 		"..",
 		"docs",
+<<<<<<< HEAD
 		"ref",
 		packageGroup,
 		"packages",
+=======
+		"packages",
+		packageGroup,
+>>>>>>> next
 		pkg,
 		"package.json"
 	);
@@ -64,7 +73,11 @@ function buildPackageContent(packageGroup, pkg) {
 		const packageContent = fs.readFileSync(packageFilename, "utf-8");
 		const packageJson = JSON.parse(packageContent);
 
+<<<<<<< HEAD
 		content += `- [${packageJson.name}](ref/${packageGroup}/packages/${packageJson.name.replace("@gtsc/", "")}/overview) - ${packageJson.description}\n`;
+=======
+		content += `- [${packageJson.name}](packages/${packageGroup}/${packageJson.name.replace("@gtsc/", "")}/overview) - ${packageJson.description}\n`;
+>>>>>>> next
 	} else {
 		console.error(`        ! File not found: ${packageFilename}`);
 	}
@@ -89,6 +102,7 @@ module.exports = async function packageIndexPlugin() {
 		async loadContent() {
 			console.log("Building Reference Overview");
 
+<<<<<<< HEAD
 			const repoContent = [];
 
 			try {
@@ -104,6 +118,23 @@ module.exports = async function packageIndexPlugin() {
 				fs.writeFileSync(
 					path.join(__dirname, "..", "docs", "reference.md"),
 					buildContent(repoContent)
+=======
+			const groupContent = [];
+
+			try {
+				const packageGroupsFilename = path.join(__dirname, "..", "docs", "package-groups.json");
+				const packageGroupsContent = fs.readFileSync(packageGroupsFilename, "utf-8");
+				const packageGroupJson = JSON.parse(packageGroupsContent);
+
+				for (const packageGroup of packageGroupJson) {
+					groupContent.push(buildGroupContent(packageGroup));
+				}
+
+				console.log("Writing Package Overview");
+				fs.writeFileSync(
+					path.join(__dirname, "..", "docs", "packages.md"),
+					buildContent(groupContent)
+>>>>>>> next
 				);
 			} catch (err) {
 				console.error(err);
