@@ -22,58 +22,72 @@ const sidebars: SidebarsConfig = {
 
 function buildPackages(): any {
 	try {
-		const packageGroupsFilename = path.join(__dirname, "docs", "packages.json");
+		const packageGroupsFilename = path.join(__dirname, "docs", "package-groups.json");
 		const packageGroupsContent = fs.readFileSync(packageGroupsFilename, "utf-8");
 		const packageGroups = JSON.parse(packageGroupsContent);
 
 		const groups = [];
 
 		for (const packageGroup of packageGroups) {
-			const packageFilename = path.join(__dirname, "docs", "packages", `${packageGroup}.json`);
+			const packageFilename = path.join(
+				__dirname,
+				"docs",
+				"packages",
+				packageGroup,
+				"package.json"
+			);
 			const packageContent = fs.readFileSync(packageFilename, "utf-8");
-			groups.push(JSON.parse(packageContent));
+			const packageContentJson = JSON.parse(packageContent);
+
+			const items = packageContentJson.workspaces.map((p) =>
+				generatePackageItems(packageGroup, p.replace("packages/", ""))
+			);
+
+			if (items.length > 0) {
+				groups.push({
+					type: "category",
+					label: packageContentJson.description,
+					items
+				});
+			}
 		}
 
-		return groups.map((pkg) => ({
-			type: "category",
-			label: pkg.label,
-			items: pkg.packages.map((p) => generatePackageItems(p.name))
-		}));
+		return groups;
 	} catch {}
 
 	return [];
 }
 
-function generatePackageItems(packageName: string): any {
+function generatePackageItems(packageGroup: string, packageName: string): any {
 	const referenceItems = [
-		dirExists(packageName, "reference/enums", "Enums"),
-		dirExists(packageName, "reference/classes", "Classes"),
-		dirExists(packageName, "reference/interfaces", "Interfaces")
+		dirExists(packageGroup, packageName, "reference/enums", "Enums"),
+		dirExists(packageGroup, packageName, "reference/classes", "Classes"),
+		dirExists(packageGroup, packageName, "reference/interfaces", "Interfaces")
 	].filter(Boolean);
 
 	return {
 		type: "category",
 		label: packageName,
 		items: [
-			fileExists(packageName, "overview", "Overview"),
-			fileExists(packageName, "examples", "Examples"),
-			fileExists(packageName, "configuration", "Configuration"),
+			fileExists(packageGroup, packageName, "overview", "Overview"),
+			fileExists(packageGroup, packageName, "examples", "Examples"),
+			fileExists(packageGroup, packageName, "configuration", "Configuration"),
 			referenceItems.length > 0 && {
 				type: "category",
 				label: "Reference",
 				link: {
 					type: "doc",
-					id: `packages/${packageName.toLowerCase()}/reference/modules`
+					id: `packages/${packageGroup}/${packageName.toLowerCase()}/reference/modules`
 				},
 				items: referenceItems
 			},
-			fileExists(packageName, "changelog", "Changelog")
+			fileExists(packageGroup, packageName, "changelog", "Changelog")
 		].filter(Boolean)
 	};
 }
 
-function fileExists(packageName: string, id: string, label: string): any {
-	const dirName = `packages/${packageName.toLowerCase()}/${id}`;
+function fileExists(packageGroup: string, packageName: string, id: string, label: string): any {
+	const dirName = `packages/${packageGroup}/${packageName.toLowerCase()}/${id}`;
 	const file = path.join(__dirname, "docs", dirName);
 
 	try {
@@ -89,8 +103,8 @@ function fileExists(packageName: string, id: string, label: string): any {
 	} catch {}
 }
 
-function dirExists(packageName: string, id: string, label: string): any {
-	const dirName = `packages/${packageName.toLowerCase()}/${id}`;
+function dirExists(packageGroup: string, packageName: string, id: string, label: string): any {
+	const dirName = `packages/${packageGroup}, ${packageName.toLowerCase()}/${id}`;
 	const dir = path.join(__dirname, "docs", dirName);
 
 	try {
