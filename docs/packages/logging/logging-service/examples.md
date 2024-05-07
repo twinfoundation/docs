@@ -1,1 +1,0 @@
-# @gtsc/logging-service - Examples
