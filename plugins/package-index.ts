@@ -23,7 +23,7 @@ function buildGroupContent(packageGroup) {
 		__dirname,
 		"..",
 		"docs",
-		"ref",
+		"pkgs",
 		packageGroup,
 		"package.json"
 	);
@@ -56,7 +56,7 @@ function buildPackageContent(packageGroup, pkg) {
 		__dirname,
 		"..",
 		"docs",
-		"ref",
+		"pkgs",
 		packageGroup,
 		"packages",
 		pkg,
@@ -67,7 +67,7 @@ function buildPackageContent(packageGroup, pkg) {
 		const packageContent = fs.readFileSync(packageFilename, "utf-8");
 		const packageJson = JSON.parse(packageContent);
 
-		content += `- [${packageJson.name}](ref/${packageGroup}/packages/${packageJson.name.replace("@gtsc/", "")}/overview) - ${packageJson.description}\n`;
+		content += `- [${packageJson.name}](pkgs/${packageGroup}/packages/${packageJson.name.replace("@gtsc/", "")}/overview) - ${packageJson.description}\n`;
 	} else {
 		console.error(`        ! File not found: ${packageFilename}`);
 	}
@@ -88,9 +88,9 @@ function fileExists(filename: string): boolean {
 
 module.exports = async function packageIndexPlugin() {
 	return {
-		name: "package-index",
+		name: "pkgs",
 		async loadContent() {
-			console.log("Building Reference Overview");
+			console.log("Building Packages Overview");
 
 			const repoContent = [];
 
@@ -103,11 +103,8 @@ module.exports = async function packageIndexPlugin() {
 					repoContent.push(buildGroupContent(repo));
 				}
 
-				console.log("Writing Reference Overview");
-				fs.writeFileSync(
-					path.join(__dirname, "..", "docs", "reference.md"),
-					buildContent(repoContent)
-				);
+				console.log("Writing Packages Overview");
+				fs.writeFileSync(path.join(__dirname, "..", "docs", "pkgs.md"), buildContent(repoContent));
 			} catch (err) {
 				console.error(err);
 			}

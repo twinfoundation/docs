@@ -80,7 +80,7 @@ const config: Config = {
 							},
 							{
 								label: "Packages",
-								to: "/docs/packages"
+								to: "/docs/pkgs"
 							}
 						]
 					},

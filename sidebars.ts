@@ -17,10 +17,10 @@ const sidebars: SidebarsConfig = {
 	introductionSidebar: ["intro"],
 
 	// But you can create a sidebar manually
-	packagesSidebar: ["reference", ...buildReference()]
+	packagesSidebar: ["pkgs", ...buildPkgs()]
 };
 
-function buildReference(): any {
+function buildPkgs(): any {
 	try {
 		const reposFilename = path.join(__dirname, "docs", "repos.json");
 		const reposContent = fs.readFileSync(reposFilename, "utf-8");
@@ -29,7 +29,7 @@ function buildReference(): any {
 		const groups = [];
 
 		for (const repo of reposJson) {
-			const packageFilename = path.join(__dirname, "docs", "ref", repo, "package.json");
+			const packageFilename = path.join(__dirname, "docs", "pkgs", repo, "package.json");
 			const packageContent = fs.readFileSync(packageFilename, "utf-8");
 			const packageContentJson = JSON.parse(packageContent);
 
@@ -71,7 +71,7 @@ function generatePackageItems(packageGroup: string, packageName: string): any {
 				label: "Reference",
 				link: {
 					type: "doc",
-					id: `ref/${packageGroup}/packages/${packageName.toLowerCase()}/reference/modules`
+					id: `pkgs/${packageGroup}/packages/${packageName.toLowerCase()}/reference/modules`
 				},
 				items: referenceItems
 			},
@@ -81,7 +81,7 @@ function generatePackageItems(packageGroup: string, packageName: string): any {
 }
 
 function fileExists(packageGroup: string, packageName: string, id: string, label: string): any {
-	const dirName = `ref/${packageGroup}/packages/${packageName.toLowerCase()}/${id}`;
+	const dirName = `pkgs/${packageGroup}/packages/${packageName.toLowerCase()}/${id}`;
 	const file = path.join(__dirname, "docs", dirName);
 
 	try {
@@ -98,7 +98,7 @@ function fileExists(packageGroup: string, packageName: string, id: string, label
 }
 
 function dirExists(packageGroup: string, packageName: string, id: string, label: string): any {
-	const dirName = `ref/${packageGroup}/packages/${packageName.toLowerCase()}/${id}`;
+	const dirName = `pkgs/${packageGroup}/packages/${packageName.toLowerCase()}/${id}`;
 	const dir = path.join(__dirname, "docs", dirName);
 
 	try {
