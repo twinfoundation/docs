@@ -34,6 +34,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Clean up
+        run: rm -rf docs/packages/
+
       ########### tools
       - name: Checkout tools
         uses: actions/checkout@v4
@@ -45,13 +48,13 @@ jobs:
 
       - name: Copy tools to Docs
         run: |
-          jq -r '.packages[].name' import-packages/tools/docs/packages.json | while read pkg; do
-            rm -rf docs/packages/$pkg
-            cp -r import-packages/tools/packages/$pkg/docs docs/packages/$pkg
-            cp -r import-packages/tools/packages/$pkg/package.json docs/packages/tools/$pkg/package.json
+          jq -r '.workspaces[]' import-packages/tools/docs/package.json | while read pkg; do
+            rm -rf docs/ref/tools/$pkg
+            cp -r import-packages/tools/$pkg/docs docs/ref/tools/$pkg
+            cp -r import-packages/tools/$pkg/package.json docs/ref/tools/$pkg/package.json
           done
 
-          cp import-packages/tools/package.json docs/packages/tools/package.json
+          cp import-packages/tools/package.json docs/ref/tools/package.json
           rm -r import-packages/tools
 
       ########### framework
@@ -65,13 +68,13 @@ jobs:
 
       - name: Copy framework to Docs
         run: |
-          jq -r '.packages[].name' import-packages/framework/docs/packages.json | while read pkg; do
-            rm -rf docs/packages/$pkg
-            cp -r import-packages/framework/packages/$pkg/docs docs/packages/$pkg
-            cp -r import-packages/framework/packages/$pkg/package.json docs/packages/framework/$pkg/package.json
+          jq -r '.workspaces[]' import-packages/framework/docs/package.json | while read pkg; do
+            rm -rf docs/ref/framework/$pkg
+            cp -r import-packages/framework/$pkg/docs docs/ref/framework/$pkg
+            cp -r import-packages/framework/$pkg/package.json docs/ref/framework/$pkg/package.json
           done
 
-          cp import-packages/framework/package.json docs/packages/framework/package.json
+          cp import-packages/framework/package.json docs/ref/framework/package.json
           rm -r import-packages/framework
 
       ########### standards
@@ -85,13 +88,13 @@ jobs:
 
       - name: Copy standards to Docs
         run: |
-          jq -r '.packages[].name' import-packages/standards/docs/packages.json | while read pkg; do
-            rm -rf docs/packages/$pkg
-            cp -r import-packages/standards/packages/$pkg/docs docs/packages/$pkg
-            cp -r import-packages/standards/packages/$pkg/package.json docs/packages/standards/$pkg/package.json
+          jq -r '.workspaces[]' import-packages/standards/docs/package.json | while read pkg; do
+            rm -rf docs/ref/standards/$pkg
+            cp -r import-packages/standards/$pkg/docs docs/ref/standards/$pkg
+            cp -r import-packages/standards/$pkg/package.json docs/ref/standards/$pkg/package.json
           done
 
-          cp import-packages/standards/package.json docs/packages/standards/package.json
+          cp import-packages/standards/package.json docs/ref/standards/package.json
           rm -r import-packages/standards
 
       ########### api
@@ -105,13 +108,13 @@ jobs:
 
       - name: Copy api to Docs
         run: |
-          jq -r '.packages[].name' import-packages/api/docs/packages.json | while read pkg; do
-            rm -rf docs/packages/$pkg
-            cp -r import-packages/api/packages/$pkg/docs docs/packages/$pkg
-            cp -r import-packages/api/packages/$pkg/package.json docs/packages/api/$pkg/package.json
+          jq -r '.workspaces[]' import-packages/api/docs/package.json | while read pkg; do
+            rm -rf docs/ref/api/$pkg
+            cp -r import-packages/api/$pkg/docs docs/ref/api/$pkg
+            cp -r import-packages/api/$pkg/package.json docs/ref/api/$pkg/package.json
           done
 
-          cp import-packages/tools/package.json docs/packages/api/package.json
+          cp import-packages/api/package.json docs/ref/api/package.json
           rm -r import-packages/api
 
       ########### entity-storage
@@ -125,13 +128,13 @@ jobs:
 
       - name: Copy entity-storage to Docs
         run: |
-          jq -r '.packages[].name' import-packages/entity-storage/docs/packages.json | while read pkg; do
-            rm -rf docs/packages/$pkg
-            cp -r import-packages/entity-storage/packages/$pkg/docs docs/packages/$pkg
-            cp -r import-packages/entity-storage/packages/$pkg/package.json docs/packages/entity-storage/$pkg/package.json
+          jq -r '.workspaces[]' import-packages/entity-storage/docs/package.json | while read pkg; do
+            rm -rf docs/ref/entity-storage/$pkg
+            cp -r import-packages/entity-storage/$pkg/docs docs/ref/entity-storage/$pkg
+            cp -r import-packages/entity-storage/$pkg/package.json docs/ref/entity-storage/$pkg/package.json
           done
 
-          cp import-packages/entity-storage/package.json docs/packages/entity-storage/package.json
+          cp import-packages/entity-storage/package.json docs/ref/entity-storage/package.json
           rm -r import-packages/entity-storage
 
       ########### logging
@@ -145,13 +148,13 @@ jobs:
 
       - name: Copy logging to Docs
         run: |
-          jq -r '.packages[].name' import-packages/logging/docs/packages.json | while read pkg; do
-            rm -rf docs/packages/$pkg
-            cp -r import-packages/logging/packages/$pkg/docs docs/packages/$pkg
-            cp -r import-packages/logging/packages/$pkg/package.json docs/packages/logging/$pkg/package.json
+          jq -r '.workspaces[]' import-packages/logging/docs/package.json | while read pkg; do
+            rm -rf docs/ref/logging/$pkg
+            cp -r import-packages/logging/$pkg/docs docs/ref/logging/$pkg
+            cp -r import-packages/logging/$pkg/package.json docs/ref/logging/$pkg/package.json
           done
 
-          cp import-packages/logging/package.json docs/packages/logging/package.json
+          cp import-packages/logging/package.json docs/ref/logging/package.json
           rm -r import-packages/logging
 
       ########### vault
@@ -165,13 +168,13 @@ jobs:
 
       - name: Copy vault to Docs
         run: |
-          jq -r '.packages[].name' import-packages/vault/docs/packages.json | while read pkg; do
-            rm -rf docs/packages/$pkg
-            cp -r import-packages/vault/packages/$pkg/docs docs/packages/$pkg
-            cp -r import-packages/vault/packages/$pkg/package.json docs/packages/vault/$pkg/package.json
+          jq -r '.workspaces[]' import-packages/vault/docs/package.json | while read pkg; do
+            rm -rf docs/ref/vault/$pkg
+            cp -r import-packages/vault/$pkg/docs docs/ref/vault/$pkg
+            cp -r import-packages/vault/$pkg/package.json docs/ref/vault/$pkg/package.json
           done
 
-          cp import-packages/vault/package.json docs/packages/vault/package.json
+          cp import-packages/vault/package.json docs/ref/vault/package.json
           rm -r import-packages/vault
 
       ########### wallet
@@ -185,13 +188,13 @@ jobs:
 
       - name: Copy wallet to Docs
         run: |
-          jq -r '.packages[].name' import-packages/wallet/docs/packages.json | while read pkg; do
-            rm -rf docs/packages/$pkg
-            cp -r import-packages/wallet/packages/$pkg/docs docs/packages/$pkg
-            cp -r import-packages/wallet/packages/$pkg/package.json docs/packages/wallet/$pkg/package.json
+          jq -r '.workspaces[]' import-packages/wallet/docs/package.json | while read pkg; do
+            rm -rf docs/ref/wallet/$pkg
+            cp -r import-packages/wallet/$pkg/docs docs/ref/wallet/$pkg
+            cp -r import-packages/wallet/$pkg/package.json docs/ref/wallet/$pkg/package.json
           done
 
-          cp import-packages/wallet/package.json docs/packages/wallet/package.json
+          cp import-packages/wallet/package.json docs/ref/wallet/package.json
           rm -r import-packages/wallet
 
       ########### identity
@@ -205,13 +208,13 @@ jobs:
 
       - name: Copy identity to Docs
         run: |
-          jq -r '.packages[].name' import-packages/identity/docs/packages.json | while read pkg; do
-            rm -rf docs/packages/$pkg
-            cp -r import-packages/identity/packages/$pkg/docs docs/packages/$pkg
-            cp -r import-packages/identity/packages/$pkg/package.json docs/packages/identity/$pkg/package.json
+          jq -r '.workspaces[]' import-packages/identity/docs/package.json | while read pkg; do
+            rm -rf docs/ref/identity/$pkg
+            cp -r import-packages/identity/$pkg/docs docs/ref/identity/$pkg
+            cp -r import-packages/identity/$pkg/package.json docs/ref/identity/$pkg/package.json
           done
 
-          cp import-packages/identity/package.json docs/packages/identity/package.json
+          cp import-packages/identity/package.json docs/ref/identity/package.json
           rm -r import-packages/identity
 
       ########### common

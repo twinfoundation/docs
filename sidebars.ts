@@ -17,30 +17,24 @@ const sidebars: SidebarsConfig = {
 	introductionSidebar: ["intro"],
 
 	// But you can create a sidebar manually
-	packagesSidebar: ["packages", ...buildPackages()]
+	packagesSidebar: ["reference", ...buildReference()]
 };
 
-function buildPackages(): any {
+function buildReference(): any {
 	try {
-		const packageGroupsFilename = path.join(__dirname, "docs", "package-groups.json");
-		const packageGroupsContent = fs.readFileSync(packageGroupsFilename, "utf-8");
-		const packageGroups = JSON.parse(packageGroupsContent);
+		const reposFilename = path.join(__dirname, "docs", "repos.json");
+		const reposContent = fs.readFileSync(reposFilename, "utf-8");
+		const reposJson = JSON.parse(reposContent);
 
 		const groups = [];
 
-		for (const packageGroup of packageGroups) {
-			const packageFilename = path.join(
-				__dirname,
-				"docs",
-				"packages",
-				packageGroup,
-				"package.json"
-			);
+		for (const repo of reposJson) {
+			const packageFilename = path.join(__dirname, "docs", "ref", repo, "package.json");
 			const packageContent = fs.readFileSync(packageFilename, "utf-8");
 			const packageContentJson = JSON.parse(packageContent);
 
 			const items = packageContentJson.workspaces.map((p) =>
-				generatePackageItems(packageGroup, p.replace("packages/", ""))
+				generatePackageItems(repo, p.replace("packages/", ""))
 			);
 
 			if (items.length > 0) {
@@ -77,7 +71,7 @@ function generatePackageItems(packageGroup: string, packageName: string): any {
 				label: "Reference",
 				link: {
 					type: "doc",
-					id: `packages/${packageGroup}/${packageName.toLowerCase()}/reference/modules`
+					id: `ref/${packageGroup}/packages/${packageName.toLowerCase()}/reference/modules`
 				},
 				items: referenceItems
 			},
@@ -87,7 +81,7 @@ function generatePackageItems(packageGroup: string, packageName: string): any {
 }
 
 function fileExists(packageGroup: string, packageName: string, id: string, label: string): any {
-	const dirName = `packages/${packageGroup}/${packageName.toLowerCase()}/${id}`;
+	const dirName = `ref/${packageGroup}/packages/${packageName.toLowerCase()}/${id}`;
 	const file = path.join(__dirname, "docs", dirName);
 
 	try {
@@ -104,7 +98,7 @@ function fileExists(packageGroup: string, packageName: string, id: string, label
 }
 
 function dirExists(packageGroup: string, packageName: string, id: string, label: string): any {
-	const dirName = `packages/${packageGroup}, ${packageName.toLowerCase()}/${id}`;
+	const dirName = `ref/${packageGroup}/packages/${packageName.toLowerCase()}/${id}`;
 	const dir = path.join(__dirname, "docs", dirName);
 
 	try {

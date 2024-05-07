@@ -23,7 +23,7 @@ function buildGroupContent(packageGroup) {
 		__dirname,
 		"..",
 		"docs",
-		"packages",
+		"ref",
 		packageGroup,
 		"package.json"
 	);
@@ -53,8 +53,9 @@ function buildPackageContent(packageGroup, pkg) {
 		__dirname,
 		"..",
 		"docs",
-		"packages",
+		"ref",
 		packageGroup,
+		"packages",
 		pkg,
 		"package.json"
 	);
@@ -63,7 +64,7 @@ function buildPackageContent(packageGroup, pkg) {
 		const packageContent = fs.readFileSync(packageFilename, "utf-8");
 		const packageJson = JSON.parse(packageContent);
 
-		content += `- [${packageJson.name}](packages/${packageGroup}/${packageJson.name.replace("@gtsc/", "")}/overview) - ${packageJson.description}\n`;
+		content += `- [${packageJson.name}](ref/${packageGroup}/packages/${packageJson.name.replace("@gtsc/", "")}/overview) - ${packageJson.description}\n`;
 	} else {
 		console.error(`        ! File not found: ${packageFilename}`);
 	}
@@ -86,23 +87,23 @@ module.exports = async function packageIndexPlugin() {
 	return {
 		name: "package-index",
 		async loadContent() {
-			console.log("Building Package Overview");
+			console.log("Building Reference Overview");
 
-			const groupContent = [];
+			const repoContent = [];
 
 			try {
-				const packageGroupsFilename = path.join(__dirname, "..", "docs", "package-groups.json");
-				const packageGroupsContent = fs.readFileSync(packageGroupsFilename, "utf-8");
-				const packageGroupJson = JSON.parse(packageGroupsContent);
+				const reposFilename = path.join(__dirname, "..", "docs", "repos.json");
+				const reposContent = fs.readFileSync(reposFilename, "utf-8");
+				const reposJson = JSON.parse(reposContent);
 
-				for (const packageGroup of packageGroupJson) {
-					groupContent.push(buildGroupContent(packageGroup));
+				for (const repo of reposJson) {
+					repoContent.push(buildGroupContent(repo));
 				}
 
-				console.log("Writing Package Overview");
+				console.log("Writing Reference Overview");
 				fs.writeFileSync(
-					path.join(__dirname, "..", "docs", "packages.md"),
-					buildContent(groupContent)
+					path.join(__dirname, "..", "docs", "reference.md"),
+					buildContent(repoContent)
 				);
 			} catch (err) {
 				console.error(err);
