@@ -32,10 +32,13 @@ function buildGroupContent(packageGroup) {
 		const packageContent = fs.readFileSync(packageGroupFilename, "utf-8");
 		const groupJson = JSON.parse(packageContent);
 
-		content += `\n## ${groupJson.description}\n\n`;
-
+		let combinedPackageContent = "";
 		for (const pkg of groupJson.workspaces) {
-			content += buildPackageContent(packageGroup, pkg.replace("packages/", ""));
+			combinedPackageContent += buildPackageContent(packageGroup, pkg.replace("packages/", ""));
+		}
+
+		if (combinedPackageContent.length > 0) {
+			content += `\n## ${groupJson.description}\n\n${combinedPackageContent}`;
 		}
 	} else {
 		console.error(`      ! File not found: ${packageGroupFilename}`);
