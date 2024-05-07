@@ -10,7 +10,7 @@ Definition for the configuration of a rest client.
 
 The endpoint where the api is hosted.
 
----
+___
 
 ### headers
 
@@ -18,7 +18,7 @@ The endpoint where the api is hosted.
 
 The headers to include in requests.
 
----
+___
 
 ### pathPrefix
 
@@ -26,7 +26,7 @@ The headers to include in requests.
 
 The prefix to the routes.
 
----
+___
 
 ### timeout
 

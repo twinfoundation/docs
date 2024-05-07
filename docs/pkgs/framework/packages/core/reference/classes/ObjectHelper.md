@@ -23,14 +23,14 @@ Make a deep clone of an object.
 #### Type parameters
 
 | Name |
-| :--- |
-| `T`  |
+| :------ |
+| `T` |
 
 #### Parameters
 
-| Name  | Type | Description          |
-| :---- | :--- | :------------------- |
-| `obj` | `T`  | The object to clone. |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `obj` | `T` | The object to clone. |
 
 #### Returns
 
@@ -38,7 +38,7 @@ Make a deep clone of an object.
 
 The objects clone.
 
----
+___
 
 ### equal
 
@@ -49,15 +49,15 @@ Does one object equal another.
 #### Type parameters
 
 | Name |
-| :--- |
-| `T`  |
+| :------ |
+| `T` |
 
 #### Parameters
 
-| Name   | Type | Description                   |
-| :----- | :--- | :---------------------------- |
-| `obj1` | `T`  | The first object to compare.  |
-| `obj2` | `T`  | The second object to compare. |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `obj1` | `T` | The first object to compare. |
+| `obj2` | `T` | The second object to compare. |
 
 #### Returns
 
@@ -65,7 +65,7 @@ Does one object equal another.
 
 True is the objects are equal.
 
----
+___
 
 ### fromBytes
 
@@ -76,14 +76,14 @@ Convert a bytes to an object.
 #### Type parameters
 
 | Name |
-| :--- |
-| `T`  |
+| :------ |
+| `T` |
 
 #### Parameters
 
-| Name    | Type                                  | Description                        |
-| :------ | :------------------------------------ | :--------------------------------- |
-| `bytes` | `undefined` \| `null` \| `Uint8Array` | The bytes to convert to an object. |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `bytes` | `undefined` \| ``null`` \| `Uint8Array` | The bytes to convert to an object. |
 
 #### Returns
 
@@ -95,7 +95,7 @@ The object.
 
 GeneralError if there was an error parsing the JSON.
 
----
+___
 
 ### pick
 
@@ -106,15 +106,15 @@ Pick a subset of properties from an object.
 #### Type parameters
 
 | Name |
-| :--- |
-| `T`  |
+| :------ |
+| `T` |
 
 #### Parameters
 
-| Name    | Type        | Description                             |
-| :------ | :---------- | :-------------------------------------- |
-| `obj`   | `T`         | The object to pick the properties from. |
-| `keys?` | keyof `T`[] | The property keys to pick.              |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `obj` | `T` | The object to pick the properties from. |
+| `keys?` | keyof `T`[] | The property keys to pick. |
 
 #### Returns
 
@@ -122,7 +122,7 @@ Pick a subset of properties from an object.
 
 The partial object.
 
----
+___
 
 ### propertyGet
 
@@ -132,10 +132,10 @@ Get the property of an unknown object.
 
 #### Parameters
 
-| Name       | Type      | Description                          |
-| :--------- | :-------- | :----------------------------------- |
-| `obj`      | `unknown` | The object to get the property from. |
-| `property` | `string`  | The property to get.                 |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `obj` | `unknown` | The object to get the property from. |
+| `property` | `string` | The property to get. |
 
 #### Returns
 
@@ -143,7 +143,7 @@ Get the property of an unknown object.
 
 The property.
 
----
+___
 
 ### propertySet
 
@@ -153,17 +153,17 @@ Set the property of an unknown object.
 
 #### Parameters
 
-| Name       | Type      | Description                          |
-| :--------- | :-------- | :----------------------------------- |
-| `obj`      | `unknown` | The object to set the property from. |
-| `property` | `string`  | The property to set.                 |
-| `value`    | `unknown` | The value to set.                    |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `obj` | `unknown` | The object to set the property from. |
+| `property` | `string` | The property to set. |
+| `value` | `unknown` | The value to set. |
 
 #### Returns
 
 `void`
 
----
+___
 
 ### toBytes
 
@@ -174,15 +174,15 @@ Convert an object to bytes.
 #### Type parameters
 
 | Name |
-| :--- |
-| `T`  |
+| :------ |
+| `T` |
 
 #### Parameters
 
-| Name     | Type               | Default value | Description              |
-| :------- | :----------------- | :------------ | :----------------------- |
-| `obj`    | `undefined` \| `T` | `undefined`   | The object to convert.   |
-| `format` | `boolean`          | `false`       | Format the JSON content. |
+| Name | Type | Default value | Description |
+| :------ | :------ | :------ | :------ |
+| `obj` | `undefined` \| `T` | `undefined` | The object to convert. |
+| `format` | `boolean` | `false` | Format the JSON content. |
 
 #### Returns
 

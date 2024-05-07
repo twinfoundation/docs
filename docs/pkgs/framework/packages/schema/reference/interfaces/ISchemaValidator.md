@@ -16,10 +16,10 @@ Validates data against a schema.
 
 #### Parameters
 
-| Name         | Type      | Description           |
-| :----------- | :-------- | :-------------------- |
-| `data`       | `unknown` | Data to be validated. |
-| `schemaName` | `string`  | Schema.               |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `data` | `unknown` | Data to be validated. |
+| `schemaName` | `string` | Schema. |
 
 #### Returns
 

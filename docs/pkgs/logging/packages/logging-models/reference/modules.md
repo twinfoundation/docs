@@ -19,7 +19,7 @@
 
 ### LogLevel
 
-Ƭ **LogLevel**: `"info"` \| `"error"` \| `"warn"` \| `"trace"` \| `"debug"`
+Ƭ **LogLevel**: ``"info"`` \| ``"error"`` \| ``"warn"`` \| ``"trace"`` \| ``"debug"``
 
 Log level.
 

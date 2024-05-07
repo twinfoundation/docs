@@ -19,14 +19,14 @@
 
 ### HttpMethods
 
-Ƭ **HttpMethods**: `"GET"` \| `"POST"` \| `"PUT"` \| `"PATCH"` \| `"DELETE"` \| `"OPTIONS"` \| `"HEAD"` \| `"CONNECT"` \| `"TRACE"`
+Ƭ **HttpMethods**: ``"GET"`` \| ``"POST"`` \| ``"PUT"`` \| ``"PATCH"`` \| ``"DELETE"`` \| ``"OPTIONS"`` \| ``"HEAD"`` \| ``"CONNECT"`` \| ``"TRACE"``
 
 The HTTP Methods.
 
----
+___
 
 ### JwtAlgorithms
 
-Ƭ **JwtAlgorithms**: `"HS256"` \| `"EdDSA"`
+Ƭ **JwtAlgorithms**: ``"HS256"`` \| ``"EdDSA"``
 
 The cryptographic algorithms supported for JSON Web Tokens and JSON Web Keys.

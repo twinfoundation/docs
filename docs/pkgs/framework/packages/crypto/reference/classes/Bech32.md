@@ -16,39 +16,39 @@ Bech32 encoding and decoding.
 
 ### decode
 
-▸ **decode**(`bech`): `undefined` \| \{ `data`: `Uint8Array` ; `humanReadablePart`: `string` }
+▸ **decode**(`bech`): `undefined` \| \{ `data`: `Uint8Array` ; `humanReadablePart`: `string`  }
 
 Decode a bech32 string.
 
 #### Parameters
 
-| Name   | Type     | Description         |
-| :----- | :------- | :------------------ |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `bech` | `string` | The text to decode. |
 
 #### Returns
 
-`undefined` \| \{ `data`: `Uint8Array` ; `humanReadablePart`: `string` }
+`undefined` \| \{ `data`: `Uint8Array` ; `humanReadablePart`: `string`  }
 
 The decoded data or undefined if it could not be decoded.
 
----
+___
 
 ### decodeTo5BitArray
 
-▸ **decodeTo5BitArray**(`bech`): `undefined` \| \{ `data`: `Uint8Array` ; `humanReadablePart`: `string` }
+▸ **decodeTo5BitArray**(`bech`): `undefined` \| \{ `data`: `Uint8Array` ; `humanReadablePart`: `string`  }
 
 Decode a bech32 string to 5 bit array.
 
 #### Parameters
 
-| Name   | Type     | Description         |
-| :----- | :------- | :------------------ |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `bech` | `string` | The text to decode. |
 
 #### Returns
 
-`undefined` \| \{ `data`: `Uint8Array` ; `humanReadablePart`: `string` }
+`undefined` \| \{ `data`: `Uint8Array` ; `humanReadablePart`: `string`  }
 
 The decoded data or undefined if it could not be decoded.
 
@@ -56,7 +56,7 @@ The decoded data or undefined if it could not be decoded.
 
 GeneralError if the bech32 string is invalid.
 
----
+___
 
 ### encode
 
@@ -66,10 +66,10 @@ Encode the buffer.
 
 #### Parameters
 
-| Name                | Type         | Description         |
-| :------------------ | :----------- | :------------------ |
-| `humanReadablePart` | `string`     | The header.         |
-| `data`              | `Uint8Array` | The data to encode. |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `humanReadablePart` | `string` | The header. |
+| `data` | `Uint8Array` | The data to encode. |
 
 #### Returns
 
@@ -77,7 +77,7 @@ Encode the buffer.
 
 The encoded data.
 
----
+___
 
 ### encode5BitArray
 
@@ -87,10 +87,10 @@ Encode the 5 bit data buffer.
 
 #### Parameters
 
-| Name                | Type         | Description         |
-| :------------------ | :----------- | :------------------ |
-| `humanReadablePart` | `string`     | The header.         |
-| `data5Bit`          | `Uint8Array` | The data to encode. |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `humanReadablePart` | `string` | The header. |
+| `data5Bit` | `Uint8Array` | The data to encode. |
 
 #### Returns
 
@@ -98,7 +98,7 @@ Encode the 5 bit data buffer.
 
 The encoded data.
 
----
+___
 
 ### from5Bit
 
@@ -108,8 +108,8 @@ Convert the 5 bit data to 8 bit.
 
 #### Parameters
 
-| Name      | Type         | Description                |
-| :-------- | :----------- | :------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `fiveBit` | `Uint8Array` | The 5 bit data to convert. |
 
 #### Returns
@@ -118,7 +118,7 @@ Convert the 5 bit data to 8 bit.
 
 The 5 bit data converted to 8 bit.
 
----
+___
 
 ### matches
 
@@ -128,10 +128,10 @@ Does the given string match the bech32 pattern.
 
 #### Parameters
 
-| Name                | Type     | Description              |
-| :------------------ | :------- | :----------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `humanReadablePart` | `string` | The human readable part. |
-| `bech32Text?`       | `string` | The text to test.        |
+| `bech32Text?` | `string` | The text to test. |
 
 #### Returns
 
@@ -139,7 +139,7 @@ Does the given string match the bech32 pattern.
 
 True if this is potentially a match.
 
----
+___
 
 ### to5Bit
 
@@ -149,8 +149,8 @@ Convert the input bytes into 5 bit data.
 
 #### Parameters
 
-| Name    | Type         | Description           |
-| :------ | :----------- | :-------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `bytes` | `Uint8Array` | The bytes to convert. |
 
 #### Returns

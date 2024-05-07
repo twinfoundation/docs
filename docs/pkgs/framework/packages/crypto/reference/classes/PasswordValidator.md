@@ -23,15 +23,15 @@ Test the strength of the password.
 
 #### Parameters
 
-| Name                       | Type                   | Description                                                               |
-| :------------------------- | :--------------------- | :------------------------------------------------------------------------ |
-| `property`                 | `string`               | The name of the property.                                                 |
-| `password`                 | `string`               | The password to test.                                                     |
-| `failures`                 | `IValidationFailure`[] | The list of failures to add to.                                           |
-| `options?`                 | `Object`               | Options to configure the testing.                                         |
-| `options.maxLength?`       | `number`               | The minimum length of the password, defaults to 128.                      |
-| `options.minLength?`       | `number`               | The minimum length of the password, defaults to 8.                        |
-| `options.minPhraseLength?` | `number`               | The minimum length of the password for it to be considered a pass phrase. |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `property` | `string` | The name of the property. |
+| `password` | `string` | The password to test. |
+| `failures` | `IValidationFailure`[] | The list of failures to add to. |
+| `options?` | `Object` | Options to configure the testing. |
+| `options.maxLength?` | `number` | The minimum length of the password, defaults to 128. |
+| `options.minLength?` | `number` | The minimum length of the password, defaults to 8. |
+| `options.minPhraseLength?` | `number` | The minimum length of the password for it to be considered a pass phrase. |
 
 #### Returns
 

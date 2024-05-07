@@ -16,10 +16,10 @@ Create a new instance of MemoryFaucetConnector.
 
 #### Parameters
 
-| Name                                      | Type                                                                             | Description                                |
-| :---------------------------------------- | :------------------------------------------------------------------------------- | :----------------------------------------- |
-| `dependencies`                            | `Object`                                                                         | The dependencies for the wallet connector. |
-| `dependencies.walletAddressEntityStorage` | `IEntityStorageConnector`\<[`IWalletAddress`](../interfaces/IWalletAddress.md)\> | The entity storage for wallet addresses.   |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `dependencies` | `Object` | The dependencies for the wallet connector. |
+| `dependencies.walletAddressEntityStorage` | `IEntityStorageConnector`\<[`IWalletAddress`](../interfaces/IWalletAddress.md)\> | The entity storage for wallet addresses. |
 
 #### Returns
 
@@ -43,11 +43,11 @@ Fund the wallet from the faucet.
 
 #### Parameters
 
-| Name               | Type              | Default value | Description                                                 |
-| :----------------- | :---------------- | :------------ | :---------------------------------------------------------- |
-| `requestContext`   | `IRequestContext` | `undefined`   | The context for the request.                                |
-| `address`          | `string`          | `undefined`   | The bech32 encoded address of the address to fund.          |
-| `timeoutInSeconds` | `number`          | `60`          | The timeout in seconds to wait for the funding to complete. |
+| Name | Type | Default value | Description |
+| :------ | :------ | :------ | :------ |
+| `requestContext` | `IRequestContext` | `undefined` | The context for the request. |
+| `address` | `string` | `undefined` | The bech32 encoded address of the address to fund. |
+| `timeoutInSeconds` | `number` | `60` | The timeout in seconds to wait for the funding to complete. |
 
 #### Returns
 

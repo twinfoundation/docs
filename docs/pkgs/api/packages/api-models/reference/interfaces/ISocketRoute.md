@@ -22,18 +22,18 @@ The handler module.
 
 ##### Parameters
 
-| Name             | Type                                                               | Description                                      |
-| :--------------- | :----------------------------------------------------------------- | :----------------------------------------------- |
-| `requestContext` | `IRequestContext`                                                  | The request context.                             |
-| `socketId`       | `string`                                                           | The id of the socket the request is arriving on. |
-| `request`        | `unknown`                                                          | The request object.                              |
-| `emitter`        | (`topic`: `string`, `response?`: `unknown`) => `Promise`\<`void`\> | Method to emit data on the socket.               |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `requestContext` | `IRequestContext` | The request context. |
+| `socketId` | `string` | The id of the socket the request is arriving on. |
+| `request` | `unknown` | The request object. |
+| `emitter` | (`topic`: `string`, `response?`: `unknown`) => `Promise`\<`void`\> | Method to emit data on the socket. |
 
 ##### Returns
 
 `Promise`\<`void`\>
 
----
+___
 
 ### operationId
 
@@ -45,7 +45,7 @@ The id of the operation.
 
 [IBaseRoute](IBaseRoute.md).[operationId](IBaseRoute.md#operationid)
 
----
+___
 
 ### path
 
@@ -57,7 +57,7 @@ The path to use for routing.
 
 [IBaseRoute](IBaseRoute.md).[path](IBaseRoute.md#path)
 
----
+___
 
 ### skipSubjectAuth
 
@@ -69,7 +69,7 @@ Skips the subject authentication for this route.
 
 [IBaseRoute](IBaseRoute.md).[skipSubjectAuth](IBaseRoute.md#skipsubjectauth)
 
----
+___
 
 ### skipTenantAuth
 

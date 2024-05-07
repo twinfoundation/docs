@@ -20,7 +20,7 @@ A message for the response.
 
 [IErrorResponse](IErrorResponse.md).[error](IErrorResponse.md#error)
 
----
+___
 
 ### existingId
 

@@ -10,7 +10,7 @@ Interface describing a log entry.
 
 JSON data for the message.
 
----
+___
 
 ### error
 
@@ -18,7 +18,7 @@ JSON data for the message.
 
 JSON version of flattened error array.
 
----
+___
 
 ### id
 
@@ -26,7 +26,7 @@ JSON version of flattened error array.
 
 The id.
 
----
+___
 
 ### level
 
@@ -34,7 +34,7 @@ The id.
 
 The level of the error being logged.
 
----
+___
 
 ### message
 
@@ -42,7 +42,7 @@ The level of the error being logged.
 
 The message.
 
----
+___
 
 ### source
 
@@ -50,7 +50,7 @@ The message.
 
 The source of the log entry.
 
----
+___
 
 ### ts
 

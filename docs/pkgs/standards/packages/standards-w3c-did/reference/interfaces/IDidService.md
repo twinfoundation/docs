@@ -10,7 +10,7 @@ Interface describing a did document service.
 
 The id of the service.
 
----
+___
 
 ### serviceEndpoint
 
@@ -18,7 +18,7 @@ The id of the service.
 
 The endpoint for the service.
 
----
+___
 
 ### type
 

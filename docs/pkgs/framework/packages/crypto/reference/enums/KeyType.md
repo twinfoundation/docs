@@ -6,6 +6,6 @@ Key types.
 
 ### Ed25519
 
-• **Ed25519** = `0`
+• **Ed25519** = ``0``
 
 The Ed25519 key type.

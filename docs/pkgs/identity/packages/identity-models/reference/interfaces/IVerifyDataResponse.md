@@ -12,6 +12,6 @@ The response payload.
 
 #### Type declaration
 
-| Name       | Type      | Description                |
-| :--------- | :-------- | :------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `verified` | `boolean` | Is the signature verified. |

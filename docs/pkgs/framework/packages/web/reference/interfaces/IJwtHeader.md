@@ -16,7 +16,7 @@ Additional fields in the header.
 
 The algorithm used to sign the token.
 
----
+___
 
 ### kid
 
@@ -24,7 +24,7 @@ The algorithm used to sign the token.
 
 The key ID.
 
----
+___
 
 ### typ
 

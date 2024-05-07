@@ -40,13 +40,13 @@ Create a new instance of BaseError.
 
 #### Parameters
 
-| Name          | Type      | Description                                       |
-| :------------ | :-------- | :------------------------------------------------ |
-| `name`        | `string`  | The name of the error.                            |
-| `source`      | `string`  | The source of the error.                          |
-| `message`     | `string`  | The message as a code.                            |
-| `properties?` | `Object`  | Any additional information for the error.         |
-| `inner?`      | `unknown` | The inner error if we have wrapped another error. |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `name` | `string` | The name of the error. |
+| `source` | `string` | The source of the error. |
+| `message` | `string` | The message as a code. |
+| `properties?` | `Object` | Any additional information for the error. |
+| `inner?` | `unknown` | The inner error if we have wrapped another error. |
 
 #### Returns
 
@@ -66,7 +66,7 @@ Error.constructor
 
 Error.cause
 
----
+___
 
 ### inner
 
@@ -78,7 +78,7 @@ The inner error if there was one.
 
 [IError](../interfaces/IError.md).[inner](../interfaces/IError.md#inner)
 
----
+___
 
 ### message
 
@@ -94,7 +94,7 @@ The message for the error.
 
 Error.message
 
----
+___
 
 ### name
 
@@ -110,7 +110,7 @@ The name for the error.
 
 Error.name
 
----
+___
 
 ### properties
 
@@ -126,7 +126,7 @@ Any additional information for the error.
 
 [IError](../interfaces/IError.md).[properties](../interfaces/IError.md#properties)
 
----
+___
 
 ### source
 
@@ -138,7 +138,7 @@ The source of the error.
 
 [IError](../interfaces/IError.md).[source](../interfaces/IError.md#source)
 
----
+___
 
 ### stack
 
@@ -164,8 +164,8 @@ Serialize the error to the error model.
 
 #### Parameters
 
-| Name            | Type      | Description                     |
-| :-------------- | :-------- | :------------------------------ |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `includeStack?` | `boolean` | Include the stack in the error. |
 
 #### Returns
@@ -174,7 +174,7 @@ Serialize the error to the error model.
 
 The error model.
 
----
+___
 
 ### expand
 
@@ -184,8 +184,8 @@ Expand an error tree.
 
 #### Parameters
 
-| Name     | Type                                                 | Description                   |
-| :------- | :--------------------------------------------------- | :---------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `errors` | `undefined` \| [`IError`](../interfaces/IError.md)[] | The list of errors to expand. |
 
 #### Returns
@@ -194,7 +194,7 @@ Expand an error tree.
 
 The first level error.
 
----
+___
 
 ### flatten
 
@@ -204,8 +204,8 @@ Flatten an error tree.
 
 #### Parameters
 
-| Name  | Type      | Description         |
-| :---- | :-------- | :------------------ |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `err` | `unknown` | The starting error. |
 
 #### Returns
@@ -214,7 +214,7 @@ Flatten an error tree.
 
 The list of all internal errors.
 
----
+___
 
 ### fromError
 
@@ -224,8 +224,8 @@ Construct an error from an existing one.
 
 #### Parameters
 
-| Name  | Type      | Description         |
-| :---- | :-------- | :------------------ |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `err` | `unknown` | The existing error. |
 
 #### Returns
@@ -234,7 +234,7 @@ Construct an error from an existing one.
 
 The new instance.
 
----
+___
 
 ### isErrorCode
 
@@ -244,10 +244,10 @@ Test to see if the error has the specified error code.
 
 #### Parameters
 
-| Name    | Type                 | Description            |
-| :------ | :------------------- | :--------------------- |
-| `error` | `unknown`            | The error to test.     |
-| `code`  | `string` \| `RegExp` | The code to check for. |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `error` | `unknown` | The error to test. |
+| `code` | `string` \| `RegExp` | The code to check for. |
 
 #### Returns
 
@@ -255,7 +255,7 @@ Test to see if the error has the specified error code.
 
 True if the error has the code.
 
----
+___
 
 ### isErrorMessage
 
@@ -265,9 +265,9 @@ Test to see if the error has the specified error message.
 
 #### Parameters
 
-| Name      | Type                 | Description               |
-| :-------- | :------------------- | :------------------------ |
-| `error`   | `unknown`            | The error to test.        |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `error` | `unknown` | The error to test. |
 | `message` | `string` \| `RegExp` | The message to check for. |
 
 #### Returns
@@ -276,7 +276,7 @@ error is BaseError
 
 True if the error has the name.
 
----
+___
 
 ### isErrorName
 
@@ -286,10 +286,10 @@ Test to see if the error has the specified error name.
 
 #### Parameters
 
-| Name    | Type                 | Description            |
-| :------ | :------------------- | :--------------------- |
-| `error` | `unknown`            | The error to test.     |
-| `name`  | `string` \| `RegExp` | The name to check for. |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `error` | `unknown` | The error to test. |
+| `name` | `string` \| `RegExp` | The name to check for. |
 
 #### Returns
 
@@ -297,7 +297,7 @@ error is BaseError
 
 True if the error has the name.
 
----
+___
 
 ### someErrorCode
 
@@ -307,10 +307,10 @@ Test to see if any of the errors or children have the given error code.
 
 #### Parameters
 
-| Name    | Type                 | Description            |
-| :------ | :------------------- | :--------------------- |
-| `error` | `unknown`            | The error to test.     |
-| `code`  | `string` \| `RegExp` | The code to check for. |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `error` | `unknown` | The error to test. |
+| `code` | `string` \| `RegExp` | The code to check for. |
 
 #### Returns
 
@@ -318,7 +318,7 @@ error is BaseError
 
 True if the error has the name.
 
----
+___
 
 ### someErrorMessage
 
@@ -328,9 +328,9 @@ Test to see if any of the errors or children have the given error message.
 
 #### Parameters
 
-| Name      | Type                 | Description               |
-| :-------- | :------------------- | :------------------------ |
-| `error`   | `unknown`            | The error to test.        |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `error` | `unknown` | The error to test. |
 | `message` | `string` \| `RegExp` | The message to check for. |
 
 #### Returns
@@ -339,7 +339,7 @@ error is BaseError
 
 True if the error has the name.
 
----
+___
 
 ### someErrorName
 
@@ -349,10 +349,10 @@ Test to see if any of the errors or children have the given error name.
 
 #### Parameters
 
-| Name    | Type                 | Description            |
-| :------ | :------------------- | :--------------------- |
-| `error` | `unknown`            | The error to test.     |
-| `name`  | `string` \| `RegExp` | The name to check for. |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `error` | `unknown` | The error to test. |
+| `name` | `string` \| `RegExp` | The name to check for. |
 
 #### Returns
 

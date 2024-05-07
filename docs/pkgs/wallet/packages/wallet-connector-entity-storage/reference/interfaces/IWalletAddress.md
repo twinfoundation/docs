@@ -10,7 +10,7 @@ Interface describing a wallet address.
 
 The address of the wallet.
 
----
+___
 
 ### balance
 
@@ -18,7 +18,7 @@ The address of the wallet.
 
 The balance of the wallet as bigint.
 
----
+___
 
 ### identity
 

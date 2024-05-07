@@ -10,7 +10,7 @@ Model to describe the parts of a url.
 
 The hash for the url.
 
----
+___
 
 ### host
 
@@ -18,7 +18,7 @@ The hash for the url.
 
 The host for the url.
 
----
+___
 
 ### params
 
@@ -26,7 +26,7 @@ The host for the url.
 
 The params for the url.
 
----
+___
 
 ### path
 
@@ -34,7 +34,7 @@ The params for the url.
 
 The path for the url.
 
----
+___
 
 ### port
 
@@ -42,7 +42,7 @@ The path for the url.
 
 The port for the url.
 
----
+___
 
 ### schema
 

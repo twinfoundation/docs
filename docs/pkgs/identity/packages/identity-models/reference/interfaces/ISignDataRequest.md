@@ -12,12 +12,12 @@ The data to be used in the signing.
 
 #### Type declaration
 
-| Name                 | Type     | Description                                 |
-| :------------------- | :------- | :------------------------------------------ |
-| `bytes`              | `string` | The bytes for the document encoded as hex.  |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `bytes` | `string` | The bytes for the document encoded as hex. |
 | `verificationMethod` | `string` | The verification method to use for signing. |
 
----
+___
 
 ### identity
 

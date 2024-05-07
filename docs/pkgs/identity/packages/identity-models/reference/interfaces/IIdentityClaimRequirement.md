@@ -10,7 +10,7 @@ Definitions for verifiable credential claim requirement.
 
 Should this property be available in public presentation of the claims.
 
----
+___
 
 ### key
 
@@ -18,7 +18,7 @@ Should this property be available in public presentation of the claims.
 
 The property key for the verifiable credential claim requirement.
 
----
+___
 
 ### type
 

@@ -18,7 +18,7 @@ Options for rendering.
 
 The cell size.
 
----
+___
 
 ### marginSize
 

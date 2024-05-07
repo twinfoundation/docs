@@ -5,8 +5,8 @@ Definition of an entity property.
 ## Type parameters
 
 | Name |
-| :--- |
-| `T`  |
+| :------ |
+| `T` |
 
 ## Properties
 
@@ -16,7 +16,7 @@ Definition of an entity property.
 
 An additional hint for the format of the data.
 
----
+___
 
 ### isPrimary
 
@@ -24,7 +24,7 @@ An additional hint for the format of the data.
 
 Is this the primary index property.
 
----
+___
 
 ### isSecondary
 
@@ -32,7 +32,7 @@ Is this the primary index property.
 
 Is this a secondary index property.
 
----
+___
 
 ### itemType
 
@@ -40,7 +40,7 @@ Is this a secondary index property.
 
 The type of the item (only applies when type is either `list` or `object`).
 
----
+___
 
 ### optional
 
@@ -48,7 +48,7 @@ The type of the item (only applies when type is either `list` or `object`).
 
 Is the property optional.
 
----
+___
 
 ### property
 
@@ -56,7 +56,7 @@ Is the property optional.
 
 The name of the property.
 
----
+___
 
 ### size
 
@@ -64,7 +64,7 @@ The name of the property.
 
 The length of the property if applicable.
 
----
+___
 
 ### sortDirection
 
@@ -72,7 +72,7 @@ The length of the property if applicable.
 
 Default sort direction for this column, leave empty if not sortable.
 
----
+___
 
 ### type
 

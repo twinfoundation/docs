@@ -22,8 +22,8 @@ Generate a new random array.
 
 #### Parameters
 
-| Name     | Type     | Description                     |
-| :------- | :------- | :------------------------------ |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `length` | `number` | The length of buffer to create. |
 
 #### Returns

@@ -10,7 +10,7 @@ Get the profile for an identity.
 
 The identity to get the profile for.
 
----
+___
 
 ### propertyNames
 

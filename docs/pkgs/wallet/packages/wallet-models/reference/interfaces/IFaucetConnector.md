@@ -18,8 +18,8 @@ Bootstrap the service by creating and initializing any resources it needs.
 
 #### Parameters
 
-| Name             | Type              | Description                            |
-| :--------------- | :---------------- | :------------------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `requestContext` | `IRequestContext` | The request context for bootstrapping. |
 
 #### Returns
@@ -32,7 +32,7 @@ Nothing.
 
 IService.bootstrap
 
----
+___
 
 ### fundAddress
 
@@ -42,11 +42,11 @@ Fund the wallet from the faucet.
 
 #### Parameters
 
-| Name                | Type              | Description                                                 |
-| :------------------ | :---------------- | :---------------------------------------------------------- |
-| `requestContext`    | `IRequestContext` | The context for the request.                                |
-| `address`           | `string`          | The bech32 encoded address of the address to fund.          |
-| `timeoutInSeconds?` | `number`          | The timeout in seconds to wait for the funding to complete. |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `requestContext` | `IRequestContext` | The context for the request. |
+| `address` | `string` | The bech32 encoded address of the address to fund. |
+| `timeoutInSeconds?` | `number` | The timeout in seconds to wait for the funding to complete. |
 
 #### Returns
 
@@ -54,7 +54,7 @@ Fund the wallet from the faucet.
 
 The amount added to the address by the faucet.
 
----
+___
 
 ### start
 
@@ -72,7 +72,7 @@ Nothing.
 
 IService.start
 
----
+___
 
 ### stop
 

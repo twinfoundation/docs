@@ -22,14 +22,14 @@ Perform a fetch request.
 
 #### Parameters
 
-| Name       | Type                                              | Description                        |
-| :--------- | :------------------------------------------------ | :--------------------------------- |
-| `source`   | `string`                                          | The source for the request.        |
-| `endpoint` | `string`                                          | The base endpoint for the request. |
-| `path`     | `string`                                          | The path of the request.           |
-| `method`   | [`HttpMethods`](../modules.md#httpmethods)        | The http method.                   |
-| `body?`    | `string` \| `Uint8Array`                          | Request to send to the endpoint.   |
-| `options?` | [`IFetchOptions`](../interfaces/IFetchOptions.md) | Options for sending the requests.  |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `source` | `string` | The source for the request. |
+| `endpoint` | `string` | The base endpoint for the request. |
+| `path` | `string` | The path of the request. |
+| `method` | [`HttpMethods`](../modules.md#httpmethods) | The http method. |
+| `body?` | `string` \| `Uint8Array` | Request to send to the endpoint. |
+| `options?` | [`IFetchOptions`](../interfaces/IFetchOptions.md) | Options for sending the requests. |
 
 #### Returns
 
@@ -37,7 +37,7 @@ Perform a fetch request.
 
 The response.
 
----
+___
 
 ### fetchBinary
 
@@ -48,19 +48,19 @@ Perform a request for binary data.
 #### Type parameters
 
 | Name |
-| :--- |
-| `T`  |
+| :------ |
+| `T` |
 
 #### Parameters
 
-| Name           | Type                                              | Description                        |
-| :------------- | :------------------------------------------------ | :--------------------------------- |
-| `source`       | `string`                                          | The source for the request.        |
-| `endpoint`     | `string`                                          | The base endpoint for the request. |
-| `path`         | `string`                                          | The path of the request.           |
-| `method`       | `"GET"` \| `"POST"`                               | The http method.                   |
-| `requestData?` | `Uint8Array`                                      | Request to send to the endpoint.   |
-| `options?`     | [`IFetchOptions`](../interfaces/IFetchOptions.md) | Options for sending the requests.  |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `source` | `string` | The source for the request. |
+| `endpoint` | `string` | The base endpoint for the request. |
+| `path` | `string` | The path of the request. |
+| `method` | ``"GET"`` \| ``"POST"`` | The http method. |
+| `requestData?` | `Uint8Array` | Request to send to the endpoint. |
+| `options?` | [`IFetchOptions`](../interfaces/IFetchOptions.md) | Options for sending the requests. |
 
 #### Returns
 
@@ -68,7 +68,7 @@ Perform a request for binary data.
 
 The response.
 
----
+___
 
 ### fetchJson
 
@@ -79,20 +79,20 @@ Perform a request in json format.
 #### Type parameters
 
 | Name |
-| :--- |
-| `T`  |
-| `U`  |
+| :------ |
+| `T` |
+| `U` |
 
 #### Parameters
 
-| Name           | Type                                              | Description                        |
-| :------------- | :------------------------------------------------ | :--------------------------------- |
-| `source`       | `string`                                          | The source for the request.        |
-| `endpoint`     | `string`                                          | The base endpoint for the request. |
-| `path`         | `string`                                          | The path of the request.           |
-| `method`       | [`HttpMethods`](../modules.md#httpmethods)        | The http method.                   |
-| `requestData?` | `T`                                               | Request to send to the endpoint.   |
-| `options?`     | [`IFetchOptions`](../interfaces/IFetchOptions.md) | Options for sending the requests.  |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `source` | `string` | The source for the request. |
+| `endpoint` | `string` | The base endpoint for the request. |
+| `path` | `string` | The path of the request. |
+| `method` | [`HttpMethods`](../modules.md#httpmethods) | The http method. |
+| `requestData?` | `T` | Request to send to the endpoint. |
+| `options?` | [`IFetchOptions`](../interfaces/IFetchOptions.md) | Options for sending the requests. |
 
 #### Returns
 

@@ -22,9 +22,9 @@ The REST routes for logging.
 
 #### Parameters
 
-| Name                 | Type     | Description                                                               |
-| :------------------- | :------- | :------------------------------------------------------------------------ |
-| `baseRouteName`      | `string` | Prefix to prepend to the paths.                                           |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `baseRouteName` | `string` | Prefix to prepend to the paths. |
 | `factoryServiceName` | `string` | The name of the service to use in the routes store in the ServiceFactory. |
 
 #### Returns
@@ -33,7 +33,7 @@ The REST routes for logging.
 
 The generated routes.
 
----
+___
 
 ### loggingCreate
 
@@ -43,12 +43,12 @@ Create a new log entry.
 
 #### Parameters
 
-| Name                 | Type                    | Description                                   |
-| :------------------- | :---------------------- | :-------------------------------------------- |
-| `requestContext`     | `IRequestContext`       | The request context for the API.              |
-| `factoryServiceName` | `string`                | The name of the service to use in the routes. |
-| `request`            | `ILoggingCreateRequest` | The request.                                  |
-| `body?`              | `unknown`               | The body if required for pure content.        |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `requestContext` | `IRequestContext` | The request context for the API. |
+| `factoryServiceName` | `string` | The name of the service to use in the routes. |
+| `request` | `ILoggingCreateRequest` | The request. |
+| `body?` | `unknown` | The body if required for pure content. |
 
 #### Returns
 
@@ -56,7 +56,7 @@ Create a new log entry.
 
 The response object with additional http response properties.
 
----
+___
 
 ### loggingList
 
@@ -66,12 +66,12 @@ Get a list of the logging entries.
 
 #### Parameters
 
-| Name                 | Type                  | Description                                   |
-| :------------------- | :-------------------- | :-------------------------------------------- |
-| `requestContext`     | `IRequestContext`     | The request context for the API.              |
-| `factoryServiceName` | `string`              | The name of the service to use in the routes. |
-| `request`            | `ILoggingListRequest` | The request.                                  |
-| `body?`              | `unknown`             | The body if required for pure content.        |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `requestContext` | `IRequestContext` | The request context for the API. |
+| `factoryServiceName` | `string` | The name of the service to use in the routes. |
+| `request` | `ILoggingListRequest` | The request. |
+| `body?` | `unknown` | The body if required for pure content. |
 
 #### Returns
 

@@ -20,11 +20,11 @@ A method for validating the identifier.
 
 #### Parameters
 
-| Name           | Type                   | Description                               |
-| :------------- | :--------------------- | :---------------------------------------- |
-| `propertyName` | `string`               | The name of the property being validated. |
-| `value`        | `unknown`              | The value to validate.                    |
-| `failures`     | `IValidationFailure`[] | List of failures to add to.               |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `propertyName` | `string` | The name of the property being validated. |
+| `value` | `unknown` | The value to validate. |
+| `failures` | `IValidationFailure`[] | List of failures to add to. |
 
 #### Returns
 

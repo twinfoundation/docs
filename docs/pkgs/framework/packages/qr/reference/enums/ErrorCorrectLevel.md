@@ -7,30 +7,30 @@ Based on https://github.com/kazuhikoarase/qrcode-generator/ .
 
 ### H
 
-• **H** = `2`
+• **H** = ``2``
 
 30% Error correction.
 
----
+___
 
 ### L
 
-• **L** = `1`
+• **L** = ``1``
 
 7% Error correction.
 
----
+___
 
 ### M
 
-• **M** = `0`
+• **M** = ``0``
 
 15% Error correction.
 
----
+___
 
 ### Q
 
-• **Q** = `3`
+• **Q** = ``3``
 
 25% Error correction.

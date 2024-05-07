@@ -18,8 +18,8 @@ Bootstrap the service by creating and initializing any resources it needs.
 
 #### Parameters
 
-| Name             | Type              | Description                            |
-| :--------------- | :---------------- | :------------------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `requestContext` | `IRequestContext` | The request context for bootstrapping. |
 
 #### Returns
@@ -32,7 +32,7 @@ Nothing.
 
 IService.bootstrap
 
----
+___
 
 ### log
 
@@ -42,10 +42,10 @@ Log an entry to the service.
 
 #### Parameters
 
-| Name             | Type                        | Description                  |
-| :--------------- | :-------------------------- | :--------------------------- |
-| `requestContext` | `IRequestContext`           | The context for the request. |
-| `logEntry`       | [`ILogEntry`](ILogEntry.md) | The entry to log.            |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `requestContext` | `IRequestContext` | The context for the request. |
+| `logEntry` | [`ILogEntry`](ILogEntry.md) | The entry to log. |
 
 #### Returns
 
@@ -53,29 +53,29 @@ Log an entry to the service.
 
 An identifier if one was allocated during the logging process.
 
----
+___
 
 ### query
 
-▸ **query**(`requestContext`, `level?`, `source?`, `timeStart?`, `timeEnd?`, `cursor?`, `pageSize?`): `Promise`\<\{ `cursor?`: `string` ; `entities`: [`ILogEntry`](ILogEntry.md)[] ; `pageSize?`: `number` ; `totalEntities`: `number` }\>
+▸ **query**(`requestContext`, `level?`, `source?`, `timeStart?`, `timeEnd?`, `cursor?`, `pageSize?`): `Promise`\<\{ `cursor?`: `string` ; `entities`: [`ILogEntry`](ILogEntry.md)[] ; `pageSize?`: `number` ; `totalEntities`: `number`  }\>
 
 Query the log entries.
 
 #### Parameters
 
-| Name             | Type                                 | Description                                         |
-| :--------------- | :----------------------------------- | :-------------------------------------------------- |
-| `requestContext` | `IRequestContext`                    | The context for the request.                        |
-| `level?`         | [`LogLevel`](../modules.md#loglevel) | The level of the log entries.                       |
-| `source?`        | `string`                             | The source of the log entries.                      |
-| `timeStart?`     | `number`                             | The inclusive time as the start of the log entries. |
-| `timeEnd?`       | `number`                             | The inclusive time as the end of the log entries.   |
-| `cursor?`        | `string`                             | The cursor to request the next page of entities.    |
-| `pageSize?`      | `number`                             | The maximum number of entities in a page.           |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `requestContext` | `IRequestContext` | The context for the request. |
+| `level?` | [`LogLevel`](../modules.md#loglevel) | The level of the log entries. |
+| `source?` | `string` | The source of the log entries. |
+| `timeStart?` | `number` | The inclusive time as the start of the log entries. |
+| `timeEnd?` | `number` | The inclusive time as the end of the log entries. |
+| `cursor?` | `string` | The cursor to request the next page of entities. |
+| `pageSize?` | `number` | The maximum number of entities in a page. |
 
 #### Returns
 
-`Promise`\<\{ `cursor?`: `string` ; `entities`: [`ILogEntry`](ILogEntry.md)[] ; `pageSize?`: `number` ; `totalEntities`: `number` }\>
+`Promise`\<\{ `cursor?`: `string` ; `entities`: [`ILogEntry`](ILogEntry.md)[] ; `pageSize?`: `number` ; `totalEntities`: `number`  }\>
 
 All the entities for the storage matching the conditions,
 and a cursor which can be used to request more entities.
@@ -84,7 +84,7 @@ and a cursor which can be used to request more entities.
 
 NotImplementedError if the implementation does not support retrieval.
 
----
+___
 
 ### start
 
@@ -102,7 +102,7 @@ Nothing.
 
 IService.start
 
----
+___
 
 ### stop
 

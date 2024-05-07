@@ -10,7 +10,7 @@ Interface representing requirements for creating for a verifiable credential.
 
 The id for the verifiable credential requirements.
 
----
+___
 
 ### requiredClaims
 
@@ -18,7 +18,7 @@ The id for the verifiable credential requirements.
 
 The requirements for verifiable credential.
 
----
+___
 
 ### verifiableCredentialType
 

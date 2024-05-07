@@ -10,7 +10,7 @@ Interface describing a key pair.
 
 The private version of the key.
 
----
+___
 
 ### publicKey
 
@@ -18,7 +18,7 @@ The private version of the key.
 
 The public version of the key.
 
----
+___
 
 ### type
 

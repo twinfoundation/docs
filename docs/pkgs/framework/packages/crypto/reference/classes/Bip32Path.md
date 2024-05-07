@@ -12,8 +12,8 @@ Create a new instance of Bip32Path.
 
 #### Parameters
 
-| Name           | Type     | Description             |
-| :------------- | :------- | :---------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `initialPath?` | `string` | Initial path to create. |
 
 #### Returns
@@ -34,7 +34,7 @@ Get the segments.
 
 The segments as numbers.
 
----
+___
 
 ### pop
 
@@ -46,7 +46,7 @@ Pop an index from the path.
 
 `void`
 
----
+___
 
 ### push
 
@@ -56,15 +56,15 @@ Push a new index on to the path.
 
 #### Parameters
 
-| Name    | Type     | Description                   |
-| :------ | :------- | :---------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `index` | `number` | The index to add to the path. |
 
 #### Returns
 
 `void`
 
----
+___
 
 ### pushHardened
 
@@ -74,15 +74,15 @@ Push a new hardened index on to the path.
 
 #### Parameters
 
-| Name    | Type     | Description                   |
-| :------ | :------- | :---------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `index` | `number` | The index to add to the path. |
 
 #### Returns
 
 `void`
 
----
+___
 
 ### toString
 
@@ -96,7 +96,7 @@ Converts the path to a string.
 
 The path as a string.
 
----
+___
 
 ### fromPath
 
@@ -106,8 +106,8 @@ Construct a new path by cloning an existing one.
 
 #### Parameters
 
-| Name        | Type                        | Description        |
-| :---------- | :-------------------------- | :----------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `bip32Path` | [`Bip32Path`](Bip32Path.md) | The path to clone. |
 
 #### Returns

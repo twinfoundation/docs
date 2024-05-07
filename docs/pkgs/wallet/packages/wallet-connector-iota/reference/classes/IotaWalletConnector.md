@@ -16,12 +16,12 @@ Create a new instance of IotaWalletConnector.
 
 #### Parameters
 
-| Name                            | Type                                                                        | Description                                |
-| :------------------------------ | :-------------------------------------------------------------------------- | :----------------------------------------- |
-| `dependencies`                  | `Object`                                                                    | The dependencies for the wallet connector. |
-| `dependencies.faucetConnector?` | `IFaucetConnector`                                                          | Optional faucet for requesting funds.      |
-| `dependencies.vaultConnector`   | `IVaultConnector`                                                           | Vault connector to use for wallet secrets. |
-| `config`                        | [`IIotaWalletConnectorConfig`](../interfaces/IIotaWalletConnectorConfig.md) | The configuration to use.                  |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `dependencies` | `Object` | The dependencies for the wallet connector. |
+| `dependencies.faucetConnector?` | `IFaucetConnector` | Optional faucet for requesting funds. |
+| `dependencies.vaultConnector` | `IVaultConnector` | Vault connector to use for wallet secrets. |
+| `config` | [`IIotaWalletConnectorConfig`](../interfaces/IIotaWalletConnectorConfig.md) | The configuration to use. |
 
 #### Returns
 
@@ -29,13 +29,13 @@ Create a new instance of IotaWalletConnector.
 
 ## Properties
 
-### MNEMONIC_SECRET_NAME
+### MNEMONIC\_SECRET\_NAME
 
-▪ `Static` **MNEMONIC_SECRET_NAME**: `string` = `"wallet-mnemonic"`
+▪ `Static` **MNEMONIC\_SECRET\_NAME**: `string` = `"wallet-mnemonic"`
 
 Default name for the mnemonic secret.
 
----
+___
 
 ### NAMESPACE
 
@@ -53,8 +53,8 @@ Create a new wallet.
 
 #### Parameters
 
-| Name             | Type              | Description                  |
-| :--------------- | :---------------- | :--------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `requestContext` | `IRequestContext` | The context for the request. |
 
 #### Returns
@@ -67,7 +67,7 @@ Nothing.
 
 IWalletConnector.create
 
----
+___
 
 ### ensureBalance
 
@@ -77,12 +77,12 @@ Ensure the balance for an address in a wallet.
 
 #### Parameters
 
-| Name                | Type              | Description                                                 |
-| :------------------ | :---------------- | :---------------------------------------------------------- |
-| `requestContext`    | `IRequestContext` | The context for the request.                                |
-| `address`           | `string`          | The bech32 encoded address.                                 |
-| `ensureBalance`     | `bigint`          | The balance to ensure on the address.                       |
-| `timeoutInSeconds?` | `number`          | The timeout in seconds to wait for the funding to complete. |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `requestContext` | `IRequestContext` | The context for the request. |
+| `address` | `string` | The bech32 encoded address. |
+| `ensureBalance` | `bigint` | The balance to ensure on the address. |
+| `timeoutInSeconds?` | `number` | The timeout in seconds to wait for the funding to complete. |
 
 #### Returns
 
@@ -94,7 +94,7 @@ True if the balance has been ensured.
 
 IWalletConnector.ensureBalance
 
----
+___
 
 ### getBalance
 
@@ -104,10 +104,10 @@ Get the balance for an address in a wallet.
 
 #### Parameters
 
-| Name             | Type              | Description                  |
-| :--------------- | :---------------- | :--------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `requestContext` | `IRequestContext` | The context for the request. |
-| `address`        | `string`          | The bech32 encoded address.  |
+| `address` | `string` | The bech32 encoded address. |
 
 #### Returns
 
@@ -119,7 +119,7 @@ The balance of the wallet address.
 
 IWalletConnector.getBalance
 
----
+___
 
 ### getStorageCosts
 
@@ -129,10 +129,10 @@ Get the storage costs for an address in a wallet.
 
 #### Parameters
 
-| Name             | Type              | Description                  |
-| :--------------- | :---------------- | :--------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `requestContext` | `IRequestContext` | The context for the request. |
-| `address`        | `string`          | The bech32 encoded address.  |
+| `address` | `string` | The bech32 encoded address. |
 
 #### Returns
 
@@ -144,7 +144,7 @@ The storage costs for the address.
 
 IWalletConnector.getStorageCosts
 
----
+___
 
 ### transfer
 
@@ -154,11 +154,11 @@ Transfer funds to an address.
 
 #### Parameters
 
-| Name             | Type              | Description                                      |
-| :--------------- | :---------------- | :----------------------------------------------- |
-| `requestContext` | `IRequestContext` | The context for the request.                     |
-| `address`        | `string`          | The bech32 encoded address to send the funds to. |
-| `amount`         | `bigint`          | The amount to transfer.                          |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `requestContext` | `IRequestContext` | The context for the request. |
+| `address` | `string` | The bech32 encoded address to send the funds to. |
+| `amount` | `bigint` | The amount to transfer. |
 
 #### Returns
 

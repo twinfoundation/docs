@@ -16,7 +16,7 @@ Options for rendering.
 
 Background color.
 
----
+___
 
 ### cellSize
 
@@ -28,7 +28,7 @@ The cell size.
 
 [IRendererOptions](IRendererOptions.md).[cellSize](IRendererOptions.md#cellsize)
 
----
+___
 
 ### foreground
 
@@ -36,7 +36,7 @@ The cell size.
 
 Foreground color.
 
----
+___
 
 ### marginSize
 

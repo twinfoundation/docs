@@ -23,16 +23,16 @@ Is the property is an array.
 #### Type parameters
 
 | Name |
-| :--- |
-| `T`  |
+| :------ |
+| `T` |
 
 #### Parameters
 
-| Name       | Type      | Description               |
-| :--------- | :-------- | :------------------------ |
-| `source`   | `string`  | The source of the error.  |
-| `property` | `string`  | The name of the property. |
-| `value`    | `unknown` | The value to test.        |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `source` | `string` | The source of the error. |
+| `property` | `string` | The name of the property. |
+| `value` | `unknown` | The value to test. |
 
 #### Returns
 
@@ -42,7 +42,7 @@ asserts value is T[]
 
 GuardError If the value does not match the assertion.
 
----
+___
 
 ### arrayOneOf
 
@@ -53,17 +53,17 @@ Is the property one of a list of items.
 #### Type parameters
 
 | Name |
-| :--- |
-| `T`  |
+| :------ |
+| `T` |
 
 #### Parameters
 
-| Name       | Type     | Description                           |
-| :--------- | :------- | :------------------------------------ |
-| `source`   | `string` | The source of the error.              |
-| `property` | `string` | The name of the property.             |
-| `value`    | `T`      | The value to test.                    |
-| `options`  | `T`[]    | The options the value must be one of. |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `source` | `string` | The source of the error. |
+| `property` | `string` | The name of the property. |
+| `value` | `T` | The value to test. |
+| `options` | `T`[] | The options the value must be one of. |
 
 #### Returns
 
@@ -73,7 +73,7 @@ asserts value is T
 
 GuardError If the value does not match the assertion.
 
----
+___
 
 ### arrayValue
 
@@ -84,16 +84,16 @@ Is the property is an array with at least one item.
 #### Type parameters
 
 | Name |
-| :--- |
-| `T`  |
+| :------ |
+| `T` |
 
 #### Parameters
 
-| Name       | Type      | Description               |
-| :--------- | :-------- | :------------------------ |
-| `source`   | `string`  | The source of the error.  |
-| `property` | `string`  | The name of the property. |
-| `value`    | `unknown` | The value to test.        |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `source` | `string` | The source of the error. |
+| `property` | `string` | The name of the property. |
+| `value` | `unknown` | The value to test. |
 
 #### Returns
 
@@ -103,7 +103,7 @@ asserts value is T[]
 
 GuardError If the value does not match the assertion.
 
----
+___
 
 ### bigint
 
@@ -113,11 +113,11 @@ Is the property a bigint.
 
 #### Parameters
 
-| Name       | Type      | Description               |
-| :--------- | :-------- | :------------------------ |
-| `source`   | `string`  | The source of the error.  |
-| `property` | `string`  | The name of the property. |
-| `value`    | `unknown` | The value to test.        |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `source` | `string` | The source of the error. |
+| `property` | `string` | The name of the property. |
+| `value` | `unknown` | The value to test. |
 
 #### Returns
 
@@ -127,7 +127,7 @@ asserts value is bigint
 
 GuardError If the value does not match the assertion.
 
----
+___
 
 ### boolean
 
@@ -137,11 +137,11 @@ Is the property a boolean.
 
 #### Parameters
 
-| Name       | Type      | Description               |
-| :--------- | :-------- | :------------------------ |
-| `source`   | `string`  | The source of the error.  |
-| `property` | `string`  | The name of the property. |
-| `value`    | `unknown` | The value to test.        |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `source` | `string` | The source of the error. |
+| `property` | `string` | The name of the property. |
+| `value` | `unknown` | The value to test. |
 
 #### Returns
 
@@ -151,7 +151,7 @@ asserts value is boolean
 
 GuardError If the value does not match the assertion.
 
----
+___
 
 ### date
 
@@ -161,11 +161,11 @@ Is the property a date.
 
 #### Parameters
 
-| Name       | Type      | Description               |
-| :--------- | :-------- | :------------------------ |
-| `source`   | `string`  | The source of the error.  |
-| `property` | `string`  | The name of the property. |
-| `value`    | `unknown` | The value to test.        |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `source` | `string` | The source of the error. |
+| `property` | `string` | The name of the property. |
+| `value` | `unknown` | The value to test. |
 
 #### Returns
 
@@ -175,7 +175,7 @@ asserts value is Date
 
 GuardError If the value does not match the assertion.
 
----
+___
 
 ### email
 
@@ -185,11 +185,11 @@ Is the property a string formatted as an email address.
 
 #### Parameters
 
-| Name       | Type      | Description               |
-| :--------- | :-------- | :------------------------ |
-| `source`   | `string`  | The source of the error.  |
-| `property` | `string`  | The name of the property. |
-| `value`    | `unknown` | The value to test.        |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `source` | `string` | The source of the error. |
+| `property` | `string` | The name of the property. |
+| `value` | `unknown` | The value to test. |
 
 #### Returns
 
@@ -199,7 +199,7 @@ asserts value is string
 
 GuardError If the value does not match the assertion.
 
----
+___
 
 ### function
 
@@ -209,11 +209,11 @@ Is the property a function.
 
 #### Parameters
 
-| Name       | Type      | Description               |
-| :--------- | :-------- | :------------------------ |
-| `source`   | `string`  | The source of the error.  |
-| `property` | `string`  | The name of the property. |
-| `value`    | `unknown` | The value to test.        |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `source` | `string` | The source of the error. |
+| `property` | `string` | The name of the property. |
+| `value` | `unknown` | The value to test. |
 
 #### Returns
 
@@ -225,7 +225,7 @@ True if the value is a function.
 
 GuardError If the value does not match the assertion.
 
----
+___
 
 ### integer
 
@@ -235,11 +235,11 @@ Is the property an integer.
 
 #### Parameters
 
-| Name       | Type      | Description               |
-| :--------- | :-------- | :------------------------ |
-| `source`   | `string`  | The source of the error.  |
-| `property` | `string`  | The name of the property. |
-| `value`    | `unknown` | The value to test.        |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `source` | `string` | The source of the error. |
+| `property` | `string` | The name of the property. |
+| `value` | `unknown` | The value to test. |
 
 #### Returns
 
@@ -249,7 +249,7 @@ asserts value is number
 
 GuardError If the value does not match the assertion.
 
----
+___
 
 ### number
 
@@ -259,11 +259,11 @@ Is the property a number.
 
 #### Parameters
 
-| Name       | Type      | Description               |
-| :--------- | :-------- | :------------------------ |
-| `source`   | `string`  | The source of the error.  |
-| `property` | `string`  | The name of the property. |
-| `value`    | `unknown` | The value to test.        |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `source` | `string` | The source of the error. |
+| `property` | `string` | The name of the property. |
+| `value` | `unknown` | The value to test. |
 
 #### Returns
 
@@ -273,7 +273,7 @@ asserts value is number
 
 GuardError If the value does not match the assertion.
 
----
+___
 
 ### object
 
@@ -283,17 +283,17 @@ Is the property an object.
 
 #### Type parameters
 
-| Name | Type                            |
-| :--- | :------------------------------ |
-| `T`  | \{ `[id: string]`: `unknown`; } |
+| Name | Type |
+| :------ | :------ |
+| `T` | \{ `[id: string]`: `unknown`;  } |
 
 #### Parameters
 
-| Name       | Type      | Description               |
-| :--------- | :-------- | :------------------------ |
-| `source`   | `string`  | The source of the error.  |
-| `property` | `string`  | The name of the property. |
-| `value`    | `unknown` | The value to test.        |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `source` | `string` | The source of the error. |
+| `property` | `string` | The name of the property. |
+| `value` | `unknown` | The value to test. |
 
 #### Returns
 
@@ -303,7 +303,7 @@ asserts value is T
 
 GuardError If the value does not match the assertion.
 
----
+___
 
 ### objectValue
 
@@ -313,17 +313,17 @@ Is the property is an object with at least one property.
 
 #### Type parameters
 
-| Name | Type                            |
-| :--- | :------------------------------ |
-| `T`  | \{ `[id: string]`: `unknown`; } |
+| Name | Type |
+| :------ | :------ |
+| `T` | \{ `[id: string]`: `unknown`;  } |
 
 #### Parameters
 
-| Name       | Type      | Description               |
-| :--------- | :-------- | :------------------------ |
-| `source`   | `string`  | The source of the error.  |
-| `property` | `string`  | The name of the property. |
-| `value`    | `unknown` | The value to test.        |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `source` | `string` | The source of the error. |
+| `property` | `string` | The name of the property. |
+| `value` | `unknown` | The value to test. |
 
 #### Returns
 
@@ -333,7 +333,7 @@ asserts value is T
 
 GuardError If the value does not match the assertion.
 
----
+___
 
 ### string
 
@@ -343,11 +343,11 @@ Is the property a string.
 
 #### Parameters
 
-| Name       | Type      | Description               |
-| :--------- | :-------- | :------------------------ |
-| `source`   | `string`  | The source of the error.  |
-| `property` | `string`  | The name of the property. |
-| `value`    | `unknown` | The value to test.        |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `source` | `string` | The source of the error. |
+| `property` | `string` | The name of the property. |
+| `value` | `unknown` | The value to test. |
 
 #### Returns
 
@@ -357,7 +357,7 @@ asserts value is string
 
 GuardError If the value does not match the assertion.
 
----
+___
 
 ### stringBase64
 
@@ -367,11 +367,11 @@ Is the property a base64 string.
 
 #### Parameters
 
-| Name       | Type      | Description               |
-| :--------- | :-------- | :------------------------ |
-| `source`   | `string`  | The source of the error.  |
-| `property` | `string`  | The name of the property. |
-| `value`    | `unknown` | The value to test.        |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `source` | `string` | The source of the error. |
+| `property` | `string` | The name of the property. |
+| `value` | `unknown` | The value to test. |
 
 #### Returns
 
@@ -381,7 +381,7 @@ asserts value is string
 
 GuardError If the value does not match the assertion.
 
----
+___
 
 ### stringBase64Url
 
@@ -391,11 +391,11 @@ Is the property a base64 url string.
 
 #### Parameters
 
-| Name       | Type      | Description               |
-| :--------- | :-------- | :------------------------ |
-| `source`   | `string`  | The source of the error.  |
-| `property` | `string`  | The name of the property. |
-| `value`    | `unknown` | The value to test.        |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `source` | `string` | The source of the error. |
+| `property` | `string` | The name of the property. |
+| `value` | `unknown` | The value to test. |
 
 #### Returns
 
@@ -405,7 +405,7 @@ asserts value is string
 
 GuardError If the value does not match the assertion.
 
----
+___
 
 ### stringHex
 
@@ -415,11 +415,11 @@ Is the property a string with a hex value.
 
 #### Parameters
 
-| Name       | Type      | Description               |
-| :--------- | :-------- | :------------------------ |
-| `source`   | `string`  | The source of the error.  |
-| `property` | `string`  | The name of the property. |
-| `value`    | `unknown` | The value to test.        |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `source` | `string` | The source of the error. |
+| `property` | `string` | The name of the property. |
+| `value` | `unknown` | The value to test. |
 
 #### Returns
 
@@ -429,7 +429,7 @@ asserts value is string
 
 GuardError If the value does not match the assertion.
 
----
+___
 
 ### stringHexLength
 
@@ -439,12 +439,12 @@ Is the property a string with a hex value with fixed length.
 
 #### Parameters
 
-| Name       | Type      | Description                        |
-| :--------- | :-------- | :--------------------------------- |
-| `source`   | `string`  | The source of the error.           |
-| `property` | `string`  | The name of the property.          |
-| `value`    | `unknown` | The value to test.                 |
-| `length`   | `number`  | The length of the string to match. |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `source` | `string` | The source of the error. |
+| `property` | `string` | The name of the property. |
+| `value` | `unknown` | The value to test. |
+| `length` | `number` | The length of the string to match. |
 
 #### Returns
 
@@ -454,7 +454,7 @@ asserts value is string
 
 GuardError If the value does not match the assertion.
 
----
+___
 
 ### stringValue
 
@@ -464,11 +464,11 @@ Is the property a string with a value.
 
 #### Parameters
 
-| Name       | Type      | Description               |
-| :--------- | :-------- | :------------------------ |
-| `source`   | `string`  | The source of the error.  |
-| `property` | `string`  | The name of the property. |
-| `value`    | `unknown` | The value to test.        |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `source` | `string` | The source of the error. |
+| `property` | `string` | The name of the property. |
+| `value` | `unknown` | The value to test. |
 
 #### Returns
 
@@ -478,7 +478,7 @@ asserts value is string
 
 GuardError If the value does not match the assertion.
 
----
+___
 
 ### timestampMilliseconds
 
@@ -488,11 +488,11 @@ Is the property a timestamp in milliseconds.
 
 #### Parameters
 
-| Name       | Type      | Description               |
-| :--------- | :-------- | :------------------------ |
-| `source`   | `string`  | The source of the error.  |
-| `property` | `string`  | The name of the property. |
-| `value`    | `unknown` | The value to test.        |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `source` | `string` | The source of the error. |
+| `property` | `string` | The name of the property. |
+| `value` | `unknown` | The value to test. |
 
 #### Returns
 
@@ -502,7 +502,7 @@ asserts value is number
 
 GuardError If the value does not match the assertion.
 
----
+___
 
 ### timestampSeconds
 
@@ -512,11 +512,11 @@ Is the property a timestamp in seconds.
 
 #### Parameters
 
-| Name       | Type      | Description               |
-| :--------- | :-------- | :------------------------ |
-| `source`   | `string`  | The source of the error.  |
-| `property` | `string`  | The name of the property. |
-| `value`    | `unknown` | The value to test.        |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `source` | `string` | The source of the error. |
+| `property` | `string` | The name of the property. |
+| `value` | `unknown` | The value to test. |
 
 #### Returns
 
@@ -526,7 +526,7 @@ asserts value is number
 
 GuardError If the value does not match the assertion.
 
----
+___
 
 ### uint8Array
 
@@ -536,11 +536,11 @@ Is the property a Uint8Array.
 
 #### Parameters
 
-| Name       | Type      | Description               |
-| :--------- | :-------- | :------------------------ |
-| `source`   | `string`  | The source of the error.  |
-| `property` | `string`  | The name of the property. |
-| `value`    | `unknown` | The value to test.        |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `source` | `string` | The source of the error. |
+| `property` | `string` | The name of the property. |
+| `value` | `unknown` | The value to test. |
 
 #### Returns
 

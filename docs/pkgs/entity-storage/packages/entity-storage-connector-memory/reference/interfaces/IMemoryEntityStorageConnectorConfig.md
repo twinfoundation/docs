@@ -4,9 +4,9 @@ Configuration for the Memory Entity Storage Connector.
 
 ## Type parameters
 
-| Name | Type      |
-| :--- | :-------- |
-| `T`  | `unknown` |
+| Name | Type |
+| :------ | :------ |
+| `T` | `unknown` |
 
 ## Properties
 

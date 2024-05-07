@@ -6,22 +6,22 @@ The roles that an identity can have.
 
 ### Node
 
-• **Node** = `"node"`
+• **Node** = ``"node"``
 
 Node.
 
----
+___
 
 ### Organization
 
-• **Organization** = `"organization"`
+• **Organization** = ``"organization"``
 
 Organization.
 
----
+___
 
 ### User
 
-• **User** = `"user"`
+• **User** = ``"user"``
 
 User.

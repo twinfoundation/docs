@@ -22,10 +22,10 @@ Filter the keys from the properties.
 
 #### Parameters
 
-| Name           | Type                                        | Description                    |
-| :------------- | :------------------------------------------ | :----------------------------- |
-| `properties?`  | [`IProperty`](../interfaces/IProperty.md)[] | The properties list to filter. |
-| `excludeKeys?` | `string`[]                                  | The keys to filter.            |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `properties?` | [`IProperty`](../interfaces/IProperty.md)[] | The properties list to filter. |
+| `excludeKeys?` | `string`[] | The keys to filter. |
 
 #### Returns
 
@@ -33,7 +33,7 @@ Filter the keys from the properties.
 
 The filtered list.
 
----
+___
 
 ### filterInclude
 
@@ -43,10 +43,10 @@ Reduce the keys in the property list.
 
 #### Parameters
 
-| Name           | Type                                        | Description                    |
-| :------------- | :------------------------------------------ | :----------------------------- |
-| `properties?`  | [`IProperty`](../interfaces/IProperty.md)[] | The properties list to filter. |
-| `includeKeys?` | `string`[]                                  | The keys to include.           |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `properties?` | [`IProperty`](../interfaces/IProperty.md)[] | The properties list to filter. |
+| `includeKeys?` | `string`[] | The keys to include. |
 
 #### Returns
 
@@ -54,7 +54,7 @@ Reduce the keys in the property list.
 
 The filtered list.
 
----
+___
 
 ### getBoolean
 
@@ -64,10 +64,10 @@ Get a boolean from the list.
 
 #### Parameters
 
-| Name         | Type                                                       | Description                      |
-| :----------- | :--------------------------------------------------------- | :------------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `properties` | `undefined` \| [`IProperty`](../interfaces/IProperty.md)[] | The properties list to get from. |
-| `key`        | `string`                                                   | The key of the item to add.      |
+| `key` | `string` | The key of the item to add. |
 
 #### Returns
 
@@ -75,7 +75,7 @@ Get a boolean from the list.
 
 The value if found.
 
----
+___
 
 ### getDate
 
@@ -85,10 +85,10 @@ Get a date from the list.
 
 #### Parameters
 
-| Name         | Type                                                       | Description                      |
-| :----------- | :--------------------------------------------------------- | :------------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `properties` | `undefined` \| [`IProperty`](../interfaces/IProperty.md)[] | The properties list to get from. |
-| `key`        | `string`                                                   | The key of the item to add.      |
+| `key` | `string` | The key of the item to add. |
 
 #### Returns
 
@@ -96,7 +96,7 @@ Get a date from the list.
 
 The value if found.
 
----
+___
 
 ### getDateTime
 
@@ -106,10 +106,10 @@ Get a date time from the list.
 
 #### Parameters
 
-| Name         | Type                                                       | Description                      |
-| :----------- | :--------------------------------------------------------- | :------------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `properties` | `undefined` \| [`IProperty`](../interfaces/IProperty.md)[] | The properties list to get from. |
-| `key`        | `string`                                                   | The key of the item to add.      |
+| `key` | `string` | The key of the item to add. |
 
 #### Returns
 
@@ -117,7 +117,7 @@ Get a date time from the list.
 
 The value if found.
 
----
+___
 
 ### getFloat
 
@@ -127,10 +127,10 @@ Get a float from the list.
 
 #### Parameters
 
-| Name         | Type                                                       | Description                      |
-| :----------- | :--------------------------------------------------------- | :------------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `properties` | `undefined` \| [`IProperty`](../interfaces/IProperty.md)[] | The properties list to get from. |
-| `key`        | `string`                                                   | The key of the item to add.      |
+| `key` | `string` | The key of the item to add. |
 
 #### Returns
 
@@ -138,7 +138,7 @@ Get a float from the list.
 
 The value if found.
 
----
+___
 
 ### getInteger
 
@@ -148,10 +148,10 @@ Get an integer from the list.
 
 #### Parameters
 
-| Name         | Type                                                       | Description                      |
-| :----------- | :--------------------------------------------------------- | :------------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `properties` | `undefined` \| [`IProperty`](../interfaces/IProperty.md)[] | The properties list to get from. |
-| `key`        | `string`                                                   | The key of the item to add.      |
+| `key` | `string` | The key of the item to add. |
 
 #### Returns
 
@@ -159,7 +159,7 @@ Get an integer from the list.
 
 The value if found.
 
----
+___
 
 ### getText
 
@@ -169,10 +169,10 @@ Get some text from the list.
 
 #### Parameters
 
-| Name         | Type                                                       | Description                      |
-| :----------- | :--------------------------------------------------------- | :------------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `properties` | `undefined` \| [`IProperty`](../interfaces/IProperty.md)[] | The properties list to get from. |
-| `key`        | `string`                                                   | The key of the item to add.      |
+| `key` | `string` | The key of the item to add. |
 
 #### Returns
 
@@ -180,7 +180,7 @@ Get some text from the list.
 
 The value if found.
 
----
+___
 
 ### getTime
 
@@ -190,10 +190,10 @@ Get a time from the list.
 
 #### Parameters
 
-| Name         | Type                                                       | Description                      |
-| :----------- | :--------------------------------------------------------- | :------------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `properties` | `undefined` \| [`IProperty`](../interfaces/IProperty.md)[] | The properties list to get from. |
-| `key`        | `string`                                                   | The key of the item to add.      |
+| `key` | `string` | The key of the item to add. |
 
 #### Returns
 
@@ -201,7 +201,7 @@ Get a time from the list.
 
 The value if found.
 
----
+___
 
 ### getTimestampMilliseconds
 
@@ -211,10 +211,10 @@ Get a timestamp in milliseconds from the list.
 
 #### Parameters
 
-| Name         | Type                                                       | Description                      |
-| :----------- | :--------------------------------------------------------- | :------------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `properties` | `undefined` \| [`IProperty`](../interfaces/IProperty.md)[] | The properties list to get from. |
-| `key`        | `string`                                                   | The key of the item to add.      |
+| `key` | `string` | The key of the item to add. |
 
 #### Returns
 
@@ -222,7 +222,7 @@ Get a timestamp in milliseconds from the list.
 
 The value if found.
 
----
+___
 
 ### getTimestampSeconds
 
@@ -232,10 +232,10 @@ Get a timestamp in seconds from the list.
 
 #### Parameters
 
-| Name         | Type                                                       | Description                      |
-| :----------- | :--------------------------------------------------------- | :------------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `properties` | `undefined` \| [`IProperty`](../interfaces/IProperty.md)[] | The properties list to get from. |
-| `key`        | `string`                                                   | The key of the item to add.      |
+| `key` | `string` | The key of the item to add. |
 
 #### Returns
 
@@ -243,7 +243,7 @@ Get a timestamp in seconds from the list.
 
 The value if found.
 
----
+___
 
 ### getUrn
 
@@ -253,10 +253,10 @@ Get a urn from the list.
 
 #### Parameters
 
-| Name         | Type                                                       | Description                      |
-| :----------- | :--------------------------------------------------------- | :------------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `properties` | `undefined` \| [`IProperty`](../interfaces/IProperty.md)[] | The properties list to get from. |
-| `key`        | `string`                                                   | The key of the item to add.      |
+| `key` | `string` | The key of the item to add. |
 
 #### Returns
 
@@ -264,7 +264,7 @@ Get a urn from the list.
 
 The value if found.
 
----
+___
 
 ### getValue
 
@@ -275,16 +275,16 @@ Get property with the specific key.
 #### Type parameters
 
 | Name |
-| :--- |
-| `T`  |
+| :------ |
+| `T` |
 
 #### Parameters
 
-| Name         | Type                                                       | Description                                                     |
-| :----------- | :--------------------------------------------------------- | :-------------------------------------------------------------- |
-| `properties` | `undefined` \| [`IProperty`](../interfaces/IProperty.md)[] | The properties list to look in.                                 |
-| `key`        | `string`                                                   | The key of the item to find.                                    |
-| `type?`      | `string`                                                   | Will only return the value if the type matches or is undefined. |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `properties` | `undefined` \| [`IProperty`](../interfaces/IProperty.md)[] | The properties list to look in. |
+| `key` | `string` | The key of the item to find. |
+| `type?` | `string` | Will only return the value if the type matches or is undefined. |
 
 #### Returns
 
@@ -292,7 +292,7 @@ Get property with the specific key.
 
 The item if it was found.
 
----
+___
 
 ### merge
 
@@ -302,9 +302,9 @@ Merge two property lists.
 
 #### Parameters
 
-| Name           | Type                                        | Description                                       |
-| :------------- | :------------------------------------------ | :------------------------------------------------ |
-| `properties1?` | [`IProperty`](../interfaces/IProperty.md)[] | The current profile properties.                   |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `properties1?` | [`IProperty`](../interfaces/IProperty.md)[] | The current profile properties. |
 | `properties2?` | [`IProperty`](../interfaces/IProperty.md)[] | The new properties to merge in to the first list. |
 
 #### Returns
@@ -313,7 +313,7 @@ Merge two property lists.
 
 The merged list.
 
----
+___
 
 ### removeValue
 
@@ -323,16 +323,16 @@ Remove property with the specific key.
 
 #### Parameters
 
-| Name         | Type                                                       | Description                     |
-| :----------- | :--------------------------------------------------------- | :------------------------------ |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `properties` | `undefined` \| [`IProperty`](../interfaces/IProperty.md)[] | The properties list to look in. |
-| `key`        | `string`                                                   | The key of the item to remove.  |
+| `key` | `string` | The key of the item to remove. |
 
 #### Returns
 
 `void`
 
----
+___
 
 ### setBoolean
 
@@ -342,17 +342,17 @@ Set a boolean in to the list.
 
 #### Parameters
 
-| Name         | Type                                        | Description                    |
-| :----------- | :------------------------------------------ | :----------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `properties` | [`IProperty`](../interfaces/IProperty.md)[] | The properties list to add to. |
-| `key`        | `string`                                    | The key of the item to add.    |
-| `value`      | `undefined` \| `boolean`                    | The value of the item to add.  |
+| `key` | `string` | The key of the item to add. |
+| `value` | `undefined` \| `boolean` | The value of the item to add. |
 
 #### Returns
 
 `void`
 
----
+___
 
 ### setDate
 
@@ -362,17 +362,17 @@ Set a date in ISO format in to the list.
 
 #### Parameters
 
-| Name         | Type                                        | Description                    |
-| :----------- | :------------------------------------------ | :----------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `properties` | [`IProperty`](../interfaces/IProperty.md)[] | The properties list to add to. |
-| `key`        | `string`                                    | The key of the item to add.    |
-| `value`      | `undefined` \| `Date`                       | The value of the item to add.  |
+| `key` | `string` | The key of the item to add. |
+| `value` | `undefined` \| `Date` | The value of the item to add. |
 
 #### Returns
 
 `void`
 
----
+___
 
 ### setDateTime
 
@@ -382,17 +382,17 @@ Set a date time in to the list.
 
 #### Parameters
 
-| Name         | Type                                        | Description                    |
-| :----------- | :------------------------------------------ | :----------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `properties` | [`IProperty`](../interfaces/IProperty.md)[] | The properties list to add to. |
-| `key`        | `string`                                    | The key of the item to add.    |
-| `value`      | `undefined` \| `Date`                       | The value of the item to add.  |
+| `key` | `string` | The key of the item to add. |
+| `value` | `undefined` \| `Date` | The value of the item to add. |
 
 #### Returns
 
 `void`
 
----
+___
 
 ### setFloat
 
@@ -402,17 +402,17 @@ Set a float in to the list.
 
 #### Parameters
 
-| Name         | Type                                        | Description                    |
-| :----------- | :------------------------------------------ | :----------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `properties` | [`IProperty`](../interfaces/IProperty.md)[] | The properties list to add to. |
-| `key`        | `string`                                    | The key of the item to add.    |
-| `value`      | `undefined` \| `number`                     | The value of the item to add.  |
+| `key` | `string` | The key of the item to add. |
+| `value` | `undefined` \| `number` | The value of the item to add. |
 
 #### Returns
 
 `void`
 
----
+___
 
 ### setInteger
 
@@ -422,17 +422,17 @@ Set an integer in to the list.
 
 #### Parameters
 
-| Name         | Type                                        | Description                    |
-| :----------- | :------------------------------------------ | :----------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `properties` | [`IProperty`](../interfaces/IProperty.md)[] | The properties list to add to. |
-| `key`        | `string`                                    | The key of the item to add.    |
-| `value`      | `undefined` \| `number`                     | The value of the item to add.  |
+| `key` | `string` | The key of the item to add. |
+| `value` | `undefined` \| `number` | The value of the item to add. |
 
 #### Returns
 
 `void`
 
----
+___
 
 ### setText
 
@@ -442,17 +442,17 @@ Set some text in to the list.
 
 #### Parameters
 
-| Name         | Type                                        | Description                    |
-| :----------- | :------------------------------------------ | :----------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `properties` | [`IProperty`](../interfaces/IProperty.md)[] | The properties list to add to. |
-| `key`        | `string`                                    | The key of the item to add.    |
-| `value`      | `undefined` \| `string`                     | The value of the item to add.  |
+| `key` | `string` | The key of the item to add. |
+| `value` | `undefined` \| `string` | The value of the item to add. |
 
 #### Returns
 
 `void`
 
----
+___
 
 ### setTime
 
@@ -462,17 +462,17 @@ Set a time in standard format in to the list.
 
 #### Parameters
 
-| Name         | Type                                        | Description                    |
-| :----------- | :------------------------------------------ | :----------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `properties` | [`IProperty`](../interfaces/IProperty.md)[] | The properties list to add to. |
-| `key`        | `string`                                    | The key of the item to add.    |
-| `value`      | `undefined` \| `Date`                       | The value of the item to add.  |
+| `key` | `string` | The key of the item to add. |
+| `value` | `undefined` \| `Date` | The value of the item to add. |
 
 #### Returns
 
 `void`
 
----
+___
 
 ### setTimestampMilliseconds
 
@@ -482,17 +482,17 @@ Set a timestamp in milliseconds in to the list.
 
 #### Parameters
 
-| Name         | Type                                        | Description                    |
-| :----------- | :------------------------------------------ | :----------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `properties` | [`IProperty`](../interfaces/IProperty.md)[] | The properties list to add to. |
-| `key`        | `string`                                    | The key of the item to add.    |
-| `value`      | `undefined` \| `number`                     | The value of the item to add.  |
+| `key` | `string` | The key of the item to add. |
+| `value` | `undefined` \| `number` | The value of the item to add. |
 
 #### Returns
 
 `void`
 
----
+___
 
 ### setTimestampSeconds
 
@@ -502,17 +502,17 @@ Set a timestamp in seconds in to the list.
 
 #### Parameters
 
-| Name         | Type                                        | Description                    |
-| :----------- | :------------------------------------------ | :----------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `properties` | [`IProperty`](../interfaces/IProperty.md)[] | The properties list to add to. |
-| `key`        | `string`                                    | The key of the item to add.    |
-| `value`      | `undefined` \| `number`                     | The value of the item to add.  |
+| `key` | `string` | The key of the item to add. |
+| `value` | `undefined` \| `number` | The value of the item to add. |
 
 #### Returns
 
 `void`
 
----
+___
 
 ### setUrn
 
@@ -522,17 +522,17 @@ Set a urn in to the list.
 
 #### Parameters
 
-| Name         | Type                                        | Description                    |
-| :----------- | :------------------------------------------ | :----------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `properties` | [`IProperty`](../interfaces/IProperty.md)[] | The properties list to add to. |
-| `key`        | `string`                                    | The key of the item to add.    |
-| `value`      | `undefined` \| `string`                     | The value of the item to add.  |
+| `key` | `string` | The key of the item to add. |
+| `value` | `undefined` \| `string` | The value of the item to add. |
 
 #### Returns
 
 `void`
 
----
+___
 
 ### setValue
 
@@ -543,17 +543,17 @@ Set a property in to the list.
 #### Type parameters
 
 | Name |
-| :--- |
-| `T`  |
+| :------ |
+| `T` |
 
 #### Parameters
 
-| Name         | Type                                        | Description                    |
-| :----------- | :------------------------------------------ | :----------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `properties` | [`IProperty`](../interfaces/IProperty.md)[] | The properties list to add to. |
-| `key`        | `string`                                    | The key of the item to add.    |
-| `type`       | `string`                                    | The type of the item to add.   |
-| `value`      | `undefined` \| `T`                          | The value of the item to add.  |
+| `key` | `string` | The key of the item to add. |
+| `type` | `string` | The type of the item to add. |
+| `value` | `undefined` \| `T` | The value of the item to add. |
 
 #### Returns
 

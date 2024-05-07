@@ -28,7 +28,7 @@ Get the digest.
 
 The digest.
 
----
+___
 
 ### update
 
@@ -38,8 +38,8 @@ Update the hash with the data.
 
 #### Parameters
 
-| Name      | Type         | Description                       |
-| :-------- | :----------- | :-------------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `message` | `Uint8Array` | The data to update the hash with. |
 
 #### Returns
@@ -52,7 +52,7 @@ The instance for chaining.
 
 Error if the hash has already been finalized.
 
----
+___
 
 ### sum
 
@@ -62,8 +62,8 @@ Perform Sum on the data.
 
 #### Parameters
 
-| Name   | Type         | Description             |
-| :----- | :----------- | :---------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `data` | `Uint8Array` | The data to operate on. |
 
 #### Returns

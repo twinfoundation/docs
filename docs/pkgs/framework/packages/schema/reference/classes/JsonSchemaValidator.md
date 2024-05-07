@@ -16,8 +16,8 @@ The constructor.
 
 #### Parameters
 
-| Name      | Type     | Description               |
-| :-------- | :------- | :------------------------ |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `schemas` | `Object` | The schemas to be loaded. |
 
 #### Returns
@@ -34,10 +34,10 @@ Validates data against the Schema passed as parameter.
 
 #### Parameters
 
-| Name         | Type      | Description               |
-| :----------- | :-------- | :------------------------ |
-| `schemaName` | `string`  | The name of the Schema.   |
-| `data`       | `unknown` | The data to be validated. |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `schemaName` | `string` | The name of the Schema. |
+| `data` | `unknown` | The data to be validated. |
 
 #### Returns
 

@@ -12,11 +12,11 @@ Create a new instance of BaseSocketClient.
 
 #### Parameters
 
-| Name                 | Type                                                                  | Description                                         |
-| :------------------- | :-------------------------------------------------------------------- | :-------------------------------------------------- |
-| `implementationName` | `string`                                                              | The name of the class implementation socket calls.  |
-| `config`             | [`IBaseSocketClientConfig`](../interfaces/IBaseSocketClientConfig.md) | The configuration for the client.                   |
-| `pathPrefix`         | `string`                                                              | The default prefix to use if none in configuration. |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `implementationName` | `string` | The name of the class implementation socket calls. |
+| `config` | [`IBaseSocketClientConfig`](../interfaces/IBaseSocketClientConfig.md) | The configuration for the client. |
+| `pathPrefix` | `string` | The default prefix to use if none in configuration. |
 
 #### Returns
 
@@ -34,7 +34,7 @@ Handle the socket connection.
 
 `Promise`\<`void`\>
 
----
+___
 
 ### handleError
 
@@ -44,16 +44,16 @@ Handle an error.
 
 #### Parameters
 
-| Name             | Type              | Description                  |
-| :--------------- | :---------------- | :--------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `requestContext` | `IRequestContext` | The context for the request. |
-| `err`            | `IError`          | The error to handle.         |
+| `err` | `IError` | The error to handle. |
 
 #### Returns
 
 `Promise`\<`void`\>
 
----
+___
 
 ### isConnected
 
@@ -67,7 +67,7 @@ Is the socket connected.
 
 True if the socket is connected.
 
----
+___
 
 ### onMessage
 
@@ -78,21 +78,21 @@ Setup a handler for a message from the socket.
 #### Type parameters
 
 | Name |
-| :--- |
-| `T`  |
+| :------ |
+| `T` |
 
 #### Parameters
 
-| Name       | Type                                 | Description                                  |
-| :--------- | :----------------------------------- | :------------------------------------------- |
-| `message`  | `string`                             | The message to look for.                     |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `message` | `string` | The message to look for. |
 | `callback` | (`data`: `T`) => `Promise`\<`void`\> | The method to call when the message arrives. |
 
 #### Returns
 
 `void`
 
----
+___
 
 ### sendMessage
 
@@ -103,21 +103,21 @@ Send a message on the socket.
 #### Type parameters
 
 | Name |
-| :--- |
-| `T`  |
+| :------ |
+| `T` |
 
 #### Parameters
 
-| Name      | Type     | Description                        |
-| :-------- | :------- | :--------------------------------- |
-| `message` | `string` | The message to send.               |
-| `data`    | `T`      | The data to send with the message. |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `message` | `string` | The message to send. |
+| `data` | `T` | The data to send with the message. |
 
 #### Returns
 
 `void`
 
----
+___
 
 ### socketConnect
 
@@ -127,8 +127,8 @@ Connect the socket if its not already connected.
 
 #### Parameters
 
-| Name             | Type              | Description                  |
-| :--------------- | :---------------- | :--------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `requestContext` | `IRequestContext` | The context for the request. |
 
 #### Returns
@@ -137,7 +137,7 @@ Connect the socket if its not already connected.
 
 True if the socket is already connected.
 
----
+___
 
 ### socketDisconnect
 

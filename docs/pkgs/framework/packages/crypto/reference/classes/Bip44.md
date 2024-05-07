@@ -22,15 +22,15 @@ Generate a bip44 address from the seed and parts.
 
 #### Parameters
 
-| Name           | Type                                     | Description                             |
-| :------------- | :--------------------------------------- | :-------------------------------------- |
-| `seed`         | `Uint8Array`                             | The account seed.                       |
-| `keyType`      | [`Ed25519`](../enums/KeyType.md#ed25519) | The key type.                           |
-| `hrp`          | `string`                                 | The human readable part of the address. |
-| `coinType`     | `number`                                 | The coin type.                          |
-| `accountIndex` | `number`                                 | The account index.                      |
-| `isInternal`   | `boolean`                                | Is this an internal address.            |
-| `addressIndex` | `number`                                 | The address index.                      |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `seed` | `Uint8Array` | The account seed. |
+| `keyType` | [`Ed25519`](../enums/KeyType.md#ed25519) | The key type. |
+| `hrp` | `string` | The human readable part of the address. |
+| `coinType` | `number` | The coin type. |
+| `accountIndex` | `number` | The account index. |
+| `isInternal` | `boolean` | Is this an internal address. |
+| `addressIndex` | `number` | The address index. |
 
 #### Returns
 
@@ -38,12 +38,12 @@ Generate a bip44 address from the seed and parts.
 
 The generated path.
 
-| Name      | Type                                    |
-| :-------- | :-------------------------------------- |
-| `address` | `string`                                |
+| Name | Type |
+| :------ | :------ |
+| `address` | `string` |
 | `keyPair` | [`IKeyPair`](../interfaces/IKeyPair.md) |
 
----
+___
 
 ### basePath
 
@@ -53,8 +53,8 @@ Create a bip44 base path for the provided coin type.
 
 #### Parameters
 
-| Name       | Type     | Description    |
-| :--------- | :------- | :------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `coinType` | `number` | The coin type. |
 
 #### Returns
@@ -63,7 +63,7 @@ Create a bip44 base path for the provided coin type.
 
 The bip44 address base path.
 
----
+___
 
 ### keyPair
 
@@ -73,14 +73,14 @@ Generate a bip44 key pair from the seed and parts.
 
 #### Parameters
 
-| Name           | Type                                     | Description                  |
-| :------------- | :--------------------------------------- | :--------------------------- |
-| `seed`         | `Uint8Array`                             | The account seed.            |
-| `keyType`      | [`Ed25519`](../enums/KeyType.md#ed25519) | The key type.                |
-| `coinType`     | `number`                                 | The coin type.               |
-| `accountIndex` | `number`                                 | The account index.           |
-| `isInternal`   | `boolean`                                | Is this an internal address. |
-| `addressIndex` | `number`                                 | The address index.           |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `seed` | `Uint8Array` | The account seed. |
+| `keyType` | [`Ed25519`](../enums/KeyType.md#ed25519) | The key type. |
+| `coinType` | `number` | The coin type. |
+| `accountIndex` | `number` | The account index. |
+| `isInternal` | `boolean` | Is this an internal address. |
+| `addressIndex` | `number` | The address index. |
 
 #### Returns
 
@@ -92,7 +92,7 @@ The key pair.
 
 Error if the address type is not supported.
 
----
+___
 
 ### path
 
@@ -102,12 +102,12 @@ Generate a bip44 path based on all its parts.
 
 #### Parameters
 
-| Name           | Type      | Description                  |
-| :------------- | :-------- | :--------------------------- |
-| `coinType`     | `number`  | The coin type.               |
-| `accountIndex` | `number`  | The account index.           |
-| `isInternal`   | `boolean` | Is this an internal address. |
-| `addressIndex` | `number`  | The address index.           |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `coinType` | `number` | The coin type. |
+| `accountIndex` | `number` | The account index. |
+| `isInternal` | `boolean` | Is this an internal address. |
+| `addressIndex` | `number` | The address index. |
 
 #### Returns
 

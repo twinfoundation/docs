@@ -23,13 +23,13 @@ Is the value an array.
 #### Type parameters
 
 | Name |
-| :--- |
-| `T`  |
+| :------ |
+| `T` |
 
 #### Parameters
 
-| Name    | Type      | Description        |
-| :------ | :-------- | :----------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `value` | `unknown` | The value to test. |
 
 #### Returns
@@ -38,7 +38,7 @@ value is T[]
 
 True if the value is an array.
 
----
+___
 
 ### arrayOneOf
 
@@ -49,14 +49,14 @@ Is the value an array with at least one element.
 #### Type parameters
 
 | Name |
-| :--- |
-| `T`  |
+| :------ |
+| `T` |
 
 #### Parameters
 
-| Name      | Type  | Description                           |
-| :-------- | :---- | :------------------------------------ |
-| `value`   | `T`   | The value to test.                    |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `value` | `T` | The value to test. |
 | `options` | `T`[] | The options the value must be one of. |
 
 #### Returns
@@ -65,7 +65,7 @@ value is T
 
 True if the value is an element from the options array.
 
----
+___
 
 ### arrayValue
 
@@ -76,13 +76,13 @@ Is the value an array with at least one element.
 #### Type parameters
 
 | Name |
-| :--- |
-| `T`  |
+| :------ |
+| `T` |
 
 #### Parameters
 
-| Name    | Type      | Description        |
-| :------ | :-------- | :----------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `value` | `unknown` | The value to test. |
 
 #### Returns
@@ -91,7 +91,7 @@ value is T[]
 
 True if the value is an array with at least one element.
 
----
+___
 
 ### bigint
 
@@ -101,8 +101,8 @@ Is the value a big integer.
 
 #### Parameters
 
-| Name    | Type      | Description        |
-| :------ | :-------- | :----------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `value` | `unknown` | The value to test. |
 
 #### Returns
@@ -111,7 +111,7 @@ value is bigint
 
 True if the value is a big integer.
 
----
+___
 
 ### boolean
 
@@ -121,8 +121,8 @@ Is the value a boolean.
 
 #### Parameters
 
-| Name    | Type      | Description        |
-| :------ | :-------- | :----------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `value` | `unknown` | The value to test. |
 
 #### Returns
@@ -131,7 +131,7 @@ value is boolean
 
 True if the value is a boolean.
 
----
+___
 
 ### date
 
@@ -141,8 +141,8 @@ Is the value a date.
 
 #### Parameters
 
-| Name    | Type      | Description        |
-| :------ | :-------- | :----------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `value` | `unknown` | The value to test. |
 
 #### Returns
@@ -151,7 +151,7 @@ value is Date
 
 True if the value is a date.
 
----
+___
 
 ### dateEmpty
 
@@ -161,8 +161,8 @@ Is the value an empty date.
 
 #### Parameters
 
-| Name    | Type      | Description        |
-| :------ | :-------- | :----------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `value` | `unknown` | The value to test. |
 
 #### Returns
@@ -171,7 +171,7 @@ Is the value an empty date.
 
 True if the value is an empty date.
 
----
+___
 
 ### dateString
 
@@ -181,8 +181,8 @@ Is the value a date string.
 
 #### Parameters
 
-| Name    | Type      | Description        |
-| :------ | :-------- | :----------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `value` | `unknown` | The value to test. |
 
 #### Returns
@@ -191,7 +191,7 @@ Is the value a date string.
 
 True if the value is a string in ISO 8601 date format.
 
----
+___
 
 ### dateTimeString
 
@@ -201,8 +201,8 @@ Is the value a date string.
 
 #### Parameters
 
-| Name    | Type      | Description        |
-| :------ | :-------- | :----------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `value` | `unknown` | The value to test. |
 
 #### Returns
@@ -211,7 +211,7 @@ Is the value a date string.
 
 True if the value is a string in ISO 8601 date/time format.
 
----
+___
 
 ### email
 
@@ -221,8 +221,8 @@ Is the value a string formatted as an email address.
 
 #### Parameters
 
-| Name    | Type      | Description        |
-| :------ | :-------- | :----------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `value` | `unknown` | The value to test. |
 
 #### Returns
@@ -231,7 +231,7 @@ value is string
 
 True if the value is a string.
 
----
+___
 
 ### empty
 
@@ -241,8 +241,8 @@ Is the property null or undefined.
 
 #### Parameters
 
-| Name    | Type      | Description        |
-| :------ | :-------- | :----------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `value` | `unknown` | The value to test. |
 
 #### Returns
@@ -251,7 +251,7 @@ value is undefined \| null
 
 True if the value is a empty.
 
----
+___
 
 ### function
 
@@ -261,8 +261,8 @@ Is the property a function.
 
 #### Parameters
 
-| Name    | Type      | Description        |
-| :------ | :-------- | :----------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `value` | `unknown` | The value to test. |
 
 #### Returns
@@ -271,7 +271,7 @@ value is Function
 
 True if the value is a function.
 
----
+___
 
 ### integer
 
@@ -281,8 +281,8 @@ Is the value an integer.
 
 #### Parameters
 
-| Name    | Type      | Description        |
-| :------ | :-------- | :----------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `value` | `unknown` | The value to test. |
 
 #### Returns
@@ -291,7 +291,7 @@ value is number
 
 True if the value is an integer.
 
----
+___
 
 ### json
 
@@ -301,8 +301,8 @@ Is the value a JSON string.
 
 #### Parameters
 
-| Name    | Type      | Description        |
-| :------ | :-------- | :----------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `value` | `unknown` | The value to test. |
 
 #### Returns
@@ -311,7 +311,7 @@ value is string
 
 True if the value is a JSON string.
 
----
+___
 
 ### notEmpty
 
@@ -321,8 +321,8 @@ Is the property is not null or undefined.
 
 #### Parameters
 
-| Name    | Type      | Description        |
-| :------ | :-------- | :----------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `value` | `unknown` | The value to test. |
 
 #### Returns
@@ -331,7 +331,7 @@ Is the property is not null or undefined.
 
 True if the value is a not empty.
 
----
+___
 
 ### null
 
@@ -341,8 +341,8 @@ Is the property null.
 
 #### Parameters
 
-| Name    | Type      | Description        |
-| :------ | :-------- | :----------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `value` | `unknown` | The value to test. |
 
 #### Returns
@@ -351,7 +351,7 @@ value is null
 
 True if the value is a empty.
 
----
+___
 
 ### number
 
@@ -361,8 +361,8 @@ Is the value a number.
 
 #### Parameters
 
-| Name    | Type      | Description        |
-| :------ | :-------- | :----------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `value` | `unknown` | The value to test. |
 
 #### Returns
@@ -371,7 +371,7 @@ value is number
 
 True if the value is a number.
 
----
+___
 
 ### object
 
@@ -381,14 +381,14 @@ Is the value an object.
 
 #### Type parameters
 
-| Name | Type                            |
-| :--- | :------------------------------ |
-| `T`  | \{ `[id: string]`: `unknown`; } |
+| Name | Type |
+| :------ | :------ |
+| `T` | \{ `[id: string]`: `unknown`;  } |
 
 #### Parameters
 
-| Name    | Type      | Description        |
-| :------ | :-------- | :----------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `value` | `unknown` | The value to test. |
 
 #### Returns
@@ -397,7 +397,7 @@ value is T
 
 True if the value is a object.
 
----
+___
 
 ### objectValue
 
@@ -407,14 +407,14 @@ Is the value an object with at least one property.
 
 #### Type parameters
 
-| Name | Type                            |
-| :--- | :------------------------------ |
-| `T`  | \{ `[id: string]`: `unknown`; } |
+| Name | Type |
+| :------ | :------ |
+| `T` | \{ `[id: string]`: `unknown`;  } |
 
 #### Parameters
 
-| Name    | Type      | Description        |
-| :------ | :-------- | :----------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `value` | `unknown` | The value to test. |
 
 #### Returns
@@ -423,7 +423,7 @@ value is T
 
 True if the value is a object.
 
----
+___
 
 ### string
 
@@ -433,8 +433,8 @@ Is the value a string.
 
 #### Parameters
 
-| Name    | Type      | Description        |
-| :------ | :-------- | :----------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `value` | `unknown` | The value to test. |
 
 #### Returns
@@ -443,7 +443,7 @@ value is string
 
 True if the value is a string.
 
----
+___
 
 ### stringBase64
 
@@ -453,8 +453,8 @@ Is the value a base64 string.
 
 #### Parameters
 
-| Name    | Type      | Description        |
-| :------ | :-------- | :----------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `value` | `unknown` | The value to test. |
 
 #### Returns
@@ -463,7 +463,7 @@ value is string
 
 True if the value is a base64 string.
 
----
+___
 
 ### stringBase64Url
 
@@ -473,8 +473,8 @@ Is the value a base64 url string.
 
 #### Parameters
 
-| Name    | Type      | Description        |
-| :------ | :-------- | :----------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `value` | `unknown` | The value to test. |
 
 #### Returns
@@ -483,7 +483,7 @@ value is string
 
 True if the value is a base64 string.
 
----
+___
 
 ### stringHex
 
@@ -493,8 +493,8 @@ Is the value a hex string.
 
 #### Parameters
 
-| Name    | Type      | Description        |
-| :------ | :-------- | :----------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `value` | `unknown` | The value to test. |
 
 #### Returns
@@ -503,7 +503,7 @@ value is string
 
 True if the value is a hex string.
 
----
+___
 
 ### stringHexLength
 
@@ -513,10 +513,10 @@ Is the value a hex string of fixed length.
 
 #### Parameters
 
-| Name     | Type      | Description         |
-| :------- | :-------- | :------------------ |
-| `value`  | `unknown` | The value to test.  |
-| `length` | `number`  | The length to test. |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `value` | `unknown` | The value to test. |
+| `length` | `number` | The length to test. |
 
 #### Returns
 
@@ -524,7 +524,7 @@ value is string
 
 True if the value is a hex string of required length.
 
----
+___
 
 ### stringValue
 
@@ -534,8 +534,8 @@ Is the value a string.
 
 #### Parameters
 
-| Name    | Type      | Description        |
-| :------ | :-------- | :----------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `value` | `unknown` | The value to test. |
 
 #### Returns
@@ -544,7 +544,7 @@ value is string
 
 True if the value is a string.
 
----
+___
 
 ### timeString
 
@@ -554,8 +554,8 @@ Is the value a time string.
 
 #### Parameters
 
-| Name    | Type      | Description        |
-| :------ | :-------- | :----------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `value` | `unknown` | The value to test. |
 
 #### Returns
@@ -564,7 +564,7 @@ Is the value a time string.
 
 True if the value is a string in ISO 8601 time format.
 
----
+___
 
 ### timestampMilliseconds
 
@@ -574,8 +574,8 @@ Is the value a timestamp in milliseconds.
 
 #### Parameters
 
-| Name    | Type      | Description        |
-| :------ | :-------- | :----------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `value` | `unknown` | The value to test. |
 
 #### Returns
@@ -584,7 +584,7 @@ value is number
 
 True if the value is a date.
 
----
+___
 
 ### timestampSeconds
 
@@ -594,8 +594,8 @@ Is the value a timestamp in seconds.
 
 #### Parameters
 
-| Name    | Type      | Description        |
-| :------ | :-------- | :----------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `value` | `unknown` | The value to test. |
 
 #### Returns
@@ -604,7 +604,7 @@ value is number
 
 True if the value is a date.
 
----
+___
 
 ### typedArray
 
@@ -614,8 +614,8 @@ Is the value a TypedArray.
 
 #### Parameters
 
-| Name    | Type      | Description        |
-| :------ | :-------- | :----------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `value` | `unknown` | The value to test. |
 
 #### Returns
@@ -624,7 +624,7 @@ value is Int8Array \| Uint8Array \| Int16Array \| Uint16Array \| Int32Array \| U
 
 True if the value is a TypedArray.
 
----
+___
 
 ### uint8Array
 
@@ -634,8 +634,8 @@ Is the value a Uint8Array.
 
 #### Parameters
 
-| Name    | Type      | Description        |
-| :------ | :-------- | :----------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `value` | `unknown` | The value to test. |
 
 #### Returns
@@ -644,7 +644,7 @@ value is Uint8Array
 
 True if the value is a Uint8Array.
 
----
+___
 
 ### undefined
 
@@ -654,8 +654,8 @@ Is the property undefined.
 
 #### Parameters
 
-| Name    | Type      | Description        |
-| :------ | :-------- | :----------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `value` | `unknown` | The value to test. |
 
 #### Returns

@@ -12,8 +12,8 @@ Create a new instance of BitString.
 
 #### Parameters
 
-| Name         | Type     | Description                   |
-| :----------- | :------- | :---------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `numberBits` | `number` | The length of the bit string. |
 
 #### Returns
@@ -30,8 +30,8 @@ Get the bit at the given index.
 
 #### Parameters
 
-| Name    | Type     | Description                   |
-| :------ | :------- | :---------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `index` | `number` | The index to get the bit for. |
 
 #### Returns
@@ -44,7 +44,7 @@ True if the bit at the index is set.
 
 GeneralError if the index is out of range.
 
----
+___
 
 ### getBits
 
@@ -58,7 +58,7 @@ Get the bits of the bit string.
 
 The bits stored in a Uint8Array.
 
----
+___
 
 ### getLength
 
@@ -72,7 +72,7 @@ Get the length of the bit string.
 
 The length of the bit string.
 
----
+___
 
 ### setBit
 
@@ -82,10 +82,10 @@ Set the bit at the given index.
 
 #### Parameters
 
-| Name    | Type      | Description                   |
-| :------ | :-------- | :---------------------------- |
-| `index` | `number`  | The index to set the bit for. |
-| `value` | `boolean` | The value to set the bit to.  |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `index` | `number` | The index to set the bit for. |
+| `value` | `boolean` | The value to set the bit to. |
 
 #### Returns
 
@@ -95,7 +95,7 @@ Set the bit at the given index.
 
 GeneralError if the index is out of range.
 
----
+___
 
 ### fromBits
 
@@ -105,10 +105,10 @@ Create a new instance of BitString from a bit array.
 
 #### Parameters
 
-| Name         | Type         | Description                             |
-| :----------- | :----------- | :-------------------------------------- |
-| `bits`       | `Uint8Array` | The bits to create the bit string from. |
-| `numberBits` | `number`     | The number of bits in the bit string.   |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `bits` | `Uint8Array` | The bits to create the bit string from. |
+| `numberBits` | `number` | The number of bits in the bit string. |
 
 #### Returns
 

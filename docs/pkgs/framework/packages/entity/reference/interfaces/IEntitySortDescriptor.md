@@ -5,8 +5,8 @@ Definition of an entity property sort details.
 ## Type parameters
 
 | Name |
-| :--- |
-| `T`  |
+| :------ |
+| `T` |
 
 ## Properties
 
@@ -16,7 +16,7 @@ Definition of an entity property sort details.
 
 The name of the property.
 
----
+___
 
 ### sortDirection
 
@@ -24,7 +24,7 @@ The name of the property.
 
 Default sort direction for this column, leave empty if not sortable.
 
----
+___
 
 ### type
 

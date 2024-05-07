@@ -6,78 +6,78 @@ The types of comparison types.
 
 ### Equals
 
-• **Equals** = `"Equals"`
+• **Equals** = ``"Equals"``
 
 Equals.
 
----
+___
 
 ### GreaterThan
 
-• **GreaterThan** = `"GreaterThan"`
+• **GreaterThan** = ``"GreaterThan"``
 
 Greater Than.
 
----
+___
 
 ### GreaterThanOrEqual
 
-• **GreaterThanOrEqual** = `"GreaterThanOrEqual"`
+• **GreaterThanOrEqual** = ``"GreaterThanOrEqual"``
 
 Greater Than Or Equal.
 
----
+___
 
 ### In
 
-• **In** = `"In"`
+• **In** = ``"In"``
 
 In operator.
 
----
+___
 
 ### Includes
 
-• **Includes** = `"Includes"`
+• **Includes** = ``"Includes"``
 
 Includes.
 
----
+___
 
 ### LessThan
 
-• **LessThan** = `"LessThan"`
+• **LessThan** = ``"LessThan"``
 
 Less Than.
 
----
+___
 
 ### LessThanOrEqual
 
-• **LessThanOrEqual** = `"LessThanOrEqual"`
+• **LessThanOrEqual** = ``"LessThanOrEqual"``
 
 Less Than Or Equal.
 
----
+___
 
 ### NotEquals
 
-• **NotEquals** = `"NotEquals"`
+• **NotEquals** = ``"NotEquals"``
 
 Not Equals.
 
----
+___
 
 ### NotIn
 
-• **NotIn** = `"NotIn"`
+• **NotIn** = ``"NotIn"``
 
 Not In operator.
 
----
+___
 
 ### NotIncludes
 
-• **NotIncludes** = `"NotIncludes"`
+• **NotIncludes** = ``"NotIncludes"``
 
 Not Includes.

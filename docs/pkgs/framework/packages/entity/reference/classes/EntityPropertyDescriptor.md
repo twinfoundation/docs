@@ -23,15 +23,15 @@ Build sort properties from the descriptor and override if necessary.
 #### Type parameters
 
 | Name |
-| :--- |
-| `T`  |
+| :------ |
+| `T` |
 
 #### Parameters
 
-| Name                | Type                                                                                         | Description                                              |
-| :------------------ | :------------------------------------------------------------------------------------------- | :------------------------------------------------------- |
-| `entityDescriptor`  | [`IEntityDescriptor`](../interfaces/IEntityDescriptor.md)\<`T`\>                             | The entity descriptor to retrieve the default sort keys. |
-| `overrideSortKeys?` | \{ `property`: keyof `T` ; `sortDirection`: [`SortDirection`](../enums/SortDirection.md) }[] | The override sort keys.                                  |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `entityDescriptor` | [`IEntityDescriptor`](../interfaces/IEntityDescriptor.md)\<`T`\> | The entity descriptor to retrieve the default sort keys. |
+| `overrideSortKeys?` | \{ `property`: keyof `T` ; `sortDirection`: [`SortDirection`](../enums/SortDirection.md)  }[] | The override sort keys. |
 
 #### Returns
 
@@ -39,7 +39,7 @@ Build sort properties from the descriptor and override if necessary.
 
 The finalised sort keys.
 
----
+___
 
 ### getPrimaryKey
 
@@ -50,13 +50,13 @@ Get the primary key from the descriptor.
 #### Type parameters
 
 | Name |
-| :--- |
-| `T`  |
+| :------ |
+| `T` |
 
 #### Parameters
 
-| Name               | Type                                                             | Description                                         |
-| :----------------- | :--------------------------------------------------------------- | :-------------------------------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `entityDescriptor` | [`IEntityDescriptor`](../interfaces/IEntityDescriptor.md)\<`T`\> | The entity descriptor to find the primary key from. |
 
 #### Returns
@@ -69,7 +69,7 @@ The key if only one was found.
 
 If no primary key was found, or more than one.
 
----
+___
 
 ### getSortProperties
 
@@ -80,13 +80,13 @@ Get the sort properties from the descriptor.
 #### Type parameters
 
 | Name |
-| :--- |
-| `T`  |
+| :------ |
+| `T` |
 
 #### Parameters
 
-| Name               | Type                                                             | Description                                         |
-| :----------------- | :--------------------------------------------------------------- | :-------------------------------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `entityDescriptor` | [`IEntityDescriptor`](../interfaces/IEntityDescriptor.md)\<`T`\> | The entity descriptor to find the primary key from. |
 
 #### Returns

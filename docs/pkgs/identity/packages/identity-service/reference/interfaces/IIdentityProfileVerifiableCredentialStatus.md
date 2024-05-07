@@ -10,7 +10,7 @@ Interface representing the status of a verifiable credential application.
 
 The id of the credential.
 
----
+___
 
 ### issuer
 
@@ -18,7 +18,7 @@ The id of the credential.
 
 Which did issued the credential.
 
----
+___
 
 ### type
 

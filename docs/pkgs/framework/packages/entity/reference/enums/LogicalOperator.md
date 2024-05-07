@@ -6,14 +6,14 @@ An enum defining logical operators.
 
 ### And
 
-• **And** = `"And"`
+• **And** = ``"And"``
 
 Logical operator AND.
 
----
+___
 
 ### Or
 
-• **Or** = `"Or"`
+• **Or** = ``"Or"``
 
 Logical operator OR.

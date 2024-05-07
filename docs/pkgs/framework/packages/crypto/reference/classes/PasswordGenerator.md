@@ -22,8 +22,8 @@ Generate a password of given length.
 
 #### Parameters
 
-| Name     | Type     | Description                             |
-| :------- | :------- | :-------------------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `length` | `number` | The length of the password to generate. |
 
 #### Returns

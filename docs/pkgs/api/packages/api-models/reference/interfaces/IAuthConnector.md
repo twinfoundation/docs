@@ -18,8 +18,8 @@ Bootstrap the service by creating and initializing any resources it needs.
 
 #### Parameters
 
-| Name             | Type              | Description                            |
-| :--------------- | :---------------- | :------------------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `requestContext` | `IRequestContext` | The request context for bootstrapping. |
 
 #### Returns
@@ -32,7 +32,7 @@ Nothing.
 
 IService.bootstrap
 
----
+___
 
 ### request
 
@@ -42,12 +42,12 @@ Process the request to check if the tenant has access to the API.
 
 #### Parameters
 
-| Name             | Type                                        | Description                  |
-| :--------------- | :------------------------------------------ | :--------------------------- |
-| `requestContext` | `IRequestContext`                           | The context for the request. |
-| `route`          | [`IBaseRoute`](IBaseRoute.md)               | The route being requested.   |
-| `headers`        | `IHttpRequestHeaders`                       | The request headers.         |
-| `query`          | [`IHttpRequestQuery`](IHttpRequestQuery.md) | The request query params.    |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `requestContext` | `IRequestContext` | The context for the request. |
+| `route` | [`IBaseRoute`](IBaseRoute.md) | The route being requested. |
+| `headers` | `IHttpRequestHeaders` | The request headers. |
+| `query` | [`IHttpRequestQuery`](IHttpRequestQuery.md) | The request query params. |
 
 #### Returns
 
@@ -55,7 +55,7 @@ Process the request to check if the tenant has access to the API.
 
 Nothing.
 
----
+___
 
 ### response
 
@@ -65,12 +65,12 @@ Process the response to see if there are any additional headers to add.
 
 #### Parameters
 
-| Name             | Type                                                                  | Description                   |
-| :--------------- | :-------------------------------------------------------------------- | :---------------------------- |
-| `requestContext` | `IRequestContext`                                                     | The context for the request.  |
-| `route`          | [`IBaseRoute`](IBaseRoute.md)                                         | The route being responded to. |
-| `requestHeaders` | `IHttpRequestHeaders`                                                 | The request headers.          |
-| `response`       | \{ `[id: string]`: `unknown`; } & [`IHttpResponse`](IHttpResponse.md) | The response.                 |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `requestContext` | `IRequestContext` | The context for the request. |
+| `route` | [`IBaseRoute`](IBaseRoute.md) | The route being responded to. |
+| `requestHeaders` | `IHttpRequestHeaders` | The request headers. |
+| `response` | \{ `[id: string]`: `unknown`;  } & [`IHttpResponse`](IHttpResponse.md) | The response. |
 
 #### Returns
 
@@ -78,7 +78,7 @@ Process the response to see if there are any additional headers to add.
 
 Nothing.
 
----
+___
 
 ### start
 
@@ -96,7 +96,7 @@ Nothing.
 
 IService.start
 
----
+___
 
 ### stop
 

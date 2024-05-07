@@ -5,8 +5,8 @@ Interface describing a label/value pair.
 ## Type parameters
 
 | Name |
-| :--- |
-| `T`  |
+| :------ |
+| `T` |
 
 ## Properties
 
@@ -16,7 +16,7 @@ Interface describing a label/value pair.
 
 The label for the item.
 
----
+___
 
 ### value
 
