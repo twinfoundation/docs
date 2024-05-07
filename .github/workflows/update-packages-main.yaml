@@ -35,7 +35,7 @@ jobs:
         run: npm ci
 
       - name: Clean up
-        run: rm -rf docs/packages/
+        run: rm -rf docs/ref/
 
       ########### tools
       - name: Checkout tools
