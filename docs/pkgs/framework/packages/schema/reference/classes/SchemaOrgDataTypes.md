@@ -14,89 +14,89 @@ Handle all the data types for schema.org.
 
 ## Properties
 
-### TYPE_BOOLEAN
+### TYPE\_BOOLEAN
 
-▪ `Static` **TYPE_BOOLEAN**: `string` = `"https://schema.org/Boolean"`
+▪ `Static` **TYPE\_BOOLEAN**: `string` = `"https://schema.org/Boolean"`
 
 Represents a boolean.
 
----
+___
 
-### TYPE_DATE
+### TYPE\_DATE
 
-▪ `Static` **TYPE_DATE**: `string` = `"https://schema.org/Date"`
+▪ `Static` **TYPE\_DATE**: `string` = `"https://schema.org/Date"`
 
 Represents a date as an ISO format string.
 
----
+___
 
-### TYPE_DATE_TIME
+### TYPE\_DATE\_TIME
 
-▪ `Static` **TYPE_DATE_TIME**: `string` = `"https://schema.org/DateTime"`
+▪ `Static` **TYPE\_DATE\_TIME**: `string` = `"https://schema.org/DateTime"`
 
 Represents a date time as an ISO format string.
 
----
+___
 
-### TYPE_FLOAT
+### TYPE\_FLOAT
 
-▪ `Static` **TYPE_FLOAT**: `string` = `"https://schema.org/Float"`
+▪ `Static` **TYPE\_FLOAT**: `string` = `"https://schema.org/Float"`
 
 Represents floating point numbers.
 
----
+___
 
-### TYPE_GEO_COORDINATES
+### TYPE\_GEO\_COORDINATES
 
-▪ `Static` **TYPE_GEO_COORDINATES**: `string` = `"https://schema.org/GeoCoordinates"`
+▪ `Static` **TYPE\_GEO\_COORDINATES**: `string` = `"https://schema.org/GeoCoordinates"`
 
 Represents a location.
 
----
+___
 
-### TYPE_IMAGE
+### TYPE\_IMAGE
 
-▪ `Static` **TYPE_IMAGE**: `string` = `"https://schema.org/image"`
+▪ `Static` **TYPE\_IMAGE**: `string` = `"https://schema.org/image"`
 
 Represents a url which points to an image.
 
----
+___
 
-### TYPE_INTEGER
+### TYPE\_INTEGER
 
-▪ `Static` **TYPE_INTEGER**: `string` = `"https://schema.org/Integer"`
+▪ `Static` **TYPE\_INTEGER**: `string` = `"https://schema.org/Integer"`
 
 Represents integer number values.
 
----
+___
 
-### TYPE_STRUCTURED_VALUE
+### TYPE\_STRUCTURED\_VALUE
 
-▪ `Static` **TYPE_STRUCTURED_VALUE**: `string` = `"https://schema.org/StructuredValue"`
+▪ `Static` **TYPE\_STRUCTURED\_VALUE**: `string` = `"https://schema.org/StructuredValue"`
 
 Represents a structured value.
 
----
+___
 
-### TYPE_TEXT
+### TYPE\_TEXT
 
-▪ `Static` **TYPE_TEXT**: `string` = `"https://schema.org/Text"`
+▪ `Static` **TYPE\_TEXT**: `string` = `"https://schema.org/Text"`
 
 Represents text storage.
 
----
+___
 
-### TYPE_TIME
+### TYPE\_TIME
 
-▪ `Static` **TYPE_TIME**: `string` = `"https://schema.org/Time"`
+▪ `Static` **TYPE\_TIME**: `string` = `"https://schema.org/Time"`
 
 Represents a time as an ISO format string.
 
----
+___
 
-### TYPE_URL
+### TYPE\_URL
 
-▪ `Static` **TYPE_URL**: `string` = `"https://schema.org/URL"`
+▪ `Static` **TYPE\_URL**: `string` = `"https://schema.org/URL"`
 
 Represents a url.
 
@@ -112,7 +112,7 @@ Register all the data types.
 
 `void`
 
----
+___
 
 ### validateGeoCoordinates
 
@@ -122,11 +122,11 @@ Validate if the property is valid geo-coordinates.
 
 #### Parameters
 
-| Name           | Type                   | Description                               |
-| :------------- | :--------------------- | :---------------------------------------- |
-| `propertyName` | `string`               | The name of the property being validated. |
-| `value`        | `unknown`              | The value to test.                        |
-| `failures`     | `IValidationFailure`[] | The list of failures to add to.           |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `propertyName` | `string` | The name of the property being validated. |
+| `value` | `unknown` | The value to test. |
+| `failures` | `IValidationFailure`[] | The list of failures to add to. |
 
 #### Returns
 

@@ -14,9 +14,9 @@ Helper methods for hex conversions.
 
 ## Properties
 
-### BIG_INT_MAX_256_BIT
+### BIG\_INT\_MAX\_256\_BIT
 
-▪ `Static` `Readonly` **BIG_INT_MAX_256_BIT**: `bigint`
+▪ `Static` `Readonly` **BIG\_INT\_MAX\_256\_BIT**: `bigint`
 
 Const defining the maximum value for a 256 bit int.
 
@@ -30,8 +30,8 @@ Add the 0x prefix if it does not exist.
 
 #### Parameters
 
-| Name  | Type     | Description                         |
-| :---- | :------- | :---------------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `hex` | `string` | The hex value to add the prefix to. |
 
 #### Returns
@@ -40,7 +40,7 @@ Add the 0x prefix if it does not exist.
 
 The hex with the prefix.
 
----
+___
 
 ### fromBigInt256
 
@@ -50,8 +50,8 @@ Convert the big int 256 bit to hex string.
 
 #### Parameters
 
-| Name    | Type     | Description                   |
-| :------ | :------- | :---------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `value` | `bigint` | The big int value to convert. |
 
 #### Returns
@@ -60,7 +60,7 @@ Convert the big int 256 bit to hex string.
 
 The hex encoded big int.
 
----
+___
 
 ### hasPrefix
 
@@ -70,8 +70,8 @@ Does the hex string have the prefix.
 
 #### Parameters
 
-| Name  | Type     | Description                            |
-| :---- | :------- | :------------------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `hex` | `string` | The hex value to check for the prefix. |
 
 #### Returns
@@ -80,7 +80,7 @@ Does the hex string have the prefix.
 
 True if the hex string has the prefix.
 
----
+___
 
 ### isHex
 
@@ -90,10 +90,10 @@ Is the data hex format.
 
 #### Parameters
 
-| Name          | Type      | Default value | Description                          |
-| :------------ | :-------- | :------------ | :----------------------------------- |
-| `value`       | `string`  | `undefined`   | The value to test.                   |
-| `allowPrefix` | `boolean` | `false`       | Allow the hex to have the 0x prefix. |
+| Name | Type | Default value | Description |
+| :------ | :------ | :------ | :------ |
+| `value` | `string` | `undefined` | The value to test. |
+| `allowPrefix` | `boolean` | `false` | Allow the hex to have the 0x prefix. |
 
 #### Returns
 
@@ -101,7 +101,7 @@ Is the data hex format.
 
 True if the string is hex.
 
----
+___
 
 ### stripPrefix
 
@@ -111,8 +111,8 @@ Strip the 0x prefix if it exists.
 
 #### Parameters
 
-| Name  | Type     | Description             |
-| :---- | :------- | :---------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `hex` | `string` | The hex value to strip. |
 
 #### Returns
@@ -121,7 +121,7 @@ Strip the 0x prefix if it exists.
 
 The stripped hex without the prefix.
 
----
+___
 
 ### toBigInt256
 
@@ -131,8 +131,8 @@ Convert the hex string to a big int.
 
 #### Parameters
 
-| Name  | Type     | Description               |
-| :---- | :------- | :------------------------ |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `hex` | `string` | The hex value to convert. |
 
 #### Returns

@@ -22,8 +22,8 @@ Convert the base 32 string to a byte array.
 
 #### Parameters
 
-| Name     | Type     | Description                   |
-| :------- | :------- | :---------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `base32` | `string` | The base32 string to convert. |
 
 #### Returns
@@ -36,7 +36,7 @@ The byte array.
 
 If the input string contains a character not in the Base32 alphabet.
 
----
+___
 
 ### encode
 
@@ -46,8 +46,8 @@ Convert a byte array to base 32.
 
 #### Parameters
 
-| Name    | Type         | Description                |
-| :------ | :----------- | :------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `bytes` | `Uint8Array` | The byte array to convert. |
 
 #### Returns

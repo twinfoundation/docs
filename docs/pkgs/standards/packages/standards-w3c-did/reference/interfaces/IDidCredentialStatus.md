@@ -16,7 +16,7 @@ Additional properties.
 
 The URI id.
 
----
+___
 
 ### type
 

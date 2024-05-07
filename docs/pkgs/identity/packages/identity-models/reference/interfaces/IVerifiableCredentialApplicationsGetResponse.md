@@ -12,7 +12,7 @@ The response payload.
 
 #### Type declaration
 
-| Name           | Type                                                                                        | Description                             |
-| :------------- | :------------------------------------------------------------------------------------------ | :-------------------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `applications` | [`IIdentityVerifiableCredentialApplication`](IIdentityVerifiableCredentialApplication.md)[] | The verifiable credential applications. |
-| `cursor?`      | `string`                                                                                    | The cursor for paged requests.          |
+| `cursor?` | `string` | The cursor for paged requests. |

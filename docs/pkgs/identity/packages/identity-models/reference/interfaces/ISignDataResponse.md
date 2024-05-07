@@ -12,7 +12,7 @@ The response payload.
 
 #### Type declaration
 
-| Name             | Type     | Description                      |
-| :--------------- | :------- | :------------------------------- |
-| `signatureType`  | `string` | The type of signature generated. |
-| `signatureValue` | `string` | The value of the signature.      |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `signatureType` | `string` | The type of signature generated. |
+| `signatureValue` | `string` | The value of the signature. |

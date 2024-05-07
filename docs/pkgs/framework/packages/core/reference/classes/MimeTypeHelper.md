@@ -22,8 +22,8 @@ Return the default extension for a mime type.
 
 #### Parameters
 
-| Name       | Type                    | Description                            |
-| :--------- | :---------------------- | :------------------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `mimeType` | `undefined` \| `string` | The mimetype to get the extension for. |
 
 #### Returns
@@ -32,7 +32,7 @@ Return the default extension for a mime type.
 
 The extension for the mime type.
 
----
+___
 
 ### detect
 
@@ -42,8 +42,8 @@ Detect the mime type from a byte array.
 
 #### Parameters
 
-| Name   | Type         | Description       |
-| :----- | :----------- | :---------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `data` | `Uint8Array` | The data to test. |
 
 #### Returns

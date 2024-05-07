@@ -11,7 +11,7 @@ Spec https://www.w3.org/TR/did-core/#did-document-properties.
 
 Aliases for the document.
 
----
+___
 
 ### assertionMethod
 
@@ -19,7 +19,7 @@ Aliases for the document.
 
 The assertion methods.
 
----
+___
 
 ### authentication
 
@@ -27,7 +27,7 @@ The assertion methods.
 
 The authentication methods.
 
----
+___
 
 ### capabilityDelegation
 
@@ -35,7 +35,7 @@ The authentication methods.
 
 The capability delegations.
 
----
+___
 
 ### capabilityInvocation
 
@@ -43,7 +43,7 @@ The capability delegations.
 
 The capability invocations.
 
----
+___
 
 ### controller
 
@@ -51,7 +51,7 @@ The capability invocations.
 
 The controller for the document.
 
----
+___
 
 ### id
 
@@ -59,7 +59,7 @@ The controller for the document.
 
 The id for the document.
 
----
+___
 
 ### keyAgreement
 
@@ -67,7 +67,7 @@ The id for the document.
 
 The key agreements.
 
----
+___
 
 ### service
 
@@ -75,7 +75,7 @@ The key agreements.
 
 The services.
 
----
+___
 
 ### verificationMethod
 

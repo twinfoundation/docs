@@ -20,7 +20,7 @@ The cell size.
 
 [IRendererOptions](IRendererOptions.md).[cellSize](IRendererOptions.md#cellsize)
 
----
+___
 
 ### marginSize
 
@@ -32,7 +32,7 @@ The margin size.
 
 [IRendererOptions](IRendererOptions.md).[marginSize](IRendererOptions.md#marginsize)
 
----
+___
 
 ### offChar
 
@@ -40,7 +40,7 @@ The margin size.
 
 The character to use for off pixels.
 
----
+___
 
 ### onChar
 

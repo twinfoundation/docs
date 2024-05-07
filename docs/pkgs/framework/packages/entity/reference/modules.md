@@ -31,13 +31,13 @@ Type defining condition for entities filtering.
 #### Type parameters
 
 | Name |
-| :--- |
-| `T`  |
+| :------ |
+| `T` |
 
----
+___
 
 ### EntityPropertyDescriptorDataType
 
-Ƭ **EntityPropertyDescriptorDataType**: `"string"` \| `"integer"` \| `"float"` \| `"double"` \| `"timestamp"` \| `"uuid"` \| `"binary"` \| `"boolean"` \| `"object"` \| `"list"`
+Ƭ **EntityPropertyDescriptorDataType**: ``"string"`` \| ``"integer"`` \| ``"float"`` \| ``"double"`` \| ``"timestamp"`` \| ``"uuid"`` \| ``"binary"`` \| ``"boolean"`` \| ``"object"`` \| ``"list"``
 
 Definition of the entity property data types.

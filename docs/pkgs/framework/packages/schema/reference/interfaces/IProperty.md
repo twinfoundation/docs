@@ -10,7 +10,7 @@ Interface describing a property.
 
 The key for the item.
 
----
+___
 
 ### type
 
@@ -18,7 +18,7 @@ The key for the item.
 
 The type for the item.
 
----
+___
 
 ### value
 

@@ -14,9 +14,9 @@ Helper class for use with request contexts.
 
 ## Properties
 
-### SYSTEM_CONTEXT
+### SYSTEM\_CONTEXT
 
-▪ `Static` `Readonly` **SYSTEM_CONTEXT**: [`IRequestContext`](../interfaces/IRequestContext.md) = `{}`
+▪ `Static` `Readonly` **SYSTEM\_CONTEXT**: [`IRequestContext`](../interfaces/IRequestContext.md) = `{}`
 
 The system context has no tenant set.
 
@@ -30,8 +30,8 @@ Remove the tenant from the request context.
 
 #### Parameters
 
-| Name             | Type                                                  | Description                            |
-| :--------------- | :---------------------------------------------------- | :------------------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `requestContext` | [`IRequestContext`](../interfaces/IRequestContext.md) | The context to remove the tenant from. |
 
 #### Returns

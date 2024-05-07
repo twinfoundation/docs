@@ -23,8 +23,8 @@ Bootstrap the service by creating and initializing any resources it needs.
 
 #### Parameters
 
-| Name             | Type              | Description                            |
-| :--------------- | :---------------- | :------------------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `requestContext` | `IRequestContext` | The request context for bootstrapping. |
 
 #### Returns
@@ -37,7 +37,7 @@ Nothing.
 
 IService.bootstrap
 
----
+___
 
 ### log
 
@@ -47,10 +47,10 @@ Log an entry to the connector.
 
 #### Parameters
 
-| Name             | Type                        | Description                  |
-| :--------------- | :-------------------------- | :--------------------------- |
-| `requestContext` | `IRequestContext`           | The context for the request. |
-| `logEntry`       | [`ILogEntry`](ILogEntry.md) | The entry to log.            |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `requestContext` | `IRequestContext` | The context for the request. |
+| `logEntry` | [`ILogEntry`](ILogEntry.md) | The entry to log. |
 
 #### Returns
 
@@ -58,28 +58,28 @@ Log an entry to the connector.
 
 An identifier if one was allocated during the logging process.
 
----
+___
 
 ### query
 
-▸ **query**(`requestContext`, `conditions?`, `sortProperties?`, `properties?`, `cursor?`, `pageSize?`): `Promise`\<\{ `cursor?`: `string` ; `entities`: `Partial`\<[`ILogEntry`](ILogEntry.md)\>[] ; `pageSize?`: `number` ; `totalEntities`: `number` }\>
+▸ **query**(`requestContext`, `conditions?`, `sortProperties?`, `properties?`, `cursor?`, `pageSize?`): `Promise`\<\{ `cursor?`: `string` ; `entities`: `Partial`\<[`ILogEntry`](ILogEntry.md)\>[] ; `pageSize?`: `number` ; `totalEntities`: `number`  }\>
 
 Query the log entries.
 
 #### Parameters
 
-| Name              | Type                                                                                    | Description                                      |
-| :---------------- | :-------------------------------------------------------------------------------------- | :----------------------------------------------- |
-| `requestContext`  | `IRequestContext`                                                                       | The context for the request.                     |
-| `conditions?`     | `EntityCondition`\<[`ILogEntry`](ILogEntry.md)\>                                        | The conditions to match for the entities.        |
-| `sortProperties?` | \{ `property`: keyof [`ILogEntry`](ILogEntry.md) ; `sortDirection`: `SortDirection` }[] | The optional sort order.                         |
-| `properties?`     | keyof [`ILogEntry`](ILogEntry.md)[]                                                     | The optional keys to return, defaults to all.    |
-| `cursor?`         | `string`                                                                                | The cursor to request the next page of entities. |
-| `pageSize?`       | `number`                                                                                | The maximum number of entities in a page.        |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `requestContext` | `IRequestContext` | The context for the request. |
+| `conditions?` | `EntityCondition`\<[`ILogEntry`](ILogEntry.md)\> | The conditions to match for the entities. |
+| `sortProperties?` | \{ `property`: keyof [`ILogEntry`](ILogEntry.md) ; `sortDirection`: `SortDirection`  }[] | The optional sort order. |
+| `properties?` | keyof [`ILogEntry`](ILogEntry.md)[] | The optional keys to return, defaults to all. |
+| `cursor?` | `string` | The cursor to request the next page of entities. |
+| `pageSize?` | `number` | The maximum number of entities in a page. |
 
 #### Returns
 
-`Promise`\<\{ `cursor?`: `string` ; `entities`: `Partial`\<[`ILogEntry`](ILogEntry.md)\>[] ; `pageSize?`: `number` ; `totalEntities`: `number` }\>
+`Promise`\<\{ `cursor?`: `string` ; `entities`: `Partial`\<[`ILogEntry`](ILogEntry.md)\>[] ; `pageSize?`: `number` ; `totalEntities`: `number`  }\>
 
 All the entities for the storage matching the conditions,
 and a cursor which can be used to request more entities.
@@ -88,7 +88,7 @@ and a cursor which can be used to request more entities.
 
 NotImplementedError if the implementation does not support retrieval.
 
----
+___
 
 ### start
 
@@ -106,7 +106,7 @@ Nothing.
 
 IService.start
 
----
+___
 
 ### stop
 

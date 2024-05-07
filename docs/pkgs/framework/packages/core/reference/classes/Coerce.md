@@ -22,8 +22,8 @@ Coerce the value to a bigint.
 
 #### Parameters
 
-| Name    | Type      | Description          |
-| :------ | :-------- | :------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `value` | `unknown` | The value to coerce. |
 
 #### Returns
@@ -36,7 +36,7 @@ The value if it can be coerced.
 
 TypeError If the value can not be coerced.
 
----
+___
 
 ### boolean
 
@@ -46,8 +46,8 @@ Coerce the value to a boolean.
 
 #### Parameters
 
-| Name    | Type      | Description          |
-| :------ | :-------- | :------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `value` | `unknown` | The value to coerce. |
 
 #### Returns
@@ -60,7 +60,7 @@ The value if it can be coerced.
 
 TypeError If the value can not be coerced.
 
----
+___
 
 ### date
 
@@ -70,8 +70,8 @@ Coerce the value to a date.
 
 #### Parameters
 
-| Name    | Type      | Description          |
-| :------ | :-------- | :------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `value` | `unknown` | The value to coerce. |
 
 #### Returns
@@ -84,7 +84,7 @@ The value if it can be coerced.
 
 TypeError If the value can not be coerced.
 
----
+___
 
 ### dateTime
 
@@ -94,8 +94,8 @@ Coerce the value to a date/time.
 
 #### Parameters
 
-| Name    | Type      | Description          |
-| :------ | :-------- | :------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `value` | `unknown` | The value to coerce. |
 
 #### Returns
@@ -108,7 +108,7 @@ The value if it can be coerced.
 
 TypeError If the value can not be coerced.
 
----
+___
 
 ### number
 
@@ -118,8 +118,8 @@ Coerce the value to a number.
 
 #### Parameters
 
-| Name    | Type      | Description          |
-| :------ | :-------- | :------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `value` | `unknown` | The value to coerce. |
 
 #### Returns
@@ -132,7 +132,7 @@ The value if it can be coerced.
 
 TypeError If the value can not be coerced.
 
----
+___
 
 ### string
 
@@ -142,8 +142,8 @@ Coerce the value to a string.
 
 #### Parameters
 
-| Name    | Type      | Description          |
-| :------ | :-------- | :------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `value` | `unknown` | The value to coerce. |
 
 #### Returns
@@ -156,7 +156,7 @@ The value if it can be coerced.
 
 TypeError If the value can not be coerced.
 
----
+___
 
 ### time
 
@@ -166,8 +166,8 @@ Coerce the value to a time.
 
 #### Parameters
 
-| Name    | Type      | Description          |
-| :------ | :-------- | :------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `value` | `unknown` | The value to coerce. |
 
 #### Returns

@@ -10,7 +10,7 @@ The context for the request.
 
 The identity of the requestor if there is an authenticated user.
 
----
+___
 
 ### locale
 
@@ -18,7 +18,7 @@ The identity of the requestor if there is an authenticated user.
 
 The locale of the context as a code e.g. es-ES, defaults to en.
 
----
+___
 
 ### tenantId
 

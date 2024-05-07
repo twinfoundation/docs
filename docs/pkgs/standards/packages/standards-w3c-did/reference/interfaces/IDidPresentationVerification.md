@@ -12,13 +12,13 @@ Who was the holder.
 
 #### Type declaration
 
-| Name         | Type                              | Description                      |
-| :----------- | :-------------------------------- | :------------------------------- |
-| `document?`  | [`IDidDocument`](IDidDocument.md) | The DID document for the holder. |
-| `id`         | `string`                          | The id of the holder.            |
-| `isVerified` | `boolean`                         | Is the holder verified.          |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `document?` | [`IDidDocument`](IDidDocument.md) | The DID document for the holder. |
+| `id` | `string` | The id of the holder. |
+| `isVerified` | `boolean` | Is the holder verified. |
 
----
+___
 
 ### isVerified
 

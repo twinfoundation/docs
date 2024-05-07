@@ -10,7 +10,7 @@ Interface describing a log entry.
 
 Optional data for the message.
 
----
+___
 
 ### error
 
@@ -18,7 +18,7 @@ Optional data for the message.
 
 Optional error details.
 
----
+___
 
 ### level
 
@@ -26,7 +26,7 @@ Optional error details.
 
 The level of the error being logged.
 
----
+___
 
 ### message
 
@@ -34,7 +34,7 @@ The level of the error being logged.
 
 The message.
 
----
+___
 
 ### source
 
@@ -42,7 +42,7 @@ The message.
 
 The source of the log entry.
 
----
+___
 
 ### ts
 

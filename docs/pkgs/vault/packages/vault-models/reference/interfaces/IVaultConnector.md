@@ -18,13 +18,13 @@ Add a key to the vault.
 
 #### Parameters
 
-| Name             | Type              | Description                              |
-| :--------------- | :---------------- | :--------------------------------------- |
-| `requestContext` | `IRequestContext` | The context for the request.             |
-| `name`           | `string`          | The name of the key to add to the vault. |
-| `type`           | `"Ed25519"`       | The type of key to add.                  |
-| `privateKey`     | `string`          | The private key in base64 format.        |
-| `publicKey`      | `string`          | The public key in base64 format.         |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `requestContext` | `IRequestContext` | The context for the request. |
+| `name` | `string` | The name of the key to add to the vault. |
+| `type` | ``"Ed25519"`` | The type of key to add. |
+| `privateKey` | `string` | The private key in base64 format. |
+| `publicKey` | `string` | The public key in base64 format. |
 
 #### Returns
 
@@ -32,7 +32,7 @@ Add a key to the vault.
 
 Nothing.
 
----
+___
 
 ### bootstrap
 
@@ -42,8 +42,8 @@ Bootstrap the service by creating and initializing any resources it needs.
 
 #### Parameters
 
-| Name             | Type              | Description                            |
-| :--------------- | :---------------- | :------------------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `requestContext` | `IRequestContext` | The request context for bootstrapping. |
 
 #### Returns
@@ -56,7 +56,7 @@ Nothing.
 
 IService.bootstrap
 
----
+___
 
 ### createKey
 
@@ -66,11 +66,11 @@ Create a key in the vault.
 
 #### Parameters
 
-| Name             | Type              | Description                                 |
-| :--------------- | :---------------- | :------------------------------------------ |
-| `requestContext` | `IRequestContext` | The context for the request.                |
-| `name`           | `string`          | The name of the key to create in the vault. |
-| `type`           | `"Ed25519"`       | The type of key to create.                  |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `requestContext` | `IRequestContext` | The context for the request. |
+| `name` | `string` | The name of the key to create in the vault. |
+| `type` | ``"Ed25519"`` | The type of key to create. |
 
 #### Returns
 
@@ -78,7 +78,7 @@ Create a key in the vault.
 
 The public key for the key pair in base64.
 
----
+___
 
 ### decrypt
 
@@ -88,12 +88,12 @@ Decrypt the data using a key in the vault.
 
 #### Parameters
 
-| Name             | Type                 | Description                                |
-| :--------------- | :------------------- | :----------------------------------------- |
-| `requestContext` | `IRequestContext`    | The context for the request.               |
-| `name`           | `string`             | The name of the key to use for decryption. |
-| `encryptionType` | `"ChaCha20Poly1305"` | The type of encryption to use.             |
-| `encryptedData`  | `string`             | The data to decrypt in base64.             |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `requestContext` | `IRequestContext` | The context for the request. |
+| `name` | `string` | The name of the key to use for decryption. |
+| `encryptionType` | ``"ChaCha20Poly1305"`` | The type of encryption to use. |
+| `encryptedData` | `string` | The data to decrypt in base64. |
 
 #### Returns
 
@@ -101,7 +101,7 @@ Decrypt the data using a key in the vault.
 
 The decrypted data in base64.
 
----
+___
 
 ### encrypt
 
@@ -111,12 +111,12 @@ Encrypt the data using a key in the vault.
 
 #### Parameters
 
-| Name             | Type                 | Description                                |
-| :--------------- | :------------------- | :----------------------------------------- |
-| `requestContext` | `IRequestContext`    | The context for the request.               |
-| `name`           | `string`             | The name of the key to use for encryption. |
-| `encryptionType` | `"ChaCha20Poly1305"` | The type of encryption to use.             |
-| `data`           | `string`             | The data to encrypt in base64 form.        |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `requestContext` | `IRequestContext` | The context for the request. |
+| `name` | `string` | The name of the key to use for encryption. |
+| `encryptionType` | ``"ChaCha20Poly1305"`` | The type of encryption to use. |
+| `data` | `string` | The data to encrypt in base64 form. |
 
 #### Returns
 
@@ -124,28 +124,28 @@ Encrypt the data using a key in the vault.
 
 The encrypted data in base64.
 
----
+___
 
 ### getKey
 
-▸ **getKey**(`requestContext`, `name`): `Promise`\<\{ `privateKey`: `string` ; `publicKey`: `string` ; `type`: `"Ed25519"` }\>
+▸ **getKey**(`requestContext`, `name`): `Promise`\<\{ `privateKey`: `string` ; `publicKey`: `string` ; `type`: ``"Ed25519"``  }\>
 
 Get a key from the vault.
 
 #### Parameters
 
-| Name             | Type              | Description                                |
-| :--------------- | :---------------- | :----------------------------------------- |
-| `requestContext` | `IRequestContext` | The context for the request.               |
-| `name`           | `string`          | The name of the key to get from the vault. |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `requestContext` | `IRequestContext` | The context for the request. |
+| `name` | `string` | The name of the key to get from the vault. |
 
 #### Returns
 
-`Promise`\<\{ `privateKey`: `string` ; `publicKey`: `string` ; `type`: `"Ed25519"` }\>
+`Promise`\<\{ `privateKey`: `string` ; `publicKey`: `string` ; `type`: ``"Ed25519"``  }\>
 
 The key.
 
----
+___
 
 ### getSecret
 
@@ -156,15 +156,15 @@ Get a secret from the vault.
 #### Type parameters
 
 | Name |
-| :--- |
-| `T`  |
+| :------ |
+| `T` |
 
 #### Parameters
 
-| Name             | Type              | Description                                 |
-| :--------------- | :---------------- | :------------------------------------------ |
-| `requestContext` | `IRequestContext` | The context for the request.                |
-| `name`           | `string`          | The name of the secret in the vault to get. |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `requestContext` | `IRequestContext` | The context for the request. |
+| `name` | `string` | The name of the secret in the vault to get. |
 
 #### Returns
 
@@ -176,7 +176,7 @@ The secret from the vault.
 
 Error if the secret is not found.
 
----
+___
 
 ### removeKey
 
@@ -186,10 +186,10 @@ Remove a key from the vault.
 
 #### Parameters
 
-| Name             | Type              | Description                                   |
-| :--------------- | :---------------- | :-------------------------------------------- |
-| `requestContext` | `IRequestContext` | The context for the request.                  |
-| `name`           | `string`          | The name of the key to remove from the vault. |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `requestContext` | `IRequestContext` | The context for the request. |
+| `name` | `string` | The name of the key to remove from the vault. |
 
 #### Returns
 
@@ -197,7 +197,7 @@ Remove a key from the vault.
 
 Nothing.
 
----
+___
 
 ### removeSecret
 
@@ -207,10 +207,10 @@ Remove a secret from the vault.
 
 #### Parameters
 
-| Name             | Type              | Description                                    |
-| :--------------- | :---------------- | :--------------------------------------------- |
-| `requestContext` | `IRequestContext` | The context for the request.                   |
-| `name`           | `string`          | The name of the secret in the vault to remove. |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `requestContext` | `IRequestContext` | The context for the request. |
+| `name` | `string` | The name of the secret in the vault to remove. |
 
 #### Returns
 
@@ -222,7 +222,7 @@ Nothing.
 
 Error if the secret is not found.
 
----
+___
 
 ### renameKey
 
@@ -232,11 +232,11 @@ Rename a key in the vault.
 
 #### Parameters
 
-| Name             | Type              | Description                    |
-| :--------------- | :---------------- | :----------------------------- |
-| `requestContext` | `IRequestContext` | The context for the request.   |
-| `name`           | `string`          | The name of the key to rename. |
-| `newName`        | `string`          | The new name of the key.       |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `requestContext` | `IRequestContext` | The context for the request. |
+| `name` | `string` | The name of the key to rename. |
+| `newName` | `string` | The new name of the key. |
 
 #### Returns
 
@@ -244,7 +244,7 @@ Rename a key in the vault.
 
 Nothing.
 
----
+___
 
 ### setSecret
 
@@ -255,16 +255,16 @@ Store a secret in the vault.
 #### Type parameters
 
 | Name |
-| :--- |
-| `T`  |
+| :------ |
+| `T` |
 
 #### Parameters
 
-| Name             | Type              | Description                                 |
-| :--------------- | :---------------- | :------------------------------------------ |
-| `requestContext` | `IRequestContext` | The context for the request.                |
-| `name`           | `string`          | The name of the secret in the vault to set. |
-| `data`           | `T`               | The secret to add to the vault.             |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `requestContext` | `IRequestContext` | The context for the request. |
+| `name` | `string` | The name of the secret in the vault to set. |
+| `data` | `T` | The secret to add to the vault. |
 
 #### Returns
 
@@ -272,7 +272,7 @@ Store a secret in the vault.
 
 Nothing.
 
----
+___
 
 ### sign
 
@@ -282,11 +282,11 @@ Sign the data using a key in the vault.
 
 #### Parameters
 
-| Name             | Type              | Description                             |
-| :--------------- | :---------------- | :-------------------------------------- |
-| `requestContext` | `IRequestContext` | The context for the request.            |
-| `name`           | `string`          | The name of the key to use for signing. |
-| `data`           | `string`          | The data to sign in base64 form.        |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `requestContext` | `IRequestContext` | The context for the request. |
+| `name` | `string` | The name of the key to use for signing. |
+| `data` | `string` | The data to sign in base64 form. |
 
 #### Returns
 
@@ -294,7 +294,7 @@ Sign the data using a key in the vault.
 
 The signature for the data in base64 form.
 
----
+___
 
 ### start
 
@@ -312,7 +312,7 @@ Nothing.
 
 IService.start
 
----
+___
 
 ### stop
 
@@ -330,7 +330,7 @@ Nothing.
 
 IService.stop
 
----
+___
 
 ### verify
 
@@ -340,12 +340,12 @@ Verify the signature of the data using a key in the vault.
 
 #### Parameters
 
-| Name             | Type              | Description                                  |
-| :--------------- | :---------------- | :------------------------------------------- |
-| `requestContext` | `IRequestContext` | The context for the request.                 |
-| `name`           | `string`          | The name of the key to use for verification. |
-| `data`           | `string`          | The data that was signed in base64 form.     |
-| `signature`      | `string`          | The signature to verify in base64 form.      |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `requestContext` | `IRequestContext` | The context for the request. |
+| `name` | `string` | The name of the key to use for verification. |
+| `data` | `string` | The data that was signed in base64 form. |
+| `signature` | `string` | The signature to verify in base64 form. |
 
 #### Returns
 

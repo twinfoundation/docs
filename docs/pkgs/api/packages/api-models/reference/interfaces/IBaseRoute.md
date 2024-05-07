@@ -18,7 +18,7 @@ Interface which defines a route.
 
 The id of the operation.
 
----
+___
 
 ### path
 
@@ -26,7 +26,7 @@ The id of the operation.
 
 The path to use for routing.
 
----
+___
 
 ### skipSubjectAuth
 
@@ -34,7 +34,7 @@ The path to use for routing.
 
 Skips the subject authentication for this route.
 
----
+___
 
 ### skipTenantAuth
 

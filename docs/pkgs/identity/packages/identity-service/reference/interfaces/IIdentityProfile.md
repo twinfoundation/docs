@@ -10,7 +10,7 @@ Interface representing profile details for the identity.
 
 The id for the identity.
 
----
+___
 
 ### keyIndexes
 
@@ -20,9 +20,9 @@ Indexes for the current issuing keys.
 
 #### Index signature
 
-▪ [id: `string`]: \{ `allocated`: `number` ; `index`: `number` }
+▪ [id: `string`]: \{ `allocated`: `number` ; `index`: `number`  }
 
----
+___
 
 ### nextRevocationIndex
 
@@ -31,7 +31,7 @@ Indexes for the current issuing keys.
 The next index to map to a verifiable credential id.
 Used for revocation of VCs.
 
----
+___
 
 ### properties
 
@@ -39,7 +39,7 @@ Used for revocation of VCs.
 
 The properties for the profile.
 
----
+___
 
 ### role
 
@@ -47,10 +47,10 @@ The properties for the profile.
 
 The role for the identity.
 
----
+___
 
 ### verifiableCredentials
 
-• `Optional` **verifiableCredentials**: \{ `id`: `string` ; `issuer`: `string` ; `type`: `string` }[]
+• `Optional` **verifiableCredentials**: \{ `id`: `string` ; `issuer`: `string` ; `type`: `string`  }[]
 
 Issued verifiable credential ids.

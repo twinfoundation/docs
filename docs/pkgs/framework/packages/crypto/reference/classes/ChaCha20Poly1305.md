@@ -22,7 +22,7 @@ GeneralError if the auth tag is not set when decrypting.
 
 GeneralError if the authentication fails.
 
----
+___
 
 ### getAuthTag
 
@@ -44,7 +44,7 @@ GeneralError if trying to get the auth tag while decrypting.
 
 GeneralError if the auth tag is not set.
 
----
+___
 
 ### setAAD
 
@@ -54,8 +54,8 @@ Set the AAD.
 
 #### Parameters
 
-| Name  | Type         | Description     |
-| :---- | :----------- | :-------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `aad` | `Uint8Array` | The aad to set. |
 
 #### Returns
@@ -66,7 +66,7 @@ Set the AAD.
 
 GeneralError if the aad is set after data.
 
----
+___
 
 ### setAuthTag
 
@@ -76,8 +76,8 @@ Set the auth tag.
 
 #### Parameters
 
-| Name      | Type         | Description       |
-| :-------- | :----------- | :---------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `authTag` | `Uint8Array` | Set the auth tag. |
 
 #### Returns
@@ -88,7 +88,7 @@ Set the auth tag.
 
 GeneralError if trying to set the auth tag while encrypting.
 
----
+___
 
 ### update
 
@@ -98,8 +98,8 @@ Update the cipher with more data.
 
 #### Parameters
 
-| Name    | Type         | Description                |
-| :------ | :----------- | :------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `input` | `Uint8Array` | The input data to include. |
 
 #### Returns
@@ -108,7 +108,7 @@ Update the cipher with more data.
 
 The updated data.
 
----
+___
 
 ### decryptor
 
@@ -118,10 +118,10 @@ Create a ChaCha20Poly1305 decryptor.
 
 #### Parameters
 
-| Name    | Type         | Description |
-| :------ | :----------- | :---------- |
-| `key`   | `Uint8Array` | The key.    |
-| `nonce` | `Uint8Array` | The nonce.  |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `key` | `Uint8Array` | The key. |
+| `nonce` | `Uint8Array` | The nonce. |
 
 #### Returns
 
@@ -129,7 +129,7 @@ Create a ChaCha20Poly1305 decryptor.
 
 Decryptor instance of ChaCha20Poly1305.
 
----
+___
 
 ### encryptor
 
@@ -139,10 +139,10 @@ Create a ChaCha20Poly1305 encryptor.
 
 #### Parameters
 
-| Name    | Type         | Description |
-| :------ | :----------- | :---------- |
-| `key`   | `Uint8Array` | The key.    |
-| `nonce` | `Uint8Array` | The nonce.  |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `key` | `Uint8Array` | The key. |
+| `nonce` | `Uint8Array` | The nonce. |
 
 #### Returns
 

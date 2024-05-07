@@ -6,14 +6,14 @@ The sort directions.
 
 ### Ascending
 
-• **Ascending** = `"Ascending"`
+• **Ascending** = ``"Ascending"``
 
 Ascending.
 
----
+___
 
 ### Descending
 
-• **Descending** = `"Descending"`
+• **Descending** = ``"Descending"``
 
 Descending.

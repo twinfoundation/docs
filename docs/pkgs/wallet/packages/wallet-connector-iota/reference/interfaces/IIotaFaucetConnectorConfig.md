@@ -10,7 +10,7 @@ Configuration for the IOTA Faucet Connector.
 
 The configuration for the client.
 
----
+___
 
 ### endpoint
 

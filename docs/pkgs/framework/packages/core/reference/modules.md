@@ -51,6 +51,6 @@
 
 ### CompressionType
 
-Ƭ **CompressionType**: `"gzip"` \| `"deflate"`
+Ƭ **CompressionType**: ``"gzip"`` \| ``"deflate"``
 
 Compression types.

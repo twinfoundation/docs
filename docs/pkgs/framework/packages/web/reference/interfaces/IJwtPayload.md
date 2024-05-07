@@ -16,7 +16,7 @@ Additional fields in the payload.
 
 The audience of the token.
 
----
+___
 
 ### exp
 
@@ -24,7 +24,7 @@ The audience of the token.
 
 The expiration time of the token.
 
----
+___
 
 ### iat
 
@@ -32,7 +32,7 @@ The expiration time of the token.
 
 The issued at time of the token.
 
----
+___
 
 ### iss
 
@@ -40,7 +40,7 @@ The issued at time of the token.
 
 The issuer of the token.
 
----
+___
 
 ### jti
 
@@ -48,7 +48,7 @@ The issuer of the token.
 
 The JWT ID.
 
----
+___
 
 ### nbf
 
@@ -56,7 +56,7 @@ The JWT ID.
 
 The not before time of the token.
 
----
+___
 
 ### sub
 

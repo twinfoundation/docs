@@ -6,30 +6,30 @@ The state of a verifiable credential.
 
 ### Issued
 
-• **Issued** = `"issued"`
+• **Issued** = ``"issued"``
 
 Issued.
 
----
+___
 
 ### PendingVerification
 
-• **PendingVerification** = `"pendingVerification"`
+• **PendingVerification** = ``"pendingVerification"``
 
 Pending verification.
 
----
+___
 
 ### Rejected
 
-• **Rejected** = `"rejected"`
+• **Rejected** = ``"rejected"``
 
 Rejected.
 
----
+___
 
 ### Revoked
 
-• **Revoked** = `"revoked"`
+• **Revoked** = ``"revoked"``
 
 Revoked.

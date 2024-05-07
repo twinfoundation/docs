@@ -12,8 +12,8 @@ Bootstrap the service by creating and initializing any resources it needs.
 
 #### Parameters
 
-| Name             | Type                                    | Description                            |
-| :--------------- | :-------------------------------------- | :------------------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `requestContext` | [`IRequestContext`](IRequestContext.md) | The request context for bootstrapping. |
 
 #### Returns
@@ -22,7 +22,7 @@ Bootstrap the service by creating and initializing any resources it needs.
 
 Nothing.
 
----
+___
 
 ### start
 
@@ -36,7 +36,7 @@ The service needs to be started when the application is initialized.
 
 Nothing.
 
----
+___
 
 ### stop
 

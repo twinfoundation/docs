@@ -23,8 +23,8 @@ Serializes in canonical format.
 
 #### Parameters
 
-| Name     | Type      | Description                  |
-| :------- | :-------- | :--------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `object` | `unknown` | The object to be serialized. |
 
 #### Returns

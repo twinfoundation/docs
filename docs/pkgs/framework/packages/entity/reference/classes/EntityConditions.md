@@ -23,14 +23,14 @@ See if the entity matches the conditions.
 #### Type parameters
 
 | Name |
-| :--- |
-| `T`  |
+| :------ |
+| `T` |
 
 #### Parameters
 
-| Name         | Type                                                      | Description             |
-| :----------- | :-------------------------------------------------------- | :---------------------- |
-| `entity`     | `T`                                                       | The entity to test.     |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `entity` | `T` | The entity to test. |
 | `condition?` | [`EntityCondition`](../modules.md#entitycondition)\<`T`\> | The conditions to test. |
 
 #### Returns
@@ -39,7 +39,7 @@ See if the entity matches the conditions.
 
 True if the entity matches.
 
----
+___
 
 ### compare
 
@@ -50,14 +50,14 @@ See if the entity matches the conditions.
 #### Type parameters
 
 | Name |
-| :--- |
-| `T`  |
+| :------ |
+| `T` |
 
 #### Parameters
 
-| Name         | Type                                                 | Description            |
-| :----------- | :--------------------------------------------------- | :--------------------- |
-| `entity`     | `T`                                                  | The entity to test.    |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `entity` | `T` | The entity to test. |
 | `comparator` | [`IComparator`](../interfaces/IComparator.md)\<`T`\> | The condition to test. |
 
 #### Returns

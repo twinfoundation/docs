@@ -22,8 +22,8 @@ Strict parse as float.
 
 #### Parameters
 
-| Name    | Type      | Description         |
-| :------ | :-------- | :------------------ |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `value` | `unknown` | The value to parse. |
 
 #### Returns
@@ -32,7 +32,7 @@ Strict parse as float.
 
 The parsed value.
 
----
+___
 
 ### strictParseInt
 
@@ -42,8 +42,8 @@ Strict parse as integer.
 
 #### Parameters
 
-| Name    | Type      | Description         |
-| :------ | :-------- | :------------------ |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `value` | `unknown` | The value to parse. |
 
 #### Returns

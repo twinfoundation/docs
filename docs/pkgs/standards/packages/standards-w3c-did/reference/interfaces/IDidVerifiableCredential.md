@@ -4,9 +4,9 @@ Interface describing a verifiable credential.
 
 ## Type parameters
 
-| Name | Type      |
-| :--- | :-------- |
-| `T`  | `unknown` |
+| Name | Type |
+| :------ | :------ |
+| `T` | `unknown` |
 
 ## Properties
 
@@ -16,7 +16,7 @@ Interface describing a verifiable credential.
 
 The context for the verifiable credential.
 
----
+___
 
 ### credentialStatus
 
@@ -25,7 +25,7 @@ The context for the verifiable credential.
 Used to discover information about the current status of the
 verifiable credential, such as whether it is suspended or revoked.
 
----
+___
 
 ### credentialSubject
 
@@ -33,7 +33,7 @@ verifiable credential, such as whether it is suspended or revoked.
 
 The data for the verifiable credential.
 
----
+___
 
 ### id
 
@@ -41,7 +41,7 @@ The data for the verifiable credential.
 
 The identifier for the verifiable credential.
 
----
+___
 
 ### issuanceDate
 
@@ -49,7 +49,7 @@ The identifier for the verifiable credential.
 
 The date the verifiable credential was issued.
 
----
+___
 
 ### issuer
 
@@ -57,7 +57,7 @@ The date the verifiable credential was issued.
 
 The issuing identity.
 
----
+___
 
 ### type
 

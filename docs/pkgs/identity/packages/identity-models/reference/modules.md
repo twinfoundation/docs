@@ -43,7 +43,7 @@
 
 Factory for creating identity connectors.
 
----
+___
 
 ### IdentityVerifiableCredentialApplicationDescriptor
 
@@ -51,7 +51,7 @@ Factory for creating identity connectors.
 
 Entity description for a IIdentityVerifiableCredentialApplication.
 
----
+___
 
 ### IdentityVerifiableCredentialRequirementsDescriptor
 

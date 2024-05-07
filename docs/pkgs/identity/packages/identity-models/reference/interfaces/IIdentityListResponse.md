@@ -12,7 +12,7 @@ The response payload.
 
 #### Type declaration
 
-| Name         | Type                                  | Description                    |
-| :----------- | :------------------------------------ | :----------------------------- |
-| `cursor?`    | `string`                              | The cursor for paged requests. |
-| `identities` | \{ `[id: string]`: `IProperty`[]; }[] | The identities.                |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `cursor?` | `string` | The cursor for paged requests. |
+| `identities` | \{ `[id: string]`: `IProperty`[];  }[] | The identities. |

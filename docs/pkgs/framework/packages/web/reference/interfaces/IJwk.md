@@ -16,7 +16,7 @@ Additional fields in the key.
 
 The cryptographic algorithm for the key.
 
----
+___
 
 ### d
 
@@ -24,7 +24,7 @@ The cryptographic algorithm for the key.
 
 The private key parameters.
 
----
+___
 
 ### dp
 
@@ -32,7 +32,7 @@ The private key parameters.
 
 The private key parameters.
 
----
+___
 
 ### dq
 
@@ -40,7 +40,7 @@ The private key parameters.
 
 The private key parameters.
 
----
+___
 
 ### e
 
@@ -48,15 +48,15 @@ The private key parameters.
 
 Exponent parameter.
 
----
+___
 
-### key_ops
+### key\_ops
 
-• `Optional` **key_ops**: `string`[]
+• `Optional` **key\_ops**: `string`[]
 
 The operation(s) that the key is intended to be used for.
 
----
+___
 
 ### kid
 
@@ -64,7 +64,7 @@ The operation(s) that the key is intended to be used for.
 
 The key ID.
 
----
+___
 
 ### kty
 
@@ -72,7 +72,7 @@ The key ID.
 
 The key type parameter.
 
----
+___
 
 ### n
 
@@ -80,7 +80,7 @@ The key type parameter.
 
 The public key parameters.
 
----
+___
 
 ### p
 
@@ -88,7 +88,7 @@ The public key parameters.
 
 The private key parameters.
 
----
+___
 
 ### q
 
@@ -96,7 +96,7 @@ The private key parameters.
 
 The private key parameters.
 
----
+___
 
 ### qi
 
@@ -104,7 +104,7 @@ The private key parameters.
 
 The private key parameters.
 
----
+___
 
 ### use
 

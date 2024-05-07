@@ -10,7 +10,7 @@ Interface describing a DID document verification method.
 
 The controller for the entry.
 
----
+___
 
 ### id
 
@@ -18,7 +18,7 @@ The controller for the entry.
 
 The id of the entry.
 
----
+___
 
 ### publicKeyJwk
 
@@ -27,7 +27,7 @@ The id of the entry.
 The public key for the entry as a JWK.
 Spec https://datatracker.ietf.org/doc/html/rfc7517 .
 
----
+___
 
 ### publicKeyMultibase
 
@@ -36,7 +36,7 @@ Spec https://datatracker.ietf.org/doc/html/rfc7517 .
 The public key for the entry.
 Spec https://datatracker.ietf.org/doc/html/draft-multiformats-multibase-03 .
 
----
+___
 
 ### revocation
 
@@ -44,7 +44,7 @@ Spec https://datatracker.ietf.org/doc/html/draft-multiformats-multibase-03 .
 
 Multi key partial revocation.
 
----
+___
 
 ### type
 

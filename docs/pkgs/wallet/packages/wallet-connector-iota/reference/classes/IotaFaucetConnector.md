@@ -16,8 +16,8 @@ Create a new instance of IotaWalletConnector.
 
 #### Parameters
 
-| Name     | Type                                                                        | Description               |
-| :------- | :-------------------------------------------------------------------------- | :------------------------ |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `config` | [`IIotaFaucetConnectorConfig`](../interfaces/IIotaFaucetConnectorConfig.md) | The configuration to use. |
 
 #### Returns
@@ -42,11 +42,11 @@ Fund the wallet from the faucet.
 
 #### Parameters
 
-| Name               | Type              | Default value | Description                                                 |
-| :----------------- | :---------------- | :------------ | :---------------------------------------------------------- |
-| `requestContext`   | `IRequestContext` | `undefined`   | The context for the request.                                |
-| `address`          | `string`          | `undefined`   | The bech32 encoded address of the address to fund.          |
-| `timeoutInSeconds` | `number`          | `60`          | The timeout in seconds to wait for the funding to complete. |
+| Name | Type | Default value | Description |
+| :------ | :------ | :------ | :------ |
+| `requestContext` | `IRequestContext` | `undefined` | The context for the request. |
+| `address` | `string` | `undefined` | The bech32 encoded address of the address to fund. |
+| `timeoutInSeconds` | `number` | `60` | The timeout in seconds to wait for the funding to complete. |
 
 #### Returns
 
@@ -58,7 +58,7 @@ The amount added to the address by the faucet.
 
 IFaucetConnector.fundAddress
 
----
+___
 
 ### getBalance
 
@@ -68,8 +68,8 @@ Calculate the balance on an address.
 
 #### Parameters
 
-| Name      | Type     | Description                                    |
-| :-------- | :------- | :--------------------------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `address` | `string` | The bech32 encoded address to get the balance. |
 
 #### Returns

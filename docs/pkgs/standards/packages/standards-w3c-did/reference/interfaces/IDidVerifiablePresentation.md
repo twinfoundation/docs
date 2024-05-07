@@ -10,7 +10,7 @@ Interface describing a verifiable presentation.
 
 The context for the verifiable credential.
 
----
+___
 
 ### holder
 
@@ -18,7 +18,7 @@ The context for the verifiable credential.
 
 The entity generating the presentation.
 
----
+___
 
 ### id
 
@@ -26,7 +26,7 @@ The entity generating the presentation.
 
 Provide a unique identifier for the presentation.
 
----
+___
 
 ### type
 
@@ -34,7 +34,7 @@ Provide a unique identifier for the presentation.
 
 The types of the data stored in the verifiable credential.
 
----
+___
 
 ### verifiableCredential
 

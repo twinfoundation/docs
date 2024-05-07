@@ -12,6 +12,6 @@ The response payload.
 
 #### Type declaration
 
-| Name       | Type     | Description           |
-| :--------- | :------- | :-------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `identity` | `string` | The identity created. |

@@ -4,9 +4,9 @@ Interface defining comparator operator.
 
 ## Type parameters
 
-| Name | Type      |
-| :--- | :-------- |
-| `T`  | `unknown` |
+| Name | Type |
+| :------ | :------ |
+| `T` | `unknown` |
 
 ## Properties
 
@@ -16,7 +16,7 @@ Interface defining comparator operator.
 
 The check to perform.
 
----
+___
 
 ### property
 
@@ -24,7 +24,7 @@ The check to perform.
 
 The name of the property in the object to check.
 
----
+___
 
 ### value
 

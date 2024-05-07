@@ -10,7 +10,7 @@ Interface representing the state of an verifiable credential application.
 
 The timestamp when the verifiable credential application was created.
 
----
+___
 
 ### id
 
@@ -18,7 +18,7 @@ The timestamp when the verifiable credential application was created.
 
 The id of the verifiable credential application.
 
----
+___
 
 ### issuer
 
@@ -26,7 +26,7 @@ The id of the verifiable credential application.
 
 The identity that is issuing the verifiable credential.
 
----
+___
 
 ### privateClaims
 
@@ -34,7 +34,7 @@ The identity that is issuing the verifiable credential.
 
 Properties supplied for the verifiable credential claims that are private.
 
----
+___
 
 ### publicClaims
 
@@ -42,7 +42,7 @@ Properties supplied for the verifiable credential claims that are private.
 
 Properties supplied for the verifiable credential claims that can be public.
 
----
+___
 
 ### rejectedCode
 
@@ -50,7 +50,7 @@ Properties supplied for the verifiable credential claims that can be public.
 
 The code for why the verifiable credential application was rejected.
 
----
+___
 
 ### state
 
@@ -58,7 +58,7 @@ The code for why the verifiable credential application was rejected.
 
 The current state of the verifiable credential application.
 
----
+___
 
 ### subject
 
@@ -66,7 +66,7 @@ The current state of the verifiable credential application.
 
 The identity that is the target of the verifiable credential.
 
----
+___
 
 ### updated
 
@@ -74,7 +74,7 @@ The identity that is the target of the verifiable credential.
 
 The timestamp when the verifiable credential application was updated.
 
----
+___
 
 ### verifiableCredential
 
@@ -82,7 +82,7 @@ The timestamp when the verifiable credential application was updated.
 
 The verifiable credential.
 
----
+___
 
 ### verifiableCredentialType
 

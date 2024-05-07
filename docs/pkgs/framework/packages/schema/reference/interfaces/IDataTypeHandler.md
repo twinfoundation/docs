@@ -14,7 +14,7 @@ Define the types of any children.
 
 ▪ [prop: `string`]: `string`
 
----
+___
 
 ### defaultValue
 
@@ -22,7 +22,7 @@ Define the types of any children.
 
 The default value for the item.
 
----
+___
 
 ### isInternal
 
@@ -30,7 +30,7 @@ The default value for the item.
 
 Is internal data type.
 
----
+___
 
 ### type
 
@@ -48,13 +48,13 @@ A method for validating the data type.
 
 #### Parameters
 
-| Name             | Type                   | Description                               |
-| :--------------- | :--------------------- | :---------------------------------------- |
-| `propertyName`   | `string`               | The name of the property being validated. |
-| `value`          | `unknown`              | The value to validate.                    |
-| `failures`       | `IValidationFailure`[] | List of failures to add to.               |
-| `container?`     | `unknown`              | The object which contains this one.       |
-| `previousValue?` | `unknown`              | The previous value of the object.         |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `propertyName` | `string` | The name of the property being validated. |
+| `value` | `unknown` | The value to validate. |
+| `failures` | `IValidationFailure`[] | List of failures to add to. |
+| `container?` | `unknown` | The object which contains this one. |
+| `previousValue?` | `unknown` | The previous value of the object. |
 
 #### Returns
 

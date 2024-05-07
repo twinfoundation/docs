@@ -14,41 +14,41 @@ Handle all the stock data types.
 
 ## Properties
 
-### TYPE_PROPERTY
+### TYPE\_PROPERTY
 
-▪ `Static` **TYPE_PROPERTY**: `string` = `"Property"`
+▪ `Static` **TYPE\_PROPERTY**: `string` = `"Property"`
 
 Represents a property.
 
----
+___
 
-### TYPE_PROPERTY_LIST
+### TYPE\_PROPERTY\_LIST
 
-▪ `Static` **TYPE_PROPERTY_LIST**: `string` = `"PropertyList"`
+▪ `Static` **TYPE\_PROPERTY\_LIST**: `string` = `"PropertyList"`
 
 Represents a property list.
 
----
+___
 
-### TYPE_TIMESTAMP_MILLISECONDS
+### TYPE\_TIMESTAMP\_MILLISECONDS
 
-▪ `Static` **TYPE_TIMESTAMP_MILLISECONDS**: `string` = `"TimestampMilliseconds"`
+▪ `Static` **TYPE\_TIMESTAMP\_MILLISECONDS**: `string` = `"TimestampMilliseconds"`
 
 Represents a timestamp as an integer, milliseconds since 1 Jan 1970.
 
----
+___
 
-### TYPE_TIMESTAMP_SECONDS
+### TYPE\_TIMESTAMP\_SECONDS
 
-▪ `Static` **TYPE_TIMESTAMP_SECONDS**: `string` = `"TimestampSeconds"`
+▪ `Static` **TYPE\_TIMESTAMP\_SECONDS**: `string` = `"TimestampSeconds"`
 
 Represents a timestamp as an integer, seconds since 1 Jan 1970.
 
----
+___
 
-### TYPE_URN
+### TYPE\_URN
 
-▪ `Static` **TYPE_URN**: `string` = `"URN"`
+▪ `Static` **TYPE\_URN**: `string` = `"URN"`
 
 Represents a urn.
 
@@ -64,7 +64,7 @@ Register all the data types.
 
 `void`
 
----
+___
 
 ### validateIProperty
 
@@ -74,13 +74,13 @@ Validator for an IProperty.
 
 #### Parameters
 
-| Name             | Type                                      | Description                               |
-| :--------------- | :---------------------------------------- | :---------------------------------------- |
-| `propertyName`   | `string`                                  | The name of the property being validated. |
-| `value`          | [`IProperty`](../interfaces/IProperty.md) | The value to test.                        |
-| `failures`       | `IValidationFailure`[]                    | The list of failures to add to.           |
-| `container?`     | `unknown`                                 | The object which contains this one.       |
-| `previousValue?` | [`IProperty`](../interfaces/IProperty.md) | The previous value of the object.         |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `propertyName` | `string` | The name of the property being validated. |
+| `value` | [`IProperty`](../interfaces/IProperty.md) | The value to test. |
+| `failures` | `IValidationFailure`[] | The list of failures to add to. |
+| `container?` | `unknown` | The object which contains this one. |
+| `previousValue?` | [`IProperty`](../interfaces/IProperty.md) | The previous value of the object. |
 
 #### Returns
 
@@ -88,7 +88,7 @@ Validator for an IProperty.
 
 True if the value is a valid property.
 
----
+___
 
 ### validateIPropertyList
 
@@ -98,13 +98,13 @@ Validator for an IProperty list.
 
 #### Parameters
 
-| Name             | Type                                        | Description                               |
-| :--------------- | :------------------------------------------ | :---------------------------------------- |
-| `propertyName`   | `string`                                    | The name of the property being validated. |
-| `value`          | [`IProperty`](../interfaces/IProperty.md)[] | The value to test.                        |
-| `failures`       | `IValidationFailure`[]                      | The list of failures to add to.           |
-| `container?`     | `unknown`                                   | The object which contains this one.       |
-| `previousValue?` | [`IProperty`](../interfaces/IProperty.md)[] | The previous value of the object.         |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `propertyName` | `string` | The name of the property being validated. |
+| `value` | [`IProperty`](../interfaces/IProperty.md)[] | The value to test. |
+| `failures` | `IValidationFailure`[] | The list of failures to add to. |
+| `container?` | `unknown` | The object which contains this one. |
+| `previousValue?` | [`IProperty`](../interfaces/IProperty.md)[] | The previous value of the object. |
 
 #### Returns
 

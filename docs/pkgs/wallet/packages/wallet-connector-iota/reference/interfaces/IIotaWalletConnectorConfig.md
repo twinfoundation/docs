@@ -10,7 +10,7 @@ Configuration for the IOTA Wallet Connector.
 
 The configuration for the client.
 
----
+___
 
 ### walletMnemonicId
 

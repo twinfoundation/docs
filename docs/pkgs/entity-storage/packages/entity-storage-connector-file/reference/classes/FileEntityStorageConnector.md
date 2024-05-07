@@ -4,9 +4,9 @@ Class for performing entity storage operations in file.
 
 ## Type parameters
 
-| Name | Type      |
-| :--- | :-------- |
-| `T`  | `unknown` |
+| Name | Type |
+| :------ | :------ |
+| `T` | `unknown` |
 
 ## Implements
 
@@ -22,18 +22,18 @@ Create a new instance of FileEntityStorageConnector.
 
 #### Type parameters
 
-| Name | Type      |
-| :--- | :-------- |
-| `T`  | `unknown` |
+| Name | Type |
+| :------ | :------ |
+| `T` | `unknown` |
 
 #### Parameters
 
-| Name                           | Type                                                                                      | Description                                         |
-| :----------------------------- | :---------------------------------------------------------------------------------------- | :-------------------------------------------------- |
-| `dependencies`                 | `Object`                                                                                  | The dependencies for the connector.                 |
-| `dependencies.loggingContract` | `ILoggingContract`                                                                        | The logging contract.                               |
-| `entityDescriptor`             | `IEntityDescriptor`\<`T`\>                                                                | The descriptor for the entity.                      |
-| `config`                       | [`IFileEntityStorageConnectorConfig`](../interfaces/IFileEntityStorageConnectorConfig.md) | The configuration for the entity storage connector. |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `dependencies` | `Object` | The dependencies for the connector. |
+| `dependencies.loggingContract` | `ILoggingContract` | The logging contract. |
+| `entityDescriptor` | `IEntityDescriptor`\<`T`\> | The descriptor for the entity. |
+| `config` | [`IFileEntityStorageConnectorConfig`](../interfaces/IFileEntityStorageConnectorConfig.md) | The configuration for the entity storage connector. |
 
 #### Returns
 
@@ -49,8 +49,8 @@ Bootstrap the connector by creating and initializing any resources it needs.
 
 #### Parameters
 
-| Name             | Type              | Description                            |
-| :--------------- | :---------------- | :------------------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `requestContext` | `IRequestContext` | The request context for bootstrapping. |
 
 #### Returns
@@ -63,7 +63,7 @@ The response of the bootstrapping as log entries.
 
 IEntityStorageConnector.bootstrap
 
----
+___
 
 ### get
 
@@ -73,11 +73,11 @@ Get an entity.
 
 #### Parameters
 
-| Name              | Type              | Description                                                               |
-| :---------------- | :---------------- | :------------------------------------------------------------------------ |
-| `requestContext`  | `IRequestContext` | The context for the request.                                              |
-| `id`              | `string`          | The id of the entity to get, or the index value if secondaryIndex is set. |
-| `secondaryIndex?` | keyof `T`         | Get the item using a secondary index.                                     |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `requestContext` | `IRequestContext` | The context for the request. |
+| `id` | `string` | The id of the entity to get, or the index value if secondaryIndex is set. |
+| `secondaryIndex?` | keyof `T` | Get the item using a secondary index. |
 
 #### Returns
 
@@ -89,28 +89,28 @@ The object if it can be found or undefined.
 
 IEntityStorageConnector.get
 
----
+___
 
 ### query
 
-▸ **query**(`requestContext`, `conditions?`, `sortProperties?`, `properties?`, `cursor?`, `pageSize?`): `Promise`\<\{ `cursor?`: `string` ; `entities`: `Partial`\<`T`\>[] ; `pageSize?`: `number` ; `totalEntities`: `number` }\>
+▸ **query**(`requestContext`, `conditions?`, `sortProperties?`, `properties?`, `cursor?`, `pageSize?`): `Promise`\<\{ `cursor?`: `string` ; `entities`: `Partial`\<`T`\>[] ; `pageSize?`: `number` ; `totalEntities`: `number`  }\>
 
 Find all the entities which match the conditions.
 
 #### Parameters
 
-| Name              | Type                                                            | Description                                         |
-| :---------------- | :-------------------------------------------------------------- | :-------------------------------------------------- |
-| `requestContext`  | `IRequestContext`                                               | The context for the request.                        |
-| `conditions?`     | `EntityCondition`\<`T`\>                                        | The conditions to match for the entities.           |
-| `sortProperties?` | \{ `property`: keyof `T` ; `sortDirection`: `SortDirection` }[] | The optional sort order.                            |
-| `properties?`     | keyof `T`[]                                                     | The optional properties to return, defaults to all. |
-| `cursor?`         | `string`                                                        | The cursor to request the next page of entities.    |
-| `pageSize?`       | `number`                                                        | The maximum number of entities in a page.           |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `requestContext` | `IRequestContext` | The context for the request. |
+| `conditions?` | `EntityCondition`\<`T`\> | The conditions to match for the entities. |
+| `sortProperties?` | \{ `property`: keyof `T` ; `sortDirection`: `SortDirection`  }[] | The optional sort order. |
+| `properties?` | keyof `T`[] | The optional properties to return, defaults to all. |
+| `cursor?` | `string` | The cursor to request the next page of entities. |
+| `pageSize?` | `number` | The maximum number of entities in a page. |
 
 #### Returns
 
-`Promise`\<\{ `cursor?`: `string` ; `entities`: `Partial`\<`T`\>[] ; `pageSize?`: `number` ; `totalEntities`: `number` }\>
+`Promise`\<\{ `cursor?`: `string` ; `entities`: `Partial`\<`T`\>[] ; `pageSize?`: `number` ; `totalEntities`: `number`  }\>
 
 All the entities for the storage matching the conditions,
 and a cursor which can be used to request more entities.
@@ -119,7 +119,7 @@ and a cursor which can be used to request more entities.
 
 IEntityStorageConnector.query
 
----
+___
 
 ### readTenantStore
 
@@ -129,8 +129,8 @@ Read the store from file.
 
 #### Parameters
 
-| Name       | Type     | Description                          |
-| :--------- | :------- | :----------------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `tenantId` | `string` | The tenant id to read the store for. |
 
 #### Returns
@@ -139,7 +139,7 @@ Read the store from file.
 
 The store for the tenant.
 
----
+___
 
 ### remove
 
@@ -149,10 +149,10 @@ Remove the entity.
 
 #### Parameters
 
-| Name             | Type              | Description                     |
-| :--------------- | :---------------- | :------------------------------ |
-| `requestContext` | `IRequestContext` | The context for the request.    |
-| `id`             | `string`          | The id of the entity to remove. |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `requestContext` | `IRequestContext` | The context for the request. |
+| `id` | `string` | The id of the entity to remove. |
 
 #### Returns
 
@@ -164,7 +164,7 @@ Nothing.
 
 IEntityStorageConnector.remove
 
----
+___
 
 ### set
 
@@ -174,10 +174,10 @@ Set an entity.
 
 #### Parameters
 
-| Name             | Type              | Description                  |
-| :--------------- | :---------------- | :--------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `requestContext` | `IRequestContext` | The context for the request. |
-| `entity`         | `T`               | The entity to set.           |
+| `entity` | `T` | The entity to set. |
 
 #### Returns
 
@@ -189,7 +189,7 @@ The id of the entity.
 
 IEntityStorageConnector.set
 
----
+___
 
 ### writeTenantStore
 
@@ -199,10 +199,10 @@ Write the store to the file.
 
 #### Parameters
 
-| Name       | Type     | Description                          |
-| :--------- | :------- | :----------------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `tenantId` | `string` | The tenant id to read the store for. |
-| `store`    | `T`[]    | The store to write.                  |
+| `store` | `T`[] | The store to write. |
 
 #### Returns
 

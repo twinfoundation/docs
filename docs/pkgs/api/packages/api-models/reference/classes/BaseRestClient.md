@@ -12,11 +12,11 @@ Create a new instance of BaseRestClient.
 
 #### Parameters
 
-| Name                 | Type                                                              | Description                                         |
-| :------------------- | :---------------------------------------------------------------- | :-------------------------------------------------- |
-| `implementationName` | `string`                                                          | The name of the class implementation REST calls.    |
-| `config`             | [`IBaseRestClientConfig`](../interfaces/IBaseRestClientConfig.md) | The configuration for the client.                   |
-| `pathPrefix`         | `string`                                                          | The default prefix to use if none in configuration. |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `implementationName` | `string` | The name of the class implementation REST calls. |
+| `config` | [`IBaseRestClientConfig`](../interfaces/IBaseRestClientConfig.md) | The configuration for the client. |
+| `pathPrefix` | `string` | The default prefix to use if none in configuration. |
 
 #### Returns
 
@@ -33,18 +33,18 @@ Perform a request in json format.
 #### Type parameters
 
 | Name |
-| :--- |
-| `T`  |
-| `U`  |
+| :------ |
+| `T` |
+| `U` |
 
 #### Parameters
 
-| Name             | Type              | Description                      |
-| :--------------- | :---------------- | :------------------------------- |
-| `requestContext` | `IRequestContext` | The context for the request.     |
-| `route`          | `string`          | The route of the request.        |
-| `method`         | `HttpMethods`     | The http method.                 |
-| `requestData?`   | `T`               | Request to send to the endpoint. |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `requestContext` | `IRequestContext` | The context for the request. |
+| `route` | `string` | The route of the request. |
+| `method` | `HttpMethods` | The http method. |
+| `requestData?` | `T` | Request to send to the endpoint. |
 
 #### Returns
 
@@ -52,7 +52,7 @@ Perform a request in json format.
 
 The response.
 
----
+___
 
 ### getEndpointWithPrefix
 
