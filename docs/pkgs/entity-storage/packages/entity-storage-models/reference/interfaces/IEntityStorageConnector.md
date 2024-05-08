@@ -42,7 +42,7 @@ ___
 
 ### get
 
-▸ **get**(`requestContext`, `id`, `secondaryIndex?`): `Promise`\<`undefined` \| `T`\>
+▸ **get**(`requestContext`, `id`, `secondaryIndex?`): `Promise`\<`undefined` \| `T` & \{ `tenantId?`: `string`  }\>
 
 Get an entity.
 
@@ -56,15 +56,15 @@ Get an entity.
 
 #### Returns
 
-`Promise`\<`undefined` \| `T`\>
+`Promise`\<`undefined` \| `T` & \{ `tenantId?`: `string`  }\>
 
-The object if it can be found or undefined.
+The object if it can be found or undefined, if request context was wildcard then tenantId is also included.
 
 ___
 
 ### query
 
-▸ **query**(`requestContext`, `conditions?`, `sortProperties?`, `properties?`, `cursor?`, `pageSize?`): `Promise`\<\{ `cursor?`: `string` ; `entities`: `Partial`\<`T`\>[] ; `pageSize?`: `number` ; `totalEntities`: `number`  }\>
+▸ **query**(`requestContext`, `conditions?`, `sortProperties?`, `properties?`, `cursor?`, `pageSize?`): `Promise`\<\{ `cursor?`: `string` ; `entities`: `Partial`\<`T` & \{ `tenantId?`: `string`  }\>[] ; `pageSize?`: `number` ; `totalEntities`: `number`  }\>
 
 Query all the entities which match the conditions.
 
@@ -81,7 +81,7 @@ Query all the entities which match the conditions.
 
 #### Returns
 
-`Promise`\<\{ `cursor?`: `string` ; `entities`: `Partial`\<`T`\>[] ; `pageSize?`: `number` ; `totalEntities`: `number`  }\>
+`Promise`\<\{ `cursor?`: `string` ; `entities`: `Partial`\<`T` & \{ `tenantId?`: `string`  }\>[] ; `pageSize?`: `number` ; `totalEntities`: `number`  }\>
 
 All the entities for the storage matching the conditions,
 and a cursor which can be used to request more entities.

@@ -14,5 +14,7 @@ The response payload.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `cursor?` | `string` | The cursor for paged requests. |
-| `identities` | \{ `[id: string]`: `IProperty`[];  }[] | The identities. |
+| `cursor?` | `string` | An optional cursor, when defined can be used to call find to get more entities. |
+| `identities` | \{ `identity`: `string` ; `properties?`: `IProperty`[]  }[] | The identities. |
+| `pageSize?` | `number` | Number of entities to return. |
+| `totalEntities` | `number` | Total entities length. |

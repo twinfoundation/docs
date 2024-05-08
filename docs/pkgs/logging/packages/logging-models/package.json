@@ -1,6 +1,6 @@
 {
 	"name": "@gtsc/logging-models",
-	"version": "0.0.3-next.7",
+	"version": "0.0.3-next.8",
 	"description": "Models which define the structure of the logging connectors and services",
 	"repository": {
 		"type": "git",

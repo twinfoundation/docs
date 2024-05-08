@@ -8,8 +8,8 @@
 ## Interfaces
 
 - [ILogEntry](interfaces/ILogEntry.md)
+- [ILogging](interfaces/ILogging.md)
 - [ILoggingConnector](interfaces/ILoggingConnector.md)
-- [ILoggingContract](interfaces/ILoggingContract.md)
 - [ILoggingCreateRequest](interfaces/ILoggingCreateRequest.md)
 - [ILoggingLevelsConfig](interfaces/ILoggingLevelsConfig.md)
 - [ILoggingListRequest](interfaces/ILoggingListRequest.md)

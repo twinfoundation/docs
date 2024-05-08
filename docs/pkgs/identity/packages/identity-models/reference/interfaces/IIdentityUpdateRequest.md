@@ -14,7 +14,7 @@ The data for the request.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `properties?` | `IProperty`[] | Properties for the identity. |
+| `properties` | `IProperty`[] | Properties for the identity. |
 
 ___
 

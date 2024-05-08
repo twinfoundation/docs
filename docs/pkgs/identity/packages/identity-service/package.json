@@ -1,7 +1,7 @@
 {
 	"name": "@gtsc/identity-service",
-	"version": "0.0.3-next.4",
-	"description": "Implementation of the identity service",
+	"version": "0.0.3-next.5",
+	"description": "Identity contract implementation and REST endpoint definitions",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/gtscio/identity.git",
@@ -28,16 +28,19 @@
 		"dist": "npm run clean && npm run build && npm run test && npm run bundle && npm run docs"
 	},
 	"dependencies": {
+		"@gtsc/api-models": "next",
 		"@gtsc/core": "next",
 		"@gtsc/crypto": "next",
 		"@gtsc/entity": "next",
 		"@gtsc/entity-storage-models": "next",
 		"@gtsc/entity-storage-connector-memory": "next",
-		"@gtsc/identity-models": "0.0.3-next.4",
-		"@gtsc/identity-connector-entity-storage": "0.0.3-next.4",
+		"@gtsc/identity-models": "0.0.3-next.5",
+		"@gtsc/identity-connector-entity-storage": "0.0.3-next.5",
 		"@gtsc/schema": "next",
+		"@gtsc/services": "next",
 		"@gtsc/vault-models": "next",
-		"@gtsc/vault-connector-entity-storage": "next"
+		"@gtsc/vault-connector-entity-storage": "next",
+		"@gtsc/web": "next"
 	},
 	"devDependencies": {
 		"@gtsc/nameof-transformer": "^0.0.4",

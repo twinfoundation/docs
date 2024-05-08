@@ -12,27 +12,6 @@ The id for the identity.
 
 ___
 
-### keyIndexes
-
-• `Optional` **keyIndexes**: `Object`
-
-Indexes for the current issuing keys.
-
-#### Index signature
-
-▪ [id: `string`]: \{ `allocated`: `number` ; `index`: `number`  }
-
-___
-
-### nextRevocationIndex
-
-• `Optional` **nextRevocationIndex**: `string`
-
-The next index to map to a verifiable credential id.
-Used for revocation of VCs.
-
-___
-
 ### properties
 
 • `Optional` **properties**: `IProperty`[]
@@ -46,11 +25,3 @@ ___
 • **role**: `IdentityRole`
 
 The role for the identity.
-
-___
-
-### verifiableCredentials
-
-• `Optional` **verifiableCredentials**: \{ `id`: `string` ; `issuer`: `string` ; `type`: `string`  }[]
-
-Issued verifiable credential ids.

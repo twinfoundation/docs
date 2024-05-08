@@ -4,14 +4,6 @@ Configuration for the File Entity Storage Connector.
 
 ## Properties
 
-### baseFilename
-
-• **baseFilename**: `string`
-
-The base filename to use for stored items.
-
-___
-
 ### directory
 
 • **directory**: `string`

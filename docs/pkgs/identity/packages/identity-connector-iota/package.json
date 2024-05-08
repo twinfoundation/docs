@@ -1,6 +1,6 @@
 {
 	"name": "@gtsc/identity-connector-iota",
-	"version": "0.0.3-next.4",
+	"version": "0.0.3-next.5",
 	"description": "Identity connector implementation using IOTA",
 	"repository": {
 		"type": "git",
@@ -31,7 +31,7 @@
 		"@gtsc/core": "next",
 		"@gtsc/crypto": "next",
 		"@gtsc/entity-storage-connector-memory": "next",
-		"@gtsc/identity-models": "0.0.3-next.4",
+		"@gtsc/identity-models": "0.0.3-next.5",
 		"@gtsc/nameof": "^0.0.4",
 		"@gtsc/vault-models": "next",
 		"@gtsc/vault-connector-entity-storage": "next",

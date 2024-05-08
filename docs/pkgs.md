@@ -56,4 +56,5 @@ This is the overview of the packages.
 - [@gtsc/identity-models](pkgs/identity/packages/identity-models/overview) - Models which define the structure of the contracts and connectors
 - [@gtsc/identity-connector-entity-storage](pkgs/identity/packages/identity-connector-entity-storage/overview) - Identity connector implementation using entity storage
 - [@gtsc/identity-connector-iota](pkgs/identity/packages/identity-connector-iota/overview) - Identity connector implementation using IOTA
-- [@gtsc/identity-service](pkgs/identity/packages/identity-service/overview) - Implementation of the identity service
+- [@gtsc/identity-service](pkgs/identity/packages/identity-service/overview) - Identity contract implementation and REST endpoint definitions
+- [@gtsc/identity-rest-client](pkgs/identity/packages/identity-rest-client/overview) - Identity contract implementation which can connect to REST endpoints

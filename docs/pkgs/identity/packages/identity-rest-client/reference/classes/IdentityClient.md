@@ -1,6 +1,12 @@
-# Class: IdentityService
+# Class: IdentityClient
 
-Class which implements the identity contract.
+Client for performing identity through to REST endpoints.
+
+## Hierarchy
+
+- `BaseRestClient`
+
+  ↳ **`IdentityClient`**
 
 ## Implements
 
@@ -10,23 +16,77 @@ Class which implements the identity contract.
 
 ### constructor
 
-• **new IdentityService**(`dependencies`): [`IdentityService`](IdentityService.md)
+• **new IdentityClient**(`config`): [`IdentityClient`](IdentityClient.md)
 
-Create a new instance of Identity.
+Create a new instance of IdentityClient.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `dependencies` | `Object` | The dependencies for the identity service. |
-| `dependencies.identityConnector` | `IIdentityConnector` | The identity connector. |
-| `dependencies.profileEntityStorage` | `IEntityStorageConnector`\<[`IIdentityProfile`](../interfaces/IIdentityProfile.md)\> | The storage connector for the profiles. |
+| `config` | `IBaseRestClientConfig` | The configuration for the client. |
 
 #### Returns
 
-[`IdentityService`](IdentityService.md)
+[`IdentityClient`](IdentityClient.md)
+
+#### Overrides
+
+BaseRestClient.constructor
 
 ## Methods
+
+### fetch
+
+▸ **fetch**\<`T`, `U`\>(`requestContext`, `route`, `method`, `requestData?`): `Promise`\<`U`\>
+
+Perform a request in json format.
+
+#### Type parameters
+
+| Name |
+| :------ |
+| `T` |
+| `U` |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `requestContext` | `IRequestContext` | The context for the request. |
+| `route` | `string` | The route of the request. |
+| `method` | `HttpMethods` | The http method. |
+| `requestData?` | `T` | Request to send to the endpoint. |
+
+#### Returns
+
+`Promise`\<`U`\>
+
+The response.
+
+#### Inherited from
+
+BaseRestClient.fetch
+
+___
+
+### getEndpointWithPrefix
+
+▸ **getEndpointWithPrefix**(): `string`
+
+Get the endpoint with the prefix for the namespace.
+
+#### Returns
+
+`string`
+
+The endpoint with namespace prefix attached.
+
+#### Inherited from
+
+BaseRestClient.getEndpointWithPrefix
+
+___
 
 ### identityCreate
 
