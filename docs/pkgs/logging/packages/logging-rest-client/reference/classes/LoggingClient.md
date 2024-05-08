@@ -10,7 +10,7 @@ Client for performing logging through to REST endpoints.
 
 ## Implements
 
-- `ILoggingContract`
+- `ILogging`
 
 ## Constructors
 
@@ -109,7 +109,7 @@ An identifier if one was allocated during the logging process.
 
 #### Implementation of
 
-ILoggingContract.log
+ILogging.log
 
 ___
 
@@ -144,4 +144,4 @@ NotImplementedError if the implementation does not support retrieval.
 
 #### Implementation of
 
-ILoggingContract.query
+ILogging.query

@@ -1,11 +1,11 @@
 {
-	"name": "@gtsc/identity-connector-entity-storage",
+	"name": "@gtsc/identity-rest-client",
 	"version": "0.0.3-next.5",
-	"description": "Identity connector implementation using entity storage",
+	"description": "Identity contract implementation which can connect to REST endpoints",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/gtscio/identity.git",
-		"directory": "packages/identity-connector-entity-storage"
+		"directory": "packages/identity-rest-client"
 	},
 	"author": "martyn.janes@iota.org",
 	"license": "Apache-2.0",
@@ -28,23 +28,19 @@
 		"dist": "npm run clean && npm run build && npm run test && npm run bundle && npm run docs"
 	},
 	"dependencies": {
+		"@gtsc/api-models": "next",
 		"@gtsc/core": "next",
-		"@gtsc/crypto": "next",
-		"@gtsc/entity-storage-connector-memory": "next",
-		"@gtsc/identity-models": "0.0.3-next.5",
+		"@gtsc/entity": "next",
 		"@gtsc/nameof": "^0.0.4",
-		"@gtsc/vault-models": "next",
-		"@gtsc/vault-connector-entity-storage": "next",
-		"@gtsc/web": "next"
+		"@gtsc/services": "next",
+		"@gtsc/identity-models": "0.0.3-next.5"
 	},
 	"devDependencies": {
 		"@gtsc/nameof-transformer": "^0.0.4",
 		"@vitest/coverage-v8": "^1.5.3",
 		"copyfiles": "^2.4.1",
-		"dotenv": "^16.4.5",
 		"rimraf": "^5.0.5",
 		"rollup": "^4.17.2",
-		"rollup-plugin-copy": "^3.5.0",
 		"rollup-plugin-typescript2": "^0.36.0",
 		"ts-patch": "^3.1.2",
 		"typedoc": "^0.25.13",

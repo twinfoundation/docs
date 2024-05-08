@@ -1,11 +1,11 @@
 {
 	"name": "@gtsc/logging-rest-client",
-	"version": "0.0.3-next.7",
+	"version": "0.0.3-next.8",
 	"description": "Logging contract implementation which can connect to REST endpoints",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/gtscio/logging.git",
-		"directory": "packages/logging-models"
+		"directory": "packages/logging-rest-client"
 	},
 	"author": "martyn.janes@iota.org",
 	"license": "Apache-2.0",
@@ -33,7 +33,7 @@
 		"@gtsc/entity": "next",
 		"@gtsc/nameof": "^0.0.4",
 		"@gtsc/services": "next",
-		"@gtsc/logging-models": "0.0.3-next.7"
+		"@gtsc/logging-models": "0.0.3-next.8"
 	},
 	"devDependencies": {
 		"@gtsc/nameof-transformer": "^0.0.4",

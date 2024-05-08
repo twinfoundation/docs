@@ -1,4 +1,4 @@
-# Interface: ILoggingContract
+# Interface: ILogging
 
 Interface describing a logging contract.
 
@@ -6,7 +6,7 @@ Interface describing a logging contract.
 
 - `IService`
 
-  ↳ **`ILoggingContract`**
+  ↳ **`ILogging`**
 
 ## Methods
 

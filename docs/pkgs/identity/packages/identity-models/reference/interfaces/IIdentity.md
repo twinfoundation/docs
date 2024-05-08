@@ -1,32 +1,38 @@
-# Class: IdentityService
+# Interface: IIdentity
 
-Class which implements the identity contract.
+Interface describing a contract which provides identity operations.
 
-## Implements
+## Hierarchy
 
-- `IIdentity`
+- `IService`
 
-## Constructors
+  ↳ **`IIdentity`**
 
-### constructor
+## Methods
 
-• **new IdentityService**(`dependencies`): [`IdentityService`](IdentityService.md)
+### bootstrap
 
-Create a new instance of Identity.
+▸ **bootstrap**(`requestContext`): `Promise`\<`void`\>
+
+Bootstrap the service by creating and initializing any resources it needs.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `dependencies` | `Object` | The dependencies for the identity service. |
-| `dependencies.identityConnector` | `IIdentityConnector` | The identity connector. |
-| `dependencies.profileEntityStorage` | `IEntityStorageConnector`\<[`IIdentityProfile`](../interfaces/IIdentityProfile.md)\> | The storage connector for the profiles. |
+| `requestContext` | `IRequestContext` | The request context for bootstrapping. |
 
 #### Returns
 
-[`IdentityService`](IdentityService.md)
+`Promise`\<`void`\>
 
-## Methods
+Nothing.
+
+#### Inherited from
+
+IService.bootstrap
+
+___
 
 ### identityCreate
 
@@ -39,7 +45,7 @@ Create a new identity.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `requestContext` | `IRequestContext` | The context for the request. |
-| `role` | `IdentityRole` | The role for the identity. |
+| `role` | [`IdentityRole`](../enums/IdentityRole.md) | The role for the identity. |
 | `properties?` | `IProperty`[] | The profile properties. |
 
 #### Returns
@@ -48,15 +54,11 @@ Create a new identity.
 
 The created identity details.
 
-#### Implementation of
-
-IIdentity.identityCreate
-
 ___
 
 ### identityGet
 
-▸ **identityGet**(`requestContext`, `identity`, `propertyNames?`): `Promise`\<\{ `properties?`: `IProperty`[] ; `role`: `IdentityRole`  }\>
+▸ **identityGet**(`requestContext`, `identity`, `propertyNames?`): `Promise`\<\{ `properties?`: `IProperty`[] ; `role`: [`IdentityRole`](../enums/IdentityRole.md)  }\>
 
 Get an item by identity.
 
@@ -70,13 +72,9 @@ Get an item by identity.
 
 #### Returns
 
-`Promise`\<\{ `properties?`: `IProperty`[] ; `role`: `IdentityRole`  }\>
+`Promise`\<\{ `properties?`: `IProperty`[] ; `role`: [`IdentityRole`](../enums/IdentityRole.md)  }\>
 
 The items properties.
-
-#### Implementation of
-
-IIdentity.identityGet
 
 ___
 
@@ -91,7 +89,7 @@ Get a list of the requested types.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `requestContext` | `IRequestContext` | The context for the request. |
-| `role` | `IdentityRole` | The role type to lookup. |
+| `role` | [`IdentityRole`](../enums/IdentityRole.md) | The role type to lookup. |
 | `propertyNames?` | `string`[] | The properties to get for the identities, default to all if undefined. |
 | `cursor?` | `string` | The cursor for paged requests. |
 | `pageSize?` | `number` | The maximum number of items in a page. |
@@ -101,10 +99,6 @@ Get a list of the requested types.
 `Promise`\<\{ `cursor?`: `string` ; `identities`: \{ `identity`: `string` ; `properties?`: `IProperty`[]  }[] ; `pageSize?`: `number` ; `totalEntities`: `number`  }\>
 
 The list of items and cursor for paging.
-
-#### Implementation of
-
-IIdentity.identityList
 
 ___
 
@@ -128,6 +122,38 @@ Update an item.
 
 Nothing.
 
-#### Implementation of
+___
 
-IIdentity.identityUpdate
+### start
+
+▸ **start**(): `Promise`\<`void`\>
+
+The service needs to be started when the application is initialized.
+
+#### Returns
+
+`Promise`\<`void`\>
+
+Nothing.
+
+#### Inherited from
+
+IService.start
+
+___
+
+### stop
+
+▸ **stop**(): `Promise`\<`void`\>
+
+The service needs to be stopped when the application is closed.
+
+#### Returns
+
+`Promise`\<`void`\>
+
+Nothing.
+
+#### Inherited from
+
+IService.stop

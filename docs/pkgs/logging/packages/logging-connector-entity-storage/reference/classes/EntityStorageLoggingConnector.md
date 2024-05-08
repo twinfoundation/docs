@@ -19,7 +19,7 @@ Create a new instance of MemoryLoggingConnector.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `dependencies` | `Object` | The dependencies for the logging connector. |
-| `dependencies.entityStorageConnector` | `IEntityStorageConnector`\<[`IEntityLogEntry`](../interfaces/IEntityLogEntry.md)\> | The entity storage connector dependency. |
+| `dependencies.logEntryStorage` | `IEntityStorageConnector`\<[`IEntityLogEntry`](../interfaces/IEntityLogEntry.md)\> | The entity storage connector dependency. |
 | `config?` | `ILoggingLevelsConfig` | The configuration for the logging connector. |
 
 #### Returns

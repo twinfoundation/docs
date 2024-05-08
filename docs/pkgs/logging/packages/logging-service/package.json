@@ -1,6 +1,6 @@
 {
 	"name": "@gtsc/logging-service",
-	"version": "0.0.3-next.7",
+	"version": "0.0.3-next.8",
 	"description": "Logging contract implementation and REST endpoint definitions",
 	"repository": {
 		"type": "git",
@@ -33,7 +33,7 @@
 		"@gtsc/entity": "next",
 		"@gtsc/nameof": "^0.0.4",
 		"@gtsc/services": "next",
-		"@gtsc/logging-models": "0.0.3-next.7",
+		"@gtsc/logging-models": "0.0.3-next.8",
 		"@gtsc/web": "next"
 	},
 	"devDependencies": {
