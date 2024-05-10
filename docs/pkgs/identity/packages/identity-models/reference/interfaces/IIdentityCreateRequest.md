@@ -4,9 +4,9 @@ Create a new identity.
 
 ## Properties
 
-### data
+### body
 
-• **data**: `Object`
+• **body**: `Object`
 
 The data for the request.
 

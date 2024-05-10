@@ -4,9 +4,9 @@ Response for log entry list request.
 
 ## Properties
 
-### data
+### body
 
-• **data**: `Object`
+• **body**: `Object`
 
 The response payload.
 

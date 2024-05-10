@@ -4,8 +4,8 @@ Create a new log entry.
 
 ## Properties
 
-### data
+### body
 
-• `Optional` **data**: [`ILogEntry`](ILogEntry.md)
+• **body**: [`ILogEntry`](ILogEntry.md)
 
 The data to be used in the create.

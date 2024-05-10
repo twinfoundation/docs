@@ -4,16 +4,28 @@ Get the profile for an identity.
 
 ## Properties
 
-### identity
+### path
 
-• **identity**: `string`
+• **path**: `Object`
 
-The identity to get the profile for.
+The path parameters.
+
+#### Type declaration
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `identity` | `string` | The identity to get the profile for. |
 
 ___
 
-### propertyNames
+### query
 
-• `Optional` **propertyNames**: `string`[]
+• **query**: `Object`
 
-The properties to get for the profile, defaults to all.
+The query parameters.
+
+#### Type declaration
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `propertyNames?` | `string` | The properties to get for the profile, defaults to all, should be a comma separated list. |

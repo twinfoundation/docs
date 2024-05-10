@@ -16,5 +16,5 @@ The query parameters.
 | :------ | :------ | :------ |
 | `cursor?` | `string` | The cursor for paged requests. |
 | `pageSize?` | `number` | Number of items to return. |
-| `propertyNames?` | `string` | The properties to get for the profile, defaults to all. should be a comma separated list. |
+| `propertyNames?` | `string` | The properties to get for the profile, defaults to all, should be a comma separated list. |
 | `role` | [`IdentityRole`](../enums/IdentityRole.md) | The property name to use for lookup. |

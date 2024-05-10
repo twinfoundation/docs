@@ -4,9 +4,9 @@ Request to update an identity.
 
 ## Properties
 
-### data
+### body
 
-• **data**: `Object`
+• **body**: `Object`
 
 The data for the request.
 
@@ -18,8 +18,14 @@ The data for the request.
 
 ___
 
-### identity
+### path
 
-• **identity**: `string`
+• **path**: `Object`
 
-The identity to update the properties.
+The path parameters.
+
+#### Type declaration
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `identity` | `string` | The identity to update the profile for. |
