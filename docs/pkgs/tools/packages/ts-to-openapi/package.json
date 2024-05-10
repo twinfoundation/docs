@@ -1,11 +1,11 @@
 {
-	"name": "@gtsc/identity-connector-entity-storage",
-	"version": "0.0.3-next.8",
-	"description": "Identity connector implementation using entity storage",
+	"name": "@gtsc/ts-to-openapi",
+	"version": "0.0.4-next.1",
+	"description": "Tool to convert TypeScript REST route definitions to OpenAPI Specifications",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/gtscio/identity.git",
-		"directory": "packages/identity-connector-entity-storage"
+		"url": "https://github.com/gtscio/tools.git",
+		"directory": "packages/ts-to-openapi"
 	},
 	"author": "martyn.janes@iota.org",
 	"license": "Apache-2.0",
@@ -14,8 +14,8 @@
 		"node": ">=20.0.0"
 	},
 	"scripts": {
-		"clean": "rimraf dist coverage docs/reference",
-		"build": "tspc",
+		"clean": "rimraf dist coverage",
+		"build": "tsc",
 		"test": "vitest --run --config ./vitest.config.ts",
 		"coverage": "vitest --run --coverage --config ./vitest.config.ts",
 		"bundle:esm": "rollup --config rollup.config.mjs --environment MODULE:esm",
@@ -28,29 +28,27 @@
 		"dist": "npm run clean && npm run build && npm run test && npm run bundle && npm run docs"
 	},
 	"dependencies": {
+		"@gtsc/api-models": "next",
 		"@gtsc/core": "next",
-		"@gtsc/crypto": "next",
-		"@gtsc/entity-storage-connector-memory": "next",
-		"@gtsc/identity-models": "0.0.3-next.8",
-		"@gtsc/nameof": "^0.0.4",
-		"@gtsc/vault-models": "next",
-		"@gtsc/vault-connector-entity-storage": "next",
-		"@gtsc/web": "next"
+		"@gtsc/nameof": "next",
+		"@gtsc/web": "next",
+		"glob": "^10.3.12",
+		"jsonschema": "^0.4.0",
+		"ts-json-schema-generator": "^2.1.1"
 	},
 	"devDependencies": {
-		"@gtsc/nameof-transformer": "^0.0.4",
-		"@vitest/coverage-v8": "^1.5.3",
+		"@gtsc/nameof-transformer": "0.0.4-next.1",
+		"@types/node": "^20.12.10",
+		"@vitest/coverage-v8": "^1.5.0",
 		"copyfiles": "^2.4.1",
-		"dotenv": "^16.4.5",
 		"rimraf": "^5.0.5",
-		"rollup": "^4.17.2",
-		"rollup-plugin-copy": "^3.5.0",
+		"rollup": "^4.16.3",
 		"rollup-plugin-typescript2": "^0.36.0",
 		"ts-patch": "^3.1.2",
 		"typedoc": "^0.25.13",
 		"typedoc-plugin-markdown": "^3.17.1",
 		"typescript": "^5.4.5",
-		"vitest": "^1.5.3"
+		"vitest": "^1.5.0"
 	},
 	"main": "./dist/cjs/index.cjs",
 	"module": "./dist/esm/index.mjs",
@@ -60,14 +58,17 @@
 			"require": "./dist/cjs/index.cjs",
 			"import": "./dist/esm/index.mjs",
 			"types": "./dist/types/index.d.ts"
-		},
-		"./locales": "./locales"
+		}
 	},
 	"files": [
+		"bin",
 		"dist/cjs",
 		"dist/esm",
 		"dist/types",
 		"locales",
 		"docs"
-	]
+	],
+	"bin": {
+		"ts-to-openapi": "bin/index.js"
+	}
 }

@@ -4,9 +4,9 @@ Response to get a list of identities.
 
 ## Properties
 
-### data
+### body
 
-• **data**: `Object`
+• **body**: `Object`
 
 The response payload.
 

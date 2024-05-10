@@ -6,6 +6,7 @@ This is the overview of the packages.
 
 - [@gtsc/nameof-transformer](pkgs/tools/packages/nameof-transformer/overview) - A TypeScript transformer which converts types and properties to their actual name for use at runtime
 - [@gtsc/nameof](pkgs/tools/packages/nameof/overview) - Provides the definitions for the methods which are processed by the nameof-transformer
+- [@gtsc/ts-to-openapi](pkgs/tools/packages/ts-to-openapi/overview) - Tool to convert TypeScript REST route definitions to OpenAPI Specifications
 
 ## Framework
 

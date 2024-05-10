@@ -22,20 +22,28 @@ Create a new instance of BaseRestClient.
 
 [`BaseRestClient`](BaseRestClient.md)
 
+## Properties
+
+### \_includeCredentials
+
+• `Private` `Readonly` **\_includeCredentials**: `boolean`
+
+Include credentials in the request, defaults to true.
+
 ## Methods
 
 ### fetch
 
-▸ **fetch**\<`T`, `U`\>(`requestContext`, `route`, `method`, `requestData?`): `Promise`\<`U`\>
+▸ **fetch**\<`T`, `U`\>(`requestContext`, `route`, `method`, `request?`): `Promise`\<`U`\>
 
 Perform a request in json format.
 
 #### Type parameters
 
-| Name |
-| :------ |
-| `T` |
-| `U` |
+| Name | Type |
+| :------ | :------ |
+| `T` | extends [`IHttpRequest`](../interfaces/IHttpRequest.md)\<`unknown`\> |
+| `U` | extends [`IHttpResponse`](../interfaces/IHttpResponse.md)\<`unknown`\> |
 
 #### Parameters
 
@@ -44,7 +52,7 @@ Perform a request in json format.
 | `requestContext` | `IRequestContext` | The context for the request. |
 | `route` | `string` | The route of the request. |
 | `method` | `HttpMethods` | The http method. |
-| `requestData?` | `T` | Request to send to the endpoint. |
+| `request?` | `T` | Request to send to the endpoint. |
 
 #### Returns
 

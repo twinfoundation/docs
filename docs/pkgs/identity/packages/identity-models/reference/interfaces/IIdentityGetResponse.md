@@ -4,9 +4,9 @@ Response to get an identity details.
 
 ## Properties
 
-### data
+### body
 
-• **data**: `Object`
+• **body**: `Object`
 
 The response payload.
 

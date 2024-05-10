@@ -18,5 +18,5 @@ The query parameters.
 | `level?` | [`LogLevel`](../modules.md#loglevel) | The level of the log entries to retrieve. |
 | `pageSize?` | `number` | The maximum number of entities in a page. |
 | `source?` | `string` | The source of the log entries to retrieve. |
-| `timeEnd?` | `number` | The end time of the metrics to retrieve. |
-| `timeStart?` | `number` | The start time of the metrics to retrieve. |
+| `timeEnd?` | `number` | The end time of the metrics to retrieve as a timestamp in ms. |
+| `timeStart?` | `number` | The start time of the metrics to retrieve as a timestamp in ms. |
