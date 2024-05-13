@@ -1,6 +1,6 @@
 {
 	"name": "@gtsc/nameof",
-	"version": "0.0.4-next.1",
+	"version": "0.0.4-next.3",
 	"description": "Provides the definitions for the methods which are processed by the nameof-transformer",
 	"repository": {
 		"type": "git",
@@ -28,7 +28,7 @@
 		"dist": "npm run clean && npm run build && npm run test && npm run bundle && npm run docs"
 	},
 	"devDependencies": {
-		"@gtsc/nameof-transformer": "0.0.4-next.1",
+		"@gtsc/nameof-transformer": "0.0.4-next.3",
 		"@vitest/coverage-v8": "^1.5.0",
 		"copyfiles": "^2.4.1",
 		"rimraf": "^5.0.5",

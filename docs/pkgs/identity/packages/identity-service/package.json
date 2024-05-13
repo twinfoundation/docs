@@ -23,8 +23,9 @@
 		"bundle": "npm run bundle:esm && npm run bundle:cjs",
 		"docs:clean": "rimraf docs/reference",
 		"docs:generate": "typedoc",
+		"docs:api": "ts-to-openapi ./ts-to-openapi.json ./docs/open-api/spec.json",
 		"docs:finalise": "rimraf docs/reference/README.md",
-		"docs": "npm run docs:clean && npm run docs:generate && npm run docs:finalise",
+		"docs": "npm run docs:clean && npm run docs:generate && npm run docs:api && npm run docs:finalise",
 		"dist": "npm run clean && npm run build && npm run test && npm run bundle && npm run docs"
 	},
 	"dependencies": {
@@ -44,6 +45,7 @@
 	},
 	"devDependencies": {
 		"@gtsc/nameof-transformer": "^0.0.4",
+		"@gtsc/ts-to-openapi": "next",
 		"@vitest/coverage-v8": "^1.5.3",
 		"copyfiles": "^2.4.1",
 		"rimraf": "^5.0.5",

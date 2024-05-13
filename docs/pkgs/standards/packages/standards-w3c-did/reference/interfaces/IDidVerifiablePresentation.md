@@ -28,6 +28,15 @@ Provide a unique identifier for the presentation.
 
 ___
 
+### proof
+
+• `Optional` **proof**: [`IDidProof`](IDidProof.md) \| [`IDidProof`](IDidProof.md)[]
+
+Proofs that the verifiable presentation is valid.
+Optional if a different proof method is used, such as JWT.
+
+___
+
 ### type
 
 • **type**: `string`[]

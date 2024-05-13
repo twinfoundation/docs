@@ -1,0 +1,314 @@
+{
+	"openapi": "3.1.0",
+	"info": {
+		"title": "Global Trade and Supply Chain - Test Endpoints",
+		"description": "REST API for Global Trade and Supply Chain - Test Endpoints.",
+		"version": "1.0.0",
+		"license": {
+			"name": "Apache 2.0 License",
+			"url": "https://opensource.org/licenses/Apache-2.0"
+		}
+	},
+	"servers": [
+		{
+			"url": "https://localhost"
+		}
+	],
+	"tags": [],
+	"paths": {
+		"/logging": {
+			"post": {
+				"operationId": "loggingEntryCreate",
+				"summary": "Create a log entry",
+				"tags": ["Logging"],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "The rest request ended in created response.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/CreatedResponse"
+								}
+							}
+						},
+						"headers": {
+							"location": {
+								"schema": {
+									"type": "string"
+								},
+								"description": "e.g. c57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70"
+							}
+						}
+					}
+				},
+				"requestBody": {
+					"description": "Create a new log entry.",
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/LogEntry"
+							},
+							"examples": {
+								"loggingEntryCreateInfoExample": {
+									"value": {
+										"level": "info",
+										"message": "This is an information message",
+										"source": "source",
+										"ts": 1715252922273
+									}
+								},
+								"loggingEntryCreateErrorExample": {
+									"value": {
+										"level": "info",
+										"message": "This is an error message",
+										"source": "source",
+										"ts": 1715252922273,
+										"error": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			"get": {
+				"operationId": "loggingListEntries",
+				"summary": "Get a list of the log entries",
+				"tags": ["Logging"],
+				"parameters": [
+					{
+						"name": "level",
+						"description": "The level of the log entries to retrieve.",
+						"in": "query",
+						"required": false,
+						"schema": {},
+						"example": "info"
+					},
+					{
+						"name": "source",
+						"description": "The source of the log entries to retrieve.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"name": "timeStart",
+						"description": "The start time of the metrics to retrieve as a timestamp in ms.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "number"
+						}
+					},
+					{
+						"name": "timeEnd",
+						"description": "The end time of the metrics to retrieve as a timestamp in ms.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "number"
+						}
+					},
+					{
+						"name": "cursor",
+						"description": "The optional cursor to get next chunk.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"name": "pageSize",
+						"description": "The maximum number of entities in a page.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "number"
+						}
+					}
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Response for log entry list request.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/LoggingListResponse"
+								},
+								"examples": {
+									"listResponseExample": {
+										"value": {
+											"entities": [
+												{
+													"level": "info",
+													"message": "This is an information message",
+													"source": "source",
+													"ts": 1715252922273
+												}
+											],
+											"cursor": "1",
+											"pageSize": 10,
+											"totalEntities": 20
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"components": {
+		"schemas": {
+			"LogEntry": {
+				"type": "object",
+				"properties": {
+					"level": {
+						"$ref": "#/components/schemas/LogLevel"
+					},
+					"source": {
+						"type": "string",
+						"description": "The source of the log entry."
+					},
+					"ts": {
+						"type": "number",
+						"description": "The timestamp of the log entry, if left blank will be populated by the connector."
+					},
+					"message": {
+						"type": "string",
+						"description": "The message."
+					},
+					"error": {
+						"$ref": "#/components/schemas/Error"
+					},
+					"data": {
+						"description": "Optional data for the message."
+					}
+				},
+				"required": ["level", "source", "message"],
+				"additionalProperties": false,
+				"description": "Interface describing a log entry."
+			},
+			"LogLevel": {
+				"type": "string",
+				"enum": ["info", "error", "warn", "trace", "debug"],
+				"description": "Log level."
+			},
+			"Error": {
+				"type": "object",
+				"properties": {
+					"name": {
+						"type": "string",
+						"description": "The name for the error."
+					},
+					"message": {
+						"type": "string",
+						"description": "The message for the error."
+					},
+					"source": {
+						"type": "string",
+						"description": "The source of the error."
+					},
+					"properties": {
+						"type": "object",
+						"additionalProperties": {},
+						"description": "Any additional information for the error."
+					},
+					"stack": {
+						"type": "string",
+						"description": "The stack trace for the error."
+					},
+					"inner": {
+						"$ref": "#/components/schemas/Error"
+					}
+				},
+				"required": ["name", "message"],
+				"additionalProperties": false,
+				"description": "Model to describe serialized error."
+			},
+			"CreatedResponse": {
+				"type": "object",
+				"properties": {
+					"statusCode": {
+						"$ref": "#/components/schemas/HttpStatusCodes"
+					},
+					"headers": {
+						"type": "object",
+						"properties": {
+							"location": {
+								"type": "string",
+								"description": "The location where the resource was created."
+							}
+						},
+						"required": ["location"],
+						"additionalProperties": false,
+						"description": "Additional response headers."
+					}
+				},
+				"required": ["statusCode", "headers"],
+				"additionalProperties": false,
+				"description": "The rest request ended in created response."
+			},
+			"HttpStatusCodes": {
+				"type": "object",
+				"additionalProperties": false,
+				"description": "Standard HTTP status codes."
+			},
+			"LoggingListResponse": {
+				"type": "object",
+				"properties": {
+					"entities": {
+						"type": "array",
+						"items": {
+							"$ref": "#/components/schemas/LogEntry"
+						},
+						"description": "The entities, which can be partial if a limited keys list was provided."
+					},
+					"cursor": {
+						"type": "string",
+						"description": "An optional cursor, when defined can be used to call find to get more entities."
+					},
+					"pageSize": {
+						"type": "number",
+						"description": "Number of entities to return."
+					},
+					"totalEntities": {
+						"type": "number",
+						"description": "Total entities length."
+					}
+				},
+				"required": ["entities", "totalEntities"],
+				"additionalProperties": false,
+				"description": "The response payload."
+			}
+		},
+		"securitySchemes": {
+			"jwtBearerAuthScheme": {
+				"type": "http",
+				"scheme": "bearer",
+				"bearerFormat": "JWT"
+			}
+		}
+	}
+}

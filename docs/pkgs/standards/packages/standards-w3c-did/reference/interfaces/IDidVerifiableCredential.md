@@ -59,6 +59,15 @@ The issuing identity.
 
 ___
 
+### proof
+
+• `Optional` **proof**: [`IDidProof`](IDidProof.md) \| [`IDidProof`](IDidProof.md)[]
+
+Proofs that the verifiable credential is valid.
+Optional if a different proof method is used, such as JWT.
+
+___
+
 ### type
 
 • **type**: `string`[]

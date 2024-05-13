@@ -33,6 +33,12 @@ This is the overview of the packages.
 - [@gtsc/entity-storage-connector-memory](pkgs/entity-storage/packages/entity-storage-connector-memory/overview) - Entity Storage connector implementation using in-memory storage
 - [@gtsc/entity-storage-connector-file](pkgs/entity-storage/packages/entity-storage-connector-file/overview) - Entity Storage connector implementation using file storage
 
+## Blob Storage
+
+- [@gtsc/blob-storage-models](pkgs/blob-storage/packages/blob-storage-models/overview) - Models which define the structure of the blob storage contracts and connectors
+- [@gtsc/blob-storage-connector-memory](pkgs/blob-storage/packages/blob-storage-connector-memory/overview) - Blob Storage connector implementation using in-memory storage
+- [@gtsc/blob-storage-connector-file](pkgs/blob-storage/packages/blob-storage-connector-file/overview) - Blob Storage connector implementation using file storage
+
 ## Logging
 
 - [@gtsc/logging-models](pkgs/logging/packages/logging-models/overview) - Models which define the structure of the logging connectors and services
@@ -59,3 +65,11 @@ This is the overview of the packages.
 - [@gtsc/identity-connector-iota](pkgs/identity/packages/identity-connector-iota/overview) - Identity connector implementation using IOTA
 - [@gtsc/identity-service](pkgs/identity/packages/identity-service/overview) - Identity contract implementation and REST endpoint definitions
 - [@gtsc/identity-rest-client](pkgs/identity/packages/identity-rest-client/overview) - Identity contract implementation which can connect to REST endpoints
+
+## Attestation
+
+- [@gtsc/attestation-models](pkgs/attestation/packages/attestation-models/overview) - Models which define the structure of the attestation connectors and services
+- [@gtsc/attestation-connector-entity-storage](pkgs/attestation/packages/attestation-connector-entity-storage/overview) - Attestation connector implementation using entity storage
+- [@gtsc/attestation-connector-open-attestation](pkgs/attestation/packages/attestation-connector-open-attestation/overview) - Attestation connector implementation using OpenAttestation
+- [@gtsc/attestation-service](pkgs/attestation/packages/attestation-service/overview) - Attestation contract implementation and REST endpoint definitions
+- [@gtsc/attestation-rest-client](pkgs/attestation/packages/attestation-rest-client/overview) - Attestation contract implementation which can connect to REST endpoints
