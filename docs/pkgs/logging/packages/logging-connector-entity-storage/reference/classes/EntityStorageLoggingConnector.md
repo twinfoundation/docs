@@ -12,7 +12,7 @@ Class for performing logging operations in entity storage.
 
 • **new EntityStorageLoggingConnector**(`dependencies`, `config?`): [`EntityStorageLoggingConnector`](EntityStorageLoggingConnector.md)
 
-Create a new instance of MemoryLoggingConnector.
+Create a new instance of EntityStorageLoggingConnector.
 
 #### Parameters
 

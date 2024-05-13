@@ -38,7 +38,7 @@ ___
 
 ### restRoutes
 
-• **restRoutes**: \{ `package`: `string` ; `pathRoot?`: `string` ; `routesMethod?`: `string` ; `tagProperty?`: `string` ; `version?`: `string`  }[]
+• **restRoutes**: \{ `package?`: `string` ; `packageRoot?`: `string` ; `pathRoot?`: `string` ; `routesMethod?`: `string` ; `tagProperty?`: `string` ; `version?`: `string`  }[]
 
 The packages containing routes.
 

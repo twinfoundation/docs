@@ -1,0 +1,281 @@
+{
+    "openapi": "3.1.0",
+    "info": {
+        "title": "Global Trade and Supply Chain - Test Endpoints",
+        "description": "REST API for Global Trade and Supply Chain - Test Endpoints.",
+        "version": "1.0.0",
+        "license": {
+            "name": "Apache 2.0 License",
+            "url": "https://opensource.org/licenses/Apache-2.0"
+        }
+    },
+    "servers": [
+        {
+            "url": "https://localhost"
+        }
+    ],
+    "tags": [],
+    "paths": {
+        "/attestation/sign": {
+            "post": {
+                "operationId": "attestationSign",
+                "summary": "Sign a data set",
+                "tags": [
+                    "Attestation"
+                ],
+                "security": [
+                    {
+                        "jwtBearerAuthScheme": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The response when creating the proof for a data set.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AttestationSignResponse"
+                                },
+                                "examples": {
+                                    "attestationSignResponseExample": {
+                                        "value": {
+                                            "proof": {
+                                                "type": "Ed25519Signature2018",
+                                                "proofPurpose": "assertionMethod",
+                                                "created": "2024-05-13T12:23:08.960Z",
+                                                "proofValue": "1d9f8d9sd9fjeiweob50ac63129782a1c3y837f6s78s8cg8hjg76hj5h342k33h"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "requestBody": {
+                    "description": "Sign the data set and return the proof.",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/AttestationSignRequest"
+                            },
+                            "examples": {
+                                "attestationSignExample": {
+                                    "value": {
+                                        "data": {
+                                            "docName": "foo",
+                                            "docType": "test-doc-type"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/attestation/verify": {
+            "post": {
+                "operationId": "attestationVerify",
+                "summary": "Verify a data set and proof",
+                "tags": [
+                    "Attestation"
+                ],
+                "security": [
+                    {
+                        "jwtBearerAuthScheme": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The response to verifying a data set and proof.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AttestationVerifyResponse"
+                                },
+                                "examples": {
+                                    "attestationVerifyResponseExample": {
+                                        "value": {
+                                            "verified": true
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "requestBody": {
+                    "description": "Verify that the proof is valid for the data set.",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/AttestationVerifyRequest"
+                            },
+                            "examples": {
+                                "attestationVerifyExample": {
+                                    "value": {
+                                        "data": {
+                                            "docName": "foo",
+                                            "docType": "test-doc-type"
+                                        },
+                                        "proof": {
+                                            "type": "Ed25519Signature2018",
+                                            "proofPurpose": "assertionMethod",
+                                            "created": "2024-05-13T12:23:08.961Z",
+                                            "proofValue": "1d9f8d9sd9fjeiweob50ac63129782a1c3y837f6s78s8cg8hjg76hj5h342k33h"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "AttestationSignRequest": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "description": "The data set that was signed."
+                    }
+                },
+                "required": [
+                    "data"
+                ],
+                "additionalProperties": false,
+                "description": "The data to be used in the signing."
+            },
+            "AttestationSignResponse": {
+                "type": "object",
+                "properties": {
+                    "proof": {
+                        "$ref": "#/components/schemas/DidProof"
+                    }
+                },
+                "required": [
+                    "proof"
+                ],
+                "additionalProperties": false,
+                "description": "The data to be used in the signing."
+            },
+            "DidProof": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "The id of the proof."
+                    },
+                    "type": {
+                        "type": "string",
+                        "description": "The type of the proof."
+                    },
+                    "proofPurpose": {
+                        "type": "string",
+                        "description": "The purpose of the proof."
+                    },
+                    "proofValue": {
+                        "type": "string",
+                        "description": "Contains the base-encoded binary data necessary to verify the digital proof using the verificationMethod specified."
+                    },
+                    "verificationMethod": {
+                        "type": "string",
+                        "description": "The verification method of the proof."
+                    },
+                    "created": {
+                        "type": "string",
+                        "description": "The iso date of when the proof was created."
+                    },
+                    "expires": {
+                        "type": "string",
+                        "description": "The iso date of when the proof expires."
+                    },
+                    "domain": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        ],
+                        "description": "One or more security domains in which the proof is meant to be used."
+                    },
+                    "challenge": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        ],
+                        "description": "Provided to mitigate replay attacks on domains."
+                    },
+                    "previousProof": {
+                        "type": "string",
+                        "description": "Identifies another data integrity proof that MUST verify before the current proof is processed"
+                    },
+                    "nonce": {
+                        "type": "string",
+                        "description": "Use of this field is to increase privacy by decreasing linkability that is the result of deterministically generated signatures."
+                    }
+                },
+                "required": [
+                    "type",
+                    "proofPurpose"
+                ],
+                "additionalProperties": false,
+                "description": "Interface describing a did proof. https://www.w3.org/TR/vc-data-integrity/"
+            },
+            "AttestationVerifyRequest": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "description": "The data set that was signed."
+                    },
+                    "proof": {
+                        "$ref": "#/components/schemas/DidProof"
+                    }
+                },
+                "required": [
+                    "data",
+                    "proof"
+                ],
+                "additionalProperties": false,
+                "description": "The parameters to be used in the verification."
+            },
+            "AttestationVerifyResponse": {
+                "type": "object",
+                "properties": {
+                    "verified": {
+                        "type": "boolean"
+                    }
+                },
+                "required": [
+                    "verified"
+                ],
+                "additionalProperties": false,
+                "description": "The data to be used in the verification."
+            }
+        },
+        "securitySchemes": {
+            "jwtBearerAuthScheme": {
+                "type": "http",
+                "scheme": "bearer",
+                "bearerFormat": "JWT"
+            }
+        }
+    }
+}
