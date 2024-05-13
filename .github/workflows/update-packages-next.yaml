@@ -142,6 +142,27 @@ jobs:
           cp import-packages/entity-storage/package.json docs/pkgs/entity-storage/package.json
           rm -r import-packages/entity-storage
 
+      ########### blob-storage
+      - name: Checkout blob-storage
+        uses: actions/checkout@v4
+        with:
+          repository: gtscio/blob-storage
+          path: import-packages/blob-storage
+          ref: ${{ env.gha-branch }}
+          token: ${{ secrets.GH_PAT }}
+
+      - name: Copy blob-storage to Docs
+        run: |
+          jq -r '.workspaces[]' import-packages/blob-storage/package.json | while read pkg; do
+            rm -rf docs/pkgs/blob-storage/$pkg
+            mkdir -p docs/pkgs/blob-storage/$pkg
+            cp -r import-packages/blob-storage/$pkg/docs/* docs/pkgs/blob-storage/$pkg
+            cp -r import-packages/blob-storage/$pkg/package.json docs/pkgs/blob-storage/$pkg/package.json
+          done
+
+          cp import-packages/blob-storage/package.json docs/pkgs/blob-storage/package.json
+          rm -r import-packages/blob-storage
+
       ########### logging
       - name: Checkout logging
         uses: actions/checkout@v4
@@ -225,6 +246,27 @@ jobs:
 
           cp import-packages/identity/package.json docs/pkgs/identity/package.json
           rm -r import-packages/identity
+
+      ########### attestation
+      - name: Checkout attestation
+        uses: actions/checkout@v4
+        with:
+          repository: gtscio/attestation
+          path: import-packages/attestation
+          ref: ${{ env.gha-branch }}
+          token: ${{ secrets.GH_PAT }}
+
+      - name: Copy attestation to Docs
+        run: |
+          jq -r '.workspaces[]' import-packages/attestation/package.json | while read pkg; do
+            rm -rf docs/pkgs/attestation/$pkg
+            mkdir -p docs/pkgs/attestation/$pkg
+            cp -r import-packages/attestation/$pkg/docs/* docs/pkgs/attestation/$pkg
+            cp -r import-packages/attestation/$pkg/package.json docs/pkgs/attestation/$pkg/package.json
+          done
+
+          cp import-packages/attestation/package.json docs/pkgs/attestation/package.json
+          rm -r import-packages/attestation
 
       ########### common
       - name: Build

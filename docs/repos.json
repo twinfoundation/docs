@@ -4,8 +4,10 @@
 	"standards",
 	"api",
 	"entity-storage",
+	"blob-storage",
 	"logging",
 	"vault",
 	"wallet",
-	"identity"
+	"identity",
+	"attestation"
 ]
