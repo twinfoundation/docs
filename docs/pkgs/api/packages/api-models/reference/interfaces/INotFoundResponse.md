@@ -4,7 +4,7 @@ The resource you tried to access does not exist, see the error field for more de
 
 ## Hierarchy
 
-- [`IErrorResponse`](../modules.md#ierrorresponse)
+- [`IErrorResponse`](../globals.md#ierrorresponse)
 
   ↳ **`INotFoundResponse`**
 

@@ -27,7 +27,7 @@ Perform a fetch request.
 | `source` | `string` | The source for the request. |
 | `endpoint` | `string` | The base endpoint for the request. |
 | `path` | `string` | The path of the request. |
-| `method` | [`HttpMethods`](../modules.md#httpmethods) | The http method. |
+| `method` | [`HttpMethods`](../globals.md#httpmethods) | The http method. |
 | `body?` | `string` \| `Uint8Array` | Request to send to the endpoint. |
 | `options?` | [`IFetchOptions`](../interfaces/IFetchOptions.md) | Options for sending the requests. |
 
@@ -90,7 +90,7 @@ Perform a request in json format.
 | `source` | `string` | The source for the request. |
 | `endpoint` | `string` | The base endpoint for the request. |
 | `path` | `string` | The path of the request. |
-| `method` | [`HttpMethods`](../modules.md#httpmethods) | The http method. |
+| `method` | [`HttpMethods`](../globals.md#httpmethods) | The http method. |
 | `requestData?` | `T` | Request to send to the endpoint. |
 | `options?` | [`IFetchOptions`](../interfaces/IFetchOptions.md) | Options for sending the requests. |
 

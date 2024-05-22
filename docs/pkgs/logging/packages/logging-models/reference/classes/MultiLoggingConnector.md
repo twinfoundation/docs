@@ -30,7 +30,7 @@ Create a new instance of MultiLoggingConnector.
 
 ### \_levels
 
-• `Private` `Readonly` **\_levels**: [`LogLevel`](../modules.md#loglevel)[]
+• `Private` `Readonly` **\_levels**: [`LogLevel`](../globals.md#loglevel)[]
 
 The log levels to display, will default to all.
 

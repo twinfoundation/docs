@@ -30,7 +30,7 @@
 
 ### IBadRequestResponse
 
-Ƭ **IBadRequestResponse**: [`IErrorResponse`](modules.md#ierrorresponse)
+Ƭ **IBadRequestResponse**: [`IErrorResponse`](globals.md#ierrorresponse)
 
 Something went wrong with the request see the error field for more details.
 
@@ -46,7 +46,7 @@ ___
 
 ### IForbiddenResponse
 
-Ƭ **IForbiddenResponse**: [`IErrorResponse`](modules.md#ierrorresponse)
+Ƭ **IForbiddenResponse**: [`IErrorResponse`](globals.md#ierrorresponse)
 
 The operation that you tried to perform is not possible, see the error field for more details.
 
@@ -54,6 +54,6 @@ ___
 
 ### IUnauthorizedResponse
 
-Ƭ **IUnauthorizedResponse**: [`IErrorResponse`](modules.md#ierrorresponse)
+Ƭ **IUnauthorizedResponse**: [`IErrorResponse`](globals.md#ierrorresponse)
 
 You are not authorized to use the API or no credentials were supplied.

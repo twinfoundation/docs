@@ -66,7 +66,7 @@ Query the log entries.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `requestContext` | `IRequestContext` | The context for the request. |
-| `level?` | [`LogLevel`](../modules.md#loglevel) | The level of the log entries. |
+| `level?` | [`LogLevel`](../globals.md#loglevel) | The level of the log entries. |
 | `source?` | `string` | The source of the log entries. |
 | `timeStart?` | `number` | The inclusive time as the start of the log entries. |
 | `timeEnd?` | `number` | The inclusive time as the end of the log entries. |

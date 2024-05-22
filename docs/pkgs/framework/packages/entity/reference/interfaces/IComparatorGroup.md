@@ -12,7 +12,7 @@ Interface defining condition group operator.
 
 ### conditions
 
-• **conditions**: [`EntityCondition`](../modules.md#entitycondition)\<`T`\>[]
+• **conditions**: [`EntityCondition`](../globals.md#entitycondition)\<`T`\>[]
 
 The conditions to join in a group.
 

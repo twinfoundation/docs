@@ -31,7 +31,7 @@ See if the entity matches the conditions.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `entity` | `T` | The entity to test. |
-| `condition?` | [`EntityCondition`](../modules.md#entitycondition)\<`T`\> | The conditions to test. |
+| `condition?` | [`EntityCondition`](../globals.md#entitycondition)\<`T`\> | The conditions to test. |
 
 #### Returns
 

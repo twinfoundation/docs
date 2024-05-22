@@ -4,7 +4,7 @@ The operation could not be processed, see the error field for more details.
 
 ## Hierarchy
 
-- [`IErrorResponse`](../modules.md#ierrorresponse)
+- [`IErrorResponse`](../globals.md#ierrorresponse)
 
   ↳ **`IUnprocessableEntityResponse`**
 

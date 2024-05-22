@@ -4,7 +4,7 @@ The request resulted in a conflicting operation, see the error field for more de
 
 ## Hierarchy
 
-- [`IErrorResponse`](../modules.md#ierrorresponse)
+- [`IErrorResponse`](../globals.md#ierrorresponse)
 
   ↳ **`IConflictResponse`**
 

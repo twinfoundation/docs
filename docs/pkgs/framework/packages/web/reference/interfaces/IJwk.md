@@ -12,7 +12,7 @@ Additional fields in the key.
 
 ### alg
 
-• `Optional` **alg**: [`JwtAlgorithms`](../modules.md#jwtalgorithms)
+• `Optional` **alg**: [`JwtAlgorithms`](../globals.md#jwtalgorithms)
 
 The cryptographic algorithm for the key.
 

@@ -24,7 +24,7 @@ Render the QR code data as a bitmap.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `cellData` | [`QRCellData`](../modules.md#qrcelldata) | The cell data for the QR code. |
+| `cellData` | [`QRCellData`](../globals.md#qrcelldata) | The cell data for the QR code. |
 | `options?` | [`IBitmapRendererOptions`](../interfaces/IBitmapRendererOptions.md) | The options for rendering. |
 
 #### Returns

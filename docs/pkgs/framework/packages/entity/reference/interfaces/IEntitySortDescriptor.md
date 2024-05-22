@@ -28,6 +28,6 @@ ___
 
 ### type
 
-• **type**: [`EntityPropertyDescriptorDataType`](../modules.md#entitypropertydescriptordatatype)
+• **type**: [`EntityPropertyDescriptorDataType`](../globals.md#entitypropertydescriptordatatype)
 
 The type of the property.

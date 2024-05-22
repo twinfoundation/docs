@@ -12,7 +12,7 @@ Additional fields in the header.
 
 ### alg
 
-• **alg**: [`JwtAlgorithms`](../modules.md#jwtalgorithms)
+• **alg**: [`JwtAlgorithms`](../globals.md#jwtalgorithms)
 
 The algorithm used to sign the token.
 

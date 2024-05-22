@@ -51,7 +51,7 @@ The default signer for the JWT.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `alg` | [`JwtAlgorithms`](../modules.md#jwtalgorithms) | The algorithm to use. |
+| `alg` | [`JwtAlgorithms`](../globals.md#jwtalgorithms) | The algorithm to use. |
 | `key` | `Uint8Array` | The key to sign with. |
 | `payload` | `Uint8Array` | The payload to sign. |
 
@@ -73,7 +73,7 @@ The default verifier for the JWT.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `alg` | [`JwtAlgorithms`](../modules.md#jwtalgorithms) | The algorithm to use. |
+| `alg` | [`JwtAlgorithms`](../globals.md#jwtalgorithms) | The algorithm to use. |
 | `key` | `Uint8Array` | The key to verify with. |
 | `payload` | `Uint8Array` | The payload to verify. |
 | `signature` | `Uint8Array` | The signature to verify. |
@@ -106,7 +106,7 @@ Encode a token.
 | `header` | `U` | The header to encode. |
 | `payload` | `T` | The payload to encode. |
 | `key?` | `Uint8Array` | The key for signing the token, can be omitted if a signer is provided. |
-| `signer?` | (`alg`: [`JwtAlgorithms`](../modules.md#jwtalgorithms), `key`: `undefined` \| `Uint8Array`, `payload`: `Uint8Array`) => `Promise`\<`Uint8Array`\> | Custom signer method. |
+| `signer?` | (`alg`: [`JwtAlgorithms`](../globals.md#jwtalgorithms), `key`: `undefined` \| `Uint8Array`, `payload`: `Uint8Array`) => `Promise`\<`Uint8Array`\> | Custom signer method. |
 
 #### Returns
 
@@ -135,7 +135,7 @@ Verify a token.
 | :------ | :------ | :------ |
 | `token` | `string` | The token to verify. |
 | `key` | `undefined` \| `Uint8Array` | The key for verifying the token |
-| `verifier?` | (`alg`: [`JwtAlgorithms`](../modules.md#jwtalgorithms), `key`: `undefined` \| `Uint8Array`, `payload`: `Uint8Array`, `signature`: `Uint8Array`) => `Promise`\<`boolean`\> | Custom verification method. |
+| `verifier?` | (`alg`: [`JwtAlgorithms`](../globals.md#jwtalgorithms), `key`: `undefined` \| `Uint8Array`, `payload`: `Uint8Array`, `signature`: `Uint8Array`) => `Promise`\<`boolean`\> | Custom verification method. |
 
 #### Returns
 
@@ -166,7 +166,7 @@ Verify a token by parts.
 | `payload?` | `T` | The payload to verify. |
 | `signature?` | `Uint8Array` | The signature to verify. |
 | `key?` | `Uint8Array` | The key for verifying the token, if not provided no verification occurs. |
-| `verifier?` | (`alg`: [`JwtAlgorithms`](../modules.md#jwtalgorithms), `key`: `undefined` \| `Uint8Array`, `payload`: `Uint8Array`, `signature`: `Uint8Array`) => `Promise`\<`boolean`\> | Custom verification method. |
+| `verifier?` | (`alg`: [`JwtAlgorithms`](../globals.md#jwtalgorithms), `key`: `undefined` \| `Uint8Array`, `payload`: `Uint8Array`, `signature`: `Uint8Array`) => `Promise`\<`boolean`\> | Custom verification method. |
 
 #### Returns
 

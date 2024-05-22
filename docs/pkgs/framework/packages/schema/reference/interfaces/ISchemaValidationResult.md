@@ -6,7 +6,7 @@ Validation result.
 
 ### error
 
-• `Optional` **error**: [`ISchemaValidationError`](../modules.md#ischemavalidationerror)
+• `Optional` **error**: [`ISchemaValidationError`](../globals.md#ischemavalidationerror)
 
 The error.
 

@@ -4,7 +4,7 @@
 
 ### default
 
-Renames and re-exports [factory](modules.md#factory)
+Renames and re-exports [factory](globals.md#factory)
 
 ## Variables
 

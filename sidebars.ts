@@ -71,7 +71,7 @@ function generatePackageItems(packageGroup: string, packageName: string): any {
 				label: "Reference",
 				link: {
 					type: "doc",
-					id: `pkgs/${packageGroup}/packages/${packageName.toLowerCase()}/reference/modules`
+					id: `pkgs/${packageGroup}/packages/${packageName.toLowerCase()}/reference/globals`
 				},
 				items: referenceItems
 			},

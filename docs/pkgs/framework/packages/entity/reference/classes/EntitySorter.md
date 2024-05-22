@@ -33,7 +33,7 @@ Compare two properties.
 | `entity1` | `T` | `undefined` | The first entity. |
 | `entity2` | `T` | `undefined` | The second entity. |
 | `prop` | keyof `T` | `undefined` | The property to compare. |
-| `type` | [`EntityPropertyDescriptorDataType`](../modules.md#entitypropertydescriptordatatype) | `undefined` | The type of the property. |
+| `type` | [`EntityPropertyDescriptorDataType`](../globals.md#entitypropertydescriptordatatype) | `undefined` | The type of the property. |
 | `direction` | [`SortDirection`](../enums/SortDirection.md) | `SortDirection.Ascending` | The direction of the sort. |
 
 #### Returns

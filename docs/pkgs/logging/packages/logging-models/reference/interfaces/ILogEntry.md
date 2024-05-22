@@ -22,7 +22,7 @@ ___
 
 ### level
 
-• **level**: [`LogLevel`](../modules.md#loglevel)
+• **level**: [`LogLevel`](../globals.md#loglevel)
 
 The level of the error being logged.
 

@@ -84,12 +84,12 @@ ___
 
 ### generate
 
-▸ **generate**(): [`QRCellData`](../modules.md#qrcelldata)
+▸ **generate**(): [`QRCellData`](../globals.md#qrcelldata)
 
 Generate the display buffer.
 
 #### Returns
 
-[`QRCellData`](../modules.md#qrcelldata)
+[`QRCellData`](../globals.md#qrcelldata)
 
 Boolean buffer of pixels.

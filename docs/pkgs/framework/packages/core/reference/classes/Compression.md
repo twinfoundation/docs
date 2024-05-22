@@ -25,7 +25,7 @@ Compress bytes using GZIP.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `bytes` | `Uint8Array` | The bytes to compress. |
-| `type` | [`CompressionType`](../modules.md#compressiontype) | The type of compression to use. |
+| `type` | [`CompressionType`](../globals.md#compressiontype) | The type of compression to use. |
 
 #### Returns
 
@@ -46,7 +46,7 @@ Decompress a gzipped compressed byte array.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `compressedBytes` | `Uint8Array` | The compressed bytes. |
-| `type` | [`CompressionType`](../modules.md#compressiontype) | The type of compression to use. |
+| `type` | [`CompressionType`](../globals.md#compressiontype) | The type of compression to use. |
 
 #### Returns
 
