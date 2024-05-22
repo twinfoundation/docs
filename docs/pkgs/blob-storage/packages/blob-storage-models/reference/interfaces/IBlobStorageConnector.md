@@ -2,25 +2,23 @@
 
 Interface describing an blob storage connector.
 
-## Hierarchy
+## Extends
 
 - `IService`
 
-  ↳ **`IBlobStorageConnector`**
-
 ## Methods
 
-### bootstrap
+### bootstrap()?
 
-▸ **bootstrap**(`requestContext`): `Promise`\<`void`\>
+> `optional` **bootstrap**(`requestContext`): `Promise`\<`void`\>
 
 Bootstrap the service by creating and initializing any resources it needs.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The request context for bootstrapping. |
+• **requestContext**: `IRequestContext`
+
+The request context for bootstrapping.
 
 #### Returns
 
@@ -30,22 +28,25 @@ Nothing.
 
 #### Inherited from
 
-IService.bootstrap
+`IService.bootstrap`
 
-___
+***
 
-### get
+### get()
 
-▸ **get**(`requestContext`, `id`): `Promise`\<`undefined` \| `Uint8Array`\>
+> **get**(`requestContext`, `id`): `Promise`\<`undefined` \| `Uint8Array`\>
 
 Get the blob.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `id` | `string` | The id of the blob to get. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **id**: `string`
+
+The id of the blob to get in urn format.
 
 #### Returns
 
@@ -53,53 +54,59 @@ Get the blob.
 
 The data for the blob if it can be found or undefined.
 
-___
+***
 
-### remove
+### remove()
 
-▸ **remove**(`requestContext`, `id`): `Promise`\<`void`\>
+> **remove**(`requestContext`, `id`): `Promise`\<`boolean`\>
 
 Remove the blob.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `id` | `string` | The id of the blob to remove. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **id**: `string`
+
+The id of the blob to remove in urn format.
 
 #### Returns
 
-`Promise`\<`void`\>
+`Promise`\<`boolean`\>
 
-Nothing.
+True if the blob was found.
 
-___
+***
 
-### set
+### set()
 
-▸ **set**(`requestContext`, `blob`): `Promise`\<`string`\>
+> **set**(`requestContext`, `blob`): `Promise`\<`string`\>
 
 Set the blob.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `blob` | `Uint8Array` | The data for the blob. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **blob**: `Uint8Array`
+
+The data for the blob.
 
 #### Returns
 
 `Promise`\<`string`\>
 
-The id of the stored blob.
+The id of the stored blob in urn format.
 
-___
+***
 
-### start
+### start()?
 
-▸ **start**(): `Promise`\<`void`\>
+> `optional` **start**(): `Promise`\<`void`\>
 
 The service needs to be started when the application is initialized.
 
@@ -111,13 +118,13 @@ Nothing.
 
 #### Inherited from
 
-IService.start
+`IService.start`
 
-___
+***
 
-### stop
+### stop()?
 
-▸ **stop**(): `Promise`\<`void`\>
+> `optional` **stop**(): `Promise`\<`void`\>
 
 The service needs to be stopped when the application is closed.
 
@@ -129,4 +136,4 @@ Nothing.
 
 #### Inherited from
 
-IService.stop
+`IService.stop`

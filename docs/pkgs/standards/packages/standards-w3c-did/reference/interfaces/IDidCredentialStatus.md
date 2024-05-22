@@ -4,22 +4,20 @@ Interface describing a DID credential status.
 
 ## Indexable
 
-▪ [key: `string`]: `unknown`
-
-Additional properties.
+ \[`key`: `string`\]: `unknown`
 
 ## Properties
 
 ### id
 
-• **id**: `string`
+> **id**: `string`
 
 The URI id.
 
-___
+***
 
 ### type
 
-• **type**: `string`
+> **type**: `string`
 
 The credential status type.

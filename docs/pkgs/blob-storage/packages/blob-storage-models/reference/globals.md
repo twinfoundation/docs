@@ -2,12 +2,13 @@
 
 ## Interfaces
 
+- [IBlobStorage](interfaces/IBlobStorage.md)
 - [IBlobStorageConnector](interfaces/IBlobStorageConnector.md)
+- [IBlobStorageGetRequest](interfaces/IBlobStorageGetRequest.md)
+- [IBlobStorageGetResponse](interfaces/IBlobStorageGetResponse.md)
+- [IBlobStorageRemoveRequest](interfaces/IBlobStorageRemoveRequest.md)
+- [IBlobStorageSetRequest](interfaces/IBlobStorageSetRequest.md)
 
 ## Variables
 
-### BlobStorageConnectorFactory
-
-• `Const` **BlobStorageConnectorFactory**: `Factory`\<[`IBlobStorageConnector`](interfaces/IBlobStorageConnector.md)\>
-
-Factory for creating blob storage connectors.
+- [BlobStorageConnectorFactory](variables/BlobStorageConnectorFactory.md)

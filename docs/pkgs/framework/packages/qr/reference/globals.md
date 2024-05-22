@@ -2,7 +2,7 @@
 
 ## Enumerations
 
-- [ErrorCorrectLevel](enums/ErrorCorrectLevel.md)
+- [ErrorCorrectLevel](enumerations/ErrorCorrectLevel.md)
 
 ## Classes
 
@@ -19,8 +19,4 @@
 
 ## Type Aliases
 
-### QRCellData
-
-Ƭ **QRCellData**: (`boolean` \| ``null``)[][]
-
-Definition of type for QR Code Cell data.
+- [QRCellData](type-aliases/QRCellData.md)

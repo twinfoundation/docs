@@ -4,16 +4,16 @@ Validation result.
 
 ## Properties
 
-### error
+### error?
 
-• `Optional` **error**: [`ISchemaValidationError`](../globals.md#ischemavalidationerror)
+> `optional` **error**: [`ISchemaValidationError`](../type-aliases/ISchemaValidationError.md)
 
 The error.
 
-___
+***
 
 ### result
 
-• **result**: `boolean`
+> **result**: `boolean`
 
 The result.

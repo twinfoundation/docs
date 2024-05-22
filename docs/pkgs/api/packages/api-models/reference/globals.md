@@ -28,32 +28,7 @@
 
 ## Type Aliases
 
-### IBadRequestResponse
-
-Ƭ **IBadRequestResponse**: [`IErrorResponse`](globals.md#ierrorresponse)
-
-Something went wrong with the request see the error field for more details.
-
-___
-
-### IErrorResponse
-
-Ƭ **IErrorResponse**: `IError`
-
-Response to be used when returning an error.
-
-___
-
-### IForbiddenResponse
-
-Ƭ **IForbiddenResponse**: [`IErrorResponse`](globals.md#ierrorresponse)
-
-The operation that you tried to perform is not possible, see the error field for more details.
-
-___
-
-### IUnauthorizedResponse
-
-Ƭ **IUnauthorizedResponse**: [`IErrorResponse`](globals.md#ierrorresponse)
-
-You are not authorized to use the API or no credentials were supplied.
+- [IBadRequestResponse](type-aliases/IBadRequestResponse.md)
+- [IErrorResponse](type-aliases/IErrorResponse.md)
+- [IForbiddenResponse](type-aliases/IForbiddenResponse.md)
+- [IUnauthorizedResponse](type-aliases/IUnauthorizedResponse.md)

@@ -2,31 +2,27 @@
 
 Interface describing an entity storage connector.
 
-## Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `T` | `unknown` |
-
-## Hierarchy
+## Extends
 
 - `IService`
 
-  ↳ **`IEntityStorageConnector`**
+## Type parameters
+
+• **T** = `unknown`
 
 ## Methods
 
-### bootstrap
+### bootstrap()?
 
-▸ **bootstrap**(`requestContext`): `Promise`\<`void`\>
+> `optional` **bootstrap**(`requestContext`): `Promise`\<`void`\>
 
 Bootstrap the service by creating and initializing any resources it needs.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The request context for bootstrapping. |
+• **requestContext**: `IRequestContext`
+
+The request context for bootstrapping.
 
 #### Returns
 
@@ -36,70 +32,119 @@ Nothing.
 
 #### Inherited from
 
-IService.bootstrap
+`IService.bootstrap`
 
-___
+***
 
-### get
+### get()
 
-▸ **get**(`requestContext`, `id`, `secondaryIndex?`): `Promise`\<`undefined` \| `T` & \{ `tenantId?`: `string`  }\>
+> **get**(`requestContext`, `id`, `secondaryIndex`?): `Promise`\<`undefined` \| `T` & `object`\>
 
 Get an entity.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `id` | `string` | The id of the entity to get, or the index value if secondaryIndex is set. |
-| `secondaryIndex?` | keyof `T` | Get the item using a secondary index. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **id**: `string`
+
+The id of the entity to get, or the index value if secondaryIndex is set.
+
+• **secondaryIndex?**: keyof `T`
+
+Get the item using a secondary index.
 
 #### Returns
 
-`Promise`\<`undefined` \| `T` & \{ `tenantId?`: `string`  }\>
+`Promise`\<`undefined` \| `T` & `object`\>
 
 The object if it can be found or undefined, if request context was wildcard then tenantId is also included.
 
-___
+***
 
-### query
+### query()
 
-▸ **query**(`requestContext`, `conditions?`, `sortProperties?`, `properties?`, `cursor?`, `pageSize?`): `Promise`\<\{ `cursor?`: `string` ; `entities`: `Partial`\<`T` & \{ `tenantId?`: `string`  }\>[] ; `pageSize?`: `number` ; `totalEntities`: `number`  }\>
+> **query**(`requestContext`, `conditions`?, `sortProperties`?, `properties`?, `cursor`?, `pageSize`?): `Promise`\<`object`\>
 
 Query all the entities which match the conditions.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `conditions?` | `EntityCondition`\<`T`\> | The conditions to match for the entities. |
-| `sortProperties?` | \{ `property`: keyof `T` ; `sortDirection`: `SortDirection`  }[] | The optional sort order. |
-| `properties?` | keyof `T`[] | The optional properties to return, defaults to all. |
-| `cursor?` | `string` | The cursor to request the next page of entities. |
-| `pageSize?` | `number` | The maximum number of entities in a page. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **conditions?**: `EntityCondition`\<`T`\>
+
+The conditions to match for the entities.
+
+• **sortProperties?**: `object`[]
+
+The optional sort order.
+
+• **properties?**: keyof `T`[]
+
+The optional properties to return, defaults to all.
+
+• **cursor?**: `string`
+
+The cursor to request the next page of entities.
+
+• **pageSize?**: `number`
+
+The maximum number of entities in a page.
 
 #### Returns
 
-`Promise`\<\{ `cursor?`: `string` ; `entities`: `Partial`\<`T` & \{ `tenantId?`: `string`  }\>[] ; `pageSize?`: `number` ; `totalEntities`: `number`  }\>
+`Promise`\<`object`\>
 
 All the entities for the storage matching the conditions,
 and a cursor which can be used to request more entities.
 
-___
+##### cursor?
 
-### remove
+> `optional` **cursor**: `string`
 
-▸ **remove**(`requestContext`, `id`): `Promise`\<`void`\>
+An optional cursor, when defined can be used to call find to get more entities.
+
+##### entities
+
+> **entities**: `Partial`\<`T` & `object`\>[]
+
+The entities, which can be partial if a limited keys list was provided.
+If the request context was wildcard then tenantId is also included.
+
+##### pageSize?
+
+> `optional` **pageSize**: `number`
+
+Number of entities to return.
+
+##### totalEntities
+
+> **totalEntities**: `number`
+
+Total entities length.
+
+***
+
+### remove()
+
+> **remove**(`requestContext`, `id`): `Promise`\<`void`\>
 
 Remove the entity.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `id` | `string` | The id of the entity to remove. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **id**: `string`
+
+The id of the entity to remove.
 
 #### Returns
 
@@ -107,20 +152,23 @@ Remove the entity.
 
 Nothing.
 
-___
+***
 
-### set
+### set()
 
-▸ **set**(`requestContext`, `entity`): `Promise`\<`void`\>
+> **set**(`requestContext`, `entity`): `Promise`\<`void`\>
 
 Set an entity.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `entity` | `T` | The entity to set. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **entity**: `T`
+
+The entity to set.
 
 #### Returns
 
@@ -128,11 +176,11 @@ Set an entity.
 
 The id of the entity.
 
-___
+***
 
-### start
+### start()?
 
-▸ **start**(): `Promise`\<`void`\>
+> `optional` **start**(): `Promise`\<`void`\>
 
 The service needs to be started when the application is initialized.
 
@@ -144,13 +192,13 @@ Nothing.
 
 #### Inherited from
 
-IService.start
+`IService.start`
 
-___
+***
 
-### stop
+### stop()?
 
-▸ **stop**(): `Promise`\<`void`\>
+> `optional` **stop**(): `Promise`\<`void`\>
 
 The service needs to be stopped when the application is closed.
 
@@ -162,4 +210,4 @@ Nothing.
 
 #### Inherited from
 
-IService.stop
+`IService.stop`

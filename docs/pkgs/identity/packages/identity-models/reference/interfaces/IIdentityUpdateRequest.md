@@ -6,26 +6,26 @@ Request to update an identity.
 
 ### body
 
-• **body**: `Object`
+> **body**: `object`
 
 The data for the request.
 
-#### Type declaration
+#### properties
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `properties` | `IProperty`[] | Properties for the identity. |
+> **properties**: `IProperty`[]
 
-___
+Properties for the identity.
+
+***
 
 ### path
 
-• **path**: `Object`
+> **path**: `object`
 
 The path parameters.
 
-#### Type declaration
+#### identity
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identity` | `string` | The identity to update the profile for. |
+> **identity**: `string`
+
+The identity to update the profile for.

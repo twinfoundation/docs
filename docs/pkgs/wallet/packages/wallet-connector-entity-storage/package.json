@@ -1,6 +1,6 @@
 {
 	"name": "@gtsc/wallet-connector-entity-storage",
-	"version": "0.0.3-next.12",
+	"version": "0.0.3-next.13",
 	"description": "Wallet connector implementation using entity storage",
 	"repository": {
 		"type": "git",
@@ -23,8 +23,8 @@
 		"bundle": "npm run bundle:esm && npm run bundle:cjs",
 		"docs:clean": "rimraf docs/reference",
 		"docs:generate": "typedoc",
-		"docs:finalise": "rimraf docs/reference/README.md",
-		"docs": "npm run docs:clean && npm run docs:generate && npm run docs:finalise",
+		"docs:remove-header": "replace-in-files --regex='^.*overview.md.*?\\s\\s.*?\\s\\s' --string='docs/' --replacement='' docs/**/*.md",
+		"docs": "npm run docs:clean && npm run docs:generate && npm run docs:remove-header",
 		"dist": "npm run clean && npm run build && npm run test && npm run bundle && npm run docs"
 	},
 	"dependencies": {
@@ -34,23 +34,24 @@
 		"@gtsc/entity-storage-models": "next",
 		"@gtsc/nameof": "^0.0.4",
 		"@gtsc/vault-models": "next",
-		"@gtsc/wallet-models": "0.0.3-next.12"
+		"@gtsc/wallet-models": "0.0.3-next.13"
 	},
 	"devDependencies": {
 		"@gtsc/nameof-transformer": "^0.0.4",
 		"@gtsc/entity-storage-connector-memory": "next",
-		"@vitest/coverage-v8": "^1.5.3",
+		"@vitest/coverage-v8": "^1.6.0",
 		"copyfiles": "^2.4.1",
+		"replace-in-files-cli": "^2.2.0",
 		"dotenv": "^16.4.5",
-		"rimraf": "^5.0.5",
+		"rimraf": "^5.0.7",
 		"rollup": "^4.17.2",
 		"rollup-plugin-copy": "^3.5.0",
 		"rollup-plugin-typescript2": "^0.36.0",
 		"ts-patch": "^3.1.2",
 		"typedoc": "^0.25.13",
-		"typedoc-plugin-markdown": "^3.17.1",
+		"typedoc-plugin-markdown": "^4.0.2",
 		"typescript": "^5.4.5",
-		"vitest": "^1.5.3"
+		"vitest": "^1.6.0"
 	},
 	"main": "./dist/cjs/index.cjs",
 	"module": "./dist/esm/index.mjs",

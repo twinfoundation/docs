@@ -6,13 +6,18 @@ Response to get an identity details.
 
 ### body
 
-• **body**: `Object`
+> **body**: `object`
 
 The response payload.
 
-#### Type declaration
+#### properties?
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `properties?` | `IProperty`[] | The properties for the identity. |
-| `role` | [`IdentityRole`](../enums/IdentityRole.md) | The role of the identity. |
+> `optional` **properties**: `IProperty`[]
+
+The properties for the identity.
+
+#### role
+
+> **role**: [`IdentityRole`](../enumerations/IdentityRole.md)
+
+The role of the identity.

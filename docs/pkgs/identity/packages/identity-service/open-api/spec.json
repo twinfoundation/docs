@@ -1,500 +1,741 @@
 {
-	"openapi": "3.1.0",
-	"info": {
-		"title": "Global Trade and Supply Chain - Test Endpoints",
-		"description": "REST API for Global Trade and Supply Chain - Test Endpoints.",
-		"version": "1.0.0",
-		"license": {
-			"name": "Apache 2.0 License",
-			"url": "https://opensource.org/licenses/Apache-2.0"
-		}
-	},
-	"servers": [
-		{
-			"url": "https://localhost"
-		}
-	],
-	"tags": [],
-	"paths": {
-		"/identity": {
-			"post": {
-				"operationId": "identityCreate",
-				"summary": "Create a new identity",
-				"tags": ["Identity"],
-				"security": [
-					{
-						"jwtBearerAuthScheme": []
-					}
-				],
-				"responses": {
-					"200": {
-						"description": "The rest request ended in created response.",
-						"content": {
-							"application/json": {
-								"schema": {
-									"$ref": "#/components/schemas/CreatedResponse"
-								}
-							}
-						},
-						"headers": {
-							"location": {
-								"schema": {
-									"type": "string"
-								},
-								"description": "e.g. did:gtsc:0xc57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70"
-							}
-						}
-					}
-				},
-				"requestBody": {
-					"description": "Create a new identity.",
-					"required": true,
-					"content": {
-						"application/json": {
-							"schema": {
-								"$ref": "#/components/schemas/IdentityCreateRequest"
-							},
-							"examples": {
-								"identityCreateRequestExample": {
-									"value": {
-										"role": "user",
-										"properties": [
-											{
-												"key": "email",
-												"type": "https://schema.org/Text",
-												"value": "john@example.com"
-											},
-											{
-												"key": "name",
-												"type": "https://schema.org/Text",
-												"value": "John Doe"
-											}
-										]
-									}
-								}
-							}
-						}
-					}
-				}
-			},
-			"get": {
-				"operationId": "identitiesList",
-				"summary": "Get the list of identities based on the provided criteria",
-				"tags": ["Identity"],
-				"parameters": [
-					{
-						"name": "role",
-						"description": "The property name to use for lookup.",
-						"in": "query",
-						"required": false,
-						"schema": {},
-						"example": "user"
-					},
-					{
-						"name": "propertyNames",
-						"description": "The properties to get for the profile, defaults to all, should be a comma separated list.",
-						"in": "query",
-						"required": false,
-						"schema": {
-							"type": "string"
-						}
-					},
-					{
-						"name": "cursor",
-						"description": "The cursor for paged requests.",
-						"in": "query",
-						"required": false,
-						"schema": {
-							"type": "string"
-						}
-					},
-					{
-						"name": "pageSize",
-						"description": "Number of items to return.",
-						"in": "query",
-						"required": false,
-						"schema": {
-							"type": "number"
-						}
-					}
-				],
-				"security": [
-					{
-						"jwtBearerAuthScheme": []
-					}
-				],
-				"responses": {
-					"200": {
-						"description": "Response to get a list of identities.",
-						"content": {
-							"application/json": {
-								"schema": {
-									"$ref": "#/components/schemas/IdentityListResponse"
-								},
-								"examples": {
-									"identitiesListResponseExample": {
-										"value": {
-											"identities": [
-												{
-													"identity": "did:gtsc:0xc57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70",
-													"properties": [
-														{
-															"key": "email",
-															"type": "https://schema.org/Text",
-															"value": "john@example.com"
-														}
-													]
-												}
-											],
-											"cursor": "1",
-											"pageSize": 10,
-											"totalEntities": 20
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		},
-		"/identity/{identity}": {
-			"put": {
-				"operationId": "identityUpdate",
-				"summary": "Update an identity",
-				"tags": ["Identity"],
-				"parameters": [
-					{
-						"name": "identity",
-						"description": "The identity to update the profile for.",
-						"in": "path",
-						"required": true,
-						"schema": {
-							"type": "string"
-						},
-						"style": "simple",
-						"example": "did:gtsc:0xc57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70"
-					}
-				],
-				"security": [
-					{
-						"jwtBearerAuthScheme": []
-					}
-				],
-				"responses": {
-					"200": {
-						"description": "The resource you tried to access does not exist, see the error field for more details.",
-						"content": {
-							"application/json": {
-								"schema": {
-									"$ref": "#/components/schemas/NotFoundResponse"
-								}
-							}
-						}
-					}
-				},
-				"requestBody": {
-					"description": "Request to update an identity.",
-					"required": true,
-					"content": {
-						"application/json": {
-							"schema": {
-								"$ref": "#/components/schemas/IdentityUpdateRequest"
-							},
-							"examples": {
-								"identityUpdateRequestExample": {
-									"value": {
-										"properties": [
-											{
-												"key": "email",
-												"type": "https://schema.org/Text",
-												"value": "john@example.com"
-											},
-											{
-												"key": "name",
-												"type": "https://schema.org/Text",
-												"value": "John Smith"
-											}
-										]
-									}
-								}
-							}
-						}
-					}
-				}
-			},
-			"get": {
-				"operationId": "identityGet",
-				"summary": "Get the identity details",
-				"tags": ["Identity"],
-				"parameters": [
-					{
-						"name": "identity",
-						"description": "The identity to get the profile for.",
-						"in": "path",
-						"required": true,
-						"schema": {
-							"type": "string"
-						},
-						"style": "simple",
-						"example": "did:gtsc:0xc57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70"
-					},
-					{
-						"name": "propertyNames",
-						"description": "The properties to get for the profile, defaults to all, should be a comma separated list.",
-						"in": "query",
-						"required": false,
-						"schema": {
-							"type": "string"
-						},
-						"example": "email,name"
-					}
-				],
-				"security": [
-					{
-						"jwtBearerAuthScheme": []
-					}
-				],
-				"responses": {
-					"200": {
-						"description": "The resource you tried to access does not exist, see the error field for more details.",
-						"content": {
-							"application/json": {
-								"schema": {
-									"$ref": "#/components/schemas/NotFoundResponse"
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-	},
-	"components": {
-		"schemas": {
-			"IdentityCreateRequest": {
-				"type": "object",
-				"properties": {
-					"role": {
-						"$ref": "#/components/schemas/IdentityRole"
-					},
-					"properties": {
-						"type": "array",
-						"items": {
-							"$ref": "#/components/schemas/Property"
-						},
-						"description": "Initial properties for the identity."
-					}
-				},
-				"required": ["role"],
-				"additionalProperties": false,
-				"description": "The data for the request."
-			},
-			"IdentityRole": {
-				"type": "string",
-				"enum": ["node", "organization", "user"],
-				"description": "The roles that an identity can have."
-			},
-			"Property": {
-				"type": "object",
-				"properties": {
-					"key": {
-						"type": "string",
-						"description": "The key for the item."
-					},
-					"type": {
-						"type": "string",
-						"description": "The type for the item."
-					},
-					"value": {
-						"description": "The value for the item."
-					}
-				},
-				"required": ["key", "type", "value"],
-				"additionalProperties": false,
-				"description": "Interface describing a property."
-			},
-			"CreatedResponse": {
-				"type": "object",
-				"properties": {
-					"statusCode": {
-						"$ref": "#/components/schemas/HttpStatusCodes"
-					},
-					"headers": {
-						"type": "object",
-						"properties": {
-							"location": {
-								"type": "string",
-								"description": "The location where the resource was created."
-							}
-						},
-						"required": ["location"],
-						"additionalProperties": false,
-						"description": "Additional response headers."
-					}
-				},
-				"required": ["statusCode", "headers"],
-				"additionalProperties": false,
-				"description": "The rest request ended in created response."
-			},
-			"HttpStatusCodes": {
-				"type": "object",
-				"additionalProperties": false,
-				"description": "Standard HTTP status codes."
-			},
-			"IdentityUpdateRequest": {
-				"type": "object",
-				"properties": {
-					"properties": {
-						"type": "array",
-						"items": {
-							"$ref": "#/components/schemas/Property"
-						},
-						"description": "Properties for the identity."
-					}
-				},
-				"required": ["properties"],
-				"additionalProperties": false,
-				"description": "The data for the request."
-			},
-			"NoContentResponse": {
-				"type": "object",
-				"additionalProperties": false,
-				"description": "The rest request ended in success with no data."
-			},
-			"NotFoundResponse": {
-				"type": "object",
-				"properties": {
-					"name": {
-						"type": "string",
-						"description": "The name for the error."
-					},
-					"message": {
-						"type": "string",
-						"description": "The message for the error."
-					},
-					"source": {
-						"type": "string",
-						"description": "The source of the error."
-					},
-					"properties": {
-						"type": "object",
-						"additionalProperties": {},
-						"description": "Any additional information for the error."
-					},
-					"stack": {
-						"type": "string",
-						"description": "The stack trace for the error."
-					},
-					"inner": {
-						"$ref": "#/components/schemas/Error"
-					},
-					"notFoundId": {
-						"type": "string",
-						"description": "The id if the item that was not found."
-					}
-				},
-				"additionalProperties": false,
-				"required": ["message", "name"],
-				"description": "The resource you tried to access does not exist, see the error field for more details."
-			},
-			"Error": {
-				"type": "object",
-				"properties": {
-					"name": {
-						"type": "string",
-						"description": "The name for the error."
-					},
-					"message": {
-						"type": "string",
-						"description": "The message for the error."
-					},
-					"source": {
-						"type": "string",
-						"description": "The source of the error."
-					},
-					"properties": {
-						"type": "object",
-						"additionalProperties": {},
-						"description": "Any additional information for the error."
-					},
-					"stack": {
-						"type": "string",
-						"description": "The stack trace for the error."
-					},
-					"inner": {
-						"$ref": "#/components/schemas/Error"
-					}
-				},
-				"required": ["name", "message"],
-				"additionalProperties": false,
-				"description": "Model to describe serialized error."
-			},
-			"IdentityGetResponse": {
-				"type": "object",
-				"properties": {
-					"role": {
-						"$ref": "#/components/schemas/IdentityRole"
-					},
-					"properties": {
-						"type": "array",
-						"items": {
-							"$ref": "#/components/schemas/Property"
-						},
-						"description": "The properties for the identity."
-					}
-				},
-				"required": ["role"],
-				"additionalProperties": false,
-				"description": "The response payload."
-			},
-			"IdentityListResponse": {
-				"type": "object",
-				"properties": {
-					"identities": {
-						"type": "array",
-						"items": {
-							"type": "object",
-							"properties": {
-								"identity": {
-									"type": "string"
-								},
-								"properties": {
-									"type": "array",
-									"items": {
-										"$ref": "#/components/schemas/Property"
-									}
-								}
-							},
-							"required": ["identity"],
-							"additionalProperties": false
-						},
-						"description": "The identities."
-					},
-					"cursor": {
-						"type": "string",
-						"description": "An optional cursor, when defined can be used to call find to get more entities."
-					},
-					"pageSize": {
-						"type": "number",
-						"description": "Number of entities to return."
-					},
-					"totalEntities": {
-						"type": "number",
-						"description": "Total entities length."
-					}
-				},
-				"required": ["identities", "totalEntities"],
-				"additionalProperties": false,
-				"description": "The response payload."
-			}
-		},
-		"securitySchemes": {
-			"jwtBearerAuthScheme": {
-				"type": "http",
-				"scheme": "bearer",
-				"bearerFormat": "JWT"
-			}
-		}
-	}
+    "openapi": "3.1.0",
+    "info": {
+        "title": "Global Trade and Supply Chain - Test Endpoints",
+        "description": "REST API for Global Trade and Supply Chain - Test Endpoints.",
+        "version": "1.0.0",
+        "license": {
+            "name": "Apache 2.0 License",
+            "url": "https://opensource.org/licenses/Apache-2.0"
+        }
+    },
+    "servers": [
+        {
+            "url": "https://localhost"
+        }
+    ],
+    "tags": [],
+    "paths": {
+        "/identity": {
+            "post": {
+                "operationId": "identityCreate",
+                "summary": "Create a new identity",
+                "tags": [
+                    "Identity"
+                ],
+                "security": [
+                    {
+                        "jwtBearerAuthScheme": []
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "The rest request ended in created response.",
+                        "headers": {
+                            "location": {
+                                "schema": {
+                                    "type": "string"
+                                },
+                                "description": "e.g. did:gtsc:0xc57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Something went wrong with the request see the error field for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "GeneralError",
+                                            "message": "component.error",
+                                            "properties": {
+                                                "foo": "bar"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "You are not authorized to use the API or no credentials were supplied.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "UnauthorizedError",
+                                            "message": "component.error"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "requestBody": {
+                    "description": "Create a new identity.",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/IdentityCreateRequest"
+                            },
+                            "examples": {
+                                "identityCreateRequestExample": {
+                                    "value": {
+                                        "role": "user",
+                                        "properties": [
+                                            {
+                                                "key": "email",
+                                                "type": "https://schema.org/Text",
+                                                "value": "john@example.com"
+                                            },
+                                            {
+                                                "key": "name",
+                                                "type": "https://schema.org/Text",
+                                                "value": "John Doe"
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "get": {
+                "operationId": "identitiesList",
+                "summary": "Get the list of identities based on the provided criteria",
+                "tags": [
+                    "Identity"
+                ],
+                "parameters": [
+                    {
+                        "name": "role",
+                        "description": "The property name to use for lookup.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {},
+                        "example": "user"
+                    },
+                    {
+                        "name": "propertyNames",
+                        "description": "The properties to get for the profile, defaults to all, should be a comma separated list.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "cursor",
+                        "description": "The cursor for paged requests.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "pageSize",
+                        "description": "Number of items to return.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "number"
+                        }
+                    }
+                ],
+                "security": [
+                    {
+                        "jwtBearerAuthScheme": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Response to get a list of identities.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/IdentityListResponse"
+                                },
+                                "examples": {
+                                    "identitiesListResponseExample": {
+                                        "value": {
+                                            "identities": [
+                                                {
+                                                    "identity": "did:gtsc:0xc57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70",
+                                                    "properties": [
+                                                        {
+                                                            "key": "email",
+                                                            "type": "https://schema.org/Text",
+                                                            "value": "john@example.com"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "cursor": "1",
+                                            "pageSize": 10,
+                                            "totalEntities": 20
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Something went wrong with the request see the error field for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "GeneralError",
+                                            "message": "component.error",
+                                            "properties": {
+                                                "foo": "bar"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "You are not authorized to use the API or no credentials were supplied.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "UnauthorizedError",
+                                            "message": "component.error"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/identity/{identity}": {
+            "put": {
+                "operationId": "identityUpdate",
+                "summary": "Update an identity",
+                "tags": [
+                    "Identity"
+                ],
+                "parameters": [
+                    {
+                        "name": "identity",
+                        "description": "The identity to update the profile for.",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "style": "simple",
+                        "example": "did:gtsc:0xc57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70"
+                    }
+                ],
+                "security": [
+                    {
+                        "jwtBearerAuthScheme": []
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "The rest request ended in success with no data."
+                    },
+                    "400": {
+                        "description": "Something went wrong with the request see the error field for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "GeneralError",
+                                            "message": "component.error",
+                                            "properties": {
+                                                "foo": "bar"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "You are not authorized to use the API or no credentials were supplied.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "UnauthorizedError",
+                                            "message": "component.error"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The resource you tried to access does not exist, see the error field for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NotFoundResponse"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "NotFoundError",
+                                            "message": "component.error",
+                                            "properties": {
+                                                "notFoundId": "1"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "requestBody": {
+                    "description": "Request to update an identity.",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/IdentityUpdateRequest"
+                            },
+                            "examples": {
+                                "identityUpdateRequestExample": {
+                                    "value": {
+                                        "properties": [
+                                            {
+                                                "key": "email",
+                                                "type": "https://schema.org/Text",
+                                                "value": "john@example.com"
+                                            },
+                                            {
+                                                "key": "name",
+                                                "type": "https://schema.org/Text",
+                                                "value": "John Smith"
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "get": {
+                "operationId": "identityGet",
+                "summary": "Get the identity details",
+                "tags": [
+                    "Identity"
+                ],
+                "parameters": [
+                    {
+                        "name": "identity",
+                        "description": "The identity to get the profile for.",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "style": "simple",
+                        "example": "did:gtsc:0xc57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70"
+                    },
+                    {
+                        "name": "propertyNames",
+                        "description": "The properties to get for the profile, defaults to all, should be a comma separated list.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "email,name"
+                    }
+                ],
+                "security": [
+                    {
+                        "jwtBearerAuthScheme": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Response to get an identity details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/IdentityGetResponse"
+                                },
+                                "examples": {
+                                    "identityGetResponseExample": {
+                                        "value": {
+                                            "role": "user",
+                                            "properties": [
+                                                {
+                                                    "key": "email",
+                                                    "type": "https://schema.org/Text",
+                                                    "value": "john@example.com"
+                                                },
+                                                {
+                                                    "key": "name",
+                                                    "type": "https://schema.org/Text",
+                                                    "value": "John Does"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Something went wrong with the request see the error field for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "GeneralError",
+                                            "message": "component.error",
+                                            "properties": {
+                                                "foo": "bar"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "You are not authorized to use the API or no credentials were supplied.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "UnauthorizedError",
+                                            "message": "component.error"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The resource you tried to access does not exist, see the error field for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NotFoundResponse"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "NotFoundError",
+                                            "message": "component.error",
+                                            "properties": {
+                                                "notFoundId": "1"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "CreatedResponse": {
+                "type": "object",
+                "properties": {
+                    "statusCode": {
+                        "$ref": "#/components/schemas/HttpStatusCodes"
+                    },
+                    "headers": {
+                        "type": "object",
+                        "properties": {
+                            "location": {
+                                "type": "string",
+                                "description": "The location where the resource was created."
+                            }
+                        },
+                        "required": [
+                            "location"
+                        ],
+                        "additionalProperties": false,
+                        "description": "Additional response headers."
+                    }
+                },
+                "required": [
+                    "statusCode",
+                    "headers"
+                ],
+                "additionalProperties": false,
+                "description": "The rest request ended in created response."
+            },
+            "HttpStatusCodes": {
+                "type": "object",
+                "additionalProperties": false,
+                "description": "Standard HTTP status codes."
+            },
+            "NoContentResponse": {
+                "type": "object",
+                "additionalProperties": false,
+                "description": "The rest request ended in success with no data."
+            },
+            "Error": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "The name for the error."
+                    },
+                    "message": {
+                        "type": "string",
+                        "description": "The message for the error."
+                    },
+                    "source": {
+                        "type": "string",
+                        "description": "The source of the error."
+                    },
+                    "properties": {
+                        "type": "object",
+                        "additionalProperties": {},
+                        "description": "Any additional information for the error."
+                    },
+                    "stack": {
+                        "type": "string",
+                        "description": "The stack trace for the error."
+                    },
+                    "inner": {
+                        "$ref": "#/components/schemas/Error"
+                    }
+                },
+                "required": [
+                    "name",
+                    "message"
+                ],
+                "additionalProperties": false,
+                "description": "Model to describe serialized error."
+            },
+            "NotFoundResponse": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "The name for the error."
+                    },
+                    "message": {
+                        "type": "string",
+                        "description": "The message for the error."
+                    },
+                    "source": {
+                        "type": "string",
+                        "description": "The source of the error."
+                    },
+                    "properties": {
+                        "type": "object",
+                        "additionalProperties": {},
+                        "description": "Any additional information for the error."
+                    },
+                    "stack": {
+                        "type": "string",
+                        "description": "The stack trace for the error."
+                    },
+                    "inner": {
+                        "$ref": "#/components/schemas/Error"
+                    },
+                    "notFoundId": {
+                        "type": "string",
+                        "description": "The id if the item that was not found."
+                    }
+                },
+                "additionalProperties": false,
+                "required": [
+                    "message",
+                    "name"
+                ],
+                "description": "The resource you tried to access does not exist, see the error field for more details."
+            },
+            "IdentityCreateRequest": {
+                "type": "object",
+                "properties": {
+                    "role": {
+                        "$ref": "#/components/schemas/IdentityRole"
+                    },
+                    "properties": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Property"
+                        },
+                        "description": "Initial properties for the identity."
+                    }
+                },
+                "required": [
+                    "role"
+                ],
+                "additionalProperties": false,
+                "description": "The data for the request."
+            },
+            "IdentityRole": {
+                "type": "string",
+                "enum": [
+                    "node",
+                    "organization",
+                    "user"
+                ],
+                "description": "The roles that an identity can have."
+            },
+            "Property": {
+                "type": "object",
+                "properties": {
+                    "key": {
+                        "type": "string",
+                        "description": "The key for the item."
+                    },
+                    "type": {
+                        "type": "string",
+                        "description": "The type for the item."
+                    },
+                    "value": {
+                        "description": "The value for the item."
+                    }
+                },
+                "required": [
+                    "key",
+                    "type",
+                    "value"
+                ],
+                "additionalProperties": false,
+                "description": "Interface describing a property."
+            },
+            "IdentityUpdateRequest": {
+                "type": "object",
+                "properties": {
+                    "properties": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Property"
+                        },
+                        "description": "Properties for the identity."
+                    }
+                },
+                "required": [
+                    "properties"
+                ],
+                "additionalProperties": false,
+                "description": "The data for the request."
+            },
+            "IdentityGetResponse": {
+                "type": "object",
+                "properties": {
+                    "role": {
+                        "$ref": "#/components/schemas/IdentityRole"
+                    },
+                    "properties": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Property"
+                        },
+                        "description": "The properties for the identity."
+                    }
+                },
+                "required": [
+                    "role"
+                ],
+                "additionalProperties": false,
+                "description": "The response payload."
+            },
+            "IdentityListResponse": {
+                "type": "object",
+                "properties": {
+                    "identities": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "identity": {
+                                    "type": "string"
+                                },
+                                "properties": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Property"
+                                    }
+                                }
+                            },
+                            "required": [
+                                "identity"
+                            ],
+                            "additionalProperties": false
+                        },
+                        "description": "The identities."
+                    },
+                    "cursor": {
+                        "type": "string",
+                        "description": "An optional cursor, when defined can be used to call find to get more entities."
+                    },
+                    "pageSize": {
+                        "type": "number",
+                        "description": "Number of entities to return."
+                    },
+                    "totalEntities": {
+                        "type": "number",
+                        "description": "Total entities length."
+                    }
+                },
+                "required": [
+                    "identities",
+                    "totalEntities"
+                ],
+                "additionalProperties": false,
+                "description": "The response payload."
+            }
+        },
+        "securitySchemes": {
+            "jwtBearerAuthScheme": {
+                "type": "http",
+                "scheme": "bearer",
+                "bearerFormat": "JWT"
+            }
+        }
+    }
 }

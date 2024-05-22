@@ -4,12 +4,12 @@ Configuration for the Memory Blob Storage Connector.
 
 ## Properties
 
-### initialValues
+### initialValues?
 
-• `Optional` **initialValues**: `Object`
+> `optional` **initialValues**: `object`
 
 Initial values to populate the blob storage with.
 
 #### Index signature
 
-▪ [tenantId: `string`]: \{ `[id: string]`: `Uint8Array`;  }
+ \[`tenantId`: `string`\]: `object`

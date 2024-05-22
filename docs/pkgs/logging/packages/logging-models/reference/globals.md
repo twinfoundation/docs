@@ -17,16 +17,8 @@
 
 ## Type Aliases
 
-### LogLevel
-
-Ƭ **LogLevel**: ``"info"`` \| ``"error"`` \| ``"warn"`` \| ``"trace"`` \| ``"debug"``
-
-Log level.
+- [LogLevel](type-aliases/LogLevel.md)
 
 ## Variables
 
-### LoggingConnectorFactory
-
-• `Const` **LoggingConnectorFactory**: `Factory`\<[`ILoggingConnector`](interfaces/ILoggingConnector.md)\>
-
-Factory for creating logging connectors.
+- [LoggingConnectorFactory](variables/LoggingConnectorFactory.md)

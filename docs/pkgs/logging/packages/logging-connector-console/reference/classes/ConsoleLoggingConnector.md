@@ -8,17 +8,17 @@ Class for performing logging operations in the console.
 
 ## Constructors
 
-### constructor
+### new ConsoleLoggingConnector()
 
-• **new ConsoleLoggingConnector**(`config?`): [`ConsoleLoggingConnector`](ConsoleLoggingConnector.md)
+> **new ConsoleLoggingConnector**(`config`?): [`ConsoleLoggingConnector`](ConsoleLoggingConnector.md)
 
 Create a new instance of ConsoleLoggingConnector.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `config?` | `ILoggingLevelsConfig` | The configuration for the logging connector. |
+• **config?**: `ILoggingLevelsConfig`
+
+The configuration for the logging connector.
 
 #### Returns
 
@@ -26,110 +26,152 @@ Create a new instance of ConsoleLoggingConnector.
 
 ## Properties
 
-### \_lastGroup
+### \_lastGroup?
 
-• `Private` `Optional` **\_lastGroup**: `string`
+> `private` `optional` **\_lastGroup**: `string`
 
 The last group identity.
 
-___
+***
 
 ### \_levels
 
-• `Private` `Readonly` **\_levels**: `LogLevel`[]
+> `private` `readonly` **\_levels**: `LogLevel`[]
 
 The log levels to display, will default to all.
 
 ## Methods
 
-### handleGroup
+### handleGroup()
 
-▸ **handleGroup**(`group`): `void`
+> `private` **handleGroup**(`group`): `void`
 
 Handle a group.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `group` | `string` | The group. |
+• **group**: `string`
+
+The group.
 
 #### Returns
 
 `void`
 
-___
+***
 
-### log
+### log()
 
-▸ **log**(`requestContext`, `logEntry`): `Promise`\<`undefined` \| `string`\>
+> **log**(`requestContext`, `logEntry`): `Promise`\<`void`\>
 
 Log an entry to the connector.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `logEntry` | `ILogEntry` | The entry to log. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **logEntry**: `ILogEntry`
+
+The entry to log.
 
 #### Returns
 
-`Promise`\<`undefined` \| `string`\>
+`Promise`\<`void`\>
 
-An identifier if one was allocated during the logging process.
+Nothing.
 
 #### Implementation of
 
-ILoggingConnector.log
+`ILoggingConnector.log`
 
-___
+***
 
-### query
+### query()
 
-▸ **query**(`requestContext`, `conditions?`, `sortProperties?`, `properties?`, `cursor?`, `pageSize?`): `Promise`\<\{ `cursor?`: `string` ; `entities`: `Partial`\<`ILogEntry`\>[] ; `pageSize?`: `number` ; `totalEntities`: `number`  }\>
+> **query**(`requestContext`, `conditions`?, `sortProperties`?, `properties`?, `cursor`?, `pageSize`?): `Promise`\<`object`\>
 
 Query the log entries.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `conditions?` | `EntityCondition`\<`ILogEntry`\> | The conditions to match for the entities. |
-| `sortProperties?` | \{ `property`: keyof `ILogEntry` ; `sortDirection`: `SortDirection`  }[] | The optional sort order. |
-| `properties?` | keyof `ILogEntry`[] | The optional keys to return, defaults to all. |
-| `cursor?` | `string` | The cursor to request the next page of entities. |
-| `pageSize?` | `number` | The maximum number of entities in a page. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **conditions?**: `EntityCondition`\<`ILogEntry`\>
+
+The conditions to match for the entities.
+
+• **sortProperties?**: `object`[]
+
+The optional sort order.
+
+• **properties?**: keyof `ILogEntry`[]
+
+The optional keys to return, defaults to all.
+
+• **cursor?**: `string`
+
+The cursor to request the next page of entities.
+
+• **pageSize?**: `number`
+
+The maximum number of entities in a page.
 
 #### Returns
 
-`Promise`\<\{ `cursor?`: `string` ; `entities`: `Partial`\<`ILogEntry`\>[] ; `pageSize?`: `number` ; `totalEntities`: `number`  }\>
+`Promise`\<`object`\>
 
 All the entities for the storage matching the conditions,
 and a cursor which can be used to request more entities.
 
-**`Throws`**
+##### cursor?
 
-NotImplementedError if the implementation does not support retrieval.
+> `optional` **cursor**: `string`
+
+An optional cursor, when defined can be used to call find to get more entities.
+
+##### entities
+
+> **entities**: `Partial`\<`ILogEntry`\>[]
+
+The entities, which can be partial if a limited keys list was provided.
+
+##### pageSize?
+
+> `optional` **pageSize**: `number`
+
+Number of entities to return.
+
+##### totalEntities
+
+> **totalEntities**: `number`
+
+Total entities length.
 
 #### Implementation of
 
-ILoggingConnector.query
+`ILoggingConnector.query`
 
-___
+#### Throws
 
-### stringToColor
+NotImplementedError if the implementation does not support retrieval.
 
-▸ **stringToColor**(`str`): `string`
+***
+
+### stringToColor()
+
+> `private` **stringToColor**(`str`): `string`
 
 Convert a string to a color.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `str` | `string` | The string to convert. |
+• **str**: `string`
+
+The string to convert.
 
 #### Returns
 

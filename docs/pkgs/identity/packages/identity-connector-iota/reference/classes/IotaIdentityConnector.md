@@ -8,19 +8,25 @@ Class for performing identity operations on IOTA.
 
 ## Constructors
 
-### constructor
+### new IotaIdentityConnector()
 
-• **new IotaIdentityConnector**(`dependencies`, `config`): [`IotaIdentityConnector`](IotaIdentityConnector.md)
+> **new IotaIdentityConnector**(`dependencies`, `config`): [`IotaIdentityConnector`](IotaIdentityConnector.md)
 
 Create a new instance of IotaIdentityConnector.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `dependencies` | `Object` | The dependencies for the identity connector. |
-| `dependencies.vaultConnector` | `IVaultConnector` | The vault for the private keys. |
-| `config` | [`IIotaIdentityConnectorConfig`](../interfaces/IIotaIdentityConnectorConfig.md) | The configuration to use. |
+• **dependencies**
+
+The dependencies for the identity connector.
+
+• **dependencies.vaultConnector**: `IVaultConnector`
+
+The vault for the private keys.
+
+• **config**: [`IIotaIdentityConnectorConfig`](../interfaces/IIotaIdentityConnectorConfig.md)
+
+The configuration to use.
 
 #### Returns
 
@@ -30,27 +36,39 @@ Create a new instance of IotaIdentityConnector.
 
 ### NAMESPACE
 
-▪ `Static` **NAMESPACE**: `string` = `"iota"`
+> `static` **NAMESPACE**: `string` = `"iota"`
 
 The namespace supported by the identity connector.
 
 ## Methods
 
-### addService
+### addService()
 
-▸ **addService**(`requestContext`, `documentId`, `serviceId`, `serviceType`, `serviceEndpoint`): `Promise`\<`IDidService`\>
+> **addService**(`requestContext`, `documentId`, `serviceId`, `serviceType`, `serviceEndpoint`): `Promise`\<`IDidService`\>
 
 Add a service to the document.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `documentId` | `string` | The id of the document to add the service to. |
-| `serviceId` | `string` | The id of the service. |
-| `serviceType` | `string` | The type of the service. |
-| `serviceEndpoint` | `string` | The endpoint for the service. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **documentId**: `string`
+
+The id of the document to add the service to.
+
+• **serviceId**: `string`
+
+The id of the service.
+
+• **serviceType**: `string`
+
+The type of the service.
+
+• **serviceEndpoint**: `string`
+
+The endpoint for the service.
 
 #### Returns
 
@@ -58,30 +76,39 @@ Add a service to the document.
 
 The service.
 
-**`Throws`**
+#### Implementation of
+
+`IIdentityConnector.addService`
+
+#### Throws
 
 NotFoundError if the id can not be resolved.
 
-#### Implementation of
+***
 
-IIdentityConnector.addService
+### addVerificationMethod()
 
-___
-
-### addVerificationMethod
-
-▸ **addVerificationMethod**(`requestContext`, `documentId`, `verificationMethodType`, `verificationMethodId?`): `Promise`\<`IDidDocumentVerificationMethod`\>
+> **addVerificationMethod**(`requestContext`, `documentId`, `verificationMethodType`, `verificationMethodId`?): `Promise`\<`IDidDocumentVerificationMethod`\>
 
 Add a verification method to the document in JSON Web key Format.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `documentId` | `string` | The id of the document to add the verification method to. |
-| `verificationMethodType` | ``"verificationMethod"`` \| ``"authentication"`` \| ``"assertionMethod"`` \| ``"keyAgreement"`` \| ``"capabilityInvocation"`` \| ``"capabilityDelegation"`` | The type of the verification method to add. |
-| `verificationMethodId?` | `string` | The id of the verification method, if undefined uses the kid of the generated JWK. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **documentId**: `string`
+
+The id of the document to add the verification method to.
+
+• **verificationMethodType**: `"verificationMethod"` \| `"authentication"` \| `"assertionMethod"` \| `"keyAgreement"` \| `"capabilityInvocation"` \| `"capabilityDelegation"`
+
+The type of the verification method to add.
+
+• **verificationMethodId?**: `string`
+
+The id of the verification method, if undefined uses the kid of the generated JWK.
 
 #### Returns
 
@@ -89,89 +116,119 @@ Add a verification method to the document in JSON Web key Format.
 
 The verification method.
 
-**`Throws`**
+#### Implementation of
+
+`IIdentityConnector.addVerificationMethod`
+
+#### Throws
 
 NotFoundError if the id can not be resolved.
 
-**`Throws`**
+#### Throws
 
 NotSupportedError if the platform does not support multiple keys.
 
-#### Implementation of
+***
 
-IIdentityConnector.addVerificationMethod
+### checkVerifiableCredential()
 
-___
-
-### checkVerifiableCredential
-
-▸ **checkVerifiableCredential**\<`T`\>(`requestContext`, `credentialJwt`): `Promise`\<\{ `revoked`: `boolean` ; `verifiableCredential?`: `IDidVerifiableCredential`\<`T`\>  }\>
+> **checkVerifiableCredential**\<`T`\>(`requestContext`, `credentialJwt`): `Promise`\<`object`\>
 
 Check a verifiable credential is valid.
 
 #### Type parameters
 
-| Name | Type |
-| :------ | :------ |
-| `T` | extends `Object` |
+• **T** *extends* `object`
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `credentialJwt` | `string` | The credential to verify. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **credentialJwt**: `string`
+
+The credential to verify.
 
 #### Returns
 
-`Promise`\<\{ `revoked`: `boolean` ; `verifiableCredential?`: `IDidVerifiableCredential`\<`T`\>  }\>
+`Promise`\<`object`\>
 
 The credential stored in the jwt and the revocation status.
 
+##### revoked
+
+> **revoked**: `boolean`
+
+##### verifiableCredential?
+
+> `optional` **verifiableCredential**: `IDidVerifiableCredential`\<`T`\>
+
 #### Implementation of
 
-IIdentityConnector.checkVerifiableCredential
+`IIdentityConnector.checkVerifiableCredential`
 
-___
+***
 
-### checkVerifiablePresentation
+### checkVerifiablePresentation()
 
-▸ **checkVerifiablePresentation**(`requestContext`, `presentationJwt`): `Promise`\<\{ `issuers?`: `IDidDocument`[] ; `revoked`: `boolean` ; `verifiablePresentation?`: `IDidVerifiablePresentation`  }\>
+> **checkVerifiablePresentation**(`requestContext`, `presentationJwt`): `Promise`\<`object`\>
 
 Check a verifiable presentation is valid.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `presentationJwt` | `string` | The presentation to verify. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **presentationJwt**: `string`
+
+The presentation to verify.
 
 #### Returns
 
-`Promise`\<\{ `issuers?`: `IDidDocument`[] ; `revoked`: `boolean` ; `verifiablePresentation?`: `IDidVerifiablePresentation`  }\>
+`Promise`\<`object`\>
 
 The presentation stored in the jwt and the revocation status.
 
+##### issuers?
+
+> `optional` **issuers**: `IDidDocument`[]
+
+##### revoked
+
+> **revoked**: `boolean`
+
+##### verifiablePresentation?
+
+> `optional` **verifiablePresentation**: `IDidVerifiablePresentation`
+
 #### Implementation of
 
-IIdentityConnector.checkVerifiablePresentation
+`IIdentityConnector.checkVerifiablePresentation`
 
-___
+***
 
-### createDocument
+### createDocument()
 
-▸ **createDocument**(`requestContext`, `privateKey?`, `publicKey?`): `Promise`\<`IDidDocument`\>
+> **createDocument**(`requestContext`, `privateKey`?, `publicKey`?): `Promise`\<`IDidDocument`\>
 
 Create a new document.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `privateKey?` | `string` | The private key to use for the document in base64, if undefined a new key will be generated. |
-| `publicKey?` | `string` | The public key to use for the document in base64, must be provided if privateKey is supplied. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **privateKey?**: `string`
+
+The private key to use for the document in base64, if undefined a new key will be generated.
+
+• **publicKey?**: `string`
+
+The public key to use for the document in base64, must be provided if privateKey is supplied.
 
 #### Returns
 
@@ -181,123 +238,193 @@ The created document.
 
 #### Implementation of
 
-IIdentityConnector.createDocument
+`IIdentityConnector.createDocument`
 
-___
+***
 
-### createProof
+### createProof()
 
-▸ **createProof**(`requestContext`, `documentId`, `verificationMethodId`, `bytes`): `Promise`\<\{ `type`: `string` ; `value`: `string`  }\>
+> **createProof**(`requestContext`, `documentId`, `verificationMethodId`, `bytes`): `Promise`\<`object`\>
 
 Create a proof for arbitrary data with the specified verification method.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `documentId` | `string` | The id of the document signing the data. |
-| `verificationMethodId` | `string` | The verification method id to use. |
-| `bytes` | `string` | The data bytes to sign in base64. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **documentId**: `string`
+
+The id of the document signing the data.
+
+• **verificationMethodId**: `string`
+
+The verification method id to use.
+
+• **bytes**: `string`
+
+The data bytes to sign in base64.
 
 #### Returns
 
-`Promise`\<\{ `type`: `string` ; `value`: `string`  }\>
+`Promise`\<`object`\>
 
 The proof signature type and value in base64.
 
+##### type
+
+> **type**: `string`
+
+##### value
+
+> **value**: `string`
+
 #### Implementation of
 
-IIdentityConnector.createProof
+`IIdentityConnector.createProof`
 
-___
+***
 
-### createVerifiableCredential
+### createVerifiableCredential()
 
-▸ **createVerifiableCredential**\<`T`\>(`requestContext`, `issuerDocumentId`, `verificationMethodId`, `credentialId`, `schemaTypes`, `subject`, `revocationIndex`): `Promise`\<\{ `jwt`: `string` ; `verifiableCredential`: `IDidVerifiableCredential`\<`T`\>  }\>
+> **createVerifiableCredential**\<`T`\>(`requestContext`, `issuerDocumentId`, `verificationMethodId`, `credentialId`, `schemaTypes`, `subject`, `revocationIndex`): `Promise`\<`object`\>
 
 Create a verifiable credential for a verification method.
 
 #### Type parameters
 
-| Name | Type |
-| :------ | :------ |
-| `T` | extends `Object` |
+• **T** *extends* `object`
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `issuerDocumentId` | `string` | The id of the document issuing the verifiable credential. |
-| `verificationMethodId` | `string` | The verification method id to use. |
-| `credentialId` | `string` | The id of the credential. |
-| `schemaTypes` | `string` \| `string`[] | The type of the schemas for the data stored in the verifiable credential. |
-| `subject` | `T` \| `T`[] | The subject data to store for the credential. |
-| `revocationIndex` | `number` | The bitmap revocation index of the credential. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **issuerDocumentId**: `string`
+
+The id of the document issuing the verifiable credential.
+
+• **verificationMethodId**: `string`
+
+The verification method id to use.
+
+• **credentialId**: `string`
+
+The id of the credential.
+
+• **schemaTypes**: `string` \| `string`[]
+
+The type of the schemas for the data stored in the verifiable credential.
+
+• **subject**: `T` \| `T`[]
+
+The subject data to store for the credential.
+
+• **revocationIndex**: `number`
+
+The bitmap revocation index of the credential.
 
 #### Returns
 
-`Promise`\<\{ `jwt`: `string` ; `verifiableCredential`: `IDidVerifiableCredential`\<`T`\>  }\>
+`Promise`\<`object`\>
 
 The created verifiable credential and its token.
 
-**`Throws`**
+##### jwt
 
-NotFoundError if the id can not be resolved.
+> **jwt**: `string`
+
+##### verifiableCredential
+
+> **verifiableCredential**: `IDidVerifiableCredential`\<`T`\>
 
 #### Implementation of
 
-IIdentityConnector.createVerifiableCredential
+`IIdentityConnector.createVerifiableCredential`
 
-___
+#### Throws
 
-### createVerifiablePresentation
+NotFoundError if the id can not be resolved.
 
-▸ **createVerifiablePresentation**(`requestContext`, `holderDocumentId`, `presentationMethodId`, `schemaTypes`, `verifiableCredentials`, `expiresInMinutes?`): `Promise`\<\{ `jwt`: `string` ; `verifiablePresentation`: `IDidVerifiablePresentation`  }\>
+***
+
+### createVerifiablePresentation()
+
+> **createVerifiablePresentation**(`requestContext`, `holderDocumentId`, `presentationMethodId`, `schemaTypes`, `verifiableCredentials`, `expiresInMinutes`?): `Promise`\<`object`\>
 
 Create a verifiable presentation from the supplied verifiable credentials.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `holderDocumentId` | `string` | The id of the document creating the verifiable presentation. |
-| `presentationMethodId` | `string` | The method to associate with the presentation. |
-| `schemaTypes` | `string` \| `string`[] | The type of the schemas for the data stored in the verifiable credential. |
-| `verifiableCredentials` | `string`[] | The credentials to use for creating the presentation in jwt format. |
-| `expiresInMinutes?` | `number` | The time in minutes for the presentation to expire. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **holderDocumentId**: `string`
+
+The id of the document creating the verifiable presentation.
+
+• **presentationMethodId**: `string`
+
+The method to associate with the presentation.
+
+• **schemaTypes**: `string` \| `string`[]
+
+The type of the schemas for the data stored in the verifiable credential.
+
+• **verifiableCredentials**: `string`[]
+
+The credentials to use for creating the presentation in jwt format.
+
+• **expiresInMinutes?**: `number`
+
+The time in minutes for the presentation to expire.
 
 #### Returns
 
-`Promise`\<\{ `jwt`: `string` ; `verifiablePresentation`: `IDidVerifiablePresentation`  }\>
+`Promise`\<`object`\>
 
 The created verifiable presentation and its token.
 
-**`Throws`**
+##### jwt
 
-NotFoundError if the id can not be resolved.
+> **jwt**: `string`
+
+##### verifiablePresentation
+
+> **verifiablePresentation**: `IDidVerifiablePresentation`
 
 #### Implementation of
 
-IIdentityConnector.createVerifiablePresentation
+`IIdentityConnector.createVerifiablePresentation`
 
-___
+#### Throws
 
-### removeService
+NotFoundError if the id can not be resolved.
 
-▸ **removeService**(`requestContext`, `documentId`, `serviceId`): `Promise`\<`void`\>
+***
+
+### removeService()
+
+> **removeService**(`requestContext`, `documentId`, `serviceId`): `Promise`\<`void`\>
 
 Remove a service from the document.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `documentId` | `string` | The id of the document to remove the service from. |
-| `serviceId` | `string` | The id of the service. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **documentId**: `string`
+
+The id of the document to remove the service from.
+
+• **serviceId**: `string`
+
+The id of the service.
 
 #### Returns
 
@@ -305,29 +432,35 @@ Remove a service from the document.
 
 Nothing.
 
-**`Throws`**
+#### Implementation of
+
+`IIdentityConnector.removeService`
+
+#### Throws
 
 NotFoundError if the id can not be resolved.
 
-#### Implementation of
+***
 
-IIdentityConnector.removeService
+### removeVerificationMethod()
 
-___
-
-### removeVerificationMethod
-
-▸ **removeVerificationMethod**(`requestContext`, `documentId`, `verificationMethodId`): `Promise`\<`void`\>
+> **removeVerificationMethod**(`requestContext`, `documentId`, `verificationMethodId`): `Promise`\<`void`\>
 
 Remove a verification method from the document.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `documentId` | `string` | The id of the document to remove the verification method from. |
-| `verificationMethodId` | `string` | The id of the verification method. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **documentId**: `string`
+
+The id of the document to remove the verification method from.
+
+• **verificationMethodId**: `string`
+
+The id of the verification method.
 
 #### Returns
 
@@ -335,32 +468,35 @@ Remove a verification method from the document.
 
 Nothing.
 
-**`Throws`**
+#### Implementation of
+
+`IIdentityConnector.removeVerificationMethod`
+
+#### Throws
 
 NotFoundError if the id can not be resolved.
 
-**`Throws`**
+#### Throws
 
 NotSupportedError if the platform does not support multiple revocable keys.
 
-#### Implementation of
+***
 
-IIdentityConnector.removeVerificationMethod
+### resolveDocument()
 
-___
-
-### resolveDocument
-
-▸ **resolveDocument**(`requestContext`, `documentId`): `Promise`\<`IDidDocument`\>
+> **resolveDocument**(`requestContext`, `documentId`): `Promise`\<`IDidDocument`\>
 
 Resolve a document from its id.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `documentId` | `string` | The id of the document to resolve. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **documentId**: `string`
+
+The id of the document to resolve.
 
 #### Returns
 
@@ -368,29 +504,35 @@ Resolve a document from its id.
 
 The resolved document.
 
-**`Throws`**
+#### Implementation of
+
+`IIdentityConnector.resolveDocument`
+
+#### Throws
 
 NotFoundError if the id can not be resolved.
 
-#### Implementation of
+***
 
-IIdentityConnector.resolveDocument
+### revokeVerifiableCredentials()
 
-___
-
-### revokeVerifiableCredentials
-
-▸ **revokeVerifiableCredentials**(`requestContext`, `issuerDocumentId`, `credentialIndices`): `Promise`\<`void`\>
+> **revokeVerifiableCredentials**(`requestContext`, `issuerDocumentId`, `credentialIndices`): `Promise`\<`void`\>
 
 Revoke verifiable credential(s).
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `issuerDocumentId` | `string` | The id of the document to update the revocation list for. |
-| `credentialIndices` | `number`[] | The revocation bitmap index or indices to revoke. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **issuerDocumentId**: `string`
+
+The id of the document to update the revocation list for.
+
+• **credentialIndices**: `number`[]
+
+The revocation bitmap index or indices to revoke.
 
 #### Returns
 
@@ -400,23 +542,29 @@ Nothing.
 
 #### Implementation of
 
-IIdentityConnector.revokeVerifiableCredentials
+`IIdentityConnector.revokeVerifiableCredentials`
 
-___
+***
 
-### unrevokeVerifiableCredentials
+### unrevokeVerifiableCredentials()
 
-▸ **unrevokeVerifiableCredentials**(`requestContext`, `issuerDocumentId`, `credentialIndices`): `Promise`\<`void`\>
+> **unrevokeVerifiableCredentials**(`requestContext`, `issuerDocumentId`, `credentialIndices`): `Promise`\<`void`\>
 
 Unrevoke verifiable credential(s).
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `issuerDocumentId` | `string` | The id of the document to update the revocation list for. |
-| `credentialIndices` | `number`[] | The revocation bitmap index or indices to un revoke. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **issuerDocumentId**: `string`
+
+The id of the document to update the revocation list for.
+
+• **credentialIndices**: `number`[]
+
+The revocation bitmap index or indices to un revoke.
 
 #### Returns
 
@@ -426,26 +574,41 @@ Nothing.
 
 #### Implementation of
 
-IIdentityConnector.unrevokeVerifiableCredentials
+`IIdentityConnector.unrevokeVerifiableCredentials`
 
-___
+***
 
-### verifyProof
+### verifyProof()
 
-▸ **verifyProof**(`requestContext`, `documentId`, `verificationMethodId`, `bytes`, `signatureType`, `signatureValue`): `Promise`\<`boolean`\>
+> **verifyProof**(`requestContext`, `documentId`, `verificationMethodId`, `bytes`, `signatureType`, `signatureValue`): `Promise`\<`boolean`\>
 
 Verify proof for arbitrary data with the specified verification method.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `documentId` | `string` | The id of the document verifying the data. |
-| `verificationMethodId` | `string` | The verification method id to use. |
-| `bytes` | `string` | The data bytes to verify in base64. |
-| `signatureType` | `string` | The type of the signature for the proof. |
-| `signatureValue` | `string` | The value of the signature for the proof in base64. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **documentId**: `string`
+
+The id of the document verifying the data.
+
+• **verificationMethodId**: `string`
+
+The verification method id to use.
+
+• **bytes**: `string`
+
+The data bytes to verify in base64.
+
+• **signatureType**: `string`
+
+The type of the signature for the proof.
+
+• **signatureValue**: `string`
+
+The value of the signature for the proof in base64.
 
 #### Returns
 
@@ -455,4 +618,4 @@ True if the signature is valid.
 
 #### Implementation of
 
-IIdentityConnector.verifyProof
+`IIdentityConnector.verifyProof`

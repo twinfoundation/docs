@@ -4,9 +4,7 @@ Class for performing entity storage operations in-memory.
 
 ## Type parameters
 
-| Name | Type |
-| :------ | :------ |
-| `T` | `unknown` |
+• **T** = `unknown`
 
 ## Implements
 
@@ -14,24 +12,21 @@ Class for performing entity storage operations in-memory.
 
 ## Constructors
 
-### constructor
+### new MemoryEntityStorageConnector()
 
-• **new MemoryEntityStorageConnector**\<`T`\>(`entityDescriptor`, `config?`): [`MemoryEntityStorageConnector`](MemoryEntityStorageConnector.md)\<`T`\>
+> **new MemoryEntityStorageConnector**\<`T`\>(`entitySchema`, `config`?): [`MemoryEntityStorageConnector`](MemoryEntityStorageConnector.md)\<`T`\>
 
 Create a new instance of MemoryEntityStorageConnector.
 
-#### Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `T` | `unknown` |
-
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `entityDescriptor` | `IEntityDescriptor`\<`T`\> | The descriptor for the entity. |
-| `config?` | [`IMemoryEntityStorageConnectorConfig`](../interfaces/IMemoryEntityStorageConnectorConfig.md)\<`T`\> | The configuration for the entity storage connector. |
+• **entitySchema**: `IEntitySchema`\<`T`\>
+
+The schema for the entity.
+
+• **config?**: [`IMemoryEntityStorageConnectorConfig`](../interfaces/IMemoryEntityStorageConnectorConfig.md)\<`T`\>
+
+The configuration for the entity storage connector.
 
 #### Returns
 
@@ -39,43 +34,49 @@ Create a new instance of MemoryEntityStorageConnector.
 
 ## Methods
 
-### get
+### get()
 
-▸ **get**(`requestContext`, `id`, `secondaryIndex?`): `Promise`\<`undefined` \| `T` & \{ `tenantId?`: `string`  }\>
+> **get**(`requestContext`, `id`, `secondaryIndex`?): `Promise`\<`undefined` \| `T` & `object`\>
 
 Get an entity.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `id` | `string` | The id of the entity to get, or the index value if secondaryIndex is set. |
-| `secondaryIndex?` | keyof `T` | Get the item using a secondary index. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **id**: `string`
+
+The id of the entity to get, or the index value if secondaryIndex is set.
+
+• **secondaryIndex?**: keyof `T`
+
+Get the item using a secondary index.
 
 #### Returns
 
-`Promise`\<`undefined` \| `T` & \{ `tenantId?`: `string`  }\>
+`Promise`\<`undefined` \| `T` & `object`\>
 
 The object if it can be found or undefined, if request context was wildcard then tenantId is also included.
 
 #### Implementation of
 
-IEntityStorageConnector.get
+`IEntityStorageConnector.get`
 
-___
+***
 
-### getStore
+### getStore()
 
-▸ **getStore**(`tenantId`): `undefined` \| `T`[]
+> **getStore**(`tenantId`): `undefined` \| `T`[]
 
 Get the memory store for the specified tenant.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `tenantId` | `string` | The tenant id. |
+• **tenantId**: `string`
+
+The tenant id.
 
 #### Returns
 
@@ -83,50 +84,93 @@ Get the memory store for the specified tenant.
 
 The store.
 
-___
+***
 
-### query
+### query()
 
-▸ **query**(`requestContext`, `conditions?`, `sortProperties?`, `properties?`, `cursor?`, `pageSize?`): `Promise`\<\{ `cursor?`: `string` ; `entities`: `Partial`\<`T` & \{ `tenantId?`: `string`  }\>[] ; `pageSize?`: `number` ; `totalEntities`: `number`  }\>
+> **query**(`requestContext`, `conditions`?, `sortProperties`?, `properties`?, `cursor`?, `pageSize`?): `Promise`\<`object`\>
 
 Find all the entities which match the conditions.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `conditions?` | `EntityCondition`\<`T`\> | The conditions to match for the entities. |
-| `sortProperties?` | \{ `property`: keyof `T` ; `sortDirection`: `SortDirection`  }[] | The optional sort order. |
-| `properties?` | keyof `T`[] | The optional properties to return, defaults to all. |
-| `cursor?` | `string` | The cursor to request the next page of entities. |
-| `pageSize?` | `number` | The maximum number of entities in a page. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **conditions?**: `EntityCondition`\<`T`\>
+
+The conditions to match for the entities.
+
+• **sortProperties?**: `object`[]
+
+The optional sort order.
+
+• **properties?**: keyof `T`[]
+
+The optional properties to return, defaults to all.
+
+• **cursor?**: `string`
+
+The cursor to request the next page of entities.
+
+• **pageSize?**: `number`
+
+The maximum number of entities in a page.
 
 #### Returns
 
-`Promise`\<\{ `cursor?`: `string` ; `entities`: `Partial`\<`T` & \{ `tenantId?`: `string`  }\>[] ; `pageSize?`: `number` ; `totalEntities`: `number`  }\>
+`Promise`\<`object`\>
 
 All the entities for the storage matching the conditions,
 and a cursor which can be used to request more entities.
 
+##### cursor?
+
+> `optional` **cursor**: `string`
+
+An optional cursor, when defined can be used to call find to get more entities.
+
+##### entities
+
+> **entities**: `Partial`\<`T` & `object`\>[]
+
+The entities, which can be partial if a limited keys list was provided.
+If the request context was wildcard then tenantId is also included.
+
+##### pageSize?
+
+> `optional` **pageSize**: `number`
+
+Number of entities to return.
+
+##### totalEntities
+
+> **totalEntities**: `number`
+
+Total entities length.
+
 #### Implementation of
 
-IEntityStorageConnector.query
+`IEntityStorageConnector.query`
 
-___
+***
 
-### remove
+### remove()
 
-▸ **remove**(`requestContext`, `id`): `Promise`\<`void`\>
+> **remove**(`requestContext`, `id`): `Promise`\<`void`\>
 
 Remove the entity.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `id` | `string` | The id of the entity to remove. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **id**: `string`
+
+The id of the entity to remove.
 
 #### Returns
 
@@ -136,22 +180,25 @@ Nothing.
 
 #### Implementation of
 
-IEntityStorageConnector.remove
+`IEntityStorageConnector.remove`
 
-___
+***
 
-### set
+### set()
 
-▸ **set**(`requestContext`, `entity`): `Promise`\<`void`\>
+> **set**(`requestContext`, `entity`): `Promise`\<`void`\>
 
 Set an entity.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `entity` | `T` | The entity to set. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **entity**: `T`
+
+The entity to set.
 
 #### Returns
 
@@ -161,4 +208,4 @@ The id of the entity.
 
 #### Implementation of
 
-IEntityStorageConnector.set
+`IEntityStorageConnector.set`

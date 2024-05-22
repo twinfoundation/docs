@@ -5,91 +5,91 @@ https://www.w3.org/TR/vc-data-integrity/
 
 ## Properties
 
-### challenge
+### challenge?
 
-• `Optional` **challenge**: `string` \| `string`[]
+> `optional` **challenge**: `string` \| `string`[]
 
 Provided to mitigate replay attacks on domains.
 
-___
+***
 
-### created
+### created?
 
-• `Optional` **created**: `string`
+> `optional` **created**: `string`
 
 The iso date of when the proof was created.
 
-___
+***
 
-### domain
+### domain?
 
-• `Optional` **domain**: `string` \| `string`[]
+> `optional` **domain**: `string` \| `string`[]
 
 One or more security domains in which the proof is meant to be used.
 
-___
+***
 
-### expires
+### expires?
 
-• `Optional` **expires**: `string`
+> `optional` **expires**: `string`
 
 The iso date of when the proof expires.
 
-___
+***
 
-### id
+### id?
 
-• `Optional` **id**: `string`
+> `optional` **id**: `string`
 
 The id of the proof.
 
-___
+***
 
-### nonce
+### nonce?
 
-• `Optional` **nonce**: `string`
+> `optional` **nonce**: `string`
 
 Use of this field is to increase privacy by decreasing linkability
 that is the result of deterministically generated signatures.
 
-___
+***
 
-### previousProof
+### previousProof?
 
-• `Optional` **previousProof**: `string`
+> `optional` **previousProof**: `string`
 
 Identifies another data integrity proof that MUST verify before
 the current proof is processed
 
-___
+***
 
 ### proofPurpose
 
-• **proofPurpose**: `string`
+> **proofPurpose**: `string`
 
 The purpose of the proof.
 
-___
+***
 
-### proofValue
+### proofValue?
 
-• `Optional` **proofValue**: `string`
+> `optional` **proofValue**: `string`
 
 Contains the base-encoded binary data necessary to verify the
 digital proof using the verificationMethod specified.
 
-___
+***
 
 ### type
 
-• **type**: `string`
+> **type**: `string`
 
 The type of the proof.
 
-___
+***
 
-### verificationMethod
+### verificationMethod?
 
-• `Optional` **verificationMethod**: `string`
+> `optional` **verificationMethod**: `string`
 
 The verification method of the proof.

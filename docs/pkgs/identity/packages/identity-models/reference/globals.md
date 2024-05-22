@@ -2,7 +2,7 @@
 
 ## Enumerations
 
-- [IdentityRole](enums/IdentityRole.md)
+- [IdentityRole](enumerations/IdentityRole.md)
 
 ## Interfaces
 
@@ -17,8 +17,4 @@
 
 ## Variables
 
-### IdentityConnectorFactory
-
-• `Const` **IdentityConnectorFactory**: `Factory`\<[`IIdentityConnector`](interfaces/IIdentityConnector.md)\>
-
-Factory for creating identity connectors.
+- [IdentityConnectorFactory](variables/IdentityConnectorFactory.md)

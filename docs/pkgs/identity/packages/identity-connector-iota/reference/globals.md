@@ -10,8 +10,4 @@
 
 ## Variables
 
-### DEFAULT\_IDENTITY\_ACCOUNT\_INDEX
-
-• `Const` **DEFAULT\_IDENTITY\_ACCOUNT\_INDEX**: ``1000000``
-
-The default index to use for storing identities.
+- [DEFAULT\_IDENTITY\_ACCOUNT\_INDEX](variables/DEFAULT_IDENTITY_ACCOUNT_INDEX.md)

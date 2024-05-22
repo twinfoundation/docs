@@ -13,8 +13,4 @@
 
 ## Type Aliases
 
-### DidVerificationMethodType
-
-Ƭ **DidVerificationMethodType**: keyof `Pick`\<[`IDidDocument`](interfaces/IDidDocument.md), ``"verificationMethod"`` \| ``"authentication"`` \| ``"assertionMethod"`` \| ``"keyAgreement"`` \| ``"capabilityInvocation"`` \| ``"capabilityDelegation"``\>
-
-The types of verification method.
+- [DidVerificationMethodType](type-aliases/DidVerificationMethodType.md)

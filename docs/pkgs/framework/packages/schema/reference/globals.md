@@ -17,24 +17,9 @@
 
 ## Type Aliases
 
-### ISchemaValidationError
-
-Ƭ **ISchemaValidationError**: `ErrorObject`[]
-
-Schema validation error.
+- [ISchemaValidationError](type-aliases/ISchemaValidationError.md)
 
 ## Variables
 
-### DataTypeHandlerFactory
-
-• `Const` **DataTypeHandlerFactory**: `Factory`\<[`IDataTypeHandler`](interfaces/IDataTypeHandler.md)\>
-
-Factory for creating handlers for data types.
-
-___
-
-### IdentifierHandlerFactory
-
-• `Const` **IdentifierHandlerFactory**: `Factory`\<[`IIdentifierHandler`](interfaces/IIdentifierHandler.md)\>
-
-Factory for creating handlers for identifiers.
+- [DataTypeHandlerFactory](variables/DataTypeHandlerFactory.md)
+- [IdentifierHandlerFactory](variables/IdentifierHandlerFactory.md)

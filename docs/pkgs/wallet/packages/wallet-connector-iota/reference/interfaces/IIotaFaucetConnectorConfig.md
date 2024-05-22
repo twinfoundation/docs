@@ -6,14 +6,14 @@ Configuration for the IOTA Faucet Connector.
 
 ### clientOptions
 
-• **clientOptions**: `IClientOptions`
+> **clientOptions**: `IClientOptions`
 
 The configuration for the client.
 
-___
+***
 
 ### endpoint
 
-• **endpoint**: `string`
+> **endpoint**: `string`
 
 The endpoint for the faucet.

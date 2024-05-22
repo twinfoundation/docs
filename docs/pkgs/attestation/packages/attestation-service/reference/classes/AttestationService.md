@@ -8,18 +8,25 @@ Service for performing attestation operations to a connector.
 
 ## Constructors
 
-### constructor
+### new AttestationService()
 
-• **new AttestationService**(`dependencies`): [`AttestationService`](AttestationService.md)
+> **new AttestationService**(`dependencies`, `config`?): [`AttestationService`](AttestationService.md)
 
 Create a new instance of AttestationService.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `dependencies` | `Object` | The connectors to use. |
-| `dependencies.attestationConnector` | `IAttestationConnector` | The attestation connector. |
+• **dependencies**
+
+The connectors to use.
+
+• **dependencies.blobStorageConnection**: `IBlobStorageConnector`
+
+The connection to the blob storage.
+
+• **config?**: [`IAttestationServiceConfig`](../interfaces/IAttestationServiceConfig.md)
+
+The configuration for the service.
 
 #### Returns
 
@@ -27,44 +34,61 @@ Create a new instance of AttestationService.
 
 ## Methods
 
-### sign
+### sign()
 
-▸ **sign**(`requestContext`, `data`): `Promise`\<`IDidProof`\>
+> **sign**(`requestContext`, `keyId`, `data`, `options`?): `Promise`\<`IAttestationProof`\>
 
 Sign the data and return the proof.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `data` | `unknown` | The data to sign. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **keyId**: `string`
+
+The key id from a vault to sign the data.
+
+• **data**: `string`
+
+The data to store in blob storage and sign as base64.
+
+• **options?**
+
+Additional options for the attestation service.
+
+• **options.namespace?**: `string`
+
+The namespace to use for storing, defaults to service configured namespace.
 
 #### Returns
 
-`Promise`\<`IDidProof`\>
+`Promise`\<`IAttestationProof`\>
 
 The proof for the data with the id set as a unique identifier for the data.
 
 #### Implementation of
 
-IAttestation.sign
+`IAttestation.sign`
 
-___
+***
 
-### verify
+### verify()
 
-▸ **verify**(`requestContext`, `data`, `proof`): `Promise`\<`boolean`\>
+> **verify**(`requestContext`, `proof`): `Promise`\<`boolean`\>
 
-Verify the data against the proof the proof.
+Verify the data against the proof.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `data` | `unknown` | The data to verify. |
-| `proof` | `IDidProof` | The proof to verify against. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **proof**: `IAttestationProof`
+
+The proof to verify against.
 
 #### Returns
 
@@ -74,4 +98,4 @@ True if the verification is successful.
 
 #### Implementation of
 
-IAttestation.verify
+`IAttestation.verify`

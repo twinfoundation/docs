@@ -6,47 +6,47 @@ Interface describing a verifiable presentation.
 
 ### @context
 
-• **@context**: `string` \| `string`[]
+> **@context**: `string` \| `string`[]
 
 The context for the verifiable credential.
 
-___
+***
 
-### holder
+### holder?
 
-• `Optional` **holder**: `string`
+> `optional` **holder**: `string`
 
 The entity generating the presentation.
 
-___
+***
 
-### id
+### id?
 
-• `Optional` **id**: `string`
+> `optional` **id**: `string`
 
 Provide a unique identifier for the presentation.
 
-___
+***
 
-### proof
+### proof?
 
-• `Optional` **proof**: [`IDidProof`](IDidProof.md) \| [`IDidProof`](IDidProof.md)[]
+> `optional` **proof**: [`IDidProof`](IDidProof.md) \| [`IDidProof`](IDidProof.md)[]
 
 Proofs that the verifiable presentation is valid.
 Optional if a different proof method is used, such as JWT.
 
-___
+***
 
 ### type
 
-• **type**: `string`[]
+> **type**: `string`[]
 
 The types of the data stored in the verifiable credential.
 
-___
+***
 
 ### verifiableCredential
 
-• **verifiableCredential**: `string`[]
+> **verifiableCredential**: `string`[]
 
 The data for the verifiable credentials.

@@ -6,8 +6,4 @@
 
 ## Type Aliases
 
-### IConsoleLoggingConnectorConfig
-
-Ƭ **IConsoleLoggingConnectorConfig**: `ILoggingLevelsConfig`
-
-Configuration for the Console Logging Connector.
+- [IConsoleLoggingConnectorConfig](type-aliases/IConsoleLoggingConnectorConfig.md)

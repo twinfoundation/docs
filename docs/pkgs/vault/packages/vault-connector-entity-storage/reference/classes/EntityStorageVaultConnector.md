@@ -1,6 +1,6 @@
 # Class: EntityStorageVaultConnector
 
-Class for performing vault operations in memory.
+Class for performing vault operations in entity storage.
 
 ## Implements
 
@@ -8,19 +8,25 @@ Class for performing vault operations in memory.
 
 ## Constructors
 
-### constructor
+### new EntityStorageVaultConnector()
 
-• **new EntityStorageVaultConnector**(`dependencies`): [`EntityStorageVaultConnector`](EntityStorageVaultConnector.md)
+> **new EntityStorageVaultConnector**(`dependencies`): [`EntityStorageVaultConnector`](EntityStorageVaultConnector.md)
 
 Create a new instance of EntityStorageVaultConnector.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `dependencies` | `Object` | The dependencies for the logging connector. |
-| `dependencies.vaultKeyEntityStorageConnector` | `IEntityStorageConnector`\<[`IVaultKey`](../interfaces/IVaultKey.md)\> | The vault key entity storage connector dependency. |
-| `dependencies.vaultSecretEntityStorageConnector` | `IEntityStorageConnector`\<[`IVaultSecret`](../interfaces/IVaultSecret.md)\> | The vault secret entity storage connector dependency. |
+• **dependencies**
+
+The dependencies for the logging connector.
+
+• **dependencies.vaultKeyEntityStorageConnector**: `IEntityStorageConnector`\<[`VaultKey`](VaultKey.md)\>
+
+The vault key entity storage connector dependency.
+
+• **dependencies.vaultSecretEntityStorageConnector**: `IEntityStorageConnector`\<[`VaultSecret`](VaultSecret.md)\>
+
+The vault secret entity storage connector dependency.
 
 #### Returns
 
@@ -28,21 +34,33 @@ Create a new instance of EntityStorageVaultConnector.
 
 ## Methods
 
-### addKey
+### addKey()
 
-▸ **addKey**(`requestContext`, `name`, `type`, `privateKey`, `publicKey`): `Promise`\<`void`\>
+> **addKey**(`requestContext`, `name`, `type`, `privateKey`, `publicKey`): `Promise`\<`void`\>
 
 Add a key to the vault.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `name` | `string` | The name of the key to add to the vault. |
-| `type` | ``"Ed25519"`` | The type of key to add. |
-| `privateKey` | `string` | The private key in base64 format. |
-| `publicKey` | `string` | The public key in base64 format. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **name**: `string`
+
+The name of the key to add to the vault.
+
+• **type**: `VaultKeyType`
+
+The type of key to add.
+
+• **privateKey**: `string`
+
+The private key in base64 format.
+
+• **publicKey**: `string`
+
+The public key in base64 format.
 
 #### Returns
 
@@ -52,23 +70,29 @@ Nothing.
 
 #### Implementation of
 
-IVaultConnector.addKey
+`IVaultConnector.addKey`
 
-___
+***
 
-### createKey
+### createKey()
 
-▸ **createKey**(`requestContext`, `name`, `type`): `Promise`\<`string`\>
+> **createKey**(`requestContext`, `name`, `type`): `Promise`\<`string`\>
 
 Create a key in the vault.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `name` | `string` | The name of the key to create in the vault. |
-| `type` | ``"Ed25519"`` | The type of key to create. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **name**: `string`
+
+The name of the key to create in the vault.
+
+• **type**: `VaultKeyType`
+
+The type of key to create.
 
 #### Returns
 
@@ -78,24 +102,33 @@ The public key for the key pair in base64.
 
 #### Implementation of
 
-IVaultConnector.createKey
+`IVaultConnector.createKey`
 
-___
+***
 
-### decrypt
+### decrypt()
 
-▸ **decrypt**(`requestContext`, `name`, `encryptionType`, `encryptedData`): `Promise`\<`string`\>
+> **decrypt**(`requestContext`, `name`, `encryptionType`, `encryptedData`): `Promise`\<`string`\>
 
 Decrypt the data using a key in the vault.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `name` | `string` | The name of the key to use for decryption. |
-| `encryptionType` | ``"ChaCha20Poly1305"`` | The type of encryption to use. |
-| `encryptedData` | `string` | The data to decrypt in base64. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **name**: `string`
+
+The name of the key to use for decryption.
+
+• **encryptionType**: `"ChaCha20Poly1305"`
+
+The type of encryption to use.
+
+• **encryptedData**: `string`
+
+The data to decrypt in base64.
 
 #### Returns
 
@@ -105,24 +138,33 @@ The decrypted data in base64.
 
 #### Implementation of
 
-IVaultConnector.decrypt
+`IVaultConnector.decrypt`
 
-___
+***
 
-### encrypt
+### encrypt()
 
-▸ **encrypt**(`requestContext`, `name`, `encryptionType`, `data`): `Promise`\<`string`\>
+> **encrypt**(`requestContext`, `name`, `encryptionType`, `data`): `Promise`\<`string`\>
 
 Encrypt the data using a key in the vault.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `name` | `string` | The name of the key to use for encryption. |
-| `encryptionType` | ``"ChaCha20Poly1305"`` | The type of encryption to use. |
-| `data` | `string` | The data to encrypt in base64. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **name**: `string`
+
+The name of the key to use for encryption.
+
+• **encryptionType**: `"ChaCha20Poly1305"`
+
+The type of encryption to use.
+
+• **data**: `string`
+
+The data to encrypt in base64.
 
 #### Returns
 
@@ -132,53 +174,75 @@ The encrypted data in base64.
 
 #### Implementation of
 
-IVaultConnector.encrypt
+`IVaultConnector.encrypt`
 
-___
+***
 
-### getKey
+### getKey()
 
-▸ **getKey**(`requestContext`, `name`): `Promise`\<\{ `privateKey`: `string` ; `publicKey`: `string` ; `type`: ``"Ed25519"``  }\>
+> **getKey**(`requestContext`, `name`): `Promise`\<`object`\>
 
 Get a key from the vault.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `name` | `string` | The name of the key to get from the vault. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **name**: `string`
+
+The name of the key to get from the vault.
 
 #### Returns
 
-`Promise`\<\{ `privateKey`: `string` ; `publicKey`: `string` ; `type`: ``"Ed25519"``  }\>
+`Promise`\<`object`\>
 
 The key.
 
+##### privateKey
+
+> **privateKey**: `string`
+
+The private key in base64 format.
+
+##### publicKey
+
+> **publicKey**: `string`
+
+The public key in base64 format.
+
+##### type
+
+> **type**: `VaultKeyType`
+
+The type of the key e.g. Ed25519, Secp256k1.
+
 #### Implementation of
 
-IVaultConnector.getKey
+`IVaultConnector.getKey`
 
-___
+***
 
-### getSecret
+### getSecret()
 
-▸ **getSecret**\<`T`\>(`requestContext`, `name`): `Promise`\<`T`\>
+> **getSecret**\<`T`\>(`requestContext`, `name`): `Promise`\<`T`\>
 
 Get a secret from the vault.
 
 #### Type parameters
 
-| Name |
-| :------ |
-| `T` |
+• **T**
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `name` | `string` | The name of the item in the vault to get. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **name**: `string`
+
+The name of the item in the vault to get.
 
 #### Returns
 
@@ -186,28 +250,31 @@ Get a secret from the vault.
 
 The item from the vault.
 
-**`Throws`**
+#### Implementation of
+
+`IVaultConnector.getSecret`
+
+#### Throws
 
 Error if the item is not found.
 
-#### Implementation of
+***
 
-IVaultConnector.getSecret
+### removeKey()
 
-___
-
-### removeKey
-
-▸ **removeKey**(`requestContext`, `name`): `Promise`\<`void`\>
+> **removeKey**(`requestContext`, `name`): `Promise`\<`void`\>
 
 Remove a key from the vault.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `name` | `string` | The name of the key to create in the value. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **name**: `string`
+
+The name of the key to create in the value.
 
 #### Returns
 
@@ -217,22 +284,25 @@ Nothing.
 
 #### Implementation of
 
-IVaultConnector.removeKey
+`IVaultConnector.removeKey`
 
-___
+***
 
-### removeSecret
+### removeSecret()
 
-▸ **removeSecret**(`requestContext`, `name`): `Promise`\<`void`\>
+> **removeSecret**(`requestContext`, `name`): `Promise`\<`void`\>
 
 Remove a secret from the vault.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `name` | `string` | The name of the item in the vault to remove. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **name**: `string`
+
+The name of the item in the vault to remove.
 
 #### Returns
 
@@ -240,29 +310,35 @@ Remove a secret from the vault.
 
 Nothing.
 
-**`Throws`**
+#### Implementation of
+
+`IVaultConnector.removeSecret`
+
+#### Throws
 
 Error if the item is not found.
 
-#### Implementation of
+***
 
-IVaultConnector.removeSecret
+### renameKey()
 
-___
-
-### renameKey
-
-▸ **renameKey**(`requestContext`, `name`, `newName`): `Promise`\<`void`\>
+> **renameKey**(`requestContext`, `name`, `newName`): `Promise`\<`void`\>
 
 Rename a key in the vault.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `name` | `string` | The name of the key to rename. |
-| `newName` | `string` | The new name of the key. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **name**: `string`
+
+The name of the key to rename.
+
+• **newName**: `string`
+
+The new name of the key.
 
 #### Returns
 
@@ -272,29 +348,33 @@ Nothing.
 
 #### Implementation of
 
-IVaultConnector.renameKey
+`IVaultConnector.renameKey`
 
-___
+***
 
-### setSecret
+### setSecret()
 
-▸ **setSecret**\<`T`\>(`requestContext`, `name`, `item`): `Promise`\<`void`\>
+> **setSecret**\<`T`\>(`requestContext`, `name`, `item`): `Promise`\<`void`\>
 
 Store a secret in the vault.
 
 #### Type parameters
 
-| Name |
-| :------ |
-| `T` |
+• **T**
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `name` | `string` | The name of the item in the vault to set. |
-| `item` | `T` | The item to add to the vault. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **name**: `string`
+
+The name of the item in the vault to set.
+
+• **item**: `T`
+
+The item to add to the vault.
 
 #### Returns
 
@@ -304,23 +384,29 @@ Nothing.
 
 #### Implementation of
 
-IVaultConnector.setSecret
+`IVaultConnector.setSecret`
 
-___
+***
 
-### sign
+### sign()
 
-▸ **sign**(`requestContext`, `name`, `data`): `Promise`\<`string`\>
+> **sign**(`requestContext`, `name`, `data`): `Promise`\<`string`\>
 
 Sign the data using a key in the vault.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `name` | `string` | The name of the key to use for signing. |
-| `data` | `string` | The data to sign in base64. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **name**: `string`
+
+The name of the key to use for signing.
+
+• **data**: `string`
+
+The data to sign in base64.
 
 #### Returns
 
@@ -330,24 +416,33 @@ The signature for the data in base64.
 
 #### Implementation of
 
-IVaultConnector.sign
+`IVaultConnector.sign`
 
-___
+***
 
-### verify
+### verify()
 
-▸ **verify**(`requestContext`, `name`, `data`, `signature`): `Promise`\<`boolean`\>
+> **verify**(`requestContext`, `name`, `data`, `signature`): `Promise`\<`boolean`\>
 
 Verify the signature of the data using a key in the vault.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `name` | `string` | The name of the key to use for verification. |
-| `data` | `string` | The data that was signed in base64. |
-| `signature` | `string` | The signature to verify in base64. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **name**: `string`
+
+The name of the key to use for verification.
+
+• **data**: `string`
+
+The data that was signed in base64.
+
+• **signature**: `string`
+
+The signature to verify in base64.
 
 #### Returns
 
@@ -357,4 +452,4 @@ True if the verification is successful.
 
 #### Implementation of
 
-IVaultConnector.verify
+`IVaultConnector.verify`

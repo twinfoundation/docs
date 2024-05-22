@@ -2,11 +2,9 @@
 
 Client for performing identity through to REST endpoints.
 
-## Hierarchy
+## Extends
 
 - `BaseRestClient`
-
-  ↳ **`IdentityClient`**
 
 ## Implements
 
@@ -14,17 +12,17 @@ Client for performing identity through to REST endpoints.
 
 ## Constructors
 
-### constructor
+### new IdentityClient()
 
-• **new IdentityClient**(`config`): [`IdentityClient`](IdentityClient.md)
+> **new IdentityClient**(`config`): [`IdentityClient`](IdentityClient.md)
 
 Create a new instance of IdentityClient.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `config` | `IBaseRestClientConfig` | The configuration for the client. |
+• **config**: `IBaseRestClientConfig`
+
+The configuration for the client.
 
 #### Returns
 
@@ -32,31 +30,39 @@ Create a new instance of IdentityClient.
 
 #### Overrides
 
-BaseRestClient.constructor
+`BaseRestClient.constructor`
 
 ## Methods
 
-### fetch
+### fetch()
 
-▸ **fetch**\<`T`, `U`\>(`requestContext`, `route`, `method`, `request?`): `Promise`\<`U`\>
+> **fetch**\<`T`, `U`\>(`requestContext`, `route`, `method`, `request`?): `Promise`\<`U`\>
 
 Perform a request in json format.
 
 #### Type parameters
 
-| Name | Type |
-| :------ | :------ |
-| `T` | extends `IHttpRequest`\<`unknown`\> |
-| `U` | extends `IHttpResponse`\<`unknown`\> |
+• **T** *extends* `IHttpRequest`\<`unknown`\>
+
+• **U** *extends* `IHttpResponse`\<`unknown`\>
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `route` | `string` | The route of the request. |
-| `method` | `HttpMethods` | The http method. |
-| `request?` | `T` | Request to send to the endpoint. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **route**: `string`
+
+The route of the request.
+
+• **method**: `HttpMethods`
+
+The http method.
+
+• **request?**: `T`
+
+Request to send to the endpoint.
 
 #### Returns
 
@@ -66,13 +72,13 @@ The response.
 
 #### Inherited from
 
-BaseRestClient.fetch
+`BaseRestClient.fetch`
 
-___
+***
 
-### getEndpointWithPrefix
+### getEndpointWithPrefix()
 
-▸ **getEndpointWithPrefix**(): `string`
+> **getEndpointWithPrefix**(): `string`
 
 Get the endpoint with the prefix for the namespace.
 
@@ -84,103 +90,171 @@ The endpoint with namespace prefix attached.
 
 #### Inherited from
 
-BaseRestClient.getEndpointWithPrefix
+`BaseRestClient.getEndpointWithPrefix`
 
-___
+***
 
-### identityCreate
+### identityCreate()
 
-▸ **identityCreate**(`requestContext`, `role`, `properties?`): `Promise`\<\{ `identity`: `string`  }\>
+> **identityCreate**(`requestContext`, `role`, `properties`?): `Promise`\<`object`\>
 
 Create a new identity.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `role` | `IdentityRole` | The role for the identity. |
-| `properties?` | `IProperty`[] | The profile properties. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **role**: `IdentityRole`
+
+The role for the identity.
+
+• **properties?**: `IProperty`[]
+
+The profile properties.
 
 #### Returns
 
-`Promise`\<\{ `identity`: `string`  }\>
+`Promise`\<`object`\>
 
 The created identity details.
 
+##### identity
+
+> **identity**: `string`
+
+The identity created.
+
 #### Implementation of
 
-IIdentity.identityCreate
+`IIdentity.identityCreate`
 
-___
+***
 
-### identityGet
+### identityGet()
 
-▸ **identityGet**(`requestContext`, `identity`, `propertyNames?`): `Promise`\<\{ `properties?`: `IProperty`[] ; `role`: `IdentityRole`  }\>
+> **identityGet**(`requestContext`, `identity`, `propertyNames`?): `Promise`\<`object`\>
 
 Get an item by identity.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `identity` | `string` | The identity of the item to get. |
-| `propertyNames?` | `string`[] | The properties to get for the item, defaults to all. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **identity**: `string`
+
+The identity of the item to get.
+
+• **propertyNames?**: `string`[]
+
+The properties to get for the item, defaults to all.
 
 #### Returns
 
-`Promise`\<\{ `properties?`: `IProperty`[] ; `role`: `IdentityRole`  }\>
+`Promise`\<`object`\>
 
 The items properties.
 
+##### properties?
+
+> `optional` **properties**: `IProperty`[]
+
+##### role
+
+> **role**: `IdentityRole`
+
 #### Implementation of
 
-IIdentity.identityGet
+`IIdentity.identityGet`
 
-___
+***
 
-### identityList
+### identityList()
 
-▸ **identityList**(`requestContext`, `role`, `propertyNames?`, `cursor?`, `pageSize?`): `Promise`\<\{ `cursor?`: `string` ; `identities`: \{ `identity`: `string` ; `properties?`: `IProperty`[]  }[] ; `pageSize?`: `number` ; `totalEntities`: `number`  }\>
+> **identityList**(`requestContext`, `role`, `propertyNames`?, `cursor`?, `pageSize`?): `Promise`\<`object`\>
 
 Get a list of the requested types.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `role` | `IdentityRole` | The role type to lookup. |
-| `propertyNames?` | `string`[] | The properties to get for the identities, default to all if undefined. |
-| `cursor?` | `string` | The cursor for paged requests. |
-| `pageSize?` | `number` | The maximum number of items in a page. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **role**: `IdentityRole`
+
+The role type to lookup.
+
+• **propertyNames?**: `string`[]
+
+The properties to get for the identities, default to all if undefined.
+
+• **cursor?**: `string`
+
+The cursor for paged requests.
+
+• **pageSize?**: `number`
+
+The maximum number of items in a page.
 
 #### Returns
 
-`Promise`\<\{ `cursor?`: `string` ; `identities`: \{ `identity`: `string` ; `properties?`: `IProperty`[]  }[] ; `pageSize?`: `number` ; `totalEntities`: `number`  }\>
+`Promise`\<`object`\>
 
 The list of items and cursor for paging.
 
+##### cursor?
+
+> `optional` **cursor**: `string`
+
+An optional cursor, when defined can be used to call find to get more entities.
+
+##### identities
+
+> **identities**: `object`[]
+
+The identities.
+
+##### pageSize?
+
+> `optional` **pageSize**: `number`
+
+Number of entities to return.
+
+##### totalEntities
+
+> **totalEntities**: `number`
+
+Total entities length.
+
 #### Implementation of
 
-IIdentity.identityList
+`IIdentity.identityList`
 
-___
+***
 
-### identityUpdate
+### identityUpdate()
 
-▸ **identityUpdate**(`requestContext`, `identity`, `properties`): `Promise`\<`void`\>
+> **identityUpdate**(`requestContext`, `identity`, `properties`): `Promise`\<`void`\>
 
 Update an item.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `identity` | `string` | The identity to update. |
-| `properties` | `IProperty`[] | Properties for the profile, set a properties value to undefined to remove it. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **identity**: `string`
+
+The identity to update.
+
+• **properties**: `IProperty`[]
+
+Properties for the profile, set a properties value to undefined to remove it.
 
 #### Returns
 
@@ -190,4 +264,4 @@ Nothing.
 
 #### Implementation of
 
-IIdentity.identityUpdate
+`IIdentity.identityUpdate`

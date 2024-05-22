@@ -6,6 +6,6 @@ Configuration for the File Entity Storage Connector.
 
 ### directory
 
-• **directory**: `string`
+> **directory**: `string`
 
 The directory to use for storage.

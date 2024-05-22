@@ -4,9 +4,9 @@ Implementation of Bip39 for mnemonic generation.
 
 ## Constructors
 
-### constructor
+### new Bip39()
 
-• **new Bip39**(): [`Bip39`](Bip39.md)
+> **new Bip39**(): [`Bip39`](Bip39.md)
 
 #### Returns
 
@@ -14,37 +14,21 @@ Implementation of Bip39 for mnemonic generation.
 
 ## Methods
 
-### entropyChecksumBits
+### entropyToMnemonic()
 
-▸ **entropyChecksumBits**(`entropy`): `string`
-
-Calculate the entropy checksum.
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `entropy` | `Uint8Array` | The entropy to calculate the checksum for. |
-
-#### Returns
-
-`string`
-
-The checksum.
-
-___
-
-### entropyToMnemonic
-
-▸ **entropyToMnemonic**(`entropy`): `string`
+> `static` **entropyToMnemonic**(`entropy`, `words`): `string`
 
 Generate a mnemonic from the entropy.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `entropy` | `Uint8Array` | The entropy to generate. |
+• **entropy**: `Uint8Array`
+
+The entropy to generate.
+
+• **words**: `string`[]= `wordlist`
+
+The wordlist to use, defaults to the English wordlist.
 
 #### Returns
 
@@ -52,23 +36,27 @@ Generate a mnemonic from the entropy.
 
 The mnemonic.
 
-**`Throws`**
+#### Throws
 
 Error if the length of the entropy is not a multiple of 4, or is less than 16 or greater than 32.
 
-___
+***
 
-### mnemonicToEntropy
+### mnemonicToEntropy()
 
-▸ **mnemonicToEntropy**(`mnemonic`): `Uint8Array`
+> `static` **mnemonicToEntropy**(`mnemonic`, `words`): `Uint8Array`
 
 Convert the mnemonic back to entropy.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `mnemonic` | `string` | The mnemonic to convert. |
+• **mnemonic**: `string`
+
+The mnemonic to convert.
+
+• **words**: `string`[]= `wordlist`
+
+The wordlist to use, defaults to the English wordlist.
 
 #### Returns
 
@@ -76,26 +64,27 @@ Convert the mnemonic back to entropy.
 
 The entropy.
 
-**`Throws`**
+#### Throws
 
 Error if the number of words is not a multiple of 3.
 
-___
+***
 
-### mnemonicToSeed
+### mnemonicToSeed()
 
-▸ **mnemonicToSeed**(`mnemonic`, `password?`, `iterations?`, `keyLength?`): `Uint8Array`
+> `static` **mnemonicToSeed**(`mnemonic`, `password`?): `Uint8Array`
 
 Convert a mnemonic to a seed.
 
 #### Parameters
 
-| Name | Type | Default value | Description |
-| :------ | :------ | :------ | :------ |
-| `mnemonic` | `string` | `undefined` | The mnemonic to convert. |
-| `password?` | `string` | `undefined` | The password to apply to the seed generation. |
-| `iterations` | `number` | `2048` | The number of iterations to perform on the password function, defaults to 2048. |
-| `keyLength` | `number` | `64` | The size of the key length to generate, defaults to 64. |
+• **mnemonic**: `string`
+
+The mnemonic to convert.
+
+• **password?**: `string`
+
+The password to apply to the seed generation.
 
 #### Returns
 
@@ -103,19 +92,23 @@ Convert a mnemonic to a seed.
 
 The seed.
 
-___
+***
 
-### randomMnemonic
+### randomMnemonic()
 
-▸ **randomMnemonic**(`length?`): `string`
+> `static` **randomMnemonic**(`strength`, `words`): `string`
 
 Generate a random mnemonic.
 
 #### Parameters
 
-| Name | Type | Default value | Description |
-| :------ | :------ | :------ | :------ |
-| `length` | `number` | `256` | The length of the mnemonic to generate, defaults to 256. |
+• **strength**: `number`= `256`
+
+The strength of the mnemonic to generate, defaults to 256.
+
+• **words**: `string`[]= `wordlist`
+
+The wordlist to use, defaults to the English wordlist.
 
 #### Returns
 
@@ -123,25 +116,6 @@ Generate a random mnemonic.
 
 The random mnemonic.
 
-**`Throws`**
+#### Throws
 
 Error if the length is not a multiple of 32.
-
-___
-
-### setWordList
-
-▸ **setWordList**(`wordlistData`, `joiningChar?`): `void`
-
-Set the wordlist and joining character.
-
-#### Parameters
-
-| Name | Type | Default value | Description |
-| :------ | :------ | :------ | :------ |
-| `wordlistData` | `string`[] | `undefined` | Array of words. |
-| `joiningChar` | `string` | `" "` | The character to join the words with. |
-
-#### Returns
-
-`void`

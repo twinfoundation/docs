@@ -38,6 +38,9 @@ This is the overview of the packages.
 - [@gtsc/blob-storage-models](pkgs/blob-storage/packages/blob-storage-models/overview) - Models which define the structure of the blob storage contracts and connectors
 - [@gtsc/blob-storage-connector-memory](pkgs/blob-storage/packages/blob-storage-connector-memory/overview) - Blob Storage connector implementation using in-memory storage
 - [@gtsc/blob-storage-connector-file](pkgs/blob-storage/packages/blob-storage-connector-file/overview) - Blob Storage connector implementation using file storage
+- [@gtsc/blob-storage-connector-ipfs](pkgs/blob-storage/packages/blob-storage-connector-ipfs/overview) - Blob Storage connector implementation using IPFS
+- [@gtsc/blob-storage-service](pkgs/blob-storage/packages/blob-storage-service/overview) - Blob storage contract implementation and REST endpoint definitions
+- [@gtsc/blob-storage-rest-client](pkgs/blob-storage/packages/blob-storage-rest-client/overview) - Blob storage implementation which can connect to REST endpoints
 
 ## Logging
 

@@ -6,14 +6,14 @@ Configuration for the IOTA Wallet Connector.
 
 ### clientOptions
 
-• **clientOptions**: `IClientOptions`
+> **clientOptions**: `IClientOptions`
 
 The configuration for the client.
 
-___
+***
 
-### walletMnemonicId
+### walletMnemonicId?
 
-• `Optional` **walletMnemonicId**: `string`
+> `optional` **walletMnemonicId**: `string`
 
 The id of the entry in the vault containing the wallet mnemonic.

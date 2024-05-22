@@ -2,25 +2,23 @@
 
 Interface describing a wallet connector.
 
-## Hierarchy
+## Extends
 
 - `IService`
 
-  ↳ **`IWalletConnector`**
-
 ## Methods
 
-### bootstrap
+### bootstrap()?
 
-▸ **bootstrap**(`requestContext`): `Promise`\<`void`\>
+> `optional` **bootstrap**(`requestContext`): `Promise`\<`void`\>
 
 Bootstrap the service by creating and initializing any resources it needs.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The request context for bootstrapping. |
+• **requestContext**: `IRequestContext`
+
+The request context for bootstrapping.
 
 #### Returns
 
@@ -30,21 +28,21 @@ Nothing.
 
 #### Inherited from
 
-IService.bootstrap
+`IService.bootstrap`
 
-___
+***
 
-### create
+### create()
 
-▸ **create**(`requestContext`): `Promise`\<`void`\>
+> **create**(`requestContext`): `Promise`\<`void`\>
 
 Create a new wallet.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
 
 #### Returns
 
@@ -52,22 +50,31 @@ Create a new wallet.
 
 Nothing.
 
-___
+***
 
-### ensureBalance
+### ensureBalance()
 
-▸ **ensureBalance**(`requestContext`, `address`, `ensureBalance`, `timeoutInSeconds?`): `Promise`\<`boolean`\>
+> **ensureBalance**(`requestContext`, `address`, `ensureBalance`, `timeoutInSeconds`?): `Promise`\<`boolean`\>
 
 Ensure the balance for an address in a wallet.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `address` | `string` | The bech32 encoded address. |
-| `ensureBalance` | `bigint` | The balance to ensure on the address. |
-| `timeoutInSeconds?` | `number` | The timeout in seconds to wait for the funding to complete. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **address**: `string`
+
+The bech32 encoded address.
+
+• **ensureBalance**: `bigint`
+
+The balance to ensure on the address.
+
+• **timeoutInSeconds?**: `number`
+
+The timeout in seconds to wait for the funding to complete.
 
 #### Returns
 
@@ -75,20 +82,23 @@ Ensure the balance for an address in a wallet.
 
 True if the balance has been ensured.
 
-___
+***
 
-### getBalance
+### getBalance()
 
-▸ **getBalance**(`requestContext`, `address`): `Promise`\<`bigint`\>
+> **getBalance**(`requestContext`, `address`): `Promise`\<`bigint`\>
 
 Get the balance for an address in a wallet.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `address` | `string` | The bech32 encoded address. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **address**: `string`
+
+The bech32 encoded address.
 
 #### Returns
 
@@ -96,20 +106,23 @@ Get the balance for an address in a wallet.
 
 The balance of the wallet address.
 
-___
+***
 
-### getStorageCosts
+### getStorageCosts()
 
-▸ **getStorageCosts**(`requestContext`, `address`): `Promise`\<`bigint`\>
+> **getStorageCosts**(`requestContext`, `address`): `Promise`\<`bigint`\>
 
 Get the storage costs for an address in a wallet.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `address` | `string` | The bech32 encoded address. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **address**: `string`
+
+The bech32 encoded address.
 
 #### Returns
 
@@ -117,11 +130,11 @@ Get the storage costs for an address in a wallet.
 
 The storage costs for the address.
 
-___
+***
 
-### start
+### start()?
 
-▸ **start**(): `Promise`\<`void`\>
+> `optional` **start**(): `Promise`\<`void`\>
 
 The service needs to be started when the application is initialized.
 
@@ -133,13 +146,13 @@ Nothing.
 
 #### Inherited from
 
-IService.start
+`IService.start`
 
-___
+***
 
-### stop
+### stop()?
 
-▸ **stop**(): `Promise`\<`void`\>
+> `optional` **stop**(): `Promise`\<`void`\>
 
 The service needs to be stopped when the application is closed.
 
@@ -151,23 +164,29 @@ Nothing.
 
 #### Inherited from
 
-IService.stop
+`IService.stop`
 
-___
+***
 
-### transfer
+### transfer()
 
-▸ **transfer**(`requestContext`, `address`, `amount`): `Promise`\<`void`\>
+> **transfer**(`requestContext`, `address`, `amount`): `Promise`\<`void`\>
 
 Transfer funds to an address.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `address` | `string` | The bech32 encoded address to send the funds to. |
-| `amount` | `bigint` | The amount to transfer. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **address**: `string`
+
+The bech32 encoded address to send the funds to.
+
+• **amount**: `bigint`
+
+The amount to transfer.
 
 #### Returns
 

@@ -2,11 +2,9 @@
 
 Client for performing logging through to REST endpoints.
 
-## Hierarchy
+## Extends
 
 - `BaseRestClient`
-
-  ↳ **`LoggingClient`**
 
 ## Implements
 
@@ -14,17 +12,17 @@ Client for performing logging through to REST endpoints.
 
 ## Constructors
 
-### constructor
+### new LoggingClient()
 
-• **new LoggingClient**(`config`): [`LoggingClient`](LoggingClient.md)
+> **new LoggingClient**(`config`): [`LoggingClient`](LoggingClient.md)
 
 Create a new instance of LoggingClient.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `config` | `IBaseRestClientConfig` | The configuration for the client. |
+• **config**: `IBaseRestClientConfig`
+
+The configuration for the client.
 
 #### Returns
 
@@ -32,31 +30,39 @@ Create a new instance of LoggingClient.
 
 #### Overrides
 
-BaseRestClient.constructor
+`BaseRestClient.constructor`
 
 ## Methods
 
-### fetch
+### fetch()
 
-▸ **fetch**\<`T`, `U`\>(`requestContext`, `route`, `method`, `request?`): `Promise`\<`U`\>
+> **fetch**\<`T`, `U`\>(`requestContext`, `route`, `method`, `request`?): `Promise`\<`U`\>
 
 Perform a request in json format.
 
 #### Type parameters
 
-| Name | Type |
-| :------ | :------ |
-| `T` | extends `IHttpRequest`\<`unknown`\> |
-| `U` | extends `IHttpResponse`\<`unknown`\> |
+• **T** *extends* `IHttpRequest`\<`unknown`\>
+
+• **U** *extends* `IHttpResponse`\<`unknown`\>
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `route` | `string` | The route of the request. |
-| `method` | `HttpMethods` | The http method. |
-| `request?` | `T` | Request to send to the endpoint. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **route**: `string`
+
+The route of the request.
+
+• **method**: `HttpMethods`
+
+The http method.
+
+• **request?**: `T`
+
+Request to send to the endpoint.
 
 #### Returns
 
@@ -66,13 +72,13 @@ The response.
 
 #### Inherited from
 
-BaseRestClient.fetch
+`BaseRestClient.fetch`
 
-___
+***
 
-### getEndpointWithPrefix
+### getEndpointWithPrefix()
 
-▸ **getEndpointWithPrefix**(): `string`
+> **getEndpointWithPrefix**(): `string`
 
 Get the endpoint with the prefix for the namespace.
 
@@ -84,64 +90,109 @@ The endpoint with namespace prefix attached.
 
 #### Inherited from
 
-BaseRestClient.getEndpointWithPrefix
+`BaseRestClient.getEndpointWithPrefix`
 
-___
+***
 
-### log
+### log()
 
-▸ **log**(`requestContext`, `logEntry`): `Promise`\<`undefined` \| `string`\>
+> **log**(`requestContext`, `logEntry`): `Promise`\<`void`\>
 
 Log an entry to the connector.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `logEntry` | `ILogEntry` | The entry to log. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **logEntry**: `ILogEntry`
+
+The entry to log.
 
 #### Returns
 
-`Promise`\<`undefined` \| `string`\>
+`Promise`\<`void`\>
 
-An identifier if one was allocated during the logging process.
+Nothing.
 
 #### Implementation of
 
-ILogging.log
+`ILogging.log`
 
-___
+***
 
-### query
+### query()
 
-▸ **query**(`requestContext`, `level?`, `source?`, `timeStart?`, `timeEnd?`, `cursor?`, `pageSize?`): `Promise`\<\{ `cursor?`: `string` ; `entities`: `ILogEntry`[] ; `pageSize?`: `number` ; `totalEntities`: `number`  }\>
+> **query**(`requestContext`, `level`?, `source`?, `timeStart`?, `timeEnd`?, `cursor`?, `pageSize`?): `Promise`\<`object`\>
 
 Query the log entries.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `level?` | `LogLevel` | The level of the log entries. |
-| `source?` | `string` | The source of the log entries. |
-| `timeStart?` | `number` | The inclusive time as the start of the log entries. |
-| `timeEnd?` | `number` | The inclusive time as the end of the log entries. |
-| `cursor?` | `string` | The cursor to request the next page of entities. |
-| `pageSize?` | `number` | The maximum number of entities in a page. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **level?**: `LogLevel`
+
+The level of the log entries.
+
+• **source?**: `string`
+
+The source of the log entries.
+
+• **timeStart?**: `number`
+
+The inclusive time as the start of the log entries.
+
+• **timeEnd?**: `number`
+
+The inclusive time as the end of the log entries.
+
+• **cursor?**: `string`
+
+The cursor to request the next page of entities.
+
+• **pageSize?**: `number`
+
+The maximum number of entities in a page.
 
 #### Returns
 
-`Promise`\<\{ `cursor?`: `string` ; `entities`: `ILogEntry`[] ; `pageSize?`: `number` ; `totalEntities`: `number`  }\>
+`Promise`\<`object`\>
 
 All the entities for the storage matching the conditions,
 and a cursor which can be used to request more entities.
 
-**`Throws`**
+##### cursor?
 
-NotImplementedError if the implementation does not support retrieval.
+> `optional` **cursor**: `string`
+
+An optional cursor, when defined can be used to call find to get more entities.
+
+##### entities
+
+> **entities**: `ILogEntry`[]
+
+The entities, which can be partial if a limited keys list was provided.
+
+##### pageSize?
+
+> `optional` **pageSize**: `number`
+
+Number of entities to return.
+
+##### totalEntities
+
+> **totalEntities**: `number`
+
+Total entities length.
 
 #### Implementation of
 
-ILogging.query
+`ILogging.query`
+
+#### Throws
+
+NotImplementedError if the implementation does not support retrieval.

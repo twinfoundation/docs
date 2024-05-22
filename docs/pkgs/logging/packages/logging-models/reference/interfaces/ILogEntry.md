@@ -4,48 +4,48 @@ Interface describing a log entry.
 
 ## Properties
 
-### data
+### data?
 
-• `Optional` **data**: `unknown`
+> `optional` **data**: `unknown`
 
 Optional data for the message.
 
-___
+***
 
-### error
+### error?
 
-• `Optional` **error**: `IError`
+> `optional` **error**: `IError`
 
 Optional error details.
 
-___
+***
 
 ### level
 
-• **level**: [`LogLevel`](../globals.md#loglevel)
+> **level**: [`LogLevel`](../type-aliases/LogLevel.md)
 
 The level of the error being logged.
 
-___
+***
 
 ### message
 
-• **message**: `string`
+> **message**: `string`
 
 The message.
 
-___
+***
 
 ### source
 
-• **source**: `string`
+> **source**: `string`
 
 The source of the log entry.
 
-___
+***
 
-### ts
+### ts?
 
-• `Optional` **ts**: `number`
+> `optional` **ts**: `number`
 
 The timestamp of the log entry, if left blank will be populated by the connector.

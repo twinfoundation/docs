@@ -6,15 +6,30 @@ Request to get a list of identities by role.
 
 ### query
 
-• **query**: `Object`
+> **query**: `object`
 
 The query parameters.
 
-#### Type declaration
+#### cursor?
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `cursor?` | `string` | The cursor for paged requests. |
-| `pageSize?` | `number` | Number of items to return. |
-| `propertyNames?` | `string` | The properties to get for the profile, defaults to all, should be a comma separated list. |
-| `role` | [`IdentityRole`](../enums/IdentityRole.md) | The property name to use for lookup. |
+> `optional` **cursor**: `string`
+
+The cursor for paged requests.
+
+#### pageSize?
+
+> `optional` **pageSize**: `number`
+
+Number of items to return.
+
+#### propertyNames?
+
+> `optional` **propertyNames**: `string`
+
+The properties to get for the profile, defaults to all, should be a comma separated list.
+
+#### role
+
+> **role**: [`IdentityRole`](../enumerations/IdentityRole.md)
+
+The property name to use for lookup.

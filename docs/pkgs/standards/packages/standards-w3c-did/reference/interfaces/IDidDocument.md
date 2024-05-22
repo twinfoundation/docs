@@ -5,80 +5,80 @@ Spec https://www.w3.org/TR/did-core/#did-document-properties.
 
 ## Properties
 
-### alsoKnownAs
+### alsoKnownAs?
 
-• `Optional` **alsoKnownAs**: `string` \| `string`[]
+> `optional` **alsoKnownAs**: `string` \| `string`[]
 
 Aliases for the document.
 
-___
+***
 
-### assertionMethod
+### assertionMethod?
 
-• `Optional` **assertionMethod**: (`string` \| [`IDidDocumentVerificationMethod`](IDidDocumentVerificationMethod.md))[]
+> `optional` **assertionMethod**: (`string` \| [`IDidDocumentVerificationMethod`](IDidDocumentVerificationMethod.md))[]
 
 The assertion methods.
 
-___
+***
 
-### authentication
+### authentication?
 
-• `Optional` **authentication**: (`string` \| [`IDidDocumentVerificationMethod`](IDidDocumentVerificationMethod.md))[]
+> `optional` **authentication**: (`string` \| [`IDidDocumentVerificationMethod`](IDidDocumentVerificationMethod.md))[]
 
 The authentication methods.
 
-___
+***
 
-### capabilityDelegation
+### capabilityDelegation?
 
-• `Optional` **capabilityDelegation**: (`string` \| [`IDidDocumentVerificationMethod`](IDidDocumentVerificationMethod.md))[]
+> `optional` **capabilityDelegation**: (`string` \| [`IDidDocumentVerificationMethod`](IDidDocumentVerificationMethod.md))[]
 
 The capability delegations.
 
-___
+***
 
-### capabilityInvocation
+### capabilityInvocation?
 
-• `Optional` **capabilityInvocation**: (`string` \| [`IDidDocumentVerificationMethod`](IDidDocumentVerificationMethod.md))[]
+> `optional` **capabilityInvocation**: (`string` \| [`IDidDocumentVerificationMethod`](IDidDocumentVerificationMethod.md))[]
 
 The capability invocations.
 
-___
+***
 
-### controller
+### controller?
 
-• `Optional` **controller**: `string` \| `string`[]
+> `optional` **controller**: `string` \| `string`[]
 
 The controller for the document.
 
-___
+***
 
 ### id
 
-• **id**: `string`
+> **id**: `string`
 
 The id for the document.
 
-___
+***
 
-### keyAgreement
+### keyAgreement?
 
-• `Optional` **keyAgreement**: (`string` \| [`IDidDocumentVerificationMethod`](IDidDocumentVerificationMethod.md))[]
+> `optional` **keyAgreement**: (`string` \| [`IDidDocumentVerificationMethod`](IDidDocumentVerificationMethod.md))[]
 
 The key agreements.
 
-___
+***
 
-### service
+### service?
 
-• `Optional` **service**: [`IDidService`](IDidService.md)[]
+> `optional` **service**: [`IDidService`](IDidService.md)[]
 
 The services.
 
-___
+***
 
-### verificationMethod
+### verificationMethod?
 
-• `Optional` **verificationMethod**: (`string` \| [`IDidDocumentVerificationMethod`](IDidDocumentVerificationMethod.md))[]
+> `optional` **verificationMethod**: (`string` \| [`IDidDocumentVerificationMethod`](IDidDocumentVerificationMethod.md))[]
 
 The verification methods.
