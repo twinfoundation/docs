@@ -34,6 +34,24 @@ The configuration for the client.
 
 ## Methods
 
+### getEndpointWithPrefix()
+
+> **getEndpointWithPrefix**(): `string`
+
+Get the endpoint with the prefix for the namespace.
+
+#### Returns
+
+`string`
+
+The endpoint with namespace prefix attached.
+
+#### Inherited from
+
+`BaseRestClient.getEndpointWithPrefix`
+
+***
+
 ### fetch()
 
 > **fetch**\<`T`, `U`\>(`requestContext`, `route`, `method`, `request`?): `Promise`\<`U`\>
@@ -73,24 +91,6 @@ The response.
 #### Inherited from
 
 `BaseRestClient.fetch`
-
-***
-
-### getEndpointWithPrefix()
-
-> **getEndpointWithPrefix**(): `string`
-
-Get the endpoint with the prefix for the namespace.
-
-#### Returns
-
-`string`
-
-The endpoint with namespace prefix attached.
-
-#### Inherited from
-
-`BaseRestClient.getEndpointWithPrefix`
 
 ***
 

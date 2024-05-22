@@ -8,11 +8,99 @@ Interface describing an identity connector.
 
 ## Methods
 
-### addService()
+### bootstrap()?
 
-> **addService**(`requestContext`, `documentId`, `serviceId`, `serviceType`, `serviceEndpoint`): `Promise`\<`IDidService`\>
+> `optional` **bootstrap**(`requestContext`): `Promise`\<`void`\>
 
-Add a service to the document.
+Bootstrap the service by creating and initializing any resources it needs.
+
+#### Parameters
+
+• **requestContext**: `IRequestContext`
+
+The request context for bootstrapping.
+
+#### Returns
+
+`Promise`\<`void`\>
+
+Nothing.
+
+#### Inherited from
+
+`IService.bootstrap`
+
+***
+
+### start()?
+
+> `optional` **start**(): `Promise`\<`void`\>
+
+The service needs to be started when the application is initialized.
+
+#### Returns
+
+`Promise`\<`void`\>
+
+Nothing.
+
+#### Inherited from
+
+`IService.start`
+
+***
+
+### stop()?
+
+> `optional` **stop**(): `Promise`\<`void`\>
+
+The service needs to be stopped when the application is closed.
+
+#### Returns
+
+`Promise`\<`void`\>
+
+Nothing.
+
+#### Inherited from
+
+`IService.stop`
+
+***
+
+### createDocument()
+
+> **createDocument**(`requestContext`, `privateKey`?, `publicKey`?): `Promise`\<`IDidDocument`\>
+
+Create a new document.
+
+#### Parameters
+
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **privateKey?**: `string`
+
+The private key to use for the document in base64, if undefined a new key will be generated.
+
+• **publicKey?**: `string`
+
+The public key to use for the document in base64, must be provided if privateKey is supplied.
+
+#### Returns
+
+`Promise`\<`IDidDocument`\>
+
+The created document.
+
+***
+
+### resolveDocument()
+
+> **resolveDocument**(`requestContext`, `documentId`): `Promise`\<`IDidDocument`\>
+
+Resolve a document from its id.
 
 #### Parameters
 
@@ -22,25 +110,13 @@ The context for the request.
 
 • **documentId**: `string`
 
-The id of the document to add the service to.
-
-• **serviceId**: `string`
-
-The id of the service.
-
-• **serviceType**: `string`
-
-The type of the service.
-
-• **serviceEndpoint**: `string`
-
-The endpoint for the service.
+The id of the document to resolve.
 
 #### Returns
 
-`Promise`\<`IDidService`\>
+`Promise`\<`IDidDocument`\>
 
-The service.
+The resolved document.
 
 #### Throws
 
@@ -88,135 +164,11 @@ NotSupportedError if the platform does not support multiple keys.
 
 ***
 
-### bootstrap()?
+### removeVerificationMethod()
 
-> `optional` **bootstrap**(`requestContext`): `Promise`\<`void`\>
+> **removeVerificationMethod**(`requestContext`, `documentId`, `verificationMethodId`): `Promise`\<`void`\>
 
-Bootstrap the service by creating and initializing any resources it needs.
-
-#### Parameters
-
-• **requestContext**: `IRequestContext`
-
-The request context for bootstrapping.
-
-#### Returns
-
-`Promise`\<`void`\>
-
-Nothing.
-
-#### Inherited from
-
-`IService.bootstrap`
-
-***
-
-### checkVerifiableCredential()
-
-> **checkVerifiableCredential**\<`T`\>(`requestContext`, `credentialJwt`): `Promise`\<`object`\>
-
-Check a verifiable credential is valid.
-
-#### Type parameters
-
-• **T** *extends* `object`
-
-#### Parameters
-
-• **requestContext**: `IRequestContext`
-
-The context for the request.
-
-• **credentialJwt**: `string`
-
-The credential to verify.
-
-#### Returns
-
-`Promise`\<`object`\>
-
-The credential stored in the jwt and the revocation status.
-
-##### revoked
-
-> **revoked**: `boolean`
-
-##### verifiableCredential?
-
-> `optional` **verifiableCredential**: `IDidVerifiableCredential`\<`T`\>
-
-***
-
-### checkVerifiablePresentation()
-
-> **checkVerifiablePresentation**(`requestContext`, `presentationJwt`): `Promise`\<`object`\>
-
-Check a verifiable presentation is valid.
-
-#### Parameters
-
-• **requestContext**: `IRequestContext`
-
-The context for the request.
-
-• **presentationJwt**: `string`
-
-The presentation to verify.
-
-#### Returns
-
-`Promise`\<`object`\>
-
-The presentation stored in the jwt and the revocation status.
-
-##### issuers?
-
-> `optional` **issuers**: `IDidDocument`[]
-
-##### revoked
-
-> **revoked**: `boolean`
-
-##### verifiablePresentation?
-
-> `optional` **verifiablePresentation**: `IDidVerifiablePresentation`
-
-***
-
-### createDocument()
-
-> **createDocument**(`requestContext`, `privateKey`?, `publicKey`?): `Promise`\<`IDidDocument`\>
-
-Create a new document.
-
-#### Parameters
-
-• **requestContext**: `IRequestContext`
-
-The context for the request.
-
-• **privateKey?**: `string`
-
-The private key to use for the document in base64, if undefined a new key will be generated.
-
-• **publicKey?**: `string`
-
-The public key to use for the document in base64, must be provided if privateKey is supplied.
-
-#### Returns
-
-`Promise`\<`IDidDocument`\>
-
-The created document.
-
-***
-
-### createProof()
-
-> **createProof**(`requestContext`, `documentId`, `verificationMethodId`, `bytes`): `Promise`\<`object`\>
-
-Create a proof for arbitrary data with the specified verification method.
+Remove a verification method from the document.
 
 #### Parameters
 
@@ -226,29 +178,97 @@ The context for the request.
 
 • **documentId**: `string`
 
-The id of the document signing the data.
+The id of the document to remove the verification method from.
 
 • **verificationMethodId**: `string`
 
-The verification method id to use.
-
-• **bytes**: `string`
-
-The data bytes to sign in base64.
+The id of the verification method.
 
 #### Returns
 
-`Promise`\<`object`\>
+`Promise`\<`void`\>
 
-The proof signature type and value in base64.
+Nothing.
 
-##### type
+#### Throws
 
-> **type**: `string`
+NotFoundError if the id can not be resolved.
 
-##### value
+#### Throws
 
-> **value**: `string`
+NotSupportedError if the platform does not support multiple revocable keys.
+
+***
+
+### addService()
+
+> **addService**(`requestContext`, `documentId`, `serviceId`, `serviceType`, `serviceEndpoint`): `Promise`\<`IDidService`\>
+
+Add a service to the document.
+
+#### Parameters
+
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **documentId**: `string`
+
+The id of the document to add the service to.
+
+• **serviceId**: `string`
+
+The id of the service.
+
+• **serviceType**: `string`
+
+The type of the service.
+
+• **serviceEndpoint**: `string`
+
+The endpoint for the service.
+
+#### Returns
+
+`Promise`\<`IDidService`\>
+
+The service.
+
+#### Throws
+
+NotFoundError if the id can not be resolved.
+
+***
+
+### removeService()
+
+> **removeService**(`requestContext`, `documentId`, `serviceId`): `Promise`\<`void`\>
+
+Remove a service from the document.
+
+#### Parameters
+
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **documentId**: `string`
+
+The id of the document to remove the service from.
+
+• **serviceId**: `string`
+
+The id of the service.
+
+#### Returns
+
+`Promise`\<`void`\>
+
+Nothing.
+
+#### Throws
+
+NotFoundError if the id can not be resolved.
 
 ***
 
@@ -298,17 +318,109 @@ The bitmap revocation index of the credential.
 
 The created verifiable credential and its token.
 
-##### jwt
-
-> **jwt**: `string`
-
 ##### verifiableCredential
 
 > **verifiableCredential**: `IDidVerifiableCredential`\<`T`\>
 
+##### jwt
+
+> **jwt**: `string`
+
 #### Throws
 
 NotFoundError if the id can not be resolved.
+
+***
+
+### checkVerifiableCredential()
+
+> **checkVerifiableCredential**\<`T`\>(`requestContext`, `credentialJwt`): `Promise`\<`object`\>
+
+Check a verifiable credential is valid.
+
+#### Type parameters
+
+• **T** *extends* `object`
+
+#### Parameters
+
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **credentialJwt**: `string`
+
+The credential to verify.
+
+#### Returns
+
+`Promise`\<`object`\>
+
+The credential stored in the jwt and the revocation status.
+
+##### revoked
+
+> **revoked**: `boolean`
+
+##### verifiableCredential?
+
+> `optional` **verifiableCredential**: `IDidVerifiableCredential`\<`T`\>
+
+***
+
+### revokeVerifiableCredentials()
+
+> **revokeVerifiableCredentials**(`requestContext`, `issuerDocumentId`, `credentialIndices`): `Promise`\<`void`\>
+
+Revoke verifiable credential(s).
+
+#### Parameters
+
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **issuerDocumentId**: `string`
+
+The id of the document to update the revocation list for.
+
+• **credentialIndices**: `number`[]
+
+The revocation bitmap index or indices to revoke.
+
+#### Returns
+
+`Promise`\<`void`\>
+
+Nothing.
+
+***
+
+### unrevokeVerifiableCredentials()
+
+> **unrevokeVerifiableCredentials**(`requestContext`, `issuerDocumentId`, `credentialIndices`): `Promise`\<`void`\>
+
+Unrevoke verifiable credential(s).
+
+#### Parameters
+
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **issuerDocumentId**: `string`
+
+The id of the document to update the revocation list for.
+
+• **credentialIndices**: `number`[]
+
+The revocation bitmap index or indices to un revoke.
+
+#### Returns
+
+`Promise`\<`void`\>
+
+Nothing.
 
 ***
 
@@ -350,25 +462,25 @@ The time in minutes for the presentation to expire.
 
 The created verifiable presentation and its token.
 
-##### jwt
-
-> **jwt**: `string`
-
 ##### verifiablePresentation
 
 > **verifiablePresentation**: `IDidVerifiablePresentation`
 
+##### jwt
+
+> **jwt**: `string`
+
 #### Throws
 
 NotFoundError if the id can not be resolved.
 
 ***
 
-### removeService()
+### checkVerifiablePresentation()
 
-> **removeService**(`requestContext`, `documentId`, `serviceId`): `Promise`\<`void`\>
+> **checkVerifiablePresentation**(`requestContext`, `presentationJwt`): `Promise`\<`object`\>
 
-Remove a service from the document.
+Check a verifiable presentation is valid.
 
 #### Parameters
 
@@ -376,31 +488,35 @@ Remove a service from the document.
 
 The context for the request.
 
-• **documentId**: `string`
+• **presentationJwt**: `string`
 
-The id of the document to remove the service from.
-
-• **serviceId**: `string`
-
-The id of the service.
+The presentation to verify.
 
 #### Returns
 
-`Promise`\<`void`\>
+`Promise`\<`object`\>
 
-Nothing.
+The presentation stored in the jwt and the revocation status.
 
-#### Throws
+##### revoked
 
-NotFoundError if the id can not be resolved.
+> **revoked**: `boolean`
+
+##### verifiablePresentation?
+
+> `optional` **verifiablePresentation**: `IDidVerifiablePresentation`
+
+##### issuers?
+
+> `optional` **issuers**: `IDidDocument`[]
 
 ***
 
-### removeVerificationMethod()
+### createProof()
 
-> **removeVerificationMethod**(`requestContext`, `documentId`, `verificationMethodId`): `Promise`\<`void`\>
+> **createProof**(`requestContext`, `documentId`, `verificationMethodId`, `bytes`): `Promise`\<`object`\>
 
-Remove a verification method from the document.
+Create a proof for arbitrary data with the specified verification method.
 
 #### Parameters
 
@@ -410,145 +526,29 @@ The context for the request.
 
 • **documentId**: `string`
 
-The id of the document to remove the verification method from.
+The id of the document signing the data.
 
 • **verificationMethodId**: `string`
 
-The id of the verification method.
+The verification method id to use.
+
+• **bytes**: `string`
+
+The data bytes to sign in base64.
 
 #### Returns
 
-`Promise`\<`void`\>
+`Promise`\<`object`\>
 
-Nothing.
+The proof signature type and value in base64.
 
-#### Throws
+##### type
 
-NotFoundError if the id can not be resolved.
+> **type**: `string`
 
-#### Throws
+##### value
 
-NotSupportedError if the platform does not support multiple revocable keys.
-
-***
-
-### resolveDocument()
-
-> **resolveDocument**(`requestContext`, `documentId`): `Promise`\<`IDidDocument`\>
-
-Resolve a document from its id.
-
-#### Parameters
-
-• **requestContext**: `IRequestContext`
-
-The context for the request.
-
-• **documentId**: `string`
-
-The id of the document to resolve.
-
-#### Returns
-
-`Promise`\<`IDidDocument`\>
-
-The resolved document.
-
-#### Throws
-
-NotFoundError if the id can not be resolved.
-
-***
-
-### revokeVerifiableCredentials()
-
-> **revokeVerifiableCredentials**(`requestContext`, `issuerDocumentId`, `credentialIndices`): `Promise`\<`void`\>
-
-Revoke verifiable credential(s).
-
-#### Parameters
-
-• **requestContext**: `IRequestContext`
-
-The context for the request.
-
-• **issuerDocumentId**: `string`
-
-The id of the document to update the revocation list for.
-
-• **credentialIndices**: `number`[]
-
-The revocation bitmap index or indices to revoke.
-
-#### Returns
-
-`Promise`\<`void`\>
-
-Nothing.
-
-***
-
-### start()?
-
-> `optional` **start**(): `Promise`\<`void`\>
-
-The service needs to be started when the application is initialized.
-
-#### Returns
-
-`Promise`\<`void`\>
-
-Nothing.
-
-#### Inherited from
-
-`IService.start`
-
-***
-
-### stop()?
-
-> `optional` **stop**(): `Promise`\<`void`\>
-
-The service needs to be stopped when the application is closed.
-
-#### Returns
-
-`Promise`\<`void`\>
-
-Nothing.
-
-#### Inherited from
-
-`IService.stop`
-
-***
-
-### unrevokeVerifiableCredentials()
-
-> **unrevokeVerifiableCredentials**(`requestContext`, `issuerDocumentId`, `credentialIndices`): `Promise`\<`void`\>
-
-Unrevoke verifiable credential(s).
-
-#### Parameters
-
-• **requestContext**: `IRequestContext`
-
-The context for the request.
-
-• **issuerDocumentId**: `string`
-
-The id of the document to update the revocation list for.
-
-• **credentialIndices**: `number`[]
-
-The revocation bitmap index or indices to un revoke.
-
-#### Returns
-
-`Promise`\<`void`\>
-
-Nothing.
+> **value**: `string`
 
 ***
 

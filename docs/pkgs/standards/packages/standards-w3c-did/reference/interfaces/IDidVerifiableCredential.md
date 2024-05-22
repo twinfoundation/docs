@@ -16,12 +16,19 @@ The context for the verifiable credential.
 
 ***
 
-### credentialStatus?
+### id
 
-> `optional` **credentialStatus**: [`IDidCredentialStatus`](IDidCredentialStatus.md)
+> **id**: `string`
 
-Used to discover information about the current status of the
-verifiable credential, such as whether it is suspended or revoked.
+The identifier for the verifiable credential.
+
+***
+
+### type
+
+> **type**: `string`[]
+
+The types of the data stored in the verifiable credential.
 
 ***
 
@@ -33,19 +40,12 @@ The data for the verifiable credential.
 
 ***
 
-### id
+### credentialStatus?
 
-> **id**: `string`
+> `optional` **credentialStatus**: [`IDidCredentialStatus`](IDidCredentialStatus.md)
 
-The identifier for the verifiable credential.
-
-***
-
-### issuanceDate
-
-> **issuanceDate**: `string`
-
-The date the verifiable credential was issued.
+Used to discover information about the current status of the
+verifiable credential, such as whether it is suspended or revoked.
 
 ***
 
@@ -57,17 +57,17 @@ The issuing identity.
 
 ***
 
+### issuanceDate
+
+> **issuanceDate**: `string`
+
+The date the verifiable credential was issued.
+
+***
+
 ### proof?
 
 > `optional` **proof**: [`IDidProof`](IDidProof.md) \| [`IDidProof`](IDidProof.md)[]
 
 Proofs that the verifiable credential is valid.
 Optional if a different proof method is used, such as JWT.
-
-***
-
-### type
-
-> **type**: `string`[]
-
-The types of the data stored in the verifiable credential.

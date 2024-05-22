@@ -98,6 +98,62 @@ The object if it can be found or undefined, if request context was wildcard then
 
 ***
 
+### set()
+
+> **set**(`requestContext`, `entity`): `Promise`\<`void`\>
+
+Set an entity.
+
+#### Parameters
+
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **entity**: `T`
+
+The entity to set.
+
+#### Returns
+
+`Promise`\<`void`\>
+
+The id of the entity.
+
+#### Implementation of
+
+`IEntityStorageConnector.set`
+
+***
+
+### remove()
+
+> **remove**(`requestContext`, `id`): `Promise`\<`void`\>
+
+Remove the entity.
+
+#### Parameters
+
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **id**: `string`
+
+The id of the entity to remove.
+
+#### Returns
+
+`Promise`\<`void`\>
+
+Nothing.
+
+#### Implementation of
+
+`IEntityStorageConnector.remove`
+
+***
+
 ### query()
 
 > **query**(`requestContext`, `conditions`?, `sortProperties`?, `properties`?, `cursor`?, `pageSize`?): `Promise`\<`object`\>
@@ -137,18 +193,18 @@ The maximum number of entities in a page.
 All the entities for the storage matching the conditions,
 and a cursor which can be used to request more entities.
 
-##### cursor?
-
-> `optional` **cursor**: `string`
-
-An optional cursor, when defined can be used to call find to get more entities.
-
 ##### entities
 
 > **entities**: `Partial`\<`T` & `object`\>[]
 
 The entities, which can be partial if a limited keys list was provided.
 If the request context was wildcard then tenantId is also included.
+
+##### cursor?
+
+> `optional` **cursor**: `string`
+
+An optional cursor, when defined can be used to call find to get more entities.
 
 ##### pageSize?
 
@@ -182,82 +238,6 @@ The tenant index.
 
 ***
 
-### readTenantStore()
-
-> `private` **readTenantStore**(`tenantId`): `Promise`\<`T`[]\>
-
-Read the store from file.
-
-#### Parameters
-
-• **tenantId**: `string`
-
-The tenant id to read the store for.
-
-#### Returns
-
-`Promise`\<`T`[]\>
-
-The store for the tenant.
-
-***
-
-### remove()
-
-> **remove**(`requestContext`, `id`): `Promise`\<`void`\>
-
-Remove the entity.
-
-#### Parameters
-
-• **requestContext**: `IRequestContext`
-
-The context for the request.
-
-• **id**: `string`
-
-The id of the entity to remove.
-
-#### Returns
-
-`Promise`\<`void`\>
-
-Nothing.
-
-#### Implementation of
-
-`IEntityStorageConnector.remove`
-
-***
-
-### set()
-
-> **set**(`requestContext`, `entity`): `Promise`\<`void`\>
-
-Set an entity.
-
-#### Parameters
-
-• **requestContext**: `IRequestContext`
-
-The context for the request.
-
-• **entity**: `T`
-
-The entity to set.
-
-#### Returns
-
-`Promise`\<`void`\>
-
-The id of the entity.
-
-#### Implementation of
-
-`IEntityStorageConnector.set`
-
-***
-
 ### writeTenantIndex()
 
 > `private` **writeTenantIndex**(`tenantIds`): `Promise`\<`void`\>
@@ -275,6 +255,26 @@ The tenant ids to write in the index.
 `Promise`\<`void`\>
 
 Nothing.
+
+***
+
+### readTenantStore()
+
+> `private` **readTenantStore**(`tenantId`): `Promise`\<`T`[]\>
+
+Read the store from file.
+
+#### Parameters
+
+• **tenantId**: `string`
+
+The tenant id to read the store for.
+
+#### Returns
+
+`Promise`\<`T`[]\>
+
+The store for the tenant.
 
 ***
 

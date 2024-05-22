@@ -32,6 +32,74 @@ Nothing.
 
 ***
 
+### start()?
+
+> `optional` **start**(): `Promise`\<`void`\>
+
+The service needs to be started when the application is initialized.
+
+#### Returns
+
+`Promise`\<`void`\>
+
+Nothing.
+
+#### Inherited from
+
+`IService.start`
+
+***
+
+### stop()?
+
+> `optional` **stop**(): `Promise`\<`void`\>
+
+The service needs to be stopped when the application is closed.
+
+#### Returns
+
+`Promise`\<`void`\>
+
+Nothing.
+
+#### Inherited from
+
+`IService.stop`
+
+***
+
+### set()
+
+> **set**(`requestContext`, `blob`, `options`?): `Promise`\<`string`\>
+
+Set the blob.
+
+#### Parameters
+
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **blob**: `Uint8Array`
+
+The data for the blob.
+
+• **options?**
+
+Additional options for the blob service.
+
+• **options.namespace?**: `string`
+
+The namespace to use for storing, defaults to service configured namespace.
+
+#### Returns
+
+`Promise`\<`string`\>
+
+The id of the stored blob in urn format.
+
+***
+
 ### get()
 
 > **get**(`requestContext`, `id`): `Promise`\<`Uint8Array`\>
@@ -85,71 +153,3 @@ Nothing.
 #### Throws
 
 Not found error if the blob cannot be found.
-
-***
-
-### set()
-
-> **set**(`requestContext`, `blob`, `options`?): `Promise`\<`string`\>
-
-Set the blob.
-
-#### Parameters
-
-• **requestContext**: `IRequestContext`
-
-The context for the request.
-
-• **blob**: `Uint8Array`
-
-The data for the blob.
-
-• **options?**
-
-Additional options for the blob service.
-
-• **options.namespace?**: `string`
-
-The namespace to use for storing, defaults to service configured namespace.
-
-#### Returns
-
-`Promise`\<`string`\>
-
-The id of the stored blob in urn format.
-
-***
-
-### start()?
-
-> `optional` **start**(): `Promise`\<`void`\>
-
-The service needs to be started when the application is initialized.
-
-#### Returns
-
-`Promise`\<`void`\>
-
-Nothing.
-
-#### Inherited from
-
-`IService.start`
-
-***
-
-### stop()?
-
-> `optional` **stop**(): `Promise`\<`void`\>
-
-The service needs to be stopped when the application is closed.
-
-#### Returns
-
-`Promise`\<`void`\>
-
-Nothing.
-
-#### Inherited from
-
-`IService.stop`

@@ -14,19 +14,19 @@ Class describing the identity document.
 
 ## Properties
 
-### document
-
-> **document**: `string`
-
-The JSON stringified version of the DID document.
-
-***
-
 ### id
 
 > **id**: `string`
 
 The identity of the document.
+
+***
+
+### document
+
+> **document**: `string`
+
+The JSON stringified version of the DID document.
 
 ***
 

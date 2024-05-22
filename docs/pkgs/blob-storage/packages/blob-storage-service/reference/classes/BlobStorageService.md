@@ -26,6 +26,42 @@ The configuration for the service.
 
 ## Methods
 
+### set()
+
+> **set**(`requestContext`, `blob`, `options`?): `Promise`\<`string`\>
+
+Set the blob.
+
+#### Parameters
+
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **blob**: `Uint8Array`
+
+The data for the blob.
+
+• **options?**
+
+Additional options for the blob.
+
+• **options.namespace?**: `string`
+
+The namespace to use for storing, defaults to service configured namespace.
+
+#### Returns
+
+`Promise`\<`string`\>
+
+The id of the stored blob in urn format.
+
+#### Implementation of
+
+`IBlobStorage.set`
+
+***
+
 ### get()
 
 > **get**(`requestContext`, `id`): `Promise`\<`Uint8Array`\>
@@ -83,39 +119,3 @@ Nothing.
 #### Implementation of
 
 `IBlobStorage.remove`
-
-***
-
-### set()
-
-> **set**(`requestContext`, `blob`, `options`?): `Promise`\<`string`\>
-
-Set the blob.
-
-#### Parameters
-
-• **requestContext**: `IRequestContext`
-
-The context for the request.
-
-• **blob**: `Uint8Array`
-
-The data for the blob.
-
-• **options?**
-
-Additional options for the blob.
-
-• **options.namespace?**: `string`
-
-The namespace to use for storing, defaults to service configured namespace.
-
-#### Returns
-
-`Promise`\<`string`\>
-
-The id of the stored blob in urn format.
-
-#### Implementation of
-
-`IBlobStorage.set`

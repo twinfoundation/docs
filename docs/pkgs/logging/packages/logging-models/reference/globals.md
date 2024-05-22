@@ -10,8 +10,8 @@
 - [ILogEntry](interfaces/ILogEntry.md)
 - [ILogging](interfaces/ILogging.md)
 - [ILoggingConnector](interfaces/ILoggingConnector.md)
-- [ILoggingCreateRequest](interfaces/ILoggingCreateRequest.md)
 - [ILoggingLevelsConfig](interfaces/ILoggingLevelsConfig.md)
+- [ILoggingCreateRequest](interfaces/ILoggingCreateRequest.md)
 - [ILoggingListRequest](interfaces/ILoggingListRequest.md)
 - [ILoggingListResponse](interfaces/ILoggingListResponse.md)
 

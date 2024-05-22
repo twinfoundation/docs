@@ -12,16 +12,16 @@ The id of the service.
 
 ***
 
-### serviceEndpoint
-
-> **serviceEndpoint**: `string` \| `string`[]
-
-The endpoint for the service.
-
-***
-
 ### type
 
 > **type**: `string` \| `string`[]
 
 The type of the service.
+
+***
+
+### serviceEndpoint
+
+> **serviceEndpoint**: `string` \| `string`[]
+
+The endpoint for the service.

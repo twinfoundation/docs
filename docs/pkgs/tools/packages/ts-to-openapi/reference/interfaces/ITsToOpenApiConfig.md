@@ -4,11 +4,19 @@ Configuration for the API.
 
 ## Properties
 
-### authMethods?
+### title
 
-> `optional` **authMethods**: `string`[]
+> **title**: `string`
 
-The authentication method.
+Title of the API.
+
+***
+
+### version
+
+> **version**: `string`
+
+The version.
 
 ***
 
@@ -36,14 +44,6 @@ The license URL.
 
 ***
 
-### restRoutes
-
-> **restRoutes**: `object`[]
-
-The packages containing routes.
-
-***
-
 ### servers
 
 > **servers**: `string`[]
@@ -52,16 +52,16 @@ The servers for the endpoints.
 
 ***
 
-### title
+### authMethods?
 
-> **title**: `string`
+> `optional` **authMethods**: `string`[]
 
-Title of the API.
+The authentication method.
 
 ***
 
-### version
+### restRoutes
 
-> **version**: `string`
+> **restRoutes**: `object`[]
 
-The version.
+The packages containing routes.

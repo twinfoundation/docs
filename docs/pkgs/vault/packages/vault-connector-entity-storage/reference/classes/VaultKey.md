@@ -22,6 +22,14 @@ The id.
 
 ***
 
+### type
+
+> **type**: `VaultKeyType`
+
+The type of the key e.g. Ed25519, Secp256k1.
+
+***
+
 ### privateKey
 
 > **privateKey**: `string`
@@ -35,11 +43,3 @@ The private key in base64 format.
 > **publicKey**: `string`
 
 The public key in base64 format.
-
-***
-
-### type
-
-> **type**: `VaultKeyType`
-
-The type of the key e.g. Ed25519, Secp256k1.

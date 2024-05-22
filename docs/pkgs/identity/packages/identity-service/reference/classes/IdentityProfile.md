@@ -22,16 +22,16 @@ The id for the identity.
 
 ***
 
-### properties?
-
-> `optional` **properties**: `IProperty`[]
-
-The properties for the profile.
-
-***
-
 ### role
 
 > **role**: `IdentityRole`
 
 The role for the identity.
+
+***
+
+### properties?
+
+> `optional` **properties**: `IProperty`[]
+
+The properties for the profile.

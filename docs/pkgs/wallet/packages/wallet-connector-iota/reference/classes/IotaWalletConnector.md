@@ -20,13 +20,13 @@ Create a new instance of IotaWalletConnector.
 
 The dependencies for the wallet connector.
 
-• **dependencies.faucetConnector?**: `IFaucetConnector`
-
-Optional faucet for requesting funds.
-
 • **dependencies.vaultConnector**: `IVaultConnector`
 
 Vault connector to use for wallet secrets.
+
+• **dependencies.faucetConnector?**: `IFaucetConnector`
+
+Optional faucet for requesting funds.
 
 • **config**: [`IIotaWalletConnectorConfig`](../interfaces/IIotaWalletConnectorConfig.md)
 
@@ -38,19 +38,19 @@ The configuration to use.
 
 ## Properties
 
-### MNEMONIC\_SECRET\_NAME
-
-> `static` **MNEMONIC\_SECRET\_NAME**: `string` = `"wallet-mnemonic"`
-
-Default name for the mnemonic secret.
-
-***
-
 ### NAMESPACE
 
 > `static` **NAMESPACE**: `string` = `"iota"`
 
 The namespace supported by the wallet connector.
+
+***
+
+### MNEMONIC\_SECRET\_NAME
+
+> `static` **MNEMONIC\_SECRET\_NAME**: `string` = `"wallet-mnemonic"`
+
+Default name for the mnemonic secret.
 
 ## Methods
 
@@ -75,42 +75,6 @@ Nothing.
 #### Implementation of
 
 `IWalletConnector.create`
-
-***
-
-### ensureBalance()
-
-> **ensureBalance**(`requestContext`, `address`, `ensureBalance`, `timeoutInSeconds`?): `Promise`\<`boolean`\>
-
-Ensure the balance for an address in a wallet.
-
-#### Parameters
-
-• **requestContext**: `IRequestContext`
-
-The context for the request.
-
-• **address**: `string`
-
-The bech32 encoded address.
-
-• **ensureBalance**: `bigint`
-
-The balance to ensure on the address.
-
-• **timeoutInSeconds?**: `number`
-
-The timeout in seconds to wait for the funding to complete.
-
-#### Returns
-
-`Promise`\<`boolean`\>
-
-True if the balance has been ensured.
-
-#### Implementation of
-
-`IWalletConnector.ensureBalance`
 
 ***
 
@@ -167,6 +131,42 @@ The storage costs for the address.
 #### Implementation of
 
 `IWalletConnector.getStorageCosts`
+
+***
+
+### ensureBalance()
+
+> **ensureBalance**(`requestContext`, `address`, `ensureBalance`, `timeoutInSeconds`?): `Promise`\<`boolean`\>
+
+Ensure the balance for an address in a wallet.
+
+#### Parameters
+
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **address**: `string`
+
+The bech32 encoded address.
+
+• **ensureBalance**: `bigint`
+
+The balance to ensure on the address.
+
+• **timeoutInSeconds?**: `number`
+
+The timeout in seconds to wait for the funding to complete.
+
+#### Returns
+
+`Promise`\<`boolean`\>
+
+True if the balance has been ensured.
+
+#### Implementation of
+
+`IWalletConnector.ensureBalance`
 
 ***
 

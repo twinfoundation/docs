@@ -12,28 +12,11 @@ The context for the verifiable credential.
 
 ***
 
-### holder?
-
-> `optional` **holder**: `string`
-
-The entity generating the presentation.
-
-***
-
 ### id?
 
 > `optional` **id**: `string`
 
 Provide a unique identifier for the presentation.
-
-***
-
-### proof?
-
-> `optional` **proof**: [`IDidProof`](IDidProof.md) \| [`IDidProof`](IDidProof.md)[]
-
-Proofs that the verifiable presentation is valid.
-Optional if a different proof method is used, such as JWT.
 
 ***
 
@@ -50,3 +33,20 @@ The types of the data stored in the verifiable credential.
 > **verifiableCredential**: `string`[]
 
 The data for the verifiable credentials.
+
+***
+
+### holder?
+
+> `optional` **holder**: `string`
+
+The entity generating the presentation.
+
+***
+
+### proof?
+
+> `optional` **proof**: [`IDidProof`](IDidProof.md) \| [`IDidProof`](IDidProof.md)[]
+
+Proofs that the verifiable presentation is valid.
+Optional if a different proof method is used, such as JWT.

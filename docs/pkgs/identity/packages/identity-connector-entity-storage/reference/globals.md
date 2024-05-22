@@ -2,8 +2,8 @@
 
 ## Classes
 
-- [EntityStorageIdentityConnector](classes/EntityStorageIdentityConnector.md)
 - [IdentityDocument](classes/IdentityDocument.md)
+- [EntityStorageIdentityConnector](classes/EntityStorageIdentityConnector.md)
 
 ## Interfaces
 

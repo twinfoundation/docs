@@ -14,6 +14,26 @@ The main entry point for the CLI.
 
 ## Methods
 
+### run()
+
+> **run**(`argv`): `Promise`\<`number`\>
+
+Run the app.
+
+#### Parameters
+
+• **argv**: `string`[]
+
+The process arguments.
+
+#### Returns
+
+`Promise`\<`number`\>
+
+The exit code.
+
+***
+
 ### process()
 
 > **process**(`tsToOpenApiConfig`, `outputApiJson`, `outputWorkingDir`): `Promise`\<`boolean`\>
@@ -39,23 +59,3 @@ The working directory.
 `Promise`\<`boolean`\>
 
 The true if the process was successful.
-
-***
-
-### run()
-
-> **run**(`argv`): `Promise`\<`number`\>
-
-Run the app.
-
-#### Parameters
-
-• **argv**: `string`[]
-
-The process arguments.
-
-#### Returns
-
-`Promise`\<`number`\>
-
-The exit code.

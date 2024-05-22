@@ -10,17 +10,17 @@ Response for log entry list request.
 
 The response payload.
 
-#### cursor?
-
-> `optional` **cursor**: `string`
-
-An optional cursor, when defined can be used to call find to get more entities.
-
 #### entities
 
 > **entities**: [`ILogEntry`](ILogEntry.md)[]
 
 The entities, which can be partial if a limited keys list was provided.
+
+#### cursor?
+
+> `optional` **cursor**: `string`
+
+An optional cursor, when defined can be used to call find to get more entities.
 
 #### pageSize?
 

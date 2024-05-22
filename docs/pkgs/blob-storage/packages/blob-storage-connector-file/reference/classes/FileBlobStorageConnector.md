@@ -66,6 +66,34 @@ The response of the bootstrapping as log entries.
 
 ***
 
+### set()
+
+> **set**(`requestContext`, `blob`): `Promise`\<`string`\>
+
+Set the blob.
+
+#### Parameters
+
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **blob**: `Uint8Array`
+
+The data for the blob.
+
+#### Returns
+
+`Promise`\<`string`\>
+
+The id of the stored blob in urn format.
+
+#### Implementation of
+
+`IBlobStorageConnector.set`
+
+***
+
 ### get()
 
 > **get**(`requestContext`, `id`): `Promise`\<`undefined` \| `Uint8Array`\>
@@ -119,31 +147,3 @@ True if the blob was found.
 #### Implementation of
 
 `IBlobStorageConnector.remove`
-
-***
-
-### set()
-
-> **set**(`requestContext`, `blob`): `Promise`\<`string`\>
-
-Set the blob.
-
-#### Parameters
-
-• **requestContext**: `IRequestContext`
-
-The context for the request.
-
-• **blob**: `Uint8Array`
-
-The data for the blob.
-
-#### Returns
-
-`Promise`\<`string`\>
-
-The id of the stored blob in urn format.
-
-#### Implementation of
-
-`IBlobStorageConnector.set`

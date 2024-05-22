@@ -10,14 +10,14 @@ Create a new identity.
 
 The data for the request.
 
-#### properties?
-
-> `optional` **properties**: `IProperty`[]
-
-Initial properties for the identity.
-
 #### role
 
 > **role**: [`IdentityRole`](../enumerations/IdentityRole.md)
 
 The role for the identity.
+
+#### properties?
+
+> `optional` **properties**: `IProperty`[]
+
+Initial properties for the identity.

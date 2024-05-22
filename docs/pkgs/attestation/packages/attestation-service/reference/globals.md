@@ -14,6 +14,6 @@
 
 ## Functions
 
+- [generateRestRoutes](functions/generateRestRoutes.md)
 - [attestationSign](functions/attestationSign.md)
 - [attestationVerify](functions/attestationVerify.md)
-- [generateRestRoutes](functions/generateRestRoutes.md)

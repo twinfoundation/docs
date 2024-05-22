@@ -2,6 +2,6 @@
 
 ## Classes
 
-- [EntityStorageVaultConnector](classes/EntityStorageVaultConnector.md)
 - [VaultKey](classes/VaultKey.md)
 - [VaultSecret](classes/VaultSecret.md)
+- [EntityStorageVaultConnector](classes/EntityStorageVaultConnector.md)

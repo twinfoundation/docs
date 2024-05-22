@@ -14,7 +14,7 @@
 
 ## Functions
 
+- [generateRestRoutes](functions/generateRestRoutes.md)
+- [blobStorageSet](functions/blobStorageSet.md)
 - [blobStorageGet](functions/blobStorageGet.md)
 - [blobStorageRemove](functions/blobStorageRemove.md)
-- [blobStorageSet](functions/blobStorageSet.md)
-- [generateRestRoutes](functions/generateRestRoutes.md)

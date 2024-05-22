@@ -4,17 +4,19 @@ Interface describing the result of checking verifiable presentation.
 
 ## Properties
 
+### isVerified
+
+> **isVerified**: `boolean`
+
+Is the whole presentation verified.
+
+***
+
 ### holder?
 
 > `optional` **holder**: `object`
 
 Who was the holder.
-
-#### document?
-
-> `optional` **document**: [`IDidDocument`](IDidDocument.md)
-
-The DID document for the holder.
 
 #### id
 
@@ -28,10 +30,8 @@ The id of the holder.
 
 Is the holder verified.
 
-***
+#### document?
 
-### isVerified
+> `optional` **document**: [`IDidDocument`](IDidDocument.md)
 
-> **isVerified**: `boolean`
-
-Is the whole presentation verified.
+The DID document for the holder.

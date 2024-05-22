@@ -10,17 +10,17 @@ Response to get a list of identities.
 
 The response payload.
 
-#### cursor?
-
-> `optional` **cursor**: `string`
-
-An optional cursor, when defined can be used to call find to get more entities.
-
 #### identities
 
 > **identities**: `object`[]
 
 The identities.
+
+#### cursor?
+
+> `optional` **cursor**: `string`
+
+An optional cursor, when defined can be used to call find to get more entities.
 
 #### pageSize?
 

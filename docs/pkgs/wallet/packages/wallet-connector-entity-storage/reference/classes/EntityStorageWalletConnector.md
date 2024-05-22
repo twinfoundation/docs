@@ -66,42 +66,6 @@ Nothing.
 
 ***
 
-### ensureBalance()
-
-> **ensureBalance**(`requestContext`, `address`, `ensureBalance`, `timeoutInSeconds`?): `Promise`\<`boolean`\>
-
-Ensure the balance for an address in a wallet.
-
-#### Parameters
-
-• **requestContext**: `IRequestContext`
-
-The context for the request.
-
-• **address**: `string`
-
-The bech32 encoded address.
-
-• **ensureBalance**: `bigint`
-
-The balance to ensure on the address.
-
-• **timeoutInSeconds?**: `number`
-
-The timeout in seconds to wait for the funding to complete.
-
-#### Returns
-
-`Promise`\<`boolean`\>
-
-True if the balance has been ensured.
-
-#### Implementation of
-
-`IWalletConnector.ensureBalance`
-
-***
-
 ### getBalance()
 
 > **getBalance**(`requestContext`, `address`): `Promise`\<`bigint`\>
@@ -155,6 +119,42 @@ The storage costs for the address.
 #### Implementation of
 
 `IWalletConnector.getStorageCosts`
+
+***
+
+### ensureBalance()
+
+> **ensureBalance**(`requestContext`, `address`, `ensureBalance`, `timeoutInSeconds`?): `Promise`\<`boolean`\>
+
+Ensure the balance for an address in a wallet.
+
+#### Parameters
+
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **address**: `string`
+
+The bech32 encoded address.
+
+• **ensureBalance**: `bigint`
+
+The balance to ensure on the address.
+
+• **timeoutInSeconds?**: `number`
+
+The timeout in seconds to wait for the funding to complete.
+
+#### Returns
+
+`Promise`\<`boolean`\>
+
+True if the balance has been ensured.
+
+#### Implementation of
+
+`IWalletConnector.ensureBalance`
 
 ***
 

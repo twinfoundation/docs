@@ -2,6 +2,6 @@
 
 ## Classes
 
+- [WalletAddress](classes/WalletAddress.md)
 - [EntityStorageFaucetConnector](classes/EntityStorageFaucetConnector.md)
 - [EntityStorageWalletConnector](classes/EntityStorageWalletConnector.md)
-- [WalletAddress](classes/WalletAddress.md)
