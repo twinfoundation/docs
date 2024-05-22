@@ -10,14 +10,14 @@ Response to get an identity details.
 
 The response payload.
 
-#### properties?
-
-> `optional` **properties**: `IProperty`[]
-
-The properties for the identity.
-
 #### role
 
 > **role**: [`IdentityRole`](../enumerations/IdentityRole.md)
 
 The role of the identity.
+
+#### properties?
+
+> `optional` **properties**: `IProperty`[]
+
+The properties for the identity.

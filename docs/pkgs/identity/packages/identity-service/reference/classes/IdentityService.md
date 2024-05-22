@@ -98,17 +98,49 @@ The properties to get for the item, defaults to all.
 
 The items properties.
 
-##### properties?
-
-> `optional` **properties**: `IProperty`[]
-
 ##### role
 
 > **role**: `IdentityRole`
 
+##### properties?
+
+> `optional` **properties**: `IProperty`[]
+
 #### Implementation of
 
 `IIdentity.identityGet`
+
+***
+
+### identityUpdate()
+
+> **identityUpdate**(`requestContext`, `identity`, `properties`): `Promise`\<`void`\>
+
+Update an item.
+
+#### Parameters
+
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **identity**: `string`
+
+The identity to update.
+
+• **properties**: `IProperty`[]
+
+Properties for the profile, set a properties value to undefined to remove it.
+
+#### Returns
+
+`Promise`\<`void`\>
+
+Nothing.
+
+#### Implementation of
+
+`IIdentity.identityUpdate`
 
 ***
 
@@ -146,17 +178,17 @@ The maximum number of items in a page.
 
 The list of items and cursor for paging.
 
-##### cursor?
-
-> `optional` **cursor**: `string`
-
-An optional cursor, when defined can be used to call find to get more entities.
-
 ##### identities
 
 > **identities**: `object`[]
 
 The identities.
+
+##### cursor?
+
+> `optional` **cursor**: `string`
+
+An optional cursor, when defined can be used to call find to get more entities.
 
 ##### pageSize?
 
@@ -173,35 +205,3 @@ Total entities length.
 #### Implementation of
 
 `IIdentity.identityList`
-
-***
-
-### identityUpdate()
-
-> **identityUpdate**(`requestContext`, `identity`, `properties`): `Promise`\<`void`\>
-
-Update an item.
-
-#### Parameters
-
-• **requestContext**: `IRequestContext`
-
-The context for the request.
-
-• **identity**: `string`
-
-The identity to update.
-
-• **properties**: `IProperty`[]
-
-Properties for the profile, set a properties value to undefined to remove it.
-
-#### Returns
-
-`Promise`\<`void`\>
-
-Nothing.
-
-#### Implementation of
-
-`IIdentity.identityUpdate`

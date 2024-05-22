@@ -32,34 +32,6 @@ Nothing.
 
 ***
 
-### fundAddress()
-
-> **fundAddress**(`requestContext`, `address`, `timeoutInSeconds`?): `Promise`\<`bigint`\>
-
-Fund the wallet from the faucet.
-
-#### Parameters
-
-• **requestContext**: `IRequestContext`
-
-The context for the request.
-
-• **address**: `string`
-
-The bech32 encoded address of the address to fund.
-
-• **timeoutInSeconds?**: `number`
-
-The timeout in seconds to wait for the funding to complete.
-
-#### Returns
-
-`Promise`\<`bigint`\>
-
-The amount added to the address by the faucet.
-
-***
-
 ### start()?
 
 > `optional` **start**(): `Promise`\<`void`\>
@@ -93,3 +65,31 @@ Nothing.
 #### Inherited from
 
 `IService.stop`
+
+***
+
+### fundAddress()
+
+> **fundAddress**(`requestContext`, `address`, `timeoutInSeconds`?): `Promise`\<`bigint`\>
+
+Fund the wallet from the faucet.
+
+#### Parameters
+
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **address**: `string`
+
+The bech32 encoded address of the address to fund.
+
+• **timeoutInSeconds?**: `number`
+
+The timeout in seconds to wait for the funding to complete.
+
+#### Returns
+
+`Promise`\<`bigint`\>
+
+The amount added to the address by the faucet.

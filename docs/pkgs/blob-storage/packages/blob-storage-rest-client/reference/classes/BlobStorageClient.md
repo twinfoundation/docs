@@ -34,6 +34,24 @@ The configuration for the client.
 
 ## Methods
 
+### getEndpointWithPrefix()
+
+> **getEndpointWithPrefix**(): `string`
+
+Get the endpoint with the prefix for the namespace.
+
+#### Returns
+
+`string`
+
+The endpoint with namespace prefix attached.
+
+#### Inherited from
+
+`BaseRestClient.getEndpointWithPrefix`
+
+***
+
 ### fetch()
 
 > **fetch**\<`T`, `U`\>(`requestContext`, `route`, `method`, `request`?): `Promise`\<`U`\>
@@ -76,84 +94,6 @@ The response.
 
 ***
 
-### get()
-
-> **get**(`requestContext`, `id`): `Promise`\<`Uint8Array`\>
-
-Get the blob.
-
-#### Parameters
-
-• **requestContext**: `IRequestContext`
-
-The context for the request.
-
-• **id**: `string`
-
-The id of the blob to get in urn format.
-
-#### Returns
-
-`Promise`\<`Uint8Array`\>
-
-The data for the blob if it can be found.
-
-#### Implementation of
-
-`IBlobStorage.get`
-
-#### Throws
-
-Not found error if the blob cannot be found.
-
-***
-
-### getEndpointWithPrefix()
-
-> **getEndpointWithPrefix**(): `string`
-
-Get the endpoint with the prefix for the namespace.
-
-#### Returns
-
-`string`
-
-The endpoint with namespace prefix attached.
-
-#### Inherited from
-
-`BaseRestClient.getEndpointWithPrefix`
-
-***
-
-### remove()
-
-> **remove**(`requestContext`, `id`): `Promise`\<`void`\>
-
-Remove the blob.
-
-#### Parameters
-
-• **requestContext**: `IRequestContext`
-
-The context for the request.
-
-• **id**: `string`
-
-The id of the blob to remove in urn format.
-
-#### Returns
-
-`Promise`\<`void`\>
-
-Nothing.
-
-#### Implementation of
-
-`IBlobStorage.remove`
-
-***
-
 ### set()
 
 > **set**(`requestContext`, `blob`, `options`?): `Promise`\<`string`\>
@@ -187,3 +127,63 @@ The id of the stored blob in urn format.
 #### Implementation of
 
 `IBlobStorage.set`
+
+***
+
+### get()
+
+> **get**(`requestContext`, `id`): `Promise`\<`Uint8Array`\>
+
+Get the blob.
+
+#### Parameters
+
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **id**: `string`
+
+The id of the blob to get in urn format.
+
+#### Returns
+
+`Promise`\<`Uint8Array`\>
+
+The data for the blob if it can be found.
+
+#### Implementation of
+
+`IBlobStorage.get`
+
+#### Throws
+
+Not found error if the blob cannot be found.
+
+***
+
+### remove()
+
+> **remove**(`requestContext`, `id`): `Promise`\<`void`\>
+
+Remove the blob.
+
+#### Parameters
+
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **id**: `string`
+
+The id of the blob to remove in urn format.
+
+#### Returns
+
+`Promise`\<`void`\>
+
+Nothing.
+
+#### Implementation of
+
+`IBlobStorage.remove`

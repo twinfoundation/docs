@@ -32,34 +32,6 @@ Nothing.
 
 ***
 
-### sign()
-
-> **sign**(`requestContext`, `keyId`, `data`): `Promise`\<`IDidProof`\>
-
-Sign the data and return the proof.
-
-#### Parameters
-
-• **requestContext**: `IRequestContext`
-
-The context for the request.
-
-• **keyId**: `string`
-
-The key id from a vault to sign the data.
-
-• **data**: `unknown`
-
-The data to sign.
-
-#### Returns
-
-`Promise`\<`IDidProof`\>
-
-The proof for the data with the id set as a unique identifier for the data.
-
-***
-
 ### start()?
 
 > `optional` **start**(): `Promise`\<`void`\>
@@ -93,6 +65,34 @@ Nothing.
 #### Inherited from
 
 `IService.stop`
+
+***
+
+### sign()
+
+> **sign**(`requestContext`, `keyId`, `data`): `Promise`\<`IDidProof`\>
+
+Sign the data and return the proof.
+
+#### Parameters
+
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **keyId**: `string`
+
+The key id from a vault to sign the data.
+
+• **data**: `unknown`
+
+The data to sign.
+
+#### Returns
+
+`Promise`\<`IDidProof`\>
+
+The proof for the data with the id set as a unique identifier for the data.
 
 ***
 

@@ -66,23 +66,59 @@ The object if it can be found or undefined, if request context was wildcard then
 
 ***
 
-### getStore()
+### set()
 
-> **getStore**(`tenantId`): `undefined` \| `T`[]
+> **set**(`requestContext`, `entity`): `Promise`\<`void`\>
 
-Get the memory store for the specified tenant.
+Set an entity.
 
 #### Parameters
 
-• **tenantId**: `string`
+• **requestContext**: `IRequestContext`
 
-The tenant id.
+The context for the request.
+
+• **entity**: `T`
+
+The entity to set.
 
 #### Returns
 
-`undefined` \| `T`[]
+`Promise`\<`void`\>
 
-The store.
+The id of the entity.
+
+#### Implementation of
+
+`IEntityStorageConnector.set`
+
+***
+
+### remove()
+
+> **remove**(`requestContext`, `id`): `Promise`\<`void`\>
+
+Remove the entity.
+
+#### Parameters
+
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **id**: `string`
+
+The id of the entity to remove.
+
+#### Returns
+
+`Promise`\<`void`\>
+
+Nothing.
+
+#### Implementation of
+
+`IEntityStorageConnector.remove`
 
 ***
 
@@ -125,18 +161,18 @@ The maximum number of entities in a page.
 All the entities for the storage matching the conditions,
 and a cursor which can be used to request more entities.
 
-##### cursor?
-
-> `optional` **cursor**: `string`
-
-An optional cursor, when defined can be used to call find to get more entities.
-
 ##### entities
 
 > **entities**: `Partial`\<`T` & `object`\>[]
 
 The entities, which can be partial if a limited keys list was provided.
 If the request context was wildcard then tenantId is also included.
+
+##### cursor?
+
+> `optional` **cursor**: `string`
+
+An optional cursor, when defined can be used to call find to get more entities.
 
 ##### pageSize?
 
@@ -156,56 +192,20 @@ Total entities length.
 
 ***
 
-### remove()
+### getStore()
 
-> **remove**(`requestContext`, `id`): `Promise`\<`void`\>
+> **getStore**(`tenantId`): `undefined` \| `T`[]
 
-Remove the entity.
-
-#### Parameters
-
-• **requestContext**: `IRequestContext`
-
-The context for the request.
-
-• **id**: `string`
-
-The id of the entity to remove.
-
-#### Returns
-
-`Promise`\<`void`\>
-
-Nothing.
-
-#### Implementation of
-
-`IEntityStorageConnector.remove`
-
-***
-
-### set()
-
-> **set**(`requestContext`, `entity`): `Promise`\<`void`\>
-
-Set an entity.
+Get the memory store for the specified tenant.
 
 #### Parameters
 
-• **requestContext**: `IRequestContext`
+• **tenantId**: `string`
 
-The context for the request.
-
-• **entity**: `T`
-
-The entity to set.
+The tenant id.
 
 #### Returns
 
-`Promise`\<`void`\>
+`undefined` \| `T`[]
 
-The id of the entity.
-
-#### Implementation of
-
-`IEntityStorageConnector.set`
+The store.

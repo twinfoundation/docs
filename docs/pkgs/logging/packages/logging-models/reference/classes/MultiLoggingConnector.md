@@ -34,19 +34,19 @@ The configuration for the logging connector.
 
 ## Properties
 
-### \_levels
-
-> `private` `readonly` **\_levels**: [`LogLevel`](../type-aliases/LogLevel.md)[]
-
-The log levels to display, will default to all.
-
-***
-
 ### \_loggingConnectors
 
 > `private` `readonly` **\_loggingConnectors**: [`ILoggingConnector`](../interfaces/ILoggingConnector.md)[]
 
 The connectors to send the log entries to.
+
+***
+
+### \_levels
+
+> `private` `readonly` **\_levels**: [`LogLevel`](../type-aliases/LogLevel.md)[]
+
+The log levels to display, will default to all.
 
 ## Methods
 
@@ -117,17 +117,17 @@ The maximum number of entities in a page.
 All the entities for the storage matching the conditions,
 and a cursor which can be used to request more entities.
 
-##### cursor?
-
-> `optional` **cursor**: `string`
-
-An optional cursor, when defined can be used to call find to get more entities.
-
 ##### entities
 
 > **entities**: `Partial`\<[`ILogEntry`](../interfaces/ILogEntry.md)\>[]
 
 The entities, which can be partial if a limited keys list was provided.
+
+##### cursor?
+
+> `optional` **cursor**: `string`
+
+An optional cursor, when defined can be used to call find to get more entities.
 
 ##### pageSize?
 

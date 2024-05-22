@@ -32,6 +32,42 @@ Nothing.
 
 ***
 
+### start()?
+
+> `optional` **start**(): `Promise`\<`void`\>
+
+The service needs to be started when the application is initialized.
+
+#### Returns
+
+`Promise`\<`void`\>
+
+Nothing.
+
+#### Inherited from
+
+`IService.start`
+
+***
+
+### stop()?
+
+> `optional` **stop**(): `Promise`\<`void`\>
+
+The service needs to be stopped when the application is closed.
+
+#### Returns
+
+`Promise`\<`void`\>
+
+Nothing.
+
+#### Inherited from
+
+`IService.stop`
+
+***
+
 ### create()
 
 > **create**(`requestContext`): `Promise`\<`void`\>
@@ -49,38 +85,6 @@ The context for the request.
 `Promise`\<`void`\>
 
 Nothing.
-
-***
-
-### ensureBalance()
-
-> **ensureBalance**(`requestContext`, `address`, `ensureBalance`, `timeoutInSeconds`?): `Promise`\<`boolean`\>
-
-Ensure the balance for an address in a wallet.
-
-#### Parameters
-
-• **requestContext**: `IRequestContext`
-
-The context for the request.
-
-• **address**: `string`
-
-The bech32 encoded address.
-
-• **ensureBalance**: `bigint`
-
-The balance to ensure on the address.
-
-• **timeoutInSeconds?**: `number`
-
-The timeout in seconds to wait for the funding to complete.
-
-#### Returns
-
-`Promise`\<`boolean`\>
-
-True if the balance has been ensured.
 
 ***
 
@@ -132,39 +136,35 @@ The storage costs for the address.
 
 ***
 
-### start()?
+### ensureBalance()
 
-> `optional` **start**(): `Promise`\<`void`\>
+> **ensureBalance**(`requestContext`, `address`, `ensureBalance`, `timeoutInSeconds`?): `Promise`\<`boolean`\>
 
-The service needs to be started when the application is initialized.
+Ensure the balance for an address in a wallet.
+
+#### Parameters
+
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **address**: `string`
+
+The bech32 encoded address.
+
+• **ensureBalance**: `bigint`
+
+The balance to ensure on the address.
+
+• **timeoutInSeconds?**: `number`
+
+The timeout in seconds to wait for the funding to complete.
 
 #### Returns
 
-`Promise`\<`void`\>
+`Promise`\<`boolean`\>
 
-Nothing.
-
-#### Inherited from
-
-`IService.start`
-
-***
-
-### stop()?
-
-> `optional` **stop**(): `Promise`\<`void`\>
-
-The service needs to be stopped when the application is closed.
-
-#### Returns
-
-`Promise`\<`void`\>
-
-Nothing.
-
-#### Inherited from
-
-`IService.stop`
+True if the balance has been ensured.
 
 ***
 

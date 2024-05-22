@@ -34,6 +34,24 @@ The configuration for the client.
 
 ## Methods
 
+### getEndpointWithPrefix()
+
+> **getEndpointWithPrefix**(): `string`
+
+Get the endpoint with the prefix for the namespace.
+
+#### Returns
+
+`string`
+
+The endpoint with namespace prefix attached.
+
+#### Inherited from
+
+`BaseRestClient.getEndpointWithPrefix`
+
+***
+
 ### fetch()
 
 > **fetch**\<`T`, `U`\>(`requestContext`, `route`, `method`, `request`?): `Promise`\<`U`\>
@@ -73,24 +91,6 @@ The response.
 #### Inherited from
 
 `BaseRestClient.fetch`
-
-***
-
-### getEndpointWithPrefix()
-
-> **getEndpointWithPrefix**(): `string`
-
-Get the endpoint with the prefix for the namespace.
-
-#### Returns
-
-`string`
-
-The endpoint with namespace prefix attached.
-
-#### Inherited from
-
-`BaseRestClient.getEndpointWithPrefix`
 
 ***
 
@@ -165,17 +165,17 @@ The maximum number of entities in a page.
 All the entities for the storage matching the conditions,
 and a cursor which can be used to request more entities.
 
-##### cursor?
-
-> `optional` **cursor**: `string`
-
-An optional cursor, when defined can be used to call find to get more entities.
-
 ##### entities
 
 > **entities**: `ILogEntry`[]
 
 The entities, which can be partial if a limited keys list was provided.
+
+##### cursor?
+
+> `optional` **cursor**: `string`
+
+An optional cursor, when defined can be used to call find to get more entities.
 
 ##### pageSize?
 

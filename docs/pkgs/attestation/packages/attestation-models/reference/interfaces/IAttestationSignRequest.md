@@ -10,17 +10,17 @@ Sign the data set and return the proof.
 
 The data to be used in the signing.
 
-#### data
-
-> **data**: `string`
-
-The base64 encoded data to sign.
-
 #### keyId
 
 > **keyId**: `string`
 
 The key id from a vault to sign the data.
+
+#### data
+
+> **data**: `string`
+
+The base64 encoded data to sign.
 
 #### namespace?
 

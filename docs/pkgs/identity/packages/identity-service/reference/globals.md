@@ -12,7 +12,7 @@
 ## Functions
 
 - [generateRestRoutes](functions/generateRestRoutes.md)
-- [identitiesList](functions/identitiesList.md)
 - [identityCreate](functions/identityCreate.md)
-- [identityGet](functions/identityGet.md)
 - [identityUpdate](functions/identityUpdate.md)
+- [identityGet](functions/identityGet.md)
+- [identitiesList](functions/identitiesList.md)

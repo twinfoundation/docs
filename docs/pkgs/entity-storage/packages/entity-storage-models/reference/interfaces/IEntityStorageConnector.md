@@ -36,6 +36,42 @@ Nothing.
 
 ***
 
+### start()?
+
+> `optional` **start**(): `Promise`\<`void`\>
+
+The service needs to be started when the application is initialized.
+
+#### Returns
+
+`Promise`\<`void`\>
+
+Nothing.
+
+#### Inherited from
+
+`IService.start`
+
+***
+
+### stop()?
+
+> `optional` **stop**(): `Promise`\<`void`\>
+
+The service needs to be stopped when the application is closed.
+
+#### Returns
+
+`Promise`\<`void`\>
+
+Nothing.
+
+#### Inherited from
+
+`IService.stop`
+
+***
+
 ### get()
 
 > **get**(`requestContext`, `id`, `secondaryIndex`?): `Promise`\<`undefined` \| `T` & `object`\>
@@ -61,6 +97,54 @@ Get the item using a secondary index.
 `Promise`\<`undefined` \| `T` & `object`\>
 
 The object if it can be found or undefined, if request context was wildcard then tenantId is also included.
+
+***
+
+### set()
+
+> **set**(`requestContext`, `entity`): `Promise`\<`void`\>
+
+Set an entity.
+
+#### Parameters
+
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **entity**: `T`
+
+The entity to set.
+
+#### Returns
+
+`Promise`\<`void`\>
+
+The id of the entity.
+
+***
+
+### remove()
+
+> **remove**(`requestContext`, `id`): `Promise`\<`void`\>
+
+Remove the entity.
+
+#### Parameters
+
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **id**: `string`
+
+The id of the entity to remove.
+
+#### Returns
+
+`Promise`\<`void`\>
+
+Nothing.
 
 ***
 
@@ -103,18 +187,18 @@ The maximum number of entities in a page.
 All the entities for the storage matching the conditions,
 and a cursor which can be used to request more entities.
 
-##### cursor?
-
-> `optional` **cursor**: `string`
-
-An optional cursor, when defined can be used to call find to get more entities.
-
 ##### entities
 
 > **entities**: `Partial`\<`T` & `object`\>[]
 
 The entities, which can be partial if a limited keys list was provided.
 If the request context was wildcard then tenantId is also included.
+
+##### cursor?
+
+> `optional` **cursor**: `string`
+
+An optional cursor, when defined can be used to call find to get more entities.
 
 ##### pageSize?
 
@@ -127,87 +211,3 @@ Number of entities to return.
 > **totalEntities**: `number`
 
 Total entities length.
-
-***
-
-### remove()
-
-> **remove**(`requestContext`, `id`): `Promise`\<`void`\>
-
-Remove the entity.
-
-#### Parameters
-
-• **requestContext**: `IRequestContext`
-
-The context for the request.
-
-• **id**: `string`
-
-The id of the entity to remove.
-
-#### Returns
-
-`Promise`\<`void`\>
-
-Nothing.
-
-***
-
-### set()
-
-> **set**(`requestContext`, `entity`): `Promise`\<`void`\>
-
-Set an entity.
-
-#### Parameters
-
-• **requestContext**: `IRequestContext`
-
-The context for the request.
-
-• **entity**: `T`
-
-The entity to set.
-
-#### Returns
-
-`Promise`\<`void`\>
-
-The id of the entity.
-
-***
-
-### start()?
-
-> `optional` **start**(): `Promise`\<`void`\>
-
-The service needs to be started when the application is initialized.
-
-#### Returns
-
-`Promise`\<`void`\>
-
-Nothing.
-
-#### Inherited from
-
-`IService.start`
-
-***
-
-### stop()?
-
-> `optional` **stop**(): `Promise`\<`void`\>
-
-The service needs to be stopped when the application is closed.
-
-#### Returns
-
-`Promise`\<`void`\>
-
-Nothing.
-
-#### Inherited from
-
-`IService.stop`

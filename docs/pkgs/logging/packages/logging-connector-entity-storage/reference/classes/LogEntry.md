@@ -14,22 +14,6 @@ Call defining a log entry.
 
 ## Properties
 
-### data?
-
-> `optional` **data**: `string`
-
-JSON data for the message.
-
-***
-
-### error?
-
-> `optional` **error**: `string`
-
-JSON version of flattened error array.
-
-***
-
 ### id
 
 > **id**: `string`
@@ -46,14 +30,6 @@ The level of the error being logged.
 
 ***
 
-### message
-
-> **message**: `string`
-
-The message.
-
-***
-
 ### source
 
 > **source**: `string`
@@ -67,3 +43,27 @@ The source of the log entry.
 > **ts**: `number`
 
 The timestamp of the log entry.
+
+***
+
+### message
+
+> **message**: `string`
+
+The message.
+
+***
+
+### error?
+
+> `optional` **error**: `string`
+
+JSON version of flattened error array.
+
+***
+
+### data?
+
+> `optional` **data**: `string`
+
+JSON data for the message.

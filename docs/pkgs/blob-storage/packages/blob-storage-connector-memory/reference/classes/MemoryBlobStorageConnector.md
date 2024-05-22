@@ -26,6 +26,34 @@ The configuration for the blob storage connector.
 
 ## Methods
 
+### set()
+
+> **set**(`requestContext`, `blob`): `Promise`\<`string`\>
+
+Set the blob.
+
+#### Parameters
+
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **blob**: `Uint8Array`
+
+The data for the blob.
+
+#### Returns
+
+`Promise`\<`string`\>
+
+The id of the stored blob in urn format.
+
+#### Implementation of
+
+`IBlobStorageConnector.set`
+
+***
+
 ### get()
 
 > **get**(`requestContext`, `id`): `Promise`\<`undefined` \| `Uint8Array`\>
@@ -51,26 +79,6 @@ The data for the blob if it can be found or undefined.
 #### Implementation of
 
 `IBlobStorageConnector.get`
-
-***
-
-### getStore()
-
-> **getStore**(`tenantId`): `undefined` \| `object`
-
-Get the memory store for the specified tenant.
-
-#### Parameters
-
-• **tenantId**: `string`
-
-The tenant id.
-
-#### Returns
-
-`undefined` \| `object`
-
-The store.
 
 ***
 
@@ -102,28 +110,20 @@ True if the blob was found.
 
 ***
 
-### set()
+### getStore()
 
-> **set**(`requestContext`, `blob`): `Promise`\<`string`\>
+> **getStore**(`tenantId`): `undefined` \| `object`
 
-Set the blob.
+Get the memory store for the specified tenant.
 
 #### Parameters
 
-• **requestContext**: `IRequestContext`
+• **tenantId**: `string`
 
-The context for the request.
-
-• **blob**: `Uint8Array`
-
-The data for the blob.
+The tenant id.
 
 #### Returns
 
-`Promise`\<`string`\>
+`undefined` \| `object`
 
-The id of the stored blob in urn format.
-
-#### Implementation of
-
-`IBlobStorageConnector.set`
+The store.

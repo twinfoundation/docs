@@ -32,42 +32,6 @@ Nothing.
 
 ***
 
-### sign()
-
-> **sign**(`requestContext`, `keyId`, `data`, `options`?): `Promise`\<[`IAttestationProof`](IAttestationProof.md)\>
-
-Sign the data and return the proof.
-
-#### Parameters
-
-• **requestContext**: `IRequestContext`
-
-The context for the request.
-
-• **keyId**: `string`
-
-The key id from a vault to sign the data.
-
-• **data**: `string`
-
-The data to store in blob storage and sign as base64.
-
-• **options?**
-
-Additional options for the attestation service.
-
-• **options.namespace?**: `string`
-
-The namespace to use for storing, defaults to service configured namespace.
-
-#### Returns
-
-`Promise`\<[`IAttestationProof`](IAttestationProof.md)\>
-
-The proof for the data with the id set as a unique identifier for the data.
-
-***
-
 ### start()?
 
 > `optional` **start**(): `Promise`\<`void`\>
@@ -101,6 +65,42 @@ Nothing.
 #### Inherited from
 
 `IService.stop`
+
+***
+
+### sign()
+
+> **sign**(`requestContext`, `keyId`, `data`, `options`?): `Promise`\<[`IAttestationProof`](IAttestationProof.md)\>
+
+Sign the data and return the proof.
+
+#### Parameters
+
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **keyId**: `string`
+
+The key id from a vault to sign the data.
+
+• **data**: `string`
+
+The data to store in blob storage and sign as base64.
+
+• **options?**
+
+Additional options for the attestation service.
+
+• **options.namespace?**: `string`
+
+The namespace to use for storing, defaults to service configured namespace.
+
+#### Returns
+
+`Promise`\<[`IAttestationProof`](IAttestationProof.md)\>
+
+The proof for the data with the id set as a unique identifier for the data.
 
 ***
 

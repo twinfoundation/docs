@@ -10,23 +10,11 @@ Get the a list of the log entries.
 
 The query parameters.
 
-#### cursor?
-
-> `optional` **cursor**: `string`
-
-The optional cursor to get next chunk.
-
 #### level?
 
 > `optional` **level**: [`LogLevel`](../type-aliases/LogLevel.md)
 
 The level of the log entries to retrieve.
-
-#### pageSize?
-
-> `optional` **pageSize**: `number`
-
-The maximum number of entities in a page.
 
 #### source?
 
@@ -34,14 +22,26 @@ The maximum number of entities in a page.
 
 The source of the log entries to retrieve.
 
+#### timeStart?
+
+> `optional` **timeStart**: `number`
+
+The start time of the metrics to retrieve as a timestamp in ms.
+
 #### timeEnd?
 
 > `optional` **timeEnd**: `number`
 
 The end time of the metrics to retrieve as a timestamp in ms.
 
-#### timeStart?
+#### cursor?
 
-> `optional` **timeStart**: `number`
+> `optional` **cursor**: `string`
 
-The start time of the metrics to retrieve as a timestamp in ms.
+The optional cursor to get next chunk.
+
+#### pageSize?
+
+> `optional` **pageSize**: `number`
+
+The maximum number of entities in a page.

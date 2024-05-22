@@ -32,6 +32,42 @@ Nothing.
 
 ***
 
+### start()?
+
+> `optional` **start**(): `Promise`\<`void`\>
+
+The service needs to be started when the application is initialized.
+
+#### Returns
+
+`Promise`\<`void`\>
+
+Nothing.
+
+#### Inherited from
+
+`IService.start`
+
+***
+
+### stop()?
+
+> `optional` **stop**(): `Promise`\<`void`\>
+
+The service needs to be stopped when the application is closed.
+
+#### Returns
+
+`Promise`\<`void`\>
+
+Nothing.
+
+#### Inherited from
+
+`IService.stop`
+
+***
+
 ### identityCreate()
 
 > **identityCreate**(`requestContext`, `role`, `properties`?): `Promise`\<`object`\>
@@ -92,13 +128,41 @@ The properties to get for the item, defaults to all.
 
 The items properties.
 
+##### role
+
+> **role**: [`IdentityRole`](../enumerations/IdentityRole.md)
+
 ##### properties?
 
 > `optional` **properties**: `IProperty`[]
 
-##### role
+***
 
-> **role**: [`IdentityRole`](../enumerations/IdentityRole.md)
+### identityUpdate()
+
+> **identityUpdate**(`requestContext`, `identity`, `properties`): `Promise`\<`void`\>
+
+Update an item.
+
+#### Parameters
+
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **identity**: `string`
+
+The identity to update.
+
+• **properties**: `IProperty`[]
+
+Properties for the profile, set a properties value to undefined to remove it.
+
+#### Returns
+
+`Promise`\<`void`\>
+
+Nothing.
 
 ***
 
@@ -136,17 +200,17 @@ The maximum number of items in a page.
 
 The list of items and cursor for paging.
 
-##### cursor?
-
-> `optional` **cursor**: `string`
-
-An optional cursor, when defined can be used to call find to get more entities.
-
 ##### identities
 
 > **identities**: `object`[]
 
 The identities.
+
+##### cursor?
+
+> `optional` **cursor**: `string`
+
+An optional cursor, when defined can be used to call find to get more entities.
 
 ##### pageSize?
 
@@ -159,67 +223,3 @@ Number of entities to return.
 > **totalEntities**: `number`
 
 Total entities length.
-
-***
-
-### identityUpdate()
-
-> **identityUpdate**(`requestContext`, `identity`, `properties`): `Promise`\<`void`\>
-
-Update an item.
-
-#### Parameters
-
-• **requestContext**: `IRequestContext`
-
-The context for the request.
-
-• **identity**: `string`
-
-The identity to update.
-
-• **properties**: `IProperty`[]
-
-Properties for the profile, set a properties value to undefined to remove it.
-
-#### Returns
-
-`Promise`\<`void`\>
-
-Nothing.
-
-***
-
-### start()?
-
-> `optional` **start**(): `Promise`\<`void`\>
-
-The service needs to be started when the application is initialized.
-
-#### Returns
-
-`Promise`\<`void`\>
-
-Nothing.
-
-#### Inherited from
-
-`IService.start`
-
-***
-
-### stop()?
-
-> `optional` **stop**(): `Promise`\<`void`\>
-
-The service needs to be stopped when the application is closed.
-
-#### Returns
-
-`Promise`\<`void`\>
-
-Nothing.
-
-#### Inherited from
-
-`IService.stop`
