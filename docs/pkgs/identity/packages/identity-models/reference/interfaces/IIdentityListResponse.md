@@ -6,15 +6,30 @@ Response to get a list of identities.
 
 ### body
 
-• **body**: `Object`
+> **body**: `object`
 
 The response payload.
 
-#### Type declaration
+#### cursor?
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `cursor?` | `string` | An optional cursor, when defined can be used to call find to get more entities. |
-| `identities` | \{ `identity`: `string` ; `properties?`: `IProperty`[]  }[] | The identities. |
-| `pageSize?` | `number` | Number of entities to return. |
-| `totalEntities` | `number` | Total entities length. |
+> `optional` **cursor**: `string`
+
+An optional cursor, when defined can be used to call find to get more entities.
+
+#### identities
+
+> **identities**: `object`[]
+
+The identities.
+
+#### pageSize?
+
+> `optional` **pageSize**: `number`
+
+Number of entities to return.
+
+#### totalEntities
+
+> **totalEntities**: `number`
+
+Total entities length.

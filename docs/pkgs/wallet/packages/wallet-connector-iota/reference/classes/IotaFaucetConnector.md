@@ -8,17 +8,17 @@ Class for performing faucet operations on IOTA.
 
 ## Constructors
 
-### constructor
+### new IotaFaucetConnector()
 
-• **new IotaFaucetConnector**(`config`): [`IotaFaucetConnector`](IotaFaucetConnector.md)
+> **new IotaFaucetConnector**(`config`): [`IotaFaucetConnector`](IotaFaucetConnector.md)
 
 Create a new instance of IotaWalletConnector.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `config` | [`IIotaFaucetConnectorConfig`](../interfaces/IIotaFaucetConnectorConfig.md) | The configuration to use. |
+• **config**: [`IIotaFaucetConnectorConfig`](../interfaces/IIotaFaucetConnectorConfig.md)
+
+The configuration to use.
 
 #### Returns
 
@@ -28,25 +28,31 @@ Create a new instance of IotaWalletConnector.
 
 ### NAMESPACE
 
-▪ `Static` **NAMESPACE**: `string` = `"iota"`
+> `static` **NAMESPACE**: `string` = `"iota"`
 
 The namespace supported by the wallet connector.
 
 ## Methods
 
-### fundAddress
+### fundAddress()
 
-▸ **fundAddress**(`requestContext`, `address`, `timeoutInSeconds?`): `Promise`\<`bigint`\>
+> **fundAddress**(`requestContext`, `address`, `timeoutInSeconds`): `Promise`\<`bigint`\>
 
 Fund the wallet from the faucet.
 
 #### Parameters
 
-| Name | Type | Default value | Description |
-| :------ | :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | `undefined` | The context for the request. |
-| `address` | `string` | `undefined` | The bech32 encoded address of the address to fund. |
-| `timeoutInSeconds` | `number` | `60` | The timeout in seconds to wait for the funding to complete. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **address**: `string`
+
+The bech32 encoded address of the address to fund.
+
+• **timeoutInSeconds**: `number`= `60`
+
+The timeout in seconds to wait for the funding to complete.
 
 #### Returns
 
@@ -56,21 +62,21 @@ The amount added to the address by the faucet.
 
 #### Implementation of
 
-IFaucetConnector.fundAddress
+`IFaucetConnector.fundAddress`
 
-___
+***
 
-### getBalance
+### getBalance()
 
-▸ **getBalance**(`address`): `Promise`\<`bigint`\>
+> `private` **getBalance**(`address`): `Promise`\<`bigint`\>
 
 Calculate the balance on an address.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `address` | `string` | The bech32 encoded address to get the balance. |
+• **address**: `string`
+
+The bech32 encoded address to get the balance.
 
 #### Returns
 

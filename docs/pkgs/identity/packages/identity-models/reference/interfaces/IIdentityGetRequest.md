@@ -6,26 +6,26 @@ Get the profile for an identity.
 
 ### path
 
-• **path**: `Object`
+> **path**: `object`
 
 The path parameters.
 
-#### Type declaration
+#### identity
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `identity` | `string` | The identity to get the profile for. |
+> **identity**: `string`
 
-___
+The identity to get the profile for.
+
+***
 
 ### query
 
-• **query**: `Object`
+> **query**: `object`
 
 The query parameters.
 
-#### Type declaration
+#### propertyNames?
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `propertyNames?` | `string` | The properties to get for the profile, defaults to all, should be a comma separated list. |
+> `optional` **propertyNames**: `string`
+
+The properties to get for the profile, defaults to all, should be a comma separated list.

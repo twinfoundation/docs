@@ -2,29 +2,39 @@
 
 Interface describing a vault securely storing data.
 
-## Hierarchy
+## Extends
 
 - `IService`
 
-  ↳ **`IVaultConnector`**
-
 ## Methods
 
-### addKey
+### addKey()
 
-▸ **addKey**(`requestContext`, `name`, `type`, `privateKey`, `publicKey`): `Promise`\<`void`\>
+> **addKey**(`requestContext`, `name`, `type`, `privateKey`, `publicKey`): `Promise`\<`void`\>
 
 Add a key to the vault.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `name` | `string` | The name of the key to add to the vault. |
-| `type` | ``"Ed25519"`` | The type of key to add. |
-| `privateKey` | `string` | The private key in base64 format. |
-| `publicKey` | `string` | The public key in base64 format. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **name**: `string`
+
+The name of the key to add to the vault.
+
+• **type**: [`VaultKeyType`](../type-aliases/VaultKeyType.md)
+
+The type of key to add.
+
+• **privateKey**: `string`
+
+The private key in base64 format.
+
+• **publicKey**: `string`
+
+The public key in base64 format.
 
 #### Returns
 
@@ -32,19 +42,19 @@ Add a key to the vault.
 
 Nothing.
 
-___
+***
 
-### bootstrap
+### bootstrap()?
 
-▸ **bootstrap**(`requestContext`): `Promise`\<`void`\>
+> `optional` **bootstrap**(`requestContext`): `Promise`\<`void`\>
 
 Bootstrap the service by creating and initializing any resources it needs.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The request context for bootstrapping. |
+• **requestContext**: `IRequestContext`
+
+The request context for bootstrapping.
 
 #### Returns
 
@@ -54,23 +64,29 @@ Nothing.
 
 #### Inherited from
 
-IService.bootstrap
+`IService.bootstrap`
 
-___
+***
 
-### createKey
+### createKey()
 
-▸ **createKey**(`requestContext`, `name`, `type`): `Promise`\<`string`\>
+> **createKey**(`requestContext`, `name`, `type`): `Promise`\<`string`\>
 
 Create a key in the vault.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `name` | `string` | The name of the key to create in the vault. |
-| `type` | ``"Ed25519"`` | The type of key to create. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **name**: `string`
+
+The name of the key to create in the vault.
+
+• **type**: [`VaultKeyType`](../type-aliases/VaultKeyType.md)
+
+The type of key to create.
 
 #### Returns
 
@@ -78,22 +94,31 @@ Create a key in the vault.
 
 The public key for the key pair in base64.
 
-___
+***
 
-### decrypt
+### decrypt()
 
-▸ **decrypt**(`requestContext`, `name`, `encryptionType`, `encryptedData`): `Promise`\<`string`\>
+> **decrypt**(`requestContext`, `name`, `encryptionType`, `encryptedData`): `Promise`\<`string`\>
 
 Decrypt the data using a key in the vault.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `name` | `string` | The name of the key to use for decryption. |
-| `encryptionType` | ``"ChaCha20Poly1305"`` | The type of encryption to use. |
-| `encryptedData` | `string` | The data to decrypt in base64. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **name**: `string`
+
+The name of the key to use for decryption.
+
+• **encryptionType**: `"ChaCha20Poly1305"`
+
+The type of encryption to use.
+
+• **encryptedData**: `string`
+
+The data to decrypt in base64.
 
 #### Returns
 
@@ -101,22 +126,31 @@ Decrypt the data using a key in the vault.
 
 The decrypted data in base64.
 
-___
+***
 
-### encrypt
+### encrypt()
 
-▸ **encrypt**(`requestContext`, `name`, `encryptionType`, `data`): `Promise`\<`string`\>
+> **encrypt**(`requestContext`, `name`, `encryptionType`, `data`): `Promise`\<`string`\>
 
 Encrypt the data using a key in the vault.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `name` | `string` | The name of the key to use for encryption. |
-| `encryptionType` | ``"ChaCha20Poly1305"`` | The type of encryption to use. |
-| `data` | `string` | The data to encrypt in base64 form. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **name**: `string`
+
+The name of the key to use for encryption.
+
+• **encryptionType**: `"ChaCha20Poly1305"`
+
+The type of encryption to use.
+
+• **data**: `string`
+
+The data to encrypt in base64 form.
 
 #### Returns
 
@@ -124,47 +158,69 @@ Encrypt the data using a key in the vault.
 
 The encrypted data in base64.
 
-___
+***
 
-### getKey
+### getKey()
 
-▸ **getKey**(`requestContext`, `name`): `Promise`\<\{ `privateKey`: `string` ; `publicKey`: `string` ; `type`: ``"Ed25519"``  }\>
+> **getKey**(`requestContext`, `name`): `Promise`\<`object`\>
 
 Get a key from the vault.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `name` | `string` | The name of the key to get from the vault. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **name**: `string`
+
+The name of the key to get from the vault.
 
 #### Returns
 
-`Promise`\<\{ `privateKey`: `string` ; `publicKey`: `string` ; `type`: ``"Ed25519"``  }\>
+`Promise`\<`object`\>
 
 The key.
 
-___
+##### privateKey
 
-### getSecret
+> **privateKey**: `string`
 
-▸ **getSecret**\<`T`\>(`requestContext`, `name`): `Promise`\<`T`\>
+The private key in base64 format.
+
+##### publicKey
+
+> **publicKey**: `string`
+
+The public key in base64 format.
+
+##### type
+
+> **type**: [`VaultKeyType`](../type-aliases/VaultKeyType.md)
+
+The type of the key e.g. Ed25519, Secp256k1.
+
+***
+
+### getSecret()
+
+> **getSecret**\<`T`\>(`requestContext`, `name`): `Promise`\<`T`\>
 
 Get a secret from the vault.
 
 #### Type parameters
 
-| Name |
-| :------ |
-| `T` |
+• **T**
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `name` | `string` | The name of the secret in the vault to get. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **name**: `string`
+
+The name of the secret in the vault to get.
 
 #### Returns
 
@@ -172,24 +228,27 @@ Get a secret from the vault.
 
 The secret from the vault.
 
-**`Throws`**
+#### Throws
 
 Error if the secret is not found.
 
-___
+***
 
-### removeKey
+### removeKey()
 
-▸ **removeKey**(`requestContext`, `name`): `Promise`\<`void`\>
+> **removeKey**(`requestContext`, `name`): `Promise`\<`void`\>
 
 Remove a key from the vault.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `name` | `string` | The name of the key to remove from the vault. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **name**: `string`
+
+The name of the key to remove from the vault.
 
 #### Returns
 
@@ -197,20 +256,23 @@ Remove a key from the vault.
 
 Nothing.
 
-___
+***
 
-### removeSecret
+### removeSecret()
 
-▸ **removeSecret**(`requestContext`, `name`): `Promise`\<`void`\>
+> **removeSecret**(`requestContext`, `name`): `Promise`\<`void`\>
 
 Remove a secret from the vault.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `name` | `string` | The name of the secret in the vault to remove. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **name**: `string`
+
+The name of the secret in the vault to remove.
 
 #### Returns
 
@@ -218,25 +280,31 @@ Remove a secret from the vault.
 
 Nothing.
 
-**`Throws`**
+#### Throws
 
 Error if the secret is not found.
 
-___
+***
 
-### renameKey
+### renameKey()
 
-▸ **renameKey**(`requestContext`, `name`, `newName`): `Promise`\<`void`\>
+> **renameKey**(`requestContext`, `name`, `newName`): `Promise`\<`void`\>
 
 Rename a key in the vault.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `name` | `string` | The name of the key to rename. |
-| `newName` | `string` | The new name of the key. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **name**: `string`
+
+The name of the key to rename.
+
+• **newName**: `string`
+
+The new name of the key.
 
 #### Returns
 
@@ -244,27 +312,31 @@ Rename a key in the vault.
 
 Nothing.
 
-___
+***
 
-### setSecret
+### setSecret()
 
-▸ **setSecret**\<`T`\>(`requestContext`, `name`, `data`): `Promise`\<`void`\>
+> **setSecret**\<`T`\>(`requestContext`, `name`, `data`): `Promise`\<`void`\>
 
 Store a secret in the vault.
 
 #### Type parameters
 
-| Name |
-| :------ |
-| `T` |
+• **T**
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `name` | `string` | The name of the secret in the vault to set. |
-| `data` | `T` | The secret to add to the vault. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **name**: `string`
+
+The name of the secret in the vault to set.
+
+• **data**: `T`
+
+The secret to add to the vault.
 
 #### Returns
 
@@ -272,21 +344,27 @@ Store a secret in the vault.
 
 Nothing.
 
-___
+***
 
-### sign
+### sign()
 
-▸ **sign**(`requestContext`, `name`, `data`): `Promise`\<`string`\>
+> **sign**(`requestContext`, `name`, `data`): `Promise`\<`string`\>
 
 Sign the data using a key in the vault.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `name` | `string` | The name of the key to use for signing. |
-| `data` | `string` | The data to sign in base64 form. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **name**: `string`
+
+The name of the key to use for signing.
+
+• **data**: `string`
+
+The data to sign in base64 form.
 
 #### Returns
 
@@ -294,11 +372,11 @@ Sign the data using a key in the vault.
 
 The signature for the data in base64 form.
 
-___
+***
 
-### start
+### start()?
 
-▸ **start**(): `Promise`\<`void`\>
+> `optional` **start**(): `Promise`\<`void`\>
 
 The service needs to be started when the application is initialized.
 
@@ -310,13 +388,13 @@ Nothing.
 
 #### Inherited from
 
-IService.start
+`IService.start`
 
-___
+***
 
-### stop
+### stop()?
 
-▸ **stop**(): `Promise`\<`void`\>
+> `optional` **stop**(): `Promise`\<`void`\>
 
 The service needs to be stopped when the application is closed.
 
@@ -328,24 +406,33 @@ Nothing.
 
 #### Inherited from
 
-IService.stop
+`IService.stop`
 
-___
+***
 
-### verify
+### verify()
 
-▸ **verify**(`requestContext`, `name`, `data`, `signature`): `Promise`\<`boolean`\>
+> **verify**(`requestContext`, `name`, `data`, `signature`): `Promise`\<`boolean`\>
 
 Verify the signature of the data using a key in the vault.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `name` | `string` | The name of the key to use for verification. |
-| `data` | `string` | The data that was signed in base64 form. |
-| `signature` | `string` | The signature to verify in base64 form. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **name**: `string`
+
+The name of the key to use for verification.
+
+• **data**: `string`
+
+The data that was signed in base64 form.
+
+• **signature**: `string`
+
+The signature to verify in base64 form.
 
 #### Returns
 

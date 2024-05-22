@@ -1,54 +1,72 @@
 # Class: HmacSha256
 
 Class to help with HmacSha256 scheme.
-TypeScript conversion from https://github.com/emn178/js-sha256.
 
 ## Constructors
 
-### constructor
+### new HmacSha256()
 
-• **new HmacSha256**(`key`, `bits?`): [`HmacSha256`](HmacSha256.md)
+> **new HmacSha256**(`key`, `bits`): [`HmacSha256`](HmacSha256.md)
 
 Create a new instance of HmacSha256.
 
 #### Parameters
 
-| Name | Type | Default value | Description |
-| :------ | :------ | :------ | :------ |
-| `key` | `Uint8Array` | `undefined` | The key for the hmac. |
-| `bits` | `number` | `256` | The number of bits. |
+• **key**: `Uint8Array`
+
+The key for the hmac.
+
+• **bits**: `number`= `HmacSha256.SIZE_256`
+
+The number of bits.
 
 #### Returns
 
 [`HmacSha256`](HmacSha256.md)
 
+## Properties
+
+### SIZE\_224
+
+> `static` `readonly` **SIZE\_224**: `number` = `224`
+
+Sha256 224.
+
+***
+
+### SIZE\_256
+
+> `static` `readonly` **SIZE\_256**: `number` = `256`
+
+Sha256 256.
+
 ## Methods
 
-### digest
+### digest()
 
-▸ **digest**(): `Uint8Array`
+> **digest**(): `Uint8Array`
 
-Get the digest.
+Get the digest for the hash.
 
 #### Returns
 
 `Uint8Array`
 
-The digest.
+The instance for chaining.
 
-___
+***
 
-### update
+### update()
 
-▸ **update**(`message`): [`HmacSha256`](HmacSha256.md)
+> **update**(`block`): [`HmacSha256`](HmacSha256.md)
 
-Update the hash with the data.
+Update the hash with the block.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `message` | `Uint8Array` | The data to update the hash with. |
+• **block**: `Uint8Array`
+
+The block to update the hash with.
 
 #### Returns
 
@@ -56,23 +74,50 @@ Update the hash with the data.
 
 The instance for chaining.
 
-___
+***
 
-### sum256
+### sum224()
 
-▸ **sum256**(`key`, `data`): `Uint8Array`
+> `static` **sum224**(`key`, `block`): `Uint8Array`
 
-Perform Sum 256 on the data.
+Perform Sum 224 on the block.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `key` | `Uint8Array` | The key for the hmac. |
-| `data` | `Uint8Array` | The data to operate on. |
+• **key**: `Uint8Array`
+
+The key for the hmac.
+
+• **block**: `Uint8Array`
+
+The block to operate on.
 
 #### Returns
 
 `Uint8Array`
 
-The sum 256 of the data.
+The sum 224 of the block.
+
+***
+
+### sum256()
+
+> `static` **sum256**(`key`, `block`): `Uint8Array`
+
+Perform Sum 256 on the block.
+
+#### Parameters
+
+• **key**: `Uint8Array`
+
+The key for the hmac.
+
+• **block**: `Uint8Array`
+
+The block to operate on.
+
+#### Returns
+
+`Uint8Array`
+
+The sum 256 of the block.

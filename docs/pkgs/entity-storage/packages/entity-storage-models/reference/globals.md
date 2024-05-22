@@ -6,8 +6,4 @@
 
 ## Variables
 
-### EntityStorageConnectorFactory
-
-• `Const` **EntityStorageConnectorFactory**: `Factory`\<[`IEntityStorageConnector`](interfaces/IEntityStorageConnector.md)\<`unknown`\>\>
-
-Factory for creating entity storage connectors.
+- [EntityStorageConnectorFactory](variables/EntityStorageConnectorFactory.md)

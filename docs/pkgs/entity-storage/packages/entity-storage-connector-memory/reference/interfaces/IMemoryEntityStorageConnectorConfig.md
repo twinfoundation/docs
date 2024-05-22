@@ -4,18 +4,16 @@ Configuration for the Memory Entity Storage Connector.
 
 ## Type parameters
 
-| Name | Type |
-| :------ | :------ |
-| `T` | `unknown` |
+• **T** = `unknown`
 
 ## Properties
 
-### initialValues
+### initialValues?
 
-• `Optional` **initialValues**: `Object`
+> `optional` **initialValues**: `object`
 
 Initial values to populate the entity storage with.
 
 #### Index signature
 
-▪ [tenantId: `string`]: `T`[]
+ \[`tenantId`: `string`\]: `T`[]

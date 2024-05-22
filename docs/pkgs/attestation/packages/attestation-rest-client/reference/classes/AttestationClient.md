@@ -2,11 +2,9 @@
 
 Client for performing attestation through to REST endpoints.
 
-## Hierarchy
+## Extends
 
 - `BaseRestClient`
-
-  ↳ **`AttestationClient`**
 
 ## Implements
 
@@ -14,17 +12,17 @@ Client for performing attestation through to REST endpoints.
 
 ## Constructors
 
-### constructor
+### new AttestationClient()
 
-• **new AttestationClient**(`config`): [`AttestationClient`](AttestationClient.md)
+> **new AttestationClient**(`config`): [`AttestationClient`](AttestationClient.md)
 
 Create a new instance of AttestationClient.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `config` | `IBaseRestClientConfig` | The configuration for the client. |
+• **config**: `IBaseRestClientConfig`
+
+The configuration for the client.
 
 #### Returns
 
@@ -32,31 +30,39 @@ Create a new instance of AttestationClient.
 
 #### Overrides
 
-BaseRestClient.constructor
+`BaseRestClient.constructor`
 
 ## Methods
 
-### fetch
+### fetch()
 
-▸ **fetch**\<`T`, `U`\>(`requestContext`, `route`, `method`, `request?`): `Promise`\<`U`\>
+> **fetch**\<`T`, `U`\>(`requestContext`, `route`, `method`, `request`?): `Promise`\<`U`\>
 
 Perform a request in json format.
 
 #### Type parameters
 
-| Name | Type |
-| :------ | :------ |
-| `T` | extends `IHttpRequest`\<`unknown`\> |
-| `U` | extends `IHttpResponse`\<`unknown`\> |
+• **T** *extends* `IHttpRequest`\<`unknown`\>
+
+• **U** *extends* `IHttpResponse`\<`unknown`\>
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `route` | `string` | The route of the request. |
-| `method` | `HttpMethods` | The http method. |
-| `request?` | `T` | Request to send to the endpoint. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **route**: `string`
+
+The route of the request.
+
+• **method**: `HttpMethods`
+
+The http method.
+
+• **request?**: `T`
+
+Request to send to the endpoint.
 
 #### Returns
 
@@ -66,13 +72,13 @@ The response.
 
 #### Inherited from
 
-BaseRestClient.fetch
+`BaseRestClient.fetch`
 
-___
+***
 
-### getEndpointWithPrefix
+### getEndpointWithPrefix()
 
-▸ **getEndpointWithPrefix**(): `string`
+> **getEndpointWithPrefix**(): `string`
 
 Get the endpoint with the prefix for the namespace.
 
@@ -84,48 +90,65 @@ The endpoint with namespace prefix attached.
 
 #### Inherited from
 
-BaseRestClient.getEndpointWithPrefix
+`BaseRestClient.getEndpointWithPrefix`
 
-___
+***
 
-### sign
+### sign()
 
-▸ **sign**(`requestContext`, `data`): `Promise`\<`IDidProof`\>
+> **sign**(`requestContext`, `keyId`, `data`, `options`?): `Promise`\<`IAttestationProof`\>
 
 Sign the data and return the proof.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `data` | `unknown` | The data to sign. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **keyId**: `string`
+
+The key id from a vault to sign the data.
+
+• **data**: `string`
+
+The data to store in blob storage and sign as base64.
+
+• **options?**
+
+Additional options for the attestation service.
+
+• **options.namespace?**: `string`
+
+The namespace to use for storing, defaults to service configured namespace.
 
 #### Returns
 
-`Promise`\<`IDidProof`\>
+`Promise`\<`IAttestationProof`\>
 
 The proof for the data with the id set as a unique identifier for the data.
 
 #### Implementation of
 
-IAttestation.sign
+`IAttestation.sign`
 
-___
+***
 
-### verify
+### verify()
 
-▸ **verify**(`requestContext`, `data`, `proof`): `Promise`\<`boolean`\>
+> **verify**(`requestContext`, `proof`): `Promise`\<`boolean`\>
 
-Verify the data against the proof the proof.
+Verify the data against the proof.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `data` | `unknown` | The data to verify. |
-| `proof` | `IDidProof` | The proof to verify against. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **proof**: `IAttestationProof`
+
+The proof to verify against.
 
 #### Returns
 
@@ -135,4 +158,4 @@ True if the verification is successful.
 
 #### Implementation of
 
-IAttestation.verify
+`IAttestation.verify`

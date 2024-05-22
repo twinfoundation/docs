@@ -1,6 +1,6 @@
 {
 	"name": "@gtsc/identity-service",
-	"version": "0.0.3-next.8",
+	"version": "0.0.3-next.9",
 	"description": "Identity contract implementation and REST endpoint definitions",
 	"repository": {
 		"type": "git",
@@ -23,9 +23,9 @@
 		"bundle": "npm run bundle:esm && npm run bundle:cjs",
 		"docs:clean": "rimraf docs/reference",
 		"docs:generate": "typedoc",
+		"docs:remove-header": "replace-in-files --regex='^.*overview.md.*?\\s\\s.*?\\s\\s' --string='docs/' --replacement='' docs/**/*.md",
 		"docs:api": "ts-to-openapi ./ts-to-openapi.json ./docs/open-api/spec.json",
-		"docs:finalise": "rimraf docs/reference/README.md",
-		"docs": "npm run docs:clean && npm run docs:generate && npm run docs:api && npm run docs:finalise",
+		"docs": "npm run docs:clean && npm run docs:generate && npm run docs:remove-header && npm run docs:api",
 		"dist": "npm run clean && npm run build && npm run test && npm run bundle && npm run docs"
 	},
 	"dependencies": {
@@ -35,8 +35,8 @@
 		"@gtsc/entity": "next",
 		"@gtsc/entity-storage-models": "next",
 		"@gtsc/entity-storage-connector-memory": "next",
-		"@gtsc/identity-models": "0.0.3-next.8",
-		"@gtsc/identity-connector-entity-storage": "0.0.3-next.8",
+		"@gtsc/identity-models": "0.0.3-next.9",
+		"@gtsc/identity-connector-entity-storage": "0.0.3-next.9",
 		"@gtsc/schema": "next",
 		"@gtsc/services": "next",
 		"@gtsc/vault-models": "next",
@@ -46,16 +46,17 @@
 	"devDependencies": {
 		"@gtsc/nameof-transformer": "^0.0.4",
 		"@gtsc/ts-to-openapi": "next",
-		"@vitest/coverage-v8": "^1.5.3",
+		"@vitest/coverage-v8": "^1.6.0",
 		"copyfiles": "^2.4.1",
-		"rimraf": "^5.0.5",
+		"replace-in-files-cli": "^2.2.0",
+		"rimraf": "^5.0.7",
 		"rollup": "^4.17.2",
 		"rollup-plugin-typescript2": "^0.36.0",
 		"ts-patch": "^3.1.2",
 		"typedoc": "^0.25.13",
-		"typedoc-plugin-markdown": "^3.17.1",
+		"typedoc-plugin-markdown": "^4.0.2",
 		"typescript": "^5.4.5",
-		"vitest": "^1.5.3"
+		"vitest": "^1.6.0"
 	},
 	"main": "./dist/cjs/index.cjs",
 	"module": "./dist/esm/index.mjs",

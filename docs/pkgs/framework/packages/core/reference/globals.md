@@ -49,8 +49,4 @@
 
 ## Type Aliases
 
-### CompressionType
-
-Ƭ **CompressionType**: ``"gzip"`` \| ``"deflate"``
-
-Compression types.
+- [CompressionType](type-aliases/CompressionType.md)

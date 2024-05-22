@@ -6,13 +6,18 @@ Create a new identity.
 
 ### body
 
-• **body**: `Object`
+> **body**: `object`
 
 The data for the request.
 
-#### Type declaration
+#### properties?
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `properties?` | `IProperty`[] | Initial properties for the identity. |
-| `role` | [`IdentityRole`](../enums/IdentityRole.md) | The role for the identity. |
+> `optional` **properties**: `IProperty`[]
+
+Initial properties for the identity.
+
+#### role
+
+> **role**: [`IdentityRole`](../enumerations/IdentityRole.md)
+
+The role for the identity.

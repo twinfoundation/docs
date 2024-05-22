@@ -6,22 +6,22 @@ Interface describing a did document service.
 
 ### id
 
-• **id**: `string`
+> **id**: `string`
 
 The id of the service.
 
-___
+***
 
 ### serviceEndpoint
 
-• **serviceEndpoint**: `string` \| `string`[]
+> **serviceEndpoint**: `string` \| `string`[]
 
 The endpoint for the service.
 
-___
+***
 
 ### type
 
-• **type**: `string` \| `string`[]
+> **type**: `string` \| `string`[]
 
 The type of the service.

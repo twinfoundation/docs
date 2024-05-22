@@ -4,72 +4,70 @@ Interface describing a verifiable credential.
 
 ## Type parameters
 
-| Name | Type |
-| :------ | :------ |
-| `T` | `unknown` |
+• **T** = `unknown`
 
 ## Properties
 
 ### @context
 
-• **@context**: `string` \| `string`[]
+> **@context**: `string` \| `string`[]
 
 The context for the verifiable credential.
 
-___
+***
 
-### credentialStatus
+### credentialStatus?
 
-• `Optional` **credentialStatus**: [`IDidCredentialStatus`](IDidCredentialStatus.md)
+> `optional` **credentialStatus**: [`IDidCredentialStatus`](IDidCredentialStatus.md)
 
 Used to discover information about the current status of the
 verifiable credential, such as whether it is suspended or revoked.
 
-___
+***
 
 ### credentialSubject
 
-• **credentialSubject**: `T` \| `T`[]
+> **credentialSubject**: `T` \| `T`[]
 
 The data for the verifiable credential.
 
-___
+***
 
 ### id
 
-• **id**: `string`
+> **id**: `string`
 
 The identifier for the verifiable credential.
 
-___
+***
 
 ### issuanceDate
 
-• **issuanceDate**: `string`
+> **issuanceDate**: `string`
 
 The date the verifiable credential was issued.
 
-___
+***
 
 ### issuer
 
-• **issuer**: `string`
+> **issuer**: `string`
 
 The issuing identity.
 
-___
+***
 
-### proof
+### proof?
 
-• `Optional` **proof**: [`IDidProof`](IDidProof.md) \| [`IDidProof`](IDidProof.md)[]
+> `optional` **proof**: [`IDidProof`](IDidProof.md) \| [`IDidProof`](IDidProof.md)[]
 
 Proofs that the verifiable credential is valid.
 Optional if a different proof method is used, such as JWT.
 
-___
+***
 
 ### type
 
-• **type**: `string`[]
+> **type**: `string`[]
 
 The types of the data stored in the verifiable credential.

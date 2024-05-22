@@ -8,17 +8,17 @@ Class for performing blob storage operations in-memory.
 
 ## Constructors
 
-### constructor
+### new MemoryBlobStorageConnector()
 
-• **new MemoryBlobStorageConnector**(`config?`): [`MemoryBlobStorageConnector`](MemoryBlobStorageConnector.md)
+> **new MemoryBlobStorageConnector**(`config`?): [`MemoryBlobStorageConnector`](MemoryBlobStorageConnector.md)
 
 Create a new instance of MemoryBlobStorageConnector.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `config?` | [`IMemoryBlobStorageConnectorConfig`](../interfaces/IMemoryBlobStorageConnectorConfig.md) | The configuration for the blob storage connector. |
+• **config?**: [`IMemoryBlobStorageConnectorConfig`](../interfaces/IMemoryBlobStorageConnectorConfig.md)
+
+The configuration for the blob storage connector.
 
 #### Returns
 
@@ -26,18 +26,21 @@ Create a new instance of MemoryBlobStorageConnector.
 
 ## Methods
 
-### get
+### get()
 
-▸ **get**(`requestContext`, `id`): `Promise`\<`undefined` \| `Uint8Array`\>
+> **get**(`requestContext`, `id`): `Promise`\<`undefined` \| `Uint8Array`\>
 
 Get the blob.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `id` | `string` | The id of the blob to get. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **id**: `string`
+
+The id of the blob to get in urn format.
 
 #### Returns
 
@@ -47,74 +50,80 @@ The data for the blob if it can be found or undefined.
 
 #### Implementation of
 
-IBlobStorageConnector.get
+`IBlobStorageConnector.get`
 
-___
+***
 
-### getStore
+### getStore()
 
-▸ **getStore**(`tenantId`): `undefined` \| \{ `[id: string]`: `Uint8Array`;  }
+> **getStore**(`tenantId`): `undefined` \| `object`
 
 Get the memory store for the specified tenant.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `tenantId` | `string` | The tenant id. |
+• **tenantId**: `string`
+
+The tenant id.
 
 #### Returns
 
-`undefined` \| \{ `[id: string]`: `Uint8Array`;  }
+`undefined` \| `object`
 
 The store.
 
-___
+***
 
-### remove
+### remove()
 
-▸ **remove**(`requestContext`, `id`): `Promise`\<`void`\>
+> **remove**(`requestContext`, `id`): `Promise`\<`boolean`\>
 
 Remove the blob.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `id` | `string` | The id of the blob to remove. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **id**: `string`
+
+The id of the blob to remove in urn format.
 
 #### Returns
 
-`Promise`\<`void`\>
+`Promise`\<`boolean`\>
 
-Nothing.
+True if the blob was found.
 
 #### Implementation of
 
-IBlobStorageConnector.remove
+`IBlobStorageConnector.remove`
 
-___
+***
 
-### set
+### set()
 
-▸ **set**(`requestContext`, `blob`): `Promise`\<`string`\>
+> **set**(`requestContext`, `blob`): `Promise`\<`string`\>
 
 Set the blob.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `blob` | `Uint8Array` | The data for the blob. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **blob**: `Uint8Array`
+
+The data for the blob.
 
 #### Returns
 
 `Promise`\<`string`\>
 
-The id of the stored blob.
+The id of the stored blob in urn format.
 
 #### Implementation of
 
-IBlobStorageConnector.set
+`IBlobStorageConnector.set`

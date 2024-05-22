@@ -8,36 +8,51 @@ Class for performing attestation operations in entity storage.
 
 ## Constructors
 
-### constructor
+### new OpenAttestationConnector()
 
-• **new OpenAttestationConnector**(`config?`): [`OpenAttestationConnector`](OpenAttestationConnector.md)
+> **new OpenAttestationConnector**(`config`?): [`OpenAttestationConnector`](OpenAttestationConnector.md)
 
 Create a new instance of EntityStorageAttestationConnector.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `config?` | [`IOpenAttestationConnectorConfig`](../interfaces/IOpenAttestationConnectorConfig.md) | The configuration for the attestation connector. |
+• **config?**: [`IOpenAttestationConnectorConfig`](../interfaces/IOpenAttestationConnectorConfig.md)
+
+The configuration for the attestation connector.
 
 #### Returns
 
 [`OpenAttestationConnector`](OpenAttestationConnector.md)
 
+## Properties
+
+### NAMESPACE
+
+> `static` `readonly` **NAMESPACE**: `string` = `"open-attestation"`
+
+The namespace for the entities.
+
 ## Methods
 
-### sign
+### sign()
 
-▸ **sign**(`requestContext`, `data`): `Promise`\<`IDidProof`\>
+> **sign**(`requestContext`, `keyId`, `data`): `Promise`\<`IDidProof`\>
 
 Sign the data and return the proof.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `data` | `unknown` | The data to sign. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **keyId**: `string`
+
+The key id from a vault to sign the data.
+
+• **data**: `unknown`
+
+The data to sign.
 
 #### Returns
 
@@ -47,23 +62,29 @@ The proof for the data with the id set as a unique identifier for the data.
 
 #### Implementation of
 
-IAttestationConnector.sign
+`IAttestationConnector.sign`
 
-___
+***
 
-### verify
+### verify()
 
-▸ **verify**(`requestContext`, `data`, `proof`): `Promise`\<`boolean`\>
+> **verify**(`requestContext`, `data`, `proof`): `Promise`\<`boolean`\>
 
-Verify the data against the proof the proof.
+Verify the data against the proof.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `data` | `unknown` | The data to verify. |
-| `proof` | `IDidProof` | The proof to verify against. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **data**: `unknown`
+
+The data to verify.
+
+• **proof**: `IDidProof`
+
+The proof to verify against.
 
 #### Returns
 
@@ -73,4 +94,4 @@ True if the verification is successful.
 
 #### Implementation of
 
-IAttestationConnector.verify
+`IAttestationConnector.verify`

@@ -6,6 +6,6 @@ Create a new log entry.
 
 ### body
 
-• **body**: [`ILogEntry`](ILogEntry.md)
+> **body**: [`ILogEntry`](ILogEntry.md)
 
 The data to be used in the create.

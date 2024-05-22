@@ -6,15 +6,30 @@ Response for log entry list request.
 
 ### body
 
-• **body**: `Object`
+> **body**: `object`
 
 The response payload.
 
-#### Type declaration
+#### cursor?
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `cursor?` | `string` | An optional cursor, when defined can be used to call find to get more entities. |
-| `entities` | [`ILogEntry`](ILogEntry.md)[] | The entities, which can be partial if a limited keys list was provided. |
-| `pageSize?` | `number` | Number of entities to return. |
-| `totalEntities` | `number` | Total entities length. |
+> `optional` **cursor**: `string`
+
+An optional cursor, when defined can be used to call find to get more entities.
+
+#### entities
+
+> **entities**: [`ILogEntry`](ILogEntry.md)[]
+
+The entities, which can be partial if a limited keys list was provided.
+
+#### pageSize?
+
+> `optional` **pageSize**: `number`
+
+Number of entities to return.
+
+#### totalEntities
+
+> **totalEntities**: `number`
+
+Total entities length.

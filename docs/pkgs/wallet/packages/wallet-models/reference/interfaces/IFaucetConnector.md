@@ -2,25 +2,23 @@
 
 Interface describing a faucet connector.
 
-## Hierarchy
+## Extends
 
 - `IService`
 
-  ↳ **`IFaucetConnector`**
-
 ## Methods
 
-### bootstrap
+### bootstrap()?
 
-▸ **bootstrap**(`requestContext`): `Promise`\<`void`\>
+> `optional` **bootstrap**(`requestContext`): `Promise`\<`void`\>
 
 Bootstrap the service by creating and initializing any resources it needs.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The request context for bootstrapping. |
+• **requestContext**: `IRequestContext`
+
+The request context for bootstrapping.
 
 #### Returns
 
@@ -30,23 +28,29 @@ Nothing.
 
 #### Inherited from
 
-IService.bootstrap
+`IService.bootstrap`
 
-___
+***
 
-### fundAddress
+### fundAddress()
 
-▸ **fundAddress**(`requestContext`, `address`, `timeoutInSeconds?`): `Promise`\<`bigint`\>
+> **fundAddress**(`requestContext`, `address`, `timeoutInSeconds`?): `Promise`\<`bigint`\>
 
 Fund the wallet from the faucet.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `address` | `string` | The bech32 encoded address of the address to fund. |
-| `timeoutInSeconds?` | `number` | The timeout in seconds to wait for the funding to complete. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **address**: `string`
+
+The bech32 encoded address of the address to fund.
+
+• **timeoutInSeconds?**: `number`
+
+The timeout in seconds to wait for the funding to complete.
 
 #### Returns
 
@@ -54,11 +58,11 @@ Fund the wallet from the faucet.
 
 The amount added to the address by the faucet.
 
-___
+***
 
-### start
+### start()?
 
-▸ **start**(): `Promise`\<`void`\>
+> `optional` **start**(): `Promise`\<`void`\>
 
 The service needs to be started when the application is initialized.
 
@@ -70,13 +74,13 @@ Nothing.
 
 #### Inherited from
 
-IService.start
+`IService.start`
 
-___
+***
 
-### stop
+### stop()?
 
-▸ **stop**(): `Promise`\<`void`\>
+> `optional` **stop**(): `Promise`\<`void`\>
 
 The service needs to be stopped when the application is closed.
 
@@ -88,4 +92,4 @@ Nothing.
 
 #### Inherited from
 
-IService.stop
+`IService.stop`

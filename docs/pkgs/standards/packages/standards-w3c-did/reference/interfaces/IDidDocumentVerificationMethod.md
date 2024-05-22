@@ -6,48 +6,48 @@ Interface describing a DID document verification method.
 
 ### controller
 
-• **controller**: `string`
+> **controller**: `string`
 
 The controller for the entry.
 
-___
+***
 
 ### id
 
-• **id**: `string`
+> **id**: `string`
 
 The id of the entry.
 
-___
+***
 
-### publicKeyJwk
+### publicKeyJwk?
 
-• `Optional` **publicKeyJwk**: `IJwk`
+> `optional` **publicKeyJwk**: `IJwk`
 
 The public key for the entry as a JWK.
 Spec https://datatracker.ietf.org/doc/html/rfc7517 .
 
-___
+***
 
-### publicKeyMultibase
+### publicKeyMultibase?
 
-• `Optional` **publicKeyMultibase**: `string`
+> `optional` **publicKeyMultibase**: `string`
 
 The public key for the entry.
 Spec https://datatracker.ietf.org/doc/html/draft-multiformats-multibase-03 .
 
-___
+***
 
-### revocation
+### revocation?
 
-• `Optional` **revocation**: `string`
+> `optional` **revocation**: `string`
 
 Multi key partial revocation.
 
-___
+***
 
 ### type
 
-• **type**: `string`
+> **type**: `string`
 
 The type of the entry.

@@ -8,20 +8,29 @@ Class for performing wallet operations on IOTA.
 
 ## Constructors
 
-### constructor
+### new IotaWalletConnector()
 
-• **new IotaWalletConnector**(`dependencies`, `config`): [`IotaWalletConnector`](IotaWalletConnector.md)
+> **new IotaWalletConnector**(`dependencies`, `config`): [`IotaWalletConnector`](IotaWalletConnector.md)
 
 Create a new instance of IotaWalletConnector.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `dependencies` | `Object` | The dependencies for the wallet connector. |
-| `dependencies.faucetConnector?` | `IFaucetConnector` | Optional faucet for requesting funds. |
-| `dependencies.vaultConnector` | `IVaultConnector` | Vault connector to use for wallet secrets. |
-| `config` | [`IIotaWalletConnectorConfig`](../interfaces/IIotaWalletConnectorConfig.md) | The configuration to use. |
+• **dependencies**
+
+The dependencies for the wallet connector.
+
+• **dependencies.faucetConnector?**: `IFaucetConnector`
+
+Optional faucet for requesting funds.
+
+• **dependencies.vaultConnector**: `IVaultConnector`
+
+Vault connector to use for wallet secrets.
+
+• **config**: [`IIotaWalletConnectorConfig`](../interfaces/IIotaWalletConnectorConfig.md)
+
+The configuration to use.
 
 #### Returns
 
@@ -31,31 +40,31 @@ Create a new instance of IotaWalletConnector.
 
 ### MNEMONIC\_SECRET\_NAME
 
-▪ `Static` **MNEMONIC\_SECRET\_NAME**: `string` = `"wallet-mnemonic"`
+> `static` **MNEMONIC\_SECRET\_NAME**: `string` = `"wallet-mnemonic"`
 
 Default name for the mnemonic secret.
 
-___
+***
 
 ### NAMESPACE
 
-▪ `Static` **NAMESPACE**: `string` = `"iota"`
+> `static` **NAMESPACE**: `string` = `"iota"`
 
 The namespace supported by the wallet connector.
 
 ## Methods
 
-### create
+### create()
 
-▸ **create**(`requestContext`): `Promise`\<`void`\>
+> **create**(`requestContext`): `Promise`\<`void`\>
 
 Create a new wallet.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
 
 #### Returns
 
@@ -65,24 +74,33 @@ Nothing.
 
 #### Implementation of
 
-IWalletConnector.create
+`IWalletConnector.create`
 
-___
+***
 
-### ensureBalance
+### ensureBalance()
 
-▸ **ensureBalance**(`requestContext`, `address`, `ensureBalance`, `timeoutInSeconds?`): `Promise`\<`boolean`\>
+> **ensureBalance**(`requestContext`, `address`, `ensureBalance`, `timeoutInSeconds`?): `Promise`\<`boolean`\>
 
 Ensure the balance for an address in a wallet.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `address` | `string` | The bech32 encoded address. |
-| `ensureBalance` | `bigint` | The balance to ensure on the address. |
-| `timeoutInSeconds?` | `number` | The timeout in seconds to wait for the funding to complete. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **address**: `string`
+
+The bech32 encoded address.
+
+• **ensureBalance**: `bigint`
+
+The balance to ensure on the address.
+
+• **timeoutInSeconds?**: `number`
+
+The timeout in seconds to wait for the funding to complete.
 
 #### Returns
 
@@ -92,22 +110,25 @@ True if the balance has been ensured.
 
 #### Implementation of
 
-IWalletConnector.ensureBalance
+`IWalletConnector.ensureBalance`
 
-___
+***
 
-### getBalance
+### getBalance()
 
-▸ **getBalance**(`requestContext`, `address`): `Promise`\<`bigint`\>
+> **getBalance**(`requestContext`, `address`): `Promise`\<`bigint`\>
 
 Get the balance for an address in a wallet.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `address` | `string` | The bech32 encoded address. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **address**: `string`
+
+The bech32 encoded address.
 
 #### Returns
 
@@ -117,22 +138,25 @@ The balance of the wallet address.
 
 #### Implementation of
 
-IWalletConnector.getBalance
+`IWalletConnector.getBalance`
 
-___
+***
 
-### getStorageCosts
+### getStorageCosts()
 
-▸ **getStorageCosts**(`requestContext`, `address`): `Promise`\<`bigint`\>
+> **getStorageCosts**(`requestContext`, `address`): `Promise`\<`bigint`\>
 
 Get the storage costs for an address in a wallet.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `address` | `string` | The bech32 encoded address. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **address**: `string`
+
+The bech32 encoded address.
 
 #### Returns
 
@@ -142,23 +166,29 @@ The storage costs for the address.
 
 #### Implementation of
 
-IWalletConnector.getStorageCosts
+`IWalletConnector.getStorageCosts`
 
-___
+***
 
-### transfer
+### transfer()
 
-▸ **transfer**(`requestContext`, `address`, `amount`): `Promise`\<`void`\>
+> **transfer**(`requestContext`, `address`, `amount`): `Promise`\<`void`\>
 
 Transfer funds to an address.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `requestContext` | `IRequestContext` | The context for the request. |
-| `address` | `string` | The bech32 encoded address to send the funds to. |
-| `amount` | `bigint` | The amount to transfer. |
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **address**: `string`
+
+The bech32 encoded address to send the funds to.
+
+• **amount**: `bigint`
+
+The amount to transfer.
 
 #### Returns
 
@@ -168,4 +198,4 @@ Nothing.
 
 #### Implementation of
 
-IWalletConnector.transfer
+`IWalletConnector.transfer`

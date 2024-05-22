@@ -4,16 +4,16 @@ Configuration for the IOTA Identity Connector.
 
 ## Properties
 
-### accountIndex
+### accountIndex?
 
-• `Optional` **accountIndex**: `number`
+> `optional` **accountIndex**: `number`
 
 The account index of the address to use for storing identities. Defaults to DEFAULT_IDENTITY_ACCOUNT_INDEX
 
-___
+***
 
 ### clientOptions
 
-• **clientOptions**: `IClientOptions`
+> **clientOptions**: `IClientOptions`
 
 The configuration for the client.

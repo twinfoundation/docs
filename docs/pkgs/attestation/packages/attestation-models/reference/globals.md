@@ -4,6 +4,7 @@
 
 - [IAttestation](interfaces/IAttestation.md)
 - [IAttestationConnector](interfaces/IAttestationConnector.md)
+- [IAttestationProof](interfaces/IAttestationProof.md)
 - [IAttestationSignRequest](interfaces/IAttestationSignRequest.md)
 - [IAttestationSignResponse](interfaces/IAttestationSignResponse.md)
 - [IAttestationVerifyRequest](interfaces/IAttestationVerifyRequest.md)
@@ -11,8 +12,4 @@
 
 ## Variables
 
-### AttestationConnectorFactory
-
-• `Const` **AttestationConnectorFactory**: `Factory`\<[`IAttestationConnector`](interfaces/IAttestationConnector.md)\>
-
-Factory for creating attestation connectors.
+- [AttestationConnectorFactory](variables/AttestationConnectorFactory.md)

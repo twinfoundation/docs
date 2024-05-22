@@ -3,16 +3,8 @@
 ## Classes
 
 - [EntityStorageIdentityConnector](classes/EntityStorageIdentityConnector.md)
+- [IdentityDocument](classes/IdentityDocument.md)
 
 ## Interfaces
 
 - [IEntityStorageIdentityConnectorConfig](interfaces/IEntityStorageIdentityConnectorConfig.md)
-- [IIdentityDocument](interfaces/IIdentityDocument.md)
-
-## Variables
-
-### IdentityDocumentDescriptor
-
-• `Const` **IdentityDocumentDescriptor**: `IEntityDescriptor`\<[`IIdentityDocument`](interfaces/IIdentityDocument.md)\>
-
-Entity description for a IIdentityDocument.

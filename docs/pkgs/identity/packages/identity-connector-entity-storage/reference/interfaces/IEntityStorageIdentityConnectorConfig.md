@@ -4,8 +4,8 @@ Configuration for the entity storage identity connector.
 
 ## Properties
 
-### didMethod
+### didMethod?
 
-• `Optional` **didMethod**: `string`
+> `optional` **didMethod**: `string`
 
 The DID Methods to use in identifiers.

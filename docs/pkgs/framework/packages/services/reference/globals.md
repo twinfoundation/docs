@@ -11,8 +11,4 @@
 
 ## Variables
 
-### ServiceFactory
-
-• `Const` **ServiceFactory**: `Factory`\<[`IService`](interfaces/IService.md)\>
-
-Factory for creating implementation of service types.
+- [ServiceFactory](variables/ServiceFactory.md)
