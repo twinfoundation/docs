@@ -1,5 +1,5 @@
 {
 	"language": "en-GB",
 	"ignorePaths": ["**/node_modules/**", "docs/pkgs/**/*"],
-	"words": ["Stiftung", "GTSC", "nameof"]
+	"words": ["GTSC", "ipfs", "nameof", "Stiftung"]
 }
