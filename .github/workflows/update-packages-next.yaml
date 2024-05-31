@@ -247,6 +247,27 @@ jobs:
           cp import-packages/identity/package.json docs/pkgs/identity/package.json
           rm -r import-packages/identity
 
+      ########### nft
+      - name: Checkout nft
+        uses: actions/checkout@v4
+        with:
+          repository: gtscio/nft
+          path: import-packages/nft
+          ref: ${{ env.gha-branch }}
+          token: ${{ secrets.GH_PAT }}
+
+      - name: Copy nft to Docs
+        run: |
+          jq -r '.workspaces[]' import-packages/nft/package.json | while read pkg; do
+            rm -rf docs/pkgs/nft/$pkg
+            mkdir -p docs/pkgs/nft/$pkg
+            cp -r import-packages/nft/$pkg/docs/* docs/pkgs/nft/$pkg
+            cp -r import-packages/nft/$pkg/package.json docs/pkgs/nft/$pkg/package.json
+          done
+
+          cp import-packages/nft/package.json docs/pkgs/nft/package.json
+          rm -r import-packages/nft
+
       ########### attestation
       - name: Checkout attestation
         uses: actions/checkout@v4

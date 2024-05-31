@@ -29,25 +29,36 @@ function buildPkgs(): any {
 		const groups = [];
 
 		for (const repo of reposJson) {
-			const packageFilename = path.join(__dirname, "docs", "pkgs", repo, "package.json");
-			const packageContent = fs.readFileSync(packageFilename, "utf-8");
-			const packageContentJson = JSON.parse(packageContent);
+			try {
+				const packageFilename = path.join(__dirname, "docs", "pkgs", repo, "package.json");
 
-			const items = packageContentJson.workspaces.map((p) =>
-				generatePackageItems(repo, p.replace("packages/", ""))
-			);
+				if (fileExists(packageFilename)) {
+					const packageContent = fs.readFileSync(packageFilename, "utf-8");
+					const packageContentJson = JSON.parse(packageContent);
 
-			if (items.length > 0) {
-				groups.push({
-					type: "category",
-					label: packageContentJson.description,
-					items
-				});
+					const items = packageContentJson.workspaces.map((p) =>
+						generatePackageItems(repo, p.replace("packages/", ""))
+					);
+
+					if (items.length > 0) {
+						groups.push({
+							type: "category",
+							label: packageContentJson.description,
+							items
+						});
+					}
+				} else {
+					console.log(`! File not found: ${packageFilename}`);
+				}
+			} catch (error) {
+				console.error(error);
 			}
 		}
 
 		return groups;
-	} catch {}
+	} catch (error) {
+		console.error(error);
+	}
 
 	return [];
 }
@@ -63,9 +74,9 @@ function generatePackageItems(packageGroup: string, packageName: string): any {
 		type: "category",
 		label: packageName,
 		items: [
-			fileExists(packageGroup, packageName, "overview", "Overview"),
-			fileExists(packageGroup, packageName, "examples", "Examples"),
-			fileExists(packageGroup, packageName, "configuration", "Configuration"),
+			packageFileExists(packageGroup, packageName, "overview", "Overview"),
+			packageFileExists(packageGroup, packageName, "examples", "Examples"),
+			packageFileExists(packageGroup, packageName, "configuration", "Configuration"),
 			referenceItems.length > 0 && {
 				type: "category",
 				label: "Reference",
@@ -75,26 +86,41 @@ function generatePackageItems(packageGroup: string, packageName: string): any {
 				},
 				items: referenceItems
 			},
-			fileExists(packageGroup, packageName, "changelog", "Changelog")
+			packageFileExists(packageGroup, packageName, "changelog", "Changelog")
 		].filter(Boolean)
 	};
 }
 
-function fileExists(packageGroup: string, packageName: string, id: string, label: string): any {
+function packageFileExists(
+	packageGroup: string,
+	packageName: string,
+	id: string,
+	label: string
+): any {
 	const dirName = `pkgs/${packageGroup}/packages/${packageName.toLowerCase()}/${id}`;
 	const file = path.join(__dirname, "docs", dirName);
 
+	const exists = fileExists(`${file}.md`);
+
+	if (exists) {
+		return {
+			type: "doc",
+			id: dirName,
+			label
+		};
+	}
+}
+
+function fileExists(filename: string): boolean {
 	try {
-		const st = fs.statSync(`${file}.md`);
+		const st = fs.statSync(filename);
 
 		if (st.isFile()) {
-			return {
-				type: "doc",
-				id: dirName,
-				label
-			};
+			return true;
 		}
 	} catch {}
+
+	return false;
 }
 
 function dirExists(packageGroup: string, packageName: string, id: string, label: string): any {
