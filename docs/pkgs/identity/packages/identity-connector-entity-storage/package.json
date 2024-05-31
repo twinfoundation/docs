@@ -1,6 +1,6 @@
 {
 	"name": "@gtsc/identity-connector-entity-storage",
-	"version": "0.0.3-next.9",
+	"version": "0.0.3-next.10",
 	"description": "Identity connector implementation using entity storage",
 	"repository": {
 		"type": "git",
@@ -31,15 +31,16 @@
 		"@gtsc/core": "next",
 		"@gtsc/crypto": "next",
 		"@gtsc/entity": "next",
-		"@gtsc/entity-storage-connector-memory": "next",
-		"@gtsc/identity-models": "0.0.3-next.9",
+		"@gtsc/identity-models": "0.0.3-next.10",
 		"@gtsc/nameof": "^0.0.4",
+		"@gtsc/standards-w3c-did": "next",
 		"@gtsc/vault-models": "next",
-		"@gtsc/vault-connector-entity-storage": "next",
 		"@gtsc/web": "next"
 	},
 	"devDependencies": {
+		"@gtsc/entity-storage-connector-memory": "next",
 		"@gtsc/nameof-transformer": "^0.0.4",
+		"@gtsc/vault-connector-entity-storage": "next",
 		"@vitest/coverage-v8": "^1.6.0",
 		"copyfiles": "^2.4.1",
 		"replace-in-files-cli": "^2.2.0",

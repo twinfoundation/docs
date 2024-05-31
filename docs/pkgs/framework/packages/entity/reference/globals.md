@@ -1,11 +1,5 @@
 # @gtsc/entity
 
-## Enumerations
-
-- [ComparisonOperator](enumerations/ComparisonOperator.md)
-- [LogicalOperator](enumerations/LogicalOperator.md)
-- [SortDirection](enumerations/SortDirection.md)
-
 ## Classes
 
 - [DecoratorHelper](classes/DecoratorHelper.md)
@@ -24,8 +18,18 @@
 
 ## Type Aliases
 
+- [ComparisonOperator](type-aliases/ComparisonOperator.md)
 - [EntityCondition](type-aliases/EntityCondition.md)
 - [EntitySchemaPropertyType](type-aliases/EntitySchemaPropertyType.md)
+- [LogicalOperator](type-aliases/LogicalOperator.md)
+- [SortDirection](type-aliases/SortDirection.md)
+
+## Variables
+
+- [ComparisonOperator](variables/ComparisonOperator.md)
+- [EntitySchemaPropertyType](variables/EntitySchemaPropertyType.md)
+- [LogicalOperator](variables/LogicalOperator.md)
+- [SortDirection](variables/SortDirection.md)
 
 ## Functions
 

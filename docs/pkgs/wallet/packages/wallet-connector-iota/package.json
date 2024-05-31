@@ -1,6 +1,6 @@
 {
 	"name": "@gtsc/wallet-connector-iota",
-	"version": "0.0.3-next.13",
+	"version": "0.0.3-next.18",
 	"description": "Wallet connector implementation using IOTA",
 	"repository": {
 		"type": "git",
@@ -32,7 +32,7 @@
 		"@gtsc/crypto": "next",
 		"@gtsc/nameof": "^0.0.4",
 		"@gtsc/vault-models": "next",
-		"@gtsc/wallet-models": "0.0.3-next.13",
+		"@gtsc/wallet-models": "0.0.3-next.18",
 		"@iota/sdk-wasm": "^1.1.3"
 	},
 	"devDependencies": {

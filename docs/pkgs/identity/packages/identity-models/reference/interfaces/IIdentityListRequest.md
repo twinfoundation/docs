@@ -12,7 +12,7 @@ The query parameters.
 
 #### role
 
-> **role**: [`IdentityRole`](../enumerations/IdentityRole.md)
+> **role**: [`IdentityRole`](../type-aliases/IdentityRole.md)
 
 The property name to use for lookup.
 

@@ -88,6 +88,34 @@ Nothing.
 
 ***
 
+### getAddresses()
+
+> **getAddresses**(`requestContext`, `startAddressIndex`, `count`): `Promise`\<`string`[]\>
+
+Get the addresses for the requested range.
+
+#### Parameters
+
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **startAddressIndex**: `number`
+
+The start index for the addresses.
+
+• **count**: `number`
+
+The end index for the addresses.
+
+#### Returns
+
+`Promise`\<`string`[]\>
+
+The list of addresses.
+
+***
+
 ### getBalance()
 
 > **getBalance**(`requestContext`, `address`): `Promise`\<`bigint`\>
@@ -193,3 +221,43 @@ The amount to transfer.
 `Promise`\<`void`\>
 
 Nothing.
+
+***
+
+### sign()
+
+> **sign**(`requestContext`, `signatureType`, `addressIndex`, `data`): `Promise`\<`object`\>
+
+Sign data using a wallet based key.
+
+#### Parameters
+
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **signatureType**: `KeyType`
+
+The type of signature to create.
+
+• **addressIndex**: `number`
+
+The index for the address.
+
+• **data**: `Uint8Array`
+
+The data bytes.
+
+#### Returns
+
+`Promise`\<`object`\>
+
+The signature and public key bytes.
+
+##### publicKey
+
+> **publicKey**: `Uint8Array`
+
+##### signature
+
+> **signature**: `Uint8Array`

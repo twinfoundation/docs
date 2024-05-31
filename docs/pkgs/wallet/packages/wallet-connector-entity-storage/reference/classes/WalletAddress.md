@@ -18,7 +18,7 @@ Class describing a wallet address.
 
 > **address**: `string`
 
-The address of the wallet.
+The address in the wallet.
 
 ***
 

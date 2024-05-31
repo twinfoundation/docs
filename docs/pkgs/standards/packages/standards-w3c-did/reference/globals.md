@@ -14,3 +14,7 @@
 ## Type Aliases
 
 - [DidVerificationMethodType](type-aliases/DidVerificationMethodType.md)
+
+## Variables
+
+- [DidVerificationMethodType](variables/DidVerificationMethodType.md)

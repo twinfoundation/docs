@@ -24,6 +24,10 @@ The dependencies for the identity connector.
 
 The vault for the private keys.
 
+• **dependencies.walletConnector**: `IWalletConnector`
+
+The wallet connector.
+
 • **config**: [`IIotaIdentityConnectorConfig`](../interfaces/IIotaIdentityConnectorConfig.md)
 
 The configuration to use.
@@ -44,7 +48,7 @@ The namespace supported by the identity connector.
 
 ### createDocument()
 
-> **createDocument**(`requestContext`, `privateKey`?, `publicKey`?): `Promise`\<`IDidDocument`\>
+> **createDocument**(`requestContext`): `Promise`\<`IDidDocument`\>
 
 Create a new document.
 
@@ -53,14 +57,6 @@ Create a new document.
 • **requestContext**: `IRequestContext`
 
 The context for the request.
-
-• **privateKey?**: `string`
-
-The private key to use for the document in base64, if undefined a new key will be generated.
-
-• **publicKey?**: `string`
-
-The public key to use for the document in base64, must be provided if privateKey is supplied.
 
 #### Returns
 
@@ -122,7 +118,7 @@ The context for the request.
 
 The id of the document to add the verification method to.
 
-• **verificationMethodType**: `"verificationMethod"` \| `"authentication"` \| `"assertionMethod"` \| `"keyAgreement"` \| `"capabilityInvocation"` \| `"capabilityDelegation"`
+• **verificationMethodType**: `DidVerificationMethodType`
 
 The type of the verification method to add.
 
@@ -554,15 +550,15 @@ The id of the document signing the data.
 
 The verification method id to use.
 
-• **bytes**: `string`
+• **bytes**: `Uint8Array`
 
-The data bytes to sign in base64.
+The data bytes to sign.
 
 #### Returns
 
 `Promise`\<`object`\>
 
-The proof signature type and value in base64.
+The proof signature type and value.
 
 ##### type
 
@@ -570,7 +566,7 @@ The proof signature type and value in base64.
 
 ##### value
 
-> **value**: `string`
+> **value**: `Uint8Array`
 
 #### Implementation of
 
@@ -598,17 +594,17 @@ The id of the document verifying the data.
 
 The verification method id to use.
 
-• **bytes**: `string`
+• **bytes**: `Uint8Array`
 
-The data bytes to verify in base64.
+The data bytes to verify.
 
 • **signatureType**: `string`
 
 The type of the signature for the proof.
 
-• **signatureValue**: `string`
+• **signatureValue**: `Uint8Array`
 
-The value of the signature for the proof in base64.
+The value of the signature for the proof.
 
 #### Returns
 

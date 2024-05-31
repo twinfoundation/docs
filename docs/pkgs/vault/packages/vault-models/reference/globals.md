@@ -12,3 +12,5 @@
 ## Variables
 
 - [VaultConnectorFactory](variables/VaultConnectorFactory.md)
+- [VaultEncryptionType](variables/VaultEncryptionType.md)
+- [VaultKeyType](variables/VaultKeyType.md)

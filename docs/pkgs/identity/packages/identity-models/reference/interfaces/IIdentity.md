@@ -80,7 +80,7 @@ Create a new identity.
 
 The context for the request.
 
-• **role**: [`IdentityRole`](../enumerations/IdentityRole.md)
+• **role**: [`IdentityRole`](../type-aliases/IdentityRole.md)
 
 The role for the identity.
 
@@ -130,7 +130,7 @@ The items properties.
 
 ##### role
 
-> **role**: [`IdentityRole`](../enumerations/IdentityRole.md)
+> **role**: [`IdentityRole`](../type-aliases/IdentityRole.md)
 
 ##### properties?
 
@@ -178,7 +178,7 @@ Get a list of the requested types.
 
 The context for the request.
 
-• **role**: [`IdentityRole`](../enumerations/IdentityRole.md)
+• **role**: [`IdentityRole`](../type-aliases/IdentityRole.md)
 
 The role type to lookup.
 
