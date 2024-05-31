@@ -616,11 +616,22 @@
                 "description": "The data for the request."
             },
             "IdentityRole": {
-                "type": "string",
-                "enum": [
-                    "node",
-                    "organization",
-                    "user"
+                "anyOf": [
+                    {
+                        "type": "string",
+                        "const": "node",
+                        "description": "Node."
+                    },
+                    {
+                        "type": "string",
+                        "const": "organization",
+                        "description": "Organization."
+                    },
+                    {
+                        "type": "string",
+                        "const": "user",
+                        "description": "User."
+                    }
                 ],
                 "description": "The roles that an identity can have."
             },

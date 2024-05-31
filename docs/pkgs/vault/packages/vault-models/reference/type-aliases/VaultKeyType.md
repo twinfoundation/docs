@@ -1,5 +1,5 @@
 # Type alias: VaultKeyType
 
-> **VaultKeyType**: `"Ed25519"` \| `"Secp256k1"`
+> **VaultKeyType**: *typeof* [`VaultKeyType`](../variables/VaultKeyType.md)\[keyof *typeof* [`VaultKeyType`](../variables/VaultKeyType.md)\]
 
-The types of keys that can be created in the vault.
+Vault key types.

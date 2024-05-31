@@ -12,7 +12,7 @@ The response payload.
 
 #### role
 
-> **role**: [`IdentityRole`](../enumerations/IdentityRole.md)
+> **role**: [`IdentityRole`](../type-aliases/IdentityRole.md)
 
 The role of the identity.
 

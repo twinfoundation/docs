@@ -36,7 +36,7 @@ The vault secret entity storage connector dependency.
 
 ### createKey()
 
-> **createKey**(`requestContext`, `name`, `type`): `Promise`\<`string`\>
+> **createKey**(`requestContext`, `name`, `type`): `Promise`\<`Uint8Array`\>
 
 Create a key in the vault.
 
@@ -56,9 +56,9 @@ The type of key to create.
 
 #### Returns
 
-`Promise`\<`string`\>
+`Promise`\<`Uint8Array`\>
 
-The public key for the key pair in base64.
+The public key for the key pair.
 
 #### Implementation of
 
@@ -86,13 +86,13 @@ The name of the key to add to the vault.
 
 The type of key to add.
 
-• **privateKey**: `string`
+• **privateKey**: `Uint8Array`
 
-The private key in base64 format.
+The private key.
 
-• **publicKey**: `string`
+• **publicKey**: `Uint8Array`
 
-The public key in base64 format.
+The public key.
 
 #### Returns
 
@@ -136,15 +136,15 @@ The type of the key e.g. Ed25519, Secp256k1.
 
 ##### privateKey
 
-> **privateKey**: `string`
+> **privateKey**: `Uint8Array`
 
-The private key in base64 format.
+The private key.
 
 ##### publicKey
 
-> **publicKey**: `string`
+> **publicKey**: `Uint8Array`
 
-The public key in base64 format.
+The public key.
 
 #### Implementation of
 
@@ -214,7 +214,7 @@ Nothing.
 
 ### sign()
 
-> **sign**(`requestContext`, `name`, `data`): `Promise`\<`string`\>
+> **sign**(`requestContext`, `name`, `data`): `Promise`\<`Uint8Array`\>
 
 Sign the data using a key in the vault.
 
@@ -228,15 +228,15 @@ The context for the request.
 
 The name of the key to use for signing.
 
-• **data**: `string`
+• **data**: `Uint8Array`
 
-The data to sign in base64.
+The data to sign.
 
 #### Returns
 
-`Promise`\<`string`\>
+`Promise`\<`Uint8Array`\>
 
-The signature for the data in base64.
+The signature for the data.
 
 #### Implementation of
 
@@ -260,11 +260,11 @@ The context for the request.
 
 The name of the key to use for verification.
 
-• **data**: `string`
+• **data**: `Uint8Array`
 
 The data that was signed in base64.
 
-• **signature**: `string`
+• **signature**: `Uint8Array`
 
 The signature to verify in base64.
 
@@ -282,7 +282,7 @@ True if the verification is successful.
 
 ### encrypt()
 
-> **encrypt**(`requestContext`, `name`, `encryptionType`, `data`): `Promise`\<`string`\>
+> **encrypt**(`requestContext`, `name`, `encryptionType`, `data`): `Promise`\<`Uint8Array`\>
 
 Encrypt the data using a key in the vault.
 
@@ -296,17 +296,17 @@ The context for the request.
 
 The name of the key to use for encryption.
 
-• **encryptionType**: `"ChaCha20Poly1305"`
+• **encryptionType**: `0`
 
 The type of encryption to use.
 
-• **data**: `string`
+• **data**: `Uint8Array`
 
 The data to encrypt in base64.
 
 #### Returns
 
-`Promise`\<`string`\>
+`Promise`\<`Uint8Array`\>
 
 The encrypted data in base64.
 
@@ -318,7 +318,7 @@ The encrypted data in base64.
 
 ### decrypt()
 
-> **decrypt**(`requestContext`, `name`, `encryptionType`, `encryptedData`): `Promise`\<`string`\>
+> **decrypt**(`requestContext`, `name`, `encryptionType`, `encryptedData`): `Promise`\<`Uint8Array`\>
 
 Decrypt the data using a key in the vault.
 
@@ -332,17 +332,17 @@ The context for the request.
 
 The name of the key to use for decryption.
 
-• **encryptionType**: `"ChaCha20Poly1305"`
+• **encryptionType**: `0`
 
 The type of encryption to use.
 
-• **encryptedData**: `string`
+• **encryptedData**: `Uint8Array`
 
 The data to decrypt in base64.
 
 #### Returns
 
-`Promise`\<`string`\>
+`Promise`\<`Uint8Array`\>
 
 The decrypted data in base64.
 

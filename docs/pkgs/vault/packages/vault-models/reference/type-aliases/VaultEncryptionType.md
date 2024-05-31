@@ -1,5 +1,5 @@
 # Type alias: VaultEncryptionType
 
-> **VaultEncryptionType**: `"ChaCha20Poly1305"`
+> **VaultEncryptionType**: *typeof* [`VaultEncryptionType`](../variables/VaultEncryptionType.md)\[keyof *typeof* [`VaultEncryptionType`](../variables/VaultEncryptionType.md)\]
 
-The types of encryption that can be performed in the vault.
+Vault encryption types.

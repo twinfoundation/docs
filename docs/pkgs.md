@@ -69,6 +69,12 @@ This is the overview of the packages.
 - [@gtsc/identity-service](pkgs/identity/packages/identity-service/overview) - Identity contract implementation and REST endpoint definitions
 - [@gtsc/identity-rest-client](pkgs/identity/packages/identity-rest-client/overview) - Identity contract implementation which can connect to REST endpoints
 
+## NFT
+
+- [@gtsc/nft-models](pkgs/nft/packages/nft-models/overview) - Contains models and classes for use with NFTs
+- [@gtsc/nft-connector-iota](pkgs/nft/packages/nft-connector-iota/overview) - Implementation of the NFT connector using IOTA
+- [@gtsc/nft-connector-entity-storage](pkgs/nft/packages/nft-connector-entity-storage/overview) - Implementation of the NFT connector using entity storage
+
 ## Attestation
 
 - [@gtsc/attestation-models](pkgs/attestation/packages/attestation-models/overview) - Models which define the structure of the attestation connectors and services
