@@ -48,16 +48,16 @@ function buildPkgs(): any {
 						});
 					}
 				} else {
-					console.log(`! File not found: ${packageFilename}`);
+					process.stdout.write(`! File not found: ${packageFilename}\n`);
 				}
 			} catch (error) {
-				console.error(error);
+				process.stderr.write(`${error}\n`);
 			}
 		}
 
 		return groups;
 	} catch (error) {
-		console.error(error);
+		process.stderr.write(`${error}\n`);
 	}
 
 	return [];

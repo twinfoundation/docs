@@ -887,7 +887,7 @@ try {
   const cli = new CLI();
   await cli.process(config, './output.json', './working');
 } catch (err) {
-  console.error(err);
+  process.stderr.write(`${err}\n`);
 } finally {
   // Remove the working directory
   await rm('./working');

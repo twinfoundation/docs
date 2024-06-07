@@ -17,7 +17,7 @@ This is the overview of the packages.
 function buildGroupContent(packageGroup) {
 	let content = "";
 
-	console.log(`  Package Group: ${packageGroup}`);
+	process.stdout.write(`  Package Group: ${packageGroup}\n`);
 
 	const packageGroupFilename = path.join(
 		__dirname,
@@ -41,7 +41,7 @@ function buildGroupContent(packageGroup) {
 			content += `\n## ${groupJson.description}\n\n${combinedPackageContent}`;
 		}
 	} else {
-		console.error(`      ! File not found: ${packageGroupFilename}`);
+		process.stderr.write(`      ! File not found: ${packageGroupFilename}\n`);
 	}
 
 	return content;
@@ -50,7 +50,7 @@ function buildGroupContent(packageGroup) {
 function buildPackageContent(packageGroup, pkg) {
 	let content = "";
 
-	console.log(`        Package: ${pkg}`);
+	process.stdout.write(`        Package: ${pkg}\n`);
 
 	const packageFilename = path.join(
 		__dirname,
@@ -69,7 +69,7 @@ function buildPackageContent(packageGroup, pkg) {
 
 		content += `- [${packageJson.name}](pkgs/${packageGroup}/packages/${packageJson.name.replace("@gtsc/", "")}/overview) - ${packageJson.description}\n`;
 	} else {
-		console.error(`        ! File not found: ${packageFilename}`);
+		process.stderr.write(`        ! File not found: ${packageFilename}\n`);
 	}
 
 	return content;
@@ -90,7 +90,7 @@ module.exports = async function packageIndexPlugin() {
 	return {
 		name: "pkgs",
 		async loadContent() {
-			console.log("Building Packages Overview");
+			process.stdout.write("Building Packages Overview\n");
 
 			const repoContent = [];
 
@@ -103,10 +103,10 @@ module.exports = async function packageIndexPlugin() {
 					repoContent.push(buildGroupContent(repo));
 				}
 
-				console.log("Writing Packages Overview");
+				process.stdout.write("Writing Packages Overview\n");
 				fs.writeFileSync(path.join(__dirname, "..", "docs", "pkgs.md"), buildContent(repoContent));
 			} catch (err) {
-				console.error(err);
+				process.stderr.write(`${err}\n`);
 			}
 		}
 	};
