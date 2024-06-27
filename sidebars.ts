@@ -30,25 +30,27 @@ function buildPkgs(): any {
 
 		for (const repo of reposJson) {
 			try {
-				const packageFilename = path.join(__dirname, "docs", "pkgs", repo, "package.json");
+				for (const packageType of repo.types) {
+					const packageFilename = path.join(__dirname, "docs", "pkgs", repo.name, "package.json");
 
-				if (fileExists(packageFilename)) {
-					const packageContent = fs.readFileSync(packageFilename, "utf-8");
-					const packageContentJson = JSON.parse(packageContent);
+					if (fileExists(packageFilename)) {
+						const packageContent = fs.readFileSync(packageFilename, "utf-8");
+						const packageContentJson = JSON.parse(packageContent);
 
-					const items = packageContentJson.workspaces.map((p) =>
-						generatePackageItems(repo, p.replace("packages/", ""))
-					);
+						const items = packageContentJson.workspaces.map((p) =>
+							generatePackageItems(repo.name, packageType, p.replace(`${packageType}/`, ""))
+						);
 
-					if (items.length > 0) {
-						groups.push({
-							type: "category",
-							label: packageContentJson.description,
-							items
-						});
+						if (items.length > 0) {
+							groups.push({
+								type: "category",
+								label: packageContentJson.description,
+								items
+							});
+						}
+					} else {
+						console.debug("! File not found", packageFilename);
 					}
-				} else {
-					console.debug("! File not found", packageFilename);
 				}
 			} catch (error) {
 				console.debug(error);
@@ -63,41 +65,45 @@ function buildPkgs(): any {
 	return [];
 }
 
-function generatePackageItems(packageGroup: string, packageName: string): any {
+function generatePackageItems(packageGroup: string, packageType: string, packageName: string): any {
 	const referenceItems = [
-		dirExists(packageGroup, packageName, "reference/enums", "Enums"),
-		dirExists(packageGroup, packageName, "reference/classes", "Classes"),
-		dirExists(packageGroup, packageName, "reference/interfaces", "Interfaces")
+		dirExists(packageGroup, packageType, packageName, "reference/classes", "Classes"),
+		dirExists(packageGroup, packageType, packageName, "reference/interfaces", "Interfaces"),
+		dirExists(packageGroup, packageType, packageName, "reference/types-aliases", "Type Aliases"),
+		dirExists(packageGroup, packageType, packageName, "reference/functions", "Functions"),
+		dirExists(packageGroup, packageType, packageName, "reference/variables", "Variables")
 	].filter(Boolean);
 
 	return {
 		type: "category",
 		label: packageName,
 		items: [
-			packageFileExists(packageGroup, packageName, "overview", "Overview"),
-			packageFileExists(packageGroup, packageName, "examples", "Examples"),
-			packageFileExists(packageGroup, packageName, "configuration", "Configuration"),
+			packageFileExists(packageGroup, packageType, packageName, "overview", "Overview"),
+			packageFileExists(packageGroup, packageType, packageName, "examples", "Examples"),
+			packageFileExists(packageGroup, packageType, packageName, "configuration", "Configuration"),
+			packageFileExists(packageGroup, packageType, packageName, "deployment", "Deployment"),
 			referenceItems.length > 0 && {
 				type: "category",
 				label: "Reference",
 				link: {
 					type: "doc",
-					id: `pkgs/${packageGroup}/packages/${packageName.toLowerCase()}/reference/globals`
+					id: `pkgs/${packageGroup}/${packageType}/${packageName.toLowerCase()}/reference/globals`
 				},
 				items: referenceItems
 			},
-			packageFileExists(packageGroup, packageName, "changelog", "Changelog")
+			packageFileExists(packageGroup, packageType, packageName, "changelog", "Changelog")
 		].filter(Boolean)
 	};
 }
 
 function packageFileExists(
 	packageGroup: string,
+	packageType: string,
 	packageName: string,
 	id: string,
 	label: string
 ): any {
-	const dirName = `pkgs/${packageGroup}/packages/${packageName.toLowerCase()}/${id}`;
+	const dirName = `pkgs/${packageGroup}/${packageType}/${packageName.toLowerCase()}/${id}`;
 	const file = path.join(__dirname, "docs", dirName);
 
 	const exists = fileExists(`${file}.md`);
@@ -123,8 +129,14 @@ function fileExists(filename: string): boolean {
 	return false;
 }
 
-function dirExists(packageGroup: string, packageName: string, id: string, label: string): any {
-	const dirName = `pkgs/${packageGroup}/packages/${packageName.toLowerCase()}/${id}`;
+function dirExists(
+	packageGroup: string,
+	packageType: string,
+	packageName: string,
+	id: string,
+	label: string
+): any {
+	const dirName = `pkgs/${packageGroup}/${packageType}/${packageName.toLowerCase()}/${id}`;
 	const dir = path.join(__dirname, "docs", dirName);
 
 	try {

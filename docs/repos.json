@@ -1,14 +1,54 @@
 [
-	"tools",
-	"framework",
-	"standards",
-	"api",
-	"entity-storage",
-	"blob-storage",
-	"logging",
-	"vault",
-	"wallet",
-	"identity",
-	"nft",
-	"attestation"
+	{
+		"name": "tools",
+		"types": ["packages"]
+	},
+	{
+		"name": "framework",
+		"types": ["packages"]
+	},
+	{
+		"name": "standards",
+		"types": ["packages"]
+	},
+	{
+		"name": "api",
+		"types": ["packages"]
+	},
+	{
+		"name": "entity-storage",
+		"types": ["packages"]
+	},
+	{
+		"name": "blob-storage",
+		"types": ["packages"]
+	},
+	{
+		"name": "logging",
+		"types": ["packages"]
+	},
+	{
+		"name": "vault",
+		"types": ["packages"]
+	},
+	{
+		"name": "wallet",
+		"types": ["packages"]
+	},
+	{
+		"name": "identity",
+		"types": ["packages"]
+	},
+	{
+		"name": "nft",
+		"types": ["packages"]
+	},
+	{
+		"name": "attestation",
+		"types": ["packages"]
+	},
+	{
+		"name": "apps",
+		"types": ["apps"]
+	}
 ]

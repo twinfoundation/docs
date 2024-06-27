@@ -24,7 +24,7 @@ function buildGroupContent(packageGroup) {
 		"..",
 		"docs",
 		"pkgs",
-		packageGroup,
+		packageGroup.name,
 		"package.json"
 	);
 
@@ -34,7 +34,13 @@ function buildGroupContent(packageGroup) {
 
 		let combinedPackageContent = "";
 		for (const pkg of groupJson.workspaces) {
-			combinedPackageContent += buildPackageContent(packageGroup, pkg.replace("packages/", ""));
+			for (const packageType of packageGroup.types) {
+				combinedPackageContent += buildPackageContent(
+					packageGroup.name,
+					packageType,
+					pkg.replace(`${packageType}/`, "")
+				);
+			}
 		}
 
 		if (combinedPackageContent.length > 0) {
@@ -47,10 +53,10 @@ function buildGroupContent(packageGroup) {
 	return content;
 }
 
-function buildPackageContent(packageGroup, pkg) {
+function buildPackageContent(packageGroup, packageType, packageName) {
 	let content = "";
 
-	console.debug("        Package", pkg);
+	console.debug("        Package", packageName);
 
 	const packageFilename = path.join(
 		__dirname,
@@ -58,8 +64,8 @@ function buildPackageContent(packageGroup, pkg) {
 		"docs",
 		"pkgs",
 		packageGroup,
-		"packages",
-		pkg,
+		packageType,
+		packageName,
 		"package.json"
 	);
 
@@ -67,7 +73,7 @@ function buildPackageContent(packageGroup, pkg) {
 		const packageContent = fs.readFileSync(packageFilename, "utf-8");
 		const packageJson = JSON.parse(packageContent);
 
-		content += `- [${packageJson.name}](pkgs/${packageGroup}/packages/${packageJson.name.replace("@gtsc/", "")}/overview) - ${packageJson.description}\n`;
+		content += `- [${packageJson.name}](pkgs/${packageGroup}/${packageType}/${packageJson.name.replace("@gtsc/", "")}/overview) - ${packageJson.description}\n`;
 	} else {
 		console.debug("        ! File not found", packageFilename);
 	}

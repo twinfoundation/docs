@@ -82,3 +82,7 @@ This is the overview of the packages.
 - [@gtsc/attestation-connector-open-attestation](pkgs/attestation/packages/attestation-connector-open-attestation/overview) - Attestation connector implementation using OpenAttestation
 - [@gtsc/attestation-service](pkgs/attestation/packages/attestation-service/overview) - Attestation contract implementation and REST endpoint definitions
 - [@gtsc/attestation-rest-client](pkgs/attestation/packages/attestation-rest-client/overview) - Attestation contract implementation which can connect to REST endpoints
+
+## Applications
+
+- [@gtsc/api-server](pkgs/apps/apps/api-server/overview) - Serve APIs using the specified configuration

@@ -289,6 +289,27 @@ jobs:
           cp import-packages/attestation/package.json docs/pkgs/attestation/package.json
           rm -r import-packages/attestation
 
+      ########### apps
+      - name: Checkout apps
+        uses: actions/checkout@v4
+        with:
+          repository: gtscio/apps
+          path: import-packages/apps
+          ref: ${{ env.gha-branch }}
+          token: ${{ secrets.GH_PAT }}
+
+      - name: Copy apps to Docs
+        run: |
+          jq -r '.workspaces[]' import-packages/apps/package.json | while read pkg; do
+            rm -rf docs/pkgs/apps/$pkg
+            mkdir -p docs/pkgs/apps/$pkg
+            cp -r import-packages/apps/$pkg/docs/* docs/pkgs/apps/$pkg
+            cp -r import-packages/apps/$pkg/package.json docs/pkgs/apps/$pkg/package.json
+          done
+
+          cp import-packages/apps/package.json docs/pkgs/apps/package.json
+          rm -r import-packages/apps
+
       ########### common
       - name: Build
         run: npm run build
