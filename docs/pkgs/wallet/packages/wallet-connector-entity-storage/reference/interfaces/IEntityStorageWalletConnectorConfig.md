@@ -4,11 +4,11 @@ Configuration for the Entity Storage Wallet Connector.
 
 ## Properties
 
-### walletMnemonicId?
+### vaultMnemonicId?
 
-> `optional` **walletMnemonicId**: `string`
+> `optional` **vaultMnemonicId**: `string`
 
-The id of the entry in the vault containing the wallet mnemonic.
+The id of the entry in the vault containing the mnemonic.
 
 ***
 

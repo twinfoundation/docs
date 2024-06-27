@@ -10,21 +10,21 @@ Class for performing logging operations on multiple connectors.
 
 ### new MultiLoggingConnector()
 
-> **new MultiLoggingConnector**(`dependencies`, `config`?): [`MultiLoggingConnector`](MultiLoggingConnector.md)
+> **new MultiLoggingConnector**(`options`): [`MultiLoggingConnector`](MultiLoggingConnector.md)
 
 Create a new instance of MultiLoggingConnector.
 
 #### Parameters
 
-• **dependencies**
+• **options**
 
-The dependencies for the logging connector.
+The options for the connector.
 
-• **dependencies.loggingConnectors**: [`ILoggingConnector`](../interfaces/ILoggingConnector.md)[]
+• **options.loggingConnectorTypes**: `string`[]
 
-The logging connectors to aggregate.
+The logging connectors to multiplex.
 
-• **config?**: [`ILoggingLevelsConfig`](../interfaces/ILoggingLevelsConfig.md)
+• **options.config?**: [`ILoggingLevelsConfig`](../interfaces/ILoggingLevelsConfig.md)
 
 The configuration for the logging connector.
 

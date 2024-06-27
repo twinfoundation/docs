@@ -1,6 +1,6 @@
 {
 	"name": "@gtsc/attestation-connector-open-attestation",
-	"version": "0.0.3-next.3",
+	"version": "0.0.3-next.6",
 	"description": "Attestation connector implementation using OpenAttestation",
 	"repository": {
 		"type": "git",
@@ -28,12 +28,12 @@
 		"dist": "npm run clean && npm run build && npm run test && npm run bundle && npm run docs"
 	},
 	"dependencies": {
-		"@gtsc/attestation-models": "0.0.3-next.3",
+		"@gtsc/attestation-models": "0.0.3-next.6",
 		"@gtsc/core": "next",
 		"@gtsc/entity": "next",
 		"@gtsc/nameof": "^0.0.4",
 		"@gtsc/standards-w3c-did": "next",
-		"@govtechsg/open-attestation": "^6.9.2"
+		"@govtechsg/open-attestation": "^6.9.3"
 	},
 	"devDependencies": {
 		"@gtsc/nameof-transformer": "^0.0.4",
@@ -42,12 +42,12 @@
 		"replace-in-files-cli": "^2.2.0",
 		"dotenv": "^16.4.5",
 		"rimraf": "^5.0.7",
-		"rollup": "^4.17.2",
+		"rollup": "^4.18.0",
 		"rollup-plugin-copy": "^3.5.0",
 		"rollup-plugin-typescript2": "^0.36.0",
-		"ts-patch": "^3.1.2",
+		"ts-patch": "^3.2.0",
 		"typedoc": "^0.25.13",
-		"typedoc-plugin-markdown": "^4.0.2",
+		"typedoc-plugin-markdown": "^4.0.3",
 		"typescript": "^5.4.5",
 		"vitest": "^1.6.0"
 	},

@@ -1,6 +1,6 @@
 # Interface: IAttestationConnector
 
-Interface describing a attestation connector.
+Interface describing an attestation connector.
 
 ## Extends
 
@@ -68,11 +68,15 @@ Nothing.
 
 ***
 
-### sign()
+### attest()
 
-> **sign**(`requestContext`, `keyId`, `data`): `Promise`\<`IDidProof`\>
+> **attest**\<`T`\>(`requestContext`, `controllerAddress`, `verificationMethodId`, `data`): `Promise`\<[`IAttestationInformation`](IAttestationInformation.md)\<`T`\>\>
 
-Sign the data and return the proof.
+Attest the data and return the collated information.
+
+#### Type parameters
+
+• **T** = `unknown`
 
 #### Parameters
 
@@ -80,27 +84,35 @@ Sign the data and return the proof.
 
 The context for the request.
 
-• **keyId**: `string`
+• **controllerAddress**: `string`
 
-The key id from a vault to sign the data.
+The controller address for the attestation.
 
-• **data**: `unknown`
+• **verificationMethodId**: `string`
 
-The data to sign.
+The identity verification method to use for attesting the data.
+
+• **data**: `T`
+
+The data to attest.
 
 #### Returns
 
-`Promise`\<`IDidProof`\>
+`Promise`\<[`IAttestationInformation`](IAttestationInformation.md)\<`T`\>\>
 
-The proof for the data with the id set as a unique identifier for the data.
+The collated attestation data.
 
 ***
 
 ### verify()
 
-> **verify**(`requestContext`, `data`, `proof`): `Promise`\<`boolean`\>
+> **verify**\<`T`\>(`requestContext`, `attestationId`): `Promise`\<`object`\>
 
-Verify the data against the proof.
+Resolve and verify the attestation id.
+
+#### Type parameters
+
+• **T** = `unknown`
 
 #### Parameters
 
@@ -108,16 +120,60 @@ Verify the data against the proof.
 
 The context for the request.
 
-• **data**: `unknown`
+• **attestationId**: `string`
 
-The data to verify.
-
-• **proof**: `IDidProof`
-
-The proof to verify against.
+The attestation id to verify.
 
 #### Returns
 
-`Promise`\<`boolean`\>
+`Promise`\<`object`\>
 
-True if the verification is successful.
+The verified attestation details.
+
+##### verified
+
+> **verified**: `boolean`
+
+##### failure?
+
+> `optional` **failure**: `string`
+
+##### information?
+
+> `optional` **information**: `Partial`\<[`IAttestationInformation`](IAttestationInformation.md)\<`T`\>\>
+
+***
+
+### transfer()
+
+> **transfer**\<`T`\>(`requestContext`, `attestationId`, `holderControllerAddress`, `holderIdentity`): `Promise`\<[`IAttestationInformation`](IAttestationInformation.md)\<`T`\>\>
+
+Transfer the attestation to a new holder.
+
+#### Type parameters
+
+• **T** = `unknown`
+
+#### Parameters
+
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **attestationId**: `string`
+
+The attestation to transfer.
+
+• **holderControllerAddress**: `string`
+
+The new controller address of the attestation belonging to the holder.
+
+• **holderIdentity**: `string`
+
+The holder identity of the attestation.
+
+#### Returns
+
+`Promise`\<[`IAttestationInformation`](IAttestationInformation.md)\<`T`\>\>
+
+The updated attestation details.

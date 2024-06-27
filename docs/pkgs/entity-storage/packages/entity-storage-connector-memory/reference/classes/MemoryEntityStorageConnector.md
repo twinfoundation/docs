@@ -14,19 +14,19 @@ Class for performing entity storage operations in-memory.
 
 ### new MemoryEntityStorageConnector()
 
-> **new MemoryEntityStorageConnector**\<`T`\>(`entitySchema`, `config`?): [`MemoryEntityStorageConnector`](MemoryEntityStorageConnector.md)\<`T`\>
+> **new MemoryEntityStorageConnector**\<`T`\>(`options`): [`MemoryEntityStorageConnector`](MemoryEntityStorageConnector.md)\<`T`\>
 
 Create a new instance of MemoryEntityStorageConnector.
 
 #### Parameters
 
-• **entitySchema**: `IEntitySchema`\<`T`\>
+• **options**
+
+The options for the connector.
+
+• **options.entitySchema**: `string`
 
 The schema for the entity.
-
-• **config?**: [`IMemoryEntityStorageConnectorConfig`](../interfaces/IMemoryEntityStorageConnectorConfig.md)\<`T`\>
-
-The configuration for the entity storage connector.
 
 #### Returns
 

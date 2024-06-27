@@ -198,7 +198,7 @@ True if the balance has been ensured.
 
 ### transfer()
 
-> **transfer**(`requestContext`, `address`, `amount`): `Promise`\<`void`\>
+> **transfer**(`requestContext`, `addressSource`, `addressDest`, `amount`): `Promise`\<`undefined` \| `string`\>
 
 Transfer funds to an address.
 
@@ -208,7 +208,11 @@ Transfer funds to an address.
 
 The context for the request.
 
-• **address**: `string`
+• **addressSource**: `string`
+
+The bech32 encoded address to send the funds from.
+
+• **addressDest**: `string`
 
 The bech32 encoded address to send the funds to.
 
@@ -218,9 +222,9 @@ The amount to transfer.
 
 #### Returns
 
-`Promise`\<`void`\>
+`Promise`\<`undefined` \| `string`\>
 
-Nothing.
+An identifier for the transfer if there was one.
 
 ***
 

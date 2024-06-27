@@ -14,27 +14,27 @@ Class for performing entity storage operations in file.
 
 ### new FileEntityStorageConnector()
 
-> **new FileEntityStorageConnector**\<`T`\>(`dependencies`, `entitySchema`, `config`): [`FileEntityStorageConnector`](FileEntityStorageConnector.md)\<`T`\>
+> **new FileEntityStorageConnector**\<`T`\>(`options`): [`FileEntityStorageConnector`](FileEntityStorageConnector.md)\<`T`\>
 
 Create a new instance of FileEntityStorageConnector.
 
 #### Parameters
 
-• **dependencies**
+• **options**
 
-The dependencies for the connector.
+The options for the connector.
 
-• **dependencies.logging**: `ILogging`
+• **options.loggingConnectorType?**: `string`
 
-The logging contract.
+The type of logging connector to use, defaults to "logging".
 
-• **entitySchema**: `IEntitySchema`\<`T`\>
+• **options.entitySchema**: `string`
 
-The schema for the entity.
+The name of the entity schema.
 
-• **config**: [`IFileEntityStorageConnectorConfig`](../interfaces/IFileEntityStorageConnectorConfig.md)
+• **options.config**: [`IFileEntityStorageConnectorConfig`](../interfaces/IFileEntityStorageConnectorConfig.md)
 
-The configuration for the entity storage connector.
+The configuration for the connector.
 
 #### Returns
 

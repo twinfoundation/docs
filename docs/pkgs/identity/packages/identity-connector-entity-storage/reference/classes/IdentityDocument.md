@@ -35,3 +35,11 @@ The JSON stringified version of the DID document.
 > **signature**: `string`
 
 The signature of the document.
+
+***
+
+### controller
+
+> **controller**: `string`
+
+The controller of the document.

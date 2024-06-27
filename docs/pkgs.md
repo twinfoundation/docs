@@ -6,6 +6,7 @@ This is the overview of the packages.
 
 - [@gtsc/nameof-transformer](pkgs/tools/packages/nameof-transformer/overview) - A TypeScript transformer which converts types and properties to their actual name for use at runtime
 - [@gtsc/nameof](pkgs/tools/packages/nameof/overview) - Provides the definitions for the methods which are processed by the nameof-transformer
+- [@gtsc/merge-locales](pkgs/tools/packages/merge-locales/overview) - Tool to merge locale files from all dependencies
 - [@gtsc/ts-to-openapi](pkgs/tools/packages/ts-to-openapi/overview) - Tool to convert TypeScript REST route definitions to OpenAPI Specifications
 
 ## Framework
@@ -18,6 +19,8 @@ This is the overview of the packages.
 - [@gtsc/services](pkgs/framework/packages/services/overview) - Package for base service types
 - [@gtsc/schema](pkgs/framework/packages/schema/overview) - Definitions and helpers for using with schemas
 - [@gtsc/web](pkgs/framework/packages/web/overview) - Contains classes for use with web operations
+- [@gtsc/cli-core](pkgs/framework/packages/cli-core/overview) - Core classes for building a CLI
+- [@gtsc/crypto-cli](pkgs/framework/packages/crypto-cli/overview) - A command line interface for interacting with the crypto tools
 
 ## Standards
 
@@ -26,6 +29,8 @@ This is the overview of the packages.
 ## API
 
 - [@gtsc/api-models](pkgs/api/packages/api-models/overview) - Contains models and classes for use with APIs
+- [@gtsc/api-core](pkgs/api/packages/api-core/overview) - Core classes for use with APIs
+- [@gtsc/api-server-fastify](pkgs/api/packages/api-server-fastify/overview) - Use Fastify as the core web server for APIs
 
 ## Entity Storage
 
@@ -60,6 +65,7 @@ This is the overview of the packages.
 - [@gtsc/wallet-models](pkgs/wallet/packages/wallet-models/overview) - Models which define the structure of the wallet contracts and connectors
 - [@gtsc/wallet-connector-entity-storage](pkgs/wallet/packages/wallet-connector-entity-storage/overview) - Wallet connector implementation using entity storage
 - [@gtsc/wallet-connector-iota](pkgs/wallet/packages/wallet-connector-iota/overview) - Wallet connector implementation using IOTA
+- [@gtsc/wallet-cli](pkgs/wallet/packages/wallet-cli/overview) - A command line interface for interacting with the wallet APIs
 
 ## Identity
 
@@ -68,20 +74,24 @@ This is the overview of the packages.
 - [@gtsc/identity-connector-iota](pkgs/identity/packages/identity-connector-iota/overview) - Identity connector implementation using IOTA
 - [@gtsc/identity-service](pkgs/identity/packages/identity-service/overview) - Identity contract implementation and REST endpoint definitions
 - [@gtsc/identity-rest-client](pkgs/identity/packages/identity-rest-client/overview) - Identity contract implementation which can connect to REST endpoints
+- [@gtsc/identity-cli](pkgs/identity/packages/identity-cli/overview) - A command line interface for interacting with the identity connectors
 
 ## NFT
 
 - [@gtsc/nft-models](pkgs/nft/packages/nft-models/overview) - Contains models and classes for use with NFTs
 - [@gtsc/nft-connector-iota](pkgs/nft/packages/nft-connector-iota/overview) - Implementation of the NFT connector using IOTA
 - [@gtsc/nft-connector-entity-storage](pkgs/nft/packages/nft-connector-entity-storage/overview) - Implementation of the NFT connector using entity storage
+- [@gtsc/nft-cli](pkgs/nft/packages/nft-cli/overview) - A command line interface for interacting with the nft connectors
 
 ## Attestation
 
 - [@gtsc/attestation-models](pkgs/attestation/packages/attestation-models/overview) - Models which define the structure of the attestation connectors and services
 - [@gtsc/attestation-connector-entity-storage](pkgs/attestation/packages/attestation-connector-entity-storage/overview) - Attestation connector implementation using entity storage
+- [@gtsc/attestation-connector-iota](pkgs/attestation/packages/attestation-connector-iota/overview) - Attestation connector implementation using IOTA
 - [@gtsc/attestation-connector-open-attestation](pkgs/attestation/packages/attestation-connector-open-attestation/overview) - Attestation connector implementation using OpenAttestation
 - [@gtsc/attestation-service](pkgs/attestation/packages/attestation-service/overview) - Attestation contract implementation and REST endpoint definitions
 - [@gtsc/attestation-rest-client](pkgs/attestation/packages/attestation-rest-client/overview) - Attestation contract implementation which can connect to REST endpoints
+- [@gtsc/attestation-cli](pkgs/attestation/packages/attestation-cli/overview) - A command line interface for interacting with the attestation connectors
 
 ## Applications
 

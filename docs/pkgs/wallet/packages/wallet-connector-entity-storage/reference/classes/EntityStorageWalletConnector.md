@@ -10,29 +10,29 @@ Class for performing wallet operations using in-memory storage.
 
 ### new EntityStorageWalletConnector()
 
-> **new EntityStorageWalletConnector**(`dependencies`, `config`?): [`EntityStorageWalletConnector`](EntityStorageWalletConnector.md)
+> **new EntityStorageWalletConnector**(`options`?): [`EntityStorageWalletConnector`](EntityStorageWalletConnector.md)
 
 Create a new instance of EntityStorageWalletConnector.
 
 #### Parameters
 
-• **dependencies**
+• **options?**
 
-The dependencies for the wallet connector.
+The options for the wallet connector.
 
-• **dependencies.vaultConnector**: `IVaultConnector`
+• **options.vaultConnectorType?**: `string`
 
-Vault connector to use for wallet secrets.
+Vault connector to use for wallet secrets, defaults to "vault".
 
-• **dependencies.faucetConnector?**: `IFaucetConnector`
+• **options.faucetConnectorType?**: `string`
 
-Optional faucet for requesting funds.
+Optional faucet for requesting funds, defaults to "faucet".
 
-• **dependencies.walletAddressEntityStorage?**: `IEntityStorageConnector`\<[`WalletAddress`](WalletAddress.md)\>
+• **options.walletAddressEntityStorageType?**: `string`
 
-The entity storage for wallets.
+The entity storage for wallets, defaults to "wallet-address".
 
-• **config?**: [`IEntityStorageWalletConnectorConfig`](../interfaces/IEntityStorageWalletConnectorConfig.md)
+• **options.config?**: [`IEntityStorageWalletConnectorConfig`](../interfaces/IEntityStorageWalletConnectorConfig.md)
 
 The configuration to use.
 
@@ -208,7 +208,7 @@ True if the balance has been ensured.
 
 ### transfer()
 
-> **transfer**(`requestContext`, `address`, `amount`): `Promise`\<`void`\>
+> **transfer**(`requestContext`, `addressSource`, `addressDest`, `amount`): `Promise`\<`undefined` \| `string`\>
 
 Transfer funds to an address.
 
@@ -218,7 +218,11 @@ Transfer funds to an address.
 
 The context for the request.
 
-• **address**: `string`
+• **addressSource**: `string`
+
+The bech32 encoded address to send the funds from.
+
+• **addressDest**: `string`
 
 The bech32 encoded address to send the funds to.
 
@@ -228,9 +232,9 @@ The amount to transfer.
 
 #### Returns
 
-`Promise`\<`void`\>
+`Promise`\<`undefined` \| `string`\>
 
-Nothing.
+An identifier for the transfer if there was one.
 
 #### Implementation of
 

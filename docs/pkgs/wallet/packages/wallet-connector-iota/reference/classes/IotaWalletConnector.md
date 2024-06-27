@@ -10,25 +10,25 @@ Class for performing wallet operations on IOTA.
 
 ### new IotaWalletConnector()
 
-> **new IotaWalletConnector**(`dependencies`, `config`): [`IotaWalletConnector`](IotaWalletConnector.md)
+> **new IotaWalletConnector**(`options`): [`IotaWalletConnector`](IotaWalletConnector.md)
 
 Create a new instance of IotaWalletConnector.
 
 #### Parameters
 
-• **dependencies**
+• **options**
 
-The dependencies for the wallet connector.
+The options for the wallet connector.
 
-• **dependencies.vaultConnector**: `IVaultConnector`
+• **options.vaultConnectorType?**: `string`
 
-Vault connector to use for wallet secrets.
+Vault connector to use for wallet secrets, defaults to "vault".
 
-• **dependencies.faucetConnector?**: `IFaucetConnector`
+• **options.faucetConnectorType?**: `string`
 
-Optional faucet for requesting funds.
+Optional faucet for requesting funds, defaults to "faucet".
 
-• **config**: [`IIotaWalletConnectorConfig`](../interfaces/IIotaWalletConnectorConfig.md)
+• **options.config**: [`IIotaWalletConnectorConfig`](../interfaces/IIotaWalletConnectorConfig.md)
 
 The configuration to use.
 
@@ -48,9 +48,17 @@ The namespace supported by the wallet connector.
 
 ### \_DEFAULT\_MNEMONIC\_SECRET\_NAME
 
-> `static` `private` `readonly` **\_DEFAULT\_MNEMONIC\_SECRET\_NAME**: `string` = `"wallet-mnemonic"`
+> `static` `private` `readonly` **\_DEFAULT\_MNEMONIC\_SECRET\_NAME**: `string` = `"mnemonic"`
 
 Default name for the mnemonic secret.
+
+***
+
+### \_DEFAULT\_SEED\_SECRET\_NAME
+
+> `static` `private` `readonly` **\_DEFAULT\_SEED\_SECRET\_NAME**: `string` = `"seed"`
+
+Default name for the seed secret.
 
 ## Methods
 
@@ -204,7 +212,7 @@ True if the balance has been ensured.
 
 ### transfer()
 
-> **transfer**(`requestContext`, `address`, `amount`): `Promise`\<`void`\>
+> **transfer**(`requestContext`, `addressSource`, `addressDest`, `amount`): `Promise`\<`undefined` \| `string`\>
 
 Transfer funds to an address.
 
@@ -214,7 +222,11 @@ Transfer funds to an address.
 
 The context for the request.
 
-• **address**: `string`
+• **addressSource**: `string`
+
+The bech32 encoded address to send the funds from.
+
+• **addressDest**: `string`
 
 The bech32 encoded address to send the funds to.
 
@@ -224,9 +236,9 @@ The amount to transfer.
 
 #### Returns
 
-`Promise`\<`void`\>
+`Promise`\<`undefined` \| `string`\>
 
-Nothing.
+An identifier for the transfer if there was one.
 
 #### Implementation of
 
@@ -275,3 +287,23 @@ The signature and public key bytes.
 #### Implementation of
 
 `IWalletConnector.sign`
+
+***
+
+### extractPayloadError()
+
+> `private` **extractPayloadError**(`error`): `IError`
+
+Extract error from SDK payload.
+
+#### Parameters
+
+• **error**: `unknown`
+
+The error to extract.
+
+#### Returns
+
+`IError`
+
+The extracted error.

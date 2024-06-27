@@ -10,21 +10,21 @@ Class for performing logging operations in entity storage.
 
 ### new EntityStorageLoggingConnector()
 
-> **new EntityStorageLoggingConnector**(`dependencies`, `config`?): [`EntityStorageLoggingConnector`](EntityStorageLoggingConnector.md)
+> **new EntityStorageLoggingConnector**(`options`?): [`EntityStorageLoggingConnector`](EntityStorageLoggingConnector.md)
 
 Create a new instance of EntityStorageLoggingConnector.
 
 #### Parameters
 
-• **dependencies**
+• **options?**
 
-The dependencies for the logging connector.
+The options for the connector.
 
-• **dependencies.logEntryStorage**: `IEntityStorageConnector`\<[`LogEntry`](LogEntry.md)\>
+• **options.logEntryStorageConnectorType?**: `string`
 
-The entity storage connector dependency.
+The type of the entity storage connector to use, defaults to "log-entry".
 
-• **config?**: `ILoggingLevelsConfig`
+• **options.config?**: `ILoggingLevelsConfig`
 
 The configuration for the logging connector.
 

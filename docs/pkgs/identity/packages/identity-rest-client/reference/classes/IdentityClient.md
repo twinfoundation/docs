@@ -96,7 +96,7 @@ The response.
 
 ### identityCreate()
 
-> **identityCreate**(`requestContext`, `role`, `properties`?): `Promise`\<`object`\>
+> **identityCreate**(`requestContext`, `controller`, `role`, `properties`?): `Promise`\<`object`\>
 
 Create a new identity.
 
@@ -105,6 +105,10 @@ Create a new identity.
 • **requestContext**: `IRequestContext`
 
 The context for the request.
+
+• **controller**: `string`
+
+The controller for the identity.
 
 • **role**: `IdentityRole`
 

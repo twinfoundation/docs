@@ -3,6 +3,7 @@
 ## Classes
 
 - [IotaIdentityConnector](classes/IotaIdentityConnector.md)
+- [IotaIdentityUtils](classes/IotaIdentityUtils.md)
 
 ## Interfaces
 

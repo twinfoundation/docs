@@ -10,23 +10,23 @@ Class for performing vault operations in entity storage.
 
 ### new EntityStorageVaultConnector()
 
-> **new EntityStorageVaultConnector**(`dependencies`): [`EntityStorageVaultConnector`](EntityStorageVaultConnector.md)
+> **new EntityStorageVaultConnector**(`options`?): [`EntityStorageVaultConnector`](EntityStorageVaultConnector.md)
 
 Create a new instance of EntityStorageVaultConnector.
 
 #### Parameters
 
-• **dependencies**
+• **options?**
 
-The dependencies for the logging connector.
+The options for the connector.
 
-• **dependencies.vaultKeyEntityStorageConnector**: `IEntityStorageConnector`\<[`VaultKey`](VaultKey.md)\>
+• **options.vaultKeyEntityStorageType?**: `string`
 
-The vault key entity storage connector dependency.
+The vault key entity storage connector type, defaults to "vault-key".
 
-• **dependencies.vaultSecretEntityStorageConnector**: `IEntityStorageConnector`\<[`VaultSecret`](VaultSecret.md)\>
+• **options.vaultSecretEntityStorageType?**: `string`
 
-The vault secret entity storage connector dependency.
+The vault secret entity storage connector type, defaults to "vault-secret".
 
 #### Returns
 

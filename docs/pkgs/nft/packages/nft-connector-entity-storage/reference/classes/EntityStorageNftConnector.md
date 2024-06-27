@@ -10,27 +10,19 @@ Class for performing NFT operations on entity storage.
 
 ### new EntityStorageNftConnector()
 
-> **new EntityStorageNftConnector**(`dependencies`, `config`?): [`EntityStorageNftConnector`](EntityStorageNftConnector.md)
+> **new EntityStorageNftConnector**(`options`?): [`EntityStorageNftConnector`](EntityStorageNftConnector.md)
 
 Create a new instance of EntityStorageNftConnector.
 
 #### Parameters
 
-• **dependencies**
+• **options?**
 
 The dependencies for the class.
 
-• **dependencies.vaultConnector**: `IVaultConnector`
+• **options.nftEntityStorageType?**: `string`
 
-The vault connector.
-
-• **dependencies.nftEntityStorage?**: `IEntityStorageConnector`\<[`Nft`](Nft.md)\>
-
-The entity storage for nfts.
-
-• **config?**: [`IEntityStorageNftConnectorConfig`](../interfaces/IEntityStorageNftConnectorConfig.md)
-
-The configuration for the connector.
+The entity storage for nfts, defaults to "nft".
 
 #### Returns
 
@@ -48,7 +40,7 @@ The namespace supported by the wallet connector.
 
 ### mint()
 
-> **mint**\<`T`, `U`\>(`requestContext`, `tag`, `immutableMetadata`?, `metadata`?): `Promise`\<`string`\>
+> **mint**\<`T`, `U`\>(`requestContext`, `issuer`, `tag`, `immutableMetadata`?, `metadata`?): `Promise`\<`string`\>
 
 Mint an NFT.
 
@@ -63,6 +55,10 @@ Mint an NFT.
 • **requestContext**: `IRequestContext`
 
 The context for the request.
+
+• **issuer**: `string`
+
+The issuer for the NFT, will also be the initial owner.
 
 • **tag**: `string`
 
@@ -88,9 +84,63 @@ The id of the created NFT in urn format.
 
 ***
 
+### resolve()
+
+> **resolve**\<`T`, `U`\>(`requestContext`, `id`): `Promise`\<`object`\>
+
+Resolve an NFT.
+
+#### Type parameters
+
+• **T** = `unknown`
+
+• **U** = `unknown`
+
+#### Parameters
+
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **id**: `string`
+
+The id of the NFT to resolve.
+
+#### Returns
+
+`Promise`\<`object`\>
+
+The data for the NFT.
+
+##### issuer
+
+> **issuer**: `string`
+
+##### owner
+
+> **owner**: `string`
+
+##### tag
+
+> **tag**: `string`
+
+##### immutableMetadata?
+
+> `optional` **immutableMetadata**: `T`
+
+##### metadata?
+
+> `optional` **metadata**: `U`
+
+#### Implementation of
+
+`INftConnector.resolve`
+
+***
+
 ### burn()
 
-> **burn**(`requestContext`, `id`): `Promise`\<`void`\>
+> **burn**(`requestContext`, `owner`, `id`): `Promise`\<`void`\>
 
 Burn an NFT.
 
@@ -99,6 +149,10 @@ Burn an NFT.
 • **requestContext**: `IRequestContext`
 
 The context for the request.
+
+• **owner**: `string`
+
+The owner for the NFT to return the funds to.
 
 • **id**: `string`
 
@@ -118,9 +172,13 @@ Nothing.
 
 ### transfer()
 
-> **transfer**(`requestContext`, `id`, `recipient`): `Promise`\<`void`\>
+> **transfer**\<`T`\>(`requestContext`, `id`, `recipient`, `metadata`?): `Promise`\<`void`\>
 
 Transfer an NFT.
+
+#### Type parameters
+
+• **T** = `unknown`
 
 #### Parameters
 
@@ -134,7 +192,11 @@ The id of the NFT to transfer in urn format.
 
 • **recipient**: `string`
 
-The recipient identity of the NFT.
+The recipient of the NFT.
+
+• **metadata?**: `T`
+
+Optional mutable data to include during the transfer.
 
 #### Returns
 
@@ -145,3 +207,39 @@ Nothing.
 #### Implementation of
 
 `INftConnector.transfer`
+
+***
+
+### updateMutable()
+
+> **updateMutable**\<`T`\>(`requestContext`, `id`, `metadata`): `Promise`\<`void`\>
+
+Update the mutable data of the NFT.
+
+#### Type parameters
+
+• **T** = `unknown`
+
+#### Parameters
+
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **id**: `string`
+
+The id of the NFT to update in urn format.
+
+• **metadata**: `T`
+
+The mutable data to update.
+
+#### Returns
+
+`Promise`\<`void`\>
+
+Nothing.
+
+#### Implementation of
+
+`INftConnector.updateMutable`

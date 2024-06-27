@@ -10,23 +10,23 @@ Class for performing blob storage operations in file.
 
 ### new FileBlobStorageConnector()
 
-> **new FileBlobStorageConnector**(`dependencies`, `config`): [`FileBlobStorageConnector`](FileBlobStorageConnector.md)
+> **new FileBlobStorageConnector**(`options`): [`FileBlobStorageConnector`](FileBlobStorageConnector.md)
 
 Create a new instance of FileBlobStorageConnector.
 
 #### Parameters
 
-• **dependencies**
+• **options**
 
-The dependencies for the connector.
+The options for the connector.
 
-• **dependencies.logging**: `ILogging`
+• **options.loggingConnectorType?**: `string`
 
-The logging contract.
+The type of logging connector to use, defaults to "logging".
 
-• **config**: [`IFileBlobStorageConnectorConfig`](../interfaces/IFileBlobStorageConnectorConfig.md)
+• **options.config**: [`IFileBlobStorageConnectorConfig`](../interfaces/IFileBlobStorageConnectorConfig.md)
 
-The configuration for the blob storage connector.
+The configuration for the connector.
 
 #### Returns
 

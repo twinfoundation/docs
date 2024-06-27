@@ -10,15 +10,9 @@ Class for performing blob storage operations in-memory.
 
 ### new MemoryBlobStorageConnector()
 
-> **new MemoryBlobStorageConnector**(`config`?): [`MemoryBlobStorageConnector`](MemoryBlobStorageConnector.md)
+> **new MemoryBlobStorageConnector**(): [`MemoryBlobStorageConnector`](MemoryBlobStorageConnector.md)
 
 Create a new instance of MemoryBlobStorageConnector.
-
-#### Parameters
-
-• **config?**: [`IMemoryBlobStorageConnectorConfig`](../interfaces/IMemoryBlobStorageConnectorConfig.md)
-
-The configuration for the blob storage connector.
 
 #### Returns
 
