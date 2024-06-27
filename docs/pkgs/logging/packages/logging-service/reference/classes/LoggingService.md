@@ -10,19 +10,19 @@ Service for performing logging operations to a connector.
 
 ### new LoggingService()
 
-> **new LoggingService**(`dependencies`): [`LoggingService`](LoggingService.md)
+> **new LoggingService**(`options`?): [`LoggingService`](LoggingService.md)
 
 Create a new instance of LoggingService.
 
 #### Parameters
 
-• **dependencies**
+• **options?**
 
-The connectors to use.
+The options for the connector.
 
-• **dependencies.loggingConnector**: `ILoggingConnector`
+• **options.loggingConnectorType?**: `string`
 
-The logging connector.
+The type of the logging connector to use, defaults to "logging".
 
 #### Returns
 

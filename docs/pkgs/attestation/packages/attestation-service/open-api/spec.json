@@ -16,10 +16,10 @@
     ],
     "tags": [],
     "paths": {
-        "/attestation/sign": {
+        "/attestation/attest": {
             "post": {
-                "operationId": "attestationSign",
-                "summary": "Sign a data set",
+                "operationId": "attestationAttest",
+                "summary": "Attest a data set",
                 "tags": [
                     "Attestation"
                 ],
@@ -29,29 +29,6 @@
                     }
                 ],
                 "responses": {
-                    "200": {
-                        "description": "The response when creating the proof for a data set.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/AttestationSignResponse"
-                                },
-                                "examples": {
-                                    "attestationSignResponseExample": {
-                                        "value": {
-                                            "proof": {
-                                                "type": "Ed25519Signature2018",
-                                                "proofPurpose": "assertionMethod",
-                                                "created": "2024-05-17T13:36:26.072Z",
-                                                "proofValue": "1d9f8d9sd9fjeiweob50ac63129782a1c3y837f6s78s8cg8hjg76hj5h342k33h",
-                                                "blobStorageId": "urn:ipfs:...."
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
                     "400": {
                         "description": "Something went wrong with the request see the error field for more details.",
                         "content": {
@@ -86,25 +63,6 @@
                                             "name": "UnauthorizedError",
                                             "message": "component.error"
                                         }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                },
-                "requestBody": {
-                    "description": "Sign the data set and return the proof.",
-                    "required": true,
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/AttestationSignRequest"
-                            },
-                            "examples": {
-                                "attestationSignExample": {
-                                    "value": {
-                                        "keyId": "my-private-key-id",
-                                        "data": "eyJkb2NOYW1lIjoiZm9vIiwiZG9jVHlwZSI6InRlc3QtZG9jLXR5cGUifQ=="
                                     }
                                 }
                             }
@@ -113,12 +71,25 @@
                 }
             }
         },
-        "/attestation/verify": {
-            "post": {
+        "/attestation/verify/{attestationId}": {
+            "get": {
                 "operationId": "attestationVerify",
-                "summary": "Verify a data set and proof",
+                "summary": "Verify an attestation",
                 "tags": [
                     "Attestation"
+                ],
+                "parameters": [
+                    {
+                        "name": "attestationId",
+                        "description": "The attestation id to verify.",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "style": "simple",
+                        "example": "urn:iota-attestation:aW90YS1uZnQ6dHN0OjB4NzYyYjljNDllYTg2OWUwZWJkYTliYmZhNzY5Mzk0NDdhNDI4ZGNmMTc4YzVkMTVhYjQ0N2UyZDRmYmJiNGViMg=="
+                    }
                 ],
                 "security": [
                     {
@@ -126,23 +97,74 @@
                     }
                 ],
                 "responses": {
-                    "200": {
-                        "description": "The response to verifying a proof.",
+                    "400": {
+                        "description": "Something went wrong with the request see the error field for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/AttestationVerifyResponse"
+                                    "$ref": "#/components/schemas/Error"
                                 },
                                 "examples": {
-                                    "attestationVerifyResponseExample": {
+                                    "exampleResponse": {
                                         "value": {
-                                            "verified": true
+                                            "name": "GeneralError",
+                                            "message": "component.error",
+                                            "properties": {
+                                                "foo": "bar"
+                                            }
                                         }
                                     }
                                 }
                             }
                         }
                     },
+                    "401": {
+                        "description": "You are not authorized to use the API or no credentials were supplied.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "UnauthorizedError",
+                                            "message": "component.error"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/attestation/transfer/{attestationId}": {
+            "put": {
+                "operationId": "attestationTransfer",
+                "summary": "Transfer an attestation",
+                "tags": [
+                    "Attestation"
+                ],
+                "parameters": [
+                    {
+                        "name": "attestationId",
+                        "description": "The attestation id to verify.",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "style": "simple",
+                        "example": "urn:iota-attestation:aW90YS1uZnQ6dHN0OjB4NzYyYjljNDllYTg2OWUwZWJkYTliYmZhNzY5Mzk0NDdhNDI4ZGNmMTc4YzVkMTVhYjQ0N2UyZDRmYmJiNGViMg=="
+                    }
+                ],
+                "security": [
+                    {
+                        "jwtBearerAuthScheme": []
+                    }
+                ],
+                "responses": {
                     "400": {
                         "description": "Something went wrong with the request see the error field for more details.",
                         "content": {
@@ -184,23 +206,18 @@
                     }
                 },
                 "requestBody": {
-                    "description": "Verify that the proof is valid for the data.",
+                    "description": "Transfer the attestation to a new holder.",
                     "required": true,
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/AttestationVerifyRequest"
+                                "$ref": "#/components/schemas/AttestationTransferRequest"
                             },
                             "examples": {
                                 "attestationVerifyExample": {
                                     "value": {
-                                        "proof": {
-                                            "type": "Ed25519Signature2018",
-                                            "proofPurpose": "assertionMethod",
-                                            "created": "2024-05-17T13:36:26.072Z",
-                                            "proofValue": "1d9f8d9sd9fjeiweob50ac63129782a1c3y837f6s78s8cg8hjg76hj5h342k33h",
-                                            "blobStorageId": "urn:ipfs:...."
-                                        }
+                                        "holderControllerAddress": "tst1pqr2uyp5l8627x6q3g94f6rhhdrkyktxdg20yg2qp5m5dtkwlfcs2h5djap",
+                                        "holderIdentity": "did:iota:tst:0x06ae1034f9f4af1b408a0b54e877bb476259666a14f221400d3746aecefa7105"
                                     }
                                 }
                             }
@@ -252,147 +269,24 @@
                 "additionalProperties": false,
                 "description": "Model to describe serialized error."
             },
-            "AttestationSignRequest": {
+            "AttestationTransferRequest": {
                 "type": "object",
                 "properties": {
-                    "keyId": {
+                    "holderControllerAddress": {
                         "type": "string",
-                        "description": "The key id from a vault to sign the data."
+                        "description": "The new holder controller address."
                     },
-                    "data": {
+                    "holderIdentity": {
                         "type": "string",
-                        "description": "The base64 encoded data to sign."
-                    },
-                    "namespace": {
-                        "type": "string",
-                        "description": "The namespace to store the data in, defaults to service configured namespace."
+                        "description": "The new holder identity."
                     }
                 },
                 "required": [
-                    "keyId",
-                    "data"
+                    "holderControllerAddress",
+                    "holderIdentity"
                 ],
                 "additionalProperties": false,
-                "description": "The data to be used in the signing."
-            },
-            "AttestationSignResponse": {
-                "type": "object",
-                "properties": {
-                    "proof": {
-                        "$ref": "#/components/schemas/AttestationProof"
-                    }
-                },
-                "required": [
-                    "proof"
-                ],
-                "additionalProperties": false,
-                "description": "The data to be used in the signing."
-            },
-            "AttestationProof": {
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "type": "string",
-                        "description": "The id of the proof."
-                    },
-                    "type": {
-                        "type": "string",
-                        "description": "The type of the proof."
-                    },
-                    "proofPurpose": {
-                        "type": "string",
-                        "description": "The purpose of the proof."
-                    },
-                    "proofValue": {
-                        "type": "string",
-                        "description": "Contains the base-encoded binary data necessary to verify the digital proof using the verificationMethod specified."
-                    },
-                    "verificationMethod": {
-                        "type": "string",
-                        "description": "The verification method of the proof."
-                    },
-                    "created": {
-                        "type": "string",
-                        "description": "The iso date of when the proof was created."
-                    },
-                    "expires": {
-                        "type": "string",
-                        "description": "The iso date of when the proof expires."
-                    },
-                    "domain": {
-                        "anyOf": [
-                            {
-                                "type": "string"
-                            },
-                            {
-                                "type": "array",
-                                "items": {
-                                    "type": "string"
-                                }
-                            }
-                        ],
-                        "description": "One or more security domains in which the proof is meant to be used."
-                    },
-                    "challenge": {
-                        "anyOf": [
-                            {
-                                "type": "string"
-                            },
-                            {
-                                "type": "array",
-                                "items": {
-                                    "type": "string"
-                                }
-                            }
-                        ],
-                        "description": "Provided to mitigate replay attacks on domains."
-                    },
-                    "previousProof": {
-                        "type": "string",
-                        "description": "Identifies another data integrity proof that MUST verify before the current proof is processed"
-                    },
-                    "nonce": {
-                        "type": "string",
-                        "description": "Use of this field is to increase privacy by decreasing linkability that is the result of deterministically generated signatures."
-                    },
-                    "blobStorageId": {
-                        "type": "string",
-                        "description": "The location of the data in blob storage."
-                    }
-                },
-                "required": [
-                    "blobStorageId",
-                    "proofPurpose",
-                    "type"
-                ],
-                "additionalProperties": false,
-                "description": "Interface describing an attestation proof."
-            },
-            "AttestationVerifyRequest": {
-                "type": "object",
-                "properties": {
-                    "proof": {
-                        "$ref": "#/components/schemas/AttestationProof"
-                    }
-                },
-                "required": [
-                    "proof"
-                ],
-                "additionalProperties": false,
-                "description": "The parameters to be used in the verification."
-            },
-            "AttestationVerifyResponse": {
-                "type": "object",
-                "properties": {
-                    "verified": {
-                        "type": "boolean"
-                    }
-                },
-                "required": [
-                    "verified"
-                ],
-                "additionalProperties": false,
-                "description": "The data to be used in the verification response."
+                "description": "The parameters to be used in the transfer."
             }
         },
         "securitySchemes": {

@@ -1,17 +1,17 @@
 # Interface: IAttestationVerifyRequest
 
-Verify that the proof is valid for the data.
+Verify that the proof is valid for the attestation.
 
 ## Properties
 
-### body
+### path
 
-> **body**: `object`
+> **path**: `object`
 
 The parameters to be used in the verification.
 
-#### proof
+#### attestationId
 
-> **proof**: [`IAttestationProof`](IAttestationProof.md)
+> **attestationId**: `string`
 
-The proof to verify.
+The attestation id to verify.

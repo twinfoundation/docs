@@ -10,23 +10,23 @@ Class which implements the identity contract.
 
 ### new IdentityService()
 
-> **new IdentityService**(`dependencies`): [`IdentityService`](IdentityService.md)
+> **new IdentityService**(`options`?): [`IdentityService`](IdentityService.md)
 
 Create a new instance of Identity.
 
 #### Parameters
 
-• **dependencies**
+• **options?**
 
 The dependencies for the identity service.
 
-• **dependencies.identityConnector**: `IIdentityConnector`
+• **options.identityConnectorType?**: `string`
 
-The identity connector.
+The identity connector type, defaults to "identity".
 
-• **dependencies.profileEntityStorage**: `IEntityStorageConnector`\<[`IdentityProfile`](IdentityProfile.md)\>
+• **options.profileEntityStorageType?**: `string`
 
-The storage connector for the profiles.
+The storage connector for the profiles, default to "identity-profile".
 
 #### Returns
 
@@ -36,7 +36,7 @@ The storage connector for the profiles.
 
 ### identityCreate()
 
-> **identityCreate**(`requestContext`, `role`, `properties`?): `Promise`\<`object`\>
+> **identityCreate**(`requestContext`, `controller`, `role`, `properties`?): `Promise`\<`object`\>
 
 Create a new identity.
 
@@ -45,6 +45,10 @@ Create a new identity.
 • **requestContext**: `IRequestContext`
 
 The context for the request.
+
+• **controller**: `string`
+
+The controller for the identity.
 
 • **role**: `IdentityRole`
 

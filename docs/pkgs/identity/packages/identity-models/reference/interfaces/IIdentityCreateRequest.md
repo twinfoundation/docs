@@ -10,6 +10,12 @@ Create a new identity.
 
 The data for the request.
 
+#### controller
+
+> **controller**: `string`
+
+The controller for the identity.
+
 #### role
 
 > **role**: [`IdentityRole`](../type-aliases/IdentityRole.md)

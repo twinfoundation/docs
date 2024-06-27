@@ -2,7 +2,7 @@
 
 > **attestationVerify**(`requestContext`, `factoryServiceName`, `request`, `body`?): `Promise`\<`IAttestationVerifyResponse`\>
 
-Verify the data and proof.
+Resolve and verify the attestation id.
 
 ## Parameters
 

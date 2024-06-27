@@ -7,3 +7,9 @@
 ## Interfaces
 
 - [ITsToOpenApiConfig](interfaces/ITsToOpenApiConfig.md)
+
+## Functions
+
+- [buildCommandTsToOpenApi](functions/buildCommandTsToOpenApi.md)
+- [actionCommandTsToOpenApi](functions/actionCommandTsToOpenApi.md)
+- [tsToOpenApi](functions/tsToOpenApi.md)

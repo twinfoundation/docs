@@ -91,6 +91,7 @@
                             "examples": {
                                 "identityCreateRequestExample": {
                                     "value": {
+                                        "controller": "tst1qrtks2qycm4al8lqw4wxxcvz8sdsrkf7xdxlvgtpcf8ve8gwzsvux44jd7n",
                                         "role": "user",
                                         "properties": [
                                             {
@@ -598,6 +599,10 @@
             "IdentityCreateRequest": {
                 "type": "object",
                 "properties": {
+                    "controller": {
+                        "type": "string",
+                        "description": "The controller for the identity."
+                    },
                     "role": {
                         "$ref": "#/components/schemas/IdentityRole"
                     },
@@ -610,6 +615,7 @@
                     }
                 },
                 "required": [
+                    "controller",
                     "role"
                 ],
                 "additionalProperties": false,

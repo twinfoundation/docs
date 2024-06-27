@@ -1,6 +1,6 @@
 {
 	"name": "@gtsc/logging-models",
-	"version": "0.0.3-next.12",
+	"version": "0.0.3-next.18",
 	"description": "Models which define the structure of the logging connectors and services",
 	"repository": {
 		"type": "git",
@@ -30,22 +30,22 @@
 	"dependencies": {
 		"@gtsc/core": "next",
 		"@gtsc/entity": "next",
-		"@gtsc/nameof": "^0.0.4",
+		"@gtsc/nameof": "0.0.4",
 		"@gtsc/services": "next"
 	},
 	"devDependencies": {
-		"@gtsc/nameof-transformer": "^0.0.4",
-		"@vitest/coverage-v8": "^1.6.0",
-		"copyfiles": "^2.4.1",
-		"replace-in-files-cli": "^2.2.0",
-		"rimraf": "^5.0.7",
-		"rollup": "^4.17.2",
-		"rollup-plugin-typescript2": "^0.36.0",
-		"ts-patch": "^3.1.2",
-		"typedoc": "^0.25.13",
-		"typedoc-plugin-markdown": "^4.0.2",
-		"typescript": "^5.4.5",
-		"vitest": "^1.6.0"
+		"@gtsc/nameof-transformer": "0.0.4",
+		"@vitest/coverage-v8": "1.6.0",
+		"copyfiles": "2.4.1",
+		"replace-in-files-cli": "2.2.0",
+		"rimraf": "5.0.7",
+		"rollup": "4.18.0",
+		"rollup-plugin-typescript2": "0.36.0",
+		"ts-patch": "3.2.0",
+		"typedoc": "0.25.13",
+		"typedoc-plugin-markdown": "4.0.3",
+		"typescript": "5.4.5",
+		"vitest": "1.6.0"
 	},
 	"main": "./dist/cjs/index.cjs",
 	"module": "./dist/esm/index.mjs",

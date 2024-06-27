@@ -18,7 +18,7 @@ Class describing the nft.
 
 > **id**: `string`
 
-The identity of the nft.
+The identity of the NFT.
 
 ***
 
@@ -26,7 +26,7 @@ The identity of the nft.
 
 > **issuer**: `string`
 
-The identity of the issuer.
+The issuer of the NFT.
 
 ***
 
@@ -34,7 +34,7 @@ The identity of the issuer.
 
 > **owner**: `string`
 
-The identity of the owner.
+The owner of the NFT.
 
 ***
 
@@ -59,11 +59,3 @@ The JSON stringified version of the immutable metadata.
 > **metadata**: `string`
 
 The JSON stringified version of the mutable metadata.
-
-***
-
-### signature?
-
-> `optional` **signature**: `string`
-
-The signature of the nft.

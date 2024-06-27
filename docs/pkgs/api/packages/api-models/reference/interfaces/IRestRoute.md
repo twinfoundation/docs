@@ -88,7 +88,7 @@ The http method.
 
 ### handler()
 
-> **handler**: (`requestContext`, `request`, `body`?) => `Promise`\<`U`\>
+> **handler**: (`requestContext`, `request`) => `Promise`\<`U`\>
 
 The handler module.
 
@@ -101,10 +101,6 @@ The request context.
 • **request**: `T`
 
 The request object, combined query param, path params and body.
-
-• **body?**: `unknown`
-
-Body as standalone if it's a data request.
 
 #### Returns
 
@@ -153,3 +149,11 @@ The request can have alternative content mime types.
 > `optional` **responseContentType**: `object`[]
 
 The response can have alternative content mime types.
+
+***
+
+### excludeFromSpec?
+
+> `optional` **excludeFromSpec**: `boolean`
+
+Exclude the route from being included in the spec file.

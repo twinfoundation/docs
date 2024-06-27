@@ -12,16 +12,30 @@ The configuration for the client.
 
 ***
 
-### walletMnemonicId?
+### vaultMnemonicId?
 
-> `optional` **walletMnemonicId**: `string`
+> `optional` **vaultMnemonicId**: `string`
 
-The id of the entry in the vault containing the wallet mnemonic.
+The id of the entry in the vault containing the mnemonic.
 
 #### Default
 
 ```ts
-wallet-mnemonic
+mnemonic
+```
+
+***
+
+### vaultSeedId?
+
+> `optional` **vaultSeedId**: `string`
+
+The id of the entry in the vault containing the seed.
+
+#### Default
+
+```ts
+seed
 ```
 
 ***

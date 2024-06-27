@@ -10,25 +10,21 @@ Class for performing NFT operations on IOTA.
 
 ### new IotaNftConnector()
 
-> **new IotaNftConnector**(`dependencies`, `config`): [`IotaNftConnector`](IotaNftConnector.md)
+> **new IotaNftConnector**(`options`): [`IotaNftConnector`](IotaNftConnector.md)
 
 Create a new instance of IotaNftConnector.
 
 #### Parameters
 
-• **dependencies**
+• **options**
 
-The dependencies for the class.
+The options for the connector.
 
-• **dependencies.vaultConnector**: `IVaultConnector`
+• **options.vaultConnectorType?**: `string`
 
-The vault connector.
+The type of the vault connector, defaults to "vault".
 
-• **dependencies.walletConnector**: `IWalletConnector`
-
-The wallet connector.
-
-• **config**: [`IIotaNftConnectorConfig`](../interfaces/IIotaNftConnectorConfig.md)
+• **options.config**: [`IIotaNftConnectorConfig`](../interfaces/IIotaNftConnectorConfig.md)
 
 The configuration for the connector.
 
@@ -44,11 +40,19 @@ The configuration for the connector.
 
 The namespace supported by the wallet connector.
 
+***
+
+### \_DEFAULT\_SEED\_SECRET\_NAME
+
+> `static` `private` `readonly` **\_DEFAULT\_SEED\_SECRET\_NAME**: `string` = `"seed"`
+
+Default name for the seed secret.
+
 ## Methods
 
 ### mint()
 
-> **mint**\<`T`, `U`\>(`requestContext`, `tag`, `immutableMetadata`?, `metadata`?): `Promise`\<`string`\>
+> **mint**\<`T`, `U`\>(`requestContext`, `issuer`, `tag`, `immutableMetadata`?, `metadata`?): `Promise`\<`string`\>
 
 Mint an NFT.
 
@@ -63,6 +67,10 @@ Mint an NFT.
 • **requestContext**: `IRequestContext`
 
 The context for the request.
+
+• **issuer**: `string`
+
+The issuer for the NFT, will also be the initial owner.
 
 • **tag**: `string`
 
@@ -88,9 +96,63 @@ The id of the created NFT in urn format.
 
 ***
 
+### resolve()
+
+> **resolve**\<`T`, `U`\>(`requestContext`, `id`): `Promise`\<`object`\>
+
+Resolve an NFT.
+
+#### Type parameters
+
+• **T** = `unknown`
+
+• **U** = `unknown`
+
+#### Parameters
+
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **id**: `string`
+
+The id of the NFT to resolve.
+
+#### Returns
+
+`Promise`\<`object`\>
+
+The data for the NFT.
+
+##### issuer
+
+> **issuer**: `string`
+
+##### owner
+
+> **owner**: `string`
+
+##### tag
+
+> **tag**: `string`
+
+##### immutableMetadata?
+
+> `optional` **immutableMetadata**: `T`
+
+##### metadata?
+
+> `optional` **metadata**: `U`
+
+#### Implementation of
+
+`INftConnector.resolve`
+
+***
+
 ### burn()
 
-> **burn**(`requestContext`, `id`): `Promise`\<`void`\>
+> **burn**(`requestContext`, `owner`, `id`): `Promise`\<`void`\>
 
 Burn an NFT.
 
@@ -99,6 +161,10 @@ Burn an NFT.
 • **requestContext**: `IRequestContext`
 
 The context for the request.
+
+• **owner**: `string`
+
+The owner for the NFT to return the funds to.
 
 • **id**: `string`
 
@@ -118,9 +184,13 @@ Nothing.
 
 ### transfer()
 
-> **transfer**(`requestContext`, `id`, `recipient`): `Promise`\<`void`\>
+> **transfer**\<`T`\>(`requestContext`, `id`, `recipient`, `metadata`?): `Promise`\<`void`\>
 
 Transfer an NFT.
+
+#### Type parameters
+
+• **T**
 
 #### Parameters
 
@@ -134,7 +204,11 @@ The id of the NFT to transfer in urn format.
 
 • **recipient**: `string`
 
-The recipient identity of the NFT.
+The recipient of the NFT.
+
+• **metadata?**: `T`
+
+Optional mutable data to include during the transfer.
 
 #### Returns
 
@@ -145,3 +219,59 @@ Nothing.
 #### Implementation of
 
 `INftConnector.transfer`
+
+***
+
+### updateMutable()
+
+> **updateMutable**\<`T`\>(`requestContext`, `id`, `metadata`): `Promise`\<`void`\>
+
+Update the mutable data of the NFT.
+
+#### Type parameters
+
+• **T**
+
+#### Parameters
+
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **id**: `string`
+
+The id of the NFT to update in urn format.
+
+• **metadata**: `T`
+
+The mutable data to update.
+
+#### Returns
+
+`Promise`\<`void`\>
+
+Nothing.
+
+#### Implementation of
+
+`INftConnector.updateMutable`
+
+***
+
+### extractPayloadError()
+
+> `private` **extractPayloadError**(`error`): `IError`
+
+Extract error from SDK payload.
+
+#### Parameters
+
+• **error**: `unknown`
+
+The error to extract.
+
+#### Returns
+
+`IError`
+
+The extracted error.

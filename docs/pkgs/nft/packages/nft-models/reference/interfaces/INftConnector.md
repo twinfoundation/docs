@@ -6,7 +6,7 @@ Interface describing an NFT connector.
 
 ### mint()
 
-> **mint**\<`T`, `U`\>(`requestContext`, `tag`, `immutableMetadata`, `metadata`): `Promise`\<`string`\>
+> **mint**\<`T`, `U`\>(`requestContext`, `issuer`, `tag`, `immutableMetadata`?, `metadata`?): `Promise`\<`string`\>
 
 Mint an NFT.
 
@@ -22,15 +22,19 @@ Mint an NFT.
 
 The context for the request.
 
+• **issuer**: `string`
+
+The issuer for the NFT, will also be the initial owner.
+
 • **tag**: `string`
 
 The tag for the NFT.
 
-• **immutableMetadata**: `undefined` \| `T`
+• **immutableMetadata?**: `T`
 
 The immutable metadata for the NFT.
 
-• **metadata**: `undefined` \| `U`
+• **metadata?**: `U`
 
 The metadata for the NFT.
 
@@ -42,9 +46,59 @@ The id of the created NFT in urn format.
 
 ***
 
+### resolve()
+
+> **resolve**\<`T`, `U`\>(`requestContext`, `id`): `Promise`\<`object`\>
+
+Resolve an NFT.
+
+#### Type parameters
+
+• **T** = `unknown`
+
+• **U** = `unknown`
+
+#### Parameters
+
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **id**: `string`
+
+The id of the NFT to resolve.
+
+#### Returns
+
+`Promise`\<`object`\>
+
+The data for the NFT.
+
+##### issuer
+
+> **issuer**: `string`
+
+##### owner
+
+> **owner**: `string`
+
+##### tag
+
+> **tag**: `string`
+
+##### immutableMetadata?
+
+> `optional` **immutableMetadata**: `T`
+
+##### metadata?
+
+> `optional` **metadata**: `U`
+
+***
+
 ### burn()
 
-> **burn**(`requestContext`, `id`): `Promise`\<`void`\>
+> **burn**(`requestContext`, `owner`, `id`): `Promise`\<`void`\>
 
 Burn an NFT.
 
@@ -53,6 +107,10 @@ Burn an NFT.
 • **requestContext**: `IRequestContext`
 
 The context for the request.
+
+• **owner**: `string`
+
+The owner for the NFT to return the funds to.
 
 • **id**: `string`
 
@@ -68,9 +126,13 @@ Nothing.
 
 ### transfer()
 
-> **transfer**(`requestContext`, `id`, `recipient`): `Promise`\<`void`\>
+> **transfer**\<`T`\>(`requestContext`, `id`, `recipient`, `metadata`?): `Promise`\<`void`\>
 
 Transfer an NFT.
+
+#### Type parameters
+
+• **T** = `unknown`
 
 #### Parameters
 
@@ -84,7 +146,43 @@ The id of the NFT to transfer in urn format.
 
 • **recipient**: `string`
 
-The recipient identity of the NFT.
+The recipient of the NFT.
+
+• **metadata?**: `T`
+
+Optional mutable data to include during the transfer.
+
+#### Returns
+
+`Promise`\<`void`\>
+
+Nothing.
+
+***
+
+### updateMutable()
+
+> **updateMutable**\<`T`\>(`requestContext`, `id`, `metadata`): `Promise`\<`void`\>
+
+Update the mutable data of the NFT.
+
+#### Type parameters
+
+• **T** = `unknown`
+
+#### Parameters
+
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **id**: `string`
+
+The id of the NFT to update in urn format.
+
+• **metadata**: `T`
+
+The mutable data to update.
 
 #### Returns
 

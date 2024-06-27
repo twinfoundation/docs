@@ -4,6 +4,6 @@
 
 - [ConsoleLoggingConnector](classes/ConsoleLoggingConnector.md)
 
-## Type Aliases
+## Interfaces
 
-- [IConsoleLoggingConnectorConfig](type-aliases/IConsoleLoggingConnectorConfig.md)
+- [IConsoleLoggingConnectorConfig](interfaces/IConsoleLoggingConnectorConfig.md)

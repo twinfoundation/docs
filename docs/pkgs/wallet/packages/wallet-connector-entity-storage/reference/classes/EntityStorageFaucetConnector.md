@@ -10,19 +10,19 @@ Class for performing faucet operations using entity storage.
 
 ### new EntityStorageFaucetConnector()
 
-> **new EntityStorageFaucetConnector**(`dependencies`): [`EntityStorageFaucetConnector`](EntityStorageFaucetConnector.md)
+> **new EntityStorageFaucetConnector**(`options`?): [`EntityStorageFaucetConnector`](EntityStorageFaucetConnector.md)
 
-Create a new instance of MemoryFaucetConnector.
+Create a new instance of EntityStorageFaucetConnector.
 
 #### Parameters
 
-• **dependencies**
+• **options?**
 
-The dependencies for the wallet connector.
+The options for the wallet connector.
 
-• **dependencies.walletAddressEntityStorage**: `IEntityStorageConnector`\<[`WalletAddress`](WalletAddress.md)\>
+• **options.walletAddressEntityStorageType?**: `string`
 
-The entity storage for wallet addresses.
+The entity storage type for wallet addresses, defaults to "wallet-address".
 
 #### Returns
 

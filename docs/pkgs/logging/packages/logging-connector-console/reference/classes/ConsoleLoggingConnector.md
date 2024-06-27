@@ -16,29 +16,13 @@ Create a new instance of ConsoleLoggingConnector.
 
 #### Parameters
 
-• **config?**: `ILoggingLevelsConfig`
+• **config?**: [`IConsoleLoggingConnectorConfig`](../interfaces/IConsoleLoggingConnectorConfig.md)
 
 The configuration for the logging connector.
 
 #### Returns
 
 [`ConsoleLoggingConnector`](ConsoleLoggingConnector.md)
-
-## Properties
-
-### \_levels
-
-> `private` `readonly` **\_levels**: `LogLevel`[]
-
-The log levels to display, will default to all.
-
-***
-
-### \_lastGroup?
-
-> `private` `optional` **\_lastGroup**: `string`
-
-The last group identity.
 
 ## Methods
 
@@ -140,41 +124,3 @@ Total entities length.
 #### Throws
 
 NotImplementedError if the implementation does not support retrieval.
-
-***
-
-### stringToColor()
-
-> `private` **stringToColor**(`str`): `string`
-
-Convert a string to a color.
-
-#### Parameters
-
-• **str**: `string`
-
-The string to convert.
-
-#### Returns
-
-`string`
-
-The color.
-
-***
-
-### handleGroup()
-
-> `private` **handleGroup**(`group`): `void`
-
-Handle a group.
-
-#### Parameters
-
-• **group**: `string`
-
-The group.
-
-#### Returns
-
-`void`

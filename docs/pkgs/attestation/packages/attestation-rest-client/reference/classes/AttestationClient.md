@@ -94,11 +94,15 @@ The response.
 
 ***
 
-### sign()
+### attest()
 
-> **sign**(`requestContext`, `keyId`, `data`, `options`?): `Promise`\<`IAttestationProof`\>
+> **attest**\<`T`\>(`requestContext`, `controllerAddress`, `verificationMethodId`, `data`, `options`?): `Promise`\<`IAttestationInformation`\<`T`\>\>
 
-Sign the data and return the proof.
+Attest the data and return the collated information.
+
+#### Type parameters
+
+• **T** = `unknown`
 
 #### Parameters
 
@@ -106,13 +110,17 @@ Sign the data and return the proof.
 
 The context for the request.
 
-• **keyId**: `string`
+• **controllerAddress**: `string`
 
-The key id from a vault to sign the data.
+The controller address for the attestation.
 
-• **data**: `string`
+• **verificationMethodId**: `string`
 
-The data to store in blob storage and sign as base64.
+The identity verification method to use for attesting the data.
+
+• **data**: `T`
+
+The data to attest.
 
 • **options?**
 
@@ -120,25 +128,29 @@ Additional options for the attestation service.
 
 • **options.namespace?**: `string`
 
-The namespace to use for storing, defaults to service configured namespace.
+The namespace of the connector to use for the attestation, defaults to service configured namespace.
 
 #### Returns
 
-`Promise`\<`IAttestationProof`\>
+`Promise`\<`IAttestationInformation`\<`T`\>\>
 
-The proof for the data with the id set as a unique identifier for the data.
+The collated attestation data.
 
 #### Implementation of
 
-`IAttestation.sign`
+`IAttestation.attest`
 
 ***
 
 ### verify()
 
-> **verify**(`requestContext`, `proof`): `Promise`\<`boolean`\>
+> **verify**\<`T`\>(`requestContext`, `attestationId`): `Promise`\<`object`\>
 
-Verify the data against the proof.
+Resolve and verify the attestation id.
+
+#### Type parameters
+
+• **T**
 
 #### Parameters
 
@@ -146,16 +158,68 @@ Verify the data against the proof.
 
 The context for the request.
 
-• **proof**: `IAttestationProof`
+• **attestationId**: `string`
 
-The proof to verify against.
+The attestation id to verify.
 
 #### Returns
 
-`Promise`\<`boolean`\>
+`Promise`\<`object`\>
 
-True if the verification is successful.
+The verified attestation details.
+
+##### verified
+
+> **verified**: `boolean`
+
+##### failure?
+
+> `optional` **failure**: `string`
+
+##### information?
+
+> `optional` **information**: `Partial`\<`IAttestationInformation`\<`T`\>\>
 
 #### Implementation of
 
 `IAttestation.verify`
+
+***
+
+### transfer()
+
+> **transfer**\<`T`\>(`requestContext`, `attestationId`, `holderControllerAddress`, `holderIdentity`): `Promise`\<`IAttestationInformation`\<`T`\>\>
+
+Transfer the attestation to a new holder.
+
+#### Type parameters
+
+• **T** = `unknown`
+
+#### Parameters
+
+• **requestContext**: `IRequestContext`
+
+The context for the request.
+
+• **attestationId**: `string`
+
+The attestation to transfer.
+
+• **holderControllerAddress**: `string`
+
+The new controller address of the attestation belonging to the holder.
+
+• **holderIdentity**: `string`
+
+The holder identity of the attestation.
+
+#### Returns
+
+`Promise`\<`IAttestationInformation`\<`T`\>\>
+
+The updated attestation details.
+
+#### Implementation of
+
+`IAttestation.transfer`

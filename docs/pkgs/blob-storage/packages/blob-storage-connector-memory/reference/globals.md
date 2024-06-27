@@ -3,7 +3,3 @@
 ## Classes
 
 - [MemoryBlobStorageConnector](classes/MemoryBlobStorageConnector.md)
-
-## Interfaces
-
-- [IMemoryBlobStorageConnectorConfig](interfaces/IMemoryBlobStorageConnectorConfig.md)

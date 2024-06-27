@@ -16,9 +16,9 @@ The context for the verifiable credential.
 
 ***
 
-### id
+### id?
 
-> **id**: `string`
+> `optional` **id**: `string`
 
 The identifier for the verifiable credential.
 
@@ -49,17 +49,17 @@ verifiable credential, such as whether it is suspended or revoked.
 
 ***
 
-### issuer
+### issuer?
 
-> **issuer**: `string`
+> `optional` **issuer**: `string`
 
 The issuing identity.
 
 ***
 
-### issuanceDate
+### issuanceDate?
 
-> **issuanceDate**: `string`
+> `optional` **issuanceDate**: `string`
 
 The date the verifiable credential was issued.
 
