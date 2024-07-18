@@ -10,11 +10,12 @@
 
 ## Variables
 
-- [tags](variables/tags.md)
+- [tagsBlobStorage](variables/tagsBlobStorage.md)
+- [restEntryPoints](variables/restEntryPoints.md)
 
 ## Functions
 
-- [generateRestRoutes](functions/generateRestRoutes.md)
+- [generateRestRoutesBlobStorage](functions/generateRestRoutesBlobStorage.md)
 - [blobStorageSet](functions/blobStorageSet.md)
 - [blobStorageGet](functions/blobStorageGet.md)
 - [blobStorageRemove](functions/blobStorageRemove.md)

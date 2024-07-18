@@ -1,10 +1,6 @@
-# Interface: IAttestationAttestRequest\<T\>
+# Interface: IAttestationAttestRequest
 
 Attest the data and return the collated attestation details.
-
-## Type parameters
-
-• **T** = `unknown`
 
 ## Properties
 
@@ -28,7 +24,7 @@ The identity verification method to use for attesting the data.
 
 #### data
 
-> **data**: `T`
+> **data**: `unknown`
 
 The data object to attest.
 

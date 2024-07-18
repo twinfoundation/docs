@@ -6,17 +6,29 @@ Interface describing an blob storage connector.
 
 - `IService`
 
+## Properties
+
+### CLASS\_NAME
+
+> `readonly` **CLASS\_NAME**: `string`
+
+The name of the service.
+
+#### Inherited from
+
+`IService.CLASS_NAME`
+
 ## Methods
 
 ### bootstrap()?
 
-> `optional` **bootstrap**(`requestContext`): `Promise`\<`void`\>
+> `optional` **bootstrap**(`requestContext`?): `Promise`\<`void`\>
 
 Bootstrap the service by creating and initializing any resources it needs.
 
 #### Parameters
 
-• **requestContext**: `IRequestContext`
+• **requestContext?**: `IServiceRequestContext`
 
 The request context for bootstrapping.
 
@@ -70,19 +82,19 @@ Nothing.
 
 ### set()
 
-> **set**(`requestContext`, `blob`): `Promise`\<`string`\>
+> **set**(`blob`, `requestContext`?): `Promise`\<`string`\>
 
 Set the blob.
 
 #### Parameters
 
-• **requestContext**: `IRequestContext`
-
-The context for the request.
-
 • **blob**: `Uint8Array`
 
 The data for the blob.
+
+• **requestContext?**: `IServiceRequestContext`
+
+The context for the request.
 
 #### Returns
 
@@ -94,19 +106,19 @@ The id of the stored blob in urn format.
 
 ### get()
 
-> **get**(`requestContext`, `id`): `Promise`\<`undefined` \| `Uint8Array`\>
+> **get**(`id`, `requestContext`?): `Promise`\<`undefined` \| `Uint8Array`\>
 
 Get the blob.
 
 #### Parameters
 
-• **requestContext**: `IRequestContext`
-
-The context for the request.
-
 • **id**: `string`
 
 The id of the blob to get in urn format.
+
+• **requestContext?**: `IServiceRequestContext`
+
+The context for the request.
 
 #### Returns
 
@@ -118,19 +130,19 @@ The data for the blob if it can be found or undefined.
 
 ### remove()
 
-> **remove**(`requestContext`, `id`): `Promise`\<`boolean`\>
+> **remove**(`id`, `requestContext`?): `Promise`\<`boolean`\>
 
 Remove the blob.
 
 #### Parameters
 
-• **requestContext**: `IRequestContext`
-
-The context for the request.
-
 • **id**: `string`
 
 The id of the blob to remove in urn format.
+
+• **requestContext?**: `IServiceRequestContext`
+
+The context for the request.
 
 #### Returns
 

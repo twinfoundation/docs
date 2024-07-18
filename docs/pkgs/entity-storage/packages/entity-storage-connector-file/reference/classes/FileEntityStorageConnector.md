@@ -40,17 +40,29 @@ The configuration for the connector.
 
 [`FileEntityStorageConnector`](FileEntityStorageConnector.md)\<`T`\>
 
+## Properties
+
+### CLASS\_NAME
+
+> `readonly` **CLASS\_NAME**: `string`
+
+Runtime name for the class.
+
+#### Implementation of
+
+`IEntityStorageConnector.CLASS_NAME`
+
 ## Methods
 
 ### bootstrap()
 
-> **bootstrap**(`requestContext`): `Promise`\<`void`\>
+> **bootstrap**(`requestContext`?): `Promise`\<`void`\>
 
 Bootstrap the connector by creating and initializing any resources it needs.
 
 #### Parameters
 
-• **requestContext**: `IRequestContext`
+• **requestContext?**: `IServiceRequestContext`
 
 The request context for bootstrapping.
 
@@ -68,15 +80,11 @@ The response of the bootstrapping as log entries.
 
 ### get()
 
-> **get**(`requestContext`, `id`, `secondaryIndex`?): `Promise`\<`undefined` \| `T` & `object`\>
+> **get**(`id`, `secondaryIndex`?, `requestContext`?): `Promise`\<`undefined` \| `T` & `object`\>
 
 Get an entity.
 
 #### Parameters
-
-• **requestContext**: `IRequestContext`
-
-The context for the request.
 
 • **id**: `string`
 
@@ -86,11 +94,15 @@ The id of the entity to get, or the index value if secondaryIndex is set.
 
 Get the item using a secondary index.
 
+• **requestContext?**: `IServiceRequestContext`
+
+The context for the request.
+
 #### Returns
 
 `Promise`\<`undefined` \| `T` & `object`\>
 
-The object if it can be found or undefined, if request context was wildcard then tenantId is also included.
+The object if it can be found or undefined, if non partitioned request then partitionId is included in items.
 
 #### Implementation of
 
@@ -100,19 +112,19 @@ The object if it can be found or undefined, if request context was wildcard then
 
 ### set()
 
-> **set**(`requestContext`, `entity`): `Promise`\<`void`\>
+> **set**(`entity`, `requestContext`?): `Promise`\<`void`\>
 
 Set an entity.
 
 #### Parameters
 
-• **requestContext**: `IRequestContext`
-
-The context for the request.
-
 • **entity**: `T`
 
 The entity to set.
+
+• **requestContext?**: `IServiceRequestContext`
+
+The context for the request.
 
 #### Returns
 
@@ -128,19 +140,19 @@ The id of the entity.
 
 ### remove()
 
-> **remove**(`requestContext`, `id`): `Promise`\<`void`\>
+> **remove**(`id`, `requestContext`?): `Promise`\<`void`\>
 
 Remove the entity.
 
 #### Parameters
 
-• **requestContext**: `IRequestContext`
-
-The context for the request.
-
 • **id**: `string`
 
 The id of the entity to remove.
+
+• **requestContext?**: `IServiceRequestContext`
+
+The context for the request.
 
 #### Returns
 
@@ -156,15 +168,11 @@ Nothing.
 
 ### query()
 
-> **query**(`requestContext`, `conditions`?, `sortProperties`?, `properties`?, `cursor`?, `pageSize`?): `Promise`\<`object`\>
+> **query**(`conditions`?, `sortProperties`?, `properties`?, `cursor`?, `pageSize`?, `requestContext`?): `Promise`\<`object`\>
 
 Find all the entities which match the conditions.
 
 #### Parameters
-
-• **requestContext**: `IRequestContext`
-
-The context for the request.
 
 • **conditions?**: `EntityCondition`\<`T`\>
 
@@ -186,6 +194,10 @@ The cursor to request the next page of entities.
 
 The maximum number of entities in a page.
 
+• **requestContext?**: `IServiceRequestContext`
+
+The context for the request.
+
 #### Returns
 
 `Promise`\<`object`\>
@@ -198,7 +210,7 @@ and a cursor which can be used to request more entities.
 > **entities**: `Partial`\<`T` & `object`\>[]
 
 The entities, which can be partial if a limited keys list was provided.
-If the request context was wildcard then tenantId is also included.
+If non partitioned request then partitionId is included in items.
 
 ##### cursor?
 
@@ -224,31 +236,31 @@ Total entities length.
 
 ***
 
-### readTenantIndex()
+### readPartitionIndex()
 
-> `private` **readTenantIndex**(): `Promise`\<`string`[]\>
+> `private` **readPartitionIndex**(): `Promise`\<`string`[]\>
 
-Read the tenant index from file.
+Read the partition index from file.
 
 #### Returns
 
 `Promise`\<`string`[]\>
 
-The tenant index.
+The partition index.
 
 ***
 
-### writeTenantIndex()
+### writePartitionIndex()
 
-> `private` **writeTenantIndex**(`tenantIds`): `Promise`\<`void`\>
+> `private` **writePartitionIndex**(`partitionIds`): `Promise`\<`void`\>
 
-Write the tenant index to the file.
+Write the partition index to the file.
 
 #### Parameters
 
-• **tenantIds**: `string`[]
+• **partitionIds**: `string`[]
 
-The tenant ids to write in the index.
+The partition ids to write in the index.
 
 #### Returns
 
@@ -258,37 +270,37 @@ Nothing.
 
 ***
 
-### readTenantStore()
+### readPartitionStore()
 
-> `private` **readTenantStore**(`tenantId`): `Promise`\<`T`[]\>
+> `private` **readPartitionStore**(`partitionId`): `Promise`\<`T`[]\>
 
 Read the store from file.
 
 #### Parameters
 
-• **tenantId**: `string`
+• **partitionId**: `string`
 
-The tenant id to read the store for.
+The partition id to read the store for.
 
 #### Returns
 
 `Promise`\<`T`[]\>
 
-The store for the tenant.
+The store for the partition.
 
 ***
 
-### writeTenantStore()
+### writePartitionStore()
 
-> `private` **writeTenantStore**(`tenantId`, `store`): `Promise`\<`void`\>
+> `private` **writePartitionStore**(`partitionId`, `store`): `Promise`\<`void`\>
 
 Write the store to the file.
 
 #### Parameters
 
-• **tenantId**: `string`
+• **partitionId**: `string`
 
-The tenant id to write the store for.
+The partition id to write the store for.
 
 • **store**: `T`[]
 

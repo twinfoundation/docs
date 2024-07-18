@@ -1,12 +1,12 @@
 # Function: blobStorageGet()
 
-> **blobStorageGet**(`requestContext`, `serviceName`, `request`, `body`?): `Promise`\<`IBlobStorageGetResponse`\>
+> **blobStorageGet**(`requestContext`, `serviceName`, `request`): `Promise`\<`IBlobStorageGetResponse`\>
 
 Get the blob from storage.
 
 ## Parameters
 
-• **requestContext**: `IRequestContext`
+• **requestContext**: `IServiceRequestContext`
 
 The request context for the API.
 
@@ -17,10 +17,6 @@ The name of the service to use in the routes.
 • **request**: `IBlobStorageGetRequest`
 
 The request.
-
-• **body?**: `unknown`
-
-The body if required for pure content.
 
 ## Returns
 

@@ -15,15 +15,3 @@ The data for the request.
 > **controller**: `string`
 
 The controller for the identity.
-
-#### role
-
-> **role**: [`IdentityRole`](../type-aliases/IdentityRole.md)
-
-The role for the identity.
-
-#### properties?
-
-> `optional` **properties**: `IProperty`[]
-
-Initial properties for the identity.

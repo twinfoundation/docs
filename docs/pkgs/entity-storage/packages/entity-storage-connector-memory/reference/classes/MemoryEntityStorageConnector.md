@@ -32,19 +32,27 @@ The schema for the entity.
 
 [`MemoryEntityStorageConnector`](MemoryEntityStorageConnector.md)\<`T`\>
 
+## Properties
+
+### CLASS\_NAME
+
+> `readonly` **CLASS\_NAME**: `string`
+
+Runtime name for the class.
+
+#### Implementation of
+
+`IEntityStorageConnector.CLASS_NAME`
+
 ## Methods
 
 ### get()
 
-> **get**(`requestContext`, `id`, `secondaryIndex`?): `Promise`\<`undefined` \| `T` & `object`\>
+> **get**(`id`, `secondaryIndex`?, `requestContext`?): `Promise`\<`undefined` \| `T` & `object`\>
 
 Get an entity.
 
 #### Parameters
-
-• **requestContext**: `IRequestContext`
-
-The context for the request.
 
 • **id**: `string`
 
@@ -54,11 +62,15 @@ The id of the entity to get, or the index value if secondaryIndex is set.
 
 Get the item using a secondary index.
 
+• **requestContext?**: `IServiceRequestContext`
+
+The context for the request.
+
 #### Returns
 
 `Promise`\<`undefined` \| `T` & `object`\>
 
-The object if it can be found or undefined, if request context was wildcard then tenantId is also included.
+The object if it can be found or undefined, if non partitioned request then partitionId is included in items.
 
 #### Implementation of
 
@@ -68,19 +80,19 @@ The object if it can be found or undefined, if request context was wildcard then
 
 ### set()
 
-> **set**(`requestContext`, `entity`): `Promise`\<`void`\>
+> **set**(`entity`, `requestContext`?): `Promise`\<`void`\>
 
 Set an entity.
 
 #### Parameters
 
-• **requestContext**: `IRequestContext`
-
-The context for the request.
-
 • **entity**: `T`
 
 The entity to set.
+
+• **requestContext?**: `IServiceRequestContext`
+
+The context for the request.
 
 #### Returns
 
@@ -96,19 +108,19 @@ The id of the entity.
 
 ### remove()
 
-> **remove**(`requestContext`, `id`): `Promise`\<`void`\>
+> **remove**(`id`, `requestContext`?): `Promise`\<`void`\>
 
 Remove the entity.
 
 #### Parameters
 
-• **requestContext**: `IRequestContext`
-
-The context for the request.
-
 • **id**: `string`
 
 The id of the entity to remove.
+
+• **requestContext?**: `IServiceRequestContext`
+
+The context for the request.
 
 #### Returns
 
@@ -124,15 +136,11 @@ Nothing.
 
 ### query()
 
-> **query**(`requestContext`, `conditions`?, `sortProperties`?, `properties`?, `cursor`?, `pageSize`?): `Promise`\<`object`\>
+> **query**(`conditions`?, `sortProperties`?, `properties`?, `cursor`?, `pageSize`?, `requestContext`?): `Promise`\<`object`\>
 
 Find all the entities which match the conditions.
 
 #### Parameters
-
-• **requestContext**: `IRequestContext`
-
-The context for the request.
 
 • **conditions?**: `EntityCondition`\<`T`\>
 
@@ -154,6 +162,10 @@ The cursor to request the next page of entities.
 
 The maximum number of entities in a page.
 
+• **requestContext?**: `IServiceRequestContext`
+
+The context for the request.
+
 #### Returns
 
 `Promise`\<`object`\>
@@ -166,7 +178,7 @@ and a cursor which can be used to request more entities.
 > **entities**: `Partial`\<`T` & `object`\>[]
 
 The entities, which can be partial if a limited keys list was provided.
-If the request context was wildcard then tenantId is also included.
+If non partitioned request then partitionId is included in items.
 
 ##### cursor?
 
@@ -194,15 +206,15 @@ Total entities length.
 
 ### getStore()
 
-> **getStore**(`tenantId`): `undefined` \| `T`[]
+> **getStore**(`partitionId`): `undefined` \| `T`[]
 
-Get the memory store for the specified tenant.
+Get the memory store for the specified partition.
 
 #### Parameters
 
-• **tenantId**: `string`
+• **partitionId**: `string`
 
-The tenant id.
+The partition id.
 
 #### Returns
 

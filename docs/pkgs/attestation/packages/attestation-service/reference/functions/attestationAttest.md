@@ -1,12 +1,12 @@
 # Function: attestationAttest()
 
-> **attestationAttest**(`requestContext`, `factoryServiceName`, `request`, `body`?): `Promise`\<`IAttestationAttestResponse`\>
+> **attestationAttest**(`requestContext`, `factoryServiceName`, `request`): `Promise`\<`IAttestationAttestResponse`\>
 
 Sign the data and return the proof.
 
 ## Parameters
 
-• **requestContext**: `IRequestContext`
+• **requestContext**: `IHttpRequestContext`
 
 The request context for the API.
 
@@ -14,13 +14,9 @@ The request context for the API.
 
 The name of the service to use in the routes.
 
-• **request**: `IAttestationAttestRequest`\<`unknown`\>
+• **request**: `IAttestationAttestRequest`
 
 The request.
-
-• **body?**: `unknown`
-
-The body if required for pure content.
 
 ## Returns
 

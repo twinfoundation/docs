@@ -8,3 +8,7 @@
 ## Type Aliases
 
 - [IEntityStorageLoggingConnectorConfig](type-aliases/IEntityStorageLoggingConnectorConfig.md)
+
+## Functions
+
+- [initSchema](functions/initSchema.md)

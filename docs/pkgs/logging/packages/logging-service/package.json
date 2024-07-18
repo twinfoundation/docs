@@ -1,6 +1,6 @@
 {
 	"name": "@gtsc/logging-service",
-	"version": "0.0.3-next.18",
+	"version": "0.0.3-next.25",
 	"description": "Logging contract implementation and REST endpoint definitions",
 	"repository": {
 		"type": "git",
@@ -32,13 +32,13 @@
 		"@gtsc/api-models": "next",
 		"@gtsc/core": "next",
 		"@gtsc/entity": "next",
-		"@gtsc/nameof": "0.0.4",
+		"@gtsc/nameof": "next",
 		"@gtsc/services": "next",
-		"@gtsc/logging-models": "0.0.3-next.18",
+		"@gtsc/logging-models": "0.0.3-next.25",
 		"@gtsc/web": "next"
 	},
 	"devDependencies": {
-		"@gtsc/nameof-transformer": "0.0.4",
+		"@gtsc/nameof-transformer": "next",
 		"@gtsc/ts-to-openapi": "next",
 		"@vitest/coverage-v8": "1.6.0",
 		"copyfiles": "2.4.1",

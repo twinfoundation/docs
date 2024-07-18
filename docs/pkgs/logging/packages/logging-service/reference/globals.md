@@ -6,10 +6,11 @@
 
 ## Variables
 
-- [tags](variables/tags.md)
+- [tagsLogging](variables/tagsLogging.md)
+- [restEntryPoints](variables/restEntryPoints.md)
 
 ## Functions
 
-- [generateRestRoutes](functions/generateRestRoutes.md)
+- [generateRestRoutesLogging](functions/generateRestRoutesLogging.md)
 - [loggingCreate](functions/loggingCreate.md)
 - [loggingList](functions/loggingList.md)

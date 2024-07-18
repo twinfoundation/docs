@@ -4,13 +4,13 @@ Model for the standard parameters for an http response.
 
 ## Type parameters
 
-• **T** = `unknown`
+• **T** = `any`
 
 ## Properties
 
 ### statusCode?
 
-> `optional` **statusCode**: `HttpStatusCodes`
+> `optional` **statusCode**: `HttpStatusCode`
 
 Response status code.
 

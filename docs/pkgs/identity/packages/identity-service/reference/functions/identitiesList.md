@@ -1,12 +1,12 @@
 # Function: identitiesList()
 
-> **identitiesList**(`requestContext`, `serviceName`, `request`, `body`?): `Promise`\<`IIdentityListResponse`\>
+> **identitiesList**(`requestContext`, `serviceName`, `request`): `Promise`\<`IIdentityProfileListResponse`\>
 
 Get the list of organizations.
 
 ## Parameters
 
-• **requestContext**: `IRequestContext`
+• **requestContext**: `IHttpRequestContext`
 
 The request context for the API.
 
@@ -14,16 +14,12 @@ The request context for the API.
 
 The name of the service to use in the routes.
 
-• **request**: `IIdentityListRequest`
+• **request**: `IIdentityProfileListRequest`
 
 The request.
 
-• **body?**: `unknown`
-
-The body if required for pure content.
-
 ## Returns
 
-`Promise`\<`IIdentityListResponse`\>
+`Promise`\<`IIdentityProfileListResponse`\>
 
 The response object with additional http response properties.

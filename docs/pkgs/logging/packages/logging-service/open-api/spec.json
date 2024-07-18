@@ -14,7 +14,12 @@
             "url": "https://localhost"
         }
     ],
-    "tags": [],
+    "tags": [
+        {
+            "name": "Logging",
+            "description": "Endpoints which are modelled to access a logging contract."
+        }
+    ],
     "paths": {
         "/logging": {
             "post": {
@@ -248,16 +253,6 @@
     },
     "components": {
         "schemas": {
-            "HttpStatusCodes": {
-                "type": "object",
-                "additionalProperties": false,
-                "description": "Standard HTTP status codes."
-            },
-            "NoContentResponse": {
-                "type": "object",
-                "additionalProperties": false,
-                "description": "The rest request ended in success with no data."
-            },
             "Error": {
                 "type": "object",
                 "properties": {

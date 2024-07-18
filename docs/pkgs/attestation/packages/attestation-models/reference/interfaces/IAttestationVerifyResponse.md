@@ -1,10 +1,6 @@
-# Interface: IAttestationVerifyResponse\<T\>
+# Interface: IAttestationVerifyResponse
 
 The response to verifying the attestation.
-
-## Type parameters
-
-• **T** = `unknown`
 
 ## Properties
 
@@ -28,6 +24,6 @@ The failure message if the attestation is not verified.
 
 #### information?
 
-> `optional` **information**: `Partial`\<[`IAttestationInformation`](IAttestationInformation.md)\<`T`\>\>
+> `optional` **information**: `Partial`\<[`IAttestationInformation`](IAttestationInformation.md)\<`unknown`\>\>
 
 The attestation information.

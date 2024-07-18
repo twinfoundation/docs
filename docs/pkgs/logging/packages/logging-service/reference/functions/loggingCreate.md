@@ -1,12 +1,12 @@
 # Function: loggingCreate()
 
-> **loggingCreate**(`requestContext`, `factoryServiceName`, `request`, `body`?): `Promise`\<`void`\>
+> **loggingCreate**(`requestContext`, `factoryServiceName`, `request`): `Promise`\<`INoContentResponse`\>
 
 Create a new log entry.
 
 ## Parameters
 
-• **requestContext**: `IRequestContext`
+• **requestContext**: `IServiceRequestContext`
 
 The request context for the API.
 
@@ -18,12 +18,8 @@ The name of the service to use in the routes.
 
 The request.
 
-• **body?**: `unknown`
-
-The body if required for pure content.
-
 ## Returns
 
-`Promise`\<`void`\>
+`Promise`\<`INoContentResponse`\>
 
 The response object with additional http response properties.

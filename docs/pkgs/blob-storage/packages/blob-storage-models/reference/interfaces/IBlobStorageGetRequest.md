@@ -4,9 +4,9 @@ Request to get an entry from blob storage.
 
 ## Properties
 
-### path
+### pathParams
 
-> **path**: `object`
+> **pathParams**: `object`
 
 The path parameters.
 

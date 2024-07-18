@@ -41,13 +41,11 @@ An example configuration file looks as follows:
   "restRoutes": [
     {
       "package": "@gtsc/logging-service",
-      "version": "next",
-      "pathRoot": "/logging"
+      "version": "next"
     },
     {
       "package": "@gtsc/identity-service",
-      "version": "next",
-      "pathRoot": "/identity"
+      "version": "next"
     }
   ]
 }
@@ -868,13 +866,11 @@ const config: ITsToOpenApiConfig = {
   restRoutes: [
     {
       package: '@gtsc/logging-service',
-      version: 'next',
-      pathRoot: '/logging'
+      version: 'next'
     },
     {
       package: '@gtsc/identity-service',
-      version: 'next',
-      pathRoot: '/identity'
+      version: 'next'
     }
   ]
 };

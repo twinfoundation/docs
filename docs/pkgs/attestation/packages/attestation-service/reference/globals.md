@@ -10,11 +10,12 @@
 
 ## Variables
 
-- [tags](variables/tags.md)
+- [tagsAttestation](variables/tagsAttestation.md)
+- [restEntryPoints](variables/restEntryPoints.md)
 
 ## Functions
 
-- [generateRestRoutes](functions/generateRestRoutes.md)
+- [generateRestRoutesAttestation](functions/generateRestRoutesAttestation.md)
 - [attestationAttest](functions/attestationAttest.md)
 - [attestationVerify](functions/attestationVerify.md)
 - [attestationTransfer](functions/attestationTransfer.md)

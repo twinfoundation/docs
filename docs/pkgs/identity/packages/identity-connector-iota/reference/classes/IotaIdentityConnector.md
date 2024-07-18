@@ -48,23 +48,35 @@ The namespace supported by the identity connector.
 
 Default name for the seed secret.
 
+***
+
+### CLASS\_NAME
+
+> `readonly` **CLASS\_NAME**: `string`
+
+Runtime name for the class.
+
+#### Implementation of
+
+`IIdentityConnector.CLASS_NAME`
+
 ## Methods
 
 ### createDocument()
 
-> **createDocument**(`requestContext`, `controller`): `Promise`\<`IDidDocument`\>
+> **createDocument**(`controller`, `requestContext`?): `Promise`\<`IDidDocument`\>
 
 Create a new document.
 
 #### Parameters
 
-• **requestContext**: `IRequestContext`
-
-The context for the request.
-
 • **controller**: `string`
 
 The controller for the document.
+
+• **requestContext?**: `IServiceRequestContext`
+
+The context for the request.
 
 #### Returns
 
@@ -80,19 +92,19 @@ The created document.
 
 ### resolveDocument()
 
-> **resolveDocument**(`requestContext`, `documentId`): `Promise`\<`IDidDocument`\>
+> **resolveDocument**(`documentId`, `requestContext`?): `Promise`\<`IDidDocument`\>
 
 Resolve a document from its id.
 
 #### Parameters
 
-• **requestContext**: `IRequestContext`
-
-The context for the request.
-
 • **documentId**: `string`
 
 The id of the document to resolve.
+
+• **requestContext?**: `IServiceRequestContext`
+
+The context for the request.
 
 #### Returns
 
@@ -112,15 +124,11 @@ NotFoundError if the id can not be resolved.
 
 ### addVerificationMethod()
 
-> **addVerificationMethod**(`requestContext`, `documentId`, `verificationMethodType`, `verificationMethodId`?): `Promise`\<`IDidDocumentVerificationMethod`\>
+> **addVerificationMethod**(`documentId`, `verificationMethodType`, `verificationMethodId`?, `requestContext`?): `Promise`\<`IDidDocumentVerificationMethod`\>
 
 Add a verification method to the document in JSON Web key Format.
 
 #### Parameters
-
-• **requestContext**: `IRequestContext`
-
-The context for the request.
 
 • **documentId**: `string`
 
@@ -133,6 +141,10 @@ The type of the verification method to add.
 • **verificationMethodId?**: `string`
 
 The id of the verification method, if undefined uses the kid of the generated JWK.
+
+• **requestContext?**: `IServiceRequestContext`
+
+The context for the request.
 
 #### Returns
 
@@ -156,19 +168,19 @@ NotSupportedError if the platform does not support multiple keys.
 
 ### removeVerificationMethod()
 
-> **removeVerificationMethod**(`requestContext`, `verificationMethodId`): `Promise`\<`void`\>
+> **removeVerificationMethod**(`verificationMethodId`, `requestContext`?): `Promise`\<`void`\>
 
 Remove a verification method from the document.
 
 #### Parameters
 
-• **requestContext**: `IRequestContext`
-
-The context for the request.
-
 • **verificationMethodId**: `string`
 
 The id of the verification method.
+
+• **requestContext?**: `IServiceRequestContext`
+
+The context for the request.
 
 #### Returns
 
@@ -192,15 +204,11 @@ NotSupportedError if the platform does not support multiple revocable keys.
 
 ### addService()
 
-> **addService**(`requestContext`, `documentId`, `serviceId`, `serviceType`, `serviceEndpoint`): `Promise`\<`IDidService`\>
+> **addService**(`documentId`, `serviceId`, `serviceType`, `serviceEndpoint`, `requestContext`?): `Promise`\<`IDidService`\>
 
 Add a service to the document.
 
 #### Parameters
-
-• **requestContext**: `IRequestContext`
-
-The context for the request.
 
 • **documentId**: `string`
 
@@ -217,6 +225,10 @@ The type of the service.
 • **serviceEndpoint**: `string`
 
 The endpoint for the service.
+
+• **requestContext?**: `IServiceRequestContext`
+
+The context for the request.
 
 #### Returns
 
@@ -236,19 +248,19 @@ NotFoundError if the id can not be resolved.
 
 ### removeService()
 
-> **removeService**(`requestContext`, `serviceId`): `Promise`\<`void`\>
+> **removeService**(`serviceId`, `requestContext`?): `Promise`\<`void`\>
 
 Remove a service from the document.
 
 #### Parameters
 
-• **requestContext**: `IRequestContext`
-
-The context for the request.
-
 • **serviceId**: `string`
 
 The id of the service.
+
+• **requestContext?**: `IServiceRequestContext`
+
+The context for the request.
 
 #### Returns
 
@@ -268,7 +280,7 @@ NotFoundError if the id can not be resolved.
 
 ### createVerifiableCredential()
 
-> **createVerifiableCredential**\<`T`\>(`requestContext`, `verificationMethodId`, `credentialId`, `types`, `subject`, `contexts`?, `revocationIndex`?): `Promise`\<`object`\>
+> **createVerifiableCredential**\<`T`\>(`verificationMethodId`, `credentialId`, `types`, `subject`, `contexts`?, `revocationIndex`?, `requestContext`?): `Promise`\<`object`\>
 
 Create a verifiable credential for a verification method.
 
@@ -277,10 +289,6 @@ Create a verifiable credential for a verification method.
 • **T**
 
 #### Parameters
-
-• **requestContext**: `IRequestContext`
-
-The context for the request.
 
 • **verificationMethodId**: `string`
 
@@ -305,6 +313,10 @@ Additional contexts to include in the credential.
 • **revocationIndex?**: `number`
 
 The bitmap revocation index of the credential, if undefined will not have revocation status.
+
+• **requestContext?**: `IServiceRequestContext`
+
+The context for the request.
 
 #### Returns
 
@@ -332,7 +344,7 @@ NotFoundError if the id can not be resolved.
 
 ### checkVerifiableCredential()
 
-> **checkVerifiableCredential**\<`T`\>(`requestContext`, `credentialJwt`): `Promise`\<`object`\>
+> **checkVerifiableCredential**\<`T`\>(`credentialJwt`, `requestContext`?): `Promise`\<`object`\>
 
 Check a verifiable credential is valid.
 
@@ -342,13 +354,13 @@ Check a verifiable credential is valid.
 
 #### Parameters
 
-• **requestContext**: `IRequestContext`
-
-The context for the request.
-
 • **credentialJwt**: `string`
 
 The credential to verify.
+
+• **requestContext?**: `IServiceRequestContext`
+
+The context for the request.
 
 #### Returns
 
@@ -372,15 +384,11 @@ The credential stored in the jwt and the revocation status.
 
 ### revokeVerifiableCredentials()
 
-> **revokeVerifiableCredentials**(`requestContext`, `issuerDocumentId`, `credentialIndices`): `Promise`\<`void`\>
+> **revokeVerifiableCredentials**(`issuerDocumentId`, `credentialIndices`, `requestContext`?): `Promise`\<`void`\>
 
 Revoke verifiable credential(s).
 
 #### Parameters
-
-• **requestContext**: `IRequestContext`
-
-The context for the request.
 
 • **issuerDocumentId**: `string`
 
@@ -389,6 +397,10 @@ The id of the document to update the revocation list for.
 • **credentialIndices**: `number`[]
 
 The revocation bitmap index or indices to revoke.
+
+• **requestContext?**: `IServiceRequestContext`
+
+The context for the request.
 
 #### Returns
 
@@ -404,15 +416,11 @@ Nothing.
 
 ### unrevokeVerifiableCredentials()
 
-> **unrevokeVerifiableCredentials**(`requestContext`, `issuerDocumentId`, `credentialIndices`): `Promise`\<`void`\>
+> **unrevokeVerifiableCredentials**(`issuerDocumentId`, `credentialIndices`, `requestContext`?): `Promise`\<`void`\>
 
 Unrevoke verifiable credential(s).
 
 #### Parameters
-
-• **requestContext**: `IRequestContext`
-
-The context for the request.
 
 • **issuerDocumentId**: `string`
 
@@ -421,6 +429,10 @@ The id of the document to update the revocation list for.
 • **credentialIndices**: `number`[]
 
 The revocation bitmap index or indices to un revoke.
+
+• **requestContext?**: `IServiceRequestContext`
+
+The context for the request.
 
 #### Returns
 
@@ -436,15 +448,11 @@ Nothing.
 
 ### createVerifiablePresentation()
 
-> **createVerifiablePresentation**(`requestContext`, `presentationMethodId`, `types`, `verifiableCredentials`, `contexts`?, `expiresInMinutes`?): `Promise`\<`object`\>
+> **createVerifiablePresentation**(`presentationMethodId`, `types`, `verifiableCredentials`, `contexts`?, `expiresInMinutes`?, `requestContext`?): `Promise`\<`object`\>
 
 Create a verifiable presentation from the supplied verifiable credentials.
 
 #### Parameters
-
-• **requestContext**: `IRequestContext`
-
-The context for the request.
 
 • **presentationMethodId**: `string`
 
@@ -465,6 +473,10 @@ Additional contexts to include in the presentation.
 • **expiresInMinutes?**: `number`
 
 The time in minutes for the presentation to expire.
+
+• **requestContext?**: `IServiceRequestContext`
+
+The context for the request.
 
 #### Returns
 
@@ -492,19 +504,19 @@ NotFoundError if the id can not be resolved.
 
 ### checkVerifiablePresentation()
 
-> **checkVerifiablePresentation**(`requestContext`, `presentationJwt`): `Promise`\<`object`\>
+> **checkVerifiablePresentation**(`presentationJwt`, `requestContext`?): `Promise`\<`object`\>
 
 Check a verifiable presentation is valid.
 
 #### Parameters
 
-• **requestContext**: `IRequestContext`
-
-The context for the request.
-
 • **presentationJwt**: `string`
 
 The presentation to verify.
+
+• **requestContext?**: `IServiceRequestContext`
+
+The context for the request.
 
 #### Returns
 
@@ -532,15 +544,11 @@ The presentation stored in the jwt and the revocation status.
 
 ### createProof()
 
-> **createProof**(`requestContext`, `verificationMethodId`, `bytes`): `Promise`\<`object`\>
+> **createProof**(`verificationMethodId`, `bytes`, `requestContext`?): `Promise`\<`object`\>
 
 Create a proof for arbitrary data with the specified verification method.
 
 #### Parameters
-
-• **requestContext**: `IRequestContext`
-
-The context for the request.
 
 • **verificationMethodId**: `string`
 
@@ -549,6 +557,10 @@ The verification method id to use.
 • **bytes**: `Uint8Array`
 
 The data bytes to sign.
+
+• **requestContext?**: `IServiceRequestContext`
+
+The context for the request.
 
 #### Returns
 
@@ -572,15 +584,11 @@ The proof signature type and value.
 
 ### verifyProof()
 
-> **verifyProof**(`requestContext`, `verificationMethodId`, `bytes`, `signatureType`, `signatureValue`): `Promise`\<`boolean`\>
+> **verifyProof**(`verificationMethodId`, `bytes`, `signatureType`, `signatureValue`, `requestContext`?): `Promise`\<`boolean`\>
 
 Verify proof for arbitrary data with the specified verification method.
 
 #### Parameters
-
-• **requestContext**: `IRequestContext`
-
-The context for the request.
 
 • **verificationMethodId**: `string`
 
@@ -597,6 +605,10 @@ The type of the signature for the proof.
 • **signatureValue**: `Uint8Array`
 
 The value of the signature for the proof.
+
+• **requestContext?**: `IServiceRequestContext`
+
+The context for the request.
 
 #### Returns
 

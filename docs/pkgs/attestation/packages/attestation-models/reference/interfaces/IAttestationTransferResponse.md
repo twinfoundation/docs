@@ -1,10 +1,6 @@
-# Interface: IAttestationTransferResponse\<T\>
+# Interface: IAttestationTransferResponse
 
 The response to transferring the attestation.
-
-## Type parameters
-
-• **T** = `unknown`
 
 ## Properties
 
@@ -16,6 +12,6 @@ The data returned from the transfer response.
 
 #### information
 
-> **information**: [`IAttestationInformation`](IAttestationInformation.md)\<`T`\>
+> **information**: [`IAttestationInformation`](IAttestationInformation.md)\<`unknown`\>
 
 The updated attestation information.

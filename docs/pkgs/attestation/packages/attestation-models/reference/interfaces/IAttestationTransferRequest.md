@@ -4,15 +4,15 @@ Transfer the attestation to a new holder.
 
 ## Properties
 
-### path
+### pathParams
 
-> **path**: `object`
+> **pathParams**: `object`
 
 The parameters to be used in the transfer.
 
-#### attestationId
+#### id
 
-> **attestationId**: `string`
+> **id**: `string`
 
 The attestation id to verify.
 

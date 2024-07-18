@@ -14,7 +14,12 @@
             "url": "https://localhost"
         }
     ],
-    "tags": [],
+    "tags": [
+        {
+            "name": "Blob Storage",
+            "description": "Endpoints which are modelled to access a blob storage contract."
+        }
+    ],
     "paths": {
         "/blob-storage": {
             "post": {
@@ -299,44 +304,6 @@
     },
     "components": {
         "schemas": {
-            "CreatedResponse": {
-                "type": "object",
-                "properties": {
-                    "statusCode": {
-                        "$ref": "#/components/schemas/HttpStatusCodes"
-                    },
-                    "headers": {
-                        "type": "object",
-                        "properties": {
-                            "location": {
-                                "type": "string",
-                                "description": "The location where the resource was created."
-                            }
-                        },
-                        "required": [
-                            "location"
-                        ],
-                        "additionalProperties": false,
-                        "description": "Additional response headers."
-                    }
-                },
-                "required": [
-                    "statusCode",
-                    "headers"
-                ],
-                "additionalProperties": false,
-                "description": "The rest request ended in created response."
-            },
-            "HttpStatusCodes": {
-                "type": "object",
-                "additionalProperties": false,
-                "description": "Standard HTTP status codes."
-            },
-            "NoContentResponse": {
-                "type": "object",
-                "additionalProperties": false,
-                "description": "The rest request ended in success with no data."
-            },
             "Error": {
                 "type": "object",
                 "properties": {
@@ -374,7 +341,12 @@
             },
             "NotFoundResponse": {
                 "type": "object",
+                "additionalProperties": false,
                 "properties": {
+                    "notFoundId": {
+                        "type": "string",
+                        "description": "The id if the item that was not found."
+                    },
                     "name": {
                         "type": "string",
                         "description": "The name for the error."
@@ -398,18 +370,13 @@
                     },
                     "inner": {
                         "$ref": "#/components/schemas/Error"
-                    },
-                    "notFoundId": {
-                        "type": "string",
-                        "description": "The id if the item that was not found."
                     }
                 },
-                "additionalProperties": false,
                 "required": [
                     "message",
                     "name"
                 ],
-                "description": "The resource you tried to access does not exist, see the error field for more details."
+                "description": "The body which contains the error."
             },
             "BlobStorageSetRequest": {
                 "type": "object",

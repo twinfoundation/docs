@@ -4,14 +4,14 @@ Verify that the proof is valid for the attestation.
 
 ## Properties
 
-### path
+### pathParams
 
-> **path**: `object`
+> **pathParams**: `object`
 
 The parameters to be used in the verification.
 
-#### attestationId
+#### id
 
-> **attestationId**: `string`
+> **id**: `string`
 
 The attestation id to verify.

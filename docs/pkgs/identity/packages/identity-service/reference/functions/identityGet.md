@@ -1,12 +1,12 @@
 # Function: identityGet()
 
-> **identityGet**(`requestContext`, `serviceName`, `request`, `body`?): `Promise`\<`IIdentityGetResponse`\>
+> **identityGet**(`requestContext`, `serviceName`, `request`): `Promise`\<`IIdentityProfileGetResponse`\>
 
-Get the identity details.
+Get the identity profile.
 
 ## Parameters
 
-• **requestContext**: `IRequestContext`
+• **requestContext**: `IHttpRequestContext`
 
 The request context for the API.
 
@@ -14,16 +14,12 @@ The request context for the API.
 
 The name of the service to use in the routes.
 
-• **request**: `IIdentityGetRequest`
+• **request**: `IIdentityProfileGetRequest`
 
 The request.
 
-• **body?**: `unknown`
-
-The body if required for pure content.
-
 ## Returns
 
-`Promise`\<`IIdentityGetResponse`\>
+`Promise`\<`IIdentityProfileGetResponse`\>
 
 The response object with additional http response properties.

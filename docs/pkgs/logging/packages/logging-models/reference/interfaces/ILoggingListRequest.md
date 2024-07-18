@@ -4,9 +4,9 @@ Get the a list of the log entries.
 
 ## Properties
 
-### query?
+### query
 
-> `optional` **query**: `object`
+> **query**: `object`
 
 The query parameters.
 

@@ -1,12 +1,12 @@
 # Function: attestationTransfer()
 
-> **attestationTransfer**(`requestContext`, `factoryServiceName`, `request`, `body`?): `Promise`\<`IAttestationTransferResponse`\>
+> **attestationTransfer**(`requestContext`, `factoryServiceName`, `request`): `Promise`\<`IAttestationTransferResponse`\>
 
 Transfer the attestation to a new holder.
 
 ## Parameters
 
-• **requestContext**: `IRequestContext`
+• **requestContext**: `IHttpRequestContext`
 
 The request context for the API.
 
@@ -17,10 +17,6 @@ The name of the service to use in the routes.
 • **request**: `IAttestationTransferRequest`
 
 The request.
-
-• **body?**: `unknown`
-
-The body if required for pure content.
 
 ## Returns
 
