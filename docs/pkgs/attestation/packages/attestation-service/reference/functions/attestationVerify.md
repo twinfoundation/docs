@@ -1,12 +1,12 @@
 # Function: attestationVerify()
 
-> **attestationVerify**(`requestContext`, `factoryServiceName`, `request`, `body`?): `Promise`\<`IAttestationVerifyResponse`\>
+> **attestationVerify**(`requestContext`, `factoryServiceName`, `request`): `Promise`\<`IAttestationVerifyResponse`\>
 
 Resolve and verify the attestation id.
 
 ## Parameters
 
-• **requestContext**: `IRequestContext`
+• **requestContext**: `IHttpRequestContext`
 
 The request context for the API.
 
@@ -17,10 +17,6 @@ The name of the service to use in the routes.
 • **request**: `IAttestationVerifyRequest`
 
 The request.
-
-• **body?**: `unknown`
-
-The body if required for pure content.
 
 ## Returns
 

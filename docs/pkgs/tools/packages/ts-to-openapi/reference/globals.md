@@ -7,6 +7,7 @@
 ## Interfaces
 
 - [ITsToOpenApiConfig](interfaces/ITsToOpenApiConfig.md)
+- [ITsToOpenApiConfigEntryPoint](interfaces/ITsToOpenApiConfigEntryPoint.md)
 
 ## Functions
 

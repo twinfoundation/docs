@@ -4,12 +4,16 @@
 
 - [IIdentity](interfaces/IIdentity.md)
 - [IIdentityConnector](interfaces/IIdentityConnector.md)
+- [IIdentityProfile](interfaces/IIdentityProfile.md)
+- [IIdentityProfileProperty](interfaces/IIdentityProfileProperty.md)
 - [IIdentityCreateRequest](interfaces/IIdentityCreateRequest.md)
-- [IIdentityGetRequest](interfaces/IIdentityGetRequest.md)
-- [IIdentityGetResponse](interfaces/IIdentityGetResponse.md)
-- [IIdentityListRequest](interfaces/IIdentityListRequest.md)
-- [IIdentityListResponse](interfaces/IIdentityListResponse.md)
-- [IIdentityUpdateRequest](interfaces/IIdentityUpdateRequest.md)
+- [IIdentityProfileCreateRequest](interfaces/IIdentityProfileCreateRequest.md)
+- [IIdentityProfileGetRequest](interfaces/IIdentityProfileGetRequest.md)
+- [IIdentityProfileGetResponse](interfaces/IIdentityProfileGetResponse.md)
+- [IIdentityProfileListRequest](interfaces/IIdentityProfileListRequest.md)
+- [IIdentityProfileListResponse](interfaces/IIdentityProfileListResponse.md)
+- [IIdentityProfileRemoveRequest](interfaces/IIdentityProfileRemoveRequest.md)
+- [IIdentityProfileUpdateRequest](interfaces/IIdentityProfileUpdateRequest.md)
 
 ## Type Aliases
 

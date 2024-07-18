@@ -8,9 +8,9 @@ Interface which defines a REST route.
 
 ## Type parameters
 
-• **T** = `any`
+• **T** *extends* [`IHttpRequest`](IHttpRequest.md) = `any`
 
-• **U** = `any`
+• **U** *extends* [`IHttpResponse`](IHttpResponse.md) & [`IRestRouteResponseOptions`](IRestRouteResponseOptions.md) = `any`
 
 ## Properties
 
@@ -38,27 +38,15 @@ The path to use for routing.
 
 ***
 
-### skipTenantAuth?
+### skipAuth?
 
-> `optional` **skipTenantAuth**: `boolean`
+> `optional` **skipAuth**: `boolean`
 
-Skips the tenant authentication for this route.
-
-#### Inherited from
-
-[`IBaseRoute`](IBaseRoute.md).[`skipTenantAuth`](IBaseRoute.md#skiptenantauth)
-
-***
-
-### skipSubjectAuth?
-
-> `optional` **skipSubjectAuth**: `boolean`
-
-Skips the subject authentication for this route.
+Skips the authentication for this route.
 
 #### Inherited from
 
-[`IBaseRoute`](IBaseRoute.md).[`skipSubjectAuth`](IBaseRoute.md#skipsubjectauth)
+[`IBaseRoute`](IBaseRoute.md).[`skipAuth`](IBaseRoute.md#skipauth)
 
 ***
 
@@ -80,7 +68,7 @@ Tag for the operation.
 
 ### method
 
-> **method**: `HttpMethods`
+> **method**: `HttpMethod`
 
 The http method.
 

@@ -30,6 +30,9 @@ This is the overview of the packages.
 
 - [@gtsc/api-models](pkgs/api/packages/api-models/overview) - Contains models and classes for use with APIs
 - [@gtsc/api-core](pkgs/api/packages/api-core/overview) - Core classes for use with APIs
+- [@gtsc/api-processors](pkgs/api/packages/api-processors/overview) - Route processors for use with API servers
+- [@gtsc/api-service](pkgs/api/packages/api-service/overview) - Information contract implementation and REST endpoint definitions
+- [@gtsc/api-rest-client](pkgs/api/packages/api-rest-client/overview) - Information contract implementation which can connect to REST endpoints
 - [@gtsc/api-server-fastify](pkgs/api/packages/api-server-fastify/overview) - Use Fastify as the core web server for APIs
 
 ## Entity Storage
@@ -81,6 +84,8 @@ This is the overview of the packages.
 - [@gtsc/nft-models](pkgs/nft/packages/nft-models/overview) - Contains models and classes for use with NFTs
 - [@gtsc/nft-connector-iota](pkgs/nft/packages/nft-connector-iota/overview) - Implementation of the NFT connector using IOTA
 - [@gtsc/nft-connector-entity-storage](pkgs/nft/packages/nft-connector-entity-storage/overview) - Implementation of the NFT connector using entity storage
+- [@gtsc/nft-service](pkgs/nft/packages/nft-service/overview) - NFT contract implementation and REST endpoint definitions
+- [@gtsc/nft-rest-client](pkgs/nft/packages/nft-rest-client/overview) - NFT contract implementation which can connect to REST endpoints
 - [@gtsc/nft-cli](pkgs/nft/packages/nft-cli/overview) - A command line interface for interacting with the nft connectors
 
 ## Attestation

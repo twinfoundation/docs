@@ -6,17 +6,29 @@ Interface describing an blob storage service.
 
 - `IService`
 
+## Properties
+
+### CLASS\_NAME
+
+> `readonly` **CLASS\_NAME**: `string`
+
+The name of the service.
+
+#### Inherited from
+
+`IService.CLASS_NAME`
+
 ## Methods
 
 ### bootstrap()?
 
-> `optional` **bootstrap**(`requestContext`): `Promise`\<`void`\>
+> `optional` **bootstrap**(`requestContext`?): `Promise`\<`void`\>
 
 Bootstrap the service by creating and initializing any resources it needs.
 
 #### Parameters
 
-• **requestContext**: `IRequestContext`
+• **requestContext?**: `IServiceRequestContext`
 
 The request context for bootstrapping.
 
@@ -70,15 +82,11 @@ Nothing.
 
 ### set()
 
-> **set**(`requestContext`, `blob`, `options`?): `Promise`\<`string`\>
+> **set**(`blob`, `options`?, `requestContext`?): `Promise`\<`string`\>
 
 Set the blob.
 
 #### Parameters
-
-• **requestContext**: `IRequestContext`
-
-The context for the request.
 
 • **blob**: `Uint8Array`
 
@@ -92,6 +100,10 @@ Additional options for the blob service.
 
 The namespace to use for storing, defaults to service configured namespace.
 
+• **requestContext?**: `IServiceRequestContext`
+
+The context for the request.
+
 #### Returns
 
 `Promise`\<`string`\>
@@ -102,19 +114,19 @@ The id of the stored blob in urn format.
 
 ### get()
 
-> **get**(`requestContext`, `id`): `Promise`\<`Uint8Array`\>
+> **get**(`id`, `requestContext`?): `Promise`\<`Uint8Array`\>
 
 Get the blob.
 
 #### Parameters
 
-• **requestContext**: `IRequestContext`
-
-The context for the request.
-
 • **id**: `string`
 
 The id of the blob to get in urn format.
+
+• **requestContext?**: `IServiceRequestContext`
+
+The context for the request.
 
 #### Returns
 
@@ -130,19 +142,19 @@ Not found error if the blob cannot be found.
 
 ### remove()
 
-> **remove**(`requestContext`, `id`): `Promise`\<`void`\>
+> **remove**(`id`, `requestContext`?): `Promise`\<`void`\>
 
 Remove the blob.
 
 #### Parameters
 
-• **requestContext**: `IRequestContext`
-
-The context for the request.
-
 • **id**: `string`
 
 The id of the blob to remove in urn format.
+
+• **requestContext?**: `IServiceRequestContext`
+
+The context for the request.
 
 #### Returns
 

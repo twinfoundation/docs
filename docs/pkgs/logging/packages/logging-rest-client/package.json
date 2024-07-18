@@ -1,6 +1,6 @@
 {
 	"name": "@gtsc/logging-rest-client",
-	"version": "0.0.3-next.18",
+	"version": "0.0.3-next.25",
 	"description": "Logging contract implementation which can connect to REST endpoints",
 	"repository": {
 		"type": "git",
@@ -28,15 +28,16 @@
 		"dist": "npm run clean && npm run build && npm run test && npm run bundle && npm run docs"
 	},
 	"dependencies": {
+		"@gtsc/api-core": "next",
 		"@gtsc/api-models": "next",
 		"@gtsc/core": "next",
 		"@gtsc/entity": "next",
-		"@gtsc/nameof": "0.0.4",
+		"@gtsc/nameof": "next",
 		"@gtsc/services": "next",
-		"@gtsc/logging-models": "0.0.3-next.18"
+		"@gtsc/logging-models": "0.0.3-next.25"
 	},
 	"devDependencies": {
-		"@gtsc/nameof-transformer": "0.0.4",
+		"@gtsc/nameof-transformer": "next",
 		"@vitest/coverage-v8": "1.6.0",
 		"copyfiles": "2.4.1",
 		"replace-in-files-cli": "2.2.0",

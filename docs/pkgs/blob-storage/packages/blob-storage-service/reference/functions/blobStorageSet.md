@@ -1,12 +1,12 @@
 # Function: blobStorageSet()
 
-> **blobStorageSet**(`requestContext`, `factoryServiceName`, `request`, `body`?): `Promise`\<`ICreatedResponse`\>
+> **blobStorageSet**(`requestContext`, `factoryServiceName`, `request`): `Promise`\<`ICreatedResponse`\>
 
 Set a blob in storage.
 
 ## Parameters
 
-• **requestContext**: `IRequestContext`
+• **requestContext**: `IServiceRequestContext`
 
 The request context for the API.
 
@@ -17,10 +17,6 @@ The name of the service to use in the routes.
 • **request**: `IBlobStorageSetRequest`
 
 The request.
-
-• **body?**: `unknown`
-
-The body if required for pure content.
 
 ## Returns
 

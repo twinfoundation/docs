@@ -22,16 +22,8 @@ The id for the identity.
 
 ***
 
-### role
-
-> **role**: `IdentityRole`
-
-The role for the identity.
-
-***
-
 ### properties?
 
-> `optional` **properties**: `IProperty`[]
+> `optional` **properties**: `IIdentityProfileProperty`[]
 
 The properties for the profile.

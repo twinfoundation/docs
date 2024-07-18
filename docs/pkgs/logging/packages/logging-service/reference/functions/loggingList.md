@@ -1,12 +1,12 @@
 # Function: loggingList()
 
-> **loggingList**(`requestContext`, `factoryServiceName`, `request`, `body`?): `Promise`\<`ILoggingListResponse`\>
+> **loggingList**(`requestContext`, `factoryServiceName`, `request`): `Promise`\<`ILoggingListResponse`\>
 
 Get a list of the logging entries.
 
 ## Parameters
 
-• **requestContext**: `IRequestContext`
+• **requestContext**: `IServiceRequestContext`
 
 The request context for the API.
 
@@ -17,10 +17,6 @@ The name of the service to use in the routes.
 • **request**: `ILoggingListRequest`
 
 The request.
-
-• **body?**: `unknown`
-
-The body if required for pure content.
 
 ## Returns
 

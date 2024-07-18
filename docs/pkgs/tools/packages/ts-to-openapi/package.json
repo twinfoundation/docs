@@ -1,6 +1,6 @@
 {
 	"name": "@gtsc/ts-to-openapi",
-	"version": "0.0.4-next.22",
+	"version": "0.0.4-next.35",
 	"description": "Tool to convert TypeScript REST route definitions to OpenAPI Specifications",
 	"repository": {
 		"type": "git",
@@ -32,16 +32,16 @@
 		"@gtsc/api-models": "next",
 		"@gtsc/cli-core": "next",
 		"@gtsc/core": "next",
-		"@gtsc/nameof": "0.0.4-next.22",
+		"@gtsc/nameof": "0.0.4-next.35",
 		"@gtsc/web": "next",
 		"commander": "12.1.0",
 		"glob": "10.4.2",
 		"jsonschema": "1.4.1",
-		"ts-json-schema-generator": "2.3.0"
+		"ts-json-schema-generator": "2.4.0-next.1"
 	},
 	"devDependencies": {
-		"@gtsc/merge-locales": "0.0.4-next.22",
-		"@gtsc/nameof-transformer": "0.0.4-next.22",
+		"@gtsc/merge-locales": "0.0.4-next.35",
+		"@gtsc/nameof-transformer": "0.0.4-next.35",
 		"@types/node": "20.14.6",
 		"@vitest/coverage-v8": "1.6.0",
 		"copyfiles": "2.4.1",

@@ -8,3 +8,7 @@
 ## Interfaces
 
 - [IEntityStorageIdentityConnectorConfig](interfaces/IEntityStorageIdentityConnectorConfig.md)
+
+## Functions
+
+- [initSchema](functions/initSchema.md)

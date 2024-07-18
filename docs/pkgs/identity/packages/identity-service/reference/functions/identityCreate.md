@@ -1,12 +1,12 @@
 # Function: identityCreate()
 
-> **identityCreate**(`requestContext`, `serviceName`, `request`, `body`?): `Promise`\<`ICreatedResponse`\>
+> **identityCreate**(`requestContext`, `serviceName`, `request`): `Promise`\<`ICreatedResponse`\>
 
 Create a new identity.
 
 ## Parameters
 
-• **requestContext**: `IRequestContext`
+• **requestContext**: `IHttpRequestContext`
 
 The request context for the API.
 
@@ -17,10 +17,6 @@ The name of the service to use in the routes.
 • **request**: `IIdentityCreateRequest`
 
 The request.
-
-• **body?**: `unknown`
-
-The body if required for pure content.
 
 ## Returns
 

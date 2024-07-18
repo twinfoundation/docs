@@ -60,17 +60,29 @@ Default name for the mnemonic secret.
 
 Default name for the seed secret.
 
+***
+
+### CLASS\_NAME
+
+> `readonly` **CLASS\_NAME**: `string`
+
+Runtime name for the class.
+
+#### Implementation of
+
+`IWalletConnector.CLASS_NAME`
+
 ## Methods
 
 ### create()
 
-> **create**(`requestContext`): `Promise`\<`void`\>
+> **create**(`requestContext`?): `Promise`\<`void`\>
 
 Create a new wallet.
 
 #### Parameters
 
-• **requestContext**: `IRequestContext`
+• **requestContext?**: `IServiceRequestContext`
 
 The context for the request.
 
@@ -88,15 +100,11 @@ Nothing.
 
 ### getAddresses()
 
-> **getAddresses**(`requestContext`, `startAddressIndex`, `count`): `Promise`\<`string`[]\>
+> **getAddresses**(`startAddressIndex`, `count`, `requestContext`?): `Promise`\<`string`[]\>
 
 Get the addresses for the requested range.
 
 #### Parameters
-
-• **requestContext**: `IRequestContext`
-
-The context for the request.
 
 • **startAddressIndex**: `number`
 
@@ -105,6 +113,10 @@ The start index for the addresses.
 • **count**: `number`
 
 The number of addresses to generate.
+
+• **requestContext?**: `IServiceRequestContext`
+
+The context for the request.
 
 #### Returns
 
@@ -120,19 +132,19 @@ The list of addresses.
 
 ### getBalance()
 
-> **getBalance**(`requestContext`, `address`): `Promise`\<`bigint`\>
+> **getBalance**(`address`, `requestContext`?): `Promise`\<`bigint`\>
 
 Get the balance for an address in a wallet.
 
 #### Parameters
 
-• **requestContext**: `IRequestContext`
-
-The context for the request.
-
 • **address**: `string`
 
 The bech32 encoded address.
+
+• **requestContext?**: `IServiceRequestContext`
+
+The context for the request.
 
 #### Returns
 
@@ -148,19 +160,19 @@ The balance of the wallet address.
 
 ### getStorageCosts()
 
-> **getStorageCosts**(`requestContext`, `address`): `Promise`\<`bigint`\>
+> **getStorageCosts**(`address`, `requestContext`?): `Promise`\<`bigint`\>
 
 Get the storage costs for an address in a wallet.
 
 #### Parameters
 
-• **requestContext**: `IRequestContext`
-
-The context for the request.
-
 • **address**: `string`
 
 The bech32 encoded address.
+
+• **requestContext?**: `IServiceRequestContext`
+
+The context for the request.
 
 #### Returns
 
@@ -176,15 +188,11 @@ The storage costs for the address.
 
 ### ensureBalance()
 
-> **ensureBalance**(`requestContext`, `address`, `ensureBalance`, `timeoutInSeconds`?): `Promise`\<`boolean`\>
+> **ensureBalance**(`address`, `ensureBalance`, `timeoutInSeconds`?, `requestContext`?): `Promise`\<`boolean`\>
 
 Ensure the balance for an address in a wallet.
 
 #### Parameters
-
-• **requestContext**: `IRequestContext`
-
-The context for the request.
 
 • **address**: `string`
 
@@ -197,6 +205,10 @@ The balance to ensure on the address.
 • **timeoutInSeconds?**: `number`
 
 The timeout in seconds to wait for the funding to complete.
+
+• **requestContext?**: `IServiceRequestContext`
+
+The context for the request.
 
 #### Returns
 
@@ -212,15 +224,11 @@ True if the balance has been ensured.
 
 ### transfer()
 
-> **transfer**(`requestContext`, `addressSource`, `addressDest`, `amount`): `Promise`\<`undefined` \| `string`\>
+> **transfer**(`addressSource`, `addressDest`, `amount`, `requestContext`?): `Promise`\<`undefined` \| `string`\>
 
 Transfer funds to an address.
 
 #### Parameters
-
-• **requestContext**: `IRequestContext`
-
-The context for the request.
 
 • **addressSource**: `string`
 
@@ -233,6 +241,10 @@ The bech32 encoded address to send the funds to.
 • **amount**: `bigint`
 
 The amount to transfer.
+
+• **requestContext?**: `IServiceRequestContext`
+
+The context for the request.
 
 #### Returns
 
@@ -248,15 +260,11 @@ An identifier for the transfer if there was one.
 
 ### sign()
 
-> **sign**(`requestContext`, `signatureType`, `addressIndex`, `data`): `Promise`\<`object`\>
+> **sign**(`signatureType`, `addressIndex`, `data`, `requestContext`?): `Promise`\<`object`\>
 
 Sign data using a wallet based key.
 
 #### Parameters
-
-• **requestContext**: `IRequestContext`
-
-The context for the request.
 
 • **signatureType**: `KeyType`
 
@@ -269,6 +277,10 @@ The index for the address.
 • **data**: `Uint8Array`
 
 The data bytes.
+
+• **requestContext?**: `IServiceRequestContext`
+
+The context for the request.
 
 #### Returns
 

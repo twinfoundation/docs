@@ -2,17 +2,25 @@
 
 Interface describing a service.
 
+## Properties
+
+### CLASS\_NAME
+
+> `readonly` **CLASS\_NAME**: `string`
+
+The name of the service.
+
 ## Methods
 
 ### bootstrap()?
 
-> `optional` **bootstrap**(`requestContext`): `Promise`\<`void`\>
+> `optional` **bootstrap**(`requestContext`?): `Promise`\<`void`\>
 
 Bootstrap the service by creating and initializing any resources it needs.
 
 #### Parameters
 
-• **requestContext**: [`IRequestContext`](IRequestContext.md)
+• **requestContext?**: [`IServiceRequestContext`](IServiceRequestContext.md)
 
 The request context for bootstrapping.
 

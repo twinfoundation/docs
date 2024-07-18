@@ -1,10 +1,6 @@
-# Interface: IAttestationAttestResponse\<T\>
+# Interface: IAttestationAttestResponse
 
 The response when creating the attestation for some data.
-
-## Type parameters
-
-• **T** = `unknown`
 
 ## Properties
 
@@ -16,4 +12,4 @@ The result of the attestation process.
 
 #### information
 
-> **information**: [`IAttestationInformation`](IAttestationInformation.md)\<`T`\>
+> **information**: [`IAttestationInformation`](IAttestationInformation.md)\<`unknown`\>

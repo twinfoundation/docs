@@ -32,6 +32,18 @@ The configuration for the client.
 
 `BaseRestClient.constructor`
 
+## Properties
+
+### CLASS\_NAME
+
+> `readonly` **CLASS\_NAME**: `string` = `BlobStorageClient._CLASS_NAME`
+
+Runtime name for the class.
+
+#### Implementation of
+
+`IBlobStorage.CLASS_NAME`
+
 ## Methods
 
 ### getEndpointWithPrefix()
@@ -54,27 +66,23 @@ The endpoint with namespace prefix attached.
 
 ### fetch()
 
-> **fetch**\<`T`, `U`\>(`requestContext`, `route`, `method`, `request`?): `Promise`\<`U`\>
+> **fetch**\<`T`, `U`\>(`route`, `method`, `request`?): `Promise`\<`U`\>
 
 Perform a request in json format.
 
 #### Type parameters
 
-• **T** *extends* `IHttpRequest`\<`unknown`\>
+• **T** *extends* `IHttpRequest`\<`any`\>
 
-• **U** *extends* `IHttpResponse`\<`unknown`\>
+• **U** *extends* `IHttpResponse`\<`any`\>
 
 #### Parameters
-
-• **requestContext**: `IRequestContext`
-
-The context for the request.
 
 • **route**: `string`
 
 The route of the request.
 
-• **method**: `HttpMethods`
+• **method**: `HttpMethod`
 
 The http method.
 
@@ -96,15 +104,11 @@ The response.
 
 ### set()
 
-> **set**(`requestContext`, `blob`, `options`?): `Promise`\<`string`\>
+> **set**(`blob`, `options`?): `Promise`\<`string`\>
 
 Set the blob.
 
 #### Parameters
-
-• **requestContext**: `IRequestContext`
-
-The context for the request.
 
 • **blob**: `Uint8Array`
 
@@ -132,15 +136,11 @@ The id of the stored blob in urn format.
 
 ### get()
 
-> **get**(`requestContext`, `id`): `Promise`\<`Uint8Array`\>
+> **get**(`id`): `Promise`\<`Uint8Array`\>
 
 Get the blob.
 
 #### Parameters
-
-• **requestContext**: `IRequestContext`
-
-The context for the request.
 
 • **id**: `string`
 
@@ -164,15 +164,11 @@ Not found error if the blob cannot be found.
 
 ### remove()
 
-> **remove**(`requestContext`, `id`): `Promise`\<`void`\>
+> **remove**(`id`): `Promise`\<`void`\>
 
 Remove the blob.
 
 #### Parameters
-
-• **requestContext**: `IRequestContext`
-
-The context for the request.
 
 • **id**: `string`
 

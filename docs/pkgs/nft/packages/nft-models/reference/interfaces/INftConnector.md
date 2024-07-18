@@ -2,11 +2,87 @@
 
 Interface describing an NFT connector.
 
+## Extends
+
+- `IService`
+
+## Properties
+
+### CLASS\_NAME
+
+> `readonly` **CLASS\_NAME**: `string`
+
+The name of the service.
+
+#### Inherited from
+
+`IService.CLASS_NAME`
+
 ## Methods
+
+### bootstrap()?
+
+> `optional` **bootstrap**(`requestContext`?): `Promise`\<`void`\>
+
+Bootstrap the service by creating and initializing any resources it needs.
+
+#### Parameters
+
+• **requestContext?**: `IServiceRequestContext`
+
+The request context for bootstrapping.
+
+#### Returns
+
+`Promise`\<`void`\>
+
+Nothing.
+
+#### Inherited from
+
+`IService.bootstrap`
+
+***
+
+### start()?
+
+> `optional` **start**(): `Promise`\<`void`\>
+
+The service needs to be started when the application is initialized.
+
+#### Returns
+
+`Promise`\<`void`\>
+
+Nothing.
+
+#### Inherited from
+
+`IService.start`
+
+***
+
+### stop()?
+
+> `optional` **stop**(): `Promise`\<`void`\>
+
+The service needs to be stopped when the application is closed.
+
+#### Returns
+
+`Promise`\<`void`\>
+
+Nothing.
+
+#### Inherited from
+
+`IService.stop`
+
+***
 
 ### mint()
 
-> **mint**\<`T`, `U`\>(`requestContext`, `issuer`, `tag`, `immutableMetadata`?, `metadata`?): `Promise`\<`string`\>
+> **mint**\<`T`, `U`\>(`issuer`, `tag`, `immutableMetadata`?, `metadata`?, `requestContext`?): `Promise`\<`string`\>
 
 Mint an NFT.
 
@@ -17,10 +93,6 @@ Mint an NFT.
 • **U** = `unknown`
 
 #### Parameters
-
-• **requestContext**: `IRequestContext`
-
-The context for the request.
 
 • **issuer**: `string`
 
@@ -38,6 +110,10 @@ The immutable metadata for the NFT.
 
 The metadata for the NFT.
 
+• **requestContext?**: `IServiceRequestContext`
+
+The context for the request.
+
 #### Returns
 
 `Promise`\<`string`\>
@@ -48,7 +124,7 @@ The id of the created NFT in urn format.
 
 ### resolve()
 
-> **resolve**\<`T`, `U`\>(`requestContext`, `id`): `Promise`\<`object`\>
+> **resolve**\<`T`, `U`\>(`id`, `requestContext`?): `Promise`\<`object`\>
 
 Resolve an NFT.
 
@@ -60,13 +136,13 @@ Resolve an NFT.
 
 #### Parameters
 
-• **requestContext**: `IRequestContext`
-
-The context for the request.
-
 • **id**: `string`
 
 The id of the NFT to resolve.
+
+• **requestContext?**: `IServiceRequestContext`
+
+The context for the request.
 
 #### Returns
 
@@ -98,15 +174,11 @@ The data for the NFT.
 
 ### burn()
 
-> **burn**(`requestContext`, `owner`, `id`): `Promise`\<`void`\>
+> **burn**(`owner`, `id`, `requestContext`?): `Promise`\<`void`\>
 
 Burn an NFT.
 
 #### Parameters
-
-• **requestContext**: `IRequestContext`
-
-The context for the request.
 
 • **owner**: `string`
 
@@ -115,6 +187,10 @@ The owner for the NFT to return the funds to.
 • **id**: `string`
 
 The id of the NFT to burn in urn format.
+
+• **requestContext?**: `IServiceRequestContext`
+
+The context for the request.
 
 #### Returns
 
@@ -126,7 +202,7 @@ Nothing.
 
 ### transfer()
 
-> **transfer**\<`T`\>(`requestContext`, `id`, `recipient`, `metadata`?): `Promise`\<`void`\>
+> **transfer**\<`T`\>(`id`, `recipient`, `metadata`?, `requestContext`?): `Promise`\<`void`\>
 
 Transfer an NFT.
 
@@ -135,10 +211,6 @@ Transfer an NFT.
 • **T** = `unknown`
 
 #### Parameters
-
-• **requestContext**: `IRequestContext`
-
-The context for the request.
 
 • **id**: `string`
 
@@ -152,6 +224,10 @@ The recipient of the NFT.
 
 Optional mutable data to include during the transfer.
 
+• **requestContext?**: `IServiceRequestContext`
+
+The context for the request.
+
 #### Returns
 
 `Promise`\<`void`\>
@@ -160,9 +236,9 @@ Nothing.
 
 ***
 
-### updateMutable()
+### update()
 
-> **updateMutable**\<`T`\>(`requestContext`, `id`, `metadata`): `Promise`\<`void`\>
+> **update**\<`T`\>(`id`, `metadata`, `requestContext`?): `Promise`\<`void`\>
 
 Update the mutable data of the NFT.
 
@@ -172,10 +248,6 @@ Update the mutable data of the NFT.
 
 #### Parameters
 
-• **requestContext**: `IRequestContext`
-
-The context for the request.
-
 • **id**: `string`
 
 The id of the NFT to update in urn format.
@@ -183,6 +255,10 @@ The id of the NFT to update in urn format.
 • **metadata**: `T`
 
 The mutable data to update.
+
+• **requestContext?**: `IServiceRequestContext`
+
+The context for the request.
 
 #### Returns
 

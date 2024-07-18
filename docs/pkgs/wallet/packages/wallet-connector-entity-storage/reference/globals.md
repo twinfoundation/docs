@@ -9,3 +9,7 @@
 ## Interfaces
 
 - [IEntityStorageWalletConnectorConfig](interfaces/IEntityStorageWalletConnectorConfig.md)
+
+## Functions
+
+- [initSchema](functions/initSchema.md)
