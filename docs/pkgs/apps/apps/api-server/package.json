@@ -23,7 +23,7 @@
 		"docs:clean": "rimraf docs/overview.md",
 		"docs:copy-overview": "copyfiles README.md docs",
 		"docs:rename-overview": "node -e require('fs/promises').rename('docs/README.md','docs/overview.md')",
-		"docs:remove-header": "replace-in-files --regex='^.*overview.md.*?\\s\\s.*?\\s\\s' --string='docs/' --replacement='' docs/**/*.md",
+		"docs:remove-header": "replace-in-files --regex='^.*overview.md.*?\\s\\s.*?\\s\\s' --string='docs/' --replacement='' \"docs/**/*.md\"",
 		"docs:api": "ts-to-openapi ./ts-to-openapi.json ./docs/open-api/spec.json",
 		"docs": "npm run docs:clean && npm run docs:copy-overview && npm run docs:rename-overview && npm run docs:remove-header && npm run docs:api",
 		"dist": "npm run clean && npm run build && npm run merge-locales && npm run test && npm run docs",
