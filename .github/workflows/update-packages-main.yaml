@@ -184,6 +184,27 @@ jobs:
           cp import-packages/logging/package.json docs/pkgs/logging/package.json
           rm -r import-packages/logging
 
+      ########### telemetry
+      - name: Checkout telemetry
+        uses: actions/checkout@v4
+        with:
+          repository: gtscio/telemetry
+          path: import-packages/telemetry
+          ref: ${{ env.gha-branch }}
+          token: ${{ secrets.GH_PAT }}
+
+      - name: Copy telemetry to Docs
+        run: |
+          jq -r '.workspaces[]' import-packages/telemetry/package.json | while read pkg; do
+            rm -rf docs/pkgs/telemetry/$pkg
+            mkdir -p docs/pkgs/telemetry/$pkg
+            cp -r import-packages/telemetry/$pkg/docs/* docs/pkgs/telemetry/$pkg
+            cp -r import-packages/telemetry/$pkg/package.json docs/pkgs/telemetry/$pkg/package.json
+          done
+
+          cp import-packages/telemetry/package.json docs/pkgs/telemetry/package.json
+          rm -r import-packages/telemetry
+
       ########### vault
       - name: Checkout vault
         uses: actions/checkout@v4

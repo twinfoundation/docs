@@ -28,6 +28,10 @@
 		"types": ["packages"]
 	},
 	{
+		"name": "telemetry",
+		"types": ["packages"]
+	},
+	{
 		"name": "vault",
 		"types": ["packages"]
 	},
