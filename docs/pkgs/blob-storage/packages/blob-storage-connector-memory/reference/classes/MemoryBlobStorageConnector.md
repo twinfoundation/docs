@@ -20,6 +20,14 @@ Create a new instance of MemoryBlobStorageConnector.
 
 ## Properties
 
+### NAMESPACE
+
+> `static` `readonly` **NAMESPACE**: `string` = `"memory"`
+
+The namespace for the items.
+
+***
+
 ### CLASS\_NAME
 
 > `readonly` **CLASS\_NAME**: `string`

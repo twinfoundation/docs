@@ -1,6 +1,6 @@
 {
 	"name": "@gtsc/vault-connector-entity-storage",
-	"version": "0.0.3-next.23",
+	"version": "0.0.3-next.25",
 	"description": "Vault connector implementation using entity storage",
 	"repository": {
 		"type": "git",
@@ -33,7 +33,7 @@
 		"@gtsc/entity": "next",
 		"@gtsc/nameof": "next",
 		"@gtsc/entity-storage-models": "next",
-		"@gtsc/vault-models": "0.0.3-next.23"
+		"@gtsc/vault-models": "0.0.3-next.25"
 	},
 	"devDependencies": {
 		"@gtsc/nameof-transformer": "next",

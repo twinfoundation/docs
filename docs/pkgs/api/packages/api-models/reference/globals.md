@@ -1,5 +1,9 @@
 # @gtsc/api-models
 
+## Classes
+
+- [ResponseHelper](classes/ResponseHelper.md)
+
 ## Interfaces
 
 - [IServerHealthResponse](interfaces/IServerHealthResponse.md)
@@ -17,6 +21,7 @@
 - [IBadRequestResponse](interfaces/IBadRequestResponse.md)
 - [IConflictResponse](interfaces/IConflictResponse.md)
 - [IForbiddenResponse](interfaces/IForbiddenResponse.md)
+- [IInternalServerErrorResponse](interfaces/IInternalServerErrorResponse.md)
 - [INotFoundResponse](interfaces/INotFoundResponse.md)
 - [IUnauthorizedResponse](interfaces/IUnauthorizedResponse.md)
 - [IAcceptedResponse](interfaces/IAcceptedResponse.md)

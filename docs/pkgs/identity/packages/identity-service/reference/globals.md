@@ -6,6 +6,10 @@
 - [IdentityProfileService](classes/IdentityProfileService.md)
 - [IdentityService](classes/IdentityService.md)
 
+## Interfaces
+
+- [IIdentityServiceConfig](interfaces/IIdentityServiceConfig.md)
+
 ## Variables
 
 - [tagsIdentityProfile](variables/tagsIdentityProfile.md)
@@ -22,4 +26,5 @@
 - [identitiesList](functions/identitiesList.md)
 - [generateRestRoutesIdentity](functions/generateRestRoutesIdentity.md)
 - [identityCreate](functions/identityCreate.md)
+- [identityResolve](functions/identityResolve.md)
 - [initSchema](functions/initSchema.md)

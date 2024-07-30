@@ -22,15 +22,15 @@ The name of the service.
 
 ### bootstrap()?
 
-> `optional` **bootstrap**(`requestContext`?): `Promise`\<`void`\>
+> `optional` **bootstrap**(`systemLoggingConnectorType`?): `Promise`\<`void`\>
 
 Bootstrap the service by creating and initializing any resources it needs.
 
 #### Parameters
 
-• **requestContext?**: `IServiceRequestContext`
+• **systemLoggingConnectorType?**: `string`
 
-The request context for bootstrapping.
+The system logging connector type, defaults to "system-logging".
 
 #### Returns
 
@@ -46,9 +46,19 @@ Nothing.
 
 ### start()?
 
-> `optional` **start**(): `Promise`\<`void`\>
+> `optional` **start**(`systemRequestContext`, `systemLoggingConnectorType`?): `Promise`\<`void`\>
 
 The service needs to be started when the application is initialized.
+
+#### Parameters
+
+• **systemRequestContext**: `IServiceRequestContext`
+
+The system request context.
+
+• **systemLoggingConnectorType?**: `string`
+
+The system logging connector type, defaults to "system-logging".
 
 #### Returns
 
@@ -64,9 +74,19 @@ Nothing.
 
 ### stop()?
 
-> `optional` **stop**(): `Promise`\<`void`\>
+> `optional` **stop**(`systemRequestContext`, `systemLoggingConnectorType`?): `Promise`\<`void`\>
 
 The service needs to be stopped when the application is closed.
+
+#### Parameters
+
+• **systemRequestContext**: `IServiceRequestContext`
+
+The system request context.
+
+• **systemLoggingConnectorType?**: `string`
+
+The system logging connector type, defaults to "system-logging".
 
 #### Returns
 
@@ -174,15 +194,11 @@ The data for the NFT.
 
 ### burn()
 
-> **burn**(`owner`, `id`, `requestContext`?): `Promise`\<`void`\>
+> **burn**(`id`, `requestContext`?): `Promise`\<`void`\>
 
 Burn an NFT.
 
 #### Parameters
-
-• **owner**: `string`
-
-The owner for the NFT to return the funds to.
 
 • **id**: `string`
 

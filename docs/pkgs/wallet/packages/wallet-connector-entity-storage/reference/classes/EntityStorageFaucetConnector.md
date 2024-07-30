@@ -32,7 +32,7 @@ The entity storage type for wallet addresses, defaults to "wallet-address".
 
 ### NAMESPACE
 
-> `static` **NAMESPACE**: `string` = `"entity-storage"`
+> `static` `readonly` **NAMESPACE**: `string` = `"entity-storage"`
 
 The namespace supported by the wallet connector.
 

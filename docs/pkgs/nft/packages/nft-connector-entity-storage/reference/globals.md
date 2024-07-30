@@ -4,3 +4,7 @@
 
 - [Nft](classes/Nft.md)
 - [EntityStorageNftConnector](classes/EntityStorageNftConnector.md)
+
+## Functions
+
+- [initSchema](functions/initSchema.md)

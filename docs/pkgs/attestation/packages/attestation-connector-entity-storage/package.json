@@ -1,6 +1,6 @@
 {
 	"name": "@gtsc/attestation-connector-entity-storage",
-	"version": "0.0.3-next.11",
+	"version": "0.0.3-next.14",
 	"description": "Attestation connector implementation using entity storage",
 	"repository": {
 		"type": "git",
@@ -28,14 +28,15 @@
 		"dist": "npm run clean && npm run build && npm run test && npm run bundle && npm run docs"
 	},
 	"dependencies": {
-		"@gtsc/attestation-models": "0.0.3-next.11",
+		"@gtsc/attestation-models": "0.0.3-next.14",
 		"@gtsc/core": "next",
 		"@gtsc/entity": "next",
 		"@gtsc/entity-storage-models": "next",
 		"@gtsc/entity-storage-connector-memory": "next",
+		"@gtsc/identity-models": "next",
 		"@gtsc/nameof": "next",
-		"@gtsc/standards-w3c-did": "next",
-		"@gtsc/vault-models": "next"
+		"@gtsc/nft-models": "next",
+		"@gtsc/standards-w3c-did": "next"
 	},
 	"devDependencies": {
 		"@gtsc/nameof-transformer": "next",

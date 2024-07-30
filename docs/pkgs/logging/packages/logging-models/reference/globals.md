@@ -4,6 +4,8 @@
 
 - [MultiLoggingConnector](classes/MultiLoggingConnector.md)
 - [SilentLoggingConnector](classes/SilentLoggingConnector.md)
+- [SystemLoggingConnector](classes/SystemLoggingConnector.md)
+- [LogEntryHelper](classes/LogEntryHelper.md)
 
 ## Interfaces
 

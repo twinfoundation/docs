@@ -22,15 +22,15 @@ The name of the service.
 
 ### bootstrap()?
 
-> `optional` **bootstrap**(`requestContext`?): `Promise`\<`void`\>
+> `optional` **bootstrap**(`systemLoggingConnectorType`?): `Promise`\<`void`\>
 
 Bootstrap the service by creating and initializing any resources it needs.
 
 #### Parameters
 
-• **requestContext?**: `IServiceRequestContext`
+• **systemLoggingConnectorType?**: `string`
 
-The request context for bootstrapping.
+The system logging connector type, defaults to "system-logging".
 
 #### Returns
 
@@ -46,9 +46,19 @@ Nothing.
 
 ### start()?
 
-> `optional` **start**(): `Promise`\<`void`\>
+> `optional` **start**(`systemRequestContext`, `systemLoggingConnectorType`?): `Promise`\<`void`\>
 
 The service needs to be started when the application is initialized.
+
+#### Parameters
+
+• **systemRequestContext**: `IServiceRequestContext`
+
+The system request context.
+
+• **systemLoggingConnectorType?**: `string`
+
+The system logging connector type, defaults to "system-logging".
 
 #### Returns
 
@@ -64,9 +74,19 @@ Nothing.
 
 ### stop()?
 
-> `optional` **stop**(): `Promise`\<`void`\>
+> `optional` **stop**(`systemRequestContext`, `systemLoggingConnectorType`?): `Promise`\<`void`\>
 
 The service needs to be stopped when the application is closed.
+
+#### Parameters
+
+• **systemRequestContext**: `IServiceRequestContext`
+
+The system request context.
+
+• **systemLoggingConnectorType?**: `string`
+
+The system logging connector type, defaults to "system-logging".
 
 #### Returns
 
@@ -82,7 +102,7 @@ Nothing.
 
 ### create()
 
-> **create**(`controller`, `requestContext`?): `Promise`\<`object`\>
+> **create**(`controller`, `options`?, `requestContext`?): `Promise`\<`object`\>
 
 Create a new identity.
 
@@ -91,6 +111,14 @@ Create a new identity.
 • **controller**: `string`
 
 The controller for the identity.
+
+• **options?**
+
+Additional options for the identity service.
+
+• **options.namespace?**: `string`
+
+The namespace of the connector to use for the identity, defaults to service configured namespace.
 
 • **requestContext?**: `IServiceRequestContext`
 
@@ -107,3 +135,27 @@ The created identity details.
 > **identity**: `string`
 
 The identity created.
+
+***
+
+### resolve()
+
+> **resolve**(`documentId`, `requestContext`?): `Promise`\<`IDidDocument`\>
+
+Resolve an identity.
+
+#### Parameters
+
+• **documentId**: `string`
+
+The id of the document to resolve.
+
+• **requestContext?**: `IServiceRequestContext`
+
+The context for the request.
+
+#### Returns
+
+`Promise`\<`IDidDocument`\>
+
+The resolved document.

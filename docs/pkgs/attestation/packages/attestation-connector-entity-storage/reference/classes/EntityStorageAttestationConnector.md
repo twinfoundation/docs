@@ -20,9 +20,17 @@ Create a new instance of EntityStorageAttestationConnector.
 
 The dependencies for the attestation connector.
 
+• **options.identityConnectorType?**: `string`
+
+The type of the identity connector, defaults to "identity".
+
+• **options.nftConnectorType?**: `string`
+
+The type of the nft connector, defaults to "nft".
+
 • **options.config?**: [`IEntityStorageAttestationConnectorConfig`](../interfaces/IEntityStorageAttestationConnectorConfig.md)
 
-The configuration for the attestation connector.
+The configuration for the connector.
 
 #### Returns
 
@@ -32,7 +40,7 @@ The configuration for the attestation connector.
 
 ### NAMESPACE
 
-> `static` `readonly` **NAMESPACE**: `string` = `"entity-attestation"`
+> `static` `readonly` **NAMESPACE**: `string` = `"entity-storage"`
 
 The namespace for the entities.
 
@@ -47,14 +55,6 @@ Runtime name for the class.
 #### Implementation of
 
 `IAttestationConnector.CLASS_NAME`
-
-***
-
-### \_config
-
-> `private` `readonly` **\_config**: [`IEntityStorageAttestationConnectorConfig`](../interfaces/IEntityStorageAttestationConnectorConfig.md)
-
-The configuration for the attestation connector.
 
 ## Methods
 

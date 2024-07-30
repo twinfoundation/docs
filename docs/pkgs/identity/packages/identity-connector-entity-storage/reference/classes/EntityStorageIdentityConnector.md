@@ -28,10 +28,6 @@ The entity storage for the did documents, defaults to "identity-document".
 
 The vault for the private keys, defaults to "vault".
 
-• **options.config?**: [`IEntityStorageIdentityConnectorConfig`](../interfaces/IEntityStorageIdentityConnectorConfig.md)
-
-The configuration for the connector.
-
 #### Returns
 
 [`EntityStorageIdentityConnector`](EntityStorageIdentityConnector.md)
@@ -40,17 +36,9 @@ The configuration for the connector.
 
 ### NAMESPACE
 
-> `static` **NAMESPACE**: `string` = `"entity-storage"`
+> `static` `readonly` **NAMESPACE**: `string` = `"entity-storage"`
 
 The namespace supported by the identity connector.
-
-***
-
-### \_REVOCATION\_BITS\_SIZE
-
-> `static` `private` `readonly` **\_REVOCATION\_BITS\_SIZE**: `number` = `131072`
-
-The size of the revocation bitmap in bits (16Kb).
 
 ***
 

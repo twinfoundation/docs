@@ -10,13 +10,13 @@ Lookup Api Keys in entity storage to try and find the associated partition id.
 
 ### new ApiKeyPartitionProcessor()
 
-> **new ApiKeyPartitionProcessor**(`options`): [`ApiKeyPartitionProcessor`](ApiKeyPartitionProcessor.md)
+> **new ApiKeyPartitionProcessor**(`options`?): [`ApiKeyPartitionProcessor`](ApiKeyPartitionProcessor.md)
 
 Create a new instance of ApiKeyPartitionProcessor.
 
 #### Parameters
 
-• **options**
+• **options?**
 
 Options for the processor.
 
@@ -24,13 +24,9 @@ Options for the processor.
 
 The type for the entity storage connector, defaults to "api-key".
 
-• **options.fixedPartitionId**: `string`
+• **options.config?**: [`IApiKeyPartitionProcessorConfig`](../interfaces/IApiKeyPartitionProcessorConfig.md)
 
-The partition id for the api keys.
-
-• **options.headerName?**: `string`
-
-The name of the header to look for the API key, defaults to "x-api-key".
+The configuration for the processor.
 
 #### Returns
 
@@ -46,7 +42,39 @@ Promise that resolves when the processor is initialized.
 
 Runtime name for the class.
 
+#### Implementation of
+
+`IHttpRestRouteProcessor.CLASS_NAME`
+
 ## Methods
+
+### start()
+
+> **start**(`systemRequestContext`, `systemLoggingConnectorType`?): `Promise`\<`void`\>
+
+The service needs to be started when the application is initialized.
+
+#### Parameters
+
+• **systemRequestContext**: `IServiceRequestContext`
+
+The system request context.
+
+• **systemLoggingConnectorType?**: `string`
+
+The system logging connector type, defaults to "system-logging".
+
+#### Returns
+
+`Promise`\<`void`\>
+
+Nothing.
+
+#### Implementation of
+
+`IHttpRestRouteProcessor.start`
+
+***
 
 ### process()
 

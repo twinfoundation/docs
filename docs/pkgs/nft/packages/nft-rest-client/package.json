@@ -1,6 +1,6 @@
 {
 	"name": "@gtsc/nft-rest-client",
-	"version": "0.0.3-next.12",
+	"version": "0.0.3-next.18",
 	"description": "NFT contract implementation which can connect to REST endpoints",
 	"repository": {
 		"type": "git",
@@ -33,7 +33,7 @@
 		"@gtsc/core": "next",
 		"@gtsc/entity": "next",
 		"@gtsc/nameof": "next",
-		"@gtsc/nft-models": "0.0.3-next.12",
+		"@gtsc/nft-models": "0.0.3-next.18",
 		"@gtsc/services": "next"
 	},
 	"devDependencies": {

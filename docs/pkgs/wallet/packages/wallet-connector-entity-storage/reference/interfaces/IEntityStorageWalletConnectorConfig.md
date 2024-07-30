@@ -10,6 +10,12 @@ Configuration for the Entity Storage Wallet Connector.
 
 The id of the entry in the vault containing the mnemonic.
 
+#### Default
+
+```ts
+mnemonic
+```
+
 ***
 
 ### coinType?

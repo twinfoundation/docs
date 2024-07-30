@@ -31,9 +31,12 @@ This is the overview of the packages.
 - [@gtsc/api-models](pkgs/api/packages/api-models/overview) - Contains models and classes for use with APIs
 - [@gtsc/api-core](pkgs/api/packages/api-core/overview) - Core classes for use with APIs
 - [@gtsc/api-processors](pkgs/api/packages/api-processors/overview) - Route processors for use with API servers
+- [@gtsc/api-server-fastify](pkgs/api/packages/api-server-fastify/overview) - Use Fastify as the core web server for APIs
 - [@gtsc/api-service](pkgs/api/packages/api-service/overview) - Information contract implementation and REST endpoint definitions
 - [@gtsc/api-rest-client](pkgs/api/packages/api-rest-client/overview) - Information contract implementation which can connect to REST endpoints
-- [@gtsc/api-server-fastify](pkgs/api/packages/api-server-fastify/overview) - Use Fastify as the core web server for APIs
+- [@gtsc/api-auth-entity-storage-models](pkgs/api/packages/api-auth-entity-storage-models/overview) - Models which define the structure of the Auth Entity Storage contracts.
+- [@gtsc/api-auth-entity-storage-service](pkgs/api/packages/api-auth-entity-storage-service/overview) - Auth Entity Storage contract implementation and REST endpoint definitions
+- [@gtsc/api-auth-entity-storage-rest-client](pkgs/api/packages/api-auth-entity-storage-rest-client/overview) - Perform REST authentication using entity storage.
 
 ## Entity Storage
 
@@ -57,6 +60,13 @@ This is the overview of the packages.
 - [@gtsc/logging-connector-entity-storage](pkgs/logging/packages/logging-connector-entity-storage/overview) - Logging connector implementation using entity storage
 - [@gtsc/logging-service](pkgs/logging/packages/logging-service/overview) - Logging contract implementation and REST endpoint definitions
 - [@gtsc/logging-rest-client](pkgs/logging/packages/logging-rest-client/overview) - Logging contract implementation which can connect to REST endpoints
+
+## Telemetry
+
+- [@gtsc/telemetry-models](pkgs/telemetry/packages/telemetry-models/overview) - Models which define the structure of the telemetry connectors and services
+- [@gtsc/telemetry-connector-entity-storage](pkgs/telemetry/packages/telemetry-connector-entity-storage/overview) - Telemetry connector implementation using entity storage
+- [@gtsc/telemetry-service](pkgs/telemetry/packages/telemetry-service/overview) - Telemetry contract implementation and REST endpoint definitions
+- [@gtsc/telemetry-rest-client](pkgs/telemetry/packages/telemetry-rest-client/overview) - Telemetry contract implementation which can connect to REST endpoints
 
 ## Vault
 

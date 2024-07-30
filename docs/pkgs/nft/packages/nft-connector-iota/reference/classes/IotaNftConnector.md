@@ -36,9 +36,9 @@ The configuration for the connector.
 
 ### NAMESPACE
 
-> `static` **NAMESPACE**: `string` = `"iota-nft"`
+> `static` `readonly` **NAMESPACE**: `string` = `"iota"`
 
-The namespace supported by the wallet connector.
+The namespace supported by the nft connector.
 
 ***
 
@@ -164,15 +164,11 @@ The data for the NFT.
 
 ### burn()
 
-> **burn**(`owner`, `id`, `requestContext`?): `Promise`\<`void`\>
+> **burn**(`id`, `requestContext`?): `Promise`\<`void`\>
 
 Burn an NFT.
 
 #### Parameters
-
-• **owner**: `string`
-
-The owner for the NFT to return the funds to.
 
 • **id**: `string`
 

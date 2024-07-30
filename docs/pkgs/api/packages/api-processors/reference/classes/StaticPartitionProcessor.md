@@ -20,9 +20,9 @@ Create a new instance of StaticPartitionProcessor.
 
 Options for the processor.
 
-• **options.partitionId**: `string`
+• **options.config**: [`IStaticPartitionProcessorConfig`](../interfaces/IStaticPartitionProcessorConfig.md)
 
-The static partition id.
+The configuration for the processor.
 
 #### Returns
 
@@ -37,6 +37,10 @@ Promise that resolves when the processor is initialized.
 > `readonly` **CLASS\_NAME**: `string`
 
 Runtime name for the class.
+
+#### Implementation of
+
+`IHttpRestRouteProcessor.CLASS_NAME`
 
 ## Methods
 

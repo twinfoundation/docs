@@ -56,7 +56,15 @@ The servers for the endpoints.
 
 > `optional` **authMethods**: `string`[]
 
-The authentication method.
+The authentication methods.
+
+***
+
+### partitionMethods?
+
+> `optional` **partitionMethods**: `string`[]
+
+The partition methods.
 
 ***
 

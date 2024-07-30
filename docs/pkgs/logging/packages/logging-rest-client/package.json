@@ -1,6 +1,6 @@
 {
 	"name": "@gtsc/logging-rest-client",
-	"version": "0.0.3-next.25",
+	"version": "0.0.3-next.29",
 	"description": "Logging contract implementation which can connect to REST endpoints",
 	"repository": {
 		"type": "git",
@@ -34,7 +34,7 @@
 		"@gtsc/entity": "next",
 		"@gtsc/nameof": "next",
 		"@gtsc/services": "next",
-		"@gtsc/logging-models": "0.0.3-next.25"
+		"@gtsc/logging-models": "0.0.3-next.29"
 	},
 	"devDependencies": {
 		"@gtsc/nameof-transformer": "next",

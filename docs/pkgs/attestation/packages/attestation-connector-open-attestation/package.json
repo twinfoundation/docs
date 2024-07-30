@@ -1,6 +1,6 @@
 {
 	"name": "@gtsc/attestation-connector-open-attestation",
-	"version": "0.0.3-next.11",
+	"version": "0.0.3-next.14",
 	"description": "Attestation connector implementation using OpenAttestation",
 	"repository": {
 		"type": "git",
@@ -28,7 +28,7 @@
 		"dist": "npm run clean && npm run build && npm run test && npm run bundle && npm run docs"
 	},
 	"dependencies": {
-		"@gtsc/attestation-models": "0.0.3-next.11",
+		"@gtsc/attestation-models": "0.0.3-next.14",
 		"@gtsc/core": "next",
 		"@gtsc/entity": "next",
 		"@gtsc/nameof": "next",

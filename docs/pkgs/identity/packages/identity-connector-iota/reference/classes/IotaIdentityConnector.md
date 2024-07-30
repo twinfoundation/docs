@@ -36,7 +36,7 @@ The configuration to use.
 
 ### NAMESPACE
 
-> `static` **NAMESPACE**: `string` = `"iota"`
+> `static` `readonly` **NAMESPACE**: `string` = `"iota"`
 
 The namespace supported by the identity connector.
 

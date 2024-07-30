@@ -20,10 +20,6 @@ Create a new instance of FileBlobStorageConnector.
 
 The options for the connector.
 
-• **options.loggingConnectorType?**: `string`
-
-The type of logging connector to use, defaults to "logging".
-
 • **options.config**: [`IFileBlobStorageConnectorConfig`](../interfaces/IFileBlobStorageConnectorConfig.md)
 
 The configuration for the connector.
@@ -36,7 +32,7 @@ The configuration for the connector.
 
 ### NAMESPACE
 
-> `static` `readonly` **NAMESPACE**: `string` = `"blob-file"`
+> `static` `readonly` **NAMESPACE**: `string` = `"file"`
 
 The namespace for the items.
 
@@ -56,15 +52,15 @@ Runtime name for the class.
 
 ### bootstrap()
 
-> **bootstrap**(`requestContext`?): `Promise`\<`void`\>
+> **bootstrap**(`systemLoggingConnectorType`?): `Promise`\<`void`\>
 
 Bootstrap the connector by creating and initializing any resources it needs.
 
 #### Parameters
 
-• **requestContext?**: `IServiceRequestContext`
+• **systemLoggingConnectorType?**: `string`
 
-The request context for bootstrapping.
+The system logging connector type, defaults to "system-logging".
 
 #### Returns
 

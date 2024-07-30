@@ -26,6 +26,14 @@ The configuration for the service.
 
 ## Properties
 
+### NAMESPACE
+
+> `static` `readonly` **NAMESPACE**: `string` = `"nft"`
+
+The namespace supported by the nft service.
+
+***
+
 ### CLASS\_NAME
 
 > `readonly` **CLASS\_NAME**: `string`
@@ -148,15 +156,11 @@ The data for the NFT.
 
 ### burn()
 
-> **burn**(`owner`, `id`, `requestContext`?): `Promise`\<`void`\>
+> **burn**(`id`, `requestContext`?): `Promise`\<`void`\>
 
 Burn an NFT.
 
 #### Parameters
-
-• **owner**: `string`
-
-The owner for the NFT to return the funds to.
 
 • **id**: `string`
 
