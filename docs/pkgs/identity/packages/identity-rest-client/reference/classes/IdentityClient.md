@@ -104,7 +104,7 @@ The response.
 
 ### create()
 
-> **create**(`controller`): `Promise`\<`object`\>
+> **create**(`controller`, `options`?): `Promise`\<`object`\>
 
 Create a new identity.
 
@@ -113,6 +113,14 @@ Create a new identity.
 • **controller**: `string`
 
 The controller for the identity.
+
+• **options?**
+
+Additional options for the identity service.
+
+• **options.namespace?**: `string`
+
+The namespace of the connector to use for the identity, defaults to service configured namespace.
 
 #### Returns
 
@@ -129,3 +137,27 @@ The identity created.
 #### Implementation of
 
 `IIdentity.create`
+
+***
+
+### resolve()
+
+> **resolve**(`documentId`): `Promise`\<`IDidDocument`\>
+
+Resolve an identity.
+
+#### Parameters
+
+• **documentId**: `string`
+
+The id of the document to resolve.
+
+#### Returns
+
+`Promise`\<`IDidDocument`\>
+
+The resolved document.
+
+#### Implementation of
+
+`IIdentity.resolve`

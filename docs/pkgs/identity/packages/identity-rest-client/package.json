@@ -1,6 +1,6 @@
 {
 	"name": "@gtsc/identity-rest-client",
-	"version": "0.0.3-next.25",
+	"version": "0.0.3-next.36",
 	"description": "Identity contract implementation which can connect to REST endpoints",
 	"repository": {
 		"type": "git",
@@ -34,7 +34,8 @@
 		"@gtsc/entity": "next",
 		"@gtsc/nameof": "next",
 		"@gtsc/services": "next",
-		"@gtsc/identity-models": "0.0.3-next.25"
+		"@gtsc/standards-w3c-did": "next",
+		"@gtsc/identity-models": "0.0.3-next.36"
 	},
 	"devDependencies": {
 		"@gtsc/nameof-transformer": "next",

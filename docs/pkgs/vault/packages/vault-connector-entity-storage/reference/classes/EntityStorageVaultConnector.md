@@ -34,6 +34,14 @@ The vault secret entity storage connector type, defaults to "vault-secret".
 
 ## Properties
 
+### NAMESPACE
+
+> `static` `readonly` **NAMESPACE**: `string` = `"entity-storage"`
+
+The namespace supported by the vault connector.
+
+***
+
 ### CLASS\_NAME
 
 > `readonly` **CLASS\_NAME**: `string`

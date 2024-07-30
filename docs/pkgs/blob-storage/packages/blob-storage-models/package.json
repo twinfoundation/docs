@@ -1,6 +1,6 @@
 {
 	"name": "@gtsc/blob-storage-models",
-	"version": "0.0.3-next.16",
+	"version": "0.0.3-next.22",
 	"description": "Models which define the structure of the blob storage contracts and connectors",
 	"repository": {
 		"type": "git",

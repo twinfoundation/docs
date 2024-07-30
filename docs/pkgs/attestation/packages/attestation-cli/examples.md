@@ -137,7 +137,7 @@ You should see output to the following.
 
 ```json
 {
-  "id": "urn:iota-attestation:aW90YS1uZnQ6dHN0OjB4MDI3M2M3ZGEyZjJhZjg1YTE1ZWMwZTQ0OWRmOWI3NTQwNWYzYWExOTQzZmYzMjJkM2ZlODIxMDFlNzEzMzYxYg==",
+  "id": "attestation:iota:aW90YS1uZnQ6dHN0OjB4MDI3M2M3ZGEyZjJhZjg1YTE1ZWMwZTQ0OWRmOWI3NTQwNWYzYWExOTQzZmYzMjJkM2ZlODIxMDFlNzEzMzYxYg==",
   "created": "2024-06-19T14:08:50Z",
   "ownerIdentity": "did:iota:tst:0x197c348b8ff62f515ca9685f7a4b567a073a0e6c492c641fdd029d909126da93",
   "data": {
@@ -171,7 +171,7 @@ If you repeat the attestation-verify command you should see the following update
 
 ```json
 {
-  "id": "urn:iota-attestation:aW90YS1uZnQ6dHN0OjB4MDI3M2M3ZGEyZjJhZjg1YTE1ZWMwZTQ0OWRmOWI3NTQwNWYzYWExOTQzZmYzMjJkM2ZlODIxMDFlNzEzMzYxYg==",
+  "id": "attestation:iota:aW90YS1uZnQ6dHN0OjB4MDI3M2M3ZGEyZjJhZjg1YTE1ZWMwZTQ0OWRmOWI3NTQwNWYzYWExOTQzZmYzMjJkM2ZlODIxMDFlNzEzMzYxYg==",
   "created": "2024-06-19T14:08:50Z",
   "ownerIdentity": "did:iota:tst:0x197c348b8ff62f515ca9685f7a4b567a073a0e6c492c641fdd029d909126da93",
   "data": {

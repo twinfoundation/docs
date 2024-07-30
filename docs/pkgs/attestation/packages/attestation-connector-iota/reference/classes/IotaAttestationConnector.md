@@ -40,7 +40,7 @@ The configuration for the connector.
 
 ### NAMESPACE
 
-> `static` `readonly` **NAMESPACE**: `string` = `"iota-attestation"`
+> `static` `readonly` **NAMESPACE**: `string` = `"iota"`
 
 The namespace for the entities.
 

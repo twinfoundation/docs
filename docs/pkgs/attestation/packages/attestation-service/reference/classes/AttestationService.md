@@ -26,6 +26,14 @@ The configuration for the service.
 
 ## Properties
 
+### NAMESPACE
+
+> `static` `readonly` **NAMESPACE**: `string` = `"attestation"`
+
+The namespace supported by the attestation service.
+
+***
+
 ### CLASS\_NAME
 
 > `readonly` **CLASS\_NAME**: `string`

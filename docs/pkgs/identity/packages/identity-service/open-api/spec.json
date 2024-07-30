@@ -45,12 +45,12 @@
                                 "schema": {
                                     "type": "string"
                                 },
-                                "description": "e.g. did:gtsc:0xc57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70"
+                                "description": "e.g. did:iota:tst:0xc57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70"
                             }
                         }
                     },
                     "400": {
-                        "description": "Something went wrong with the request see the error field for more details.",
+                        "description": "The server cannot process the request, see the error field for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -71,7 +71,7 @@
                         }
                     },
                     "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied.",
+                        "description": "You are not authorized to use the API or no credentials were supplied, see the error field for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -81,6 +81,24 @@
                                     "exampleResponse": {
                                         "value": {
                                             "name": "UnauthorizedError",
+                                            "message": "component.error"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "The server has encountered a situation it does not know how to handle, see the error field for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "InternalServerError",
                                             "message": "component.error"
                                         }
                                     }
@@ -109,12 +127,25 @@
                 }
             }
         },
-        "/identity/profile": {
-            "post": {
-                "operationId": "identityProfileCreate",
-                "summary": "Create an identity profile",
+        "/identity/{id}": {
+            "get": {
+                "operationId": "identityResolve",
+                "summary": "Resolve an identity",
                 "tags": [
-                    "Identity Profile"
+                    "Identity"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "description": "The identity to get the document for.",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "style": "simple",
+                        "example": "did:iota:tst:0xe3088ba9aa8c28e1d139708a14e8c0fdff11ee8223baac4aa5bcf3321e4bfc6a"
+                    }
                 ],
                 "security": [
                     {
@@ -122,11 +153,32 @@
                     }
                 ],
                 "responses": {
-                    "204": {
-                        "description": "The rest request ended in success with no data."
+                    "200": {
+                        "description": "Response to resolving an identity.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DidDocument"
+                                },
+                                "examples": {
+                                    "identityResolveResponseExample": {
+                                        "value": {
+                                            "id": "did:iota:tst:0xe3088ba9aa8c28e1d139708a14e8c0fdff11ee8223baac4aa5bcf3321e4bfc6a",
+                                            "service": [
+                                                {
+                                                    "id": "did:iota:tst:0xe3088ba9aa8c28e1d139708a14e8c0fdff11ee8223baac4aa5bcf3321e4bfc6a#revocation",
+                                                    "type": "RevocationBitmap2022",
+                                                    "serviceEndpoint": "data:application/octet-stream;base64,eJyzMmAAAwABr"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     },
                     "400": {
-                        "description": "Something went wrong with the request see the error field for more details.",
+                        "description": "The server cannot process the request, see the error field for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -147,7 +199,83 @@
                         }
                     },
                     "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied.",
+                        "description": "You are not authorized to use the API or no credentials were supplied, see the error field for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "UnauthorizedError",
+                                            "message": "component.error"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "The server has encountered a situation it does not know how to handle, see the error field for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "InternalServerError",
+                                            "message": "component.error"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/identity/profile": {
+            "post": {
+                "operationId": "identityProfileCreate",
+                "summary": "Create an identity profile",
+                "tags": [
+                    "Identity Profile"
+                ],
+                "security": [
+                    {
+                        "jwtBearerAuthScheme": []
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "The rest request ended in success with no data."
+                    },
+                    "400": {
+                        "description": "The server cannot process the request, see the error field for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "GeneralError",
+                                            "message": "component.error",
+                                            "properties": {
+                                                "foo": "bar"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "You are not authorized to use the API or no credentials were supplied, see the error field for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -186,6 +314,24 @@
                                 }
                             }
                         }
+                    },
+                    "500": {
+                        "description": "The server has encountered a situation it does not know how to handle, see the error field for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "InternalServerError",
+                                            "message": "component.error"
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
                 },
                 "requestBody": {
@@ -199,7 +345,7 @@
                             "examples": {
                                 "identityProfileCreateRequestExample": {
                                     "value": {
-                                        "identity": "did:gtsc:0xc57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70",
+                                        "identity": "did:iota:tst:0xc57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70",
                                         "properties": [
                                             {
                                                 "key": "role",
@@ -210,6 +356,7 @@
                                             {
                                                 "key": "email",
                                                 "type": "https://schema.org/Text",
+                                                "value": "john@example.com",
                                                 "isPublic": false
                                             },
                                             {
@@ -286,9 +433,9 @@
                                 "examples": {
                                     "identitiesProfileListResponseExample": {
                                         "value": {
-                                            "identities": [
+                                            "items": [
                                                 {
-                                                    "identity": "did:gtsc:0xc57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70",
+                                                    "identity": "did:iota:tst:0xc57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70",
                                                     "properties": [
                                                         {
                                                             "key": "email",
@@ -309,7 +456,7 @@
                         }
                     },
                     "400": {
-                        "description": "Something went wrong with the request see the error field for more details.",
+                        "description": "The server cannot process the request, see the error field for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -330,7 +477,7 @@
                         }
                     },
                     "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied.",
+                        "description": "You are not authorized to use the API or no credentials were supplied, see the error field for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -340,6 +487,24 @@
                                     "exampleResponse": {
                                         "value": {
                                             "name": "UnauthorizedError",
+                                            "message": "component.error"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "The server has encountered a situation it does not know how to handle, see the error field for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "InternalServerError",
                                             "message": "component.error"
                                         }
                                     }
@@ -367,7 +532,7 @@
                             "type": "string"
                         },
                         "style": "simple",
-                        "example": "did:gtsc:0xc57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70"
+                        "example": "did:iota:tst:0xc57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70"
                     },
                     {
                         "name": "propertyNames",
@@ -423,7 +588,7 @@
                         }
                     },
                     "400": {
-                        "description": "Something went wrong with the request see the error field for more details.",
+                        "description": "The server cannot process the request, see the error field for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -444,7 +609,7 @@
                         }
                     },
                     "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied.",
+                        "description": "You are not authorized to use the API or no credentials were supplied, see the error field for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -476,6 +641,24 @@
                                             "properties": {
                                                 "notFoundId": "1"
                                             }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "The server has encountered a situation it does not know how to handle, see the error field for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "InternalServerError",
+                                            "message": "component.error"
                                         }
                                     }
                                 }
@@ -500,7 +683,7 @@
                             "type": "string"
                         },
                         "style": "simple",
-                        "example": "did:gtsc:0xc57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70"
+                        "example": "did:iota:tst:0xc57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70"
                     }
                 ],
                 "security": [
@@ -513,7 +696,7 @@
                         "description": "The rest request ended in success with no data."
                     },
                     "400": {
-                        "description": "Something went wrong with the request see the error field for more details.",
+                        "description": "The server cannot process the request, see the error field for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -534,7 +717,7 @@
                         }
                     },
                     "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied.",
+                        "description": "You are not authorized to use the API or no credentials were supplied, see the error field for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -566,6 +749,24 @@
                                             "properties": {
                                                 "notFoundId": "1"
                                             }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "The server has encountered a situation it does not know how to handle, see the error field for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "InternalServerError",
+                                            "message": "component.error"
                                         }
                                     }
                                 }
@@ -626,7 +827,7 @@
                             "type": "string"
                         },
                         "style": "simple",
-                        "example": "did:gtsc:0xc57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70"
+                        "example": "did:iota:tst:0xc57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70"
                     }
                 ],
                 "security": [
@@ -639,7 +840,7 @@
                         "description": "The rest request ended in success with no data."
                     },
                     "400": {
-                        "description": "Something went wrong with the request see the error field for more details.",
+                        "description": "The server cannot process the request, see the error field for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -660,7 +861,7 @@
                         }
                     },
                     "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied.",
+                        "description": "You are not authorized to use the API or no credentials were supplied, see the error field for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -692,6 +893,24 @@
                                             "properties": {
                                                 "notFoundId": "1"
                                             }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "The server has encountered a situation it does not know how to handle, see the error field for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "InternalServerError",
+                                            "message": "component.error"
                                         }
                                     }
                                 }
@@ -827,6 +1046,10 @@
                     "controller": {
                         "type": "string",
                         "description": "The controller for the identity."
+                    },
+                    "namespace": {
+                        "type": "string",
+                        "description": "The namespace of the connector to use for the identity, defaults to service configured namespace."
                     }
                 },
                 "required": [
@@ -834,6 +1057,299 @@
                 ],
                 "additionalProperties": false,
                 "description": "The data for the request."
+            },
+            "DidDocument": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "The id for the document."
+                    },
+                    "alsoKnownAs": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        ],
+                        "description": "Aliases for the document."
+                    },
+                    "controller": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        ],
+                        "description": "The controller for the document."
+                    },
+                    "verificationMethod": {
+                        "type": "array",
+                        "items": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/DidDocumentVerificationMethod"
+                                }
+                            ]
+                        },
+                        "description": "The verification methods."
+                    },
+                    "authentication": {
+                        "type": "array",
+                        "items": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/DidDocumentVerificationMethod"
+                                }
+                            ]
+                        },
+                        "description": "The authentication methods."
+                    },
+                    "assertionMethod": {
+                        "type": "array",
+                        "items": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/DidDocumentVerificationMethod"
+                                }
+                            ]
+                        },
+                        "description": "The assertion methods."
+                    },
+                    "keyAgreement": {
+                        "type": "array",
+                        "items": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/DidDocumentVerificationMethod"
+                                }
+                            ]
+                        },
+                        "description": "The key agreements."
+                    },
+                    "capabilityInvocation": {
+                        "type": "array",
+                        "items": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/DidDocumentVerificationMethod"
+                                }
+                            ]
+                        },
+                        "description": "The capability invocations."
+                    },
+                    "capabilityDelegation": {
+                        "type": "array",
+                        "items": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/DidDocumentVerificationMethod"
+                                }
+                            ]
+                        },
+                        "description": "The capability delegations."
+                    },
+                    "service": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/DidService"
+                        },
+                        "description": "The services."
+                    }
+                },
+                "required": [
+                    "id"
+                ],
+                "additionalProperties": false,
+                "description": "Interface describing a DID Document. Spec https://www.w3.org/TR/did-core/#did-document-properties."
+            },
+            "DidDocumentVerificationMethod": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "The id of the entry."
+                    },
+                    "controller": {
+                        "type": "string",
+                        "description": "The controller for the entry."
+                    },
+                    "type": {
+                        "type": "string",
+                        "description": "The type of the entry."
+                    },
+                    "publicKeyMultibase": {
+                        "type": "string",
+                        "description": "The public key for the entry. Spec https://datatracker.ietf.org/doc/html/draft-multiformats-multibase-03 ."
+                    },
+                    "publicKeyJwk": {
+                        "$ref": "#/components/schemas/Jwk"
+                    },
+                    "revocation": {
+                        "type": "string",
+                        "description": "Multi key partial revocation."
+                    }
+                },
+                "required": [
+                    "id",
+                    "controller",
+                    "type"
+                ],
+                "additionalProperties": false,
+                "description": "Interface describing a DID document verification method."
+            },
+            "Jwk": {
+                "type": "object",
+                "properties": {
+                    "alg": {
+                        "$ref": "#/components/schemas/JwtAlgorithms"
+                    },
+                    "use": {
+                        "type": "string",
+                        "description": "The intended use for the key."
+                    },
+                    "key_ops": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "The operation(s) that the key is intended to be used for."
+                    },
+                    "kty": {
+                        "type": "string",
+                        "description": "The key type parameter."
+                    },
+                    "n": {
+                        "type": "string",
+                        "description": "The public key parameters."
+                    },
+                    "e": {
+                        "type": "string",
+                        "description": "Exponent parameter."
+                    },
+                    "d": {
+                        "type": "string",
+                        "description": "The private key parameters."
+                    },
+                    "p": {
+                        "type": "string",
+                        "description": "The private key parameters."
+                    },
+                    "q": {
+                        "type": "string",
+                        "description": "The private key parameters."
+                    },
+                    "dp": {
+                        "type": "string",
+                        "description": "The private key parameters."
+                    },
+                    "dq": {
+                        "type": "string",
+                        "description": "The private key parameters."
+                    },
+                    "qi": {
+                        "type": "string",
+                        "description": "The private key parameters."
+                    },
+                    "kid": {
+                        "type": "string",
+                        "description": "The key ID."
+                    }
+                },
+                "required": [
+                    "kty"
+                ],
+                "additionalProperties": {
+                    "description": "Additional fields in the key."
+                },
+                "description": "The fields in a JSON Web Key."
+            },
+            "JwtAlgorithms": {
+                "anyOf": [
+                    {
+                        "type": "string",
+                        "const": "HS256",
+                        "description": "HMAC using SHA-256."
+                    },
+                    {
+                        "type": "string",
+                        "const": "EdDSA",
+                        "description": "EdDSA using Ed25519."
+                    }
+                ],
+                "description": "The cryptographic algorithms supported for JSON Web Tokens and JSON Web Keys."
+            },
+            "DidService": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "The id of the service."
+                    },
+                    "type": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        ],
+                        "description": "The type of the service."
+                    },
+                    "serviceEndpoint": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        ],
+                        "description": "The endpoint for the service."
+                    }
+                },
+                "required": [
+                    "id",
+                    "type",
+                    "serviceEndpoint"
+                ],
+                "additionalProperties": false,
+                "description": "Interface describing a did document service."
             },
             "IdentityProfileCreateRequest": {
                 "type": "object",
@@ -919,7 +1435,7 @@
             "IdentityProfileListResponse": {
                 "type": "object",
                 "properties": {
-                    "identities": {
+                    "items": {
                         "type": "array",
                         "items": {
                             "type": "object",
@@ -957,7 +1473,7 @@
                     }
                 },
                 "required": [
-                    "identities",
+                    "items",
                     "totalEntities"
                 ],
                 "additionalProperties": false,

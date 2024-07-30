@@ -11,21 +11,33 @@ See https://docs.ipfs.tech/reference/kubo/rpc/ for more information.
 
 ### new IpfsBlobStorageConnector()
 
-> **new IpfsBlobStorageConnector**(`config`): [`IpfsBlobStorageConnector`](IpfsBlobStorageConnector.md)
+> **new IpfsBlobStorageConnector**(`options`): [`IpfsBlobStorageConnector`](IpfsBlobStorageConnector.md)
 
-Create a new instance of Ipfs.
+Create a new instance of IpfsBlobStorageConnector.
 
 #### Parameters
 
-• **config**: [`IIpfsBlobStorageConnectorConfig`](../interfaces/IIpfsBlobStorageConnectorConfig.md)
+• **options**
 
-The configuration for the blob storage connector.
+The options for the connector.
+
+• **options.config**: [`IIpfsBlobStorageConnectorConfig`](../interfaces/IIpfsBlobStorageConnectorConfig.md)
+
+The configuration for the connector.
 
 #### Returns
 
 [`IpfsBlobStorageConnector`](IpfsBlobStorageConnector.md)
 
 ## Properties
+
+### NAMESPACE
+
+> `static` `readonly` **NAMESPACE**: `string` = `"ipfs"`
+
+The namespace for the items.
+
+***
 
 ### CLASS\_NAME
 

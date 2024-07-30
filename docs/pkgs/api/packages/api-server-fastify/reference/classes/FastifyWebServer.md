@@ -4,21 +4,25 @@ Implementation of the web server using Fastify.
 
 ## Implements
 
-- `IWebServer`
+- `IWebServer`\<`FastifyInstance`\>
 
 ## Constructors
 
 ### new FastifyWebServer()
 
-> **new FastifyWebServer**(`logger`): [`FastifyWebServer`](FastifyWebServer.md)
+> **new FastifyWebServer**(`options`?): [`FastifyWebServer`](FastifyWebServer.md)
 
 Create a new instance of FastifyWebServer.
 
 #### Parameters
 
-• **logger**
+• **options?**
 
-The logger to use.
+The options for the server.
+
+• **options.loggingConnectorType?**: `string`
+
+The type of the logging connector to use, if undefined, no logging will happen.
 
 #### Returns
 
@@ -33,6 +37,24 @@ The logger to use.
 Runtime name for the class.
 
 ## Methods
+
+### getInstance()
+
+> **getInstance**(): `FastifyInstance`\<`RawServerDefault`, `IncomingMessage`, `ServerResponse`\<`IncomingMessage`\>, `FastifyBaseLogger`, `FastifyTypeProviderDefault`\>
+
+Get the web server instance.
+
+#### Returns
+
+`FastifyInstance`\<`RawServerDefault`, `IncomingMessage`, `ServerResponse`\<`IncomingMessage`\>, `FastifyBaseLogger`, `FastifyTypeProviderDefault`\>
+
+The web server instance.
+
+#### Implementation of
+
+`IWebServer.getInstance`
+
+***
 
 ### build()
 

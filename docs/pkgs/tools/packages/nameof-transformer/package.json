@@ -1,6 +1,6 @@
 {
 	"name": "@gtsc/nameof-transformer",
-	"version": "0.0.4-next.35",
+	"version": "0.0.4-next.36",
 	"description": "A TypeScript transformer which converts types and properties to their actual name for use at runtime",
 	"repository": {
 		"type": "git",

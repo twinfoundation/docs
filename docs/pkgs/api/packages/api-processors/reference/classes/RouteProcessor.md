@@ -20,9 +20,9 @@ Create a new instance of RouteProcessor.
 
 Options for the processor.
 
-• **options.includeErrorStack?**: `boolean`
+• **options.config?**: [`IRouteProcessorConfig`](../interfaces/IRouteProcessorConfig.md)
 
-Include the stack with errors.
+The configuration for the processor.
 
 #### Returns
 
@@ -37,6 +37,10 @@ Promise that resolves when the processor is initialized.
 > `readonly` **CLASS\_NAME**: `string`
 
 Runtime name for the class.
+
+#### Implementation of
+
+`IHttpRestRouteProcessor.CLASS_NAME`
 
 ## Methods
 

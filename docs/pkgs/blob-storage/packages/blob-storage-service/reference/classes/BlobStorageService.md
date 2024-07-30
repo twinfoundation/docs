@@ -26,6 +26,14 @@ The configuration for the service.
 
 ## Properties
 
+### NAMESPACE
+
+> `static` `readonly` **NAMESPACE**: `string` = `"blob"`
+
+The namespace supported by the blob storage service.
+
+***
+
 ### CLASS\_NAME
 
 > `readonly` **CLASS\_NAME**: `string`

@@ -10,9 +10,9 @@ Response to get a list of identities.
 
 The response payload.
 
-#### identities
+#### items
 
-> **identities**: `object`[]
+> **items**: `object`[]
 
 The identities.
 

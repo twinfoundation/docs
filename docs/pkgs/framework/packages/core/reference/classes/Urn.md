@@ -16,7 +16,7 @@ Create a new instance of Urn.
 
 The identifier for the namespace.
 
-• **namespaceSpecific**: `string`
+• **namespaceSpecific**: `string` \| `string`[]
 
 The specific part of the namespace.
 
@@ -74,7 +74,7 @@ True if the namespace matches.
 
 > `static` **tryParseExact**(`urn`): `undefined` \| [`Urn`](Urn.md)
 
-Try and parse a string into the urn parts it must start with urn:.
+Try and parse a string into the urn parts.
 
 #### Parameters
 
@@ -188,6 +188,26 @@ The formatted urn.
 
 ***
 
+### parts()
+
+> **parts**(`startIndex`): `string`[]
+
+Get the parts.
+
+#### Parameters
+
+• **startIndex**: `number`= `0`
+
+The index to start from, defaults to 0.
+
+#### Returns
+
+`string`[]
+
+The parts.
+
+***
+
 ### namespaceIdentifier()
 
 > **namespaceIdentifier**(): `string`
@@ -202,11 +222,51 @@ The namespace identifier.
 
 ***
 
+### namespaceMethod()
+
+> **namespaceMethod**(): `string`
+
+Get the namespace method, the first component after the identifier.
+
+#### Returns
+
+`string`
+
+The namespace method.
+
+***
+
+### namespaceSpecificParts()
+
+> **namespaceSpecificParts**(`startIndex`): `string`[]
+
+Get the namespace specific parts.
+
+#### Parameters
+
+• **startIndex**: `number`= `0`
+
+The index to start from, defaults to 0.
+
+#### Returns
+
+`string`[]
+
+The namespace specific parts.
+
+***
+
 ### namespaceSpecific()
 
-> **namespaceSpecific**(): `string`
+> **namespaceSpecific**(`startIndex`): `string`
 
 Get the namespace specific.
+
+#### Parameters
+
+• **startIndex**: `number`= `0`
+
+The index to start from, defaults to 0.
 
 #### Returns
 
@@ -216,35 +276,15 @@ The namespace specific.
 
 ***
 
-### parts()
-
-> **parts**(`omitPrefix`?): `string`[]
-
-Get the individual parts of the urn.
-
-#### Parameters
-
-• **omitPrefix?**: `boolean`
-
-Omit the urn: prefix from the string.
-
-#### Returns
-
-`string`[]
-
-The parts of the urn.
-
-***
-
 ### toString()
 
-> **toString**(`omitPrefix`?): `string`
+> **toString**(`omitPrefix`): `string`
 
 Convert the parts in to a full string.
 
 #### Parameters
 
-• **omitPrefix?**: `boolean`
+• **omitPrefix**: `boolean`= `true`
 
 Omit the urn: prefix from the string.
 

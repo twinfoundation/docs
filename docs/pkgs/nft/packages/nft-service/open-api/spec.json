@@ -41,12 +41,12 @@
                                 "schema": {
                                     "type": "string"
                                 },
-                                "description": "e.g. urn:iota-nft:aW90YS1uZnQ6dHN0OjB4NzYyYjljNDllYTg2OWUwZWJkYTliYmZhNzY5Mzk0NDdhNDI4ZGNmMTc4YzVkMTVhYjQ0N2UyZDRmYmJiNGViMg=="
+                                "description": "e.g. nft:iota:aW90YS1uZnQ6dHN0OjB4NzYyYjljNDllYTg2OWUwZWJkYTliYmZhNzY5Mzk0NDdhNDI4ZGNmMTc4YzVkMTVhYjQ0N2UyZDRmYmJiNGViMg=="
                             }
                         }
                     },
                     "400": {
-                        "description": "Something went wrong with the request see the error field for more details.",
+                        "description": "The server cannot process the request, see the error field for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -67,7 +67,7 @@
                         }
                     },
                     "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied.",
+                        "description": "You are not authorized to use the API or no credentials were supplied, see the error field for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -77,6 +77,24 @@
                                     "exampleResponse": {
                                         "value": {
                                             "name": "UnauthorizedError",
+                                            "message": "component.error"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "The server has encountered a situation it does not know how to handle, see the error field for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "InternalServerError",
                                             "message": "component.error"
                                         }
                                     }
@@ -131,7 +149,7 @@
                             "type": "string"
                         },
                         "style": "simple",
-                        "example": "urn:iota-nft:aW90YS1uZnQ6dHN0OjB4NzYyYjljNDllYTg2OWUwZWJkYTliYmZhNzY5Mzk0NDdhNDI4ZGNmMTc4YzVkMTVhYjQ0N2UyZDRmYmJiNGViMg=="
+                        "example": "nft:iota:aW90YS1uZnQ6dHN0OjB4NzYyYjljNDllYTg2OWUwZWJkYTliYmZhNzY5Mzk0NDdhNDI4ZGNmMTc4YzVkMTVhYjQ0N2UyZDRmYmJiNGViMg=="
                     }
                 ],
                 "security": [
@@ -168,7 +186,7 @@
                         }
                     },
                     "400": {
-                        "description": "Something went wrong with the request see the error field for more details.",
+                        "description": "The server cannot process the request, see the error field for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -189,7 +207,7 @@
                         }
                     },
                     "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied.",
+                        "description": "You are not authorized to use the API or no credentials were supplied, see the error field for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -199,6 +217,111 @@
                                     "exampleResponse": {
                                         "value": {
                                             "name": "UnauthorizedError",
+                                            "message": "component.error"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "The server has encountered a situation it does not know how to handle, see the error field for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "InternalServerError",
+                                            "message": "component.error"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "operationId": "nftBurn",
+                "summary": "Burn an NFT",
+                "tags": [
+                    "NFT"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "description": "The id of the NFT to burn.",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "style": "simple",
+                        "example": "nft:iota:aW90YS1uZnQ6dHN0OjB4NzYyYjljNDllYTg2OWUwZWJkYTliYmZhNzY5Mzk0NDdhNDI4ZGNmMTc4YzVkMTVhYjQ0N2UyZDRmYmJiNGViMg=="
+                    }
+                ],
+                "security": [
+                    {
+                        "jwtBearerAuthScheme": []
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "The rest request ended in success with no data."
+                    },
+                    "400": {
+                        "description": "The server cannot process the request, see the error field for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "GeneralError",
+                                            "message": "component.error",
+                                            "properties": {
+                                                "foo": "bar"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "You are not authorized to use the API or no credentials were supplied, see the error field for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "UnauthorizedError",
+                                            "message": "component.error"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "The server has encountered a situation it does not know how to handle, see the error field for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "InternalServerError",
                                             "message": "component.error"
                                         }
                                     }
@@ -224,7 +347,7 @@
                             "type": "string"
                         },
                         "style": "simple",
-                        "example": "urn:iota-nft:aW90YS1uZnQ6dHN0OjB4NzYyYjljNDllYTg2OWUwZWJkYTliYmZhNzY5Mzk0NDdhNDI4ZGNmMTc4YzVkMTVhYjQ0N2UyZDRmYmJiNGViMg=="
+                        "example": "nft:iota:aW90YS1uZnQ6dHN0OjB4NzYyYjljNDllYTg2OWUwZWJkYTliYmZhNzY5Mzk0NDdhNDI4ZGNmMTc4YzVkMTVhYjQ0N2UyZDRmYmJiNGViMg=="
                     }
                 ],
                 "security": [
@@ -237,7 +360,7 @@
                         "description": "The rest request ended in success with no data."
                     },
                     "400": {
-                        "description": "Something went wrong with the request see the error field for more details.",
+                        "description": "The server cannot process the request, see the error field for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -258,7 +381,7 @@
                         }
                     },
                     "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied.",
+                        "description": "You are not authorized to use the API or no credentials were supplied, see the error field for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -268,6 +391,24 @@
                                     "exampleResponse": {
                                         "value": {
                                             "name": "UnauthorizedError",
+                                            "message": "component.error"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "The server has encountered a situation it does not know how to handle, see the error field for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "InternalServerError",
                                             "message": "component.error"
                                         }
                                     }
@@ -298,95 +439,6 @@
                 }
             }
         },
-        "/nft/{id}/burn": {
-            "post": {
-                "operationId": "nftBurn",
-                "summary": "Burn an NFT",
-                "tags": [
-                    "NFT"
-                ],
-                "parameters": [
-                    {
-                        "name": "id",
-                        "description": "The id of the NFT to resolve.",
-                        "in": "path",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "style": "simple",
-                        "example": "urn:iota-nft:aW90YS1uZnQ6dHN0OjB4NzYyYjljNDllYTg2OWUwZWJkYTliYmZhNzY5Mzk0NDdhNDI4ZGNmMTc4YzVkMTVhYjQ0N2UyZDRmYmJiNGViMg=="
-                    }
-                ],
-                "security": [
-                    {
-                        "jwtBearerAuthScheme": []
-                    }
-                ],
-                "responses": {
-                    "204": {
-                        "description": "The rest request ended in success with no data."
-                    },
-                    "400": {
-                        "description": "Something went wrong with the request see the error field for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "GeneralError",
-                                            "message": "component.error",
-                                            "properties": {
-                                                "foo": "bar"
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "UnauthorizedError",
-                                            "message": "component.error"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                },
-                "requestBody": {
-                    "description": "Burn the NFT.",
-                    "required": true,
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/NftBurnRequest"
-                            },
-                            "examples": {
-                                "nftBurnExample": {
-                                    "value": {
-                                        "owner": "tst1prctjk5ck0dutnsunnje6u90jk5htx03qznjjmkd6843pzltlgz87srjzzv"
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
         "/nft/{id}/transfer": {
             "post": {
                 "operationId": "nftTransfer",
@@ -404,7 +456,7 @@
                             "type": "string"
                         },
                         "style": "simple",
-                        "example": "urn:iota-nft:aW90YS1uZnQ6dHN0OjB4NzYyYjljNDllYTg2OWUwZWJkYTliYmZhNzY5Mzk0NDdhNDI4ZGNmMTc4YzVkMTVhYjQ0N2UyZDRmYmJiNGViMg=="
+                        "example": "nft:iota:aW90YS1uZnQ6dHN0OjB4NzYyYjljNDllYTg2OWUwZWJkYTliYmZhNzY5Mzk0NDdhNDI4ZGNmMTc4YzVkMTVhYjQ0N2UyZDRmYmJiNGViMg=="
                     }
                 ],
                 "security": [
@@ -417,7 +469,7 @@
                         "description": "The rest request ended in success with no data."
                     },
                     "400": {
-                        "description": "Something went wrong with the request see the error field for more details.",
+                        "description": "The server cannot process the request, see the error field for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -438,7 +490,7 @@
                         }
                     },
                     "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied.",
+                        "description": "You are not authorized to use the API or no credentials were supplied, see the error field for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -448,6 +500,24 @@
                                     "exampleResponse": {
                                         "value": {
                                             "name": "UnauthorizedError",
+                                            "message": "component.error"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "The server has encountered a situation it does not know how to handle, see the error field for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "InternalServerError",
                                             "message": "component.error"
                                         }
                                     }
@@ -575,20 +645,6 @@
                 ],
                 "additionalProperties": false,
                 "description": "The data that was resolved."
-            },
-            "NftBurnRequest": {
-                "type": "object",
-                "properties": {
-                    "owner": {
-                        "type": "string",
-                        "description": "The owner for the NFT to return the funds to."
-                    }
-                },
-                "required": [
-                    "owner"
-                ],
-                "additionalProperties": false,
-                "description": "The data to be used for burning."
             },
             "NftTransferRequest": {
                 "type": "object",

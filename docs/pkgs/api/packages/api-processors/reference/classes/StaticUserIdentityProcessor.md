@@ -1,6 +1,6 @@
-# Class: StaticIdentityProcessor
+# Class: StaticUserIdentityProcessor
 
-Adds a static identity to the request context.
+Adds a static user identity to the request context.
 
 ## Implements
 
@@ -8,25 +8,25 @@ Adds a static identity to the request context.
 
 ## Constructors
 
-### new StaticIdentityProcessor()
+### new StaticUserIdentityProcessor()
 
-> **new StaticIdentityProcessor**(`options`?): [`StaticIdentityProcessor`](StaticIdentityProcessor.md)
+> **new StaticUserIdentityProcessor**(`options`): [`StaticUserIdentityProcessor`](StaticUserIdentityProcessor.md)
 
 Create a new instance of StaticIdentityProcessor.
 
 #### Parameters
 
-• **options?**
+• **options**
 
 Options for the processor.
 
-• **options.identity?**: `Uint8Array`
+• **options.config**: [`IStaticUserIdentityProcessorConfig`](../interfaces/IStaticUserIdentityProcessorConfig.md)
 
-The fixed identity for request context.
+The configuration for the processor.
 
 #### Returns
 
-[`StaticIdentityProcessor`](StaticIdentityProcessor.md)
+[`StaticUserIdentityProcessor`](StaticUserIdentityProcessor.md)
 
 Promise that resolves when the processor is initialized.
 
@@ -37,6 +37,10 @@ Promise that resolves when the processor is initialized.
 > `readonly` **CLASS\_NAME**: `string`
 
 Runtime name for the class.
+
+#### Implementation of
+
+`IHttpRestRouteProcessor.CLASS_NAME`
 
 ## Methods
 

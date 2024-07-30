@@ -14,6 +14,8 @@
 - [IIdentityProfileListResponse](interfaces/IIdentityProfileListResponse.md)
 - [IIdentityProfileRemoveRequest](interfaces/IIdentityProfileRemoveRequest.md)
 - [IIdentityProfileUpdateRequest](interfaces/IIdentityProfileUpdateRequest.md)
+- [IIdentityResolveRequest](interfaces/IIdentityResolveRequest.md)
+- [IIdentityResolveResponse](interfaces/IIdentityResolveResponse.md)
 
 ## Type Aliases
 
