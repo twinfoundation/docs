@@ -56,14 +56,18 @@ The message.
 
 ### error?
 
-> `optional` **error**: `string`
+> `optional` **error**: [`LogEntryError`](LogEntryError.md)[]
 
-JSON version of flattened error array.
+Associated error data.
 
 ***
 
 ### data?
 
-> `optional` **data**: `string`
+> `optional` **data**: `object`
 
-JSON data for the message.
+Data for the message.
+
+#### Index signature
+
+ \[`key`: `string`\]: `unknown`

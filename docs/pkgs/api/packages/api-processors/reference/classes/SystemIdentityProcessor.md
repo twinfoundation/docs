@@ -32,15 +32,15 @@ Runtime name for the class.
 
 ### start()
 
-> **start**(`systemRequestContext`, `systemLoggingConnectorType`?): `Promise`\<`void`\>
+> **start**(`systemIdentity`, `systemLoggingConnectorType`?): `Promise`\<`void`\>
 
 The service needs to be started when the application is initialized.
 
 #### Parameters
 
-• **systemRequestContext**: `IServiceRequestContext`
+• **systemIdentity**: `string`
 
-The system request context.
+The identity of the system.
 
 • **systemLoggingConnectorType?**: `string`
 
@@ -58,11 +58,11 @@ Nothing.
 
 ***
 
-### process()
+### pre()
 
-> **process**(`request`, `response`, `route`, `requestContext`, `state`): `Promise`\<`void`\>
+> **pre**(`request`, `response`, `route`, `requestIdentity`, `processorState`): `Promise`\<`void`\>
 
-Process the REST request for the specified route.
+Pre process the REST request for the specified route.
 
 #### Parameters
 
@@ -78,13 +78,13 @@ The outgoing response.
 
 The route to process.
 
-• **requestContext**: `IServiceRequestContext`
+• **requestIdentity**: `IHttpRequestIdentity`
 
-The context for the request.
+The identity context for the request.
 
-• **state**
+• **processorState**
 
-The state for the request.
+The state handed through the processors.
 
 #### Returns
 
@@ -92,4 +92,4 @@ The state for the request.
 
 #### Implementation of
 
-`IHttpRestRouteProcessor.process`
+`IHttpRestRouteProcessor.pre`

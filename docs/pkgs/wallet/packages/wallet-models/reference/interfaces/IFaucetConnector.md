@@ -46,15 +46,15 @@ Nothing.
 
 ### start()?
 
-> `optional` **start**(`systemRequestContext`, `systemLoggingConnectorType`?): `Promise`\<`void`\>
+> `optional` **start**(`systemIdentity`, `systemLoggingConnectorType`?): `Promise`\<`void`\>
 
 The service needs to be started when the application is initialized.
 
 #### Parameters
 
-• **systemRequestContext**: `IServiceRequestContext`
+• **systemIdentity**: `string`
 
-The system request context.
+The identity of the system.
 
 • **systemLoggingConnectorType?**: `string`
 
@@ -74,15 +74,15 @@ Nothing.
 
 ### stop()?
 
-> `optional` **stop**(`systemRequestContext`, `systemLoggingConnectorType`?): `Promise`\<`void`\>
+> `optional` **stop**(`systemIdentity`, `systemLoggingConnectorType`?): `Promise`\<`void`\>
 
 The service needs to be stopped when the application is closed.
 
 #### Parameters
 
-• **systemRequestContext**: `IServiceRequestContext`
+• **systemIdentity**: `string`
 
-The system request context.
+The identity of the system.
 
 • **systemLoggingConnectorType?**: `string`
 
@@ -102,11 +102,15 @@ Nothing.
 
 ### fundAddress()
 
-> **fundAddress**(`address`, `timeoutInSeconds`?, `requestContext`?): `Promise`\<`bigint`\>
+> **fundAddress**(`identity`, `address`, `timeoutInSeconds`?): `Promise`\<`bigint`\>
 
 Fund the wallet from the faucet.
 
 #### Parameters
+
+• **identity**: `string`
+
+The identity of the user to access the vault keys.
 
 • **address**: `string`
 
@@ -115,10 +119,6 @@ The bech32 encoded address of the address to fund.
 • **timeoutInSeconds?**: `number`
 
 The timeout in seconds to wait for the funding to complete.
-
-• **requestContext?**: `IServiceRequestContext`
-
-The context for the request.
 
 #### Returns
 

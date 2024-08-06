@@ -1,6 +1,6 @@
 {
 	"name": "@gtsc/identity-cli",
-	"version": "0.0.3-next.36",
+	"version": "0.0.5-next.3",
 	"description": "A command line interface for interacting with the identity connectors",
 	"repository": {
 		"type": "git",
@@ -35,13 +35,15 @@
 		"@gtsc/crypto-cli": "next",
 		"@gtsc/entity": "next",
 		"@gtsc/entity-storage-connector-memory": "next",
-		"@gtsc/identity-models": "0.0.3-next.36",
-		"@gtsc/identity-connector-iota": "0.0.3-next.36",
+		"@gtsc/identity-models": "0.0.5-next.3",
+		"@gtsc/identity-connector-iota": "0.0.5-next.3",
 		"@gtsc/nameof": "next",
 		"@gtsc/standards-w3c-did": "next",
 		"@gtsc/vault-connector-entity-storage": "next",
 		"@gtsc/vault-models": "next",
 		"@gtsc/wallet-cli": "next",
+		"@gtsc/wallet-connector-iota": "next",
+		"@gtsc/wallet-models": "next",
 		"@iota/sdk-wasm": "1.1.3",
 		"commander": "12.1.0"
 	},

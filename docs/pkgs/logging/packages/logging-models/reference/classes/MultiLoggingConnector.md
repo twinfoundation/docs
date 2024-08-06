@@ -34,6 +34,14 @@ The configuration for the logging connector.
 
 ## Properties
 
+### NAMESPACE
+
+> `static` `readonly` **NAMESPACE**: `string` = `"multi"`
+
+The namespace for the logging connector.
+
+***
+
 ### CLASS\_NAME
 
 > `readonly` **CLASS\_NAME**: `string`
@@ -64,7 +72,7 @@ The log levels to display, will default to all.
 
 ### log()
 
-> **log**(`logEntry`, `requestContext`?): `Promise`\<`void`\>
+> **log**(`logEntry`): `Promise`\<`void`\>
 
 Log an entry to the connector.
 
@@ -73,10 +81,6 @@ Log an entry to the connector.
 • **logEntry**: [`ILogEntry`](../interfaces/ILogEntry.md)
 
 The entry to log.
-
-• **requestContext?**: `IServiceRequestContext`
-
-The context for the request.
 
 #### Returns
 
@@ -92,7 +96,7 @@ Nothing.
 
 ### query()
 
-> **query**(`conditions`?, `sortProperties`?, `properties`?, `cursor`?, `pageSize`?, `requestContext`?): `Promise`\<`object`\>
+> **query**(`conditions`?, `sortProperties`?, `properties`?, `cursor`?, `pageSize`?): `Promise`\<`object`\>
 
 Query the log entries.
 
@@ -117,10 +121,6 @@ The cursor to request the next page of entities.
 • **pageSize?**: `number`
 
 The maximum number of entities in a page.
-
-• **requestContext?**: `IServiceRequestContext`
-
-The context for the request.
 
 #### Returns
 

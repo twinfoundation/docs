@@ -1,6 +1,6 @@
 {
 	"name": "@gtsc/vault-models",
-	"version": "0.0.3-next.25",
+	"version": "0.0.5-next.1",
 	"description": "Models which define the structure of the vault contracts and connectors",
 	"repository": {
 		"type": "git",

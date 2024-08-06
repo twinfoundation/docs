@@ -1,6 +1,6 @@
 {
 	"name": "@gtsc/attestation",
-	"version": "0.0.3-next.14",
+	"version": "0.0.5-next.1",
 	"description": "Attestation",
 	"repository": {
 		"type": "git",

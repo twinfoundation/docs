@@ -1,12 +1,12 @@
 # Function: attestationVerify()
 
-> **attestationVerify**(`requestContext`, `factoryServiceName`, `request`): `Promise`\<`IAttestationVerifyResponse`\>
+> **attestationVerify**(`httpRequestContext`, `factoryServiceName`, `request`): `Promise`\<`IAttestationVerifyResponse`\>
 
 Resolve and verify the attestation id.
 
 ## Parameters
 
-• **requestContext**: `IHttpRequestContext`
+• **httpRequestContext**: `IHttpRequestContext`
 
 The request context for the API.
 

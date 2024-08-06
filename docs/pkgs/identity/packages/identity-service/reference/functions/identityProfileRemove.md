@@ -1,12 +1,12 @@
 # Function: identityProfileRemove()
 
-> **identityProfileRemove**(`requestContext`, `serviceName`, `request`): `Promise`\<`INoContentResponse`\>
+> **identityProfileRemove**(`httpRequestContext`, `serviceName`, `request`): `Promise`\<`INoContentResponse`\>
 
 Remove an identity profile.
 
 ## Parameters
 
-• **requestContext**: `IHttpRequestContext`
+• **httpRequestContext**: `IHttpRequestContext`
 
 The request context for the API.
 
@@ -14,7 +14,7 @@ The request context for the API.
 
 The name of the service to use in the routes.
 
-• **request**: `IIdentityProfileRemoveRequest`
+• **request**: `INoContentRequest`
 
 The request.
 

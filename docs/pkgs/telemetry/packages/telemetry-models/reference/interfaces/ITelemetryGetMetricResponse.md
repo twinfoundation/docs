@@ -1,6 +1,6 @@
 # Interface: ITelemetryGetMetricResponse
 
-Get a telemetry entry response.
+Get a telemetry metric response.
 
 ## Properties
 

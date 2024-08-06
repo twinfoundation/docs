@@ -76,15 +76,15 @@ Runtime name for the class.
 
 ### create()
 
-> **create**(`requestContext`?): `Promise`\<`void`\>
+> **create**(`identity`): `Promise`\<`void`\>
 
 Create a new wallet.
 
 #### Parameters
 
-• **requestContext?**: `IServiceRequestContext`
+• **identity**: `string`
 
-The context for the request.
+The identity of the user to access the vault keys.
 
 #### Returns
 
@@ -100,11 +100,15 @@ Nothing.
 
 ### getAddresses()
 
-> **getAddresses**(`startAddressIndex`, `count`, `requestContext`?): `Promise`\<`string`[]\>
+> **getAddresses**(`identity`, `startAddressIndex`, `count`): `Promise`\<`string`[]\>
 
 Get the addresses for the requested range.
 
 #### Parameters
+
+• **identity**: `string`
+
+The identity of the user to access the vault keys.
 
 • **startAddressIndex**: `number`
 
@@ -113,10 +117,6 @@ The start index for the addresses.
 • **count**: `number`
 
 The number of addresses to generate.
-
-• **requestContext?**: `IServiceRequestContext`
-
-The context for the request.
 
 #### Returns
 
@@ -132,19 +132,19 @@ The list of addresses.
 
 ### getBalance()
 
-> **getBalance**(`address`, `requestContext`?): `Promise`\<`bigint`\>
+> **getBalance**(`identity`, `address`): `Promise`\<`bigint`\>
 
 Get the balance for an address in a wallet.
 
 #### Parameters
 
+• **identity**: `string`
+
+The identity of the user to access the vault keys.
+
 • **address**: `string`
 
 The bech32 encoded address.
-
-• **requestContext?**: `IServiceRequestContext`
-
-The context for the request.
 
 #### Returns
 
@@ -158,41 +158,17 @@ The balance of the wallet address.
 
 ***
 
-### getStorageCosts()
-
-> **getStorageCosts**(`address`, `requestContext`?): `Promise`\<`bigint`\>
-
-Get the storage costs for an address in a wallet.
-
-#### Parameters
-
-• **address**: `string`
-
-The bech32 encoded address.
-
-• **requestContext?**: `IServiceRequestContext`
-
-The context for the request.
-
-#### Returns
-
-`Promise`\<`bigint`\>
-
-The storage costs for the address.
-
-#### Implementation of
-
-`IWalletConnector.getStorageCosts`
-
-***
-
 ### ensureBalance()
 
-> **ensureBalance**(`address`, `ensureBalance`, `timeoutInSeconds`?, `requestContext`?): `Promise`\<`boolean`\>
+> **ensureBalance**(`identity`, `address`, `ensureBalance`, `timeoutInSeconds`?): `Promise`\<`boolean`\>
 
 Ensure the balance for an address in a wallet.
 
 #### Parameters
+
+• **identity**: `string`
+
+The identity of the user to access the vault keys.
 
 • **address**: `string`
 
@@ -205,10 +181,6 @@ The balance to ensure on the address.
 • **timeoutInSeconds?**: `number`
 
 The timeout in seconds to wait for the funding to complete.
-
-• **requestContext?**: `IServiceRequestContext`
-
-The context for the request.
 
 #### Returns
 
@@ -224,11 +196,15 @@ True if the balance has been ensured.
 
 ### transfer()
 
-> **transfer**(`addressSource`, `addressDest`, `amount`, `requestContext`?): `Promise`\<`undefined` \| `string`\>
+> **transfer**(`identity`, `addressSource`, `addressDest`, `amount`): `Promise`\<`undefined` \| `string`\>
 
 Transfer funds to an address.
 
 #### Parameters
+
+• **identity**: `string`
+
+The identity of the user to access the vault keys.
 
 • **addressSource**: `string`
 
@@ -242,10 +218,6 @@ The bech32 encoded address to send the funds to.
 
 The amount to transfer.
 
-• **requestContext?**: `IServiceRequestContext`
-
-The context for the request.
-
 #### Returns
 
 `Promise`\<`undefined` \| `string`\>
@@ -255,50 +227,6 @@ An identifier for the transfer if there was one.
 #### Implementation of
 
 `IWalletConnector.transfer`
-
-***
-
-### sign()
-
-> **sign**(`signatureType`, `addressIndex`, `data`, `requestContext`?): `Promise`\<`object`\>
-
-Sign data using a wallet based key.
-
-#### Parameters
-
-• **signatureType**: `KeyType`
-
-The type of signature to create.
-
-• **addressIndex**: `number`
-
-The index for the address.
-
-• **data**: `Uint8Array`
-
-The data bytes.
-
-• **requestContext?**: `IServiceRequestContext`
-
-The context for the request.
-
-#### Returns
-
-`Promise`\<`object`\>
-
-The signature and public key bytes.
-
-##### publicKey
-
-> **publicKey**: `Uint8Array`
-
-##### signature
-
-> **signature**: `Uint8Array`
-
-#### Implementation of
-
-`IWalletConnector.sign`
 
 ***
 

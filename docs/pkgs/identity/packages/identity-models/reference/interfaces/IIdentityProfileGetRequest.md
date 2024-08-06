@@ -4,20 +4,6 @@ Get the profile for an identity.
 
 ## Properties
 
-### pathParams
-
-> **pathParams**: `object`
-
-The path parameters.
-
-#### identity
-
-> **identity**: `string`
-
-The identity to get the profile for.
-
-***
-
 ### query
 
 > **query**: `object`

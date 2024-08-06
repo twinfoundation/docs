@@ -48,7 +48,7 @@ Runtime name for the class.
 
 ### attest()
 
-> **attest**\<`T`\>(`controllerAddress`, `verificationMethodId`, `data`, `requestContext`?): `Promise`\<`IAttestationInformation`\<`T`\>\>
+> **attest**\<`T`\>(`controller`, `address`, `verificationMethodId`, `data`): `Promise`\<`IAttestationInformation`\<`T`\>\>
 
 Attest the data and return the collated information.
 
@@ -58,7 +58,11 @@ Attest the data and return the collated information.
 
 #### Parameters
 
-• **controllerAddress**: `string`
+• **controller**: `string`
+
+The controller identity of the user to access the vault keys.
+
+• **address**: `string`
 
 The controller address for the attestation.
 
@@ -69,10 +73,6 @@ The identity verification method to use for attesting the data.
 • **data**: `T`
 
 The data to attest.
-
-• **requestContext?**: `IServiceRequestContext`
-
-The context for the request.
 
 #### Returns
 
@@ -88,7 +88,7 @@ The collated attestation data.
 
 ### verify()
 
-> **verify**\<`T`\>(`attestationId`, `requestContext`?): `Promise`\<`object`\>
+> **verify**\<`T`\>(`attestationId`): `Promise`\<`object`\>
 
 Resolve and verify the attestation id.
 
@@ -101,10 +101,6 @@ Resolve and verify the attestation id.
 • **attestationId**: `string`
 
 The attestation id to verify.
-
-• **requestContext?**: `IServiceRequestContext`
-
-The context for the request.
 
 #### Returns
 
@@ -132,7 +128,7 @@ The verified attestation details.
 
 ### transfer()
 
-> **transfer**\<`T`\>(`attestationId`, `holderControllerAddress`, `holderIdentity`, `requestContext`?): `Promise`\<`IAttestationInformation`\<`T`\>\>
+> **transfer**\<`T`\>(`controller`, `attestationId`, `holderIdentity`, `holderAddress`): `Promise`\<`IAttestationInformation`\<`T`\>\>
 
 Transfer the attestation to a new holder.
 
@@ -142,21 +138,21 @@ Transfer the attestation to a new holder.
 
 #### Parameters
 
+• **controller**: `string`
+
+The controller identity of the user to access the vault keys.
+
 • **attestationId**: `string`
 
 The attestation to transfer.
-
-• **holderControllerAddress**: `string`
-
-The new controller address of the attestation belonging to the holder.
 
 • **holderIdentity**: `string`
 
 The holder identity of the attestation.
 
-• **requestContext?**: `IServiceRequestContext`
+• **holderAddress**: `string`
 
-The context for the request.
+The new controller address of the attestation belonging to the holder.
 
 #### Returns
 

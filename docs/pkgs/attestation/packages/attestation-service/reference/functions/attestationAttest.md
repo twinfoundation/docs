@@ -1,12 +1,12 @@
 # Function: attestationAttest()
 
-> **attestationAttest**(`requestContext`, `factoryServiceName`, `request`): `Promise`\<`IAttestationAttestResponse`\>
+> **attestationAttest**(`httpRequestContext`, `factoryServiceName`, `request`): `Promise`\<`IAttestationAttestResponse`\>
 
 Sign the data and return the proof.
 
 ## Parameters
 
-• **requestContext**: `IHttpRequestContext`
+• **httpRequestContext**: `IHttpRequestContext`
 
 The request context for the API.
 

@@ -1,6 +1,6 @@
 {
 	"name": "@gtsc/attestation-service",
-	"version": "0.0.3-next.14",
+	"version": "0.0.5-next.1",
 	"description": "Attestation contract implementation and REST endpoint definitions",
 	"repository": {
 		"type": "git",
@@ -30,7 +30,7 @@
 	},
 	"dependencies": {
 		"@gtsc/api-models": "next",
-		"@gtsc/attestation-models": "0.0.3-next.14",
+		"@gtsc/attestation-models": "0.0.5-next.1",
 		"@gtsc/core": "next",
 		"@gtsc/entity": "next",
 		"@gtsc/nameof": "next",
@@ -39,7 +39,7 @@
 	},
 	"devDependencies": {
 		"@gtsc/nameof-transformer": "next",
-		"@gtsc/attestation-connector-entity-storage": "0.0.3-next.14",
+		"@gtsc/attestation-connector-entity-storage": "0.0.5-next.1",
 		"@gtsc/ts-to-openapi": "next",
 		"@vitest/coverage-v8": "1.6.0",
 		"copyfiles": "2.4.1",

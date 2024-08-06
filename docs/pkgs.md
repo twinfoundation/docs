@@ -43,6 +43,7 @@ This is the overview of the packages.
 - [@gtsc/entity-storage-models](pkgs/entity-storage/packages/entity-storage-models/overview) - Models which define the structure of the entity storage contracts and connectors
 - [@gtsc/entity-storage-connector-memory](pkgs/entity-storage/packages/entity-storage-connector-memory/overview) - Entity Storage connector implementation using in-memory storage
 - [@gtsc/entity-storage-connector-file](pkgs/entity-storage/packages/entity-storage-connector-file/overview) - Entity Storage connector implementation using file storage
+- [@gtsc/entity-storage-connector-scylladb](pkgs/entity-storage/packages/entity-storage-connector-scylladb/overview) - Entity Storage connector implementation using ScyllaDB
 
 ## Blob Storage
 
@@ -110,4 +111,5 @@ This is the overview of the packages.
 
 ## Applications
 
-- [@gtsc/api-server](pkgs/apps/apps/api-server/overview) - Serve APIs using the specified configuration
+- [@gtsc/gtsc-api-server](pkgs/apps/apps/gtsc-api-server/overview) - Serve APIs using the specified configuration
+- [@gtsc/gtsc-ui](pkgs/apps/apps/gtsc-ui/overview) - UI to demonstate the APIs
