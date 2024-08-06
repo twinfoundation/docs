@@ -38,11 +38,11 @@ The configuration for the authentication.
 
 ## Properties
 
-### \_DEFAULT\_TTL
+### \_DEFAULT\_TTL\_MINUTES
 
-> `static` `private` `readonly` **\_DEFAULT\_TTL**: `number` = `1440`
+> `static` `private` `readonly` **\_DEFAULT\_TTL\_MINUTES**: `number` = `60`
 
-Default TTL in minutes 1440 is 24 hours.
+Default TTL in minutes.
 
 ***
 
@@ -60,15 +60,15 @@ Runtime name for the class.
 
 ### start()
 
-> **start**(`systemRequestContext`, `systemLoggingConnectorType`?): `Promise`\<`void`\>
+> **start**(`systemIdentity`, `systemLoggingConnectorType`?): `Promise`\<`void`\>
 
 The service needs to be started when the application is initialized.
 
 #### Parameters
 
-• **systemRequestContext**: `IServiceRequestContext`
+• **systemIdentity**: `string`
 
-The system request context.
+The identity of the system.
 
 • **systemLoggingConnectorType?**: `string`
 
@@ -88,7 +88,7 @@ Nothing.
 
 ### login()
 
-> **login**(`email`, `password`, `requestContext`?): `Promise`\<`string`\>
+> **login**(`email`, `password`): `Promise`\<`object`\>
 
 Perform a login for the user.
 
@@ -102,16 +102,76 @@ The email address for the user.
 
 The password for the user.
 
-• **requestContext?**: `IServiceRequestContext`
-
-The context for the request.
-
 #### Returns
 
-`Promise`\<`string`\>
+`Promise`\<`object`\>
 
-The authentication token for the user.
+The authentication token for the user, if it uses a mechanism with public access.
+
+##### token?
+
+> `optional` **token**: `string`
+
+##### expiry
+
+> **expiry**: `number`
 
 #### Implementation of
 
 `IAuthentication.login`
+
+***
+
+### logout()
+
+> **logout**(`token`?): `Promise`\<`void`\>
+
+Logout the current user.
+
+#### Parameters
+
+• **token?**: `string`
+
+The token to logout, if it uses a mechanism with public access.
+
+#### Returns
+
+`Promise`\<`void`\>
+
+Nothing.
+
+#### Implementation of
+
+`IAuthentication.logout`
+
+***
+
+### refresh()
+
+> **refresh**(`token`?): `Promise`\<`object`\>
+
+Refresh the token.
+
+#### Parameters
+
+• **token?**: `string`
+
+The token to refresh, if it uses a mechanism with public access.
+
+#### Returns
+
+`Promise`\<`object`\>
+
+The refreshed token, if it uses a mechanism with public access.
+
+##### token
+
+> **token**: `string`
+
+##### expiry
+
+> **expiry**: `number`
+
+#### Implementation of
+
+`IAuthentication.refresh`

@@ -60,14 +60,6 @@ The authentication methods.
 
 ***
 
-### partitionMethods?
-
-> `optional` **partitionMethods**: `string`[]
-
-The partition methods.
-
-***
-
 ### restRoutes
 
 > **restRoutes**: `object`[]

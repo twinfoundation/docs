@@ -52,11 +52,15 @@ Runtime name for the class.
 
 ### fundAddress()
 
-> **fundAddress**(`address`, `timeoutInSeconds`, `requestContext`?): `Promise`\<`bigint`\>
+> **fundAddress**(`identity`, `address`, `timeoutInSeconds`): `Promise`\<`bigint`\>
 
 Fund the wallet from the faucet.
 
 #### Parameters
+
+• **identity**: `string`
+
+The identity of the user to access the vault keys.
 
 • **address**: `string`
 
@@ -65,10 +69,6 @@ The bech32 encoded address of the address to fund.
 • **timeoutInSeconds**: `number`= `60`
 
 The timeout in seconds to wait for the funding to complete.
-
-• **requestContext?**: `IServiceRequestContext`
-
-The context for the request.
 
 #### Returns
 

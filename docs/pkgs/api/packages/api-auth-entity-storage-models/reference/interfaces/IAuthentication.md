@@ -46,15 +46,15 @@ Nothing.
 
 ### start()?
 
-> `optional` **start**(`systemRequestContext`, `systemLoggingConnectorType`?): `Promise`\<`void`\>
+> `optional` **start**(`systemIdentity`, `systemLoggingConnectorType`?): `Promise`\<`void`\>
 
 The service needs to be started when the application is initialized.
 
 #### Parameters
 
-• **systemRequestContext**: `IServiceRequestContext`
+• **systemIdentity**: `string`
 
-The system request context.
+The identity of the system.
 
 • **systemLoggingConnectorType?**: `string`
 
@@ -74,15 +74,15 @@ Nothing.
 
 ### stop()?
 
-> `optional` **stop**(`systemRequestContext`, `systemLoggingConnectorType`?): `Promise`\<`void`\>
+> `optional` **stop**(`systemIdentity`, `systemLoggingConnectorType`?): `Promise`\<`void`\>
 
 The service needs to be stopped when the application is closed.
 
 #### Parameters
 
-• **systemRequestContext**: `IServiceRequestContext`
+• **systemIdentity**: `string`
 
-The system request context.
+The identity of the system.
 
 • **systemLoggingConnectorType?**: `string`
 
@@ -102,7 +102,7 @@ Nothing.
 
 ### login()
 
-> **login**(`email`, `password`, `requestContext`?): `Promise`\<`string`\>
+> **login**(`email`, `password`): `Promise`\<`object`\>
 
 Perform a login for the user.
 
@@ -116,12 +116,64 @@ The email address for the user.
 
 The password for the user.
 
-• **requestContext?**: `IServiceRequestContext`
+#### Returns
 
-The context for the request.
+`Promise`\<`object`\>
+
+The authentication token for the user, if it uses a mechanism with public access.
+
+##### token?
+
+> `optional` **token**: `string`
+
+##### expiry
+
+> **expiry**: `number`
+
+***
+
+### logout()
+
+> **logout**(`token`?): `Promise`\<`void`\>
+
+Logout the current user.
+
+#### Parameters
+
+• **token?**: `string`
+
+The token to logout, if it uses a mechanism with public access.
 
 #### Returns
 
-`Promise`\<`string`\>
+`Promise`\<`void`\>
 
-The authentication token for the user.
+Nothing.
+
+***
+
+### refresh()
+
+> **refresh**(`token`?): `Promise`\<`object`\>
+
+Refresh the token.
+
+#### Parameters
+
+• **token?**: `string`
+
+The token to refresh, if it uses a mechanism with public access.
+
+#### Returns
+
+`Promise`\<`object`\>
+
+The refreshed token, if it uses a mechanism with public access.
+
+##### token?
+
+> `optional` **token**: `string`
+
+##### expiry
+
+> **expiry**: `number`

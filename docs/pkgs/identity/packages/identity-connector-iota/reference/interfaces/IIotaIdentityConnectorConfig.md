@@ -54,6 +54,20 @@ IOTA 4218
 
 ***
 
+### walletAddressIndex?
+
+> `optional` **walletAddressIndex**: `number`
+
+The wallet address index to use for funding and controlling the identity.
+
+#### Default
+
+```ts
+0
+```
+
+***
+
 ### inclusionTimeoutSeconds?
 
 > `optional` **inclusionTimeoutSeconds**: `number`

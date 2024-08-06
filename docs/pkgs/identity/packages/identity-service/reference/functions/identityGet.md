@@ -1,12 +1,12 @@
 # Function: identityGet()
 
-> **identityGet**(`requestContext`, `serviceName`, `request`): `Promise`\<`IIdentityProfileGetResponse`\>
+> **identityGet**(`httpRequestContext`, `serviceName`, `request`): `Promise`\<`IIdentityProfileGetResponse`\>
 
 Get the identity profile.
 
 ## Parameters
 
-• **requestContext**: `IHttpRequestContext`
+• **httpRequestContext**: `IHttpRequestContext`
 
 The request context for the API.
 

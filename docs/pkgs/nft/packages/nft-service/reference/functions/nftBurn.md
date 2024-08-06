@@ -1,12 +1,12 @@
 # Function: nftBurn()
 
-> **nftBurn**(`requestContext`, `factoryServiceName`, `request`): `Promise`\<`INoContentResponse`\>
+> **nftBurn**(`httpRequestContext`, `factoryServiceName`, `request`): `Promise`\<`INoContentResponse`\>
 
 Burn an NFT.
 
 ## Parameters
 
-• **requestContext**: `IHttpRequestContext`
+• **httpRequestContext**: `IHttpRequestContext`
 
 The request context for the API.
 

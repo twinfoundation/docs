@@ -22,6 +22,14 @@ The identity of the NFT.
 
 ***
 
+### controller
+
+> **controller**: `string`
+
+The controller of the NFT.
+
+***
+
 ### issuer
 
 > **issuer**: `string`
@@ -48,14 +56,14 @@ The tag for the nft.
 
 ### immutableMetadata
 
-> **immutableMetadata**: `string`
+> **immutableMetadata**: `unknown`
 
-The JSON stringified version of the immutable metadata.
+The immutable metadata.
 
 ***
 
 ### metadata
 
-> **metadata**: `string`
+> **metadata**: `unknown`
 
-The JSON stringified version of the mutable metadata.
+The mutable metadata.

@@ -1,12 +1,12 @@
 # Function: authenticationLogin()
 
-> **authenticationLogin**(`requestContext`, `factoryServiceName`, `request`): `Promise`\<`ILoginResponse`\>
+> **authenticationLogin**(`httpRequestContext`, `factoryServiceName`, `request`): `Promise`\<`ILoginResponse` & `IRestRouteResponseOptions`\>
 
 Login to the server.
 
 ## Parameters
 
-• **requestContext**: `IHttpRequestContext`
+• **httpRequestContext**: `IHttpRequestContext`
 
 The request context for the API.
 
@@ -20,6 +20,6 @@ The request.
 
 ## Returns
 
-`Promise`\<`ILoginResponse`\>
+`Promise`\<`ILoginResponse` & `IRestRouteResponseOptions`\>
 
 The response object with additional http response properties.

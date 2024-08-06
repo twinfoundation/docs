@@ -1,12 +1,12 @@
 # Function: loggingList()
 
-> **loggingList**(`requestContext`, `factoryServiceName`, `request`): `Promise`\<`ILoggingListResponse`\>
+> **loggingList**(`httpRequestContext`, `factoryServiceName`, `request`): `Promise`\<`ILoggingListResponse`\>
 
 Get a list of the logging entries.
 
 ## Parameters
 
-• **requestContext**: `IServiceRequestContext`
+• **httpRequestContext**: `IHttpRequestContext`
 
 The request context for the API.
 

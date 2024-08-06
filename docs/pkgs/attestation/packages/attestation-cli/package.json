@@ -1,6 +1,6 @@
 {
 	"name": "@gtsc/attestation-cli",
-	"version": "0.0.3-next.14",
+	"version": "0.0.5-next.1",
 	"description": "A command line interface for interacting with the attestation connectors",
 	"repository": {
 		"type": "git",
@@ -35,7 +35,7 @@
 		"@gtsc/crypto-cli": "next",
 		"@gtsc/entity": "next",
 		"@gtsc/entity-storage-connector-memory": "next",
-		"@gtsc/attestation-connector-iota": "0.0.3-next.14",
+		"@gtsc/attestation-connector-iota": "0.0.5-next.1",
 		"@gtsc/identity-cli": "next",
 		"@gtsc/identity-models": "next",
 		"@gtsc/identity-connector-iota": "next",

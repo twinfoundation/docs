@@ -46,7 +46,7 @@ Runtime name for the class.
 
 ### process()
 
-> **process**(`request`, `response`, `route`, `requestContext`, `state`): `Promise`\<`void`\>
+> **process**(`request`, `response`, `route`, `requestIdentity`, `processorState`): `Promise`\<`void`\>
 
 Process the REST request for the specified route.
 
@@ -64,13 +64,13 @@ The outgoing response.
 
 The route to process.
 
-• **requestContext**: `IServiceRequestContext`
+• **requestIdentity**: `IHttpRequestIdentity`
 
-The context for the request.
+The identity context for the request.
 
-• **state**
+• **processorState**
 
-The state for the request.
+The state handed through the processors.
 
 #### Returns
 
@@ -79,31 +79,3 @@ The state for the request.
 #### Implementation of
 
 `IHttpRestRouteProcessor.process`
-
-***
-
-### processError()
-
-> `private` **processError**(`err`): `object`
-
-Process the errors from the routes.
-
-#### Parameters
-
-• **err**: `unknown`
-
-The error to process.
-
-#### Returns
-
-`object`
-
-The status code and additional error data.
-
-##### error
-
-> **error**: `IError`
-
-##### httpStatusCode
-
-> **httpStatusCode**: `HttpStatusCode`

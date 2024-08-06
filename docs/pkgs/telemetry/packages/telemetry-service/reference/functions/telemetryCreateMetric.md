@@ -1,12 +1,12 @@
 # Function: telemetryCreateMetric()
 
-> **telemetryCreateMetric**(`requestContext`, `factoryServiceName`, `request`): `Promise`\<`ICreatedResponse`\>
+> **telemetryCreateMetric**(`httpRequestContext`, `factoryServiceName`, `request`): `Promise`\<`ICreatedResponse`\>
 
 Create a new telemetry metric.
 
 ## Parameters
 
-• **requestContext**: `IServiceRequestContext`
+• **httpRequestContext**: `IHttpRequestContext`
 
 The request context for the API.
 

@@ -76,7 +76,7 @@ The response of the bootstrapping as log entries.
 
 ### get()
 
-> **get**(`id`, `secondaryIndex`?, `requestContext`?): `Promise`\<`undefined` \| `T` & `object`\>
+> **get**(`id`, `secondaryIndex`?): `Promise`\<`undefined` \| `T`\>
 
 Get an entity.
 
@@ -90,15 +90,11 @@ The id of the entity to get, or the index value if secondaryIndex is set.
 
 Get the item using a secondary index.
 
-• **requestContext?**: `IServiceRequestContext`
-
-The context for the request.
-
 #### Returns
 
-`Promise`\<`undefined` \| `T` & `object`\>
+`Promise`\<`undefined` \| `T`\>
 
-The object if it can be found or undefined, if non partitioned request then partitionId is included in items.
+The object if it can be found or undefined.
 
 #### Implementation of
 
@@ -108,7 +104,7 @@ The object if it can be found or undefined, if non partitioned request then part
 
 ### set()
 
-> **set**(`entity`, `requestContext`?): `Promise`\<`void`\>
+> **set**(`entity`): `Promise`\<`void`\>
 
 Set an entity.
 
@@ -117,10 +113,6 @@ Set an entity.
 • **entity**: `T`
 
 The entity to set.
-
-• **requestContext?**: `IServiceRequestContext`
-
-The context for the request.
 
 #### Returns
 
@@ -136,7 +128,7 @@ The id of the entity.
 
 ### remove()
 
-> **remove**(`id`, `requestContext`?): `Promise`\<`void`\>
+> **remove**(`id`): `Promise`\<`void`\>
 
 Remove the entity.
 
@@ -145,10 +137,6 @@ Remove the entity.
 • **id**: `string`
 
 The id of the entity to remove.
-
-• **requestContext?**: `IServiceRequestContext`
-
-The context for the request.
 
 #### Returns
 
@@ -164,7 +152,7 @@ Nothing.
 
 ### query()
 
-> **query**(`conditions`?, `sortProperties`?, `properties`?, `cursor`?, `pageSize`?, `requestContext`?): `Promise`\<`object`\>
+> **query**(`conditions`?, `sortProperties`?, `properties`?, `cursor`?, `pageSize`?): `Promise`\<`object`\>
 
 Find all the entities which match the conditions.
 
@@ -190,10 +178,6 @@ The cursor to request the next page of entities.
 
 The maximum number of entities in a page.
 
-• **requestContext?**: `IServiceRequestContext`
-
-The context for the request.
-
 #### Returns
 
 `Promise`\<`object`\>
@@ -203,10 +187,9 @@ and a cursor which can be used to request more entities.
 
 ##### entities
 
-> **entities**: `Partial`\<`T` & `object`\>[]
+> **entities**: `Partial`\<`T`\>[]
 
 The entities, which can be partial if a limited keys list was provided.
-If non partitioned request then partitionId is included in items.
 
 ##### cursor?
 
@@ -232,71 +215,27 @@ Total entities length.
 
 ***
 
-### readPartitionIndex()
+### readStore()
 
-> `private` **readPartitionIndex**(): `Promise`\<`string`[]\>
-
-Read the partition index from file.
-
-#### Returns
-
-`Promise`\<`string`[]\>
-
-The partition index.
-
-***
-
-### writePartitionIndex()
-
-> `private` **writePartitionIndex**(`partitionIds`): `Promise`\<`void`\>
-
-Write the partition index to the file.
-
-#### Parameters
-
-• **partitionIds**: `string`[]
-
-The partition ids to write in the index.
-
-#### Returns
-
-`Promise`\<`void`\>
-
-Nothing.
-
-***
-
-### readPartitionStore()
-
-> `private` **readPartitionStore**(`partitionId`): `Promise`\<`T`[]\>
+> `private` **readStore**(): `Promise`\<`T`[]\>
 
 Read the store from file.
-
-#### Parameters
-
-• **partitionId**: `string`
-
-The partition id to read the store for.
 
 #### Returns
 
 `Promise`\<`T`[]\>
 
-The store for the partition.
+The store.
 
 ***
 
-### writePartitionStore()
+### writeStore()
 
-> `private` **writePartitionStore**(`partitionId`, `store`): `Promise`\<`void`\>
+> `private` **writeStore**(`store`): `Promise`\<`void`\>
 
 Write the store to the file.
 
 #### Parameters
-
-• **partitionId**: `string`
-
-The partition id to write the store for.
 
 • **store**: `T`[]
 

@@ -46,15 +46,15 @@ Nothing.
 
 ### start()?
 
-> `optional` **start**(`systemRequestContext`, `systemLoggingConnectorType`?): `Promise`\<`void`\>
+> `optional` **start**(`systemIdentity`, `systemLoggingConnectorType`?): `Promise`\<`void`\>
 
 The service needs to be started when the application is initialized.
 
 #### Parameters
 
-• **systemRequestContext**: `IServiceRequestContext`
+• **systemIdentity**: `string`
 
-The system request context.
+The identity of the system.
 
 • **systemLoggingConnectorType?**: `string`
 
@@ -74,15 +74,15 @@ Nothing.
 
 ### stop()?
 
-> `optional` **stop**(`systemRequestContext`, `systemLoggingConnectorType`?): `Promise`\<`void`\>
+> `optional` **stop**(`systemIdentity`, `systemLoggingConnectorType`?): `Promise`\<`void`\>
 
 The service needs to be stopped when the application is closed.
 
 #### Parameters
 
-• **systemRequestContext**: `IServiceRequestContext`
+• **systemIdentity**: `string`
 
-The system request context.
+The identity of the system.
 
 • **systemLoggingConnectorType?**: `string`
 
@@ -102,23 +102,19 @@ Nothing.
 
 ### create()
 
-> **create**(`identity`, `properties`, `requestContext`?): `Promise`\<`void`\>
+> **create**(`properties`, `identity`?): `Promise`\<`void`\>
 
 Create the profile properties for an identity.
 
 #### Parameters
 
-• **identity**: `string`
-
-The identity of the profile to create.
-
 • **properties**: [`IIdentityProfileProperty`](IIdentityProfileProperty.md)[]
 
 The properties to create the profile with.
 
-• **requestContext?**: `IServiceRequestContext`
+• **identity?**: `string`
 
-The context for the request.
+The identity to perform the profile operation on.
 
 #### Returns
 
@@ -130,24 +126,19 @@ Nothing.
 
 ### get()
 
-> **get**(`identity`, `propertyNames`?, `requestContext`?): `Promise`\<`object`\>
+> **get**(`propertyNames`?, `identity`?): `Promise`\<`object`\>
 
 Get the profile properties for an identity.
-if matching authenticated user private properties are also returned.
 
 #### Parameters
-
-• **identity**: `string`
-
-The identity of the item to get.
 
 • **propertyNames?**: `string`[]
 
 The properties to get for the item, defaults to all.
 
-• **requestContext?**: `IServiceRequestContext`
+• **identity?**: `string`
 
-The context for the request.
+The identity to perform the profile operation on.
 
 #### Returns
 
@@ -163,23 +154,19 @@ The items properties.
 
 ### update()
 
-> **update**(`identity`, `properties`, `requestContext`?): `Promise`\<`void`\>
+> **update**(`properties`, `identity`?): `Promise`\<`void`\>
 
 Update the profile properties of an identity.
 
 #### Parameters
 
-• **identity**: `string`
-
-The identity to update.
-
 • **properties**: [`IIdentityProfileProperty`](IIdentityProfileProperty.md)[]
 
 Properties for the profile, set a properties value to undefined to remove it.
 
-• **requestContext?**: `IServiceRequestContext`
+• **identity?**: `string`
 
-The context for the request.
+The identity to perform the profile operation on.
 
 #### Returns
 
@@ -191,19 +178,15 @@ Nothing.
 
 ### remove()
 
-> **remove**(`identity`, `requestContext`?): `Promise`\<`void`\>
+> **remove**(`identity`?): `Promise`\<`void`\>
 
 Delete the profile for an identity.
 
 #### Parameters
 
-• **identity**: `string`
+• **identity?**: `string`
 
-The identity to delete.
-
-• **requestContext?**: `IServiceRequestContext`
-
-The context for the request.
+The identity to perform the profile operation on.
 
 #### Returns
 
@@ -215,7 +198,7 @@ Nothing.
 
 ### list()
 
-> **list**(`filters`?, `propertyNames`?, `cursor`?, `pageSize`?, `requestContext`?): `Promise`\<`object`\>
+> **list**(`filters`?, `propertyNames`?, `cursor`?, `pageSize`?): `Promise`\<`object`\>
 
 Get a list of the requested identities.
 
@@ -236,10 +219,6 @@ The cursor for paged requests.
 • **pageSize?**: `number`
 
 The maximum number of items in a page.
-
-• **requestContext?**: `IServiceRequestContext`
-
-The context for the request.
 
 #### Returns
 

@@ -50,18 +50,6 @@ Skips the authentication for this route.
 
 ***
 
-### skipPartition?
-
-> `optional` **skipPartition**: `boolean`
-
-Skips the partition id check for this route.
-
-#### Inherited from
-
-[`IBaseRoute`](IBaseRoute.md).[`skipPartition`](IBaseRoute.md#skippartition)
-
-***
-
 ### summary
 
 > **summary**: `string`
@@ -88,15 +76,15 @@ The http method.
 
 ### handler()
 
-> **handler**: (`requestContext`, `request`) => `Promise`\<`U`\>
+> **handler**: (`httpRequestContext`, `request`) => `Promise`\<`U`\>
 
 The handler module.
 
 #### Parameters
 
-• **requestContext**: [`IHttpRequestContext`](IHttpRequestContext.md)
+• **httpRequestContext**: [`IHttpRequestContext`](IHttpRequestContext.md)
 
-The request context.
+The http request context.
 
 • **request**: `T`
 

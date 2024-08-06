@@ -48,7 +48,7 @@ Runtime name for the class.
 
 ### login()
 
-> **login**(`email`, `password`): `Promise`\<`string`\>
+> **login**(`email`, `password`): `Promise`\<`object`\>
 
 Perform a login for the user.
 
@@ -64,13 +64,77 @@ The password for the user.
 
 #### Returns
 
-`Promise`\<`string`\>
+`Promise`\<`object`\>
 
-The authentication token for the user.
+The authentication token for the user, if it uses a mechanism with public access.
+
+##### token?
+
+> `optional` **token**: `string`
+
+##### expiry
+
+> **expiry**: `number`
 
 #### Implementation of
 
 `IAuthentication.login`
+
+***
+
+### logout()
+
+> **logout**(`token`?): `Promise`\<`void`\>
+
+Logout the current user.
+
+#### Parameters
+
+• **token?**: `string`
+
+The token to logout, if it uses a mechanism with public access.
+
+#### Returns
+
+`Promise`\<`void`\>
+
+Nothing.
+
+#### Implementation of
+
+`IAuthentication.logout`
+
+***
+
+### refresh()
+
+> **refresh**(`token`?): `Promise`\<`object`\>
+
+Refresh the token.
+
+#### Parameters
+
+• **token?**: `string`
+
+The token to refresh, if it uses a mechanism with public access.
+
+#### Returns
+
+`Promise`\<`object`\>
+
+The refreshed token, if it uses a mechanism with public access.
+
+##### token?
+
+> `optional` **token**: `string`
+
+##### expiry
+
+> **expiry**: `number`
+
+#### Implementation of
+
+`IAuthentication.refresh`
 
 ***
 

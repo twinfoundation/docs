@@ -1,12 +1,12 @@
 # Function: identityProfileUpdate()
 
-> **identityProfileUpdate**(`requestContext`, `serviceName`, `request`): `Promise`\<`INoContentResponse`\>
+> **identityProfileUpdate**(`httpRequestContext`, `serviceName`, `request`): `Promise`\<`INoContentResponse`\>
 
 Update an identity profile.
 
 ## Parameters
 
-• **requestContext**: `IHttpRequestContext`
+• **httpRequestContext**: `IHttpRequestContext`
 
 The request context for the API.
 

@@ -1,12 +1,12 @@
 # Function: attestationTransfer()
 
-> **attestationTransfer**(`requestContext`, `factoryServiceName`, `request`): `Promise`\<`IAttestationTransferResponse`\>
+> **attestationTransfer**(`httpRequestContext`, `factoryServiceName`, `request`): `Promise`\<`IAttestationTransferResponse`\>
 
 Transfer the attestation to a new holder.
 
 ## Parameters
 
-• **requestContext**: `IHttpRequestContext`
+• **httpRequestContext**: `IHttpRequestContext`
 
 The request context for the API.
 

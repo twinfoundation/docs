@@ -1,6 +1,6 @@
 # Interface: ITelemetryCreateMetricRequest
 
-Create a new telemetry entry.
+Create a new telemetry metric.
 
 ## Properties
 

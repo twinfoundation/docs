@@ -1,12 +1,12 @@
 # Function: nftResolve()
 
-> **nftResolve**(`requestContext`, `factoryServiceName`, `request`): `Promise`\<`INftResolveResponse`\>
+> **nftResolve**(`httpRequestContext`, `factoryServiceName`, `request`): `Promise`\<`INftResolveResponse`\>
 
 Resolve an NFT.
 
 ## Parameters
 
-• **requestContext**: `IHttpRequestContext`
+• **httpRequestContext**: `IHttpRequestContext`
 
 The request context for the API.
 

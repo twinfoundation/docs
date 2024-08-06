@@ -18,13 +18,13 @@ The seed required for signing by the issuer.
 
 The id of the attestation to transfer in urn format.
 
-• **opts.holderAddress**: `string`
-
-The new holder address of the attestation.
-
 • **opts.holderIdentity**: `string`
 
 The new holder identity of the attestation.
+
+• **opts.holderAddress**: `string`
+
+The new holder address of the attestation.
 
 • **opts.node**: `string`
 

@@ -48,7 +48,7 @@ Runtime name for the class.
 
 ### mint()
 
-> **mint**\<`T`, `U`\>(`issuer`, `tag`, `immutableMetadata`?, `metadata`?, `options`?, `requestContext`?): `Promise`\<`string`\>
+> **mint**\<`T`, `U`\>(`issuer`, `tag`, `immutableMetadata`?, `metadata`?, `options`?, `identity`?): `Promise`\<`string`\>
 
 Mint an NFT.
 
@@ -84,9 +84,9 @@ Additional options for the NFT service.
 
 The namespace of the connector to use for the NFT, defaults to service configured namespace.
 
-• **requestContext?**: `IServiceRequestContext`
+• **identity?**: `string`
 
-The context for the request.
+The identity to perform the nft operation on.
 
 #### Returns
 
@@ -102,7 +102,7 @@ The id of the created NFT in urn format.
 
 ### resolve()
 
-> **resolve**\<`T`, `U`\>(`id`, `requestContext`?): `Promise`\<`object`\>
+> **resolve**\<`T`, `U`\>(`id`, `identity`?): `Promise`\<`object`\>
 
 Resolve an NFT.
 
@@ -118,9 +118,9 @@ Resolve an NFT.
 
 The id of the NFT to resolve.
 
-• **requestContext?**: `IServiceRequestContext`
+• **identity?**: `string`
 
-The context for the request.
+The identity to perform the nft operation on.
 
 #### Returns
 
@@ -156,7 +156,7 @@ The data for the NFT.
 
 ### burn()
 
-> **burn**(`id`, `requestContext`?): `Promise`\<`void`\>
+> **burn**(`id`, `identity`?): `Promise`\<`void`\>
 
 Burn an NFT.
 
@@ -166,9 +166,9 @@ Burn an NFT.
 
 The id of the NFT to burn in urn format.
 
-• **requestContext?**: `IServiceRequestContext`
+• **identity?**: `string`
 
-The context for the request.
+The identity to perform the nft operation on.
 
 #### Returns
 
@@ -184,7 +184,7 @@ Nothing.
 
 ### transfer()
 
-> **transfer**\<`T`\>(`id`, `recipient`, `metadata`?, `requestContext`?): `Promise`\<`void`\>
+> **transfer**\<`T`\>(`id`, `recipient`, `metadata`?, `identity`?): `Promise`\<`void`\>
 
 Transfer an NFT.
 
@@ -206,9 +206,9 @@ The recipient of the NFT.
 
 Optional mutable data to include during the transfer.
 
-• **requestContext?**: `IServiceRequestContext`
+• **identity?**: `string`
 
-The context for the request.
+The identity to perform the nft operation on.
 
 #### Returns
 
@@ -224,7 +224,7 @@ Nothing.
 
 ### update()
 
-> **update**\<`T`\>(`id`, `metadata`, `requestContext`?): `Promise`\<`void`\>
+> **update**\<`T`\>(`id`, `metadata`, `identity`?): `Promise`\<`void`\>
 
 Update the data of the NFT.
 
@@ -242,9 +242,9 @@ The id of the NFT to update in urn format.
 
 The mutable data to update.
 
-• **requestContext?**: `IServiceRequestContext`
+• **identity?**: `string`
 
-The context for the request.
+The identity to perform the nft operation on.
 
 #### Returns
 

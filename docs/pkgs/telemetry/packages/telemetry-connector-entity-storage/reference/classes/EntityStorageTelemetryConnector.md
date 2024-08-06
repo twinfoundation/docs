@@ -38,6 +38,14 @@ The type of the logging connector to use, can be undefined for no logging.
 
 ## Properties
 
+### NAMESPACE
+
+> `static` `readonly` **NAMESPACE**: `string` = `"entity-storage"`
+
+The namespace supported by the telemetry connector.
+
+***
+
 ### CLASS\_NAME
 
 > `readonly` **CLASS\_NAME**: `string`
@@ -52,7 +60,7 @@ Runtime name for the class.
 
 ### createMetric()
 
-> **createMetric**(`metric`, `requestContext`?): `Promise`\<`void`\>
+> **createMetric**(`metric`): `Promise`\<`void`\>
 
 Create a new metric.
 
@@ -61,10 +69,6 @@ Create a new metric.
 • **metric**: `ITelemetryMetric`
 
 The metric details.
-
-• **requestContext?**: `IServiceRequestContext`
-
-The context for the request.
 
 #### Returns
 
@@ -80,7 +84,7 @@ Nothing.
 
 ### getMetric()
 
-> **getMetric**(`id`, `requestContext`?): `Promise`\<`object`\>
+> **getMetric**(`id`): `Promise`\<`object`\>
 
 Get the metric details and it's most recent value.
 
@@ -89,10 +93,6 @@ Get the metric details and it's most recent value.
 • **id**: `string`
 
 The metric id.
-
-• **requestContext?**: `IServiceRequestContext`
-
-The context for the request.
 
 #### Returns
 
@@ -116,7 +116,7 @@ The metric details and it's most recent value.
 
 ### updateMetric()
 
-> **updateMetric**(`metric`, `requestContext`?): `Promise`\<`void`\>
+> **updateMetric**(`metric`): `Promise`\<`void`\>
 
 Update metric.
 
@@ -125,10 +125,6 @@ Update metric.
 • **metric**: `Omit`\<`ITelemetryMetric`, `"type"`\>
 
 The metric details.
-
-• **requestContext?**: `IServiceRequestContext`
-
-The context for the request.
 
 #### Returns
 
@@ -144,7 +140,7 @@ Nothing.
 
 ### addMetricValue()
 
-> **addMetricValue**(`id`, `value`, `customData`?, `requestContext`?): `Promise`\<`string`\>
+> **addMetricValue**(`id`, `value`, `customData`?): `Promise`\<`string`\>
 
 Add a metric value.
 
@@ -162,10 +158,6 @@ The value for the add operation.
 
 The custom data for the metric value.
 
-• **requestContext?**: `IServiceRequestContext`
-
-The context for the request.
-
 #### Returns
 
 `Promise`\<`string`\>
@@ -180,7 +172,7 @@ Nothing.
 
 ### removeMetric()
 
-> **removeMetric**(`id`, `requestContext`?): `Promise`\<`void`\>
+> **removeMetric**(`id`): `Promise`\<`void`\>
 
 Remove metric.
 
@@ -189,10 +181,6 @@ Remove metric.
 • **id**: `string`
 
 The id of the metric.
-
-• **requestContext?**: `IServiceRequestContext`
-
-The context for the request.
 
 #### Returns
 
@@ -208,7 +196,7 @@ Nothing.
 
 ### query()
 
-> **query**(`type`?, `cursor`?, `pageSize`?, `requestContext`?): `Promise`\<`object`\>
+> **query**(`type`?, `cursor`?, `pageSize`?): `Promise`\<`object`\>
 
 Query the metrics.
 
@@ -225,10 +213,6 @@ The cursor to request the next page of entities.
 • **pageSize?**: `number`
 
 The maximum number of entities in a page.
-
-• **requestContext?**: `IServiceRequestContext`
-
-The context for the request.
 
 #### Returns
 
@@ -273,7 +257,7 @@ NotImplementedError if the implementation does not support retrieval.
 
 ### queryValues()
 
-> **queryValues**(`id`, `timeStart`?, `timeEnd`?, `cursor`?, `pageSize`?, `requestContext`?): `Promise`\<`object`\>
+> **queryValues**(`id`, `timeStart`?, `timeEnd`?, `cursor`?, `pageSize`?): `Promise`\<`object`\>
 
 Query the metrics.
 
@@ -298,10 +282,6 @@ The cursor to request the next page of entities.
 • **pageSize?**: `number`
 
 The maximum number of entities in a page.
-
-• **requestContext?**: `IServiceRequestContext`
-
-The context for the request.
 
 #### Returns
 

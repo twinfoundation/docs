@@ -25,108 +25,6 @@
         }
     ],
     "paths": {
-        "/identity": {
-            "post": {
-                "operationId": "identityCreate",
-                "summary": "Create a new identity",
-                "tags": [
-                    "Identity"
-                ],
-                "security": [
-                    {
-                        "jwtBearerAuthScheme": []
-                    }
-                ],
-                "responses": {
-                    "201": {
-                        "description": "The rest request ended in created response.",
-                        "headers": {
-                            "location": {
-                                "schema": {
-                                    "type": "string"
-                                },
-                                "description": "e.g. did:iota:tst:0xc57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70"
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "The server cannot process the request, see the error field for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "GeneralError",
-                                            "message": "component.error",
-                                            "properties": {
-                                                "foo": "bar"
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied, see the error field for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "UnauthorizedError",
-                                            "message": "component.error"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "500": {
-                        "description": "The server has encountered a situation it does not know how to handle, see the error field for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "InternalServerError",
-                                            "message": "component.error"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                },
-                "requestBody": {
-                    "description": "Create a new identity.",
-                    "required": true,
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/IdentityCreateRequest"
-                            },
-                            "examples": {
-                                "identityCreateRequestExample": {
-                                    "value": {
-                                        "controller": "tst1qrtks2qycm4al8lqw4wxxcvz8sdsrkf7xdxlvgtpcf8ve8gwzsvux44jd7n"
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
         "/identity/{id}": {
             "get": {
                 "operationId": "identityResolve",
@@ -345,7 +243,6 @@
                             "examples": {
                                 "identityProfileCreateRequestExample": {
                                     "value": {
-                                        "identity": "did:iota:tst:0xc57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70",
                                         "properties": [
                                             {
                                                 "key": "role",
@@ -374,166 +271,12 @@
                 }
             },
             "get": {
-                "operationId": "identitiesProfileList",
-                "summary": "Get the list of profile data for identities",
-                "tags": [
-                    "Identity Profile"
-                ],
-                "parameters": [
-                    {
-                        "name": "filters",
-                        "description": "The filters to apply to the list, comma separated list with color between key and value for each pair e.g. prop1:value1,prop2:value2.",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "propertyNames",
-                        "description": "The properties to get for the profile, defaults to all, should be a comma separated list.",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "cursor",
-                        "description": "The cursor for paged requests.",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "pageSize",
-                        "description": "Number of items to return.",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "number"
-                        }
-                    }
-                ],
-                "security": [
-                    {
-                        "jwtBearerAuthScheme": []
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Response to get a list of identities.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/IdentityProfileListResponse"
-                                },
-                                "examples": {
-                                    "identitiesProfileListResponseExample": {
-                                        "value": {
-                                            "items": [
-                                                {
-                                                    "identity": "did:iota:tst:0xc57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70",
-                                                    "properties": [
-                                                        {
-                                                            "key": "email",
-                                                            "type": "https://schema.org/Text",
-                                                            "value": "john@example.com",
-                                                            "isPublic": false
-                                                        }
-                                                    ]
-                                                }
-                                            ],
-                                            "cursor": "1",
-                                            "pageSize": 10,
-                                            "totalEntities": 20
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "The server cannot process the request, see the error field for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "GeneralError",
-                                            "message": "component.error",
-                                            "properties": {
-                                                "foo": "bar"
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied, see the error field for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "UnauthorizedError",
-                                            "message": "component.error"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "500": {
-                        "description": "The server has encountered a situation it does not know how to handle, see the error field for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "InternalServerError",
-                                            "message": "component.error"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/identity/profile/{identity}": {
-            "get": {
                 "operationId": "identityProfileGet",
                 "summary": "Get the identity profile properties",
                 "tags": [
                     "Identity Profile"
                 ],
                 "parameters": [
-                    {
-                        "name": "identity",
-                        "description": "The identity to get the profile for.",
-                        "in": "path",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "style": "simple",
-                        "example": "did:iota:tst:0xc57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70"
-                    },
                     {
                         "name": "propertyNames",
                         "description": "The properties to get for the profile, defaults to all, should be a comma separated list.",
@@ -673,19 +416,6 @@
                 "tags": [
                     "Identity Profile"
                 ],
-                "parameters": [
-                    {
-                        "name": "identity",
-                        "description": "The identity to update the profile for.",
-                        "in": "path",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "style": "simple",
-                        "example": "did:iota:tst:0xc57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70"
-                    }
-                ],
                 "security": [
                     {
                         "jwtBearerAuthScheme": []
@@ -817,19 +547,6 @@
                 "tags": [
                     "Identity Profile"
                 ],
-                "parameters": [
-                    {
-                        "name": "identity",
-                        "description": "The identity to remove the profile for.",
-                        "in": "path",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "style": "simple",
-                        "example": "did:iota:tst:0xc57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70"
-                    }
-                ],
                 "security": [
                     {
                         "jwtBearerAuthScheme": []
@@ -893,6 +610,149 @@
                                             "properties": {
                                                 "notFoundId": "1"
                                             }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "The server has encountered a situation it does not know how to handle, see the error field for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "InternalServerError",
+                                            "message": "component.error"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/identity/profile/query": {
+            "get": {
+                "operationId": "identitiesProfileList",
+                "summary": "Get the list of profile data for identities",
+                "tags": [
+                    "Identity Profile"
+                ],
+                "parameters": [
+                    {
+                        "name": "filters",
+                        "description": "The filters to apply to the list, comma separated list with color between key and value for each pair e.g. prop1:value1,prop2:value2.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "propertyNames",
+                        "description": "The properties to get for the profile, defaults to all, should be a comma separated list.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "cursor",
+                        "description": "The cursor for paged requests.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "pageSize",
+                        "description": "Number of items to return.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "number"
+                        }
+                    }
+                ],
+                "security": [
+                    {
+                        "jwtBearerAuthScheme": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Response to get a list of identities.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/IdentityProfileListResponse"
+                                },
+                                "examples": {
+                                    "identitiesProfileListResponseExample": {
+                                        "value": {
+                                            "items": [
+                                                {
+                                                    "identity": "did:iota:tst:0xc57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70",
+                                                    "properties": [
+                                                        {
+                                                            "key": "email",
+                                                            "type": "https://schema.org/Text",
+                                                            "value": "john@example.com",
+                                                            "isPublic": false
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "cursor": "1",
+                                            "pageSize": 10,
+                                            "totalEntities": 20
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "The server cannot process the request, see the error field for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "GeneralError",
+                                            "message": "component.error",
+                                            "properties": {
+                                                "foo": "bar"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "You are not authorized to use the API or no credentials were supplied, see the error field for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "UnauthorizedError",
+                                            "message": "component.error"
                                         }
                                     }
                                 }
@@ -1039,24 +899,6 @@
                     "name"
                 ],
                 "description": "The body which contains the error."
-            },
-            "IdentityCreateRequest": {
-                "type": "object",
-                "properties": {
-                    "controller": {
-                        "type": "string",
-                        "description": "The controller for the identity."
-                    },
-                    "namespace": {
-                        "type": "string",
-                        "description": "The namespace of the connector to use for the identity, defaults to service configured namespace."
-                    }
-                },
-                "required": [
-                    "controller"
-                ],
-                "additionalProperties": false,
-                "description": "The data for the request."
             },
             "DidDocument": {
                 "type": "object",
@@ -1354,10 +1196,6 @@
             "IdentityProfileCreateRequest": {
                 "type": "object",
                 "properties": {
-                    "identity": {
-                        "type": "string",
-                        "description": "The identity to create the profile for."
-                    },
                     "properties": {
                         "type": "array",
                         "items": {
@@ -1367,7 +1205,6 @@
                     }
                 },
                 "required": [
-                    "identity",
                     "properties"
                 ],
                 "additionalProperties": false,

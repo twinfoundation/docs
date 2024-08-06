@@ -24,6 +24,6 @@ The id.
 
 ### data
 
-> **data**: `string`
+> **data**: `unknown`
 
-The JSON stringified data for the secret.
+The data for the secret.

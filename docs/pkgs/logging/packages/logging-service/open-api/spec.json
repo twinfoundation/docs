@@ -38,7 +38,7 @@
                         "description": "The rest request ended in success with no data."
                     },
                     "400": {
-                        "description": "Something went wrong with the request see the error field for more details.",
+                        "description": "The server cannot process the request, see the error field for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -59,7 +59,7 @@
                         }
                     },
                     "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied.",
+                        "description": "You are not authorized to use the API or no credentials were supplied, see the error field for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -69,6 +69,24 @@
                                     "exampleResponse": {
                                         "value": {
                                             "name": "UnauthorizedError",
+                                            "message": "component.error"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "The server has encountered a situation it does not know how to handle, see the error field for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "InternalServerError",
                                             "message": "component.error"
                                         }
                                     }
@@ -209,7 +227,7 @@
                         }
                     },
                     "400": {
-                        "description": "Something went wrong with the request see the error field for more details.",
+                        "description": "The server cannot process the request, see the error field for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -230,7 +248,7 @@
                         }
                     },
                     "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied.",
+                        "description": "You are not authorized to use the API or no credentials were supplied, see the error field for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -240,6 +258,24 @@
                                     "exampleResponse": {
                                         "value": {
                                             "name": "UnauthorizedError",
+                                            "message": "component.error"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "The server has encountered a situation it does not know how to handle, see the error field for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "InternalServerError",
                                             "message": "component.error"
                                         }
                                     }
@@ -310,6 +346,8 @@
                         "$ref": "#/components/schemas/Error"
                     },
                     "data": {
+                        "type": "object",
+                        "additionalProperties": {},
                         "description": "Optional data for the message."
                     }
                 },

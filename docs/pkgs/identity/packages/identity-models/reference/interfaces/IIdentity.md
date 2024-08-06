@@ -46,15 +46,15 @@ Nothing.
 
 ### start()?
 
-> `optional` **start**(`systemRequestContext`, `systemLoggingConnectorType`?): `Promise`\<`void`\>
+> `optional` **start**(`systemIdentity`, `systemLoggingConnectorType`?): `Promise`\<`void`\>
 
 The service needs to be started when the application is initialized.
 
 #### Parameters
 
-• **systemRequestContext**: `IServiceRequestContext`
+• **systemIdentity**: `string`
 
-The system request context.
+The identity of the system.
 
 • **systemLoggingConnectorType?**: `string`
 
@@ -74,15 +74,15 @@ Nothing.
 
 ### stop()?
 
-> `optional` **stop**(`systemRequestContext`, `systemLoggingConnectorType`?): `Promise`\<`void`\>
+> `optional` **stop**(`systemIdentity`, `systemLoggingConnectorType`?): `Promise`\<`void`\>
 
 The service needs to be stopped when the application is closed.
 
 #### Parameters
 
-• **systemRequestContext**: `IServiceRequestContext`
+• **systemIdentity**: `string`
 
-The system request context.
+The identity of the system.
 
 • **systemLoggingConnectorType?**: `string`
 
@@ -100,47 +100,9 @@ Nothing.
 
 ***
 
-### create()
-
-> **create**(`controller`, `options`?, `requestContext`?): `Promise`\<`object`\>
-
-Create a new identity.
-
-#### Parameters
-
-• **controller**: `string`
-
-The controller for the identity.
-
-• **options?**
-
-Additional options for the identity service.
-
-• **options.namespace?**: `string`
-
-The namespace of the connector to use for the identity, defaults to service configured namespace.
-
-• **requestContext?**: `IServiceRequestContext`
-
-The context for the request.
-
-#### Returns
-
-`Promise`\<`object`\>
-
-The created identity details.
-
-##### identity
-
-> **identity**: `string`
-
-The identity created.
-
-***
-
 ### resolve()
 
-> **resolve**(`documentId`, `requestContext`?): `Promise`\<`IDidDocument`\>
+> **resolve**(`documentId`): `Promise`\<`IDidDocument`\>
 
 Resolve an identity.
 
@@ -149,10 +111,6 @@ Resolve an identity.
 • **documentId**: `string`
 
 The id of the document to resolve.
-
-• **requestContext?**: `IServiceRequestContext`
-
-The context for the request.
 
 #### Returns
 

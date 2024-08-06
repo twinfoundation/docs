@@ -1,6 +1,6 @@
 # Class: IdentityProfileService
 
-Class which implements the identity contract.
+Class which implements the identity profile contract.
 
 ## Implements
 
@@ -12,15 +12,15 @@ Class which implements the identity contract.
 
 > **new IdentityProfileService**(`options`?): [`IdentityProfileService`](IdentityProfileService.md)
 
-Create a new instance of Identity.
+Create a new instance of IdentityProfileService.
 
 #### Parameters
 
 • **options?**
 
-The dependencies for the identity service.
+The dependencies for the identity profile service.
 
-• **options.profileEntityStorageType?**: `string`
+• **options.profileEntityConnectorType?**: `string`
 
 The storage connector for the profiles, default to "identity-profile".
 
@@ -44,23 +44,19 @@ Runtime name for the class.
 
 ### create()
 
-> **create**(`identity`, `properties`, `requestContext`?): `Promise`\<`void`\>
+> **create**(`properties`, `identity`?): `Promise`\<`void`\>
 
 Create the profile properties for an identity.
 
 #### Parameters
 
-• **identity**: `string`
-
-The identity of the profile to create.
-
 • **properties**: `IIdentityProfileProperty`[]
 
 The properties to create the profile with.
 
-• **requestContext?**: `IServiceRequestContext`
+• **identity?**: `string`
 
-The context for the request.
+The identity to perform the profile operation on.
 
 #### Returns
 
@@ -76,24 +72,19 @@ Nothing.
 
 ### get()
 
-> **get**(`identity`, `propertyNames`?, `requestContext`?): `Promise`\<`object`\>
+> **get**(`propertyNames`?, `identity`?): `Promise`\<`object`\>
 
 Get the profile properties for an identity.
-if matching authenticated user private properties are also returned.
 
 #### Parameters
-
-• **identity**: `string`
-
-The identity of the item to get.
 
 • **propertyNames?**: `string`[]
 
 The properties to get for the item, defaults to all.
 
-• **requestContext?**: `IServiceRequestContext`
+• **identity?**: `string`
 
-The context for the request.
+The identity to perform the profile operation on.
 
 #### Returns
 
@@ -113,23 +104,19 @@ The items properties.
 
 ### update()
 
-> **update**(`identity`, `properties`, `requestContext`?): `Promise`\<`void`\>
+> **update**(`properties`, `identity`?): `Promise`\<`void`\>
 
 Update the profile properties of an identity.
 
 #### Parameters
 
-• **identity**: `string`
-
-The identity to update.
-
 • **properties**: `IIdentityProfileProperty`[]
 
 Properties for the profile, set a properties value to undefined to remove it.
 
-• **requestContext?**: `IServiceRequestContext`
+• **identity?**: `string`
 
-The context for the request.
+The identity to perform the profile operation on.
 
 #### Returns
 
@@ -145,19 +132,15 @@ Nothing.
 
 ### remove()
 
-> **remove**(`identity`, `requestContext`?): `Promise`\<`void`\>
+> **remove**(`identity`?): `Promise`\<`void`\>
 
 Delete the profile for an identity.
 
 #### Parameters
 
-• **identity**: `string`
+• **identity?**: `string`
 
-The identity to delete.
-
-• **requestContext?**: `IServiceRequestContext`
-
-The context for the request.
+The identity to perform the profile operation on.
 
 #### Returns
 
@@ -173,7 +156,7 @@ Nothing.
 
 ### list()
 
-> **list**(`filters`?, `propertyNames`?, `cursor`?, `pageSize`?, `requestContext`?): `Promise`\<`object`\>
+> **list**(`filters`?, `propertyNames`?, `cursor`?, `pageSize`?): `Promise`\<`object`\>
 
 Get a list of the requested types.
 
@@ -194,10 +177,6 @@ The cursor for paged requests.
 • **pageSize?**: `number`
 
 The maximum number of items in a page.
-
-• **requestContext?**: `IServiceRequestContext`
-
-The context for the request.
 
 #### Returns
 
