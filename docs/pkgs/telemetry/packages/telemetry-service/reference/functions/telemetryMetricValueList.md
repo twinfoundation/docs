@@ -1,12 +1,12 @@
 # Function: telemetryMetricValueList()
 
-> **telemetryMetricValueList**(`requestContext`, `factoryServiceName`, `request`): `Promise`\<`ITelemetryValuesListResponse`\>
+> **telemetryMetricValueList**(`httpRequestContext`, `factoryServiceName`, `request`): `Promise`\<`ITelemetryValuesListResponse`\>
 
 Get a list of the telemetry metric values.
 
 ## Parameters
 
-• **requestContext**: `IServiceRequestContext`
+• **httpRequestContext**: `IHttpRequestContext`
 
 The request context for the API.
 

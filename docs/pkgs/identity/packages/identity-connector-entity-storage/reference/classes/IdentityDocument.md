@@ -24,9 +24,9 @@ The identity of the document.
 
 ### document
 
-> **document**: `string`
+> **document**: `IDidDocument`
 
-The JSON stringified version of the DID document.
+The DID document.
 
 ***
 

@@ -1,6 +1,6 @@
 {
 	"name": "@gtsc/blob-storage-connector-ipfs",
-	"version": "0.0.3-next.22",
+	"version": "0.0.5-next.1",
 	"description": "Blob Storage connector implementation using IPFS",
 	"repository": {
 		"type": "git",
@@ -28,7 +28,7 @@
 		"dist": "npm run clean && npm run build && npm run test && npm run bundle && npm run docs"
 	},
 	"dependencies": {
-		"@gtsc/blob-storage-models": "0.0.3-next.22",
+		"@gtsc/blob-storage-models": "0.0.5-next.1",
 		"@gtsc/core": "next",
 		"@gtsc/crypto": "next",
 		"@gtsc/nameof": "next"

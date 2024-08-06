@@ -1,12 +1,12 @@
 # Function: telemetryRemoveMetric()
 
-> **telemetryRemoveMetric**(`requestContext`, `factoryServiceName`, `request`): `Promise`\<`INoContentResponse`\>
+> **telemetryRemoveMetric**(`httpRequestContext`, `factoryServiceName`, `request`): `Promise`\<`INoContentResponse`\>
 
 Removes a telemetry metric.
 
 ## Parameters
 
-• **requestContext**: `IServiceRequestContext`
+• **httpRequestContext**: `IHttpRequestContext`
 
 The request context for the API.
 

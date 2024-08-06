@@ -46,15 +46,15 @@ Nothing.
 
 ### start()?
 
-> `optional` **start**(`systemRequestContext`, `systemLoggingConnectorType`?): `Promise`\<`void`\>
+> `optional` **start**(`systemIdentity`, `systemLoggingConnectorType`?): `Promise`\<`void`\>
 
 The service needs to be started when the application is initialized.
 
 #### Parameters
 
-• **systemRequestContext**: `IServiceRequestContext`
+• **systemIdentity**: `string`
 
-The system request context.
+The identity of the system.
 
 • **systemLoggingConnectorType?**: `string`
 
@@ -74,15 +74,15 @@ Nothing.
 
 ### stop()?
 
-> `optional` **stop**(`systemRequestContext`, `systemLoggingConnectorType`?): `Promise`\<`void`\>
+> `optional` **stop**(`systemIdentity`, `systemLoggingConnectorType`?): `Promise`\<`void`\>
 
 The service needs to be stopped when the application is closed.
 
 #### Parameters
 
-• **systemRequestContext**: `IServiceRequestContext`
+• **systemIdentity**: `string`
 
-The system request context.
+The identity of the system.
 
 • **systemLoggingConnectorType?**: `string`
 
@@ -102,7 +102,7 @@ Nothing.
 
 ### attest()
 
-> **attest**\<`T`\>(`controllerAddress`, `verificationMethodId`, `data`, `options`?, `requestContext`?): `Promise`\<[`IAttestationInformation`](IAttestationInformation.md)\<`T`\>\>
+> **attest**\<`T`\>(`address`, `verificationMethodId`, `data`, `options`?, `identity`?): `Promise`\<[`IAttestationInformation`](IAttestationInformation.md)\<`T`\>\>
 
 Attest the data and return the collated information.
 
@@ -112,7 +112,7 @@ Attest the data and return the collated information.
 
 #### Parameters
 
-• **controllerAddress**: `string`
+• **address**: `string`
 
 The controller address for the attestation.
 
@@ -132,9 +132,9 @@ Additional options for the attestation service.
 
 The namespace of the connector to use for the attestation, defaults to service configured namespace.
 
-• **requestContext?**: `IServiceRequestContext`
+• **identity?**: `string`
 
-The context for the request.
+The identity to perform the attestation operation with.
 
 #### Returns
 
@@ -146,7 +146,7 @@ The collated attestation data.
 
 ### verify()
 
-> **verify**\<`T`\>(`attestationId`, `requestContext`?): `Promise`\<`object`\>
+> **verify**\<`T`\>(`attestationId`): `Promise`\<`object`\>
 
 Resolve and verify the attestation id.
 
@@ -159,10 +159,6 @@ Resolve and verify the attestation id.
 • **attestationId**: `string`
 
 The attestation id to verify.
-
-• **requestContext?**: `IServiceRequestContext`
-
-The context for the request.
 
 #### Returns
 
@@ -186,7 +182,7 @@ The verified attestation details.
 
 ### transfer()
 
-> **transfer**\<`T`\>(`attestationId`, `holderControllerAddress`, `holderIdentity`, `requestContext`?): `Promise`\<[`IAttestationInformation`](IAttestationInformation.md)\<`T`\>\>
+> **transfer**\<`T`\>(`attestationId`, `holderIdentity`, `holderAddress`, `identity`?): `Promise`\<[`IAttestationInformation`](IAttestationInformation.md)\<`T`\>\>
 
 Transfer the attestation to a new holder.
 
@@ -200,17 +196,17 @@ Transfer the attestation to a new holder.
 
 The attestation to transfer.
 
-• **holderControllerAddress**: `string`
-
-The new controller address of the attestation belonging to the holder.
-
 • **holderIdentity**: `string`
 
 The holder identity of the attestation.
 
-• **requestContext?**: `IServiceRequestContext`
+• **holderAddress**: `string`
 
-The context for the request.
+The new controller address of the attestation belonging to the holder.
+
+• **identity?**: `string`
+
+The identity to perform the attestation operation with.
 
 #### Returns
 

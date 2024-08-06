@@ -2,8 +2,8 @@
 
 ## Classes
 
-- [TelemetryMetricEntry](classes/TelemetryMetricEntry.md)
-- [TelemetryMetricValueEntry](classes/TelemetryMetricValueEntry.md)
+- [TelemetryMetric](classes/TelemetryMetric.md)
+- [TelemetryMetricValue](classes/TelemetryMetricValue.md)
 - [EntityStorageTelemetryConnector](classes/EntityStorageTelemetryConnector.md)
 
 ## Functions

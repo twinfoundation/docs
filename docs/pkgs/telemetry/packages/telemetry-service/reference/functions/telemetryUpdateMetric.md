@@ -1,12 +1,12 @@
 # Function: telemetryUpdateMetric()
 
-> **telemetryUpdateMetric**(`requestContext`, `factoryServiceName`, `request`): `Promise`\<`INoContentResponse`\>
+> **telemetryUpdateMetric**(`httpRequestContext`, `factoryServiceName`, `request`): `Promise`\<`INoContentResponse`\>
 
 Updates a telemetry metric.
 
 ## Parameters
 
-• **requestContext**: `IServiceRequestContext`
+• **httpRequestContext**: `IHttpRequestContext`
 
 The request context for the API.
 

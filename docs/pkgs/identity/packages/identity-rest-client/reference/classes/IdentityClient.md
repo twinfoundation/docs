@@ -102,44 +102,6 @@ The response.
 
 ***
 
-### create()
-
-> **create**(`controller`, `options`?): `Promise`\<`object`\>
-
-Create a new identity.
-
-#### Parameters
-
-• **controller**: `string`
-
-The controller for the identity.
-
-• **options?**
-
-Additional options for the identity service.
-
-• **options.namespace?**: `string`
-
-The namespace of the connector to use for the identity, defaults to service configured namespace.
-
-#### Returns
-
-`Promise`\<`object`\>
-
-The created identity details.
-
-##### identity
-
-> **identity**: `string`
-
-The identity created.
-
-#### Implementation of
-
-`IIdentity.create`
-
-***
-
 ### resolve()
 
 > **resolve**(`documentId`): `Promise`\<`IDidDocument`\>

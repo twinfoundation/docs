@@ -1,12 +1,12 @@
 # Function: nftTransfer()
 
-> **nftTransfer**(`requestContext`, `factoryServiceName`, `request`): `Promise`\<`INoContentResponse`\>
+> **nftTransfer**(`httpRequestContext`, `factoryServiceName`, `request`): `Promise`\<`INoContentResponse`\>
 
 Transfer an NFT.
 
 ## Parameters
 
-• **requestContext**: `IHttpRequestContext`
+• **httpRequestContext**: `IHttpRequestContext`
 
 The request context for the API.
 

@@ -1,6 +1,6 @@
 # Interface: ITelemetryUpdateMetricRequest
 
-Update a telemetry entry.
+Update a telemetry metric.
 
 ## Properties
 

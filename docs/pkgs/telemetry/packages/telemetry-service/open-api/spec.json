@@ -104,7 +104,7 @@
                     }
                 },
                 "requestBody": {
-                    "description": "Create a new telemetry entry.",
+                    "description": "Create a new telemetry metric.",
                     "required": true,
                     "content": {
                         "application/json": {
@@ -286,7 +286,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Get a telemetry entry response.",
+                        "description": "Get a telemetry metric response.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -459,7 +459,7 @@
                     }
                 },
                 "requestBody": {
-                    "description": "Update a telemetry entry.",
+                    "description": "Update a telemetry metric.",
                     "required": true,
                     "content": {
                         "application/json": {

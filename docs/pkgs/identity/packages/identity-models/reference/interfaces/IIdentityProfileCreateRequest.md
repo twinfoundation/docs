@@ -10,12 +10,6 @@ Request to create an identity profile.
 
 The data for the request.
 
-#### identity
-
-> **identity**: `string`
-
-The identity to create the profile for.
-
 #### properties
 
 > **properties**: [`IIdentityProfileProperty`](IIdentityProfileProperty.md)[]

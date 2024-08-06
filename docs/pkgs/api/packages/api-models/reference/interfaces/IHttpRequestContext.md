@@ -4,19 +4,27 @@ Context data from the HTTP request.
 
 ## Extends
 
-- `IServiceRequestContext`
+- [`IHttpRequestIdentity`](IHttpRequestIdentity.md)
 
 ## Properties
 
-### partitionId?
+### serverRequest
 
-> `optional` **partitionId**: `string`
+> **serverRequest**: [`IHttpServerRequest`](IHttpServerRequest.md)\<`any`\>
 
-The id for partitioning data, usually correlated from the api key making the request.
+The raw HTTP request.
 
-#### Inherited from
+***
 
-`IServiceRequestContext.partitionId`
+### processorState
+
+> **processorState**: `object`
+
+The state handed through the processors.
+
+#### Index signature
+
+ \[`id`: `string`\]: `unknown`
 
 ***
 
@@ -28,7 +36,7 @@ The identity of the system the request is being performed on.
 
 #### Inherited from
 
-`IServiceRequestContext.systemIdentity`
+[`IHttpRequestIdentity`](IHttpRequestIdentity.md).[`systemIdentity`](IHttpRequestIdentity.md#systemidentity)
 
 ***
 
@@ -40,12 +48,4 @@ The identity of the requestor if there is an authenticated user.
 
 #### Inherited from
 
-`IServiceRequestContext.userIdentity`
-
-***
-
-### serverRequest
-
-> **serverRequest**: [`IHttpServerRequest`](IHttpServerRequest.md)\<`any`\>
-
-The raw HTTP request.
+[`IHttpRequestIdentity`](IHttpRequestIdentity.md).[`userIdentity`](IHttpRequestIdentity.md#useridentity)

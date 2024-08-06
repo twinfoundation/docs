@@ -24,14 +24,14 @@ The attestation id to verify.
 
 The parameters to be used in the transfer.
 
-#### holderControllerAddress
-
-> **holderControllerAddress**: `string`
-
-The new holder controller address.
-
 #### holderIdentity
 
 > **holderIdentity**: `string`
 
 The new holder identity.
+
+#### holderAddress
+
+> **holderAddress**: `string`
+
+The new holder controller address.

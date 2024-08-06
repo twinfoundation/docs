@@ -22,15 +22,15 @@ The name of the service.
 
 ### bootstrap()?
 
-> `optional` **bootstrap**(`requestContext`?): `Promise`\<`void`\>
+> `optional` **bootstrap**(`systemLoggingConnectorType`?): `Promise`\<`void`\>
 
 Bootstrap the service by creating and initializing any resources it needs.
 
 #### Parameters
 
-• **requestContext?**: `IServiceRequestContext`
+• **systemLoggingConnectorType?**: `string`
 
-The request context for bootstrapping.
+The system logging connector type, defaults to "system-logging".
 
 #### Returns
 
@@ -46,9 +46,19 @@ Nothing.
 
 ### start()?
 
-> `optional` **start**(): `Promise`\<`void`\>
+> `optional` **start**(`systemIdentity`, `systemLoggingConnectorType`?): `Promise`\<`void`\>
 
 The service needs to be started when the application is initialized.
+
+#### Parameters
+
+• **systemIdentity**: `string`
+
+The identity of the system.
+
+• **systemLoggingConnectorType?**: `string`
+
+The system logging connector type, defaults to "system-logging".
 
 #### Returns
 
@@ -64,9 +74,19 @@ Nothing.
 
 ### stop()?
 
-> `optional` **stop**(): `Promise`\<`void`\>
+> `optional` **stop**(`systemIdentity`, `systemLoggingConnectorType`?): `Promise`\<`void`\>
 
 The service needs to be stopped when the application is closed.
+
+#### Parameters
+
+• **systemIdentity**: `string`
+
+The identity of the system.
+
+• **systemLoggingConnectorType?**: `string`
+
+The system logging connector type, defaults to "system-logging".
 
 #### Returns
 
@@ -82,7 +102,7 @@ Nothing.
 
 ### log()
 
-> **log**(`logEntry`, `requestContext`?): `Promise`\<`void`\>
+> **log**(`logEntry`): `Promise`\<`void`\>
 
 Log an entry to the service.
 
@@ -91,10 +111,6 @@ Log an entry to the service.
 • **logEntry**: [`ILogEntry`](ILogEntry.md)
 
 The entry to log.
-
-• **requestContext?**: `IServiceRequestContext`
-
-The context for the request.
 
 #### Returns
 
@@ -106,7 +122,7 @@ Nothing.
 
 ### query()
 
-> **query**(`level`?, `source`?, `timeStart`?, `timeEnd`?, `cursor`?, `pageSize`?, `requestContext`?): `Promise`\<`object`\>
+> **query**(`level`?, `source`?, `timeStart`?, `timeEnd`?, `cursor`?, `pageSize`?): `Promise`\<`object`\>
 
 Query the log entries.
 
@@ -135,10 +151,6 @@ The cursor to request the next page of entities.
 • **pageSize?**: `number`
 
 The maximum number of entities in a page.
-
-• **requestContext?**: `IServiceRequestContext`
-
-The context for the request.
 
 #### Returns
 

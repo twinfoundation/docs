@@ -1,12 +1,12 @@
 # Function: identityResolve()
 
-> **identityResolve**(`requestContext`, `serviceName`, `request`): `Promise`\<`IIdentityResolveResponse`\>
+> **identityResolve**(`httpRequestContext`, `serviceName`, `request`): `Promise`\<`IIdentityResolveResponse`\>
 
 Resolve an identity.
 
 ## Parameters
 
-• **requestContext**: `IHttpRequestContext`
+• **httpRequestContext**: `IHttpRequestContext`
 
 The request context for the API.
 

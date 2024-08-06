@@ -1,6 +1,6 @@
 # Interface: ITelemetryGetMetricRequest
 
-Get a telemetry entry.
+Get a telemetry metric.
 
 ## Properties
 

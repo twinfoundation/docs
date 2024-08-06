@@ -1,6 +1,6 @@
 {
 	"name": "@gtsc/attestation-connector-iota",
-	"version": "0.0.3-next.14",
+	"version": "0.0.5-next.1",
 	"description": "Attestation connector implementation using IOTA",
 	"repository": {
 		"type": "git",
@@ -28,7 +28,7 @@
 		"dist": "npm run clean && npm run build && npm run test && npm run bundle && npm run docs"
 	},
 	"dependencies": {
-		"@gtsc/attestation-models": "0.0.3-next.14",
+		"@gtsc/attestation-models": "0.0.5-next.1",
 		"@gtsc/core": "next",
 		"@gtsc/crypto": "next",
 		"@gtsc/entity": "next",
@@ -46,6 +46,7 @@
 		"@gtsc/vault-connector-entity-storage": "next",
 		"@gtsc/identity-connector-iota": "next",
 		"@gtsc/nft-connector-iota": "next",
+		"@gtsc/wallet-models": "next",
 		"@gtsc/wallet-connector-iota": "next",
 		"@vitest/coverage-v8": "1.6.0",
 		"copyfiles": "2.4.1",

@@ -1,6 +1,6 @@
 # Interface: ITelemetryRemoveMetricRequest
 
-Remove a telemetry entry and it's values.
+Remove a telemetry metric and it's values.
 
 ## Properties
 

@@ -46,51 +46,9 @@ Runtime name for the class.
 
 ## Methods
 
-### create()
-
-> **create**(`controller`, `options`?, `requestContext`?): `Promise`\<`object`\>
-
-Create a new identity.
-
-#### Parameters
-
-• **controller**: `string`
-
-The controller for the identity.
-
-• **options?**
-
-Additional options for the identity service.
-
-• **options.namespace?**: `string`
-
-The namespace of the connector to use for the identity, defaults to service configured namespace.
-
-• **requestContext?**: `IServiceRequestContext`
-
-The context for the request.
-
-#### Returns
-
-`Promise`\<`object`\>
-
-The created identity details.
-
-##### identity
-
-> **identity**: `string`
-
-The identity created.
-
-#### Implementation of
-
-`IIdentity.create`
-
-***
-
 ### resolve()
 
-> **resolve**(`documentId`, `requestContext`?): `Promise`\<`IDidDocument`\>
+> **resolve**(`documentId`): `Promise`\<`IDidDocument`\>
 
 Resolve an identity.
 
@@ -99,10 +57,6 @@ Resolve an identity.
 • **documentId**: `string`
 
 The id of the document to resolve.
-
-• **requestContext?**: `IServiceRequestContext`
-
-The context for the request.
 
 #### Returns
 

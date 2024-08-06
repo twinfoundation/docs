@@ -1,12 +1,12 @@
 # Function: telemetryAddMetricValue()
 
-> **telemetryAddMetricValue**(`requestContext`, `factoryServiceName`, `request`): `Promise`\<`ICreatedResponse`\>
+> **telemetryAddMetricValue**(`httpRequestContext`, `factoryServiceName`, `request`): `Promise`\<`ICreatedResponse`\>
 
 Add a telemetry metric value.
 
 ## Parameters
 
-• **requestContext**: `IServiceRequestContext`
+• **httpRequestContext**: `IHttpRequestContext`
 
 The request context for the API.
 

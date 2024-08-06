@@ -3,6 +3,7 @@
 ## Classes
 
 - [LogEntry](classes/LogEntry.md)
+- [LogEntryError](classes/LogEntryError.md)
 - [EntityStorageLoggingConnector](classes/EntityStorageLoggingConnector.md)
 
 ## Type Aliases

@@ -1,12 +1,12 @@
 # Function: blobStorageRemove()
 
-> **blobStorageRemove**(`requestContext`, `serviceName`, `request`): `Promise`\<`INoContentResponse`\>
+> **blobStorageRemove**(`httpRequestContext`, `serviceName`, `request`): `Promise`\<`INoContentResponse`\>
 
 Remove the blob from storage.
 
 ## Parameters
 
-• **requestContext**: `IServiceRequestContext`
+• **httpRequestContext**: `IHttpRequestContext`
 
 The request context for the API.
 

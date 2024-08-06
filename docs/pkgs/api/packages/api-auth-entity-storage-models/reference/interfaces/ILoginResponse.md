@@ -10,8 +10,14 @@ Response from a login on the server.
 
 The login response details.
 
-#### token
+#### token?
 
-> **token**: `string`
+> `optional` **token**: `string`
 
-The access token for future requests.
+The access token, if it uses a mechanism with public access.
+
+#### expiry
+
+> **expiry**: `number`
+
+The expiry time of the token.

@@ -46,15 +46,15 @@ Nothing.
 
 ### start()?
 
-> `optional` **start**(`systemRequestContext`, `systemLoggingConnectorType`?): `Promise`\<`void`\>
+> `optional` **start**(`systemIdentity`, `systemLoggingConnectorType`?): `Promise`\<`void`\>
 
 The service needs to be started when the application is initialized.
 
 #### Parameters
 
-• **systemRequestContext**: `IServiceRequestContext`
+• **systemIdentity**: `string`
 
-The system request context.
+The identity of the system.
 
 • **systemLoggingConnectorType?**: `string`
 
@@ -74,15 +74,15 @@ Nothing.
 
 ### stop()?
 
-> `optional` **stop**(`systemRequestContext`, `systemLoggingConnectorType`?): `Promise`\<`void`\>
+> `optional` **stop**(`systemIdentity`, `systemLoggingConnectorType`?): `Promise`\<`void`\>
 
 The service needs to be stopped when the application is closed.
 
 #### Parameters
 
-• **systemRequestContext**: `IServiceRequestContext`
+• **systemIdentity**: `string`
 
-The system request context.
+The identity of the system.
 
 • **systemLoggingConnectorType?**: `string`
 
@@ -102,7 +102,7 @@ Nothing.
 
 ### set()
 
-> **set**(`blob`, `requestContext`?): `Promise`\<`string`\>
+> **set**(`blob`): `Promise`\<`string`\>
 
 Set the blob.
 
@@ -111,10 +111,6 @@ Set the blob.
 • **blob**: `Uint8Array`
 
 The data for the blob.
-
-• **requestContext?**: `IServiceRequestContext`
-
-The context for the request.
 
 #### Returns
 
@@ -126,7 +122,7 @@ The id of the stored blob in urn format.
 
 ### get()
 
-> **get**(`id`, `requestContext`?): `Promise`\<`undefined` \| `Uint8Array`\>
+> **get**(`id`): `Promise`\<`undefined` \| `Uint8Array`\>
 
 Get the blob.
 
@@ -135,10 +131,6 @@ Get the blob.
 • **id**: `string`
 
 The id of the blob to get in urn format.
-
-• **requestContext?**: `IServiceRequestContext`
-
-The context for the request.
 
 #### Returns
 
@@ -150,7 +142,7 @@ The data for the blob if it can be found or undefined.
 
 ### remove()
 
-> **remove**(`id`, `requestContext`?): `Promise`\<`boolean`\>
+> **remove**(`id`): `Promise`\<`boolean`\>
 
 Remove the blob.
 
@@ -159,10 +151,6 @@ Remove the blob.
 • **id**: `string`
 
 The id of the blob to remove in urn format.
-
-• **requestContext?**: `IServiceRequestContext`
-
-The context for the request.
 
 #### Returns
 

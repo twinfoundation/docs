@@ -46,6 +46,10 @@ Optional error details.
 
 ### data?
 
-> `optional` **data**: `unknown`
+> `optional` **data**: `object`
 
 Optional data for the message.
+
+#### Index signature
+
+ \[`key`: `string`\]: `unknown`

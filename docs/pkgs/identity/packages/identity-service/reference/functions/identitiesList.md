@@ -1,12 +1,12 @@
 # Function: identitiesList()
 
-> **identitiesList**(`requestContext`, `serviceName`, `request`): `Promise`\<`IIdentityProfileListResponse`\>
+> **identitiesList**(`httpRequestContext`, `serviceName`, `request`): `Promise`\<`IIdentityProfileListResponse`\>
 
 Get the list of organizations.
 
 ## Parameters
 
-• **requestContext**: `IHttpRequestContext`
+• **httpRequestContext**: `IHttpRequestContext`
 
 The request context for the API.
 

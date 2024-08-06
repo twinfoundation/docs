@@ -2,7 +2,6 @@
 
 ## Classes
 
-- [IdentityProfile](classes/IdentityProfile.md)
 - [IdentityProfileService](classes/IdentityProfileService.md)
 - [IdentityService](classes/IdentityService.md)
 
@@ -25,6 +24,4 @@
 - [identityProfileRemove](functions/identityProfileRemove.md)
 - [identitiesList](functions/identitiesList.md)
 - [generateRestRoutesIdentity](functions/generateRestRoutesIdentity.md)
-- [identityCreate](functions/identityCreate.md)
 - [identityResolve](functions/identityResolve.md)
-- [initSchema](functions/initSchema.md)

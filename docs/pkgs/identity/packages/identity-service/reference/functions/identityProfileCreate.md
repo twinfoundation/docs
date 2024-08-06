@@ -1,12 +1,12 @@
 # Function: identityProfileCreate()
 
-> **identityProfileCreate**(`requestContext`, `serviceName`, `request`): `Promise`\<`INoContentResponse`\>
+> **identityProfileCreate**(`httpRequestContext`, `serviceName`, `request`): `Promise`\<`INoContentResponse`\>
 
 Create an identity profile.
 
 ## Parameters
 
-• **requestContext**: `IHttpRequestContext`
+• **httpRequestContext**: `IHttpRequestContext`
 
 The request context for the API.
 

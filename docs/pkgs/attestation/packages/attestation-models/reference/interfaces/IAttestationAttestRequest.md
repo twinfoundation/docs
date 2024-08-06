@@ -10,9 +10,9 @@ Attest the data and return the collated attestation details.
 
 The data to be used in the signing.
 
-#### controllerAddress
+#### address
 
-> **controllerAddress**: `string`
+> **address**: `string`
 
 The controller address for the attestation.
 

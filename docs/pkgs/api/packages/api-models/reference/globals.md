@@ -2,7 +2,7 @@
 
 ## Classes
 
-- [ResponseHelper](classes/ResponseHelper.md)
+- [HttpErrorHelper](classes/HttpErrorHelper.md)
 
 ## Interfaces
 
@@ -13,6 +13,7 @@
 - [IBaseSocketClientConfig](interfaces/IBaseSocketClientConfig.md)
 - [IHttpRequest](interfaces/IHttpRequest.md)
 - [IHttpRequestContext](interfaces/IHttpRequestContext.md)
+- [IHttpRequestIdentity](interfaces/IHttpRequestIdentity.md)
 - [IHttpRequestPathParams](interfaces/IHttpRequestPathParams.md)
 - [IHttpRequestQuery](interfaces/IHttpRequestQuery.md)
 - [IHttpResponse](interfaces/IHttpResponse.md)
@@ -31,6 +32,7 @@
 - [IBaseRoute](interfaces/IBaseRoute.md)
 - [IRestRoute](interfaces/IRestRoute.md)
 - [IRestRouteEntryPoint](interfaces/IRestRouteEntryPoint.md)
+- [IRestRouteResponseAttachmentOptions](interfaces/IRestRouteResponseAttachmentOptions.md)
 - [IRestRouteResponseOptions](interfaces/IRestRouteResponseOptions.md)
 - [ISocketRoute](interfaces/ISocketRoute.md)
 - [ITag](interfaces/ITag.md)
@@ -44,3 +46,7 @@
 ## Type Aliases
 
 - [HealthStatus](type-aliases/HealthStatus.md)
+
+## Variables
+
+- [HealthStatus](variables/HealthStatus.md)
