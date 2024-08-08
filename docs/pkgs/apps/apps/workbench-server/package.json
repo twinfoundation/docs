@@ -1,11 +1,11 @@
 {
-	"name": "@gtsc/gtsc-api-server",
+	"name": "@gtsc/workbench-server",
 	"version": "0.0.1-next.1",
 	"description": "Serve APIs using the specified configuration",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/gtscio/apps.git",
-		"directory": "apps/gtsc-api-server"
+		"directory": "apps/workbench-server"
 	},
 	"author": "martyn.janes@iota.org",
 	"license": "Apache-2.0",
@@ -27,8 +27,7 @@
 		"docs:api": "ts-to-openapi ./ts-to-openapi.json ./docs/open-api/spec.json",
 		"docs": "npm run docs:clean && npm run docs:copy-overview && npm run docs:rename-overview && npm run docs:remove-header && npm run docs:api",
 		"dist": "npm run clean && npm run build && npm run merge-locales && npm run test && npm run docs",
-		"start": "node dist/es/index.js",
-		"start:bootstrap": "cross-env GTSC_BOOTSTRAP=true node dist/es/index.js"
+		"start": "node dist/es/index.js"
 	},
 	"dependencies": {
 		"@gtsc/attestation-models": "next",
@@ -60,11 +59,12 @@
 		"@gtsc/logging-connector-console": "next",
 		"@gtsc/logging-connector-entity-storage": "next",
 		"@gtsc/logging-service": "next",
-		"@gtsc/nameof": "^0.0.4",
+		"@gtsc/nameof": "next",
 		"@gtsc/nft-models": "next",
 		"@gtsc/nft-connector-entity-storage": "next",
 		"@gtsc/nft-connector-iota": "next",
 		"@gtsc/nft-service": "next",
+		"@gtsc/schema": "next",
 		"@gtsc/services": "next",
 		"@gtsc/telemetry-models": "next",
 		"@gtsc/telemetry-connector-entity-storage": "next",
@@ -78,7 +78,7 @@
 	},
 	"devDependencies": {
 		"@gtsc/merge-locales": "next",
-		"@gtsc/nameof-transformer": "^0.0.4",
+		"@gtsc/nameof-transformer": "next",
 		"@gtsc/ts-to-openapi": "next",
 		"@vitest/coverage-v8": "1.6.0",
 		"@types/node": "20.14.8",

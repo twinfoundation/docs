@@ -1,4 +1,4 @@
-# GTSC API Server
+# Workbench Server
 
 A REST server implementation support the routes from various packages.
 

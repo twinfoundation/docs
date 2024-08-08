@@ -111,5 +111,5 @@ This is the overview of the packages.
 
 ## Applications
 
-- [@gtsc/gtsc-api-server](pkgs/apps/apps/gtsc-api-server/overview) - Serve APIs using the specified configuration
-- [@gtsc/gtsc-ui](pkgs/apps/apps/gtsc-ui/overview) - UI to demonstate the APIs
+- [@gtsc/workbench-server](pkgs/apps/apps/workbench-server/overview) - Serve APIs using the specified configuration
+- [@gtsc/workbench-ui](pkgs/apps/apps/workbench-ui/overview) - UI to demonstate the APIs
