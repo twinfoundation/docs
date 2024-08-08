@@ -1,7 +1,7 @@
 {
     "openapi": "3.1.0",
     "info": {
-        "title": "GTSC - API Server",
+        "title": "GTSC Workbench Server",
         "description": "REST API for Global Trade and Supply Chain - API Server.",
         "version": "1.0.0",
         "license": {

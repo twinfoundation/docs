@@ -1,6 +1,6 @@
-# GTSC UI
+# GTSC Workbench UI
 
-This web front-end demonstrates using the GTSC API, it is written using svelte.
+This web front-end demonstrates using the Workbench API, it is written using svelte.
 
 ## Developing
 

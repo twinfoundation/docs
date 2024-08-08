@@ -3,3 +3,4 @@
 ## Classes
 
 - [IdentityClient](classes/IdentityClient.md)
+- [IdentityProfileClient](classes/IdentityProfileClient.md)
