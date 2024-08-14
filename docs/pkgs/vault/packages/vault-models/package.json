@@ -1,6 +1,6 @@
 {
 	"name": "@gtsc/vault-models",
-	"version": "0.0.5-next.1",
+	"version": "0.0.5-next.3",
 	"description": "Models which define the structure of the vault contracts and connectors",
 	"repository": {
 		"type": "git",
@@ -29,8 +29,7 @@
 	},
 	"dependencies": {
 		"@gtsc/core": "next",
-		"@gtsc/nameof": "next",
-		"@gtsc/services": "next"
+		"@gtsc/nameof": "next"
 	},
 	"devDependencies": {
 		"@gtsc/nameof-transformer": "next",

@@ -8,7 +8,7 @@ The client to connect to the authentication service.
 
 ## Implements
 
-- `IAuthentication`
+- `IAuthenticationComponent`
 
 ## Constructors
 
@@ -42,7 +42,7 @@ Runtime name for the class.
 
 #### Implementation of
 
-`IAuthentication.CLASS_NAME`
+`IAuthenticationComponent.CLASS_NAME`
 
 ## Methods
 
@@ -78,7 +78,7 @@ The authentication token for the user, if it uses a mechanism with public access
 
 #### Implementation of
 
-`IAuthentication.login`
+`IAuthenticationComponent.login`
 
 ***
 
@@ -102,7 +102,7 @@ Nothing.
 
 #### Implementation of
 
-`IAuthentication.logout`
+`IAuthenticationComponent.logout`
 
 ***
 
@@ -134,7 +134,7 @@ The refreshed token, if it uses a mechanism with public access.
 
 #### Implementation of
 
-`IAuthentication.refresh`
+`IAuthenticationComponent.refresh`
 
 ***
 

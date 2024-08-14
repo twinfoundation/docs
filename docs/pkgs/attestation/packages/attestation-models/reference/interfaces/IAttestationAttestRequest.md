@@ -32,4 +32,4 @@ The data object to attest.
 
 > `optional` **namespace**: `string`
 
-The namespace of the connector to use for the attestation, defaults to service configured namespace.
+The namespace of the connector to use for the attestation, defaults to component configured namespace.

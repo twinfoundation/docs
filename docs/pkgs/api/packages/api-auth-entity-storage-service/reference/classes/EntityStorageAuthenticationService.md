@@ -1,10 +1,10 @@
 # Class: EntityStorageAuthenticationService
 
-Implementation of the authentication service using entity storage.
+Implementation of the authentication component using entity storage.
 
 ## Implements
 
-- `IAuthentication`
+- `IAuthenticationComponent`
 
 ## Constructors
 
@@ -54,25 +54,25 @@ Runtime name for the class.
 
 #### Implementation of
 
-`IAuthentication.CLASS_NAME`
+`IAuthenticationComponent.CLASS_NAME`
 
 ## Methods
 
 ### start()
 
-> **start**(`systemIdentity`, `systemLoggingConnectorType`?): `Promise`\<`void`\>
+> **start**(`nodeIdentity`, `nodeLoggingConnectorType`?): `Promise`\<`void`\>
 
 The service needs to be started when the application is initialized.
 
 #### Parameters
 
-• **systemIdentity**: `string`
+• **nodeIdentity**: `string`
 
-The identity of the system.
+The identity of the node.
 
-• **systemLoggingConnectorType?**: `string`
+• **nodeLoggingConnectorType?**: `string`
 
-The system logging connector type, defaults to "system-logging".
+The node logging connector type, defaults to "node-logging".
 
 #### Returns
 
@@ -82,7 +82,7 @@ Nothing.
 
 #### Implementation of
 
-`IAuthentication.start`
+`IAuthenticationComponent.start`
 
 ***
 
@@ -118,7 +118,7 @@ The authentication token for the user, if it uses a mechanism with public access
 
 #### Implementation of
 
-`IAuthentication.login`
+`IAuthenticationComponent.login`
 
 ***
 
@@ -142,7 +142,7 @@ Nothing.
 
 #### Implementation of
 
-`IAuthentication.logout`
+`IAuthenticationComponent.logout`
 
 ***
 
@@ -174,4 +174,4 @@ The refreshed token, if it uses a mechanism with public access.
 
 #### Implementation of
 
-`IAuthentication.refresh`
+`IAuthenticationComponent.refresh`

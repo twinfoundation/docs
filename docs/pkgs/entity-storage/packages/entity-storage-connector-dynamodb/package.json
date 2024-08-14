@@ -1,11 +1,11 @@
 {
-	"name": "@gtsc/services",
-	"version": "0.0.5-next.4",
-	"description": "Package for base service types",
+	"name": "@gtsc/entity-storage-connector-dynamodb",
+	"version": "0.0.5-next.7",
+	"description": "Entity Storage connector implementation using DynamoDb storage",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/gtscio/framework.git",
-		"directory": "packages/services"
+		"url": "https://github.com/gtscio/entity-storage.git",
+		"directory": "packages/entity-storage-connector-dynamodb"
 	},
 	"author": "martyn.janes@iota.org",
 	"license": "Apache-2.0",
@@ -14,7 +14,7 @@
 		"node": ">=20.0.0"
 	},
 	"scripts": {
-		"clean": "rimraf dist coverage",
+		"clean": "rimraf dist coverage docs/reference",
 		"build": "tspc",
 		"test": "vitest --run --config ./vitest.config.ts --no-cache",
 		"coverage": "vitest --run --coverage --config ./vitest.config.ts --no-cache",
@@ -28,16 +28,27 @@
 		"dist": "npm run clean && npm run build && npm run test && npm run bundle && npm run docs"
 	},
 	"dependencies": {
-		"@gtsc/core": "0.0.5-next.4",
-		"@gtsc/nameof": "next"
+		"@gtsc/core": "next",
+		"@gtsc/entity": "next",
+		"@gtsc/nameof": "next",
+		"@gtsc/entity-storage-models": "0.0.5-next.7",
+		"@gtsc/logging-models": "next",
+		"@aws-sdk/client-dynamodb": "3.624",
+		"@aws-sdk/lib-dynamodb": "3.624",
+		"@aws-sdk/util-dynamodb": "3.624"
 	},
 	"devDependencies": {
+		"@gtsc/entity-storage-connector-memory": "0.0.5-next.7",
+		"@gtsc/logging-connector-entity-storage": "next",
+		"@gtsc/logging-service": "next",
 		"@gtsc/nameof-transformer": "next",
 		"@vitest/coverage-v8": "1.6.0",
 		"copyfiles": "2.4.1",
 		"replace-in-files-cli": "2.2.0",
+		"dotenv": "16.4.5",
 		"rimraf": "5.0.7",
 		"rollup": "4.18.0",
+		"rollup-plugin-copy": "3.5.0",
 		"rollup-plugin-typescript2": "0.36.0",
 		"ts-patch": "3.2.0",
 		"typedoc": "0.25.13",
@@ -53,7 +64,8 @@
 			"require": "./dist/cjs/index.cjs",
 			"import": "./dist/esm/index.mjs",
 			"types": "./dist/types/index.d.ts"
-		}
+		},
+		"./locales": "./locales"
 	},
 	"files": [
 		"dist/cjs",

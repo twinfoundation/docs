@@ -1,6 +1,6 @@
 {
 	"name": "@gtsc/entity-storage-models",
-	"version": "0.0.5-next.1",
+	"version": "0.0.5-next.7",
 	"description": "Models which define the structure of the entity storage contracts and connectors",
 	"repository": {
 		"type": "git",
@@ -30,8 +30,7 @@
 	"dependencies": {
 		"@gtsc/core": "next",
 		"@gtsc/entity": "next",
-		"@gtsc/nameof": "next",
-		"@gtsc/services": "next"
+		"@gtsc/nameof": "next"
 	},
 	"devDependencies": {
 		"@gtsc/nameof-transformer": "next",

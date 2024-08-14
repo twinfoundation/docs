@@ -19,3 +19,4 @@
 - [attestationAttest](functions/attestationAttest.md)
 - [attestationVerify](functions/attestationVerify.md)
 - [attestationTransfer](functions/attestationTransfer.md)
+- [attestationDestroy](functions/attestationDestroy.md)

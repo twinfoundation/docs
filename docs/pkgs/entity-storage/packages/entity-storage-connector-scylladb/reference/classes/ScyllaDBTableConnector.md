@@ -48,6 +48,22 @@ The configuration for the connector.
 
 `AbstractScyllaDBConnector<T>.constructor`
 
+## Properties
+
+### CLASS\_NAME
+
+> `readonly` **CLASS\_NAME**: `string`
+
+Runtime name for the class.
+
+#### Implementation of
+
+`IEntityStorageConnector.CLASS_NAME`
+
+#### Overrides
+
+`AbstractScyllaDBConnector.CLASS_NAME`
+
 ## Methods
 
 ### get()
@@ -153,21 +169,21 @@ Total entities length.
 
 ### bootstrap()
 
-> **bootstrap**(`systemLoggingConnectorType`?): `Promise`\<`void`\>
+> **bootstrap**(`nodeLoggingConnectorType`?): `Promise`\<`boolean`\>
 
-Bootstrap the connector by creating and initializing any resources it needs.
+Bootstrap the component by creating and initializing any resources it needs.
 
 #### Parameters
 
-• **systemLoggingConnectorType?**: `string`
+• **nodeLoggingConnectorType?**: `string`
 
-The system logging connector type, defaults to "system-logging".
+The node logging connector type, defaults to "node-logging".
 
 #### Returns
 
-`Promise`\<`void`\>
+`Promise`\<`boolean`\>
 
-The response of the bootstrapping as log entries.
+True if the bootstrapping process was successful.
 
 #### Implementation of
 
@@ -216,20 +232,6 @@ The id of the entity to remove.
 #### Implementation of
 
 `IEntityStorageConnector.remove`
-
-***
-
-### pageSize()
-
-> **pageSize**(): `number`
-
-Get the default page size of the entity storage.
-
-#### Returns
-
-`number`
-
-The entity storage page size.
 
 ***
 

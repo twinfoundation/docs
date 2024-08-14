@@ -7,7 +7,7 @@
 
 ## Interfaces
 
-- [ITelemetry](interfaces/ITelemetry.md)
+- [ITelemetryComponent](interfaces/ITelemetryComponent.md)
 - [ITelemetryConnector](interfaces/ITelemetryConnector.md)
 - [ITelemetryMetric](interfaces/ITelemetryMetric.md)
 - [ITelemetryMetricValue](interfaces/ITelemetryMetricValue.md)

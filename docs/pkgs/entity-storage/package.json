@@ -1,6 +1,6 @@
 {
 	"name": "@gtsc/entity-storage",
-	"version": "0.0.5-next.1",
+	"version": "0.0.5-next.7",
 	"description": "Entity Storage",
 	"repository": {
 		"type": "git",
@@ -42,7 +42,8 @@
 		"packages/entity-storage-models",
 		"packages/entity-storage-connector-memory",
 		"packages/entity-storage-connector-file",
-		"packages/entity-storage-connector-scylladb"
+		"packages/entity-storage-connector-scylladb",
+		"packages/entity-storage-connector-dynamodb"
 	],
 	"type": "module"
 }

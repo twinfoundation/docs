@@ -1,6 +1,6 @@
 # Function: identityProfileUpdate()
 
-> **identityProfileUpdate**(`httpRequestContext`, `serviceName`, `request`): `Promise`\<`INoContentResponse`\>
+> **identityProfileUpdate**(`httpRequestContext`, `componentName`, `request`): `Promise`\<`INoContentResponse`\>
 
 Update an identity profile.
 
@@ -10,9 +10,9 @@ Update an identity profile.
 
 The request context for the API.
 
-• **serviceName**: `string`
+• **componentName**: `string`
 
-The name of the service to use in the routes.
+The name of the component to use in the routes stored in the ComponentFactory.
 
 • **request**: `IIdentityProfileUpdateRequest`
 

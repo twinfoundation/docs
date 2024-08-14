@@ -4,7 +4,7 @@ Service for performing NFT operations to a connector.
 
 ## Implements
 
-- `INft`
+- `INftComponent`
 
 ## Constructors
 
@@ -42,7 +42,7 @@ Runtime name for the class.
 
 #### Implementation of
 
-`INft.CLASS_NAME`
+`INftComponent.CLASS_NAME`
 
 ## Methods
 
@@ -96,7 +96,7 @@ The id of the created NFT in urn format.
 
 #### Implementation of
 
-`INft.mint`
+`INftComponent.mint`
 
 ***
 
@@ -150,7 +150,7 @@ The data for the NFT.
 
 #### Implementation of
 
-`INft.resolve`
+`INftComponent.resolve`
 
 ***
 
@@ -178,7 +178,7 @@ Nothing.
 
 #### Implementation of
 
-`INft.burn`
+`INftComponent.burn`
 
 ***
 
@@ -218,7 +218,7 @@ Nothing.
 
 #### Implementation of
 
-`INft.transfer`
+`INftComponent.transfer`
 
 ***
 
@@ -254,4 +254,4 @@ Nothing.
 
 #### Implementation of
 
-`INft.update`
+`INftComponent.update`

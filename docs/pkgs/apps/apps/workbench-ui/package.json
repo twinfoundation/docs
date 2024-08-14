@@ -27,7 +27,9 @@
 		"@gtsc/core": "next",
 		"@gtsc/identity-models": "next",
 		"@gtsc/identity-rest-client": "next",
-		"@gtsc/schema": "next"
+		"@gtsc/qr": "next",
+		"@gtsc/schema": "next",
+		"@gtsc/standards-w3c-did": "next"
 	},
 	"devDependencies": {
 		"@gtsc/merge-locales": "next",

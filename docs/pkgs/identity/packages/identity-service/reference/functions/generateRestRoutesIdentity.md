@@ -1,6 +1,6 @@
 # Function: generateRestRoutesIdentity()
 
-> **generateRestRoutesIdentity**(`baseRouteName`, `serviceName`): `IRestRoute`[]
+> **generateRestRoutesIdentity**(`baseRouteName`, `componentName`): `IRestRoute`[]
 
 The REST routes for identity.
 
@@ -10,9 +10,9 @@ The REST routes for identity.
 
 Prefix to prepend to the paths.
 
-• **serviceName**: `string`
+• **componentName**: `string`
 
-The name of the service to use in the routes.
+The name of the component to use in the routes stored in the ComponentFactory.
 
 ## Returns
 

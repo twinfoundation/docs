@@ -175,3 +175,31 @@ The updated attestation details.
 #### Implementation of
 
 `IAttestationConnector.transfer`
+
+***
+
+### destroy()
+
+> **destroy**(`controller`, `attestationId`): `Promise`\<`void`\>
+
+Destroy the attestation.
+
+#### Parameters
+
+• **controller**: `string`
+
+The controller identity of the user to access the vault keys.
+
+• **attestationId**: `string`
+
+The attestation to destroy.
+
+#### Returns
+
+`Promise`\<`void`\>
+
+Nothing.
+
+#### Implementation of
+
+`IAttestationConnector.destroy`

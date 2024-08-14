@@ -1,6 +1,6 @@
 {
 	"name": "@gtsc/telemetry-rest-client",
-	"version": "0.0.5-next.1",
+	"version": "0.0.5-next.4",
 	"description": "Telemetry contract implementation which can connect to REST endpoints",
 	"repository": {
 		"type": "git",
@@ -33,8 +33,7 @@
 		"@gtsc/core": "next",
 		"@gtsc/entity": "next",
 		"@gtsc/nameof": "next",
-		"@gtsc/services": "next",
-		"@gtsc/telemetry-models": "0.0.5-next.1"
+		"@gtsc/telemetry-models": "0.0.5-next.4"
 	},
 	"devDependencies": {
 		"@gtsc/nameof-transformer": "next",

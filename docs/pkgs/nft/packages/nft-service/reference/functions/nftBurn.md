@@ -1,6 +1,6 @@
 # Function: nftBurn()
 
-> **nftBurn**(`httpRequestContext`, `factoryServiceName`, `request`): `Promise`\<`INoContentResponse`\>
+> **nftBurn**(`httpRequestContext`, `componentName`, `request`): `Promise`\<`INoContentResponse`\>
 
 Burn an NFT.
 
@@ -10,9 +10,9 @@ Burn an NFT.
 
 The request context for the API.
 
-• **factoryServiceName**: `string`
+• **componentName**: `string`
 
-The name of the service to use in the routes.
+The name of the component to use in the routes.
 
 • **request**: `INftBurnRequest`
 

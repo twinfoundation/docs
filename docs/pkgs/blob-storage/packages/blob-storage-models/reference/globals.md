@@ -2,12 +2,15 @@
 
 ## Interfaces
 
-- [IBlobStorage](interfaces/IBlobStorage.md)
+- [IBlobStorageComponent](interfaces/IBlobStorageComponent.md)
 - [IBlobStorageConnector](interfaces/IBlobStorageConnector.md)
+- [IBlobStorageCreateRequest](interfaces/IBlobStorageCreateRequest.md)
+- [IBlobStorageGetContentRequest](interfaces/IBlobStorageGetContentRequest.md)
+- [IBlobStorageGetContentResponse](interfaces/IBlobStorageGetContentResponse.md)
 - [IBlobStorageGetRequest](interfaces/IBlobStorageGetRequest.md)
 - [IBlobStorageGetResponse](interfaces/IBlobStorageGetResponse.md)
 - [IBlobStorageRemoveRequest](interfaces/IBlobStorageRemoveRequest.md)
-- [IBlobStorageSetRequest](interfaces/IBlobStorageSetRequest.md)
+- [IBlobStorageUpdateRequest](interfaces/IBlobStorageUpdateRequest.md)
 
 ## Variables
 

@@ -8,7 +8,7 @@ Client for performing identity through to REST endpoints.
 
 ## Implements
 
-- `IIdentity`
+- `IIdentityComponent`
 
 ## Constructors
 
@@ -42,7 +42,7 @@ Runtime name for the class.
 
 #### Implementation of
 
-`IIdentity.CLASS_NAME`
+`IIdentityComponent.CLASS_NAME`
 
 ## Methods
 
@@ -122,4 +122,4 @@ The resolved document.
 
 #### Implementation of
 
-`IIdentity.resolve`
+`IIdentityComponent.resolve`

@@ -4,7 +4,7 @@ Service for performing attestation operations to a connector.
 
 ## Implements
 
-- `IAttestation`
+- `IAttestationComponent`
 
 ## Constructors
 
@@ -42,7 +42,7 @@ Runtime name for the class.
 
 #### Implementation of
 
-`IAttestation.CLASS_NAME`
+`IAttestationComponent.CLASS_NAME`
 
 ## Methods
 
@@ -90,7 +90,7 @@ The collated attestation data.
 
 #### Implementation of
 
-`IAttestation.attest`
+`IAttestationComponent.attest`
 
 ***
 
@@ -130,7 +130,7 @@ The verified attestation details.
 
 #### Implementation of
 
-`IAttestation.verify`
+`IAttestationComponent.verify`
 
 ***
 
@@ -170,4 +170,32 @@ The updated attestation details.
 
 #### Implementation of
 
-`IAttestation.transfer`
+`IAttestationComponent.transfer`
+
+***
+
+### destroy()
+
+> **destroy**(`attestationId`, `identity`?): `Promise`\<`void`\>
+
+Destroy the attestation.
+
+#### Parameters
+
+• **attestationId**: `string`
+
+The attestation to transfer.
+
+• **identity?**: `string`
+
+The identity to perform the attestation operation with.
+
+#### Returns
+
+`Promise`\<`void`\>
+
+The updated attestation details.
+
+#### Implementation of
+
+`IAttestationComponent.destroy`

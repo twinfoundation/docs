@@ -8,7 +8,7 @@ Client for performing identity through to REST endpoints.
 
 ## Implements
 
-- `IIdentityProfile`
+- `IIdentityProfileComponent`
 
 ## Constructors
 
@@ -42,7 +42,7 @@ Runtime name for the class.
 
 #### Implementation of
 
-`IIdentityProfile.CLASS_NAME`
+`IIdentityProfileComponent.CLASS_NAME`
 
 ## Methods
 
@@ -122,7 +122,7 @@ Nothing.
 
 #### Implementation of
 
-`IIdentityProfile.create`
+`IIdentityProfileComponent.create`
 
 ***
 
@@ -142,7 +142,11 @@ The properties to get for the item, defaults to all.
 
 `Promise`\<`object`\>
 
-The items properties.
+The identity and the items properties.
+
+##### identity
+
+> **identity**: `string`
 
 ##### properties?
 
@@ -150,7 +154,39 @@ The items properties.
 
 #### Implementation of
 
-`IIdentityProfile.get`
+`IIdentityProfileComponent.get`
+
+***
+
+### getPublic()
+
+> **getPublic**(`propertyNames`, `identity`): `Promise`\<`object`\>
+
+Get the public profile properties for an identity.
+
+#### Parameters
+
+• **propertyNames**: `undefined` \| `string`[]
+
+The properties to get for the item, defaults to all.
+
+• **identity**: `string`
+
+The identity to get the profile for.
+
+#### Returns
+
+`Promise`\<`object`\>
+
+The identity and the items properties.
+
+##### properties?
+
+> `optional` **properties**: `IProperty`[]
+
+#### Implementation of
+
+`IIdentityProfileComponent.getPublic`
 
 ***
 
@@ -174,7 +210,7 @@ Nothing.
 
 #### Implementation of
 
-`IIdentityProfile.update`
+`IIdentityProfileComponent.update`
 
 ***
 
@@ -192,7 +228,7 @@ Nothing.
 
 #### Implementation of
 
-`IIdentityProfile.remove`
+`IIdentityProfileComponent.remove`
 
 ***
 
@@ -252,4 +288,4 @@ Total entities length.
 
 #### Implementation of
 
-`IIdentityProfile.list`
+`IIdentityProfileComponent.list`

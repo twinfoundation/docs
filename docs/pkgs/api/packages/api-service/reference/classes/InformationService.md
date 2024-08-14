@@ -4,7 +4,7 @@ The information service for the server.
 
 ## Implements
 
-- `IInformation`
+- `IInformationComponent`
 
 ## Constructors
 
@@ -38,7 +38,7 @@ Runtime name for the class.
 
 #### Implementation of
 
-`IInformation.CLASS_NAME`
+`IInformationComponent.CLASS_NAME`
 
 ## Methods
 
@@ -56,7 +56,7 @@ Nothing.
 
 #### Implementation of
 
-`IInformation.start`
+`IInformationComponent.start`
 
 ***
 
@@ -74,7 +74,7 @@ The service information.
 
 #### Implementation of
 
-`IInformation.info`
+`IInformationComponent.info`
 
 ***
 
@@ -92,7 +92,7 @@ The OpenAPI spec.
 
 #### Implementation of
 
-`IInformation.spec`
+`IInformationComponent.spec`
 
 ***
 
@@ -110,7 +110,7 @@ The service health.
 
 #### Implementation of
 
-`IInformation.health`
+`IInformationComponent.health`
 
 ***
 
@@ -142,7 +142,7 @@ Nothing.
 
 #### Implementation of
 
-`IInformation.setComponentHealth`
+`IInformationComponent.setComponentHealth`
 
 ***
 
@@ -166,4 +166,4 @@ Nothing.
 
 #### Implementation of
 
-`IInformation.removeComponentHealth`
+`IInformationComponent.removeComponentHealth`

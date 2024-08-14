@@ -4,7 +4,7 @@ Class which implements the identity contract.
 
 ## Implements
 
-- `IIdentity`
+- `IIdentityComponent`
 
 ## Constructors
 
@@ -42,7 +42,7 @@ Runtime name for the class.
 
 #### Implementation of
 
-`IIdentity.CLASS_NAME`
+`IIdentityComponent.CLASS_NAME`
 
 ## Methods
 
@@ -66,4 +66,4 @@ The resolved document.
 
 #### Implementation of
 
-`IIdentity.resolve`
+`IIdentityComponent.resolve`

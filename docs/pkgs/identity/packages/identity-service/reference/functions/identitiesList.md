@@ -1,6 +1,6 @@
 # Function: identitiesList()
 
-> **identitiesList**(`httpRequestContext`, `serviceName`, `request`): `Promise`\<`IIdentityProfileListResponse`\>
+> **identitiesList**(`httpRequestContext`, `componentName`, `request`): `Promise`\<`IIdentityProfileListResponse`\>
 
 Get the list of organizations.
 
@@ -10,9 +10,9 @@ Get the list of organizations.
 
 The request context for the API.
 
-• **serviceName**: `string`
+• **componentName**: `string`
 
-The name of the service to use in the routes.
+The name of the component to use in the routes stored in the ComponentFactory.
 
 • **request**: `IIdentityProfileListRequest`
 
