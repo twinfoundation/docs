@@ -52,7 +52,7 @@
 		"types": ["packages"]
 	},
 	{
-		"name": "apps",
+		"name": "workbench",
 		"types": ["apps"]
 	}
 ]
