@@ -4,7 +4,7 @@
 	"description": "Serve APIs using the specified configuration",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/gtscio/apps.git",
+		"url": "https://github.com/gtscio/workbench.git",
 		"directory": "apps/workbench-server"
 	},
 	"author": "martyn.janes@iota.org",

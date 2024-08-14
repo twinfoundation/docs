@@ -97,7 +97,7 @@ Once configured you can restart nginx with `sudo systemctl restart nginx`
 We clone the repo, build it and then make a copy of the relevant .env file.
 
 ```shell
-git clone https://github.com/gtscio/apps.git
+git clone https://github.com/gtscio/workbench.git
 cd apps
 npm install
 cd apps/workbench-server
@@ -137,13 +137,13 @@ Description=Workbench Server
 After=network.target
 
 [Service]
-ExecStart=/home/ec2-user/.nvm/versions/node/v20.16.0/bin/node /home/ec2-user/apps/apps/workbench-server/dist/es/index.js
+ExecStart=/home/ec2-user/.nvm/versions/node/v20.16.0/bin/node /home/ec2-user/workbench/apps/workbench-server/dist/es/index.js
 Restart=always
 User=ec2-user
 Group=ec2-user
 Environment=PATH=/usr/bin:/usr/local/bin
 Environment=NODE_ENV=production
-WorkingDirectory=/home/ec2-user/apps/apps/workbench-server/
+WorkingDirectory=/home/ec2-user/workbench/apps/workbench-server/
 
 [Install]
 WantedBy=multi-user.target
