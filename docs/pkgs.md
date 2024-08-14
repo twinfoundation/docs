@@ -16,7 +16,6 @@ This is the overview of the packages.
 - [@gtsc/crypto](pkgs/framework/packages/crypto/overview) - Contains helper methods and classes which implement cryptographic functions
 - [@gtsc/image](pkgs/framework/packages/image/overview) - Classes for image manipulation
 - [@gtsc/qr](pkgs/framework/packages/qr/overview) - Package for creating QR codes
-- [@gtsc/services](pkgs/framework/packages/services/overview) - Package for base service types
 - [@gtsc/schema](pkgs/framework/packages/schema/overview) - Definitions and helpers for using with schemas
 - [@gtsc/web](pkgs/framework/packages/web/overview) - Contains classes for use with web operations
 - [@gtsc/cli-core](pkgs/framework/packages/cli-core/overview) - Core classes for building a CLI
@@ -44,6 +43,7 @@ This is the overview of the packages.
 - [@gtsc/entity-storage-connector-memory](pkgs/entity-storage/packages/entity-storage-connector-memory/overview) - Entity Storage connector implementation using in-memory storage
 - [@gtsc/entity-storage-connector-file](pkgs/entity-storage/packages/entity-storage-connector-file/overview) - Entity Storage connector implementation using file storage
 - [@gtsc/entity-storage-connector-scylladb](pkgs/entity-storage/packages/entity-storage-connector-scylladb/overview) - Entity Storage connector implementation using ScyllaDB
+- [@gtsc/entity-storage-connector-dynamodb](pkgs/entity-storage/packages/entity-storage-connector-dynamodb/overview) - Entity Storage connector implementation using DynamoDb storage
 
 ## Blob Storage
 

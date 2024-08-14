@@ -24,9 +24,9 @@ COPY . .
 EXPOSE 3000
 
 # Set the environment variables that will override the .env file in the package
-ENV SERVER_HOST=0.0.0.0
-ENV SERVER_PORT=3000
-ENV SERVER_STORAGE_FILE_ROOT=/workbench/data
+ENV WORKBENCH_HOST=0.0.0.0
+ENV WORKBENCH_PORT=3000
+ENV WORKBENCH_STORAGE_FILE_ROOT=/workbench/data
 
 # Start the server
 CMD ["node", "dist/es/index.js"]
@@ -44,13 +44,13 @@ This will build and deploy an image called `workbench-server` to your docker ser
 
 To initialize the server instance you must first run it in `bootstrap` mode. If you have any entity storage configured to use `file` storage you should map a folder on the local host to contain the data, so that it remains persistent.
 
-If the server does not find `system-config.json` in the `file` storage it will automatically trigger bootstrap mode:
+If the server does not find `workbench-config.json` in the `file` storage it will automatically trigger bootstrap mode:
 
 ```shell
 docker run -t -i -v d:/docker-host/workbench/data:/workbench/data -p 3000:3000 workbench-server
 ```
 
-This example will map the local folder `d:/docker-host/workbench/data` and make it available in the docker container as `/workbench/data` which is used to configure file entity storage using the environment variable `SERVER_STORAGE_FILE_ROOT`.
+This example will map the local folder `d:/docker-host/workbench/data` and make it available in the docker container as `/workbench/data` which is used to configure file entity storage using the environment variable `WORKBENCH_STORAGE_FILE_ROOT`.
 
 The output from the docker container should be something like the following.
 
@@ -59,7 +59,7 @@ The output from the docker container should be something like the following.
 
 .....
 
-➡️  No system-config.json found, starting bootstrap process
+➡️  No workbench-config.json found, starting bootstrap process
 
 INFO [2024-08-08T06:36:15.925Z] Bootstrap FileEntityStorageConnector
 INFO [2024-08-08T06:36:15.926Z] Creating directory "/workbench/data/vault-key"
@@ -96,24 +96,24 @@ INFO [2024-08-08T06:36:15.936Z] Creating directory "/workbench/data/authenticati
 INFO [2024-08-08T06:36:15.937Z] Created directory "/workbench/data/authentication-user"
 INFO [2024-08-08T06:36:15.938Z] Generating and storing mnemonic "educate short size soup enact faculty brother move purity robust dose toy crumble jazz lunar hospital response pepper nice ice movie post used icon"
 INFO [2024-08-08T06:36:16.016Z] Funding wallet "ent1qqc8saacg65385catgeke7ph36z05cdmwuatekkuqp9n0u5rmzjkq7exhrg"
-INFO [2024-08-08T06:36:16.017Z] Generating system identity
+INFO [2024-08-08T06:36:16.017Z] Generating node identity
 INFO [2024-08-08T06:36:16.050Z] Adding attestation verification method
-INFO [2024-08-08T06:36:16.075Z] System identity "did:entity-storage:0xad375455c60b6e6df5f0fbf42d1224732756484dd64758dc9b3d71aa9c6478ed"
-INFO [2024-08-08T06:36:16.085Z] System User Email "system@system"
-INFO [2024-08-08T06:36:16.085Z] System User Password "MFCUApWEdgr0R4&C"
-INFO [2024-08-08T06:36:16.087Z] System configuration created in "system-config.json", some of these details will not be shown again, please record them
+INFO [2024-08-08T06:36:16.075Z] Node identity "did:entity-storage:0xad375455c60b6e6df5f0fbf42d1224732756484dd64758dc9b3d71aa9c6478ed"
+INFO [2024-08-08T06:36:16.085Z] Node User Email "admin@node"
+INFO [2024-08-08T06:36:16.085Z] Node User Password "MFCUApWEdgr0R4&C"
+INFO [2024-08-08T06:36:16.087Z] Node configuration created in "workbench-config.json", some of these details will not be shown again, please record them
 
-➡️  Writing JSON file: /workbench/data/system-config.json
-➡️  Bootstrap process complete, system-config.json has been created
+➡️  Writing JSON file: /workbench/data/workbench-config.json
+➡️  Bootstrap process complete, workbench-config.json has been created
 ```
 
-You will see it generated an API key and system user with password for future use, these should be recorded as they will not be made visible again.
+You will see it generated a node admin user with password for future use, these should be recorded as they will not be made visible again.
 
-To run the bootstrap again you would have to manually remove the `system-config.json` from the data folder.
+To run the bootstrap again you would have to manually remove the `workbench-config.json` from the data folder.
 
 ## Docker Running
 
-To run the server we use exactly the same command as before, when the `system-config.json` is found the bootstrap process will not be repeated.
+To run the server we use exactly the same command as before, when the `workbench-config.json` is found the bootstrap process will not be repeated.
 
 ```shell
 docker run -t -i -v d:/docker-host/workbench/data:/workbench/data -p 3000:3000 workbench-server

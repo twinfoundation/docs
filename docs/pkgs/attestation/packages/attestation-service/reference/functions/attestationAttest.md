@@ -1,6 +1,6 @@
 # Function: attestationAttest()
 
-> **attestationAttest**(`httpRequestContext`, `factoryServiceName`, `request`): `Promise`\<`IAttestationAttestResponse`\>
+> **attestationAttest**(`httpRequestContext`, `componentName`, `request`): `Promise`\<`IAttestationAttestResponse`\>
 
 Sign the data and return the proof.
 
@@ -10,9 +10,9 @@ Sign the data and return the proof.
 
 The request context for the API.
 
-• **factoryServiceName**: `string`
+• **componentName**: `string`
 
-The name of the service to use in the routes.
+The name of the component to use in the routes.
 
 • **request**: `IAttestationAttestRequest`
 

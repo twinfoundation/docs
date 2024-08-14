@@ -1,10 +1,10 @@
-# Interface: IAttestation
+# Interface: IAttestationComponent
 
 Interface describing an attestation contract.
 
 ## Extends
 
-- `IService`
+- `IComponent`
 
 ## Properties
 
@@ -12,53 +12,53 @@ Interface describing an attestation contract.
 
 > `readonly` **CLASS\_NAME**: `string`
 
-The name of the service.
+The name of the component.
 
 #### Inherited from
 
-`IService.CLASS_NAME`
+`IComponent.CLASS_NAME`
 
 ## Methods
 
 ### bootstrap()?
 
-> `optional` **bootstrap**(`systemLoggingConnectorType`?): `Promise`\<`void`\>
+> `optional` **bootstrap**(`nodeLoggingConnectorType`?): `Promise`\<`boolean`\>
 
-Bootstrap the service by creating and initializing any resources it needs.
+Bootstrap the component by creating and initializing any resources it needs.
 
 #### Parameters
 
-• **systemLoggingConnectorType?**: `string`
+• **nodeLoggingConnectorType?**: `string`
 
-The system logging connector type, defaults to "system-logging".
+The node logging connector type, defaults to "node-logging".
 
 #### Returns
 
-`Promise`\<`void`\>
+`Promise`\<`boolean`\>
 
-Nothing.
+True if the bootstrapping process was successful.
 
 #### Inherited from
 
-`IService.bootstrap`
+`IComponent.bootstrap`
 
 ***
 
 ### start()?
 
-> `optional` **start**(`systemIdentity`, `systemLoggingConnectorType`?): `Promise`\<`void`\>
+> `optional` **start**(`nodeIdentity`, `nodeLoggingConnectorType`?): `Promise`\<`void`\>
 
-The service needs to be started when the application is initialized.
+The component needs to be started when the node is initialized.
 
 #### Parameters
 
-• **systemIdentity**: `string`
+• **nodeIdentity**: `string`
 
-The identity of the system.
+The identity of the node starting the component.
 
-• **systemLoggingConnectorType?**: `string`
+• **nodeLoggingConnectorType?**: `string`
 
-The system logging connector type, defaults to "system-logging".
+The node logging connector type, defaults to "node-logging".
 
 #### Returns
 
@@ -68,25 +68,25 @@ Nothing.
 
 #### Inherited from
 
-`IService.start`
+`IComponent.start`
 
 ***
 
 ### stop()?
 
-> `optional` **stop**(`systemIdentity`, `systemLoggingConnectorType`?): `Promise`\<`void`\>
+> `optional` **stop**(`nodeIdentity`, `nodeLoggingConnectorType`?): `Promise`\<`void`\>
 
-The service needs to be stopped when the application is closed.
+The component needs to be stopped when the node is closed.
 
 #### Parameters
 
-• **systemIdentity**: `string`
+• **nodeIdentity**: `string`
 
-The identity of the system.
+The identity of the node stopping the component.
 
-• **systemLoggingConnectorType?**: `string`
+• **nodeLoggingConnectorType?**: `string`
 
-The system logging connector type, defaults to "system-logging".
+The node logging connector type, defaults to "node-logging".
 
 #### Returns
 
@@ -96,7 +96,7 @@ Nothing.
 
 #### Inherited from
 
-`IService.stop`
+`IComponent.stop`
 
 ***
 
@@ -126,11 +126,11 @@ The data to attest.
 
 • **options?**
 
-Additional options for the attestation service.
+Additional options for the attestation component.
 
 • **options.namespace?**: `string`
 
-The namespace of the connector to use for the attestation, defaults to service configured namespace.
+The namespace of the connector to use for the attestation, defaults to component configured namespace.
 
 • **identity?**: `string`
 
@@ -211,5 +211,29 @@ The identity to perform the attestation operation with.
 #### Returns
 
 `Promise`\<[`IAttestationInformation`](IAttestationInformation.md)\<`T`\>\>
+
+The updated attestation details.
+
+***
+
+### destroy()
+
+> **destroy**(`attestationId`, `identity`?): `Promise`\<`void`\>
+
+Destroy the attestation.
+
+#### Parameters
+
+• **attestationId**: `string`
+
+The attestation to transfer.
+
+• **identity?**: `string`
+
+The identity to perform the attestation operation with.
+
+#### Returns
+
+`Promise`\<`void`\>
 
 The updated attestation details.

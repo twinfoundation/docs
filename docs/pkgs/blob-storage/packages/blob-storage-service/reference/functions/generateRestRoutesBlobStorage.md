@@ -1,6 +1,6 @@
 # Function: generateRestRoutesBlobStorage()
 
-> **generateRestRoutesBlobStorage**(`baseRouteName`, `factoryServiceName`): `IRestRoute`[]
+> **generateRestRoutesBlobStorage**(`baseRouteName`, `componentName`): `IRestRoute`[]
 
 The REST routes for blob storage.
 
@@ -10,9 +10,9 @@ The REST routes for blob storage.
 
 Prefix to prepend to the paths.
 
-• **factoryServiceName**: `string`
+• **componentName**: `string`
 
-The name of the service to use in the routes store in the ServiceFactory.
+The name of the component to use in the routes stored in the ComponentFactory.
 
 ## Returns
 

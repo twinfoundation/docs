@@ -3,6 +3,8 @@
 ## Classes
 
 - [BlobStorageService](classes/BlobStorageService.md)
+- [BlobMetadata](classes/BlobMetadata.md)
+- [BlobMetadataProperty](classes/BlobMetadataProperty.md)
 
 ## Interfaces
 
@@ -16,6 +18,9 @@
 ## Functions
 
 - [generateRestRoutesBlobStorage](functions/generateRestRoutesBlobStorage.md)
-- [blobStorageSet](functions/blobStorageSet.md)
+- [blobStorageCreate](functions/blobStorageCreate.md)
 - [blobStorageGet](functions/blobStorageGet.md)
+- [blobStorageGetContent](functions/blobStorageGetContent.md)
+- [blobStorageUpdate](functions/blobStorageUpdate.md)
 - [blobStorageRemove](functions/blobStorageRemove.md)
+- [initSchema](functions/initSchema.md)

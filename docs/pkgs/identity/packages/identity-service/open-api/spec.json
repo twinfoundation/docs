@@ -45,11 +45,7 @@
                         "example": "did:iota:tst:0xe3088ba9aa8c28e1d139708a14e8c0fdff11ee8223baac4aa5bcf3321e4bfc6a"
                     }
                 ],
-                "security": [
-                    {
-                        "jwtBearerAuthScheme": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "Response to resolving an identity.",
@@ -90,24 +86,6 @@
                                             "properties": {
                                                 "foo": "bar"
                                             }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied, see the error field for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "UnauthorizedError",
-                                            "message": "component.error"
                                         }
                                     }
                                 }
@@ -304,6 +282,7 @@
                                 "examples": {
                                     "identityGetResponseExample": {
                                         "value": {
+                                            "identity": "did:iota:tst:0xc57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70",
                                             "properties": [
                                                 {
                                                     "key": "role",
@@ -589,6 +568,134 @@
                                         "value": {
                                             "name": "UnauthorizedError",
                                             "message": "component.error"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The resource you tried to access does not exist, see the error field for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NotFoundResponse"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "NotFoundError",
+                                            "message": "component.error",
+                                            "properties": {
+                                                "notFoundId": "1"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "The server has encountered a situation it does not know how to handle, see the error field for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "InternalServerError",
+                                            "message": "component.error"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/identity/profile/{identity}/public": {
+            "get": {
+                "operationId": "identityProfileGetPublic",
+                "summary": "Get the identity profile public properties",
+                "tags": [
+                    "Identity Profile"
+                ],
+                "parameters": [
+                    {
+                        "name": "identity",
+                        "description": "The identity to get the profile for.",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "style": "simple",
+                        "example": "did:iota:tst:0xc57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70"
+                    },
+                    {
+                        "name": "propertyNames",
+                        "description": "The properties to get for the profile, defaults to all, should be a comma separated list.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "role,email,name"
+                    }
+                ],
+                "security": [],
+                "responses": {
+                    "200": {
+                        "description": "Response to get an identity public profile.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/IdentityProfileGetPublicResponse"
+                                },
+                                "examples": {
+                                    "identityGetPublicResponseExample": {
+                                        "value": {
+                                            "properties": [
+                                                {
+                                                    "key": "role",
+                                                    "type": "https://schema.org/Text",
+                                                    "value": "User"
+                                                },
+                                                {
+                                                    "key": "email",
+                                                    "type": "https://schema.org/Text",
+                                                    "value": "john@example.com"
+                                                },
+                                                {
+                                                    "key": "name",
+                                                    "type": "https://schema.org/Text",
+                                                    "value": "John Smith"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "The server cannot process the request, see the error field for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "GeneralError",
+                                            "message": "component.error",
+                                            "properties": {
+                                                "foo": "bar"
+                                            }
                                         }
                                     }
                                 }
@@ -1241,6 +1348,10 @@
             "IdentityProfileGetResponse": {
                 "type": "object",
                 "properties": {
+                    "identity": {
+                        "type": "string",
+                        "description": "The identity of the profile, this is the authenticated user identity."
+                    },
                     "properties": {
                         "type": "array",
                         "items": {
@@ -1249,8 +1360,48 @@
                         "description": "The properties for the identity."
                     }
                 },
+                "required": [
+                    "identity"
+                ],
                 "additionalProperties": false,
                 "description": "The response payload."
+            },
+            "IdentityProfileGetPublicResponse": {
+                "type": "object",
+                "properties": {
+                    "properties": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Property"
+                        },
+                        "description": "The properties for the identity."
+                    }
+                },
+                "additionalProperties": false,
+                "description": "The response payload."
+            },
+            "Property": {
+                "type": "object",
+                "properties": {
+                    "key": {
+                        "type": "string",
+                        "description": "The key for the item."
+                    },
+                    "type": {
+                        "type": "string",
+                        "description": "The type for the item."
+                    },
+                    "value": {
+                        "description": "The value for the item."
+                    }
+                },
+                "required": [
+                    "key",
+                    "type",
+                    "value"
+                ],
+                "additionalProperties": false,
+                "description": "Interface describing a property."
             },
             "IdentityProfileUpdateRequest": {
                 "type": "object",

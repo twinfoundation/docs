@@ -10,6 +10,12 @@ Response to get an identity details.
 
 The response payload.
 
+#### identity
+
+> **identity**: `string`
+
+The identity of the profile, this is the authenticated user identity.
+
 #### properties?
 
 > `optional` **properties**: [`IIdentityProfileProperty`](IIdentityProfileProperty.md)[]

@@ -3,7 +3,7 @@
 ## Interfaces
 
 - [IIrc27Metadata](interfaces/IIrc27Metadata.md)
-- [INft](interfaces/INft.md)
+- [INftComponent](interfaces/INftComponent.md)
 - [INftConnector](interfaces/INftConnector.md)
 - [INftBurnRequest](interfaces/INftBurnRequest.md)
 - [INftMintRequest](interfaces/INftMintRequest.md)

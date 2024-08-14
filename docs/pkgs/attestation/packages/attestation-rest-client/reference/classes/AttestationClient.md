@@ -8,7 +8,7 @@ Client for performing attestation through to REST endpoints.
 
 ## Implements
 
-- `IAttestation`
+- `IAttestationComponent`
 
 ## Constructors
 
@@ -42,7 +42,7 @@ Runtime name for the class.
 
 #### Implementation of
 
-`IAttestation.CLASS_NAME`
+`IAttestationComponent.CLASS_NAME`
 
 ## Methods
 
@@ -128,11 +128,11 @@ The data to attest.
 
 • **options?**
 
-Additional options for the attestation service.
+Additional options for the attestation component.
 
 • **options.namespace?**: `string`
 
-The namespace of the connector to use for the attestation, defaults to service configured namespace.
+The namespace of the connector to use for the attestation, defaults to component configured namespace.
 
 #### Returns
 
@@ -142,7 +142,7 @@ The collated attestation data.
 
 #### Implementation of
 
-`IAttestation.attest`
+`IAttestationComponent.attest`
 
 ***
 
@@ -182,7 +182,7 @@ The verified attestation details.
 
 #### Implementation of
 
-`IAttestation.verify`
+`IAttestationComponent.verify`
 
 ***
 
@@ -218,4 +218,28 @@ The updated attestation details.
 
 #### Implementation of
 
-`IAttestation.transfer`
+`IAttestationComponent.transfer`
+
+***
+
+### destroy()
+
+> **destroy**(`attestationId`): `Promise`\<`void`\>
+
+Destroy the attestation.
+
+#### Parameters
+
+• **attestationId**: `string`
+
+The attestation to transfer.
+
+#### Returns
+
+`Promise`\<`void`\>
+
+The updated attestation details.
+
+#### Implementation of
+
+`IAttestationComponent.destroy`

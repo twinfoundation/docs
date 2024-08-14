@@ -108,12 +108,12 @@ cp .env.example-entity-storage .env
 The .env file can be modified to suit your own use case. For example to set the location for the storage.
 
 ```shell
-SERVER_STORAGE_FILE_ROOT="/home/ec2-user/workbench/"
+WORKBENCH_STORAGE_FILE_ROOT="/home/ec2-user/workbench/"
 ```
 
 ## Bootstrapping the server
 
-You can now bootstrap the server, this will initialise all the required services and generate and initial configuration file. You should take note of the information in the logging as it will display information such as system passwords which will only be displayed once.
+You can now bootstrap the server, this will initialise all the required services and generate an initial configuration file. You should take note of the information in the logging as it will display information such as node admin passwords which will only be displayed once.
 
 ```shell
 node ./dist/es/index.js

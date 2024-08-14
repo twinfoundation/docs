@@ -605,11 +605,7 @@
                         "example": "did:iota:tst:0xe3088ba9aa8c28e1d139708a14e8c0fdff11ee8223baac4aa5bcf3321e4bfc6a"
                     }
                 ],
-                "security": [
-                    {
-                        "jwtBearerAuthScheme": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "Response to resolving an identity.",
@@ -650,24 +646,6 @@
                                             "properties": {
                                                 "foo": "bar"
                                             }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied, see the error field for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "UnauthorizedError",
-                                            "message": "component.error"
                                         }
                                     }
                                 }
@@ -864,6 +842,7 @@
                                 "examples": {
                                     "identityGetResponseExample": {
                                         "value": {
+                                            "identity": "did:iota:tst:0xc57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70",
                                             "properties": [
                                                 {
                                                     "key": "role",
@@ -1197,6 +1176,134 @@
                 }
             }
         },
+        "/identity/profile/{identity}/public": {
+            "get": {
+                "operationId": "identityProfileGetPublic",
+                "summary": "Get the identity profile public properties",
+                "tags": [
+                    "Identity Profile"
+                ],
+                "parameters": [
+                    {
+                        "name": "identity",
+                        "description": "The identity to get the profile for.",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "style": "simple",
+                        "example": "did:iota:tst:0xc57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70"
+                    },
+                    {
+                        "name": "propertyNames",
+                        "description": "The properties to get for the profile, defaults to all, should be a comma separated list.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "role,email,name"
+                    }
+                ],
+                "security": [],
+                "responses": {
+                    "200": {
+                        "description": "Response to get an identity public profile.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/IdentityProfileGetPublicResponse"
+                                },
+                                "examples": {
+                                    "identityGetPublicResponseExample": {
+                                        "value": {
+                                            "properties": [
+                                                {
+                                                    "key": "role",
+                                                    "type": "https://schema.org/Text",
+                                                    "value": "User"
+                                                },
+                                                {
+                                                    "key": "email",
+                                                    "type": "https://schema.org/Text",
+                                                    "value": "john@example.com"
+                                                },
+                                                {
+                                                    "key": "name",
+                                                    "type": "https://schema.org/Text",
+                                                    "value": "John Smith"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "The server cannot process the request, see the error field for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "GeneralError",
+                                            "message": "component.error",
+                                            "properties": {
+                                                "foo": "bar"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The resource you tried to access does not exist, see the error field for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NotFoundResponse"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "NotFoundError",
+                                            "message": "component.error",
+                                            "properties": {
+                                                "notFoundId": "1"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "The server has encountered a situation it does not know how to handle, see the error field for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "InternalServerError",
+                                            "message": "component.error"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/identity/profile/query": {
             "get": {
                 "operationId": "identitiesProfileList",
@@ -1340,10 +1447,10 @@
                 }
             }
         },
-        "/blob-storage": {
+        "/blob": {
             "post": {
-                "operationId": "blobStorageSet",
-                "summary": "Set a blob in to storage",
+                "operationId": "blobStorageCreate",
+                "summary": "Create a blob in to storage",
                 "tags": [
                     "Blob Storage"
                 ],
@@ -1423,17 +1530,24 @@
                     }
                 },
                 "requestBody": {
-                    "description": "Request to set an entry in blob storage.",
+                    "description": "Request to create an entry in blob storage.",
                     "required": true,
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/BlobStorageSetRequest"
+                                "$ref": "#/components/schemas/BlobStorageCreateRequest"
                             },
                             "examples": {
-                                "blobStorageSetExample": {
+                                "blobStorageCreateExample": {
                                     "value": {
-                                        "blob": "VGhlIHF1aWNrIGJyb3duIGZveCBqdW1wcyBvdmVyIHRoZSBsYXp5IGRvZw=="
+                                        "blob": "VGhlIHF1aWNrIGJyb3duIGZveCBqdW1wcyBvdmVyIHRoZSBsYXp5IGRvZw==",
+                                        "metadata": [
+                                            {
+                                                "key": "filename",
+                                                "type": "https://schema.org/Text",
+                                                "value": "my-file.pdf"
+                                            }
+                                        ]
                                     }
                                 }
                             }
@@ -1442,10 +1556,10 @@
                 }
             }
         },
-        "/blob-storage/{id}": {
+        "/blob/{id}": {
             "get": {
                 "operationId": "blobStorageGet",
-                "summary": "Get the blob from storage",
+                "summary": "Get the blob metadata from storage",
                 "tags": [
                     "Blob Storage"
                 ],
@@ -1460,6 +1574,16 @@
                         },
                         "style": "simple",
                         "example": "blob-memory:c57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70"
+                    },
+                    {
+                        "name": "includeContent",
+                        "description": "Include the content in the response, otherwise only metadata is returned.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "example": true
                     }
                 ],
                 "security": [
@@ -1478,6 +1602,13 @@
                                 "examples": {
                                     "blobStorageGetResponseExample": {
                                         "value": {
+                                            "metadata": [
+                                                {
+                                                    "key": "filename",
+                                                    "type": "https://schema.org/Text",
+                                                    "value": "my-file.pdf"
+                                                }
+                                            ],
                                             "blob": "VGhlIHF1aWNrIGJyb3duIGZveCBqdW1wcyBvdmVyIHRoZSBsYXp5IGRvZw=="
                                         }
                                     }
@@ -1565,6 +1696,117 @@
                     }
                 }
             },
+            "put": {
+                "operationId": "blobStorageUpdate",
+                "summary": "Update a blob metadata in storage",
+                "tags": [
+                    "Blob Storage"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "description": "The id of the blob to get in urn format.",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "style": "simple",
+                        "example": "blob-memory:c57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70"
+                    }
+                ],
+                "security": [
+                    {
+                        "jwtBearerAuthScheme": []
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "The rest request ended in success with no data."
+                    },
+                    "400": {
+                        "description": "The server cannot process the request, see the error field for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "GeneralError",
+                                            "message": "component.error",
+                                            "properties": {
+                                                "foo": "bar"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "You are not authorized to use the API or no credentials were supplied, see the error field for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "UnauthorizedError",
+                                            "message": "component.error"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "The server has encountered a situation it does not know how to handle, see the error field for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "InternalServerError",
+                                            "message": "component.error"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "requestBody": {
+                    "description": "Request to update a blob entry.",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/BlobStorageUpdateRequest"
+                            },
+                            "examples": {
+                                "blobStorageUpdateExample": {
+                                    "value": {
+                                        "metadata": [
+                                            {
+                                                "key": "filename",
+                                                "type": "https://schema.org/Text",
+                                                "value": "my-file.pdf"
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
             "delete": {
                 "operationId": "blobStorageRemove",
                 "summary": "Remove the blob from storage",
@@ -1592,6 +1834,124 @@
                 "responses": {
                     "204": {
                         "description": "The rest request ended in success with no data."
+                    },
+                    "400": {
+                        "description": "The server cannot process the request, see the error field for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "GeneralError",
+                                            "message": "component.error",
+                                            "properties": {
+                                                "foo": "bar"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "You are not authorized to use the API or no credentials were supplied, see the error field for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "UnauthorizedError",
+                                            "message": "component.error"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The resource you tried to access does not exist, see the error field for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NotFoundResponse"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "NotFoundError",
+                                            "message": "component.error",
+                                            "properties": {
+                                                "notFoundId": "1"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "The server has encountered a situation it does not know how to handle, see the error field for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "InternalServerError",
+                                            "message": "component.error"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/blob/{id}/content": {
+            "get": {
+                "operationId": "blobStorageGetContent",
+                "summary": "Get the blob from storage",
+                "tags": [
+                    "Blob Storage"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "description": "",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "style": "simple",
+                        "example": "blob-memory:c57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70"
+                    }
+                ],
+                "security": [
+                    {
+                        "jwtBearerAuthScheme": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The content of the blob, which will be a specific mime type if one can be detected from the content (or set as mimeType in the metadata), or defaults to application/octet-stream.",
+                        "content": {
+                            "application/octet-stream": {
+                                "schema": {
+                                    "type": "string",
+                                    "format": "binary"
+                                }
+                            }
+                        }
                     },
                     "400": {
                         "description": "The server cannot process the request, see the error field for more details.",
@@ -3436,11 +3796,7 @@
                         "example": "attestation:iota:aW90YS1uZnQ6dHN0OjB4NzYyYjljNDllYTg2OWUwZWJkYTliYmZhNzY5Mzk0NDdhNDI4ZGNmMTc4YzVkMTVhYjQ0N2UyZDRmYmJiNGViMg=="
                     }
                 ],
-                "security": [
-                    {
-                        "jwtBearerAuthScheme": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "The response to verifying the attestation.",
@@ -3494,6 +3850,75 @@
                                 }
                             }
                         }
+                    },
+                    "400": {
+                        "description": "The server cannot process the request, see the error field for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "GeneralError",
+                                            "message": "component.error",
+                                            "properties": {
+                                                "foo": "bar"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "The server has encountered a situation it does not know how to handle, see the error field for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "InternalServerError",
+                                            "message": "component.error"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "operationId": "attestationDestroy",
+                "summary": "Destroy an attestation",
+                "tags": [
+                    "Attestation"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "description": "The attestation id to destroy.",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "style": "simple",
+                        "example": "attestation:iota:aW90YS1uZnQ6dHN0OjB4NzYyYjljNDllYTg2OWUwZWJkYTliYmZhNzY5Mzk0NDdhNDI4ZGNmMTc4YzVkMTVhYjQ0N2UyZDRmYmJiNGViMg=="
+                    }
+                ],
+                "security": [
+                    {
+                        "jwtBearerAuthScheme": []
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "The rest request ended in success with no data."
                     },
                     "400": {
                         "description": "The server cannot process the request, see the error field for more details.",
@@ -3589,7 +4014,7 @@
                                     "$ref": "#/components/schemas/AttestationTransferResponse"
                                 },
                                 "examples": {
-                                    "attestationVerifyResponseExample": {
+                                    "attestationTransferResponseExample": {
                                         "value": {
                                             "information": {
                                                 "id": "attestation:iota:aW90YS1uZnQ6dHN0OjB4NzYyYjljNDllYTg2OWUwZWJkYTliYmZhNzY5Mzk0NDdhNDI4ZGNmMTc4YzVkMTVhYjQ0N2UyZDRmYmJiNGViMg==",
@@ -3680,7 +4105,7 @@
                                 "$ref": "#/components/schemas/AttestationTransferRequest"
                             },
                             "examples": {
-                                "attestationVerifyExample": {
+                                "attestationTransferRequestExample": {
                                     "value": {
                                         "holderAddress": "tst1pqr2uyp5l8627x6q3g94f6rhhdrkyktxdg20yg2qp5m5dtkwlfcs2h5djap",
                                         "holderIdentity": "did:iota:tst:0x06ae1034f9f4af1b408a0b54e877bb476259666a14f221400d3746aecefa7105"
@@ -4288,6 +4713,10 @@
             "IdentityProfileGetResponse": {
                 "type": "object",
                 "properties": {
+                    "identity": {
+                        "type": "string",
+                        "description": "The identity of the profile, this is the authenticated user identity."
+                    },
                     "properties": {
                         "type": "array",
                         "items": {
@@ -4296,8 +4725,48 @@
                         "description": "The properties for the identity."
                     }
                 },
+                "required": [
+                    "identity"
+                ],
                 "additionalProperties": false,
                 "description": "The response payload."
+            },
+            "IdentityProfileGetPublicResponse": {
+                "type": "object",
+                "properties": {
+                    "properties": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Property"
+                        },
+                        "description": "The properties for the identity."
+                    }
+                },
+                "additionalProperties": false,
+                "description": "The response payload."
+            },
+            "Property": {
+                "type": "object",
+                "properties": {
+                    "key": {
+                        "type": "string",
+                        "description": "The key for the item."
+                    },
+                    "type": {
+                        "type": "string",
+                        "description": "The type for the item."
+                    },
+                    "value": {
+                        "description": "The value for the item."
+                    }
+                },
+                "required": [
+                    "key",
+                    "type",
+                    "value"
+                ],
+                "additionalProperties": false,
+                "description": "Interface describing a property."
             },
             "IdentityProfileUpdateRequest": {
                 "type": "object",
@@ -4363,16 +4832,23 @@
                 "additionalProperties": false,
                 "description": "The response payload."
             },
-            "BlobStorageSetRequest": {
+            "BlobStorageCreateRequest": {
                 "type": "object",
                 "properties": {
                     "blob": {
                         "type": "string",
                         "description": "The data to store in base64 encoding."
                     },
+                    "metadata": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Property"
+                        },
+                        "description": "Metadata to associate with the blob."
+                    },
                     "namespace": {
                         "type": "string",
-                        "description": "The namespace to store the data in, defaults to service configured namespace."
+                        "description": "The namespace to store the data in, defaults to component configured namespace."
                     }
                 },
                 "required": [
@@ -4384,13 +4860,37 @@
             "BlobStorageGetResponse": {
                 "type": "object",
                 "properties": {
+                    "metadata": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Property"
+                        },
+                        "description": "Metadata associated with the blob."
+                    },
                     "blob": {
                         "type": "string",
-                        "description": "The blob in base64 format."
+                        "description": "The blob in base64 format, if the includeContent flag was set in the request."
                     }
                 },
                 "required": [
-                    "blob"
+                    "metadata"
+                ],
+                "additionalProperties": false,
+                "description": "The body parameters."
+            },
+            "BlobStorageUpdateRequest": {
+                "type": "object",
+                "properties": {
+                    "metadata": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Property"
+                        },
+                        "description": "Metadata to associate with the blob."
+                    }
+                },
+                "required": [
+                    "metadata"
                 ],
                 "additionalProperties": false,
                 "description": "The body parameters."
@@ -4704,7 +5204,7 @@
                     },
                     "namespace": {
                         "type": "string",
-                        "description": "The namespace of the connector to use for the NFT, defaults to service configured namespace."
+                        "description": "The namespace of the connector to use for the NFT, defaults to component configured namespace."
                     }
                 },
                 "required": [
@@ -4787,7 +5287,7 @@
                     },
                     "namespace": {
                         "type": "string",
-                        "description": "The namespace of the connector to use for the attestation, defaults to service configured namespace."
+                        "description": "The namespace of the connector to use for the attestation, defaults to component configured namespace."
                     }
                 },
                 "required": [

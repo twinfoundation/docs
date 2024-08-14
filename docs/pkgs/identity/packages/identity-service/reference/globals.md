@@ -20,6 +20,7 @@
 - [generateRestRoutesIdentityProfile](functions/generateRestRoutesIdentityProfile.md)
 - [identityProfileCreate](functions/identityProfileCreate.md)
 - [identityGet](functions/identityGet.md)
+- [identityGetPublic](functions/identityGetPublic.md)
 - [identityProfileUpdate](functions/identityProfileUpdate.md)
 - [identityProfileRemove](functions/identityProfileRemove.md)
 - [identitiesList](functions/identitiesList.md)

@@ -1,6 +1,6 @@
 # Function: identityGet()
 
-> **identityGet**(`httpRequestContext`, `serviceName`, `request`): `Promise`\<`IIdentityProfileGetResponse`\>
+> **identityGet**(`httpRequestContext`, `componentName`, `request`): `Promise`\<`IIdentityProfileGetResponse`\>
 
 Get the identity profile.
 
@@ -10,9 +10,9 @@ Get the identity profile.
 
 The request context for the API.
 
-• **serviceName**: `string`
+• **componentName**: `string`
 
-The name of the service to use in the routes.
+The name of the component to use in the routes stored in the ComponentFactory.
 
 • **request**: `IIdentityProfileGetRequest`
 

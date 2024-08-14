@@ -1,6 +1,6 @@
 # Function: attestationVerify()
 
-> **attestationVerify**(`httpRequestContext`, `factoryServiceName`, `request`): `Promise`\<`IAttestationVerifyResponse`\>
+> **attestationVerify**(`httpRequestContext`, `componentName`, `request`): `Promise`\<`IAttestationVerifyResponse`\>
 
 Resolve and verify the attestation id.
 
@@ -10,9 +10,9 @@ Resolve and verify the attestation id.
 
 The request context for the API.
 
-• **factoryServiceName**: `string`
+• **componentName**: `string`
 
-The name of the service to use in the routes.
+The name of the component to use in the routes.
 
 • **request**: `IAttestationVerifyRequest`
 

@@ -4,7 +4,7 @@ Service for performing logging operations to a connector.
 
 ## Implements
 
-- `ILogging`
+- `ILoggingComponent`
 
 ## Constructors
 
@@ -38,7 +38,7 @@ Runtime name for the class.
 
 #### Implementation of
 
-`ILogging.CLASS_NAME`
+`ILoggingComponent.CLASS_NAME`
 
 ## Methods
 
@@ -62,7 +62,7 @@ Nothing.
 
 #### Implementation of
 
-`ILogging.log`
+`ILoggingComponent.log`
 
 ***
 
@@ -131,7 +131,7 @@ Total entities length.
 
 #### Implementation of
 
-`ILogging.query`
+`ILoggingComponent.query`
 
 #### Throws
 

@@ -1,6 +1,6 @@
 # Function: attestationTransfer()
 
-> **attestationTransfer**(`httpRequestContext`, `factoryServiceName`, `request`): `Promise`\<`IAttestationTransferResponse`\>
+> **attestationTransfer**(`httpRequestContext`, `componentName`, `request`): `Promise`\<`IAttestationTransferResponse`\>
 
 Transfer the attestation to a new holder.
 
@@ -10,9 +10,9 @@ Transfer the attestation to a new holder.
 
 The request context for the API.
 
-• **factoryServiceName**: `string`
+• **componentName**: `string`
 
-The name of the service to use in the routes.
+The name of the component to use in the routes.
 
 • **request**: `IAttestationTransferRequest`
 

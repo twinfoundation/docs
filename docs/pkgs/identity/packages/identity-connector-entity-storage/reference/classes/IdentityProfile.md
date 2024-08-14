@@ -24,6 +24,10 @@ The id for the identity.
 
 ### properties?
 
-> `optional` **properties**: `IIdentityProfileProperty`[]
+> `optional` **properties**: `object`
 
 The properties for the profile.
+
+#### Index signature
+
+ \[`key`: `string`\]: [`IdentityProfileProperty`](IdentityProfileProperty.md)

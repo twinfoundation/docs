@@ -8,7 +8,7 @@ Client for performing telemetry through to REST endpoints.
 
 ## Implements
 
-- `ITelemetry`
+- `ITelemetryComponent`
 
 ## Constructors
 
@@ -42,7 +42,7 @@ Runtime name for the class.
 
 #### Implementation of
 
-`ITelemetry.CLASS_NAME`
+`ITelemetryComponent.CLASS_NAME`
 
 ## Methods
 
@@ -122,7 +122,7 @@ Nothing.
 
 #### Implementation of
 
-`ITelemetry.createMetric`
+`ITelemetryComponent.createMetric`
 
 ***
 
@@ -154,7 +154,7 @@ The metric details and it's most recent value.
 
 #### Implementation of
 
-`ITelemetry.getMetric`
+`ITelemetryComponent.getMetric`
 
 ***
 
@@ -178,7 +178,7 @@ Nothing.
 
 #### Implementation of
 
-`ITelemetry.updateMetric`
+`ITelemetryComponent.updateMetric`
 
 ***
 
@@ -210,7 +210,7 @@ The created metric value id.
 
 #### Implementation of
 
-`ITelemetry.addMetricValue`
+`ITelemetryComponent.addMetricValue`
 
 ***
 
@@ -234,7 +234,7 @@ Nothing.
 
 #### Implementation of
 
-`ITelemetry.removeMetric`
+`ITelemetryComponent.removeMetric`
 
 ***
 
@@ -291,7 +291,7 @@ Total entities length.
 
 #### Implementation of
 
-`ITelemetry.query`
+`ITelemetryComponent.query`
 
 #### Throws
 
@@ -366,7 +366,7 @@ Total entities length.
 
 #### Implementation of
 
-`ITelemetry.queryValues`
+`ITelemetryComponent.queryValues`
 
 #### Throws
 

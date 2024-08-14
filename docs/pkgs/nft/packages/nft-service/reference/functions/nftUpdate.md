@@ -1,6 +1,6 @@
 # Function: nftUpdate()
 
-> **nftUpdate**(`httpRequestContext`, `factoryServiceName`, `request`): `Promise`\<`INoContentResponse`\>
+> **nftUpdate**(`httpRequestContext`, `componentName`, `request`): `Promise`\<`INoContentResponse`\>
 
 Update an NFT.
 
@@ -10,9 +10,9 @@ Update an NFT.
 
 The request context for the API.
 
-• **factoryServiceName**: `string`
+• **componentName**: `string`
 
-The name of the service to use in the routes.
+The name of the component to use in the routes.
 
 • **request**: `INftUpdateRequest`
 

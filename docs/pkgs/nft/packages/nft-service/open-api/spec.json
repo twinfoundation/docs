@@ -606,7 +606,7 @@
                     },
                     "namespace": {
                         "type": "string",
-                        "description": "The namespace of the connector to use for the NFT, defaults to service configured namespace."
+                        "description": "The namespace of the connector to use for the NFT, defaults to component configured namespace."
                     }
                 },
                 "required": [

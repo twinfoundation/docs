@@ -169,11 +169,7 @@
                         "example": "attestation:iota:aW90YS1uZnQ6dHN0OjB4NzYyYjljNDllYTg2OWUwZWJkYTliYmZhNzY5Mzk0NDdhNDI4ZGNmMTc4YzVkMTVhYjQ0N2UyZDRmYmJiNGViMg=="
                     }
                 ],
-                "security": [
-                    {
-                        "jwtBearerAuthScheme": []
-                    }
-                ],
+                "security": [],
                 "responses": {
                     "200": {
                         "description": "The response to verifying the attestation.",
@@ -227,6 +223,75 @@
                                 }
                             }
                         }
+                    },
+                    "400": {
+                        "description": "The server cannot process the request, see the error field for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "GeneralError",
+                                            "message": "component.error",
+                                            "properties": {
+                                                "foo": "bar"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "The server has encountered a situation it does not know how to handle, see the error field for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "InternalServerError",
+                                            "message": "component.error"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "operationId": "attestationDestroy",
+                "summary": "Destroy an attestation",
+                "tags": [
+                    "Attestation"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "description": "The attestation id to destroy.",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "style": "simple",
+                        "example": "attestation:iota:aW90YS1uZnQ6dHN0OjB4NzYyYjljNDllYTg2OWUwZWJkYTliYmZhNzY5Mzk0NDdhNDI4ZGNmMTc4YzVkMTVhYjQ0N2UyZDRmYmJiNGViMg=="
+                    }
+                ],
+                "security": [
+                    {
+                        "jwtBearerAuthScheme": []
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "The rest request ended in success with no data."
                     },
                     "400": {
                         "description": "The server cannot process the request, see the error field for more details.",
@@ -322,7 +387,7 @@
                                     "$ref": "#/components/schemas/AttestationTransferResponse"
                                 },
                                 "examples": {
-                                    "attestationVerifyResponseExample": {
+                                    "attestationTransferResponseExample": {
                                         "value": {
                                             "information": {
                                                 "id": "attestation:iota:aW90YS1uZnQ6dHN0OjB4NzYyYjljNDllYTg2OWUwZWJkYTliYmZhNzY5Mzk0NDdhNDI4ZGNmMTc4YzVkMTVhYjQ0N2UyZDRmYmJiNGViMg==",
@@ -413,7 +478,7 @@
                                 "$ref": "#/components/schemas/AttestationTransferRequest"
                             },
                             "examples": {
-                                "attestationVerifyExample": {
+                                "attestationTransferRequestExample": {
                                     "value": {
                                         "holderAddress": "tst1pqr2uyp5l8627x6q3g94f6rhhdrkyktxdg20yg2qp5m5dtkwlfcs2h5djap",
                                         "holderIdentity": "did:iota:tst:0x06ae1034f9f4af1b408a0b54e877bb476259666a14f221400d3746aecefa7105"
@@ -479,7 +544,7 @@
                     },
                     "namespace": {
                         "type": "string",
-                        "description": "The namespace of the connector to use for the attestation, defaults to service configured namespace."
+                        "description": "The namespace of the connector to use for the attestation, defaults to component configured namespace."
                     }
                 },
                 "required": [
