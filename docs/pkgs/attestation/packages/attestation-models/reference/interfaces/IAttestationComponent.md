@@ -102,7 +102,7 @@ Nothing.
 
 ### attest()
 
-> **attest**\<`T`\>(`address`, `verificationMethodId`, `data`, `options`?, `identity`?): `Promise`\<[`IAttestationInformation`](IAttestationInformation.md)\<`T`\>\>
+> **attest**\<`T`\>(`verificationMethodId`, `data`, `namespace`?, `identity`?, `nodeIdentity`?): `Promise`\<[`IAttestationInformation`](IAttestationInformation.md)\<`T`\>\>
 
 Attest the data and return the collated information.
 
@@ -112,10 +112,6 @@ Attest the data and return the collated information.
 
 #### Parameters
 
-• **address**: `string`
-
-The controller address for the attestation.
-
 • **verificationMethodId**: `string`
 
 The identity verification method to use for attesting the data.
@@ -124,17 +120,17 @@ The identity verification method to use for attesting the data.
 
 The data to attest.
 
-• **options?**
-
-Additional options for the attestation component.
-
-• **options.namespace?**: `string`
+• **namespace?**: `string`
 
 The namespace of the connector to use for the attestation, defaults to component configured namespace.
 
 • **identity?**: `string`
 
 The identity to perform the attestation operation with.
+
+• **nodeIdentity?**: `string`
+
+The node identity to include in the attestation.
 
 #### Returns
 
@@ -182,7 +178,7 @@ The verified attestation details.
 
 ### transfer()
 
-> **transfer**\<`T`\>(`attestationId`, `holderIdentity`, `holderAddress`, `identity`?): `Promise`\<[`IAttestationInformation`](IAttestationInformation.md)\<`T`\>\>
+> **transfer**\<`T`\>(`attestationId`, `holderIdentity`, `identity`?): `Promise`\<[`IAttestationInformation`](IAttestationInformation.md)\<`T`\>\>
 
 Transfer the attestation to a new holder.
 
@@ -198,11 +194,7 @@ The attestation to transfer.
 
 • **holderIdentity**: `string`
 
-The holder identity of the attestation.
-
-• **holderAddress**: `string`
-
-The new controller address of the attestation belonging to the holder.
+The identity to transfer the attestation to.
 
 • **identity?**: `string`
 

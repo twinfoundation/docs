@@ -11,7 +11,7 @@
     },
     "servers": [
         {
-            "url": "http://localhost:3000"
+            "url": "https://workbench-api.gtsc.io"
         }
     ],
     "tags": [
@@ -60,7 +60,6 @@
                 "tags": [
                     "Info"
                 ],
-                "security": [],
                 "responses": {
                     "200": {
                         "description": "The information about the server.",
@@ -130,7 +129,6 @@
                 "tags": [
                     "Info"
                 ],
-                "security": [],
                 "responses": {
                     "200": {
                         "description": "The health of the server.",
@@ -243,7 +241,6 @@
                 "tags": [
                     "Info"
                 ],
-                "security": [],
                 "responses": {
                     "200": {
                         "description": "The OpenAPI spec for the endpoints.",
@@ -314,7 +311,26 @@
                 "tags": [
                     "Authentication"
                 ],
-                "security": [],
+                "requestBody": {
+                    "description": "Perform a login on the server.",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/LoginRequest"
+                            },
+                            "examples": {
+                                "loginRequestExample": {
+                                    "summary": "The request to login to the server.",
+                                    "value": {
+                                        "email": "user@example.com",
+                                        "password": "MyPassword123!"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
                 "responses": {
                     "200": {
                         "description": "Response from a login on the server.",
@@ -392,26 +408,6 @@
                             }
                         }
                     }
-                },
-                "requestBody": {
-                    "description": "Perform a login on the server.",
-                    "required": true,
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/LoginRequest"
-                            },
-                            "examples": {
-                                "loginRequestExample": {
-                                    "summary": "The request to login to the server.",
-                                    "value": {
-                                        "email": "user@example.com",
-                                        "password": "MyPassword123!"
-                                    }
-                                }
-                            }
-                        }
-                    }
                 }
             }
         },
@@ -434,7 +430,6 @@
                         "example": "eyJhbGciOiJIU...sw5c"
                     }
                 ],
-                "security": [],
                 "responses": {
                     "204": {
                         "description": "The rest request ended in success with no data."
@@ -605,7 +600,6 @@
                         "example": "did:iota:tst:0xe3088ba9aa8c28e1d139708a14e8c0fdff11ee8223baac4aa5bcf3321e4bfc6a"
                     }
                 ],
-                "security": [],
                 "responses": {
                     "200": {
                         "description": "Response to resolving an identity.",
@@ -685,6 +679,43 @@
                         "jwtBearerAuthScheme": []
                     }
                 ],
+                "requestBody": {
+                    "description": "Request to create an identity profile.",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/IdentityProfileCreateRequest"
+                            },
+                            "examples": {
+                                "identityProfileCreateRequestExample": {
+                                    "value": {
+                                        "properties": [
+                                            {
+                                                "key": "role",
+                                                "type": "https://schema.org/Text",
+                                                "value": "User",
+                                                "isPublic": false
+                                            },
+                                            {
+                                                "key": "email",
+                                                "type": "https://schema.org/Text",
+                                                "value": "john@example.com",
+                                                "isPublic": false
+                                            },
+                                            {
+                                                "key": "name",
+                                                "type": "https://schema.org/Text",
+                                                "value": "John Smith",
+                                                "isPublic": true
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
                 "responses": {
                     "204": {
                         "description": "The rest request ended in success with no data."
@@ -764,43 +795,6 @@
                                             "name": "InternalServerError",
                                             "message": "component.error"
                                         }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                },
-                "requestBody": {
-                    "description": "Request to create an identity profile.",
-                    "required": true,
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/IdentityProfileCreateRequest"
-                            },
-                            "examples": {
-                                "identityProfileCreateRequestExample": {
-                                    "value": {
-                                        "properties": [
-                                            {
-                                                "key": "role",
-                                                "type": "https://schema.org/Text",
-                                                "value": "User",
-                                                "isPublic": false
-                                            },
-                                            {
-                                                "key": "email",
-                                                "type": "https://schema.org/Text",
-                                                "value": "john@example.com",
-                                                "isPublic": false
-                                            },
-                                            {
-                                                "key": "name",
-                                                "type": "https://schema.org/Text",
-                                                "value": "John Smith",
-                                                "isPublic": true
-                                            }
-                                        ]
                                     }
                                 }
                             }
@@ -960,6 +954,42 @@
                         "jwtBearerAuthScheme": []
                     }
                 ],
+                "requestBody": {
+                    "description": "Request to update an identity profile.",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/IdentityProfileUpdateRequest"
+                            },
+                            "examples": {
+                                "identityProfileUpdateRequestExample": {
+                                    "value": {
+                                        "properties": [
+                                            {
+                                                "key": "role",
+                                                "type": "https://schema.org/Text",
+                                                "value": "User",
+                                                "isPublic": false
+                                            },
+                                            {
+                                                "key": "email",
+                                                "type": "https://schema.org/Text",
+                                                "isPublic": false
+                                            },
+                                            {
+                                                "key": "name",
+                                                "type": "https://schema.org/Text",
+                                                "value": "John Smith",
+                                                "isPublic": true
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
                 "responses": {
                     "204": {
                         "description": "The rest request ended in success with no data."
@@ -1037,42 +1067,6 @@
                                             "name": "InternalServerError",
                                             "message": "component.error"
                                         }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                },
-                "requestBody": {
-                    "description": "Request to update an identity profile.",
-                    "required": true,
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/IdentityProfileUpdateRequest"
-                            },
-                            "examples": {
-                                "identityProfileUpdateRequestExample": {
-                                    "value": {
-                                        "properties": [
-                                            {
-                                                "key": "role",
-                                                "type": "https://schema.org/Text",
-                                                "value": "User",
-                                                "isPublic": false
-                                            },
-                                            {
-                                                "key": "email",
-                                                "type": "https://schema.org/Text",
-                                                "isPublic": false
-                                            },
-                                            {
-                                                "key": "name",
-                                                "type": "https://schema.org/Text",
-                                                "value": "John Smith",
-                                                "isPublic": true
-                                            }
-                                        ]
                                     }
                                 }
                             }
@@ -1206,7 +1200,6 @@
                         "example": "role,email,name"
                     }
                 ],
-                "security": [],
                 "responses": {
                     "200": {
                         "description": "Response to get an identity public profile.",
@@ -1459,6 +1452,31 @@
                         "jwtBearerAuthScheme": []
                     }
                 ],
+                "requestBody": {
+                    "description": "Request to create an entry in blob storage.",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/BlobStorageCreateRequest"
+                            },
+                            "examples": {
+                                "blobStorageCreateExample": {
+                                    "value": {
+                                        "blob": "VGhlIHF1aWNrIGJyb3duIGZveCBqdW1wcyBvdmVyIHRoZSBsYXp5IGRvZw==",
+                                        "metadata": [
+                                            {
+                                                "key": "filename",
+                                                "type": "https://schema.org/Text",
+                                                "value": "my-file.pdf"
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
                 "responses": {
                     "201": {
                         "description": "The rest request ended in created response.",
@@ -1523,31 +1541,6 @@
                                             "name": "InternalServerError",
                                             "message": "component.error"
                                         }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                },
-                "requestBody": {
-                    "description": "Request to create an entry in blob storage.",
-                    "required": true,
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/BlobStorageCreateRequest"
-                            },
-                            "examples": {
-                                "blobStorageCreateExample": {
-                                    "value": {
-                                        "blob": "VGhlIHF1aWNrIGJyb3duIGZveCBqdW1wcyBvdmVyIHRoZSBsYXp5IGRvZw==",
-                                        "metadata": [
-                                            {
-                                                "key": "filename",
-                                                "type": "https://schema.org/Text",
-                                                "value": "my-file.pdf"
-                                            }
-                                        ]
                                     }
                                 }
                             }
@@ -1720,6 +1713,30 @@
                         "jwtBearerAuthScheme": []
                     }
                 ],
+                "requestBody": {
+                    "description": "Request to update a blob entry.",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/BlobStorageUpdateRequest"
+                            },
+                            "examples": {
+                                "blobStorageUpdateExample": {
+                                    "value": {
+                                        "metadata": [
+                                            {
+                                                "key": "filename",
+                                                "type": "https://schema.org/Text",
+                                                "value": "my-file.pdf"
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
                 "responses": {
                     "204": {
                         "description": "The rest request ended in success with no data."
@@ -1776,30 +1793,6 @@
                                             "name": "InternalServerError",
                                             "message": "component.error"
                                         }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                },
-                "requestBody": {
-                    "description": "Request to update a blob entry.",
-                    "required": true,
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/BlobStorageUpdateRequest"
-                            },
-                            "examples": {
-                                "blobStorageUpdateExample": {
-                                    "value": {
-                                        "metadata": [
-                                            {
-                                                "key": "filename",
-                                                "type": "https://schema.org/Text",
-                                                "value": "my-file.pdf"
-                                            }
-                                        ]
                                     }
                                 }
                             }
@@ -1949,6 +1942,12 @@
                                 "schema": {
                                     "type": "string",
                                     "format": "binary"
+                                },
+                                "examples": {
+                                    "blobStorageGetContentResponseExample": {
+                                        "summary": "Binary Data",
+                                        "value": ""
+                                    }
                                 }
                             }
                         }
@@ -2046,6 +2045,28 @@
                         "jwtBearerAuthScheme": []
                     }
                 ],
+                "requestBody": {
+                    "description": "Create a new telemetry metric.",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/TelemetryMetric"
+                            },
+                            "examples": {
+                                "telemetryCreateMetricRequestExample": {
+                                    "value": {
+                                        "id": "my-counter",
+                                        "label": "My Counter",
+                                        "description": "This is my counter",
+                                        "type": "Counter",
+                                        "unit": "KG"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
                 "responses": {
                     "201": {
                         "description": "The rest request ended in created response.",
@@ -2110,28 +2131,6 @@
                                             "name": "InternalServerError",
                                             "message": "component.error"
                                         }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                },
-                "requestBody": {
-                    "description": "Create a new telemetry metric.",
-                    "required": true,
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/TelemetryMetric"
-                            },
-                            "examples": {
-                                "telemetryCreateMetricRequestExample": {
-                                    "value": {
-                                        "id": "my-counter",
-                                        "label": "My Counter",
-                                        "description": "This is my counter",
-                                        "type": "Counter",
-                                        "unit": "KG"
                                     }
                                 }
                             }
@@ -2409,6 +2408,24 @@
                         "jwtBearerAuthScheme": []
                     }
                 ],
+                "requestBody": {
+                    "description": "Update a telemetry metric.",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/TelemetryUpdateMetricRequest"
+                            },
+                            "examples": {
+                                "telemetryUpdateMetricRequestExample": {
+                                    "value": {
+                                        "label": "My New Label"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
                 "responses": {
                     "204": {
                         "description": "The rest request ended in success with no data."
@@ -2465,24 +2482,6 @@
                                             "name": "InternalServerError",
                                             "message": "component.error"
                                         }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                },
-                "requestBody": {
-                    "description": "Update a telemetry metric.",
-                    "required": true,
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/TelemetryUpdateMetricRequest"
-                            },
-                            "examples": {
-                                "telemetryUpdateMetricRequestExample": {
-                                    "value": {
-                                        "label": "My New Label"
                                     }
                                 }
                             }
@@ -2603,6 +2602,29 @@
                         "jwtBearerAuthScheme": []
                     }
                 ],
+                "requestBody": {
+                    "description": "Add a telemetry metric value.",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/TelemetryAddMetricValueRequest"
+                            },
+                            "examples": {
+                                "telemetryAddMetricValueRequestExample": {
+                                    "value": {
+                                        "value": 10
+                                    }
+                                },
+                                "telemetryAddMetricValueIncRequestExample": {
+                                    "value": {
+                                        "value": "inc"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
                 "responses": {
                     "201": {
                         "description": "The rest request ended in created response.",
@@ -2667,29 +2689,6 @@
                                             "name": "InternalServerError",
                                             "message": "component.error"
                                         }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                },
-                "requestBody": {
-                    "description": "Add a telemetry metric value.",
-                    "required": true,
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/TelemetryAddMetricValueRequest"
-                            },
-                            "examples": {
-                                "telemetryAddMetricValueRequestExample": {
-                                    "value": {
-                                        "value": 10
-                                    }
-                                },
-                                "telemetryAddMetricValueIncRequestExample": {
-                                    "value": {
-                                        "value": "inc"
                                     }
                                 }
                             }
@@ -2867,6 +2866,42 @@
                         "jwtBearerAuthScheme": []
                     }
                 ],
+                "requestBody": {
+                    "description": "Create a new log entry.",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/LogEntry"
+                            },
+                            "examples": {
+                                "loggingEntryCreateInfoExample": {
+                                    "value": {
+                                        "level": "info",
+                                        "message": "This is an information message",
+                                        "source": "source",
+                                        "ts": 1715252922273
+                                    }
+                                },
+                                "loggingEntryCreateErrorExample": {
+                                    "value": {
+                                        "level": "info",
+                                        "message": "This is an error message",
+                                        "source": "source",
+                                        "ts": 1715252922273,
+                                        "error": {
+                                            "name": "GeneralError",
+                                            "message": "component.error",
+                                            "properties": {
+                                                "foo": "bar"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
                 "responses": {
                     "204": {
                         "description": "The rest request ended in success with no data."
@@ -2922,42 +2957,6 @@
                                         "value": {
                                             "name": "InternalServerError",
                                             "message": "component.error"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                },
-                "requestBody": {
-                    "description": "Create a new log entry.",
-                    "required": true,
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/LogEntry"
-                            },
-                            "examples": {
-                                "loggingEntryCreateInfoExample": {
-                                    "value": {
-                                        "level": "info",
-                                        "message": "This is an information message",
-                                        "source": "source",
-                                        "ts": 1715252922273
-                                    }
-                                },
-                                "loggingEntryCreateErrorExample": {
-                                    "value": {
-                                        "level": "info",
-                                        "message": "This is an error message",
-                                        "source": "source",
-                                        "ts": 1715252922273,
-                                        "error": {
-                                            "name": "GeneralError",
-                                            "message": "component.error",
-                                            "properties": {
-                                                "foo": "bar"
-                                            }
                                         }
                                     }
                                 }
@@ -3132,6 +3131,33 @@
                         "jwtBearerAuthScheme": []
                     }
                 ],
+                "requestBody": {
+                    "description": "Mint the data and return the NFT id.",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/NftMintRequest"
+                            },
+                            "examples": {
+                                "nftMintExample": {
+                                    "value": {
+                                        "issuer": "tst1prctjk5ck0dutnsunnje6u90jk5htx03qznjjmkd6843pzltlgz87srjzzv",
+                                        "tag": "MY-NFT",
+                                        "immutableMetadata": {
+                                            "docName": "bill-of-lading",
+                                            "mimeType": "application/pdf",
+                                            "fingerprint": "0xf0b95a98b3dbc5ce1c9ce59d70af95a97599f100a7296ecdd1eb108bebfa047f"
+                                        },
+                                        "metadata": {
+                                            "data": "tst1prctjk5ck0dutnsunnje6u90jk5htx03qznjjmkd6843pzltlgz87srjzzv"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
                 "responses": {
                     "201": {
                         "description": "The rest request ended in created response.",
@@ -3195,33 +3221,6 @@
                                         "value": {
                                             "name": "InternalServerError",
                                             "message": "component.error"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                },
-                "requestBody": {
-                    "description": "Mint the data and return the NFT id.",
-                    "required": true,
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/NftMintRequest"
-                            },
-                            "examples": {
-                                "nftMintExample": {
-                                    "value": {
-                                        "issuer": "tst1prctjk5ck0dutnsunnje6u90jk5htx03qznjjmkd6843pzltlgz87srjzzv",
-                                        "tag": "MY-NFT",
-                                        "immutableMetadata": {
-                                            "docName": "bill-of-lading",
-                                            "mimeType": "application/pdf",
-                                            "fingerprint": "0xf0b95a98b3dbc5ce1c9ce59d70af95a97599f100a7296ecdd1eb108bebfa047f"
-                                        },
-                                        "metadata": {
-                                            "data": "tst1prctjk5ck0dutnsunnje6u90jk5htx03qznjjmkd6843pzltlgz87srjzzv"
                                         }
                                     }
                                 }
@@ -3454,6 +3453,26 @@
                         "jwtBearerAuthScheme": []
                     }
                 ],
+                "requestBody": {
+                    "description": "Update the mutable data for the NFT.",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/NftUpdateRequest"
+                            },
+                            "examples": {
+                                "nftUpdateExample": {
+                                    "value": {
+                                        "metadata": {
+                                            "data": "AAAAA"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
                 "responses": {
                     "204": {
                         "description": "The rest request ended in success with no data."
@@ -3509,26 +3528,6 @@
                                         "value": {
                                             "name": "InternalServerError",
                                             "message": "component.error"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                },
-                "requestBody": {
-                    "description": "Update the mutable data for the NFT.",
-                    "required": true,
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/NftUpdateRequest"
-                            },
-                            "examples": {
-                                "nftUpdateExample": {
-                                    "value": {
-                                        "metadata": {
-                                            "data": "AAAAA"
                                         }
                                     }
                                 }
@@ -3563,6 +3562,27 @@
                         "jwtBearerAuthScheme": []
                     }
                 ],
+                "requestBody": {
+                    "description": "Transfer the NFT and update the metadata.",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/NftTransferRequest"
+                            },
+                            "examples": {
+                                "nftTransferExample": {
+                                    "value": {
+                                        "recipient": "tst1prctjk5ck0dutnsunnje6u90jk5htx03qznjjmkd6843pzltlgz87srjzzv",
+                                        "metadata": {
+                                            "data": "AAAAA"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
                 "responses": {
                     "204": {
                         "description": "The rest request ended in success with no data."
@@ -3624,27 +3644,6 @@
                             }
                         }
                     }
-                },
-                "requestBody": {
-                    "description": "Transfer the NFT and update the metadata.",
-                    "required": true,
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/NftTransferRequest"
-                            },
-                            "examples": {
-                                "nftTransferExample": {
-                                    "value": {
-                                        "recipient": "tst1prctjk5ck0dutnsunnje6u90jk5htx03qznjjmkd6843pzltlgz87srjzzv",
-                                        "metadata": {
-                                            "data": "AAAAA"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
                 }
             }
         },
@@ -3660,6 +3659,29 @@
                         "jwtBearerAuthScheme": []
                     }
                 ],
+                "requestBody": {
+                    "description": "Attest the data and return the collated attestation details.",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/AttestationAttestRequest"
+                            },
+                            "examples": {
+                                "attestationAttestExample": {
+                                    "value": {
+                                        "verificationMethodId": "did:iota:tst:0xf0b95a98b3dbc5ce1c9ce59d70af95a97599f100a7296ecdd1eb108bebfa047f#attestation",
+                                        "data": {
+                                            "docName": "bill-of-lading",
+                                            "mimeType": "application/pdf",
+                                            "fingerprint": "0xf0b95a98b3dbc5ce1c9ce59d70af95a97599f100a7296ecdd1eb108bebfa047f"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
                 "responses": {
                     "200": {
                         "description": "The response when creating the attestation for some data.",
@@ -3749,30 +3771,6 @@
                             }
                         }
                     }
-                },
-                "requestBody": {
-                    "description": "Attest the data and return the collated attestation details.",
-                    "required": true,
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/AttestationAttestRequest"
-                            },
-                            "examples": {
-                                "attestationAttestExample": {
-                                    "value": {
-                                        "address": "tst1prctjk5ck0dutnsunnje6u90jk5htx03qznjjmkd6843pzltlgz87srjzzv",
-                                        "verificationMethodId": "did:iota:tst:0xf0b95a98b3dbc5ce1c9ce59d70af95a97599f100a7296ecdd1eb108bebfa047f#attestation",
-                                        "data": {
-                                            "docName": "bill-of-lading",
-                                            "mimeType": "application/pdf",
-                                            "fingerprint": "0xf0b95a98b3dbc5ce1c9ce59d70af95a97599f100a7296ecdd1eb108bebfa047f"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
                 }
             }
         },
@@ -3796,7 +3794,6 @@
                         "example": "attestation:iota:aW90YS1uZnQ6dHN0OjB4NzYyYjljNDllYTg2OWUwZWJkYTliYmZhNzY5Mzk0NDdhNDI4ZGNmMTc4YzVkMTVhYjQ0N2UyZDRmYmJiNGViMg=="
                     }
                 ],
-                "security": [],
                 "responses": {
                     "200": {
                         "description": "The response to verifying the attestation.",
@@ -4005,6 +4002,24 @@
                         "jwtBearerAuthScheme": []
                     }
                 ],
+                "requestBody": {
+                    "description": "Transfer the attestation to a new holder.",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/AttestationTransferRequest"
+                            },
+                            "examples": {
+                                "attestationTransferRequestExample": {
+                                    "value": {
+                                        "holderIdentity": "did:iota:tst:0x06ae1034f9f4af1b408a0b54e877bb476259666a14f221400d3746aecefa7105"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
                 "responses": {
                     "200": {
                         "description": "The response to transferring the attestation.",
@@ -4090,25 +4105,6 @@
                                             "name": "InternalServerError",
                                             "message": "component.error"
                                         }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                },
-                "requestBody": {
-                    "description": "Transfer the attestation to a new holder.",
-                    "required": true,
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/AttestationTransferRequest"
-                            },
-                            "examples": {
-                                "attestationTransferRequestExample": {
-                                    "value": {
-                                        "holderAddress": "tst1pqr2uyp5l8627x6q3g94f6rhhdrkyktxdg20yg2qp5m5dtkwlfcs2h5djap",
-                                        "holderIdentity": "did:iota:tst:0x06ae1034f9f4af1b408a0b54e877bb476259666a14f221400d3746aecefa7105"
                                     }
                                 }
                             }
@@ -4878,6 +4874,48 @@
                 "additionalProperties": false,
                 "description": "The body parameters."
             },
+            "Uint8Array": {
+                "type": "object",
+                "properties": {
+                    "BYTES_PER_ELEMENT": {
+                        "type": "number"
+                    },
+                    "buffer": {
+                        "$ref": "#/components/schemas/ArrayBuffer"
+                    },
+                    "byteLength": {
+                        "type": "number"
+                    },
+                    "byteOffset": {
+                        "type": "number"
+                    },
+                    "length": {
+                        "type": "number"
+                    }
+                },
+                "required": [
+                    "BYTES_PER_ELEMENT",
+                    "buffer",
+                    "byteLength",
+                    "byteOffset",
+                    "length"
+                ],
+                "additionalProperties": {
+                    "type": "number"
+                }
+            },
+            "ArrayBuffer": {
+                "type": "object",
+                "properties": {
+                    "byteLength": {
+                        "type": "number"
+                    }
+                },
+                "required": [
+                    "byteLength"
+                ],
+                "additionalProperties": false
+            },
             "BlobStorageUpdateRequest": {
                 "type": "object",
                 "properties": {
@@ -5274,10 +5312,6 @@
             "AttestationAttestRequest": {
                 "type": "object",
                 "properties": {
-                    "address": {
-                        "type": "string",
-                        "description": "The controller address for the attestation."
-                    },
                     "verificationMethodId": {
                         "type": "string",
                         "description": "The identity verification method to use for attesting the data."
@@ -5291,7 +5325,6 @@
                     }
                 },
                 "required": [
-                    "address",
                     "verificationMethodId",
                     "data"
                 ],
@@ -5397,15 +5430,10 @@
                     "holderIdentity": {
                         "type": "string",
                         "description": "The new holder identity."
-                    },
-                    "holderAddress": {
-                        "type": "string",
-                        "description": "The new holder controller address."
                     }
                 },
                 "required": [
-                    "holderIdentity",
-                    "holderAddress"
+                    "holderIdentity"
                 ],
                 "additionalProperties": false,
                 "description": "The parameters to be used in the transfer."

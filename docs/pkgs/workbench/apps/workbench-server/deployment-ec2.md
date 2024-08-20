@@ -166,5 +166,15 @@ sudo systemctl status workbench.service
 or
 
 ```shell
-sudo journalctl -u workbench
+sudo journalctl -u workbench | tail
 ```
+
+## Upgrade EC2 Instance
+
+sudo systemctl stop workbench.service
+cd app
+git pull
+npm i
+cd workbench-server
+npm run dist
+sudo systemctl start workbench.service

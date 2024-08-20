@@ -1,6 +1,6 @@
 {
 	"name": "@gtsc/logging-connector-console",
-	"version": "0.0.5-next.5",
+	"version": "0.0.5-next.6",
 	"description": "Logging connector implementation using the console",
 	"repository": {
 		"type": "git",
@@ -30,7 +30,7 @@
 	"dependencies": {
 		"@gtsc/core": "next",
 		"@gtsc/nameof": "next",
-		"@gtsc/logging-models": "0.0.5-next.5"
+		"@gtsc/logging-models": "0.0.5-next.6"
 	},
 	"devDependencies": {
 		"@gtsc/nameof-transformer": "next",

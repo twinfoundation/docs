@@ -10,12 +10,6 @@ Attest the data and return the collated attestation details.
 
 The data to be used in the signing.
 
-#### address
-
-> **address**: `string`
-
-The controller address for the attestation.
-
 #### verificationMethodId
 
 > **verificationMethodId**: `string`

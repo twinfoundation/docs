@@ -517,12 +517,16 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "The content of the blob, which will be a specific mime type if one can be detected from the content (or set as mimeType in the metadata), or defaults to application/octet-stream.",
                         "content": {
-                            "application/octet-stream": {
+                            "application/json": {
                                 "schema": {
-                                    "type": "string",
-                                    "format": "binary"
+                                    "$ref": "#/components/schemas/Uint8Array"
+                                },
+                                "examples": {
+                                    "blobStorageGetContentResponseExample": {
+                                        "summary": "The content of the blob, which will be a specific mime type if one can be detected from the content (or set as mimeType in the metadata), or defaults to application/octet-stream.",
+                                        "value": {}
+                                    }
                                 }
                             }
                         }
@@ -753,6 +757,48 @@
                 ],
                 "additionalProperties": false,
                 "description": "The body parameters."
+            },
+            "Uint8Array": {
+                "type": "object",
+                "properties": {
+                    "BYTES_PER_ELEMENT": {
+                        "type": "number"
+                    },
+                    "buffer": {
+                        "$ref": "#/components/schemas/ArrayBuffer"
+                    },
+                    "byteLength": {
+                        "type": "number"
+                    },
+                    "byteOffset": {
+                        "type": "number"
+                    },
+                    "length": {
+                        "type": "number"
+                    }
+                },
+                "required": [
+                    "BYTES_PER_ELEMENT",
+                    "buffer",
+                    "byteLength",
+                    "byteOffset",
+                    "length"
+                ],
+                "additionalProperties": {
+                    "type": "number"
+                }
+            },
+            "ArrayBuffer": {
+                "type": "object",
+                "properties": {
+                    "byteLength": {
+                        "type": "number"
+                    }
+                },
+                "required": [
+                    "byteLength"
+                ],
+                "additionalProperties": false
             },
             "BlobStorageUpdateRequest": {
                 "type": "object",

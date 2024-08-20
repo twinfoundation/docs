@@ -1,6 +1,6 @@
 {
 	"name": "@gtsc/entity-storage-connector-dynamodb",
-	"version": "0.0.5-next.7",
+	"version": "0.0.5-next.8",
 	"description": "Entity Storage connector implementation using DynamoDb storage",
 	"repository": {
 		"type": "git",
@@ -31,14 +31,14 @@
 		"@gtsc/core": "next",
 		"@gtsc/entity": "next",
 		"@gtsc/nameof": "next",
-		"@gtsc/entity-storage-models": "0.0.5-next.7",
+		"@gtsc/entity-storage-models": "0.0.5-next.8",
 		"@gtsc/logging-models": "next",
 		"@aws-sdk/client-dynamodb": "3.624",
 		"@aws-sdk/lib-dynamodb": "3.624",
 		"@aws-sdk/util-dynamodb": "3.624"
 	},
 	"devDependencies": {
-		"@gtsc/entity-storage-connector-memory": "0.0.5-next.7",
+		"@gtsc/entity-storage-connector-memory": "0.0.5-next.8",
 		"@gtsc/logging-connector-entity-storage": "next",
 		"@gtsc/logging-service": "next",
 		"@gtsc/nameof-transformer": "next",

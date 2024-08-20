@@ -102,7 +102,7 @@ Nothing.
 
 ### create()
 
-> **create**(`blob`, `metadata`?, `options`?): `Promise`\<`string`\>
+> **create**(`blob`, `metadata`?, `namespace`?, `nodeIdentity`?): `Promise`\<`string`\>
 
 Create the blob with some metadata.
 
@@ -116,13 +116,13 @@ The data for the blob in base64 format.
 
 Metadata to associate with the blob.
 
-• **options?**
-
-Additional options for the blob component.
-
-• **options.namespace?**: `string`
+• **namespace?**: `string`
 
 The namespace to use for storing, defaults to component configured namespace.
+
+• **nodeIdentity?**: `string`
+
+The node identity which controls the vault key.
 
 #### Returns
 
@@ -134,7 +134,7 @@ The id of the stored blob in urn format.
 
 ### get()
 
-> **get**(`id`, `includeContent`): `Promise`\<`object`\>
+> **get**(`id`, `includeContent`, `nodeIdentity`?): `Promise`\<`object`\>
 
 Get the blob and metadata.
 
@@ -147,6 +147,10 @@ The id of the blob to get in urn format.
 • **includeContent**: `boolean`
 
 Include the content, or just get the metadata.
+
+• **nodeIdentity?**: `string`
+
+The node identity which controls the vault key.
 
 #### Returns
 

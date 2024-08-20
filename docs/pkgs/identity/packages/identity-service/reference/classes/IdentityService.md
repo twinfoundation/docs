@@ -10,13 +10,17 @@ Class which implements the identity contract.
 
 ### new IdentityService()
 
-> **new IdentityService**(`config`?): [`IdentityService`](IdentityService.md)
+> **new IdentityService**(`options`?): [`IdentityService`](IdentityService.md)
 
 Create a new instance of IdentityService.
 
 #### Parameters
 
-• **config?**: [`IIdentityServiceConfig`](../interfaces/IIdentityServiceConfig.md)
+• **options?**
+
+The options for the service.
+
+• **options.config?**: [`IIdentityServiceConfig`](../interfaces/IIdentityServiceConfig.md)
 
 The configuration for the service.
 

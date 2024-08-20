@@ -10,13 +10,17 @@ Class for performing logging operations in the console.
 
 ### new ConsoleLoggingConnector()
 
-> **new ConsoleLoggingConnector**(`config`?): [`ConsoleLoggingConnector`](ConsoleLoggingConnector.md)
+> **new ConsoleLoggingConnector**(`options`?): [`ConsoleLoggingConnector`](ConsoleLoggingConnector.md)
 
 Create a new instance of ConsoleLoggingConnector.
 
 #### Parameters
 
-• **config?**: [`IConsoleLoggingConnectorConfig`](../interfaces/IConsoleLoggingConnectorConfig.md)
+• **options?**
+
+The options for the logging connector.
+
+• **options.config?**: [`IConsoleLoggingConnectorConfig`](../interfaces/IConsoleLoggingConnectorConfig.md)
 
 The configuration for the logging connector.
 
