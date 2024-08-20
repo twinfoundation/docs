@@ -4,7 +4,7 @@
 	"description": "Blob storage contract implementation and REST endpoint definitions",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/gtscio/blob-storage.git",
+		"url": "git+https://github.com/gtscio/blob-storage.git",
 		"directory": "packages/blob-storage-service"
 	},
 	"author": "martyn.janes@iota.org",

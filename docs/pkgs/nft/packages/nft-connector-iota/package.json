@@ -4,7 +4,7 @@
 	"description": "Implementation of the NFT connector using IOTA",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/gtscio/nft.git",
+		"url": "git+https://github.com/gtscio/nft.git",
 		"directory": "packages/nft-connector-iota"
 	},
 	"author": "martyn.janes@iota.org",

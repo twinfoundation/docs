@@ -4,7 +4,7 @@
 	"description": "Wallet",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/gtscio/wallet.git"
+		"url": "git+https://github.com/gtscio/wallet.git"
 	},
 	"author": "martyn.janes@iota.org",
 	"license": "Apache-2.0",

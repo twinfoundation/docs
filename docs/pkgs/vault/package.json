@@ -4,7 +4,7 @@
 	"description": "Vault",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/gtscio/vault.git"
+		"url": "git+https://github.com/gtscio/vault.git"
 	},
 	"author": "martyn.janes@iota.org",
 	"license": "Apache-2.0",

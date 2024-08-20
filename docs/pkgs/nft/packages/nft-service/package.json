@@ -4,7 +4,7 @@
 	"description": "NFT contract implementation and REST endpoint definitions",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/gtscio/nft.git",
+		"url": "git+https://github.com/gtscio/nft.git",
 		"directory": "packages/nft-service"
 	},
 	"author": "martyn.janes@iota.org",

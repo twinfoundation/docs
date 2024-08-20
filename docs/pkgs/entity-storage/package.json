@@ -4,7 +4,7 @@
 	"description": "Entity Storage",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/gtscio/entity-storage.git"
+		"url": "git+https://github.com/gtscio/entity-storage.git"
 	},
 	"author": "martyn.janes@iota.org",
 	"license": "Apache-2.0",

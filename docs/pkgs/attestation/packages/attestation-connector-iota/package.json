@@ -4,7 +4,7 @@
 	"description": "Attestation connector implementation using IOTA",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/gtscio/attestation.git",
+		"url": "git+https://github.com/gtscio/attestation.git",
 		"directory": "packages/attestation-connector-iota"
 	},
 	"author": "martyn.janes@iota.org",

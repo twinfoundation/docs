@@ -4,7 +4,7 @@
 	"description": "Tool to convert TypeScript REST route definitions to OpenAPI Specifications",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/gtscio/tools.git",
+		"url": "git+https://github.com/gtscio/tools.git",
 		"directory": "packages/ts-to-openapi"
 	},
 	"author": "martyn.janes@iota.org",

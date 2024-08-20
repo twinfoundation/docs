@@ -4,7 +4,7 @@
 	"description": "Identity contract implementation which can connect to REST endpoints",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/gtscio/identity.git",
+		"url": "git+https://github.com/gtscio/identity.git",
 		"directory": "packages/identity-rest-client"
 	},
 	"author": "martyn.janes@iota.org",

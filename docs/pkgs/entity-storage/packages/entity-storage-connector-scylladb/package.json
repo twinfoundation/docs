@@ -4,7 +4,7 @@
 	"description": "Entity Storage connector implementation using ScyllaDB",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/gtscio/entity-storage.git",
+		"url": "git+https://github.com/gtscio/entity-storage.git",
 		"directory": "packages/entity-storage-connector-scylladb"
 	},
 	"author": "jose.cantera@iota.org",

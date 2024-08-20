@@ -4,7 +4,7 @@
 	"description": "A command line interface for interacting with the wallet APIs",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/gtscio/wallet.git",
+		"url": "git+https://github.com/gtscio/wallet.git",
 		"directory": "packages/wallet-cli"
 	},
 	"author": "martyn.janes@iota.org",

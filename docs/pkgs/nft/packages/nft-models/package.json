@@ -4,7 +4,7 @@
 	"description": "Contains models and classes for use with NFTs",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/gtscio/nft.git",
+		"url": "git+https://github.com/gtscio/nft.git",
 		"directory": "packages/nft-models"
 	},
 	"author": "martyn.janes@iota.org",

@@ -4,7 +4,7 @@
 	"description": "Blob Storage",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/gtscio/blob-storage.git"
+		"url": "git+https://github.com/gtscio/blob-storage.git"
 	},
 	"author": "martyn.janes@iota.org",
 	"license": "Apache-2.0",

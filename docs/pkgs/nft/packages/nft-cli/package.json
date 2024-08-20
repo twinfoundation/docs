@@ -4,7 +4,7 @@
 	"description": "A command line interface for interacting with the nft connectors",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/gtscio/nft.git",
+		"url": "git+https://github.com/gtscio/nft.git",
 		"directory": "packages/nft-cli"
 	},
 	"author": "martyn.janes@iota.org",

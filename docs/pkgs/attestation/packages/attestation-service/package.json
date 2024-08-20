@@ -4,7 +4,7 @@
 	"description": "Attestation contract implementation and REST endpoint definitions",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/gtscio/attestation.git",
+		"url": "git+https://github.com/gtscio/attestation.git",
 		"directory": "packages/attestation-service"
 	},
 	"author": "martyn.janes@iota.org",

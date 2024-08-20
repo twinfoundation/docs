@@ -4,7 +4,7 @@
 	"description": "A command line interface for interacting with the identity connectors",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/gtscio/identity.git",
+		"url": "git+https://github.com/gtscio/identity.git",
 		"directory": "packages/identity-cli"
 	},
 	"author": "martyn.janes@iota.org",

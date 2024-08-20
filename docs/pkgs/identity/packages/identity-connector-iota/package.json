@@ -4,7 +4,7 @@
 	"description": "Identity connector implementation using IOTA",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/gtscio/identity.git",
+		"url": "git+https://github.com/gtscio/identity.git",
 		"directory": "packages/identity-connector-iota"
 	},
 	"author": "martyn.janes@iota.org",

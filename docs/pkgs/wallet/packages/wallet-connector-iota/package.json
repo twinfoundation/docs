@@ -4,7 +4,7 @@
 	"description": "Wallet connector implementation using IOTA",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/gtscio/wallet.git",
+		"url": "git+https://github.com/gtscio/wallet.git",
 		"directory": "packages/wallet-connector-iota"
 	},
 	"author": "martyn.janes@iota.org",

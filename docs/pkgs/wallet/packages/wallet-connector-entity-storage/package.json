@@ -4,7 +4,7 @@
 	"description": "Wallet connector implementation using entity storage",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/gtscio/wallet.git",
+		"url": "git+https://github.com/gtscio/wallet.git",
 		"directory": "packages/wallet-connector-entity-storage"
 	},
 	"author": "martyn.janes@iota.org",

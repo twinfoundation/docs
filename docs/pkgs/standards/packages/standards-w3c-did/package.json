@@ -4,7 +4,7 @@
 	"description": "Models which define the structure of W3C DID Standard",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/gtscio/standards.git",
+		"url": "git+https://github.com/gtscio/standards.git",
 		"directory": "packages/standards-w3c-did"
 	},
 	"author": "martyn.janes@iota.org",

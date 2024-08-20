@@ -4,7 +4,7 @@
 	"description": "Attestation contract implementation which can connect to REST endpoints",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/gtscio/attestation.git",
+		"url": "git+https://github.com/gtscio/attestation.git",
 		"directory": "packages/attestation-rest-client"
 	},
 	"author": "martyn.janes@iota.org",
