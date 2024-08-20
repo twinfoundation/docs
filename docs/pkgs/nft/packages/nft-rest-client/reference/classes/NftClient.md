@@ -104,7 +104,7 @@ The response.
 
 ### mint()
 
-> **mint**\<`T`, `U`\>(`issuer`, `tag`, `immutableMetadata`?, `metadata`?, `options`?): `Promise`\<`string`\>
+> **mint**\<`T`, `U`\>(`issuer`, `tag`, `immutableMetadata`?, `metadata`?, `namespace`?): `Promise`\<`string`\>
 
 Mint an NFT.
 
@@ -132,11 +132,7 @@ The immutable metadata for the NFT.
 
 The metadata for the NFT.
 
-• **options?**
-
-Additional options for the NFT component.
-
-• **options.namespace?**: `string`
+• **namespace?**: `string`
 
 The namespace of the connector to use for the NFT, defaults to component configured namespace.
 

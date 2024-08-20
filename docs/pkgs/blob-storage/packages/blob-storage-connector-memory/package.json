@@ -1,6 +1,6 @@
 {
 	"name": "@gtsc/blob-storage-connector-memory",
-	"version": "0.0.5-next.6",
+	"version": "0.0.5-next.9",
 	"description": "Blob Storage connector implementation using in-memory storage",
 	"repository": {
 		"type": "git",
@@ -28,7 +28,7 @@
 		"dist": "npm run clean && npm run build && npm run test && npm run bundle && npm run docs"
 	},
 	"dependencies": {
-		"@gtsc/blob-storage-models": "0.0.5-next.6",
+		"@gtsc/blob-storage-models": "0.0.5-next.9",
 		"@gtsc/core": "next",
 		"@gtsc/crypto": "next",
 		"@gtsc/nameof": "next"

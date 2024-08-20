@@ -29,9 +29,3 @@ The parameters to be used in the transfer.
 > **holderIdentity**: `string`
 
 The new holder identity.
-
-#### holderAddress
-
-> **holderAddress**: `string`
-
-The new holder controller address.

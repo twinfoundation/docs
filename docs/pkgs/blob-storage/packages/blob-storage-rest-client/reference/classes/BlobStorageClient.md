@@ -104,7 +104,7 @@ The response.
 
 ### create()
 
-> **create**(`blob`, `metadata`?, `options`?): `Promise`\<`string`\>
+> **create**(`blob`, `metadata`?, `namespace`?): `Promise`\<`string`\>
 
 Create the blob with some metadata.
 
@@ -118,11 +118,7 @@ The data for the blob in base64 format.
 
 Metadata to associate with the blob.
 
-• **options?**
-
-Additional options for the blob component.
-
-• **options.namespace?**: `string`
+• **namespace?**: `string`
 
 The namespace to use for storing, defaults to component configured namespace.
 

@@ -59,7 +59,7 @@ The output from the docker container should be something like the following.
 
 .....
 
-➡️  No workbench-config.json found, starting bootstrap process
+➡️  Starting bootstrap process
 
 INFO [2024-08-08T06:36:15.925Z] Bootstrap FileEntityStorageConnector
 INFO [2024-08-08T06:36:15.926Z] Creating directory "/workbench/data/vault-key"
@@ -104,7 +104,7 @@ INFO [2024-08-08T06:36:16.085Z] Node User Password "MFCUApWEdgr0R4&C"
 INFO [2024-08-08T06:36:16.087Z] Node configuration created in "workbench-config.json", some of these details will not be shown again, please record them
 
 ➡️  Writing JSON file: /workbench/data/workbench-config.json
-➡️  Bootstrap process complete, workbench-config.json has been created
+➡️  Bootstrap process complete, some of the details logged will not be shown again, please record them
 ```
 
 You will see it generated a node admin user with password for future use, these should be recorded as they will not be made visible again.

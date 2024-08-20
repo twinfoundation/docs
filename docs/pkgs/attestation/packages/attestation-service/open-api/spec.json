@@ -134,7 +134,6 @@
                             "examples": {
                                 "attestationAttestExample": {
                                     "value": {
-                                        "address": "tst1prctjk5ck0dutnsunnje6u90jk5htx03qznjjmkd6843pzltlgz87srjzzv",
                                         "verificationMethodId": "did:iota:tst:0xf0b95a98b3dbc5ce1c9ce59d70af95a97599f100a7296ecdd1eb108bebfa047f#attestation",
                                         "data": {
                                             "docName": "bill-of-lading",
@@ -480,7 +479,6 @@
                             "examples": {
                                 "attestationTransferRequestExample": {
                                     "value": {
-                                        "holderAddress": "tst1pqr2uyp5l8627x6q3g94f6rhhdrkyktxdg20yg2qp5m5dtkwlfcs2h5djap",
                                         "holderIdentity": "did:iota:tst:0x06ae1034f9f4af1b408a0b54e877bb476259666a14f221400d3746aecefa7105"
                                     }
                                 }
@@ -531,10 +529,6 @@
             "AttestationAttestRequest": {
                 "type": "object",
                 "properties": {
-                    "address": {
-                        "type": "string",
-                        "description": "The controller address for the attestation."
-                    },
                     "verificationMethodId": {
                         "type": "string",
                         "description": "The identity verification method to use for attesting the data."
@@ -548,7 +542,6 @@
                     }
                 },
                 "required": [
-                    "address",
                     "verificationMethodId",
                     "data"
                 ],
@@ -654,15 +647,10 @@
                     "holderIdentity": {
                         "type": "string",
                         "description": "The new holder identity."
-                    },
-                    "holderAddress": {
-                        "type": "string",
-                        "description": "The new holder controller address."
                     }
                 },
                 "required": [
-                    "holderIdentity",
-                    "holderAddress"
+                    "holderIdentity"
                 ],
                 "additionalProperties": false,
                 "description": "The parameters to be used in the transfer."

@@ -10,13 +10,17 @@ Service for performing NFT operations to a connector.
 
 ### new NftService()
 
-> **new NftService**(`config`?): [`NftService`](NftService.md)
+> **new NftService**(`options`?): [`NftService`](NftService.md)
 
 Create a new instance of NftService.
 
 #### Parameters
 
-• **config?**: [`INftServiceConfig`](../interfaces/INftServiceConfig.md)
+• **options?**
+
+The options for the service.
+
+• **options.config?**: [`INftServiceConfig`](../interfaces/INftServiceConfig.md)
 
 The configuration for the service.
 
@@ -48,7 +52,7 @@ Runtime name for the class.
 
 ### mint()
 
-> **mint**\<`T`, `U`\>(`issuer`, `tag`, `immutableMetadata`?, `metadata`?, `options`?, `identity`?): `Promise`\<`string`\>
+> **mint**\<`T`, `U`\>(`issuer`, `tag`, `immutableMetadata`?, `metadata`?, `namespace`?, `identity`?): `Promise`\<`string`\>
 
 Mint an NFT.
 
@@ -76,11 +80,7 @@ The immutable metadata for the NFT.
 
 The metadata for the NFT.
 
-• **options?**
-
-Additional options for the NFT service.
-
-• **options.namespace?**: `string`
+• **namespace?**: `string`
 
 The namespace of the connector to use for the NFT, defaults to service configured namespace.
 

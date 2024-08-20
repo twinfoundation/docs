@@ -1,6 +1,6 @@
 {
 	"name": "@gtsc/attestation-models",
-	"version": "0.0.5-next.3",
+	"version": "0.0.5-next.6",
 	"description": "Models which define the structure of the attestation connectors and services",
 	"repository": {
 		"type": "git",
@@ -31,6 +31,7 @@
 		"@gtsc/core": "next",
 		"@gtsc/entity": "next",
 		"@gtsc/nameof": "next",
+		"@gtsc/schema": "next",
 		"@gtsc/standards-w3c-did": "next"
 	},
 	"devDependencies": {

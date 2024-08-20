@@ -10,13 +10,17 @@ Class for performing attestation operations in entity storage.
 
 ### new OpenAttestationConnector()
 
-> **new OpenAttestationConnector**(`config`?): [`OpenAttestationConnector`](OpenAttestationConnector.md)
+> **new OpenAttestationConnector**(`options`): [`OpenAttestationConnector`](OpenAttestationConnector.md)
 
 Create a new instance of OpenAttestationConnector.
 
 #### Parameters
 
-• **config?**: [`IOpenAttestationConnectorConfig`](../interfaces/IOpenAttestationConnectorConfig.md)
+• **options**
+
+The options for the attestation connector.
+
+• **options.config?**: [`IOpenAttestationConnectorConfig`](../interfaces/IOpenAttestationConnectorConfig.md)
 
 The configuration for the attestation connector.
 
