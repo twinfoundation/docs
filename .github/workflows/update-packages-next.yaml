@@ -226,6 +226,27 @@ jobs:
           cp import-packages/vault/package.json docs/pkgs/vault/package.json
           rm -r import-packages/vault
 
+      ########### immutable-storage
+      - name: Checkout immutable-storage
+        uses: actions/checkout@v4
+        with:
+          repository: gtscio/immutable-storage
+          path: import-packages/immutable-storage
+          ref: ${{ env.gha-branch }}
+          token: ${{ secrets.GH_PAT }}
+
+      - name: Copy immutable-storage to Docs
+        run: |
+          jq -r '.workspaces[]' import-packages/immutable-storage/package.json | while read pkg; do
+            rm -rf docs/pkgs/immutable-storage/$pkg
+            mkdir -p docs/pkgs/immutable-storage/$pkg
+            cp -r import-packages/immutable-storage/$pkg/docs/* docs/pkgs/immutable-storage/$pkg
+            cp -r import-packages/immutable-storage/$pkg/package.json docs/pkgs/immutable-storage/$pkg/package.json
+          done
+
+          cp import-packages/immutable-storage/package.json docs/pkgs/immutable-storage/package.json
+          rm -r import-packages/immutable-storage
+
       ########### wallet
       - name: Checkout wallet
         uses: actions/checkout@v4
