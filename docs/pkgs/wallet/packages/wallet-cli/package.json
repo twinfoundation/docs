@@ -1,10 +1,10 @@
 {
 	"name": "@gtsc/wallet-cli",
-	"version": "0.0.5-next.3",
+	"version": "0.0.5-next.4",
 	"description": "A command line interface for interacting with the wallet APIs",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/gtscio/wallet.git",
+		"url": "git+https://github.com/gtscio/wallet.git",
 		"directory": "packages/wallet-cli"
 	},
 	"author": "martyn.janes@iota.org",
@@ -38,8 +38,8 @@
 		"@gtsc/entity-storage-connector-memory": "next",
 		"@gtsc/vault-connector-entity-storage": "next",
 		"@gtsc/vault-models": "next",
-		"@gtsc/wallet-connector-iota": "0.0.5-next.3",
-		"@gtsc/wallet-models": "0.0.5-next.3",
+		"@gtsc/wallet-connector-iota": "0.0.5-next.4",
+		"@gtsc/wallet-models": "0.0.5-next.4",
 		"commander": "12.1.0"
 	},
 	"devDependencies": {

@@ -33,6 +33,29 @@
                         "jwtBearerAuthScheme": []
                     }
                 ],
+                "requestBody": {
+                    "description": "Attest the data and return the collated attestation details.",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/AttestationAttestRequest"
+                            },
+                            "examples": {
+                                "attestationAttestExample": {
+                                    "value": {
+                                        "verificationMethodId": "did:iota:tst:0xf0b95a98b3dbc5ce1c9ce59d70af95a97599f100a7296ecdd1eb108bebfa047f#attestation",
+                                        "data": {
+                                            "docName": "bill-of-lading",
+                                            "mimeType": "application/pdf",
+                                            "fingerprint": "0xf0b95a98b3dbc5ce1c9ce59d70af95a97599f100a7296ecdd1eb108bebfa047f"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
                 "responses": {
                     "200": {
                         "description": "The response when creating the attestation for some data.",
@@ -122,29 +145,6 @@
                             }
                         }
                     }
-                },
-                "requestBody": {
-                    "description": "Attest the data and return the collated attestation details.",
-                    "required": true,
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/AttestationAttestRequest"
-                            },
-                            "examples": {
-                                "attestationAttestExample": {
-                                    "value": {
-                                        "verificationMethodId": "did:iota:tst:0xf0b95a98b3dbc5ce1c9ce59d70af95a97599f100a7296ecdd1eb108bebfa047f#attestation",
-                                        "data": {
-                                            "docName": "bill-of-lading",
-                                            "mimeType": "application/pdf",
-                                            "fingerprint": "0xf0b95a98b3dbc5ce1c9ce59d70af95a97599f100a7296ecdd1eb108bebfa047f"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
                 }
             }
         },
@@ -168,7 +168,6 @@
                         "example": "attestation:iota:aW90YS1uZnQ6dHN0OjB4NzYyYjljNDllYTg2OWUwZWJkYTliYmZhNzY5Mzk0NDdhNDI4ZGNmMTc4YzVkMTVhYjQ0N2UyZDRmYmJiNGViMg=="
                     }
                 ],
-                "security": [],
                 "responses": {
                     "200": {
                         "description": "The response to verifying the attestation.",
@@ -377,6 +376,24 @@
                         "jwtBearerAuthScheme": []
                     }
                 ],
+                "requestBody": {
+                    "description": "Transfer the attestation to a new holder.",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/AttestationTransferRequest"
+                            },
+                            "examples": {
+                                "attestationTransferRequestExample": {
+                                    "value": {
+                                        "holderIdentity": "did:iota:tst:0x06ae1034f9f4af1b408a0b54e877bb476259666a14f221400d3746aecefa7105"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
                 "responses": {
                     "200": {
                         "description": "The response to transferring the attestation.",
@@ -462,24 +479,6 @@
                                             "name": "InternalServerError",
                                             "message": "component.error"
                                         }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                },
-                "requestBody": {
-                    "description": "Transfer the attestation to a new holder.",
-                    "required": true,
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/AttestationTransferRequest"
-                            },
-                            "examples": {
-                                "attestationTransferRequestExample": {
-                                    "value": {
-                                        "holderIdentity": "did:iota:tst:0x06ae1034f9f4af1b408a0b54e877bb476259666a14f221400d3746aecefa7105"
                                     }
                                 }
                             }

@@ -1,6 +1,6 @@
 {
 	"name": "@gtsc/identity-connector-entity-storage",
-	"version": "0.0.5-next.11",
+	"version": "0.0.5-next.12",
 	"description": "Identity connector implementation using entity storage",
 	"repository": {
 		"type": "git",
@@ -31,7 +31,7 @@
 		"@gtsc/core": "next",
 		"@gtsc/crypto": "next",
 		"@gtsc/entity": "next",
-		"@gtsc/identity-models": "0.0.5-next.11",
+		"@gtsc/identity-models": "0.0.5-next.12",
 		"@gtsc/nameof": "next",
 		"@gtsc/schema": "next",
 		"@gtsc/standards-w3c-did": "next",

@@ -1,6 +1,6 @@
 {
 	"name": "@gtsc/nft-connector-entity-storage",
-	"version": "0.0.5-next.7",
+	"version": "0.0.5-next.8",
 	"description": "Implementation of the NFT connector using entity storage",
 	"repository": {
 		"type": "git",
@@ -33,7 +33,7 @@
 		"@gtsc/entity": "next",
 		"@gtsc/entity-storage-models": "next",
 		"@gtsc/nameof": "next",
-		"@gtsc/nft-models": "0.0.5-next.7"
+		"@gtsc/nft-models": "0.0.5-next.8"
 	},
 	"devDependencies": {
 		"@gtsc/nameof-transformer": "next",

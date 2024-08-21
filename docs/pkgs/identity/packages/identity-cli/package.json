@@ -1,6 +1,6 @@
 {
 	"name": "@gtsc/identity-cli",
-	"version": "0.0.5-next.11",
+	"version": "0.0.5-next.12",
 	"description": "A command line interface for interacting with the identity connectors",
 	"repository": {
 		"type": "git",
@@ -35,8 +35,8 @@
 		"@gtsc/crypto-cli": "next",
 		"@gtsc/entity": "next",
 		"@gtsc/entity-storage-connector-memory": "next",
-		"@gtsc/identity-models": "0.0.5-next.11",
-		"@gtsc/identity-connector-iota": "0.0.5-next.11",
+		"@gtsc/identity-models": "0.0.5-next.12",
+		"@gtsc/identity-connector-iota": "0.0.5-next.12",
 		"@gtsc/nameof": "next",
 		"@gtsc/standards-w3c-did": "next",
 		"@gtsc/vault-connector-entity-storage": "next",

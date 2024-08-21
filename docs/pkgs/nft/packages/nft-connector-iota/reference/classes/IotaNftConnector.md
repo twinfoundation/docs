@@ -42,14 +42,6 @@ The namespace supported by the nft connector.
 
 ***
 
-### \_DEFAULT\_SEED\_SECRET\_NAME
-
-> `static` `private` `readonly` **\_DEFAULT\_SEED\_SECRET\_NAME**: `string` = `"seed"`
-
-Default name for the seed secret.
-
-***
-
 ### CLASS\_NAME
 
 > `readonly` **CLASS\_NAME**: `string`
