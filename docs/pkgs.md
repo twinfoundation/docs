@@ -81,6 +81,12 @@ This is the overview of the packages.
 - [@gtsc/wallet-connector-iota](pkgs/wallet/packages/wallet-connector-iota/overview) - Wallet connector implementation using IOTA
 - [@gtsc/wallet-cli](pkgs/wallet/packages/wallet-cli/overview) - A command line interface for interacting with the wallet APIs
 
+## Immutable Storage
+
+- [@gtsc/immutable-storage-models](pkgs/immutable-storage/packages/immutable-storage-models/overview) - Contains models and classes for use with immutable storage
+- [@gtsc/immutable-storage-connector-iota](pkgs/immutable-storage/packages/immutable-storage-connector-iota/overview) - Implementation of the Immutable Storage connector using IOTA
+- [@gtsc/immutable-storage-connector-entity-storage](pkgs/immutable-storage/packages/immutable-storage-connector-entity-storage/overview) - Implementation of the Immutable Storage connector using entity storage
+
 ## Identity
 
 - [@gtsc/identity-models](pkgs/identity/packages/identity-models/overview) - Models which define the structure of the contracts and connectors
