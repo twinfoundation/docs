@@ -1,6 +1,6 @@
 {
 	"name": "@gtsc/nft-cli",
-	"version": "0.0.5-next.7",
+	"version": "0.0.5-next.8",
 	"description": "A command line interface for interacting with the nft connectors",
 	"repository": {
 		"type": "git",
@@ -36,7 +36,7 @@
 		"@gtsc/entity": "next",
 		"@gtsc/entity-storage-connector-memory": "next",
 		"@gtsc/nameof": "next",
-		"@gtsc/nft-connector-iota": "0.0.5-next.7",
+		"@gtsc/nft-connector-iota": "0.0.5-next.8",
 		"@gtsc/vault-connector-entity-storage": "next",
 		"@gtsc/vault-models": "next",
 		"@gtsc/wallet-cli": "next",

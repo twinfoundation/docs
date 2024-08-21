@@ -122,7 +122,7 @@ Nothing.
 
 ### getAddresses()
 
-> **getAddresses**(`identity`, `startAddressIndex`, `count`): `Promise`\<`string`[]\>
+> **getAddresses**(`identity`, `accountIndex`, `startAddressIndex`, `count`): `Promise`\<`string`[]\>
 
 Get the addresses for the requested range.
 
@@ -131,6 +131,10 @@ Get the addresses for the requested range.
 • **identity**: `string`
 
 The identity of the user to access the vault keys.
+
+• **accountIndex**: `number`
+
+The account index to get the addresses for.
 
 • **startAddressIndex**: `number`
 

@@ -50,14 +50,6 @@ The namespace supported by the wallet connector.
 
 ***
 
-### \_DEFAULT\_MNEMONIC\_SECRET\_NAME
-
-> `static` `private` `readonly` **\_DEFAULT\_MNEMONIC\_SECRET\_NAME**: `string` = `"mnemonic"`
-
-Default name for the mnemonic secret.
-
-***
-
 ### CLASS\_NAME
 
 > `readonly` **CLASS\_NAME**: `string`
@@ -96,7 +88,7 @@ Nothing.
 
 ### getAddresses()
 
-> **getAddresses**(`identity`, `startAddressIndex`, `count`): `Promise`\<`string`[]\>
+> **getAddresses**(`identity`, `accountIndex`, `startAddressIndex`, `count`): `Promise`\<`string`[]\>
 
 Get the addresses for the requested range.
 
@@ -105,6 +97,10 @@ Get the addresses for the requested range.
 • **identity**: `string`
 
 The identity of the user to access the vault keys.
+
+• **accountIndex**: `number`
+
+The account index to get the addresses for.
 
 • **startAddressIndex**: `number`
 

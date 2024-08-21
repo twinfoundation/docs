@@ -33,6 +33,33 @@
                         "jwtBearerAuthScheme": []
                     }
                 ],
+                "requestBody": {
+                    "description": "Mint the data and return the NFT id.",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/NftMintRequest"
+                            },
+                            "examples": {
+                                "nftMintExample": {
+                                    "value": {
+                                        "issuer": "tst1prctjk5ck0dutnsunnje6u90jk5htx03qznjjmkd6843pzltlgz87srjzzv",
+                                        "tag": "MY-NFT",
+                                        "immutableMetadata": {
+                                            "docName": "bill-of-lading",
+                                            "mimeType": "application/pdf",
+                                            "fingerprint": "0xf0b95a98b3dbc5ce1c9ce59d70af95a97599f100a7296ecdd1eb108bebfa047f"
+                                        },
+                                        "metadata": {
+                                            "data": "tst1prctjk5ck0dutnsunnje6u90jk5htx03qznjjmkd6843pzltlgz87srjzzv"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
                 "responses": {
                     "201": {
                         "description": "The rest request ended in created response.",
@@ -96,33 +123,6 @@
                                         "value": {
                                             "name": "InternalServerError",
                                             "message": "component.error"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                },
-                "requestBody": {
-                    "description": "Mint the data and return the NFT id.",
-                    "required": true,
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/NftMintRequest"
-                            },
-                            "examples": {
-                                "nftMintExample": {
-                                    "value": {
-                                        "issuer": "tst1prctjk5ck0dutnsunnje6u90jk5htx03qznjjmkd6843pzltlgz87srjzzv",
-                                        "tag": "MY-NFT",
-                                        "immutableMetadata": {
-                                            "docName": "bill-of-lading",
-                                            "mimeType": "application/pdf",
-                                            "fingerprint": "0xf0b95a98b3dbc5ce1c9ce59d70af95a97599f100a7296ecdd1eb108bebfa047f"
-                                        },
-                                        "metadata": {
-                                            "data": "tst1prctjk5ck0dutnsunnje6u90jk5htx03qznjjmkd6843pzltlgz87srjzzv"
                                         }
                                     }
                                 }
@@ -355,6 +355,26 @@
                         "jwtBearerAuthScheme": []
                     }
                 ],
+                "requestBody": {
+                    "description": "Update the mutable data for the NFT.",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/NftUpdateRequest"
+                            },
+                            "examples": {
+                                "nftUpdateExample": {
+                                    "value": {
+                                        "metadata": {
+                                            "data": "AAAAA"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
                 "responses": {
                     "204": {
                         "description": "The rest request ended in success with no data."
@@ -410,26 +430,6 @@
                                         "value": {
                                             "name": "InternalServerError",
                                             "message": "component.error"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                },
-                "requestBody": {
-                    "description": "Update the mutable data for the NFT.",
-                    "required": true,
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/NftUpdateRequest"
-                            },
-                            "examples": {
-                                "nftUpdateExample": {
-                                    "value": {
-                                        "metadata": {
-                                            "data": "AAAAA"
                                         }
                                     }
                                 }
@@ -464,6 +464,27 @@
                         "jwtBearerAuthScheme": []
                     }
                 ],
+                "requestBody": {
+                    "description": "Transfer the NFT and update the metadata.",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/NftTransferRequest"
+                            },
+                            "examples": {
+                                "nftTransferExample": {
+                                    "value": {
+                                        "recipient": "tst1prctjk5ck0dutnsunnje6u90jk5htx03qznjjmkd6843pzltlgz87srjzzv",
+                                        "metadata": {
+                                            "data": "AAAAA"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
                 "responses": {
                     "204": {
                         "description": "The rest request ended in success with no data."
@@ -519,27 +540,6 @@
                                         "value": {
                                             "name": "InternalServerError",
                                             "message": "component.error"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                },
-                "requestBody": {
-                    "description": "Transfer the NFT and update the metadata.",
-                    "required": true,
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/NftTransferRequest"
-                            },
-                            "examples": {
-                                "nftTransferExample": {
-                                    "value": {
-                                        "recipient": "tst1prctjk5ck0dutnsunnje6u90jk5htx03qznjjmkd6843pzltlgz87srjzzv",
-                                        "metadata": {
-                                            "data": "AAAAA"
                                         }
                                     }
                                 }

@@ -45,7 +45,6 @@
                         "example": "did:iota:tst:0xe3088ba9aa8c28e1d139708a14e8c0fdff11ee8223baac4aa5bcf3321e4bfc6a"
                     }
                 ],
-                "security": [],
                 "responses": {
                     "200": {
                         "description": "Response to resolving an identity.",
@@ -125,6 +124,43 @@
                         "jwtBearerAuthScheme": []
                     }
                 ],
+                "requestBody": {
+                    "description": "Request to create an identity profile.",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/IdentityProfileCreateRequest"
+                            },
+                            "examples": {
+                                "identityProfileCreateRequestExample": {
+                                    "value": {
+                                        "properties": [
+                                            {
+                                                "key": "role",
+                                                "type": "https://schema.org/Text",
+                                                "value": "User",
+                                                "isPublic": false
+                                            },
+                                            {
+                                                "key": "email",
+                                                "type": "https://schema.org/Text",
+                                                "value": "john@example.com",
+                                                "isPublic": false
+                                            },
+                                            {
+                                                "key": "name",
+                                                "type": "https://schema.org/Text",
+                                                "value": "John Smith",
+                                                "isPublic": true
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
                 "responses": {
                     "204": {
                         "description": "The rest request ended in success with no data."
@@ -204,43 +240,6 @@
                                             "name": "InternalServerError",
                                             "message": "component.error"
                                         }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                },
-                "requestBody": {
-                    "description": "Request to create an identity profile.",
-                    "required": true,
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/IdentityProfileCreateRequest"
-                            },
-                            "examples": {
-                                "identityProfileCreateRequestExample": {
-                                    "value": {
-                                        "properties": [
-                                            {
-                                                "key": "role",
-                                                "type": "https://schema.org/Text",
-                                                "value": "User",
-                                                "isPublic": false
-                                            },
-                                            {
-                                                "key": "email",
-                                                "type": "https://schema.org/Text",
-                                                "value": "john@example.com",
-                                                "isPublic": false
-                                            },
-                                            {
-                                                "key": "name",
-                                                "type": "https://schema.org/Text",
-                                                "value": "John Smith",
-                                                "isPublic": true
-                                            }
-                                        ]
                                     }
                                 }
                             }
@@ -400,6 +399,42 @@
                         "jwtBearerAuthScheme": []
                     }
                 ],
+                "requestBody": {
+                    "description": "Request to update an identity profile.",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/IdentityProfileUpdateRequest"
+                            },
+                            "examples": {
+                                "identityProfileUpdateRequestExample": {
+                                    "value": {
+                                        "properties": [
+                                            {
+                                                "key": "role",
+                                                "type": "https://schema.org/Text",
+                                                "value": "User",
+                                                "isPublic": false
+                                            },
+                                            {
+                                                "key": "email",
+                                                "type": "https://schema.org/Text",
+                                                "isPublic": false
+                                            },
+                                            {
+                                                "key": "name",
+                                                "type": "https://schema.org/Text",
+                                                "value": "John Smith",
+                                                "isPublic": true
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
                 "responses": {
                     "204": {
                         "description": "The rest request ended in success with no data."
@@ -477,42 +512,6 @@
                                             "name": "InternalServerError",
                                             "message": "component.error"
                                         }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                },
-                "requestBody": {
-                    "description": "Request to update an identity profile.",
-                    "required": true,
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/IdentityProfileUpdateRequest"
-                            },
-                            "examples": {
-                                "identityProfileUpdateRequestExample": {
-                                    "value": {
-                                        "properties": [
-                                            {
-                                                "key": "role",
-                                                "type": "https://schema.org/Text",
-                                                "value": "User",
-                                                "isPublic": false
-                                            },
-                                            {
-                                                "key": "email",
-                                                "type": "https://schema.org/Text",
-                                                "isPublic": false
-                                            },
-                                            {
-                                                "key": "name",
-                                                "type": "https://schema.org/Text",
-                                                "value": "John Smith",
-                                                "isPublic": true
-                                            }
-                                        ]
                                     }
                                 }
                             }
@@ -646,7 +645,6 @@
                         "example": "role,email,name"
                     }
                 ],
-                "security": [],
                 "responses": {
                     "200": {
                         "description": "Response to get an identity public profile.",

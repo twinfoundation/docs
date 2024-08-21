@@ -171,6 +171,9 @@ sudo journalctl -u workbench | tail
 
 ## Upgrade EC2 Instance
 
+To upgrade a previous installation on an EC2 instance with the latest version.
+
+```shell
 sudo systemctl stop workbench.service
 cd app
 git pull
@@ -178,3 +181,4 @@ npm i
 cd workbench-server
 npm run dist
 sudo systemctl start workbench.service
+```
