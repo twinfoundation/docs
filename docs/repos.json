@@ -40,6 +40,10 @@
 		"types": ["packages"]
 	},
 	{
+		"name": "immutable-storage",
+		"types": ["packages"]
+	},
+	{
 		"name": "identity",
 		"types": ["packages"]
 	},
