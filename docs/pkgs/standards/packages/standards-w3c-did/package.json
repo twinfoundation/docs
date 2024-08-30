@@ -1,6 +1,6 @@
 {
 	"name": "@gtsc/standards-w3c-did",
-	"version": "0.0.5-next.1",
+	"version": "0.0.5-next.2",
 	"description": "Models which define the structure of W3C DID Standard",
 	"repository": {
 		"type": "git",

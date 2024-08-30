@@ -1,6 +1,6 @@
-# Interface: IIotaWalletConnectorConfig
+# Interface: IIotaConfig
 
-Configuration for the IOTA Wallet Connector.
+Configuration for IOTA.
 
 ## Properties
 

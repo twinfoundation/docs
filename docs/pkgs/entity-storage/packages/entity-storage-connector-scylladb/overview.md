@@ -12,13 +12,13 @@ npm install @gtsc/entity-storage-connector-scylladb
 
 The tests developed are functional tests and need an instance of ScyllaDB up and running. To run ScyllaDB locally:
 
-```sh
+```shell
 docker run -p 9042:9042 --name scylla --hostname scylla -d scylladb/scylla:5.4.9 --smp 1
 ```
 
 Afterwards you can run the tests as follows:
 
-```sh
+```shell
 npm run test
 ```
 

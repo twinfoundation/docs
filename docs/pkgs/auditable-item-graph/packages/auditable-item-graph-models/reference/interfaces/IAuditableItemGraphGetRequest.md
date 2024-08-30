@@ -1,0 +1,43 @@
+# Interface: IAuditableItemGraphGetRequest
+
+Get an auditable item graph vertex.
+
+## Properties
+
+### pathParams
+
+> **pathParams**: `object`
+
+The parameters from the path.
+
+#### id
+
+> **id**: `string`
+
+The id of the vertex to get.
+
+***
+
+### query?
+
+> `optional` **query**: `object`
+
+The query parameters.
+
+#### includeDeleted?
+
+> `optional` **includeDeleted**: `boolean`
+
+Whether to include deleted aliases, resource, edges, defaults to false.
+
+#### includeChangesets?
+
+> `optional` **includeChangesets**: `boolean`
+
+Whether to include the changesets of the vertex, defaults to false.
+
+#### verifySignatureDepth?
+
+> `optional` **verifySignatureDepth**: [`VerifyDepth`](../type-aliases/VerifyDepth.md)
+
+How many signatures to verify, none, current or all, defaults to "none".

@@ -1,6 +1,6 @@
 {
 	"name": "@gtsc/blob-storage-service",
-	"version": "0.0.5-next.9",
+	"version": "0.0.5-next.10",
 	"description": "Blob storage contract implementation and REST endpoint definitions",
 	"repository": {
 		"type": "git",
@@ -30,7 +30,7 @@
 	},
 	"dependencies": {
 		"@gtsc/api-models": "next",
-		"@gtsc/blob-storage-models": "0.0.5-next.9",
+		"@gtsc/blob-storage-models": "0.0.5-next.10",
 		"@gtsc/core": "next",
 		"@gtsc/entity": "next",
 		"@gtsc/entity-storage-models": "next",

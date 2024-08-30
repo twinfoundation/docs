@@ -24,10 +24,6 @@ The options for the identity connector.
 
 The vault connector type for the private keys, defaults to "vault".
 
-• **options.walletConnectorType?**: `string`
-
-The wallet connector type for generating addresses, defaults to "wallet".
-
 • **options.config**: [`IIotaIdentityConnectorConfig`](../interfaces/IIotaIdentityConnectorConfig.md)
 
 The configuration to use.
@@ -43,14 +39,6 @@ The configuration to use.
 > `static` `readonly` **NAMESPACE**: `string` = `"iota"`
 
 The namespace supported by the identity connector.
-
-***
-
-### \_DEFAULT\_SEED\_SECRET\_NAME
-
-> `static` `private` `readonly` **\_DEFAULT\_SEED\_SECRET\_NAME**: `string` = `"seed"`
-
-Default name for the seed secret.
 
 ***
 
@@ -603,23 +591,3 @@ True if the signature is valid.
 #### Implementation of
 
 `IIdentityConnector.verifyProof`
-
-***
-
-### extractPayloadError()
-
-> `private` **extractPayloadError**(`error`): `IError`
-
-Extract error from SDK payload.
-
-#### Parameters
-
-• **error**: `unknown`
-
-The error to extract.
-
-#### Returns
-
-`IError`
-
-The extracted error.

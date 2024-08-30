@@ -256,27 +256,3 @@ Truncates (clear) table.
 #### Returns
 
 `Promise`\<`void`\>
-
-***
-
-### toDbField()
-
-> `private` **toDbField**(`logicalField`): `string`
-
-Transform a logical description of a field into a DB field.
-
-#### Parameters
-
-• **logicalField**: `IEntitySchemaProperty`\<`T`\>
-
-The logical field description.
-
-#### Returns
-
-`string`
-
-The DB type.
-
-#### Throws
-
-GeneralException if no mapping found.

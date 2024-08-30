@@ -8,18 +8,18 @@ The types of metrics.
 
 ### Counter
 
-> `readonly` **Counter**: `"Counter"` = `"Counter"`
+> `readonly` **Counter**: `0` = `0`
 
 Counter.
 
 ### IncDecCounter
 
-> `readonly` **IncDecCounter**: `"IncDecCounter"` = `"IncDecCounter"`
+> `readonly` **IncDecCounter**: `1` = `1`
 
 Increment Decrement Counter.
 
 ### Gauge
 
-> `readonly` **Gauge**: `"Gauge"` = `"Gauge"`
+> `readonly` **Gauge**: `2` = `2`
 
 Gauge.

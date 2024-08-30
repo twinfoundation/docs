@@ -2,6 +2,10 @@
 
 Configuration for the IOTA Identity Connector.
 
+## Extends
+
+- `IIotaConfig`
+
 ## Properties
 
 ### clientOptions
@@ -10,19 +14,9 @@ Configuration for the IOTA Identity Connector.
 
 The configuration for the client.
 
-***
+#### Inherited from
 
-### vaultSeedId?
-
-> `optional` **vaultSeedId**: `string`
-
-The id of the entry in the vault containing the seed.
-
-#### Default
-
-```ts
-seed
-```
+`IIotaConfig.clientOptions`
 
 ***
 
@@ -38,6 +32,28 @@ The id of the entry in the vault containing the mnemonic.
 mnemonic
 ```
 
+#### Inherited from
+
+`IIotaConfig.vaultMnemonicId`
+
+***
+
+### vaultSeedId?
+
+> `optional` **vaultSeedId**: `string`
+
+The id of the entry in the vault containing the seed.
+
+#### Default
+
+```ts
+seed
+```
+
+#### Inherited from
+
+`IIotaConfig.vaultSeedId`
+
 ***
 
 ### coinType?
@@ -52,19 +68,27 @@ The coin type.
 IOTA 4218
 ```
 
+#### Inherited from
+
+`IIotaConfig.coinType`
+
 ***
 
-### walletAddressIndex?
+### bech32Hrp?
 
-> `optional` **walletAddressIndex**: `number`
+> `optional` **bech32Hrp**: `string`
 
-The wallet address index to use for funding and controlling the identity.
+The bech32 human readable part for the addresses.
 
 #### Default
 
 ```ts
-0
+iota
 ```
+
+#### Inherited from
+
+`IIotaConfig.bech32Hrp`
 
 ***
 
@@ -78,4 +102,22 @@ The length of time to wait for the inclusion of a transaction in seconds.
 
 ```ts
 60
+```
+
+#### Inherited from
+
+`IIotaConfig.inclusionTimeoutSeconds`
+
+***
+
+### walletAddressIndex?
+
+> `optional` **walletAddressIndex**: `number`
+
+The wallet address index to use for funding and controlling the identity.
+
+#### Default
+
+```ts
+0
 ```

@@ -28,7 +28,7 @@ Vault connector to use for wallet secrets, defaults to "vault".
 
 Optional faucet for requesting funds, defaults to "faucet".
 
-• **options.config**: [`IIotaWalletConnectorConfig`](../interfaces/IIotaWalletConnectorConfig.md)
+• **options.config**: `IIotaConfig`
 
 The configuration to use.
 
@@ -43,14 +43,6 @@ The configuration to use.
 > `static` `readonly` **NAMESPACE**: `string` = `"iota"`
 
 The namespace supported by the wallet connector.
-
-***
-
-### \_DEFAULT\_SEED\_SECRET\_NAME
-
-> `static` `private` `readonly` **\_DEFAULT\_SEED\_SECRET\_NAME**: `string` = `"seed"`
-
-Default name for the seed secret.
 
 ***
 
@@ -223,23 +215,3 @@ An identifier for the transfer if there was one.
 #### Implementation of
 
 `IWalletConnector.transfer`
-
-***
-
-### extractPayloadError()
-
-> `private` **extractPayloadError**(`error`): `IError`
-
-Extract error from SDK payload.
-
-#### Parameters
-
-• **error**: `unknown`
-
-The error to extract.
-
-#### Returns
-
-`IError`
-
-The extracted error.

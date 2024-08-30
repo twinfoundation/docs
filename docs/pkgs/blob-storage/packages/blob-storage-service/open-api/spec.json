@@ -33,6 +33,31 @@
                         "jwtBearerAuthScheme": []
                     }
                 ],
+                "requestBody": {
+                    "description": "Request to create an entry in blob storage.",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/BlobStorageCreateRequest"
+                            },
+                            "examples": {
+                                "blobStorageCreateExample": {
+                                    "value": {
+                                        "blob": "VGhlIHF1aWNrIGJyb3duIGZveCBqdW1wcyBvdmVyIHRoZSBsYXp5IGRvZw==",
+                                        "metadata": [
+                                            {
+                                                "key": "filename",
+                                                "type": "https://schema.org/Text",
+                                                "value": "my-file.pdf"
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
                 "responses": {
                     "201": {
                         "description": "The rest request ended in created response.",
@@ -97,31 +122,6 @@
                                             "name": "InternalServerError",
                                             "message": "component.error"
                                         }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                },
-                "requestBody": {
-                    "description": "Request to create an entry in blob storage.",
-                    "required": true,
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/BlobStorageCreateRequest"
-                            },
-                            "examples": {
-                                "blobStorageCreateExample": {
-                                    "value": {
-                                        "blob": "VGhlIHF1aWNrIGJyb3duIGZveCBqdW1wcyBvdmVyIHRoZSBsYXp5IGRvZw==",
-                                        "metadata": [
-                                            {
-                                                "key": "filename",
-                                                "type": "https://schema.org/Text",
-                                                "value": "my-file.pdf"
-                                            }
-                                        ]
                                     }
                                 }
                             }
@@ -294,6 +294,30 @@
                         "jwtBearerAuthScheme": []
                     }
                 ],
+                "requestBody": {
+                    "description": "Request to update a blob entry.",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/BlobStorageUpdateRequest"
+                            },
+                            "examples": {
+                                "blobStorageUpdateExample": {
+                                    "value": {
+                                        "metadata": [
+                                            {
+                                                "key": "filename",
+                                                "type": "https://schema.org/Text",
+                                                "value": "my-file.pdf"
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
                 "responses": {
                     "204": {
                         "description": "The rest request ended in success with no data."
@@ -350,30 +374,6 @@
                                             "name": "InternalServerError",
                                             "message": "component.error"
                                         }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                },
-                "requestBody": {
-                    "description": "Request to update a blob entry.",
-                    "required": true,
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/BlobStorageUpdateRequest"
-                            },
-                            "examples": {
-                                "blobStorageUpdateExample": {
-                                    "value": {
-                                        "metadata": [
-                                            {
-                                                "key": "filename",
-                                                "type": "https://schema.org/Text",
-                                                "value": "my-file.pdf"
-                                            }
-                                        ]
                                     }
                                 }
                             }
@@ -517,15 +517,17 @@
                 ],
                 "responses": {
                     "200": {
+                        "description": "The content of the blob, which will be a specific mime type if one can be detected from the content (or set as mimeType in the metadata), or defaults to application/octet-stream.",
                         "content": {
-                            "application/json": {
+                            "application/octet-stream": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/Uint8Array"
+                                    "type": "string",
+                                    "format": "binary"
                                 },
                                 "examples": {
                                     "blobStorageGetContentResponseExample": {
-                                        "summary": "The content of the blob, which will be a specific mime type if one can be detected from the content (or set as mimeType in the metadata), or defaults to application/octet-stream.",
-                                        "value": {}
+                                        "summary": "Binary Data",
+                                        "value": ""
                                     }
                                 }
                             }

@@ -68,14 +68,6 @@ Runtime name for the class.
 
 `AbstractScyllaDBConnector.CLASS_NAME`
 
-***
-
-### \_viewSchema
-
-> `private` `readonly` **\_viewSchema**: `IEntitySchema`\<`T`\>
-
-The view descriptor.
-
 ## Methods
 
 ### get()

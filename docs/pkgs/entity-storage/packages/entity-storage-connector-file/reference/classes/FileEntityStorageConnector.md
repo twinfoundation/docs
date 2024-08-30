@@ -212,37 +212,3 @@ Total entities length.
 #### Implementation of
 
 `IEntityStorageConnector.query`
-
-***
-
-### readStore()
-
-> `private` **readStore**(): `Promise`\<`T`[]\>
-
-Read the store from file.
-
-#### Returns
-
-`Promise`\<`T`[]\>
-
-The store.
-
-***
-
-### writeStore()
-
-> `private` **writeStore**(`store`): `Promise`\<`void`\>
-
-Write the store to the file.
-
-#### Parameters
-
-• **store**: `T`[]
-
-The store to write.
-
-#### Returns
-
-`Promise`\<`void`\>
-
-Nothing.

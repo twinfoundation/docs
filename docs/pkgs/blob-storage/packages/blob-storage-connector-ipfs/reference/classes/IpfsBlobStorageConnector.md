@@ -120,21 +120,3 @@ True if the blob was found.
 #### Implementation of
 
 `IBlobStorageConnector.remove`
-
-***
-
-### addSecurity()
-
-> `private` **addSecurity**(`requestInit`): `void`
-
-Add the security to the request.
-
-#### Parameters
-
-• **requestInit**: `RequestInit`
-
-The request options.
-
-#### Returns
-
-`void`

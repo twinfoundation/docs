@@ -74,6 +74,10 @@ This is the overview of the packages.
 - [@gtsc/vault-models](pkgs/vault/packages/vault-models/overview) - Models which define the structure of the vault contracts and connectors
 - [@gtsc/vault-connector-entity-storage](pkgs/vault/packages/vault-connector-entity-storage/overview) - Vault connector implementation using entity storage
 
+## Distributed Ledger
+
+- [@gtsc/dlt-iota](pkgs/dlt/packages/dlt-iota/overview) - DLT helpers for use with IOTA
+
 ## Wallet
 
 - [@gtsc/wallet-models](pkgs/wallet/packages/wallet-models/overview) - Models which define the structure of the wallet contracts and connectors
@@ -114,6 +118,12 @@ This is the overview of the packages.
 - [@gtsc/attestation-service](pkgs/attestation/packages/attestation-service/overview) - Attestation contract implementation and REST endpoint definitions
 - [@gtsc/attestation-rest-client](pkgs/attestation/packages/attestation-rest-client/overview) - Attestation contract implementation which can connect to REST endpoints
 - [@gtsc/attestation-cli](pkgs/attestation/packages/attestation-cli/overview) - A command line interface for interacting with the attestation connectors
+
+## Auditable Item Graph
+
+- [@gtsc/auditable-item-graph-models](pkgs/auditable-item-graph/packages/auditable-item-graph-models/overview) - Models which define the structure of the auditable item graph connectors and services
+- [@gtsc/auditable-item-graph-service](pkgs/auditable-item-graph/packages/auditable-item-graph-service/overview) - Auditable Item Graph contract implementation and REST endpoint definitions
+- [@gtsc/auditable-item-graph-rest-client](pkgs/auditable-item-graph/packages/auditable-item-graph-rest-client/overview) - Auditable Item Graph contract implementation which can connect to REST endpoints
 
 ## Applications
 

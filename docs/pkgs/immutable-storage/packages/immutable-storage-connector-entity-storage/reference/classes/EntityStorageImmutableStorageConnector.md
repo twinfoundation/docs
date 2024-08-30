@@ -22,7 +22,7 @@ The dependencies for the class.
 
 • **options.immutableStorageEntityStorageType?**: `string`
 
-The entity storage for immutable storage items, defaults to "immutable-storage".
+The entity storage for immutable storage items, defaults to "immutable-item".
 
 #### Returns
 
