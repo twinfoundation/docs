@@ -247,6 +247,27 @@ jobs:
           cp import-packages/immutable-storage/package.json docs/pkgs/immutable-storage/package.json
           rm -r import-packages/immutable-storage
 
+      ########### dlt
+      - name: Checkout dlt
+        uses: actions/checkout@v4
+        with:
+          repository: gtscio/dlt
+          path: import-packages/dlt
+          ref: ${{ env.gha-branch }}
+          token: ${{ secrets.GH_PAT }}
+
+      - name: Copy dlt to Docs
+        run: |
+          jq -r '.workspaces[]' import-packages/dlt/package.json | while read pkg; do
+            rm -rf docs/pkgs/dlt/$pkg
+            mkdir -p docs/pkgs/dlt/$pkg
+            cp -r import-packages/dlt/$pkg/docs/* docs/pkgs/dlt/$pkg
+            cp -r import-packages/dlt/$pkg/package.json docs/pkgs/dlt/$pkg/package.json
+          done
+
+          cp import-packages/dlt/package.json docs/pkgs/dlt/package.json
+          rm -r import-packages/dlt
+
       ########### wallet
       - name: Checkout wallet
         uses: actions/checkout@v4
@@ -330,6 +351,27 @@ jobs:
 
           cp import-packages/attestation/package.json docs/pkgs/attestation/package.json
           rm -r import-packages/attestation
+
+      ########### auditable-item-graph
+      - name: Checkout auditable-item-graph
+        uses: actions/checkout@v4
+        with:
+          repository: gtscio/auditable-item-graph
+          path: import-packages/auditable-item-graph
+          ref: ${{ env.gha-branch }}
+          token: ${{ secrets.GH_PAT }}
+
+      - name: Copy auditable-item-graph to Docs
+        run: |
+          jq -r '.workspaces[]' import-packages/auditable-item-graph/package.json | while read pkg; do
+            rm -rf docs/pkgs/auditable-item-graph/$pkg
+            mkdir -p docs/pkgs/auditable-item-graph/$pkg
+            cp -r import-packages/auditable-item-graph/$pkg/docs/* docs/pkgs/auditable-item-graph/$pkg
+            cp -r import-packages/auditable-item-graph/$pkg/package.json docs/pkgs/auditable-item-graph/$pkg/package.json
+          done
+
+          cp import-packages/auditable-item-graph/package.json docs/pkgs/auditable-item-graph/package.json
+          rm -r import-packages/auditable-item-graph
 
       ########### workbench
       - name: Checkout workbench
