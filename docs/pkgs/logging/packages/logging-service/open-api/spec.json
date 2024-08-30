@@ -33,6 +33,42 @@
                         "jwtBearerAuthScheme": []
                     }
                 ],
+                "requestBody": {
+                    "description": "Create a new log entry.",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/LogEntry"
+                            },
+                            "examples": {
+                                "loggingEntryCreateInfoExample": {
+                                    "value": {
+                                        "level": "info",
+                                        "message": "This is an information message",
+                                        "source": "source",
+                                        "ts": 1715252922273
+                                    }
+                                },
+                                "loggingEntryCreateErrorExample": {
+                                    "value": {
+                                        "level": "info",
+                                        "message": "This is an error message",
+                                        "source": "source",
+                                        "ts": 1715252922273,
+                                        "error": {
+                                            "name": "GeneralError",
+                                            "message": "component.error",
+                                            "properties": {
+                                                "foo": "bar"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
                 "responses": {
                     "204": {
                         "description": "The rest request ended in success with no data."
@@ -94,42 +130,6 @@
                             }
                         }
                     }
-                },
-                "requestBody": {
-                    "description": "Create a new log entry.",
-                    "required": true,
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/LogEntry"
-                            },
-                            "examples": {
-                                "loggingEntryCreateInfoExample": {
-                                    "value": {
-                                        "level": "info",
-                                        "message": "This is an information message",
-                                        "source": "source",
-                                        "ts": 1715252922273
-                                    }
-                                },
-                                "loggingEntryCreateErrorExample": {
-                                    "value": {
-                                        "level": "info",
-                                        "message": "This is an error message",
-                                        "source": "source",
-                                        "ts": 1715252922273,
-                                        "error": {
-                                            "name": "GeneralError",
-                                            "message": "component.error",
-                                            "properties": {
-                                                "foo": "bar"
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
                 }
             },
             "get": {
@@ -144,7 +144,9 @@
                         "description": "The level of the log entries to retrieve.",
                         "in": "query",
                         "required": false,
-                        "schema": {},
+                        "schema": {
+                            "$ref": "#/components/schemas/LogLevel"
+                        },
                         "example": "info"
                     },
                     {

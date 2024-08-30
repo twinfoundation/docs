@@ -1,0 +1,45 @@
+# Class: AuditableItemGraphChangeset
+
+Class describing a set of updates to the vertex.
+
+## Constructors
+
+### new AuditableItemGraphChangeset()
+
+> **new AuditableItemGraphChangeset**(): [`AuditableItemGraphChangeset`](AuditableItemGraphChangeset.md)
+
+#### Returns
+
+[`AuditableItemGraphChangeset`](AuditableItemGraphChangeset.md)
+
+## Properties
+
+### created
+
+> **created**: `number`
+
+The timestamp of when the changeset was created.
+
+***
+
+### userIdentity
+
+> **userIdentity**: `string`
+
+The identity of the user who made the changeset.
+
+***
+
+### hash
+
+> **hash**: `string`
+
+The hash of the changeset.
+
+***
+
+### immutableStorageId?
+
+> `optional` **immutableStorageId**: `string`
+
+The immutable storage id which contains the signature for this changeset.

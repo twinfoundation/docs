@@ -33,6 +33,28 @@
                         "jwtBearerAuthScheme": []
                     }
                 ],
+                "requestBody": {
+                    "description": "Create a new telemetry metric.",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/TelemetryMetric"
+                            },
+                            "examples": {
+                                "telemetryCreateMetricRequestExample": {
+                                    "value": {
+                                        "id": "my-counter",
+                                        "label": "My Counter",
+                                        "description": "This is my counter",
+                                        "type": "Counter",
+                                        "unit": "KG"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
                 "responses": {
                     "201": {
                         "description": "The rest request ended in created response.",
@@ -102,28 +124,6 @@
                             }
                         }
                     }
-                },
-                "requestBody": {
-                    "description": "Create a new telemetry metric.",
-                    "required": true,
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/TelemetryMetric"
-                            },
-                            "examples": {
-                                "telemetryCreateMetricRequestExample": {
-                                    "value": {
-                                        "id": "my-counter",
-                                        "label": "My Counter",
-                                        "description": "This is my counter",
-                                        "type": "Counter",
-                                        "unit": "KG"
-                                    }
-                                }
-                            }
-                        }
-                    }
                 }
             },
             "get": {
@@ -138,7 +138,9 @@
                         "description": "The type of the metric.",
                         "in": "query",
                         "required": false,
-                        "schema": {},
+                        "schema": {
+                            "$ref": "#/components/schemas/MetricType"
+                        },
                         "example": "Counter"
                     },
                     {
@@ -396,6 +398,24 @@
                         "jwtBearerAuthScheme": []
                     }
                 ],
+                "requestBody": {
+                    "description": "Update a telemetry metric.",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/TelemetryUpdateMetricRequest"
+                            },
+                            "examples": {
+                                "telemetryUpdateMetricRequestExample": {
+                                    "value": {
+                                        "label": "My New Label"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
                 "responses": {
                     "204": {
                         "description": "The rest request ended in success with no data."
@@ -452,24 +472,6 @@
                                             "name": "InternalServerError",
                                             "message": "component.error"
                                         }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                },
-                "requestBody": {
-                    "description": "Update a telemetry metric.",
-                    "required": true,
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/TelemetryUpdateMetricRequest"
-                            },
-                            "examples": {
-                                "telemetryUpdateMetricRequestExample": {
-                                    "value": {
-                                        "label": "My New Label"
                                     }
                                 }
                             }
@@ -590,6 +592,29 @@
                         "jwtBearerAuthScheme": []
                     }
                 ],
+                "requestBody": {
+                    "description": "Add a telemetry metric value.",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/TelemetryAddMetricValueRequest"
+                            },
+                            "examples": {
+                                "telemetryAddMetricValueRequestExample": {
+                                    "value": {
+                                        "value": 10
+                                    }
+                                },
+                                "telemetryAddMetricValueIncRequestExample": {
+                                    "value": {
+                                        "value": "inc"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
                 "responses": {
                     "201": {
                         "description": "The rest request ended in created response.",
@@ -654,29 +679,6 @@
                                             "name": "InternalServerError",
                                             "message": "component.error"
                                         }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                },
-                "requestBody": {
-                    "description": "Add a telemetry metric value.",
-                    "required": true,
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/TelemetryAddMetricValueRequest"
-                            },
-                            "examples": {
-                                "telemetryAddMetricValueRequestExample": {
-                                    "value": {
-                                        "value": 10
-                                    }
-                                },
-                                "telemetryAddMetricValueIncRequestExample": {
-                                    "value": {
-                                        "value": "inc"
                                     }
                                 }
                             }
@@ -914,18 +916,18 @@
             "MetricType": {
                 "anyOf": [
                     {
-                        "type": "string",
-                        "const": "Counter",
+                        "type": "number",
+                        "const": 0,
                         "description": "Counter."
                     },
                     {
-                        "type": "string",
-                        "const": "IncDecCounter",
+                        "type": "number",
+                        "const": 1,
                         "description": "Increment Decrement Counter."
                     },
                     {
-                        "type": "string",
-                        "const": "Gauge",
+                        "type": "number",
+                        "const": 2,
                         "description": "Gauge."
                     }
                 ],

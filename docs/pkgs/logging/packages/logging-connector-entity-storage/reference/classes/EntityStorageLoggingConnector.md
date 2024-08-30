@@ -52,14 +52,6 @@ Runtime name for the class.
 
 `ILoggingConnector.CLASS_NAME`
 
-***
-
-### \_levels
-
-> `private` `readonly` **\_levels**: `LogLevel`[]
-
-The log levels to capture, will default to all.
-
 ## Methods
 
 ### log()

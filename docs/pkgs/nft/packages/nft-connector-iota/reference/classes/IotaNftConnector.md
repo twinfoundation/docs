@@ -251,23 +251,3 @@ Nothing.
 #### Implementation of
 
 `INftConnector.update`
-
-***
-
-### extractPayloadError()
-
-> `private` **extractPayloadError**(`error`): `IError`
-
-Extract error from SDK payload.
-
-#### Parameters
-
-• **error**: `unknown`
-
-The error to extract.
-
-#### Returns
-
-`IError`
-
-The extracted error.

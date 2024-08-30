@@ -52,22 +52,6 @@ Runtime name for the class.
 
 [`ILoggingConnector`](../interfaces/ILoggingConnector.md).[`CLASS_NAME`](../interfaces/ILoggingConnector.md#class_name)
 
-***
-
-### \_loggingConnectors
-
-> `private` `readonly` **\_loggingConnectors**: [`ILoggingConnector`](../interfaces/ILoggingConnector.md)[]
-
-The connectors to send the log entries to.
-
-***
-
-### \_levels
-
-> `private` `readonly` **\_levels**: [`LogLevel`](../type-aliases/LogLevel.md)[]
-
-The log levels to display, will default to all.
-
 ## Methods
 
 ### log()

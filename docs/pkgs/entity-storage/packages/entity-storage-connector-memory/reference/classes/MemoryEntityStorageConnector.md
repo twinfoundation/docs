@@ -189,12 +189,12 @@ Total entities length.
 
 ### getStore()
 
-> **getStore**(): `undefined` \| `T`[]
+> **getStore**(): `T`[]
 
 Get the memory store.
 
 #### Returns
 
-`undefined` \| `T`[]
+`T`[]
 
 The store.

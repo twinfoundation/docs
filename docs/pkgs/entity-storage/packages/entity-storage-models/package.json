@@ -1,6 +1,6 @@
 {
 	"name": "@gtsc/entity-storage-models",
-	"version": "0.0.5-next.8",
+	"version": "0.0.5-next.11",
 	"description": "Models which define the structure of the entity storage contracts and connectors",
 	"repository": {
 		"type": "git",

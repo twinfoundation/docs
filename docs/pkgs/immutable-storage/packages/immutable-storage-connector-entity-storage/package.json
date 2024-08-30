@@ -1,6 +1,6 @@
 {
 	"name": "@gtsc/immutable-storage-connector-entity-storage",
-	"version": "0.0.5-next.1",
+	"version": "0.0.5-next.3",
 	"description": "Implementation of the Immutable Storage connector using entity storage",
 	"repository": {
 		"type": "git",
@@ -33,7 +33,7 @@
 		"@gtsc/entity": "next",
 		"@gtsc/entity-storage-models": "next",
 		"@gtsc/nameof": "next",
-		"@gtsc/immutable-storage-models": "0.0.5-next.1"
+		"@gtsc/immutable-storage-models": "0.0.5-next.3"
 	},
 	"devDependencies": {
 		"@gtsc/nameof-transformer": "next",

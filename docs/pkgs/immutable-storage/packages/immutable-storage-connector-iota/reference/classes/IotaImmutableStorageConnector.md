@@ -24,10 +24,6 @@ The options for the connector.
 
 The type of the vault connector, defaults to "vault".
 
-• **options.walletConnectorType?**: `string`
-
-The type of the wallet connector, defaults to "wallet".
-
 • **options.config**: [`IIotaImmutableStorageConnectorConfig`](../interfaces/IIotaImmutableStorageConnectorConfig.md)
 
 The configuration for the connector.
@@ -135,23 +131,3 @@ Nothing.
 #### Implementation of
 
 `IImmutableStorageConnector.remove`
-
-***
-
-### extractPayloadError()
-
-> `private` **extractPayloadError**(`error`): `IError`
-
-Extract error from SDK payload.
-
-#### Parameters
-
-• **error**: `unknown`
-
-The error to extract.
-
-#### Returns
-
-`IError`
-
-The extracted error.
