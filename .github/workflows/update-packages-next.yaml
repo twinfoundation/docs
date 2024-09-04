@@ -79,6 +79,27 @@ jobs:
           cp import-packages/framework/package.json docs/pkgs/framework/package.json
           rm -r import-packages/framework
 
+      ########### data
+      - name: Checkout data
+        uses: actions/checkout@v4
+        with:
+          repository: gtscio/data
+          path: import-packages/data
+          ref: ${{ env.gha-branch }}
+          token: ${{ secrets.GH_PAT }}
+
+      - name: Copy data to Docs
+        run: |
+          jq -r '.workspaces[]' import-packages/data/package.json | while read pkg; do
+            rm -rf docs/pkgs/data/$pkg
+            mkdir -p docs/pkgs/data/$pkg
+            cp -r import-packages/data/$pkg/docs/* docs/pkgs/data/$pkg
+            cp -r import-packages/data/$pkg/package.json docs/pkgs/data/$pkg/package.json
+          done
+
+          cp import-packages/data/package.json docs/pkgs/data/package.json
+          rm -r import-packages/data
+
       ########### standards
       - name: Checkout standards
         uses: actions/checkout@v4

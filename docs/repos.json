@@ -12,6 +12,10 @@
 		"types": ["packages"]
 	},
 	{
+		"name": "data",
+		"types": ["packages"]
+	},
+	{
 		"name": "api",
 		"types": ["packages"]
 	},
