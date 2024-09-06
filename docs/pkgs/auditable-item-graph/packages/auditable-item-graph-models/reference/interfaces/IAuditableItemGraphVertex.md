@@ -4,7 +4,7 @@ Interface describing an auditable item graph vertex.
 
 ## Extends
 
-- `Omit`\<[`IAuditableItemGraphAuditedElement`](IAuditableItemGraphAuditedElement.md), `"deleted"`\>.[`IAuditableItemGraphMetadataElement`](IAuditableItemGraphMetadataElement.md)
+- `Omit`\<[`IAuditableItemGraphAuditedElement`](IAuditableItemGraphAuditedElement.md), `"deleted"`\>.`IAuditableItemGraphMetadataElement`
 
 ## Properties
 
@@ -32,15 +32,27 @@ The timestamp of when the element was created.
 
 ***
 
-### metadata?
+### updated?
 
-> `optional` **metadata**: [`IAuditableItemGraphProperty`](IAuditableItemGraphProperty.md)[]
+> `optional` **updated**: `number`
 
-Metadata to associate with the element.
+The timestamp of when the element was updated.
 
 #### Inherited from
 
-[`IAuditableItemGraphMetadataElement`](IAuditableItemGraphMetadataElement.md).[`metadata`](IAuditableItemGraphMetadataElement.md#metadata)
+`Omit.updated`
+
+***
+
+### metadata?
+
+> `optional` **metadata**: `unknown`
+
+The metadata to associate with the element as JSON-LD.
+
+#### Inherited from
+
+`IAuditableItemGraphMetadataElement.metadata`
 
 ***
 
@@ -49,14 +61,6 @@ Metadata to associate with the element.
 > `optional` **nodeIdentity**: `string`
 
 The identity of the node which controls the vertex.
-
-***
-
-### updated
-
-> **updated**: `number`
-
-The timestamp of when the element was last updated.
 
 ***
 
@@ -81,11 +85,3 @@ The resources attached to the vertex.
 > `optional` **edges**: [`IAuditableItemGraphEdge`](IAuditableItemGraphEdge.md)[]
 
 Edges connected to the vertex.
-
-***
-
-### changesets?
-
-> `optional` **changesets**: [`IAuditableItemGraphChangeset`](IAuditableItemGraphChangeset.md)[]
-
-Changesets containing time sliced changes to the vertex.

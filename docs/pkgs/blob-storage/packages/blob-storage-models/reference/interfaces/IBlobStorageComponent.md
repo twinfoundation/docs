@@ -6,103 +6,11 @@ Interface describing an blob storage component.
 
 - `IComponent`
 
-## Properties
-
-### CLASS\_NAME
-
-> `readonly` **CLASS\_NAME**: `string`
-
-The name of the component.
-
-#### Inherited from
-
-`IComponent.CLASS_NAME`
-
 ## Methods
-
-### bootstrap()?
-
-> `optional` **bootstrap**(`nodeLoggingConnectorType`?): `Promise`\<`boolean`\>
-
-Bootstrap the component by creating and initializing any resources it needs.
-
-#### Parameters
-
-• **nodeLoggingConnectorType?**: `string`
-
-The node logging connector type, defaults to "node-logging".
-
-#### Returns
-
-`Promise`\<`boolean`\>
-
-True if the bootstrapping process was successful.
-
-#### Inherited from
-
-`IComponent.bootstrap`
-
-***
-
-### start()?
-
-> `optional` **start**(`nodeIdentity`, `nodeLoggingConnectorType`?): `Promise`\<`void`\>
-
-The component needs to be started when the node is initialized.
-
-#### Parameters
-
-• **nodeIdentity**: `string`
-
-The identity of the node starting the component.
-
-• **nodeLoggingConnectorType?**: `string`
-
-The node logging connector type, defaults to "node-logging".
-
-#### Returns
-
-`Promise`\<`void`\>
-
-Nothing.
-
-#### Inherited from
-
-`IComponent.start`
-
-***
-
-### stop()?
-
-> `optional` **stop**(`nodeIdentity`, `nodeLoggingConnectorType`?): `Promise`\<`void`\>
-
-The component needs to be stopped when the node is closed.
-
-#### Parameters
-
-• **nodeIdentity**: `string`
-
-The identity of the node stopping the component.
-
-• **nodeLoggingConnectorType?**: `string`
-
-The node logging connector type, defaults to "node-logging".
-
-#### Returns
-
-`Promise`\<`void`\>
-
-Nothing.
-
-#### Inherited from
-
-`IComponent.stop`
-
-***
 
 ### create()
 
-> **create**(`blob`, `metadata`?, `namespace`?, `nodeIdentity`?): `Promise`\<`string`\>
+> **create**(`blob`, `mimeType`?, `extension`?, `metadata`?, `namespace`?, `nodeIdentity`?): `Promise`\<`string`\>
 
 Create the blob with some metadata.
 
@@ -112,9 +20,17 @@ Create the blob with some metadata.
 
 The data for the blob in base64 format.
 
-• **metadata?**: `IProperty`[]
+• **mimeType?**: `string`
 
-Metadata to associate with the blob.
+Mime type for the blob, will be detected if left undefined.
+
+• **extension?**: `string`
+
+Extension for the blob, will be detected if left undefined.
+
+• **metadata?**: `unknown`
+
+Data for the custom metadata as JSON-LD.
 
 • **namespace?**: `string`
 
@@ -156,15 +72,23 @@ The node identity which controls the vault key.
 
 `Promise`\<`object`\>
 
-The metadata and data for the blob if it can be found.
+The data and metadata for the blob if it can be found.
 
 ##### blob?
 
 > `optional` **blob**: `string`
 
-##### metadata
+##### mimeType?
 
-> **metadata**: `IProperty`[]
+> `optional` **mimeType**: `string`
+
+##### extension?
+
+> `optional` **extension**: `string`
+
+##### metadata?
+
+> `optional` **metadata**: `unknown`
 
 #### Throws
 
@@ -174,7 +98,7 @@ Not found error if the blob cannot be found.
 
 ### update()
 
-> **update**(`id`, `metadata`): `Promise`\<`void`\>
+> **update**(`id`, `mimeType`?, `extension`?, `metadata`?): `Promise`\<`void`\>
 
 Update the blob with metadata.
 
@@ -184,9 +108,17 @@ Update the blob with metadata.
 
 The id of the blob metadata to update.
 
-• **metadata**: `IProperty`[]
+• **mimeType?**: `string`
 
-Metadata to associate with the blob.
+Mime type for the blob, will be detected if left undefined.
+
+• **extension?**: `string`
+
+Extension for the blob, will be detected if left undefined.
+
+• **metadata?**: `unknown`
+
+Data for the custom metadata as JSON-LD.
 
 #### Returns
 

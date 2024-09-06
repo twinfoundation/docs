@@ -46,77 +46,21 @@ Runtime name for the class.
 
 ## Methods
 
-### getEndpointWithPrefix()
-
-> **getEndpointWithPrefix**(): `string`
-
-Get the endpoint with the prefix for the namespace.
-
-#### Returns
-
-`string`
-
-The endpoint with namespace prefix attached.
-
-#### Inherited from
-
-`BaseRestClient.getEndpointWithPrefix`
-
-***
-
-### fetch()
-
-> **fetch**\<`T`, `U`\>(`route`, `method`, `request`?): `Promise`\<`U`\>
-
-Perform a request in json format.
-
-#### Type parameters
-
-• **T** *extends* `IHttpRequest`\<`any`\>
-
-• **U** *extends* `IHttpResponse`\<`any`\>
-
-#### Parameters
-
-• **route**: `string`
-
-The route of the request.
-
-• **method**: `HttpMethod`
-
-The http method.
-
-• **request?**: `T`
-
-Request to send to the endpoint.
-
-#### Returns
-
-`Promise`\<`U`\>
-
-The response.
-
-#### Inherited from
-
-`BaseRestClient.fetch`
-
-***
-
 ### create()
 
-> **create**(`aliases`?, `metadata`?, `resources`?, `edges`?): `Promise`\<`string`\>
+> **create**(`metadata`?, `aliases`?, `resources`?, `edges`?): `Promise`\<`string`\>
 
 Create a new graph vertex.
 
 #### Parameters
 
+• **metadata?**: `unknown`
+
+The metadata for the vertex.
+
 • **aliases?**: `object`[]
 
 Alternative aliases that can be used to identify the vertex.
-
-• **metadata?**: `IProperty`[]
-
-The metadata for the vertex.
 
 • **resources?**: `object`[]
 
@@ -178,15 +122,15 @@ The vertex if found.
 
 ##### verification?
 
-> `optional` **verification**: `object`
-
-###### Index signature
-
- \[`epoch`: `number`\]: `object`
+> `optional` **verification**: `object`[]
 
 ##### vertex
 
 > **vertex**: `IAuditableItemGraphVertex`
+
+##### changesets?
+
+> `optional` **changesets**: `IAuditableItemGraphChangeset`[]
 
 #### Implementation of
 
@@ -200,7 +144,7 @@ NotFoundError if the vertex is not found.
 
 ### update()
 
-> **update**(`id`, `aliases`?, `metadata`?, `resources`?, `edges`?): `Promise`\<`void`\>
+> **update**(`id`, `metadata`?, `aliases`?, `resources`?, `edges`?): `Promise`\<`void`\>
 
 Update a graph vertex.
 
@@ -210,13 +154,13 @@ Update a graph vertex.
 
 The id of the vertex to update.
 
+• **metadata?**: `unknown`
+
+The metadata for the vertex as JSON-LD.
+
 • **aliases?**: `object`[]
 
 Alternative aliases that can be used to identify the vertex.
-
-• **metadata?**: `IProperty`[]
-
-The metadata for the vertex.
 
 • **resources?**: `object`[]
 
@@ -323,18 +267,6 @@ The entities, which can be partial if a limited keys list was provided.
 > `optional` **cursor**: `string`
 
 An optional cursor, when defined can be used to call find to get more entities.
-
-##### pageSize?
-
-> `optional` **pageSize**: `number`
-
-Number of entities to return.
-
-##### totalEntities
-
-> **totalEntities**: `number`
-
-Total entities length.
 
 #### Implementation of
 

@@ -2,23 +2,11 @@
 
 Interface describing a set of updates to the vertex.
 
+## Extends
+
+- [`IAuditableItemGraphIntegrity`](IAuditableItemGraphIntegrity.md)
+
 ## Properties
-
-### created
-
-> **created**: `number`
-
-The timestamp of when the changeset was created.
-
-***
-
-### userIdentity
-
-> **userIdentity**: `string`
-
-The identity of the user who made the changeset.
-
-***
 
 ### hash
 
@@ -33,3 +21,39 @@ The hash for the changeset.
 > `optional` **immutableStorageId**: `string`
 
 The immutable storage id containing the signature for the changeset.
+
+***
+
+### created
+
+> **created**: `number`
+
+The timestamp of when the changeset was created.
+
+#### Inherited from
+
+[`IAuditableItemGraphIntegrity`](IAuditableItemGraphIntegrity.md).[`created`](IAuditableItemGraphIntegrity.md#created)
+
+***
+
+### userIdentity
+
+> **userIdentity**: `string`
+
+The user identity that created the changes.
+
+#### Inherited from
+
+[`IAuditableItemGraphIntegrity`](IAuditableItemGraphIntegrity.md).[`userIdentity`](IAuditableItemGraphIntegrity.md#useridentity)
+
+***
+
+### patches
+
+> **patches**: `IPatchOperation`[]
+
+The patches for the integrity at this epoch.
+
+#### Inherited from
+
+[`IAuditableItemGraphIntegrity`](IAuditableItemGraphIntegrity.md).[`patches`](IAuditableItemGraphIntegrity.md#patches)

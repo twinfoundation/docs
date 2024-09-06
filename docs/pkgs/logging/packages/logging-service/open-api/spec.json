@@ -219,9 +219,7 @@
                                                     "ts": 1715252922273
                                                 }
                                             ],
-                                            "cursor": "1",
-                                            "pageSize": 10,
-                                            "totalEntities": 20
+                                            "cursor": "1"
                                         }
                                     }
                                 }
@@ -385,19 +383,10 @@
                     "cursor": {
                         "type": "string",
                         "description": "An optional cursor, when defined can be used to call find to get more entities."
-                    },
-                    "pageSize": {
-                        "type": "number",
-                        "description": "Number of entities to return."
-                    },
-                    "totalEntities": {
-                        "type": "number",
-                        "description": "Total entities length."
                     }
                 },
                 "required": [
-                    "entities",
-                    "totalEntities"
+                    "entities"
                 ],
                 "additionalProperties": false,
                 "description": "The response payload."

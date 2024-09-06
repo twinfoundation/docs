@@ -47,7 +47,7 @@
                                         "id": "my-counter",
                                         "label": "My Counter",
                                         "description": "This is my counter",
-                                        "type": "Counter",
+                                        "type": 0,
                                         "unit": "KG"
                                     }
                                 }
@@ -140,8 +140,7 @@
                         "required": false,
                         "schema": {
                             "$ref": "#/components/schemas/MetricType"
-                        },
-                        "example": "Counter"
+                        }
                     },
                     {
                         "name": "cursor",
@@ -182,19 +181,17 @@
                                                 {
                                                     "id": "my-counter",
                                                     "label": "My Counter",
-                                                    "type": "Counter",
+                                                    "type": 0,
                                                     "unit": "KG"
                                                 },
                                                 {
                                                     "id": "my-counter-2",
                                                     "label": "My Counter 2",
-                                                    "type": "IncDecCounter",
+                                                    "type": 1,
                                                     "unit": "M"
                                                 }
                                             ],
-                                            "cursor": "1",
-                                            "pageSize": 10,
-                                            "totalEntities": 2
+                                            "cursor": "1"
                                         }
                                     }
                                 }
@@ -301,7 +298,7 @@
                                                 "id": "my-counter",
                                                 "label": "My Counter",
                                                 "description": "This is my counter",
-                                                "type": "Counter",
+                                                "type": 0,
                                                 "unit": "KG"
                                             },
                                             "value": {
@@ -760,7 +757,7 @@
                                             "metric": {
                                                 "id": "my-counter",
                                                 "label": "My Counter",
-                                                "type": "Counter",
+                                                "type": 0,
                                                 "unit": "KG"
                                             },
                                             "entities": [
@@ -775,9 +772,7 @@
                                                     "value": 11
                                                 }
                                             ],
-                                            "cursor": "1",
-                                            "pageSize": 10,
-                                            "totalEntities": 2
+                                            "cursor": "1"
                                         }
                                     }
                                 }
@@ -1045,19 +1040,10 @@
                     "cursor": {
                         "type": "string",
                         "description": "An optional cursor, when defined can be used to call find to get more entities."
-                    },
-                    "pageSize": {
-                        "type": "number",
-                        "description": "Number of entities to return."
-                    },
-                    "totalEntities": {
-                        "type": "number",
-                        "description": "Total number of metric values length."
                     }
                 },
                 "required": [
-                    "entities",
-                    "totalEntities"
+                    "entities"
                 ],
                 "additionalProperties": false,
                 "description": "The response payload."
@@ -1078,20 +1064,11 @@
                     "cursor": {
                         "type": "string",
                         "description": "An optional cursor, when defined can be used to call find to get more entities."
-                    },
-                    "pageSize": {
-                        "type": "number",
-                        "description": "Number of entities to return."
-                    },
-                    "totalEntities": {
-                        "type": "number",
-                        "description": "Total number of metric values length."
                     }
                 },
                 "required": [
                     "metric",
-                    "entities",
-                    "totalEntities"
+                    "entities"
                 ],
                 "additionalProperties": false,
                 "description": "The response payload."

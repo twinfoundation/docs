@@ -1,6 +1,6 @@
 {
 	"name": "@gtsc/entity-storage-connector-memory",
-	"version": "0.0.5-next.11",
+	"version": "0.0.5-next.12",
 	"description": "Entity Storage connector implementation using in-memory storage",
 	"repository": {
 		"type": "git",
@@ -31,7 +31,7 @@
 		"@gtsc/core": "next",
 		"@gtsc/entity": "next",
 		"@gtsc/nameof": "next",
-		"@gtsc/entity-storage-models": "0.0.5-next.11"
+		"@gtsc/entity-storage-models": "0.0.5-next.12"
 	},
 	"devDependencies": {
 		"@gtsc/nameof-transformer": "next",

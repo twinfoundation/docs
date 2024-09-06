@@ -1,6 +1,6 @@
 {
 	"name": "@gtsc/entity-storage-connector-scylladb",
-	"version": "0.0.5-next.11",
+	"version": "0.0.5-next.12",
 	"description": "Entity Storage connector implementation using ScyllaDB",
 	"repository": {
 		"type": "git",
@@ -30,13 +30,13 @@
 	"dependencies": {
 		"@gtsc/core": "next",
 		"@gtsc/entity": "next",
-		"@gtsc/entity-storage-models": "0.0.5-next.11",
+		"@gtsc/entity-storage-models": "0.0.5-next.12",
 		"@gtsc/logging-models": "next",
 		"@gtsc/nameof": "next",
 		"cassandra-driver": "^4.7.2"
 	},
 	"devDependencies": {
-		"@gtsc/entity-storage-connector-memory": "0.0.5-next.11",
+		"@gtsc/entity-storage-connector-memory": "0.0.5-next.12",
 		"@gtsc/logging-connector-entity-storage": "next",
 		"@gtsc/nameof-transformer": "next",
 		"@types/node": "20.14.6",

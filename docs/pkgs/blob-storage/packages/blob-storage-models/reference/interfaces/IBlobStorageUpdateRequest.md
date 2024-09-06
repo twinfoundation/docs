@@ -24,8 +24,20 @@ The id of the blob to get in urn format.
 
 The body parameters.
 
-#### metadata
+#### mimeType?
 
-> **metadata**: `IProperty`[]
+> `optional` **mimeType**: `string`
 
-Metadata to associate with the blob.
+The mime type of the blob, will be detected if left undefined.
+
+#### extension?
+
+> `optional` **extension**: `string`
+
+The extension of the blob, will be detected if left undefined.
+
+#### metadata?
+
+> `optional` **metadata**: `unknown`
+
+Custom metadata to associate with the blob as JSON-LD.

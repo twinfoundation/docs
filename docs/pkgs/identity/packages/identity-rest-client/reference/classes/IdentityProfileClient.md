@@ -1,10 +1,16 @@
-# Class: IdentityProfileClient
+# Class: IdentityProfileClient\<T, U\>
 
 Client for performing identity through to REST endpoints.
 
 ## Extends
 
 - `BaseRestClient`
+
+## Type parameters
+
+• **T** = `any`
+
+• **U** = `any`
 
 ## Implements
 
@@ -14,7 +20,7 @@ Client for performing identity through to REST endpoints.
 
 ### new IdentityProfileClient()
 
-> **new IdentityProfileClient**(`config`): [`IdentityProfileClient`](IdentityProfileClient.md)
+> **new IdentityProfileClient**\<`T`, `U`\>(`config`): [`IdentityProfileClient`](IdentityProfileClient.md)\<`T`, `U`\>
 
 Create a new instance of IdentityClient.
 
@@ -26,7 +32,7 @@ The configuration for the client.
 
 #### Returns
 
-[`IdentityProfileClient`](IdentityProfileClient.md)
+[`IdentityProfileClient`](IdentityProfileClient.md)\<`T`, `U`\>
 
 #### Overrides
 
@@ -46,73 +52,21 @@ Runtime name for the class.
 
 ## Methods
 
-### getEndpointWithPrefix()
-
-> **getEndpointWithPrefix**(): `string`
-
-Get the endpoint with the prefix for the namespace.
-
-#### Returns
-
-`string`
-
-The endpoint with namespace prefix attached.
-
-#### Inherited from
-
-`BaseRestClient.getEndpointWithPrefix`
-
-***
-
-### fetch()
-
-> **fetch**\<`T`, `U`\>(`route`, `method`, `request`?): `Promise`\<`U`\>
-
-Perform a request in json format.
-
-#### Type parameters
-
-• **T** *extends* `IHttpRequest`\<`any`\>
-
-• **U** *extends* `IHttpResponse`\<`any`\>
-
-#### Parameters
-
-• **route**: `string`
-
-The route of the request.
-
-• **method**: `HttpMethod`
-
-The http method.
-
-• **request?**: `T`
-
-Request to send to the endpoint.
-
-#### Returns
-
-`Promise`\<`U`\>
-
-The response.
-
-#### Inherited from
-
-`BaseRestClient.fetch`
-
-***
-
 ### create()
 
-> **create**(`properties`): `Promise`\<`void`\>
+> **create**(`publicProfile`?, `privateProfile`?): `Promise`\<`void`\>
 
 Create the profile properties for an identity.
 
 #### Parameters
 
-• **properties**: `IIdentityProfileProperty`[]
+• **publicProfile?**: `T`
 
-The properties to create the profile with.
+The public profile data as JSON-LD.
+
+• **privateProfile?**: `U`
+
+The private profile data as JSON-LD.
 
 #### Returns
 
@@ -128,15 +82,19 @@ Nothing.
 
 ### get()
 
-> **get**(`propertyNames`?): `Promise`\<`object`\>
+> **get**(`publicPropertyNames`?, `privatePropertyNames`?): `Promise`\<`object`\>
 
 Get the profile properties for an identity.
 
 #### Parameters
 
-• **propertyNames?**: `string`[]
+• **publicPropertyNames?**: keyof `T`[]
 
-The properties to get for the item, defaults to all.
+The public properties to get for the profile, defaults to all.
+
+• **privatePropertyNames?**: keyof `U`[]
+
+The private properties to get for the profile, defaults to all.
 
 #### Returns
 
@@ -148,9 +106,13 @@ The identity and the items properties.
 
 > **identity**: `string`
 
-##### properties?
+##### publicProfile?
 
-> `optional` **properties**: `IIdentityProfileProperty`[]
+> `optional` **publicProfile**: `Partial`\<`T`\>
+
+##### privateProfile?
+
+> `optional` **privateProfile**: `Partial`\<`U`\>
 
 #### Implementation of
 
@@ -160,29 +122,25 @@ The identity and the items properties.
 
 ### getPublic()
 
-> **getPublic**(`propertyNames`, `identity`): `Promise`\<`object`\>
+> **getPublic**(`identity`, `propertyNames`?): `Promise`\<`undefined` \| `Partial`\<`T`\>\>
 
 Get the public profile properties for an identity.
 
 #### Parameters
 
-• **propertyNames**: `undefined` \| `string`[]
-
-The properties to get for the item, defaults to all.
-
 • **identity**: `string`
 
-The identity to get the profile for.
+The identity to perform the profile operation on.
+
+• **propertyNames?**: keyof `T`[]
+
+The public properties to get for the profile, defaults to all.
 
 #### Returns
 
-`Promise`\<`object`\>
+`Promise`\<`undefined` \| `Partial`\<`T`\>\>
 
-The identity and the items properties.
-
-##### properties?
-
-> `optional` **properties**: `IProperty`[]
+The items properties.
 
 #### Implementation of
 
@@ -192,15 +150,19 @@ The identity and the items properties.
 
 ### update()
 
-> **update**(`properties`): `Promise`\<`void`\>
+> **update**(`publicProfile`?, `privateProfile`?): `Promise`\<`void`\>
 
 Update the profile properties of an identity.
 
 #### Parameters
 
-• **properties**: `IIdentityProfileProperty`[]
+• **publicProfile?**: `unknown`
 
-Properties for the profile, set a properties value to undefined to remove it.
+The public profile data as JSON-LD.
+
+• **privateProfile?**: `unknown`
+
+The private profile data as JSON-LD.
 
 #### Returns
 
@@ -234,19 +196,19 @@ Nothing.
 
 ### list()
 
-> **list**(`filters`?, `propertyNames`?, `cursor`?, `pageSize`?): `Promise`\<`object`\>
+> **list**(`publicFilters`?, `publicPropertyNames`?, `cursor`?, `pageSize`?): `Promise`\<`object`\>
 
 Get a list of the requested identities.
 
 #### Parameters
 
-• **filters?**: `object`[]
+• **publicFilters?**: `object`[]
 
-The filters to apply to the identities.
+The filters to apply to the identities public profiles.
 
-• **propertyNames?**: `string`[]
+• **publicPropertyNames?**: keyof `T`[]
 
-The properties to get for the identities, default to all if undefined.
+The public properties to get for the profile, defaults to all.
 
 • **cursor?**: `string`
 
@@ -266,25 +228,13 @@ The list of items and cursor for paging.
 
 > **items**: `object`[]
 
-The items.
+The identities.
 
 ##### cursor?
 
 > `optional` **cursor**: `string`
 
 An optional cursor, when defined can be used to call find to get more entities.
-
-##### pageSize?
-
-> `optional` **pageSize**: `number`
-
-Number of entities to return.
-
-##### totalEntities
-
-> **totalEntities**: `number`
-
-Total entities length.
 
 #### Implementation of
 

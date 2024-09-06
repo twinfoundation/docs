@@ -6,115 +6,23 @@ Interface describing an auditable item graph contract.
 
 - `IComponent`
 
-## Properties
-
-### CLASS\_NAME
-
-> `readonly` **CLASS\_NAME**: `string`
-
-The name of the component.
-
-#### Inherited from
-
-`IComponent.CLASS_NAME`
-
 ## Methods
-
-### bootstrap()?
-
-> `optional` **bootstrap**(`nodeLoggingConnectorType`?): `Promise`\<`boolean`\>
-
-Bootstrap the component by creating and initializing any resources it needs.
-
-#### Parameters
-
-• **nodeLoggingConnectorType?**: `string`
-
-The node logging connector type, defaults to "node-logging".
-
-#### Returns
-
-`Promise`\<`boolean`\>
-
-True if the bootstrapping process was successful.
-
-#### Inherited from
-
-`IComponent.bootstrap`
-
-***
-
-### start()?
-
-> `optional` **start**(`nodeIdentity`, `nodeLoggingConnectorType`?): `Promise`\<`void`\>
-
-The component needs to be started when the node is initialized.
-
-#### Parameters
-
-• **nodeIdentity**: `string`
-
-The identity of the node starting the component.
-
-• **nodeLoggingConnectorType?**: `string`
-
-The node logging connector type, defaults to "node-logging".
-
-#### Returns
-
-`Promise`\<`void`\>
-
-Nothing.
-
-#### Inherited from
-
-`IComponent.start`
-
-***
-
-### stop()?
-
-> `optional` **stop**(`nodeIdentity`, `nodeLoggingConnectorType`?): `Promise`\<`void`\>
-
-The component needs to be stopped when the node is closed.
-
-#### Parameters
-
-• **nodeIdentity**: `string`
-
-The identity of the node stopping the component.
-
-• **nodeLoggingConnectorType?**: `string`
-
-The node logging connector type, defaults to "node-logging".
-
-#### Returns
-
-`Promise`\<`void`\>
-
-Nothing.
-
-#### Inherited from
-
-`IComponent.stop`
-
-***
 
 ### create()
 
-> **create**(`aliases`?, `metadata`?, `resources`?, `edges`?, `identity`?, `nodeIdentity`?): `Promise`\<`string`\>
+> **create**(`metadata`?, `aliases`?, `resources`?, `edges`?, `identity`?, `nodeIdentity`?): `Promise`\<`string`\>
 
 Create a new graph vertex.
 
 #### Parameters
 
+• **metadata?**: `unknown`
+
+The metadata for the vertex as JSON-LD.
+
 • **aliases?**: `object`[]
 
 Alternative aliases that can be used to identify the vertex.
-
-• **metadata?**: `IProperty`[]
-
-The metadata for the vertex.
 
 • **resources?**: `object`[]
 
@@ -142,7 +50,7 @@ The id of the new graph item.
 
 ### update()
 
-> **update**(`id`, `aliases`?, `metadata`?, `resources`?, `edges`?, `identity`?, `nodeIdentity`?): `Promise`\<`void`\>
+> **update**(`id`, `metadata`?, `aliases`?, `resources`?, `edges`?, `identity`?, `nodeIdentity`?): `Promise`\<`void`\>
 
 Update a graph vertex.
 
@@ -152,13 +60,13 @@ Update a graph vertex.
 
 The id of the vertex to update.
 
+• **metadata?**: `unknown`
+
+The metadata for the vertex as JSON-LD.
+
 • **aliases?**: `object`[]
 
 Alternative aliases that can be used to identify the vertex.
-
-• **metadata?**: `IProperty`[]
-
-The metadata for the vertex.
 
 • **resources?**: `object`[]
 
@@ -224,15 +132,15 @@ The vertex if found.
 
 ##### verification?
 
-> `optional` **verification**: `object`
-
-###### Index signature
-
- \[`epoch`: `number`\]: `object`
+> `optional` **verification**: `object`[]
 
 ##### vertex
 
 > **vertex**: [`IAuditableItemGraphVertex`](IAuditableItemGraphVertex.md)
+
+##### changesets?
+
+> `optional` **changesets**: [`IAuditableItemGraphChangeset`](IAuditableItemGraphChangeset.md)[]
 
 #### Throws
 
@@ -325,15 +233,3 @@ The entities, which can be partial if a limited keys list was provided.
 > `optional` **cursor**: `string`
 
 An optional cursor, when defined can be used to call find to get more entities.
-
-##### pageSize?
-
-> `optional` **pageSize**: `number`
-
-Number of entities to return.
-
-##### totalEntities
-
-> **totalEntities**: `number`
-
-Total entities length.

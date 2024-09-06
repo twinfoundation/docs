@@ -31,7 +31,6 @@
 		"@gtsc/core": "next",
 		"@gtsc/entity": "next",
 		"@gtsc/nameof": "next",
-		"@gtsc/schema": "next",
 		"@gtsc/standards-w3c-did": "next"
 	},
 	"devDependencies": {

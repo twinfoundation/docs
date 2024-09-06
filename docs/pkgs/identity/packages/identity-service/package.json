@@ -1,6 +1,6 @@
 {
 	"name": "@gtsc/identity-service",
-	"version": "0.0.5-next.14",
+	"version": "0.0.5-next.19",
 	"description": "Identity contract implementation and REST endpoint definitions",
 	"repository": {
 		"type": "git",
@@ -32,12 +32,12 @@
 		"@gtsc/api-models": "next",
 		"@gtsc/core": "next",
 		"@gtsc/crypto": "next",
+		"@gtsc/data-core": "next",
 		"@gtsc/entity": "next",
 		"@gtsc/entity-storage-models": "next",
 		"@gtsc/entity-storage-connector-memory": "next",
-		"@gtsc/identity-models": "0.0.5-next.14",
-		"@gtsc/identity-connector-entity-storage": "0.0.5-next.14",
-		"@gtsc/schema": "next",
+		"@gtsc/identity-models": "0.0.5-next.19",
+		"@gtsc/identity-connector-entity-storage": "0.0.5-next.19",
 		"@gtsc/standards-w3c-did": "next",
 		"@gtsc/vault-models": "next",
 		"@gtsc/vault-connector-entity-storage": "next",

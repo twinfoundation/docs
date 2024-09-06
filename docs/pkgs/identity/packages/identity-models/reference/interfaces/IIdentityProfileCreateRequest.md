@@ -10,8 +10,14 @@ Request to create an identity profile.
 
 The data for the request.
 
-#### properties
+#### publicProfile?
 
-> **properties**: [`IIdentityProfileProperty`](IIdentityProfileProperty.md)[]
+> `optional` **publicProfile**: `unknown`
 
-Properties for the identity.
+The public profile data.
+
+#### privateProfile?
+
+> `optional` **privateProfile**: `unknown`
+
+The private profile data.

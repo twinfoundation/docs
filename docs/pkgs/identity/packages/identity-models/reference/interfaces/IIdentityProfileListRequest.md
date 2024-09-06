@@ -4,23 +4,23 @@ Request to get a list of identities.
 
 ## Properties
 
-### query
+### query?
 
-> **query**: `object`
+> `optional` **query**: `object`
 
 The query parameters.
 
-#### filters?
+#### publicFilters?
 
-> `optional` **filters**: `string`
+> `optional` **publicFilters**: `string`
 
-The filters to apply to the list, comma separated list with color between key and value for each pair e.g. prop1:value1,prop2:value2.
+The public filters to apply to the list, comma separated list with color between key and value for each pair e.g. prop1:value1,prop2:value2.
 
-#### propertyNames?
+#### publicPropertyNames?
 
-> `optional` **propertyNames**: `string`
+> `optional` **publicPropertyNames**: `string`
 
-The properties to get for the profile, defaults to all, should be a comma separated list.
+The public properties to get for the profile, defaults to all, should be a comma separated list.
 
 #### cursor?
 

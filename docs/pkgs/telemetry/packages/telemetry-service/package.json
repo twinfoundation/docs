@@ -1,6 +1,6 @@
 {
 	"name": "@gtsc/telemetry-service",
-	"version": "0.0.5-next.5",
+	"version": "0.0.5-next.6",
 	"description": "Telemetry contract implementation and REST endpoint definitions",
 	"repository": {
 		"type": "git",
@@ -33,7 +33,7 @@
 		"@gtsc/core": "next",
 		"@gtsc/entity": "next",
 		"@gtsc/nameof": "next",
-		"@gtsc/telemetry-models": "0.0.5-next.3",
+		"@gtsc/telemetry-models": "0.0.5-next.6",
 		"@gtsc/web": "next"
 	},
 	"devDependencies": {

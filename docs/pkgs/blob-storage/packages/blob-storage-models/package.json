@@ -1,6 +1,6 @@
 {
 	"name": "@gtsc/blob-storage-models",
-	"version": "0.0.5-next.10",
+	"version": "0.0.5-next.13",
 	"description": "Models which define the structure of the blob storage contracts and connectors",
 	"repository": {
 		"type": "git",
@@ -29,8 +29,7 @@
 	},
 	"dependencies": {
 		"@gtsc/core": "next",
-		"@gtsc/nameof": "next",
-		"@gtsc/schema": "next"
+		"@gtsc/nameof": "next"
 	},
 	"devDependencies": {
 		"@gtsc/nameof-transformer": "next",

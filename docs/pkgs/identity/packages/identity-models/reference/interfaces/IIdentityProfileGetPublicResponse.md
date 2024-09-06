@@ -4,14 +4,20 @@ Response to get an identity public profile.
 
 ## Properties
 
+### headers
+
+> **headers**: `object`
+
+The response headers.
+
+#### Content-Type
+
+> **Content-Type**: `"application/ld+json"`
+
+***
+
 ### body
 
-> **body**: `object`
+> **body**: `unknown`
 
 The response payload.
-
-#### properties?
-
-> `optional` **properties**: `IProperty`[]
-
-The properties for the identity.

@@ -50,6 +50,10 @@
         {
             "name": "Attestation",
             "description": "Endpoints which are modelled to access an attestation contract."
+        },
+        {
+            "name": "Auditable Item Graph",
+            "description": "Endpoints which are modelled to access an auditable item graph contract."
         }
     ],
     "paths": {
@@ -690,26 +694,18 @@
                             "examples": {
                                 "identityProfileCreateRequestExample": {
                                     "value": {
-                                        "properties": [
-                                            {
-                                                "key": "role",
-                                                "type": "https://schema.org/Text",
-                                                "value": "User",
-                                                "isPublic": false
-                                            },
-                                            {
-                                                "key": "email",
-                                                "type": "https://schema.org/Text",
-                                                "value": "john@example.com",
-                                                "isPublic": false
-                                            },
-                                            {
-                                                "key": "name",
-                                                "type": "https://schema.org/Text",
-                                                "value": "John Smith",
-                                                "isPublic": true
-                                            }
-                                        ]
+                                        "publicProfile": {
+                                            "@context": "http://schema.org/",
+                                            "@type": "Person",
+                                            "jobTitle": "Professor",
+                                            "name": "Jane Doe"
+                                        },
+                                        "privateProfile": {
+                                            "@context": "http://schema.org/",
+                                            "@type": "Person",
+                                            "telephone": "(425) 123-4567",
+                                            "url": "http://www.janedoe.com"
+                                        }
                                     }
                                 }
                             }
@@ -810,14 +806,23 @@
                 ],
                 "parameters": [
                     {
-                        "name": "propertyNames",
-                        "description": "The properties to get for the profile, defaults to all, should be a comma separated list.",
+                        "name": "publicPropertyNames",
+                        "description": "The public properties to get for the profile, defaults to all, should be a comma separated list.",
                         "in": "query",
                         "required": false,
                         "schema": {
                             "type": "string"
                         },
-                        "example": "role,email,name"
+                        "example": "name,jobTitle"
+                    },
+                    {
+                        "name": "privatePropertyNames",
+                        "description": "The private properties to get for the profile, defaults to all, should be a comma separated list.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
                     }
                 ],
                 "security": [
@@ -837,26 +842,12 @@
                                     "identityGetResponseExample": {
                                         "value": {
                                             "identity": "did:iota:tst:0xc57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70",
-                                            "properties": [
-                                                {
-                                                    "key": "role",
-                                                    "type": "https://schema.org/Text",
-                                                    "value": "User",
-                                                    "isPublic": false
-                                                },
-                                                {
-                                                    "key": "email",
-                                                    "type": "https://schema.org/Text",
-                                                    "value": "john@example.com",
-                                                    "isPublic": false
-                                                },
-                                                {
-                                                    "key": "name",
-                                                    "type": "https://schema.org/Text",
-                                                    "value": "John Smith",
-                                                    "isPublic": true
-                                                }
-                                            ]
+                                            "publicProfile": {
+                                                "@context": "http://schema.org/",
+                                                "@type": "Person",
+                                                "jobTitle": "Professor",
+                                                "name": "Jane Doe"
+                                            }
                                         }
                                     }
                                 }
@@ -965,25 +956,18 @@
                             "examples": {
                                 "identityProfileUpdateRequestExample": {
                                     "value": {
-                                        "properties": [
-                                            {
-                                                "key": "role",
-                                                "type": "https://schema.org/Text",
-                                                "value": "User",
-                                                "isPublic": false
-                                            },
-                                            {
-                                                "key": "email",
-                                                "type": "https://schema.org/Text",
-                                                "isPublic": false
-                                            },
-                                            {
-                                                "key": "name",
-                                                "type": "https://schema.org/Text",
-                                                "value": "John Smith",
-                                                "isPublic": true
-                                            }
-                                        ]
+                                        "publicProfile": {
+                                            "@context": "http://schema.org/",
+                                            "@type": "Person",
+                                            "jobTitle": "Professor",
+                                            "name": "Jane Doe"
+                                        },
+                                        "privateProfile": {
+                                            "@context": "http://schema.org/",
+                                            "@type": "Person",
+                                            "telephone": "(425) 123-4567",
+                                            "url": "http://www.janedoe.com"
+                                        }
                                     }
                                 }
                             }
@@ -1191,7 +1175,7 @@
                     },
                     {
                         "name": "propertyNames",
-                        "description": "The properties to get for the profile, defaults to all, should be a comma separated list.",
+                        "description": "The properties to get for the public profile, defaults to all, should be a comma separated list.",
                         "in": "query",
                         "required": false,
                         "schema": {
@@ -1204,33 +1188,28 @@
                     "200": {
                         "description": "Response to get an identity public profile.",
                         "content": {
-                            "application/json": {
+                            "application/ld+json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/IdentityProfileGetPublicResponse"
                                 },
                                 "examples": {
                                     "identityGetPublicResponseExample": {
                                         "value": {
-                                            "properties": [
-                                                {
-                                                    "key": "role",
-                                                    "type": "https://schema.org/Text",
-                                                    "value": "User"
-                                                },
-                                                {
-                                                    "key": "email",
-                                                    "type": "https://schema.org/Text",
-                                                    "value": "john@example.com"
-                                                },
-                                                {
-                                                    "key": "name",
-                                                    "type": "https://schema.org/Text",
-                                                    "value": "John Smith"
-                                                }
-                                            ]
+                                            "@context": "http://schema.org/",
+                                            "@type": "Person",
+                                            "jobTitle": "Professor",
+                                            "name": "Jane Doe"
                                         }
                                     }
                                 }
+                            }
+                        },
+                        "headers": {
+                            "Content-Type": {
+                                "schema": {
+                                    "type": "string"
+                                },
+                                "description": "e.g. application/ld+json"
                             }
                         }
                     },
@@ -1306,8 +1285,8 @@
                 ],
                 "parameters": [
                     {
-                        "name": "filters",
-                        "description": "The filters to apply to the list, comma separated list with color between key and value for each pair e.g. prop1:value1,prop2:value2.",
+                        "name": "publicFilters",
+                        "description": "The public filters to apply to the list, comma separated list with color between key and value for each pair e.g. prop1:value1,prop2:value2.",
                         "in": "query",
                         "required": false,
                         "schema": {
@@ -1315,8 +1294,8 @@
                         }
                     },
                     {
-                        "name": "propertyNames",
-                        "description": "The properties to get for the profile, defaults to all, should be a comma separated list.",
+                        "name": "publicPropertyNames",
+                        "description": "The public properties to get for the profile, defaults to all, should be a comma separated list.",
                         "in": "query",
                         "required": false,
                         "schema": {
@@ -1361,19 +1340,15 @@
                                             "items": [
                                                 {
                                                     "identity": "did:iota:tst:0xc57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70",
-                                                    "properties": [
-                                                        {
-                                                            "key": "email",
-                                                            "type": "https://schema.org/Text",
-                                                            "value": "john@example.com",
-                                                            "isPublic": false
-                                                        }
-                                                    ]
+                                                    "publicProfile": {
+                                                        "@context": "http://schema.org/",
+                                                        "@type": "Person",
+                                                        "jobTitle": "Professor",
+                                                        "name": "Jane Doe"
+                                                    }
                                                 }
                                             ],
-                                            "cursor": "1",
-                                            "pageSize": 10,
-                                            "totalEntities": 20
+                                            "cursor": "1"
                                         }
                                     }
                                 }
@@ -1464,13 +1439,11 @@
                                 "blobStorageCreateExample": {
                                     "value": {
                                         "blob": "VGhlIHF1aWNrIGJyb3duIGZveCBqdW1wcyBvdmVyIHRoZSBsYXp5IGRvZw==",
-                                        "metadata": [
-                                            {
-                                                "key": "filename",
-                                                "type": "https://schema.org/Text",
-                                                "value": "my-file.pdf"
-                                            }
-                                        ]
+                                        "metadata": {
+                                            "@context": "http://schema.org/",
+                                            "@type": "DigitalDocument",
+                                            "name": "myfile.pdf"
+                                        }
                                     }
                                 }
                             }
@@ -1595,13 +1568,11 @@
                                 "examples": {
                                     "blobStorageGetResponseExample": {
                                         "value": {
-                                            "metadata": [
-                                                {
-                                                    "key": "filename",
-                                                    "type": "https://schema.org/Text",
-                                                    "value": "my-file.pdf"
-                                                }
-                                            ],
+                                            "metadata": {
+                                                "@context": "http://schema.org/",
+                                                "@type": "DigitalDocument",
+                                                "name": "myfile.pdf"
+                                            },
                                             "blob": "VGhlIHF1aWNrIGJyb3duIGZveCBqdW1wcyBvdmVyIHRoZSBsYXp5IGRvZw=="
                                         }
                                     }
@@ -1724,13 +1695,11 @@
                             "examples": {
                                 "blobStorageUpdateExample": {
                                     "value": {
-                                        "metadata": [
-                                            {
-                                                "key": "filename",
-                                                "type": "https://schema.org/Text",
-                                                "value": "my-file.pdf"
-                                            }
-                                        ]
+                                        "metadata": {
+                                            "@context": "http://schema.org/",
+                                            "@type": "DigitalDocument",
+                                            "name": "myfile.pdf"
+                                        }
                                     }
                                 }
                             }
@@ -2059,7 +2028,7 @@
                                         "id": "my-counter",
                                         "label": "My Counter",
                                         "description": "This is my counter",
-                                        "type": "Counter",
+                                        "type": 0,
                                         "unit": "KG"
                                     }
                                 }
@@ -2150,8 +2119,9 @@
                         "description": "The type of the metric.",
                         "in": "query",
                         "required": false,
-                        "schema": {},
-                        "example": "Counter"
+                        "schema": {
+                            "$ref": "#/components/schemas/MetricType"
+                        }
                     },
                     {
                         "name": "cursor",
@@ -2192,19 +2162,17 @@
                                                 {
                                                     "id": "my-counter",
                                                     "label": "My Counter",
-                                                    "type": "Counter",
+                                                    "type": 0,
                                                     "unit": "KG"
                                                 },
                                                 {
                                                     "id": "my-counter-2",
                                                     "label": "My Counter 2",
-                                                    "type": "IncDecCounter",
+                                                    "type": 1,
                                                     "unit": "M"
                                                 }
                                             ],
-                                            "cursor": "1",
-                                            "pageSize": 10,
-                                            "totalEntities": 2
+                                            "cursor": "1"
                                         }
                                     }
                                 }
@@ -2311,7 +2279,7 @@
                                                 "id": "my-counter",
                                                 "label": "My Counter",
                                                 "description": "This is my counter",
-                                                "type": "Counter",
+                                                "type": 0,
                                                 "unit": "KG"
                                             },
                                             "value": {
@@ -2770,7 +2738,7 @@
                                             "metric": {
                                                 "id": "my-counter",
                                                 "label": "My Counter",
-                                                "type": "Counter",
+                                                "type": 0,
                                                 "unit": "KG"
                                             },
                                             "entities": [
@@ -2785,9 +2753,7 @@
                                                     "value": 11
                                                 }
                                             ],
-                                            "cursor": "1",
-                                            "pageSize": 10,
-                                            "totalEntities": 2
+                                            "cursor": "1"
                                         }
                                     }
                                 }
@@ -2977,7 +2943,9 @@
                         "description": "The level of the log entries to retrieve.",
                         "in": "query",
                         "required": false,
-                        "schema": {},
+                        "schema": {
+                            "$ref": "#/components/schemas/LogLevel"
+                        },
                         "example": "info"
                     },
                     {
@@ -3050,9 +3018,7 @@
                                                     "ts": 1715252922273
                                                 }
                                             ],
-                                            "cursor": "1",
-                                            "pageSize": 10,
-                                            "totalEntities": 20
+                                            "cursor": "1"
                                         }
                                     }
                                 }
@@ -4112,6 +4078,636 @@
                     }
                 }
             }
+        },
+        "/aig": {
+            "post": {
+                "operationId": "auditableItemGraphCreate",
+                "summary": "Create a new graph vertex",
+                "tags": [
+                    "Auditable Item Graph"
+                ],
+                "security": [
+                    {
+                        "jwtBearerAuthScheme": []
+                    }
+                ],
+                "requestBody": {
+                    "description": "Create an auditable item graph vertex.",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/AuditableItemGraphCreateRequest"
+                            },
+                            "examples": {
+                                "auditableItemGraphCreateRequestExample": {
+                                    "value": {
+                                        "metadata": {
+                                            "title": "Title",
+                                            "counter": 456
+                                        },
+                                        "aliases": [
+                                            {
+                                                "id": "bar456",
+                                                "metadata": {
+                                                    "title": "Title",
+                                                    "counter": 456
+                                                }
+                                            },
+                                            {
+                                                "id": "foo321",
+                                                "metadata": {
+                                                    "title": "Title",
+                                                    "counter": 456
+                                                }
+                                            }
+                                        ],
+                                        "resources": [
+                                            {
+                                                "id": "resource1",
+                                                "metadata": {
+                                                    "title": "Title",
+                                                    "counter": 456
+                                                }
+                                            },
+                                            {
+                                                "id": "resource2",
+                                                "metadata": {
+                                                    "title": "Title",
+                                                    "counter": 456
+                                                }
+                                            }
+                                        ],
+                                        "edges": [
+                                            {
+                                                "id": "edge1",
+                                                "relationship": "frenemy",
+                                                "metadata": {
+                                                    "title": "Title",
+                                                    "counter": 456
+                                                }
+                                            },
+                                            {
+                                                "id": "edge2",
+                                                "relationship": "end",
+                                                "metadata": {
+                                                    "title": "Title",
+                                                    "counter": 456
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "The rest request ended in created response.",
+                        "headers": {
+                            "location": {
+                                "schema": {
+                                    "type": "string"
+                                },
+                                "description": "e.g. aig:1234567890"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "The server cannot process the request, see the error field for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "GeneralError",
+                                            "message": "component.error",
+                                            "properties": {
+                                                "foo": "bar"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "You are not authorized to use the API or no credentials were supplied, see the error field for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "UnauthorizedError",
+                                            "message": "component.error"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "The server has encountered a situation it does not know how to handle, see the error field for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "InternalServerError",
+                                            "message": "component.error"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "get": {
+                "operationId": "auditableItemGraphList",
+                "summary": "Query graph vertices by id or alias",
+                "tags": [
+                    "Auditable Item Graph"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "description": "The id or alias to try and find.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "idMode",
+                        "description": "Which field to look in with the id, defaults to both.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "id",
+                                "alias",
+                                "both"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "orderBy",
+                        "description": "The order for the results, default to created.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "created",
+                                "updated"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "orderByDirection",
+                        "description": "The direction for the order, defaults to desc.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/components/schemas/SortDirection"
+                        }
+                    },
+                    {
+                        "name": "properties",
+                        "description": "The properties to return as a comma separated list, defaults to \"id,created,aliases,metadata\".",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "cursor",
+                        "description": "The optional cursor to get next chunk.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "pageSize",
+                        "description": "The maximum number of entities in a page.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "number"
+                        }
+                    }
+                ],
+                "security": [
+                    {
+                        "jwtBearerAuthScheme": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The response to getting the a list of the vertices with matching ids or aliases.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AuditableItemGraphListResponse"
+                                },
+                                "examples": {
+                                    "auditableItemGraphGetResponseExample": {
+                                        "value": {
+                                            "entities": [
+                                                {
+                                                    "id": "0101010101010101010101010101010101010101010101010101010101010101",
+                                                    "aliases": [
+                                                        {
+                                                            "id": "foo4",
+                                                            "created": 1234567890
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "cursor": "1"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "The server cannot process the request, see the error field for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "GeneralError",
+                                            "message": "component.error",
+                                            "properties": {
+                                                "foo": "bar"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "You are not authorized to use the API or no credentials were supplied, see the error field for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "UnauthorizedError",
+                                            "message": "component.error"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "The server has encountered a situation it does not know how to handle, see the error field for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "InternalServerError",
+                                            "message": "component.error"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/aig/{id}": {
+            "get": {
+                "operationId": "auditableItemGraphGet",
+                "summary": "Get a graph vertex",
+                "tags": [
+                    "Auditable Item Graph"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "description": "The id of the vertex to get.",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "style": "simple",
+                        "example": "aig:1234567890"
+                    },
+                    {
+                        "name": "includeDeleted",
+                        "description": "Whether to include deleted aliases, resource, edges, defaults to false.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    {
+                        "name": "includeChangesets",
+                        "description": "Whether to include the changesets of the vertex, defaults to false.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    {
+                        "name": "verifySignatureDepth",
+                        "description": "How many signatures to verify, none, current or all, defaults to \"none\".",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/components/schemas/VerifyDepth"
+                        }
+                    }
+                ],
+                "security": [
+                    {
+                        "jwtBearerAuthScheme": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Response to getting an auditable item graph vertex.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AuditableItemGraphGetResponse"
+                                },
+                                "examples": {
+                                    "auditableItemGraphGetResponseExample": {
+                                        "value": {
+                                            "vertex": {
+                                                "id": "aig:1234567890",
+                                                "created": 1234567890,
+                                                "updated": 1234567890,
+                                                "metadata": {
+                                                    "title": "Title",
+                                                    "counter": 456
+                                                },
+                                                "aliases": [
+                                                    {
+                                                        "id": "tst:1234567890",
+                                                        "created": 1234567890
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "The server cannot process the request, see the error field for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "GeneralError",
+                                            "message": "component.error",
+                                            "properties": {
+                                                "foo": "bar"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "You are not authorized to use the API or no credentials were supplied, see the error field for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "UnauthorizedError",
+                                            "message": "component.error"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "The server has encountered a situation it does not know how to handle, see the error field for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "InternalServerError",
+                                            "message": "component.error"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "operationId": "auditableItemGraphUpdate",
+                "summary": "Update a graph vertex",
+                "tags": [
+                    "Auditable Item Graph"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "description": "The id of the vertex to update.",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "style": "simple",
+                        "example": "aig:1234567890"
+                    }
+                ],
+                "security": [
+                    {
+                        "jwtBearerAuthScheme": []
+                    }
+                ],
+                "requestBody": {
+                    "description": "Update an auditable item graph vertex.",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/AuditableItemGraphUpdateRequest"
+                            },
+                            "examples": {
+                                "auditableItemGraphUpdateRequestExample": {
+                                    "value": {
+                                        "metadata": {
+                                            "title": "Title",
+                                            "counter": 456
+                                        },
+                                        "aliases": [
+                                            {
+                                                "id": "bar456",
+                                                "metadata": {
+                                                    "title": "Title",
+                                                    "counter": 456
+                                                }
+                                            },
+                                            {
+                                                "id": "foo321",
+                                                "metadata": {
+                                                    "title": "Title",
+                                                    "counter": 456
+                                                }
+                                            }
+                                        ],
+                                        "resources": [
+                                            {
+                                                "id": "resource1",
+                                                "metadata": {
+                                                    "title": "Title",
+                                                    "counter": 456
+                                                }
+                                            },
+                                            {
+                                                "id": "resource2",
+                                                "metadata": {
+                                                    "title": "Title",
+                                                    "counter": 456
+                                                }
+                                            }
+                                        ],
+                                        "edges": [
+                                            {
+                                                "id": "edge1",
+                                                "relationship": "frenemy",
+                                                "metadata": {
+                                                    "title": "Title",
+                                                    "counter": 456
+                                                }
+                                            },
+                                            {
+                                                "id": "edge2",
+                                                "relationship": "end",
+                                                "metadata": {
+                                                    "title": "Title",
+                                                    "counter": 456
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "204": {
+                        "description": "The rest request ended in success with no data."
+                    },
+                    "400": {
+                        "description": "The server cannot process the request, see the error field for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "GeneralError",
+                                            "message": "component.error",
+                                            "properties": {
+                                                "foo": "bar"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "You are not authorized to use the API or no credentials were supplied, see the error field for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "UnauthorizedError",
+                                            "message": "component.error"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "The server has encountered a situation it does not know how to handle, see the error field for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "InternalServerError",
+                                            "message": "component.error"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     },
     "components": {
@@ -4664,47 +5260,15 @@
             "IdentityProfileCreateRequest": {
                 "type": "object",
                 "properties": {
-                    "properties": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/IdentityProfileProperty"
-                        },
-                        "description": "Properties for the identity."
+                    "publicProfile": {
+                        "description": "The public profile data."
+                    },
+                    "privateProfile": {
+                        "description": "The private profile data."
                     }
                 },
-                "required": [
-                    "properties"
-                ],
                 "additionalProperties": false,
                 "description": "The data for the request."
-            },
-            "IdentityProfileProperty": {
-                "type": "object",
-                "properties": {
-                    "key": {
-                        "type": "string",
-                        "description": "The key for the item."
-                    },
-                    "type": {
-                        "type": "string",
-                        "description": "The type for the item."
-                    },
-                    "value": {
-                        "description": "The value for the item."
-                    },
-                    "isPublic": {
-                        "type": "boolean",
-                        "description": "Is the property public."
-                    }
-                },
-                "required": [
-                    "isPublic",
-                    "key",
-                    "type",
-                    "value"
-                ],
-                "additionalProperties": false,
-                "description": "Interface describing a contract which provides profile operations."
             },
             "IdentityProfileGetResponse": {
                 "type": "object",
@@ -4713,12 +5277,11 @@
                         "type": "string",
                         "description": "The identity of the profile, this is the authenticated user identity."
                     },
-                    "properties": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/IdentityProfileProperty"
-                        },
-                        "description": "The properties for the identity."
+                    "publicProfile": {
+                        "description": "The public profile data."
+                    },
+                    "privateProfile": {
+                        "description": "The private profile data."
                     }
                 },
                 "required": [
@@ -4728,56 +5291,18 @@
                 "description": "The response payload."
             },
             "IdentityProfileGetPublicResponse": {
-                "type": "object",
-                "properties": {
-                    "properties": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/Property"
-                        },
-                        "description": "The properties for the identity."
-                    }
-                },
-                "additionalProperties": false,
                 "description": "The response payload."
-            },
-            "Property": {
-                "type": "object",
-                "properties": {
-                    "key": {
-                        "type": "string",
-                        "description": "The key for the item."
-                    },
-                    "type": {
-                        "type": "string",
-                        "description": "The type for the item."
-                    },
-                    "value": {
-                        "description": "The value for the item."
-                    }
-                },
-                "required": [
-                    "key",
-                    "type",
-                    "value"
-                ],
-                "additionalProperties": false,
-                "description": "Interface describing a property."
             },
             "IdentityProfileUpdateRequest": {
                 "type": "object",
                 "properties": {
-                    "properties": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/IdentityProfileProperty"
-                        },
-                        "description": "Properties for the identity."
+                    "publicProfile": {
+                        "description": "The public profile data."
+                    },
+                    "privateProfile": {
+                        "description": "The private profile data."
                     }
                 },
-                "required": [
-                    "properties"
-                ],
                 "additionalProperties": false,
                 "description": "The data for the request."
             },
@@ -4793,12 +5318,8 @@
                                     "type": "string",
                                     "description": "The identity."
                                 },
-                                "properties": {
-                                    "type": "array",
-                                    "items": {
-                                        "$ref": "#/components/schemas/IdentityProfileProperty"
-                                    },
-                                    "description": "The properties for the identity."
+                                "publicProfile": {
+                                    "description": "The public profile data."
                                 }
                             },
                             "required": [
@@ -4811,19 +5332,10 @@
                     "cursor": {
                         "type": "string",
                         "description": "An optional cursor, when defined can be used to call find to get more entities."
-                    },
-                    "pageSize": {
-                        "type": "number",
-                        "description": "Number of entities to return."
-                    },
-                    "totalEntities": {
-                        "type": "number",
-                        "description": "Total entities length."
                     }
                 },
                 "required": [
-                    "items",
-                    "totalEntities"
+                    "items"
                 ],
                 "additionalProperties": false,
                 "description": "The response payload."
@@ -4835,12 +5347,16 @@
                         "type": "string",
                         "description": "The data to store in base64 encoding."
                     },
+                    "mimeType": {
+                        "type": "string",
+                        "description": "The mime type of the blob, will be detected if left undefined."
+                    },
+                    "extension": {
+                        "type": "string",
+                        "description": "The extension of the blob, will be detected if left undefined."
+                    },
                     "metadata": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/Property"
-                        },
-                        "description": "Metadata to associate with the blob."
+                        "description": "Custom metadata to associate with the blob as JSON-LD."
                     },
                     "namespace": {
                         "type": "string",
@@ -4856,21 +5372,22 @@
             "BlobStorageGetResponse": {
                 "type": "object",
                 "properties": {
+                    "mimeType": {
+                        "type": "string",
+                        "description": "The mime type of the blob."
+                    },
+                    "extension": {
+                        "type": "string",
+                        "description": "The extension of the blob."
+                    },
                     "metadata": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/Property"
-                        },
-                        "description": "Metadata associated with the blob."
+                        "description": "Custom metadata to associate with the blob as JSON-LD."
                     },
                     "blob": {
                         "type": "string",
                         "description": "The blob in base64 format, if the includeContent flag was set in the request."
                     }
                 },
-                "required": [
-                    "metadata"
-                ],
                 "additionalProperties": false,
                 "description": "The body parameters."
             },
@@ -4919,17 +5436,18 @@
             "BlobStorageUpdateRequest": {
                 "type": "object",
                 "properties": {
+                    "mimeType": {
+                        "type": "string",
+                        "description": "The mime type of the blob, will be detected if left undefined."
+                    },
+                    "extension": {
+                        "type": "string",
+                        "description": "The extension of the blob, will be detected if left undefined."
+                    },
                     "metadata": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/Property"
-                        },
-                        "description": "Metadata to associate with the blob."
+                        "description": "Custom metadata to associate with the blob as JSON-LD."
                     }
                 },
-                "required": [
-                    "metadata"
-                ],
                 "additionalProperties": false,
                 "description": "The body parameters."
             },
@@ -4967,18 +5485,18 @@
             "MetricType": {
                 "anyOf": [
                     {
-                        "type": "string",
-                        "const": "Counter",
+                        "type": "number",
+                        "const": 0,
                         "description": "Counter."
                     },
                     {
-                        "type": "string",
-                        "const": "IncDecCounter",
+                        "type": "number",
+                        "const": 1,
                         "description": "Increment Decrement Counter."
                     },
                     {
-                        "type": "string",
-                        "const": "Gauge",
+                        "type": "number",
+                        "const": 2,
                         "description": "Gauge."
                     }
                 ],
@@ -5096,19 +5614,10 @@
                     "cursor": {
                         "type": "string",
                         "description": "An optional cursor, when defined can be used to call find to get more entities."
-                    },
-                    "pageSize": {
-                        "type": "number",
-                        "description": "Number of entities to return."
-                    },
-                    "totalEntities": {
-                        "type": "number",
-                        "description": "Total number of metric values length."
                     }
                 },
                 "required": [
-                    "entities",
-                    "totalEntities"
+                    "entities"
                 ],
                 "additionalProperties": false,
                 "description": "The response payload."
@@ -5129,20 +5638,11 @@
                     "cursor": {
                         "type": "string",
                         "description": "An optional cursor, when defined can be used to call find to get more entities."
-                    },
-                    "pageSize": {
-                        "type": "number",
-                        "description": "Number of entities to return."
-                    },
-                    "totalEntities": {
-                        "type": "number",
-                        "description": "Total number of metric values length."
                     }
                 },
                 "required": [
                     "metric",
-                    "entities",
-                    "totalEntities"
+                    "entities"
                 ],
                 "additionalProperties": false,
                 "description": "The response payload."
@@ -5206,19 +5706,10 @@
                     "cursor": {
                         "type": "string",
                         "description": "An optional cursor, when defined can be used to call find to get more entities."
-                    },
-                    "pageSize": {
-                        "type": "number",
-                        "description": "Number of entities to return."
-                    },
-                    "totalEntities": {
-                        "type": "number",
-                        "description": "Total entities length."
                     }
                 },
                 "required": [
-                    "entities",
-                    "totalEntities"
+                    "entities"
                 ],
                 "additionalProperties": false,
                 "description": "The response payload."
@@ -5450,6 +5941,450 @@
                 ],
                 "additionalProperties": false,
                 "description": "The data returned from the transfer response."
+            },
+            "AuditableItemGraphCreateRequest": {
+                "type": "object",
+                "properties": {
+                    "metadata": {
+                        "description": "The metadata to be used in the vertex as JSON-LD."
+                    },
+                    "aliases": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "string"
+                                },
+                                "metadata": {}
+                            },
+                            "required": [
+                                "id"
+                            ],
+                            "additionalProperties": false
+                        },
+                        "description": "Alternative aliases that can be used to identify the vertex."
+                    },
+                    "resources": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "string"
+                                },
+                                "metadata": {}
+                            },
+                            "required": [
+                                "id"
+                            ],
+                            "additionalProperties": false
+                        },
+                        "description": "The resources attached to the vertex."
+                    },
+                    "edges": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "string"
+                                },
+                                "relationship": {
+                                    "type": "string"
+                                },
+                                "metadata": {}
+                            },
+                            "required": [
+                                "id",
+                                "relationship"
+                            ],
+                            "additionalProperties": false
+                        },
+                        "description": "The edges connected to the vertex."
+                    }
+                },
+                "additionalProperties": false,
+                "description": "The data to be used in the vertex."
+            },
+            "VerifyDepth": {
+                "anyOf": [
+                    {
+                        "type": "string",
+                        "const": "none",
+                        "description": "Do not verify any signatures."
+                    },
+                    {
+                        "type": "string",
+                        "const": "current",
+                        "description": "Verify only the most recent signature."
+                    },
+                    {
+                        "type": "string",
+                        "const": "all",
+                        "description": "Verify all the signatures."
+                    }
+                ],
+                "description": "How deep to verify the signatures."
+            },
+            "AuditableItemGraphGetResponse": {
+                "type": "object",
+                "properties": {
+                    "vertex": {
+                        "$ref": "#/components/schemas/AuditableItemGraphVertex"
+                    },
+                    "changesets": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/AuditableItemGraphChangeset"
+                        },
+                        "description": "Changesets containing time sliced changes to the vertex."
+                    },
+                    "verified": {
+                        "type": "boolean",
+                        "description": "Whether the vertex has been verified."
+                    },
+                    "verification": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "created": {
+                                    "type": "number"
+                                },
+                                "failure": {
+                                    "type": "string"
+                                },
+                                "failureProperties": {
+                                    "type": "object",
+                                    "additionalProperties": {}
+                                }
+                            },
+                            "required": [
+                                "created"
+                            ],
+                            "additionalProperties": false
+                        },
+                        "description": "The verification for the changesets including any failure information."
+                    }
+                },
+                "required": [
+                    "vertex"
+                ],
+                "additionalProperties": false,
+                "description": "The response body."
+            },
+            "AuditableItemGraphVertex": {
+                "type": "object",
+                "properties": {
+                    "nodeIdentity": {
+                        "type": "string",
+                        "description": "The identity of the node which controls the vertex."
+                    },
+                    "aliases": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/AuditableItemGraphAlias"
+                        },
+                        "description": "Alternative aliases that can be used to identify the vertex."
+                    },
+                    "resources": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/AuditableItemGraphResource"
+                        },
+                        "description": "The resources attached to the vertex."
+                    },
+                    "edges": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/AuditableItemGraphEdge"
+                        },
+                        "description": "Edges connected to the vertex."
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "The id of the element."
+                    },
+                    "created": {
+                        "type": "number",
+                        "description": "The timestamp of when the element was created."
+                    },
+                    "updated": {
+                        "type": "number",
+                        "description": "The timestamp of when the element was updated."
+                    },
+                    "metadata": {
+                        "description": "The metadata to associate with the element as JSON-LD."
+                    }
+                },
+                "additionalProperties": false
+            },
+            "AuditableItemGraphAlias": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "metadata": {
+                        "description": "The metadata to associate with the element as JSON-LD."
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "The id of the element."
+                    },
+                    "created": {
+                        "type": "number",
+                        "description": "The timestamp of when the element was created."
+                    },
+                    "updated": {
+                        "type": "number",
+                        "description": "The timestamp of when the element was updated."
+                    },
+                    "deleted": {
+                        "type": "number",
+                        "description": "The timestamp of when the element was deleted, as we never actually remove items."
+                    }
+                },
+                "required": [
+                    "created",
+                    "id"
+                ],
+                "description": "Interface describing an alias for a vertex."
+            },
+            "AuditableItemGraphResource": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "metadata": {
+                        "description": "The metadata to associate with the element as JSON-LD."
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "The id of the element."
+                    },
+                    "created": {
+                        "type": "number",
+                        "description": "The timestamp of when the element was created."
+                    },
+                    "updated": {
+                        "type": "number",
+                        "description": "The timestamp of when the element was updated."
+                    },
+                    "deleted": {
+                        "type": "number",
+                        "description": "The timestamp of when the element was deleted, as we never actually remove items."
+                    }
+                },
+                "required": [
+                    "created",
+                    "id"
+                ],
+                "description": "Interface describing an auditable item graph vertex resource."
+            },
+            "AuditableItemGraphEdge": {
+                "type": "object",
+                "properties": {
+                    "metadata": {
+                        "description": "The metadata to associate with the element as JSON-LD."
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "The id of the element."
+                    },
+                    "created": {
+                        "type": "number",
+                        "description": "The timestamp of when the element was created."
+                    },
+                    "updated": {
+                        "type": "number",
+                        "description": "The timestamp of when the element was updated."
+                    },
+                    "deleted": {
+                        "type": "number",
+                        "description": "The timestamp of when the element was deleted, as we never actually remove items."
+                    },
+                    "relationship": {
+                        "type": "string",
+                        "description": "The relationship between the two vertices."
+                    }
+                },
+                "required": [
+                    "created",
+                    "id",
+                    "relationship"
+                ],
+                "additionalProperties": false,
+                "description": "Interface describing an edge between two vertices in an auditable item graph."
+            },
+            "AuditableItemGraphChangeset": {
+                "type": "object",
+                "properties": {
+                    "created": {
+                        "type": "number",
+                        "description": "The timestamp of when the changeset was created."
+                    },
+                    "userIdentity": {
+                        "type": "string",
+                        "description": "The user identity that created the changes."
+                    },
+                    "patches": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/PatchOperation"
+                        },
+                        "description": "The patches for the integrity at this epoch."
+                    },
+                    "hash": {
+                        "type": "string",
+                        "description": "The hash for the changeset."
+                    },
+                    "immutableStorageId": {
+                        "type": "string",
+                        "description": "The immutable storage id containing the signature for the changeset."
+                    }
+                },
+                "required": [
+                    "created",
+                    "hash",
+                    "patches",
+                    "userIdentity"
+                ],
+                "additionalProperties": false,
+                "description": "Interface describing a set of updates to the vertex."
+            },
+            "PatchOperation": {
+                "type": "object",
+                "properties": {
+                    "op": {
+                        "type": "string",
+                        "enum": [
+                            "add",
+                            "remove",
+                            "replace",
+                            "move",
+                            "copy",
+                            "test"
+                        ],
+                        "description": "The operation that was performed on the item."
+                    },
+                    "path": {
+                        "type": "string",
+                        "description": "The path to the object that was changed."
+                    },
+                    "from": {
+                        "type": "string",
+                        "description": "The path the value was copied or moved from."
+                    },
+                    "value": {
+                        "description": "The value to add."
+                    }
+                },
+                "required": [
+                    "op",
+                    "path"
+                ],
+                "additionalProperties": false,
+                "description": "Interface describing a patch operation to add a property."
+            },
+            "AuditableItemGraphUpdateRequest": {
+                "type": "object",
+                "properties": {
+                    "metadata": {
+                        "description": "The metadata to be used in the vertex as JSON-LD."
+                    },
+                    "aliases": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "string"
+                                },
+                                "metadata": {}
+                            },
+                            "required": [
+                                "id"
+                            ],
+                            "additionalProperties": false
+                        },
+                        "description": "Alternative aliases that can be used to identify the vertex."
+                    },
+                    "resources": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "string"
+                                },
+                                "metadata": {}
+                            },
+                            "required": [
+                                "id"
+                            ],
+                            "additionalProperties": false
+                        },
+                        "description": "The resources attached to the vertex."
+                    },
+                    "edges": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "string"
+                                },
+                                "relationship": {
+                                    "type": "string"
+                                },
+                                "metadata": {}
+                            },
+                            "required": [
+                                "id",
+                                "relationship"
+                            ],
+                            "additionalProperties": false
+                        },
+                        "description": "The edges connected to the vertex."
+                    }
+                },
+                "additionalProperties": false,
+                "description": "The data to be used in the vertex."
+            },
+            "SortDirection": {
+                "anyOf": [
+                    {
+                        "type": "string",
+                        "const": "asc",
+                        "description": "Ascending."
+                    },
+                    {
+                        "type": "string",
+                        "const": "desc",
+                        "description": "Descending."
+                    }
+                ],
+                "description": "The sort directions."
+            },
+            "AuditableItemGraphListResponse": {
+                "type": "object",
+                "properties": {
+                    "entities": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/AuditableItemGraphVertex"
+                        },
+                        "description": "The entities, which can be partial if a limited keys list was provided."
+                    },
+                    "cursor": {
+                        "type": "string",
+                        "description": "An optional cursor, when defined can be used to call find to get more entities."
+                    }
+                },
+                "required": [
+                    "entities"
+                ],
+                "additionalProperties": false,
+                "description": "The response payload."
             }
         },
         "securitySchemes": {

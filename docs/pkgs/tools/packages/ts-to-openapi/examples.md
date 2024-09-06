@@ -106,7 +106,6 @@ Processing Models //work/node_modules/@gtsc/entity-storage-connector-memory/dist
 Processing Models //work/node_modules/@gtsc/entity-storage-models/dist/types/models/**/*.ts
 Processing Models //work/node_modules/@gtsc/identity-connector-entity-storage/dist/types/models/**/*.ts
 Processing Models //work/node_modules/@gtsc/identity-models/dist/types/models/**/*.ts
-Processing Models //work/node_modules/@gtsc/schema/dist/types/models/**/*.ts
 Processing Models //work/node_modules/@gtsc/services/dist/types/models/**/*.ts
 Processing Models //work/node_modules/@gtsc/vault-connector-entity-storage/dist/types/models/**/*.ts
 Processing Models //work/node_modules/@gtsc/vault-models/dist/types/models/**/*.ts

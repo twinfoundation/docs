@@ -22,12 +22,16 @@ The id for the identity.
 
 ***
 
-### properties?
+### publicProfile?
 
-> `optional` **properties**: `object`
+> `optional` **publicProfile**: `unknown`
 
-The properties for the profile.
+The public profile data.
 
-#### Index signature
+***
 
- \[`key`: `string`\]: [`IdentityProfileProperty`](IdentityProfileProperty.md)
+### privateProfile?
+
+> `optional` **privateProfile**: `unknown`
+
+The private profile data.

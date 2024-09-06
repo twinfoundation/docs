@@ -1,6 +1,6 @@
 {
 	"name": "@gtsc/logging-connector-entity-storage",
-	"version": "0.0.5-next.12",
+	"version": "0.0.5-next.13",
 	"description": "Logging connector implementation using entity storage",
 	"repository": {
 		"type": "git",
@@ -31,7 +31,7 @@
 		"@gtsc/core": "next",
 		"@gtsc/entity": "next",
 		"@gtsc/nameof": "next",
-		"@gtsc/logging-models": "0.0.5-next.12"
+		"@gtsc/logging-models": "0.0.5-next.13"
 	},
 	"peerDependencies": {
 		"@gtsc/entity-storage-models": ">= 0.0.5-next.1 || >= 0.0.5",
