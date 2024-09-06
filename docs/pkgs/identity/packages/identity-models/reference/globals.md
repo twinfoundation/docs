@@ -10,7 +10,6 @@
 - [IIdentityConnector](interfaces/IIdentityConnector.md)
 - [IIdentityProfileComponent](interfaces/IIdentityProfileComponent.md)
 - [IIdentityProfileConnector](interfaces/IIdentityProfileConnector.md)
-- [IIdentityProfileProperty](interfaces/IIdentityProfileProperty.md)
 - [IIdentityProfileCreateRequest](interfaces/IIdentityProfileCreateRequest.md)
 - [IIdentityProfileGetPublicRequest](interfaces/IIdentityProfileGetPublicRequest.md)
 - [IIdentityProfileGetPublicResponse](interfaces/IIdentityProfileGetPublicResponse.md)

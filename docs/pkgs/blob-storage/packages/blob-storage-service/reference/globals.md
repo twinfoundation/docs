@@ -4,7 +4,6 @@
 
 - [BlobStorageService](classes/BlobStorageService.md)
 - [BlobMetadata](classes/BlobMetadata.md)
-- [BlobMetadataProperty](classes/BlobMetadataProperty.md)
 
 ## Interfaces
 

@@ -1,6 +1,6 @@
 {
 	"name": "@gtsc/telemetry-connector-entity-storage",
-	"version": "0.0.5-next.5",
+	"version": "0.0.5-next.6",
 	"description": "Telemetry connector implementation using entity storage",
 	"repository": {
 		"type": "git",
@@ -34,7 +34,7 @@
 		"@gtsc/entity-storage-connector-memory": "next",
 		"@gtsc/logging-models": "next",
 		"@gtsc/nameof": "next",
-		"@gtsc/telemetry-models": "0.0.5-next.5"
+		"@gtsc/telemetry-models": "0.0.5-next.6"
 	},
 	"devDependencies": {
 		"@gtsc/nameof-transformer": "next",

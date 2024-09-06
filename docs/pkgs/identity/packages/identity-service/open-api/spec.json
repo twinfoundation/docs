@@ -135,26 +135,18 @@
                             "examples": {
                                 "identityProfileCreateRequestExample": {
                                     "value": {
-                                        "properties": [
-                                            {
-                                                "key": "role",
-                                                "type": "https://schema.org/Text",
-                                                "value": "User",
-                                                "isPublic": false
-                                            },
-                                            {
-                                                "key": "email",
-                                                "type": "https://schema.org/Text",
-                                                "value": "john@example.com",
-                                                "isPublic": false
-                                            },
-                                            {
-                                                "key": "name",
-                                                "type": "https://schema.org/Text",
-                                                "value": "John Smith",
-                                                "isPublic": true
-                                            }
-                                        ]
+                                        "publicProfile": {
+                                            "@context": "http://schema.org/",
+                                            "@type": "Person",
+                                            "jobTitle": "Professor",
+                                            "name": "Jane Doe"
+                                        },
+                                        "privateProfile": {
+                                            "@context": "http://schema.org/",
+                                            "@type": "Person",
+                                            "telephone": "(425) 123-4567",
+                                            "url": "http://www.janedoe.com"
+                                        }
                                     }
                                 }
                             }
@@ -255,14 +247,23 @@
                 ],
                 "parameters": [
                     {
-                        "name": "propertyNames",
-                        "description": "The properties to get for the profile, defaults to all, should be a comma separated list.",
+                        "name": "publicPropertyNames",
+                        "description": "The public properties to get for the profile, defaults to all, should be a comma separated list.",
                         "in": "query",
                         "required": false,
                         "schema": {
                             "type": "string"
                         },
-                        "example": "role,email,name"
+                        "example": "name,jobTitle"
+                    },
+                    {
+                        "name": "privatePropertyNames",
+                        "description": "The private properties to get for the profile, defaults to all, should be a comma separated list.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
                     }
                 ],
                 "security": [
@@ -282,26 +283,12 @@
                                     "identityGetResponseExample": {
                                         "value": {
                                             "identity": "did:iota:tst:0xc57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70",
-                                            "properties": [
-                                                {
-                                                    "key": "role",
-                                                    "type": "https://schema.org/Text",
-                                                    "value": "User",
-                                                    "isPublic": false
-                                                },
-                                                {
-                                                    "key": "email",
-                                                    "type": "https://schema.org/Text",
-                                                    "value": "john@example.com",
-                                                    "isPublic": false
-                                                },
-                                                {
-                                                    "key": "name",
-                                                    "type": "https://schema.org/Text",
-                                                    "value": "John Smith",
-                                                    "isPublic": true
-                                                }
-                                            ]
+                                            "publicProfile": {
+                                                "@context": "http://schema.org/",
+                                                "@type": "Person",
+                                                "jobTitle": "Professor",
+                                                "name": "Jane Doe"
+                                            }
                                         }
                                     }
                                 }
@@ -410,25 +397,18 @@
                             "examples": {
                                 "identityProfileUpdateRequestExample": {
                                     "value": {
-                                        "properties": [
-                                            {
-                                                "key": "role",
-                                                "type": "https://schema.org/Text",
-                                                "value": "User",
-                                                "isPublic": false
-                                            },
-                                            {
-                                                "key": "email",
-                                                "type": "https://schema.org/Text",
-                                                "isPublic": false
-                                            },
-                                            {
-                                                "key": "name",
-                                                "type": "https://schema.org/Text",
-                                                "value": "John Smith",
-                                                "isPublic": true
-                                            }
-                                        ]
+                                        "publicProfile": {
+                                            "@context": "http://schema.org/",
+                                            "@type": "Person",
+                                            "jobTitle": "Professor",
+                                            "name": "Jane Doe"
+                                        },
+                                        "privateProfile": {
+                                            "@context": "http://schema.org/",
+                                            "@type": "Person",
+                                            "telephone": "(425) 123-4567",
+                                            "url": "http://www.janedoe.com"
+                                        }
                                     }
                                 }
                             }
@@ -636,7 +616,7 @@
                     },
                     {
                         "name": "propertyNames",
-                        "description": "The properties to get for the profile, defaults to all, should be a comma separated list.",
+                        "description": "The properties to get for the public profile, defaults to all, should be a comma separated list.",
                         "in": "query",
                         "required": false,
                         "schema": {
@@ -649,33 +629,28 @@
                     "200": {
                         "description": "Response to get an identity public profile.",
                         "content": {
-                            "application/json": {
+                            "application/ld+json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/IdentityProfileGetPublicResponse"
                                 },
                                 "examples": {
                                     "identityGetPublicResponseExample": {
                                         "value": {
-                                            "properties": [
-                                                {
-                                                    "key": "role",
-                                                    "type": "https://schema.org/Text",
-                                                    "value": "User"
-                                                },
-                                                {
-                                                    "key": "email",
-                                                    "type": "https://schema.org/Text",
-                                                    "value": "john@example.com"
-                                                },
-                                                {
-                                                    "key": "name",
-                                                    "type": "https://schema.org/Text",
-                                                    "value": "John Smith"
-                                                }
-                                            ]
+                                            "@context": "http://schema.org/",
+                                            "@type": "Person",
+                                            "jobTitle": "Professor",
+                                            "name": "Jane Doe"
                                         }
                                     }
                                 }
+                            }
+                        },
+                        "headers": {
+                            "Content-Type": {
+                                "schema": {
+                                    "type": "string"
+                                },
+                                "description": "e.g. application/ld+json"
                             }
                         }
                     },
@@ -751,8 +726,8 @@
                 ],
                 "parameters": [
                     {
-                        "name": "filters",
-                        "description": "The filters to apply to the list, comma separated list with color between key and value for each pair e.g. prop1:value1,prop2:value2.",
+                        "name": "publicFilters",
+                        "description": "The public filters to apply to the list, comma separated list with color between key and value for each pair e.g. prop1:value1,prop2:value2.",
                         "in": "query",
                         "required": false,
                         "schema": {
@@ -760,8 +735,8 @@
                         }
                     },
                     {
-                        "name": "propertyNames",
-                        "description": "The properties to get for the profile, defaults to all, should be a comma separated list.",
+                        "name": "publicPropertyNames",
+                        "description": "The public properties to get for the profile, defaults to all, should be a comma separated list.",
                         "in": "query",
                         "required": false,
                         "schema": {
@@ -806,19 +781,15 @@
                                             "items": [
                                                 {
                                                     "identity": "did:iota:tst:0xc57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70",
-                                                    "properties": [
-                                                        {
-                                                            "key": "email",
-                                                            "type": "https://schema.org/Text",
-                                                            "value": "john@example.com",
-                                                            "isPublic": false
-                                                        }
-                                                    ]
+                                                    "publicProfile": {
+                                                        "@context": "http://schema.org/",
+                                                        "@type": "Person",
+                                                        "jobTitle": "Professor",
+                                                        "name": "Jane Doe"
+                                                    }
                                                 }
                                             ],
-                                            "cursor": "1",
-                                            "pageSize": 10,
-                                            "totalEntities": 20
+                                            "cursor": "1"
                                         }
                                     }
                                 }
@@ -1301,47 +1272,15 @@
             "IdentityProfileCreateRequest": {
                 "type": "object",
                 "properties": {
-                    "properties": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/IdentityProfileProperty"
-                        },
-                        "description": "Properties for the identity."
+                    "publicProfile": {
+                        "description": "The public profile data."
+                    },
+                    "privateProfile": {
+                        "description": "The private profile data."
                     }
                 },
-                "required": [
-                    "properties"
-                ],
                 "additionalProperties": false,
                 "description": "The data for the request."
-            },
-            "IdentityProfileProperty": {
-                "type": "object",
-                "properties": {
-                    "key": {
-                        "type": "string",
-                        "description": "The key for the item."
-                    },
-                    "type": {
-                        "type": "string",
-                        "description": "The type for the item."
-                    },
-                    "value": {
-                        "description": "The value for the item."
-                    },
-                    "isPublic": {
-                        "type": "boolean",
-                        "description": "Is the property public."
-                    }
-                },
-                "required": [
-                    "isPublic",
-                    "key",
-                    "type",
-                    "value"
-                ],
-                "additionalProperties": false,
-                "description": "Interface describing a contract which provides profile operations."
             },
             "IdentityProfileGetResponse": {
                 "type": "object",
@@ -1350,12 +1289,11 @@
                         "type": "string",
                         "description": "The identity of the profile, this is the authenticated user identity."
                     },
-                    "properties": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/IdentityProfileProperty"
-                        },
-                        "description": "The properties for the identity."
+                    "publicProfile": {
+                        "description": "The public profile data."
+                    },
+                    "privateProfile": {
+                        "description": "The private profile data."
                     }
                 },
                 "required": [
@@ -1365,56 +1303,18 @@
                 "description": "The response payload."
             },
             "IdentityProfileGetPublicResponse": {
-                "type": "object",
-                "properties": {
-                    "properties": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/Property"
-                        },
-                        "description": "The properties for the identity."
-                    }
-                },
-                "additionalProperties": false,
                 "description": "The response payload."
-            },
-            "Property": {
-                "type": "object",
-                "properties": {
-                    "key": {
-                        "type": "string",
-                        "description": "The key for the item."
-                    },
-                    "type": {
-                        "type": "string",
-                        "description": "The type for the item."
-                    },
-                    "value": {
-                        "description": "The value for the item."
-                    }
-                },
-                "required": [
-                    "key",
-                    "type",
-                    "value"
-                ],
-                "additionalProperties": false,
-                "description": "Interface describing a property."
             },
             "IdentityProfileUpdateRequest": {
                 "type": "object",
                 "properties": {
-                    "properties": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/IdentityProfileProperty"
-                        },
-                        "description": "Properties for the identity."
+                    "publicProfile": {
+                        "description": "The public profile data."
+                    },
+                    "privateProfile": {
+                        "description": "The private profile data."
                     }
                 },
-                "required": [
-                    "properties"
-                ],
                 "additionalProperties": false,
                 "description": "The data for the request."
             },
@@ -1430,12 +1330,8 @@
                                     "type": "string",
                                     "description": "The identity."
                                 },
-                                "properties": {
-                                    "type": "array",
-                                    "items": {
-                                        "$ref": "#/components/schemas/IdentityProfileProperty"
-                                    },
-                                    "description": "The properties for the identity."
+                                "publicProfile": {
+                                    "description": "The public profile data."
                                 }
                             },
                             "required": [
@@ -1448,19 +1344,10 @@
                     "cursor": {
                         "type": "string",
                         "description": "An optional cursor, when defined can be used to call find to get more entities."
-                    },
-                    "pageSize": {
-                        "type": "number",
-                        "description": "Number of entities to return."
-                    },
-                    "totalEntities": {
-                        "type": "number",
-                        "description": "Total entities length."
                     }
                 },
                 "required": [
-                    "items",
-                    "totalEntities"
+                    "items"
                 ],
                 "additionalProperties": false,
                 "description": "The response payload."

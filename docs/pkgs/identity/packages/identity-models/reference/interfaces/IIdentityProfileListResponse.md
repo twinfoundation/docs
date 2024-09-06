@@ -21,15 +21,3 @@ The identities.
 > `optional` **cursor**: `string`
 
 An optional cursor, when defined can be used to call find to get more entities.
-
-#### pageSize?
-
-> `optional` **pageSize**: `number`
-
-Number of entities to return.
-
-#### totalEntities
-
-> **totalEntities**: `number`
-
-Total entities length.

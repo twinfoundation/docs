@@ -1,6 +1,6 @@
 {
 	"name": "@gtsc/blob-storage",
-	"version": "0.0.5-next.10",
+	"version": "0.0.5-next.13",
 	"description": "Blob Storage",
 	"repository": {
 		"type": "git",

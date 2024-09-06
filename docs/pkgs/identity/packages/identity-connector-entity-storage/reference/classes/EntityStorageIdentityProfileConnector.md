@@ -1,6 +1,12 @@
-# Class: EntityStorageIdentityProfileConnector
+# Class: EntityStorageIdentityProfileConnector\<T, U\>
 
 Class which implements the identity profile connector contract.
+
+## Type parameters
+
+• **T** = `any`
+
+• **U** = `any`
 
 ## Implements
 
@@ -10,7 +16,7 @@ Class which implements the identity profile connector contract.
 
 ### new EntityStorageIdentityProfileConnector()
 
-> **new EntityStorageIdentityProfileConnector**(`options`?): [`EntityStorageIdentityProfileConnector`](EntityStorageIdentityProfileConnector.md)
+> **new EntityStorageIdentityProfileConnector**\<`T`, `U`\>(`options`?): [`EntityStorageIdentityProfileConnector`](EntityStorageIdentityProfileConnector.md)\<`T`, `U`\>
 
 Create a new instance of Identity.
 
@@ -26,7 +32,7 @@ The storage connector for the profiles, default to "identity-profile".
 
 #### Returns
 
-[`EntityStorageIdentityProfileConnector`](EntityStorageIdentityProfileConnector.md)
+[`EntityStorageIdentityProfileConnector`](EntityStorageIdentityProfileConnector.md)\<`T`, `U`\>
 
 ## Properties
 
@@ -52,7 +58,7 @@ Runtime name for the class.
 
 ### create()
 
-> **create**(`identity`, `properties`): `Promise`\<`void`\>
+> **create**(`identity`, `publicProfile`?, `privateProfile`?): `Promise`\<`void`\>
 
 Create the profile properties for an identity.
 
@@ -62,9 +68,13 @@ Create the profile properties for an identity.
 
 The identity of the profile to create.
 
-• **properties**: `IIdentityProfileProperty`[]
+• **publicProfile?**: `T`
 
-The properties to create the profile with.
+The public profile data.
+
+• **privateProfile?**: `U`
+
+The private profile data.
 
 #### Returns
 
@@ -80,7 +90,7 @@ Nothing.
 
 ### get()
 
-> **get**(`identity`, `includePrivate`?, `propertyNames`?): `Promise`\<`object`\>
+> **get**(`identity`, `publicPropertyNames`?, `privatePropertyNames`?): `Promise`\<`object`\>
 
 Get the profile properties for an identity.
 
@@ -90,13 +100,13 @@ Get the profile properties for an identity.
 
 The identity of the item to get.
 
-• **includePrivate?**: `boolean`
+• **publicPropertyNames?**: keyof `T`[]
 
-Include private properties, defaults to true.
+The public properties to get for the profile, defaults to all.
 
-• **propertyNames?**: `string`[]
+• **privatePropertyNames?**: keyof `U`[]
 
-The properties to get for the item, defaults to all.
+The private properties to get for the profile, defaults to all.
 
 #### Returns
 
@@ -104,9 +114,13 @@ The properties to get for the item, defaults to all.
 
 The items properties.
 
-##### properties?
+##### publicProfile?
 
-> `optional` **properties**: `IIdentityProfileProperty`[]
+> `optional` **publicProfile**: `Partial`\<`T`\>
+
+##### privateProfile?
+
+> `optional` **privateProfile**: `Partial`\<`U`\>
 
 #### Implementation of
 
@@ -116,7 +130,7 @@ The items properties.
 
 ### update()
 
-> **update**(`identity`, `properties`): `Promise`\<`void`\>
+> **update**(`identity`, `publicProfile`?, `privateProfile`?): `Promise`\<`void`\>
 
 Update the profile properties of an identity.
 
@@ -126,9 +140,13 @@ Update the profile properties of an identity.
 
 The identity to update.
 
-• **properties**: `IIdentityProfileProperty`[]
+• **publicProfile?**: `T`
 
-Properties for the profile, set a properties value to undefined to remove it.
+The public profile data.
+
+• **privateProfile?**: `U`
+
+The private profile data.
 
 #### Returns
 
@@ -168,23 +186,27 @@ Nothing.
 
 ### list()
 
-> **list**(`includePrivate`?, `filters`?, `propertyNames`?, `cursor`?, `pageSize`?): `Promise`\<`object`\>
+> **list**(`publicFilters`?, `privateFilters`?, `publicPropertyNames`?, `privatePropertyNames`?, `cursor`?, `pageSize`?): `Promise`\<`object`\>
 
 Get a list of the requested types.
 
 #### Parameters
 
-• **includePrivate?**: `boolean`
+• **publicFilters?**: `object`[]
 
-Include private properties, defaults to false.
+The filters to apply to the identities public profiles.
 
-• **filters?**: `object`[]
+• **privateFilters?**: `object`[]
 
-The filters to apply to the identities.
+The filters to apply to the identities private profiles.
 
-• **propertyNames?**: `string`[]
+• **publicPropertyNames?**: keyof `T`[]
 
-The properties to get for the identities, default to all if undefined.
+The public properties to get for the profile, defaults to all.
+
+• **privatePropertyNames?**: keyof `U`[]
+
+The private properties to get for the profile, defaults to all.
 
 • **cursor?**: `string`
 
@@ -211,18 +233,6 @@ The identities.
 > `optional` **cursor**: `string`
 
 An optional cursor, when defined can be used to call find to get more entities.
-
-##### pageSize?
-
-> `optional` **pageSize**: `number`
-
-Number of entities to return.
-
-##### totalEntities
-
-> **totalEntities**: `number`
-
-Total entities length.
 
 #### Implementation of
 

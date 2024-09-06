@@ -16,8 +16,14 @@ The response payload.
 
 The identity of the profile, this is the authenticated user identity.
 
-#### properties?
+#### publicProfile?
 
-> `optional` **properties**: [`IIdentityProfileProperty`](IIdentityProfileProperty.md)[]
+> `optional` **publicProfile**: `unknown`
 
-The properties for the identity.
+The public profile data.
+
+#### privateProfile?
+
+> `optional` **privateProfile**: `unknown`
+
+The private profile data.

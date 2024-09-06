@@ -10,11 +10,23 @@ Response to get an entry from blob storage.
 
 The body parameters.
 
-#### metadata
+#### mimeType?
 
-> **metadata**: `IProperty`[]
+> `optional` **mimeType**: `string`
 
-Metadata associated with the blob.
+The mime type of the blob.
+
+#### extension?
+
+> `optional` **extension**: `string`
+
+The extension of the blob.
+
+#### metadata?
+
+> `optional` **metadata**: `unknown`
+
+Custom metadata to associate with the blob as JSON-LD.
 
 #### blob?
 

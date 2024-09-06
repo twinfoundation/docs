@@ -46,62 +46,6 @@ Runtime name for the class.
 
 ## Methods
 
-### getEndpointWithPrefix()
-
-> **getEndpointWithPrefix**(): `string`
-
-Get the endpoint with the prefix for the namespace.
-
-#### Returns
-
-`string`
-
-The endpoint with namespace prefix attached.
-
-#### Inherited from
-
-`BaseRestClient.getEndpointWithPrefix`
-
-***
-
-### fetch()
-
-> **fetch**\<`T`, `U`\>(`route`, `method`, `request`?): `Promise`\<`U`\>
-
-Perform a request in json format.
-
-#### Type parameters
-
-• **T** *extends* `IHttpRequest`\<`any`\>
-
-• **U** *extends* `IHttpResponse`\<`any`\>
-
-#### Parameters
-
-• **route**: `string`
-
-The route of the request.
-
-• **method**: `HttpMethod`
-
-The http method.
-
-• **request?**: `T`
-
-Request to send to the endpoint.
-
-#### Returns
-
-`Promise`\<`U`\>
-
-The response.
-
-#### Inherited from
-
-`BaseRestClient.fetch`
-
-***
-
 ### createMetric()
 
 > **createMetric**(`metric`): `Promise`\<`void`\>
@@ -277,18 +221,6 @@ The metrics.
 
 An optional cursor, when defined can be used to call find to get more values.
 
-##### pageSize?
-
-> `optional` **pageSize**: `number`
-
-Number of values to return.
-
-##### totalEntities
-
-> **totalEntities**: `number`
-
-Total entities length.
-
 #### Implementation of
 
 `ITelemetryComponent.query`
@@ -351,18 +283,6 @@ The values for the metric.
 > `optional` **cursor**: `string`
 
 An optional cursor, when defined can be used to call find to get more values.
-
-##### pageSize?
-
-> `optional` **pageSize**: `number`
-
-Number of values to return.
-
-##### totalEntities
-
-> **totalEntities**: `number`
-
-Total entities length.
 
 #### Implementation of
 

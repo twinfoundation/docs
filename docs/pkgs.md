@@ -16,7 +16,6 @@ This is the overview of the packages.
 - [@gtsc/crypto](pkgs/framework/packages/crypto/overview) - Contains helper methods and classes which implement cryptographic functions
 - [@gtsc/image](pkgs/framework/packages/image/overview) - Classes for image manipulation
 - [@gtsc/qr](pkgs/framework/packages/qr/overview) - Package for creating QR codes
-- [@gtsc/schema](pkgs/framework/packages/schema/overview) - Definitions and helpers for using with schemas
 - [@gtsc/web](pkgs/framework/packages/web/overview) - Contains classes for use with web operations
 - [@gtsc/cli-core](pkgs/framework/packages/cli-core/overview) - Core classes for building a CLI
 - [@gtsc/crypto-cli](pkgs/framework/packages/crypto-cli/overview) - A command line interface for interacting with the crypto tools
@@ -24,6 +23,16 @@ This is the overview of the packages.
 ## Standards
 
 - [@gtsc/standards-w3c-did](pkgs/standards/packages/standards-w3c-did/overview) - Models which define the structure of W3C DID Standard
+
+## Data
+
+- [@gtsc/data-core](pkgs/data/packages/data-core/overview) - Definitions and helpers for using with data and schemas
+- [@gtsc/data-framework](pkgs/data/packages/data-framework/overview) - Models which define the structure of framework types
+- [@gtsc/data-json-ld](pkgs/data/packages/data-json-ld/overview) - Models which define the structure of JSON LD
+- [@gtsc/data-schema-org](pkgs/data/packages/data-schema-org/overview) - Models which define the structure of schema.org Standard
+- [@gtsc/data-gs1](pkgs/data/packages/data-gs1/overview) - Models which define the structure of GS1 Standard
+- [@gtsc/data-unece](pkgs/data/packages/data-unece/overview) - Models which define the structure of UN/CEFACT Standard
+- [@gtsc/data-vda](pkgs/data/packages/data-vda/overview) - Models which define the structure of VDA JAIF Standard
 
 ## API
 
@@ -95,9 +104,9 @@ This is the overview of the packages.
 
 - [@gtsc/identity-models](pkgs/identity/packages/identity-models/overview) - Models which define the structure of the contracts and connectors
 - [@gtsc/identity-connector-entity-storage](pkgs/identity/packages/identity-connector-entity-storage/overview) - Identity connector implementation using entity storage
-- [@gtsc/identity-connector-iota](pkgs/identity/packages/identity-connector-iota/overview) - Identity connector implementation using IOTA
 - [@gtsc/identity-service](pkgs/identity/packages/identity-service/overview) - Identity contract implementation and REST endpoint definitions
 - [@gtsc/identity-rest-client](pkgs/identity/packages/identity-rest-client/overview) - Identity contract implementation which can connect to REST endpoints
+- [@gtsc/identity-connector-iota](pkgs/identity/packages/identity-connector-iota/overview) - Identity connector implementation using IOTA
 - [@gtsc/identity-cli](pkgs/identity/packages/identity-cli/overview) - A command line interface for interacting with the identity connectors
 
 ## NFT
@@ -125,7 +134,7 @@ This is the overview of the packages.
 - [@gtsc/auditable-item-graph-service](pkgs/auditable-item-graph/packages/auditable-item-graph-service/overview) - Auditable Item Graph contract implementation and REST endpoint definitions
 - [@gtsc/auditable-item-graph-rest-client](pkgs/auditable-item-graph/packages/auditable-item-graph-rest-client/overview) - Auditable Item Graph contract implementation which can connect to REST endpoints
 
-## Applications
+## Workbench
 
 - [@gtsc/workbench-server](pkgs/workbench/apps/workbench-server/overview) - Serve APIs using the specified configuration
 - [@gtsc/workbench-ui](pkgs/workbench/apps/workbench-ui/overview) - UI to demonstate the APIs

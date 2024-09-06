@@ -16,7 +16,7 @@ Class to helper with fetch operations.
 
 ### fetch()
 
-> `static` **fetch**(`source`, `endpoint`, `path`, `method`, `body`?, `options`?): `Promise`\<`Response`\>
+> `static` **fetch**(`source`, `url`, `method`, `body`?, `options`?): `Promise`\<`Response`\>
 
 Perform a fetch request.
 
@@ -26,13 +26,9 @@ Perform a fetch request.
 
 The source for the request.
 
-• **endpoint**: `string`
+• **url**: `string`
 
-The base endpoint for the request.
-
-• **path**: `string`
-
-The path of the request.
+The url for the request.
 
 • **method**: [`HttpMethod`](../type-aliases/HttpMethod.md)
 
@@ -42,7 +38,7 @@ The http method.
 
 Request to send to the endpoint.
 
-• **options?**: [`IFetchOptions`](../interfaces/IFetchOptions.md)
+• **options?**: `Omit`\<[`IFetchOptions`](../interfaces/IFetchOptions.md), `"cacheTtlSeconds"`\>
 
 Options for sending the requests.
 
@@ -56,7 +52,7 @@ The response.
 
 ### fetchJson()
 
-> `static` **fetchJson**\<`T`, `U`\>(`source`, `endpoint`, `path`, `method`, `requestData`?, `options`?): `Promise`\<`U`\>
+> `static` **fetchJson**\<`T`, `U`\>(`source`, `url`, `method`, `requestData`?, `options`?): `Promise`\<`U`\>
 
 Perform a request in json format.
 
@@ -72,13 +68,9 @@ Perform a request in json format.
 
 The source for the request.
 
-• **endpoint**: `string`
+• **url**: `string`
 
-The base endpoint for the request.
-
-• **path**: `string`
-
-The path of the request.
+The url for the request.
 
 • **method**: [`HttpMethod`](../type-aliases/HttpMethod.md)
 
@@ -102,7 +94,7 @@ The response.
 
 ### fetchBinary()
 
-> `static` **fetchBinary**\<`T`\>(`source`, `endpoint`, `path`, `method`, `requestData`?, `options`?): `Promise`\<`Uint8Array` \| `T`\>
+> `static` **fetchBinary**\<`T`\>(`source`, `url`, `method`, `requestData`?, `options`?): `Promise`\<`Uint8Array` \| `T`\>
 
 Perform a request for binary data.
 
@@ -116,13 +108,9 @@ Perform a request for binary data.
 
 The source for the request.
 
-• **endpoint**: `string`
+• **url**: `string`
 
-The base endpoint for the request.
-
-• **path**: `string`
-
-The path of the request.
+The url for the request.
 
 • **method**: `"GET"` \| `"POST"`
 
@@ -141,3 +129,57 @@ Options for sending the requests.
 `Promise`\<`Uint8Array` \| `T`\>
 
 The response.
+
+***
+
+### clearCache()
+
+> `static` **clearCache**(): `void`
+
+Clears the cache.
+
+#### Returns
+
+`void`
+
+***
+
+### getCacheEntry()
+
+> `static` **getCacheEntry**\<`T`\>(`url`): `Promise`\<`undefined` \| `T`\>
+
+Get a cache entry.
+
+#### Type parameters
+
+• **T**
+
+#### Parameters
+
+• **url**: `string`
+
+The url for the request.
+
+#### Returns
+
+`Promise`\<`undefined` \| `T`\>
+
+The cache entry if it exists.
+
+***
+
+### removeCacheEntry()
+
+> `static` **removeCacheEntry**(`url`): `void`
+
+Remove a cache entry.
+
+#### Parameters
+
+• **url**: `string`
+
+The url for the request.
+
+#### Returns
+
+`void`

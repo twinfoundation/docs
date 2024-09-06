@@ -6,7 +6,7 @@
 - [AuditableItemGraphAlias](classes/AuditableItemGraphAlias.md)
 - [AuditableItemGraphChangeset](classes/AuditableItemGraphChangeset.md)
 - [AuditableItemGraphEdge](classes/AuditableItemGraphEdge.md)
-- [AuditableItemGraphProperty](classes/AuditableItemGraphProperty.md)
+- [AuditableItemGraphPatch](classes/AuditableItemGraphPatch.md)
 - [AuditableItemGraphResource](classes/AuditableItemGraphResource.md)
 - [AuditableItemGraphVertex](classes/AuditableItemGraphVertex.md)
 

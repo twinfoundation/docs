@@ -591,5 +591,3 @@ True if the signature is valid.
 #### Implementation of
 
 `IIdentityConnector.verifyProof`
-
-***

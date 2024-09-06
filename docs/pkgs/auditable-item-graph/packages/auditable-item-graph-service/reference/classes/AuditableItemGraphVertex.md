@@ -38,9 +38,9 @@ The timestamp of when the vertex was created.
 
 ***
 
-### updated
+### updated?
 
-> **updated**: `number`
+> `optional` **updated**: `number`
 
 The timestamp of when the vertex was last updated.
 
@@ -54,19 +54,19 @@ Combined alias index for the vertex used for querying.
 
 ***
 
+### metadata?
+
+> `optional` **metadata**: `unknown`
+
+Metadata to associate with the vertex as JSON-LD.
+
+***
+
 ### aliases?
 
 > `optional` **aliases**: [`AuditableItemGraphAlias`](AuditableItemGraphAlias.md)[]
 
 Alternative aliases that can be used to identify the vertex.
-
-***
-
-### metadata?
-
-> `optional` **metadata**: [`AuditableItemGraphProperty`](AuditableItemGraphProperty.md)[]
-
-Metadata to associate with the vertex.
 
 ***
 
@@ -83,11 +83,3 @@ The resources attached to the vertex.
 > `optional` **edges**: [`AuditableItemGraphEdge`](AuditableItemGraphEdge.md)[]
 
 Edges connected to the vertex.
-
-***
-
-### changesets?
-
-> `optional` **changesets**: [`AuditableItemGraphChangeset`](AuditableItemGraphChangeset.md)[]
-
-Changesets containing time sliced changes to the vertex.

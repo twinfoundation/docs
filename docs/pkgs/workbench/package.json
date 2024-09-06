@@ -1,7 +1,7 @@
 {
 	"name": "@gtsc/workbench",
 	"version": "0.0.1-next.1",
-	"description": "Applications",
+	"description": "Workbench",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/gtscio/workbench.git"

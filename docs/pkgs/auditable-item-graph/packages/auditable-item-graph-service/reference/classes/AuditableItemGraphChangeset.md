@@ -14,6 +14,22 @@ Class describing a set of updates to the vertex.
 
 ## Properties
 
+### hash
+
+> **hash**: `string`
+
+The hash of the changeset.
+
+***
+
+### vertexId
+
+> **vertexId**: `string`
+
+The vertex the changeset belongs to.
+
+***
+
 ### created
 
 > **created**: `number`
@@ -30,11 +46,11 @@ The identity of the user who made the changeset.
 
 ***
 
-### hash
+### patches
 
-> **hash**: `string`
+> **patches**: [`AuditableItemGraphPatch`](AuditableItemGraphPatch.md)[]
 
-The hash of the changeset.
+The patches in the changeset.
 
 ***
 

@@ -1,6 +1,6 @@
 {
 	"name": "@gtsc/identity",
-	"version": "0.0.5-next.14",
+	"version": "0.0.5-next.19",
 	"description": "Identity",
 	"repository": {
 		"type": "git",
@@ -41,9 +41,9 @@
 	"workspaces": [
 		"packages/identity-models",
 		"packages/identity-connector-entity-storage",
-		"packages/identity-connector-iota",
 		"packages/identity-service",
 		"packages/identity-rest-client",
+		"packages/identity-connector-iota",
 		"packages/identity-cli"
 	],
 	"type": "module"

@@ -26,11 +26,15 @@ The vault connector type, defaults to "vault".
 
 • **options.vertexEntityStorageType?**: `string`
 
-The entity storage for vertices, defaults to "vertex".
+The entity storage for vertices, defaults to "auditable-item-graph-vertex".
 
 • **options.integrityImmutableStorageType?**: `string`
 
 The immutable storage for audit trail, defaults to "auditable-item-graph".
+
+• **options.changesetEntityStorageType?**: `string`
+
+The entity storage for changesets, defaults to "auditable-item-graph-changeset".
 
 • **options.identityConnectorType?**: `string`
 
@@ -68,19 +72,19 @@ Runtime name for the class.
 
 ### create()
 
-> **create**(`aliases`?, `metadata`?, `resources`?, `edges`?, `identity`?, `nodeIdentity`?): `Promise`\<`string`\>
+> **create**(`metadata`?, `aliases`?, `resources`?, `edges`?, `identity`?, `nodeIdentity`?): `Promise`\<`string`\>
 
 Create a new graph vertex.
 
 #### Parameters
 
+• **metadata?**: `unknown`
+
+The metadata for the vertex as JSON-LD.
+
 • **aliases?**: `object`[]
 
 Alternative aliases that can be used to identify the vertex.
-
-• **metadata?**: `IProperty`[]
-
-The metadata for the vertex.
 
 • **resources?**: `object`[]
 
@@ -128,7 +132,7 @@ Additional options for the get operation.
 
 • **options.includeDeleted?**: `boolean`
 
-Whether to include deleted aliases, resource, edges, defaults to false.
+Whether to include deleted/updated aliases, resource, edges, defaults to false.
 
 • **options.includeChangesets?**: `boolean`
 
@@ -150,15 +154,15 @@ The vertex if found.
 
 ##### verification?
 
-> `optional` **verification**: `object`
-
-###### Index signature
-
- \[`epoch`: `number`\]: `object`
+> `optional` **verification**: `object`[]
 
 ##### vertex
 
 > **vertex**: `IAuditableItemGraphVertex`
+
+##### changesets?
+
+> `optional` **changesets**: `IAuditableItemGraphChangeset`[]
 
 #### Implementation of
 
@@ -172,7 +176,7 @@ NotFoundError if the vertex is not found.
 
 ### update()
 
-> **update**(`id`, `aliases`?, `metadata`?, `resources`?, `edges`?, `identity`?, `nodeIdentity`?): `Promise`\<`void`\>
+> **update**(`id`, `metadata`?, `aliases`?, `resources`?, `edges`?, `identity`?, `nodeIdentity`?): `Promise`\<`void`\>
 
 Update a graph vertex.
 
@@ -182,13 +186,13 @@ Update a graph vertex.
 
 The id of the vertex to update.
 
+• **metadata?**: `unknown`
+
+The metadata for the vertex.
+
 • **aliases?**: `object`[]
 
 Alternative aliases that can be used to identify the vertex.
-
-• **metadata?**: `IProperty`[]
-
-The metadata for the vertex.
 
 • **resources?**: `object`[]
 
@@ -307,18 +311,6 @@ The entities, which can be partial if a limited keys list was provided.
 > `optional` **cursor**: `string`
 
 An optional cursor, when defined can be used to call find to get more entities.
-
-##### pageSize?
-
-> `optional` **pageSize**: `number`
-
-Number of entities to return.
-
-##### totalEntities
-
-> **totalEntities**: `number`
-
-Total entities length.
 
 #### Implementation of
 

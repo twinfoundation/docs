@@ -18,9 +18,9 @@ The identity to get the profile for.
 
 ***
 
-### query
+### query?
 
-> **query**: `object`
+> `optional` **query**: `object`
 
 The query parameters.
 
@@ -28,4 +28,4 @@ The query parameters.
 
 > `optional` **propertyNames**: `string`
 
-The properties to get for the profile, defaults to all, should be a comma separated list.
+The properties to get for the public profile, defaults to all, should be a comma separated list.

@@ -50,7 +50,7 @@ Runtime name for the class.
 
 #### Implementation of
 
-[`ILoggingConnector`](../interfaces/ILoggingConnector.md).[`CLASS_NAME`](../interfaces/ILoggingConnector.md#class_name)
+`ILoggingConnector.CLASS_NAME`
 
 ## Methods
 
@@ -124,18 +124,6 @@ The entities, which can be partial if a limited keys list was provided.
 > `optional` **cursor**: `string`
 
 An optional cursor, when defined can be used to call find to get more entities.
-
-##### pageSize?
-
-> `optional` **pageSize**: `number`
-
-Number of entities to return.
-
-##### totalEntities
-
-> **totalEntities**: `number`
-
-Total entities length.
 
 #### Implementation of
 

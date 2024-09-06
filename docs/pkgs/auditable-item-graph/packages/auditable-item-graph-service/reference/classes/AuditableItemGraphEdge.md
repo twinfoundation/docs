@@ -48,6 +48,6 @@ The relationship between the two vertices.
 
 ### metadata?
 
-> `optional` **metadata**: [`AuditableItemGraphProperty`](AuditableItemGraphProperty.md)[]
+> `optional` **metadata**: `unknown`
 
-Metadata to associate with the edge.
+Metadata to associate with the edge as JSON-LD.

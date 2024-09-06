@@ -1,4 +1,4 @@
-# Interface: IIdentityProfileConnector
+# Interface: IIdentityProfileConnector\<T, U\>
 
 Interface describing a contract which provides profile operations.
 
@@ -6,103 +6,17 @@ Interface describing a contract which provides profile operations.
 
 - `IComponent`
 
-## Properties
+## Type parameters
 
-### CLASS\_NAME
+• **T** = `any`
 
-> `readonly` **CLASS\_NAME**: `string`
-
-The name of the component.
-
-#### Inherited from
-
-`IComponent.CLASS_NAME`
+• **U** = `any`
 
 ## Methods
 
-### bootstrap()?
-
-> `optional` **bootstrap**(`nodeLoggingConnectorType`?): `Promise`\<`boolean`\>
-
-Bootstrap the component by creating and initializing any resources it needs.
-
-#### Parameters
-
-• **nodeLoggingConnectorType?**: `string`
-
-The node logging connector type, defaults to "node-logging".
-
-#### Returns
-
-`Promise`\<`boolean`\>
-
-True if the bootstrapping process was successful.
-
-#### Inherited from
-
-`IComponent.bootstrap`
-
-***
-
-### start()?
-
-> `optional` **start**(`nodeIdentity`, `nodeLoggingConnectorType`?): `Promise`\<`void`\>
-
-The component needs to be started when the node is initialized.
-
-#### Parameters
-
-• **nodeIdentity**: `string`
-
-The identity of the node starting the component.
-
-• **nodeLoggingConnectorType?**: `string`
-
-The node logging connector type, defaults to "node-logging".
-
-#### Returns
-
-`Promise`\<`void`\>
-
-Nothing.
-
-#### Inherited from
-
-`IComponent.start`
-
-***
-
-### stop()?
-
-> `optional` **stop**(`nodeIdentity`, `nodeLoggingConnectorType`?): `Promise`\<`void`\>
-
-The component needs to be stopped when the node is closed.
-
-#### Parameters
-
-• **nodeIdentity**: `string`
-
-The identity of the node stopping the component.
-
-• **nodeLoggingConnectorType?**: `string`
-
-The node logging connector type, defaults to "node-logging".
-
-#### Returns
-
-`Promise`\<`void`\>
-
-Nothing.
-
-#### Inherited from
-
-`IComponent.stop`
-
-***
-
 ### create()
 
-> **create**(`identity`, `properties`): `Promise`\<`void`\>
+> **create**(`identity`, `publicProfile`?, `privateProfile`?): `Promise`\<`void`\>
 
 Create the profile properties for an identity.
 
@@ -112,9 +26,13 @@ Create the profile properties for an identity.
 
 The identity of the profile to create.
 
-• **properties**: [`IIdentityProfileProperty`](IIdentityProfileProperty.md)[]
+• **publicProfile?**: `T`
 
-The properties to create the profile with.
+The public profile data as JSON-LD.
+
+• **privateProfile?**: `U`
+
+The private profile data as JSON-LD.
 
 #### Returns
 
@@ -126,7 +44,7 @@ Nothing.
 
 ### get()
 
-> **get**(`identity`, `includePrivate`?, `propertyNames`?): `Promise`\<`object`\>
+> **get**(`identity`, `publicPropertyNames`?, `privatePropertyNames`?): `Promise`\<`object`\>
 
 Get the profile properties for an identity.
 
@@ -136,29 +54,33 @@ Get the profile properties for an identity.
 
 The identity of the item to get.
 
-• **includePrivate?**: `boolean`
+• **publicPropertyNames?**: keyof `T`[]
 
-Include private properties, defaults to true.
+The public properties to get for the profile, defaults to all.
 
-• **propertyNames?**: `string`[]
+• **privatePropertyNames?**: keyof `U`[]
 
-The properties to get for the item, defaults to all.
+The private properties to get for the profile, defaults to all.
 
 #### Returns
 
 `Promise`\<`object`\>
 
-The items properties.
+The identity profile, will only return private data if you have correct permissions.
 
-##### properties?
+##### publicProfile?
 
-> `optional` **properties**: [`IIdentityProfileProperty`](IIdentityProfileProperty.md)[]
+> `optional` **publicProfile**: `Partial`\<`T`\>
+
+##### privateProfile?
+
+> `optional` **privateProfile**: `Partial`\<`U`\>
 
 ***
 
 ### update()
 
-> **update**(`identity`, `properties`): `Promise`\<`void`\>
+> **update**(`identity`, `publicProfile`?, `privateProfile`?): `Promise`\<`void`\>
 
 Update the profile properties of an identity.
 
@@ -168,9 +90,13 @@ Update the profile properties of an identity.
 
 The identity to update.
 
-• **properties**: [`IIdentityProfileProperty`](IIdentityProfileProperty.md)[]
+• **publicProfile?**: `T`
 
-Properties for the profile, set a properties value to undefined to remove it.
+The public profile data as JSON-LD.
+
+• **privateProfile?**: `U`
+
+The private profile data as JSON-LD.
 
 #### Returns
 
@@ -202,23 +128,27 @@ Nothing.
 
 ### list()
 
-> **list**(`includePrivate`?, `filters`?, `propertyNames`?, `cursor`?, `pageSize`?): `Promise`\<`object`\>
+> **list**(`publicFilters`?, `privateFilters`?, `publicPropertyNames`?, `privatePropertyNames`?, `cursor`?, `pageSize`?): `Promise`\<`object`\>
 
 Get a list of the requested identities.
 
 #### Parameters
 
-• **includePrivate?**: `boolean`
+• **publicFilters?**: `object`[]
 
-Include private properties, defaults to false.
+The filters to apply to the identities public profiles.
 
-• **filters?**: `object`[]
+• **privateFilters?**: `object`[]
 
-The filters to apply to the identities.
+The filters to apply to the identities private profiles.
 
-• **propertyNames?**: `string`[]
+• **publicPropertyNames?**: keyof `T`[]
 
-The properties to get for the identities, default to all if undefined.
+The public properties to get for the profile, defaults to all.
+
+• **privatePropertyNames?**: keyof `U`[]
+
+The private properties to get for the profile, defaults to all.
 
 • **cursor?**: `string`
 
@@ -238,22 +168,10 @@ The list of items and cursor for paging.
 
 > **items**: `object`[]
 
-The identities.
+The identity profiles.
 
 ##### cursor?
 
 > `optional` **cursor**: `string`
 
 An optional cursor, when defined can be used to call find to get more entities.
-
-##### pageSize?
-
-> `optional` **pageSize**: `number`
-
-Number of entities to return.
-
-##### totalEntities
-
-> **totalEntities**: `number`
-
-Total entities length.

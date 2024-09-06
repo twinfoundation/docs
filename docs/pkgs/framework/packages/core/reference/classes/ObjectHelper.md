@@ -126,7 +126,7 @@ The combined deep merge of the objects.
 
 ### equal()
 
-> `static` **equal**\<`T`\>(`obj1`, `obj2`): `boolean`
+> `static` **equal**\<`T`\>(`obj1`, `obj2`, `strictPropertyOrder`?): `boolean`
 
 Does one object equal another.
 
@@ -143,6 +143,10 @@ The first object to compare.
 • **obj2**: `T`
 
 The second object to compare.
+
+• **strictPropertyOrder?**: `boolean`
+
+Should the properties be in the same order, defaults to true.
 
 #### Returns
 
@@ -240,13 +244,41 @@ Pick a subset of properties from an object.
 
 #### Parameters
 
-• **obj**: `T`
+• **obj**: `undefined` \| `T`
 
 The object to pick the properties from.
 
 • **keys?**: keyof `T`[]
 
 The property keys to pick.
+
+#### Returns
+
+`Partial`\<`T`\>
+
+The partial object.
+
+***
+
+### omit()
+
+> `static` **omit**\<`T`\>(`obj`, `keys`?): `Partial`\<`T`\>
+
+Omit a subset of properties from an object.
+
+#### Type parameters
+
+• **T**
+
+#### Parameters
+
+• **obj**: `undefined` \| `T`
+
+The object to omit the properties from.
+
+• **keys?**: keyof `T`[]
+
+The property keys to omit.
 
 #### Returns
 
