@@ -1,6 +1,6 @@
 {
 	"name": "@gtsc/auditable-item-graph",
-	"version": "0.0.5-next.12",
+	"version": "0.0.5-next.16",
 	"description": "Auditable Item Graph",
 	"repository": {
 		"type": "git",

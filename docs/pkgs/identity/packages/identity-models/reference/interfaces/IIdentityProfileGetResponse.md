@@ -18,12 +18,12 @@ The identity of the profile, this is the authenticated user identity.
 
 #### publicProfile?
 
-> `optional` **publicProfile**: `unknown`
+> `optional` **publicProfile**: `Partial`\<`IJsonLdDocument`\>
 
 The public profile data.
 
 #### privateProfile?
 
-> `optional` **privateProfile**: `unknown`
+> `optional` **privateProfile**: `Partial`\<`IJsonLdDocument`\>
 
 The private profile data.

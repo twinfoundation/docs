@@ -1,6 +1,6 @@
 {
 	"name": "@gtsc/nft-connector-iota",
-	"version": "0.0.5-next.9",
+	"version": "0.0.5-next.10",
 	"description": "Implementation of the NFT connector using IOTA",
 	"repository": {
 		"type": "git",
@@ -32,7 +32,7 @@
 		"@gtsc/crypto": "next",
 		"@gtsc/dlt-iota": "next",
 		"@gtsc/nameof": "next",
-		"@gtsc/nft-models": "0.0.5-next.9",
+		"@gtsc/nft-models": "0.0.5-next.10",
 		"@iota/sdk-wasm": "1.1.3",
 		"@gtsc/vault-models": "next",
 		"@gtsc/wallet-models": "next"

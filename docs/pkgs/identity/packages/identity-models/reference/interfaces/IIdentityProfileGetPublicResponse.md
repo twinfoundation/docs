@@ -18,6 +18,6 @@ The response headers.
 
 ### body
 
-> **body**: `unknown`
+> **body**: `Partial`\<`IJsonLdDocument`\>
 
 The response payload.

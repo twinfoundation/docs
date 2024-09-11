@@ -8,13 +8,13 @@ Client for performing identity through to REST endpoints.
 
 ## Type parameters
 
-• **T** = `any`
+• **T** *extends* `IJsonLdDocument` = `IJsonLdDocument`
 
-• **U** = `any`
+• **U** *extends* `IJsonLdDocument` = `IJsonLdDocument`
 
 ## Implements
 
-- `IIdentityProfileComponent`
+- `IIdentityProfileComponent`\<`T`, `U`\>
 
 ## Constructors
 
@@ -122,7 +122,7 @@ The identity and the items properties.
 
 ### getPublic()
 
-> **getPublic**(`identity`, `propertyNames`?): `Promise`\<`undefined` \| `Partial`\<`T`\>\>
+> **getPublic**(`identity`, `propertyNames`?): `Promise`\<`Partial`\<`T`\>\>
 
 Get the public profile properties for an identity.
 
@@ -138,7 +138,7 @@ The public properties to get for the profile, defaults to all.
 
 #### Returns
 
-`Promise`\<`undefined` \| `Partial`\<`T`\>\>
+`Promise`\<`Partial`\<`T`\>\>
 
 The items properties.
 
@@ -156,11 +156,11 @@ Update the profile properties of an identity.
 
 #### Parameters
 
-• **publicProfile?**: `unknown`
+• **publicProfile?**: `T`
 
 The public profile data as JSON-LD.
 
-• **privateProfile?**: `unknown`
+• **privateProfile?**: `U`
 
 The private profile data as JSON-LD.
 

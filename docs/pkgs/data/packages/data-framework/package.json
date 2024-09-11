@@ -1,6 +1,6 @@
 {
 	"name": "@gtsc/data-framework",
-	"version": "0.0.5-next.7",
+	"version": "0.0.5-next.21",
 	"description": "Models which define the structure of framework types",
 	"repository": {
 		"type": "git",
@@ -29,12 +29,15 @@
 	},
 	"dependencies": {
 		"@gtsc/core": "next",
-		"@gtsc/data-core": "0.0.5-next.7",
+		"@gtsc/data-core": "0.0.5-next.21",
+		"@gtsc/data-json-ld": "0.0.5-next.21",
 		"@gtsc/entity": "next",
-		"@gtsc/nameof": "next"
+		"@gtsc/nameof": "next",
+		"@types/json-schema": "7.0.15"
 	},
 	"devDependencies": {
 		"@gtsc/nameof-transformer": "next",
+		"@rollup/plugin-json": "6.1.0",
 		"@vitest/coverage-v8": "1.6.0",
 		"copyfiles": "2.4.1",
 		"replace-in-files-cli": "2.2.0",

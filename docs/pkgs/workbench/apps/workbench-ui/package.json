@@ -30,6 +30,7 @@
 		"@gtsc/core": "next",
 		"@gtsc/crypto": "next",
 		"@gtsc/data-core": "next",
+		"@gtsc/data-json-ld": "next",
 		"@gtsc/identity-models": "next",
 		"@gtsc/identity-rest-client": "next",
 		"@gtsc/qr": "next",

@@ -54,28 +54,6 @@ Result containing errors if there are any.
 
 ***
 
-### extractTypes()
-
-> `static` **extractTypes**(`schema`, `types`): `void`
-
-Extracts the types from the schema.
-
-#### Parameters
-
-• **schema**: `JSONSchema7`
-
-The schema to extract the types from.
-
-• **types**: `string`[]
-
-The types to add to.
-
-#### Returns
-
-`void`
-
-***
-
 ### getPropertyType()
 
 > `static` **getPropertyType**(`schema`, `propertyName`): `undefined` \| `string`

@@ -40,6 +40,6 @@ The timestamp of when the resource was deleted, as we never actually remove item
 
 ### metadata?
 
-> `optional` **metadata**: `unknown`
+> `optional` **metadata**: `IJsonLdNodeObject`
 
 Metadata to associate with the resource as JSON-LD.

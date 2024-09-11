@@ -4,31 +4,33 @@ Response to getting an auditable item graph vertex.
 
 ## Properties
 
+### headers?
+
+> `optional` **headers**: `object`
+
+The headers which can be used to determine the response data type.
+
+#### Content-Type
+
+> **Content-Type**: `"application/json"` \| `"application/ld+json"`
+
+***
+
 ### body
 
-> **body**: `object`
+> **body**: IJsonLdDocument \| IAuditableItemGraphVertex & `object`
 
-The response body.
+The response body, id accept header is set to application/ld+json the return object is JSON-LD document.
 
-#### vertex
+#### Type declaration
 
-> **vertex**: [`IAuditableItemGraphVertex`](IAuditableItemGraphVertex.md)
-
-The vertex data.
-
-#### changesets?
-
-> `optional` **changesets**: [`IAuditableItemGraphChangeset`](IAuditableItemGraphChangeset.md)[]
-
-Changesets containing time sliced changes to the vertex.
-
-#### verified?
+##### verified?
 
 > `optional` **verified**: `boolean`
 
 Whether the vertex has been verified.
 
-#### verification?
+##### verification?
 
 > `optional` **verification**: `object`[]
 

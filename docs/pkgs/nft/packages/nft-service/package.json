@@ -1,6 +1,6 @@
 {
 	"name": "@gtsc/nft-service",
-	"version": "0.0.5-next.9",
+	"version": "0.0.5-next.10",
 	"description": "NFT contract implementation and REST endpoint definitions",
 	"repository": {
 		"type": "git",
@@ -33,12 +33,12 @@
 		"@gtsc/core": "next",
 		"@gtsc/entity": "next",
 		"@gtsc/nameof": "next",
-		"@gtsc/nft-models": "0.0.5-next.9",
+		"@gtsc/nft-models": "0.0.5-next.10",
 		"@gtsc/web": "next"
 	},
 	"devDependencies": {
 		"@gtsc/nameof-transformer": "next",
-		"@gtsc/nft-connector-entity-storage": "0.0.5-next.9",
+		"@gtsc/nft-connector-entity-storage": "0.0.5-next.10",
 		"@gtsc/ts-to-openapi": "next",
 		"@vitest/coverage-v8": "1.6.0",
 		"copyfiles": "2.4.1",

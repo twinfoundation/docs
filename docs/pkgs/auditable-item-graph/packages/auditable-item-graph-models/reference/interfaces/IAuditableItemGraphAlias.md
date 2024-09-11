@@ -58,7 +58,7 @@ The timestamp of when the element was deleted, as we never actually remove items
 
 ### metadata?
 
-> `optional` **metadata**: `unknown`
+> `optional` **metadata**: `IJsonLdNodeObject`
 
 The metadata to associate with the element as JSON-LD.
 

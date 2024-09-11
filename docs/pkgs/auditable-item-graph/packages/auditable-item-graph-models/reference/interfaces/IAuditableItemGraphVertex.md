@@ -46,7 +46,7 @@ The timestamp of when the element was updated.
 
 ### metadata?
 
-> `optional` **metadata**: `unknown`
+> `optional` **metadata**: `IJsonLdNodeObject`
 
 The metadata to associate with the element as JSON-LD.
 
@@ -85,3 +85,11 @@ The resources attached to the vertex.
 > `optional` **edges**: [`IAuditableItemGraphEdge`](IAuditableItemGraphEdge.md)[]
 
 Edges connected to the vertex.
+
+***
+
+### changesets?
+
+> `optional` **changesets**: [`IAuditableItemGraphChangeset`](IAuditableItemGraphChangeset.md)[]
+
+Changesets for the vertex.

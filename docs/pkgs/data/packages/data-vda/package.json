@@ -1,6 +1,6 @@
 {
 	"name": "@gtsc/data-vda",
-	"version": "0.0.5-next.7",
+	"version": "0.0.5-next.21",
 	"description": "Models which define the structure of VDA JAIF Standard",
 	"repository": {
 		"type": "git",
@@ -29,8 +29,8 @@
 	},
 	"dependencies": {
 		"@gtsc/core": "next",
-		"@gtsc/data-core": "0.0.5-next.7",
-		"@gtsc/data-json-ld": "0.0.5-next.7",
+		"@gtsc/data-core": "0.0.5-next.21",
+		"@gtsc/data-json-ld": "0.0.5-next.21",
 		"@gtsc/entity": "next",
 		"@gtsc/nameof": "next"
 	},

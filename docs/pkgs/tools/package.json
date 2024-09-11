@@ -1,6 +1,6 @@
 {
 	"name": "@gtsc/tools",
-	"version": "0.0.5-next.6",
+	"version": "0.0.5-next.13",
 	"description": "Tools",
 	"repository": {
 		"type": "git",
@@ -42,7 +42,8 @@
 		"packages/nameof-transformer",
 		"packages/nameof",
 		"packages/merge-locales",
-		"packages/ts-to-openapi"
+		"packages/ts-to-openapi",
+		"packages/ts-to-schema"
 	],
 	"type": "module"
 }

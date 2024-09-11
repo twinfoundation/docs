@@ -1,6 +1,6 @@
 {
 	"name": "@gtsc/auditable-item-graph-rest-client",
-	"version": "0.0.5-next.12",
+	"version": "0.0.5-next.16",
 	"description": "Auditable Item Graph contract implementation which can connect to REST endpoints",
 	"repository": {
 		"type": "git",
@@ -30,10 +30,12 @@
 	"dependencies": {
 		"@gtsc/api-core": "next",
 		"@gtsc/api-models": "next",
-		"@gtsc/auditable-item-graph-models": "0.0.5-next.12",
+		"@gtsc/auditable-item-graph-models": "0.0.5-next.16",
 		"@gtsc/core": "next",
+		"@gtsc/data-json-ld": "next",
 		"@gtsc/entity": "next",
-		"@gtsc/nameof": "next"
+		"@gtsc/nameof": "next",
+		"@gtsc/web": "next"
 	},
 	"devDependencies": {
 		"@gtsc/nameof-transformer": "next",

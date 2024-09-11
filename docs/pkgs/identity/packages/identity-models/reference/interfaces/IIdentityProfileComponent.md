@@ -8,9 +8,9 @@ Interface describing a contract which provides profile operations.
 
 ## Type parameters
 
-• **T** = `any`
+• **T** *extends* `IJsonLdDocument` = `IJsonLdDocument`
 
-• **U** = `any`
+• **U** *extends* `IJsonLdDocument` = `IJsonLdDocument`
 
 ## Methods
 
@@ -84,7 +84,7 @@ The items identity and the properties.
 
 ### getPublic()
 
-> **getPublic**(`identity`, `propertyNames`?): `Promise`\<`undefined` \| `Partial`\<`T`\>\>
+> **getPublic**(`identity`, `propertyNames`?): `Promise`\<`Partial`\<`T`\>\>
 
 Get the public profile properties for an identity.
 
@@ -100,7 +100,7 @@ The public properties to get for the profile, defaults to all.
 
 #### Returns
 
-`Promise`\<`undefined` \| `Partial`\<`T`\>\>
+`Promise`\<`Partial`\<`T`\>\>
 
 The items properties.
 

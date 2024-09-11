@@ -50,7 +50,7 @@ The user identity that created the changes.
 
 ### patches
 
-> **patches**: `IPatchOperation`[]
+> **patches**: [`IAuditableItemGraphPatchOperation`](IAuditableItemGraphPatchOperation.md)[]
 
 The patches for the integrity at this epoch.
 

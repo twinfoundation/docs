@@ -8,9 +8,9 @@ Interface describing a contract which provides profile operations.
 
 ## Type parameters
 
-• **T** = `any`
+• **T** *extends* `IJsonLdDocument` = `IJsonLdDocument`
 
-• **U** = `any`
+• **U** *extends* `IJsonLdDocument` = `IJsonLdDocument`
 
 ## Methods
 
@@ -68,13 +68,13 @@ The private properties to get for the profile, defaults to all.
 
 The identity profile, will only return private data if you have correct permissions.
 
-##### publicProfile?
+##### publicProfile
 
-> `optional` **publicProfile**: `Partial`\<`T`\>
+> **publicProfile**: `Partial`\<`T`\>
 
-##### privateProfile?
+##### privateProfile
 
-> `optional` **privateProfile**: `Partial`\<`U`\>
+> **privateProfile**: `Partial`\<`U`\>
 
 ***
 

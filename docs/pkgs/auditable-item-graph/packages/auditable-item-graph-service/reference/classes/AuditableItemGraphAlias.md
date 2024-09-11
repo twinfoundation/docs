@@ -40,6 +40,6 @@ The timestamp of when the alias was deleted, as we never actually remove items.
 
 ### metadata?
 
-> `optional` **metadata**: `unknown`
+> `optional` **metadata**: `IJsonLdNodeObject`
 
 Metadata to associate with the alias as JSON-LD.

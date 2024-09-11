@@ -16,6 +16,7 @@ Class to handle errors.
 - [`NotImplementedError`](NotImplementedError.md)
 - [`NotSupportedError`](NotSupportedError.md)
 - [`UnauthorizedError`](UnauthorizedError.md)
+- [`UnprocessableError`](UnprocessableError.md)
 - [`ValidationError`](ValidationError.md)
 
 ## Implements

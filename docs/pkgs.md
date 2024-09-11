@@ -8,6 +8,7 @@ This is the overview of the packages.
 - [@gtsc/nameof](pkgs/tools/packages/nameof/overview) - Provides the definitions for the methods which are processed by the nameof-transformer
 - [@gtsc/merge-locales](pkgs/tools/packages/merge-locales/overview) - Tool to merge locale files from all dependencies
 - [@gtsc/ts-to-openapi](pkgs/tools/packages/ts-to-openapi/overview) - Tool to convert TypeScript REST route definitions to OpenAPI Specifications
+- [@gtsc/ts-to-schema](pkgs/tools/packages/ts-to-schema/overview) - Tool to convert TypeScript definitions to JSON schemas
 
 ## Framework
 
@@ -27,8 +28,8 @@ This is the overview of the packages.
 ## Data
 
 - [@gtsc/data-core](pkgs/data/packages/data-core/overview) - Definitions and helpers for using with data and schemas
-- [@gtsc/data-framework](pkgs/data/packages/data-framework/overview) - Models which define the structure of framework types
 - [@gtsc/data-json-ld](pkgs/data/packages/data-json-ld/overview) - Models which define the structure of JSON LD
+- [@gtsc/data-framework](pkgs/data/packages/data-framework/overview) - Models which define the structure of framework types
 - [@gtsc/data-schema-org](pkgs/data/packages/data-schema-org/overview) - Models which define the structure of schema.org Standard
 - [@gtsc/data-gs1](pkgs/data/packages/data-gs1/overview) - Models which define the structure of GS1 Standard
 - [@gtsc/data-unece](pkgs/data/packages/data-unece/overview) - Models which define the structure of UN/CEFACT Standard

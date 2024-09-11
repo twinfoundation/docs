@@ -4,6 +4,18 @@ Get an auditable item graph vertex.
 
 ## Properties
 
+### headers?
+
+> `optional` **headers**: `object`
+
+The headers which can be used to determine the response data type.
+
+#### Accept
+
+> **Accept**: `"application/json"` \| `"application/ld+json"`
+
+***
+
 ### pathParams
 
 > **pathParams**: `object`
