@@ -4,4 +4,4 @@ sidebar_position: 1
 
 # Introduction
 
-An introduction to GTSC.
+An introduction to TWIN.

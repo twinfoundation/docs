@@ -1,42 +1,45 @@
-import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
 
 type FeatureItem = {
 	title: string;
-	Svg: React.ComponentType<React.ComponentProps<'svg'>>;
-	description: JSX.Element;
+	svg: string;
+	description: string;
+	href: string;
 };
 
 const FeatureList: FeatureItem[] = [
 	{
-		title: 'First Section',
-		Svg: require('@site/static/img/gtsc.svg').default,
-		description: <>Lorum Ipsem.</>
+		title: 'Introduction',
+		svg: '/img/logo.svg',
+		description: 'A short introduction to TWIN technology.',
+		href: '/docs/intro'
 	},
 	{
-		title: 'Second Section',
-		Svg: require('@site/static/img/gtsc.svg').default,
-		description: <>Lorum Ipsem.</>
+		title: 'Packages',
+		svg: '/img/logo.svg',
+		description: 'Information about the available technology packages.',
+		href: '/docs/pkgs'
 	},
 	{
-		title: 'Third Section',
-		Svg: require('@site/static/img/gtsc.svg').default,
-		description: <>Lorum Ipsem.</>
+		title: 'Lorum Ipsem',
+		svg: '/img/logo.svg',
+		description: 'Lorum Ipsem.',
+		href: '/'
 	}
 ];
 
-function Feature({ title, Svg, description }: FeatureItem) {
+function Feature({ title, svg, description, href }: FeatureItem) {
 	return (
-		<div className={clsx('col col--4')}>
-			<div className="text--center">
-				<Svg className={styles.featureSvg} role="img" />
-			</div>
-			<div className="text--center padding-horiz--md">
+		<a href={href} className={styles.feature}>
+			<div className={styles.featureHeader}>
+				<img src={svg} role="img" className={styles.featureImg} />
 				<Heading as="h3">{title}</Heading>
+			</div>
+			<div className={styles.featureDescription}>
 				<p>{description}</p>
 			</div>
-		</div>
+		</a>
 	);
 }
 
@@ -44,7 +47,7 @@ export default function HomepageFeatures(): JSX.Element {
 	return (
 		<section className={styles.features}>
 			<div className="container">
-				<div className="row">
+				<div className={styles.featuresRow}>
 					{FeatureList.map((props, idx) => (
 						<Feature key={idx} {...props} />
 					))}

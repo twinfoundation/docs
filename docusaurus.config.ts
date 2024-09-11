@@ -3,13 +3,13 @@ import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
 
 const config: Config = {
-	title: "GTSC",
-	tagline: "Global Trade and Supply Chain",
+	title: "TWIN",
+	tagline: "Trade Worldwide Information Network",
 	favicon: "img/favicon.ico",
 
-	url: "https://docs.gtsc.io",
+	url: "https://docs-next.gtsc.io",
 	baseUrl: "/",
-	organizationName: "gtscio",
+	organizationName: "TWIN",
 	projectName: "docs",
 
 	onBrokenLinks: "throw",
@@ -41,12 +41,12 @@ const config: Config = {
 	themeConfig:
 		/** @type {import('@docusaurus/preset-classic').ThemeConfig} */
 		{
-			image: "img/gtsc.svg",
+			image: "img/logo.svg",
 			navbar: {
-				title: "GTSC",
+				title: "TWIN",
 				logo: {
-					alt: "GTSC",
-					src: "img/gtsc.svg"
+					alt: "TWIN",
+					src: "img/logo.svg"
 				},
 				items: [
 					{
@@ -69,7 +69,6 @@ const config: Config = {
 				]
 			},
 			footer: {
-				style: "dark",
 				links: [
 					{
 						title: "Docs",
@@ -111,7 +110,7 @@ const config: Config = {
 						]
 					}
 				],
-				copyright: `Copyright © ${new Date().getFullYear()} GTSC`
+				copyright: `Copyright © ${new Date().getFullYear()} TWIN`
 			},
 			prism: {
 				theme: prismThemes.github,
