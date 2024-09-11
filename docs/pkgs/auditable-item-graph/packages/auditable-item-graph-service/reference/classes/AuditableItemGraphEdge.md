@@ -48,6 +48,6 @@ The relationship between the two vertices.
 
 ### metadata?
 
-> `optional` **metadata**: `unknown`
+> `optional` **metadata**: `IJsonLdNodeObject`
 
 Metadata to associate with the edge as JSON-LD.

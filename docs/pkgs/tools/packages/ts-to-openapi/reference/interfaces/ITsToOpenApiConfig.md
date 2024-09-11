@@ -65,3 +65,15 @@ The authentication methods.
 > **restRoutes**: `object`[]
 
 The packages containing routes.
+
+***
+
+### externalReferences?
+
+> `optional` **externalReferences**: `object`
+
+External type references
+
+#### Index signature
+
+ \[`id`: `string`\]: `string`

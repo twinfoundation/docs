@@ -1,6 +1,6 @@
 # Interface: IBadRequestResponse
 
-The server cannot process the request, see the error field for more details.
+The server cannot process the request, see the content for more details.
 
 ## Properties
 

@@ -66,7 +66,7 @@ The relationship between the two vertices.
 
 ### metadata?
 
-> `optional` **metadata**: `unknown`
+> `optional` **metadata**: `IJsonLdNodeObject`
 
 The metadata to associate with the element as JSON-LD.
 

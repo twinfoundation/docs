@@ -45,22 +45,25 @@
                                 "auditableItemGraphCreateRequestExample": {
                                     "value": {
                                         "metadata": {
-                                            "title": "Title",
-                                            "counter": 456
+                                            "@context": "http://schema.org/",
+                                            "@type": "Note",
+                                            "content": "This is a simple note"
                                         },
                                         "aliases": [
                                             {
                                                 "id": "bar456",
                                                 "metadata": {
-                                                    "title": "Title",
-                                                    "counter": 456
+                                                    "@context": "http://schema.org/",
+                                                    "@type": "Note",
+                                                    "content": "This is a simple note"
                                                 }
                                             },
                                             {
                                                 "id": "foo321",
                                                 "metadata": {
-                                                    "title": "Title",
-                                                    "counter": 456
+                                                    "@context": "http://schema.org/",
+                                                    "@type": "Note",
+                                                    "content": "This is a simple note"
                                                 }
                                             }
                                         ],
@@ -68,15 +71,17 @@
                                             {
                                                 "id": "resource1",
                                                 "metadata": {
-                                                    "title": "Title",
-                                                    "counter": 456
+                                                    "@context": "http://schema.org/",
+                                                    "@type": "Note",
+                                                    "content": "This is a simple note"
                                                 }
                                             },
                                             {
                                                 "id": "resource2",
                                                 "metadata": {
-                                                    "title": "Title",
-                                                    "counter": 456
+                                                    "@context": "http://schema.org/",
+                                                    "@type": "Note",
+                                                    "content": "This is a simple note"
                                                 }
                                             }
                                         ],
@@ -85,16 +90,18 @@
                                                 "id": "edge1",
                                                 "relationship": "frenemy",
                                                 "metadata": {
-                                                    "title": "Title",
-                                                    "counter": 456
+                                                    "@context": "http://schema.org/",
+                                                    "@type": "Note",
+                                                    "content": "This is a simple note"
                                                 }
                                             },
                                             {
                                                 "id": "edge2",
                                                 "relationship": "end",
                                                 "metadata": {
-                                                    "title": "Title",
-                                                    "counter": 456
+                                                    "@context": "http://schema.org/",
+                                                    "@type": "Note",
+                                                    "content": "This is a simple note"
                                                 }
                                             }
                                         ]
@@ -108,7 +115,7 @@
                     "201": {
                         "description": "The rest request ended in created response.",
                         "headers": {
-                            "location": {
+                            "Location": {
                                 "schema": {
                                     "type": "string"
                                 },
@@ -117,7 +124,7 @@
                         }
                     },
                     "400": {
-                        "description": "The server cannot process the request, see the error field for more details.",
+                        "description": "The server cannot process the request, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -138,7 +145,7 @@
                         }
                     },
                     "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied, see the error field for more details.",
+                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -156,7 +163,7 @@
                         }
                     },
                     "500": {
-                        "description": "The server has encountered a situation it does not know how to handle, see the error field for more details.",
+                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -290,7 +297,7 @@
                         }
                     },
                     "400": {
-                        "description": "The server cannot process the request, see the error field for more details.",
+                        "description": "The server cannot process the request, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -311,7 +318,7 @@
                         }
                     },
                     "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied, see the error field for more details.",
+                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -329,7 +336,7 @@
                         }
                     },
                     "500": {
-                        "description": "The server has encountered a situation it does not know how to handle, see the error field for more details.",
+                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -394,6 +401,16 @@
                         "schema": {
                             "$ref": "#/components/schemas/VerifyDepth"
                         }
+                    },
+                    {
+                        "name": "Accept",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "style": "simple",
+                        "example": "application/json"
                     }
                 ],
                 "security": [
@@ -412,29 +429,64 @@
                                 "examples": {
                                     "auditableItemGraphGetResponseExample": {
                                         "value": {
-                                            "vertex": {
-                                                "id": "aig:1234567890",
-                                                "created": 1234567890,
-                                                "updated": 1234567890,
-                                                "metadata": {
-                                                    "title": "Title",
-                                                    "counter": 456
-                                                },
-                                                "aliases": [
-                                                    {
-                                                        "id": "tst:1234567890",
-                                                        "created": 1234567890
-                                                    }
-                                                ]
-                                            }
+                                            "id": "aig:1234567890",
+                                            "created": 1234567890,
+                                            "updated": 1234567890,
+                                            "metadata": {
+                                                "@context": "http://schema.org/",
+                                                "@type": "Note",
+                                                "content": "This is a simple note"
+                                            },
+                                            "aliases": [
+                                                {
+                                                    "id": "tst:1234567890",
+                                                    "created": 1234567890
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }
+                            },
+                            "application/ld+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AuditableItemGraphGetResponse"
+                                },
+                                "examples": {
+                                    "auditableItemGraphJsonLdGetResponseExample": {
+                                        "value": {
+                                            "@context": "https://schema.gtsc.io/aig/",
+                                            "@type": "vertex",
+                                            "id": "aig:1234567890",
+                                            "created": "2024-08-22T11:55:16.271Z",
+                                            "updated": "2024-08-22T11:55:16.271Z",
+                                            "metadata": {
+                                                "@context": "http://schema.org/",
+                                                "@type": "Note",
+                                                "content": "This is a simple note"
+                                            },
+                                            "aliases": [
+                                                {
+                                                    "@type": "alias",
+                                                    "created": "2024-08-22T11:55:16.271Z",
+                                                    "id": "tst:1234567890"
+                                                }
+                                            ]
                                         }
                                     }
                                 }
                             }
+                        },
+                        "headers": {
+                            "Content-Type": {
+                                "schema": {
+                                    "type": "string"
+                                },
+                                "description": "e.g. application/ld+json"
+                            }
                         }
                     },
                     "400": {
-                        "description": "The server cannot process the request, see the error field for more details.",
+                        "description": "The server cannot process the request, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -455,7 +507,7 @@
                         }
                     },
                     "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied, see the error field for more details.",
+                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -473,7 +525,7 @@
                         }
                     },
                     "500": {
-                        "description": "The server has encountered a situation it does not know how to handle, see the error field for more details.",
+                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -528,22 +580,25 @@
                                 "auditableItemGraphUpdateRequestExample": {
                                     "value": {
                                         "metadata": {
-                                            "title": "Title",
-                                            "counter": 456
+                                            "@context": "http://schema.org/",
+                                            "@type": "Note",
+                                            "content": "This is a simple note"
                                         },
                                         "aliases": [
                                             {
                                                 "id": "bar456",
                                                 "metadata": {
-                                                    "title": "Title",
-                                                    "counter": 456
+                                                    "@context": "http://schema.org/",
+                                                    "@type": "Note",
+                                                    "content": "This is a simple note"
                                                 }
                                             },
                                             {
                                                 "id": "foo321",
                                                 "metadata": {
-                                                    "title": "Title",
-                                                    "counter": 456
+                                                    "@context": "http://schema.org/",
+                                                    "@type": "Note",
+                                                    "content": "This is a simple note"
                                                 }
                                             }
                                         ],
@@ -551,15 +606,17 @@
                                             {
                                                 "id": "resource1",
                                                 "metadata": {
-                                                    "title": "Title",
-                                                    "counter": 456
+                                                    "@context": "http://schema.org/",
+                                                    "@type": "Note",
+                                                    "content": "This is a simple note"
                                                 }
                                             },
                                             {
                                                 "id": "resource2",
                                                 "metadata": {
-                                                    "title": "Title",
-                                                    "counter": 456
+                                                    "@context": "http://schema.org/",
+                                                    "@type": "Note",
+                                                    "content": "This is a simple note"
                                                 }
                                             }
                                         ],
@@ -568,16 +625,18 @@
                                                 "id": "edge1",
                                                 "relationship": "frenemy",
                                                 "metadata": {
-                                                    "title": "Title",
-                                                    "counter": 456
+                                                    "@context": "http://schema.org/",
+                                                    "@type": "Note",
+                                                    "content": "This is a simple note"
                                                 }
                                             },
                                             {
                                                 "id": "edge2",
                                                 "relationship": "end",
                                                 "metadata": {
-                                                    "title": "Title",
-                                                    "counter": 456
+                                                    "@context": "http://schema.org/",
+                                                    "@type": "Note",
+                                                    "content": "This is a simple note"
                                                 }
                                             }
                                         ]
@@ -592,7 +651,7 @@
                         "description": "The rest request ended in success with no data."
                     },
                     "400": {
-                        "description": "The server cannot process the request, see the error field for more details.",
+                        "description": "The server cannot process the request, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -613,7 +672,7 @@
                         }
                     },
                     "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied, see the error field for more details.",
+                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -631,7 +690,7 @@
                         }
                     },
                     "500": {
-                        "description": "The server has encountered a situation it does not know how to handle, see the error field for more details.",
+                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -693,7 +752,7 @@
                 "type": "object",
                 "properties": {
                     "metadata": {
-                        "description": "The metadata to be used in the vertex as JSON-LD."
+                        "$ref": "https://schema.gtsc.io/json-ld/JsonLdNodeObject"
                     },
                     "aliases": {
                         "type": "array",
@@ -703,7 +762,9 @@
                                 "id": {
                                     "type": "string"
                                 },
-                                "metadata": {}
+                                "metadata": {
+                                    "$ref": "https://schema.gtsc.io/json-ld/JsonLdNodeObject"
+                                }
                             },
                             "required": [
                                 "id"
@@ -720,7 +781,9 @@
                                 "id": {
                                     "type": "string"
                                 },
-                                "metadata": {}
+                                "metadata": {
+                                    "$ref": "https://schema.gtsc.io/json-ld/JsonLdNodeObject"
+                                }
                             },
                             "required": [
                                 "id"
@@ -740,7 +803,9 @@
                                 "relationship": {
                                     "type": "string"
                                 },
-                                "metadata": {}
+                                "metadata": {
+                                    "$ref": "https://schema.gtsc.io/json-ld/JsonLdNodeObject"
+                                }
                             },
                             "required": [
                                 "id",
@@ -775,104 +840,379 @@
                 "description": "How deep to verify the signatures."
             },
             "AuditableItemGraphGetResponse": {
-                "type": "object",
-                "properties": {
-                    "vertex": {
-                        "$ref": "#/components/schemas/AuditableItemGraphVertex"
-                    },
-                    "changesets": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/AuditableItemGraphChangeset"
-                        },
-                        "description": "Changesets containing time sliced changes to the vertex."
-                    },
-                    "verified": {
-                        "type": "boolean",
-                        "description": "Whether the vertex has been verified."
-                    },
-                    "verification": {
-                        "type": "array",
-                        "items": {
-                            "type": "object",
-                            "properties": {
-                                "created": {
-                                    "type": "number"
-                                },
-                                "failure": {
-                                    "type": "string"
-                                },
-                                "failureProperties": {
+                "anyOf": [
+                    {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "verified": {
+                                "type": "boolean",
+                                "description": "Whether the vertex has been verified."
+                            },
+                            "verification": {
+                                "type": "array",
+                                "items": {
                                     "type": "object",
-                                    "additionalProperties": {}
+                                    "properties": {
+                                        "created": {
+                                            "type": "number"
+                                        },
+                                        "failure": {
+                                            "type": "string"
+                                        },
+                                        "failureProperties": {
+                                            "type": "object",
+                                            "additionalProperties": {}
+                                        }
+                                    },
+                                    "required": [
+                                        "created"
+                                    ],
+                                    "additionalProperties": false
+                                },
+                                "description": "The verification for the changesets including any failure information."
+                            },
+                            "metadata": {
+                                "$ref": "https://schema.gtsc.io/json-ld/JsonLdNodeObject",
+                                "description": "The metadata to associate with the element as JSON-LD."
+                            },
+                            "id": {
+                                "type": "string",
+                                "description": "The id of the element."
+                            },
+                            "created": {
+                                "type": "number",
+                                "description": "The timestamp of when the element was created."
+                            },
+                            "updated": {
+                                "type": "number",
+                                "description": "The timestamp of when the element was updated."
+                            },
+                            "nodeIdentity": {
+                                "type": "string",
+                                "description": "The identity of the node which controls the vertex."
+                            },
+                            "aliases": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/components/schemas/AuditableItemGraphAlias"
+                                },
+                                "description": "Alternative aliases that can be used to identify the vertex."
+                            },
+                            "resources": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/components/schemas/AuditableItemGraphResource"
+                                },
+                                "description": "The resources attached to the vertex."
+                            },
+                            "edges": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/components/schemas/AuditableItemGraphEdge"
+                                },
+                                "description": "Edges connected to the vertex."
+                            },
+                            "changesets": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/components/schemas/AuditableItemGraphChangeset"
+                                },
+                                "description": "Changesets for the vertex."
+                            }
+                        },
+                        "required": [
+                            "created",
+                            "id"
+                        ]
+                    },
+                    {
+                        "type": "object",
+                        "additionalProperties": {
+                            "anyOf": [
+                                {
+                                    "$ref": "https://schema.gtsc.io/json-ld/JsonLdNodePrimitive"
+                                },
+                                {
+                                    "$ref": "https://schema.gtsc.io/json-ld/JsonLdLanguageMap"
+                                },
+                                {
+                                    "$ref": "https://schema.gtsc.io/json-ld/JsonLdIndexMap"
+                                },
+                                {
+                                    "$ref": "https://schema.gtsc.io/json-ld/JsonLdIncludedBlock"
+                                },
+                                {
+                                    "$ref": "https://schema.gtsc.io/json-ld/JsonLdIdMap"
+                                },
+                                {
+                                    "$ref": "https://schema.gtsc.io/json-ld/JsonLdTypeMap"
+                                },
+                                {
+                                    "type": "array"
+                                }
+                            ]
+                        },
+                        "properties": {
+                            "verified": {
+                                "type": "boolean",
+                                "description": "Whether the vertex has been verified."
+                            },
+                            "verification": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "created": {
+                                            "type": "number"
+                                        },
+                                        "failure": {
+                                            "type": "string"
+                                        },
+                                        "failureProperties": {
+                                            "type": "object",
+                                            "additionalProperties": {}
+                                        }
+                                    },
+                                    "required": [
+                                        "created"
+                                    ],
+                                    "additionalProperties": false
+                                },
+                                "description": "The verification for the changesets including any failure information."
+                            },
+                            "@context": {
+                                "anyOf": [
+                                    {
+                                        "type": "null"
+                                    },
+                                    {
+                                        "type": "string"
+                                    },
+                                    {
+                                        "$ref": "https://schema.gtsc.io/json-ld/JsonLdContextDefinition"
+                                    },
+                                    {
+                                        "type": "array",
+                                        "items": {
+                                            "anyOf": [
+                                                {
+                                                    "type": "null"
+                                                },
+                                                {
+                                                    "type": "string"
+                                                },
+                                                {
+                                                    "$ref": "https://schema.gtsc.io/json-ld/JsonLdContextDefinition"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            },
+                            "@id": {
+                                "anyOf": [
+                                    {
+                                        "type": "string"
+                                    },
+                                    {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string"
+                                        }
+                                    }
+                                ]
+                            },
+                            "@included": {
+                                "$ref": "https://schema.gtsc.io/json-ld/JsonLdIncludedBlock"
+                            },
+                            "@graph": {
+                                "anyOf": [
+                                    {
+                                        "$ref": "https://schema.gtsc.io/json-ld/JsonLdNodeObject"
+                                    },
+                                    {
+                                        "type": "array",
+                                        "items": {
+                                            "$ref": "https://schema.gtsc.io/json-ld/JsonLdNodeObject"
+                                        }
+                                    }
+                                ]
+                            },
+                            "@nest": {
+                                "anyOf": [
+                                    {
+                                        "$ref": "https://schema.gtsc.io/json-ld/JsonLdJsonObject"
+                                    },
+                                    {
+                                        "type": "array",
+                                        "items": {
+                                            "$ref": "https://schema.gtsc.io/json-ld/JsonLdJsonObject"
+                                        }
+                                    }
+                                ]
+                            },
+                            "@type": {
+                                "anyOf": [
+                                    {
+                                        "type": "string"
+                                    },
+                                    {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string"
+                                        }
+                                    }
+                                ]
+                            },
+                            "@reverse": {
+                                "type": "object",
+                                "additionalProperties": {
+                                    "type": "string"
                                 }
                             },
-                            "required": [
-                                "created"
-                            ],
-                            "additionalProperties": false
-                        },
-                        "description": "The verification for the changesets including any failure information."
+                            "@index": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "allOf": [
+                            {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "https://schema.gtsc.io/json-ld/JsonLdNodeObject"
+                                }
+                            },
+                            {
+                                "type": "object",
+                                "additionalProperties": false,
+                                "properties": {
+                                    "verified": {
+                                        "type": "boolean",
+                                        "description": "Whether the vertex has been verified."
+                                    },
+                                    "verification": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "created": {
+                                                    "type": "number"
+                                                },
+                                                "failure": {
+                                                    "type": "string"
+                                                },
+                                                "failureProperties": {
+                                                    "type": "object",
+                                                    "additionalProperties": {}
+                                                }
+                                            },
+                                            "required": [
+                                                "created"
+                                            ],
+                                            "additionalProperties": false
+                                        },
+                                        "description": "The verification for the changesets including any failure information."
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "verified": {
+                                "type": "boolean",
+                                "description": "Whether the vertex has been verified."
+                            },
+                            "verification": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "created": {
+                                            "type": "number"
+                                        },
+                                        "failure": {
+                                            "type": "string"
+                                        },
+                                        "failureProperties": {
+                                            "type": "object",
+                                            "additionalProperties": {}
+                                        }
+                                    },
+                                    "required": [
+                                        "created"
+                                    ],
+                                    "additionalProperties": false
+                                },
+                                "description": "The verification for the changesets including any failure information."
+                            },
+                            "@context": {
+                                "anyOf": [
+                                    {
+                                        "type": "null"
+                                    },
+                                    {
+                                        "type": "string"
+                                    },
+                                    {
+                                        "$ref": "https://schema.gtsc.io/json-ld/JsonLdContextDefinition"
+                                    },
+                                    {
+                                        "type": "array",
+                                        "items": {
+                                            "anyOf": [
+                                                {
+                                                    "type": "null"
+                                                },
+                                                {
+                                                    "type": "string"
+                                                },
+                                                {
+                                                    "$ref": "https://schema.gtsc.io/json-ld/JsonLdContextDefinition"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            },
+                            "@graph": {
+                                "anyOf": [
+                                    {
+                                        "$ref": "https://schema.gtsc.io/json-ld/JsonLdValueObject"
+                                    },
+                                    {
+                                        "$ref": "https://schema.gtsc.io/json-ld/JsonLdNodeObject"
+                                    },
+                                    {
+                                        "type": "array",
+                                        "items": {
+                                            "anyOf": [
+                                                {
+                                                    "$ref": "https://schema.gtsc.io/json-ld/JsonLdValueObject"
+                                                },
+                                                {
+                                                    "$ref": "https://schema.gtsc.io/json-ld/JsonLdNodeObject"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        }
                     }
-                },
-                "required": [
-                    "vertex"
                 ],
-                "additionalProperties": false,
-                "description": "The response body."
-            },
-            "AuditableItemGraphVertex": {
-                "type": "object",
-                "properties": {
-                    "nodeIdentity": {
-                        "type": "string",
-                        "description": "The identity of the node which controls the vertex."
-                    },
-                    "aliases": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/AuditableItemGraphAlias"
-                        },
-                        "description": "Alternative aliases that can be used to identify the vertex."
-                    },
-                    "resources": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/AuditableItemGraphResource"
-                        },
-                        "description": "The resources attached to the vertex."
-                    },
-                    "edges": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/AuditableItemGraphEdge"
-                        },
-                        "description": "Edges connected to the vertex."
-                    },
-                    "id": {
-                        "type": "string",
-                        "description": "The id of the element."
-                    },
-                    "created": {
-                        "type": "number",
-                        "description": "The timestamp of when the element was created."
-                    },
-                    "updated": {
-                        "type": "number",
-                        "description": "The timestamp of when the element was updated."
-                    },
-                    "metadata": {
-                        "description": "The metadata to associate with the element as JSON-LD."
-                    }
-                },
-                "additionalProperties": false
+                "description": "The response body, id accept header is set to application/ld+json the return object is JSON-LD document."
             },
             "AuditableItemGraphAlias": {
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
                     "metadata": {
-                        "description": "The metadata to associate with the element as JSON-LD."
+                        "$ref": "https://schema.gtsc.io/json-ld/JsonLdNodeObject"
                     },
                     "id": {
                         "type": "string",
@@ -902,7 +1242,7 @@
                 "additionalProperties": false,
                 "properties": {
                     "metadata": {
-                        "description": "The metadata to associate with the element as JSON-LD."
+                        "$ref": "https://schema.gtsc.io/json-ld/JsonLdNodeObject"
                     },
                     "id": {
                         "type": "string",
@@ -931,7 +1271,7 @@
                 "type": "object",
                 "properties": {
                     "metadata": {
-                        "description": "The metadata to associate with the element as JSON-LD."
+                        "$ref": "https://schema.gtsc.io/json-ld/JsonLdNodeObject"
                     },
                     "id": {
                         "type": "string",
@@ -976,7 +1316,7 @@
                     "patches": {
                         "type": "array",
                         "items": {
-                            "$ref": "#/components/schemas/PatchOperation"
+                            "$ref": "#/components/schemas/AuditableItemGraphPatchOperation"
                         },
                         "description": "The patches for the integrity at this epoch."
                     },
@@ -998,8 +1338,9 @@
                 "additionalProperties": false,
                 "description": "Interface describing a set of updates to the vertex."
             },
-            "PatchOperation": {
+            "AuditableItemGraphPatchOperation": {
                 "type": "object",
+                "additionalProperties": false,
                 "properties": {
                     "op": {
                         "type": "string",
@@ -1029,14 +1370,13 @@
                     "op",
                     "path"
                 ],
-                "additionalProperties": false,
-                "description": "Interface describing a patch operation to add a property."
+                "description": "The patch operation for JSON diffs."
             },
             "AuditableItemGraphUpdateRequest": {
                 "type": "object",
                 "properties": {
                     "metadata": {
-                        "description": "The metadata to be used in the vertex as JSON-LD."
+                        "$ref": "https://schema.gtsc.io/json-ld/JsonLdNodeObject"
                     },
                     "aliases": {
                         "type": "array",
@@ -1046,7 +1386,9 @@
                                 "id": {
                                     "type": "string"
                                 },
-                                "metadata": {}
+                                "metadata": {
+                                    "$ref": "https://schema.gtsc.io/json-ld/JsonLdNodeObject"
+                                }
                             },
                             "required": [
                                 "id"
@@ -1063,7 +1405,9 @@
                                 "id": {
                                     "type": "string"
                                 },
-                                "metadata": {}
+                                "metadata": {
+                                    "$ref": "https://schema.gtsc.io/json-ld/JsonLdNodeObject"
+                                }
                             },
                             "required": [
                                 "id"
@@ -1083,7 +1427,9 @@
                                 "relationship": {
                                     "type": "string"
                                 },
-                                "metadata": {}
+                                "metadata": {
+                                    "$ref": "https://schema.gtsc.io/json-ld/JsonLdNodeObject"
+                                }
                             },
                             "required": [
                                 "id",
@@ -1132,6 +1478,59 @@
                 ],
                 "additionalProperties": false,
                 "description": "The response payload."
+            },
+            "AuditableItemGraphVertex": {
+                "type": "object",
+                "properties": {
+                    "nodeIdentity": {
+                        "type": "string",
+                        "description": "The identity of the node which controls the vertex."
+                    },
+                    "aliases": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/AuditableItemGraphAlias"
+                        },
+                        "description": "Alternative aliases that can be used to identify the vertex."
+                    },
+                    "resources": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/AuditableItemGraphResource"
+                        },
+                        "description": "The resources attached to the vertex."
+                    },
+                    "edges": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/AuditableItemGraphEdge"
+                        },
+                        "description": "Edges connected to the vertex."
+                    },
+                    "changesets": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/AuditableItemGraphChangeset"
+                        },
+                        "description": "Changesets for the vertex."
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "The id of the element."
+                    },
+                    "created": {
+                        "type": "number",
+                        "description": "The timestamp of when the element was created."
+                    },
+                    "updated": {
+                        "type": "number",
+                        "description": "The timestamp of when the element was updated."
+                    },
+                    "metadata": {
+                        "$ref": "https://schema.gtsc.io/json-ld/JsonLdNodeObject"
+                    }
+                },
+                "additionalProperties": false
             }
         },
         "securitySchemes": {

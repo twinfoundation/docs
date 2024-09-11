@@ -12,7 +12,7 @@ The data to be used in the vertex.
 
 #### metadata?
 
-> `optional` **metadata**: `unknown`
+> `optional` **metadata**: `IJsonLdNodeObject`
 
 The metadata to be used in the vertex as JSON-LD.
 

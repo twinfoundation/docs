@@ -1,6 +1,6 @@
 {
 	"name": "@gtsc/telemetry-models",
-	"version": "0.0.5-next.6",
+	"version": "0.0.5-next.7",
 	"description": "Models which define the structure of the telemetry connectors and services",
 	"repository": {
 		"type": "git",

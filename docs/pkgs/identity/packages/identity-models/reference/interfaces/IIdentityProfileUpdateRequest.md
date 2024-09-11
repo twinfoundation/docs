@@ -12,12 +12,12 @@ The data for the request.
 
 #### publicProfile?
 
-> `optional` **publicProfile**: `unknown`
+> `optional` **publicProfile**: `IJsonLdDocument`
 
 The public profile data.
 
 #### privateProfile?
 
-> `optional` **privateProfile**: `unknown`
+> `optional` **privateProfile**: `IJsonLdDocument`
 
 The private profile data.

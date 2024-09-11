@@ -1,6 +1,6 @@
 {
 	"name": "@gtsc/data-core",
-	"version": "0.0.5-next.7",
+	"version": "0.0.5-next.21",
 	"description": "Definitions and helpers for using with data and schemas",
 	"repository": {
 		"type": "git",
@@ -31,6 +31,7 @@
 		"@gtsc/core": "next",
 		"@gtsc/entity": "next",
 		"@gtsc/nameof": "next",
+		"@gtsc/web": "next",
 		"@types/json-schema": "7.0.15",
 		"ajv": "8.16.0",
 		"ajv-formats": "3.0.1"

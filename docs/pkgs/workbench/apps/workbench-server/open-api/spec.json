@@ -85,7 +85,7 @@
                         }
                     },
                     "400": {
-                        "description": "The server cannot process the request, see the error field for more details.",
+                        "description": "The server cannot process the request, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -106,7 +106,7 @@
                         }
                     },
                     "500": {
-                        "description": "The server has encountered a situation it does not know how to handle, see the error field for more details.",
+                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -197,7 +197,7 @@
                         }
                     },
                     "400": {
-                        "description": "The server cannot process the request, see the error field for more details.",
+                        "description": "The server cannot process the request, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -218,7 +218,7 @@
                         }
                     },
                     "500": {
-                        "description": "The server has encountered a situation it does not know how to handle, see the error field for more details.",
+                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -267,7 +267,7 @@
                         }
                     },
                     "400": {
-                        "description": "The server cannot process the request, see the error field for more details.",
+                        "description": "The server cannot process the request, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -288,7 +288,7 @@
                         }
                     },
                     "500": {
-                        "description": "The server has encountered a situation it does not know how to handle, see the error field for more details.",
+                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -356,7 +356,7 @@
                         }
                     },
                     "400": {
-                        "description": "The server cannot process the request, see the error field for more details.",
+                        "description": "The server cannot process the request, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -377,7 +377,7 @@
                         }
                     },
                     "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied, see the error field for more details.",
+                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -395,7 +395,7 @@
                         }
                     },
                     "500": {
-                        "description": "The server has encountered a situation it does not know how to handle, see the error field for more details.",
+                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -439,7 +439,7 @@
                         "description": "The rest request ended in success with no data."
                     },
                     "400": {
-                        "description": "The server cannot process the request, see the error field for more details.",
+                        "description": "The server cannot process the request, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -460,7 +460,7 @@
                         }
                     },
                     "500": {
-                        "description": "The server has encountered a situation it does not know how to handle, see the error field for more details.",
+                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -525,7 +525,7 @@
                         }
                     },
                     "400": {
-                        "description": "The server cannot process the request, see the error field for more details.",
+                        "description": "The server cannot process the request, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -546,7 +546,7 @@
                         }
                     },
                     "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied, see the error field for more details.",
+                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -564,7 +564,7 @@
                         }
                     },
                     "500": {
-                        "description": "The server has encountered a situation it does not know how to handle, see the error field for more details.",
+                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -630,7 +630,7 @@
                         }
                     },
                     "400": {
-                        "description": "The server cannot process the request, see the error field for more details.",
+                        "description": "The server cannot process the request, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -651,7 +651,7 @@
                         }
                     },
                     "500": {
-                        "description": "The server has encountered a situation it does not know how to handle, see the error field for more details.",
+                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -717,7 +717,7 @@
                         "description": "The rest request ended in success with no data."
                     },
                     "400": {
-                        "description": "The server cannot process the request, see the error field for more details.",
+                        "description": "The server cannot process the request, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -738,7 +738,7 @@
                         }
                     },
                     "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied, see the error field for more details.",
+                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -756,7 +756,7 @@
                         }
                     },
                     "409": {
-                        "description": "The request resulted in a conflicting operation, see the error field for more details.",
+                        "description": "The request resulted in a conflicting operation, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -779,7 +779,7 @@
                         }
                     },
                     "500": {
-                        "description": "The server has encountered a situation it does not know how to handle, see the error field for more details.",
+                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -855,7 +855,7 @@
                         }
                     },
                     "400": {
-                        "description": "The server cannot process the request, see the error field for more details.",
+                        "description": "The server cannot process the request, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -876,7 +876,7 @@
                         }
                     },
                     "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied, see the error field for more details.",
+                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -894,7 +894,7 @@
                         }
                     },
                     "404": {
-                        "description": "The resource you tried to access does not exist, see the error field for more details.",
+                        "description": "The resource you tried to access does not exist, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -915,7 +915,7 @@
                         }
                     },
                     "500": {
-                        "description": "The server has encountered a situation it does not know how to handle, see the error field for more details.",
+                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -979,7 +979,7 @@
                         "description": "The rest request ended in success with no data."
                     },
                     "400": {
-                        "description": "The server cannot process the request, see the error field for more details.",
+                        "description": "The server cannot process the request, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -1000,7 +1000,7 @@
                         }
                     },
                     "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied, see the error field for more details.",
+                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -1018,7 +1018,7 @@
                         }
                     },
                     "404": {
-                        "description": "The resource you tried to access does not exist, see the error field for more details.",
+                        "description": "The resource you tried to access does not exist, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -1039,7 +1039,7 @@
                         }
                     },
                     "500": {
-                        "description": "The server has encountered a situation it does not know how to handle, see the error field for more details.",
+                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -1074,7 +1074,7 @@
                         "description": "The rest request ended in success with no data."
                     },
                     "400": {
-                        "description": "The server cannot process the request, see the error field for more details.",
+                        "description": "The server cannot process the request, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -1095,7 +1095,7 @@
                         }
                     },
                     "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied, see the error field for more details.",
+                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -1113,7 +1113,7 @@
                         }
                     },
                     "404": {
-                        "description": "The resource you tried to access does not exist, see the error field for more details.",
+                        "description": "The resource you tried to access does not exist, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -1134,7 +1134,7 @@
                         }
                     },
                     "500": {
-                        "description": "The server has encountered a situation it does not know how to handle, see the error field for more details.",
+                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -1190,7 +1190,7 @@
                         "content": {
                             "application/ld+json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/IdentityProfileGetPublicResponse"
+                                    "$ref": "https://schema.gtsc.io/json-ld/JsonLdDocument"
                                 },
                                 "examples": {
                                     "identityGetPublicResponseExample": {
@@ -1214,7 +1214,7 @@
                         }
                     },
                     "400": {
-                        "description": "The server cannot process the request, see the error field for more details.",
+                        "description": "The server cannot process the request, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -1235,7 +1235,7 @@
                         }
                     },
                     "404": {
-                        "description": "The resource you tried to access does not exist, see the error field for more details.",
+                        "description": "The resource you tried to access does not exist, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -1256,7 +1256,7 @@
                         }
                     },
                     "500": {
-                        "description": "The server has encountered a situation it does not know how to handle, see the error field for more details.",
+                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -1356,7 +1356,7 @@
                         }
                     },
                     "400": {
-                        "description": "The server cannot process the request, see the error field for more details.",
+                        "description": "The server cannot process the request, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -1377,7 +1377,7 @@
                         }
                     },
                     "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied, see the error field for more details.",
+                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -1395,7 +1395,7 @@
                         }
                     },
                     "500": {
-                        "description": "The server has encountered a situation it does not know how to handle, see the error field for more details.",
+                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -1454,7 +1454,7 @@
                     "201": {
                         "description": "The rest request ended in created response.",
                         "headers": {
-                            "location": {
+                            "Location": {
                                 "schema": {
                                     "type": "string"
                                 },
@@ -1463,7 +1463,7 @@
                         }
                     },
                     "400": {
-                        "description": "The server cannot process the request, see the error field for more details.",
+                        "description": "The server cannot process the request, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -1484,7 +1484,7 @@
                         }
                     },
                     "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied, see the error field for more details.",
+                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -1502,7 +1502,7 @@
                         }
                     },
                     "500": {
-                        "description": "The server has encountered a situation it does not know how to handle, see the error field for more details.",
+                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -1581,7 +1581,7 @@
                         }
                     },
                     "400": {
-                        "description": "The server cannot process the request, see the error field for more details.",
+                        "description": "The server cannot process the request, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -1602,7 +1602,7 @@
                         }
                     },
                     "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied, see the error field for more details.",
+                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -1620,7 +1620,7 @@
                         }
                     },
                     "404": {
-                        "description": "The resource you tried to access does not exist, see the error field for more details.",
+                        "description": "The resource you tried to access does not exist, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -1641,7 +1641,7 @@
                         }
                     },
                     "500": {
-                        "description": "The server has encountered a situation it does not know how to handle, see the error field for more details.",
+                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -1711,7 +1711,7 @@
                         "description": "The rest request ended in success with no data."
                     },
                     "400": {
-                        "description": "The server cannot process the request, see the error field for more details.",
+                        "description": "The server cannot process the request, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -1732,7 +1732,7 @@
                         }
                     },
                     "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied, see the error field for more details.",
+                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -1750,7 +1750,7 @@
                         }
                     },
                     "500": {
-                        "description": "The server has encountered a situation it does not know how to handle, see the error field for more details.",
+                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -1798,7 +1798,7 @@
                         "description": "The rest request ended in success with no data."
                     },
                     "400": {
-                        "description": "The server cannot process the request, see the error field for more details.",
+                        "description": "The server cannot process the request, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -1819,7 +1819,7 @@
                         }
                     },
                     "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied, see the error field for more details.",
+                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -1837,7 +1837,7 @@
                         }
                     },
                     "404": {
-                        "description": "The resource you tried to access does not exist, see the error field for more details.",
+                        "description": "The resource you tried to access does not exist, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -1858,7 +1858,7 @@
                         }
                     },
                     "500": {
-                        "description": "The server has encountered a situation it does not know how to handle, see the error field for more details.",
+                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -1922,7 +1922,7 @@
                         }
                     },
                     "400": {
-                        "description": "The server cannot process the request, see the error field for more details.",
+                        "description": "The server cannot process the request, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -1943,7 +1943,7 @@
                         }
                     },
                     "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied, see the error field for more details.",
+                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -1961,7 +1961,7 @@
                         }
                     },
                     "404": {
-                        "description": "The resource you tried to access does not exist, see the error field for more details.",
+                        "description": "The resource you tried to access does not exist, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -1982,7 +1982,7 @@
                         }
                     },
                     "500": {
-                        "description": "The server has encountered a situation it does not know how to handle, see the error field for more details.",
+                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -2040,7 +2040,7 @@
                     "201": {
                         "description": "The rest request ended in created response.",
                         "headers": {
-                            "location": {
+                            "Location": {
                                 "schema": {
                                     "type": "string"
                                 },
@@ -2049,7 +2049,7 @@
                         }
                     },
                     "400": {
-                        "description": "The server cannot process the request, see the error field for more details.",
+                        "description": "The server cannot process the request, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -2070,7 +2070,7 @@
                         }
                     },
                     "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied, see the error field for more details.",
+                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -2088,7 +2088,7 @@
                         }
                     },
                     "500": {
-                        "description": "The server has encountered a situation it does not know how to handle, see the error field for more details.",
+                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -2180,7 +2180,7 @@
                         }
                     },
                     "400": {
-                        "description": "The server cannot process the request, see the error field for more details.",
+                        "description": "The server cannot process the request, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -2201,7 +2201,7 @@
                         }
                     },
                     "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied, see the error field for more details.",
+                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -2219,7 +2219,7 @@
                         }
                     },
                     "500": {
-                        "description": "The server has encountered a situation it does not know how to handle, see the error field for more details.",
+                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -2294,7 +2294,7 @@
                         }
                     },
                     "400": {
-                        "description": "The server cannot process the request, see the error field for more details.",
+                        "description": "The server cannot process the request, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -2315,7 +2315,7 @@
                         }
                     },
                     "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied, see the error field for more details.",
+                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -2333,7 +2333,7 @@
                         }
                     },
                     "500": {
-                        "description": "The server has encountered a situation it does not know how to handle, see the error field for more details.",
+                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -2399,7 +2399,7 @@
                         "description": "The rest request ended in success with no data."
                     },
                     "400": {
-                        "description": "The server cannot process the request, see the error field for more details.",
+                        "description": "The server cannot process the request, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -2420,7 +2420,7 @@
                         }
                     },
                     "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied, see the error field for more details.",
+                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -2438,7 +2438,7 @@
                         }
                     },
                     "500": {
-                        "description": "The server has encountered a situation it does not know how to handle, see the error field for more details.",
+                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -2486,7 +2486,7 @@
                         "description": "The rest request ended in success with no data."
                     },
                     "400": {
-                        "description": "The server cannot process the request, see the error field for more details.",
+                        "description": "The server cannot process the request, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -2507,7 +2507,7 @@
                         }
                     },
                     "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied, see the error field for more details.",
+                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -2525,7 +2525,7 @@
                         }
                     },
                     "500": {
-                        "description": "The server has encountered a situation it does not know how to handle, see the error field for more details.",
+                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -2597,7 +2597,7 @@
                     "201": {
                         "description": "The rest request ended in created response.",
                         "headers": {
-                            "location": {
+                            "Location": {
                                 "schema": {
                                     "type": "string"
                                 },
@@ -2606,7 +2606,7 @@
                         }
                     },
                     "400": {
-                        "description": "The server cannot process the request, see the error field for more details.",
+                        "description": "The server cannot process the request, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -2627,7 +2627,7 @@
                         }
                     },
                     "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied, see the error field for more details.",
+                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -2645,7 +2645,7 @@
                         }
                     },
                     "500": {
-                        "description": "The server has encountered a situation it does not know how to handle, see the error field for more details.",
+                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -2761,7 +2761,7 @@
                         }
                     },
                     "400": {
-                        "description": "The server cannot process the request, see the error field for more details.",
+                        "description": "The server cannot process the request, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -2782,7 +2782,7 @@
                         }
                     },
                     "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied, see the error field for more details.",
+                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -2800,7 +2800,7 @@
                         }
                     },
                     "500": {
-                        "description": "The server has encountered a situation it does not know how to handle, see the error field for more details.",
+                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -2873,7 +2873,7 @@
                         "description": "The rest request ended in success with no data."
                     },
                     "400": {
-                        "description": "The server cannot process the request, see the error field for more details.",
+                        "description": "The server cannot process the request, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -2894,7 +2894,7 @@
                         }
                     },
                     "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied, see the error field for more details.",
+                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -2912,7 +2912,7 @@
                         }
                     },
                     "500": {
-                        "description": "The server has encountered a situation it does not know how to handle, see the error field for more details.",
+                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -3026,7 +3026,7 @@
                         }
                     },
                     "400": {
-                        "description": "The server cannot process the request, see the error field for more details.",
+                        "description": "The server cannot process the request, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -3047,7 +3047,7 @@
                         }
                     },
                     "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied, see the error field for more details.",
+                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -3065,7 +3065,7 @@
                         }
                     },
                     "500": {
-                        "description": "The server has encountered a situation it does not know how to handle, see the error field for more details.",
+                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -3128,7 +3128,7 @@
                     "201": {
                         "description": "The rest request ended in created response.",
                         "headers": {
-                            "location": {
+                            "Location": {
                                 "schema": {
                                     "type": "string"
                                 },
@@ -3137,7 +3137,7 @@
                         }
                     },
                     "400": {
-                        "description": "The server cannot process the request, see the error field for more details.",
+                        "description": "The server cannot process the request, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -3158,7 +3158,7 @@
                         }
                     },
                     "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied, see the error field for more details.",
+                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -3176,7 +3176,7 @@
                         }
                     },
                     "500": {
-                        "description": "The server has encountered a situation it does not know how to handle, see the error field for more details.",
+                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -3250,7 +3250,7 @@
                         }
                     },
                     "400": {
-                        "description": "The server cannot process the request, see the error field for more details.",
+                        "description": "The server cannot process the request, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -3271,7 +3271,7 @@
                         }
                     },
                     "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied, see the error field for more details.",
+                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -3289,7 +3289,7 @@
                         }
                     },
                     "500": {
-                        "description": "The server has encountered a situation it does not know how to handle, see the error field for more details.",
+                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -3337,7 +3337,7 @@
                         "description": "The rest request ended in success with no data."
                     },
                     "400": {
-                        "description": "The server cannot process the request, see the error field for more details.",
+                        "description": "The server cannot process the request, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -3358,7 +3358,7 @@
                         }
                     },
                     "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied, see the error field for more details.",
+                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -3376,7 +3376,7 @@
                         }
                     },
                     "500": {
-                        "description": "The server has encountered a situation it does not know how to handle, see the error field for more details.",
+                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -3444,7 +3444,7 @@
                         "description": "The rest request ended in success with no data."
                     },
                     "400": {
-                        "description": "The server cannot process the request, see the error field for more details.",
+                        "description": "The server cannot process the request, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -3465,7 +3465,7 @@
                         }
                     },
                     "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied, see the error field for more details.",
+                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -3483,7 +3483,7 @@
                         }
                     },
                     "500": {
-                        "description": "The server has encountered a situation it does not know how to handle, see the error field for more details.",
+                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -3554,7 +3554,7 @@
                         "description": "The rest request ended in success with no data."
                     },
                     "400": {
-                        "description": "The server cannot process the request, see the error field for more details.",
+                        "description": "The server cannot process the request, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -3575,7 +3575,7 @@
                         }
                     },
                     "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied, see the error field for more details.",
+                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -3593,7 +3593,7 @@
                         }
                     },
                     "500": {
-                        "description": "The server has encountered a situation it does not know how to handle, see the error field for more details.",
+                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -3681,7 +3681,7 @@
                         }
                     },
                     "400": {
-                        "description": "The server cannot process the request, see the error field for more details.",
+                        "description": "The server cannot process the request, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -3702,7 +3702,7 @@
                         }
                     },
                     "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied, see the error field for more details.",
+                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -3720,7 +3720,7 @@
                         }
                     },
                     "500": {
-                        "description": "The server has encountered a situation it does not know how to handle, see the error field for more details.",
+                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -3815,7 +3815,7 @@
                         }
                     },
                     "400": {
-                        "description": "The server cannot process the request, see the error field for more details.",
+                        "description": "The server cannot process the request, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -3836,7 +3836,7 @@
                         }
                     },
                     "500": {
-                        "description": "The server has encountered a situation it does not know how to handle, see the error field for more details.",
+                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -3884,7 +3884,7 @@
                         "description": "The rest request ended in success with no data."
                     },
                     "400": {
-                        "description": "The server cannot process the request, see the error field for more details.",
+                        "description": "The server cannot process the request, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -3905,7 +3905,7 @@
                         }
                     },
                     "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied, see the error field for more details.",
+                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -3923,7 +3923,7 @@
                         }
                     },
                     "500": {
-                        "description": "The server has encountered a situation it does not know how to handle, see the error field for more details.",
+                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -4020,7 +4020,7 @@
                         }
                     },
                     "400": {
-                        "description": "The server cannot process the request, see the error field for more details.",
+                        "description": "The server cannot process the request, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -4041,7 +4041,7 @@
                         }
                     },
                     "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied, see the error field for more details.",
+                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -4059,7 +4059,7 @@
                         }
                     },
                     "500": {
-                        "description": "The server has encountered a situation it does not know how to handle, see the error field for more details.",
+                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -4103,22 +4103,25 @@
                                 "auditableItemGraphCreateRequestExample": {
                                     "value": {
                                         "metadata": {
-                                            "title": "Title",
-                                            "counter": 456
+                                            "@context": "http://schema.org/",
+                                            "@type": "Note",
+                                            "content": "This is a simple note"
                                         },
                                         "aliases": [
                                             {
                                                 "id": "bar456",
                                                 "metadata": {
-                                                    "title": "Title",
-                                                    "counter": 456
+                                                    "@context": "http://schema.org/",
+                                                    "@type": "Note",
+                                                    "content": "This is a simple note"
                                                 }
                                             },
                                             {
                                                 "id": "foo321",
                                                 "metadata": {
-                                                    "title": "Title",
-                                                    "counter": 456
+                                                    "@context": "http://schema.org/",
+                                                    "@type": "Note",
+                                                    "content": "This is a simple note"
                                                 }
                                             }
                                         ],
@@ -4126,15 +4129,17 @@
                                             {
                                                 "id": "resource1",
                                                 "metadata": {
-                                                    "title": "Title",
-                                                    "counter": 456
+                                                    "@context": "http://schema.org/",
+                                                    "@type": "Note",
+                                                    "content": "This is a simple note"
                                                 }
                                             },
                                             {
                                                 "id": "resource2",
                                                 "metadata": {
-                                                    "title": "Title",
-                                                    "counter": 456
+                                                    "@context": "http://schema.org/",
+                                                    "@type": "Note",
+                                                    "content": "This is a simple note"
                                                 }
                                             }
                                         ],
@@ -4143,16 +4148,18 @@
                                                 "id": "edge1",
                                                 "relationship": "frenemy",
                                                 "metadata": {
-                                                    "title": "Title",
-                                                    "counter": 456
+                                                    "@context": "http://schema.org/",
+                                                    "@type": "Note",
+                                                    "content": "This is a simple note"
                                                 }
                                             },
                                             {
                                                 "id": "edge2",
                                                 "relationship": "end",
                                                 "metadata": {
-                                                    "title": "Title",
-                                                    "counter": 456
+                                                    "@context": "http://schema.org/",
+                                                    "@type": "Note",
+                                                    "content": "This is a simple note"
                                                 }
                                             }
                                         ]
@@ -4166,7 +4173,7 @@
                     "201": {
                         "description": "The rest request ended in created response.",
                         "headers": {
-                            "location": {
+                            "Location": {
                                 "schema": {
                                     "type": "string"
                                 },
@@ -4175,7 +4182,7 @@
                         }
                     },
                     "400": {
-                        "description": "The server cannot process the request, see the error field for more details.",
+                        "description": "The server cannot process the request, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -4196,7 +4203,7 @@
                         }
                     },
                     "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied, see the error field for more details.",
+                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -4214,7 +4221,7 @@
                         }
                     },
                     "500": {
-                        "description": "The server has encountered a situation it does not know how to handle, see the error field for more details.",
+                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -4348,7 +4355,7 @@
                         }
                     },
                     "400": {
-                        "description": "The server cannot process the request, see the error field for more details.",
+                        "description": "The server cannot process the request, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -4369,7 +4376,7 @@
                         }
                     },
                     "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied, see the error field for more details.",
+                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -4387,7 +4394,7 @@
                         }
                     },
                     "500": {
-                        "description": "The server has encountered a situation it does not know how to handle, see the error field for more details.",
+                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -4452,6 +4459,16 @@
                         "schema": {
                             "$ref": "#/components/schemas/VerifyDepth"
                         }
+                    },
+                    {
+                        "name": "Accept",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "style": "simple",
+                        "example": "application/json"
                     }
                 ],
                 "security": [
@@ -4470,29 +4487,64 @@
                                 "examples": {
                                     "auditableItemGraphGetResponseExample": {
                                         "value": {
-                                            "vertex": {
-                                                "id": "aig:1234567890",
-                                                "created": 1234567890,
-                                                "updated": 1234567890,
-                                                "metadata": {
-                                                    "title": "Title",
-                                                    "counter": 456
-                                                },
-                                                "aliases": [
-                                                    {
-                                                        "id": "tst:1234567890",
-                                                        "created": 1234567890
-                                                    }
-                                                ]
-                                            }
+                                            "id": "aig:1234567890",
+                                            "created": 1234567890,
+                                            "updated": 1234567890,
+                                            "metadata": {
+                                                "@context": "http://schema.org/",
+                                                "@type": "Note",
+                                                "content": "This is a simple note"
+                                            },
+                                            "aliases": [
+                                                {
+                                                    "id": "tst:1234567890",
+                                                    "created": 1234567890
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }
+                            },
+                            "application/ld+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AuditableItemGraphGetResponse"
+                                },
+                                "examples": {
+                                    "auditableItemGraphJsonLdGetResponseExample": {
+                                        "value": {
+                                            "@context": "https://schema.gtsc.io/aig/",
+                                            "@type": "vertex",
+                                            "id": "aig:1234567890",
+                                            "created": "2024-08-22T11:55:16.271Z",
+                                            "updated": "2024-08-22T11:55:16.271Z",
+                                            "metadata": {
+                                                "@context": "http://schema.org/",
+                                                "@type": "Note",
+                                                "content": "This is a simple note"
+                                            },
+                                            "aliases": [
+                                                {
+                                                    "@type": "alias",
+                                                    "created": "2024-08-22T11:55:16.271Z",
+                                                    "id": "tst:1234567890"
+                                                }
+                                            ]
                                         }
                                     }
                                 }
                             }
+                        },
+                        "headers": {
+                            "Content-Type": {
+                                "schema": {
+                                    "type": "string"
+                                },
+                                "description": "e.g. application/ld+json"
+                            }
                         }
                     },
                     "400": {
-                        "description": "The server cannot process the request, see the error field for more details.",
+                        "description": "The server cannot process the request, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -4513,7 +4565,7 @@
                         }
                     },
                     "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied, see the error field for more details.",
+                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -4531,7 +4583,7 @@
                         }
                     },
                     "500": {
-                        "description": "The server has encountered a situation it does not know how to handle, see the error field for more details.",
+                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -4586,22 +4638,25 @@
                                 "auditableItemGraphUpdateRequestExample": {
                                     "value": {
                                         "metadata": {
-                                            "title": "Title",
-                                            "counter": 456
+                                            "@context": "http://schema.org/",
+                                            "@type": "Note",
+                                            "content": "This is a simple note"
                                         },
                                         "aliases": [
                                             {
                                                 "id": "bar456",
                                                 "metadata": {
-                                                    "title": "Title",
-                                                    "counter": 456
+                                                    "@context": "http://schema.org/",
+                                                    "@type": "Note",
+                                                    "content": "This is a simple note"
                                                 }
                                             },
                                             {
                                                 "id": "foo321",
                                                 "metadata": {
-                                                    "title": "Title",
-                                                    "counter": 456
+                                                    "@context": "http://schema.org/",
+                                                    "@type": "Note",
+                                                    "content": "This is a simple note"
                                                 }
                                             }
                                         ],
@@ -4609,15 +4664,17 @@
                                             {
                                                 "id": "resource1",
                                                 "metadata": {
-                                                    "title": "Title",
-                                                    "counter": 456
+                                                    "@context": "http://schema.org/",
+                                                    "@type": "Note",
+                                                    "content": "This is a simple note"
                                                 }
                                             },
                                             {
                                                 "id": "resource2",
                                                 "metadata": {
-                                                    "title": "Title",
-                                                    "counter": 456
+                                                    "@context": "http://schema.org/",
+                                                    "@type": "Note",
+                                                    "content": "This is a simple note"
                                                 }
                                             }
                                         ],
@@ -4626,16 +4683,18 @@
                                                 "id": "edge1",
                                                 "relationship": "frenemy",
                                                 "metadata": {
-                                                    "title": "Title",
-                                                    "counter": 456
+                                                    "@context": "http://schema.org/",
+                                                    "@type": "Note",
+                                                    "content": "This is a simple note"
                                                 }
                                             },
                                             {
                                                 "id": "edge2",
                                                 "relationship": "end",
                                                 "metadata": {
-                                                    "title": "Title",
-                                                    "counter": 456
+                                                    "@context": "http://schema.org/",
+                                                    "@type": "Note",
+                                                    "content": "This is a simple note"
                                                 }
                                             }
                                         ]
@@ -4650,7 +4709,7 @@
                         "description": "The rest request ended in success with no data."
                     },
                     "400": {
-                        "description": "The server cannot process the request, see the error field for more details.",
+                        "description": "The server cannot process the request, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -4671,7 +4730,7 @@
                         }
                     },
                     "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied, see the error field for more details.",
+                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -4689,7 +4748,7 @@
                         }
                     },
                     "500": {
-                        "description": "The server has encountered a situation it does not know how to handle, see the error field for more details.",
+                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -4712,79 +4771,977 @@
     },
     "components": {
         "schemas": {
-            "Error": {
+            "ArrayBuffer": {
                 "type": "object",
                 "properties": {
-                    "name": {
-                        "type": "string",
-                        "description": "The name for the error."
-                    },
-                    "message": {
-                        "type": "string",
-                        "description": "The message for the error."
-                    },
-                    "source": {
-                        "type": "string",
-                        "description": "The source of the error."
-                    },
-                    "properties": {
-                        "type": "object",
-                        "additionalProperties": {},
-                        "description": "Any additional information for the error."
-                    },
-                    "stack": {
-                        "type": "string",
-                        "description": "The stack trace for the error."
-                    },
-                    "inner": {
-                        "$ref": "#/components/schemas/Error"
+                    "byteLength": {
+                        "type": "number"
                     }
                 },
                 "required": [
-                    "name",
-                    "message"
+                    "byteLength"
                 ],
-                "additionalProperties": false,
-                "description": "Model to describe serialized error."
+                "additionalProperties": false
             },
-            "NotFoundResponse": {
+            "AttestationAttestRequest": {
                 "type": "object",
-                "additionalProperties": false,
                 "properties": {
-                    "notFoundId": {
+                    "verificationMethodId": {
                         "type": "string",
-                        "description": "The id if the item that was not found."
+                        "description": "The identity verification method to use for attesting the data."
                     },
-                    "name": {
+                    "data": {
+                        "description": "The data object to attest."
+                    },
+                    "namespace": {
                         "type": "string",
-                        "description": "The name for the error."
-                    },
-                    "message": {
-                        "type": "string",
-                        "description": "The message for the error."
-                    },
-                    "source": {
-                        "type": "string",
-                        "description": "The source of the error."
-                    },
-                    "properties": {
-                        "type": "object",
-                        "additionalProperties": {},
-                        "description": "Any additional information for the error."
-                    },
-                    "stack": {
-                        "type": "string",
-                        "description": "The stack trace for the error."
-                    },
-                    "inner": {
-                        "$ref": "#/components/schemas/Error"
+                        "description": "The namespace of the connector to use for the attestation, defaults to component configured namespace."
                     }
                 },
                 "required": [
-                    "message",
-                    "name"
+                    "verificationMethodId",
+                    "data"
                 ],
-                "description": "The body which contains the error."
+                "additionalProperties": false,
+                "description": "The data to be used in the signing."
+            },
+            "AttestationAttestResponse": {
+                "type": "object",
+                "properties": {
+                    "information": {
+                        "$ref": "#/components/schemas/AttestationInformation"
+                    }
+                },
+                "required": [
+                    "information"
+                ],
+                "additionalProperties": false,
+                "description": "The result of the attestation process."
+            },
+            "AttestationInformation": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "The unique identifier of the attestation."
+                    },
+                    "created": {
+                        "type": "string",
+                        "description": "Created date/time of the attestation in ISO format."
+                    },
+                    "ownerIdentity": {
+                        "type": "string",
+                        "description": "The identity of the owner."
+                    },
+                    "transferred": {
+                        "type": "string",
+                        "description": "Transferred date/time of the attestation in ISO format, can be blank if holder identity is owner."
+                    },
+                    "holderIdentity": {
+                        "type": "string",
+                        "description": "The identity of the current holder, can be undefined if owner is still the holder."
+                    },
+                    "data": {
+                        "description": "The data that was attested."
+                    },
+                    "proof": {
+                        "$ref": "#/components/schemas/AttestationProof"
+                    }
+                },
+                "required": [
+                    "id",
+                    "created",
+                    "ownerIdentity",
+                    "data",
+                    "proof"
+                ],
+                "additionalProperties": false,
+                "description": "Interface describing the collated attestation information."
+            },
+            "AttestationProof": {
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "description": "The type of the proof."
+                    },
+                    "value": {
+                        "type": "string",
+                        "description": "The value of the proof."
+                    }
+                },
+                "required": [
+                    "type",
+                    "value"
+                ],
+                "additionalProperties": false,
+                "description": "Interface describing an attestation proof."
+            },
+            "AttestationTransferRequest": {
+                "type": "object",
+                "properties": {
+                    "holderIdentity": {
+                        "type": "string",
+                        "description": "The new holder identity."
+                    }
+                },
+                "required": [
+                    "holderIdentity"
+                ],
+                "additionalProperties": false,
+                "description": "The parameters to be used in the transfer."
+            },
+            "AttestationTransferResponse": {
+                "type": "object",
+                "properties": {
+                    "information": {
+                        "$ref": "#/components/schemas/AttestationInformation"
+                    }
+                },
+                "required": [
+                    "information"
+                ],
+                "additionalProperties": false,
+                "description": "The data returned from the transfer response."
+            },
+            "AttestationVerifyResponse": {
+                "type": "object",
+                "properties": {
+                    "verified": {
+                        "type": "boolean",
+                        "description": "Whether the attestation is verified."
+                    },
+                    "failure": {
+                        "type": "string",
+                        "description": "The failure message if the attestation is not verified."
+                    },
+                    "information": {
+                        "$ref": "#/components/schemas/AttestationInformation"
+                    }
+                },
+                "required": [
+                    "verified"
+                ],
+                "additionalProperties": false,
+                "description": "The data returned from the verification response."
+            },
+            "AuditableItemGraphAlias": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "metadata": {
+                        "$ref": "https://schema.gtsc.io/json-ld/JsonLdNodeObject"
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "The id of the element."
+                    },
+                    "created": {
+                        "type": "number",
+                        "description": "The timestamp of when the element was created."
+                    },
+                    "updated": {
+                        "type": "number",
+                        "description": "The timestamp of when the element was updated."
+                    },
+                    "deleted": {
+                        "type": "number",
+                        "description": "The timestamp of when the element was deleted, as we never actually remove items."
+                    }
+                },
+                "required": [
+                    "created",
+                    "id"
+                ],
+                "description": "Interface describing an alias for a vertex."
+            },
+            "AuditableItemGraphChangeset": {
+                "type": "object",
+                "properties": {
+                    "created": {
+                        "type": "number",
+                        "description": "The timestamp of when the changeset was created."
+                    },
+                    "userIdentity": {
+                        "type": "string",
+                        "description": "The user identity that created the changes."
+                    },
+                    "patches": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/AuditableItemGraphPatchOperation"
+                        },
+                        "description": "The patches for the integrity at this epoch."
+                    },
+                    "hash": {
+                        "type": "string",
+                        "description": "The hash for the changeset."
+                    },
+                    "immutableStorageId": {
+                        "type": "string",
+                        "description": "The immutable storage id containing the signature for the changeset."
+                    }
+                },
+                "required": [
+                    "created",
+                    "hash",
+                    "patches",
+                    "userIdentity"
+                ],
+                "additionalProperties": false,
+                "description": "Interface describing a set of updates to the vertex."
+            },
+            "AuditableItemGraphCreateRequest": {
+                "type": "object",
+                "properties": {
+                    "metadata": {
+                        "$ref": "https://schema.gtsc.io/json-ld/JsonLdNodeObject"
+                    },
+                    "aliases": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "string"
+                                },
+                                "metadata": {
+                                    "$ref": "https://schema.gtsc.io/json-ld/JsonLdNodeObject"
+                                }
+                            },
+                            "required": [
+                                "id"
+                            ],
+                            "additionalProperties": false
+                        },
+                        "description": "Alternative aliases that can be used to identify the vertex."
+                    },
+                    "resources": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "string"
+                                },
+                                "metadata": {
+                                    "$ref": "https://schema.gtsc.io/json-ld/JsonLdNodeObject"
+                                }
+                            },
+                            "required": [
+                                "id"
+                            ],
+                            "additionalProperties": false
+                        },
+                        "description": "The resources attached to the vertex."
+                    },
+                    "edges": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "string"
+                                },
+                                "relationship": {
+                                    "type": "string"
+                                },
+                                "metadata": {
+                                    "$ref": "https://schema.gtsc.io/json-ld/JsonLdNodeObject"
+                                }
+                            },
+                            "required": [
+                                "id",
+                                "relationship"
+                            ],
+                            "additionalProperties": false
+                        },
+                        "description": "The edges connected to the vertex."
+                    }
+                },
+                "additionalProperties": false,
+                "description": "The data to be used in the vertex."
+            },
+            "AuditableItemGraphEdge": {
+                "type": "object",
+                "properties": {
+                    "metadata": {
+                        "$ref": "https://schema.gtsc.io/json-ld/JsonLdNodeObject"
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "The id of the element."
+                    },
+                    "created": {
+                        "type": "number",
+                        "description": "The timestamp of when the element was created."
+                    },
+                    "updated": {
+                        "type": "number",
+                        "description": "The timestamp of when the element was updated."
+                    },
+                    "deleted": {
+                        "type": "number",
+                        "description": "The timestamp of when the element was deleted, as we never actually remove items."
+                    },
+                    "relationship": {
+                        "type": "string",
+                        "description": "The relationship between the two vertices."
+                    }
+                },
+                "required": [
+                    "created",
+                    "id",
+                    "relationship"
+                ],
+                "additionalProperties": false,
+                "description": "Interface describing an edge between two vertices in an auditable item graph."
+            },
+            "AuditableItemGraphGetResponse": {
+                "anyOf": [
+                    {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "verified": {
+                                "type": "boolean",
+                                "description": "Whether the vertex has been verified."
+                            },
+                            "verification": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "created": {
+                                            "type": "number"
+                                        },
+                                        "failure": {
+                                            "type": "string"
+                                        },
+                                        "failureProperties": {
+                                            "type": "object",
+                                            "additionalProperties": {}
+                                        }
+                                    },
+                                    "required": [
+                                        "created"
+                                    ],
+                                    "additionalProperties": false
+                                },
+                                "description": "The verification for the changesets including any failure information."
+                            },
+                            "metadata": {
+                                "$ref": "https://schema.gtsc.io/json-ld/JsonLdNodeObject",
+                                "description": "The metadata to associate with the element as JSON-LD."
+                            },
+                            "id": {
+                                "type": "string",
+                                "description": "The id of the element."
+                            },
+                            "created": {
+                                "type": "number",
+                                "description": "The timestamp of when the element was created."
+                            },
+                            "updated": {
+                                "type": "number",
+                                "description": "The timestamp of when the element was updated."
+                            },
+                            "nodeIdentity": {
+                                "type": "string",
+                                "description": "The identity of the node which controls the vertex."
+                            },
+                            "aliases": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/components/schemas/AuditableItemGraphAlias"
+                                },
+                                "description": "Alternative aliases that can be used to identify the vertex."
+                            },
+                            "resources": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/components/schemas/AuditableItemGraphResource"
+                                },
+                                "description": "The resources attached to the vertex."
+                            },
+                            "edges": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/components/schemas/AuditableItemGraphEdge"
+                                },
+                                "description": "Edges connected to the vertex."
+                            },
+                            "changesets": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/components/schemas/AuditableItemGraphChangeset"
+                                },
+                                "description": "Changesets for the vertex."
+                            }
+                        },
+                        "required": [
+                            "created",
+                            "id"
+                        ]
+                    },
+                    {
+                        "type": "object",
+                        "additionalProperties": {
+                            "anyOf": [
+                                {
+                                    "$ref": "https://schema.gtsc.io/json-ld/JsonLdNodePrimitive"
+                                },
+                                {
+                                    "$ref": "https://schema.gtsc.io/json-ld/JsonLdLanguageMap"
+                                },
+                                {
+                                    "$ref": "https://schema.gtsc.io/json-ld/JsonLdIndexMap"
+                                },
+                                {
+                                    "$ref": "https://schema.gtsc.io/json-ld/JsonLdIncludedBlock"
+                                },
+                                {
+                                    "$ref": "https://schema.gtsc.io/json-ld/JsonLdIdMap"
+                                },
+                                {
+                                    "$ref": "https://schema.gtsc.io/json-ld/JsonLdTypeMap"
+                                },
+                                {
+                                    "type": "array"
+                                }
+                            ]
+                        },
+                        "properties": {
+                            "verified": {
+                                "type": "boolean",
+                                "description": "Whether the vertex has been verified."
+                            },
+                            "verification": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "created": {
+                                            "type": "number"
+                                        },
+                                        "failure": {
+                                            "type": "string"
+                                        },
+                                        "failureProperties": {
+                                            "type": "object",
+                                            "additionalProperties": {}
+                                        }
+                                    },
+                                    "required": [
+                                        "created"
+                                    ],
+                                    "additionalProperties": false
+                                },
+                                "description": "The verification for the changesets including any failure information."
+                            },
+                            "@context": {
+                                "anyOf": [
+                                    {
+                                        "type": "null"
+                                    },
+                                    {
+                                        "type": "string"
+                                    },
+                                    {
+                                        "$ref": "https://schema.gtsc.io/json-ld/JsonLdContextDefinition"
+                                    },
+                                    {
+                                        "type": "array",
+                                        "items": {
+                                            "anyOf": [
+                                                {
+                                                    "type": "null"
+                                                },
+                                                {
+                                                    "type": "string"
+                                                },
+                                                {
+                                                    "$ref": "https://schema.gtsc.io/json-ld/JsonLdContextDefinition"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            },
+                            "@id": {
+                                "anyOf": [
+                                    {
+                                        "type": "string"
+                                    },
+                                    {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string"
+                                        }
+                                    }
+                                ]
+                            },
+                            "@included": {
+                                "$ref": "https://schema.gtsc.io/json-ld/JsonLdIncludedBlock"
+                            },
+                            "@graph": {
+                                "anyOf": [
+                                    {
+                                        "$ref": "https://schema.gtsc.io/json-ld/JsonLdNodeObject"
+                                    },
+                                    {
+                                        "type": "array",
+                                        "items": {
+                                            "$ref": "https://schema.gtsc.io/json-ld/JsonLdNodeObject"
+                                        }
+                                    }
+                                ]
+                            },
+                            "@nest": {
+                                "anyOf": [
+                                    {
+                                        "$ref": "https://schema.gtsc.io/json-ld/JsonLdJsonObject"
+                                    },
+                                    {
+                                        "type": "array",
+                                        "items": {
+                                            "$ref": "https://schema.gtsc.io/json-ld/JsonLdJsonObject"
+                                        }
+                                    }
+                                ]
+                            },
+                            "@type": {
+                                "anyOf": [
+                                    {
+                                        "type": "string"
+                                    },
+                                    {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string"
+                                        }
+                                    }
+                                ]
+                            },
+                            "@reverse": {
+                                "type": "object",
+                                "additionalProperties": {
+                                    "type": "string"
+                                }
+                            },
+                            "@index": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "allOf": [
+                            {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "https://schema.gtsc.io/json-ld/JsonLdNodeObject"
+                                }
+                            },
+                            {
+                                "type": "object",
+                                "additionalProperties": false,
+                                "properties": {
+                                    "verified": {
+                                        "type": "boolean",
+                                        "description": "Whether the vertex has been verified."
+                                    },
+                                    "verification": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "created": {
+                                                    "type": "number"
+                                                },
+                                                "failure": {
+                                                    "type": "string"
+                                                },
+                                                "failureProperties": {
+                                                    "type": "object",
+                                                    "additionalProperties": {}
+                                                }
+                                            },
+                                            "required": [
+                                                "created"
+                                            ],
+                                            "additionalProperties": false
+                                        },
+                                        "description": "The verification for the changesets including any failure information."
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "verified": {
+                                "type": "boolean",
+                                "description": "Whether the vertex has been verified."
+                            },
+                            "verification": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "created": {
+                                            "type": "number"
+                                        },
+                                        "failure": {
+                                            "type": "string"
+                                        },
+                                        "failureProperties": {
+                                            "type": "object",
+                                            "additionalProperties": {}
+                                        }
+                                    },
+                                    "required": [
+                                        "created"
+                                    ],
+                                    "additionalProperties": false
+                                },
+                                "description": "The verification for the changesets including any failure information."
+                            },
+                            "@context": {
+                                "anyOf": [
+                                    {
+                                        "type": "null"
+                                    },
+                                    {
+                                        "type": "string"
+                                    },
+                                    {
+                                        "$ref": "https://schema.gtsc.io/json-ld/JsonLdContextDefinition"
+                                    },
+                                    {
+                                        "type": "array",
+                                        "items": {
+                                            "anyOf": [
+                                                {
+                                                    "type": "null"
+                                                },
+                                                {
+                                                    "type": "string"
+                                                },
+                                                {
+                                                    "$ref": "https://schema.gtsc.io/json-ld/JsonLdContextDefinition"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            },
+                            "@graph": {
+                                "anyOf": [
+                                    {
+                                        "$ref": "https://schema.gtsc.io/json-ld/JsonLdValueObject"
+                                    },
+                                    {
+                                        "$ref": "https://schema.gtsc.io/json-ld/JsonLdNodeObject"
+                                    },
+                                    {
+                                        "type": "array",
+                                        "items": {
+                                            "anyOf": [
+                                                {
+                                                    "$ref": "https://schema.gtsc.io/json-ld/JsonLdValueObject"
+                                                },
+                                                {
+                                                    "$ref": "https://schema.gtsc.io/json-ld/JsonLdNodeObject"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ],
+                "description": "The response body, id accept header is set to application/ld+json the return object is JSON-LD document."
+            },
+            "AuditableItemGraphListResponse": {
+                "type": "object",
+                "properties": {
+                    "entities": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/AuditableItemGraphVertex"
+                        },
+                        "description": "The entities, which can be partial if a limited keys list was provided."
+                    },
+                    "cursor": {
+                        "type": "string",
+                        "description": "An optional cursor, when defined can be used to call find to get more entities."
+                    }
+                },
+                "required": [
+                    "entities"
+                ],
+                "additionalProperties": false,
+                "description": "The response payload."
+            },
+            "AuditableItemGraphPatchOperation": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "op": {
+                        "type": "string",
+                        "enum": [
+                            "add",
+                            "remove",
+                            "replace",
+                            "move",
+                            "copy",
+                            "test"
+                        ],
+                        "description": "The operation that was performed on the item."
+                    },
+                    "path": {
+                        "type": "string",
+                        "description": "The path to the object that was changed."
+                    },
+                    "from": {
+                        "type": "string",
+                        "description": "The path the value was copied or moved from."
+                    },
+                    "value": {
+                        "description": "The value to add."
+                    }
+                },
+                "required": [
+                    "op",
+                    "path"
+                ],
+                "description": "The patch operation for JSON diffs."
+            },
+            "AuditableItemGraphResource": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "metadata": {
+                        "$ref": "https://schema.gtsc.io/json-ld/JsonLdNodeObject"
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "The id of the element."
+                    },
+                    "created": {
+                        "type": "number",
+                        "description": "The timestamp of when the element was created."
+                    },
+                    "updated": {
+                        "type": "number",
+                        "description": "The timestamp of when the element was updated."
+                    },
+                    "deleted": {
+                        "type": "number",
+                        "description": "The timestamp of when the element was deleted, as we never actually remove items."
+                    }
+                },
+                "required": [
+                    "created",
+                    "id"
+                ],
+                "description": "Interface describing an auditable item graph vertex resource."
+            },
+            "AuditableItemGraphUpdateRequest": {
+                "type": "object",
+                "properties": {
+                    "metadata": {
+                        "$ref": "https://schema.gtsc.io/json-ld/JsonLdNodeObject"
+                    },
+                    "aliases": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "string"
+                                },
+                                "metadata": {
+                                    "$ref": "https://schema.gtsc.io/json-ld/JsonLdNodeObject"
+                                }
+                            },
+                            "required": [
+                                "id"
+                            ],
+                            "additionalProperties": false
+                        },
+                        "description": "Alternative aliases that can be used to identify the vertex."
+                    },
+                    "resources": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "string"
+                                },
+                                "metadata": {
+                                    "$ref": "https://schema.gtsc.io/json-ld/JsonLdNodeObject"
+                                }
+                            },
+                            "required": [
+                                "id"
+                            ],
+                            "additionalProperties": false
+                        },
+                        "description": "The resources attached to the vertex."
+                    },
+                    "edges": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "string"
+                                },
+                                "relationship": {
+                                    "type": "string"
+                                },
+                                "metadata": {
+                                    "$ref": "https://schema.gtsc.io/json-ld/JsonLdNodeObject"
+                                }
+                            },
+                            "required": [
+                                "id",
+                                "relationship"
+                            ],
+                            "additionalProperties": false
+                        },
+                        "description": "The edges connected to the vertex."
+                    }
+                },
+                "additionalProperties": false,
+                "description": "The data to be used in the vertex."
+            },
+            "AuditableItemGraphVertex": {
+                "type": "object",
+                "properties": {
+                    "nodeIdentity": {
+                        "type": "string",
+                        "description": "The identity of the node which controls the vertex."
+                    },
+                    "aliases": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/AuditableItemGraphAlias"
+                        },
+                        "description": "Alternative aliases that can be used to identify the vertex."
+                    },
+                    "resources": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/AuditableItemGraphResource"
+                        },
+                        "description": "The resources attached to the vertex."
+                    },
+                    "edges": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/AuditableItemGraphEdge"
+                        },
+                        "description": "Edges connected to the vertex."
+                    },
+                    "changesets": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/AuditableItemGraphChangeset"
+                        },
+                        "description": "Changesets for the vertex."
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "The id of the element."
+                    },
+                    "created": {
+                        "type": "number",
+                        "description": "The timestamp of when the element was created."
+                    },
+                    "updated": {
+                        "type": "number",
+                        "description": "The timestamp of when the element was updated."
+                    },
+                    "metadata": {
+                        "$ref": "https://schema.gtsc.io/json-ld/JsonLdNodeObject"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "BlobStorageCreateRequest": {
+                "type": "object",
+                "properties": {
+                    "blob": {
+                        "type": "string",
+                        "description": "The data to store in base64 encoding."
+                    },
+                    "mimeType": {
+                        "type": "string",
+                        "description": "The mime type of the blob, will be detected if left undefined."
+                    },
+                    "extension": {
+                        "type": "string",
+                        "description": "The extension of the blob, will be detected if left undefined."
+                    },
+                    "metadata": {
+                        "$ref": "https://schema.gtsc.io/json-ld/JsonLdNodeObject"
+                    },
+                    "namespace": {
+                        "type": "string",
+                        "description": "The namespace to store the data in, defaults to component configured namespace."
+                    }
+                },
+                "required": [
+                    "blob"
+                ],
+                "additionalProperties": false,
+                "description": "The body parameters."
+            },
+            "BlobStorageGetResponse": {
+                "type": "object",
+                "properties": {
+                    "mimeType": {
+                        "type": "string",
+                        "description": "The mime type of the blob."
+                    },
+                    "extension": {
+                        "type": "string",
+                        "description": "The extension of the blob."
+                    },
+                    "metadata": {
+                        "$ref": "https://schema.gtsc.io/json-ld/JsonLdNodeObject"
+                    },
+                    "blob": {
+                        "type": "string",
+                        "description": "The blob in base64 format, if the includeContent flag was set in the request."
+                    }
+                },
+                "additionalProperties": false,
+                "description": "The body parameters."
+            },
+            "BlobStorageUpdateRequest": {
+                "type": "object",
+                "properties": {
+                    "mimeType": {
+                        "type": "string",
+                        "description": "The mime type of the blob, will be detected if left undefined."
+                    },
+                    "extension": {
+                        "type": "string",
+                        "description": "The extension of the blob, will be detected if left undefined."
+                    },
+                    "metadata": {
+                        "$ref": "https://schema.gtsc.io/json-ld/JsonLdNodeObject"
+                    }
+                },
+                "additionalProperties": false,
+                "description": "The body parameters."
             },
             "ConflictResponse": {
                 "type": "object",
@@ -4828,141 +5785,6 @@
                     "name"
                 ],
                 "description": "The body which contains the error."
-            },
-            "ServerInfo": {
-                "type": "object",
-                "properties": {
-                    "name": {
-                        "type": "string",
-                        "description": "The application name."
-                    },
-                    "version": {
-                        "type": "string",
-                        "description": "The version of the server."
-                    }
-                },
-                "required": [
-                    "name",
-                    "version"
-                ],
-                "additionalProperties": false,
-                "description": "The information about the server."
-            },
-            "HealthInfo": {
-                "type": "object",
-                "properties": {
-                    "status": {
-                        "$ref": "#/components/schemas/HealthStatus"
-                    },
-                    "components": {
-                        "type": "array",
-                        "items": {
-                            "type": "object",
-                            "properties": {
-                                "name": {
-                                    "type": "string",
-                                    "description": "The name of the component."
-                                },
-                                "status": {
-                                    "$ref": "#/components/schemas/HealthStatus"
-                                },
-                                "details": {
-                                    "type": "string",
-                                    "description": "The details for the status."
-                                }
-                            },
-                            "required": [
-                                "name",
-                                "status"
-                            ],
-                            "additionalProperties": false
-                        },
-                        "description": "The status of the components."
-                    }
-                },
-                "required": [
-                    "status"
-                ],
-                "additionalProperties": false,
-                "description": "The status of the server."
-            },
-            "HealthStatus": {
-                "anyOf": [
-                    {
-                        "type": "string",
-                        "const": "ok",
-                        "description": "OK."
-                    },
-                    {
-                        "type": "string",
-                        "const": "warning",
-                        "description": "Warning."
-                    },
-                    {
-                        "type": "string",
-                        "const": "error",
-                        "description": "Error."
-                    }
-                ],
-                "description": "The health status of the component."
-            },
-            "ServerSpecResponse": {
-                "description": "The spec for the server."
-            },
-            "LoginRequest": {
-                "type": "object",
-                "properties": {
-                    "email": {
-                        "type": "string",
-                        "description": "The email address for the user."
-                    },
-                    "password": {
-                        "type": "string",
-                        "description": "The password for the user."
-                    }
-                },
-                "required": [
-                    "email",
-                    "password"
-                ],
-                "additionalProperties": false,
-                "description": "The login details."
-            },
-            "LoginResponse": {
-                "type": "object",
-                "properties": {
-                    "token": {
-                        "type": "string",
-                        "description": "The access token, if it uses a mechanism with public access."
-                    },
-                    "expiry": {
-                        "type": "number",
-                        "description": "The expiry time of the token."
-                    }
-                },
-                "required": [
-                    "expiry"
-                ],
-                "additionalProperties": false,
-                "description": "The login response details."
-            },
-            "RefreshTokenResponse": {
-                "type": "object",
-                "properties": {
-                    "token": {
-                        "type": "string",
-                        "description": "The refreshed token, if it uses a mechanism with public access."
-                    },
-                    "expiry": {
-                        "type": "number",
-                        "description": "The expiry time of the token."
-                    }
-                },
-                "required": [
-                    "expiry"
-                ],
-                "additionalProperties": false,
-                "description": "The refresh token details."
             },
             "DidDocument": {
                 "type": "object",
@@ -5132,6 +5954,223 @@
                 "additionalProperties": false,
                 "description": "Interface describing a DID document verification method."
             },
+            "DidService": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "The id of the service."
+                    },
+                    "type": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        ],
+                        "description": "The type of the service."
+                    },
+                    "serviceEndpoint": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        ],
+                        "description": "The endpoint for the service."
+                    }
+                },
+                "required": [
+                    "id",
+                    "type",
+                    "serviceEndpoint"
+                ],
+                "additionalProperties": false,
+                "description": "Interface describing a did document service."
+            },
+            "Error": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "The name for the error."
+                    },
+                    "message": {
+                        "type": "string",
+                        "description": "The message for the error."
+                    },
+                    "source": {
+                        "type": "string",
+                        "description": "The source of the error."
+                    },
+                    "properties": {
+                        "type": "object",
+                        "additionalProperties": {},
+                        "description": "Any additional information for the error."
+                    },
+                    "stack": {
+                        "type": "string",
+                        "description": "The stack trace for the error."
+                    },
+                    "inner": {
+                        "$ref": "#/components/schemas/Error"
+                    }
+                },
+                "required": [
+                    "name",
+                    "message"
+                ],
+                "additionalProperties": false,
+                "description": "Model to describe serialized error."
+            },
+            "HealthInfo": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "$ref": "#/components/schemas/HealthStatus"
+                    },
+                    "components": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "name": {
+                                    "type": "string",
+                                    "description": "The name of the component."
+                                },
+                                "status": {
+                                    "$ref": "#/components/schemas/HealthStatus"
+                                },
+                                "details": {
+                                    "type": "string",
+                                    "description": "The details for the status."
+                                }
+                            },
+                            "required": [
+                                "name",
+                                "status"
+                            ],
+                            "additionalProperties": false
+                        },
+                        "description": "The status of the components."
+                    }
+                },
+                "required": [
+                    "status"
+                ],
+                "additionalProperties": false,
+                "description": "The status of the server."
+            },
+            "HealthStatus": {
+                "anyOf": [
+                    {
+                        "type": "string",
+                        "const": "ok",
+                        "description": "OK."
+                    },
+                    {
+                        "type": "string",
+                        "const": "warning",
+                        "description": "Warning."
+                    },
+                    {
+                        "type": "string",
+                        "const": "error",
+                        "description": "Error."
+                    }
+                ],
+                "description": "The health status of the component."
+            },
+            "IdentityProfileCreateRequest": {
+                "type": "object",
+                "properties": {
+                    "publicProfile": {
+                        "$ref": "https://schema.gtsc.io/json-ld/JsonLdDocument"
+                    },
+                    "privateProfile": {
+                        "$ref": "https://schema.gtsc.io/json-ld/JsonLdDocument"
+                    }
+                },
+                "additionalProperties": false,
+                "description": "The data for the request."
+            },
+            "IdentityProfileGetResponse": {
+                "type": "object",
+                "properties": {
+                    "identity": {
+                        "type": "string",
+                        "description": "The identity of the profile, this is the authenticated user identity."
+                    },
+                    "publicProfile": {
+                        "$ref": "https://schema.gtsc.io/json-ld/JsonLdDocument"
+                    },
+                    "privateProfile": {
+                        "$ref": "https://schema.gtsc.io/json-ld/JsonLdDocument"
+                    }
+                },
+                "required": [
+                    "identity"
+                ],
+                "additionalProperties": false,
+                "description": "The response payload."
+            },
+            "IdentityProfileListResponse": {
+                "type": "object",
+                "properties": {
+                    "items": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "identity": {
+                                    "type": "string",
+                                    "description": "The identity."
+                                },
+                                "publicProfile": {
+                                    "$ref": "https://schema.gtsc.io/json-ld/JsonLdDocument"
+                                }
+                            },
+                            "required": [
+                                "identity"
+                            ],
+                            "additionalProperties": false
+                        },
+                        "description": "The identities."
+                    },
+                    "cursor": {
+                        "type": "string",
+                        "description": "An optional cursor, when defined can be used to call find to get more entities."
+                    }
+                },
+                "required": [
+                    "items"
+                ],
+                "additionalProperties": false,
+                "description": "The response payload."
+            },
+            "IdentityProfileUpdateRequest": {
+                "type": "object",
+                "properties": {
+                    "publicProfile": {
+                        "$ref": "https://schema.gtsc.io/json-ld/JsonLdDocument"
+                    },
+                    "privateProfile": {
+                        "$ref": "https://schema.gtsc.io/json-ld/JsonLdDocument"
+                    }
+                },
+                "additionalProperties": false,
+                "description": "The data for the request."
+            },
             "Jwk": {
                 "type": "object",
                 "properties": {
@@ -5213,440 +6252,6 @@
                 ],
                 "description": "The cryptographic algorithms supported for JSON Web Tokens and JSON Web Keys."
             },
-            "DidService": {
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "type": "string",
-                        "description": "The id of the service."
-                    },
-                    "type": {
-                        "anyOf": [
-                            {
-                                "type": "string"
-                            },
-                            {
-                                "type": "array",
-                                "items": {
-                                    "type": "string"
-                                }
-                            }
-                        ],
-                        "description": "The type of the service."
-                    },
-                    "serviceEndpoint": {
-                        "anyOf": [
-                            {
-                                "type": "string"
-                            },
-                            {
-                                "type": "array",
-                                "items": {
-                                    "type": "string"
-                                }
-                            }
-                        ],
-                        "description": "The endpoint for the service."
-                    }
-                },
-                "required": [
-                    "id",
-                    "type",
-                    "serviceEndpoint"
-                ],
-                "additionalProperties": false,
-                "description": "Interface describing a did document service."
-            },
-            "IdentityProfileCreateRequest": {
-                "type": "object",
-                "properties": {
-                    "publicProfile": {
-                        "description": "The public profile data."
-                    },
-                    "privateProfile": {
-                        "description": "The private profile data."
-                    }
-                },
-                "additionalProperties": false,
-                "description": "The data for the request."
-            },
-            "IdentityProfileGetResponse": {
-                "type": "object",
-                "properties": {
-                    "identity": {
-                        "type": "string",
-                        "description": "The identity of the profile, this is the authenticated user identity."
-                    },
-                    "publicProfile": {
-                        "description": "The public profile data."
-                    },
-                    "privateProfile": {
-                        "description": "The private profile data."
-                    }
-                },
-                "required": [
-                    "identity"
-                ],
-                "additionalProperties": false,
-                "description": "The response payload."
-            },
-            "IdentityProfileGetPublicResponse": {
-                "description": "The response payload."
-            },
-            "IdentityProfileUpdateRequest": {
-                "type": "object",
-                "properties": {
-                    "publicProfile": {
-                        "description": "The public profile data."
-                    },
-                    "privateProfile": {
-                        "description": "The private profile data."
-                    }
-                },
-                "additionalProperties": false,
-                "description": "The data for the request."
-            },
-            "IdentityProfileListResponse": {
-                "type": "object",
-                "properties": {
-                    "items": {
-                        "type": "array",
-                        "items": {
-                            "type": "object",
-                            "properties": {
-                                "identity": {
-                                    "type": "string",
-                                    "description": "The identity."
-                                },
-                                "publicProfile": {
-                                    "description": "The public profile data."
-                                }
-                            },
-                            "required": [
-                                "identity"
-                            ],
-                            "additionalProperties": false
-                        },
-                        "description": "The identities."
-                    },
-                    "cursor": {
-                        "type": "string",
-                        "description": "An optional cursor, when defined can be used to call find to get more entities."
-                    }
-                },
-                "required": [
-                    "items"
-                ],
-                "additionalProperties": false,
-                "description": "The response payload."
-            },
-            "BlobStorageCreateRequest": {
-                "type": "object",
-                "properties": {
-                    "blob": {
-                        "type": "string",
-                        "description": "The data to store in base64 encoding."
-                    },
-                    "mimeType": {
-                        "type": "string",
-                        "description": "The mime type of the blob, will be detected if left undefined."
-                    },
-                    "extension": {
-                        "type": "string",
-                        "description": "The extension of the blob, will be detected if left undefined."
-                    },
-                    "metadata": {
-                        "description": "Custom metadata to associate with the blob as JSON-LD."
-                    },
-                    "namespace": {
-                        "type": "string",
-                        "description": "The namespace to store the data in, defaults to component configured namespace."
-                    }
-                },
-                "required": [
-                    "blob"
-                ],
-                "additionalProperties": false,
-                "description": "The body parameters."
-            },
-            "BlobStorageGetResponse": {
-                "type": "object",
-                "properties": {
-                    "mimeType": {
-                        "type": "string",
-                        "description": "The mime type of the blob."
-                    },
-                    "extension": {
-                        "type": "string",
-                        "description": "The extension of the blob."
-                    },
-                    "metadata": {
-                        "description": "Custom metadata to associate with the blob as JSON-LD."
-                    },
-                    "blob": {
-                        "type": "string",
-                        "description": "The blob in base64 format, if the includeContent flag was set in the request."
-                    }
-                },
-                "additionalProperties": false,
-                "description": "The body parameters."
-            },
-            "Uint8Array": {
-                "type": "object",
-                "properties": {
-                    "BYTES_PER_ELEMENT": {
-                        "type": "number"
-                    },
-                    "buffer": {
-                        "$ref": "#/components/schemas/ArrayBuffer"
-                    },
-                    "byteLength": {
-                        "type": "number"
-                    },
-                    "byteOffset": {
-                        "type": "number"
-                    },
-                    "length": {
-                        "type": "number"
-                    }
-                },
-                "required": [
-                    "BYTES_PER_ELEMENT",
-                    "buffer",
-                    "byteLength",
-                    "byteOffset",
-                    "length"
-                ],
-                "additionalProperties": {
-                    "type": "number"
-                }
-            },
-            "ArrayBuffer": {
-                "type": "object",
-                "properties": {
-                    "byteLength": {
-                        "type": "number"
-                    }
-                },
-                "required": [
-                    "byteLength"
-                ],
-                "additionalProperties": false
-            },
-            "BlobStorageUpdateRequest": {
-                "type": "object",
-                "properties": {
-                    "mimeType": {
-                        "type": "string",
-                        "description": "The mime type of the blob, will be detected if left undefined."
-                    },
-                    "extension": {
-                        "type": "string",
-                        "description": "The extension of the blob, will be detected if left undefined."
-                    },
-                    "metadata": {
-                        "description": "Custom metadata to associate with the blob as JSON-LD."
-                    }
-                },
-                "additionalProperties": false,
-                "description": "The body parameters."
-            },
-            "TelemetryMetric": {
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "type": "string",
-                        "description": "The id of the metric."
-                    },
-                    "label": {
-                        "type": "string",
-                        "description": "The label of the metric."
-                    },
-                    "type": {
-                        "$ref": "#/components/schemas/MetricType"
-                    },
-                    "description": {
-                        "type": "string",
-                        "description": "Description."
-                    },
-                    "unit": {
-                        "type": "string",
-                        "description": "The unit the metric describes."
-                    }
-                },
-                "required": [
-                    "id",
-                    "label",
-                    "type"
-                ],
-                "additionalProperties": false,
-                "description": "Interface describing a telemetry metric."
-            },
-            "MetricType": {
-                "anyOf": [
-                    {
-                        "type": "number",
-                        "const": 0,
-                        "description": "Counter."
-                    },
-                    {
-                        "type": "number",
-                        "const": 1,
-                        "description": "Increment Decrement Counter."
-                    },
-                    {
-                        "type": "number",
-                        "const": 2,
-                        "description": "Gauge."
-                    }
-                ],
-                "description": "The types of metrics."
-            },
-            "TelemetryGetMetricResponse": {
-                "type": "object",
-                "properties": {
-                    "metric": {
-                        "$ref": "#/components/schemas/TelemetryMetric"
-                    },
-                    "value": {
-                        "$ref": "#/components/schemas/TelemetryMetricValue"
-                    }
-                },
-                "required": [
-                    "metric",
-                    "value"
-                ],
-                "additionalProperties": false,
-                "description": "The body parameters."
-            },
-            "TelemetryMetricValue": {
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "type": "string",
-                        "description": "The id of the metric value."
-                    },
-                    "ts": {
-                        "type": "number",
-                        "description": "The timestamp of the metric."
-                    },
-                    "value": {
-                        "type": "number",
-                        "description": "The value of the metric."
-                    },
-                    "customData": {
-                        "type": "object",
-                        "additionalProperties": {},
-                        "description": "The custom data for the metric value."
-                    }
-                },
-                "required": [
-                    "id",
-                    "ts",
-                    "value"
-                ],
-                "additionalProperties": false,
-                "description": "Interface describing a telemetry metric value."
-            },
-            "TelemetryUpdateMetricRequest": {
-                "type": "object",
-                "properties": {
-                    "label": {
-                        "type": "string",
-                        "description": "The label of the metric."
-                    },
-                    "description": {
-                        "type": "string",
-                        "description": "The description of the metric."
-                    },
-                    "unit": {
-                        "type": "string",
-                        "description": "The unit of the metric."
-                    }
-                },
-                "required": [
-                    "label"
-                ],
-                "additionalProperties": false,
-                "description": "The data to be used in the update."
-            },
-            "TelemetryAddMetricValueRequest": {
-                "type": "object",
-                "properties": {
-                    "value": {
-                        "anyOf": [
-                            {
-                                "type": "string",
-                                "const": "inc"
-                            },
-                            {
-                                "type": "string",
-                                "const": "dec"
-                            },
-                            {
-                                "type": "number"
-                            }
-                        ],
-                        "description": "The value for the update operation."
-                    },
-                    "customData": {
-                        "type": "object",
-                        "additionalProperties": {},
-                        "description": "The custom data for the update operation."
-                    }
-                },
-                "required": [
-                    "value"
-                ],
-                "additionalProperties": false,
-                "description": "The data to be used in the update."
-            },
-            "TelemetryListResponse": {
-                "type": "object",
-                "properties": {
-                    "entities": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/TelemetryMetric"
-                        },
-                        "description": "The metrics."
-                    },
-                    "cursor": {
-                        "type": "string",
-                        "description": "An optional cursor, when defined can be used to call find to get more entities."
-                    }
-                },
-                "required": [
-                    "entities"
-                ],
-                "additionalProperties": false,
-                "description": "The response payload."
-            },
-            "TelemetryValuesListResponse": {
-                "type": "object",
-                "properties": {
-                    "metric": {
-                        "$ref": "#/components/schemas/TelemetryMetric"
-                    },
-                    "entities": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/TelemetryMetricValue"
-                        },
-                        "description": "The metric values."
-                    },
-                    "cursor": {
-                        "type": "string",
-                        "description": "An optional cursor, when defined can be used to call find to get more entities."
-                    }
-                },
-                "required": [
-                    "metric",
-                    "entities"
-                ],
-                "additionalProperties": false,
-                "description": "The response payload."
-            },
             "LogEntry": {
                 "type": "object",
                 "properties": {
@@ -5713,6 +6318,63 @@
                 ],
                 "additionalProperties": false,
                 "description": "The response payload."
+            },
+            "LoginRequest": {
+                "type": "object",
+                "properties": {
+                    "email": {
+                        "type": "string",
+                        "description": "The email address for the user."
+                    },
+                    "password": {
+                        "type": "string",
+                        "description": "The password for the user."
+                    }
+                },
+                "required": [
+                    "email",
+                    "password"
+                ],
+                "additionalProperties": false,
+                "description": "The login details."
+            },
+            "LoginResponse": {
+                "type": "object",
+                "properties": {
+                    "token": {
+                        "type": "string",
+                        "description": "The access token, if it uses a mechanism with public access."
+                    },
+                    "expiry": {
+                        "type": "number",
+                        "description": "The expiry time of the token."
+                    }
+                },
+                "required": [
+                    "expiry"
+                ],
+                "additionalProperties": false,
+                "description": "The login response details."
+            },
+            "MetricType": {
+                "anyOf": [
+                    {
+                        "type": "number",
+                        "const": 0,
+                        "description": "Counter."
+                    },
+                    {
+                        "type": "number",
+                        "const": 1,
+                        "description": "Increment Decrement Counter."
+                    },
+                    {
+                        "type": "number",
+                        "const": 2,
+                        "description": "Gauge."
+                    }
+                ],
+                "description": "The types of metrics."
             },
             "NftMintRequest": {
                 "type": "object",
@@ -5800,212 +6462,305 @@
                 "additionalProperties": false,
                 "description": "The data to be used in the update."
             },
-            "AttestationAttestRequest": {
+            "NotFoundResponse": {
                 "type": "object",
+                "additionalProperties": false,
                 "properties": {
-                    "verificationMethodId": {
+                    "notFoundId": {
                         "type": "string",
-                        "description": "The identity verification method to use for attesting the data."
+                        "description": "The id if the item that was not found."
                     },
-                    "data": {
-                        "description": "The data object to attest."
-                    },
-                    "namespace": {
+                    "name": {
                         "type": "string",
-                        "description": "The namespace of the connector to use for the attestation, defaults to component configured namespace."
+                        "description": "The name for the error."
+                    },
+                    "message": {
+                        "type": "string",
+                        "description": "The message for the error."
+                    },
+                    "source": {
+                        "type": "string",
+                        "description": "The source of the error."
+                    },
+                    "properties": {
+                        "type": "object",
+                        "additionalProperties": {},
+                        "description": "Any additional information for the error."
+                    },
+                    "stack": {
+                        "type": "string",
+                        "description": "The stack trace for the error."
+                    },
+                    "inner": {
+                        "$ref": "#/components/schemas/Error"
                     }
                 },
                 "required": [
-                    "verificationMethodId",
-                    "data"
+                    "message",
+                    "name"
                 ],
-                "additionalProperties": false,
-                "description": "The data to be used in the signing."
+                "description": "The body which contains the error."
             },
-            "AttestationAttestResponse": {
+            "RefreshTokenResponse": {
                 "type": "object",
                 "properties": {
-                    "information": {
-                        "$ref": "#/components/schemas/AttestationInformation"
+                    "token": {
+                        "type": "string",
+                        "description": "The refreshed token, if it uses a mechanism with public access."
+                    },
+                    "expiry": {
+                        "type": "number",
+                        "description": "The expiry time of the token."
                     }
                 },
                 "required": [
-                    "information"
+                    "expiry"
                 ],
                 "additionalProperties": false,
-                "description": "The result of the attestation process."
+                "description": "The refresh token details."
             },
-            "AttestationInformation": {
+            "ServerInfo": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "The application name."
+                    },
+                    "version": {
+                        "type": "string",
+                        "description": "The version of the server."
+                    }
+                },
+                "required": [
+                    "name",
+                    "version"
+                ],
+                "additionalProperties": false,
+                "description": "The information about the server."
+            },
+            "ServerSpecResponse": {
+                "description": "The spec for the server."
+            },
+            "SortDirection": {
+                "anyOf": [
+                    {
+                        "type": "string",
+                        "const": "asc",
+                        "description": "Ascending."
+                    },
+                    {
+                        "type": "string",
+                        "const": "desc",
+                        "description": "Descending."
+                    }
+                ],
+                "description": "The sort directions."
+            },
+            "TelemetryAddMetricValueRequest": {
+                "type": "object",
+                "properties": {
+                    "value": {
+                        "anyOf": [
+                            {
+                                "type": "string",
+                                "const": "inc"
+                            },
+                            {
+                                "type": "string",
+                                "const": "dec"
+                            },
+                            {
+                                "type": "number"
+                            }
+                        ],
+                        "description": "The value for the update operation."
+                    },
+                    "customData": {
+                        "type": "object",
+                        "additionalProperties": {},
+                        "description": "The custom data for the update operation."
+                    }
+                },
+                "required": [
+                    "value"
+                ],
+                "additionalProperties": false,
+                "description": "The data to be used in the update."
+            },
+            "TelemetryGetMetricResponse": {
+                "type": "object",
+                "properties": {
+                    "metric": {
+                        "$ref": "#/components/schemas/TelemetryMetric"
+                    },
+                    "value": {
+                        "$ref": "#/components/schemas/TelemetryMetricValue"
+                    }
+                },
+                "required": [
+                    "metric",
+                    "value"
+                ],
+                "additionalProperties": false,
+                "description": "The body parameters."
+            },
+            "TelemetryListResponse": {
+                "type": "object",
+                "properties": {
+                    "entities": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/TelemetryMetric"
+                        },
+                        "description": "The metrics."
+                    },
+                    "cursor": {
+                        "type": "string",
+                        "description": "An optional cursor, when defined can be used to call find to get more entities."
+                    }
+                },
+                "required": [
+                    "entities"
+                ],
+                "additionalProperties": false,
+                "description": "The response payload."
+            },
+            "TelemetryMetric": {
                 "type": "object",
                 "properties": {
                     "id": {
                         "type": "string",
-                        "description": "The unique identifier of the attestation."
+                        "description": "The id of the metric."
                     },
-                    "created": {
+                    "label": {
                         "type": "string",
-                        "description": "Created date/time of the attestation in ISO format."
+                        "description": "The label of the metric."
                     },
-                    "ownerIdentity": {
+                    "type": {
+                        "$ref": "#/components/schemas/MetricType"
+                    },
+                    "description": {
                         "type": "string",
-                        "description": "The identity of the owner."
+                        "description": "Description."
                     },
-                    "transferred": {
+                    "unit": {
                         "type": "string",
-                        "description": "Transferred date/time of the attestation in ISO format, can be blank if holder identity is owner."
-                    },
-                    "holderIdentity": {
-                        "type": "string",
-                        "description": "The identity of the current holder, can be undefined if owner is still the holder."
-                    },
-                    "data": {
-                        "description": "The data that was attested."
-                    },
-                    "proof": {
-                        "$ref": "#/components/schemas/AttestationProof"
+                        "description": "The unit the metric describes."
                     }
                 },
                 "required": [
                     "id",
-                    "created",
-                    "ownerIdentity",
-                    "data",
-                    "proof"
+                    "label",
+                    "type"
                 ],
                 "additionalProperties": false,
-                "description": "Interface describing the collated attestation information."
+                "description": "Interface describing a telemetry metric."
             },
-            "AttestationProof": {
+            "TelemetryMetricValue": {
                 "type": "object",
                 "properties": {
-                    "type": {
+                    "id": {
                         "type": "string",
-                        "description": "The type of the proof."
+                        "description": "The id of the metric value."
+                    },
+                    "ts": {
+                        "type": "number",
+                        "description": "The timestamp of the metric."
                     },
                     "value": {
-                        "type": "string",
-                        "description": "The value of the proof."
+                        "type": "number",
+                        "description": "The value of the metric."
+                    },
+                    "customData": {
+                        "type": "object",
+                        "additionalProperties": {},
+                        "description": "The custom data for the metric value."
                     }
                 },
                 "required": [
-                    "type",
+                    "id",
+                    "ts",
                     "value"
                 ],
                 "additionalProperties": false,
-                "description": "Interface describing an attestation proof."
+                "description": "Interface describing a telemetry metric value."
             },
-            "AttestationVerifyResponse": {
+            "TelemetryUpdateMetricRequest": {
                 "type": "object",
                 "properties": {
-                    "verified": {
-                        "type": "boolean",
-                        "description": "Whether the attestation is verified."
-                    },
-                    "failure": {
+                    "label": {
                         "type": "string",
-                        "description": "The failure message if the attestation is not verified."
+                        "description": "The label of the metric."
                     },
-                    "information": {
-                        "$ref": "#/components/schemas/AttestationInformation"
-                    }
-                },
-                "required": [
-                    "verified"
-                ],
-                "additionalProperties": false,
-                "description": "The data returned from the verification response."
-            },
-            "AttestationTransferRequest": {
-                "type": "object",
-                "properties": {
-                    "holderIdentity": {
+                    "description": {
                         "type": "string",
-                        "description": "The new holder identity."
+                        "description": "The description of the metric."
+                    },
+                    "unit": {
+                        "type": "string",
+                        "description": "The unit of the metric."
                     }
                 },
                 "required": [
-                    "holderIdentity"
+                    "label"
                 ],
                 "additionalProperties": false,
-                "description": "The parameters to be used in the transfer."
+                "description": "The data to be used in the update."
             },
-            "AttestationTransferResponse": {
+            "TelemetryValuesListResponse": {
                 "type": "object",
                 "properties": {
-                    "information": {
-                        "$ref": "#/components/schemas/AttestationInformation"
+                    "metric": {
+                        "$ref": "#/components/schemas/TelemetryMetric"
+                    },
+                    "entities": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/TelemetryMetricValue"
+                        },
+                        "description": "The metric values."
+                    },
+                    "cursor": {
+                        "type": "string",
+                        "description": "An optional cursor, when defined can be used to call find to get more entities."
                     }
                 },
                 "required": [
-                    "information"
+                    "metric",
+                    "entities"
                 ],
                 "additionalProperties": false,
-                "description": "The data returned from the transfer response."
+                "description": "The response payload."
             },
-            "AuditableItemGraphCreateRequest": {
+            "Uint8Array": {
                 "type": "object",
                 "properties": {
-                    "metadata": {
-                        "description": "The metadata to be used in the vertex as JSON-LD."
+                    "BYTES_PER_ELEMENT": {
+                        "type": "number"
                     },
-                    "aliases": {
-                        "type": "array",
-                        "items": {
-                            "type": "object",
-                            "properties": {
-                                "id": {
-                                    "type": "string"
-                                },
-                                "metadata": {}
-                            },
-                            "required": [
-                                "id"
-                            ],
-                            "additionalProperties": false
-                        },
-                        "description": "Alternative aliases that can be used to identify the vertex."
+                    "buffer": {
+                        "$ref": "#/components/schemas/ArrayBuffer"
                     },
-                    "resources": {
-                        "type": "array",
-                        "items": {
-                            "type": "object",
-                            "properties": {
-                                "id": {
-                                    "type": "string"
-                                },
-                                "metadata": {}
-                            },
-                            "required": [
-                                "id"
-                            ],
-                            "additionalProperties": false
-                        },
-                        "description": "The resources attached to the vertex."
+                    "byteLength": {
+                        "type": "number"
                     },
-                    "edges": {
-                        "type": "array",
-                        "items": {
-                            "type": "object",
-                            "properties": {
-                                "id": {
-                                    "type": "string"
-                                },
-                                "relationship": {
-                                    "type": "string"
-                                },
-                                "metadata": {}
-                            },
-                            "required": [
-                                "id",
-                                "relationship"
-                            ],
-                            "additionalProperties": false
-                        },
-                        "description": "The edges connected to the vertex."
+                    "byteOffset": {
+                        "type": "number"
+                    },
+                    "length": {
+                        "type": "number"
                     }
                 },
-                "additionalProperties": false,
-                "description": "The data to be used in the vertex."
+                "required": [
+                    "BYTES_PER_ELEMENT",
+                    "buffer",
+                    "byteLength",
+                    "byteOffset",
+                    "length"
+                ],
+                "additionalProperties": {
+                    "type": "number"
+                }
             },
             "VerifyDepth": {
                 "anyOf": [
@@ -6026,365 +6781,6 @@
                     }
                 ],
                 "description": "How deep to verify the signatures."
-            },
-            "AuditableItemGraphGetResponse": {
-                "type": "object",
-                "properties": {
-                    "vertex": {
-                        "$ref": "#/components/schemas/AuditableItemGraphVertex"
-                    },
-                    "changesets": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/AuditableItemGraphChangeset"
-                        },
-                        "description": "Changesets containing time sliced changes to the vertex."
-                    },
-                    "verified": {
-                        "type": "boolean",
-                        "description": "Whether the vertex has been verified."
-                    },
-                    "verification": {
-                        "type": "array",
-                        "items": {
-                            "type": "object",
-                            "properties": {
-                                "created": {
-                                    "type": "number"
-                                },
-                                "failure": {
-                                    "type": "string"
-                                },
-                                "failureProperties": {
-                                    "type": "object",
-                                    "additionalProperties": {}
-                                }
-                            },
-                            "required": [
-                                "created"
-                            ],
-                            "additionalProperties": false
-                        },
-                        "description": "The verification for the changesets including any failure information."
-                    }
-                },
-                "required": [
-                    "vertex"
-                ],
-                "additionalProperties": false,
-                "description": "The response body."
-            },
-            "AuditableItemGraphVertex": {
-                "type": "object",
-                "properties": {
-                    "nodeIdentity": {
-                        "type": "string",
-                        "description": "The identity of the node which controls the vertex."
-                    },
-                    "aliases": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/AuditableItemGraphAlias"
-                        },
-                        "description": "Alternative aliases that can be used to identify the vertex."
-                    },
-                    "resources": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/AuditableItemGraphResource"
-                        },
-                        "description": "The resources attached to the vertex."
-                    },
-                    "edges": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/AuditableItemGraphEdge"
-                        },
-                        "description": "Edges connected to the vertex."
-                    },
-                    "id": {
-                        "type": "string",
-                        "description": "The id of the element."
-                    },
-                    "created": {
-                        "type": "number",
-                        "description": "The timestamp of when the element was created."
-                    },
-                    "updated": {
-                        "type": "number",
-                        "description": "The timestamp of when the element was updated."
-                    },
-                    "metadata": {
-                        "description": "The metadata to associate with the element as JSON-LD."
-                    }
-                },
-                "additionalProperties": false
-            },
-            "AuditableItemGraphAlias": {
-                "type": "object",
-                "additionalProperties": false,
-                "properties": {
-                    "metadata": {
-                        "description": "The metadata to associate with the element as JSON-LD."
-                    },
-                    "id": {
-                        "type": "string",
-                        "description": "The id of the element."
-                    },
-                    "created": {
-                        "type": "number",
-                        "description": "The timestamp of when the element was created."
-                    },
-                    "updated": {
-                        "type": "number",
-                        "description": "The timestamp of when the element was updated."
-                    },
-                    "deleted": {
-                        "type": "number",
-                        "description": "The timestamp of when the element was deleted, as we never actually remove items."
-                    }
-                },
-                "required": [
-                    "created",
-                    "id"
-                ],
-                "description": "Interface describing an alias for a vertex."
-            },
-            "AuditableItemGraphResource": {
-                "type": "object",
-                "additionalProperties": false,
-                "properties": {
-                    "metadata": {
-                        "description": "The metadata to associate with the element as JSON-LD."
-                    },
-                    "id": {
-                        "type": "string",
-                        "description": "The id of the element."
-                    },
-                    "created": {
-                        "type": "number",
-                        "description": "The timestamp of when the element was created."
-                    },
-                    "updated": {
-                        "type": "number",
-                        "description": "The timestamp of when the element was updated."
-                    },
-                    "deleted": {
-                        "type": "number",
-                        "description": "The timestamp of when the element was deleted, as we never actually remove items."
-                    }
-                },
-                "required": [
-                    "created",
-                    "id"
-                ],
-                "description": "Interface describing an auditable item graph vertex resource."
-            },
-            "AuditableItemGraphEdge": {
-                "type": "object",
-                "properties": {
-                    "metadata": {
-                        "description": "The metadata to associate with the element as JSON-LD."
-                    },
-                    "id": {
-                        "type": "string",
-                        "description": "The id of the element."
-                    },
-                    "created": {
-                        "type": "number",
-                        "description": "The timestamp of when the element was created."
-                    },
-                    "updated": {
-                        "type": "number",
-                        "description": "The timestamp of when the element was updated."
-                    },
-                    "deleted": {
-                        "type": "number",
-                        "description": "The timestamp of when the element was deleted, as we never actually remove items."
-                    },
-                    "relationship": {
-                        "type": "string",
-                        "description": "The relationship between the two vertices."
-                    }
-                },
-                "required": [
-                    "created",
-                    "id",
-                    "relationship"
-                ],
-                "additionalProperties": false,
-                "description": "Interface describing an edge between two vertices in an auditable item graph."
-            },
-            "AuditableItemGraphChangeset": {
-                "type": "object",
-                "properties": {
-                    "created": {
-                        "type": "number",
-                        "description": "The timestamp of when the changeset was created."
-                    },
-                    "userIdentity": {
-                        "type": "string",
-                        "description": "The user identity that created the changes."
-                    },
-                    "patches": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/PatchOperation"
-                        },
-                        "description": "The patches for the integrity at this epoch."
-                    },
-                    "hash": {
-                        "type": "string",
-                        "description": "The hash for the changeset."
-                    },
-                    "immutableStorageId": {
-                        "type": "string",
-                        "description": "The immutable storage id containing the signature for the changeset."
-                    }
-                },
-                "required": [
-                    "created",
-                    "hash",
-                    "patches",
-                    "userIdentity"
-                ],
-                "additionalProperties": false,
-                "description": "Interface describing a set of updates to the vertex."
-            },
-            "PatchOperation": {
-                "type": "object",
-                "properties": {
-                    "op": {
-                        "type": "string",
-                        "enum": [
-                            "add",
-                            "remove",
-                            "replace",
-                            "move",
-                            "copy",
-                            "test"
-                        ],
-                        "description": "The operation that was performed on the item."
-                    },
-                    "path": {
-                        "type": "string",
-                        "description": "The path to the object that was changed."
-                    },
-                    "from": {
-                        "type": "string",
-                        "description": "The path the value was copied or moved from."
-                    },
-                    "value": {
-                        "description": "The value to add."
-                    }
-                },
-                "required": [
-                    "op",
-                    "path"
-                ],
-                "additionalProperties": false,
-                "description": "Interface describing a patch operation to add a property."
-            },
-            "AuditableItemGraphUpdateRequest": {
-                "type": "object",
-                "properties": {
-                    "metadata": {
-                        "description": "The metadata to be used in the vertex as JSON-LD."
-                    },
-                    "aliases": {
-                        "type": "array",
-                        "items": {
-                            "type": "object",
-                            "properties": {
-                                "id": {
-                                    "type": "string"
-                                },
-                                "metadata": {}
-                            },
-                            "required": [
-                                "id"
-                            ],
-                            "additionalProperties": false
-                        },
-                        "description": "Alternative aliases that can be used to identify the vertex."
-                    },
-                    "resources": {
-                        "type": "array",
-                        "items": {
-                            "type": "object",
-                            "properties": {
-                                "id": {
-                                    "type": "string"
-                                },
-                                "metadata": {}
-                            },
-                            "required": [
-                                "id"
-                            ],
-                            "additionalProperties": false
-                        },
-                        "description": "The resources attached to the vertex."
-                    },
-                    "edges": {
-                        "type": "array",
-                        "items": {
-                            "type": "object",
-                            "properties": {
-                                "id": {
-                                    "type": "string"
-                                },
-                                "relationship": {
-                                    "type": "string"
-                                },
-                                "metadata": {}
-                            },
-                            "required": [
-                                "id",
-                                "relationship"
-                            ],
-                            "additionalProperties": false
-                        },
-                        "description": "The edges connected to the vertex."
-                    }
-                },
-                "additionalProperties": false,
-                "description": "The data to be used in the vertex."
-            },
-            "SortDirection": {
-                "anyOf": [
-                    {
-                        "type": "string",
-                        "const": "asc",
-                        "description": "Ascending."
-                    },
-                    {
-                        "type": "string",
-                        "const": "desc",
-                        "description": "Descending."
-                    }
-                ],
-                "description": "The sort directions."
-            },
-            "AuditableItemGraphListResponse": {
-                "type": "object",
-                "properties": {
-                    "entities": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/AuditableItemGraphVertex"
-                        },
-                        "description": "The entities, which can be partial if a limited keys list was provided."
-                    },
-                    "cursor": {
-                        "type": "string",
-                        "description": "An optional cursor, when defined can be used to call find to get more entities."
-                    }
-                },
-                "required": [
-                    "entities"
-                ],
-                "additionalProperties": false,
-                "description": "The response payload."
             }
         },
         "securitySchemes": {

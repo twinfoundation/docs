@@ -6,7 +6,7 @@ EPCIS Document.
 
 ### @context
 
-> **@context**: `ContextDefinition`
+> **@context**: `IJsonLdContextDefinition`
 
 The @context.
 

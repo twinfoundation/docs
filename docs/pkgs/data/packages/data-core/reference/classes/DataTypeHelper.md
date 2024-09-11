@@ -38,7 +38,7 @@ The data to validate.
 
 The list of validation failures to add to.
 
-• **validationMode?**: `"schema"` \| `"validate"` \| `"either"`
+• **validationMode?**: [`ValidationMode`](../type-aliases/ValidationMode.md)
 
 The validation mode to use, defaults to either.
 

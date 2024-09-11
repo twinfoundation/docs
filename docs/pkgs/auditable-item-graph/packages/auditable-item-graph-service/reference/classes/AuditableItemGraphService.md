@@ -78,7 +78,7 @@ Create a new graph vertex.
 
 #### Parameters
 
-• **metadata?**: `unknown`
+• **metadata?**: `IJsonLdNodeObject`
 
 The metadata for the vertex as JSON-LD.
 
@@ -116,7 +116,7 @@ The id of the new graph item.
 
 ### get()
 
-> **get**(`id`, `options`?): `Promise`\<`object`\>
+> **get**(`id`, `options`?, `responseType`?): `Promise`\<IJsonLdDocument \| IAuditableItemGraphVertex & `object`\>
 
 Get a graph vertex.
 
@@ -142,27 +142,15 @@ Whether to include the changesets of the vertex, defaults to false.
 
 How many signatures to verify, defaults to "none".
 
+• **responseType?**: `"application/json"` \| `"application/ld+json"`
+
+The response type to return, defaults to application/json.
+
 #### Returns
 
-`Promise`\<`object`\>
+`Promise`\<IJsonLdDocument \| IAuditableItemGraphVertex & `object`\>
 
 The vertex if found.
-
-##### verified?
-
-> `optional` **verified**: `boolean`
-
-##### verification?
-
-> `optional` **verification**: `object`[]
-
-##### vertex
-
-> **vertex**: `IAuditableItemGraphVertex`
-
-##### changesets?
-
-> `optional` **changesets**: `IAuditableItemGraphChangeset`[]
 
 #### Implementation of
 
@@ -186,7 +174,7 @@ Update a graph vertex.
 
 The id of the vertex to update.
 
-• **metadata?**: `unknown`
+• **metadata?**: `IJsonLdNodeObject`
 
 The metadata for the vertex.
 
