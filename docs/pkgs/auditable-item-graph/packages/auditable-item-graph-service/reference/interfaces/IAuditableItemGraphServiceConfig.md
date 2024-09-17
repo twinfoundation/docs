@@ -18,11 +18,11 @@ auditable-item-graph
 
 ***
 
-### enableIntegrityCheck?
+### enableImmutableDiffs?
 
-> `optional` **enableIntegrityCheck**: `boolean`
+> `optional` **enableImmutableDiffs**: `boolean`
 
-Enable immutable integrity checking by storing the changes encrypted in immutable storage.
+Enable immutable diffs by storing the changes encrypted in immutable storage.
 This will incur additional costs and should only be enabled if you require immutable integrity checking.
 
 #### Default

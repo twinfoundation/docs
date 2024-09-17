@@ -54,6 +54,14 @@ The patches in the changeset.
 
 ***
 
+### signature
+
+> **signature**: `string`
+
+The signature of the changeset.
+
+***
+
 ### immutableStorageId?
 
 > `optional` **immutableStorageId**: `string`

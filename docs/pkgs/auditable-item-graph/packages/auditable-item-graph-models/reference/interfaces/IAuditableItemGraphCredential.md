@@ -4,9 +4,33 @@ The data stored immutably for the graph in a verifiable credential.
 
 ## Properties
 
+### created
+
+> **created**: `number`
+
+The timestamp of when the changeset was created.
+
+***
+
+### userIdentity
+
+> **userIdentity**: `string`
+
+The user identity that created the changes.
+
+***
+
 ### signature
 
 > **signature**: `string`
+
+The signature for the changeset.
+
+***
+
+### hash
+
+> **hash**: `string`
 
 The signature for the changeset.
 
@@ -16,4 +40,4 @@ The signature for the changeset.
 
 > `optional` **integrity**: `string`
 
-The data for the integrity check, if it is enabled, encrypted and base64 encoded.
+The integrity data for this changeset, encrypted.

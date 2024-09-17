@@ -18,7 +18,7 @@ Class describing the auditable item graph vertex resource.
 
 > **id**: `string`
 
-The id of the vertex.
+The id of the resource.
 
 ***
 
@@ -26,7 +26,15 @@ The id of the vertex.
 
 > **created**: `number`
 
-The timestamp of when the vertex was created.
+The timestamp of when the resource was created.
+
+***
+
+### updated?
+
+> `optional` **updated**: `number`
+
+The timestamp of when the resource was updated.
 
 ***
 

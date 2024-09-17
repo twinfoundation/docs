@@ -135,6 +135,12 @@ This is the overview of the packages.
 - [@gtsc/auditable-item-graph-service](pkgs/auditable-item-graph/packages/auditable-item-graph-service/overview) - Auditable Item Graph contract implementation and REST endpoint definitions
 - [@gtsc/auditable-item-graph-rest-client](pkgs/auditable-item-graph/packages/auditable-item-graph-rest-client/overview) - Auditable Item Graph contract implementation which can connect to REST endpoints
 
+## Auditable Item Stream
+
+- [@gtsc/auditable-item-stream-models](pkgs/auditable-item-stream/packages/auditable-item-stream-models/overview) - Models which define the structure of the auditable item stream connectors and services
+- [@gtsc/auditable-item-stream-service](pkgs/auditable-item-stream/packages/auditable-item-stream-service/overview) - Auditable Item Stream contract implementation and REST endpoint definitions
+- [@gtsc/auditable-item-stream-rest-client](pkgs/auditable-item-stream/packages/auditable-item-stream-rest-client/overview) - Auditable Item Stream contract implementation which can connect to REST endpoints
+
 ## Workbench
 
 - [@gtsc/workbench-server](pkgs/workbench/apps/workbench-server/overview) - Serve APIs using the specified configuration

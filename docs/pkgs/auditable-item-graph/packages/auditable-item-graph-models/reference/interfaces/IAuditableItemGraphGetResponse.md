@@ -18,20 +18,6 @@ The headers which can be used to determine the response data type.
 
 ### body
 
-> **body**: IJsonLdDocument \| IAuditableItemGraphVertex & `object`
+> **body**: `IJsonLdDocument` \| [`IAuditableItemGraphVertex`](IAuditableItemGraphVertex.md) & `object`
 
-The response body, id accept header is set to application/ld+json the return object is JSON-LD document.
-
-#### Type declaration
-
-##### verified?
-
-> `optional` **verified**: `boolean`
-
-Whether the vertex has been verified.
-
-##### verification?
-
-> `optional` **verification**: `object`[]
-
-The verification for the changesets including any failure information.
+The response body, if accept header is set to application/ld+json the return object is JSON-LD document.

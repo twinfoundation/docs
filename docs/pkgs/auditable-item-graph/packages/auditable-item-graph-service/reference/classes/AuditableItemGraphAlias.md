@@ -22,11 +22,27 @@ The alternative alias for the vertex.
 
 ***
 
+### format?
+
+> `optional` **format**: `string`
+
+The format of the alias for the vertex.
+
+***
+
 ### created
 
 > **created**: `number`
 
 The timestamp of when the alias was created.
+
+***
+
+### updated?
+
+> `optional` **updated**: `number`
+
+The timestamp of when the alias was updated.
 
 ***
 

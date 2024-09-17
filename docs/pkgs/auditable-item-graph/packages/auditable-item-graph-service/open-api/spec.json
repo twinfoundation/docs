@@ -39,7 +39,7 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/AuditableItemGraphCreateRequest"
+                                "$ref": "https://schema.gtsc.io/aig/AuditableItemGraphCreateRequest"
                             },
                             "examples": {
                                 "auditableItemGraphCreateRequestExample": {
@@ -260,6 +260,15 @@
                         "schema": {
                             "type": "number"
                         }
+                    },
+                    {
+                        "name": "Accept",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "style": "simple"
                     }
                 ],
                 "security": [
@@ -273,10 +282,10 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/AuditableItemGraphListResponse"
+                                    "$ref": "https://schema.gtsc.io/aig/AuditableItemGraphListResponse"
                                 },
                                 "examples": {
-                                    "auditableItemGraphGetResponseExample": {
+                                    "auditableItemGraphListResponseExample": {
                                         "value": {
                                             "entities": [
                                                 {
@@ -293,6 +302,46 @@
                                         }
                                     }
                                 }
+                            },
+                            "application/ld+json": {
+                                "schema": {
+                                    "$ref": "https://schema.gtsc.io/aig/AuditableItemGraphListResponse"
+                                },
+                                "examples": {
+                                    "auditableItemGraphJsonLdListResponseExample": {
+                                        "value": {
+                                            "@context": "https://schema.gtsc.io/aig/",
+                                            "@graph": [
+                                                {
+                                                    "@type": "vertex",
+                                                    "id": "aig:1234567890",
+                                                    "created": "2024-08-22T11:55:16.271Z",
+                                                    "updated": "2024-08-22T11:55:16.271Z",
+                                                    "metadata": {
+                                                        "@context": "http://schema.org/",
+                                                        "@type": "Note",
+                                                        "content": "This is a simple note"
+                                                    },
+                                                    "aliases": [
+                                                        {
+                                                            "@type": "alias",
+                                                            "created": "2024-08-22T11:55:16.271Z",
+                                                            "id": "tst:1234567890"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "headers": {
+                            "Content-Type": {
+                                "schema": {
+                                    "type": "string"
+                                },
+                                "description": "e.g. application/ld+json"
                             }
                         }
                     },
@@ -424,7 +473,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/AuditableItemGraphGetResponse"
+                                    "$ref": "https://schema.gtsc.io/aig/AuditableItemGraphGetResponse"
                                 },
                                 "examples": {
                                     "auditableItemGraphGetResponseExample": {
@@ -449,7 +498,7 @@
                             },
                             "application/ld+json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/AuditableItemGraphGetResponse"
+                                    "$ref": "https://schema.gtsc.io/aig/AuditableItemGraphGetResponse"
                                 },
                                 "examples": {
                                     "auditableItemGraphJsonLdGetResponseExample": {
@@ -574,7 +623,7 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/AuditableItemGraphUpdateRequest"
+                                "$ref": "https://schema.gtsc.io/aig/AuditableItemGraphUpdateRequest"
                             },
                             "examples": {
                                 "auditableItemGraphUpdateRequestExample": {
@@ -713,6 +762,256 @@
     },
     "components": {
         "schemas": {
+            "AuditableItemGraphCreateRequest": {
+                "type": "object",
+                "properties": {
+                    "metadata": {
+                        "$ref": "https://schema.gtsc.io/json-ld/JsonLdNodeObject"
+                    },
+                    "aliases": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "string"
+                                },
+                                "format": {
+                                    "type": "string"
+                                },
+                                "metadata": {
+                                    "$ref": "https://schema.gtsc.io/json-ld/JsonLdNodeObject"
+                                }
+                            },
+                            "required": [
+                                "id"
+                            ],
+                            "additionalProperties": false
+                        },
+                        "description": "Alternative aliases that can be used to identify the vertex."
+                    },
+                    "resources": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "string"
+                                },
+                                "metadata": {
+                                    "$ref": "https://schema.gtsc.io/json-ld/JsonLdNodeObject"
+                                }
+                            },
+                            "required": [
+                                "id"
+                            ],
+                            "additionalProperties": false
+                        },
+                        "description": "The resources attached to the vertex."
+                    },
+                    "edges": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "string"
+                                },
+                                "relationship": {
+                                    "type": "string"
+                                },
+                                "metadata": {
+                                    "$ref": "https://schema.gtsc.io/json-ld/JsonLdNodeObject"
+                                }
+                            },
+                            "required": [
+                                "id",
+                                "relationship"
+                            ],
+                            "additionalProperties": false
+                        },
+                        "description": "The edges connected to the vertex."
+                    }
+                },
+                "additionalProperties": false,
+                "description": "The data to be used in the vertex."
+            },
+            "AuditableItemGraphGetResponse": {
+                "anyOf": [
+                    {
+                        "$ref": "https://schema.gtsc.io/json-ld/JsonLdDocument"
+                    },
+                    {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "verified": {
+                                "type": "boolean",
+                                "description": "Whether the vertex and its elements have been verified."
+                            },
+                            "changesetsVerification": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "https://schema.gtsc.io/aig/AuditableItemGraphVerification"
+                                },
+                                "description": "The verification for the changesets including any failure information."
+                            },
+                            "metadata": {
+                                "$ref": "https://schema.gtsc.io/json-ld/JsonLdNodeObject",
+                                "description": "The metadata to associate with the element as JSON-LD."
+                            },
+                            "id": {
+                                "type": "string",
+                                "description": "The id of the element."
+                            },
+                            "created": {
+                                "type": "number",
+                                "description": "The timestamp of when the element was created."
+                            },
+                            "updated": {
+                                "type": "number",
+                                "description": "The timestamp of when the element was updated."
+                            },
+                            "nodeIdentity": {
+                                "type": "string",
+                                "description": "The identity of the node which controls the vertex."
+                            },
+                            "aliases": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "https://schema.gtsc.io/aig/AuditableItemGraphAlias"
+                                },
+                                "description": "Alternative aliases that can be used to identify the vertex."
+                            },
+                            "resources": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "https://schema.gtsc.io/aig/AuditableItemGraphResource"
+                                },
+                                "description": "The resources attached to the vertex."
+                            },
+                            "edges": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "https://schema.gtsc.io/aig/AuditableItemGraphEdge"
+                                },
+                                "description": "Edges connected to the vertex."
+                            },
+                            "changesets": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "https://schema.gtsc.io/aig/AuditableItemGraphChangeset"
+                                },
+                                "description": "Changesets for the vertex."
+                            }
+                        },
+                        "required": [
+                            "created",
+                            "id"
+                        ]
+                    }
+                ],
+                "description": "The response body, if accept header is set to application/ld+json the return object is JSON-LD document."
+            },
+            "AuditableItemGraphListResponse": {
+                "anyOf": [
+                    {
+                        "$ref": "https://schema.gtsc.io/json-ld/JsonLdDocument"
+                    },
+                    {
+                        "type": "object",
+                        "properties": {
+                            "entities": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "https://schema.gtsc.io/aig/AuditableItemGraphVertex"
+                                },
+                                "description": "The entities, which can be partial if a limited keys list was provided."
+                            },
+                            "cursor": {
+                                "type": "string",
+                                "description": "An optional cursor, when defined can be used to call find to get more entities."
+                            }
+                        },
+                        "additionalProperties": false
+                    }
+                ],
+                "description": "The response payload."
+            },
+            "AuditableItemGraphUpdateRequest": {
+                "type": "object",
+                "properties": {
+                    "metadata": {
+                        "$ref": "https://schema.gtsc.io/json-ld/JsonLdNodeObject"
+                    },
+                    "aliases": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "string"
+                                },
+                                "format": {
+                                    "type": "string"
+                                },
+                                "metadata": {
+                                    "$ref": "https://schema.gtsc.io/json-ld/JsonLdNodeObject"
+                                }
+                            },
+                            "required": [
+                                "id"
+                            ],
+                            "additionalProperties": false
+                        },
+                        "description": "Alternative aliases that can be used to identify the vertex."
+                    },
+                    "resources": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "string"
+                                },
+                                "metadata": {
+                                    "$ref": "https://schema.gtsc.io/json-ld/JsonLdNodeObject"
+                                }
+                            },
+                            "required": [
+                                "id"
+                            ],
+                            "additionalProperties": false
+                        },
+                        "description": "The resources attached to the vertex."
+                    },
+                    "edges": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "string"
+                                },
+                                "relationship": {
+                                    "type": "string"
+                                },
+                                "metadata": {
+                                    "$ref": "https://schema.gtsc.io/json-ld/JsonLdNodeObject"
+                                }
+                            },
+                            "required": [
+                                "id",
+                                "relationship"
+                            ],
+                            "additionalProperties": false
+                        },
+                        "description": "The edges connected to the vertex."
+                    }
+                },
+                "additionalProperties": false,
+                "description": "The data to be used in the vertex."
+            },
             "Error": {
                 "type": "object",
                 "properties": {
@@ -748,76 +1047,20 @@
                 "additionalProperties": false,
                 "description": "Model to describe serialized error."
             },
-            "AuditableItemGraphCreateRequest": {
-                "type": "object",
-                "properties": {
-                    "metadata": {
-                        "$ref": "https://schema.gtsc.io/json-ld/JsonLdNodeObject"
+            "SortDirection": {
+                "anyOf": [
+                    {
+                        "type": "string",
+                        "const": "asc",
+                        "description": "Ascending."
                     },
-                    "aliases": {
-                        "type": "array",
-                        "items": {
-                            "type": "object",
-                            "properties": {
-                                "id": {
-                                    "type": "string"
-                                },
-                                "metadata": {
-                                    "$ref": "https://schema.gtsc.io/json-ld/JsonLdNodeObject"
-                                }
-                            },
-                            "required": [
-                                "id"
-                            ],
-                            "additionalProperties": false
-                        },
-                        "description": "Alternative aliases that can be used to identify the vertex."
-                    },
-                    "resources": {
-                        "type": "array",
-                        "items": {
-                            "type": "object",
-                            "properties": {
-                                "id": {
-                                    "type": "string"
-                                },
-                                "metadata": {
-                                    "$ref": "https://schema.gtsc.io/json-ld/JsonLdNodeObject"
-                                }
-                            },
-                            "required": [
-                                "id"
-                            ],
-                            "additionalProperties": false
-                        },
-                        "description": "The resources attached to the vertex."
-                    },
-                    "edges": {
-                        "type": "array",
-                        "items": {
-                            "type": "object",
-                            "properties": {
-                                "id": {
-                                    "type": "string"
-                                },
-                                "relationship": {
-                                    "type": "string"
-                                },
-                                "metadata": {
-                                    "$ref": "https://schema.gtsc.io/json-ld/JsonLdNodeObject"
-                                }
-                            },
-                            "required": [
-                                "id",
-                                "relationship"
-                            ],
-                            "additionalProperties": false
-                        },
-                        "description": "The edges connected to the vertex."
+                    {
+                        "type": "string",
+                        "const": "desc",
+                        "description": "Descending."
                     }
-                },
-                "additionalProperties": false,
-                "description": "The data to be used in the vertex."
+                ],
+                "description": "The sort directions."
             },
             "VerifyDepth": {
                 "anyOf": [
@@ -838,699 +1081,6 @@
                     }
                 ],
                 "description": "How deep to verify the signatures."
-            },
-            "AuditableItemGraphGetResponse": {
-                "anyOf": [
-                    {
-                        "type": "object",
-                        "additionalProperties": false,
-                        "properties": {
-                            "verified": {
-                                "type": "boolean",
-                                "description": "Whether the vertex has been verified."
-                            },
-                            "verification": {
-                                "type": "array",
-                                "items": {
-                                    "type": "object",
-                                    "properties": {
-                                        "created": {
-                                            "type": "number"
-                                        },
-                                        "failure": {
-                                            "type": "string"
-                                        },
-                                        "failureProperties": {
-                                            "type": "object",
-                                            "additionalProperties": {}
-                                        }
-                                    },
-                                    "required": [
-                                        "created"
-                                    ],
-                                    "additionalProperties": false
-                                },
-                                "description": "The verification for the changesets including any failure information."
-                            },
-                            "metadata": {
-                                "$ref": "https://schema.gtsc.io/json-ld/JsonLdNodeObject",
-                                "description": "The metadata to associate with the element as JSON-LD."
-                            },
-                            "id": {
-                                "type": "string",
-                                "description": "The id of the element."
-                            },
-                            "created": {
-                                "type": "number",
-                                "description": "The timestamp of when the element was created."
-                            },
-                            "updated": {
-                                "type": "number",
-                                "description": "The timestamp of when the element was updated."
-                            },
-                            "nodeIdentity": {
-                                "type": "string",
-                                "description": "The identity of the node which controls the vertex."
-                            },
-                            "aliases": {
-                                "type": "array",
-                                "items": {
-                                    "$ref": "#/components/schemas/AuditableItemGraphAlias"
-                                },
-                                "description": "Alternative aliases that can be used to identify the vertex."
-                            },
-                            "resources": {
-                                "type": "array",
-                                "items": {
-                                    "$ref": "#/components/schemas/AuditableItemGraphResource"
-                                },
-                                "description": "The resources attached to the vertex."
-                            },
-                            "edges": {
-                                "type": "array",
-                                "items": {
-                                    "$ref": "#/components/schemas/AuditableItemGraphEdge"
-                                },
-                                "description": "Edges connected to the vertex."
-                            },
-                            "changesets": {
-                                "type": "array",
-                                "items": {
-                                    "$ref": "#/components/schemas/AuditableItemGraphChangeset"
-                                },
-                                "description": "Changesets for the vertex."
-                            }
-                        },
-                        "required": [
-                            "created",
-                            "id"
-                        ]
-                    },
-                    {
-                        "type": "object",
-                        "additionalProperties": {
-                            "anyOf": [
-                                {
-                                    "$ref": "https://schema.gtsc.io/json-ld/JsonLdNodePrimitive"
-                                },
-                                {
-                                    "$ref": "https://schema.gtsc.io/json-ld/JsonLdLanguageMap"
-                                },
-                                {
-                                    "$ref": "https://schema.gtsc.io/json-ld/JsonLdIndexMap"
-                                },
-                                {
-                                    "$ref": "https://schema.gtsc.io/json-ld/JsonLdIncludedBlock"
-                                },
-                                {
-                                    "$ref": "https://schema.gtsc.io/json-ld/JsonLdIdMap"
-                                },
-                                {
-                                    "$ref": "https://schema.gtsc.io/json-ld/JsonLdTypeMap"
-                                },
-                                {
-                                    "type": "array"
-                                }
-                            ]
-                        },
-                        "properties": {
-                            "verified": {
-                                "type": "boolean",
-                                "description": "Whether the vertex has been verified."
-                            },
-                            "verification": {
-                                "type": "array",
-                                "items": {
-                                    "type": "object",
-                                    "properties": {
-                                        "created": {
-                                            "type": "number"
-                                        },
-                                        "failure": {
-                                            "type": "string"
-                                        },
-                                        "failureProperties": {
-                                            "type": "object",
-                                            "additionalProperties": {}
-                                        }
-                                    },
-                                    "required": [
-                                        "created"
-                                    ],
-                                    "additionalProperties": false
-                                },
-                                "description": "The verification for the changesets including any failure information."
-                            },
-                            "@context": {
-                                "anyOf": [
-                                    {
-                                        "type": "null"
-                                    },
-                                    {
-                                        "type": "string"
-                                    },
-                                    {
-                                        "$ref": "https://schema.gtsc.io/json-ld/JsonLdContextDefinition"
-                                    },
-                                    {
-                                        "type": "array",
-                                        "items": {
-                                            "anyOf": [
-                                                {
-                                                    "type": "null"
-                                                },
-                                                {
-                                                    "type": "string"
-                                                },
-                                                {
-                                                    "$ref": "https://schema.gtsc.io/json-ld/JsonLdContextDefinition"
-                                                }
-                                            ]
-                                        }
-                                    }
-                                ]
-                            },
-                            "@id": {
-                                "anyOf": [
-                                    {
-                                        "type": "string"
-                                    },
-                                    {
-                                        "type": "array",
-                                        "items": {
-                                            "type": "string"
-                                        }
-                                    }
-                                ]
-                            },
-                            "@included": {
-                                "$ref": "https://schema.gtsc.io/json-ld/JsonLdIncludedBlock"
-                            },
-                            "@graph": {
-                                "anyOf": [
-                                    {
-                                        "$ref": "https://schema.gtsc.io/json-ld/JsonLdNodeObject"
-                                    },
-                                    {
-                                        "type": "array",
-                                        "items": {
-                                            "$ref": "https://schema.gtsc.io/json-ld/JsonLdNodeObject"
-                                        }
-                                    }
-                                ]
-                            },
-                            "@nest": {
-                                "anyOf": [
-                                    {
-                                        "$ref": "https://schema.gtsc.io/json-ld/JsonLdJsonObject"
-                                    },
-                                    {
-                                        "type": "array",
-                                        "items": {
-                                            "$ref": "https://schema.gtsc.io/json-ld/JsonLdJsonObject"
-                                        }
-                                    }
-                                ]
-                            },
-                            "@type": {
-                                "anyOf": [
-                                    {
-                                        "type": "string"
-                                    },
-                                    {
-                                        "type": "array",
-                                        "items": {
-                                            "type": "string"
-                                        }
-                                    }
-                                ]
-                            },
-                            "@reverse": {
-                                "type": "object",
-                                "additionalProperties": {
-                                    "type": "string"
-                                }
-                            },
-                            "@index": {
-                                "type": "string"
-                            }
-                        }
-                    },
-                    {
-                        "allOf": [
-                            {
-                                "type": "array",
-                                "items": {
-                                    "$ref": "https://schema.gtsc.io/json-ld/JsonLdNodeObject"
-                                }
-                            },
-                            {
-                                "type": "object",
-                                "additionalProperties": false,
-                                "properties": {
-                                    "verified": {
-                                        "type": "boolean",
-                                        "description": "Whether the vertex has been verified."
-                                    },
-                                    "verification": {
-                                        "type": "array",
-                                        "items": {
-                                            "type": "object",
-                                            "properties": {
-                                                "created": {
-                                                    "type": "number"
-                                                },
-                                                "failure": {
-                                                    "type": "string"
-                                                },
-                                                "failureProperties": {
-                                                    "type": "object",
-                                                    "additionalProperties": {}
-                                                }
-                                            },
-                                            "required": [
-                                                "created"
-                                            ],
-                                            "additionalProperties": false
-                                        },
-                                        "description": "The verification for the changesets including any failure information."
-                                    }
-                                }
-                            }
-                        ]
-                    },
-                    {
-                        "type": "object",
-                        "additionalProperties": false,
-                        "properties": {
-                            "verified": {
-                                "type": "boolean",
-                                "description": "Whether the vertex has been verified."
-                            },
-                            "verification": {
-                                "type": "array",
-                                "items": {
-                                    "type": "object",
-                                    "properties": {
-                                        "created": {
-                                            "type": "number"
-                                        },
-                                        "failure": {
-                                            "type": "string"
-                                        },
-                                        "failureProperties": {
-                                            "type": "object",
-                                            "additionalProperties": {}
-                                        }
-                                    },
-                                    "required": [
-                                        "created"
-                                    ],
-                                    "additionalProperties": false
-                                },
-                                "description": "The verification for the changesets including any failure information."
-                            },
-                            "@context": {
-                                "anyOf": [
-                                    {
-                                        "type": "null"
-                                    },
-                                    {
-                                        "type": "string"
-                                    },
-                                    {
-                                        "$ref": "https://schema.gtsc.io/json-ld/JsonLdContextDefinition"
-                                    },
-                                    {
-                                        "type": "array",
-                                        "items": {
-                                            "anyOf": [
-                                                {
-                                                    "type": "null"
-                                                },
-                                                {
-                                                    "type": "string"
-                                                },
-                                                {
-                                                    "$ref": "https://schema.gtsc.io/json-ld/JsonLdContextDefinition"
-                                                }
-                                            ]
-                                        }
-                                    }
-                                ]
-                            },
-                            "@graph": {
-                                "anyOf": [
-                                    {
-                                        "$ref": "https://schema.gtsc.io/json-ld/JsonLdValueObject"
-                                    },
-                                    {
-                                        "$ref": "https://schema.gtsc.io/json-ld/JsonLdNodeObject"
-                                    },
-                                    {
-                                        "type": "array",
-                                        "items": {
-                                            "anyOf": [
-                                                {
-                                                    "$ref": "https://schema.gtsc.io/json-ld/JsonLdValueObject"
-                                                },
-                                                {
-                                                    "$ref": "https://schema.gtsc.io/json-ld/JsonLdNodeObject"
-                                                }
-                                            ]
-                                        }
-                                    }
-                                ]
-                            }
-                        }
-                    }
-                ],
-                "description": "The response body, id accept header is set to application/ld+json the return object is JSON-LD document."
-            },
-            "AuditableItemGraphAlias": {
-                "type": "object",
-                "additionalProperties": false,
-                "properties": {
-                    "metadata": {
-                        "$ref": "https://schema.gtsc.io/json-ld/JsonLdNodeObject"
-                    },
-                    "id": {
-                        "type": "string",
-                        "description": "The id of the element."
-                    },
-                    "created": {
-                        "type": "number",
-                        "description": "The timestamp of when the element was created."
-                    },
-                    "updated": {
-                        "type": "number",
-                        "description": "The timestamp of when the element was updated."
-                    },
-                    "deleted": {
-                        "type": "number",
-                        "description": "The timestamp of when the element was deleted, as we never actually remove items."
-                    }
-                },
-                "required": [
-                    "created",
-                    "id"
-                ],
-                "description": "Interface describing an alias for a vertex."
-            },
-            "AuditableItemGraphResource": {
-                "type": "object",
-                "additionalProperties": false,
-                "properties": {
-                    "metadata": {
-                        "$ref": "https://schema.gtsc.io/json-ld/JsonLdNodeObject"
-                    },
-                    "id": {
-                        "type": "string",
-                        "description": "The id of the element."
-                    },
-                    "created": {
-                        "type": "number",
-                        "description": "The timestamp of when the element was created."
-                    },
-                    "updated": {
-                        "type": "number",
-                        "description": "The timestamp of when the element was updated."
-                    },
-                    "deleted": {
-                        "type": "number",
-                        "description": "The timestamp of when the element was deleted, as we never actually remove items."
-                    }
-                },
-                "required": [
-                    "created",
-                    "id"
-                ],
-                "description": "Interface describing an auditable item graph vertex resource."
-            },
-            "AuditableItemGraphEdge": {
-                "type": "object",
-                "properties": {
-                    "metadata": {
-                        "$ref": "https://schema.gtsc.io/json-ld/JsonLdNodeObject"
-                    },
-                    "id": {
-                        "type": "string",
-                        "description": "The id of the element."
-                    },
-                    "created": {
-                        "type": "number",
-                        "description": "The timestamp of when the element was created."
-                    },
-                    "updated": {
-                        "type": "number",
-                        "description": "The timestamp of when the element was updated."
-                    },
-                    "deleted": {
-                        "type": "number",
-                        "description": "The timestamp of when the element was deleted, as we never actually remove items."
-                    },
-                    "relationship": {
-                        "type": "string",
-                        "description": "The relationship between the two vertices."
-                    }
-                },
-                "required": [
-                    "created",
-                    "id",
-                    "relationship"
-                ],
-                "additionalProperties": false,
-                "description": "Interface describing an edge between two vertices in an auditable item graph."
-            },
-            "AuditableItemGraphChangeset": {
-                "type": "object",
-                "properties": {
-                    "created": {
-                        "type": "number",
-                        "description": "The timestamp of when the changeset was created."
-                    },
-                    "userIdentity": {
-                        "type": "string",
-                        "description": "The user identity that created the changes."
-                    },
-                    "patches": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/AuditableItemGraphPatchOperation"
-                        },
-                        "description": "The patches for the integrity at this epoch."
-                    },
-                    "hash": {
-                        "type": "string",
-                        "description": "The hash for the changeset."
-                    },
-                    "immutableStorageId": {
-                        "type": "string",
-                        "description": "The immutable storage id containing the signature for the changeset."
-                    }
-                },
-                "required": [
-                    "created",
-                    "hash",
-                    "patches",
-                    "userIdentity"
-                ],
-                "additionalProperties": false,
-                "description": "Interface describing a set of updates to the vertex."
-            },
-            "AuditableItemGraphPatchOperation": {
-                "type": "object",
-                "additionalProperties": false,
-                "properties": {
-                    "op": {
-                        "type": "string",
-                        "enum": [
-                            "add",
-                            "remove",
-                            "replace",
-                            "move",
-                            "copy",
-                            "test"
-                        ],
-                        "description": "The operation that was performed on the item."
-                    },
-                    "path": {
-                        "type": "string",
-                        "description": "The path to the object that was changed."
-                    },
-                    "from": {
-                        "type": "string",
-                        "description": "The path the value was copied or moved from."
-                    },
-                    "value": {
-                        "description": "The value to add."
-                    }
-                },
-                "required": [
-                    "op",
-                    "path"
-                ],
-                "description": "The patch operation for JSON diffs."
-            },
-            "AuditableItemGraphUpdateRequest": {
-                "type": "object",
-                "properties": {
-                    "metadata": {
-                        "$ref": "https://schema.gtsc.io/json-ld/JsonLdNodeObject"
-                    },
-                    "aliases": {
-                        "type": "array",
-                        "items": {
-                            "type": "object",
-                            "properties": {
-                                "id": {
-                                    "type": "string"
-                                },
-                                "metadata": {
-                                    "$ref": "https://schema.gtsc.io/json-ld/JsonLdNodeObject"
-                                }
-                            },
-                            "required": [
-                                "id"
-                            ],
-                            "additionalProperties": false
-                        },
-                        "description": "Alternative aliases that can be used to identify the vertex."
-                    },
-                    "resources": {
-                        "type": "array",
-                        "items": {
-                            "type": "object",
-                            "properties": {
-                                "id": {
-                                    "type": "string"
-                                },
-                                "metadata": {
-                                    "$ref": "https://schema.gtsc.io/json-ld/JsonLdNodeObject"
-                                }
-                            },
-                            "required": [
-                                "id"
-                            ],
-                            "additionalProperties": false
-                        },
-                        "description": "The resources attached to the vertex."
-                    },
-                    "edges": {
-                        "type": "array",
-                        "items": {
-                            "type": "object",
-                            "properties": {
-                                "id": {
-                                    "type": "string"
-                                },
-                                "relationship": {
-                                    "type": "string"
-                                },
-                                "metadata": {
-                                    "$ref": "https://schema.gtsc.io/json-ld/JsonLdNodeObject"
-                                }
-                            },
-                            "required": [
-                                "id",
-                                "relationship"
-                            ],
-                            "additionalProperties": false
-                        },
-                        "description": "The edges connected to the vertex."
-                    }
-                },
-                "additionalProperties": false,
-                "description": "The data to be used in the vertex."
-            },
-            "SortDirection": {
-                "anyOf": [
-                    {
-                        "type": "string",
-                        "const": "asc",
-                        "description": "Ascending."
-                    },
-                    {
-                        "type": "string",
-                        "const": "desc",
-                        "description": "Descending."
-                    }
-                ],
-                "description": "The sort directions."
-            },
-            "AuditableItemGraphListResponse": {
-                "type": "object",
-                "properties": {
-                    "entities": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/AuditableItemGraphVertex"
-                        },
-                        "description": "The entities, which can be partial if a limited keys list was provided."
-                    },
-                    "cursor": {
-                        "type": "string",
-                        "description": "An optional cursor, when defined can be used to call find to get more entities."
-                    }
-                },
-                "required": [
-                    "entities"
-                ],
-                "additionalProperties": false,
-                "description": "The response payload."
-            },
-            "AuditableItemGraphVertex": {
-                "type": "object",
-                "properties": {
-                    "nodeIdentity": {
-                        "type": "string",
-                        "description": "The identity of the node which controls the vertex."
-                    },
-                    "aliases": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/AuditableItemGraphAlias"
-                        },
-                        "description": "Alternative aliases that can be used to identify the vertex."
-                    },
-                    "resources": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/AuditableItemGraphResource"
-                        },
-                        "description": "The resources attached to the vertex."
-                    },
-                    "edges": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/AuditableItemGraphEdge"
-                        },
-                        "description": "Edges connected to the vertex."
-                    },
-                    "changesets": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/AuditableItemGraphChangeset"
-                        },
-                        "description": "Changesets for the vertex."
-                    },
-                    "id": {
-                        "type": "string",
-                        "description": "The id of the element."
-                    },
-                    "created": {
-                        "type": "number",
-                        "description": "The timestamp of when the element was created."
-                    },
-                    "updated": {
-                        "type": "number",
-                        "description": "The timestamp of when the element was updated."
-                    },
-                    "metadata": {
-                        "$ref": "https://schema.gtsc.io/json-ld/JsonLdNodeObject"
-                    }
-                },
-                "additionalProperties": false
             }
         },
         "securitySchemes": {
