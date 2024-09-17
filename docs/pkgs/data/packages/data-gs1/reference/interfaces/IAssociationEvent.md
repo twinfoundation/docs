@@ -58,7 +58,7 @@ Quantity in case of class-level event visibility data.
 
 ### @context?
 
-> `optional` **@context**: `ContextDefinition`
+> `optional` **@context**: `IJsonLdContextDefinition`
 
 JSON-LD @context.
 

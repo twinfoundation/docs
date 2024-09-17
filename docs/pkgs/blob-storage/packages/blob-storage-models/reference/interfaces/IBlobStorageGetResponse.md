@@ -24,7 +24,7 @@ The extension of the blob.
 
 #### metadata?
 
-> `optional` **metadata**: `unknown`
+> `optional` **metadata**: `IJsonLdNodeObject`
 
 Custom metadata to associate with the blob as JSON-LD.
 

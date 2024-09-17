@@ -1,6 +1,6 @@
 {
 	"name": "@gtsc/data",
-	"version": "0.0.5-next.7",
+	"version": "0.0.5-next.21",
 	"description": "Data",
 	"repository": {
 		"type": "git",
@@ -40,8 +40,8 @@
 	},
 	"workspaces": [
 		"packages/data-core",
-		"packages/data-framework",
 		"packages/data-json-ld",
+		"packages/data-framework",
 		"packages/data-schema-org",
 		"packages/data-gs1",
 		"packages/data-unece",

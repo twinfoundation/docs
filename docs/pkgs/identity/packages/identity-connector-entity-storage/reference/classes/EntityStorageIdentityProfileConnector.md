@@ -4,13 +4,13 @@ Class which implements the identity profile connector contract.
 
 ## Type parameters
 
-• **T** = `any`
+• **T** *extends* `IJsonLdDocument` = `IJsonLdDocument`
 
-• **U** = `any`
+• **U** *extends* `IJsonLdDocument` = `IJsonLdDocument`
 
 ## Implements
 
-- `IIdentityProfileConnector`
+- `IIdentityProfileConnector`\<`T`, `U`\>
 
 ## Constructors
 
@@ -114,13 +114,13 @@ The private properties to get for the profile, defaults to all.
 
 The items properties.
 
-##### publicProfile?
+##### publicProfile
 
-> `optional` **publicProfile**: `Partial`\<`T`\>
+> **publicProfile**: `Partial`\<`T`\>
 
-##### privateProfile?
+##### privateProfile
 
-> `optional` **privateProfile**: `Partial`\<`U`\>
+> **privateProfile**: `Partial`\<`U`\>
 
 #### Implementation of
 

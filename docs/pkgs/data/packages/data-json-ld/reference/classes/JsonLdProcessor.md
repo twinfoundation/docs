@@ -40,23 +40,23 @@ The document loader to use.
 
 ### compact()
 
-> `static` **compact**(`document`, `context`?): `Promise`\<`JsonLdDocument`\>
+> `static` **compact**(`document`, `context`?): `Promise`\<[`IJsonLdDocument`](../type-aliases/IJsonLdDocument.md)\>
 
 Compact a document according to a particular context.
 
 #### Parameters
 
-• **document**: `JsonLdDocument`
+• **document**: [`IJsonLdDocument`](../type-aliases/IJsonLdDocument.md)
 
 The JSON-LD document to compact.
 
-• **context?**: `ContextDefinition`
+• **context?**: [`IJsonLdContextDefinition`](../interfaces/IJsonLdContextDefinition.md)
 
 The context to compact the document to.
 
 #### Returns
 
-`Promise`\<`JsonLdDocument`\>
+`Promise`\<[`IJsonLdDocument`](../type-aliases/IJsonLdDocument.md)\>
 
 The compacted JSON-LD document.
 
@@ -64,19 +64,19 @@ The compacted JSON-LD document.
 
 ### expand()
 
-> `static` **expand**(`compacted`): `Promise`\<`JsonLdDocument`\>
+> `static` **expand**(`compacted`): `Promise`\<[`IJsonLdDocument`](../type-aliases/IJsonLdDocument.md)\>
 
 Expand a document, removing its context.
 
 #### Parameters
 
-• **compacted**: `JsonLdDocument`
+• **compacted**: [`IJsonLdDocument`](../type-aliases/IJsonLdDocument.md)
 
 The compacted JSON-LD document to expand.
 
 #### Returns
 
-`Promise`\<`JsonLdDocument`\>
+`Promise`\<[`IJsonLdDocument`](../type-aliases/IJsonLdDocument.md)\>
 
 The expanded JSON-LD document.
 

@@ -56,7 +56,7 @@ Combined alias index for the vertex used for querying.
 
 ### metadata?
 
-> `optional` **metadata**: `unknown`
+> `optional` **metadata**: `IJsonLdNodeObject`
 
 Metadata to associate with the vertex as JSON-LD.
 
