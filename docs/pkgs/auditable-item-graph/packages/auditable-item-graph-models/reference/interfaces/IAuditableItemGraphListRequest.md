@@ -4,6 +4,18 @@ Get the a list of the vertices with matching ids or aliases.
 
 ## Properties
 
+### headers?
+
+> `optional` **headers**: `object`
+
+The headers which can be used to determine the response data type.
+
+#### Accept
+
+> **Accept**: `"application/json"` \| `"application/ld+json"`
+
+***
+
 ### query?
 
 > `optional` **query**: `object`

@@ -30,6 +30,14 @@ The timestamp of when the edge was created.
 
 ***
 
+### updated?
+
+> `optional` **updated**: `number`
+
+The timestamp of when the edge was updated.
+
+***
+
 ### deleted?
 
 > `optional` **deleted**: `number`

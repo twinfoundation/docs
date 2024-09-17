@@ -8,6 +8,14 @@ Interface describing an alias for a vertex.
 
 ## Properties
 
+### format?
+
+> `optional` **format**: `string`
+
+The format of the id in the alias.
+
+***
+
 ### id
 
 > **id**: `string`
