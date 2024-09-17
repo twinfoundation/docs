@@ -68,6 +68,10 @@
 		"types": ["packages"]
 	},
 	{
+		"name": "auditable-item-stream",
+		"types": ["packages"]
+	},
+	{
 		"name": "workbench",
 		"types": ["apps"]
 	}
