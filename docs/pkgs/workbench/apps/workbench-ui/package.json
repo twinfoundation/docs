@@ -1,7 +1,7 @@
 {
 	"name": "@gtsc/workbench-ui",
 	"version": "0.0.1-next.1",
-	"description": "UI to demonstate the APIs",
+	"description": "UI to demonstrate the APIs",
 	"private": true,
 	"scripts": {
 		"dev": "vite dev",
