@@ -16,16 +16,16 @@ const FeatureList: FeatureItem[] = [
 		href: '/docs/intro'
 	},
 	{
-		title: 'Packages',
+		title: 'Applications',
 		svg: '/img/logo.svg',
-		description: 'Information about the available technology packages.',
-		href: '/docs/pkgs'
+		description: 'Information about the available applications.',
+		href: '/docs/apps'
 	},
 	{
-		title: 'Lorum Ipsem',
+		title: 'Packages',
 		svg: '/img/logo.svg',
-		description: 'Lorum Ipsem.',
-		href: '/'
+		description: 'Information about the available packages.',
+		href: '/docs/pkgs'
 	}
 ];
 

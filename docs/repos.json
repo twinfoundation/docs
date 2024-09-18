@@ -1,78 +1,59 @@
 [
 	{
-		"name": "tools",
-		"types": ["packages"]
+		"name": "tools"
 	},
 	{
-		"name": "framework",
-		"types": ["packages"]
+		"name": "framework"
 	},
 	{
-		"name": "standards",
-		"types": ["packages"]
+		"name": "standards"
 	},
 	{
-		"name": "data",
-		"types": ["packages"]
+		"name": "data"
 	},
 	{
-		"name": "api",
-		"types": ["packages"]
+		"name": "api"
 	},
 	{
-		"name": "entity-storage",
-		"types": ["packages"]
+		"name": "entity-storage"
 	},
 	{
-		"name": "blob-storage",
-		"types": ["packages"]
+		"name": "blob-storage"
 	},
 	{
-		"name": "logging",
-		"types": ["packages"]
+		"name": "logging"
 	},
 	{
-		"name": "telemetry",
-		"types": ["packages"]
+		"name": "telemetry"
 	},
 	{
-		"name": "vault",
-		"types": ["packages"]
+		"name": "vault"
 	},
 	{
-		"name": "dlt",
-		"types": ["packages"]
+		"name": "dlt"
 	},
 	{
-		"name": "wallet",
-		"types": ["packages"]
+		"name": "wallet"
 	},
 	{
-		"name": "immutable-storage",
-		"types": ["packages"]
+		"name": "immutable-storage"
 	},
 	{
-		"name": "identity",
-		"types": ["packages"]
+		"name": "identity"
 	},
 	{
-		"name": "nft",
-		"types": ["packages"]
+		"name": "nft"
 	},
 	{
-		"name": "attestation",
-		"types": ["packages"]
+		"name": "attestation"
 	},
 	{
-		"name": "auditable-item-graph",
-		"types": ["packages"]
+		"name": "auditable-item-graph"
 	},
 	{
-		"name": "auditable-item-stream",
-		"types": ["packages"]
+		"name": "auditable-item-stream"
 	},
 	{
-		"name": "workbench",
-		"types": ["apps"]
+		"name": "workbench"
 	}
 ]

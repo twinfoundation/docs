@@ -57,6 +57,12 @@ const config: Config = {
 					},
 					{
 						type: "docSidebar",
+						sidebarId: "appsSidebar",
+						position: "left",
+						label: "Applications"
+					},
+					{
+						type: "docSidebar",
 						sidebarId: "packagesSidebar",
 						position: "left",
 						label: "Packages"
@@ -76,6 +82,10 @@ const config: Config = {
 							{
 								label: "Introduction",
 								to: "/docs/intro"
+							},
+							{
+								label: "Applications",
+								to: "/docs/apps"
 							},
 							{
 								label: "Packages",

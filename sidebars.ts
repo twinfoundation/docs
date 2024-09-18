@@ -13,14 +13,12 @@ import fs from "fs";
  Create as many sidebars as you want.
  */
 const sidebars: SidebarsConfig = {
-	// By default, Docusaurus generates a sidebar from the docs folder structure
 	introductionSidebar: ["intro"],
-
-	// But you can create a sidebar manually
-	packagesSidebar: ["pkgs", ...buildPkgs()]
+	appsSidebar: ["apps", ...buildPkgs("apps")],
+	packagesSidebar: ["pkgs", ...buildPkgs("packages")]
 };
 
-function buildPkgs(): any {
+function buildPkgs(packageType): any {
 	try {
 		const reposFilename = path.join(__dirname, "docs", "repos.json");
 		const reposContent = fs.readFileSync(reposFilename, "utf-8");
@@ -30,27 +28,31 @@ function buildPkgs(): any {
 
 		for (const repo of reposJson) {
 			try {
-				for (const packageType of repo.types) {
-					const packageFilename = path.join(__dirname, "docs", "pkgs", repo.name, "package.json");
+				const packageFilename = path.join(__dirname, "docs", "pkgs", repo.name, "package.json");
 
-					if (fileExists(packageFilename)) {
-						const packageContent = fs.readFileSync(packageFilename, "utf-8");
-						const packageContentJson = JSON.parse(packageContent);
+				if (fileExists(packageFilename)) {
+					const packageContent = fs.readFileSync(packageFilename, "utf-8");
+					const packageContentJson = JSON.parse(packageContent);
 
-						const items = packageContentJson.workspaces.map((p) =>
-							generatePackageItems(repo.name, packageType, p.replace(`${packageType}/`, ""))
-						);
+					const items = [];
 
-						if (items.length > 0) {
-							groups.push({
-								type: "category",
-								label: packageContentJson.description,
-								items
-							});
+					for (const p of packageContentJson.workspaces) {
+						if (p.includes(`${packageType}/`)) {
+							items.push(
+								generatePackageItems(repo.name, packageType, p.replace(`${packageType}/`, ""))
+							);
 						}
-					} else {
-						console.debug("! File not found", packageFilename);
 					}
+
+					if (items.length > 0) {
+						groups.push({
+							type: "category",
+							label: packageContentJson.description,
+							items
+						});
+					}
+				} else {
+					console.debug("! File not found", packageFilename);
 				}
 			} catch (error) {
 				console.debug(error);

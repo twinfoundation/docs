@@ -1,10 +1,10 @@
 import path from "path";
 import fs from "fs";
 
-function buildContent(groupContent) {
+function buildContent(groupContent, description) {
 	let content = `# Overview
 
-This is the overview of the packages.
+${description}
 `;
 
 	for (const group of groupContent) {
@@ -14,10 +14,8 @@ This is the overview of the packages.
 	return content;
 }
 
-function buildGroupContent(packageGroup) {
+function buildGroupContent(packageGroup, packageType) {
 	let content = "";
-
-	console.debug("  Package Group", packageGroup);
 
 	const packageGroupFilename = path.join(
 		__dirname,
@@ -33,8 +31,13 @@ function buildGroupContent(packageGroup) {
 		const groupJson = JSON.parse(packageContent);
 
 		let combinedPackageContent = "";
+		let displayedGroup = false;
 		for (const pkg of groupJson.workspaces) {
-			for (const packageType of packageGroup.types) {
+			if (pkg.includes(`${packageType}/`)) {
+				if (!displayedGroup) {
+					console.debug("  Group", packageGroup);
+					displayedGroup = true;
+				}
 				combinedPackageContent += buildPackageContent(
 					packageGroup.name,
 					packageType,
@@ -92,28 +95,36 @@ function fileExists(filename: string): boolean {
 	return false;
 }
 
+function buildOverview(packageType, outputFilename, description) {
+	console.debug(`Building ${packageType} Overviews`);
+
+	const repoContent = [];
+
+	try {
+		const reposFilename = path.join(__dirname, "..", "docs", "repos.json");
+		const reposContent = fs.readFileSync(reposFilename, "utf-8");
+		const reposJson = JSON.parse(reposContent);
+
+		for (const repo of reposJson) {
+			repoContent.push(buildGroupContent(repo, packageType));
+		}
+
+		console.debug(`Writing ${packageType} Overview`, outputFilename);
+		fs.writeFileSync(
+			path.join(__dirname, "..", "docs", outputFilename),
+			buildContent(repoContent, description)
+		);
+	} catch (err) {
+		console.debug(err);
+	}
+}
+
 module.exports = async function packageIndexPlugin() {
 	return {
-		name: "pkgs",
+		name: "appsAndPackages",
 		async loadContent() {
-			console.debug("Building Packages Overview");
-
-			const repoContent = [];
-
-			try {
-				const reposFilename = path.join(__dirname, "..", "docs", "repos.json");
-				const reposContent = fs.readFileSync(reposFilename, "utf-8");
-				const reposJson = JSON.parse(reposContent);
-
-				for (const repo of reposJson) {
-					repoContent.push(buildGroupContent(repo));
-				}
-
-				console.debug("Writing Packages Overview");
-				fs.writeFileSync(path.join(__dirname, "..", "docs", "pkgs.md"), buildContent(repoContent));
-			} catch (err) {
-				console.debug(err);
-			}
+			buildOverview("apps", "apps.md", "This is the overview of the applications.");
+			buildOverview("packages", "pkgs.md", "This is the overview of the packages.");
 		}
 	};
 };
