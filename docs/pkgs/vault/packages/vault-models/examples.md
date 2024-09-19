@@ -1,1 +1,0 @@
-# @gtsc/vault-models - Examples

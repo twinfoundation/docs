@@ -1,1 +1,0 @@
-# @gtsc/attestation-models - Examples
