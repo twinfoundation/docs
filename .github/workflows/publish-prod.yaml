@@ -3,7 +3,7 @@ name: Publish Production
 env:
   gha-branch: main
   gha-production: true
-  gha-domain: ${{ secrets.DOMAIN_PROD }}
+  gha-domain: ${{ secrets.DOMAIN_PROD_DOCS }}
 
 on:
   workflow_dispatch:
@@ -34,7 +34,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID_DOCS }}
           VERCEL_SCOPE: ${{ secrets.VERCEL_SCOPE }}
           ALIAS_DOMAINS: ${{ env.gha-domain }}
           PRODUCTION: ${{ env.gha-production }}
