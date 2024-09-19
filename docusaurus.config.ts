@@ -7,7 +7,7 @@ const config: Config = {
 	tagline: "Trade Worldwide Information Network",
 	favicon: "img/favicon.ico",
 
-	url: "https://docs-next.gtsc.io",
+	url: "https://www.twindev.org",
 	baseUrl: "/",
 	organizationName: "TWIN",
 	projectName: "docs",
@@ -29,7 +29,7 @@ const config: Config = {
 			{
 				docs: {
 					sidebarPath: "./sidebars.ts",
-					editUrl: "https://github.com/gtscio/docs/tree/main/"
+					editUrl: "https://github.com/twinfoundation/docs/tree/main/"
 				},
 				theme: {
 					customCss: "./src/css/custom.css"
@@ -68,7 +68,7 @@ const config: Config = {
 						label: "Packages"
 					},
 					{
-						href: "https://github.com/gtscio/docs",
+						href: "https://github.com/twinfoundation/docs",
 						label: "GitHub",
 						position: "right"
 					}

@@ -1,6 +1,6 @@
-# GTSC Docs
+# TWIN Docs
 
-This is the main repository for the GTSC documentation.
+This is the main repository for the TWIN documentation.
 
 ## Installation
 

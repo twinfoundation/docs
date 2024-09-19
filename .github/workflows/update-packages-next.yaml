@@ -41,7 +41,7 @@ jobs:
       - name: Checkout tools
         uses: actions/checkout@v4
         with:
-          repository: gtscio/tools
+          repository: twinfoundation/tools
           path: import-packages/tools
           ref: ${{ env.gha-branch }}
           token: ${{ secrets.GH_PAT }}
@@ -62,7 +62,7 @@ jobs:
       - name: Checkout framework
         uses: actions/checkout@v4
         with:
-          repository: gtscio/framework
+          repository: twinfoundation/framework
           path: import-packages/framework
           ref: ${{ env.gha-branch }}
           token: ${{ secrets.GH_PAT }}
@@ -83,7 +83,7 @@ jobs:
       - name: Checkout data
         uses: actions/checkout@v4
         with:
-          repository: gtscio/data
+          repository: twinfoundation/data
           path: import-packages/data
           ref: ${{ env.gha-branch }}
           token: ${{ secrets.GH_PAT }}
@@ -104,7 +104,7 @@ jobs:
       - name: Checkout standards
         uses: actions/checkout@v4
         with:
-          repository: gtscio/standards
+          repository: twinfoundation/standards
           path: import-packages/standards
           ref: ${{ env.gha-branch }}
           token: ${{ secrets.GH_PAT }}
@@ -125,7 +125,7 @@ jobs:
       - name: Checkout api
         uses: actions/checkout@v4
         with:
-          repository: gtscio/api
+          repository: twinfoundation/api
           path: import-packages/api
           ref: ${{ env.gha-branch }}
           token: ${{ secrets.GH_PAT }}
@@ -146,7 +146,7 @@ jobs:
       - name: Checkout entity-storage
         uses: actions/checkout@v4
         with:
-          repository: gtscio/entity-storage
+          repository: twinfoundation/entity-storage
           path: import-packages/entity-storage
           ref: ${{ env.gha-branch }}
           token: ${{ secrets.GH_PAT }}
@@ -167,7 +167,7 @@ jobs:
       - name: Checkout blob-storage
         uses: actions/checkout@v4
         with:
-          repository: gtscio/blob-storage
+          repository: twinfoundation/blob-storage
           path: import-packages/blob-storage
           ref: ${{ env.gha-branch }}
           token: ${{ secrets.GH_PAT }}
@@ -188,7 +188,7 @@ jobs:
       - name: Checkout logging
         uses: actions/checkout@v4
         with:
-          repository: gtscio/logging
+          repository: twinfoundation/logging
           path: import-packages/logging
           ref: ${{ env.gha-branch }}
           token: ${{ secrets.GH_PAT }}
@@ -209,7 +209,7 @@ jobs:
       - name: Checkout telemetry
         uses: actions/checkout@v4
         with:
-          repository: gtscio/telemetry
+          repository: twinfoundation/telemetry
           path: import-packages/telemetry
           ref: ${{ env.gha-branch }}
           token: ${{ secrets.GH_PAT }}
@@ -230,7 +230,7 @@ jobs:
       - name: Checkout vault
         uses: actions/checkout@v4
         with:
-          repository: gtscio/vault
+          repository: twinfoundation/vault
           path: import-packages/vault
           ref: ${{ env.gha-branch }}
           token: ${{ secrets.GH_PAT }}
@@ -251,7 +251,7 @@ jobs:
       - name: Checkout immutable-storage
         uses: actions/checkout@v4
         with:
-          repository: gtscio/immutable-storage
+          repository: twinfoundation/immutable-storage
           path: import-packages/immutable-storage
           ref: ${{ env.gha-branch }}
           token: ${{ secrets.GH_PAT }}
@@ -272,7 +272,7 @@ jobs:
       - name: Checkout dlt
         uses: actions/checkout@v4
         with:
-          repository: gtscio/dlt
+          repository: twinfoundation/dlt
           path: import-packages/dlt
           ref: ${{ env.gha-branch }}
           token: ${{ secrets.GH_PAT }}
@@ -293,7 +293,7 @@ jobs:
       - name: Checkout wallet
         uses: actions/checkout@v4
         with:
-          repository: gtscio/wallet
+          repository: twinfoundation/wallet
           path: import-packages/wallet
           ref: ${{ env.gha-branch }}
           token: ${{ secrets.GH_PAT }}
@@ -314,7 +314,7 @@ jobs:
       - name: Checkout identity
         uses: actions/checkout@v4
         with:
-          repository: gtscio/identity
+          repository: twinfoundation/identity
           path: import-packages/identity
           ref: ${{ env.gha-branch }}
           token: ${{ secrets.GH_PAT }}
@@ -335,7 +335,7 @@ jobs:
       - name: Checkout nft
         uses: actions/checkout@v4
         with:
-          repository: gtscio/nft
+          repository: twinfoundation/nft
           path: import-packages/nft
           ref: ${{ env.gha-branch }}
           token: ${{ secrets.GH_PAT }}
@@ -356,7 +356,7 @@ jobs:
       - name: Checkout attestation
         uses: actions/checkout@v4
         with:
-          repository: gtscio/attestation
+          repository: twinfoundation/attestation
           path: import-packages/attestation
           ref: ${{ env.gha-branch }}
           token: ${{ secrets.GH_PAT }}
@@ -377,7 +377,7 @@ jobs:
       - name: Checkout auditable-item-graph
         uses: actions/checkout@v4
         with:
-          repository: gtscio/auditable-item-graph
+          repository: twinfoundation/auditable-item-graph
           path: import-packages/auditable-item-graph
           ref: ${{ env.gha-branch }}
           token: ${{ secrets.GH_PAT }}
@@ -398,7 +398,7 @@ jobs:
       - name: Checkout auditable-item-stream
         uses: actions/checkout@v4
         with:
-          repository: gtscio/auditable-item-stream
+          repository: twinfoundation/auditable-item-stream
           path: import-packages/auditable-item-stream
           ref: ${{ env.gha-branch }}
           token: ${{ secrets.GH_PAT }}
@@ -419,7 +419,7 @@ jobs:
       - name: Checkout workbench
         uses: actions/checkout@v4
         with:
-          repository: gtscio/workbench
+          repository: twinfoundation/workbench
           path: import-packages/workbench
           ref: ${{ env.gha-branch }}
           token: ${{ secrets.GH_PAT }}
@@ -437,14 +437,14 @@ jobs:
           rm -r import-packages/workbench
 
       ########### common
-      - name: Build
-        run: npm run build
+      #- name: Build
+      #  run: npm run build
 
       - name: Create Pull Request
         run: |
           git checkout -b docs/update-${{ env.gha-branch }}-${{ github.sha }}
-          git config --global user.name 'GTSC'
-          git config --global user.email 'ci@gtsc.io'
+          git config --global user.name 'TWIN CI'
+          git config --global user.email 'ci@twindev.org'
           git add .
           git commit -am "Update Packages Documentation"
           git push --set-upstream origin docs/update-${{ env.gha-branch }}-${{ github.sha }}
