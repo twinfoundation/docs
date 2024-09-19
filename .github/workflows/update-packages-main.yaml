@@ -51,7 +51,8 @@ jobs:
           jq -r '.workspaces[]' import-packages/tools/package.json | while read pkg; do
             rm -rf docs/pkgs/tools/$pkg
             mkdir -p docs/pkgs/tools/$pkg
-            cp -r import-packages/tools/$pkg/docs/* docs/pkgs/tools/$pkg/content/*
+            mkdir -p docs/pkgs/tools/$pkg/content
+            cp -r import-packages/tools/$pkg/docs/* docs/pkgs/tools/$pkg/content
             cp -r import-packages/tools/$pkg/README.md docs/pkgs/tools/$pkg/index.md
             cp -r import-packages/tools/$pkg/package.json docs/pkgs/tools/$pkg/package.json
           done
@@ -73,7 +74,8 @@ jobs:
           jq -r '.workspaces[]' import-packages/framework/package.json | while read pkg; do
             rm -rf docs/pkgs/framework/$pkg
             mkdir -p docs/pkgs/framework/$pkg
-            cp -r import-packages/framework/$pkg/docs/* docs/pkgs/framework/$pkg/content/*
+            mkdir -p docs/pkgs/framework/$pkg/content
+            cp -r import-packages/framework/$pkg/docs/* docs/pkgs/framework/$pkg/content
             cp -r import-packages/framework/$pkg/README.md docs/pkgs/framework/$pkg/index.md
             cp -r import-packages/framework/$pkg/package.json docs/pkgs/framework/$pkg/package.json
           done
@@ -95,7 +97,8 @@ jobs:
           jq -r '.workspaces[]' import-packages/data/package.json | while read pkg; do
             rm -rf docs/pkgs/data/$pkg
             mkdir -p docs/pkgs/data/$pkg
-            cp -r import-packages/data/$pkg/docs/* docs/pkgs/data/$pkg/content/*
+            mkdir -p docs/pkgs/data/$pkg/content
+            cp -r import-packages/data/$pkg/docs/* docs/pkgs/data/$pkg/content
             cp -r import-packages/data/$pkg/README.md docs/pkgs/data/$pkg/index.md
             cp -r import-packages/data/$pkg/package.json docs/pkgs/data/$pkg/package.json
           done
@@ -117,7 +120,8 @@ jobs:
           jq -r '.workspaces[]' import-packages/standards/package.json | while read pkg; do
             rm -rf docs/pkgs/standards/$pkg
             mkdir -p docs/pkgs/standards/$pkg
-            cp -r import-packages/standards/$pkg/docs/* docs/pkgs/standards/$pkg/content/*
+            mkdir -p docs/pkgs/standards/$pkg/content
+            cp -r import-packages/standards/$pkg/docs/* docs/pkgs/standards/$pkg/content
             cp -r import-packages/standards/$pkg/README.md docs/pkgs/standards/$pkg/index.md
             cp -r import-packages/standards/$pkg/package.json docs/pkgs/standards/$pkg/package.json
           done
@@ -139,7 +143,8 @@ jobs:
           jq -r '.workspaces[]' import-packages/api/package.json | while read pkg; do
             rm -rf docs/pkgs/api/$pkg
             mkdir -p docs/pkgs/api/$pkg
-            cp -r import-packages/api/$pkg/docs/* docs/pkgs/api/$pkg/content/*
+            mkdir -p docs/pkgs/api/$pkg/content
+            cp -r import-packages/api/$pkg/docs/* docs/pkgs/api/$pkg/content
             cp -r import-packages/api/$pkg/README.md docs/pkgs/api/$pkg/index.md
             cp -r import-packages/api/$pkg/package.json docs/pkgs/api/$pkg/package.json
           done
@@ -161,7 +166,8 @@ jobs:
           jq -r '.workspaces[]' import-packages/entity-storage/package.json | while read pkg; do
             rm -rf docs/pkgs/entity-storage/$pkg
             mkdir -p docs/pkgs/entity-storage/$pkg
-            cp -r import-packages/entity-storage/$pkg/docs/* docs/pkgs/entity-storage/$pkg/content/*
+            mkdir -p docs/pkgs/entity-storage/$pkg/content
+            cp -r import-packages/entity-storage/$pkg/docs/* docs/pkgs/entity-storage/$pkg/content
             cp -r import-packages/entity-storage/$pkg/README.md docs/pkgs/entity-storage/$pkg/index.md
             cp -r import-packages/entity-storage/$pkg/package.json docs/pkgs/entity-storage/$pkg/package.json
           done
@@ -183,7 +189,8 @@ jobs:
           jq -r '.workspaces[]' import-packages/blob-storage/package.json | while read pkg; do
             rm -rf docs/pkgs/blob-storage/$pkg
             mkdir -p docs/pkgs/blob-storage/$pkg
-            cp -r import-packages/blob-storage/$pkg/docs/* docs/pkgs/blob-storage/$pkg/content/*
+            mkdir -p docs/pkgs/blob-storage/$pkg/content
+            cp -r import-packages/blob-storage/$pkg/docs/* docs/pkgs/blob-storage/$pkg/content
             cp -r import-packages/blob-storage/$pkg/README.md docs/pkgs/blob-storage/$pkg/index.md
             cp -r import-packages/blob-storage/$pkg/package.json docs/pkgs/blob-storage/$pkg/package.json
           done
@@ -205,7 +212,8 @@ jobs:
           jq -r '.workspaces[]' import-packages/logging/package.json | while read pkg; do
             rm -rf docs/pkgs/logging/$pkg
             mkdir -p docs/pkgs/logging/$pkg
-            cp -r import-packages/logging/$pkg/docs/* docs/pkgs/logging/$pkg/content/*
+            mkdir -p docs/pkgs/logging/$pkg/content
+            cp -r import-packages/logging/$pkg/docs/* docs/pkgs/logging/$pkg/content
             cp -r import-packages/logging/$pkg/README.md docs/pkgs/logging/$pkg/index.md
             cp -r import-packages/logging/$pkg/package.json docs/pkgs/logging/$pkg/package.json
           done
@@ -227,7 +235,8 @@ jobs:
           jq -r '.workspaces[]' import-packages/telemetry/package.json | while read pkg; do
             rm -rf docs/pkgs/telemetry/$pkg
             mkdir -p docs/pkgs/telemetry/$pkg
-            cp -r import-packages/telemetry/$pkg/docs/* docs/pkgs/telemetry/$pkg/content/*
+            mkdir -p docs/pkgs/telemetry/$pkg/content
+            cp -r import-packages/telemetry/$pkg/docs/* docs/pkgs/telemetry/$pkg/content
             cp -r import-packages/telemetry/$pkg/README.md docs/pkgs/telemetry/$pkg/index.md
             cp -r import-packages/telemetry/$pkg/package.json docs/pkgs/telemetry/$pkg/package.json
           done
@@ -249,7 +258,8 @@ jobs:
           jq -r '.workspaces[]' import-packages/vault/package.json | while read pkg; do
             rm -rf docs/pkgs/vault/$pkg
             mkdir -p docs/pkgs/vault/$pkg
-            cp -r import-packages/vault/$pkg/docs/* docs/pkgs/vault/$pkg/content/*
+            mkdir -p docs/pkgs/vault/$pkg/content
+            cp -r import-packages/vault/$pkg/docs/* docs/pkgs/vault/$pkg/content
             cp -r import-packages/vault/$pkg/README.md docs/pkgs/vault/$pkg/index.md
             cp -r import-packages/vault/$pkg/package.json docs/pkgs/vault/$pkg/package.json
           done
@@ -271,7 +281,8 @@ jobs:
           jq -r '.workspaces[]' import-packages/dlt/package.json | while read pkg; do
             rm -rf docs/pkgs/dlt/$pkg
             mkdir -p docs/pkgs/dlt/$pkg
-            cp -r import-packages/dlt/$pkg/docs/* docs/pkgs/dlt/$pkg/content/*
+            mkdir -p docs/pkgs/dlt/$pkg/content
+            cp -r import-packages/dlt/$pkg/docs/* docs/pkgs/dlt/$pkg/content
             cp -r import-packages/dlt/$pkg/README.md docs/pkgs/dlt/$pkg/index.md
             cp -r import-packages/dlt/$pkg/package.json docs/pkgs/dlt/$pkg/package.json
           done
@@ -293,7 +304,8 @@ jobs:
           jq -r '.workspaces[]' import-packages/wallet/package.json | while read pkg; do
             rm -rf docs/pkgs/wallet/$pkg
             mkdir -p docs/pkgs/wallet/$pkg
-            cp -r import-packages/wallet/$pkg/docs/* docs/pkgs/wallet/$pkg/content/*
+            mkdir -p docs/pkgs/wallet/$pkg/content
+            cp -r import-packages/wallet/$pkg/docs/* docs/pkgs/wallet/$pkg/content
             cp -r import-packages/wallet/$pkg/README.md docs/pkgs/wallet/$pkg/index.md
             cp -r import-packages/wallet/$pkg/package.json docs/pkgs/wallet/$pkg/package.json
           done
@@ -315,7 +327,8 @@ jobs:
           jq -r '.workspaces[]' import-packages/immutable-storage/package.json | while read pkg; do
             rm -rf docs/pkgs/immutable-storage/$pkg
             mkdir -p docs/pkgs/immutable-storage/$pkg
-            cp -r import-packages/immutable-storage/$pkg/docs/* docs/pkgs/immutable-storage/$pkg/content/*
+            mkdir -p docs/pkgs/immutable-storage/$pkg/content
+            cp -r import-packages/immutable-storage/$pkg/docs/* docs/pkgs/immutable-storage/$pkg/content
             cp -r import-packages/immutable-storage/$pkg/README.md docs/pkgs/immutable-storage/$pkg/index.md
             cp -r import-packages/immutable-storage/$pkg/package.json docs/pkgs/immutable-storage/$pkg/package.json
           done
@@ -337,7 +350,8 @@ jobs:
           jq -r '.workspaces[]' import-packages/identity/package.json | while read pkg; do
             rm -rf docs/pkgs/identity/$pkg
             mkdir -p docs/pkgs/identity/$pkg
-            cp -r import-packages/identity/$pkg/docs/* docs/pkgs/identity/$pkg/content/*
+            mkdir -p docs/pkgs/identity/$pkg/content
+            cp -r import-packages/identity/$pkg/docs/* docs/pkgs/identity/$pkg/content
             cp -r import-packages/identity/$pkg/README.md docs/pkgs/identity/$pkg/index.md
             cp -r import-packages/identity/$pkg/package.json docs/pkgs/identity/$pkg/package.json
           done
@@ -359,7 +373,8 @@ jobs:
           jq -r '.workspaces[]' import-packages/nft/package.json | while read pkg; do
             rm -rf docs/pkgs/nft/$pkg
             mkdir -p docs/pkgs/nft/$pkg
-            cp -r import-packages/nft/$pkg/docs/* docs/pkgs/nft/$pkg/content/*
+            mkdir -p docs/pkgs/nft/$pkg/content
+            cp -r import-packages/nft/$pkg/docs/* docs/pkgs/nft/$pkg/content
             cp -r import-packages/nft/$pkg/README.md docs/pkgs/nft/$pkg/index.md
             cp -r import-packages/nft/$pkg/package.json docs/pkgs/nft/$pkg/package.json
           done
@@ -381,7 +396,8 @@ jobs:
           jq -r '.workspaces[]' import-packages/attestation/package.json | while read pkg; do
             rm -rf docs/pkgs/attestation/$pkg
             mkdir -p docs/pkgs/attestation/$pkg
-            cp -r import-packages/attestation/$pkg/docs/* docs/pkgs/attestation/$pkg/content/*
+            mkdir -p docs/pkgs/attestation/$pkg/content
+            cp -r import-packages/attestation/$pkg/docs/* docs/pkgs/attestation/$pkg/content
             cp -r import-packages/attestation/$pkg/README.md docs/pkgs/attestation/$pkg/index.md
             cp -r import-packages/attestation/$pkg/package.json docs/pkgs/attestation/$pkg/package.json
           done
@@ -403,7 +419,8 @@ jobs:
           jq -r '.workspaces[]' import-packages/auditable-item-graph/package.json | while read pkg; do
             rm -rf docs/pkgs/auditable-item-graph/$pkg
             mkdir -p docs/pkgs/auditable-item-graph/$pkg
-            cp -r import-packages/auditable-item-graph/$pkg/docs/* docs/pkgs/auditable-item-graph/$pkg/content/*
+            mkdir -p docs/pkgs/auditable-item-graph/$pkg/content
+            cp -r import-packages/auditable-item-graph/$pkg/docs/* docs/pkgs/auditable-item-graph/$pkg/content
             cp -r import-packages/auditable-item-graph/$pkg/README.md docs/pkgs/auditable-item-graph/$pkg/index.md
             cp -r import-packages/auditable-item-graph/$pkg/package.json docs/pkgs/auditable-item-graph/$pkg/package.json
           done
@@ -425,7 +442,8 @@ jobs:
           jq -r '.workspaces[]' import-packages/auditable-item-stream/package.json | while read pkg; do
             rm -rf docs/pkgs/auditable-item-stream/$pkg
             mkdir -p docs/pkgs/auditable-item-stream/$pkg
-            cp -r import-packages/auditable-item-stream/$pkg/docs/* docs/pkgs/auditable-item-stream/$pkg/content/*
+            mkdir -p docs/pkgs/auditable-item-stream/$pkg/content
+            cp -r import-packages/auditable-item-stream/$pkg/docs/* docs/pkgs/auditable-item-stream/$pkg/content
             cp -r import-packages/auditable-item-stream/$pkg/README.md docs/pkgs/auditable-item-stream/$pkg/index.md
             cp -r import-packages/auditable-item-stream/$pkg/package.json docs/pkgs/auditable-item-stream/$pkg/package.json
           done
@@ -447,7 +465,8 @@ jobs:
           jq -r '.workspaces[]' import-packages/workbench/package.json | while read pkg; do
             rm -rf docs/pkgs/workbench/$pkg
             mkdir -p docs/pkgs/workbench/$pkg
-            cp -r import-packages/workbench/$pkg/docs/* docs/pkgs/workbench/$pkg/content/*
+            mkdir -p docs/pkgs/workbench/$pkg/content
+            cp -r import-packages/workbench/$pkg/docs/* docs/pkgs/workbench/$pkg/content
             cp -r import-packages/workbench/$pkg/README.md docs/pkgs/workbench/$pkg/index.md
             cp -r import-packages/workbench/$pkg/package.json docs/pkgs/workbench/$pkg/package.json
           done
