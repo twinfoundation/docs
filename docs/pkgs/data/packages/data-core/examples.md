@@ -1,1 +1,0 @@
-# @gtsc/data-core - Examples

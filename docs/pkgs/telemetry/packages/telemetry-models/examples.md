@@ -1,1 +1,0 @@
-# @gtsc/telemetry-models - Examples

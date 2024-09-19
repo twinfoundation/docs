@@ -1,1 +1,0 @@
-# @gtsc/api-processors - Examples
