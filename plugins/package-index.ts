@@ -76,7 +76,7 @@ function buildPackageContent(packageGroup, packageType, packageName) {
 		const packageContent = fs.readFileSync(packageFilename, "utf-8");
 		const packageJson = JSON.parse(packageContent);
 
-		content += `- [${packageJson.name}](pkgs/${packageGroup}/${packageType}/${packageJson.name.replace("@twin.org/", "")}/overview) - ${packageJson.description}\n`;
+		content += `- [${packageJson.name}](pkgs/${packageGroup}/${packageType}/${packageJson.name.replace("@twin.org/", "")}/index.md) - ${packageJson.description}\n`;
 	} else {
 		console.debug("        ! File not found", packageFilename);
 	}

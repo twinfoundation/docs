@@ -69,31 +69,43 @@ function buildPkgs(packageType): any {
 
 function generatePackageItems(packageGroup: string, packageType: string, packageName: string): any {
 	const referenceItems = [
-		dirExists(packageGroup, packageType, packageName, "reference/classes", "Classes"),
-		dirExists(packageGroup, packageType, packageName, "reference/interfaces", "Interfaces"),
-		dirExists(packageGroup, packageType, packageName, "reference/types-aliases", "Type Aliases"),
-		dirExists(packageGroup, packageType, packageName, "reference/functions", "Functions"),
-		dirExists(packageGroup, packageType, packageName, "reference/variables", "Variables")
+		dirExists(packageGroup, packageType, packageName, "docs/reference/classes", "Classes"),
+		dirExists(packageGroup, packageType, packageName, "docs/reference/interfaces", "Interfaces"),
+		dirExists(
+			packageGroup,
+			packageType,
+			packageName,
+			"docs/reference/types-aliases",
+			"Type Aliases"
+		),
+		dirExists(packageGroup, packageType, packageName, "docs/reference/functions", "Functions"),
+		dirExists(packageGroup, packageType, packageName, "docs/reference/variables", "Variables")
 	].filter(Boolean);
 
 	return {
 		type: "category",
 		label: packageName,
 		items: [
-			packageFileExists(packageGroup, packageType, packageName, "overview", "Overview"),
-			packageFileExists(packageGroup, packageType, packageName, "examples", "Examples"),
-			packageFileExists(packageGroup, packageType, packageName, "configuration", "Configuration"),
-			packageFileExists(packageGroup, packageType, packageName, "deployment", "Deployment"),
+			packageFileExists(packageGroup, packageType, packageName, "index", "Overview"),
+			packageFileExists(packageGroup, packageType, packageName, "docs/examples", "Examples"),
+			packageFileExists(
+				packageGroup,
+				packageType,
+				packageName,
+				"docs/configuration",
+				"Configuration"
+			),
+			packageFileExists(packageGroup, packageType, packageName, "docs/deployment", "Deployment"),
 			referenceItems.length > 0 && {
 				type: "category",
 				label: "Reference",
 				link: {
 					type: "doc",
-					id: `pkgs/${packageGroup}/${packageType}/${packageName.toLowerCase()}/reference/globals`
+					id: `pkgs/${packageGroup}/${packageType}/${packageName.toLowerCase()}/docs/reference/index`
 				},
 				items: referenceItems
 			},
-			packageFileExists(packageGroup, packageType, packageName, "changelog", "Changelog")
+			packageFileExists(packageGroup, packageType, packageName, "docs/changelog", "Changelog")
 		].filter(Boolean)
 	};
 }
