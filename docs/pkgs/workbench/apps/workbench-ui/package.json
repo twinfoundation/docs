@@ -13,10 +13,8 @@
 		"test:integration": "playwright test",
 		"test:unit": "vitest --run",
 		"merge-locales": "merge-locales --config ./locales/merge-locales-config.json",
-		"docs:clean": "rimraf docs/overview.md",
-		"docs:copy-overview": "copyfiles README.md docs",
-		"docs:rename-overview": "node -e \"require('fs/promises').rename('docs/README.md','docs/overview.md')\"",
-		"docs": "npm run docs:clean && npm run docs:copy-overview && npm run docs:rename-overview",
+		"docs:clean": "echo Nothing to clean",
+		"docs": "npm run docs:clean",
 		"dist": "npm run build && npm run check && npm run merge-locales && npm run test && npm run docs"
 	},
 	"dependencies": {
