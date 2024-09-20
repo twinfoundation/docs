@@ -7,7 +7,7 @@ const config: Config = {
 	tagline: "Trade Worldwide Information Network",
 	favicon: "img/favicon.ico",
 
-	url: "https://www.twindev.org",
+	url: "https://twindev.org",
 	baseUrl: "/",
 	organizationName: "TWIN",
 	projectName: "docs",
