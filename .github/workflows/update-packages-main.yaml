@@ -44,7 +44,6 @@ jobs:
           repository: twinfoundation/tools
           path: import-packages/tools
           ref: ${{ env.gha-branch }}
-          token: ${{ secrets.GH_PAT }}
 
       - name: Copy tools to Docs
         run: |
@@ -67,7 +66,6 @@ jobs:
           repository: twinfoundation/framework
           path: import-packages/framework
           ref: ${{ env.gha-branch }}
-          token: ${{ secrets.GH_PAT }}
 
       - name: Copy framework to Docs
         run: |
@@ -90,7 +88,6 @@ jobs:
           repository: twinfoundation/data
           path: import-packages/data
           ref: ${{ env.gha-branch }}
-          token: ${{ secrets.GH_PAT }}
 
       - name: Copy data to Docs
         run: |
@@ -113,7 +110,6 @@ jobs:
           repository: twinfoundation/standards
           path: import-packages/standards
           ref: ${{ env.gha-branch }}
-          token: ${{ secrets.GH_PAT }}
 
       - name: Copy standards to Docs
         run: |
@@ -136,7 +132,6 @@ jobs:
           repository: twinfoundation/api
           path: import-packages/api
           ref: ${{ env.gha-branch }}
-          token: ${{ secrets.GH_PAT }}
 
       - name: Copy api to Docs
         run: |
@@ -159,7 +154,6 @@ jobs:
           repository: twinfoundation/entity-storage
           path: import-packages/entity-storage
           ref: ${{ env.gha-branch }}
-          token: ${{ secrets.GH_PAT }}
 
       - name: Copy entity-storage to Docs
         run: |
@@ -182,7 +176,6 @@ jobs:
           repository: twinfoundation/blob-storage
           path: import-packages/blob-storage
           ref: ${{ env.gha-branch }}
-          token: ${{ secrets.GH_PAT }}
 
       - name: Copy blob-storage to Docs
         run: |
@@ -205,7 +198,6 @@ jobs:
           repository: twinfoundation/logging
           path: import-packages/logging
           ref: ${{ env.gha-branch }}
-          token: ${{ secrets.GH_PAT }}
 
       - name: Copy logging to Docs
         run: |
@@ -228,7 +220,6 @@ jobs:
           repository: twinfoundation/telemetry
           path: import-packages/telemetry
           ref: ${{ env.gha-branch }}
-          token: ${{ secrets.GH_PAT }}
 
       - name: Copy telemetry to Docs
         run: |
@@ -251,7 +242,6 @@ jobs:
           repository: twinfoundation/vault
           path: import-packages/vault
           ref: ${{ env.gha-branch }}
-          token: ${{ secrets.GH_PAT }}
 
       - name: Copy vault to Docs
         run: |
@@ -274,7 +264,6 @@ jobs:
           repository: twinfoundation/dlt
           path: import-packages/dlt
           ref: ${{ env.gha-branch }}
-          token: ${{ secrets.GH_PAT }}
 
       - name: Copy dlt to Docs
         run: |
@@ -297,7 +286,6 @@ jobs:
           repository: twinfoundation/wallet
           path: import-packages/wallet
           ref: ${{ env.gha-branch }}
-          token: ${{ secrets.GH_PAT }}
 
       - name: Copy wallet to Docs
         run: |
@@ -320,7 +308,6 @@ jobs:
           repository: twinfoundation/immutable-storage
           path: import-packages/immutable-storage
           ref: ${{ env.gha-branch }}
-          token: ${{ secrets.GH_PAT }}
 
       - name: Copy immutable-storage to Docs
         run: |
@@ -343,7 +330,6 @@ jobs:
           repository: twinfoundation/identity
           path: import-packages/identity
           ref: ${{ env.gha-branch }}
-          token: ${{ secrets.GH_PAT }}
 
       - name: Copy identity to Docs
         run: |
@@ -366,7 +352,6 @@ jobs:
           repository: twinfoundation/nft
           path: import-packages/nft
           ref: ${{ env.gha-branch }}
-          token: ${{ secrets.GH_PAT }}
 
       - name: Copy nft to Docs
         run: |
@@ -389,7 +374,6 @@ jobs:
           repository: twinfoundation/attestation
           path: import-packages/attestation
           ref: ${{ env.gha-branch }}
-          token: ${{ secrets.GH_PAT }}
 
       - name: Copy attestation to Docs
         run: |
@@ -412,7 +396,6 @@ jobs:
           repository: twinfoundation/auditable-item-graph
           path: import-packages/auditable-item-graph
           ref: ${{ env.gha-branch }}
-          token: ${{ secrets.GH_PAT }}
 
       - name: Copy auditable-item-graph to Docs
         run: |
@@ -435,7 +418,6 @@ jobs:
           repository: twinfoundation/auditable-item-stream
           path: import-packages/auditable-item-stream
           ref: ${{ env.gha-branch }}
-          token: ${{ secrets.GH_PAT }}
 
       - name: Copy auditable-item-stream to Docs
         run: |
@@ -458,7 +440,6 @@ jobs:
           repository: twinfoundation/workbench
           path: import-packages/workbench
           ref: ${{ env.gha-branch }}
-          token: ${{ secrets.GH_PAT }}
 
       - name: Copy workbench to Docs
         run: |
