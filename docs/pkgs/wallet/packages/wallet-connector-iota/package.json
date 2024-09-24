@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/wallet-connector-iota",
-	"version": "0.0.1-next.3",
+	"version": "0.0.1-next.4",
 	"description": "Wallet connector implementation using IOTA",
 	"repository": {
 		"type": "git",
@@ -32,7 +32,7 @@
 		"@twin.org/dlt-iota": "next",
 		"@twin.org/nameof": "next",
 		"@twin.org/vault-models": "next",
-		"@twin.org/wallet-models": "0.0.1-next.3",
+		"@twin.org/wallet-models": "0.0.1-next.4",
 		"@iota/sdk-wasm": "1.1.3"
 	},
 	"devDependencies": {

@@ -4,7 +4,7 @@ Interface describing the collated attestation information.
 
 ## Type Parameters
 
-• **T** = `unknown`
+• **T** *extends* `IJsonLdNodeObject` = `IJsonLdNodeObject`
 
 ## Properties
 

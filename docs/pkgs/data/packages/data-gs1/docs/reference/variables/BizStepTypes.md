@@ -8,166 +8,166 @@ See EPCIS CVB specification for details.
 
 ## Type declaration
 
-### ACCEPTING
+### Accepting
 
-> `readonly` **ACCEPTING**: `"accepting"` = `"accepting"`
+> `readonly` **Accepting**: `"accepting"` = `"accepting"`
 
-### ARRIVING
+### Arriving
 
-> `readonly` **ARRIVING**: `"arriving"` = `"arriving"`
+> `readonly` **Arriving**: `"arriving"` = `"arriving"`
 
-### ASSEMBLING
+### Assembling
 
-> `readonly` **ASSEMBLING**: `"assembling"` = `"assembling"`
+> `readonly` **Assembling**: `"assembling"` = `"assembling"`
 
-### COLLECTING
+### Collecting
 
-> `readonly` **COLLECTING**: `"collecting"` = `"collecting"`
+> `readonly` **Collecting**: `"collecting"` = `"collecting"`
 
-### COMMISSIONING
+### Commissioning
 
-> `readonly` **COMMISSIONING**: `"commissioning"` = `"commissioning"`
+> `readonly` **Commissioning**: `"commissioning"` = `"commissioning"`
 
-### CONSIGNING
+### Consigning
 
-> `readonly` **CONSIGNING**: `"consigning"` = `"consigning"`
+> `readonly` **Consigning**: `"consigning"` = `"consigning"`
 
-### CREATING\_CLASS\_INSTANCE
+### CreatingClassInstance
 
-> `readonly` **CREATING\_CLASS\_INSTANCE**: `"creating_class_instance"` = `"creating_class_instance"`
+> `readonly` **CreatingClassInstance**: `"creating_class_instance"` = `"creating_class_instance"`
 
-### CYCLE\_COUNTING
+### CycleCounting
 
-> `readonly` **CYCLE\_COUNTING**: `"cycle_counting"` = `"cycle_counting"`
+> `readonly` **CycleCounting**: `"cycle_counting"` = `"cycle_counting"`
 
-### DECOMMISSIONING
+### Decommissioning
 
-> `readonly` **DECOMMISSIONING**: `"decommissioning"` = `"decommissioning"`
+> `readonly` **Decommissioning**: `"decommissioning"` = `"decommissioning"`
 
-### DEPARTING
+### Departing
 
-> `readonly` **DEPARTING**: `"departing"` = `"departing"`
+> `readonly` **Departing**: `"departing"` = `"departing"`
 
-### DESTROYING
+### Destroying
 
-> `readonly` **DESTROYING**: `"destroying"` = `"destroying"`
+> `readonly` **Destroying**: `"destroying"` = `"destroying"`
 
-### DISASSEMBLING
+### Disassembling
 
-> `readonly` **DISASSEMBLING**: `"disassembling"` = `"disassembling"`
+> `readonly` **Disassembling**: `"disassembling"` = `"disassembling"`
 
-### DISPENSING
+### Dispensing
 
-> `readonly` **DISPENSING**: `"dispensing"` = `"dispensing"`
+> `readonly` **Dispensing**: `"dispensing"` = `"dispensing"`
 
-### ENCODING
+### Encoding
 
-> `readonly` **ENCODING**: `"encoding"` = `"encoding"`
+> `readonly` **Encoding**: `"encoding"` = `"encoding"`
 
-### ENTERING\_EXITING
+### EnteringExiting
 
-> `readonly` **ENTERING\_EXITING**: `"entering_exiting"` = `"entering_exiting"`
+> `readonly` **EnteringExiting**: `"entering_exiting"` = `"entering_exiting"`
 
-### HOLDING
+### Holding
 
-> `readonly` **HOLDING**: `"holding"` = `"holding"`
+> `readonly` **Holding**: `"holding"` = `"holding"`
 
-### INSPECTING
+### Inspecting
 
-> `readonly` **INSPECTING**: `"inspecting"` = `"inspecting"`
+> `readonly` **Inspecting**: `"inspecting"` = `"inspecting"`
 
-### INSTALLING
+### Installing
 
-> `readonly` **INSTALLING**: `"installing"` = `"installing"`
+> `readonly` **Installing**: `"installing"` = `"installing"`
 
-### KILLING
+### Killing
 
-> `readonly` **KILLING**: `"killing"` = `"killing"`
+> `readonly` **Killing**: `"killing"` = `"killing"`
 
-### LOADING
+### Loading
 
-> `readonly` **LOADING**: `"loading"` = `"loading"`
+> `readonly` **Loading**: `"loading"` = `"loading"`
 
-### OTHER
+### Other
 
-> `readonly` **OTHER**: `"other"` = `"other"`
+> `readonly` **Other**: `"other"` = `"other"`
 
-### PACKING
+### Packing
 
-> `readonly` **PACKING**: `"packing"` = `"packing"`
+> `readonly` **Packing**: `"packing"` = `"packing"`
 
-### PICKING
+### Picking
 
-> `readonly` **PICKING**: `"picking"` = `"picking"`
+> `readonly` **Picking**: `"picking"` = `"picking"`
 
-### RECEIVING
+### Receiving
 
-> `readonly` **RECEIVING**: `"receiving"` = `"receiving"`
+> `readonly` **Receiving**: `"receiving"` = `"receiving"`
 
-### REMOVING
+### Removing
 
-> `readonly` **REMOVING**: `"removing"` = `"removing"`
+> `readonly` **Removing**: `"removing"` = `"removing"`
 
-### REPACKAGING
+### Repackaging
 
-> `readonly` **REPACKAGING**: `"repackaging"` = `"repackaging"`
+> `readonly` **Repackaging**: `"repackaging"` = `"repackaging"`
 
-### REPAIRING
+### Repairing
 
-> `readonly` **REPAIRING**: `"repairing"` = `"repairing"`
+> `readonly` **Repairing**: `"repairing"` = `"repairing"`
 
-### REPLACING
+### Replacing
 
-> `readonly` **REPLACING**: `"replacing"` = `"replacing"`
+> `readonly` **Replacing**: `"replacing"` = `"replacing"`
 
-### RESERVING
+### Reserving
 
-> `readonly` **RESERVING**: `"reserving"` = `"reserving"`
+> `readonly` **Reserving**: `"reserving"` = `"reserving"`
 
-### RETAIL\_SELLING
+### RetailSelling
 
-> `readonly` **RETAIL\_SELLING**: `"retail_selling"` = `"retail_selling"`
+> `readonly` **RetailSelling**: `"retail_selling"` = `"retail_selling"`
 
-### SHIPPING
+### Shipping
 
-> `readonly` **SHIPPING**: `"shipping"` = `"shipping"`
+> `readonly` **Shipping**: `"shipping"` = `"shipping"`
 
-### STAGING\_OUTBOUND
+### StagingOutbound
 
-> `readonly` **STAGING\_OUTBOUND**: `"staging_outbound"` = `"staging_outbound"`
+> `readonly` **StagingOutbound**: `"staging_outbound"` = `"staging_outbound"`
 
-### STOCK\_TAKING
+### StockTaking
 
-> `readonly` **STOCK\_TAKING**: `"stock_taking"` = `"stock_taking"`
+> `readonly` **StockTaking**: `"stock_taking"` = `"stock_taking"`
 
-### STOCKING
+### Stocking
 
-> `readonly` **STOCKING**: `"stocking"` = `"stocking"`
+> `readonly` **Stocking**: `"stocking"` = `"stocking"`
 
-### STORING
+### Storing
 
-> `readonly` **STORING**: `"storing"` = `"storing"`
+> `readonly` **Storing**: `"storing"` = `"storing"`
 
-### TRANSPORTING
+### Transporting
 
-> `readonly` **TRANSPORTING**: `"transporting"` = `"transporting"`
+> `readonly` **Transporting**: `"transporting"` = `"transporting"`
 
-### UNLOADING
+### Unloading
 
-> `readonly` **UNLOADING**: `"unloading"` = `"unloading"`
+> `readonly` **Unloading**: `"unloading"` = `"unloading"`
 
-### UNPACKING
+### Unpacking
 
-> `readonly` **UNPACKING**: `"unpacking"` = `"unpacking"`
+> `readonly` **Unpacking**: `"unpacking"` = `"unpacking"`
 
-### VOID\_SHIPPING
+### VoidShipping
 
-> `readonly` **VOID\_SHIPPING**: `"void_shipping"` = `"void_shipping"`
+> `readonly` **VoidShipping**: `"void_shipping"` = `"void_shipping"`
 
-### SENSOR\_REPORTING
+### SensorReporting
 
-> `readonly` **SENSOR\_REPORTING**: `"sensor_reporting"` = `"sensor_reporting"`
+> `readonly` **SensorReporting**: `"sensor_reporting"` = `"sensor_reporting"`
 
-### SAMPLING
+### Sampling
 
-> `readonly` **SAMPLING**: `"sampling"` = `"sampling"`
+> `readonly` **Sampling**: `"sampling"` = `"sampling"`

@@ -6,6 +6,12 @@ The types of framework data.
 
 ## Type declaration
 
+### ContextRoot
+
+> `readonly` **ContextRoot**: `"https://schema.twindev.org/framework/"` = `"https://schema.twindev.org/framework/"`
+
+Context Root.
+
 ### Urn
 
 > `readonly` **Urn**: `"https://schema.twindev.org/framework/URN"` = `"https://schema.twindev.org/framework/URN"`

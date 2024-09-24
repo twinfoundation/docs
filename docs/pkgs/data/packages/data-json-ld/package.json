@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/data-json-ld",
-	"version": "0.0.1-next.3",
+	"version": "0.0.1-next.7",
 	"description": "Models which define the structure of JSON LD",
 	"repository": {
 		"type": "git",
@@ -30,7 +30,7 @@
 	},
 	"dependencies": {
 		"@twin.org/core": "next",
-		"@twin.org/data-core": "0.0.1-next.3",
+		"@twin.org/data-core": "0.0.1-next.7",
 		"@twin.org/entity": "next",
 		"@twin.org/nameof": "next",
 		"@twin.org/web": "next",

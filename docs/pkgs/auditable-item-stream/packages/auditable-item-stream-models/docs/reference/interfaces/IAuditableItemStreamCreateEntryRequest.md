@@ -24,8 +24,8 @@ The id of the stream to create the entry in.
 
 The data to be used in the stream.
 
-#### object
+#### entryObject
 
-> **object**: `IJsonLdNodeObject`
+> **entryObject**: `IJsonLdNodeObject`
 
 The object to be used for the entry in the stream as JSON-LD.

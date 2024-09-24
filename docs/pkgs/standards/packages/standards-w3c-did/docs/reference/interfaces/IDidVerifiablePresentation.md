@@ -1,12 +1,16 @@
-# Interface: IDidVerifiablePresentation
+# Interface: IDidVerifiablePresentation\<T\>
 
 Interface describing a verifiable presentation.
+
+## Type Parameters
+
+• **T** *extends* `IJsonLdNodeObject` = `IJsonLdNodeObject`
 
 ## Properties
 
 ### @context
 
-> **@context**: `string` \| `string`[]
+> **@context**: `IJsonLdContextDefinitionRoot`
 
 The context for the verifiable credential.
 
@@ -30,7 +34,7 @@ The types of the data stored in the verifiable credential.
 
 ### verifiableCredential
 
-> **verifiableCredential**: `string`[]
+> **verifiableCredential**: (`string` \| [`IDidVerifiableCredential`](IDidVerifiableCredential.md)\<`T`\>)[]
 
 The data for the verifiable credentials.
 

@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/nft",
-	"version": "0.0.1-next.3",
+	"version": "0.0.1-next.4",
 	"description": "NFT",
 	"repository": {
 		"type": "git",
@@ -44,7 +44,7 @@
 		"packages/nft-connector-entity-storage",
 		"packages/nft-service",
 		"packages/nft-rest-client",
-		"packages/nft-cli"
+		"apps/nft-cli"
 	],
 	"type": "module"
 }

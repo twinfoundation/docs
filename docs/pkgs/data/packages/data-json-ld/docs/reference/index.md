@@ -26,6 +26,8 @@
 - [IJsonLdValueObject](type-aliases/IJsonLdValueObject.md)
 - [IJsonLdIndexMapItem](type-aliases/IJsonLdIndexMapItem.md)
 - [IJsonLdIncludedBlock](type-aliases/IJsonLdIncludedBlock.md)
+- [IJsonLdContextDefinitionElement](type-aliases/IJsonLdContextDefinitionElement.md)
+- [IJsonLdContextDefinitionRoot](type-aliases/IJsonLdContextDefinitionRoot.md)
 - [IJsonLdExpandedTermDefinition](type-aliases/IJsonLdExpandedTermDefinition.md)
 - [IJsonLdKeyword](type-aliases/IJsonLdKeyword.md)
 - [IJsonLdListOrSetItem](type-aliases/IJsonLdListOrSetItem.md)

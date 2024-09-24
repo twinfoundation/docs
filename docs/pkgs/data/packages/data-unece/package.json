@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/data-unece",
-	"version": "0.0.1-next.3",
+	"version": "0.0.1-next.7",
 	"description": "Models which define the structure of UN/CEFACT Standard",
 	"repository": {
 		"type": "git",
@@ -28,8 +28,8 @@
 	},
 	"dependencies": {
 		"@twin.org/core": "next",
-		"@twin.org/data-core": "0.0.1-next.3",
-		"@twin.org/data-json-ld": "0.0.1-next.3",
+		"@twin.org/data-core": "0.0.1-next.7",
+		"@twin.org/data-json-ld": "0.0.1-next.7",
 		"@twin.org/entity": "next",
 		"@twin.org/nameof": "next"
 	},

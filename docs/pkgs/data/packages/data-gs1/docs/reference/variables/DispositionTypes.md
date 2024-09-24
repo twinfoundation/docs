@@ -8,134 +8,134 @@ See EPCIS CVB for more details.
 
 ## Type declaration
 
-### ACTIVE
+### Active
 
-> `readonly` **ACTIVE**: `"active"` = `"active"`
+> `readonly` **Active**: `"active"` = `"active"`
 
-### CONTAINER\_CLOSED
+### ContainerClosed
 
-> `readonly` **CONTAINER\_CLOSED**: `"container_closed"` = `"container_closed"`
+> `readonly` **ContainerClosed**: `"container_closed"` = `"container_closed"`
 
-### DAMAGED
+### Damaged
 
-> `readonly` **DAMAGED**: `"damaged"` = `"damaged"`
+> `readonly` **Damaged**: `"damaged"` = `"damaged"`
 
-### DESTROYED
+### Destroyed
 
-> `readonly` **DESTROYED**: `"destroyed"` = `"destroyed"`
+> `readonly` **Destroyed**: `"destroyed"` = `"destroyed"`
 
-### DISPENSED
+### Dispensed
 
-> `readonly` **DISPENSED**: `"dispensed"` = `"dispensed"`
+> `readonly` **Dispensed**: `"dispensed"` = `"dispensed"`
 
-### DISPOSED
+### Disposed
 
-> `readonly` **DISPOSED**: `"disposed"` = `"disposed"`
+> `readonly` **Disposed**: `"disposed"` = `"disposed"`
 
-### ENCODED
+### Encoded
 
-> `readonly` **ENCODED**: `"encoded"` = `"encoded"`
+> `readonly` **Encoded**: `"encoded"` = `"encoded"`
 
-### EXPIRED
+### Expired
 
-> `readonly` **EXPIRED**: `"expired"` = `"expired"`
+> `readonly` **Expired**: `"expired"` = `"expired"`
 
-### IN\_PROGRESS
+### InProgress
 
-> `readonly` **IN\_PROGRESS**: `"in_progress"` = `"in_progress"`
+> `readonly` **InProgress**: `"in_progress"` = `"in_progress"`
 
-### IN\_TRANSIT
+### InTransit
 
-> `readonly` **IN\_TRANSIT**: `"in_transit"` = `"in_transit"`
+> `readonly` **InTransit**: `"in_transit"` = `"in_transit"`
 
-### INACTIVE
+### Inactive
 
-> `readonly` **INACTIVE**: `"inactive"` = `"inactive"`
+> `readonly` **Inactive**: `"inactive"` = `"inactive"`
 
-### NO\_PEDIGREE\_MATCH
+### NoPedigreeMatch
 
-> `readonly` **NO\_PEDIGREE\_MATCH**: `"no_pedigree_match"` = `"no_pedigree_match"`
+> `readonly` **NoPedigreeMatch**: `"no_pedigree_match"` = `"no_pedigree_match"`
 
-### NON\_SELLABLE\_OTHER
+### NonSellableOther
 
-> `readonly` **NON\_SELLABLE\_OTHER**: `"non_sellable_other"` = `"non_sellable_other"`
+> `readonly` **NonSellableOther**: `"non_sellable_other"` = `"non_sellable_other"`
 
-### PARTIALLY\_DISPENSED
+### PartiallyDispensed
 
-> `readonly` **PARTIALLY\_DISPENSED**: `"partially_dispensed"` = `"partially_dispensed"`
+> `readonly` **PartiallyDispensed**: `"partially_dispensed"` = `"partially_dispensed"`
 
-### RECALLED
+### Recalled
 
-> `readonly` **RECALLED**: `"recalled"` = `"recalled"`
+> `readonly` **Recalled**: `"recalled"` = `"recalled"`
 
-### RESERVED
+### Reserved
 
-> `readonly` **RESERVED**: `"reserved"` = `"reserved"`
+> `readonly` **Reserved**: `"reserved"` = `"reserved"`
 
-### RETAIL\_SOLD
+### RetailSold
 
-> `readonly` **RETAIL\_SOLD**: `"retail_sold"` = `"retail_sold"`
+> `readonly` **RetailSold**: `"retail_sold"` = `"retail_sold"`
 
-### RETURNED
+### Returned
 
-> `readonly` **RETURNED**: `"returned"` = `"returned"`
+> `readonly` **Returned**: `"returned"` = `"returned"`
 
-### SELLABLE\_ACCESSIBLE
+### SellableAccessible
 
-> `readonly` **SELLABLE\_ACCESSIBLE**: `"sellable_accessible"` = `"sellable_accessible"`
+> `readonly` **SellableAccessible**: `"sellable_accessible"` = `"sellable_accessible"`
 
-### SELLABLE\_NOT\_ACCESSIBLE
+### SellableNotAccessible
 
-> `readonly` **SELLABLE\_NOT\_ACCESSIBLE**: `"sellable_not_accessible"` = `"sellable_not_accessible"`
+> `readonly` **SellableNotAccessible**: `"sellable_not_accessible"` = `"sellable_not_accessible"`
 
-### STOLEN
+### Stolen
 
-> `readonly` **STOLEN**: `"stolen"` = `"stolen"`
+> `readonly` **Stolen**: `"stolen"` = `"stolen"`
 
-### UNKNOWN
+### Unknown
 
-> `readonly` **UNKNOWN**: `"unknown"` = `"unknown"`
+> `readonly` **Unknown**: `"unknown"` = `"unknown"`
 
-### AVAILABLE
+### Available
 
-> `readonly` **AVAILABLE**: `"available"` = `"available"`
+> `readonly` **Available**: `"available"` = `"available"`
 
-### COMPLETENESS\_VERIFIED
+### CompletenessVerified
 
-> `readonly` **COMPLETENESS\_VERIFIED**: `"completeness_verified"` = `"completeness_verified"`
+> `readonly` **CompletenessVerified**: `"completeness_verified"` = `"completeness_verified"`
 
-### COMPLETENESS\_INFERRED
+### CompletenessInferred
 
-> `readonly` **COMPLETENESS\_INFERRED**: `"completeness_inferred"` = `"completeness_inferred"`
+> `readonly` **CompletenessInferred**: `"completeness_inferred"` = `"completeness_inferred"`
 
-### CONFORMANT
+### Conformant
 
-> `readonly` **CONFORMANT**: `"conformant"` = `"conformant"`
+> `readonly` **Conformant**: `"conformant"` = `"conformant"`
 
-### CONTAINER\_OPEN
+### ContainerOpen
 
-> `readonly` **CONTAINER\_OPEN**: `"container_open"` = `"container_open"`
+> `readonly` **ContainerOpen**: `"container_open"` = `"container_open"`
 
-### MISMATCH\_INSTANCE
+### MismatchInstance
 
-> `readonly` **MISMATCH\_INSTANCE**: `"mismatch_instance"` = `"mismatch_instance"`
+> `readonly` **MismatchInstance**: `"mismatch_instance"` = `"mismatch_instance"`
 
-### MISMATCH\_CLASS
+### MismatchClass
 
-> `readonly` **MISMATCH\_CLASS**: `"mismatch_class"` = `"mismatch_class"`
+> `readonly` **MismatchClass**: `"mismatch_class"` = `"mismatch_class"`
 
-### MISMATCH\_QUANTITY
+### MismatchQuantity
 
-> `readonly` **MISMATCH\_QUANTITY**: `"mismatch_quantity"` = `"mismatch_quantity"`
+> `readonly` **MismatchQuantity**: `"mismatch_quantity"` = `"mismatch_quantity"`
 
-### NEEDS\_REPLACEMENT
+### NeedsReplacement
 
-> `readonly` **NEEDS\_REPLACEMENT**: `"needs_replacement"` = `"needs_replacement"`
+> `readonly` **NeedsReplacement**: `"needs_replacement"` = `"needs_replacement"`
 
-### NON\_CONFORMANT
+### NonConformant
 
-> `readonly` **NON\_CONFORMANT**: `"non_conformant"` = `"non_conformant"`
+> `readonly` **NonConformant**: `"non_conformant"` = `"non_conformant"`
 
-### UNAVAILABLE
+### Unavailable
 
-> `readonly` **UNAVAILABLE**: `"unavailable"` = `"unavailable"`
+> `readonly` **Unavailable**: `"unavailable"` = `"unavailable"`

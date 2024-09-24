@@ -15,7 +15,7 @@ https://www.w3.org/TR/json-ld11/#node-objects
 
 ### @context?
 
-> `optional` **@context**: `null` \| `string` \| [`IJsonLdContextDefinition`](IJsonLdContextDefinition.md) \| (`null` \| `string` \| [`IJsonLdContextDefinition`](IJsonLdContextDefinition.md))[]
+> `optional` **@context**: [`IJsonLdContextDefinitionRoot`](../type-aliases/IJsonLdContextDefinitionRoot.md)
 
 ***
 

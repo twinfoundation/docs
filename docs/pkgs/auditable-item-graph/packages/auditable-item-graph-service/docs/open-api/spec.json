@@ -39,7 +39,7 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "https://schema.twindev.org/aig/AuditableItemGraphCreateRequest"
+                                "$ref": "#/components/schemas/AuditableItemGraphCreateRequest"
                             },
                             "examples": {
                                 "auditableItemGraphCreateRequestExample": {
@@ -282,7 +282,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "https://schema.twindev.org/aig/AuditableItemGraphListResponse"
+                                    "$ref": "#/components/schemas/AuditableItemGraphListResponse"
                                 },
                                 "examples": {
                                     "auditableItemGraphListResponseExample": {
@@ -305,7 +305,7 @@
                             },
                             "application/ld+json": {
                                 "schema": {
-                                    "$ref": "https://schema.twindev.org/aig/AuditableItemGraphListResponse"
+                                    "$ref": "#/components/schemas/AuditableItemGraphListResponse"
                                 },
                                 "examples": {
                                     "auditableItemGraphJsonLdListResponseExample": {
@@ -473,7 +473,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "https://schema.twindev.org/aig/AuditableItemGraphGetResponse"
+                                    "$ref": "#/components/schemas/AuditableItemGraphGetResponse"
                                 },
                                 "examples": {
                                     "auditableItemGraphGetResponseExample": {
@@ -498,7 +498,7 @@
                             },
                             "application/ld+json": {
                                 "schema": {
-                                    "$ref": "https://schema.twindev.org/aig/AuditableItemGraphGetResponse"
+                                    "$ref": "#/components/schemas/AuditableItemGraphGetResponse"
                                 },
                                 "examples": {
                                     "auditableItemGraphJsonLdGetResponseExample": {
@@ -623,7 +623,7 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "https://schema.twindev.org/aig/AuditableItemGraphUpdateRequest"
+                                "$ref": "#/components/schemas/AuditableItemGraphUpdateRequest"
                             },
                             "examples": {
                                 "auditableItemGraphUpdateRequestExample": {

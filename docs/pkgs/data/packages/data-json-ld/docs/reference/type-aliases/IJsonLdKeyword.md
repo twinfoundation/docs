@@ -18,7 +18,7 @@ Not for export.
 
 ### @context
 
-> **@context**: `null` \| `string` \| [`IJsonLdContextDefinition`](../interfaces/IJsonLdContextDefinition.md) \| (`null` \| `string` \| [`IJsonLdContextDefinition`](../interfaces/IJsonLdContextDefinition.md))[]
+> **@context**: [`IJsonLdContextDefinitionRoot`](IJsonLdContextDefinitionRoot.md)
 
 ### @direction
 

@@ -24,6 +24,6 @@ The failure message if the attestation is not verified.
 
 #### information?
 
-> `optional` **information**: `Partial`\<[`IAttestationInformation`](IAttestationInformation.md)\<`unknown`\>\>
+> `optional` **information**: `Partial`\<[`IAttestationInformation`](IAttestationInformation.md)\<`IJsonLdNodeObject`\>\>
 
 The attestation information.

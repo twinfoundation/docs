@@ -26,5 +26,7 @@
 - [auditableItemStreamDeleteEntry](functions/auditableItemStreamDeleteEntry.md)
 - [auditableItemStreamUpdateEntry](functions/auditableItemStreamUpdateEntry.md)
 - [auditableItemStreamGetEntry](functions/auditableItemStreamGetEntry.md)
+- [auditableItemStreamGetEntryObject](functions/auditableItemStreamGetEntryObject.md)
 - [auditableItemStreamListEntries](functions/auditableItemStreamListEntries.md)
+- [auditableItemStreamListEntryObjects](functions/auditableItemStreamListEntryObjects.md)
 - [initSchema](functions/initSchema.md)

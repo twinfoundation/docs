@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/attestation-connector-iota",
-	"version": "0.0.1-next.3",
+	"version": "0.0.1-next.5",
 	"description": "Attestation connector implementation using IOTA",
 	"repository": {
 		"type": "git",
@@ -27,9 +27,10 @@
 		"dist": "npm run clean && npm run build && npm run test && npm run bundle && npm run docs"
 	},
 	"dependencies": {
-		"@twin.org/attestation-models": "0.0.1-next.3",
+		"@twin.org/attestation-models": "0.0.1-next.5",
 		"@twin.org/core": "next",
 		"@twin.org/crypto": "next",
+		"@twin.org/data-json-ld": "next",
 		"@twin.org/entity": "next",
 		"@twin.org/identity-models": "next",
 		"@twin.org/nameof": "next",

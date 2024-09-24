@@ -183,7 +183,7 @@ The entities, which can be partial if a limited keys list was provided.
 
 ### createEntry()
 
-> **createEntry**(`id`, `object`, `userIdentity`?, `nodeIdentity`?): `Promise`\<`string`\>
+> **createEntry**(`id`, `entryObject`, `userIdentity`?, `nodeIdentity`?): `Promise`\<`string`\>
 
 Create an entry in the stream.
 
@@ -193,7 +193,7 @@ Create an entry in the stream.
 
 The id of the stream to update.
 
-• **object**: `IJsonLdNodeObject`
+• **entryObject**: `IJsonLdNodeObject`
 
 The object for the stream as JSON-LD.
 
@@ -248,6 +248,34 @@ The response type to return, defaults to application/json.
 #### Returns
 
 `Promise`\<[`JsonReturnType`](../type-aliases/JsonReturnType.md)\<`T`, [`IAuditableItemStreamEntry`](IAuditableItemStreamEntry.md) & `object`, `IJsonLdDocument`\>\>
+
+The stream and entries if found.
+
+#### Throws
+
+NotFoundError if the stream is not found.
+
+***
+
+### getEntryObject()
+
+> **getEntryObject**(`id`, `entryId`): `Promise`\<`IJsonLdNodeObject`\>
+
+Get the entry object from the stream.
+
+#### Parameters
+
+• **id**: `string`
+
+The id of the stream to get.
+
+• **entryId**: `string`
+
+The id of the stream entry to get.
+
+#### Returns
+
+`Promise`\<`IJsonLdNodeObject`\>
 
 The stream and entries if found.
 
@@ -357,6 +385,10 @@ Whether to include deleted entries, defaults to false.
 
 Should the entries be verified, defaults to false.
 
+• **options.entryObjects?**: `boolean`
+
+Return just the embedded entry objects, defaults to false.
+
 • **options.pageSize?**: `number`
 
 How many entries to return.
@@ -376,6 +408,54 @@ The response type to return, defaults to application/json.
 #### Returns
 
 `Promise`\<[`JsonReturnType`](../type-aliases/JsonReturnType.md)\<`T`, `object`, `IJsonLdDocument`\>\>
+
+The stream and entries if found.
+
+#### Throws
+
+NotFoundError if the stream is not found.
+
+***
+
+### getEntryObjects()
+
+> **getEntryObjects**(`id`, `options`?): `Promise`\<`IJsonLdDocument`\>
+
+Get the entry objects for the stream.
+
+#### Parameters
+
+• **id**: `string`
+
+The id of the stream to get.
+
+• **options?**
+
+Additional options for the get operation.
+
+• **options.conditions?**: `IComparator`[]
+
+The conditions to filter the stream.
+
+• **options.includeDeleted?**: `boolean`
+
+Whether to include deleted entries, defaults to false.
+
+• **options.pageSize?**: `number`
+
+How many entries to return.
+
+• **options.cursor?**: `string`
+
+Cursor to use for next chunk of data.
+
+• **options.order?**: `SortDirection`
+
+Retrieve the entries in ascending/descending time order, defaults to Ascending.
+
+#### Returns
+
+`Promise`\<`IJsonLdDocument`\>
 
 The stream and entries if found.
 
