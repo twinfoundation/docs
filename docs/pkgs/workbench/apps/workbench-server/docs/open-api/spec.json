@@ -4101,7 +4101,7 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "https://schema.twindev.org/aig/AuditableItemGraphCreateRequest"
+                                "$ref": "#/components/schemas/AuditableItemGraphCreateRequest"
                             },
                             "examples": {
                                 "auditableItemGraphCreateRequestExample": {
@@ -4344,7 +4344,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "https://schema.twindev.org/aig/AuditableItemGraphListResponse"
+                                    "$ref": "#/components/schemas/AuditableItemGraphListResponse"
                                 },
                                 "examples": {
                                     "auditableItemGraphListResponseExample": {
@@ -4367,7 +4367,7 @@
                             },
                             "application/ld+json": {
                                 "schema": {
-                                    "$ref": "https://schema.twindev.org/aig/AuditableItemGraphListResponse"
+                                    "$ref": "#/components/schemas/AuditableItemGraphListResponse"
                                 },
                                 "examples": {
                                     "auditableItemGraphJsonLdListResponseExample": {
@@ -4535,7 +4535,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "https://schema.twindev.org/aig/AuditableItemGraphGetResponse"
+                                    "$ref": "#/components/schemas/AuditableItemGraphGetResponse"
                                 },
                                 "examples": {
                                     "auditableItemGraphGetResponseExample": {
@@ -4560,7 +4560,7 @@
                             },
                             "application/ld+json": {
                                 "schema": {
-                                    "$ref": "https://schema.twindev.org/aig/AuditableItemGraphGetResponse"
+                                    "$ref": "#/components/schemas/AuditableItemGraphGetResponse"
                                 },
                                 "examples": {
                                     "auditableItemGraphJsonLdGetResponseExample": {
@@ -4685,7 +4685,7 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "https://schema.twindev.org/aig/AuditableItemGraphUpdateRequest"
+                                "$ref": "#/components/schemas/AuditableItemGraphUpdateRequest"
                             },
                             "examples": {
                                 "auditableItemGraphUpdateRequestExample": {
@@ -4839,7 +4839,7 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "https://schema.twindev.org/ais/AuditableItemStreamCreateRequest"
+                                "$ref": "#/components/schemas/AuditableItemStreamCreateRequest"
                             },
                             "examples": {
                                 "auditableItemStreamCreateRequestExample": {
@@ -4851,7 +4851,7 @@
                                         },
                                         "entries": [
                                             {
-                                                "object": {
+                                                "entryObject": {
                                                     "@context": "http://schema.org/",
                                                     "@type": "Event",
                                                     "startDate": "2011-04-09T20:00:00Z",
@@ -5022,7 +5022,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "https://schema.twindev.org/ais/AuditableItemStreamListResponse"
+                                    "$ref": "#/components/schemas/AuditableItemStreamListResponse"
                                 },
                                 "examples": {
                                     "auditableItemStreamListResponseExample": {
@@ -5045,7 +5045,7 @@
                             },
                             "application/ld+json": {
                                 "schema": {
-                                    "$ref": "https://schema.twindev.org/ais/AuditableItemStreamListResponse"
+                                    "$ref": "#/components/schemas/AuditableItemStreamListResponse"
                                 },
                                 "examples": {
                                     "auditableItemStreamJsonLdListResponseExample": {
@@ -5235,7 +5235,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "https://schema.twindev.org/ais/AuditableItemStreamGetResponse"
+                                    "$ref": "#/components/schemas/AuditableItemStreamGetResponse"
                                 },
                                 "examples": {
                                     "auditableItemStreamGetResponseExample": {
@@ -5266,7 +5266,7 @@
                             },
                             "application/ld+json": {
                                 "schema": {
-                                    "$ref": "https://schema.twindev.org/ais/AuditableItemStreamGetResponse"
+                                    "$ref": "#/components/schemas/AuditableItemStreamGetResponse"
                                 },
                                 "examples": {
                                     "auditableItemStreamJsonLdGetResponseExample": {
@@ -5418,7 +5418,7 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "https://schema.twindev.org/ais/AuditableItemStreamUpdateRequest"
+                                "$ref": "#/components/schemas/AuditableItemStreamUpdateRequest"
                             },
                             "examples": {
                                 "auditableItemStreamUpdateRequestExample": {
@@ -5548,12 +5548,12 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "https://schema.twindev.org/ais/AuditableItemStreamCreateEntryRequest"
+                                "$ref": "#/components/schemas/AuditableItemStreamCreateEntryRequest"
                             },
                             "examples": {
                                 "auditableItemStreamCreateEntryRequestExample": {
                                     "value": {
-                                        "object": {
+                                        "entryObject": {
                                             "@context": "http://schema.org/",
                                             "@type": "Event",
                                             "startDate": "2011-04-09T20:00:00Z",
@@ -5697,7 +5697,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "https://schema.twindev.org/ais/AuditableItemStreamGetEntryResponse"
+                                    "$ref": "#/components/schemas/AuditableItemStreamGetEntryResponse"
                                 },
                                 "examples": {
                                     "auditableItemStreamGetEntryResponseExample": {
@@ -5716,7 +5716,7 @@
                             },
                             "application/ld+json": {
                                 "schema": {
-                                    "$ref": "https://schema.twindev.org/ais/AuditableItemStreamGetEntryResponse"
+                                    "$ref": "#/components/schemas/AuditableItemStreamGetEntryResponse"
                                 },
                                 "examples": {
                                     "auditableItemStreamJsonLdGetEntryResponseExample": {
@@ -5985,7 +5985,7 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "https://schema.twindev.org/ais/AuditableItemStreamUpdateRequest"
+                                "$ref": "#/components/schemas/AuditableItemStreamUpdateRequest"
                             },
                             "examples": {
                                 "auditableItemStreamUpdateRequestExample": {
@@ -6086,10 +6086,148 @@
                 }
             }
         },
+        "/ais/{id}/{entryId}/object": {
+            "get": {
+                "operationId": "auditableItemStreamGetEntryObject",
+                "summary": "Get a stream entry",
+                "tags": [
+                    "Auditable Item Stream"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "description": "",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "style": "simple",
+                        "example": "ais:1234567890"
+                    },
+                    {
+                        "name": "entryId",
+                        "description": "",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "style": "simple",
+                        "example": "ais:1234567890:01010101010"
+                    }
+                ],
+                "security": [
+                    {
+                        "jwtBearerAuthScheme": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Response to getting an auditable item stream entry object.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
+                                },
+                                "examples": {
+                                    "auditableItemStreamGetEntryObjectResponseExample": {
+                                        "value": {
+                                            "@context": "http://schema.org/",
+                                            "@type": "Event",
+                                            "startDate": "2011-04-09T20:00:00Z",
+                                            "description": "A description of the event"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "The server cannot process the request, see the content for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "GeneralError",
+                                            "message": "component.error",
+                                            "properties": {
+                                                "foo": "bar"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "UnauthorizedError",
+                                            "message": "component.error"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The resource you tried to access does not exist, see the content for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NotFoundResponse"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "NotFoundError",
+                                            "message": "component.error",
+                                            "properties": {
+                                                "notFoundId": "1"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "InternalServerError",
+                                            "message": "component.error"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/ais/{id}/entries": {
             "get": {
                 "operationId": "auditableItemStreamListEntries",
-                "summary": "Get the entries in a stream",
+                "summary": "Get the entry objects in a stream",
                 "tags": [
                     "Auditable Item Stream"
                 ],
@@ -6180,7 +6318,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "https://schema.twindev.org/ais/AuditableItemStreamListEntriesResponse"
+                                    "$ref": "#/components/schemas/AuditableItemStreamListEntriesResponse"
                                 },
                                 "examples": {
                                     "auditableItemStreamListEntriesResponseExample": {
@@ -6203,7 +6341,7 @@
                             },
                             "application/ld+json": {
                                 "schema": {
-                                    "$ref": "https://schema.twindev.org/ais/AuditableItemStreamListEntriesResponse"
+                                    "$ref": "#/components/schemas/AuditableItemStreamListEntriesResponse"
                                 },
                                 "examples": {
                                     "auditableItemStreamJsonLdListEntriesResponseExample": {
@@ -6232,6 +6370,191 @@
                                     "type": "string"
                                 },
                                 "description": "e.g. application/ld+json"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "The server cannot process the request, see the content for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "GeneralError",
+                                            "message": "component.error",
+                                            "properties": {
+                                                "foo": "bar"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "UnauthorizedError",
+                                            "message": "component.error"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The resource you tried to access does not exist, see the content for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NotFoundResponse"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "NotFoundError",
+                                            "message": "component.error",
+                                            "properties": {
+                                                "notFoundId": "1"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "InternalServerError",
+                                            "message": "component.error"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/ais/{id}/entries/objects": {
+            "get": {
+                "operationId": "auditableItemStreamListEntryObjects",
+                "summary": "Get the entry objects in a stream",
+                "tags": [
+                    "Auditable Item Stream"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "description": "The id of the stream to get.",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "style": "simple",
+                        "example": "ais:1234567890"
+                    },
+                    {
+                        "name": "conditions",
+                        "description": "The conditions to filter the stream, consist of property|comparison|value comma separated.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "includeDeleted",
+                        "description": "Whether to include deleted entries, defaults to false.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    {
+                        "name": "order",
+                        "description": "Retrieve the entries in ascending/descending time order, defaults to Ascending.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/components/schemas/SortDirection"
+                        }
+                    },
+                    {
+                        "name": "pageSize",
+                        "description": "How many entries to return.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "cursor",
+                        "description": "Cursor to use for next chunk of data.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "Accept",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "style": "simple"
+                    }
+                ],
+                "security": [
+                    {
+                        "jwtBearerAuthScheme": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Response to getting an auditable item stream entries objects.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "https://schema.twindev.org/json-ld/JsonLdDocument"
+                                },
+                                "examples": {
+                                    "auditableItemStreamListEntryObjectsResponseExample": {
+                                        "value": {
+                                            "entries": [
+                                                {
+                                                    "@context": "http://schema.org/",
+                                                    "@type": "Event",
+                                                    "startDate": "2011-04-09T20:00:00Z",
+                                                    "description": "A description of the event"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }
                             }
                         }
                     },
@@ -6726,12 +7049,12 @@
             "AuditableItemStreamCreateEntryRequest": {
                 "type": "object",
                 "properties": {
-                    "object": {
+                    "entryObject": {
                         "$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
                     }
                 },
                 "required": [
-                    "object"
+                    "entryObject"
                 ],
                 "additionalProperties": false,
                 "description": "The data to be used in the stream."
@@ -6747,12 +7070,12 @@
                         "items": {
                             "type": "object",
                             "properties": {
-                                "object": {
+                                "entryObject": {
                                     "$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
                                 }
                             },
                             "required": [
-                                "object"
+                                "entryObject"
                             ],
                             "additionalProperties": false
                         },
@@ -6775,7 +7098,7 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "verification": {
+                            "entryVerification": {
                                 "$ref": "https://schema.twindev.org/ais/AuditableItemStreamVerification"
                             },
                             "id": {
@@ -6798,7 +7121,7 @@
                                 "type": "string",
                                 "description": "The identity of the user which added the entry to the stream."
                             },
-                            "object": {
+                            "entryObject": {
                                 "$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject",
                                 "description": "The object to associate with the entry as JSON-LD."
                             },
@@ -6821,10 +7144,10 @@
                         },
                         "required": [
                             "created",
+                            "entryObject",
                             "hash",
                             "id",
                             "index",
-                            "object",
                             "signature"
                         ]
                     }
@@ -6844,7 +7167,7 @@
                                 "type": "string",
                                 "description": "Cursor to retrieve the next chunk of data, can be used with the get entries method."
                             },
-                            "verification": {
+                            "streamVerification": {
                                 "$ref": "https://schema.twindev.org/ais/AuditableItemStreamVerification",
                                 "description": "The verification of the stream."
                             },

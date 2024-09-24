@@ -6,15 +6,9 @@ The types of auditable item graph data.
 
 ## Type declaration
 
-### ContextUri
+### ContextRoot
 
-> `readonly` **ContextUri**: `"https://schema.twindev.org/aig/"` = `"https://schema.twindev.org/aig/"`
-
-The context uri for the auditable item graph types.
-
-### ContextJsonld
-
-> `readonly` **ContextJsonld**: `"https://schema.twindev.org/aig/types.jsonld"` = `"https://schema.twindev.org/aig/types.jsonld"`
+> `readonly` **ContextRoot**: `"https://schema.twindev.org/aig/"` = `"https://schema.twindev.org/aig/"`
 
 The context root for the auditable item graph types.
 

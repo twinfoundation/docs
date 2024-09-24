@@ -19,7 +19,6 @@ This is the overview of the packages.
 - [@twin.org/qr](pkgs/framework/packages/qr/index.md) - Package for creating QR codes
 - [@twin.org/web](pkgs/framework/packages/web/index.md) - Contains classes for use with web operations
 - [@twin.org/cli-core](pkgs/framework/packages/cli-core/index.md) - Core classes for building a CLI
-- [@twin.org/crypto-cli](pkgs/framework/packages/crypto-cli/index.md) - A command line interface for interacting with the crypto tools
 
 ## Standards
 
@@ -93,7 +92,6 @@ This is the overview of the packages.
 - [@twin.org/wallet-models](pkgs/wallet/packages/wallet-models/index.md) - Models which define the structure of the wallet contracts and connectors
 - [@twin.org/wallet-connector-entity-storage](pkgs/wallet/packages/wallet-connector-entity-storage/index.md) - Wallet connector implementation using entity storage
 - [@twin.org/wallet-connector-iota](pkgs/wallet/packages/wallet-connector-iota/index.md) - Wallet connector implementation using IOTA
-- [@twin.org/wallet-cli](pkgs/wallet/packages/wallet-cli/index.md) - A command line interface for interacting with the wallet APIs
 
 ## Immutable Storage
 
@@ -108,7 +106,6 @@ This is the overview of the packages.
 - [@twin.org/identity-service](pkgs/identity/packages/identity-service/index.md) - Identity contract implementation and REST endpoint definitions
 - [@twin.org/identity-rest-client](pkgs/identity/packages/identity-rest-client/index.md) - Identity contract implementation which can connect to REST endpoints
 - [@twin.org/identity-connector-iota](pkgs/identity/packages/identity-connector-iota/index.md) - Identity connector implementation using IOTA
-- [@twin.org/identity-cli](pkgs/identity/packages/identity-cli/index.md) - A command line interface for interacting with the identity connectors
 
 ## NFT
 
@@ -117,7 +114,6 @@ This is the overview of the packages.
 - [@twin.org/nft-connector-entity-storage](pkgs/nft/packages/nft-connector-entity-storage/index.md) - Implementation of the NFT connector using entity storage
 - [@twin.org/nft-service](pkgs/nft/packages/nft-service/index.md) - NFT contract implementation and REST endpoint definitions
 - [@twin.org/nft-rest-client](pkgs/nft/packages/nft-rest-client/index.md) - NFT contract implementation which can connect to REST endpoints
-- [@twin.org/nft-cli](pkgs/nft/packages/nft-cli/index.md) - A command line interface for interacting with the nft connectors
 
 ## Attestation
 
@@ -127,7 +123,6 @@ This is the overview of the packages.
 - [@twin.org/attestation-connector-open-attestation](pkgs/attestation/packages/attestation-connector-open-attestation/index.md) - Attestation connector implementation using OpenAttestation
 - [@twin.org/attestation-service](pkgs/attestation/packages/attestation-service/index.md) - Attestation contract implementation and REST endpoint definitions
 - [@twin.org/attestation-rest-client](pkgs/attestation/packages/attestation-rest-client/index.md) - Attestation contract implementation which can connect to REST endpoints
-- [@twin.org/attestation-cli](pkgs/attestation/packages/attestation-cli/index.md) - A command line interface for interacting with the attestation connectors
 
 ## Auditable Item Graph
 

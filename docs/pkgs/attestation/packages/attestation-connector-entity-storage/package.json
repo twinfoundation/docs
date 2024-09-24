@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/attestation-connector-entity-storage",
-	"version": "0.0.1-next.3",
+	"version": "0.0.1-next.5",
 	"description": "Attestation connector implementation using entity storage",
 	"repository": {
 		"type": "git",
@@ -27,8 +27,9 @@
 		"dist": "npm run clean && npm run build && npm run test && npm run bundle && npm run docs"
 	},
 	"dependencies": {
-		"@twin.org/attestation-models": "0.0.1-next.3",
+		"@twin.org/attestation-models": "0.0.1-next.5",
 		"@twin.org/core": "next",
+		"@twin.org/data-json-ld": "next",
 		"@twin.org/entity": "next",
 		"@twin.org/entity-storage-models": "next",
 		"@twin.org/entity-storage-connector-memory": "next",
@@ -38,6 +39,10 @@
 		"@twin.org/standards-w3c-did": "next"
 	},
 	"devDependencies": {
+		"@twin.org/identity-connector-entity-storage": "next",
+		"@twin.org/nft-connector-entity-storage": "next",
+		"@twin.org/vault-connector-entity-storage": "next",
+		"@twin.org/wallet-connector-entity-storage": "next",
 		"@twin.org/nameof-transformer": "next",
 		"@vitest/coverage-v8": "2.1.1",
 		"copyfiles": "2.4.1",

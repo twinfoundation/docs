@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/wallet",
-	"version": "0.0.1-next.3",
+	"version": "0.0.1-next.4",
 	"description": "Wallet",
 	"repository": {
 		"type": "git",
@@ -42,7 +42,7 @@
 		"packages/wallet-models",
 		"packages/wallet-connector-entity-storage",
 		"packages/wallet-connector-iota",
-		"packages/wallet-cli"
+		"apps/wallet-cli"
 	],
 	"type": "module"
 }

@@ -44,9 +44,9 @@ The identity of the user which added the entry to the stream.
 
 ***
 
-### object
+### entryObject
 
-> **object**: `IJsonLdNodeObject`
+> **entryObject**: `IJsonLdNodeObject`
 
 The object to associate with the entry as JSON-LD.
 

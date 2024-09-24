@@ -1,0 +1,81 @@
+{
+	"name": "@twin.org/nft-cli",
+	"version": "0.0.1-next.4",
+	"description": "A command line interface for interacting with the nft connectors",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/twinfoundation/nft.git",
+		"directory": "apps/nft-cli"
+	},
+	"author": "martyn.janes@iota.org",
+	"license": "Apache-2.0",
+	"type": "module",
+	"engines": {
+		"node": ">=20.0.0"
+	},
+	"scripts": {
+		"clean": "rimraf dist coverage",
+		"build": "tspc",
+		"merge-locales": "merge-locales",
+		"test": "vitest --run --config ./vitest.config.ts --no-cache",
+		"coverage": "vitest --run --coverage --config ./vitest.config.ts --no-cache",
+		"bundle:esm": "rollup --config rollup.config.mjs --environment MODULE:esm",
+		"bundle:cjs": "rollup --config rollup.config.mjs --environment MODULE:cjs",
+		"bundle": "npm run bundle:esm && npm run bundle:cjs",
+		"docs:clean": "rimraf docs/reference",
+		"docs:generate": "typedoc",
+		"docs": "npm run docs:clean && npm run docs:generate",
+		"dist": "npm run clean && npm run build && npm run merge-locales && npm run test && npm run bundle && npm run docs"
+	},
+	"dependencies": {
+		"@twin.org/core": "next",
+		"@twin.org/crypto": "next",
+		"@twin.org/cli-core": "next",
+		"@twin.org/crypto-cli": "next",
+		"@twin.org/entity": "next",
+		"@twin.org/entity-storage-connector-memory": "next",
+		"@twin.org/nameof": "next",
+		"@twin.org/nft-connector-iota": "0.0.1-next.4",
+		"@twin.org/vault-connector-entity-storage": "next",
+		"@twin.org/vault-models": "next",
+		"@twin.org/wallet-cli": "next",
+		"commander": "12.1.0"
+	},
+	"devDependencies": {
+		"@twin.org/merge-locales": "next",
+		"@twin.org/nameof-transformer": "next",
+		"@types/node": "22.5.5",
+		"@vitest/coverage-v8": "2.1.1",
+		"copyfiles": "2.4.1",
+		"rimraf": "6.0.1",
+		"rollup": "4.22.0",
+		"rollup-plugin-typescript2": "0.36.0",
+		"ts-patch": "3.2.1",
+		"typedoc": "0.26.7",
+		"typedoc-plugin-markdown": "4.2.7",
+		"typescript": "5.6.2",
+		"vitest": "2.1.1"
+	},
+	"main": "./dist/cjs/index.cjs",
+	"module": "./dist/esm/index.mjs",
+	"types": "./dist/types/index.d.ts",
+	"exports": {
+		".": {
+			"require": "./dist/cjs/index.cjs",
+			"import": "./dist/esm/index.mjs",
+			"types": "./dist/types/index.d.ts"
+		}
+	},
+	"files": [
+		"bin",
+		"dist/cjs",
+		"dist/esm",
+		"dist/types",
+		"dist/locales",
+		"locales",
+		"docs"
+	],
+	"bin": {
+		"twin-nft": "bin/index.js"
+	}
+}

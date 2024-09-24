@@ -6,10 +6,10 @@ EPCIS Error types.
 
 ## Type declaration
 
-### VALIDATION\_FAILED
+### ValidationFailed
 
-> `readonly` **VALIDATION\_FAILED**: `"epcisException:ValidationException"` = `"epcisException:ValidationException"`
+> `readonly` **ValidationFailed**: `"epcisException:ValidationException"` = `"epcisException:ValidationException"`
 
-### NO\_SUCH\_RESOURCE
+### NoSuchResource
 
-> `readonly` **NO\_SUCH\_RESOURCE**: `"epcisException:NoSuchResourceException"` = `"epcisException:NoSuchResourceException"`
+> `readonly` **NoSuchResource**: `"epcisException:NoSuchResourceException"` = `"epcisException:NoSuchResourceException"`

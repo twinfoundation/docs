@@ -12,6 +12,6 @@ The data returned from the transfer response.
 
 #### information
 
-> **information**: [`IAttestationInformation`](IAttestationInformation.md)\<`unknown`\>
+> **information**: [`IAttestationInformation`](IAttestationInformation.md)\<`IJsonLdNodeObject`\>
 
 The updated attestation information.

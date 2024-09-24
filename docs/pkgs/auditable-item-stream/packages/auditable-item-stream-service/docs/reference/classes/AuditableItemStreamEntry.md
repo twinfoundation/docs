@@ -62,9 +62,9 @@ The identity of the user that added the entry.
 
 ***
 
-### object
+### entryObject
 
-> **object**: `IJsonLdNodeObject`
+> **entryObject**: `IJsonLdNodeObject`
 
 Object to associate with the entry as JSON-LD.
 

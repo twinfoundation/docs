@@ -6,6 +6,12 @@ The types of JSON-LD data.
 
 ## Type declaration
 
+### ContextRoot
+
+> `readonly` **ContextRoot**: `"https://schema.twindev.org/json-ld/"` = `"https://schema.twindev.org/json-ld/"`
+
+Context Root.
+
 ### Document
 
 > `readonly` **Document**: `"https://schema.twindev.org/json-ld/JsonLdDocument"` = `"https://schema.twindev.org/json-ld/JsonLdDocument"`

@@ -6,15 +6,9 @@ The types of auditable item stream data.
 
 ## Type declaration
 
-### ContextUri
+### ContextRoot
 
-> `readonly` **ContextUri**: `"https://schema.twindev.org/ais/"` = `"https://schema.twindev.org/ais/"`
-
-The context uri for the auditable item stream types.
-
-### ContextJsonld
-
-> `readonly` **ContextJsonld**: `"https://schema.twindev.org/ais/types.jsonld"` = `"https://schema.twindev.org/ais/types.jsonld"`
+> `readonly` **ContextRoot**: `"https://schema.twindev.org/ais/"` = `"https://schema.twindev.org/ais/"`
 
 The context root for the auditable item stream types.
 

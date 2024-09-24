@@ -18,7 +18,7 @@ The identity verification method to use for attesting the data.
 
 #### data
 
-> **data**: `unknown`
+> **data**: `IJsonLdNodeObject`
 
 The data object to attest.
 

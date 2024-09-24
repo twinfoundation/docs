@@ -6,20 +6,20 @@ EPCIS 2.0 action types.
 
 ## Type declaration
 
-### ADD
+### Add
 
-> `readonly` **ADD**: `"ADD"` = `"ADD"`
+> `readonly` **Add**: `"ADD"` = `"ADD"`
 
 ADD action.
 
-### OBSERVE
+### Observe
 
-> `readonly` **OBSERVE**: `"OBSERVE"` = `"OBSERVE"`
+> `readonly` **Observe**: `"OBSERVE"` = `"OBSERVE"`
 
 OBSERVE action.
 
-### DELETE
+### Delete
 
-> `readonly` **DELETE**: `"DELETE"` = `"DELETE"`
+> `readonly` **Delete**: `"DELETE"` = `"DELETE"`
 
 DELETE action.

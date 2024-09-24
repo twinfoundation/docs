@@ -12,4 +12,4 @@ The result of the attestation process.
 
 #### information
 
-> **information**: [`IAttestationInformation`](IAttestationInformation.md)\<`unknown`\>
+> **information**: [`IAttestationInformation`](IAttestationInformation.md)\<`IJsonLdNodeObject`\>

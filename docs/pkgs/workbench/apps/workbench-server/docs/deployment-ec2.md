@@ -175,10 +175,14 @@ To upgrade a previous installation on an EC2 instance with the latest version.
 
 ```shell
 sudo systemctl stop workbench.service
-cd app
+cd apps
 git pull
 npm i
-cd workbench-server
+cd apps/workbench-server
 npm run dist
+
+# Update any env vars if necessary
+# nano .env
+
 sudo systemctl start workbench.service
 ```

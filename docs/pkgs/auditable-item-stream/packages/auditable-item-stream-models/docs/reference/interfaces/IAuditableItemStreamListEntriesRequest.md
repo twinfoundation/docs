@@ -1,6 +1,6 @@
 # Interface: IAuditableItemStreamListEntriesRequest
 
-Get an auditable item stream.
+Get an auditable item stream entries.
 
 ## Properties
 

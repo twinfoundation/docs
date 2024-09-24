@@ -264,13 +264,13 @@ NotFoundError if the id can not be resolved.
 
 ### createVerifiableCredential()
 
-> **createVerifiableCredential**\<`T`\>(`controller`, `verificationMethodId`, `credentialId`, `types`, `subject`, `contexts`?, `revocationIndex`?): `Promise`\<`object`\>
+> **createVerifiableCredential**\<`T`\>(`controller`, `verificationMethodId`, `id`, `credential`, `revocationIndex`?): `Promise`\<`object`\>
 
 Create a verifiable credential for a verification method.
 
 #### Type Parameters
 
-• **T**
+• **T** *extends* `IJsonLdNodeObject` = `IJsonLdNodeObject`
 
 #### Parameters
 
@@ -282,21 +282,13 @@ The controller of the identity who can make changes.
 
 The verification method id to use.
 
-• **credentialId**: `undefined` \| `string`
+• **id**: `undefined` \| `string`
 
 The id of the credential.
 
-• **types**: `undefined` \| `string` \| `string`[]
+• **credential**: `T`
 
-The type for the data stored in the verifiable credential.
-
-• **subject**: `T` \| `T`[]
-
-The subject data to store for the credential.
-
-• **contexts?**: `string` \| `string`[]
-
-Additional contexts to include in the credential.
+The credential to store in the verifiable credential.
 
 • **revocationIndex?**: `number`
 
@@ -334,7 +326,7 @@ Check a verifiable credential is valid.
 
 #### Type Parameters
 
-• **T**
+• **T** *extends* `IJsonLdNodeObject` = `IJsonLdNodeObject`
 
 #### Parameters
 
@@ -428,9 +420,13 @@ Nothing.
 
 ### createVerifiablePresentation()
 
-> **createVerifiablePresentation**(`controller`, `presentationMethodId`, `types`, `verifiableCredentials`, `contexts`?, `expiresInMinutes`?): `Promise`\<`object`\>
+> **createVerifiablePresentation**\<`T`\>(`controller`, `presentationMethodId`, `presentationId`, `contexts`, `types`, `verifiableCredentials`, `expiresInMinutes`?): `Promise`\<`object`\>
 
 Create a verifiable presentation from the supplied verifiable credentials.
+
+#### Type Parameters
+
+• **T** *extends* `IJsonLdNodeObject` = `IJsonLdNodeObject`
 
 #### Parameters
 
@@ -442,17 +438,21 @@ The controller of the identity who can make changes.
 
 The method to associate with the presentation.
 
+• **presentationId**: `undefined` \| `string`
+
+The id of the presentation.
+
+• **contexts**: `undefined` \| `IJsonLdContextDefinitionRoot`
+
+The contexts for the data stored in the verifiable credential.
+
 • **types**: `undefined` \| `string` \| `string`[]
 
 The types for the data stored in the verifiable credential.
 
-• **verifiableCredentials**: `string`[]
+• **verifiableCredentials**: (`string` \| `IDidVerifiableCredential`\<`T`\>)[]
 
 The credentials to use for creating the presentation in jwt format.
-
-• **contexts?**: `string` \| `string`[]
-
-Additional contexts to include in the presentation.
 
 • **expiresInMinutes?**: `number`
 
@@ -466,7 +466,7 @@ The created verifiable presentation and its token.
 
 ##### verifiablePresentation
 
-> **verifiablePresentation**: `IDidVerifiablePresentation`
+> **verifiablePresentation**: `IDidVerifiablePresentation`\<`T`\>
 
 ##### jwt
 
@@ -484,9 +484,13 @@ NotFoundError if the id can not be resolved.
 
 ### checkVerifiablePresentation()
 
-> **checkVerifiablePresentation**(`presentationJwt`): `Promise`\<`object`\>
+> **checkVerifiablePresentation**\<`T`\>(`presentationJwt`): `Promise`\<`object`\>
 
 Check a verifiable presentation is valid.
+
+#### Type Parameters
+
+• **T** *extends* `IJsonLdNodeObject` = `IJsonLdNodeObject`
 
 #### Parameters
 
@@ -506,7 +510,7 @@ The presentation stored in the jwt and the revocation status.
 
 ##### verifiablePresentation?
 
-> `optional` **verifiablePresentation**: `IDidVerifiablePresentation`
+> `optional` **verifiablePresentation**: `IDidVerifiablePresentation`\<`T`\>
 
 ##### issuers?
 

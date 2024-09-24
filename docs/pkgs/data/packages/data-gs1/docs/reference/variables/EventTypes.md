@@ -6,32 +6,32 @@ EPCIS 2.0 event types.
 
 ## Type declaration
 
-### OBJECT\_EVENT
+### ObjectEvent
 
-> `readonly` **OBJECT\_EVENT**: `"ObjectEvent"` = `"ObjectEvent"`
+> `readonly` **ObjectEvent**: `"ObjectEvent"` = `"ObjectEvent"`
 
 ObjectEvent.
 
-### AGGREGATION\_EVENT
+### AggregationEvent
 
-> `readonly` **AGGREGATION\_EVENT**: `"AggregationEvent"` = `"AggregationEvent"`
+> `readonly` **AggregationEvent**: `"AggregationEvent"` = `"AggregationEvent"`
 
 Aggregation Event.
 
-### ASSOCIATION\_EVENT
+### AssociationEvent
 
-> `readonly` **ASSOCIATION\_EVENT**: `"AssociationEvent"` = `"AssociationEvent"`
+> `readonly` **AssociationEvent**: `"AssociationEvent"` = `"AssociationEvent"`
 
 Association Event.
 
-### TRANSFORMATION\_EVENT
+### TransformationEvent
 
-> `readonly` **TRANSFORMATION\_EVENT**: `"TransformationEvent"` = `"TransformationEvent"`
+> `readonly` **TransformationEvent**: `"TransformationEvent"` = `"TransformationEvent"`
 
 Transformation Event.
 
-### TRANSACTION\_EVENT
+### TransactionEvent
 
-> `readonly` **TRANSACTION\_EVENT**: `"TransactionEvent"` = `"TransactionEvent"`
+> `readonly` **TransactionEvent**: `"TransactionEvent"` = `"TransactionEvent"`
 
 Transaction Event.

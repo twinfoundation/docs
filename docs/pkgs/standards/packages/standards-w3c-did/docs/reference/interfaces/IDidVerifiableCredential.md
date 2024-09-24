@@ -4,13 +4,13 @@ Interface describing a verifiable credential.
 
 ## Type Parameters
 
-• **T** = `unknown`
+• **T** *extends* `IJsonLdNodeObject` = `IJsonLdNodeObject`
 
 ## Properties
 
 ### @context
 
-> **@context**: `string` \| `string`[]
+> **@context**: `IJsonLdContextDefinitionRoot`
 
 The context for the verifiable credential.
 
