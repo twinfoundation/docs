@@ -200,7 +200,7 @@ Create a verifiable credential for a verification method.
 
 #### Type Parameters
 
-• **T** *extends* `IJsonLdNodeObject` = `IJsonLdNodeObject`
+• **T** *extends* `IJsonLdObject`
 
 #### Parameters
 
@@ -252,7 +252,7 @@ Check a verifiable credential is valid.
 
 #### Type Parameters
 
-• **T** *extends* `IJsonLdNodeObject` = `IJsonLdNodeObject`
+• **T** *extends* `IJsonLdObject`
 
 #### Parameters
 
@@ -340,7 +340,7 @@ Create a verifiable presentation from the supplied verifiable credentials.
 
 #### Type Parameters
 
-• **T** *extends* `IJsonLdNodeObject` = `IJsonLdNodeObject`
+• **T** *extends* `IJsonLdObject`
 
 #### Parameters
 
@@ -400,7 +400,7 @@ Check a verifiable presentation is valid.
 
 #### Type Parameters
 
-• **T** *extends* `IJsonLdNodeObject` = `IJsonLdNodeObject`
+• **T** *extends* `IJsonLdObject`
 
 #### Parameters
 

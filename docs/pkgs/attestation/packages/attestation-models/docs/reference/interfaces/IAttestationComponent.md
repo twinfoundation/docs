@@ -16,7 +16,7 @@ Attest the data and return the collated information.
 
 #### Type Parameters
 
-• **T** *extends* `IJsonLdNodeObject` = `IJsonLdNodeObject`
+• **T** *extends* `IJsonLdNodeObject`
 
 #### Parameters
 
@@ -56,7 +56,7 @@ Resolve and verify the attestation id.
 
 #### Type Parameters
 
-• **T** *extends* `IJsonLdNodeObject` = `IJsonLdNodeObject`
+• **T** *extends* `IJsonLdNodeObject`
 
 #### Parameters
 
@@ -92,7 +92,7 @@ Transfer the attestation to a new holder.
 
 #### Type Parameters
 
-• **T** *extends* `IJsonLdNodeObject` = `IJsonLdNodeObject`
+• **T** *extends* `IJsonLdNodeObject`
 
 #### Parameters
 

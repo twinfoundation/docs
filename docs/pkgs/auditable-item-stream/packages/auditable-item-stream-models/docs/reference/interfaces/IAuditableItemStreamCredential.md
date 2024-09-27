@@ -4,11 +4,27 @@ Interface describing the immutable credential for a stream.
 
 ## Properties
 
-### created
+### @context
 
-> **created**: `number`
+> **@context**: `"https://schema.twindev.org/ais/"` \| [`"https://schema.twindev.org/ais/"`, `...string[]`]
 
-The timestamp of when the stream was created.
+JSON-LD Context.
+
+***
+
+### type
+
+> **type**: `"AuditableItemStreamCredential"`
+
+JSON-LD Type.
+
+***
+
+### dateCreated
+
+> **dateCreated**: `string`
+
+The date/time of when the stream was created.
 
 ***
 

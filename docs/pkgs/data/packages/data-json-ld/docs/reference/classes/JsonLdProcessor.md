@@ -96,38 +96,6 @@ The URL to redirect to.
 
 ***
 
-### extractProperty()
-
-> `static` **extractProperty**\<`T`\>(`nodeObject`, `propertyNames`, `deleteProperty`): `undefined` \| `T`
-
-Extract a property from the JSON-LD.
-
-#### Type Parameters
-
-• **T**
-
-#### Parameters
-
-• **nodeObject**: [`IJsonLdNodeObject`](../interfaces/IJsonLdNodeObject.md)
-
-The JSON-LD node object to extract from.
-
-• **propertyNames**: `string`[]
-
-The possible names for the property.
-
-• **deleteProperty**: `boolean` = `true`
-
-Delete the property from the object, defaults to true.
-
-#### Returns
-
-`undefined` \| `T`
-
-The properties if available.
-
-***
-
 ### combineContexts()
 
 > `static` **combineContexts**(`context1`, `context2`): `undefined` \| [`IJsonLdContextDefinitionRoot`](../type-aliases/IJsonLdContextDefinitionRoot.md)

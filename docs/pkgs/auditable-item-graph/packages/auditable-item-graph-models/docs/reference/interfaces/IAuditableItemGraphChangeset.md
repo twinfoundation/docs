@@ -4,11 +4,27 @@ Interface describing a set of updates to the vertex.
 
 ## Properties
 
-### created
+### @context
 
-> **created**: `number`
+> **@context**: `"https://schema.twindev.org/aig/"` \| [`"https://schema.twindev.org/aig/"`, `...string[]`]
 
-The timestamp of when the changeset was created.
+JSON-LD Context.
+
+***
+
+### type
+
+> **type**: `"AuditableItemGraphChangeset"`
+
+JSON-LD Type.
+
+***
+
+### dateCreated
+
+> **dateCreated**: `string`
+
+The date/time of when the changeset was created.
 
 ***
 
@@ -49,3 +65,11 @@ The signature for the changeset.
 > `optional` **immutableStorageId**: `string`
 
 The immutable storage id containing the signature for the changeset.
+
+***
+
+### verification?
+
+> `optional` **verification**: [`IAuditableItemGraphVerification`](IAuditableItemGraphVerification.md)
+
+The verification for the changeset.

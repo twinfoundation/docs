@@ -11,6 +11,9 @@
 - [IAuditableItemStreamCredential](interfaces/IAuditableItemStreamCredential.md)
 - [IAuditableItemStreamEntry](interfaces/IAuditableItemStreamEntry.md)
 - [IAuditableItemStreamEntryCredential](interfaces/IAuditableItemStreamEntryCredential.md)
+- [IAuditableItemStreamEntryList](interfaces/IAuditableItemStreamEntryList.md)
+- [IAuditableItemStreamEntryObjectList](interfaces/IAuditableItemStreamEntryObjectList.md)
+- [IAuditableItemStreamList](interfaces/IAuditableItemStreamList.md)
 - [IAuditableItemStreamVerification](interfaces/IAuditableItemStreamVerification.md)
 - [IAuditableItemStreamCreateEntryRequest](interfaces/IAuditableItemStreamCreateEntryRequest.md)
 - [IAuditableItemStreamCreateRequest](interfaces/IAuditableItemStreamCreateRequest.md)
@@ -32,7 +35,6 @@
 
 ## Type Aliases
 
-- [JsonReturnType](type-aliases/JsonReturnType.md)
 - [AuditableItemStreamTypes](type-aliases/AuditableItemStreamTypes.md)
 - [AuditableItemStreamVerificationState](type-aliases/AuditableItemStreamVerificationState.md)
 

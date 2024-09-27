@@ -22,19 +22,19 @@ The id of the stream.
 
 ***
 
-### created
+### dateCreated
 
-> **created**: `number`
+> **dateCreated**: `string`
 
-The timestamp of when the stream was created.
+The date/time of when the stream was created.
 
 ***
 
-### updated?
+### dateModified?
 
-> `optional` **updated**: `number`
+> `optional` **dateModified**: `string`
 
-The timestamp of when the stream was last updated.
+The date/time of when the stream was modified.
 
 ***
 
@@ -54,11 +54,11 @@ The identity of the user which created the stream.
 
 ***
 
-### metadata?
+### streamObject?
 
-> `optional` **metadata**: `IJsonLdNodeObject`
+> `optional` **streamObject**: `IJsonLdNodeObject`
 
-Metadata to associate with the stream as JSON-LD.
+Object to associate with the stream as JSON-LD.
 
 ***
 

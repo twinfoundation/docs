@@ -60,7 +60,7 @@
                     "201": {
                         "description": "The rest request ended in created response.",
                         "headers": {
-                            "Location": {
+                            "location": {
                                 "schema": {
                                     "type": "string"
                                 },
@@ -972,6 +972,34 @@
                 },
                 "description": "A context definition defines a local context in a node object."
             },
+            "JsonLdContextDefinitionElement": {
+                "anyOf": [
+                    {
+                        "type": "null"
+                    },
+                    {
+                        "type": "string"
+                    },
+                    {
+                        "$ref": "#/components/schemas/JsonLdContextDefinition"
+                    }
+                ],
+                "description": "A context definition element is used to define the types of a context definition."
+            },
+            "JsonLdContextDefinitionRoot": {
+                "anyOf": [
+                    {
+                        "$ref": "#/components/schemas/JsonLdContextDefinitionElement"
+                    },
+                    {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/JsonLdContextDefinitionElement"
+                        }
+                    }
+                ],
+                "description": "A context definition root is used to define the root of a context definition."
+            },
             "JsonLdExpandedTermDefinition": {
                 "anyOf": [
                     {
@@ -1097,33 +1125,7 @@
                         ]
                     },
                     "@context": {
-                        "anyOf": [
-                            {
-                                "type": "null"
-                            },
-                            {
-                                "type": "string"
-                            },
-                            {
-                                "$ref": "#/components/schemas/JsonLdContextDefinition"
-                            },
-                            {
-                                "type": "array",
-                                "items": {
-                                    "anyOf": [
-                                        {
-                                            "type": "null"
-                                        },
-                                        {
-                                            "type": "string"
-                                        },
-                                        {
-                                            "$ref": "#/components/schemas/JsonLdContextDefinition"
-                                        }
-                                    ]
-                                }
-                            }
-                        ]
+                        "$ref": "#/components/schemas/JsonLdContextDefinitionRoot"
                     }
                 },
                 "required": [
@@ -1288,33 +1290,7 @@
                         ]
                     },
                     "@context": {
-                        "anyOf": [
-                            {
-                                "type": "null"
-                            },
-                            {
-                                "type": "string"
-                            },
-                            {
-                                "$ref": "#/components/schemas/JsonLdContextDefinition"
-                            },
-                            {
-                                "type": "array",
-                                "items": {
-                                    "anyOf": [
-                                        {
-                                            "type": "null"
-                                        },
-                                        {
-                                            "type": "string"
-                                        },
-                                        {
-                                            "$ref": "#/components/schemas/JsonLdContextDefinition"
-                                        }
-                                    ]
-                                }
-                            }
-                        ]
+                        "$ref": "#/components/schemas/JsonLdContextDefinitionRoot"
                     },
                     "@direction": {
                         "type": [
@@ -1547,33 +1523,7 @@
                 "type": "object",
                 "properties": {
                     "@context": {
-                        "anyOf": [
-                            {
-                                "type": "null"
-                            },
-                            {
-                                "type": "string"
-                            },
-                            {
-                                "$ref": "#/components/schemas/JsonLdContextDefinition"
-                            },
-                            {
-                                "type": "array",
-                                "items": {
-                                    "anyOf": [
-                                        {
-                                            "type": "null"
-                                        },
-                                        {
-                                            "type": "string"
-                                        },
-                                        {
-                                            "$ref": "#/components/schemas/JsonLdContextDefinition"
-                                        }
-                                    ]
-                                }
-                            }
-                        ]
+                        "$ref": "#/components/schemas/JsonLdContextDefinitionRoot"
                     },
                     "@id": {
                         "anyOf": [

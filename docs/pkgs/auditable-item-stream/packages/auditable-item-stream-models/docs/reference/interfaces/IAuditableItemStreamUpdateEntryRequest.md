@@ -30,8 +30,8 @@ The id of the entry to update.
 
 The data to be used in the entry.
 
-#### object
+#### entryObject
 
-> **object**: `IJsonLdNodeObject`
+> **entryObject**: `IJsonLdNodeObject`
 
 The object to be used in the entry as JSON-LD.

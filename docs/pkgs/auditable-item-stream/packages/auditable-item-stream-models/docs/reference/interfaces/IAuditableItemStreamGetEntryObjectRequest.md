@@ -10,9 +10,9 @@ Get an entry object in the auditable item stream.
 
 The headers which can be used to determine the response data type.
 
-#### Accept
+#### accept
 
-> **Accept**: `"application/json"` \| `"application/ld+json"`
+> **accept**: `"application/json"` \| `"application/ld+json"`
 
 ***
 

@@ -22,40 +22,40 @@ The id of the edge.
 
 ***
 
-### created
+### dateCreated
 
-> **created**: `number`
+> **dateCreated**: `string`
 
-The timestamp of when the edge was created.
-
-***
-
-### updated?
-
-> `optional` **updated**: `number`
-
-The timestamp of when the edge was updated.
+The date/time of when the edge was created.
 
 ***
 
-### deleted?
+### dateModified?
 
-> `optional` **deleted**: `number`
+> `optional` **dateModified**: `string`
+
+The date/time of when the edge was last modified.
+
+***
+
+### dateDeleted?
+
+> `optional` **dateDeleted**: `string`
 
 The timestamp of when the edge was deleted, as we never actually remove items.
 
 ***
 
-### relationship
+### edgeRelationship
 
-> **relationship**: `string`
+> **edgeRelationship**: `string`
 
 The relationship between the two vertices.
 
 ***
 
-### metadata?
+### edgeObject?
 
-> `optional` **metadata**: `IJsonLdNodeObject`
+> `optional` **edgeObject**: `IJsonLdNodeObject`
 
-Metadata to associate with the edge as JSON-LD.
+Object to associate with the edge as JSON-LD.

@@ -10,14 +10,14 @@ The response to getting the a list of the vertices with matching ids or aliases.
 
 The headers which can be used to determine the response data type.
 
-#### Content-Type
+#### content-type
 
-> **Content-Type**: `"application/json"` \| `"application/ld+json"`
+> **content-type**: `"application/json"` \| `"application/ld+json"`
 
 ***
 
 ### body
 
-> **body**: `IJsonLdDocument` \| `object`
+> **body**: [`IAuditableItemGraphVertexList`](IAuditableItemGraphVertexList.md)
 
 The response payload.

@@ -14,12 +14,12 @@ Context Root.
 
 ### Document
 
-> `readonly` **Document**: `"https://vocabulary.uncefact.org/Document"` = `"https://vocabulary.uncefact.org/Document"`
+> `readonly` **Document**: `"Document"` = `"Document"`
 
 Represents a UN/CEFACT document.
 
 ### Consignment
 
-> `readonly` **Consignment**: `"https://vocabulary.uncefact.org/Consignment"` = `"https://vocabulary.uncefact.org/Consignment"`
+> `readonly` **Consignment**: `"Consignment"` = `"Consignment"`
 
 Represents a UN/CEFACT consignment.

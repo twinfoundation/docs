@@ -4,11 +4,27 @@ The data stored immutably for the graph in a verifiable credential.
 
 ## Properties
 
-### created
+### @context
 
-> **created**: `number`
+> **@context**: `"https://schema.twindev.org/aig/"` \| [`"https://schema.twindev.org/aig/"`, `...string[]`]
 
-The timestamp of when the changeset was created.
+JSON-LD Context.
+
+***
+
+### type
+
+> **type**: `"AuditableItemGraphPatchCredential"`
+
+JSON-LD Type.
+
+***
+
+### dateCreated
+
+> **dateCreated**: `string`
+
+The date/time of when the changeset was created.
 
 ***
 

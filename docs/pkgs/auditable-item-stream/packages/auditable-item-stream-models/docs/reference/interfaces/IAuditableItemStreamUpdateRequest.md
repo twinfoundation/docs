@@ -24,8 +24,8 @@ The id of the stream to update.
 
 The data to be used in the stream.
 
-#### metadata?
+#### streamObject?
 
-> `optional` **metadata**: `IJsonLdNodeObject`
+> `optional` **streamObject**: `IJsonLdNodeObject`
 
-The metadata to be used in the stream as JSON-LD.
+The object to be used in the stream as JSON-LD.

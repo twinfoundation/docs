@@ -4,6 +4,22 @@ Interface describing an auditable item stream.
 
 ## Properties
 
+### @context
+
+> **@context**: `"https://schema.twindev.org/ais/"` \| [`"https://schema.twindev.org/ais/"`, `...string[]`]
+
+JSON-LD Context.
+
+***
+
+### type
+
+> **type**: `"AuditableItemStream"`
+
+JSON-LD Type.
+
+***
+
 ### id
 
 > **id**: `string`
@@ -12,19 +28,19 @@ The id of the stream.
 
 ***
 
-### created
+### dateCreated
 
-> **created**: `number`
+> **dateCreated**: `string`
 
-The timestamp of when the stream was created.
+The date/time of when the stream was created.
 
 ***
 
-### updated?
+### dateModified?
 
-> `optional` **updated**: `number`
+> `optional` **dateModified**: `string`
 
-The timestamp of when the stream was updated.
+The date/time of when the stream was modified.
 
 ***
 
@@ -44,11 +60,11 @@ The identity of the user who created the stream.
 
 ***
 
-### metadata?
+### streamObject?
 
-> `optional` **metadata**: `IJsonLdNodeObject`
+> `optional` **streamObject**: `IJsonLdNodeObject`
 
-The metadata to associate with the entry as JSON-LD.
+The object to associate with the entry as JSON-LD.
 
 ***
 
@@ -76,6 +92,14 @@ The immutable storage id.
 
 ***
 
+### immutableInterval
+
+> **immutableInterval**: `number`
+
+After how many entries do we add immutable checks.
+
+***
+
 ### entries?
 
 > `optional` **entries**: [`IAuditableItemStreamEntry`](IAuditableItemStreamEntry.md)[]
@@ -84,8 +108,16 @@ Entries in the stream.
 
 ***
 
-### immutableInterval
+### cursor?
 
-> **immutableInterval**: `number`
+> `optional` **cursor**: `string`
 
-After how many entries do we add immutable checks.
+The cursor for the stream entries.
+
+***
+
+### streamVerification?
+
+> `optional` **streamVerification**: [`IAuditableItemStreamVerification`](IAuditableItemStreamVerification.md)
+
+The verification of the stream.

@@ -4,7 +4,7 @@ Interface describing an auditable item graph vertex resource.
 
 ## Extends
 
-- [`IAuditableItemGraphAuditedElement`](IAuditableItemGraphAuditedElement.md).`IAuditableItemGraphMetadataElement`
+- [`IAuditableItemGraphAuditedElement`](IAuditableItemGraphAuditedElement.md)
 
 ## Properties
 
@@ -20,48 +20,60 @@ The id of the element.
 
 ***
 
-### created
+### dateCreated
 
-> **created**: `number`
+> **dateCreated**: `string`
 
-The timestamp of when the element was created.
+The date/time of when the element was created.
 
 #### Inherited from
 
-[`IAuditableItemGraphAuditedElement`](IAuditableItemGraphAuditedElement.md).[`created`](IAuditableItemGraphAuditedElement.md#created)
+[`IAuditableItemGraphAuditedElement`](IAuditableItemGraphAuditedElement.md).[`dateCreated`](IAuditableItemGraphAuditedElement.md#datecreated)
 
 ***
 
-### updated?
+### dateModified?
 
-> `optional` **updated**: `number`
+> `optional` **dateModified**: `string`
 
-The timestamp of when the element was updated.
+The date/time of when the element was modified.
 
 #### Inherited from
 
-[`IAuditableItemGraphAuditedElement`](IAuditableItemGraphAuditedElement.md).[`updated`](IAuditableItemGraphAuditedElement.md#updated)
+[`IAuditableItemGraphAuditedElement`](IAuditableItemGraphAuditedElement.md).[`dateModified`](IAuditableItemGraphAuditedElement.md#datemodified)
 
 ***
 
-### deleted?
+### dateDeleted?
 
-> `optional` **deleted**: `number`
+> `optional` **dateDeleted**: `string`
 
-The timestamp of when the element was deleted, as we never actually remove items.
+The date/time of when the element was deleted, as we never actually remove items.
 
 #### Inherited from
 
-[`IAuditableItemGraphAuditedElement`](IAuditableItemGraphAuditedElement.md).[`deleted`](IAuditableItemGraphAuditedElement.md#deleted)
+[`IAuditableItemGraphAuditedElement`](IAuditableItemGraphAuditedElement.md).[`dateDeleted`](IAuditableItemGraphAuditedElement.md#datedeleted)
 
 ***
 
-### metadata?
+### @context
 
-> `optional` **metadata**: `IJsonLdNodeObject`
+> **@context**: `"https://schema.twindev.org/aig/"` \| [`"https://schema.twindev.org/aig/"`, `...string[]`]
 
-The metadata to associate with the element as JSON-LD.
+JSON-LD Context.
 
-#### Inherited from
+***
 
-`IAuditableItemGraphMetadataElement.metadata`
+### type
+
+> **type**: `"AuditableItemGraphResource"`
+
+JSON-LD Type.
+
+***
+
+### resourceObject?
+
+> `optional` **resourceObject**: `IJsonLdNodeObject`
+
+The JSON-LD object for the resource.

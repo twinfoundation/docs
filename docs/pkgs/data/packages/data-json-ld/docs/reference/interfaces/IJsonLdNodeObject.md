@@ -7,6 +7,10 @@ in the graph serialized by the JSON-LD document.
 
 https://www.w3.org/TR/json-ld11/#node-objects
 
+## Extends
+
+- [`IJsonLdObject`](IJsonLdObject.md)
+
 ## Indexable
 
  \[`key`: `string`\]: [`IJsonLdNodePrimitive`](../type-aliases/IJsonLdNodePrimitive.md) \| [`IJsonLdNodePrimitive`](../type-aliases/IJsonLdNodePrimitive.md)[] \| [`IJsonLdLanguageMap`](IJsonLdLanguageMap.md) \| [`IJsonLdIndexMap`](IJsonLdIndexMap.md) \| [`IJsonLdIncludedBlock`](../type-aliases/IJsonLdIncludedBlock.md) \| [`IJsonLdIdMap`](IJsonLdIdMap.md) \| [`IJsonLdTypeMap`](IJsonLdTypeMap.md) \| [`IJsonLdNodeObject`](IJsonLdNodeObject.md)\[keyof [`IJsonLdNodeObject`](IJsonLdNodeObject.md)\]
@@ -17,11 +21,19 @@ https://www.w3.org/TR/json-ld11/#node-objects
 
 > `optional` **@context**: [`IJsonLdContextDefinitionRoot`](../type-aliases/IJsonLdContextDefinitionRoot.md)
 
+#### Inherited from
+
+[`IJsonLdObject`](IJsonLdObject.md).[`@context`](IJsonLdObject.md#@context)
+
 ***
 
 ### @id?
 
 > `optional` **@id**: `string` \| `string`[]
+
+#### Inherited from
+
+[`IJsonLdObject`](IJsonLdObject.md).[`@id`](IJsonLdObject.md#@id)
 
 ***
 
@@ -29,11 +41,19 @@ https://www.w3.org/TR/json-ld11/#node-objects
 
 > `optional` **@included**: [`IJsonLdIncludedBlock`](../type-aliases/IJsonLdIncludedBlock.md)
 
+#### Inherited from
+
+[`IJsonLdObject`](IJsonLdObject.md).[`@included`](IJsonLdObject.md#@included)
+
 ***
 
 ### @graph?
 
 > `optional` **@graph**: [`IJsonLdNodeObject`](IJsonLdNodeObject.md) \| [`IJsonLdNodeObject`](IJsonLdNodeObject.md)[]
+
+#### Inherited from
+
+[`IJsonLdObject`](IJsonLdObject.md).[`@graph`](IJsonLdObject.md#@graph)
 
 ***
 
@@ -41,11 +61,19 @@ https://www.w3.org/TR/json-ld11/#node-objects
 
 > `optional` **@nest**: [`IJsonLdJsonObject`](IJsonLdJsonObject.md) \| [`IJsonLdJsonObject`](IJsonLdJsonObject.md)[]
 
+#### Inherited from
+
+[`IJsonLdObject`](IJsonLdObject.md).[`@nest`](IJsonLdObject.md#@nest)
+
 ***
 
 ### @type?
 
 > `optional` **@type**: `string` \| `string`[]
+
+#### Inherited from
+
+[`IJsonLdObject`](IJsonLdObject.md).[`@type`](IJsonLdObject.md#@type)
 
 ***
 
@@ -57,8 +85,16 @@ https://www.w3.org/TR/json-ld11/#node-objects
 
  \[`key`: `string`\]: [`IJsonLdKeyword`](../type-aliases/IJsonLdKeyword.md)\[`"@reverse"`\]
 
+#### Inherited from
+
+[`IJsonLdObject`](IJsonLdObject.md).[`@reverse`](IJsonLdObject.md#@reverse)
+
 ***
 
 ### @index?
 
 > `optional` **@index**: `string`
+
+#### Inherited from
+
+[`IJsonLdObject`](IJsonLdObject.md).[`@index`](IJsonLdObject.md#@index)

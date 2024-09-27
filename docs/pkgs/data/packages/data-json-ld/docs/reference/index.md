@@ -9,6 +9,7 @@
 ## Interfaces
 
 - [IJsonLdNodeObject](interfaces/IJsonLdNodeObject.md)
+- [IJsonLdObject](interfaces/IJsonLdObject.md)
 - [IJsonLdGraphObject](interfaces/IJsonLdGraphObject.md)
 - [IJsonLdListObject](interfaces/IJsonLdListObject.md)
 - [IJsonLdSetObject](interfaces/IJsonLdSetObject.md)

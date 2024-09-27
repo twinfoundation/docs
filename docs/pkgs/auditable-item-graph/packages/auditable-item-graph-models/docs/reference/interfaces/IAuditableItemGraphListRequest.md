@@ -10,9 +10,9 @@ Get the a list of the vertices with matching ids or aliases.
 
 The headers which can be used to determine the response data type.
 
-#### Accept
+#### accept
 
-> **Accept**: `"application/json"` \| `"application/ld+json"`
+> **accept**: `"application/json"` \| `"application/ld+json"`
 
 ***
 
@@ -36,9 +36,9 @@ Which field to look in with the id, defaults to both.
 
 #### orderBy?
 
-> `optional` **orderBy**: `"created"` \| `"updated"`
+> `optional` **orderBy**: `"dateCreated"` \| `"dateModified"`
 
-The order for the results, default to created.
+The order for the results, default to dateCreated.
 
 #### orderByDirection?
 
@@ -50,7 +50,7 @@ The direction for the order, defaults to desc.
 
 > `optional` **properties**: `string`
 
-The properties to return as a comma separated list, defaults to "id,created,aliases,metadata".
+The properties to return as a comma separated list, defaults to "id,dateCreated,aliases,vertexObject".
 
 #### cursor?
 

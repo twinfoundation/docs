@@ -18,24 +18,24 @@ The id of the element.
 
 ***
 
-### created
+### dateCreated
 
-> **created**: `number`
+> **dateCreated**: `string`
 
-The timestamp of when the element was created.
-
-***
-
-### updated?
-
-> `optional` **updated**: `number`
-
-The timestamp of when the element was updated.
+The date/time of when the element was created.
 
 ***
 
-### deleted?
+### dateModified?
 
-> `optional` **deleted**: `number`
+> `optional` **dateModified**: `string`
 
-The timestamp of when the element was deleted, as we never actually remove items.
+The date/time of when the element was modified.
+
+***
+
+### dateDeleted?
+
+> `optional` **dateDeleted**: `string`
+
+The date/time of when the element was deleted, as we never actually remove items.

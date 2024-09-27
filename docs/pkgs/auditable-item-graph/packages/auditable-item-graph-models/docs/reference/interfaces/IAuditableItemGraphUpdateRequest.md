@@ -24,11 +24,11 @@ The id of the vertex to update.
 
 The data to be used in the vertex.
 
-#### metadata?
+#### vertexObject?
 
-> `optional` **metadata**: `IJsonLdNodeObject`
+> `optional` **vertexObject**: `IJsonLdNodeObject`
 
-The metadata to be used in the vertex as JSON-LD.
+The object to be used in the vertex as JSON-LD.
 
 #### aliases?
 

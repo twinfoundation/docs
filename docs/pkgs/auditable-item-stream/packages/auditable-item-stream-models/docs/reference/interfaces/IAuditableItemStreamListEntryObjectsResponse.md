@@ -10,14 +10,14 @@ Response to getting an auditable item stream entries objects.
 
 The headers which can be used to determine the response data type.
 
-#### Content-Type
+#### content-type
 
-> **Content-Type**: `"application/json"` \| `"application/ld+json"`
+> **content-type**: `"application/json"` \| `"application/ld+json"`
 
 ***
 
 ### body
 
-> **body**: `IJsonLdDocument`
+> **body**: [`IAuditableItemStreamEntryObjectList`](IAuditableItemStreamEntryObjectList.md)
 
-The response body, if accept header is set to application/ld+json the return object is JSON-LD document.
+The response body.

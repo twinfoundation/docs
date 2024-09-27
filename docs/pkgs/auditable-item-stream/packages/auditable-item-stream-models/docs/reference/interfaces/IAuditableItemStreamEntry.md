@@ -4,6 +4,22 @@ Interface describing an entry for the stream.
 
 ## Properties
 
+### @context
+
+> **@context**: `"https://schema.twindev.org/ais/"` \| [`"https://schema.twindev.org/ais/"`, `...string[]`]
+
+JSON-LD Context.
+
+***
+
+### type
+
+> **type**: `"AuditableItemStreamEntry"`
+
+JSON-LD Type.
+
+***
+
 ### id
 
 > **id**: `string`
@@ -12,27 +28,27 @@ The id of the entry.
 
 ***
 
-### created
+### dateCreated
 
-> **created**: `number`
+> **dateCreated**: `string`
 
-The timestamp of when the entry was created.
-
-***
-
-### updated?
-
-> `optional` **updated**: `number`
-
-The timestamp of when the entry was updated.
+The date/time of when the entry was created.
 
 ***
 
-### deleted?
+### dateModified?
 
-> `optional` **deleted**: `number`
+> `optional` **dateModified**: `string`
 
-The timestamp of when the entry was deleted, as we never actually remove items.
+The date/time of when the entry was modified.
+
+***
+
+### dateDeleted?
+
+> `optional` **dateDeleted**: `string`
+
+The date/time of when the entry was deleted, as we never actually remove items.
 
 ***
 
@@ -81,3 +97,11 @@ The signature of the entry.
 > `optional` **immutableStorageId**: `string`
 
 The immutable storage id containing the signature for the entry.
+
+***
+
+### entryVerification?
+
+> `optional` **entryVerification**: [`IAuditableItemStreamVerification`](IAuditableItemStreamVerification.md)
+
+The verification of the entry.

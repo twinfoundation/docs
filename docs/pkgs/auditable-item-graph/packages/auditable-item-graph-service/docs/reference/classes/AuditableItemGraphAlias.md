@@ -22,40 +22,40 @@ The alternative alias for the vertex.
 
 ***
 
-### format?
+### aliasFormat?
 
-> `optional` **format**: `string`
+> `optional` **aliasFormat**: `string`
 
 The format of the alias for the vertex.
 
 ***
 
-### created
+### dateCreated
 
-> **created**: `number`
+> **dateCreated**: `string`
 
-The timestamp of when the alias was created.
-
-***
-
-### updated?
-
-> `optional` **updated**: `number`
-
-The timestamp of when the alias was updated.
+The date/time of when the alias was created.
 
 ***
 
-### deleted?
+### dateModified?
 
-> `optional` **deleted**: `number`
+> `optional` **dateModified**: `string`
+
+The date/time of when the alias was last modified.
+
+***
+
+### dateDeleted?
+
+> `optional` **dateDeleted**: `string`
 
 The timestamp of when the alias was deleted, as we never actually remove items.
 
 ***
 
-### metadata?
+### aliasObject?
 
-> `optional` **metadata**: `IJsonLdNodeObject`
+> `optional` **aliasObject**: `IJsonLdNodeObject`
 
-Metadata to associate with the alias as JSON-LD.
+Object to associate with the alias as JSON-LD.

@@ -646,7 +646,7 @@
                             }
                         },
                         "headers": {
-                            "Content-Type": {
+                            "content-type": {
                                 "schema": {
                                     "type": "string"
                                 },
