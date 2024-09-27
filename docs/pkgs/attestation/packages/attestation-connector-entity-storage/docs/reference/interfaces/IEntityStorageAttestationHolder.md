@@ -12,8 +12,8 @@ The identity of the holder, if not provided defaults to owner.
 
 ***
 
-### transferred?
+### dateTransferred?
 
-> `optional` **transferred**: `string`
+> `optional` **dateTransferred**: `string`
 
 The ISO date/time when the attestation was transferred, if not provided defaults to issued date.

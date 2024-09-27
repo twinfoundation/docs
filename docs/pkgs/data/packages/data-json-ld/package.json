@@ -16,7 +16,7 @@
 	"scripts": {
 		"clean": "rimraf dist coverage docs/reference src/schemas",
 		"build:schema": "ts-to-schema ./ts-to-schema.json ./src/schemas",
-		"build:compile": "tspc",
+		"build:compile": "tsc",
 		"build": "npm run build:schema && npm run build:compile",
 		"test": "vitest --run --config ./vitest.config.ts --no-cache",
 		"coverage": "vitest --run --coverage --config ./vitest.config.ts --no-cache",

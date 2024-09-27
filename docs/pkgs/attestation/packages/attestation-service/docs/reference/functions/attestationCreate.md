@@ -1,6 +1,6 @@
-# Function: attestationAttest()
+# Function: attestationCreate()
 
-> **attestationAttest**(`httpRequestContext`, `componentName`, `request`): `Promise`\<`IAttestationAttestResponse`\>
+> **attestationCreate**(`httpRequestContext`, `componentName`, `request`): `Promise`\<`ICreatedResponse`\>
 
 Sign the data and return the proof.
 
@@ -14,12 +14,12 @@ The request context for the API.
 
 The name of the component to use in the routes.
 
-• **request**: `IAttestationAttestRequest`
+• **request**: `IAttestationCreateRequest`
 
 The request.
 
 ## Returns
 
-`Promise`\<`IAttestationAttestResponse`\>
+`Promise`\<`ICreatedResponse`\>
 
 The response object with additional http response properties.

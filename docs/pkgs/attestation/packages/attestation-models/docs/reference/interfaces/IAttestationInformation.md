@@ -1,12 +1,24 @@
-# Interface: IAttestationInformation\<T\>
+# Interface: IAttestationInformation
 
 Interface describing the collated attestation information.
 
-## Type Parameters
-
-• **T** *extends* `IJsonLdNodeObject` = `IJsonLdNodeObject`
-
 ## Properties
+
+### @context
+
+> **@context**: `"https://schema.twindev.org/attestation/"` \| [`"https://schema.twindev.org/attestation/"`, `...string[]`]
+
+JSON-LD Context.
+
+***
+
+### type
+
+> **type**: `"Information"`
+
+JSON-LD Type.
+
+***
 
 ### id
 
@@ -16,11 +28,19 @@ The unique identifier of the attestation.
 
 ***
 
-### created
+### dateCreated
 
-> **created**: `string`
+> **dateCreated**: `string`
 
 Created date/time of the attestation in ISO format.
+
+***
+
+### dateTransferred?
+
+> `optional` **dateTransferred**: `string`
+
+Transferred date/time of the attestation in ISO format, can be blank if holder identity is owner.
 
 ***
 
@@ -32,14 +52,6 @@ The identity of the owner.
 
 ***
 
-### transferred?
-
-> `optional` **transferred**: `string`
-
-Transferred date/time of the attestation in ISO format, can be blank if holder identity is owner.
-
-***
-
 ### holderIdentity?
 
 > `optional` **holderIdentity**: `string`
@@ -48,16 +60,32 @@ The identity of the current holder, can be undefined if owner is still the holde
 
 ***
 
-### data
+### attestationObject
 
-> **data**: `T`
+> **attestationObject**: `IJsonLdNodeObject`
 
 The data that was attested.
 
 ***
 
-### proof
+### proof?
 
-> **proof**: [`IAttestationProof`](IAttestationProof.md)
+> `optional` **proof**: `IJsonLdNodeObject`
 
 The proof for the attested data.
+
+***
+
+### verified?
+
+> `optional` **verified**: `boolean`
+
+Whether the attestation has been verified.
+
+***
+
+### verificationFailure?
+
+> `optional` **verificationFailure**: `string`
+
+The verification failure message.

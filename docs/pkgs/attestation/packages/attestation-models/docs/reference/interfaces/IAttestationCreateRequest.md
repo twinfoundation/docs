@@ -1,6 +1,6 @@
-# Interface: IAttestationAttestRequest
+# Interface: IAttestationCreateRequest
 
-Attest the data and return the collated attestation details.
+Attest the data and return the id of the attestation.
 
 ## Properties
 
@@ -16,9 +16,9 @@ The data to be used in the signing.
 
 The identity verification method to use for attesting the data.
 
-#### data
+#### attestationObject
 
-> **data**: `IJsonLdNodeObject`
+> **attestationObject**: `IJsonLdNodeObject`
 
 The data object to attest.
 

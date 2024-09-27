@@ -1,6 +1,6 @@
 # Function: attestationTransfer()
 
-> **attestationTransfer**(`httpRequestContext`, `componentName`, `request`): `Promise`\<`IAttestationTransferResponse`\>
+> **attestationTransfer**(`httpRequestContext`, `componentName`, `request`): `Promise`\<`INoContentResponse`\>
 
 Transfer the attestation to a new holder.
 
@@ -20,6 +20,6 @@ The request.
 
 ## Returns
 
-`Promise`\<`IAttestationTransferResponse`\>
+`Promise`\<`INoContentResponse`\>
 
 The response object with additional http response properties.
