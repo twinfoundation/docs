@@ -48,15 +48,15 @@ Runtime name for the class.
 
 ### create()
 
-> **create**(`metadata`?, `aliases`?, `resources`?, `edges`?): `Promise`\<`string`\>
+> **create**(`vertexObject`?, `aliases`?, `resources`?, `edges`?): `Promise`\<`string`\>
 
 Create a new graph vertex.
 
 #### Parameters
 
-• **metadata?**: `IJsonLdNodeObject`
+• **vertexObject?**: `IJsonLdNodeObject`
 
-The metadata for the vertex.
+The object for the vertex.
 
 • **aliases?**: `object`[]
 
@@ -84,13 +84,9 @@ The id of the new graph item.
 
 ### get()
 
-> **get**\<`T`\>(`id`, `options`?, `responseType`?): `Promise`\<`JsonReturnType`\<`T`, `IAuditableItemGraphVertex` & `object`, `IJsonLdDocument`\>\>
+> **get**(`id`, `options`?): `Promise`\<`IAuditableItemGraphVertex`\>
 
 Get a graph vertex.
-
-#### Type Parameters
-
-• **T** *extends* `"json"` \| `"jsonld"` = `"json"`
 
 #### Parameters
 
@@ -114,13 +110,9 @@ Whether to include the changesets of the vertex, defaults to false.
 
 How many signatures to verify, defaults to "none".
 
-• **responseType?**: `T`
-
-The response type to return, defaults to application/json.
-
 #### Returns
 
-`Promise`\<`JsonReturnType`\<`T`, `IAuditableItemGraphVertex` & `object`, `IJsonLdDocument`\>\>
+`Promise`\<`IAuditableItemGraphVertex`\>
 
 The vertex if found.
 
@@ -136,7 +128,7 @@ NotFoundError if the vertex is not found.
 
 ### update()
 
-> **update**(`id`, `metadata`?, `aliases`?, `resources`?, `edges`?): `Promise`\<`void`\>
+> **update**(`id`, `vertexObject`?, `aliases`?, `resources`?, `edges`?): `Promise`\<`void`\>
 
 Update a graph vertex.
 
@@ -146,9 +138,9 @@ Update a graph vertex.
 
 The id of the vertex to update.
 
-• **metadata?**: `IJsonLdNodeObject`
+• **vertexObject?**: `IJsonLdNodeObject`
 
-The metadata for the vertex as JSON-LD.
+The object for the vertex as JSON-LD.
 
 • **aliases?**: `object`[]
 
@@ -176,13 +168,9 @@ Nothing.
 
 ### query()
 
-> **query**\<`T`\>(`options`?, `orderBy`?, `orderByDirection`?, `properties`?, `cursor`?, `pageSize`?, `responseType`?): `Promise`\<`JsonReturnType`\<`T`, `object`, `IJsonLdDocument`\>\>
+> **query**(`options`?, `orderBy`?, `orderByDirection`?, `properties`?, `cursor`?, `pageSize`?): `Promise`\<`IAuditableItemGraphVertexList`\>
 
 Query the graph for vertices.
-
-#### Type Parameters
-
-• **T** *extends* `"json"` \| `"jsonld"` = `"json"`
 
 #### Parameters
 
@@ -198,7 +186,7 @@ The optional id to look for.
 
 Look in id, alias or both, defaults to both.
 
-• **orderBy?**: `"created"` \| `"updated"`
+• **orderBy?**: `"dateCreated"` \| `"dateModified"`
 
 The order for the results, defaults to created.
 
@@ -208,7 +196,7 @@ The direction for the order, defaults to descending.
 
 • **properties?**: keyof `IAuditableItemGraphVertex`[]
 
-The properties to return, if not provided defaults to id, created, aliases and metadata.
+The properties to return, if not provided defaults to id, created, aliases and object.
 
 • **cursor?**: `string`
 
@@ -218,13 +206,9 @@ The cursor to request the next page of entities.
 
 The maximum number of entities in a page.
 
-• **responseType?**: `T`
-
-The response type to return, defaults to application/json.
-
 #### Returns
 
-`Promise`\<`JsonReturnType`\<`T`, `object`, `IJsonLdDocument`\>\>
+`Promise`\<`IAuditableItemGraphVertexList`\>
 
 The entities, which can be partial if a limited keys list was provided.
 

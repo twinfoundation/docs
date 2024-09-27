@@ -8,11 +8,27 @@ Interface describing an auditable item stream verification.
 
 ## Properties
 
+### @context
+
+> **@context**: `"https://schema.twindev.org/ais/"` \| [`"https://schema.twindev.org/ais/"`, `...string[]`]
+
+JSON-LD Context.
+
+***
+
+### type
+
+> **type**: `"AuditableItemStreamVerification"`
+
+JSON-LD Type.
+
+***
+
 ### id?
 
 > `optional` **id**: `string`
 
-The id if used for an entry.
+The id, only used if the verification if for an entry.
 
 ***
 

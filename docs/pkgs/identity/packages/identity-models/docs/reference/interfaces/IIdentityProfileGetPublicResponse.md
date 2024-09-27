@@ -10,9 +10,9 @@ Response to get an identity public profile.
 
 The response headers.
 
-#### Content-Type
+#### content-type
 
-> **Content-Type**: `"application/ld+json"`
+> **content-type**: `"application/ld+json"`
 
 ***
 

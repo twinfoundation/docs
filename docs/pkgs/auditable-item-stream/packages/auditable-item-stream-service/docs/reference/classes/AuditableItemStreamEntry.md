@@ -30,33 +30,33 @@ The stream that the entry belongs to.
 
 ***
 
-### created
+### dateCreated
 
-> **created**: `number`
+> **dateCreated**: `string`
 
-The timestamp of when the entry was created.
-
-***
-
-### updated?
-
-> `optional` **updated**: `number`
-
-The timestamp of when the entry was updated.
+The date/time of when the entry was created.
 
 ***
 
-### deleted?
+### dateModified?
 
-> `optional` **deleted**: `number`
+> `optional` **dateModified**: `string`
 
-The timestamp of when the entry was deleted, as we never actually remove items.
+The date/time of when the entry was modified.
 
 ***
 
-### userIdentity?
+### dateDeleted?
 
-> `optional` **userIdentity**: `string`
+> `optional` **dateDeleted**: `string`
+
+The date/time of when the entry was deleted, as we never actually remove items.
+
+***
+
+### userIdentity
+
+> **userIdentity**: `string`
 
 The identity of the user that added the entry.
 

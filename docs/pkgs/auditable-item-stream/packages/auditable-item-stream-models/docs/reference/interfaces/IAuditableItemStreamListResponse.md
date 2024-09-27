@@ -10,14 +10,14 @@ The response to getting the a list of the streams.
 
 The headers which can be used to determine the response data type.
 
-#### Content-Type
+#### content-type
 
-> **Content-Type**: `"application/json"` \| `"application/ld+json"`
+> **content-type**: `"application/json"` \| `"application/ld+json"`
 
 ***
 
 ### body
 
-> **body**: `IJsonLdDocument` \| `object`
+> **body**: [`IAuditableItemStreamList`](IAuditableItemStreamList.md)
 
 The response payload.

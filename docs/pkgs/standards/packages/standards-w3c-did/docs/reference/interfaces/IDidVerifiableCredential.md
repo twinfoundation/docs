@@ -4,7 +4,7 @@ Interface describing a verifiable credential.
 
 ## Type Parameters
 
-• **T** *extends* `IJsonLdNodeObject` = `IJsonLdNodeObject`
+• **T** *extends* `IJsonLdObject` = `IJsonLdObject`
 
 ## Properties
 

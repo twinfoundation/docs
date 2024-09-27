@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/auditable-item-stream",
-	"version": "0.0.1-next.5",
+	"version": "0.0.1-next.6",
 	"description": "Auditable Item Stream",
 	"repository": {
 		"type": "git",
@@ -35,7 +35,7 @@
 		"eslint-plugin-unicorn": "55.0.0",
 		"eslint-plugin-unused-imports": "3.2.0",
 		"fast-glob": "3.3.2",
-		"markdownlint-cli": "0.41.0",
+		"markdownlint-cli": "0.42.0",
 		"prettier": "3.3.3"
 	},
 	"workspaces": [

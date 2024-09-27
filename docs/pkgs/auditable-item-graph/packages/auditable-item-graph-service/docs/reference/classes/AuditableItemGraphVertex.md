@@ -30,19 +30,19 @@ The identity of the node which controls the vertex.
 
 ***
 
-### created
+### dateCreated
 
-> **created**: `number`
+> **dateCreated**: `string`
 
-The timestamp of when the vertex was created.
+The date/time of when the vertex was created.
 
 ***
 
-### updated?
+### dateModified?
 
-> `optional` **updated**: `number`
+> `optional` **dateModified**: `string`
 
-The timestamp of when the vertex was last updated.
+The date/time of when the vertex was last modified.
 
 ***
 
@@ -54,11 +54,11 @@ Combined alias index for the vertex used for querying.
 
 ***
 
-### metadata?
+### vertexObject?
 
-> `optional` **metadata**: `IJsonLdNodeObject`
+> `optional` **vertexObject**: `IJsonLdNodeObject`
 
-Metadata to associate with the vertex as JSON-LD.
+Object to associate with the vertex as JSON-LD.
 
 ***
 

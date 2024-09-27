@@ -4,7 +4,7 @@ Interface describing an auditable item graph vertex.
 
 ## Extends
 
-- `Omit`\<[`IAuditableItemGraphAuditedElement`](IAuditableItemGraphAuditedElement.md), `"deleted"`\>.`IAuditableItemGraphMetadataElement`
+- `Omit`\<[`IAuditableItemGraphAuditedElement`](IAuditableItemGraphAuditedElement.md), `"deleted"`\>
 
 ## Properties
 
@@ -20,39 +20,55 @@ The id of the element.
 
 ***
 
-### created
+### dateCreated
 
-> **created**: `number`
+> **dateCreated**: `string`
 
-The timestamp of when the element was created.
+The date/time of when the element was created.
 
 #### Inherited from
 
-`Omit.created`
+`Omit.dateCreated`
 
 ***
 
-### updated?
+### dateModified?
 
-> `optional` **updated**: `number`
+> `optional` **dateModified**: `string`
 
-The timestamp of when the element was updated.
+The date/time of when the element was modified.
 
 #### Inherited from
 
-`Omit.updated`
+`Omit.dateModified`
 
 ***
 
-### metadata?
+### dateDeleted?
 
-> `optional` **metadata**: `IJsonLdNodeObject`
+> `optional` **dateDeleted**: `string`
 
-The metadata to associate with the element as JSON-LD.
+The date/time of when the element was deleted, as we never actually remove items.
 
 #### Inherited from
 
-`IAuditableItemGraphMetadataElement.metadata`
+`Omit.dateDeleted`
+
+***
+
+### @context
+
+> **@context**: `"https://schema.twindev.org/aig/"` \| [`"https://schema.twindev.org/aig/"`, `...string[]`]
+
+JSON-LD Context.
+
+***
+
+### type
+
+> **type**: `"AuditableItemGraphVertex"`
+
+JSON-LD Type.
 
 ***
 
@@ -61,6 +77,14 @@ The metadata to associate with the element as JSON-LD.
 > `optional` **nodeIdentity**: `string`
 
 The identity of the node which controls the vertex.
+
+***
+
+### vertexObject?
+
+> `optional` **vertexObject**: `IJsonLdNodeObject`
+
+The JSON-LD object for the vertex.
 
 ***
 
@@ -93,3 +117,11 @@ Edges connected to the vertex.
 > `optional` **changesets**: [`IAuditableItemGraphChangeset`](IAuditableItemGraphChangeset.md)[]
 
 Changesets for the vertex.
+
+***
+
+### verified?
+
+> `optional` **verified**: `boolean`
+
+Is the vertex verified, will only be populated when verification is requested.

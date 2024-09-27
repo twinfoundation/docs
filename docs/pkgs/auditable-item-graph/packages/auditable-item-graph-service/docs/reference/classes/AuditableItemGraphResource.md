@@ -22,32 +22,32 @@ The id of the resource.
 
 ***
 
-### created
+### dateCreated
 
-> **created**: `number`
+> **dateCreated**: `string`
 
-The timestamp of when the resource was created.
-
-***
-
-### updated?
-
-> `optional` **updated**: `number`
-
-The timestamp of when the resource was updated.
+The date/time of when the resource was created.
 
 ***
 
-### deleted?
+### dateModified?
 
-> `optional` **deleted**: `number`
+> `optional` **dateModified**: `string`
+
+The date/time of when the resource was last modified.
+
+***
+
+### dateDeleted?
+
+> `optional` **dateDeleted**: `string`
 
 The timestamp of when the resource was deleted, as we never actually remove items.
 
 ***
 
-### metadata?
+### resourceObject?
 
-> `optional` **metadata**: `IJsonLdNodeObject`
+> `optional` **resourceObject**: `IJsonLdNodeObject`
 
-Metadata to associate with the resource as JSON-LD.
+Object to associate with the resource as JSON-LD.

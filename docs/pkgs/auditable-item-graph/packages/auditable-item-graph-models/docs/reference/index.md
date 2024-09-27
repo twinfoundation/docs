@@ -16,6 +16,7 @@
 - [IAuditableItemGraphResource](interfaces/IAuditableItemGraphResource.md)
 - [IAuditableItemGraphVerification](interfaces/IAuditableItemGraphVerification.md)
 - [IAuditableItemGraphVertex](interfaces/IAuditableItemGraphVertex.md)
+- [IAuditableItemGraphVertexList](interfaces/IAuditableItemGraphVertexList.md)
 - [IAuditableItemGraphCreateRequest](interfaces/IAuditableItemGraphCreateRequest.md)
 - [IAuditableItemGraphGetRequest](interfaces/IAuditableItemGraphGetRequest.md)
 - [IAuditableItemGraphGetResponse](interfaces/IAuditableItemGraphGetResponse.md)
@@ -25,7 +26,6 @@
 
 ## Type Aliases
 
-- [JsonReturnType](type-aliases/JsonReturnType.md)
 - [AuditableItemGraphTypes](type-aliases/AuditableItemGraphTypes.md)
 - [AuditableItemGraphVerificationState](type-aliases/AuditableItemGraphVerificationState.md)
 - [VerifyDepth](type-aliases/VerifyDepth.md)

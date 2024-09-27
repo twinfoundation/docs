@@ -10,9 +10,9 @@ Response to getting an auditable item stream entry object.
 
 The headers which can be used to determine the response data type.
 
-#### Content-Type
+#### content-type
 
-> **Content-Type**: `"application/json"` \| `"application/ld+json"`
+> **content-type**: `"application/json"` \| `"application/ld+json"`
 
 ***
 

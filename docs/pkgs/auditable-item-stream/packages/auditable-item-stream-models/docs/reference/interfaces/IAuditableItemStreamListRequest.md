@@ -10,9 +10,9 @@ Get the a list of the streams.
 
 The headers which can be used to determine the response data type.
 
-#### Accept
+#### accept
 
-> **Accept**: `"application/json"` \| `"application/ld+json"`
+> **accept**: `"application/json"` \| `"application/ld+json"`
 
 ***
 
@@ -30,7 +30,7 @@ The conditions to filter the streams, consist of property|comparison|value comma
 
 #### orderBy?
 
-> `optional` **orderBy**: `"created"` \| `"updated"`
+> `optional` **orderBy**: `"dateCreated"` \| `"dateModified"`
 
 The order for the results, default to created.
 
@@ -44,7 +44,7 @@ The direction for the order, defaults to desc.
 
 > `optional` **properties**: `string`
 
-The properties to return as a comma separated list, defaults to "id,metadata".
+The properties to return as a comma separated list, defaults to "id,object".
 
 #### cursor?
 

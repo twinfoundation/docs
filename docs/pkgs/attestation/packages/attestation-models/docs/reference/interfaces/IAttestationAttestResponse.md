@@ -13,3 +13,5 @@ The result of the attestation process.
 #### information
 
 > **information**: [`IAttestationInformation`](IAttestationInformation.md)\<`IJsonLdNodeObject`\>
+
+The attestation information.

@@ -30,11 +30,11 @@ The vertex the changeset belongs to.
 
 ***
 
-### created
+### dateCreated
 
-> **created**: `number`
+> **dateCreated**: `string`
 
-The timestamp of when the changeset was created.
+The date/time of when the changeset was created.
 
 ***
 

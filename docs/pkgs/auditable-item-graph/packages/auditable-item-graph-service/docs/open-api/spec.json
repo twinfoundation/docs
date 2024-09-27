@@ -44,7 +44,7 @@
                             "examples": {
                                 "auditableItemGraphCreateRequestExample": {
                                     "value": {
-                                        "metadata": {
+                                        "vertexObject": {
                                             "@context": "http://schema.org/",
                                             "@type": "Note",
                                             "content": "This is a simple note"
@@ -52,7 +52,7 @@
                                         "aliases": [
                                             {
                                                 "id": "bar456",
-                                                "metadata": {
+                                                "aliasObject": {
                                                     "@context": "http://schema.org/",
                                                     "@type": "Note",
                                                     "content": "This is a simple note"
@@ -60,7 +60,7 @@
                                             },
                                             {
                                                 "id": "foo321",
-                                                "metadata": {
+                                                "aliasObject": {
                                                     "@context": "http://schema.org/",
                                                     "@type": "Note",
                                                     "content": "This is a simple note"
@@ -70,7 +70,7 @@
                                         "resources": [
                                             {
                                                 "id": "resource1",
-                                                "metadata": {
+                                                "resourceObject": {
                                                     "@context": "http://schema.org/",
                                                     "@type": "Note",
                                                     "content": "This is a simple note"
@@ -78,7 +78,7 @@
                                             },
                                             {
                                                 "id": "resource2",
-                                                "metadata": {
+                                                "resourceObject": {
                                                     "@context": "http://schema.org/",
                                                     "@type": "Note",
                                                     "content": "This is a simple note"
@@ -88,8 +88,8 @@
                                         "edges": [
                                             {
                                                 "id": "edge1",
-                                                "relationship": "frenemy",
-                                                "metadata": {
+                                                "edgeRelationship": "frenemy",
+                                                "edgeObject": {
                                                     "@context": "http://schema.org/",
                                                     "@type": "Note",
                                                     "content": "This is a simple note"
@@ -97,8 +97,8 @@
                                             },
                                             {
                                                 "id": "edge2",
-                                                "relationship": "end",
-                                                "metadata": {
+                                                "edgeRelationship": "end",
+                                                "edgeObject": {
                                                     "@context": "http://schema.org/",
                                                     "@type": "Note",
                                                     "content": "This is a simple note"
@@ -115,7 +115,7 @@
                     "201": {
                         "description": "The rest request ended in created response.",
                         "headers": {
-                            "Location": {
+                            "location": {
                                 "schema": {
                                     "type": "string"
                                 },
@@ -214,14 +214,14 @@
                     },
                     {
                         "name": "orderBy",
-                        "description": "The order for the results, default to created.",
+                        "description": "The order for the results, default to dateCreated.",
                         "in": "query",
                         "required": false,
                         "schema": {
                             "type": "string",
                             "enum": [
-                                "created",
-                                "updated"
+                                "dateCreated",
+                                "dateModified"
                             ]
                         }
                     },
@@ -236,7 +236,7 @@
                     },
                     {
                         "name": "properties",
-                        "description": "The properties to return as a comma separated list, defaults to \"id,created,aliases,metadata\".",
+                        "description": "The properties to return as a comma separated list, defaults to \"id,dateCreated,aliases,vertexObject\".",
                         "in": "query",
                         "required": false,
                         "schema": {
@@ -262,7 +262,7 @@
                         }
                     },
                     {
-                        "name": "Accept",
+                        "name": "accept",
                         "in": "header",
                         "required": true,
                         "schema": {
@@ -282,18 +282,34 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/AuditableItemGraphListResponse"
+                                    "$ref": "https://schema.twindev.org/aig/AuditableItemGraphVertexList"
                                 },
                                 "examples": {
                                     "auditableItemGraphListResponseExample": {
                                         "value": {
-                                            "entities": [
+                                            "@context": [
+                                                "https://schema.twindev.org/aig/",
+                                                "https://schema.org/"
+                                            ],
+                                            "type": "AuditableItemGraphVertexList",
+                                            "vertices": [
                                                 {
+                                                    "@context": [
+                                                        "https://schema.twindev.org/aig/",
+                                                        "https://schema.org/"
+                                                    ],
+                                                    "type": "AuditableItemGraphVertex",
                                                     "id": "0101010101010101010101010101010101010101010101010101010101010101",
+                                                    "dateCreated": "2024-08-22T11:55:16.271Z",
                                                     "aliases": [
                                                         {
+                                                            "@context": [
+                                                                "https://schema.twindev.org/aig/",
+                                                                "https://schema.org/"
+                                                            ],
+                                                            "type": "AuditableItemGraphAlias",
                                                             "id": "foo4",
-                                                            "created": 1234567890
+                                                            "dateCreated": "2024-08-22T11:55:16.271Z"
                                                         }
                                                     ]
                                                 }
@@ -305,39 +321,46 @@
                             },
                             "application/ld+json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/AuditableItemGraphListResponse"
+                                    "$ref": "https://schema.twindev.org/aig/AuditableItemGraphVertexList"
                                 },
                                 "examples": {
                                     "auditableItemGraphJsonLdListResponseExample": {
                                         "value": {
-                                            "@context": "https://schema.twindev.org/aig/",
-                                            "@graph": [
+                                            "@context": [
+                                                "https://schema.twindev.org/aig/",
+                                                "https://schema.org/"
+                                            ],
+                                            "type": "AuditableItemGraphVertexList",
+                                            "vertices": [
                                                 {
-                                                    "@type": "vertex",
-                                                    "id": "aig:1234567890",
-                                                    "created": "2024-08-22T11:55:16.271Z",
-                                                    "updated": "2024-08-22T11:55:16.271Z",
-                                                    "metadata": {
-                                                        "@context": "http://schema.org/",
-                                                        "@type": "Note",
-                                                        "content": "This is a simple note"
-                                                    },
+                                                    "@context": [
+                                                        "https://schema.twindev.org/aig/",
+                                                        "https://schema.org/"
+                                                    ],
+                                                    "type": "AuditableItemGraphVertex",
+                                                    "id": "0101010101010101010101010101010101010101010101010101010101010101",
+                                                    "dateCreated": "2024-08-22T11:55:16.271Z",
                                                     "aliases": [
                                                         {
-                                                            "@type": "alias",
-                                                            "created": "2024-08-22T11:55:16.271Z",
-                                                            "id": "tst:1234567890"
+                                                            "@context": [
+                                                                "https://schema.twindev.org/aig/",
+                                                                "https://schema.org/"
+                                                            ],
+                                                            "type": "AuditableItemGraphAlias",
+                                                            "id": "foo4",
+                                                            "dateCreated": "2024-08-22T11:55:16.271Z"
                                                         }
                                                     ]
                                                 }
-                                            ]
+                                            ],
+                                            "cursor": "1"
                                         }
                                     }
                                 }
                             }
                         },
                         "headers": {
-                            "Content-Type": {
+                            "content-type": {
                                 "schema": {
                                     "type": "string"
                                 },
@@ -452,7 +475,7 @@
                         }
                     },
                     {
-                        "name": "Accept",
+                        "name": "accept",
                         "in": "header",
                         "required": true,
                         "schema": {
@@ -473,23 +496,33 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/AuditableItemGraphGetResponse"
+                                    "$ref": "https://schema.twindev.org/aig/AuditableItemGraphVertex"
                                 },
                                 "examples": {
                                     "auditableItemGraphGetResponseExample": {
                                         "value": {
+                                            "@context": [
+                                                "https://schema.twindev.org/aig/",
+                                                "https://schema.org/"
+                                            ],
+                                            "type": "AuditableItemGraphVertex",
                                             "id": "aig:1234567890",
-                                            "created": 1234567890,
-                                            "updated": 1234567890,
-                                            "metadata": {
+                                            "dateCreated": "2024-08-22T11:55:16.271Z",
+                                            "dateModified": "2024-08-22T11:55:16.271Z",
+                                            "vertexObject": {
                                                 "@context": "http://schema.org/",
                                                 "@type": "Note",
                                                 "content": "This is a simple note"
                                             },
                                             "aliases": [
                                                 {
+                                                    "@context": [
+                                                        "https://schema.twindev.org/aig/",
+                                                        "https://schema.org/"
+                                                    ],
+                                                    "type": "AuditableItemGraphAlias",
                                                     "id": "tst:1234567890",
-                                                    "created": 1234567890
+                                                    "dateCreated": "2024-08-22T11:55:16.271Z"
                                                 }
                                             ]
                                         }
@@ -498,25 +531,32 @@
                             },
                             "application/ld+json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/AuditableItemGraphGetResponse"
+                                    "$ref": "https://schema.twindev.org/aig/AuditableItemGraphVertex"
                                 },
                                 "examples": {
                                     "auditableItemGraphJsonLdGetResponseExample": {
                                         "value": {
-                                            "@context": "https://schema.twindev.org/aig/",
-                                            "@type": "vertex",
+                                            "@context": [
+                                                "https://schema.twindev.org/aig/",
+                                                "https://schema.org/"
+                                            ],
+                                            "type": "AuditableItemGraphVertex",
                                             "id": "aig:1234567890",
-                                            "created": "2024-08-22T11:55:16.271Z",
-                                            "updated": "2024-08-22T11:55:16.271Z",
-                                            "metadata": {
+                                            "dateCreated": "2024-08-22T11:55:16.271Z",
+                                            "dateModified": "2024-08-22T11:55:16.271Z",
+                                            "vertexObject": {
                                                 "@context": "http://schema.org/",
                                                 "@type": "Note",
                                                 "content": "This is a simple note"
                                             },
                                             "aliases": [
                                                 {
-                                                    "@type": "alias",
-                                                    "created": "2024-08-22T11:55:16.271Z",
+                                                    "@context": [
+                                                        "https://schema.twindev.org/aig/",
+                                                        "https://schema.org/"
+                                                    ],
+                                                    "type": "AuditableItemGraphAlias",
+                                                    "dateCreated": "2024-08-22T11:55:16.271Z",
                                                     "id": "tst:1234567890"
                                                 }
                                             ]
@@ -526,7 +566,7 @@
                             }
                         },
                         "headers": {
-                            "Content-Type": {
+                            "content-type": {
                                 "schema": {
                                     "type": "string"
                                 },
@@ -628,7 +668,7 @@
                             "examples": {
                                 "auditableItemGraphUpdateRequestExample": {
                                     "value": {
-                                        "metadata": {
+                                        "vertexObject": {
                                             "@context": "http://schema.org/",
                                             "@type": "Note",
                                             "content": "This is a simple note"
@@ -636,7 +676,7 @@
                                         "aliases": [
                                             {
                                                 "id": "bar456",
-                                                "metadata": {
+                                                "aliasObject": {
                                                     "@context": "http://schema.org/",
                                                     "@type": "Note",
                                                     "content": "This is a simple note"
@@ -644,7 +684,7 @@
                                             },
                                             {
                                                 "id": "foo321",
-                                                "metadata": {
+                                                "aliasObject": {
                                                     "@context": "http://schema.org/",
                                                     "@type": "Note",
                                                     "content": "This is a simple note"
@@ -654,7 +694,7 @@
                                         "resources": [
                                             {
                                                 "id": "resource1",
-                                                "metadata": {
+                                                "resourceObject": {
                                                     "@context": "http://schema.org/",
                                                     "@type": "Note",
                                                     "content": "This is a simple note"
@@ -662,7 +702,7 @@
                                             },
                                             {
                                                 "id": "resource2",
-                                                "metadata": {
+                                                "resourceObject": {
                                                     "@context": "http://schema.org/",
                                                     "@type": "Note",
                                                     "content": "This is a simple note"
@@ -672,8 +712,8 @@
                                         "edges": [
                                             {
                                                 "id": "edge1",
-                                                "relationship": "frenemy",
-                                                "metadata": {
+                                                "edgeRelationship": "frenemy",
+                                                "edgeObject": {
                                                     "@context": "http://schema.org/",
                                                     "@type": "Note",
                                                     "content": "This is a simple note"
@@ -681,8 +721,8 @@
                                             },
                                             {
                                                 "id": "edge2",
-                                                "relationship": "end",
-                                                "metadata": {
+                                                "edgeRelationship": "end",
+                                                "edgeObject": {
                                                     "@context": "http://schema.org/",
                                                     "@type": "Note",
                                                     "content": "This is a simple note"
@@ -765,7 +805,7 @@
             "AuditableItemGraphCreateRequest": {
                 "type": "object",
                 "properties": {
-                    "metadata": {
+                    "vertexObject": {
                         "$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
                     },
                     "aliases": {
@@ -776,10 +816,10 @@
                                 "id": {
                                     "type": "string"
                                 },
-                                "format": {
+                                "aliasFormat": {
                                     "type": "string"
                                 },
-                                "metadata": {
+                                "aliasObject": {
                                     "$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
                                 }
                             },
@@ -798,7 +838,7 @@
                                 "id": {
                                     "type": "string"
                                 },
-                                "metadata": {
+                                "resourceObject": {
                                     "$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
                                 }
                             },
@@ -817,16 +857,16 @@
                                 "id": {
                                     "type": "string"
                                 },
-                                "relationship": {
+                                "edgeRelationship": {
                                     "type": "string"
                                 },
-                                "metadata": {
+                                "edgeObject": {
                                     "$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
                                 }
                             },
                             "required": [
                                 "id",
-                                "relationship"
+                                "edgeRelationship"
                             ],
                             "additionalProperties": false
                         },
@@ -836,112 +876,10 @@
                 "additionalProperties": false,
                 "description": "The data to be used in the vertex."
             },
-            "AuditableItemGraphGetResponse": {
-                "anyOf": [
-                    {
-                        "$ref": "https://schema.twindev.org/json-ld/JsonLdDocument"
-                    },
-                    {
-                        "type": "object",
-                        "additionalProperties": false,
-                        "properties": {
-                            "verified": {
-                                "type": "boolean",
-                                "description": "Whether the vertex and its elements have been verified."
-                            },
-                            "changesetsVerification": {
-                                "type": "array",
-                                "items": {
-                                    "$ref": "https://schema.twindev.org/aig/AuditableItemGraphVerification"
-                                },
-                                "description": "The verification for the changesets including any failure information."
-                            },
-                            "metadata": {
-                                "$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject",
-                                "description": "The metadata to associate with the element as JSON-LD."
-                            },
-                            "id": {
-                                "type": "string",
-                                "description": "The id of the element."
-                            },
-                            "created": {
-                                "type": "number",
-                                "description": "The timestamp of when the element was created."
-                            },
-                            "updated": {
-                                "type": "number",
-                                "description": "The timestamp of when the element was updated."
-                            },
-                            "nodeIdentity": {
-                                "type": "string",
-                                "description": "The identity of the node which controls the vertex."
-                            },
-                            "aliases": {
-                                "type": "array",
-                                "items": {
-                                    "$ref": "https://schema.twindev.org/aig/AuditableItemGraphAlias"
-                                },
-                                "description": "Alternative aliases that can be used to identify the vertex."
-                            },
-                            "resources": {
-                                "type": "array",
-                                "items": {
-                                    "$ref": "https://schema.twindev.org/aig/AuditableItemGraphResource"
-                                },
-                                "description": "The resources attached to the vertex."
-                            },
-                            "edges": {
-                                "type": "array",
-                                "items": {
-                                    "$ref": "https://schema.twindev.org/aig/AuditableItemGraphEdge"
-                                },
-                                "description": "Edges connected to the vertex."
-                            },
-                            "changesets": {
-                                "type": "array",
-                                "items": {
-                                    "$ref": "https://schema.twindev.org/aig/AuditableItemGraphChangeset"
-                                },
-                                "description": "Changesets for the vertex."
-                            }
-                        },
-                        "required": [
-                            "created",
-                            "id"
-                        ]
-                    }
-                ],
-                "description": "The response body, if accept header is set to application/ld+json the return object is JSON-LD document."
-            },
-            "AuditableItemGraphListResponse": {
-                "anyOf": [
-                    {
-                        "$ref": "https://schema.twindev.org/json-ld/JsonLdDocument"
-                    },
-                    {
-                        "type": "object",
-                        "properties": {
-                            "entities": {
-                                "type": "array",
-                                "items": {
-                                    "$ref": "https://schema.twindev.org/aig/AuditableItemGraphVertex"
-                                },
-                                "description": "The entities, which can be partial if a limited keys list was provided."
-                            },
-                            "cursor": {
-                                "type": "string",
-                                "description": "An optional cursor, when defined can be used to call find to get more entities."
-                            }
-                        },
-                        "additionalProperties": false
-                    }
-                ],
-                "description": "The response payload."
-            },
             "AuditableItemGraphUpdateRequest": {
                 "type": "object",
                 "properties": {
-                    "metadata": {
+                    "vertexObject": {
                         "$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
                     },
                     "aliases": {
@@ -952,10 +890,10 @@
                                 "id": {
                                     "type": "string"
                                 },
-                                "format": {
+                                "aliasFormat": {
                                     "type": "string"
                                 },
-                                "metadata": {
+                                "aliasObject": {
                                     "$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
                                 }
                             },
@@ -974,7 +912,7 @@
                                 "id": {
                                     "type": "string"
                                 },
-                                "metadata": {
+                                "resourceObject": {
                                     "$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
                                 }
                             },
@@ -993,16 +931,16 @@
                                 "id": {
                                     "type": "string"
                                 },
-                                "relationship": {
+                                "edgeRelationship": {
                                     "type": "string"
                                 },
-                                "metadata": {
+                                "edgeObject": {
                                     "$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
                                 }
                             },
                             "required": [
                                 "id",
-                                "relationship"
+                                "edgeRelationship"
                             ],
                             "additionalProperties": false
                         },
