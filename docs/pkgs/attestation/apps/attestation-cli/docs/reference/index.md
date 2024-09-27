@@ -6,9 +6,9 @@
 
 ## Functions
 
-- [buildCommandAttestationAttest](functions/buildCommandAttestationAttest.md)
-- [actionCommandAttestationAttest](functions/actionCommandAttestationAttest.md)
+- [buildCommandAttestationCreate](functions/buildCommandAttestationCreate.md)
+- [actionCommandAttestationCreate](functions/actionCommandAttestationCreate.md)
+- [buildCommandAttestationGet](functions/buildCommandAttestationGet.md)
+- [actionCommandAttestationGet](functions/actionCommandAttestationGet.md)
 - [buildCommandAttestationTransfer](functions/buildCommandAttestationTransfer.md)
 - [actionCommandAttestationTransfer](functions/actionCommandAttestationTransfer.md)
-- [buildCommandAttestationVerify](functions/buildCommandAttestationVerify.md)
-- [actionCommandAttestationVerify](functions/actionCommandAttestationVerify.md)

@@ -1,8 +1,8 @@
-# Function: actionCommandAttestationVerify()
+# Function: actionCommandAttestationCreate()
 
-> **actionCommandAttestationVerify**(`opts`): `Promise`\<`void`\>
+> **actionCommandAttestationCreate**(`opts`): `Promise`\<`void`\>
 
-Action the attestation verify command.
+Action the attestation attest command.
 
 ## Parameters
 

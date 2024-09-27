@@ -16,7 +16,7 @@
 ## Functions
 
 - [generateRestRoutesAttestation](functions/generateRestRoutesAttestation.md)
-- [attestationAttest](functions/attestationAttest.md)
-- [attestationVerify](functions/attestationVerify.md)
+- [attestationCreate](functions/attestationCreate.md)
+- [attestationGet](functions/attestationGet.md)
 - [attestationTransfer](functions/attestationTransfer.md)
 - [attestationDestroy](functions/attestationDestroy.md)
