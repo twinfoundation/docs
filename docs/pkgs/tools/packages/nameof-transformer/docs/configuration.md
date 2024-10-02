@@ -17,7 +17,7 @@ Modify your build script in `package.json`
 ```shell
 {
     "scripts": {
-        "compile": "tspc"
+        "prepare": "ts-patch install -s"
     }
 }
 ```

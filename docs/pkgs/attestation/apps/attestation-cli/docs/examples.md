@@ -40,15 +40,15 @@ Commands:
   verifiable-credential-verify [options]    Verify a verifiable credential.
   verifiable-credential-revoke [options]    Revoke a verifiable credential.
   verifiable-credential-unrevoke [options]  Unrevoke a verifiable credential.
-  attestation-attest [options]              Create an attestation.
-  attestation-verify [options]              Verify an attestation.
+  attestation-create [options]              Create an attestation.
+  attestation-get [options]              Verify an attestation.
   attestation-transfer [options]            Transfer an attestation to a new holder.
 ```
 
 You can get further details on the sub commands by using the help option for the individual commands.
 
 ```shell
-twin-attestation attestation-attest --help
+twin-attestation attestation-create --help
 ```
 
 Output
@@ -56,7 +56,7 @@ Output
 ```shell
 🌍 TWIN Attestation v1.0.0
 
-Usage: twin-attestation attestation-attest [options]
+Usage: twin-attestation attestation-create [options]
 
 Create an attestation.
 
@@ -79,7 +79,7 @@ The commands `mnemonic`, `address`, `faucet`, `identity*` and `verifiable-creden
 
 ## Command
 
-### attestation-attest
+### attestation-create
 
 Use this command to attest some data, the owner address must have sufficient funds to store the data. The seed and the funds can be generated using the `mnemonic` and `faucet` commands. You must also have an identity with a verification method used to generate the verifiable credential for the attestation.
 
@@ -123,15 +123,15 @@ To attest the data issue the following command:
 
 ```shell
 # Attest the data and store the id in the attestation.env file
-twin-attestation attestation-attest --load-env config.env wallet.env verification-method.env --seed !SEED --owner !ADDRESS_0_BECH32 --verification-method-id !DID_VERIFICATION_METHOD_ID --private-key !DID_VERIFICATION_METHOD_PRIVATE_KEY --data-json data.json --env attestation.env
+twin-attestation attestation-create --load-env config.env wallet.env verification-method.env --seed !SEED --owner !ADDRESS_0_BECH32 --verification-method-id !DID_VERIFICATION_METHOD_ID --private-key !DID_VERIFICATION_METHOD_PRIVATE_KEY --data-json data.json --env attestation.env
 ```
 
-### attestation-verify
+### attestation-get
 
 To verify the attestation and retrieve its details issue the following command.
 
 ```shell
-twin-attestation attestation-verify --load-env config.env attestation.env --id !ATTESTATION_ID
+twin-attestation attestation-get --load-env config.env attestation.env --id !ATTESTATION_ID
 ```
 
 You should see output to the following.
@@ -168,7 +168,7 @@ twin-attestation identity-create --load-env config.env wallet.env --seed !SEED -
 twin-attestation attestation-transfer --load-env config.env wallet.env attestation.env identity2.env --seed !SEED --id !ATTESTATION_ID --holder-address !ADDRESS_1_BECH32 --holder-identity !DID
 ```
 
-If you repeat the attestation-verify command you should see the following updated details, with `holderIdentity` and `transferred` set.
+If you repeat the attestation-get command you should see the following updated details, with `holderIdentity` and `transferred` set.
 
 ```json
 {

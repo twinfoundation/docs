@@ -1,6 +1,6 @@
-# Function: attestationVerify()
+# Function: attestationGet()
 
-> **attestationVerify**(`httpRequestContext`, `componentName`, `request`): `Promise`\<`IAttestationVerifyResponse`\>
+> **attestationGet**(`httpRequestContext`, `componentName`, `request`): `Promise`\<`IAttestationGetResponse`\>
 
 Resolve and verify the attestation id.
 
@@ -14,12 +14,12 @@ The request context for the API.
 
 The name of the component to use in the routes.
 
-• **request**: `IAttestationVerifyRequest`
+• **request**: `IAttestationGetRequest`
 
 The request.
 
 ## Returns
 
-`Promise`\<`IAttestationVerifyResponse`\>
+`Promise`\<`IAttestationGetResponse`\>
 
 The response object with additional http response properties.

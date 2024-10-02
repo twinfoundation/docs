@@ -8,15 +8,11 @@ Interface describing an attestation contract.
 
 ## Methods
 
-### attest()
+### create()
 
-> **attest**\<`T`\>(`verificationMethodId`, `data`, `namespace`?, `identity`?, `nodeIdentity`?): `Promise`\<[`IAttestationInformation`](IAttestationInformation.md)\<`T`\>\>
+> **create**(`verificationMethodId`, `attestationObject`, `namespace`?, `identity`?, `nodeIdentity`?): `Promise`\<`string`\>
 
 Attest the data and return the collated information.
-
-#### Type Parameters
-
-• **T** *extends* `IJsonLdNodeObject`
 
 #### Parameters
 
@@ -24,7 +20,7 @@ Attest the data and return the collated information.
 
 The identity verification method to use for attesting the data.
 
-• **data**: `T`
+• **attestationObject**: `IJsonLdNodeObject`
 
 The data to attest.
 
@@ -42,57 +38,37 @@ The node identity to include in the attestation.
 
 #### Returns
 
-`Promise`\<[`IAttestationInformation`](IAttestationInformation.md)\<`T`\>\>
+`Promise`\<`string`\>
 
-The collated attestation data.
+The id of the attestation.
 
 ***
 
-### verify()
+### get()
 
-> **verify**\<`T`\>(`attestationId`): `Promise`\<`object`\>
+> **get**(`id`): `Promise`\<[`IAttestationInformation`](IAttestationInformation.md)\>
 
 Resolve and verify the attestation id.
 
-#### Type Parameters
-
-• **T** *extends* `IJsonLdNodeObject`
-
 #### Parameters
 
-• **attestationId**: `string`
+• **id**: `string`
 
 The attestation id to verify.
 
 #### Returns
 
-`Promise`\<`object`\>
+`Promise`\<[`IAttestationInformation`](IAttestationInformation.md)\>
 
 The verified attestation details.
-
-##### verified
-
-> **verified**: `boolean`
-
-##### failure?
-
-> `optional` **failure**: `string`
-
-##### information?
-
-> `optional` **information**: `Partial`\<[`IAttestationInformation`](IAttestationInformation.md)\<`T`\>\>
 
 ***
 
 ### transfer()
 
-> **transfer**\<`T`\>(`attestationId`, `holderIdentity`, `identity`?): `Promise`\<[`IAttestationInformation`](IAttestationInformation.md)\<`T`\>\>
+> **transfer**(`attestationId`, `holderIdentity`, `identity`?): `Promise`\<`void`\>
 
 Transfer the attestation to a new holder.
-
-#### Type Parameters
-
-• **T** *extends* `IJsonLdNodeObject`
 
 #### Parameters
 
@@ -110,9 +86,9 @@ The identity to perform the attestation operation with.
 
 #### Returns
 
-`Promise`\<[`IAttestationInformation`](IAttestationInformation.md)\<`T`\>\>
+`Promise`\<`void`\>
 
-The updated attestation details.
+Nothing.
 
 ***
 
@@ -136,4 +112,4 @@ The identity to perform the attestation operation with.
 
 `Promise`\<`void`\>
 
-The updated attestation details.
+Nothing.
