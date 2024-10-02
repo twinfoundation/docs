@@ -135,3 +135,7 @@ This is the overview of the packages.
 - [@twin.org/auditable-item-stream-models](pkgs/auditable-item-stream/packages/auditable-item-stream-models/index.md) - Models which define the structure of the auditable item stream connectors and services
 - [@twin.org/auditable-item-stream-service](pkgs/auditable-item-stream/packages/auditable-item-stream-service/index.md) - Auditable Item Stream contract implementation and REST endpoint definitions
 - [@twin.org/auditable-item-stream-rest-client](pkgs/auditable-item-stream/packages/auditable-item-stream-rest-client/index.md) - Auditable Item Stream contract implementation which can connect to REST endpoints
+
+## UI
+
+- [@twin.org/ui-components-svelte](pkgs/ui/packages/ui-components-svelte/index.md) - UI component for svelte
