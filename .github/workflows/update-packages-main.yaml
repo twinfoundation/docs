@@ -433,6 +433,28 @@ jobs:
           cp import-packages/auditable-item-stream/package.json docs/pkgs/auditable-item-stream/package.json
           rm -r import-packages/auditable-item-stream
 
+      ########### ui
+      - name: Checkout ui
+        uses: actions/checkout@v4
+        with:
+          repository: twinfoundation/ui
+          path: import-packages/ui
+          ref: ${{ env.gha-branch }}
+
+      - name: Copy ui to Docs
+        run: |
+          jq -r '.workspaces[]' import-packages/ui/package.json | while read pkg; do
+            rm -rf docs/pkgs/ui/$pkg
+            mkdir -p docs/pkgs/ui/$pkg
+            mkdir -p docs/pkgs/ui/$pkg/docs
+            cp -r import-packages/ui/$pkg/docs/* docs/pkgs/ui/$pkg/docs
+            cp -r import-packages/ui/$pkg/README.md docs/pkgs/ui/$pkg/index.md
+            cp -r import-packages/ui/$pkg/package.json docs/pkgs/ui/$pkg/package.json
+          done
+
+          cp import-packages/ui/package.json docs/pkgs/ui/package.json
+          rm -r import-packages/ui
+
       ########### workbench
       - name: Checkout workbench
         uses: actions/checkout@v4

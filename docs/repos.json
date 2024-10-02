@@ -55,5 +55,8 @@
 	},
 	{
 		"name": "auditable-item-stream"
+	},
+	{
+		"name": "ui"
 	}
 ]
