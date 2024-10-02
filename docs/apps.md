@@ -26,3 +26,7 @@ This is the overview of the applications.
 ## Attestation
 
 - [@twin.org/attestation-cli](pkgs/attestation/apps/attestation-cli/index.md) - A command line interface for interacting with the attestation connectors
+
+## UI
+
+- [@twin.org/ui-playground-svelte](pkgs/ui/apps/ui-playground-svelte/index.md) - UI to demonstrate the APIs
