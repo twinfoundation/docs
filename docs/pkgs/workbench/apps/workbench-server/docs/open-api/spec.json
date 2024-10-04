@@ -3619,7 +3619,7 @@
         },
         "/attestation": {
             "post": {
-                "operationId": "attestationAttest",
+                "operationId": "attestationCreate",
                 "summary": "Attest a JSON-LD object",
                 "tags": [
                     "Attestation"
@@ -3630,18 +3630,18 @@
                     }
                 ],
                 "requestBody": {
-                    "description": "Attest the data and return the collated attestation details.",
+                    "description": "Attest the data and return the id of the attestation.",
                     "required": true,
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/AttestationAttestRequest"
+                                "$ref": "#/components/schemas/AttestationCreateRequest"
                             },
                             "examples": {
-                                "attestationAttestExample": {
+                                "attestationCreateRequestExample": {
                                     "value": {
                                         "verificationMethodId": "did:iota:tst:0xf0b95a98b3dbc5ce1c9ce59d70af95a97599f100a7296ecdd1eb108bebfa047f#attestation",
-                                        "data": {
+                                        "attestationObject": {
                                             "@context": "https://schema.org",
                                             "type": "DigitalDocument",
                                             "name": "bill-of-lading",
@@ -3655,36 +3655,14 @@
                     }
                 },
                 "responses": {
-                    "200": {
-                        "description": "The response when creating the attestation for some data.",
-                        "content": {
-                            "application/json": {
+                    "201": {
+                        "description": "The rest request ended in created response.",
+                        "headers": {
+                            "location": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/AttestationAttestResponse"
+                                    "type": "string"
                                 },
-                                "examples": {
-                                    "attestationAttestResponseExample": {
-                                        "value": {
-                                            "information": {
-                                                "id": "attestation:iota:aW90YS1uZnQ6dHN0OjB4NzYyYjljNDllYTg2OWUwZWJkYTliYmZhNzY5Mzk0NDdhNDI4ZGNmMTc4YzVkMTVhYjQ0N2UyZDRmYmJiNGViMg==",
-                                                "created": "2024-06-18T13:34:51Z",
-                                                "ownerIdentity": "did:iota:tst:0x8992c426116f21b2a4c7a2854300748d3e94a8ce089d5be62e11f105bd2a0f9e",
-                                                "holderIdentity": "did:iota:tst:0x8992c426116f21b2a4c7a2854300748d3e94a8ce089d5be62e11f105bd2a0f9e",
-                                                "data": {
-                                                    "@context": "https://schema.org",
-                                                    "type": "DigitalDocument",
-                                                    "name": "bill-of-lading",
-                                                    "mimeType": "application/pdf",
-                                                    "fingerprint": "0xf0b95a98b3dbc5ce1c9ce59d70af95a97599f100a7296ecdd1eb108bebfa047f"
-                                                },
-                                                "proof": {
-                                                    "type": "jwt",
-                                                    "value": "eyJraWQiOiJkaWQ6aW90YTp0c3Q6MHg4OTkyYzQyNjExNmYyMWIyYTRjN2EyODU0MzAwNzQ4ZDNlOTRhOGNlMDg5ZDViZTYyZTExZjEwNWJkMmEwZjllI2F0dGVzdGF0aW9uIiwidHlwIjoiSldUIiwiYWxnIjoiRWREU0EifQ.eyJpc3MiOiJkaWQ6aW90YTp0c3Q6MHg4OTkyYzQyNjExNmYyMWIyYTRjN2EyODU0MzAwNzQ4ZDNlOTRhOGNlMDg5ZDViZTYyZTExZjEwNWJkMmEwZjllIiwibmJmIjoxNzE4NzE3NjkxLCJqdGkiOiJ1cm46ZXhhbXBsZToxMjM0NTY3OCIsInZjIjp7IkBjb250ZXh0IjoiaHR0cHM6Ly93d3cudzMub3JnLzIwMTgvY3JlZGVudGlhbHMvdjEiLCJ0eXBlIjpbIlZlcmlmaWFibGVDcmVkZW50aWFsIiwiRG9jRGVzY3JpcHRpb25UeXBlIl0sImNyZWRlbnRpYWxTdWJqZWN0Ijp7ImRvY05hbWUiOiJiaWxsLW9mLWxhZGluZyIsImZpbmdlcnByaW50IjoiMHhmMGI5NWE5OGIzZGJjNWNlMWM5Y2U1OWQ3MGFmOTVhOTc1OTlmMTAwYTcyOTZlY2RkMWViMTA4YmViZmEwNDdmIiwibWltZVR5cGUiOiJhcHBsaWNhdGlvbi9wZGYifSwiY3JlZGVudGlhbFN0YXR1cyI6eyJpZCI6ImRpZDppb3RhOnRzdDoweDg5OTJjNDI2MTE2ZjIxYjJhNGM3YTI4NTQzMDA3NDhkM2U5NGE4Y2UwODlkNWJlNjJlMTFmMTA1YmQyYTBmOWUjcmV2b2NhdGlvbiIsInR5cGUiOiJSZXZvY2F0aW9uQml0bWFwMjAyMiIsInJldm9jYXRpb25CaXRtYXBJbmRleCI6IjAifX19.GC0EnIZgYxuUDmXcnejNb7nwsnRv1e1KW2AL0HgzYv9Ab-FTXqkgRk4agYyCDW2cJoDQXcsM1lbnKWPlw6ZBCw"
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
+                                "description": "e.g. attestation:iota:aW90YS1uZnQ6dHN0OjB4NzYyYjljNDllYTg2OWUwZWJkYTliYmZhNzY5Mzk0NDdhNDI4ZGNmMTc4YzVkMTVhYjQ0N2UyZDRmYmJiNGViMg=="
                             }
                         }
                     },
@@ -3750,8 +3728,8 @@
         },
         "/attestation/{id}": {
             "get": {
-                "operationId": "attestationVerify",
-                "summary": "Verify an attestation",
+                "operationId": "attestationGet",
+                "summary": "Get an attestation",
                 "tags": [
                     "Attestation"
                 ],
@@ -3766,6 +3744,15 @@
                         },
                         "style": "simple",
                         "example": "attestation:iota:aW90YS1uZnQ6dHN0OjB4NzYyYjljNDllYTg2OWUwZWJkYTliYmZhNzY5Mzk0NDdhNDI4ZGNmMTc4YzVkMTVhYjQ0N2UyZDRmYmJiNGViMg=="
+                    },
+                    {
+                        "name": "accept",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "style": "simple"
                     }
                 ],
                 "responses": {
@@ -3774,52 +3761,116 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/AttestationVerifyResponse"
+                                    "$ref": "#/components/schemas/AttestationInformation"
                                 },
                                 "examples": {
-                                    "attestationVerifyResponseExample": {
+                                    "attestationGetResponseExample": {
                                         "value": {
-                                            "verified": true,
-                                            "information": {
-                                                "id": "attestation:iota:aW90YS1uZnQ6dHN0OjB4NzYyYjljNDllYTg2OWUwZWJkYTliYmZhNzY5Mzk0NDdhNDI4ZGNmMTc4YzVkMTVhYjQ0N2UyZDRmYmJiNGViMg==",
-                                                "created": "2024-06-18T13:34:51Z",
-                                                "ownerIdentity": "did:iota:tst:0x8992c426116f21b2a4c7a2854300748d3e94a8ce089d5be62e11f105bd2a0f9e",
-                                                "holderIdentity": "did:iota:tst:0x8992c426116f21b2a4c7a2854300748d3e94a8ce089d5be62e11f105bd2a0f9e",
-                                                "data": {
-                                                    "@context": "https://schema.org",
-                                                    "type": "DigitalDocument",
-                                                    "name": "bill-of-lading",
-                                                    "mimeType": "application/pdf",
-                                                    "fingerprint": "0xf0b95a98b3dbc5ce1c9ce59d70af95a97599f100a7296ecdd1eb108bebfa047f"
-                                                },
-                                                "proof": {
-                                                    "type": "jwt",
-                                                    "value": "eyJraWQiOiJkaWQ6aW90YTp0c3Q6MHg4OTkyYzQyNjExNmYyMWIyYTRjN2EyODU0MzAwNzQ4ZDNlOTRhOGNlMDg5ZDViZTYyZTExZjEwNWJkMmEwZjllI2F0dGVzdGF0aW9uIiwidHlwIjoiSldUIiwiYWxnIjoiRWREU0EifQ.eyJpc3MiOiJkaWQ6aW90YTp0c3Q6MHg4OTkyYzQyNjExNmYyMWIyYTRjN2EyODU0MzAwNzQ4ZDNlOTRhOGNlMDg5ZDViZTYyZTExZjEwNWJkMmEwZjllIiwibmJmIjoxNzE4NzE3NjkxLCJqdGkiOiJ1cm46ZXhhbXBsZToxMjM0NTY3OCIsInZjIjp7IkBjb250ZXh0IjoiaHR0cHM6Ly93d3cudzMub3JnLzIwMTgvY3JlZGVudGlhbHMvdjEiLCJ0eXBlIjpbIlZlcmlmaWFibGVDcmVkZW50aWFsIiwiRG9jRGVzY3JpcHRpb25UeXBlIl0sImNyZWRlbnRpYWxTdWJqZWN0Ijp7ImRvY05hbWUiOiJiaWxsLW9mLWxhZGluZyIsImZpbmdlcnByaW50IjoiMHhmMGI5NWE5OGIzZGJjNWNlMWM5Y2U1OWQ3MGFmOTVhOTc1OTlmMTAwYTcyOTZlY2RkMWViMTA4YmViZmEwNDdmIiwibWltZVR5cGUiOiJhcHBsaWNhdGlvbi9wZGYifSwiY3JlZGVudGlhbFN0YXR1cyI6eyJpZCI6ImRpZDppb3RhOnRzdDoweDg5OTJjNDI2MTE2ZjIxYjJhNGM3YTI4NTQzMDA3NDhkM2U5NGE4Y2UwODlkNWJlNjJlMTFmMTA1YmQyYTBmOWUjcmV2b2NhdGlvbiIsInR5cGUiOiJSZXZvY2F0aW9uQml0bWFwMjAyMiIsInJldm9jYXRpb25CaXRtYXBJbmRleCI6IjAifX19.GC0EnIZgYxuUDmXcnejNb7nwsnRv1e1KW2AL0HgzYv9Ab-FTXqkgRk4agYyCDW2cJoDQXcsM1lbnKWPlw6ZBCw"
-                                                }
-                                            }
+                                            "@context": [
+                                                "https://schema.twindev.org/attestation/",
+                                                "https://schema.org/"
+                                            ],
+                                            "type": "Information",
+                                            "id": "attestation:iota:aW90YS1uZnQ6dHN0OjB4NzYyYjljNDllYTg2OWUwZWJkYTliYmZhNzY5Mzk0NDdhNDI4ZGNmMTc4YzVkMTVhYjQ0N2UyZDRmYmJiNGViMg==",
+                                            "dateCreated": "2024-06-18T13:34:51Z",
+                                            "ownerIdentity": "did:iota:tst:0x8992c426116f21b2a4c7a2854300748d3e94a8ce089d5be62e11f105bd2a0f9e",
+                                            "holderIdentity": "did:iota:tst:0x8992c426116f21b2a4c7a2854300748d3e94a8ce089d5be62e11f105bd2a0f9e",
+                                            "attestationObject": {
+                                                "@context": "https://schema.org",
+                                                "type": "DigitalDocument",
+                                                "name": "bill-of-lading",
+                                                "mimeType": "application/pdf",
+                                                "fingerprint": "0xf0b95a98b3dbc5ce1c9ce59d70af95a97599f100a7296ecdd1eb108bebfa047f"
+                                            },
+                                            "proof": {
+                                                "type": "JwtProof",
+                                                "value": "eyJraWQiOiJkaWQ6aW90YTp0c3Q6MHg4OTkyYzQyNjExNmYyMWIyYTRjN2EyODU0MzAwNzQ4ZDNlOTRhOGNlMDg5ZDViZTYyZTExZjEwNWJkMmEwZjllI2F0dGVzdGF0aW9uIiwidHlwIjoiSldUIiwiYWxnIjoiRWREU0EifQ.eyJpc3MiOiJkaWQ6aW90YTp0c3Q6MHg4OTkyYzQyNjExNmYyMWIyYTRjN2EyODU0MzAwNzQ4ZDNlOTRhOGNlMDg5ZDViZTYyZTExZjEwNWJkMmEwZjllIiwibmJmIjoxNzE4NzE3NjkxLCJqdGkiOiJ1cm46ZXhhbXBsZToxMjM0NTY3OCIsInZjIjp7IkBjb250ZXh0IjoiaHR0cHM6Ly93d3cudzMub3JnLzIwMTgvY3JlZGVudGlhbHMvdjEiLCJ0eXBlIjpbIlZlcmlmaWFibGVDcmVkZW50aWFsIiwiRG9jRGVzY3JpcHRpb25UeXBlIl0sImNyZWRlbnRpYWxTdWJqZWN0Ijp7ImRvY05hbWUiOiJiaWxsLW9mLWxhZGluZyIsImZpbmdlcnByaW50IjoiMHhmMGI5NWE5OGIzZGJjNWNlMWM5Y2U1OWQ3MGFmOTVhOTc1OTlmMTAwYTcyOTZlY2RkMWViMTA4YmViZmEwNDdmIiwibWltZVR5cGUiOiJhcHBsaWNhdGlvbi9wZGYifSwiY3JlZGVudGlhbFN0YXR1cyI6eyJpZCI6ImRpZDppb3RhOnRzdDoweDg5OTJjNDI2MTE2ZjIxYjJhNGM3YTI4NTQzMDA3NDhkM2U5NGE4Y2UwODlkNWJlNjJlMTFmMTA1YmQyYTBmOWUjcmV2b2NhdGlvbiIsInR5cGUiOiJSZXZvY2F0aW9uQml0bWFwMjAyMiIsInJldm9jYXRpb25CaXRtYXBJbmRleCI6IjAifX19.GC0EnIZgYxuUDmXcnejNb7nwsnRv1e1KW2AL0HgzYv9Ab-FTXqkgRk4agYyCDW2cJoDQXcsM1lbnKWPlw6ZBCw"
+                                            },
+                                            "verified": true
                                         }
                                     },
                                     "attestationVerifyResponseFailExample": {
                                         "value": {
+                                            "@context": [
+                                                "https://schema.twindev.org/attestation/",
+                                                "https://schema.org/"
+                                            ],
+                                            "type": "Information",
+                                            "id": "attestation:iota:aW90YS1uZnQ6dHN0OjB4NzYyYjljNDllYTg2OWUwZWJkYTliYmZhNzY5Mzk0NDdhNDI4ZGNmMTc4YzVkMTVhYjQ0N2UyZDRmYmJiNGViMg==",
+                                            "dateCreated": "2024-06-18T13:34:51Z",
+                                            "ownerIdentity": "did:iota:tst:0x8992c426116f21b2a4c7a2854300748d3e94a8ce089d5be62e11f105bd2a0f9e",
+                                            "holderIdentity": "did:iota:tst:0x8992c426116f21b2a4c7a2854300748d3e94a8ce089d5be62e11f105bd2a0f9e",
+                                            "attestationObject": {
+                                                "@context": "https://schema.org",
+                                                "type": "DigitalDocument",
+                                                "name": "bill-of-lading",
+                                                "mimeType": "application/pdf",
+                                                "fingerprint": "0xf0b95a98b3dbc5ce1c9ce59d70af95a97599f100a7296ecdd1eb108bebfa047f"
+                                            },
+                                            "proof": {
+                                                "type": "JwtProof",
+                                                "value": "eyJraWQiOiJkaWQ6aW90YTp0c3Q6MHg4OTkyYzQyNjExNmYyMWIyYTRjN2EyODU0MzAwNzQ4ZDNlOTRhOGNlMDg5ZDViZTYyZTExZjEwNWJkMmEwZjllI2F0dGVzdGF0aW9uIiwidHlwIjoiSldUIiwiYWxnIjoiRWREU0EifQ.eyJpc3MiOiJkaWQ6aW90YTp0c3Q6MHg4OTkyYzQyNjExNmYyMWIyYTRjN2EyODU0MzAwNzQ4ZDNlOTRhOGNlMDg5ZDViZTYyZTExZjEwNWJkMmEwZjllIiwibmJmIjoxNzE4NzE3NjkxLCJqdGkiOiJ1cm46ZXhhbXBsZToxMjM0NTY3OCIsInZjIjp7IkBjb250ZXh0IjoiaHR0cHM6Ly93d3cudzMub3JnLzIwMTgvY3JlZGVudGlhbHMvdjEiLCJ0eXBlIjpbIlZlcmlmaWFibGVDcmVkZW50aWFsIiwiRG9jRGVzY3JpcHRpb25UeXBlIl0sImNyZWRlbnRpYWxTdWJqZWN0Ijp7ImRvY05hbWUiOiJiaWxsLW9mLWxhZGluZyIsImZpbmdlcnByaW50IjoiMHhmMGI5NWE5OGIzZGJjNWNlMWM5Y2U1OWQ3MGFmOTVhOTc1OTlmMTAwYTcyOTZlY2RkMWViMTA4YmViZmEwNDdmIiwibWltZVR5cGUiOiJhcHBsaWNhdGlvbi9wZGYifSwiY3JlZGVudGlhbFN0YXR1cyI6eyJpZCI6ImRpZDppb3RhOnRzdDoweDg5OTJjNDI2MTE2ZjIxYjJhNGM3YTI4NTQzMDA3NDhkM2U5NGE4Y2UwODlkNWJlNjJlMTFmMTA1YmQyYTBmOWUjcmV2b2NhdGlvbiIsInR5cGUiOiJSZXZvY2F0aW9uQml0bWFwMjAyMiIsInJldm9jYXRpb25CaXRtYXBJbmRleCI6IjAifX19.GC0EnIZgYxuUDmXcnejNb7nwsnRv1e1KW2AL0HgzYv9Ab-FTXqkgRk4agYyCDW2cJoDQXcsM1lbnKWPlw6ZBCw"
+                                            },
                                             "verified": false,
-                                            "failure": "proofFailed",
-                                            "information": {
-                                                "id": "attestation:iota:aW90YS1uZnQ6dHN0OjB4NzYyYjljNDllYTg2OWUwZWJkYTliYmZhNzY5Mzk0NDdhNDI4ZGNmMTc4YzVkMTVhYjQ0N2UyZDRmYmJiNGViMg==",
-                                                "created": "2024-06-18T13:34:51Z",
-                                                "ownerIdentity": "did:iota:tst:0x8992c426116f21b2a4c7a2854300748d3e94a8ce089d5be62e11f105bd2a0f9e",
-                                                "holderIdentity": "did:iota:tst:0x8992c426116f21b2a4c7a2854300748d3e94a8ce089d5be62e11f105bd2a0f9e",
-                                                "data": {
-                                                    "@context": "https://schema.org",
-                                                    "type": "DigitalDocument",
-                                                    "name": "bill-of-lading",
-                                                    "mimeType": "application/pdf",
-                                                    "fingerprint": "0xf0b95a98b3dbc5ce1c9ce59d70af95a97599f100a7296ecdd1eb108bebfa047f"
-                                                },
-                                                "proof": {
-                                                    "type": "jwt",
-                                                    "value": "eyJraWQiOiJkaWQ6aW90YTp0c3Q6MHg4OTkyYzQyNjExNmYyMWIyYTRjN2EyODU0MzAwNzQ4ZDNlOTRhOGNlMDg5ZDViZTYyZTExZjEwNWJkMmEwZjllI2F0dGVzdGF0aW9uIiwidHlwIjoiSldUIiwiYWxnIjoiRWREU0EifQ.eyJpc3MiOiJkaWQ6aW90YTp0c3Q6MHg4OTkyYzQyNjExNmYyMWIyYTRjN2EyODU0MzAwNzQ4ZDNlOTRhOGNlMDg5ZDViZTYyZTExZjEwNWJkMmEwZjllIiwibmJmIjoxNzE4NzE3NjkxLCJqdGkiOiJ1cm46ZXhhbXBsZToxMjM0NTY3OCIsInZjIjp7IkBjb250ZXh0IjoiaHR0cHM6Ly93d3cudzMub3JnLzIwMTgvY3JlZGVudGlhbHMvdjEiLCJ0eXBlIjpbIlZlcmlmaWFibGVDcmVkZW50aWFsIiwiRG9jRGVzY3JpcHRpb25UeXBlIl0sImNyZWRlbnRpYWxTdWJqZWN0Ijp7ImRvY05hbWUiOiJiaWxsLW9mLWxhZGluZyIsImZpbmdlcnByaW50IjoiMHhmMGI5NWE5OGIzZGJjNWNlMWM5Y2U1OWQ3MGFmOTVhOTc1OTlmMTAwYTcyOTZlY2RkMWViMTA4YmViZmEwNDdmIiwibWltZVR5cGUiOiJhcHBsaWNhdGlvbi9wZGYifSwiY3JlZGVudGlhbFN0YXR1cyI6eyJpZCI6ImRpZDppb3RhOnRzdDoweDg5OTJjNDI2MTE2ZjIxYjJhNGM3YTI4NTQzMDA3NDhkM2U5NGE4Y2UwODlkNWJlNjJlMTFmMTA1YmQyYTBmOWUjcmV2b2NhdGlvbiIsInR5cGUiOiJSZXZvY2F0aW9uQml0bWFwMjAyMiIsInJldm9jYXRpb25CaXRtYXBJbmRleCI6IjAifX19.GC0EnIZgYxuUDmXcnejNb7nwsnRv1e1KW2AL0HgzYv9Ab-FTXqkgRk4agYyCDW2cJoDQXcsM1lbnKWPlw6ZBCw"
-                                                }
-                                            }
+                                            "verificationFailure": "proofFailed"
+                                        }
+                                    }
+                                }
+                            },
+                            "application/ld+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AttestationInformation"
+                                },
+                                "examples": {
+                                    "attestationGetResponseExample": {
+                                        "value": {
+                                            "@context": [
+                                                "https://schema.twindev.org/attestation/",
+                                                "https://schema.org/"
+                                            ],
+                                            "type": "Information",
+                                            "id": "attestation:iota:aW90YS1uZnQ6dHN0OjB4NzYyYjljNDllYTg2OWUwZWJkYTliYmZhNzY5Mzk0NDdhNDI4ZGNmMTc4YzVkMTVhYjQ0N2UyZDRmYmJiNGViMg==",
+                                            "dateCreated": "2024-06-18T13:34:51Z",
+                                            "ownerIdentity": "did:iota:tst:0x8992c426116f21b2a4c7a2854300748d3e94a8ce089d5be62e11f105bd2a0f9e",
+                                            "holderIdentity": "did:iota:tst:0x8992c426116f21b2a4c7a2854300748d3e94a8ce089d5be62e11f105bd2a0f9e",
+                                            "attestationObject": {
+                                                "@context": "https://schema.org",
+                                                "type": "DigitalDocument",
+                                                "name": "bill-of-lading",
+                                                "mimeType": "application/pdf",
+                                                "fingerprint": "0xf0b95a98b3dbc5ce1c9ce59d70af95a97599f100a7296ecdd1eb108bebfa047f"
+                                            },
+                                            "proof": {
+                                                "type": "JwtProof",
+                                                "value": "eyJraWQiOiJkaWQ6aW90YTp0c3Q6MHg4OTkyYzQyNjExNmYyMWIyYTRjN2EyODU0MzAwNzQ4ZDNlOTRhOGNlMDg5ZDViZTYyZTExZjEwNWJkMmEwZjllI2F0dGVzdGF0aW9uIiwidHlwIjoiSldUIiwiYWxnIjoiRWREU0EifQ.eyJpc3MiOiJkaWQ6aW90YTp0c3Q6MHg4OTkyYzQyNjExNmYyMWIyYTRjN2EyODU0MzAwNzQ4ZDNlOTRhOGNlMDg5ZDViZTYyZTExZjEwNWJkMmEwZjllIiwibmJmIjoxNzE4NzE3NjkxLCJqdGkiOiJ1cm46ZXhhbXBsZToxMjM0NTY3OCIsInZjIjp7IkBjb250ZXh0IjoiaHR0cHM6Ly93d3cudzMub3JnLzIwMTgvY3JlZGVudGlhbHMvdjEiLCJ0eXBlIjpbIlZlcmlmaWFibGVDcmVkZW50aWFsIiwiRG9jRGVzY3JpcHRpb25UeXBlIl0sImNyZWRlbnRpYWxTdWJqZWN0Ijp7ImRvY05hbWUiOiJiaWxsLW9mLWxhZGluZyIsImZpbmdlcnByaW50IjoiMHhmMGI5NWE5OGIzZGJjNWNlMWM5Y2U1OWQ3MGFmOTVhOTc1OTlmMTAwYTcyOTZlY2RkMWViMTA4YmViZmEwNDdmIiwibWltZVR5cGUiOiJhcHBsaWNhdGlvbi9wZGYifSwiY3JlZGVudGlhbFN0YXR1cyI6eyJpZCI6ImRpZDppb3RhOnRzdDoweDg5OTJjNDI2MTE2ZjIxYjJhNGM3YTI4NTQzMDA3NDhkM2U5NGE4Y2UwODlkNWJlNjJlMTFmMTA1YmQyYTBmOWUjcmV2b2NhdGlvbiIsInR5cGUiOiJSZXZvY2F0aW9uQml0bWFwMjAyMiIsInJldm9jYXRpb25CaXRtYXBJbmRleCI6IjAifX19.GC0EnIZgYxuUDmXcnejNb7nwsnRv1e1KW2AL0HgzYv9Ab-FTXqkgRk4agYyCDW2cJoDQXcsM1lbnKWPlw6ZBCw"
+                                            },
+                                            "verified": true
+                                        }
+                                    },
+                                    "attestationVerifyResponseFailExample": {
+                                        "value": {
+                                            "@context": [
+                                                "https://schema.twindev.org/attestation/",
+                                                "https://schema.org/"
+                                            ],
+                                            "type": "Information",
+                                            "id": "attestation:iota:aW90YS1uZnQ6dHN0OjB4NzYyYjljNDllYTg2OWUwZWJkYTliYmZhNzY5Mzk0NDdhNDI4ZGNmMTc4YzVkMTVhYjQ0N2UyZDRmYmJiNGViMg==",
+                                            "dateCreated": "2024-06-18T13:34:51Z",
+                                            "ownerIdentity": "did:iota:tst:0x8992c426116f21b2a4c7a2854300748d3e94a8ce089d5be62e11f105bd2a0f9e",
+                                            "holderIdentity": "did:iota:tst:0x8992c426116f21b2a4c7a2854300748d3e94a8ce089d5be62e11f105bd2a0f9e",
+                                            "attestationObject": {
+                                                "@context": "https://schema.org",
+                                                "type": "DigitalDocument",
+                                                "name": "bill-of-lading",
+                                                "mimeType": "application/pdf",
+                                                "fingerprint": "0xf0b95a98b3dbc5ce1c9ce59d70af95a97599f100a7296ecdd1eb108bebfa047f"
+                                            },
+                                            "proof": {
+                                                "type": "JwtProof",
+                                                "value": "eyJraWQiOiJkaWQ6aW90YTp0c3Q6MHg4OTkyYzQyNjExNmYyMWIyYTRjN2EyODU0MzAwNzQ4ZDNlOTRhOGNlMDg5ZDViZTYyZTExZjEwNWJkMmEwZjllI2F0dGVzdGF0aW9uIiwidHlwIjoiSldUIiwiYWxnIjoiRWREU0EifQ.eyJpc3MiOiJkaWQ6aW90YTp0c3Q6MHg4OTkyYzQyNjExNmYyMWIyYTRjN2EyODU0MzAwNzQ4ZDNlOTRhOGNlMDg5ZDViZTYyZTExZjEwNWJkMmEwZjllIiwibmJmIjoxNzE4NzE3NjkxLCJqdGkiOiJ1cm46ZXhhbXBsZToxMjM0NTY3OCIsInZjIjp7IkBjb250ZXh0IjoiaHR0cHM6Ly93d3cudzMub3JnLzIwMTgvY3JlZGVudGlhbHMvdjEiLCJ0eXBlIjpbIlZlcmlmaWFibGVDcmVkZW50aWFsIiwiRG9jRGVzY3JpcHRpb25UeXBlIl0sImNyZWRlbnRpYWxTdWJqZWN0Ijp7ImRvY05hbWUiOiJiaWxsLW9mLWxhZGluZyIsImZpbmdlcnByaW50IjoiMHhmMGI5NWE5OGIzZGJjNWNlMWM5Y2U1OWQ3MGFmOTVhOTc1OTlmMTAwYTcyOTZlY2RkMWViMTA4YmViZmEwNDdmIiwibWltZVR5cGUiOiJhcHBsaWNhdGlvbi9wZGYifSwiY3JlZGVudGlhbFN0YXR1cyI6eyJpZCI6ImRpZDppb3RhOnRzdDoweDg5OTJjNDI2MTE2ZjIxYjJhNGM3YTI4NTQzMDA3NDhkM2U5NGE4Y2UwODlkNWJlNjJlMTFmMTA1YmQyYTBmOWUjcmV2b2NhdGlvbiIsInR5cGUiOiJSZXZvY2F0aW9uQml0bWFwMjAyMiIsInJldm9jYXRpb25CaXRtYXBJbmRleCI6IjAifX19.GC0EnIZgYxuUDmXcnejNb7nwsnRv1e1KW2AL0HgzYv9Ab-FTXqkgRk4agYyCDW2cJoDQXcsM1lbnKWPlw6ZBCw"
+                                            },
+                                            "verified": false,
+                                            "verificationFailure": "proofFailed"
                                         }
                                     }
                                 }
@@ -3999,39 +4050,8 @@
                     }
                 },
                 "responses": {
-                    "200": {
-                        "description": "The response to transferring the attestation.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/AttestationTransferResponse"
-                                },
-                                "examples": {
-                                    "attestationTransferResponseExample": {
-                                        "value": {
-                                            "information": {
-                                                "id": "attestation:iota:aW90YS1uZnQ6dHN0OjB4NzYyYjljNDllYTg2OWUwZWJkYTliYmZhNzY5Mzk0NDdhNDI4ZGNmMTc4YzVkMTVhYjQ0N2UyZDRmYmJiNGViMg==",
-                                                "created": "2024-06-18T13:34:51Z",
-                                                "ownerIdentity": "did:iota:tst:0x8992c426116f21b2a4c7a2854300748d3e94a8ce089d5be62e11f105bd2a0f9e",
-                                                "holderIdentity": "did:iota:tst:0x06ae1034f9f4af1b408a0b54e877bb476259666a14f221400d3746aecefa7105",
-                                                "transferred": "2024-06-18T13:35:45.642Z",
-                                                "data": {
-                                                    "@context": "https://schema.org",
-                                                    "type": "DigitalDocument",
-                                                    "name": "bill-of-lading",
-                                                    "fingerprint": "0xf0b95a98b3dbc5ce1c9ce59d70af95a97599f100a7296ecdd1eb108bebfa047f",
-                                                    "mimeType": "application/pdf"
-                                                },
-                                                "proof": {
-                                                    "type": "jwt",
-                                                    "value": "eyJraWQiOiJkaWQ6aW90YTp0c3Q6MHg4OTkyYzQyNjExNmYyMWIyYTRjN2EyODU0MzAwNzQ4ZDNlOTRhOGNlMDg5ZDViZTYyZTExZjEwNWJkMmEwZjllI2F0dGVzdGF0aW9uIiwidHlwIjoiSldUIiwiYWxnIjoiRWREU0EifQ.eyJpc3MiOiJkaWQ6aW90YTp0c3Q6MHg4OTkyYzQyNjExNmYyMWIyYTRjN2EyODU0MzAwNzQ4ZDNlOTRhOGNlMDg5ZDViZTYyZTExZjEwNWJkMmEwZjllIiwibmJmIjoxNzE4NzE3NjkxLCJqdGkiOiJ1cm46ZXhhbXBsZToxMjM0NTY3OCIsInZjIjp7IkBjb250ZXh0IjoiaHR0cHM6Ly93d3cudzMub3JnLzIwMTgvY3JlZGVudGlhbHMvdjEiLCJ0eXBlIjpbIlZlcmlmaWFibGVDcmVkZW50aWFsIiwiRG9jRGVzY3JpcHRpb25UeXBlIl0sImNyZWRlbnRpYWxTdWJqZWN0Ijp7ImRvY05hbWUiOiJiaWxsLW9mLWxhZGluZyIsImZpbmdlcnByaW50IjoiMHhmMGI5NWE5OGIzZGJjNWNlMWM5Y2U1OWQ3MGFmOTVhOTc1OTlmMTAwYTcyOTZlY2RkMWViMTA4YmViZmEwNDdmIiwibWltZVR5cGUiOiJhcHBsaWNhdGlvbi9wZGYifSwiY3JlZGVudGlhbFN0YXR1cyI6eyJpZCI6ImRpZDppb3RhOnRzdDoweDg5OTJjNDI2MTE2ZjIxYjJhNGM3YTI4NTQzMDA3NDhkM2U5NGE4Y2UwODlkNWJlNjJlMTFmMTA1YmQyYTBmOWUjcmV2b2NhdGlvbiIsInR5cGUiOiJSZXZvY2F0aW9uQml0bWFwMjAyMiIsInJldm9jYXRpb25CaXRtYXBJbmRleCI6IjAifX19.GC0EnIZgYxuUDmXcnejNb7nwsnRv1e1KW2AL0HgzYv9Ab-FTXqkgRk4agYyCDW2cJoDQXcsM1lbnKWPlw6ZBCw"
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
+                    "204": {
+                        "description": "The rest request ended in success with no data."
                     },
                     "400": {
                         "description": "The server cannot process the request, see the content for more details.",
@@ -6770,14 +6790,14 @@
                 ],
                 "additionalProperties": false
             },
-            "AttestationAttestRequest": {
+            "AttestationCreateRequest": {
                 "type": "object",
                 "properties": {
                     "verificationMethodId": {
                         "type": "string",
                         "description": "The identity verification method to use for attesting the data."
                     },
-                    "data": {
+                    "attestationObject": {
                         "$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
                     },
                     "namespace": {
@@ -6787,82 +6807,86 @@
                 },
                 "required": [
                     "verificationMethodId",
-                    "data"
+                    "attestationObject"
                 ],
                 "additionalProperties": false,
                 "description": "The data to be used in the signing."
             },
-            "AttestationAttestResponse": {
-                "type": "object",
-                "properties": {
-                    "information": {
-                        "$ref": "#/components/schemas/AttestationInformation"
-                    }
-                },
-                "required": [
-                    "information"
-                ],
-                "additionalProperties": false,
-                "description": "The result of the attestation process."
-            },
             "AttestationInformation": {
                 "type": "object",
                 "properties": {
+                    "@context": {
+                        "anyOf": [
+                            {
+                                "type": "string",
+                                "const": "https://schema.twindev.org/attestation/"
+                            },
+                            {
+                                "type": "array",
+                                "minItems": 1,
+                                "items": [
+                                    {
+                                        "type": "string",
+                                        "const": "https://schema.twindev.org/attestation/"
+                                    }
+                                ],
+                                "additionalItems": {
+                                    "type": "string"
+                                }
+                            }
+                        ],
+                        "description": "JSON-LD Context."
+                    },
+                    "type": {
+                        "type": "string",
+                        "const": "Information",
+                        "description": "JSON-LD Type."
+                    },
                     "id": {
                         "type": "string",
                         "description": "The unique identifier of the attestation."
                     },
-                    "created": {
+                    "dateCreated": {
                         "type": "string",
                         "description": "Created date/time of the attestation in ISO format."
+                    },
+                    "dateTransferred": {
+                        "type": "string",
+                        "description": "Transferred date/time of the attestation in ISO format, can be blank if holder identity is owner."
                     },
                     "ownerIdentity": {
                         "type": "string",
                         "description": "The identity of the owner."
                     },
-                    "transferred": {
-                        "type": "string",
-                        "description": "Transferred date/time of the attestation in ISO format, can be blank if holder identity is owner."
-                    },
                     "holderIdentity": {
                         "type": "string",
                         "description": "The identity of the current holder, can be undefined if owner is still the holder."
                     },
-                    "data": {
+                    "attestationObject": {
                         "$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
                     },
                     "proof": {
-                        "$ref": "#/components/schemas/AttestationProof"
+                        "$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
+                    },
+                    "verified": {
+                        "type": "boolean",
+                        "description": "Whether the attestation has been verified."
+                    },
+                    "verificationFailure": {
+                        "type": "string",
+                        "description": "The verification failure message."
                     }
                 },
                 "required": [
+                    "@context",
+                    "type",
                     "id",
-                    "created",
+                    "dateCreated",
                     "ownerIdentity",
-                    "data",
-                    "proof"
+                    "attestationObject"
                 ],
                 "additionalProperties": false,
                 "description": "Interface describing the collated attestation information."
-            },
-            "AttestationProof": {
-                "type": "object",
-                "properties": {
-                    "type": {
-                        "type": "string",
-                        "description": "The type of the proof."
-                    },
-                    "value": {
-                        "type": "string",
-                        "description": "The value of the proof."
-                    }
-                },
-                "required": [
-                    "type",
-                    "value"
-                ],
-                "additionalProperties": false,
-                "description": "Interface describing an attestation proof."
             },
             "AttestationTransferRequest": {
                 "type": "object",
@@ -6877,40 +6901,6 @@
                 ],
                 "additionalProperties": false,
                 "description": "The parameters to be used in the transfer."
-            },
-            "AttestationTransferResponse": {
-                "type": "object",
-                "properties": {
-                    "information": {
-                        "$ref": "#/components/schemas/AttestationInformation"
-                    }
-                },
-                "required": [
-                    "information"
-                ],
-                "additionalProperties": false,
-                "description": "The data returned from the transfer response."
-            },
-            "AttestationVerifyResponse": {
-                "type": "object",
-                "properties": {
-                    "verified": {
-                        "type": "boolean",
-                        "description": "Whether the attestation is verified."
-                    },
-                    "failure": {
-                        "type": "string",
-                        "description": "The failure message if the attestation is not verified."
-                    },
-                    "information": {
-                        "$ref": "#/components/schemas/AttestationInformation"
-                    }
-                },
-                "required": [
-                    "verified"
-                ],
-                "additionalProperties": false,
-                "description": "The data returned from the verification response."
             },
             "AuditableItemGraphCreateRequest": {
                 "type": "object",

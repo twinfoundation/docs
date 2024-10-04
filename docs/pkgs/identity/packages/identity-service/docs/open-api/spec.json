@@ -905,6 +905,9 @@
             "DidDocument": {
                 "type": "object",
                 "properties": {
+                    "@context": {
+                        "$ref": "https://schema.twindev.org/json-ld/JsonLdContextDefinitionRoot"
+                    },
                     "id": {
                         "type": "string",
                         "description": "The id for the document."

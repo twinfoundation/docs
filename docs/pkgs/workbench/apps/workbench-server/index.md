@@ -2,6 +2,8 @@
 
 A REST server implementation support the routes from various packages.
 
+A deployment of this API can be found here [https://workbench-api.twindev.org/info](https://workbench-api.twindev.org/info)
+
 ## Building and running the application
 
 To install the dependencies, perform a full build and start the server.

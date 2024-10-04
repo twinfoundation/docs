@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/standards-w3c-did",
-	"version": "0.0.1-next.11",
+	"version": "0.0.1-next.16",
 	"description": "Models which define the structure of W3C DID Standard",
 	"repository": {
 		"type": "git",
@@ -15,7 +15,9 @@
 	},
 	"scripts": {
 		"clean": "rimraf dist coverage docs/reference",
-		"build": "tsc",
+		"build:schema": "ts-to-schema ./ts-to-schema.json ./src/schemas",
+		"build:compile": "tsc",
+		"build": "npm run build:schema && npm run build:compile",
 		"build:watch": "tsc-watch --onSuccess \"npm run bundle:esm\"",
 		"test": "vitest --run --config ./vitest.config.ts --no-cache",
 		"coverage": "vitest --run --coverage --config ./vitest.config.ts --no-cache",
@@ -34,6 +36,7 @@
 	},
 	"devDependencies": {
 		"@twin.org/nameof-transformer": "next",
+		"@twin.org/ts-to-schema": "next",
 		"@vitest/coverage-v8": "2.1.1",
 		"copyfiles": "2.4.1",
 		"rimraf": "6.0.1",
