@@ -39,13 +39,16 @@
 		"name": "wallet"
 	},
 	{
-		"name": "immutable-storage"
-	},
-	{
 		"name": "identity"
 	},
 	{
 		"name": "nft"
+	},
+	{
+		"name": "immutable-storage"
+	},
+	{
+		"name": "immutable-proof"
 	},
 	{
 		"name": "attestation"

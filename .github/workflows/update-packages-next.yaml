@@ -257,28 +257,6 @@ jobs:
           cp import-packages/vault/package.json docs/pkgs/vault/package.json
           rm -r import-packages/vault
 
-      ########### immutable-storage
-      - name: Checkout immutable-storage
-        uses: actions/checkout@v4
-        with:
-          repository: twinfoundation/immutable-storage
-          path: import-packages/immutable-storage
-          ref: ${{ env.gha-branch }}
-
-      - name: Copy immutable-storage to Docs
-        run: |
-          jq -r '.workspaces[]' import-packages/immutable-storage/package.json | while read pkg; do
-            rm -rf docs/pkgs/immutable-storage/$pkg
-            mkdir -p docs/pkgs/immutable-storage/$pkg
-            mkdir -p docs/pkgs/immutable-storage/$pkg/docs
-            cp -r import-packages/immutable-storage/$pkg/docs/* docs/pkgs/immutable-storage/$pkg/docs
-            cp -r import-packages/immutable-storage/$pkg/README.md docs/pkgs/immutable-storage/$pkg/index.md
-            cp -r import-packages/immutable-storage/$pkg/package.json docs/pkgs/immutable-storage/$pkg/package.json
-          done
-
-          cp import-packages/immutable-storage/package.json docs/pkgs/immutable-storage/package.json
-          rm -r import-packages/immutable-storage
-
       ########### dlt
       - name: Checkout dlt
         uses: actions/checkout@v4
@@ -366,6 +344,50 @@ jobs:
 
           cp import-packages/nft/package.json docs/pkgs/nft/package.json
           rm -r import-packages/nft
+
+      ########### immutable-storage
+      - name: Checkout immutable-storage
+        uses: actions/checkout@v4
+        with:
+          repository: twinfoundation/immutable-storage
+          path: import-packages/immutable-storage
+          ref: ${{ env.gha-branch }}
+
+      - name: Copy immutable-storage to Docs
+        run: |
+          jq -r '.workspaces[]' import-packages/immutable-storage/package.json | while read pkg; do
+            rm -rf docs/pkgs/immutable-storage/$pkg
+            mkdir -p docs/pkgs/immutable-storage/$pkg
+            mkdir -p docs/pkgs/immutable-storage/$pkg/docs
+            cp -r import-packages/immutable-storage/$pkg/docs/* docs/pkgs/immutable-storage/$pkg/docs
+            cp -r import-packages/immutable-storage/$pkg/README.md docs/pkgs/immutable-storage/$pkg/index.md
+            cp -r import-packages/immutable-storage/$pkg/package.json docs/pkgs/immutable-storage/$pkg/package.json
+          done
+
+          cp import-packages/immutable-storage/package.json docs/pkgs/immutable-storage/package.json
+          rm -r import-packages/immutable-storage
+
+      ########### immutable-proof
+      - name: Checkout immutable-proof
+        uses: actions/checkout@v4
+        with:
+          repository: twinfoundation/immutable-proof
+          path: import-packages/immutable-proof
+          ref: ${{ env.gha-branch }}
+
+      - name: Copy immutable-proof to Docs
+        run: |
+          jq -r '.workspaces[]' import-packages/immutable-proof/package.json | while read pkg; do
+            rm -rf docs/pkgs/immutable-proof/$pkg
+            mkdir -p docs/pkgs/immutable-proof/$pkg
+            mkdir -p docs/pkgs/immutable-proof/$pkg/docs
+            cp -r import-packages/immutable-proof/$pkg/docs/* docs/pkgs/immutable-proof/$pkg/docs
+            cp -r import-packages/immutable-proof/$pkg/README.md docs/pkgs/immutable-proof/$pkg/index.md
+            cp -r import-packages/immutable-proof/$pkg/package.json docs/pkgs/immutable-proof/$pkg/package.json
+          done
+
+          cp import-packages/immutable-proof/package.json docs/pkgs/immutable-proof/package.json
+          rm -r import-packages/immutable-proof
 
       ########### attestation
       - name: Checkout attestation
