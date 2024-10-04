@@ -5,6 +5,14 @@ Spec https://www.w3.org/TR/did-core/#did-document-properties.
 
 ## Properties
 
+### @context?
+
+> `optional` **@context**: `IJsonLdContextDefinitionRoot`
+
+The context for the document.
+
+***
+
 ### id
 
 > **id**: `string`

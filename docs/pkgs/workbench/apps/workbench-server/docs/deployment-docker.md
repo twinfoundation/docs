@@ -15,7 +15,7 @@ WORKDIR /app
 COPY package.json .
 
 # Install only the production dependencies
-RUN npm install --omit=dev
+RUN npm install --omit=dev --ignore-scripts
 
 # Copy the rest of the files to the image
 COPY . .
@@ -47,10 +47,10 @@ To initialize the server instance you must first run it in `bootstrap` mode. If 
 If the server does not find `workbench-config.json` in the `file` storage it will automatically trigger bootstrap mode:
 
 ```shell
-docker run -t -i -v d:/docker-host/workbench/data:/workbench/data -p 3000:3000 workbench-server
+docker run -t -i -v /home/workbench/data:/workbench/data -p 3000:3000 workbench-server
 ```
 
-This example will map the local folder `d:/docker-host/workbench/data` and make it available in the docker container as `/workbench/data` which is used to configure file entity storage using the environment variable `WORKBENCH_STORAGE_FILE_ROOT`.
+This example will map the local folder `/home/workbench/data` and make it available in the docker container as `/workbench/data` which is used to configure file entity storage using the environment variable `WORKBENCH_STORAGE_FILE_ROOT`.
 
 The output from the docker container should be something like the following.
 
@@ -116,7 +116,7 @@ To run the bootstrap again you would have to manually remove the `workbench-conf
 To run the server we use exactly the same command as before, when the `workbench-config.json` is found the bootstrap process will not be repeated.
 
 ```shell
-docker run -t -i -v d:/docker-host/workbench/data:/workbench/data -p 3000:3000 workbench-server
+docker run -t -i -v /home/workbench/data:/workbench/data -p 3000:3000 workbench-server
 ```
 
 You should now see output similar to the following:

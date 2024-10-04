@@ -93,12 +93,6 @@ This is the overview of the packages.
 - [@twin.org/wallet-connector-entity-storage](pkgs/wallet/packages/wallet-connector-entity-storage/index.md) - Wallet connector implementation using entity storage
 - [@twin.org/wallet-connector-iota](pkgs/wallet/packages/wallet-connector-iota/index.md) - Wallet connector implementation using IOTA
 
-## Immutable Storage
-
-- [@twin.org/immutable-storage-models](pkgs/immutable-storage/packages/immutable-storage-models/index.md) - Contains models and classes for use with immutable storage
-- [@twin.org/immutable-storage-connector-iota](pkgs/immutable-storage/packages/immutable-storage-connector-iota/index.md) - Implementation of the Immutable Storage connector using IOTA
-- [@twin.org/immutable-storage-connector-entity-storage](pkgs/immutable-storage/packages/immutable-storage-connector-entity-storage/index.md) - Implementation of the Immutable Storage connector using entity storage
-
 ## Identity
 
 - [@twin.org/identity-models](pkgs/identity/packages/identity-models/index.md) - Models which define the structure of the contracts and connectors
@@ -114,6 +108,18 @@ This is the overview of the packages.
 - [@twin.org/nft-connector-entity-storage](pkgs/nft/packages/nft-connector-entity-storage/index.md) - Implementation of the NFT connector using entity storage
 - [@twin.org/nft-service](pkgs/nft/packages/nft-service/index.md) - NFT contract implementation and REST endpoint definitions
 - [@twin.org/nft-rest-client](pkgs/nft/packages/nft-rest-client/index.md) - NFT contract implementation which can connect to REST endpoints
+
+## Immutable Storage
+
+- [@twin.org/immutable-storage-models](pkgs/immutable-storage/packages/immutable-storage-models/index.md) - Contains models and classes for use with immutable storage
+- [@twin.org/immutable-storage-connector-iota](pkgs/immutable-storage/packages/immutable-storage-connector-iota/index.md) - Implementation of the Immutable Storage connector using IOTA
+- [@twin.org/immutable-storage-connector-entity-storage](pkgs/immutable-storage/packages/immutable-storage-connector-entity-storage/index.md) - Implementation of the Immutable Storage connector using entity storage
+
+## Immutable Proof
+
+- [@twin.org/immutable-proof-models](pkgs/immutable-proof/packages/immutable-proof-models/index.md) - Models which define the structure of the immutable proof connectors and services
+- [@twin.org/immutable-proof-service](pkgs/immutable-proof/packages/immutable-proof-service/index.md) - Immutable proof contract implementation and REST endpoint definitions
+- [@twin.org/immutable-proof-rest-client](pkgs/immutable-proof/packages/immutable-proof-rest-client/index.md) - Immutable Proof contract implementation which can connect to REST endpoints
 
 ## Attestation
 

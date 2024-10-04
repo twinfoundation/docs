@@ -1,5 +1,5 @@
 # @twin.org/identity-connector-iota - Changelog
 
-## v0.0.1-next.12
+## v0.0.1-next.15
 
 - Initial Release

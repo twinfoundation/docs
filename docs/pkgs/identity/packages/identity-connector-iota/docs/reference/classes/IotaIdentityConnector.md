@@ -264,13 +264,9 @@ NotFoundError if the id can not be resolved.
 
 ### createVerifiableCredential()
 
-> **createVerifiableCredential**\<`T`\>(`controller`, `verificationMethodId`, `id`, `credential`, `revocationIndex`?): `Promise`\<`object`\>
+> **createVerifiableCredential**(`controller`, `verificationMethodId`, `id`, `credential`, `revocationIndex`?): `Promise`\<`object`\>
 
 Create a verifiable credential for a verification method.
-
-#### Type Parameters
-
-• **T** *extends* `IJsonLdObject`
 
 #### Parameters
 
@@ -286,7 +282,7 @@ The verification method id to use.
 
 The id of the credential.
 
-• **credential**: `T`
+• **credential**: `IJsonLdNodeObject`
 
 The credential to store in the verifiable credential.
 
@@ -302,7 +298,7 @@ The created verifiable credential and its token.
 
 ##### verifiableCredential
 
-> **verifiableCredential**: `IDidVerifiableCredential`\<`T`\>
+> **verifiableCredential**: `IDidVerifiableCredential`
 
 ##### jwt
 
@@ -320,13 +316,9 @@ NotFoundError if the id can not be resolved.
 
 ### checkVerifiableCredential()
 
-> **checkVerifiableCredential**\<`T`\>(`credentialJwt`): `Promise`\<`object`\>
+> **checkVerifiableCredential**(`credentialJwt`): `Promise`\<`object`\>
 
 Check a verifiable credential is valid.
-
-#### Type Parameters
-
-• **T** *extends* `IJsonLdObject`
 
 #### Parameters
 
@@ -346,7 +338,7 @@ The credential stored in the jwt and the revocation status.
 
 ##### verifiableCredential?
 
-> `optional` **verifiableCredential**: `IDidVerifiableCredential`\<`T`\>
+> `optional` **verifiableCredential**: `IDidVerifiableCredential`
 
 #### Implementation of
 
@@ -420,13 +412,9 @@ Nothing.
 
 ### createVerifiablePresentation()
 
-> **createVerifiablePresentation**\<`T`\>(`controller`, `presentationMethodId`, `presentationId`, `contexts`, `types`, `verifiableCredentials`, `expiresInMinutes`?): `Promise`\<`object`\>
+> **createVerifiablePresentation**(`controller`, `presentationMethodId`, `presentationId`, `contexts`, `types`, `verifiableCredentials`, `expiresInMinutes`?): `Promise`\<`object`\>
 
 Create a verifiable presentation from the supplied verifiable credentials.
-
-#### Type Parameters
-
-• **T** *extends* `IJsonLdObject`
 
 #### Parameters
 
@@ -450,7 +438,7 @@ The contexts for the data stored in the verifiable credential.
 
 The types for the data stored in the verifiable credential.
 
-• **verifiableCredentials**: (`string` \| `IDidVerifiableCredential`\<`T`\>)[]
+• **verifiableCredentials**: (`string` \| `IDidVerifiableCredential`)[]
 
 The credentials to use for creating the presentation in jwt format.
 
@@ -466,7 +454,7 @@ The created verifiable presentation and its token.
 
 ##### verifiablePresentation
 
-> **verifiablePresentation**: `IDidVerifiablePresentation`\<`T`\>
+> **verifiablePresentation**: `IDidVerifiablePresentation`
 
 ##### jwt
 
@@ -484,13 +472,9 @@ NotFoundError if the id can not be resolved.
 
 ### checkVerifiablePresentation()
 
-> **checkVerifiablePresentation**\<`T`\>(`presentationJwt`): `Promise`\<`object`\>
+> **checkVerifiablePresentation**(`presentationJwt`): `Promise`\<`object`\>
 
 Check a verifiable presentation is valid.
-
-#### Type Parameters
-
-• **T** *extends* `IJsonLdObject`
 
 #### Parameters
 
@@ -510,7 +494,7 @@ The presentation stored in the jwt and the revocation status.
 
 ##### verifiablePresentation?
 
-> `optional` **verifiablePresentation**: `IDidVerifiablePresentation`\<`T`\>
+> `optional` **verifiablePresentation**: `IDidVerifiablePresentation`
 
 ##### issuers?
 
@@ -524,7 +508,7 @@ The presentation stored in the jwt and the revocation status.
 
 ### createProof()
 
-> **createProof**(`controller`, `verificationMethodId`, `bytes`): `Promise`\<`object`\>
+> **createProof**(`controller`, `verificationMethodId`, `bytes`): `Promise`\<`IDidProof`\>
 
 Create a proof for arbitrary data with the specified verification method.
 
@@ -544,17 +528,9 @@ The data bytes to sign.
 
 #### Returns
 
-`Promise`\<`object`\>
+`Promise`\<`IDidProof`\>
 
-The proof signature type and value.
-
-##### type
-
-> **type**: `string`
-
-##### value
-
-> **value**: `Uint8Array`
+The proof.
 
 #### Implementation of
 
@@ -564,33 +540,25 @@ The proof signature type and value.
 
 ### verifyProof()
 
-> **verifyProof**(`verificationMethodId`, `bytes`, `signatureType`, `signatureValue`): `Promise`\<`boolean`\>
+> **verifyProof**(`bytes`, `proof`): `Promise`\<`boolean`\>
 
 Verify proof for arbitrary data with the specified verification method.
 
 #### Parameters
 
-• **verificationMethodId**: `string`
-
-The verification method id to use.
-
 • **bytes**: `Uint8Array`
 
 The data bytes to verify.
 
-• **signatureType**: `string`
+• **proof**: `IDidProof`
 
-The type of the signature for the proof.
-
-• **signatureValue**: `Uint8Array`
-
-The value of the signature for the proof.
+The proof to verify.
 
 #### Returns
 
 `Promise`\<`boolean`\>
 
-True if the signature is valid.
+True if the proof is verified.
 
 #### Implementation of
 

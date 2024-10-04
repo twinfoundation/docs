@@ -207,5 +207,5 @@ This will output the proof as a set of data containing the type and a value in b
 This command will verify a proof using the specified verification method.
 
 ```shell
-twin-identity proof-verify --load-env config.env verification-method.env --id !DID_VERIFICATION_METHOD_ID --data aGVsbG8gd29ybGQ= --type Ed25519 --value lrPdZ+Gfgc8w/ha2YU7hil8s+gykFHAdmIEdJdraWeRkkb8nHHF1PLKs4gGPXCT1mqBIwiwOgz5V0JKIg00UDg==
+twin-identity proof-verify --load-env config.env verification-method.env --id !DID_VERIFICATION_METHOD_ID --data aGVsbG8gd29ybGQ= --cryptosuite eddsa-jcs-2022 --value 5LVrNuqQzQxnLMxwwpkE1smcD9Zpygg3gvJ6xvwdcLGrhk4yXFW8jewGY5Z3kRMKL1dasqw6ABBCcNgUv1pngnzA
 ```

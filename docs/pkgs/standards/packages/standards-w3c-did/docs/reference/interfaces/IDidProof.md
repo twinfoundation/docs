@@ -5,6 +5,30 @@ https://www.w3.org/TR/vc-data-integrity/
 
 ## Properties
 
+### @context
+
+> **@context**: `"https://w3id.org/security/data-integrity/v2"` \| [`"https://w3id.org/security/data-integrity/v2"`, `...string[]`]
+
+JSON-LD Context.
+
+***
+
+### type
+
+> **type**: `"DataIntegrityProof"`
+
+JSON-LD Type.
+
+***
+
+### cryptosuite
+
+> **cryptosuite**: `string`
+
+An identifier for the cryptographic suite that can be used to verify the proof.
+
+***
+
 ### id?
 
 > `optional` **id**: `string`
@@ -13,25 +37,17 @@ The id of the proof.
 
 ***
 
-### type
-
-> **type**: `string`
-
-The type of the proof.
-
-***
-
 ### proofPurpose
 
 > **proofPurpose**: `string`
 
-The purpose of the proof.
+The reason the proof was created.
 
 ***
 
-### proofValue?
+### proofValue
 
-> `optional` **proofValue**: `string`
+> **proofValue**: `string`
 
 Contains the base-encoded binary data necessary to verify the
 digital proof using the verificationMethod specified.

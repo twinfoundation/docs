@@ -2,6 +2,8 @@
 
 This web front-end demonstrates using the Workbench API, it is written using svelte.
 
+A deployment of this app can be found here [https://workbench.twindev.org/](https://workbench.twindev.org/)
+
 ## Developing
 
 Once you've created a project and installed dependencies with `npm install`, start a development server:

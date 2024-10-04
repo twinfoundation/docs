@@ -1,0 +1,75 @@
+{
+	"name": "@twin.org/immutable-proof-models",
+	"version": "0.0.1-next.1",
+	"description": "Models which define the structure of the immutable proof connectors and services",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/twinfoundation/immutable-proof.git",
+		"directory": "packages/immutable-proof-models"
+	},
+	"author": "martyn.janes@iota.org",
+	"license": "Apache-2.0",
+	"type": "module",
+	"engines": {
+		"node": ">=20.0.0"
+	},
+	"scripts": {
+		"clean": "rimraf dist coverage docs/reference src/schemas",
+		"build:schema": "ts-to-schema ./ts-to-schema.json ./src/schemas",
+		"build:compile": "tsc",
+		"build": "npm run build:schema && npm run build:compile",
+		"test": "vitest --run --config ./vitest.config.ts --no-cache",
+		"coverage": "vitest --run --coverage --config ./vitest.config.ts --no-cache",
+		"bundle:esm": "rollup --config rollup.config.mjs --environment MODULE:esm",
+		"bundle:cjs": "rollup --config rollup.config.mjs --environment MODULE:cjs",
+		"bundle": "npm run bundle:esm && npm run bundle:cjs",
+		"docs:clean": "rimraf docs/reference",
+		"docs:generate": "typedoc",
+		"docs": "npm run docs:clean && npm run docs:generate",
+		"dist": "npm run clean && npm run build && npm run test && npm run bundle && npm run docs",
+		"prepare": "ts-patch install -s"
+	},
+	"dependencies": {
+		"@twin.org/core": "next",
+		"@twin.org/data-core": "next",
+		"@twin.org/data-json-ld": "next",
+		"@twin.org/entity": "next",
+		"@twin.org/nameof": "next",
+		"@twin.org/standards-w3c-did": "next",
+		"@twin.org/web": "next"
+	},
+	"devDependencies": {
+		"@twin.org/nameof-transformer": "next",
+		"@twin.org/ts-to-schema": "next",
+		"@rollup/plugin-json": "6.1.0",
+		"@vitest/coverage-v8": "2.1.1",
+		"copyfiles": "2.4.1",
+		"rimraf": "6.0.1",
+		"rollup": "4.22.4",
+		"rollup-plugin-typescript2": "0.36.0",
+		"ts-patch": "3.2.1",
+		"tsc-watch": "6.2.0",
+		"typedoc": "0.26.7",
+		"typedoc-plugin-markdown": "4.2.8",
+		"typescript": "5.6.2",
+		"vitest": "2.1.1"
+	},
+	"main": "./dist/cjs/index.cjs",
+	"module": "./dist/esm/index.mjs",
+	"types": "./dist/types/index.d.ts",
+	"exports": {
+		".": {
+			"require": "./dist/cjs/index.cjs",
+			"import": "./dist/esm/index.mjs",
+			"types": "./dist/types/index.d.ts"
+		},
+		"./locales": "./locales"
+	},
+	"files": [
+		"dist/cjs",
+		"dist/esm",
+		"dist/types",
+		"locales",
+		"docs"
+	]
+}
