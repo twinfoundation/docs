@@ -10,11 +10,9 @@
 - [IAuditableItemGraphAuditedElement](interfaces/IAuditableItemGraphAuditedElement.md)
 - [IAuditableItemGraphChangeset](interfaces/IAuditableItemGraphChangeset.md)
 - [IAuditableItemGraphComponent](interfaces/IAuditableItemGraphComponent.md)
-- [IAuditableItemGraphCredential](interfaces/IAuditableItemGraphCredential.md)
 - [IAuditableItemGraphEdge](interfaces/IAuditableItemGraphEdge.md)
 - [IAuditableItemGraphPatchOperation](interfaces/IAuditableItemGraphPatchOperation.md)
 - [IAuditableItemGraphResource](interfaces/IAuditableItemGraphResource.md)
-- [IAuditableItemGraphVerification](interfaces/IAuditableItemGraphVerification.md)
 - [IAuditableItemGraphVertex](interfaces/IAuditableItemGraphVertex.md)
 - [IAuditableItemGraphVertexList](interfaces/IAuditableItemGraphVertexList.md)
 - [IAuditableItemGraphCreateRequest](interfaces/IAuditableItemGraphCreateRequest.md)
@@ -27,11 +25,9 @@
 ## Type Aliases
 
 - [AuditableItemGraphTypes](type-aliases/AuditableItemGraphTypes.md)
-- [AuditableItemGraphVerificationState](type-aliases/AuditableItemGraphVerificationState.md)
 - [VerifyDepth](type-aliases/VerifyDepth.md)
 
 ## Variables
 
 - [AuditableItemGraphTypes](variables/AuditableItemGraphTypes.md)
-- [AuditableItemGraphVerificationState](variables/AuditableItemGraphVerificationState.md)
 - [VerifyDepth](variables/VerifyDepth.md)

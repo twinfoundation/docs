@@ -74,6 +74,24 @@ True if the bootstrapping process was successful.
 
 ***
 
+### getSchema()
+
+> **getSchema**(): `IEntitySchema`\<`unknown`\>
+
+Get the schema for the entities.
+
+#### Returns
+
+`IEntitySchema`\<`unknown`\>
+
+The schema for the entities.
+
+#### Implementation of
+
+`IEntityStorageConnector.getSchema`
+
+***
+
 ### get()
 
 > **get**(`id`, `secondaryIndex`?): `Promise`\<`undefined` \| `T`\>

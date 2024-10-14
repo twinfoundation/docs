@@ -53,6 +53,8 @@ This is the overview of the packages.
 - [@twin.org/entity-storage-connector-file](pkgs/entity-storage/packages/entity-storage-connector-file/index.md) - Entity Storage connector implementation using file storage
 - [@twin.org/entity-storage-connector-scylladb](pkgs/entity-storage/packages/entity-storage-connector-scylladb/index.md) - Entity Storage connector implementation using ScyllaDB
 - [@twin.org/entity-storage-connector-dynamodb](pkgs/entity-storage/packages/entity-storage-connector-dynamodb/index.md) - Entity Storage connector implementation using DynamoDb storage
+- [@twin.org/entity-storage-service](pkgs/entity-storage/packages/entity-storage-service/index.md) - Entity Storage contract implementation and REST endpoint definitions
+- [@twin.org/entity-storage-rest-client](pkgs/entity-storage/packages/entity-storage-rest-client/index.md) - Entity Storage contract implementation which can connect to REST endpoints
 
 ## Blob Storage
 
@@ -62,6 +64,9 @@ This is the overview of the packages.
 - [@twin.org/blob-storage-connector-ipfs](pkgs/blob-storage/packages/blob-storage-connector-ipfs/index.md) - Blob Storage connector implementation using IPFS
 - [@twin.org/blob-storage-service](pkgs/blob-storage/packages/blob-storage-service/index.md) - Blob storage contract implementation and REST endpoint definitions
 - [@twin.org/blob-storage-rest-client](pkgs/blob-storage/packages/blob-storage-rest-client/index.md) - Blob storage implementation which can connect to REST endpoints
+- [@twin.org/blob-storage-connector-aws-s3](pkgs/blob-storage/packages/blob-storage-connector-aws-s3/index.md) - Blob Storage connector implementation using AWS S3
+- [@twin.org/blob-storage-connector-azure](pkgs/blob-storage/packages/blob-storage-connector-azure/index.md) - Blob Storage connector implementation using Azure
+- [@twin.org/blob-storage-connector-gcp](pkgs/blob-storage/packages/blob-storage-connector-gcp/index.md) - Blob Storage connector implementation using Google Cloud Storage
 
 ## Logging
 

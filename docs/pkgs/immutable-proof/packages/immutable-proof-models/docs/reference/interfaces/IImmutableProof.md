@@ -57,3 +57,11 @@ The hash of the object associated with the proof.
 > `optional` **proof**: `IDidProof`
 
 The proof which can be undefined if it has not yet been issued.
+
+***
+
+### immutableReceipt?
+
+> `optional` **immutableReceipt**: `IJsonLdNodeObject`
+
+The immutable receipt detail for where the proof is stored.

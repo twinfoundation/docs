@@ -76,32 +76,16 @@ The index of the entry in the stream.
 
 ***
 
-### hash
+### proofId?
 
-> **hash**: `string`
+> `optional` **proofId**: `string`
 
-The hash of the entry.
-
-***
-
-### signature
-
-> **signature**: `string`
-
-The signature of the entry.
+The if of the immutable proof.
 
 ***
 
-### immutableStorageId?
+### verification?
 
-> `optional` **immutableStorageId**: `string`
-
-The immutable storage id containing the signature for the entry.
-
-***
-
-### entryVerification?
-
-> `optional` **entryVerification**: [`IAuditableItemStreamVerification`](IAuditableItemStreamVerification.md)
+> `optional` **verification**: `IImmutableProofVerification`
 
 The verification of the entry.

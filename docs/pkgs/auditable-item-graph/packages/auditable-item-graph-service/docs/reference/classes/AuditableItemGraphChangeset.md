@@ -14,11 +14,11 @@ Class describing a set of updates to the vertex.
 
 ## Properties
 
-### hash
+### id
 
-> **hash**: `string`
+> **id**: `string`
 
-The hash of the changeset.
+The id of the changeset.
 
 ***
 
@@ -54,16 +54,8 @@ The patches in the changeset.
 
 ***
 
-### signature
+### proofId
 
-> **signature**: `string`
+> **proofId**: `string`
 
-The signature of the changeset.
-
-***
-
-### immutableStorageId?
-
-> `optional` **immutableStorageId**: `string`
-
-The immutable storage id which contains the signature for this changeset.
+The immutable proof id which contains the signature for this changeset.

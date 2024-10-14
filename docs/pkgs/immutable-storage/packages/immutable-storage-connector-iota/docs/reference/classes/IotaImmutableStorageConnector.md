@@ -56,7 +56,7 @@ Runtime name for the class.
 
 ### store()
 
-> **store**(`controller`, `data`): `Promise`\<`string`\>
+> **store**(`controller`, `data`): `Promise`\<`object`\>
 
 Store an item in immutable storage.
 
@@ -72,9 +72,17 @@ The data to store.
 
 #### Returns
 
-`Promise`\<`string`\>
+`Promise`\<`object`\>
 
-The id of the stored immutable item in urn format.
+The id of the stored immutable item in urn format and the receipt.
+
+##### id
+
+> **id**: `string`
+
+##### receipt
+
+> **receipt**: `IJsonLdNodeObject`
 
 #### Implementation of
 
@@ -84,7 +92,7 @@ The id of the stored immutable item in urn format.
 
 ### get()
 
-> **get**(`id`): `Promise`\<`Uint8Array`\>
+> **get**(`id`, `options`?): `Promise`\<`object`\>
 
 Get an immutable item.
 
@@ -94,11 +102,27 @@ Get an immutable item.
 
 The id of the item to get.
 
+• **options?**
+
+Additional options for getting the item.
+
+• **options.includeData?**: `boolean`
+
+Should the data be included in the response, defaults to true.
+
 #### Returns
 
-`Promise`\<`Uint8Array`\>
+`Promise`\<`object`\>
 
-The data for the item.
+The data for the item and the receipt.
+
+##### data?
+
+> `optional` **data**: `Uint8Array`
+
+##### receipt
+
+> **receipt**: `IJsonLdNodeObject`
 
 #### Implementation of
 

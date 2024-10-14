@@ -13,7 +13,7 @@ npm install @twin.org/blob-storage-connector-ipfs
 The tests developed are functional tests and need an instance of IPFS up and running. To run IPFS locally:
 
 ```shell
-docker run -p 4001:4001 -p 4001:4001/udp -p 8080:8080 -p 5001:5001 --name ipfs --hostname ipfs -d ipfs/kubo:latest
+docker run -p 4001:4001 -p 4001:4001/udp -p 8080:8080 -p 5001:5001 --name twin-blob-ipfs --hostname ipfs -d ipfs/kubo:latest
 ```
 
 Afterwards you can run the tests as follows:

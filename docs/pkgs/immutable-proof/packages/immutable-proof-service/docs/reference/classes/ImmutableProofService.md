@@ -30,7 +30,7 @@ The entity storage for proofs, defaults to "immutable-proof".
 
 • **options.immutableStorageType?**: `string`
 
-The immutable storage, defaults to "immutable-proof".
+The immutable storage, defaults to "immutable-storage".
 
 • **options.config?**: [`IImmutableProofServiceConfig`](../interfaces/IImmutableProofServiceConfig.md)
 
@@ -128,7 +128,7 @@ NotFoundError if the proof is not found.
 
 ### verify()
 
-> **verify**(`id`, `proofObject`): `Promise`\<`object`\>
+> **verify**(`id`, `proofObject`): `Promise`\<`IImmutableProofVerification`\>
 
 Verify an authentication proof.
 
@@ -144,17 +144,9 @@ The object to verify as JSON-LD.
 
 #### Returns
 
-`Promise`\<`object`\>
+`Promise`\<`IImmutableProofVerification`\>
 
 The result of the verification and any failures.
-
-##### verified
-
-> **verified**: `boolean`
-
-##### failure?
-
-> `optional` **failure**: `ImmutableProofFailure`
 
 #### Throws
 

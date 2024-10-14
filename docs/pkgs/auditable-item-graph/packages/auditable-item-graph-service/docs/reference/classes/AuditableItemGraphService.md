@@ -20,25 +20,17 @@ Create a new instance of AuditableItemGraphService.
 
 The dependencies for the auditable item graph connector.
 
-• **options.vaultConnectorType?**: `string`
+• **options.immutableProofComponentType?**: `string`
 
-The vault connector type, defaults to "vault".
+The immutable proof component type, defaults to "immutable-proof".
 
 • **options.vertexEntityStorageType?**: `string`
 
 The entity storage for vertices, defaults to "auditable-item-graph-vertex".
 
-• **options.immutableStorageType?**: `string`
-
-The immutable storage for audit trail, defaults to "auditable-item-graph".
-
 • **options.changesetEntityStorageType?**: `string`
 
 The entity storage for changesets, defaults to "auditable-item-graph-changeset".
-
-• **options.identityConnectorType?**: `string`
-
-The identity connector type, defaults to "identity".
 
 • **options.config?**: [`IAuditableItemGraphServiceConfig`](../interfaces/IAuditableItemGraphServiceConfig.md)
 
@@ -55,6 +47,14 @@ The configuration for the connector.
 > `readonly` `static` **NAMESPACE**: `string` = `"aig"`
 
 The namespace for the service.
+
+***
+
+### NAMESPACE\_CHANGESET
+
+> `readonly` `static` **NAMESPACE\_CHANGESET**: `string` = `"changeset"`
+
+The namespace for the service changeset.
 
 ***
 

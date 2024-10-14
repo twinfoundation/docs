@@ -20,9 +20,9 @@ Create a new instance of AuditableItemStreamService.
 
 The dependencies for the auditable item stream connector.
 
-• **options.vaultConnectorType?**: `string`
+• **options.immutableProofComponentType?**: `string`
 
-The vault connector type, defaults to "vault".
+The immutable proof component type, defaults to "immutable-proof".
 
 • **options.streamEntityStorageType?**: `string`
 
@@ -31,14 +31,6 @@ The entity storage for stream, defaults to "auditable-item-stream".
 • **options.streamEntryEntityStorageType?**: `string`
 
 The entity storage for stream entries, defaults to "auditable-item-stream-entry".
-
-• **options.immutableStorageType?**: `string`
-
-The immutable storage for audit trail, defaults to "auditable-item-stream".
-
-• **options.identityConnectorType?**: `string`
-
-The identity connector type, defaults to "identity".
 
 • **options.config?**: [`IAuditableItemStreamServiceConfig`](../interfaces/IAuditableItemStreamServiceConfig.md)
 

@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/immutable-storage-connector-entity-storage",
-	"version": "0.0.1-next.4",
+	"version": "0.0.1-next.7",
 	"description": "Implementation of the Immutable Storage connector using entity storage",
 	"repository": {
 		"type": "git",
@@ -15,7 +15,9 @@
 	},
 	"scripts": {
 		"clean": "rimraf dist coverage",
-		"build": "tsc",
+		"build:schema": "ts-to-schema ./ts-to-schema.json ./src/schemas",
+		"build:compile": "tsc",
+		"build": "npm run build:schema && npm run build:compile",
 		"build:watch": "tsc-watch --onSuccess \"npm run bundle:esm\"",
 		"test": "vitest --run --config ./vitest.config.ts --no-cache",
 		"coverage": "vitest --run --coverage --config ./vitest.config.ts --no-cache",
@@ -31,14 +33,16 @@
 	"dependencies": {
 		"@twin.org/core": "next",
 		"@twin.org/crypto": "next",
+		"@twin.org/data-json-ld": "next",
 		"@twin.org/entity": "next",
 		"@twin.org/entity-storage-models": "next",
 		"@twin.org/nameof": "next",
-		"@twin.org/immutable-storage-models": "0.0.1-next.4"
+		"@twin.org/immutable-storage-models": "0.0.1-next.7"
 	},
 	"devDependencies": {
 		"@twin.org/nameof-transformer": "next",
 		"@twin.org/entity-storage-connector-memory": "next",
+		"@twin.org/ts-to-schema": "next",
 		"@vitest/coverage-v8": "2.1.1",
 		"@types/node": "22.6.1",
 		"copyfiles": "2.4.1",

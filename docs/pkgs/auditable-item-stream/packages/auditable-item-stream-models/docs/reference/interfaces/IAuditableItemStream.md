@@ -68,27 +68,11 @@ The object to associate with the entry as JSON-LD.
 
 ***
 
-### hash
+### proofId?
 
-> **hash**: `string`
+> `optional` **proofId**: `string`
 
-The hash of the stream.
-
-***
-
-### signature
-
-> **signature**: `string`
-
-The signature of the stream.
-
-***
-
-### immutableStorageId?
-
-> `optional` **immutableStorageId**: `string`
-
-The immutable storage id.
+The id of the immutable proof for the stream.
 
 ***
 
@@ -116,8 +100,8 @@ The cursor for the stream entries.
 
 ***
 
-### streamVerification?
+### verification?
 
-> `optional` **streamVerification**: [`IAuditableItemStreamVerification`](IAuditableItemStreamVerification.md)
+> `optional` **verification**: `IImmutableProofVerification`
 
 The verification of the stream.

@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/entity-storage",
-	"version": "0.0.1-next.4",
+	"version": "0.0.1-next.7",
 	"description": "Entity Storage",
 	"repository": {
 		"type": "git",
@@ -43,7 +43,9 @@
 		"packages/entity-storage-connector-memory",
 		"packages/entity-storage-connector-file",
 		"packages/entity-storage-connector-scylladb",
-		"packages/entity-storage-connector-dynamodb"
+		"packages/entity-storage-connector-dynamodb",
+		"packages/entity-storage-service",
+		"packages/entity-storage-rest-client"
 	],
 	"type": "module"
 }

@@ -1521,6 +1521,31 @@
             },
             "JsonLdNodeObject": {
                 "type": "object",
+                "additionalProperties": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/components/schemas/JsonLdNodePrimitive"
+                        },
+                        {
+                            "$ref": "#/components/schemas/JsonLdLanguageMap"
+                        },
+                        {
+                            "$ref": "#/components/schemas/JsonLdIndexMap"
+                        },
+                        {
+                            "$ref": "#/components/schemas/JsonLdIncludedBlock"
+                        },
+                        {
+                            "$ref": "#/components/schemas/JsonLdIdMap"
+                        },
+                        {
+                            "$ref": "#/components/schemas/JsonLdTypeMap"
+                        },
+                        {
+                            "type": "array"
+                        }
+                    ]
+                },
                 "properties": {
                     "@context": {
                         "$ref": "#/components/schemas/JsonLdContextDefinitionRoot"
@@ -1589,34 +1614,6 @@
                     "@index": {
                         "type": "string"
                     }
-                },
-                "additionalProperties": {
-                    "anyOf": [
-                        {
-                            "$ref": "#/components/schemas/JsonLdNodePrimitive"
-                        },
-                        {
-                            "type": "array",
-                            "items": {
-                                "$ref": "#/components/schemas/JsonLdNodePrimitive"
-                            }
-                        },
-                        {
-                            "$ref": "#/components/schemas/JsonLdLanguageMap"
-                        },
-                        {
-                            "$ref": "#/components/schemas/JsonLdIndexMap"
-                        },
-                        {
-                            "$ref": "#/components/schemas/JsonLdIncludedBlock"
-                        },
-                        {
-                            "$ref": "#/components/schemas/JsonLdIdMap"
-                        },
-                        {
-                            "$ref": "#/components/schemas/JsonLdTypeMap"
-                        }
-                    ]
                 },
                 "description": "A node object represents zero or more properties of a node in the graph serialized by the JSON-LD document."
             },

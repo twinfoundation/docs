@@ -4,20 +4,20 @@ Response to verifying an immutable proof.
 
 ## Properties
 
+### headers?
+
+> `optional` **headers**: `object`
+
+The headers which can be used to determine the response data type.
+
+#### content-type
+
+> **content-type**: `"application/json"` \| `"application/ld+json"`
+
+***
+
 ### body
 
-> **body**: `object`
+> **body**: [`IImmutableProofVerification`](IImmutableProofVerification.md)
 
 The response body.
-
-#### verified
-
-> **verified**: `boolean`
-
-Was the proof verified.
-
-#### failure?
-
-> `optional` **failure**: [`ImmutableProofFailure`](../type-aliases/ImmutableProofFailure.md)
-
-If not verified what was the failure.
