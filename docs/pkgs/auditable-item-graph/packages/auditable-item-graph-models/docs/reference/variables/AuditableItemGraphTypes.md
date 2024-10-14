@@ -48,24 +48,6 @@ Represents auditable item graph  changeset.
 
 Represents patch operation.
 
-### Credential
-
-> `readonly` **Credential**: `"AuditableItemGraphPatchCredential"` = `"AuditableItemGraphPatchCredential"`
-
-Represents the immutable credential payload.
-
-### Verification
-
-> `readonly` **Verification**: `"AuditableItemGraphVerification"` = `"AuditableItemGraphVerification"`
-
-Represents auditable item stream verification.
-
-### VerificationState
-
-> `readonly` **VerificationState**: `"AuditableItemGraphVerificationState"` = `"AuditableItemGraphVerificationState"`
-
-Represents auditable item stream verification state.
-
 ### VertexList
 
 > `readonly` **VertexList**: `"AuditableItemGraphVertexList"` = `"AuditableItemGraphVertexList"`

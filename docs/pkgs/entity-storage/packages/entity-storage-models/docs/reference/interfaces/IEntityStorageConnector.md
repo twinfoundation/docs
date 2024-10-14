@@ -12,6 +12,40 @@ Interface describing an entity storage connector.
 
 ## Methods
 
+### getSchema()
+
+> **getSchema**(): `IEntitySchema`\<`unknown`\>
+
+Get the schema for the entities.
+
+#### Returns
+
+`IEntitySchema`\<`unknown`\>
+
+The schema for the entities.
+
+***
+
+### set()
+
+> **set**(`entity`): `Promise`\<`void`\>
+
+Set an entity.
+
+#### Parameters
+
+• **entity**: `T`
+
+The entity to set.
+
+#### Returns
+
+`Promise`\<`void`\>
+
+The id of the entity.
+
+***
+
 ### get()
 
 > **get**(`id`, `secondaryIndex`?): `Promise`\<`undefined` \| `T`\>
@@ -33,26 +67,6 @@ Get the item using a secondary index.
 `Promise`\<`undefined` \| `T`\>
 
 The object if it can be found or undefined.
-
-***
-
-### set()
-
-> **set**(`entity`): `Promise`\<`void`\>
-
-Set an entity.
-
-#### Parameters
-
-• **entity**: `T`
-
-The entity to set.
-
-#### Returns
-
-`Promise`\<`void`\>
-
-The id of the entity.
 
 ***
 

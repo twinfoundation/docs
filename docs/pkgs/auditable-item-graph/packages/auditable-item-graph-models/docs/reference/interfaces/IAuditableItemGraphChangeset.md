@@ -20,6 +20,14 @@ JSON-LD Type.
 
 ***
 
+### id
+
+> **id**: `string`
+
+The id of the changeset.
+
+***
+
 ### dateCreated
 
 > **dateCreated**: `string`
@@ -44,32 +52,16 @@ The patches in the changeset.
 
 ***
 
-### hash
+### proofId?
 
-> **hash**: `string`
+> `optional` **proofId**: `string`
 
-The hash for the changeset.
-
-***
-
-### signature
-
-> **signature**: `string`
-
-The signature for the changeset.
-
-***
-
-### immutableStorageId?
-
-> `optional` **immutableStorageId**: `string`
-
-The immutable storage id containing the signature for the changeset.
+The immutable proof id which contains the signature for this changeset.
 
 ***
 
 ### verification?
 
-> `optional` **verification**: [`IAuditableItemGraphVerification`](IAuditableItemGraphVerification.md)
+> `optional` **verification**: `IImmutableProofVerification`
 
 The verification for the changeset.

@@ -78,24 +78,8 @@ After how many entries do we add immutable checks.
 
 ***
 
-### hash
+### proofId?
 
-> **hash**: `string`
+> `optional` **proofId**: `string`
 
-The hash of the entry.
-
-***
-
-### signature
-
-> **signature**: `string`
-
-The signature of the entry.
-
-***
-
-### immutableStorageId?
-
-> `optional` **immutableStorageId**: `string`
-
-The immutable storage id.
+The immutable proof id.

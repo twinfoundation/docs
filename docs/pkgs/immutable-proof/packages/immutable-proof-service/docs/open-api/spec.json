@@ -189,7 +189,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ImmutableProof"
+                                    "$ref": "https://schema.twindev.org/immutable-proof/ImmutableProof"
                                 },
                                 "examples": {
                                     "immutableProofGetResponseExample": {
@@ -214,7 +214,7 @@
                             },
                             "application/ld+json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ImmutableProof"
+                                    "$ref": "https://schema.twindev.org/immutable-proof/ImmutableProof"
                                 },
                                 "examples": {
                                     "immutableProofJsonLdGetResponseExample": {
@@ -344,6 +344,15 @@
                         },
                         "style": "simple",
                         "example": "ais:1234567890"
+                    },
+                    {
+                        "name": "accept",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "style": "simple"
                     }
                 ],
                 "security": [
@@ -379,16 +388,20 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ImmutableProofVerifyResponse"
+                                    "$ref": "https://schema.twindev.org/immutable-proof/ImmutableProofVerification"
                                 },
                                 "examples": {
                                     "immutableProofVerifyResponseExample": {
                                         "value": {
+                                            "@context": "https://schema.twindev.org/immutable-proof/",
+                                            "type": "ImmutableProofVerification",
                                             "verified": true
                                         }
                                     },
                                     "immutableProofVerifyResponseFailExample": {
                                         "value": {
+                                            "@context": "https://schema.twindev.org/immutable-proof/",
+                                            "type": "ImmutableProofVerification",
                                             "verified": false,
                                             "failure": "proofTypeMismatch"
                                         }
@@ -643,66 +656,6 @@
                 "additionalProperties": false,
                 "description": "Model to describe serialized error."
             },
-            "ImmutableProof": {
-                "type": "object",
-                "properties": {
-                    "@context": {
-                        "anyOf": [
-                            {
-                                "type": "string",
-                                "const": "https://schema.twindev.org/immutable-proof/"
-                            },
-                            {
-                                "type": "array",
-                                "minItems": 1,
-                                "items": [
-                                    {
-                                        "type": "string",
-                                        "const": "https://schema.twindev.org/immutable-proof/"
-                                    }
-                                ],
-                                "additionalItems": {
-                                    "type": "string"
-                                }
-                            }
-                        ],
-                        "description": "JSON-LD Context."
-                    },
-                    "type": {
-                        "type": "string",
-                        "const": "ImmutableProof",
-                        "description": "JSON-LD Type."
-                    },
-                    "id": {
-                        "type": "string",
-                        "description": "The id of the proof."
-                    },
-                    "userIdentity": {
-                        "type": "string",
-                        "description": "The id of the user who created the proof."
-                    },
-                    "proofObjectId": {
-                        "type": "string",
-                        "description": "The id of the object associated with the proof."
-                    },
-                    "proofObjectHash": {
-                        "type": "string",
-                        "description": "The hash of the object associated with the proof."
-                    },
-                    "proof": {
-                        "$ref": "#/components/schemas/DidProof"
-                    }
-                },
-                "required": [
-                    "@context",
-                    "type",
-                    "id",
-                    "userIdentity",
-                    "proofObjectHash"
-                ],
-                "additionalProperties": false,
-                "description": "Interface describing an immutable proof state."
-            },
             "ImmutableProofCreateRequest": {
                 "type": "object",
                 "properties": {
@@ -716,36 +669,6 @@
                 "additionalProperties": false,
                 "description": "The parameters from the body."
             },
-            "ImmutableProofFailure": {
-                "anyOf": [
-                    {
-                        "type": "string",
-                        "const": "notIssued",
-                        "description": "Proof not yes issued."
-                    },
-                    {
-                        "type": "string",
-                        "const": "proofMissing",
-                        "description": "Proof missing."
-                    },
-                    {
-                        "type": "string",
-                        "const": "cryptoSuiteMismatch",
-                        "description": "Crypto suite mismatch."
-                    },
-                    {
-                        "type": "string",
-                        "const": "proofTypeMismatch",
-                        "description": "Proof type."
-                    },
-                    {
-                        "type": "string",
-                        "const": "signatureMismatch",
-                        "description": "Signature mismatch."
-                    }
-                ],
-                "description": "The failure reason of the proof."
-            },
             "ImmutableProofVerifyRequest": {
                 "type": "object",
                 "properties": {
@@ -758,23 +681,6 @@
                 ],
                 "additionalProperties": false,
                 "description": "The parameters from the body."
-            },
-            "ImmutableProofVerifyResponse": {
-                "type": "object",
-                "properties": {
-                    "verified": {
-                        "type": "boolean",
-                        "description": "Was the proof verified."
-                    },
-                    "failure": {
-                        "$ref": "#/components/schemas/ImmutableProofFailure"
-                    }
-                },
-                "required": [
-                    "verified"
-                ],
-                "additionalProperties": false,
-                "description": "The response body."
             },
             "NotFoundResponse": {
                 "type": "object",

@@ -70,6 +70,28 @@ Runtime name for the class.
 
 ## Methods
 
+### getSchema()
+
+> **getSchema**(): `IEntitySchema`\<`unknown`\>
+
+Get the schema for the entities.
+
+#### Returns
+
+`IEntitySchema`\<`unknown`\>
+
+The schema for the entities.
+
+#### Implementation of
+
+`IEntityStorageConnector.getSchema`
+
+#### Inherited from
+
+`AbstractScyllaDBConnector.getSchema`
+
+***
+
 ### get()
 
 > **get**(`id`, `secondaryIndex`?): `Promise`\<`undefined` \| `T`\>

@@ -62,40 +62,48 @@ The combined.
 
 ***
 
-### conditionsFromString()
+### objectFromString()
 
-> `static` **conditionsFromString**(`conditions`?): `undefined` \| `IComparator`[]
+> `static` **objectFromString**\<`T`\>(`value`?): `undefined` \| `T`
 
-Convert the conditions string to a list of comparators.
+Convert object string to object.
+
+#### Type Parameters
+
+• **T** = `unknown`
 
 #### Parameters
 
-• **conditions?**: `string`
+• **value?**: `string`
 
-The conditions query string.
+The value query string.
 
 #### Returns
 
-`undefined` \| `IComparator`[]
+`undefined` \| `T`
 
-The list of comparators.
+The object.
 
 ***
 
-### conditionsToString()
+### objectToString()
 
-> `static` **conditionsToString**(`conditions`?): `undefined` \| `string`
+> `static` **objectToString**\<`T`\>(`value`?): `undefined` \| `string`
 
-Convert the conditions to a string parameter.
+Convert object to query string.
+
+#### Type Parameters
+
+• **T** = `unknown`
 
 #### Parameters
 
-• **conditions?**: `IComparator`[]
+• **value?**: `T`
 
-The conditions to convert.
+The value to convert to a string.
 
 #### Returns
 
 `undefined` \| `string`
 
-The string version of the comparators.
+The converted object.

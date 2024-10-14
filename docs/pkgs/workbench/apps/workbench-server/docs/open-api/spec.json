@@ -5113,8 +5113,7 @@
                                                     },
                                                     "nodeIdentity": "tst:1234567890",
                                                     "userIdentity": "tst:1234567890",
-                                                    "hash": "0101010101010101010101010101010101010101010101010101010101010101",
-                                                    "signature": "0101010101010101010101010101010101010101010101010101010101010101",
+                                                    "proofId": "0101010101010101010101010101010101010101010101010101010101010101",
                                                     "immutableInterval": 10
                                                 }
                                             ],
@@ -5146,8 +5145,7 @@
                                                     },
                                                     "nodeIdentity": "tst:1234567890",
                                                     "userIdentity": "tst:1234567890",
-                                                    "hash": "0101010101010101010101010101010101010101010101010101010101010101",
-                                                    "signature": "0101010101010101010101010101010101010101010101010101010101010101",
+                                                    "proofId": "0101010101010101010101010101010101010101010101010101010101010101",
                                                     "immutableInterval": 10
                                                 }
                                             ],
@@ -5341,8 +5339,7 @@
                                             },
                                             "nodeIdentity": "tst:1234567890",
                                             "userIdentity": "tst:1234567890",
-                                            "hash": "0101010101010101010101010101010101010101010101010101010101010101",
-                                            "signature": "0101010101010101010101010101010101010101010101010101010101010101",
+                                            "proofId": "0101010101010101010101010101010101010101010101010101010101010101",
                                             "immutableInterval": 10,
                                             "entries": [
                                                 {
@@ -5350,8 +5347,7 @@
                                                     "type": "AuditableItemStreamEntry",
                                                     "id": "tst:1234567890",
                                                     "dateCreated": "2024-08-22T11:55:16.271Z",
-                                                    "hash": "0101010101010101010101010101010101010101010101010101010101010101",
-                                                    "signature": "0101010101010101010101010101010101010101010101010101010101010101",
+                                                    "proofId": "0101010101010101010101010101010101010101010101010101010101010101",
                                                     "index": 0,
                                                     "entryObject": {
                                                         "@context": "http://schema.org/",
@@ -5384,8 +5380,7 @@
                                             },
                                             "nodeIdentity": "tst:1234567890",
                                             "userIdentity": "tst:1234567890",
-                                            "hash": "0101010101010101010101010101010101010101010101010101010101010101",
-                                            "signature": "0101010101010101010101010101010101010101010101010101010101010101",
+                                            "proofId": "0101010101010101010101010101010101010101010101010101010101010101",
                                             "immutableInterval": 10,
                                             "entries": [
                                                 {
@@ -5393,8 +5388,7 @@
                                                     "type": "AuditableItemStreamEntry",
                                                     "id": "tst:1234567890",
                                                     "dateCreated": "2024-08-22T11:55:16.271Z",
-                                                    "hash": "0101010101010101010101010101010101010101010101010101010101010101",
-                                                    "signature": "0101010101010101010101010101010101010101010101010101010101010101",
+                                                    "proofId": "0101010101010101010101010101010101010101010101010101010101010101",
                                                     "index": 0,
                                                     "entryObject": {
                                                         "@context": "http://schema.org/",
@@ -5816,8 +5810,7 @@
                                             "type": "AuditableItemStreamEntry",
                                             "id": "tst:1234567890",
                                             "dateCreated": "2024-08-22T11:55:16.271Z",
-                                            "hash": "0101010101010101010101010101010101010101010101010101010101010101",
-                                            "signature": "0101010101010101010101010101010101010101010101010101010101010101",
+                                            "proofId": "0101010101010101010101010101010101010101010101010101010101010101",
                                             "index": 0,
                                             "entryObject": {
                                                 "@context": "http://schema.org/",
@@ -5840,8 +5833,7 @@
                                             "type": "AuditableItemStreamEntry",
                                             "id": "tst:1234567890",
                                             "dateCreated": "2024-08-22T11:55:16.271Z",
-                                            "hash": "0101010101010101010101010101010101010101010101010101010101010101",
-                                            "signature": "0101010101010101010101010101010101010101010101010101010101010101",
+                                            "proofId": "0101010101010101010101010101010101010101010101010101010101010101",
                                             "index": 0,
                                             "entryObject": {
                                                 "@context": "http://schema.org/",
@@ -6449,8 +6441,7 @@
                                                     "type": "AuditableItemStreamEntry",
                                                     "id": "tst:1234567890",
                                                     "dateCreated": "2024-08-22T11:55:16.271Z",
-                                                    "hash": "0101010101010101010101010101010101010101010101010101010101010101",
-                                                    "signature": "0101010101010101010101010101010101010101010101010101010101010101",
+                                                    "proofId": "0101010101010101010101010101010101010101010101010101010101010101",
                                                     "index": 0,
                                                     "entryObject": {
                                                         "@context": "http://schema.org/",
@@ -6480,8 +6471,7 @@
                                                     "type": "AuditableItemStreamEntry",
                                                     "id": "tst:1234567890",
                                                     "dateCreated": "2024-08-22T11:55:16.271Z",
-                                                    "hash": "0101010101010101010101010101010101010101010101010101010101010101",
-                                                    "signature": "0101010101010101010101010101010101010101010101010101010101010101",
+                                                    "proofId": "0101010101010101010101010101010101010101010101010101010101010101",
                                                     "index": 0,
                                                     "entryObject": {
                                                         "@context": "http://schema.org/",
@@ -7231,6 +7221,9 @@
             "DidDocument": {
                 "type": "object",
                 "properties": {
+                    "@context": {
+                        "$ref": "https://schema.twindev.org/json-ld/JsonLdContextDefinitionRoot"
+                    },
                     "id": {
                         "type": "string",
                         "description": "The id for the document."
@@ -7612,6 +7605,65 @@
                 },
                 "additionalProperties": false,
                 "description": "The data for the request."
+            },
+            "ImmutableProofFailure": {
+                "anyOf": [
+                    {
+                        "type": "string",
+                        "const": "notIssued",
+                        "description": "Proof not yes issued."
+                    },
+                    {
+                        "type": "string",
+                        "const": "proofMissing",
+                        "description": "Proof missing."
+                    },
+                    {
+                        "type": "string",
+                        "const": "cryptoSuiteMismatch",
+                        "description": "Crypto suite mismatch."
+                    },
+                    {
+                        "type": "string",
+                        "const": "proofTypeMismatch",
+                        "description": "Proof type."
+                    },
+                    {
+                        "type": "string",
+                        "const": "signatureMismatch",
+                        "description": "Signature mismatch."
+                    }
+                ],
+                "description": "The failure reason of the proof."
+            },
+            "ImmutableProofVerification": {
+                "type": "object",
+                "properties": {
+                    "@context": {
+                        "type": "string",
+                        "const": "https://schema.twindev.org/immutable-proof/",
+                        "description": "JSON-LD Context."
+                    },
+                    "type": {
+                        "type": "string",
+                        "const": "ImmutableProofVerification",
+                        "description": "JSON-LD Type."
+                    },
+                    "verified": {
+                        "type": "boolean",
+                        "description": "Was the verification successful."
+                    },
+                    "failure": {
+                        "$ref": "#/components/schemas/ImmutableProofFailure"
+                    }
+                },
+                "required": [
+                    "@context",
+                    "type",
+                    "verified"
+                ],
+                "additionalProperties": false,
+                "description": "Interface describing an immutable proof verification."
             },
             "Jwk": {
                 "type": "object",

@@ -8,13 +8,10 @@
 
 - [IAuditableItemStream](interfaces/IAuditableItemStream.md)
 - [IAuditableItemStreamComponent](interfaces/IAuditableItemStreamComponent.md)
-- [IAuditableItemStreamCredential](interfaces/IAuditableItemStreamCredential.md)
 - [IAuditableItemStreamEntry](interfaces/IAuditableItemStreamEntry.md)
-- [IAuditableItemStreamEntryCredential](interfaces/IAuditableItemStreamEntryCredential.md)
 - [IAuditableItemStreamEntryList](interfaces/IAuditableItemStreamEntryList.md)
 - [IAuditableItemStreamEntryObjectList](interfaces/IAuditableItemStreamEntryObjectList.md)
 - [IAuditableItemStreamList](interfaces/IAuditableItemStreamList.md)
-- [IAuditableItemStreamVerification](interfaces/IAuditableItemStreamVerification.md)
 - [IAuditableItemStreamCreateEntryRequest](interfaces/IAuditableItemStreamCreateEntryRequest.md)
 - [IAuditableItemStreamCreateRequest](interfaces/IAuditableItemStreamCreateRequest.md)
 - [IAuditableItemStreamDeleteEntryRequest](interfaces/IAuditableItemStreamDeleteEntryRequest.md)
@@ -36,9 +33,7 @@
 ## Type Aliases
 
 - [AuditableItemStreamTypes](type-aliases/AuditableItemStreamTypes.md)
-- [AuditableItemStreamVerificationState](type-aliases/AuditableItemStreamVerificationState.md)
 
 ## Variables
 
 - [AuditableItemStreamTypes](variables/AuditableItemStreamTypes.md)
-- [AuditableItemStreamVerificationState](variables/AuditableItemStreamVerificationState.md)

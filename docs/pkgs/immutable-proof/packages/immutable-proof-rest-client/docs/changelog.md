@@ -1,5 +1,5 @@
 # @twin.org/immutable-proof-rest-client - Changelog
 
-## v0.0.1-next.1
+## v0.0.1-next.6
 
 - Initial Release

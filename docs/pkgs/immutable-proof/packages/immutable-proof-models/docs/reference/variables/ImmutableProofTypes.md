@@ -17,3 +17,9 @@ The context root for the immutable proof types.
 > `readonly` **ImmutableProof**: `"ImmutableProof"` = `"ImmutableProof"`
 
 Represents Immutable Proof.
+
+### ImmutableProofVerification
+
+> `readonly` **ImmutableProofVerification**: `"ImmutableProofVerification"` = `"ImmutableProofVerification"`
+
+Represents Immutable Proof Verification.

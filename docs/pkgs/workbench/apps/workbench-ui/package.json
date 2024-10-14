@@ -12,7 +12,7 @@
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"test:integration": "playwright test",
 		"test:unit": "vitest --run",
-		"merge-locales": "merge-locales --config ./locales/merge-locales-config.json",
+		"merge-locales": "merge-locales --config ./merge-locales-config.json",
 		"docs:clean": "echo Nothing to clean",
 		"docs": "npm run docs:clean",
 		"dist": "npm run build && npm run check && npm run merge-locales && npm run test && npm run docs"
@@ -28,6 +28,7 @@
 		"@twin.org/crypto": "next",
 		"@twin.org/data-core": "next",
 		"@twin.org/data-json-ld": "next",
+		"@twin.org/entity-storage-rest-client": "next",
 		"@twin.org/identity-models": "next",
 		"@twin.org/identity-rest-client": "next",
 		"@twin.org/qr": "next",
