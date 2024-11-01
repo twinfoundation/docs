@@ -34,7 +34,7 @@ The public key for the key pair.
 
 ### addKey()
 
-> **addKey**(`name`, `type`, `privateKey`, `publicKey`): `Promise`\<`void`\>
+> **addKey**(`name`, `type`, `privateKey`, `publicKey`?): `Promise`\<`void`\>
 
 Add a key to the vault.
 
@@ -52,9 +52,9 @@ The type of key to add.
 
 The private key.
 
-• **publicKey**: `Uint8Array`
+• **publicKey?**: `Uint8Array`
 
-The public key.
+The public key, can be undefined if the key type is symmetric.
 
 #### Returns
 
@@ -80,7 +80,7 @@ The name of the key to get from the vault.
 
 `Promise`\<`object`\>
 
-The key.
+The key, publicKey can be undefined if key is symmetric.
 
 ##### type
 
@@ -94,11 +94,11 @@ The type of the key e.g. Ed25519, Secp256k1.
 
 The private key.
 
-##### publicKey
+##### publicKey?
 
-> **publicKey**: `Uint8Array`
+> `optional` **publicKey**: `Uint8Array`
 
-The public key.
+The public key, which can be undefined if key type is symmetric.
 
 ***
 

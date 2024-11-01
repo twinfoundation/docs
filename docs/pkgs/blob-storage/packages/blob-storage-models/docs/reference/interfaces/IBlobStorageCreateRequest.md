@@ -16,15 +16,15 @@ The body parameters.
 
 The data to store in base64 encoding.
 
-#### mimeType?
+#### encodingFormat?
 
-> `optional` **mimeType**: `string`
+> `optional` **encodingFormat**: `string`
 
 The mime type of the blob, will be detected if left undefined.
 
-#### extension?
+#### fileExtension?
 
-> `optional` **extension**: `string`
+> `optional` **fileExtension**: `string`
 
 The extension of the blob, will be detected if left undefined.
 

@@ -114,12 +114,12 @@ True if the blob was found.
 
 ### getStore()
 
-> **getStore**(): `undefined` \| `object`
+> **getStore**(): `object`
 
 Get the memory store.
 
 #### Returns
 
-`undefined` \| `object`
+`object`
 
 The store.

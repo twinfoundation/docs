@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/immutable-proof-models",
-	"version": "0.0.1-next.6",
+	"version": "0.0.1-next.7",
 	"description": "Models which define the structure of the immutable proof connectors and services",
 	"repository": {
 		"type": "git",

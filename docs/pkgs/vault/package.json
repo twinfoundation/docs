@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/vault",
-	"version": "0.0.1-next.4",
+	"version": "0.0.1-next.9",
 	"description": "Vault",
 	"repository": {
 		"type": "git",
@@ -40,7 +40,8 @@
 	},
 	"workspaces": [
 		"packages/vault-models",
-		"packages/vault-connector-entity-storage"
+		"packages/vault-connector-entity-storage",
+		"packages/vault-connector-hashicorp"
 	],
 	"type": "module"
 }

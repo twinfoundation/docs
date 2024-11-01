@@ -29,4 +29,4 @@ This is the overview of the applications.
 
 ## UI
 
-- [@twin.org/ui-playground-svelte](pkgs/ui/apps/ui-playground-svelte/index.md) - UI to demonstrate the APIs
+- [@twin.org/ui-storybook-react](pkgs/ui/apps/ui-storybook-react/index.md) - Demonstrate the React UI Components

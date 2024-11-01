@@ -16,11 +16,17 @@ The parameters from the query.
 
 The condition for the query as JSON version of EntityCondition type.
 
-#### sortProperties?
+#### orderBy?
 
-> `optional` **sortProperties**: `string`
+> `optional` **orderBy**: `string`
 
-The sort property array as JSON serialization of property,direction.
+The order property for the results.
+
+#### orderByDirection?
+
+> `optional` **orderByDirection**: `SortDirection`
+
+The direction for the order, defaults to desc.
 
 #### properties?
 

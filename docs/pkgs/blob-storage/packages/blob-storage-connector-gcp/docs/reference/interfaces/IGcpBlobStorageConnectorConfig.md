@@ -12,6 +12,14 @@ The GCP project ID.
 
 ***
 
+### credentials?
+
+> `optional` **credentials**: `string`
+
+The GCP credentials, a base64 encoded version of the JWTInput data type.
+
+***
+
 ### bucketName
 
 > **bucketName**: `string`
@@ -25,12 +33,3 @@ The GCP bucket name.
 > `optional` **apiEndpoint**: `string`
 
 Optional endpoint for GCP Storage emulator.
-
-***
-
-### protocol?
-
-> `optional` **protocol**: `"http"` \| `"https"`
-
-The protocol to use for GCP Storage (e.g., 'http' or 'https').
-Defaults to 'https' if not specified.

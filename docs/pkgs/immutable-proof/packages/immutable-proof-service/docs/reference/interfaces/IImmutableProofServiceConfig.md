@@ -13,19 +13,19 @@ The assertion method id to use for the stream.
 #### Default
 
 ```ts
-immutable-proof
+immutable-proof-assertion
 ```
 
 ***
 
-### proofConfigKeyId?
+### proofHashKeyId?
 
-> `optional` **proofConfigKeyId**: `string`
+> `optional` **proofHashKeyId**: `string`
 
-The key to use in the proof config.
+The key to use in the proof hash.
 
 #### Default
 
 ```ts
-immutable-proof
+immutable-proof-hash
 ```

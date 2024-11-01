@@ -3,7 +3,7 @@
 ## Classes
 
 - [BlobStorageService](classes/BlobStorageService.md)
-- [BlobMetadata](classes/BlobMetadata.md)
+- [BlobStorageEntry](classes/BlobStorageEntry.md)
 
 ## Interfaces
 
@@ -22,4 +22,5 @@
 - [blobStorageGetContent](functions/blobStorageGetContent.md)
 - [blobStorageUpdate](functions/blobStorageUpdate.md)
 - [blobStorageRemove](functions/blobStorageRemove.md)
+- [blobStorageList](functions/blobStorageList.md)
 - [initSchema](functions/initSchema.md)

@@ -132,12 +132,21 @@
                         }
                     },
                     {
-                        "name": "sortProperties",
-                        "description": "The sort property array as JSON serialization of property,direction.",
+                        "name": "orderBy",
+                        "description": "The order property for the results.",
                         "in": "query",
                         "required": false,
                         "schema": {
                             "type": "string"
+                        }
+                    },
+                    {
+                        "name": "orderByDirection",
+                        "description": "The direction for the order, defaults to desc.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/components/schemas/SortDirection"
                         }
                     },
                     {
@@ -517,6 +526,9 @@
                         "description": "The cursor for the next page."
                     }
                 },
+                "required": [
+                    "entities"
+                ],
                 "additionalProperties": false,
                 "description": "The list of entries from the query."
             },
@@ -596,6 +608,21 @@
                     "name"
                 ],
                 "description": "The body which contains the error."
+            },
+            "SortDirection": {
+                "anyOf": [
+                    {
+                        "type": "string",
+                        "const": "asc",
+                        "description": "Ascending."
+                    },
+                    {
+                        "type": "string",
+                        "const": "desc",
+                        "description": "Descending."
+                    }
+                ],
+                "description": "The sort directions."
             }
         },
         "securitySchemes": {

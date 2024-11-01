@@ -51,6 +51,30 @@ Runtime name for the class.
 
 ## Methods
 
+### bootstrap()
+
+> **bootstrap**(`nodeLoggingConnectorType`?): `Promise`\<`boolean`\>
+
+Bootstrap the component by creating and initializing any resources it needs.
+
+#### Parameters
+
+• **nodeLoggingConnectorType?**: `string`
+
+The node logging connector type, defaults to "node-logging".
+
+#### Returns
+
+`Promise`\<`boolean`\>
+
+True if the bootstrapping process was successful.
+
+#### Implementation of
+
+`IBlobStorageConnector.bootstrap`
+
+***
+
 ### set()
 
 > **set**(`blob`): `Promise`\<`string`\>

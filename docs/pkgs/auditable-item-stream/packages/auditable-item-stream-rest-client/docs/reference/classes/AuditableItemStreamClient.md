@@ -159,6 +159,30 @@ Nothing.
 
 ***
 
+### remove()
+
+> **remove**(`id`): `Promise`\<`void`\>
+
+Delete the stream.
+
+#### Parameters
+
+• **id**: `string`
+
+The id of the stream to remove.
+
+#### Returns
+
+`Promise`\<`void`\>
+
+Nothing.
+
+#### Implementation of
+
+`IAuditableItemStreamComponent.remove`
+
+***
+
 ### query()
 
 > **query**(`conditions`?, `orderBy`?, `orderByDirection`?, `properties`?, `cursor`?, `pageSize`?): `Promise`\<`IAuditableItemStreamList`\>
@@ -339,17 +363,17 @@ Nothing.
 
 > **removeEntry**(`id`, `entryId`): `Promise`\<`void`\>
 
-Delete from the stream.
+Remove from the stream.
 
 #### Parameters
 
 • **id**: `string`
 
-The id of the stream to update.
+The id of the stream to remove from.
 
 • **entryId**: `string`
 
-The id of the entry to delete.
+The id of the entry to remove.
 
 #### Returns
 

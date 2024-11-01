@@ -21,10 +21,10 @@
         }
     ],
     "paths": {
-        "/blob": {
+        "/blob-storage": {
             "post": {
                 "operationId": "blobStorageCreate",
-                "summary": "Create a blob in to storage",
+                "summary": "Create an entry in blob storage",
                 "tags": [
                     "Blob Storage"
                 ],
@@ -42,7 +42,7 @@
                                 "$ref": "#/components/schemas/BlobStorageCreateRequest"
                             },
                             "examples": {
-                                "blobStorageCreateExample": {
+                                "blobStorageCreateRequestExample": {
                                     "value": {
                                         "blob": "VGhlIHF1aWNrIGJyb3duIGZveCBqdW1wcyBvdmVyIHRoZSBsYXp5IGRvZw==",
                                         "metadata": {
@@ -126,12 +126,239 @@
                         }
                     }
                 }
-            }
-        },
-        "/blob/{id}": {
+            },
             "get": {
                 "operationId": "blobStorageGet",
-                "summary": "Get the blob metadata from storage",
+                "summary": "Query the items from blob storage",
+                "tags": [
+                    "Blob Storage"
+                ],
+                "parameters": [
+                    {
+                        "name": "conditions",
+                        "description": "The condition for the query as JSON version of EntityCondition type.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "orderBy",
+                        "description": "The order for the results, default to created.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "dateCreated",
+                                "dateModified"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "orderByDirection",
+                        "description": "The direction for the order, defaults to desc.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/components/schemas/SortDirection"
+                        }
+                    },
+                    {
+                        "name": "pageSize",
+                        "description": "The number of entries to return per page.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "cursor",
+                        "description": "The cursor to get next chunk of data, returned in previous response.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "accept",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "style": "simple"
+                    }
+                ],
+                "security": [
+                    {
+                        "jwtBearerAuthScheme": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Response to getting the list of entries from a query.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/BlobStorageEntryList"
+                                },
+                                "examples": {
+                                    "blobStorageListResponseExample": {
+                                        "value": {
+                                            "@context": [
+                                                "https://schema.twindev.org/blob-storage/"
+                                            ],
+                                            "type": "BlobStorageEntryList",
+                                            "entries": [
+                                                {
+                                                    "@context": [
+                                                        "https://schema.twindev.org/blob-storage/",
+                                                        "https://schema.org/"
+                                                    ],
+                                                    "type": "BlobStorageEntry",
+                                                    "id": "blob-memory:c57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70",
+                                                    "dateCreated": "2024-01-01T00:00:00Z",
+                                                    "encodingFormat": "application/pdf",
+                                                    "blobSize": 42,
+                                                    "fileExtension": "pdf",
+                                                    "metadata": {
+                                                        "@context": "http://schema.org/",
+                                                        "@type": "DigitalDocument",
+                                                        "name": "myfile.pdf"
+                                                    },
+                                                    "blob": "VGhlIHF1aWNrIGJyb3duIGZveCBqdW1wcyBvdmVyIHRoZSBsYXp5IGRvZw=="
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }
+                            },
+                            "application/ld+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/BlobStorageEntryList"
+                                },
+                                "examples": {
+                                    "blobStorageListResponseJsonLdExample": {
+                                        "value": {
+                                            "@context": [
+                                                "https://schema.twindev.org/blob-storage/"
+                                            ],
+                                            "type": "BlobStorageEntryList",
+                                            "entries": [
+                                                {
+                                                    "@context": [
+                                                        "https://schema.twindev.org/blob-storage/",
+                                                        "https://schema.org/"
+                                                    ],
+                                                    "type": "BlobStorageEntry",
+                                                    "id": "blob-memory:c57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70",
+                                                    "dateCreated": "2024-01-01T00:00:00Z",
+                                                    "encodingFormat": "application/pdf",
+                                                    "blobSize": 42,
+                                                    "fileExtension": "pdf",
+                                                    "metadata": {
+                                                        "@context": "http://schema.org/",
+                                                        "@type": "DigitalDocument",
+                                                        "name": "myfile.pdf"
+                                                    },
+                                                    "blob": "VGhlIHF1aWNrIGJyb3duIGZveCBqdW1wcyBvdmVyIHRoZSBsYXp5IGRvZw=="
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "The server cannot process the request, see the content for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "GeneralError",
+                                            "message": "component.error",
+                                            "properties": {
+                                                "foo": "bar"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "UnauthorizedError",
+                                            "message": "component.error"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The resource you tried to access does not exist, see the content for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NotFoundResponse"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "NotFoundError",
+                                            "message": "component.error",
+                                            "properties": {
+                                                "notFoundId": "1"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "InternalServerError",
+                                            "message": "component.error"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/blob-storage/{id}": {
+            "get": {
+                "operationId": "blobStorageGet",
+                "summary": "Get the metadata for an item from blob storage",
                 "tags": [
                     "Blob Storage"
                 ],
@@ -156,6 +383,15 @@
                             "type": "boolean"
                         },
                         "example": true
+                    },
+                    {
+                        "name": "accept",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "style": "simple"
                     }
                 ],
                 "security": [
@@ -169,11 +405,48 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/BlobStorageGetResponse"
+                                    "$ref": "#/components/schemas/BlobStorageEntry"
                                 },
                                 "examples": {
                                     "blobStorageGetResponseExample": {
                                         "value": {
+                                            "@context": [
+                                                "https://schema.twindev.org/blob-storage/",
+                                                "https://schema.org/"
+                                            ],
+                                            "type": "BlobStorageEntry",
+                                            "id": "blob-memory:c57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70",
+                                            "dateCreated": "2024-01-01T00:00:00Z",
+                                            "encodingFormat": "application/pdf",
+                                            "blobSize": 42,
+                                            "fileExtension": "pdf",
+                                            "metadata": {
+                                                "@context": "http://schema.org/",
+                                                "@type": "DigitalDocument",
+                                                "name": "myfile.pdf"
+                                            },
+                                            "blob": "VGhlIHF1aWNrIGJyb3duIGZveCBqdW1wcyBvdmVyIHRoZSBsYXp5IGRvZw=="
+                                        }
+                                    }
+                                }
+                            },
+                            "application/ld+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/BlobStorageEntry"
+                                },
+                                "examples": {
+                                    "blobStorageGetResponseJsonLdExample": {
+                                        "value": {
+                                            "@context": [
+                                                "https://schema.twindev.org/blob-storage/",
+                                                "https://schema.org/"
+                                            ],
+                                            "type": "BlobStorageEntry",
+                                            "id": "blob-memory:c57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70",
+                                            "dateCreated": "2024-01-01T00:00:00Z",
+                                            "encodingFormat": "application/pdf",
+                                            "blobSize": 42,
+                                            "fileExtension": "pdf",
                                             "metadata": {
                                                 "@context": "http://schema.org/",
                                                 "@type": "DigitalDocument",
@@ -268,7 +541,7 @@
             },
             "put": {
                 "operationId": "blobStorageUpdate",
-                "summary": "Update a blob metadata in storage",
+                "summary": "Update the metadata for an item in blob storage",
                 "tags": [
                     "Blob Storage"
                 ],
@@ -299,7 +572,7 @@
                                 "$ref": "#/components/schemas/BlobStorageUpdateRequest"
                             },
                             "examples": {
-                                "blobStorageUpdateExample": {
+                                "blobStorageUpdateRequestExample": {
                                     "value": {
                                         "metadata": {
                                             "@context": "http://schema.org/",
@@ -377,7 +650,7 @@
             },
             "delete": {
                 "operationId": "blobStorageRemove",
-                "summary": "Remove the blob from storage",
+                "summary": "Remove an item from blob storage",
                 "tags": [
                     "Blob Storage"
                 ],
@@ -484,10 +757,10 @@
                 }
             }
         },
-        "/blob/{id}/content": {
+        "/blob-storage/{id}/content": {
             "get": {
                 "operationId": "blobStorageGetContent",
-                "summary": "Get the blob from storage",
+                "summary": "Get the content for an item in blob storage",
                 "tags": [
                     "Blob Storage"
                 ],
@@ -511,7 +784,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "The content of the blob, which will be a specific mime type if one can be detected from the content (or set as mimeType in the metadata), or defaults to application/octet-stream.",
+                        "description": "The content of the blob, which will be a specific mime type if one can be detected from the content (or set as encodingFormat in the entry), or defaults to application/octet-stream.",
                         "content": {
                             "application/octet-stream": {
                                 "schema": {
@@ -630,11 +903,11 @@
                         "type": "string",
                         "description": "The data to store in base64 encoding."
                     },
-                    "mimeType": {
+                    "encodingFormat": {
                         "type": "string",
                         "description": "The mime type of the blob, will be detected if left undefined."
                     },
-                    "extension": {
+                    "fileExtension": {
                         "type": "string",
                         "description": "The extension of the blob, will be detected if left undefined."
                     },
@@ -652,16 +925,59 @@
                 "additionalProperties": false,
                 "description": "The body parameters."
             },
-            "BlobStorageGetResponse": {
+            "BlobStorageEntry": {
                 "type": "object",
                 "properties": {
-                    "mimeType": {
-                        "type": "string",
-                        "description": "The mime type of the blob."
+                    "@context": {
+                        "anyOf": [
+                            {
+                                "type": "string",
+                                "const": "https://schema.twindev.org/blob-storage/"
+                            },
+                            {
+                                "type": "array",
+                                "minItems": 1,
+                                "items": [
+                                    {
+                                        "type": "string",
+                                        "const": "https://schema.twindev.org/blob-storage/"
+                                    }
+                                ],
+                                "additionalItems": {
+                                    "type": "string"
+                                }
+                            }
+                        ],
+                        "description": "JSON-LD Context."
                     },
-                    "extension": {
+                    "type": {
                         "type": "string",
-                        "description": "The extension of the blob."
+                        "const": "BlobStorageEntry",
+                        "description": "JSON-LD Type."
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "The id for the blob."
+                    },
+                    "dateCreated": {
+                        "type": "string",
+                        "description": "The date/time when the entry was created."
+                    },
+                    "dateModified": {
+                        "type": "string",
+                        "description": "The date/time when the entry was modified."
+                    },
+                    "blobSize": {
+                        "type": "number",
+                        "description": "The size of the data in the blob."
+                    },
+                    "encodingFormat": {
+                        "type": "string",
+                        "description": "The mime type for the blob."
+                    },
+                    "fileExtension": {
+                        "type": "string",
+                        "description": "The extension."
                     },
                     "metadata": {
                         "$ref": "#/components/schemas/JsonLdNodeObject"
@@ -671,17 +987,74 @@
                         "description": "The blob in base64 format, if the includeContent flag was set in the request."
                     }
                 },
+                "required": [
+                    "@context",
+                    "type",
+                    "id",
+                    "dateCreated",
+                    "blobSize"
+                ],
                 "additionalProperties": false,
-                "description": "The body parameters."
+                "description": "Interface describing a blob storage entry."
+            },
+            "BlobStorageEntryList": {
+                "type": "object",
+                "properties": {
+                    "@context": {
+                        "anyOf": [
+                            {
+                                "type": "string",
+                                "const": "https://schema.twindev.org/blob-storage/"
+                            },
+                            {
+                                "type": "array",
+                                "minItems": 1,
+                                "items": [
+                                    {
+                                        "type": "string",
+                                        "const": "https://schema.twindev.org/blob-storage/"
+                                    }
+                                ],
+                                "additionalItems": {
+                                    "type": "string"
+                                }
+                            }
+                        ],
+                        "description": "JSON-LD Context."
+                    },
+                    "type": {
+                        "type": "string",
+                        "const": "BlobStorageEntryList",
+                        "description": "JSON-LD Type."
+                    },
+                    "entries": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/BlobStorageEntry"
+                        },
+                        "description": "The list of entries."
+                    },
+                    "cursor": {
+                        "type": "string",
+                        "description": "The cursor to get the next chunk of entries."
+                    }
+                },
+                "required": [
+                    "@context",
+                    "type",
+                    "entries"
+                ],
+                "additionalProperties": false,
+                "description": "Interface describing an blob storage entry list."
             },
             "BlobStorageUpdateRequest": {
                 "type": "object",
                 "properties": {
-                    "mimeType": {
+                    "encodingFormat": {
                         "type": "string",
                         "description": "The mime type of the blob, will be detected if left undefined."
                     },
-                    "extension": {
+                    "fileExtension": {
                         "type": "string",
                         "description": "The extension of the blob, will be detected if left undefined."
                     },
@@ -1811,6 +2184,21 @@
                     "name"
                 ],
                 "description": "The body which contains the error."
+            },
+            "SortDirection": {
+                "anyOf": [
+                    {
+                        "type": "string",
+                        "const": "asc",
+                        "description": "Ascending."
+                    },
+                    {
+                        "type": "string",
+                        "const": "desc",
+                        "description": "Descending."
+                    }
+                ],
+                "description": "The sort directions."
             },
             "Uint8Array": {
                 "type": "object",
