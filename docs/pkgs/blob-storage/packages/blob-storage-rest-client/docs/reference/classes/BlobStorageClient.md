@@ -48,7 +48,7 @@ Runtime name for the class.
 
 ### create()
 
-> **create**(`blob`, `mimeType`?, `extension`?, `metadata`?, `namespace`?): `Promise`\<`string`\>
+> **create**(`blob`, `encodingFormat`?, `fileExtension`?, `metadata`?, `namespace`?): `Promise`\<`string`\>
 
 Create the blob with some metadata.
 
@@ -58,11 +58,11 @@ Create the blob with some metadata.
 
 The data for the blob in base64 format.
 
-• **mimeType?**: `string`
+• **encodingFormat?**: `string`
 
 Mime type for the blob, will be detected if left undefined.
 
-• **extension?**: `string`
+• **fileExtension?**: `string`
 
 Extension for the blob, will be detected if left undefined.
 
@@ -88,7 +88,7 @@ The id of the stored blob in urn format.
 
 ### get()
 
-> **get**(`id`, `includeContent`): `Promise`\<`object`\>
+> **get**(`id`, `includeContent`): `Promise`\<`IBlobStorageEntry`\>
 
 Get the blob and metadata.
 
@@ -104,25 +104,9 @@ Include the content, or just get the metadata.
 
 #### Returns
 
-`Promise`\<`object`\>
+`Promise`\<`IBlobStorageEntry`\>
 
 The metadata and data for the blob if it can be found.
-
-##### blob?
-
-> `optional` **blob**: `string`
-
-##### mimeType?
-
-> `optional` **mimeType**: `string`
-
-##### extension?
-
-> `optional` **extension**: `string`
-
-##### metadata?
-
-> `optional` **metadata**: `IJsonLdNodeObject`
 
 #### Throws
 
@@ -136,7 +120,7 @@ Not found error if the blob cannot be found.
 
 ### update()
 
-> **update**(`id`, `mimeType`?, `extension`?, `metadata`?): `Promise`\<`void`\>
+> **update**(`id`, `encodingFormat`?, `fileExtension`?, `metadata`?): `Promise`\<`void`\>
 
 Update the blob with metadata.
 
@@ -146,11 +130,11 @@ Update the blob with metadata.
 
 The id of the blob metadata to update.
 
-• **mimeType?**: `string`
+• **encodingFormat?**: `string`
 
 Mime type for the blob, will be detected if left undefined.
 
-• **extension?**: `string`
+• **fileExtension?**: `string`
 
 Extension for the blob, will be detected if left undefined.
 
@@ -195,6 +179,47 @@ Nothing.
 #### Implementation of
 
 `IBlobStorageComponent.remove`
+
+***
+
+### query()
+
+> **query**(`conditions`?, `orderBy`?, `orderByDirection`?, `cursor`?, `pageSize`?): `Promise`\<`IBlobStorageEntryList`\>
+
+Query all the blob storage entries which match the conditions.
+
+#### Parameters
+
+• **conditions?**: `EntityCondition`\<`IBlobStorageEntry`\>
+
+The conditions to match for the entries.
+
+• **orderBy?**: `"dateCreated"` \| `"dateModified"`
+
+The order for the results, defaults to created.
+
+• **orderByDirection?**: `SortDirection`
+
+The direction for the order, defaults to descending.
+
+• **cursor?**: `string`
+
+The cursor to request the next page of entries.
+
+• **pageSize?**: `number`
+
+The suggested number of entries to return in each chunk, in some scenarios can return a different amount.
+
+#### Returns
+
+`Promise`\<`IBlobStorageEntryList`\>
+
+All the entries for the storage matching the conditions,
+and a cursor which can be used to request more entities.
+
+#### Implementation of
+
+`IBlobStorageComponent.query`
 
 ***
 

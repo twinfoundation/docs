@@ -10,9 +10,9 @@ Response to getting the list of entries from a query.
 
 The list of entries from the query.
 
-#### entities?
+#### entities
 
-> `optional` **entities**: `unknown`[]
+> **entities**: `unknown`[]
 
 The entities from the query.
 

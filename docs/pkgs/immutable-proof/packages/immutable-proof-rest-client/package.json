@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/immutable-proof-rest-client",
-	"version": "0.0.1-next.6",
+	"version": "0.0.1-next.7",
 	"description": "Immutable Proof contract implementation which can connect to REST endpoints",
 	"repository": {
 		"type": "git",
@@ -34,7 +34,7 @@
 		"@twin.org/core": "next",
 		"@twin.org/data-json-ld": "next",
 		"@twin.org/entity": "next",
-		"@twin.org/immutable-proof-models": "0.0.1-next.6",
+		"@twin.org/immutable-proof-models": "0.0.1-next.7",
 		"@twin.org/nameof": "next",
 		"@twin.org/web": "next"
 	},

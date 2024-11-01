@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/blob-storage-rest-client",
-	"version": "0.0.1-next.7",
+	"version": "0.0.1-next.15",
 	"description": "Blob storage implementation which can connect to REST endpoints",
 	"repository": {
 		"type": "git",
@@ -31,9 +31,10 @@
 	"dependencies": {
 		"@twin.org/api-core": "next",
 		"@twin.org/api-models": "next",
-		"@twin.org/blob-storage-models": "0.0.1-next.7",
+		"@twin.org/blob-storage-models": "0.0.1-next.15",
 		"@twin.org/core": "next",
 		"@twin.org/data-json-ld": "next",
+		"@twin.org/entity": "next",
 		"@twin.org/nameof": "next",
 		"@twin.org/web": "next"
 	},

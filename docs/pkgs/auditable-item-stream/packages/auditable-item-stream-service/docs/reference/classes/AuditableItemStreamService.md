@@ -191,6 +191,38 @@ Nothing.
 
 ***
 
+### remove()
+
+> **remove**(`id`, `userIdentity`?, `nodeIdentity`?): `Promise`\<`void`\>
+
+Delete the stream.
+
+#### Parameters
+
+• **id**: `string`
+
+The id of the stream to remove.
+
+• **userIdentity?**: `string`
+
+The identity to create the auditable item stream operation with.
+
+• **nodeIdentity?**: `string`
+
+The node identity to use for vault operations.
+
+#### Returns
+
+`Promise`\<`void`\>
+
+Nothing.
+
+#### Implementation of
+
+`IAuditableItemStreamComponent.remove`
+
+***
+
 ### query()
 
 > **query**(`conditions`?, `orderBy`?, `orderByDirection`?, `properties`?, `cursor`?, `pageSize`?): `Promise`\<`IAuditableItemStreamList`\>
@@ -393,11 +425,11 @@ Delete from the stream.
 
 • **id**: `string`
 
-The id of the stream to update.
+The id of the stream to remove from.
 
 • **entryId**: `string`
 
-The id of the entry to delete.
+The id of the entry to remove.
 
 • **userIdentity?**: `string`
 

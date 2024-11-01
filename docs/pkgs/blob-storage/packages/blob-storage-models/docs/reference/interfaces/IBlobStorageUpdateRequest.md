@@ -24,15 +24,15 @@ The id of the blob to get in urn format.
 
 The body parameters.
 
-#### mimeType?
+#### encodingFormat?
 
-> `optional` **mimeType**: `string`
+> `optional` **encodingFormat**: `string`
 
 The mime type of the blob, will be detected if left undefined.
 
-#### extension?
+#### fileExtension?
 
-> `optional` **extension**: `string`
+> `optional` **fileExtension**: `string`
 
 The extension of the blob, will be detected if left undefined.
 

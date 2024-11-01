@@ -38,8 +38,8 @@ The private key in base64 format.
 
 ***
 
-### publicKey
+### publicKey?
 
-> **publicKey**: `string`
+> `optional` **publicKey**: `string`
 
 The public key in base64 format.

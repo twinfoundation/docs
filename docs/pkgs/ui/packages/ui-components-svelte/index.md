@@ -2,13 +2,15 @@
 
 This package contains the svelte UI components.
 
-## Building
+## Installation
 
-To create a production version of you the components:
-
-```bash
-npm run dist
+```shell
+npm install @twin.org/ui-components.svelte
 ```
+
+## Examples
+
+Usage of the APIs is shown in the examples [docs/examples.md](docs/examples.md)
 
 ## Changelog
 

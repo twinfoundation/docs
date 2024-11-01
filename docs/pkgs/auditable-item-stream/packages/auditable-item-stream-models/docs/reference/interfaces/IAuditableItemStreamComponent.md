@@ -125,6 +125,34 @@ NotFoundError if the stream is not found.
 
 ***
 
+### remove()
+
+> **remove**(`id`, `userIdentity`?, `nodeIdentity`?): `Promise`\<`void`\>
+
+Delete the stream.
+
+#### Parameters
+
+• **id**: `string`
+
+The id of the stream to remove.
+
+• **userIdentity?**: `string`
+
+The identity to create the auditable item stream operation with.
+
+• **nodeIdentity?**: `string`
+
+The node identity to use for vault operations.
+
+#### Returns
+
+`Promise`\<`void`\>
+
+Nothing.
+
+***
+
 ### query()
 
 > **query**(`conditions`?, `orderBy`?, `orderByDirection`?, `properties`?, `cursor`?, `pageSize`?): `Promise`\<[`IAuditableItemStreamList`](IAuditableItemStreamList.md)\>
@@ -299,21 +327,21 @@ Nothing.
 
 ### removeEntry()
 
-> **removeEntry**(`id`, `entryId`, `identity`?, `nodeIdentity`?): `Promise`\<`void`\>
+> **removeEntry**(`id`, `entryId`, `userIdentity`?, `nodeIdentity`?): `Promise`\<`void`\>
 
-Delete from the stream.
+Remove from the stream.
 
 #### Parameters
 
 • **id**: `string`
 
-The id of the stream to update.
+The id of the stream to remove from.
 
 • **entryId**: `string`
 
 The id of the entry to delete.
 
-• **identity?**: `string`
+• **userIdentity?**: `string`
 
 The identity to create the auditable item stream operation with.
 

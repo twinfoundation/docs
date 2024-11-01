@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/entity-storage-connector-dynamodb",
-	"version": "0.0.1-next.7",
+	"version": "0.0.1-next.12",
 	"description": "Entity Storage connector implementation using DynamoDb storage",
 	"repository": {
 		"type": "git",
@@ -32,14 +32,14 @@
 		"@twin.org/core": "next",
 		"@twin.org/entity": "next",
 		"@twin.org/nameof": "next",
-		"@twin.org/entity-storage-models": "0.0.1-next.7",
+		"@twin.org/entity-storage-models": "0.0.1-next.12",
 		"@twin.org/logging-models": "next",
 		"@aws-sdk/client-dynamodb": "3.656",
 		"@aws-sdk/lib-dynamodb": "3.656",
 		"@aws-sdk/util-dynamodb": "3.656"
 	},
 	"devDependencies": {
-		"@twin.org/entity-storage-connector-memory": "0.0.1-next.7",
+		"@twin.org/entity-storage-connector-memory": "0.0.1-next.12",
 		"@twin.org/logging-connector-entity-storage": "next",
 		"@twin.org/nameof-transformer": "next",
 		"@vitest/coverage-v8": "2.1.1",

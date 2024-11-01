@@ -94,7 +94,7 @@ The schema for the entities.
 
 ### get()
 
-> **get**(`id`, `secondaryIndex`?): `Promise`\<`undefined` \| `T`\>
+> **get**(`id`, `secondaryIndex`?, `conditions`?): `Promise`\<`undefined` \| `T`\>
 
 Get an entity.
 
@@ -107,6 +107,10 @@ The id of the entity to get.
 • **secondaryIndex?**: keyof `T`
 
 Get the item using a secondary index.
+
+• **conditions?**: `object`[]
+
+The optional conditions to match for the entities.
 
 #### Returns
 

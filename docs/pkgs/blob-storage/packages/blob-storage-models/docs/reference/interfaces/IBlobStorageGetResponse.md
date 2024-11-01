@@ -4,32 +4,20 @@ Response to get an entry from blob storage.
 
 ## Properties
 
+### headers?
+
+> `optional` **headers**: `object`
+
+The headers which can be used to determine the response data type.
+
+#### content-type
+
+> **content-type**: `"application/json"` \| `"application/ld+json"`
+
+***
+
 ### body
 
-> **body**: `object`
+> **body**: [`IBlobStorageEntry`](IBlobStorageEntry.md)
 
 The body parameters.
-
-#### mimeType?
-
-> `optional` **mimeType**: `string`
-
-The mime type of the blob.
-
-#### extension?
-
-> `optional` **extension**: `string`
-
-The extension of the blob.
-
-#### metadata?
-
-> `optional` **metadata**: `IJsonLdNodeObject`
-
-Custom metadata to associate with the blob as JSON-LD.
-
-#### blob?
-
-> `optional` **blob**: `string`
-
-The blob in base64 format, if the includeContent flag was set in the request.

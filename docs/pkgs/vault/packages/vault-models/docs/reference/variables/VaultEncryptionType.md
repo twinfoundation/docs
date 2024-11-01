@@ -10,4 +10,4 @@ The names of the vault encryption types.
 
 > `readonly` **ChaCha20Poly1305**: `0` = `0`
 
-The ChaCha20Poly1305 encryption type.
+The ChaCha20Poly1305. (symmetric)

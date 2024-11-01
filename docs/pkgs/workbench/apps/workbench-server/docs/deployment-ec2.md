@@ -184,5 +184,8 @@ npm run dist
 # Update any env vars if necessary
 # nano .env
 
+# To perform a test run before launching the service permanently
+# npm run start
+
 sudo systemctl start workbench.service
 ```

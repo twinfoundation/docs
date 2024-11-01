@@ -128,7 +128,7 @@ Nothing.
 
 ### query()
 
-> **query**(`conditions`?, `sortProperties`?, `properties`?, `cursor`?, `pageSize`?): `Promise`\<`object`\>
+> **query**(`conditions`?, `orderBy`?, `orderByDirection`?, `properties`?, `cursor`?, `pageSize`?): `Promise`\<`object`\>
 
 Query all the entities which match the conditions.
 
@@ -138,9 +138,13 @@ Query all the entities which match the conditions.
 
 The conditions to match for the entities.
 
-• **sortProperties?**: `object`[]
+• **orderBy?**: keyof `T`
 
-The optional sort order.
+The order for the results.
+
+• **orderByDirection?**: `SortDirection`
+
+The direction for the order, defaults to ascending.
 
 • **properties?**: keyof `T`[]
 

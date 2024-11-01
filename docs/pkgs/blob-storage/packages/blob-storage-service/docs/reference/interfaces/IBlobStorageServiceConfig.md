@@ -24,3 +24,19 @@ blob-storage.
 
 The namespace of the default storage connector to use.
 Defaults to the first entry in the factory if not provided.
+
+***
+
+### includeNodeIdentity?
+
+> `optional` **includeNodeIdentity**: `boolean`
+
+Include the node identity when performing storage operations, defaults to true.
+
+***
+
+### includeUserIdentity?
+
+> `optional` **includeUserIdentity**: `boolean`
+
+Include the user identity when performing storage operations, defaults to true.

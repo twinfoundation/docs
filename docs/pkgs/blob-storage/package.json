@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/blob-storage",
-	"version": "0.0.1-next.7",
+	"version": "0.0.1-next.15",
 	"description": "Blob Storage",
 	"repository": {
 		"type": "git",
@@ -41,10 +41,10 @@
 	"workspaces": [
 		"packages/blob-storage-models",
 		"packages/blob-storage-connector-memory",
-		"packages/blob-storage-connector-file",
-		"packages/blob-storage-connector-ipfs",
 		"packages/blob-storage-service",
 		"packages/blob-storage-rest-client",
+		"packages/blob-storage-connector-file",
+		"packages/blob-storage-connector-ipfs",
 		"packages/blob-storage-connector-aws-s3",
 		"packages/blob-storage-connector-azure",
 		"packages/blob-storage-connector-gcp"

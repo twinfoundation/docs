@@ -15,6 +15,7 @@
 - [IAuditableItemStreamCreateEntryRequest](interfaces/IAuditableItemStreamCreateEntryRequest.md)
 - [IAuditableItemStreamCreateRequest](interfaces/IAuditableItemStreamCreateRequest.md)
 - [IAuditableItemStreamDeleteEntryRequest](interfaces/IAuditableItemStreamDeleteEntryRequest.md)
+- [IAuditableItemStreamDeleteRequest](interfaces/IAuditableItemStreamDeleteRequest.md)
 - [IAuditableItemStreamGetEntryObjectRequest](interfaces/IAuditableItemStreamGetEntryObjectRequest.md)
 - [IAuditableItemStreamGetEntryObjectResponse](interfaces/IAuditableItemStreamGetEntryObjectResponse.md)
 - [IAuditableItemStreamGetEntryRequest](interfaces/IAuditableItemStreamGetEntryRequest.md)

@@ -50,20 +50,22 @@ This is the overview of the packages.
 
 - [@twin.org/entity-storage-models](pkgs/entity-storage/packages/entity-storage-models/index.md) - Models which define the structure of the entity storage contracts and connectors
 - [@twin.org/entity-storage-connector-memory](pkgs/entity-storage/packages/entity-storage-connector-memory/index.md) - Entity Storage connector implementation using in-memory storage
+- [@twin.org/entity-storage-service](pkgs/entity-storage/packages/entity-storage-service/index.md) - Entity Storage contract implementation and REST endpoint definitions
+- [@twin.org/entity-storage-rest-client](pkgs/entity-storage/packages/entity-storage-rest-client/index.md) - Entity Storage contract implementation which can connect to REST endpoints
 - [@twin.org/entity-storage-connector-file](pkgs/entity-storage/packages/entity-storage-connector-file/index.md) - Entity Storage connector implementation using file storage
 - [@twin.org/entity-storage-connector-scylladb](pkgs/entity-storage/packages/entity-storage-connector-scylladb/index.md) - Entity Storage connector implementation using ScyllaDB
 - [@twin.org/entity-storage-connector-dynamodb](pkgs/entity-storage/packages/entity-storage-connector-dynamodb/index.md) - Entity Storage connector implementation using DynamoDb storage
-- [@twin.org/entity-storage-service](pkgs/entity-storage/packages/entity-storage-service/index.md) - Entity Storage contract implementation and REST endpoint definitions
-- [@twin.org/entity-storage-rest-client](pkgs/entity-storage/packages/entity-storage-rest-client/index.md) - Entity Storage contract implementation which can connect to REST endpoints
+- [@twin.org/entity-storage-connector-gcp-firestore](pkgs/entity-storage/packages/entity-storage-connector-gcp-firestore/index.md) - Entity Storage connector implementation using GCP Firestore storage
+- [@twin.org/entity-storage-connector-cosmosdb](pkgs/entity-storage/packages/entity-storage-connector-cosmosdb/index.md) - Entity Storage connector implementation using CosmosDB storage
 
 ## Blob Storage
 
 - [@twin.org/blob-storage-models](pkgs/blob-storage/packages/blob-storage-models/index.md) - Models which define the structure of the blob storage contracts and connectors
 - [@twin.org/blob-storage-connector-memory](pkgs/blob-storage/packages/blob-storage-connector-memory/index.md) - Blob Storage connector implementation using in-memory storage
-- [@twin.org/blob-storage-connector-file](pkgs/blob-storage/packages/blob-storage-connector-file/index.md) - Blob Storage connector implementation using file storage
-- [@twin.org/blob-storage-connector-ipfs](pkgs/blob-storage/packages/blob-storage-connector-ipfs/index.md) - Blob Storage connector implementation using IPFS
 - [@twin.org/blob-storage-service](pkgs/blob-storage/packages/blob-storage-service/index.md) - Blob storage contract implementation and REST endpoint definitions
 - [@twin.org/blob-storage-rest-client](pkgs/blob-storage/packages/blob-storage-rest-client/index.md) - Blob storage implementation which can connect to REST endpoints
+- [@twin.org/blob-storage-connector-file](pkgs/blob-storage/packages/blob-storage-connector-file/index.md) - Blob Storage connector implementation using file storage
+- [@twin.org/blob-storage-connector-ipfs](pkgs/blob-storage/packages/blob-storage-connector-ipfs/index.md) - Blob Storage connector implementation using IPFS
 - [@twin.org/blob-storage-connector-aws-s3](pkgs/blob-storage/packages/blob-storage-connector-aws-s3/index.md) - Blob Storage connector implementation using AWS S3
 - [@twin.org/blob-storage-connector-azure](pkgs/blob-storage/packages/blob-storage-connector-azure/index.md) - Blob Storage connector implementation using Azure
 - [@twin.org/blob-storage-connector-gcp](pkgs/blob-storage/packages/blob-storage-connector-gcp/index.md) - Blob Storage connector implementation using Google Cloud Storage
@@ -87,6 +89,7 @@ This is the overview of the packages.
 
 - [@twin.org/vault-models](pkgs/vault/packages/vault-models/index.md) - Models which define the structure of the vault contracts and connectors
 - [@twin.org/vault-connector-entity-storage](pkgs/vault/packages/vault-connector-entity-storage/index.md) - Vault connector implementation using entity storage
+- [@twin.org/vault-connector-hashicorp](pkgs/vault/packages/vault-connector-hashicorp/index.md) - Vault connector implementation using Hashicorp storage
 
 ## Distributed Ledger
 
@@ -149,4 +152,6 @@ This is the overview of the packages.
 
 ## UI
 
-- [@twin.org/ui-components-svelte](pkgs/ui/packages/ui-components-svelte/index.md) - UI component for svelte
+- [@twin.org/ui-tailwind](pkgs/ui/packages/ui-tailwind/index.md) - UI package for tailwind
+- [@twin.org/ui-components-react](pkgs/ui/packages/ui-components-react/index.md) - UI components for react
+- [@twin.org/ui-components-svelte](pkgs/ui/packages/ui-components-svelte/index.md) - UI components for svelte
