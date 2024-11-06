@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/workbench-ui",
-	"version": "0.0.1-next.1",
+	"version": "0.0.1-next.3",
 	"description": "UI to demonstrate the APIs",
 	"private": true,
 	"scripts": {
@@ -39,6 +39,7 @@
 		"@twin.org/qr": "next",
 		"@twin.org/standards-w3c-did": "next",
 		"@twin.org/ui-components-svelte": "next",
+		"@twin.org/web": "next",
 		"schema-dts": "1.1.2"
 	},
 	"devDependencies": {

@@ -85,6 +85,11 @@ This is the overview of the packages.
 - [@twin.org/telemetry-service](pkgs/telemetry/packages/telemetry-service/index.md) - Telemetry contract implementation and REST endpoint definitions
 - [@twin.org/telemetry-rest-client](pkgs/telemetry/packages/telemetry-rest-client/index.md) - Telemetry contract implementation which can connect to REST endpoints
 
+## Background Tasks
+
+- [@twin.org/background-task-models](pkgs/background-task/packages/background-task-models/index.md) - Models which define the structure of the background task contracts and connectors
+- [@twin.org/background-task-connector-entity-storage](pkgs/background-task/packages/background-task-connector-entity-storage/index.md) - Background task connector implementation using entity storage
+
 ## Vault
 
 - [@twin.org/vault-models](pkgs/vault/packages/vault-models/index.md) - Models which define the structure of the vault contracts and connectors
