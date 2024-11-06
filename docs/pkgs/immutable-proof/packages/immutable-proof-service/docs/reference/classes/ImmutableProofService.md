@@ -32,13 +32,17 @@ The entity storage for proofs, defaults to "immutable-proof".
 
 The immutable storage, defaults to "immutable-storage".
 
-• **options.config?**: [`IImmutableProofServiceConfig`](../interfaces/IImmutableProofServiceConfig.md)
-
-The configuration for the connector.
-
 • **options.identityConnectorType?**: `string`
 
 The identity connector type, defaults to "identity".
+
+• **options.backgroundTaskConnectorType?**: `string`
+
+The background task connector type, defaults to "background-task".
+
+• **options.config?**: [`IImmutableProofServiceConfig`](../interfaces/IImmutableProofServiceConfig.md)
+
+The configuration for the connector.
 
 #### Returns
 
