@@ -257,6 +257,28 @@ jobs:
           cp import-packages/vault/package.json docs/pkgs/vault/package.json
           rm -r import-packages/vault
 
+      ########### background-task
+      - name: Checkout background-task
+        uses: actions/checkout@v4
+        with:
+          repository: twinfoundation/background-task
+          path: import-packages/background-task
+          ref: ${{ env.gha-branch }}
+
+      - name: Copy background-task to Docs
+        run: |
+          jq -r '.workspaces[]' import-packages/background-task/package.json | while read pkg; do
+            rm -rf docs/pkgs/background-task/$pkg
+            mkdir -p docs/pkgs/background-task/$pkg
+            mkdir -p docs/pkgs/background-task/$pkg/docs
+            cp -r import-packages/background-task/$pkg/docs/* docs/pkgs/background-task/$pkg/docs
+            cp -r import-packages/background-task/$pkg/README.md docs/pkgs/background-task/$pkg/index.md
+            cp -r import-packages/background-task/$pkg/package.json docs/pkgs/background-task/$pkg/package.json
+          done
+
+          cp import-packages/background-task/package.json docs/pkgs/background-task/package.json
+          rm -r import-packages/background-task
+
       ########### dlt
       - name: Checkout dlt
         uses: actions/checkout@v4

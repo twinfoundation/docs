@@ -30,6 +30,9 @@
 		"name": "telemetry"
 	},
 	{
+		"name": "background-task"
+	},
+	{
 		"name": "vault"
 	},
 	{
