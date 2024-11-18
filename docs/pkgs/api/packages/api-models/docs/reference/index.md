@@ -32,8 +32,8 @@
 - [INoContentResponse](interfaces/INoContentResponse.md)
 - [IOkResponse](interfaces/IOkResponse.md)
 - [IBaseRoute](interfaces/IBaseRoute.md)
+- [IBaseRouteEntryPoint](interfaces/IBaseRouteEntryPoint.md)
 - [IRestRoute](interfaces/IRestRoute.md)
-- [IRestRouteEntryPoint](interfaces/IRestRouteEntryPoint.md)
 - [IRestRouteExample](interfaces/IRestRouteExample.md)
 - [IRestRouteRequestExample](interfaces/IRestRouteRequestExample.md)
 - [IRestRouteResponseAttachmentOptions](interfaces/IRestRouteResponseAttachmentOptions.md)
@@ -41,8 +41,10 @@
 - [IRestRouteResponseOptions](interfaces/IRestRouteResponseOptions.md)
 - [ISocketRoute](interfaces/ISocketRoute.md)
 - [ITag](interfaces/ITag.md)
-- [IHttpRestRouteProcessor](interfaces/IHttpRestRouteProcessor.md)
+- [IBaseRouteProcessor](interfaces/IBaseRouteProcessor.md)
 - [IMimeTypeProcessor](interfaces/IMimeTypeProcessor.md)
+- [IRestRouteProcessor](interfaces/IRestRouteProcessor.md)
+- [ISocketRouteProcessor](interfaces/ISocketRouteProcessor.md)
 - [IWebServer](interfaces/IWebServer.md)
 - [IWebServerOptions](interfaces/IWebServerOptions.md)
 - [IHealthInfo](interfaces/IHealthInfo.md)
@@ -51,8 +53,13 @@
 
 ## Type Aliases
 
+- [IRestRouteEntryPoint](type-aliases/IRestRouteEntryPoint.md)
+- [ISocketRouteEntryPoint](type-aliases/ISocketRouteEntryPoint.md)
 - [HealthStatus](type-aliases/HealthStatus.md)
 
 ## Variables
 
+- [MimeTypeProcessorFactory](variables/MimeTypeProcessorFactory.md)
+- [RestRouteProcessorFactory](variables/RestRouteProcessorFactory.md)
+- [SocketRouteProcessorFactory](variables/SocketRouteProcessorFactory.md)
 - [HealthStatus](variables/HealthStatus.md)

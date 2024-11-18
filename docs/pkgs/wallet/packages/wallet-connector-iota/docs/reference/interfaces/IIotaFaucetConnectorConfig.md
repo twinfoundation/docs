@@ -2,15 +2,11 @@
 
 Configuration for the IOTA Faucet Connector.
 
+## Extends
+
+- `IIotaConfig`
+
 ## Properties
-
-### clientOptions
-
-> **clientOptions**: `IClientOptions`
-
-The configuration for the client.
-
-***
 
 ### endpoint
 

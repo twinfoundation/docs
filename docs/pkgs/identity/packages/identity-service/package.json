@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/identity-service",
-	"version": "0.0.1-next.17",
+	"version": "0.0.1-next.18",
 	"description": "Identity contract implementation and REST endpoint definitions",
 	"repository": {
 		"type": "git",
@@ -38,8 +38,8 @@
 		"@twin.org/entity": "next",
 		"@twin.org/entity-storage-models": "next",
 		"@twin.org/entity-storage-connector-memory": "next",
-		"@twin.org/identity-models": "0.0.1-next.17",
-		"@twin.org/identity-connector-entity-storage": "0.0.1-next.17",
+		"@twin.org/identity-models": "0.0.1-next.18",
+		"@twin.org/identity-connector-entity-storage": "0.0.1-next.18",
 		"@twin.org/standards-w3c-did": "next",
 		"@twin.org/vault-models": "next",
 		"@twin.org/vault-connector-entity-storage": "next",

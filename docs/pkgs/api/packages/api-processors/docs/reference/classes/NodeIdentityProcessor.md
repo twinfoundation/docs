@@ -4,7 +4,7 @@ Adds a node identity to the request identity.
 
 ## Implements
 
-- `IHttpRestRouteProcessor`
+- `IBaseRouteProcessor`
 
 ## Constructors
 
@@ -18,6 +18,14 @@ Adds a node identity to the request identity.
 
 ## Properties
 
+### NAMESPACE
+
+> `readonly` `static` **NAMESPACE**: `string` = `"node-identity"`
+
+The namespace supported by the processor.
+
+***
+
 ### CLASS\_NAME
 
 > `readonly` **CLASS\_NAME**: `string`
@@ -26,7 +34,7 @@ Runtime name for the class.
 
 #### Implementation of
 
-`IHttpRestRouteProcessor.CLASS_NAME`
+`IBaseRouteProcessor.CLASS_NAME`
 
 ## Methods
 
@@ -54,7 +62,7 @@ Nothing.
 
 #### Implementation of
 
-`IHttpRestRouteProcessor.start`
+`IBaseRouteProcessor.start`
 
 ***
 
@@ -74,7 +82,7 @@ The incoming request.
 
 The outgoing response.
 
-• **route**: `undefined` \| `IRestRoute`\<`any`, `any`\>
+• **route**: `undefined` \| `IBaseRoute`
 
 The route to process.
 
@@ -92,4 +100,4 @@ The state handed through the processors.
 
 #### Implementation of
 
-`IHttpRestRouteProcessor.pre`
+`IBaseRouteProcessor.pre`

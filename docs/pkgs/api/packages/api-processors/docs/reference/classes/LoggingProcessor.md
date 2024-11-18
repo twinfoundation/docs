@@ -4,7 +4,7 @@ Process the REST request and log its information.
 
 ## Implements
 
-- `IHttpRestRouteProcessor`
+- `IBaseRouteProcessor`
 
 ## Constructors
 
@@ -24,7 +24,7 @@ Options for the processor.
 
 The type for the logging connector, defaults to "logging".
 
-• **options.config?**: [`IRequestLoggingProcessorConfig`](../interfaces/IRequestLoggingProcessorConfig.md)
+• **options.config?**: [`ILoggingProcessorConfig`](../interfaces/ILoggingProcessorConfig.md)
 
 The configuration for the processor.
 
@@ -36,6 +36,14 @@ Promise that resolves when the processor is initialized.
 
 ## Properties
 
+### NAMESPACE
+
+> `readonly` `static` **NAMESPACE**: `string` = `"logging"`
+
+The namespace supported by the processor.
+
+***
+
 ### CLASS\_NAME
 
 > `readonly` **CLASS\_NAME**: `string`
@@ -44,7 +52,7 @@ Runtime name for the class.
 
 #### Implementation of
 
-`IHttpRestRouteProcessor.CLASS_NAME`
+`IBaseRouteProcessor.CLASS_NAME`
 
 ## Methods
 
@@ -64,7 +72,7 @@ The incoming request.
 
 The outgoing response.
 
-• **route**: `undefined` \| `IRestRoute`\<`any`, `any`\>
+• **route**: `undefined` \| `IBaseRoute`
 
 The route to process.
 
@@ -82,7 +90,7 @@ The state handed through the processors.
 
 #### Implementation of
 
-`IHttpRestRouteProcessor.pre`
+`IBaseRouteProcessor.pre`
 
 ***
 
@@ -102,7 +110,7 @@ The incoming request.
 
 The outgoing response.
 
-• **route**: `undefined` \| `IRestRoute`\<`any`, `any`\>
+• **route**: `undefined` \| `IBaseRoute`
 
 The route to process.
 
@@ -120,4 +128,4 @@ The state handed through the processors.
 
 #### Implementation of
 
-`IHttpRestRouteProcessor.post`
+`IBaseRouteProcessor.post`

@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/wallet-connector-entity-storage",
-	"version": "0.0.1-next.5",
+	"version": "0.0.1-next.6",
 	"description": "Wallet connector implementation using entity storage",
 	"repository": {
 		"type": "git",
@@ -35,7 +35,7 @@
 		"@twin.org/entity-storage-models": "next",
 		"@twin.org/nameof": "next",
 		"@twin.org/vault-models": "next",
-		"@twin.org/wallet-models": "0.0.1-next.5"
+		"@twin.org/wallet-models": "0.0.1-next.6"
 	},
 	"devDependencies": {
 		"@twin.org/nameof-transformer": "next",
