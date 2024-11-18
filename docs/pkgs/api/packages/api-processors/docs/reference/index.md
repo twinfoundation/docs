@@ -2,7 +2,8 @@
 
 ## Classes
 
-- [RouteProcessor](classes/RouteProcessor.md)
+- [RestRouteProcessor](classes/RestRouteProcessor.md)
+- [SocketRouteProcessor](classes/SocketRouteProcessor.md)
 - [NodeIdentityProcessor](classes/NodeIdentityProcessor.md)
 - [StaticUserIdentityProcessor](classes/StaticUserIdentityProcessor.md)
 - [LoggingProcessor](classes/LoggingProcessor.md)
@@ -10,7 +11,6 @@
 
 ## Interfaces
 
-- [IRequestLoggingProcessorConfig](interfaces/IRequestLoggingProcessorConfig.md)
-- [IResponseLoggingProcessorConfig](interfaces/IResponseLoggingProcessorConfig.md)
+- [ILoggingProcessorConfig](interfaces/ILoggingProcessorConfig.md)
 - [IRouteProcessorConfig](interfaces/IRouteProcessorConfig.md)
 - [IStaticUserIdentityProcessorConfig](interfaces/IStaticUserIdentityProcessorConfig.md)

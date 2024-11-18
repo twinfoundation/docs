@@ -30,6 +30,14 @@ The type of the telemetry connector to use, defaults to "telemetry".
 
 ## Properties
 
+### NAMESPACE
+
+> `readonly` `static` **NAMESPACE**: `string` = `"telemetry"`
+
+The namespace supported by the telemetry service.
+
+***
+
 ### CLASS\_NAME
 
 > `readonly` **CLASS\_NAME**: `string`

@@ -30,6 +30,14 @@ The type of the logging connector to use, defaults to "logging".
 
 ## Properties
 
+### NAMESPACE
+
+> `readonly` `static` **NAMESPACE**: `string` = `"logging"`
+
+The namespace for the logging component.
+
+***
+
 ### CLASS\_NAME
 
 > `readonly` **CLASS\_NAME**: `string`

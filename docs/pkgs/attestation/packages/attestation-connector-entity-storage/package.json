@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/attestation-connector-entity-storage",
-	"version": "0.0.1-next.8",
+	"version": "0.0.1-next.9",
 	"description": "Attestation connector implementation using entity storage",
 	"repository": {
 		"type": "git",
@@ -29,7 +29,7 @@
 		"prepare": "ts-patch install -s"
 	},
 	"dependencies": {
-		"@twin.org/attestation-models": "0.0.1-next.8",
+		"@twin.org/attestation-models": "0.0.1-next.9",
 		"@twin.org/core": "next",
 		"@twin.org/data-json-ld": "next",
 		"@twin.org/data-schema-org": "next",

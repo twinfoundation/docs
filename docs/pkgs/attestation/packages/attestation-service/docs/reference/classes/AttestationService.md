@@ -10,17 +10,17 @@ Service for performing attestation operations to a connector.
 
 ### new AttestationService()
 
-> **new AttestationService**(`options`): [`AttestationService`](AttestationService.md)
+> **new AttestationService**(`options`?): [`AttestationService`](AttestationService.md)
 
 Create a new instance of AttestationService.
 
 #### Parameters
 
-• **options**
+• **options?**
 
 The options for the service.
 
-• **options.walletConnectorType**: `string`
+• **options.walletConnectorType?**: `string`
 
 The wallet connector type for generating addresses, defaults to "wallet".
 

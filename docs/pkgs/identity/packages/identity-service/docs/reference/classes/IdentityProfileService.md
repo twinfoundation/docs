@@ -36,6 +36,14 @@ The storage connector for the profiles, default to "identity-profile".
 
 ## Properties
 
+### NAMESPACE
+
+> `readonly` `static` **NAMESPACE**: `string` = `"identity-profile"`
+
+The namespace supported by the identity profile service.
+
+***
+
 ### CLASS\_NAME
 
 > `readonly` **CLASS\_NAME**: `string`
