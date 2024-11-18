@@ -1,6 +1,6 @@
 import { themes as prismThemes } from "prism-react-renderer";
 import type { Config } from "@docusaurus/types";
-import type * as Preset from "@docusaurus/preset-classic";
+import * as Preset from "@docusaurus/preset-classic";
 
 const config: Config = {
 	title: "TWIN",
@@ -21,6 +21,31 @@ const config: Config = {
 	},
 
 	plugins: ["./plugins/package-index.ts"],
+
+	headTags: [
+		{
+			tagName: "link",
+			attributes: {
+				rel: "preconnect",
+				href: "https://fonts.googleapis.com"
+			}
+		},
+		{
+			tagName: "link",
+			attributes: {
+				rel: "preconnect",
+				href: "https://fonts.gstatic.com",
+				crossOrigin: "true"
+			}
+		},
+		{
+			tagName: "link",
+			attributes: {
+				rel: "stylesheet",
+				href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+			}
+		}
+	],
 
 	presets: [
 		[
