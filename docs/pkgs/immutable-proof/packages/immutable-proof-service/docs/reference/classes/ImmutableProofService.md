@@ -132,7 +132,7 @@ NotFoundError if the proof is not found.
 
 ### verify()
 
-> **verify**(`id`, `proofObject`): `Promise`\<`IImmutableProofVerification`\>
+> **verify**(`id`): `Promise`\<`IImmutableProofVerification`\>
 
 Verify an authentication proof.
 
@@ -141,10 +141,6 @@ Verify an authentication proof.
 • **id**: `string`
 
 The id of the proof to verify.
-
-• **proofObject**: `IJsonLdNodeObject`
-
-The object to verify as JSON-LD.
 
 #### Returns
 

@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/identity-models",
-	"version": "0.0.1-next.18",
+	"version": "0.0.1-next.19",
 	"description": "Models which define the structure of the contracts and connectors",
 	"repository": {
 		"type": "git",
@@ -38,17 +38,17 @@
 	},
 	"devDependencies": {
 		"@twin.org/nameof-transformer": "next",
-		"@vitest/coverage-v8": "2.1.4",
+		"@twin.org/nameof-vitest-plugin": "next",
+		"@vitest/coverage-v8": "2.1.5",
 		"copyfiles": "2.4.1",
 		"rimraf": "6.0.1",
-		"rollup": "4.24.4",
-		"rollup-plugin-typescript2": "0.36.0",
+		"rollup": "4.27.3",
 		"ts-patch": "3.2.1",
-		"tsc-watch": "6.2.0",
+		"tsc-watch": "6.2.1",
 		"typedoc": "0.26.11",
 		"typedoc-plugin-markdown": "4.2.10",
 		"typescript": "5.6.3",
-		"vitest": "2.1.4"
+		"vitest": "2.1.5"
 	},
 	"main": "./dist/cjs/index.cjs",
 	"module": "./dist/esm/index.mjs",
@@ -59,7 +59,7 @@
 			"import": "./dist/esm/index.mjs",
 			"types": "./dist/types/index.d.ts"
 		},
-		"./locales": "./locales"
+		"./locales/*.json": "./locales/*.json"
 	},
 	"files": [
 		"dist/cjs",

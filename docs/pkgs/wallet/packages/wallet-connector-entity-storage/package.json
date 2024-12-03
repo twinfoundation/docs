@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/wallet-connector-entity-storage",
-	"version": "0.0.1-next.6",
+	"version": "0.0.1-next.7",
 	"description": "Wallet connector implementation using entity storage",
 	"repository": {
 		"type": "git",
@@ -35,25 +35,25 @@
 		"@twin.org/entity-storage-models": "next",
 		"@twin.org/nameof": "next",
 		"@twin.org/vault-models": "next",
-		"@twin.org/wallet-models": "0.0.1-next.6"
+		"@twin.org/wallet-models": "0.0.1-next.7"
 	},
 	"devDependencies": {
 		"@twin.org/nameof-transformer": "next",
+		"@twin.org/nameof-vitest-plugin": "next",
 		"@twin.org/entity-storage-connector-memory": "next",
 		"@twin.org/vault-connector-entity-storage": "next",
-		"@vitest/coverage-v8": "2.1.1",
+		"@vitest/coverage-v8": "2.1.5",
 		"copyfiles": "2.4.1",
 		"dotenv": "16.4.5",
 		"rimraf": "6.0.1",
-		"rollup": "4.22.4",
+		"rollup": "4.27.3",
 		"rollup-plugin-copy": "3.5.0",
-		"rollup-plugin-typescript2": "0.36.0",
 		"ts-patch": "3.2.1",
-		"tsc-watch": "6.2.0",
-		"typedoc": "0.26.7",
-		"typedoc-plugin-markdown": "4.2.8",
-		"typescript": "5.6.2",
-		"vitest": "2.1.1"
+		"tsc-watch": "6.2.1",
+		"typedoc": "0.26.11",
+		"typedoc-plugin-markdown": "4.2.10",
+		"typescript": "5.6.3",
+		"vitest": "2.1.5"
 	},
 	"main": "./dist/cjs/index.cjs",
 	"module": "./dist/esm/index.mjs",
@@ -64,7 +64,7 @@
 			"import": "./dist/esm/index.mjs",
 			"types": "./dist/types/index.d.ts"
 		},
-		"./locales": "./locales"
+		"./locales/*.json": "./locales/*.json"
 	},
 	"files": [
 		"dist/cjs",

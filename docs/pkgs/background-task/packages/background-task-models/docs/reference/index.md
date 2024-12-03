@@ -7,7 +7,6 @@
 
 ## Type Aliases
 
-- [BackgroundTaskHandler](type-aliases/BackgroundTaskHandler.md)
 - [TaskStatus](type-aliases/TaskStatus.md)
 
 ## Variables

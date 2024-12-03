@@ -10,7 +10,7 @@ Interface describing a background task connector.
 
 ### registerHandler()
 
-> **registerHandler**\<`T`, `U`\>(`taskType`, `handler`): `Promise`\<`void`\>
+> **registerHandler**\<`T`, `U`\>(`taskType`, `module`, `method`, `stateChangeCallback`?): `Promise`\<`void`\>
 
 Register a handler for a task.
 
@@ -26,9 +26,17 @@ Register a handler for a task.
 
 The type of the task the handler can process.
 
-• **handler**: [`BackgroundTaskHandler`](../type-aliases/BackgroundTaskHandler.md)\<`T`, `U`\>
+• **module**: `string`
 
-The handler for the task.
+The module the handler is in.
+
+• **method**: `string`
+
+The method in the module to execute.
+
+• **stateChangeCallback?**
+
+The callback to execute when the task state is updated.
 
 #### Returns
 

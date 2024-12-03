@@ -44,7 +44,7 @@ This will build and deploy an image called `workbench-server` to your docker ser
 
 To initialize the server instance you must first run it in `bootstrap` mode. If you have any entity storage configured to use `file` storage you should map a folder on the local host to contain the data, so that it remains persistent.
 
-If the server does not find `workbench-config.json` in the `file` storage it will automatically trigger bootstrap mode:
+If the server does not find `engine-state.json` in the `file` storage it will automatically trigger bootstrap mode:
 
 ```shell
 docker run -t -i -v /home/workbench/data:/workbench/data -p 3000:3000 workbench-server
@@ -101,19 +101,19 @@ INFO [2024-08-08T06:36:16.050Z] Adding attestation verification method
 INFO [2024-08-08T06:36:16.075Z] Node identity "did:entity-storage:0xad375455c60b6e6df5f0fbf42d1224732756484dd64758dc9b3d71aa9c6478ed"
 INFO [2024-08-08T06:36:16.085Z] Node User Email "admin@node"
 INFO [2024-08-08T06:36:16.085Z] Node User Password "MFCUApWEdgr0R4&C"
-INFO [2024-08-08T06:36:16.087Z] Node configuration created in "workbench-config.json", some of these details will not be shown again, please record them
+INFO [2024-08-08T06:36:16.087Z] Node configuration created in "engine-state.json", some of these details will not be shown again, please record them
 
-➡️  Writing JSON file: /workbench/data/workbench-config.json
+➡️  Writing JSON file: /workbench/data/engine-state.json
 ➡️  Bootstrap process complete, some of the details logged will not be shown again, please record them
 ```
 
 You will see it generated a node admin user with password for future use, these should be recorded as they will not be made visible again.
 
-To run the bootstrap again you would have to manually remove the `workbench-config.json` from the data folder.
+To run the bootstrap again you would have to manually remove the `engine-state.json` from the data folder.
 
 ## Docker Running
 
-To run the server we use exactly the same command as before, when the `workbench-config.json` is found the bootstrap process will not be repeated.
+To run the server we use exactly the same command as before, when the `engine-state.json` is found the bootstrap process will not be repeated.
 
 ```shell
 docker run -t -i -v /home/workbench/data:/workbench/data -p 3000:3000 workbench-server
