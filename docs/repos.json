@@ -3,6 +3,9 @@
 		"name": "workbench"
 	},
 	{
+		"name": "engine"
+	},
+	{
 		"name": "tools"
 	},
 	{
@@ -31,6 +34,9 @@
 	},
 	{
 		"name": "background-task"
+	},
+	{
+		"name": "event-bus"
 	},
 	{
 		"name": "vault"
