@@ -5,6 +5,7 @@ This is the overview of the packages.
 ## Tools
 
 - [@twin.org/nameof-transformer](pkgs/tools/packages/nameof-transformer/index.md) - A TypeScript transformer which converts types and properties to their actual name for use at runtime
+- [@twin.org/nameof-vitest-plugin](pkgs/tools/packages/nameof-vitest-plugin/index.md) - A Vitest plugin which perform the nameof transformation
 - [@twin.org/nameof](pkgs/tools/packages/nameof/index.md) - Provides the definitions for the methods which are processed by the nameof-transformer
 - [@twin.org/merge-locales](pkgs/tools/packages/merge-locales/index.md) - Tool to merge locale files from all dependencies
 - [@twin.org/ts-to-openapi](pkgs/tools/packages/ts-to-openapi/index.md) - Tool to convert TypeScript REST route definitions to OpenAPI Specifications
@@ -18,6 +19,7 @@ This is the overview of the packages.
 - [@twin.org/image](pkgs/framework/packages/image/index.md) - Classes for image manipulation
 - [@twin.org/qr](pkgs/framework/packages/qr/index.md) - Package for creating QR codes
 - [@twin.org/web](pkgs/framework/packages/web/index.md) - Contains classes for use with web operations
+- [@twin.org/modules](pkgs/framework/packages/modules/index.md) - Helper classes for loading and executing from modules
 - [@twin.org/cli-core](pkgs/framework/packages/cli-core/index.md) - Core classes for building a CLI
 
 ## Standards
@@ -131,6 +133,7 @@ This is the overview of the packages.
 ## Immutable Proof
 
 - [@twin.org/immutable-proof-models](pkgs/immutable-proof/packages/immutable-proof-models/index.md) - Models which define the structure of the immutable proof connectors and services
+- [@twin.org/immutable-proof-task](pkgs/immutable-proof/packages/immutable-proof-task/index.md) - Background task for generating the proof
 - [@twin.org/immutable-proof-service](pkgs/immutable-proof/packages/immutable-proof-service/index.md) - Immutable proof contract implementation and REST endpoint definitions
 - [@twin.org/immutable-proof-rest-client](pkgs/immutable-proof/packages/immutable-proof-rest-client/index.md) - Immutable Proof contract implementation which can connect to REST endpoints
 

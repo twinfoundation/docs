@@ -17,3 +17,11 @@ JSON-LD Context.
 > **type**: `"ImmutableStorageEntityStorageReceipt"`
 
 JSON-LD Type.
+
+***
+
+### entityStorageId
+
+> **entityStorageId**: `string`
+
+The entity storage Id.
