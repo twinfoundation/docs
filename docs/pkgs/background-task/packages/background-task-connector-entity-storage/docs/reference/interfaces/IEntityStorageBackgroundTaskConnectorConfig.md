@@ -4,6 +4,20 @@ Interface for the entity storage background task connector.
 
 ## Properties
 
+### engineName?
+
+> `optional` **engineName**: `string`
+
+The name of the engine to clone when creating the background task connector.
+
+#### Default
+
+```ts
+engine
+```
+
+***
+
 ### taskInterval?
 
 > `optional` **taskInterval**: `number`

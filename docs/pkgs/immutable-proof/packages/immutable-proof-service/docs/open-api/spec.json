@@ -360,28 +360,6 @@
                         "jwtBearerAuthScheme": []
                     }
                 ],
-                "requestBody": {
-                    "description": "Verify a proof.",
-                    "required": true,
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/ImmutableProofVerifyRequest"
-                            },
-                            "examples": {
-                                "immutableProofVerifyRequestExample": {
-                                    "value": {
-                                        "proofObject": {
-                                            "@context": "http://schema.org",
-                                            "type": "Person",
-                                            "name": "John Smith"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                },
                 "responses": {
                     "200": {
                         "description": "Response to verifying an immutable proof.",
@@ -657,19 +635,6 @@
                 "description": "Model to describe serialized error."
             },
             "ImmutableProofCreateRequest": {
-                "type": "object",
-                "properties": {
-                    "proofObject": {
-                        "$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-                    }
-                },
-                "required": [
-                    "proofObject"
-                ],
-                "additionalProperties": false,
-                "description": "The parameters from the body."
-            },
-            "ImmutableProofVerifyRequest": {
                 "type": "object",
                 "properties": {
                     "proofObject": {

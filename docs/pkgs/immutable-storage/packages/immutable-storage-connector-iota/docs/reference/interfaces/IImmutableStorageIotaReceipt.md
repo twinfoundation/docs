@@ -33,3 +33,19 @@ The index of the milestone that the item was booked in to the ledger.
 > **milestoneTimestampBooked**: `number`
 
 The timestamp of the milestone that the item was booked in to the ledger.
+
+***
+
+### network
+
+> **network**: `string`
+
+The network for the receipt.
+
+***
+
+### transactionId
+
+> **transactionId**: `string`
+
+The transaction for the receipt.
