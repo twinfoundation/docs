@@ -37,6 +37,28 @@ jobs:
       - name: Clean up
         run: rm -rf docs/pkgs/
 
+      ########### engine
+      - name: Checkout engine
+        uses: actions/checkout@v4
+        with:
+          repository: twinfoundation/engine
+          path: import-packages/engine
+          ref: ${{ env.gha-branch }}
+
+      - name: Copy engine to Docs
+        run: |
+          jq -r '.workspaces[]' import-packages/engine/package.json | while read pkg; do
+            rm -rf docs/pkgs/engine/$pkg
+            mkdir -p docs/pkgs/engine/$pkg
+            mkdir -p docs/pkgs/engine/$pkg/docs
+            cp -r import-packages/engine/$pkg/docs/* docs/pkgs/engine/$pkg/docs
+            cp -r import-packages/engine/$pkg/README.md docs/pkgs/engine/$pkg/index.md
+            cp -r import-packages/engine/$pkg/package.json docs/pkgs/engine/$pkg/package.json
+          done
+
+          cp import-packages/engine/package.json docs/pkgs/engine/package.json
+          rm -r import-packages/engine
+
       ########### tools
       - name: Checkout tools
         uses: actions/checkout@v4
@@ -278,6 +300,28 @@ jobs:
 
           cp import-packages/background-task/package.json docs/pkgs/background-task/package.json
           rm -r import-packages/background-task
+
+      ########### event-bus
+      - name: Checkout event-bus
+        uses: actions/checkout@v4
+        with:
+          repository: twinfoundation/event-bus
+          path: import-packages/event-bus
+          ref: ${{ env.gha-branch }}
+
+      - name: Copy event-bus to Docs
+        run: |
+          jq -r '.workspaces[]' import-packages/event-bus/package.json | while read pkg; do
+            rm -rf docs/pkgs/event-bus/$pkg
+            mkdir -p docs/pkgs/event-bus/$pkg
+            mkdir -p docs/pkgs/event-bus/$pkg/docs
+            cp -r import-packages/event-bus/$pkg/docs/* docs/pkgs/event-bus/$pkg/docs
+            cp -r import-packages/event-bus/$pkg/README.md docs/pkgs/event-bus/$pkg/index.md
+            cp -r import-packages/event-bus/$pkg/package.json docs/pkgs/event-bus/$pkg/package.json
+          done
+
+          cp import-packages/event-bus/package.json docs/pkgs/event-bus/package.json
+          rm -r import-packages/event-bus
 
       ########### dlt
       - name: Checkout dlt
