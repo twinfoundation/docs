@@ -16,23 +16,33 @@ Attest the data and return the collated information.
 
 #### Parameters
 
-• **verificationMethodId**: `string`
+##### verificationMethodId
+
+`string`
 
 The identity verification method to use for attesting the data.
 
-• **attestationObject**: `IJsonLdNodeObject`
+##### attestationObject
+
+`IJsonLdNodeObject`
 
 The data to attest.
 
-• **namespace?**: `string`
+##### namespace?
+
+`string`
 
 The namespace of the connector to use for the attestation, defaults to component configured namespace.
 
-• **identity?**: `string`
+##### identity?
+
+`string`
 
 The identity to perform the attestation operation with.
 
-• **nodeIdentity?**: `string`
+##### nodeIdentity?
+
+`string`
 
 The node identity to include in the attestation.
 
@@ -52,7 +62,9 @@ Resolve and verify the attestation id.
 
 #### Parameters
 
-• **id**: `string`
+##### id
+
+`string`
 
 The attestation id to verify.
 
@@ -72,15 +84,21 @@ Transfer the attestation to a new holder.
 
 #### Parameters
 
-• **attestationId**: `string`
+##### attestationId
+
+`string`
 
 The attestation to transfer.
 
-• **holderIdentity**: `string`
+##### holderIdentity
+
+`string`
 
 The identity to transfer the attestation to.
 
-• **identity?**: `string`
+##### identity?
+
+`string`
 
 The identity to perform the attestation operation with.
 
@@ -100,11 +118,15 @@ Destroy the attestation.
 
 #### Parameters
 
-• **attestationId**: `string`
+##### attestationId
+
+`string`
 
 The attestation to transfer.
 
-• **identity?**: `string`
+##### identity?
+
+`string`
 
 The identity to perform the attestation operation with.
 

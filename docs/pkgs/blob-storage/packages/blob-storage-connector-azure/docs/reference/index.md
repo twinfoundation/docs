@@ -7,3 +7,4 @@
 ## Interfaces
 
 - [IAzureBlobStorageConnectorConfig](interfaces/IAzureBlobStorageConnectorConfig.md)
+- [IAzureBlobStorageConnectorConstructorOptions](interfaces/IAzureBlobStorageConnectorConstructorOptions.md)

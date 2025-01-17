@@ -54,8 +54,8 @@ The timestamp of when the alias was deleted, as we never actually remove items.
 
 ***
 
-### aliasObject?
+### annotationObject?
 
-> `optional` **aliasObject**: `IJsonLdNodeObject`
+> `optional` **annotationObject**: `IJsonLdNodeObject`
 
 Object to associate with the alias as JSON-LD.

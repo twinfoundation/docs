@@ -6,7 +6,9 @@ Action the attestation attest command.
 
 ## Parameters
 
-• **opts**: `object` & `ICliOutputOptionsConsole` & `ICliOutputOptionsEnv` & `ICliOutputOptionsJson`
+### opts
+
+`object` & `ICliOutputOptionsConsole` & `ICliOutputOptionsEnv` & `ICliOutputOptionsJson`
 
 The options for the command.
 

@@ -22,15 +22,21 @@ Create the profile properties for an identity.
 
 #### Parameters
 
-• **publicProfile?**: `T`
+##### publicProfile?
+
+`T`
 
 The public profile data as JSON-LD.
 
-• **privateProfile?**: `U`
+##### privateProfile?
+
+`U`
 
 The private profile data as JSON-LD.
 
-• **identity?**: `string`
+##### identity?
+
+`string`
 
 The identity to perform the profile operation on.
 
@@ -44,41 +50,35 @@ Nothing.
 
 ### get()
 
-> **get**(`publicPropertyNames`?, `privatePropertyNames`?, `identity`?): `Promise`\<`object`\>
+> **get**(`publicPropertyNames`?, `privatePropertyNames`?, `identity`?): `Promise`\<\{ `identity`: `string`; `publicProfile`: `Partial`\<`T`\>; `privateProfile`: `Partial`\<`U`\>; \}\>
 
 Get the profile properties for an identity.
 
 #### Parameters
 
-• **publicPropertyNames?**: keyof `T`[]
+##### publicPropertyNames?
+
+keyof `T`[]
 
 The public properties to get for the profile, defaults to all.
 
-• **privatePropertyNames?**: keyof `U`[]
+##### privatePropertyNames?
+
+keyof `U`[]
 
 The private properties to get for the profile, defaults to all.
 
-• **identity?**: `string`
+##### identity?
+
+`string`
 
 The identity to perform the profile operation on.
 
 #### Returns
 
-`Promise`\<`object`\>
+`Promise`\<\{ `identity`: `string`; `publicProfile`: `Partial`\<`T`\>; `privateProfile`: `Partial`\<`U`\>; \}\>
 
 The items identity and the properties.
-
-##### identity
-
-> **identity**: `string`
-
-##### publicProfile?
-
-> `optional` **publicProfile**: `Partial`\<`T`\>
-
-##### privateProfile?
-
-> `optional` **privateProfile**: `Partial`\<`U`\>
 
 ***
 
@@ -90,11 +90,15 @@ Get the public profile properties for an identity.
 
 #### Parameters
 
-• **identity**: `string`
+##### identity
+
+`string`
 
 The identity to perform the profile operation on.
 
-• **propertyNames?**: keyof `T`[]
+##### propertyNames?
+
+keyof `T`[]
 
 The public properties to get for the profile, defaults to all.
 
@@ -114,15 +118,21 @@ Update the profile properties of an identity.
 
 #### Parameters
 
-• **publicProfile?**: `T`
+##### publicProfile?
+
+`T`
 
 The public profile data as JSON-LD.
 
-• **privateProfile?**: `U`
+##### privateProfile?
+
+`U`
 
 The private profile data as JSON-LD.
 
-• **identity?**: `string`
+##### identity?
+
+`string`
 
 The identity to perform the profile operation on.
 
@@ -142,7 +152,9 @@ Delete the profile for an identity.
 
 #### Parameters
 
-• **identity?**: `string`
+##### identity?
+
+`string`
 
 The identity to perform the profile operation on.
 
@@ -156,42 +168,38 @@ Nothing.
 
 ### list()
 
-> **list**(`publicFilters`?, `publicPropertyNames`?, `cursor`?, `pageSize`?): `Promise`\<`object`\>
+> **list**(`publicFilters`?, `publicPropertyNames`?, `cursor`?, `pageSize`?): `Promise`\<\{ `items`: `object`[]; `cursor`: `string`; \}\>
 
 Get a list of the requested identities.
 
 #### Parameters
 
-• **publicFilters?**: `object`[]
+##### publicFilters?
+
+`object`[]
 
 The filters to apply to the identities public profiles.
 
-• **publicPropertyNames?**: keyof `T`[]
+##### publicPropertyNames?
+
+keyof `T`[]
 
 The public properties to get for the profile, defaults to all.
 
-• **cursor?**: `string`
+##### cursor?
+
+`string`
 
 The cursor for paged requests.
 
-• **pageSize?**: `number`
+##### pageSize?
+
+`number`
 
 The maximum number of items in a page.
 
 #### Returns
 
-`Promise`\<`object`\>
+`Promise`\<\{ `items`: `object`[]; `cursor`: `string`; \}\>
 
 The list of items and cursor for paging.
-
-##### items
-
-> **items**: `object`[]
-
-The identities.
-
-##### cursor?
-
-> `optional` **cursor**: `string`
-
-An optional cursor, when defined can be used to call find to get more entities.

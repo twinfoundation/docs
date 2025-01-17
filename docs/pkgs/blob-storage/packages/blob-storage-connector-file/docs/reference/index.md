@@ -7,3 +7,4 @@
 ## Interfaces
 
 - [IFileBlobStorageConnectorConfig](interfaces/IFileBlobStorageConnectorConfig.md)
+- [IFileBlobStorageConnectorConstructorOptions](interfaces/IFileBlobStorageConnectorConstructorOptions.md)

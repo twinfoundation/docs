@@ -6,23 +6,31 @@ Action the verification method remove command.
 
 ## Parameters
 
-• **opts**
+### opts
 
 The options for the command.
 
-• **opts.seed**: `string`
+#### seed
+
+`string`
 
 The private key for the controller.
 
-• **opts.id**: `string`
+#### id
+
+`string`
 
 The id of the verification method to remove.
 
-• **opts.node**: `string`
+#### node
+
+`string`
 
 The node URL.
 
-• **opts.explorer**: `string`
+#### explorer
+
+`string`
 
 The explorer URL.
 

@@ -13,6 +13,7 @@
 ## Interfaces
 
 - [IAuditableItemGraphServiceConfig](interfaces/IAuditableItemGraphServiceConfig.md)
+- [IAuditableItemGraphServiceConstructorOptions](interfaces/IAuditableItemGraphServiceConstructorOptions.md)
 
 ## Variables
 

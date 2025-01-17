@@ -6,15 +6,21 @@ Action the root command.
 
 ## Parameters
 
-• **configFile**: `string`
+### configFile
+
+`string`
 
 The optional configuration file.
 
-• **outputFolder**: `string`
+### outputFolder
+
+`string`
 
 The output folder for the schemas.
 
-• **opts**: `unknown`
+### opts
+
+`unknown`
 
 The options for the command.
 

@@ -6,15 +6,21 @@ Action the root command.
 
 ## Parameters
 
-• **configFile**: `string`
+### configFile
+
+`string`
 
 The optional configuration file.
 
-• **outputFile**: `string`
+### outputFile
+
+`string`
 
 The output file for the generation OpenApi spec.
 
-• **opts**: `unknown`
+### opts
+
+`unknown`
 
 The options for the command.
 

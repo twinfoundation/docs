@@ -16,17 +16,11 @@ Create a new instance of IotaIdentityConnector.
 
 #### Parameters
 
-• **options**
+##### options
+
+[`IIotaIdentityConnectorConstructorOptions`](../interfaces/IIotaIdentityConnectorConstructorOptions.md)
 
 The options for the identity connector.
-
-• **options.vaultConnectorType?**: `string`
-
-The vault connector type for the private keys, defaults to "vault".
-
-• **options.config**: [`IIotaIdentityConnectorConfig`](../interfaces/IIotaIdentityConnectorConfig.md)
-
-The configuration to use.
 
 #### Returns
 
@@ -62,7 +56,9 @@ Create a new document.
 
 #### Parameters
 
-• **controller**: `string`
+##### controller
+
+`string`
 
 The controller of the identity who can make changes.
 
@@ -86,7 +82,9 @@ Resolve a document from its id.
 
 #### Parameters
 
-• **documentId**: `string`
+##### documentId
+
+`string`
 
 The id of the document to resolve.
 
@@ -114,19 +112,27 @@ Add a verification method to the document in JSON Web key Format.
 
 #### Parameters
 
-• **controller**: `string`
+##### controller
+
+`string`
 
 The controller of the identity who can make changes.
 
-• **documentId**: `string`
+##### documentId
+
+`string`
 
 The id of the document to add the verification method to.
 
-• **verificationMethodType**: `DidVerificationMethodType`
+##### verificationMethodType
+
+`DidVerificationMethodType`
 
 The type of the verification method to add.
 
-• **verificationMethodId?**: `string`
+##### verificationMethodId?
+
+`string`
 
 The id of the verification method, if undefined uses the kid of the generated JWK.
 
@@ -158,11 +164,15 @@ Remove a verification method from the document.
 
 #### Parameters
 
-• **controller**: `string`
+##### controller
+
+`string`
 
 The controller of the identity who can make changes.
 
-• **verificationMethodId**: `string`
+##### verificationMethodId
+
+`string`
 
 The id of the verification method.
 
@@ -194,23 +204,33 @@ Add a service to the document.
 
 #### Parameters
 
-• **controller**: `string`
+##### controller
+
+`string`
 
 The controller of the identity who can make changes.
 
-• **documentId**: `string`
+##### documentId
+
+`string`
 
 The id of the document to add the service to.
 
-• **serviceId**: `string`
+##### serviceId
+
+`string`
 
 The id of the service.
 
-• **serviceType**: `string`
+##### serviceType
+
+`string`
 
 The type of the service.
 
-• **serviceEndpoint**: `string`
+##### serviceEndpoint
+
+`string`
 
 The endpoint for the service.
 
@@ -238,11 +258,15 @@ Remove a service from the document.
 
 #### Parameters
 
-• **controller**: `string`
+##### controller
+
+`string`
 
 The controller of the identity who can make changes.
 
-• **serviceId**: `string`
+##### serviceId
+
+`string`
 
 The id of the service.
 
@@ -264,45 +288,47 @@ NotFoundError if the id can not be resolved.
 
 ### createVerifiableCredential()
 
-> **createVerifiableCredential**(`controller`, `verificationMethodId`, `id`, `credential`, `revocationIndex`?): `Promise`\<`object`\>
+> **createVerifiableCredential**(`controller`, `verificationMethodId`, `id`, `credential`, `revocationIndex`?): `Promise`\<\{ `verifiableCredential`: `IDidVerifiableCredential`; `jwt`: `string`; \}\>
 
 Create a verifiable credential for a verification method.
 
 #### Parameters
 
-• **controller**: `string`
+##### controller
+
+`string`
 
 The controller of the identity who can make changes.
 
-• **verificationMethodId**: `string`
+##### verificationMethodId
+
+`string`
 
 The verification method id to use.
 
-• **id**: `undefined` \| `string`
+##### id
 
 The id of the credential.
 
-• **credential**: `IJsonLdNodeObject`
+`undefined` | `string`
+
+##### credential
+
+`IJsonLdNodeObject`
 
 The credential to store in the verifiable credential.
 
-• **revocationIndex?**: `number`
+##### revocationIndex?
+
+`number`
 
 The bitmap revocation index of the credential, if undefined will not have revocation status.
 
 #### Returns
 
-`Promise`\<`object`\>
+`Promise`\<\{ `verifiableCredential`: `IDidVerifiableCredential`; `jwt`: `string`; \}\>
 
 The created verifiable credential and its token.
-
-##### verifiableCredential
-
-> **verifiableCredential**: `IDidVerifiableCredential`
-
-##### jwt
-
-> **jwt**: `string`
 
 #### Throws
 
@@ -316,29 +342,23 @@ NotFoundError if the id can not be resolved.
 
 ### checkVerifiableCredential()
 
-> **checkVerifiableCredential**(`credentialJwt`): `Promise`\<`object`\>
+> **checkVerifiableCredential**(`credentialJwt`): `Promise`\<\{ `revoked`: `boolean`; `verifiableCredential`: `IDidVerifiableCredential`; \}\>
 
 Check a verifiable credential is valid.
 
 #### Parameters
 
-• **credentialJwt**: `string`
+##### credentialJwt
+
+`string`
 
 The credential to verify.
 
 #### Returns
 
-`Promise`\<`object`\>
+`Promise`\<\{ `revoked`: `boolean`; `verifiableCredential`: `IDidVerifiableCredential`; \}\>
 
 The credential stored in the jwt and the revocation status.
-
-##### revoked
-
-> **revoked**: `boolean`
-
-##### verifiableCredential?
-
-> `optional` **verifiableCredential**: `IDidVerifiableCredential`
 
 #### Implementation of
 
@@ -354,15 +374,21 @@ Revoke verifiable credential(s).
 
 #### Parameters
 
-• **controller**: `string`
+##### controller
+
+`string`
 
 The controller of the identity who can make changes.
 
-• **issuerDocumentId**: `string`
+##### issuerDocumentId
+
+`string`
 
 The id of the document to update the revocation list for.
 
-• **credentialIndices**: `number`[]
+##### credentialIndices
+
+`number`[]
 
 The revocation bitmap index or indices to revoke.
 
@@ -386,15 +412,21 @@ Unrevoke verifiable credential(s).
 
 #### Parameters
 
-• **controller**: `string`
+##### controller
+
+`string`
 
 The controller of the identity who can make changes.
 
-• **issuerDocumentId**: `string`
+##### issuerDocumentId
+
+`string`
 
 The id of the document to update the revocation list for.
 
-• **credentialIndices**: `number`[]
+##### credentialIndices
+
+`number`[]
 
 The revocation bitmap index or indices to un revoke.
 
@@ -412,53 +444,59 @@ Nothing.
 
 ### createVerifiablePresentation()
 
-> **createVerifiablePresentation**(`controller`, `presentationMethodId`, `presentationId`, `contexts`, `types`, `verifiableCredentials`, `expiresInMinutes`?): `Promise`\<`object`\>
+> **createVerifiablePresentation**(`controller`, `presentationMethodId`, `presentationId`, `contexts`, `types`, `verifiableCredentials`, `expiresInMinutes`?): `Promise`\<\{ `verifiablePresentation`: `IDidVerifiablePresentation`; `jwt`: `string`; \}\>
 
 Create a verifiable presentation from the supplied verifiable credentials.
 
 #### Parameters
 
-• **controller**: `string`
+##### controller
+
+`string`
 
 The controller of the identity who can make changes.
 
-• **presentationMethodId**: `string`
+##### presentationMethodId
+
+`string`
 
 The method to associate with the presentation.
 
-• **presentationId**: `undefined` \| `string`
+##### presentationId
 
 The id of the presentation.
 
-• **contexts**: `undefined` \| `IJsonLdContextDefinitionRoot`
+`undefined` | `string`
+
+##### contexts
 
 The contexts for the data stored in the verifiable credential.
 
-• **types**: `undefined` \| `string` \| `string`[]
+`undefined` | `IJsonLdContextDefinitionRoot`
+
+##### types
 
 The types for the data stored in the verifiable credential.
 
-• **verifiableCredentials**: (`string` \| `IDidVerifiableCredential`)[]
+`undefined` | `string` | `string`[]
+
+##### verifiableCredentials
+
+(`string` \| `IDidVerifiableCredential`)[]
 
 The credentials to use for creating the presentation in jwt format.
 
-• **expiresInMinutes?**: `number`
+##### expiresInMinutes?
+
+`number`
 
 The time in minutes for the presentation to expire.
 
 #### Returns
 
-`Promise`\<`object`\>
+`Promise`\<\{ `verifiablePresentation`: `IDidVerifiablePresentation`; `jwt`: `string`; \}\>
 
 The created verifiable presentation and its token.
-
-##### verifiablePresentation
-
-> **verifiablePresentation**: `IDidVerifiablePresentation`
-
-##### jwt
-
-> **jwt**: `string`
 
 #### Throws
 
@@ -472,33 +510,23 @@ NotFoundError if the id can not be resolved.
 
 ### checkVerifiablePresentation()
 
-> **checkVerifiablePresentation**(`presentationJwt`): `Promise`\<`object`\>
+> **checkVerifiablePresentation**(`presentationJwt`): `Promise`\<\{ `revoked`: `boolean`; `verifiablePresentation`: `IDidVerifiablePresentation`; `issuers`: `IDidDocument`[]; \}\>
 
 Check a verifiable presentation is valid.
 
 #### Parameters
 
-• **presentationJwt**: `string`
+##### presentationJwt
+
+`string`
 
 The presentation to verify.
 
 #### Returns
 
-`Promise`\<`object`\>
+`Promise`\<\{ `revoked`: `boolean`; `verifiablePresentation`: `IDidVerifiablePresentation`; `issuers`: `IDidDocument`[]; \}\>
 
 The presentation stored in the jwt and the revocation status.
-
-##### revoked
-
-> **revoked**: `boolean`
-
-##### verifiablePresentation?
-
-> `optional` **verifiablePresentation**: `IDidVerifiablePresentation`
-
-##### issuers?
-
-> `optional` **issuers**: `IDidDocument`[]
 
 #### Implementation of
 
@@ -514,15 +542,21 @@ Create a proof for arbitrary data with the specified verification method.
 
 #### Parameters
 
-• **controller**: `string`
+##### controller
+
+`string`
 
 The controller of the identity who can make changes.
 
-• **verificationMethodId**: `string`
+##### verificationMethodId
+
+`string`
 
 The verification method id to use.
 
-• **bytes**: `Uint8Array`
+##### bytes
+
+`Uint8Array`
 
 The data bytes to sign.
 
@@ -546,11 +580,15 @@ Verify proof for arbitrary data with the specified verification method.
 
 #### Parameters
 
-• **bytes**: `Uint8Array`
+##### bytes
+
+`Uint8Array`
 
 The data bytes to verify.
 
-• **proof**: `IDidProof`
+##### proof
+
+`IDidProof`
 
 The proof to verify.
 

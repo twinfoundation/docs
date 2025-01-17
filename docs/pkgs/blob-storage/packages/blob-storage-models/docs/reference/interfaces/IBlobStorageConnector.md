@@ -16,7 +16,9 @@ Set the blob.
 
 #### Parameters
 
-• **blob**: `Uint8Array`
+##### blob
+
+`Uint8Array`
 
 The data for the blob.
 
@@ -36,7 +38,9 @@ Get the blob.
 
 #### Parameters
 
-• **id**: `string`
+##### id
+
+`string`
 
 The id of the blob to get in urn format.
 
@@ -56,7 +60,9 @@ Remove the blob.
 
 #### Parameters
 
-• **id**: `string`
+##### id
+
+`string`
 
 The id of the blob to remove in urn format.
 

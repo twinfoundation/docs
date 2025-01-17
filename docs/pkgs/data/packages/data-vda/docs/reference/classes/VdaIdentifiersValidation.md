@@ -22,15 +22,21 @@ Validate if the property is a valid epc.
 
 #### Parameters
 
-• **propertyName**: `string`
+##### propertyName
+
+`string`
 
 The name of the property being validated.
 
-• **value**: `unknown`
+##### value
+
+`unknown`
 
 The value to test.
 
-• **failures**: `IValidationFailure`[]
+##### failures
+
+`IValidationFailure`[]
 
 The list of failures to add to.
 
@@ -50,15 +56,21 @@ Validate if the property is a valid epc vda id location.
 
 #### Parameters
 
-• **propertyName**: `string`
+##### propertyName
+
+`string`
 
 The name of the property being validated.
 
-• **value**: `unknown`
+##### value
+
+`unknown`
 
 The value to test.
 
-• **failures**: `IValidationFailure`[]
+##### failures
+
+`IValidationFailure`[]
 
 The list of failures to add to.
 
@@ -78,15 +90,21 @@ Validate if the property is a valid epc vda id item.
 
 #### Parameters
 
-• **propertyName**: `string`
+##### propertyName
+
+`string`
 
 The name of the property being validated.
 
-• **value**: `unknown`
+##### value
+
+`unknown`
 
 The value to test.
 
-• **failures**: `IValidationFailure`[]
+##### failures
+
+`IValidationFailure`[]
 
 The list of failures to add to.
 
@@ -106,15 +124,21 @@ Validate if the property is a valid epc id gtin.
 
 #### Parameters
 
-• **propertyName**: `string`
+##### propertyName
+
+`string`
 
 The name of the property being validated.
 
-• **value**: `unknown`
+##### value
+
+`unknown`
 
 The value to test.
 
-• **failures**: `IValidationFailure`[]
+##### failures
+
+`IValidationFailure`[]
 
 The list of failures to add to.
 
@@ -134,7 +158,9 @@ Function to validate and extract RFID read points URNs.
 
 #### Parameters
 
-• **urn**: `string`
+##### urn
+
+`string`
 
 The URN to validate.
 
@@ -154,7 +180,9 @@ Function to validate and extract Biz Location URN.
 
 #### Parameters
 
-• **urn**: `string`
+##### urn
+
+`string`
 
 The URN to validate.
 
@@ -174,7 +202,9 @@ Function to validate VDA URI Packages License Plates.
 
 #### Parameters
 
-• **id**: `string`
+##### id
+
+`string`
 
 The VDA URI to validate.
 
@@ -194,7 +224,9 @@ VDA object identifier verifier function.
 
 #### Parameters
 
-• **epc**: `string`
+##### epc
+
+`string`
 
 The epc to validate.
 

@@ -44,7 +44,7 @@
                             "examples": {
                                 "auditableItemGraphCreateRequestExample": {
                                     "value": {
-                                        "vertexObject": {
+                                        "annotationObject": {
                                             "@context": "http://schema.org/",
                                             "@type": "Note",
                                             "content": "This is a simple note"
@@ -52,7 +52,7 @@
                                         "aliases": [
                                             {
                                                 "id": "bar456",
-                                                "aliasObject": {
+                                                "annotationObject": {
                                                     "@context": "http://schema.org/",
                                                     "@type": "Note",
                                                     "content": "This is a simple note"
@@ -60,7 +60,7 @@
                                             },
                                             {
                                                 "id": "foo321",
-                                                "aliasObject": {
+                                                "annotationObject": {
                                                     "@context": "http://schema.org/",
                                                     "@type": "Note",
                                                     "content": "This is a simple note"
@@ -89,7 +89,7 @@
                                             {
                                                 "id": "edge1",
                                                 "edgeRelationship": "frenemy",
-                                                "edgeObject": {
+                                                "annotationObject": {
                                                     "@context": "http://schema.org/",
                                                     "@type": "Note",
                                                     "content": "This is a simple note"
@@ -98,7 +98,7 @@
                                             {
                                                 "id": "edge2",
                                                 "edgeRelationship": "end",
-                                                "edgeObject": {
+                                                "annotationObject": {
                                                     "@context": "http://schema.org/",
                                                     "@type": "Note",
                                                     "content": "This is a simple note"
@@ -213,6 +213,15 @@
                         }
                     },
                     {
+                        "name": "conditions",
+                        "description": "The conditions to filter the streams, JSON stringified IComparator[].",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
                         "name": "orderBy",
                         "description": "The order for the results, default to dateCreated.",
                         "in": "query",
@@ -236,7 +245,7 @@
                     },
                     {
                         "name": "properties",
-                        "description": "The properties to return as a comma separated list, defaults to \"id,dateCreated,aliases,vertexObject\".",
+                        "description": "The properties to return as a comma separated list, defaults to \"id,dateCreated,aliases,annotationObject\".",
                         "in": "query",
                         "required": false,
                         "schema": {
@@ -289,14 +298,14 @@
                                         "value": {
                                             "@context": [
                                                 "https://schema.twindev.org/aig/",
-                                                "https://schema.org/"
+                                                "https://schema.org"
                                             ],
                                             "type": "AuditableItemGraphVertexList",
                                             "vertices": [
                                                 {
                                                     "@context": [
                                                         "https://schema.twindev.org/aig/",
-                                                        "https://schema.org/"
+                                                        "https://schema.org"
                                                     ],
                                                     "type": "AuditableItemGraphVertex",
                                                     "id": "0101010101010101010101010101010101010101010101010101010101010101",
@@ -305,7 +314,7 @@
                                                         {
                                                             "@context": [
                                                                 "https://schema.twindev.org/aig/",
-                                                                "https://schema.org/"
+                                                                "https://schema.org"
                                                             ],
                                                             "type": "AuditableItemGraphAlias",
                                                             "id": "foo4",
@@ -328,14 +337,14 @@
                                         "value": {
                                             "@context": [
                                                 "https://schema.twindev.org/aig/",
-                                                "https://schema.org/"
+                                                "https://schema.org"
                                             ],
                                             "type": "AuditableItemGraphVertexList",
                                             "vertices": [
                                                 {
                                                     "@context": [
                                                         "https://schema.twindev.org/aig/",
-                                                        "https://schema.org/"
+                                                        "https://schema.org"
                                                     ],
                                                     "type": "AuditableItemGraphVertex",
                                                     "id": "0101010101010101010101010101010101010101010101010101010101010101",
@@ -344,7 +353,7 @@
                                                         {
                                                             "@context": [
                                                                 "https://schema.twindev.org/aig/",
-                                                                "https://schema.org/"
+                                                                "https://schema.org"
                                                             ],
                                                             "type": "AuditableItemGraphAlias",
                                                             "id": "foo4",
@@ -503,13 +512,13 @@
                                         "value": {
                                             "@context": [
                                                 "https://schema.twindev.org/aig/",
-                                                "https://schema.org/"
+                                                "https://schema.org"
                                             ],
                                             "type": "AuditableItemGraphVertex",
                                             "id": "aig:1234567890",
                                             "dateCreated": "2024-08-22T11:55:16.271Z",
                                             "dateModified": "2024-08-22T11:55:16.271Z",
-                                            "vertexObject": {
+                                            "annotationObject": {
                                                 "@context": "http://schema.org/",
                                                 "@type": "Note",
                                                 "content": "This is a simple note"
@@ -518,7 +527,7 @@
                                                 {
                                                     "@context": [
                                                         "https://schema.twindev.org/aig/",
-                                                        "https://schema.org/"
+                                                        "https://schema.org"
                                                     ],
                                                     "type": "AuditableItemGraphAlias",
                                                     "id": "tst:1234567890",
@@ -538,13 +547,13 @@
                                         "value": {
                                             "@context": [
                                                 "https://schema.twindev.org/aig/",
-                                                "https://schema.org/"
+                                                "https://schema.org"
                                             ],
                                             "type": "AuditableItemGraphVertex",
                                             "id": "aig:1234567890",
                                             "dateCreated": "2024-08-22T11:55:16.271Z",
                                             "dateModified": "2024-08-22T11:55:16.271Z",
-                                            "vertexObject": {
+                                            "annotationObject": {
                                                 "@context": "http://schema.org/",
                                                 "@type": "Note",
                                                 "content": "This is a simple note"
@@ -553,7 +562,7 @@
                                                 {
                                                     "@context": [
                                                         "https://schema.twindev.org/aig/",
-                                                        "https://schema.org/"
+                                                        "https://schema.org"
                                                     ],
                                                     "type": "AuditableItemGraphAlias",
                                                     "dateCreated": "2024-08-22T11:55:16.271Z",
@@ -668,7 +677,7 @@
                             "examples": {
                                 "auditableItemGraphUpdateRequestExample": {
                                     "value": {
-                                        "vertexObject": {
+                                        "annotationObject": {
                                             "@context": "http://schema.org/",
                                             "@type": "Note",
                                             "content": "This is a simple note"
@@ -676,7 +685,7 @@
                                         "aliases": [
                                             {
                                                 "id": "bar456",
-                                                "aliasObject": {
+                                                "annotationObject": {
                                                     "@context": "http://schema.org/",
                                                     "@type": "Note",
                                                     "content": "This is a simple note"
@@ -684,7 +693,7 @@
                                             },
                                             {
                                                 "id": "foo321",
-                                                "aliasObject": {
+                                                "annotationObject": {
                                                     "@context": "http://schema.org/",
                                                     "@type": "Note",
                                                     "content": "This is a simple note"
@@ -713,7 +722,7 @@
                                             {
                                                 "id": "edge1",
                                                 "edgeRelationship": "frenemy",
-                                                "edgeObject": {
+                                                "annotationObject": {
                                                     "@context": "http://schema.org/",
                                                     "@type": "Note",
                                                     "content": "This is a simple note"
@@ -722,7 +731,7 @@
                                             {
                                                 "id": "edge2",
                                                 "edgeRelationship": "end",
-                                                "edgeObject": {
+                                                "annotationObject": {
                                                     "@context": "http://schema.org/",
                                                     "@type": "Note",
                                                     "content": "This is a simple note"
@@ -805,7 +814,7 @@
             "AuditableItemGraphCreateRequest": {
                 "type": "object",
                 "properties": {
-                    "vertexObject": {
+                    "annotationObject": {
                         "$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
                     },
                     "aliases": {
@@ -819,7 +828,7 @@
                                 "aliasFormat": {
                                     "type": "string"
                                 },
-                                "aliasObject": {
+                                "annotationObject": {
                                     "$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
                                 }
                             },
@@ -842,9 +851,6 @@
                                     "$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
                                 }
                             },
-                            "required": [
-                                "id"
-                            ],
                             "additionalProperties": false
                         },
                         "description": "The resources attached to the vertex."
@@ -860,7 +866,7 @@
                                 "edgeRelationship": {
                                     "type": "string"
                                 },
-                                "edgeObject": {
+                                "annotationObject": {
                                     "$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
                                 }
                             },
@@ -879,7 +885,7 @@
             "AuditableItemGraphUpdateRequest": {
                 "type": "object",
                 "properties": {
-                    "vertexObject": {
+                    "annotationObject": {
                         "$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
                     },
                     "aliases": {
@@ -893,7 +899,7 @@
                                 "aliasFormat": {
                                     "type": "string"
                                 },
-                                "aliasObject": {
+                                "annotationObject": {
                                     "$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
                                 }
                             },
@@ -916,9 +922,6 @@
                                     "$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
                                 }
                             },
-                            "required": [
-                                "id"
-                            ],
                             "additionalProperties": false
                         },
                         "description": "The resources attached to the vertex."
@@ -934,7 +937,7 @@
                                 "edgeRelationship": {
                                     "type": "string"
                                 },
-                                "edgeObject": {
+                                "annotationObject": {
                                     "$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
                                 }
                             },

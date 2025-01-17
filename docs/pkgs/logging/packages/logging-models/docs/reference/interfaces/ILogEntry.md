@@ -52,4 +52,4 @@ Optional data for the message.
 
 #### Index Signature
 
- \[`key`: `string`\]: `unknown`
+\[`key`: `string`\]: `unknown`

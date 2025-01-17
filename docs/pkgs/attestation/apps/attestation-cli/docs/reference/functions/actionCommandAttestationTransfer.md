@@ -6,31 +6,43 @@ Action the attestation transfer command.
 
 ## Parameters
 
-• **opts**
+### opts
 
 The options for the command.
 
-• **opts.seed**: `string`
+#### seed
+
+`string`
 
 The seed required for signing by the issuer.
 
-• **opts.id**: `string`
+#### id
+
+`string`
 
 The id of the attestation to transfer in urn format.
 
-• **opts.holderIdentity**: `string`
+#### holderIdentity
+
+`string`
 
 The new holder identity of the attestation.
 
-• **opts.holderAddress**: `string`
+#### holderAddress
+
+`string`
 
 The new holder address of the attestation.
 
-• **opts.node**: `string`
+#### node
+
+`string`
 
 The node URL.
 
-• **opts.explorer**: `string`
+#### explorer
+
+`string`
 
 The explorer URL.
 

@@ -16,7 +16,9 @@ Log an entry to the component.
 
 #### Parameters
 
-• **logEntry**: [`ILogEntry`](ILogEntry.md)
+##### logEntry
+
+[`ILogEntry`](ILogEntry.md)
 
 The entry to log.
 
@@ -30,54 +32,54 @@ Nothing.
 
 ### query()
 
-> **query**(`level`?, `source`?, `timeStart`?, `timeEnd`?, `cursor`?, `pageSize`?): `Promise`\<`object`\>
+> **query**(`level`?, `source`?, `timeStart`?, `timeEnd`?, `cursor`?, `pageSize`?): `Promise`\<\{ `entities`: [`ILogEntry`](ILogEntry.md)[]; `cursor`: `string`; \}\>
 
 Query the log entries.
 
 #### Parameters
 
-• **level?**: [`LogLevel`](../type-aliases/LogLevel.md)
+##### level?
+
+[`LogLevel`](../type-aliases/LogLevel.md)
 
 The level of the log entries.
 
-• **source?**: `string`
+##### source?
+
+`string`
 
 The source of the log entries.
 
-• **timeStart?**: `number`
+##### timeStart?
+
+`number`
 
 The inclusive time as the start of the log entries.
 
-• **timeEnd?**: `number`
+##### timeEnd?
+
+`number`
 
 The inclusive time as the end of the log entries.
 
-• **cursor?**: `string`
+##### cursor?
+
+`string`
 
 The cursor to request the next page of entities.
 
-• **pageSize?**: `number`
+##### pageSize?
+
+`number`
 
 The maximum number of entities in a page.
 
 #### Returns
 
-`Promise`\<`object`\>
+`Promise`\<\{ `entities`: [`ILogEntry`](ILogEntry.md)[]; `cursor`: `string`; \}\>
 
 All the entities for the storage matching the conditions,
 and a cursor which can be used to request more entities.
-
-##### entities
-
-> **entities**: [`ILogEntry`](ILogEntry.md)[]
-
-The entities, which can be partial if a limited keys list was provided.
-
-##### cursor?
-
-> `optional` **cursor**: `string`
-
-An optional cursor, when defined can be used to call find to get more entities.
 
 #### Throws
 

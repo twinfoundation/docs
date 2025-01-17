@@ -56,25 +56,25 @@ The EPCIS Body.
 
 The results of the query.
 
-#### queryResults.subscriptionID?
+##### queryResults.subscriptionID?
 
 > `optional` **subscriptionID**: `string`
 
 The concerned subscription.
 
-#### queryResults.queryName
+##### queryResults.queryName
 
 > **queryName**: `string`
 
 The concerned query.
 
-#### queryResults.resultsBody
+##### queryResults.resultsBody
 
 > **resultsBody**: `object`
 
 And now the results.
 
-#### queryResults.resultsBody.eventList
+##### queryResults.resultsBody.eventList
 
 > **eventList**: [`IEpcisEvent`](IEpcisEvent.md)[]
 

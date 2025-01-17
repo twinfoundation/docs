@@ -6,7 +6,9 @@ Replace the transformers manually.
 
 ## Parameters
 
-• **content**: `string`
+### content
+
+`string`
 
 The content to replace the transformers in.
 

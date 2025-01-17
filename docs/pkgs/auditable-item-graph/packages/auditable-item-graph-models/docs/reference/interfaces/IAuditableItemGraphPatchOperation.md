@@ -6,7 +6,7 @@ The patch operation for JSON diffs.
 
 ### @context
 
-> **@context**: `"https://schema.twindev.org/aig/"` \| [`"https://schema.twindev.org/aig/"`, `...string[]`]
+> **@context**: `"https://schema.twindev.org/aig/"` \| \[`"https://schema.twindev.org/aig/"`, `...string[]`\]
 
 JSON-LD Context.
 

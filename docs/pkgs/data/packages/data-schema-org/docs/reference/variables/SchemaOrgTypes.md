@@ -8,7 +8,7 @@ The types of schema.org data.
 
 ### ContextRoot
 
-> `readonly` **ContextRoot**: `"https://schema.org/"` = `"https://schema.org/"`
+> `readonly` **ContextRoot**: `"https://schema.org"` = `"https://schema.org"`
 
 Context Root.
 

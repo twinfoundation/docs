@@ -22,7 +22,9 @@ Parse the document id into its parts.
 
 #### Parameters
 
-• **documentId**: `string`
+##### documentId
+
+`string`
 
 The full document id.
 

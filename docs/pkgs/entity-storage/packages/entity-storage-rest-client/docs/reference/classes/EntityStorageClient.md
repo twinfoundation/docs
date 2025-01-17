@@ -24,7 +24,9 @@ Create a new instance of EntityStorageClient.
 
 #### Parameters
 
-• **config**: `IBaseRestClientConfig`
+##### config
+
+`IBaseRestClientConfig`
 
 The configuration for the client.
 
@@ -58,7 +60,9 @@ Set an entity.
 
 #### Parameters
 
-• **entity**: `T`
+##### entity
+
+`T`
 
 The entity to set.
 
@@ -82,11 +86,15 @@ Get an entity.
 
 #### Parameters
 
-• **id**: `string`
+##### id
+
+`string`
 
 The id of the entity to get, or the index value if secondaryIndex is set.
 
-• **secondaryIndex?**: keyof `T`
+##### secondaryIndex?
+
+keyof `T`
 
 Get the item using a secondary index.
 
@@ -110,7 +118,9 @@ Remove the entity.
 
 #### Parameters
 
-• **id**: `string`
+##### id
+
+`string`
 
 The id of the entity to remove.
 
@@ -128,54 +138,54 @@ Nothing.
 
 ### query()
 
-> **query**(`conditions`?, `orderBy`?, `orderByDirection`?, `properties`?, `cursor`?, `pageSize`?): `Promise`\<`object`\>
+> **query**(`conditions`?, `orderBy`?, `orderByDirection`?, `properties`?, `cursor`?, `pageSize`?): `Promise`\<\{ `entities`: `Partial`\<`T`\>[]; `cursor`: `string`; \}\>
 
 Query all the entities which match the conditions.
 
 #### Parameters
 
-• **conditions?**: `EntityCondition`\<`T`\>
+##### conditions?
+
+`EntityCondition`\<`T`\>
 
 The conditions to match for the entities.
 
-• **orderBy?**: keyof `T`
+##### orderBy?
+
+keyof `T`
 
 The order for the results.
 
-• **orderByDirection?**: `SortDirection`
+##### orderByDirection?
+
+`SortDirection`
 
 The direction for the order, defaults to ascending.
 
-• **properties?**: keyof `T`[]
+##### properties?
+
+keyof `T`[]
 
 The optional properties to return, defaults to all.
 
-• **cursor?**: `string`
+##### cursor?
+
+`string`
 
 The cursor to request the next page of entities.
 
-• **pageSize?**: `number`
+##### pageSize?
+
+`number`
 
 The suggested number of entities to return in each chunk, in some scenarios can return a different amount.
 
 #### Returns
 
-`Promise`\<`object`\>
+`Promise`\<\{ `entities`: `Partial`\<`T`\>[]; `cursor`: `string`; \}\>
 
 All the entities for the storage matching the conditions,
 and a cursor which can be used to request more entities.
-
-##### entities
-
-> **entities**: `Partial`\<`T`\>[]
-
-The entities, which can be partial if a limited keys list was provided.
-
-##### cursor?
-
-> `optional` **cursor**: `string`
-
-An optional cursor, when defined can be used to call find to get more entities.
 
 #### Implementation of
 

@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/workbench-ui",
-	"version": "0.0.1-next.6",
+	"version": "0.0.1-next.9",
 	"description": "UI to demonstrate the APIs",
 	"private": true,
 	"scripts": {
@@ -34,6 +34,7 @@
 		"@twin.org/data-json-ld": "next",
 		"@twin.org/data-schema-org": "next",
 		"@twin.org/entity-storage-rest-client": "next",
+		"@twin.org/event-bus-socket-client": "next",
 		"@twin.org/identity-models": "next",
 		"@twin.org/identity-rest-client": "next",
 		"@twin.org/immutable-proof-models": "next",
@@ -57,7 +58,7 @@
 		"svelte": "^5.2.7",
 		"svelte-check": "^4.0.9",
 		"tailwindcss": "^3.4.15",
-		"typescript": "^5.6.3",
+		"typescript": "^5.7.3",
 		"vite": "^5.4.11",
 		"vitest": "^2.1.5"
 	},

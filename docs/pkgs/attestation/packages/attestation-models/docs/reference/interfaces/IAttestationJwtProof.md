@@ -6,7 +6,7 @@ Interface describing an attestation proof.
 
 ### @context
 
-> **@context**: `"https://schema.twindev.org/attestation/"` \| [`"https://schema.twindev.org/attestation/"`, `...string[]`]
+> **@context**: `"https://schema.twindev.org/attestation/"` \| \[`"https://schema.twindev.org/attestation/"`, `...string[]`\]
 
 JSON-LD Context.
 

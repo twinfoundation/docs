@@ -7,3 +7,4 @@
 ## Interfaces
 
 - [ICosmosDbEntityStorageConnectorConfig](interfaces/ICosmosDbEntityStorageConnectorConfig.md)
+- [ICosmosDbEntityStorageConnectorConstructorOptions](interfaces/ICosmosDbEntityStorageConnectorConstructorOptions.md)

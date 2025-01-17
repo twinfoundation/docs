@@ -22,23 +22,33 @@ Mint an NFT.
 
 #### Parameters
 
-• **controller**: `string`
+##### controller
+
+`string`
 
 The identity of the user to access the vault keys.
 
-• **issuerAddress**: `string`
+##### issuerAddress
+
+`string`
 
 The issuer for the NFT, will also be the initial owner.
 
-• **tag**: `string`
+##### tag
+
+`string`
 
 The tag for the NFT.
 
-• **immutableMetadata?**: `T`
+##### immutableMetadata?
+
+`T`
 
 The immutable metadata for the NFT.
 
-• **metadata?**: `U`
+##### metadata?
+
+`U`
 
 The metadata for the NFT.
 
@@ -52,7 +62,7 @@ The id of the created NFT in urn format.
 
 ### resolve()
 
-> **resolve**\<`T`, `U`\>(`id`): `Promise`\<`object`\>
+> **resolve**\<`T`, `U`\>(`id`): `Promise`\<\{ `issuer`: `string`; `owner`: `string`; `tag`: `string`; `immutableMetadata`: `T`; `metadata`: `U`; \}\>
 
 Resolve an NFT.
 
@@ -64,35 +74,17 @@ Resolve an NFT.
 
 #### Parameters
 
-• **id**: `string`
+##### id
+
+`string`
 
 The id of the NFT to resolve.
 
 #### Returns
 
-`Promise`\<`object`\>
+`Promise`\<\{ `issuer`: `string`; `owner`: `string`; `tag`: `string`; `immutableMetadata`: `T`; `metadata`: `U`; \}\>
 
 The data for the NFT.
-
-##### issuer
-
-> **issuer**: `string`
-
-##### owner
-
-> **owner**: `string`
-
-##### tag
-
-> **tag**: `string`
-
-##### immutableMetadata?
-
-> `optional` **immutableMetadata**: `T`
-
-##### metadata?
-
-> `optional` **metadata**: `U`
 
 ***
 
@@ -104,11 +96,15 @@ Burn an NFT.
 
 #### Parameters
 
-• **controller**: `string`
+##### controller
+
+`string`
 
 The controller of the NFT who can make changes.
 
-• **id**: `string`
+##### id
+
+`string`
 
 The id of the NFT to burn in urn format.
 
@@ -132,19 +128,27 @@ Transfer an NFT.
 
 #### Parameters
 
-• **controller**: `string`
+##### controller
+
+`string`
 
 The controller of the NFT who can make changes.
 
-• **id**: `string`
+##### id
+
+`string`
 
 The id of the NFT to transfer in urn format.
 
-• **recipient**: `string`
+##### recipient
+
+`string`
 
 The recipient of the NFT.
 
-• **metadata?**: `T`
+##### metadata?
+
+`T`
 
 Optional mutable data to include during the transfer.
 
@@ -168,15 +172,21 @@ Update the mutable data of the NFT.
 
 #### Parameters
 
-• **controller**: `string`
+##### controller
+
+`string`
 
 The controller of the NFT who can make changes.
 
-• **id**: `string`
+##### id
+
+`string`
 
 The id of the NFT to update in urn format.
 
-• **metadata**: `T`
+##### metadata
+
+`T`
 
 The mutable data to update.
 

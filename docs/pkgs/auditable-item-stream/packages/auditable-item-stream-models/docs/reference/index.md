@@ -30,11 +30,19 @@
 - [IAuditableItemStreamListResponse](interfaces/IAuditableItemStreamListResponse.md)
 - [IAuditableItemStreamUpdateEntryRequest](interfaces/IAuditableItemStreamUpdateEntryRequest.md)
 - [IAuditableItemStreamUpdateRequest](interfaces/IAuditableItemStreamUpdateRequest.md)
+- [IAuditableItemStreamEventBusStreamCreated](interfaces/IAuditableItemStreamEventBusStreamCreated.md)
+- [IAuditableItemStreamEventBusStreamDeleted](interfaces/IAuditableItemStreamEventBusStreamDeleted.md)
+- [IAuditableItemStreamEventBusStreamEntryCreated](interfaces/IAuditableItemStreamEventBusStreamEntryCreated.md)
+- [IAuditableItemStreamEventBusStreamEntryDeleted](interfaces/IAuditableItemStreamEventBusStreamEntryDeleted.md)
+- [IAuditableItemStreamEventBusStreamEntryUpdated](interfaces/IAuditableItemStreamEventBusStreamEntryUpdated.md)
+- [IAuditableItemStreamEventBusStreamUpdated](interfaces/IAuditableItemStreamEventBusStreamUpdated.md)
 
 ## Type Aliases
 
+- [AuditableItemStreamTopics](type-aliases/AuditableItemStreamTopics.md)
 - [AuditableItemStreamTypes](type-aliases/AuditableItemStreamTypes.md)
 
 ## Variables
 
+- [AuditableItemStreamTopics](variables/AuditableItemStreamTopics.md)
 - [AuditableItemStreamTypes](variables/AuditableItemStreamTypes.md)

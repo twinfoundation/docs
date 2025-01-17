@@ -4,6 +4,10 @@
 
 - [LoggingService](classes/LoggingService.md)
 
+## Interfaces
+
+- [ILoggingServiceConstructorOptions](interfaces/ILoggingServiceConstructorOptions.md)
+
 ## Variables
 
 - [tagsLogging](variables/tagsLogging.md)

@@ -4,4 +4,4 @@ EPCIS Query type.
 
 ## Indexable
 
- \[`key`: `string`\]: `string`
+\[`key`: `string`\]: `string`

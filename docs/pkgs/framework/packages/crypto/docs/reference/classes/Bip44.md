@@ -22,27 +22,39 @@ Generate a bip44 key pair from the seed and parts.
 
 #### Parameters
 
-• **seed**: `Uint8Array`
+##### seed
+
+`Uint8Array`
 
 The account seed.
 
-• **keyType**: [`KeyType`](../type-aliases/KeyType.md)
+##### keyType
+
+[`KeyType`](../type-aliases/KeyType.md)
 
 The key type.
 
-• **coinType**: `number`
+##### coinType
+
+`number`
 
 The coin type.
 
-• **accountIndex**: `number`
+##### accountIndex
+
+`number`
 
 The account index.
 
-• **isInternal**: `boolean`
+##### isInternal
+
+`boolean`
 
 Is this an internal address.
 
-• **addressIndex**: `number`
+##### addressIndex
+
+`number`
 
 The address index.
 
@@ -74,19 +86,27 @@ Generate a bip44 path based on all its parts.
 
 #### Parameters
 
-• **coinType**: `number`
+##### coinType
+
+`number`
 
 The coin type.
 
-• **accountIndex**: `number`
+##### accountIndex
+
+`number`
 
 The account index.
 
-• **isInternal**: `boolean`
+##### isInternal
+
+`boolean`
 
 Is this an internal address.
 
-• **addressIndex**: `number`
+##### addressIndex
+
+`number`
 
 The address index.
 
@@ -106,7 +126,9 @@ Create a bip44 base path for the provided coin type.
 
 #### Parameters
 
-• **coinType**: `number`
+##### coinType
+
+`number`
 
 The coin type.
 
@@ -118,6 +140,70 @@ The bip44 address base path.
 
 ***
 
+### address()
+
+> `static` **address**(`seed`, `keyType`, `coinType`, `accountIndex`, `isInternal`, `addressIndex`): `object`
+
+Generate an address from the seed and parts.
+
+#### Parameters
+
+##### seed
+
+`Uint8Array`
+
+The account seed.
+
+##### keyType
+
+[`KeyType`](../type-aliases/KeyType.md)
+
+The key type.
+
+##### coinType
+
+`number`
+
+The coin type.
+
+##### accountIndex
+
+`number`
+
+The account index.
+
+##### isInternal
+
+`boolean`
+
+Is this an internal address.
+
+##### addressIndex
+
+`number`
+
+The address index.
+
+#### Returns
+
+`object`
+
+The generated path and the associated keypair.
+
+##### address
+
+> **address**: `string`
+
+##### privateKey
+
+> **privateKey**: `Uint8Array`
+
+##### publicKey
+
+> **publicKey**: `Uint8Array`
+
+***
+
 ### addressBech32()
 
 > `static` **addressBech32**(`seed`, `keyType`, `hrp`, `coinType`, `accountIndex`, `isInternal`, `addressIndex`): `object`
@@ -126,31 +212,45 @@ Generate a bech32 address from the seed and parts.
 
 #### Parameters
 
-• **seed**: `Uint8Array`
+##### seed
+
+`Uint8Array`
 
 The account seed.
 
-• **keyType**: [`KeyType`](../type-aliases/KeyType.md)
+##### keyType
+
+[`KeyType`](../type-aliases/KeyType.md)
 
 The key type.
 
-• **hrp**: `string`
+##### hrp
+
+`string`
 
 The human readable part of the address.
 
-• **coinType**: `number`
+##### coinType
+
+`number`
 
 The coin type.
 
-• **accountIndex**: `number`
+##### accountIndex
+
+`number`
 
 The account index.
 
-• **isInternal**: `boolean`
+##### isInternal
+
+`boolean`
 
 Is this an internal address.
 
-• **addressIndex**: `number`
+##### addressIndex
+
+`number`
 
 The address index.
 

@@ -22,15 +22,21 @@ Validate if the property is valid geo-coordinates.
 
 #### Parameters
 
-• **propertyName**: `string`
+##### propertyName
+
+`string`
 
 The name of the property being validated.
 
-• **value**: `unknown`
+##### value
+
+`unknown`
 
 The value to test.
 
-• **failures**: `IValidationFailure`[]
+##### failures
+
+`IValidationFailure`[]
 
 The list of failures to add to.
 

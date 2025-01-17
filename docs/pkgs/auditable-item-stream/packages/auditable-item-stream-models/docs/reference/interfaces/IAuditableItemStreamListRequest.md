@@ -26,7 +26,7 @@ The query parameters.
 
 > `optional` **conditions**: `string`
 
-The conditions to filter the streams, consist of property|comparison|value comma separated.
+The conditions to filter the streams, JSON stringified IComparator[].
 
 #### orderBy?
 

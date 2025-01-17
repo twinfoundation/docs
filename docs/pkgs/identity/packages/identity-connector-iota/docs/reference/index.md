@@ -8,3 +8,4 @@
 ## Interfaces
 
 - [IIotaIdentityConnectorConfig](interfaces/IIotaIdentityConnectorConfig.md)
+- [IIotaIdentityConnectorConstructorOptions](interfaces/IIotaIdentityConnectorConstructorOptions.md)

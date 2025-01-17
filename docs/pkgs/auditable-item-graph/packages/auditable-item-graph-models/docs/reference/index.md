@@ -21,13 +21,17 @@
 - [IAuditableItemGraphListRequest](interfaces/IAuditableItemGraphListRequest.md)
 - [IAuditableItemGraphListResponse](interfaces/IAuditableItemGraphListResponse.md)
 - [IAuditableItemGraphUpdateRequest](interfaces/IAuditableItemGraphUpdateRequest.md)
+- [IAuditableItemGraphEventBusVertexCreated](interfaces/IAuditableItemGraphEventBusVertexCreated.md)
+- [IAuditableItemGraphEventBusVertexUpdated](interfaces/IAuditableItemGraphEventBusVertexUpdated.md)
 
 ## Type Aliases
 
+- [AuditableItemGraphTopics](type-aliases/AuditableItemGraphTopics.md)
 - [AuditableItemGraphTypes](type-aliases/AuditableItemGraphTypes.md)
 - [VerifyDepth](type-aliases/VerifyDepth.md)
 
 ## Variables
 
+- [AuditableItemGraphTopics](variables/AuditableItemGraphTopics.md)
 - [AuditableItemGraphTypes](variables/AuditableItemGraphTypes.md)
 - [VerifyDepth](variables/VerifyDepth.md)

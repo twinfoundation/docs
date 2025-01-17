@@ -20,7 +20,9 @@ Create a new instance of ImmutableProofClient.
 
 #### Parameters
 
-• **config**: `IBaseRestClientConfig`
+##### config
+
+`IBaseRestClientConfig`
 
 The configuration for the client.
 
@@ -54,7 +56,9 @@ Create a new authentication proof.
 
 #### Parameters
 
-• **proofObject**: `IJsonLdNodeObject`
+##### proofObject
+
+`IJsonLdNodeObject`
 
 The object for the proof as JSON-LD.
 
@@ -78,7 +82,9 @@ Get an authentication proof.
 
 #### Parameters
 
-• **id**: `string`
+##### id
+
+`string`
 
 The id of the proof to get.
 
@@ -106,7 +112,9 @@ Verify an authentication proof.
 
 #### Parameters
 
-• **id**: `string`
+##### id
+
+`string`
 
 The id of the proof to verify.
 
@@ -134,7 +142,9 @@ Remove the immutable storage for the proof.
 
 #### Parameters
 
-• **id**: `string`
+##### id
+
+`string`
 
 The id of the proof to remove the storage from.
 

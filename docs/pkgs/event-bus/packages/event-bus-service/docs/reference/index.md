@@ -4,6 +4,10 @@
 
 - [EventBusService](classes/EventBusService.md)
 
+## Interfaces
+
+- [IEventBusServiceConstructorOptions](interfaces/IEventBusServiceConstructorOptions.md)
+
 ## Variables
 
 - [tagsEventBus](variables/tagsEventBus.md)

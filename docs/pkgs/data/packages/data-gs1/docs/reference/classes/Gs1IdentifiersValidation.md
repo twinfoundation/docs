@@ -22,15 +22,21 @@ Validate if the property is a valid epc.
 
 #### Parameters
 
-• **propertyName**: `string`
+##### propertyName
+
+`string`
 
 The name of the property being validated.
 
-• **value**: `unknown`
+##### value
+
+`unknown`
 
 The value to test.
 
-• **failures**: `IValidationFailure`[]
+##### failures
+
+`IValidationFailure`[]
 
 The list of failures to add to.
 
@@ -50,15 +56,21 @@ Validate if the property is a valid epc id gtin.
 
 #### Parameters
 
-• **propertyName**: `string`
+##### propertyName
+
+`string`
 
 The name of the property being validated.
 
-• **value**: `unknown`
+##### value
+
+`unknown`
 
 The value to test.
 
-• **failures**: `IValidationFailure`[]
+##### failures
+
+`IValidationFailure`[]
 
 The list of failures to add to.
 
@@ -78,15 +90,21 @@ Validate if the property is a valid epc id gln.
 
 #### Parameters
 
-• **propertyName**: `string`
+##### propertyName
+
+`string`
 
 The name of the property being validated.
 
-• **value**: `unknown`
+##### value
+
+`unknown`
 
 The value to test.
 
-• **failures**: `IValidationFailure`[]
+##### failures
+
+`IValidationFailure`[]
 
 The list of failures to add to.
 
@@ -106,15 +124,21 @@ Validate if the property is a valid epc class.
 
 #### Parameters
 
-• **propertyName**: `string`
+##### propertyName
+
+`string`
 
 The name of the property being validated.
 
-• **value**: `unknown`
+##### value
+
+`unknown`
 
 The value to test.
 
-• **failures**: `IValidationFailure`[]
+##### failures
+
+`IValidationFailure`[]
 
 The list of failures to add to.
 
@@ -134,7 +158,9 @@ Extract the EPC gtin from the URI.
 
 #### Parameters
 
-• **epc**: `string`
+##### epc
+
+`string`
 
 The uri to extract from.
 
@@ -154,7 +180,9 @@ Extract the EPC gln from the URI.
 
 #### Parameters
 
-• **epc**: `string`
+##### epc
+
+`string`
 
 The uri to extract from.
 
@@ -174,7 +202,9 @@ Extract The EPC Class from the URI.
 
 #### Parameters
 
-• **epc**: `string`
+##### epc
+
+`string`
 
 The uri to extract from.
 

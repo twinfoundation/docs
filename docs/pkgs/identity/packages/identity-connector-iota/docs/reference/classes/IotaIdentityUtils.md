@@ -22,7 +22,9 @@ Convert a DID to an address.
 
 #### Parameters
 
-• **did**: `string`
+##### did
+
+`string`
 
 The DID to convert.
 

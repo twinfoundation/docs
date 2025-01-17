@@ -14,13 +14,16 @@
 - [IImmutableProofGetResponse](interfaces/IImmutableProofGetResponse.md)
 - [IImmutableProofVerifyRequest](interfaces/IImmutableProofVerifyRequest.md)
 - [IImmutableProofVerifyResponse](interfaces/IImmutableProofVerifyResponse.md)
+- [IImmutableProofEventBusProofCreated](interfaces/IImmutableProofEventBusProofCreated.md)
 
 ## Type Aliases
 
 - [ImmutableProofFailure](type-aliases/ImmutableProofFailure.md)
+- [ImmutableProofTopics](type-aliases/ImmutableProofTopics.md)
 - [ImmutableProofTypes](type-aliases/ImmutableProofTypes.md)
 
 ## Variables
 
 - [ImmutableProofFailure](variables/ImmutableProofFailure.md)
+- [ImmutableProofTopics](variables/ImmutableProofTopics.md)
 - [ImmutableProofTypes](variables/ImmutableProofTypes.md)

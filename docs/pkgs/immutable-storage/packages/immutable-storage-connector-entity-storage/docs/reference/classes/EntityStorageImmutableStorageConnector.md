@@ -16,13 +16,11 @@ Create a new instance of EntityStorageImmutableStorageConnector.
 
 #### Parameters
 
-• **options?**
+##### options?
 
-The dependencies for the class.
+[`IEntityStorageImmutableStorageConnectorConstructorOptions`](../interfaces/IEntityStorageImmutableStorageConnectorConstructorOptions.md)
 
-• **options.immutableStorageEntityStorageType?**: `string`
-
-The entity storage for immutable storage items, defaults to "immutable-item".
+The options for the class.
 
 #### Returns
 
@@ -52,33 +50,29 @@ Runtime name for the class.
 
 ### store()
 
-> **store**(`controller`, `data`): `Promise`\<`object`\>
+> **store**(`controller`, `data`): `Promise`\<\{ `id`: `string`; `receipt`: `IJsonLdNodeObject`; \}\>
 
 Store an item in immutable storage.
 
 #### Parameters
 
-• **controller**: `string`
+##### controller
+
+`string`
 
 The identity of the user to access the vault keys.
 
-• **data**: `Uint8Array`
+##### data
+
+`Uint8Array`
 
 The data to store.
 
 #### Returns
 
-`Promise`\<`object`\>
+`Promise`\<\{ `id`: `string`; `receipt`: `IJsonLdNodeObject`; \}\>
 
 The id of the stored immutable item in urn format.
-
-##### id
-
-> **id**: `string`
-
-##### receipt
-
-> **receipt**: `IJsonLdNodeObject`
 
 #### Implementation of
 
@@ -88,37 +82,33 @@ The id of the stored immutable item in urn format.
 
 ### get()
 
-> **get**(`id`, `options`?): `Promise`\<`object`\>
+> **get**(`id`, `options`?): `Promise`\<\{ `data`: `Uint8Array`; `receipt`: `IJsonLdNodeObject`; \}\>
 
 Get an immutable item.
 
 #### Parameters
 
-• **id**: `string`
+##### id
+
+`string`
 
 The id of the item to get.
 
-• **options?**
+##### options?
 
 Additional options for getting the item.
 
-• **options.includeData?**: `boolean`
+###### includeData
+
+`boolean`
 
 Should the data be included in the response, defaults to true.
 
 #### Returns
 
-`Promise`\<`object`\>
+`Promise`\<\{ `data`: `Uint8Array`; `receipt`: `IJsonLdNodeObject`; \}\>
 
 The data for the item and the receipt.
-
-##### data?
-
-> `optional` **data**: `Uint8Array`
-
-##### receipt
-
-> **receipt**: `IJsonLdNodeObject`
 
 #### Implementation of
 
@@ -134,11 +124,15 @@ Remove the item from immutable storage.
 
 #### Parameters
 
-• **controller**: `string`
+##### controller
+
+`string`
 
 The identity of the user to access the vault keys.
 
-• **id**: `string`
+##### id
+
+`string`
 
 The id of the immutable item to remove in urn format.
 

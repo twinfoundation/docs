@@ -6,6 +6,10 @@
 - [LogEntryError](classes/LogEntryError.md)
 - [EntityStorageLoggingConnector](classes/EntityStorageLoggingConnector.md)
 
+## Interfaces
+
+- [IEntityStorageLoggingConnectorConstructorOptions](interfaces/IEntityStorageLoggingConnectorConstructorOptions.md)
+
 ## Type Aliases
 
 - [IEntityStorageLoggingConnectorConfig](type-aliases/IEntityStorageLoggingConnectorConfig.md)

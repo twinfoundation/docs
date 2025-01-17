@@ -8,6 +8,7 @@
 ## Interfaces
 
 - [IBlobStorageServiceConfig](interfaces/IBlobStorageServiceConfig.md)
+- [IBlobStorageServiceConstructorOptions](interfaces/IBlobStorageServiceConstructorOptions.md)
 
 ## Variables
 

@@ -16,33 +16,11 @@ Create a new instance of ImmutableProofService.
 
 #### Parameters
 
-• **options?**
+##### options?
+
+[`IImmutableProofServiceConstructorOptions`](../interfaces/IImmutableProofServiceConstructorOptions.md)
 
 The dependencies for the immutable proof connector.
-
-• **options.vaultConnectorType?**: `string`
-
-The vault connector type, defaults to "vault".
-
-• **options.immutableProofEntityStorageType?**: `string`
-
-The entity storage for proofs, defaults to "immutable-proof".
-
-• **options.immutableStorageType?**: `string`
-
-The immutable storage, defaults to "immutable-storage".
-
-• **options.identityConnectorType?**: `string`
-
-The identity connector type, defaults to "identity".
-
-• **options.backgroundTaskConnectorType?**: `string`
-
-The background task connector type, defaults to "background-task".
-
-• **options.config?**: [`IImmutableProofServiceConfig`](../interfaces/IImmutableProofServiceConfig.md)
-
-The configuration for the connector.
 
 #### Returns
 
@@ -78,15 +56,21 @@ Create a new authentication proof.
 
 #### Parameters
 
-• **proofObject**: `IJsonLdNodeObject`
+##### proofObject
+
+`IJsonLdNodeObject`
 
 The object for the proof as JSON-LD.
 
-• **userIdentity?**: `string`
+##### userIdentity?
+
+`string`
 
 The identity to create the immutable proof operation with.
 
-• **nodeIdentity?**: `string`
+##### nodeIdentity?
+
+`string`
 
 The node identity to use for vault operations.
 
@@ -110,7 +94,9 @@ Get an authentication proof.
 
 #### Parameters
 
-• **id**: `string`
+##### id
+
+`string`
 
 The id of the proof to get.
 
@@ -138,7 +124,9 @@ Verify an authentication proof.
 
 #### Parameters
 
-• **id**: `string`
+##### id
+
+`string`
 
 The id of the proof to verify.
 
@@ -166,11 +154,15 @@ Remove the immutable storage for the proof.
 
 #### Parameters
 
-• **id**: `string`
+##### id
+
+`string`
 
 The id of the proof to remove the storage from.
 
-• **nodeIdentity?**: `string`
+##### nodeIdentity?
+
+`string`
 
 The node identity to use for vault operations.
 

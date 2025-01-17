@@ -12,6 +12,7 @@
 - [ILoggingComponent](interfaces/ILoggingComponent.md)
 - [ILoggingConnector](interfaces/ILoggingConnector.md)
 - [ILoggingLevelsConfig](interfaces/ILoggingLevelsConfig.md)
+- [IMultiLoggingConnectorConstructorOptions](interfaces/IMultiLoggingConnectorConstructorOptions.md)
 - [ILoggingCreateRequest](interfaces/ILoggingCreateRequest.md)
 - [ILoggingListRequest](interfaces/ILoggingListRequest.md)
 - [ILoggingListResponse](interfaces/ILoggingListResponse.md)

@@ -7,3 +7,4 @@
 ## Interfaces
 
 - [IConsoleLoggingConnectorConfig](interfaces/IConsoleLoggingConnectorConfig.md)
+- [IConsoleLoggingConnectorConstructorOptions](interfaces/IConsoleLoggingConnectorConstructorOptions.md)

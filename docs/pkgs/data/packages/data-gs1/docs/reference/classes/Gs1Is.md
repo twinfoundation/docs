@@ -22,7 +22,9 @@ Is the value an EPC identifier.
 
 #### Parameters
 
-• **value**: `string`
+##### value
+
+`string`
 
 The value to test.
 
@@ -42,7 +44,9 @@ Is the value a valid geo uri https://en.wikipedia.org/wiki/Geo_URI_scheme.
 
 #### Parameters
 
-• **value**: `string`
+##### value
+
+`string`
 
 The value to check.
 

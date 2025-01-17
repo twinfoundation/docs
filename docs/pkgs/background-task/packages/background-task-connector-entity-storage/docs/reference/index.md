@@ -8,6 +8,7 @@
 ## Interfaces
 
 - [IEntityStorageBackgroundTaskConnectorConfig](interfaces/IEntityStorageBackgroundTaskConnectorConfig.md)
+- [IEntityStorageBackgroundTaskConnectorConstructorOptions](interfaces/IEntityStorageBackgroundTaskConnectorConstructorOptions.md)
 
 ## Functions
 

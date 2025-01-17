@@ -6,15 +6,21 @@ Create a new log entry.
 
 ## Parameters
 
-• **httpRequestContext**: `IHttpRequestContext`
+### httpRequestContext
+
+`IHttpRequestContext`
 
 The request context for the API.
 
-• **componentName**: `string`
+### componentName
+
+`string`
 
 The name of the component to use in the routes.
 
-• **request**: `ILoggingCreateRequest`
+### request
+
+`ILoggingCreateRequest`
 
 The request.
 

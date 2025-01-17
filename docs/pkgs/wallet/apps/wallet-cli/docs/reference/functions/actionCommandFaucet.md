@@ -6,23 +6,43 @@ Action the faucet command.
 
 ## Parameters
 
-• **opts**
+### opts
 
 The options for the command.
 
-• **opts.address**: `string`
+#### address
+
+`string`
 
 The address to fill from the faucet.
 
-• **opts.faucet**: `string`
+#### faucet
+
+`string`
 
 The faucet URL.
 
-• **opts.node**: `string`
+#### connector
+
+`string`
+
+The connector to perform the operations with.
+
+#### node
+
+`string`
 
 The node URL.
 
-• **opts.explorer**: `string`
+#### network
+
+`string`
+
+The network to use for rebased connector.
+
+#### explorer
+
+`string`
 
 The explorer URL.
 

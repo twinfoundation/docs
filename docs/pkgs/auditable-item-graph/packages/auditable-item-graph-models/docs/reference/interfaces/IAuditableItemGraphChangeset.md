@@ -6,7 +6,7 @@ Interface describing a set of updates to the vertex.
 
 ### @context
 
-> **@context**: `"https://schema.twindev.org/aig/"` \| [`"https://schema.twindev.org/aig/"`, `...string[]`]
+> **@context**: `"https://schema.twindev.org/aig/"` \| \[`"https://schema.twindev.org/aig/"`, `...string[]`\]
 
 JSON-LD Context.
 

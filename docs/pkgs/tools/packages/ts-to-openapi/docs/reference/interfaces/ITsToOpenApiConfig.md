@@ -66,6 +66,30 @@ The authentication methods.
 
 The packages containing routes.
 
+#### package?
+
+> `optional` **package**: `string`
+
+The package containing the routes.
+
+#### version?
+
+> `optional` **version**: `string`
+
+The version of the package to use, defaults to latest.
+
+#### packageRoot?
+
+> `optional` **packageRoot**: `string`
+
+To point to a local instance of a package use this property instead of package/version.
+
+#### entryPoints?
+
+> `optional` **entryPoints**: [`ITsToOpenApiConfigEntryPoint`](ITsToOpenApiConfigEntryPoint.md)[]
+
+The rest entry points to include, defaults to all exported entry points.
+
 ***
 
 ### externalReferences?
@@ -76,4 +100,4 @@ External type references
 
 #### Index Signature
 
- \[`id`: `string`\]: `string`
+\[`id`: `string`\]: `string`

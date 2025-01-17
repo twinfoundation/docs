@@ -12,17 +12,15 @@ Class for performing vault operations in entity storage.
 
 > **new HashicorpVaultConnector**(`options`): [`HashicorpVaultConnector`](HashicorpVaultConnector.md)
 
-Create a new instance of HashicorpStorageVaultConnector.
+Create a new instance of HashicorpVaultConnector.
 
 #### Parameters
 
-• **options**
+##### options
+
+[`IHashicorpVaultConnectorConstructorOptions`](../interfaces/IHashicorpVaultConnectorConstructorOptions.md)
 
 The options for the vault connector.
-
-• **options.config**: [`IHashicorpVaultConnectorConfig`](../interfaces/IHashicorpVaultConnectorConfig.md)
-
-The configuration for the Hashicorp Vault connector.
 
 #### Returns
 
@@ -58,7 +56,9 @@ Bootstrap the vault connector and ensure connectivity.
 
 #### Parameters
 
-• **nodeLoggingConnectorType?**: `string`
+##### nodeLoggingConnectorType?
+
+`string`
 
 The node logging connector type, defaults to "node-logging".
 
@@ -86,11 +86,15 @@ Store a secret in the vault.
 
 #### Parameters
 
-• **name**: `string`
+##### name
+
+`string`
 
 The name of the item in the vault to set.
 
-• **data**: `T`
+##### data
+
+`T`
 
 The item to add to the vault.
 
@@ -118,7 +122,9 @@ Get a secret from the vault.
 
 #### Parameters
 
-• **name**: `string`
+##### name
+
+`string`
 
 The name of the item in the vault to get.
 
@@ -146,7 +152,9 @@ Remove a secret from the vault.
 
 #### Parameters
 
-• **name**: `string`
+##### name
+
+`string`
 
 The name of the item in the vault to remove.
 
@@ -174,11 +182,15 @@ Create a key in the vault.
 
 #### Parameters
 
-• **name**: `string`
+##### name
+
+`string`
 
 The name of the key to create.
 
-• **type**: `VaultKeyType`
+##### type
+
+`VaultKeyType`
 
 The type of the key to create.
 
@@ -202,19 +214,27 @@ Add a key to the vault.
 
 #### Parameters
 
-• **name**: `string`
+##### name
+
+`string`
 
 The name of the key to add.
 
-• **type**: `VaultKeyType`
+##### type
+
+`VaultKeyType`
 
 The type of the key to add.
 
-• **privateKey**: `Uint8Array`
+##### privateKey
+
+`Uint8Array`
 
 The private key to add.
 
-• **publicKey?**: `Uint8Array`
+##### publicKey?
+
+`Uint8Array`
 
 The public key, can be undefined if the key type is symmetric.
 
@@ -232,39 +252,23 @@ Nothing.
 
 ### getKey()
 
-> **getKey**(`name`): `Promise`\<`object`\>
+> **getKey**(`name`): `Promise`\<\{ `type`: `VaultKeyType`; `privateKey`: `Uint8Array`; `publicKey`: `Uint8Array`; \}\>
 
 Get a key from the vault.
 
 #### Parameters
 
-• **name**: `string`
+##### name
+
+`string`
 
 The name of the key to get.
 
 #### Returns
 
-`Promise`\<`object`\>
+`Promise`\<\{ `type`: `VaultKeyType`; `privateKey`: `Uint8Array`; `publicKey`: `Uint8Array`; \}\>
 
 The key, publicKey can be undefined if key is symmetric.
-
-##### type
-
-> **type**: `VaultKeyType`
-
-The type of the key e.g. Ed25519.
-
-##### privateKey
-
-> **privateKey**: `Uint8Array`
-
-The private key.
-
-##### publicKey?
-
-> `optional` **publicKey**: `Uint8Array`
-
-The public key, which can be undefined if key type is symmetric.
 
 #### Implementation of
 
@@ -280,11 +284,15 @@ Rename a key in the vault.
 
 #### Parameters
 
-• **name**: `string`
+##### name
+
+`string`
 
 The name of the key to rename.
 
-• **newName**: `string`
+##### newName
+
+`string`
 
 The new name of the key.
 
@@ -308,7 +316,9 @@ Remove a key from the vault.
 
 #### Parameters
 
-• **name**: `string`
+##### name
+
+`string`
 
 The name of the key to remove.
 
@@ -332,11 +342,15 @@ Sign data.
 
 #### Parameters
 
-• **name**: `string`
+##### name
+
+`string`
 
 The name of the key to use.
 
-• **data**: `Uint8Array`
+##### data
+
+`Uint8Array`
 
 The data to sign.
 
@@ -360,15 +374,21 @@ Verify a signature.
 
 #### Parameters
 
-• **name**: `string`
+##### name
+
+`string`
 
 The name of the key to use.
 
-• **data**: `Uint8Array`
+##### data
+
+`Uint8Array`
 
 The data to verify.
 
-• **signature**: `Uint8Array`
+##### signature
+
+`Uint8Array`
 
 The signature to verify.
 
@@ -392,15 +412,21 @@ Encrypt data.
 
 #### Parameters
 
-• **name**: `string`
+##### name
+
+`string`
 
 The name of the key to use.
 
-• **encryptionType**: `0`
+##### encryptionType
+
+`0`
 
 The type of encryption to use.
 
-• **data**: `Uint8Array`
+##### data
+
+`Uint8Array`
 
 The data to encrypt.
 
@@ -424,15 +450,21 @@ Decrypt data.
 
 #### Parameters
 
-• **name**: `string`
+##### name
+
+`string`
 
 The name of the key to use.
 
-• **encryptionType**: `0`
+##### encryptionType
+
+`0`
 
 The type of encryption to use.
 
-• **encryptedData**: `Uint8Array`
+##### encryptedData
+
+`Uint8Array`
 
 The encrypted data to decrypt.
 
@@ -456,7 +488,9 @@ Get the versions of a secret.
 
 #### Parameters
 
-• **name**: `string`
+##### name
+
+`string`
 
 The name of the secret.
 
@@ -480,15 +514,21 @@ Update the configuration of a key.
 
 #### Parameters
 
-• **name**: `string`
+##### name
+
+`string`
 
 The name of the key to update.
 
-• **deletionAllowed?**: `boolean`
+##### deletionAllowed?
+
+`boolean`
 
 Whether the key can be deleted.
 
-• **exportable?**: `boolean`
+##### exportable?
+
+`boolean`
 
 Whether the key can be exported.
 
@@ -508,7 +548,9 @@ Backup a key from the vault.
 
 #### Parameters
 
-• **name**: `string`
+##### name
+
+`string`
 
 The name of the key to backup.
 
@@ -532,11 +574,15 @@ Restore a key to the vault.
 
 #### Parameters
 
-• **name**: `string`
+##### name
+
+`string`
 
 The name of the key to restore.
 
-• **backup**: `string`
+##### backup
+
+`string`
 
 The backup of the key.
 
@@ -554,47 +600,35 @@ Error if the key cannot be restored.
 
 ### exportKey()
 
-> **exportKey**(`name`, `keyPath`, `version`?): `Promise`\<`object`\>
+> **exportKey**(`name`, `keyPath`, `version`?): `Promise`\<\{ `type`: `VaultKeyType`; `key`: `Uint8Array`; `name`: `string`; \}\>
 
 Export the key from the vault.
 
 #### Parameters
 
-• **name**: `string`
+##### name
+
+`string`
 
 The name of the key.
 
-• **keyPath**: `"public-key"` \| `"signing-key"` \| `"encryption-key"`
+##### keyPath
 
 The path of the key. Defaults to "signing-key".
 
-• **version?**: `string`
+`"public-key"` | `"signing-key"` | `"encryption-key"`
+
+##### version?
+
+`string`
 
 The version of the key. If omitted, all versions of the key will be returned.
 
 #### Returns
 
-`Promise`\<`object`\>
+`Promise`\<\{ `type`: `VaultKeyType`; `key`: `Uint8Array`; `name`: `string`; \}\>
 
 The key details.
-
-##### type
-
-> **type**: `VaultKeyType`
-
-The type of the key e.g. Ed25519.
-
-##### key
-
-> **key**: `Uint8Array`
-
-The key.
-
-##### name
-
-> **name**: `string`
-
-The name of the key.
 
 #### Throws
 
@@ -610,7 +644,9 @@ Get the key configuration.
 
 #### Parameters
 
-• **name**: `string`
+##### name
+
+`string`
 
 The name of the key to get the configuration for.
 

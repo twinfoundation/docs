@@ -7,3 +7,4 @@
 ## Interfaces
 
 - [IHashicorpVaultConnectorConfig](interfaces/IHashicorpVaultConnectorConfig.md)
+- [IHashicorpVaultConnectorConstructorOptions](interfaces/IHashicorpVaultConnectorConstructorOptions.md)

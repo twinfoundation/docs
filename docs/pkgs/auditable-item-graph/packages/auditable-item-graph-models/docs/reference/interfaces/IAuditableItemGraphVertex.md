@@ -8,18 +8,6 @@ Interface describing an auditable item graph vertex.
 
 ## Properties
 
-### id
-
-> **id**: `string`
-
-The id of the element.
-
-#### Inherited from
-
-`Omit.id`
-
-***
-
 ### dateCreated
 
 > **dateCreated**: `string`
@@ -58,9 +46,21 @@ The date/time of when the element was deleted, as we never actually remove items
 
 ### @context
 
-> **@context**: `"https://schema.twindev.org/aig/"` \| [`"https://schema.twindev.org/aig/"`, `...string[]`]
+> **@context**: `"https://schema.twindev.org/aig/"` \| \[`"https://schema.twindev.org/aig/"`, `...string[]`\]
 
 JSON-LD Context.
+
+***
+
+### id
+
+> **id**: `string`
+
+The id of the element.
+
+#### Overrides
+
+`Omit.id`
 
 ***
 
@@ -80,11 +80,11 @@ The identity of the node which controls the vertex.
 
 ***
 
-### vertexObject?
+### annotationObject?
 
-> `optional` **vertexObject**: `IJsonLdNodeObject`
+> `optional` **annotationObject**: `IJsonLdNodeObject`
 
-The JSON-LD object for the vertex.
+The JSON-LD annotation object for the vertex.
 
 ***
 

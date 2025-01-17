@@ -54,9 +54,9 @@ Combined alias index for the vertex used for querying.
 
 ***
 
-### vertexObject?
+### annotationObject?
 
-> `optional` **vertexObject**: `IJsonLdNodeObject`
+> `optional` **annotationObject**: `IJsonLdNodeObject`
 
 Object to associate with the vertex as JSON-LD.
 

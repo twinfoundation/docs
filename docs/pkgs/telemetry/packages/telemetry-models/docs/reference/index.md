@@ -7,6 +7,7 @@
 
 ## Interfaces
 
+- [IMultiTelemetryConnectorConstructorOptions](interfaces/IMultiTelemetryConnectorConstructorOptions.md)
 - [ITelemetryComponent](interfaces/ITelemetryComponent.md)
 - [ITelemetryConnector](interfaces/ITelemetryConnector.md)
 - [ITelemetryMetric](interfaces/ITelemetryMetric.md)

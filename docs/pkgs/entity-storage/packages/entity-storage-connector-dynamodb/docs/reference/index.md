@@ -7,3 +7,4 @@
 ## Interfaces
 
 - [IDynamoDbEntityStorageConnectorConfig](interfaces/IDynamoDbEntityStorageConnectorConfig.md)
+- [IDynamoDbEntityStorageConnectorConstructorOptions](interfaces/IDynamoDbEntityStorageConnectorConstructorOptions.md)

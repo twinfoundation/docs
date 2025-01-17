@@ -6,19 +6,27 @@ Subscribe to a topic.
 
 ## Parameters
 
-• **httpRequestContext**: `IHttpRequestContext`
+### httpRequestContext
+
+`IHttpRequestContext`
 
 The request context for the API.
 
-• **componentName**: `string`
+### componentName
+
+`string`
 
 The name of the component to use in the routes.
 
-• **request**: `IEventBusSubscribeRequest`
+### request
+
+`IEventBusSubscribeRequest`
 
 The request.
 
-• **emitter**
+### emitter
+
+(`topic`, `response`) => `Promise`\<`void`\>
 
 The emitter to send message back.
 

@@ -7,3 +7,4 @@
 ## Interfaces
 
 - [IOpenAttestationConnectorConfig](interfaces/IOpenAttestationConnectorConfig.md)
+- [IOpenAttestationConnectorConstructorOptions](interfaces/IOpenAttestationConnectorConstructorOptions.md)

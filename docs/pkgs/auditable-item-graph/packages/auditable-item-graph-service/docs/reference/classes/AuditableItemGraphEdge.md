@@ -54,8 +54,8 @@ The relationship between the two vertices.
 
 ***
 
-### edgeObject?
+### annotationObject?
 
-> `optional` **edgeObject**: `IJsonLdNodeObject`
+> `optional` **annotationObject**: `IJsonLdNodeObject`
 
 Object to associate with the edge as JSON-LD.

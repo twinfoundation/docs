@@ -8,6 +8,8 @@
 ## Interfaces
 
 - [IIotaFaucetConnectorConfig](interfaces/IIotaFaucetConnectorConfig.md)
+- [IIotaFaucetConnectorConstructorOptions](interfaces/IIotaFaucetConnectorConstructorOptions.md)
+- [IIotaWalletConnectorConstructorOptions](interfaces/IIotaWalletConnectorConstructorOptions.md)
 
 ## Type Aliases
 

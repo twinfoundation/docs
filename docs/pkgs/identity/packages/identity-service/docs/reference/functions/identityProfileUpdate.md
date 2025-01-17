@@ -6,15 +6,21 @@ Update an identity profile.
 
 ## Parameters
 
-• **httpRequestContext**: `IHttpRequestContext`
+### httpRequestContext
+
+`IHttpRequestContext`
 
 The request context for the API.
 
-• **componentName**: `string`
+### componentName
+
+`string`
 
 The name of the component to use in the routes stored in the ComponentFactory.
 
-• **request**: `IIdentityProfileUpdateRequest`
+### request
+
+`IIdentityProfileUpdateRequest`
 
 The request.
 

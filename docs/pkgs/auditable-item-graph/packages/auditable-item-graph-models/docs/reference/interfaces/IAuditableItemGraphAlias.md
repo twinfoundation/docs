@@ -10,9 +10,21 @@ Interface describing an alias for a vertex.
 
 ### @context
 
-> **@context**: `"https://schema.twindev.org/aig/"` \| [`"https://schema.twindev.org/aig/"`, `...string[]`]
+> **@context**: `"https://schema.twindev.org/aig/"` \| \[`"https://schema.twindev.org/aig/"`, `...string[]`\]
 
 JSON-LD Context.
+
+***
+
+### id
+
+> **id**: `string`
+
+The id of the element.
+
+#### Overrides
+
+[`IAuditableItemGraphAuditedElement`](IAuditableItemGraphAuditedElement.md).[`id`](IAuditableItemGraphAuditedElement.md#id)
 
 ***
 
@@ -24,11 +36,11 @@ JSON-LD Type.
 
 ***
 
-### aliasObject?
+### annotationObject?
 
-> `optional` **aliasObject**: `IJsonLdNodeObject`
+> `optional` **annotationObject**: `IJsonLdNodeObject`
 
-The JSON-LD object for the alias.
+The JSON-LD annotation object for the alias.
 
 ***
 
@@ -37,18 +49,6 @@ The JSON-LD object for the alias.
 > `optional` **aliasFormat**: `string`
 
 The format of the id in the alias.
-
-***
-
-### id
-
-> **id**: `string`
-
-The id of the element.
-
-#### Inherited from
-
-[`IAuditableItemGraphAuditedElement`](IAuditableItemGraphAuditedElement.md).[`id`](IAuditableItemGraphAuditedElement.md#id)
 
 ***
 

@@ -6,23 +6,31 @@ Action the verifiable credential unrevoke command.
 
 ## Parameters
 
-• **opts**
+### opts
 
 The options for the command.
 
-• **opts.seed**: `string`
+#### seed
+
+`string`
 
 The seed to generate the private key for the controller.
 
-• **opts.did**: `string`
+#### did
+
+`string`
 
 The id of the document to unrevoke the index.
 
-• **opts.revocationIndex**: `string`
+#### revocationIndex
+
+`string`
 
 The revocation index for the credential.
 
-• **opts.node**: `string`
+#### node
+
+`string`
 
 The node URL.
 

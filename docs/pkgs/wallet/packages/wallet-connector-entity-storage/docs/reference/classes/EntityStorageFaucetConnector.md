@@ -16,13 +16,11 @@ Create a new instance of EntityStorageFaucetConnector.
 
 #### Parameters
 
-• **options?**
+##### options?
+
+[`IEntityStorageFaucetConnectorConstructorOptions`](../interfaces/IEntityStorageFaucetConnectorConstructorOptions.md)
 
 The options for the wallet connector.
-
-• **options.walletAddressEntityStorageType?**: `string`
-
-The entity storage type for wallet addresses, defaults to "wallet-address".
 
 #### Returns
 
@@ -58,15 +56,21 @@ Fund the wallet from the faucet.
 
 #### Parameters
 
-• **identity**: `string`
+##### identity
+
+`string`
 
 The identity of the user to access the vault keys.
 
-• **address**: `string`
+##### address
+
+`string`
 
 The bech32 encoded address of the address to fund.
 
-• **timeoutInSeconds**: `number` = `60`
+##### timeoutInSeconds
+
+`number` = `60`
 
 The timeout in seconds to wait for the funding to complete.
 

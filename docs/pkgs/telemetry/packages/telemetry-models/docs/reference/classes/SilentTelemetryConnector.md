@@ -38,7 +38,9 @@ Create a new metric.
 
 #### Parameters
 
-• **metric**: [`ITelemetryMetric`](../interfaces/ITelemetryMetric.md)
+##### metric
+
+[`ITelemetryMetric`](../interfaces/ITelemetryMetric.md)
 
 The metric details.
 
@@ -56,29 +58,23 @@ Nothing.
 
 ### getMetric()
 
-> **getMetric**(`id`): `Promise`\<`object`\>
+> **getMetric**(`id`): `Promise`\<\{ `metric`: [`ITelemetryMetric`](../interfaces/ITelemetryMetric.md); `value`: [`ITelemetryMetricValue`](../interfaces/ITelemetryMetricValue.md); \}\>
 
 Get the metric details and it's most recent value.
 
 #### Parameters
 
-• **id**: `string`
+##### id
+
+`string`
 
 The metric id.
 
 #### Returns
 
-`Promise`\<`object`\>
+`Promise`\<\{ `metric`: [`ITelemetryMetric`](../interfaces/ITelemetryMetric.md); `value`: [`ITelemetryMetricValue`](../interfaces/ITelemetryMetricValue.md); \}\>
 
 The metric details and it's most recent value.
-
-##### metric
-
-> **metric**: [`ITelemetryMetric`](../interfaces/ITelemetryMetric.md)
-
-##### value
-
-> **value**: [`ITelemetryMetricValue`](../interfaces/ITelemetryMetricValue.md)
 
 #### Implementation of
 
@@ -94,7 +90,9 @@ Update metric.
 
 #### Parameters
 
-• **metric**: `Omit`\<[`ITelemetryMetric`](../interfaces/ITelemetryMetric.md), `"type"`\>
+##### metric
+
+`Omit`\<[`ITelemetryMetric`](../interfaces/ITelemetryMetric.md), `"type"`\>
 
 The metric details.
 
@@ -118,15 +116,19 @@ Update metric value.
 
 #### Parameters
 
-• **id**: `string`
+##### id
+
+`string`
 
 The id of the metric.
 
-• **value**: `number` \| `"inc"` \| `"dec"`
+##### value
 
 The value for the update operation.
 
-• **customData?**
+`number` | `"inc"` | `"dec"`
+
+##### customData?
 
 The custom data for the update operation.
 
@@ -150,7 +152,9 @@ Remove metric.
 
 #### Parameters
 
-• **id**: `string`
+##### id
+
+`string`
 
 The id of the metric.
 
@@ -168,42 +172,36 @@ Nothing.
 
 ### query()
 
-> **query**(`type`?, `cursor`?, `pageSize`?): `Promise`\<`object`\>
+> **query**(`type`?, `cursor`?, `pageSize`?): `Promise`\<\{ `entities`: [`ITelemetryMetric`](../interfaces/ITelemetryMetric.md)[]; `cursor`: `string`; \}\>
 
 Query the metrics.
 
 #### Parameters
 
-• **type?**: [`MetricType`](../type-aliases/MetricType.md)
+##### type?
+
+[`MetricType`](../type-aliases/MetricType.md)
 
 The type of the metric.
 
-• **cursor?**: `string`
+##### cursor?
+
+`string`
 
 The cursor to request the next page of entities.
 
-• **pageSize?**: `number`
+##### pageSize?
+
+`number`
 
 The maximum number of entities in a page.
 
 #### Returns
 
-`Promise`\<`object`\>
+`Promise`\<\{ `entities`: [`ITelemetryMetric`](../interfaces/ITelemetryMetric.md)[]; `cursor`: `string`; \}\>
 
 All the entities for the storage matching the conditions,
 and a cursor which can be used to request more entities.
-
-##### entities
-
-> **entities**: [`ITelemetryMetric`](../interfaces/ITelemetryMetric.md)[]
-
-The metrics.
-
-##### cursor?
-
-> `optional` **cursor**: `string`
-
-An optional cursor, when defined can be used to call find to get more values.
 
 #### Throws
 
@@ -217,56 +215,48 @@ NotImplementedError if the implementation does not support retrieval.
 
 ### queryValues()
 
-> **queryValues**(`id`, `timeStart`?, `timeEnd`?, `cursor`?, `pageSize`?): `Promise`\<`object`\>
+> **queryValues**(`id`, `timeStart`?, `timeEnd`?, `cursor`?, `pageSize`?): `Promise`\<\{ `metric`: [`ITelemetryMetric`](../interfaces/ITelemetryMetric.md); `entities`: [`ITelemetryMetricValue`](../interfaces/ITelemetryMetricValue.md)[]; `cursor`: `string`; \}\>
 
 Query the metric values.
 
 #### Parameters
 
-• **id**: `string`
+##### id
+
+`string`
 
 The id of the metric.
 
-• **timeStart?**: `number`
+##### timeStart?
+
+`number`
 
 The inclusive time as the start of the metric entries.
 
-• **timeEnd?**: `number`
+##### timeEnd?
+
+`number`
 
 The inclusive time as the end of the metric entries.
 
-• **cursor?**: `string`
+##### cursor?
+
+`string`
 
 The cursor to request the next page of entities.
 
-• **pageSize?**: `number`
+##### pageSize?
+
+`number`
 
 The maximum number of entities in a page.
 
 #### Returns
 
-`Promise`\<`object`\>
+`Promise`\<\{ `metric`: [`ITelemetryMetric`](../interfaces/ITelemetryMetric.md); `entities`: [`ITelemetryMetricValue`](../interfaces/ITelemetryMetricValue.md)[]; `cursor`: `string`; \}\>
 
 All the entities for the storage matching the conditions,
 and a cursor which can be used to request more entities.
-
-##### metric
-
-> **metric**: [`ITelemetryMetric`](../interfaces/ITelemetryMetric.md)
-
-The metric details.
-
-##### entities
-
-> **entities**: [`ITelemetryMetricValue`](../interfaces/ITelemetryMetricValue.md)[]
-
-The values for the metric.
-
-##### cursor?
-
-> `optional` **cursor**: `string`
-
-An optional cursor, when defined can be used to call find to get more values.
 
 #### Throws
 

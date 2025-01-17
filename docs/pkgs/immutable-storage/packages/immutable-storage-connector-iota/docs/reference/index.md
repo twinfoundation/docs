@@ -8,6 +8,7 @@
 
 - [IImmutableStorageIotaReceipt](interfaces/IImmutableStorageIotaReceipt.md)
 - [IIotaImmutableStorageConnectorConfig](interfaces/IIotaImmutableStorageConnectorConfig.md)
+- [IIotaImmutableStorageConnectorConstructorOptions](interfaces/IIotaImmutableStorageConnectorConstructorOptions.md)
 
 ## Type Aliases
 

@@ -14,13 +14,13 @@ Interface describing an entity storage connector.
 
 ### getSchema()
 
-> **getSchema**(): `IEntitySchema`\<`unknown`\>
+> **getSchema**(): `IEntitySchema`
 
 Get the schema for the entities.
 
 #### Returns
 
-`IEntitySchema`\<`unknown`\>
+`IEntitySchema`
 
 The schema for the entities.
 
@@ -34,11 +34,15 @@ Set an entity.
 
 #### Parameters
 
-• **entity**: `T`
+##### entity
+
+`T`
 
 The entity to set.
 
-• **conditions?**: `object`[]
+##### conditions?
+
+`object`[]
 
 The optional conditions to match for the entities.
 
@@ -58,15 +62,21 @@ Get an entity.
 
 #### Parameters
 
-• **id**: `string`
+##### id
+
+`string`
 
 The id of the entity to get, or the index value if secondaryIndex is set.
 
-• **secondaryIndex?**: keyof `T`
+##### secondaryIndex?
+
+keyof `T`
 
 Get the item using a secondary index.
 
-• **conditions?**: `object`[]
+##### conditions?
+
+`object`[]
 
 The optional conditions to match for the entities.
 
@@ -86,11 +96,15 @@ Remove the entity.
 
 #### Parameters
 
-• **id**: `string`
+##### id
+
+`string`
 
 The id of the entity to remove.
 
-• **conditions?**: `object`[]
+##### conditions?
+
+`object`[]
 
 The optional conditions to match for the entities.
 
@@ -104,47 +118,45 @@ Nothing.
 
 ### query()
 
-> **query**(`conditions`?, `sortProperties`?, `properties`?, `cursor`?, `pageSize`?): `Promise`\<`object`\>
+> **query**(`conditions`?, `sortProperties`?, `properties`?, `cursor`?, `pageSize`?): `Promise`\<\{ `entities`: `Partial`\<`T`\>[]; `cursor`: `string`; \}\>
 
 Query all the entities which match the conditions.
 
 #### Parameters
 
-• **conditions?**: `EntityCondition`\<`T`\>
+##### conditions?
+
+`EntityCondition`\<`T`\>
 
 The conditions to match for the entities.
 
-• **sortProperties?**: `object`[]
+##### sortProperties?
+
+`object`[]
 
 The optional sort order.
 
-• **properties?**: keyof `T`[]
+##### properties?
+
+keyof `T`[]
 
 The optional properties to return, defaults to all.
 
-• **cursor?**: `string`
+##### cursor?
+
+`string`
 
 The cursor to request the next page of entities.
 
-• **pageSize?**: `number`
+##### pageSize?
+
+`number`
 
 The suggested number of entities to return in each chunk, in some scenarios can return a different amount.
 
 #### Returns
 
-`Promise`\<`object`\>
+`Promise`\<\{ `entities`: `Partial`\<`T`\>[]; `cursor`: `string`; \}\>
 
 All the entities for the storage matching the conditions,
 and a cursor which can be used to request more entities.
-
-##### entities
-
-> **entities**: `Partial`\<`T`\>[]
-
-The entities, which can be partial if a limited keys list was provided.
-
-##### cursor?
-
-> `optional` **cursor**: `string`
-
-An optional cursor, when defined can be used to call find to get more entities.

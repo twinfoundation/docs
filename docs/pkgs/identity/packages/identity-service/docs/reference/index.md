@@ -7,7 +7,9 @@
 
 ## Interfaces
 
+- [IIdentityProfileServiceConstructorOptions](interfaces/IIdentityProfileServiceConstructorOptions.md)
 - [IIdentityServiceConfig](interfaces/IIdentityServiceConfig.md)
+- [IIdentityServiceConstructorOptions](interfaces/IIdentityServiceConstructorOptions.md)
 
 ## Variables
 

@@ -7,6 +7,7 @@
 ## Interfaces
 
 - [INftServiceConfig](interfaces/INftServiceConfig.md)
+- [INftServiceConstructorOptions](interfaces/INftServiceConstructorOptions.md)
 
 ## Variables
 

@@ -16,21 +16,11 @@ Create a new instance of EntityStorageTelemetryConnector.
 
 #### Parameters
 
-• **options?**
+##### options?
+
+[`IEntityStorageTelemetryConnectorConstructorOptions`](../interfaces/IEntityStorageTelemetryConnectorConstructorOptions.md)
 
 The options for the connector.
-
-• **options.telemetryMetricStorageConnectorType?**: `string`
-
-The type of the entity storage connector to use, defaults to "telemetry-metric".
-
-• **options.telemetryMetricValueStorageConnectorType?**: `string`
-
-The type of the entity storage connector to use, defaults to "telemetry-metric-value".
-
-• **options.loggingConnectorType?**: `string`
-
-The type of the logging connector to use, can be undefined for no logging.
 
 #### Returns
 
@@ -66,7 +56,9 @@ Create a new metric.
 
 #### Parameters
 
-• **metric**: `ITelemetryMetric`
+##### metric
+
+`ITelemetryMetric`
 
 The metric details.
 
@@ -84,29 +76,23 @@ Nothing.
 
 ### getMetric()
 
-> **getMetric**(`id`): `Promise`\<`object`\>
+> **getMetric**(`id`): `Promise`\<\{ `metric`: `ITelemetryMetric`; `value`: `ITelemetryMetricValue`; \}\>
 
 Get the metric details and it's most recent value.
 
 #### Parameters
 
-• **id**: `string`
+##### id
+
+`string`
 
 The metric id.
 
 #### Returns
 
-`Promise`\<`object`\>
+`Promise`\<\{ `metric`: `ITelemetryMetric`; `value`: `ITelemetryMetricValue`; \}\>
 
 The metric details and it's most recent value.
-
-##### metric
-
-> **metric**: `ITelemetryMetric`
-
-##### value
-
-> **value**: `ITelemetryMetricValue`
 
 #### Implementation of
 
@@ -122,7 +108,9 @@ Update metric.
 
 #### Parameters
 
-• **metric**: `Omit`\<`ITelemetryMetric`, `"type"`\>
+##### metric
+
+`Omit`\<`ITelemetryMetric`, `"type"`\>
 
 The metric details.
 
@@ -146,15 +134,19 @@ Add a metric value.
 
 #### Parameters
 
-• **id**: `string`
+##### id
+
+`string`
 
 The id of the metric.
 
-• **value**: `number` \| `"inc"` \| `"dec"`
+##### value
 
 The value for the add operation.
 
-• **customData?**
+`number` | `"inc"` | `"dec"`
+
+##### customData?
 
 The custom data for the metric value.
 
@@ -178,7 +170,9 @@ Remove metric.
 
 #### Parameters
 
-• **id**: `string`
+##### id
+
+`string`
 
 The id of the metric.
 
@@ -196,42 +190,36 @@ Nothing.
 
 ### query()
 
-> **query**(`type`?, `cursor`?, `pageSize`?): `Promise`\<`object`\>
+> **query**(`type`?, `cursor`?, `pageSize`?): `Promise`\<\{ `entities`: `ITelemetryMetric`[]; `cursor`: `string`; \}\>
 
 Query the metrics.
 
 #### Parameters
 
-• **type?**: `MetricType`
+##### type?
+
+`MetricType`
 
 The type of the metric.
 
-• **cursor?**: `string`
+##### cursor?
+
+`string`
 
 The cursor to request the next page of entities.
 
-• **pageSize?**: `number`
+##### pageSize?
+
+`number`
 
 The maximum number of entities in a page.
 
 #### Returns
 
-`Promise`\<`object`\>
+`Promise`\<\{ `entities`: `ITelemetryMetric`[]; `cursor`: `string`; \}\>
 
 All the entities for the storage matching the conditions,
 and a cursor which can be used to request more entities.
-
-##### entities
-
-> **entities**: `ITelemetryMetric`[]
-
-The metrics.
-
-##### cursor?
-
-> `optional` **cursor**: `string`
-
-An optional cursor, when defined can be used to call find to get more values.
 
 #### Throws
 
@@ -245,56 +233,48 @@ NotImplementedError if the implementation does not support retrieval.
 
 ### queryValues()
 
-> **queryValues**(`id`, `timeStart`?, `timeEnd`?, `cursor`?, `pageSize`?): `Promise`\<`object`\>
+> **queryValues**(`id`, `timeStart`?, `timeEnd`?, `cursor`?, `pageSize`?): `Promise`\<\{ `metric`: `ITelemetryMetric`; `entities`: `ITelemetryMetricValue`[]; `cursor`: `string`; \}\>
 
 Query the metrics.
 
 #### Parameters
 
-• **id**: `string`
+##### id
+
+`string`
 
 The id of the metric.
 
-• **timeStart?**: `number`
+##### timeStart?
+
+`number`
 
 The inclusive time as the start of the metric entries.
 
-• **timeEnd?**: `number`
+##### timeEnd?
+
+`number`
 
 The inclusive time as the end of the metric entries.
 
-• **cursor?**: `string`
+##### cursor?
+
+`string`
 
 The cursor to request the next page of entities.
 
-• **pageSize?**: `number`
+##### pageSize?
+
+`number`
 
 The maximum number of entities in a page.
 
 #### Returns
 
-`Promise`\<`object`\>
+`Promise`\<\{ `metric`: `ITelemetryMetric`; `entities`: `ITelemetryMetricValue`[]; `cursor`: `string`; \}\>
 
 All the entities for the storage matching the conditions,
 and a cursor which can be used to request more entities.
-
-##### metric
-
-> **metric**: `ITelemetryMetric`
-
-The metric details.
-
-##### entities
-
-> **entities**: `ITelemetryMetricValue`[]
-
-The values for the metric.
-
-##### cursor?
-
-> `optional` **cursor**: `string`
-
-An optional cursor, when defined can be used to call find to get more values.
 
 #### Throws
 

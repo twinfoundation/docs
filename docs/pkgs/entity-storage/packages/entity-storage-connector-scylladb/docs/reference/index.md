@@ -7,5 +7,8 @@
 
 ## Interfaces
 
+- [IScyllaDBConfig](interfaces/IScyllaDBConfig.md)
 - [IScyllaDBTableConfig](interfaces/IScyllaDBTableConfig.md)
+- [IScyllaDBTableConnectorConstructorOptions](interfaces/IScyllaDBTableConnectorConstructorOptions.md)
 - [IScyllaDBViewConfig](interfaces/IScyllaDBViewConfig.md)
+- [IScyllaDBViewConnectorConstructorOptions](interfaces/IScyllaDBViewConnectorConstructorOptions.md)

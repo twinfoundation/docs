@@ -22,7 +22,9 @@ Translate the log entry.
 
 #### Parameters
 
-• **logEntry**: [`ILogEntry`](../interfaces/ILogEntry.md)
+##### logEntry
+
+[`ILogEntry`](../interfaces/ILogEntry.md)
 
 The log entry.
 

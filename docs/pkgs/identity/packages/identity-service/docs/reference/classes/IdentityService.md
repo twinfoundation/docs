@@ -16,13 +16,11 @@ Create a new instance of IdentityService.
 
 #### Parameters
 
-• **options?**
+##### options?
+
+[`IIdentityServiceConstructorOptions`](../interfaces/IIdentityServiceConstructorOptions.md)
 
 The options for the service.
-
-• **options.config?**: [`IIdentityServiceConfig`](../interfaces/IIdentityServiceConfig.md)
-
-The configuration for the service.
 
 #### Returns
 
@@ -50,15 +48,49 @@ Runtime name for the class.
 
 ## Methods
 
-### resolve()
+### identityCreate()
 
-> **resolve**(`documentId`): `Promise`\<`IDidDocument`\>
+> **identityCreate**(`controller`, `namespace`?): `Promise`\<`IDidDocument`\>
+
+Create a new identity.
+
+#### Parameters
+
+##### controller
+
+`string`
+
+The controller of the identity who can make changes.
+
+##### namespace?
+
+`string`
+
+The namespace of the connector to use for the identity, defaults to service configured namespace.
+
+#### Returns
+
+`Promise`\<`IDidDocument`\>
+
+The created identity document.
+
+#### Implementation of
+
+`IIdentityComponent.identityCreate`
+
+***
+
+### identityResolve()
+
+> **identityResolve**(`identity`): `Promise`\<`IDidDocument`\>
 
 Resolve an identity.
 
 #### Parameters
 
-• **documentId**: `string`
+##### identity
+
+`string`
 
 The id of the document to resolve.
 
@@ -70,4 +102,504 @@ The resolved document.
 
 #### Implementation of
 
-`IIdentityComponent.resolve`
+`IIdentityComponent.identityResolve`
+
+***
+
+### verificationMethodCreate()
+
+> **verificationMethodCreate**(`controller`, `identity`, `verificationMethodType`, `verificationMethodId`?): `Promise`\<`IDidDocumentVerificationMethod`\>
+
+Add a verification method to the document in JSON Web key Format.
+
+#### Parameters
+
+##### controller
+
+`string`
+
+The controller of the identity who can make changes.
+
+##### identity
+
+`string`
+
+The id of the document to add the verification method to.
+
+##### verificationMethodType
+
+`DidVerificationMethodType`
+
+The type of the verification method to add.
+
+##### verificationMethodId?
+
+`string`
+
+The id of the verification method, if undefined uses the kid of the generated JWK.
+
+#### Returns
+
+`Promise`\<`IDidDocumentVerificationMethod`\>
+
+The verification method.
+
+#### Throws
+
+NotFoundError if the id can not be resolved.
+
+#### Throws
+
+NotSupportedError if the platform does not support multiple keys.
+
+#### Implementation of
+
+`IIdentityComponent.verificationMethodCreate`
+
+***
+
+### verificationMethodRemove()
+
+> **verificationMethodRemove**(`controller`, `verificationMethodId`): `Promise`\<`void`\>
+
+Remove a verification method from the document.
+
+#### Parameters
+
+##### controller
+
+`string`
+
+The controller of the identity who can make changes.
+
+##### verificationMethodId
+
+`string`
+
+The id of the verification method.
+
+#### Returns
+
+`Promise`\<`void`\>
+
+Nothing.
+
+#### Throws
+
+NotFoundError if the id can not be resolved.
+
+#### Throws
+
+NotSupportedError if the platform does not support multiple revocable keys.
+
+#### Implementation of
+
+`IIdentityComponent.verificationMethodRemove`
+
+***
+
+### serviceCreate()
+
+> **serviceCreate**(`controller`, `identity`, `serviceId`, `serviceType`, `serviceEndpoint`): `Promise`\<`IDidService`\>
+
+Add a service to the document.
+
+#### Parameters
+
+##### controller
+
+`string`
+
+The controller of the identity who can make changes.
+
+##### identity
+
+`string`
+
+The id of the document to add the service to.
+
+##### serviceId
+
+`string`
+
+The id of the service.
+
+##### serviceType
+
+`string`
+
+The type of the service.
+
+##### serviceEndpoint
+
+`string`
+
+The endpoint for the service.
+
+#### Returns
+
+`Promise`\<`IDidService`\>
+
+The service.
+
+#### Throws
+
+NotFoundError if the id can not be resolved.
+
+#### Implementation of
+
+`IIdentityComponent.serviceCreate`
+
+***
+
+### serviceRemove()
+
+> **serviceRemove**(`controller`, `serviceId`): `Promise`\<`void`\>
+
+Remove a service from the document.
+
+#### Parameters
+
+##### controller
+
+`string`
+
+The controller of the identity who can make changes.
+
+##### serviceId
+
+`string`
+
+The id of the service.
+
+#### Returns
+
+`Promise`\<`void`\>
+
+Nothing.
+
+#### Throws
+
+NotFoundError if the id can not be resolved.
+
+#### Implementation of
+
+`IIdentityComponent.serviceRemove`
+
+***
+
+### verifiableCredentialCreate()
+
+> **verifiableCredentialCreate**(`controller`, `verificationMethodId`, `id`, `credential`, `revocationIndex`?): `Promise`\<\{ `verifiableCredential`: `IDidVerifiableCredential`; `jwt`: `string`; \}\>
+
+Create a verifiable credential for a verification method.
+
+#### Parameters
+
+##### controller
+
+`string`
+
+The controller of the identity who can make changes.
+
+##### verificationMethodId
+
+`string`
+
+The verification method id to use.
+
+##### id
+
+The id of the credential.
+
+`undefined` | `string`
+
+##### credential
+
+`IJsonLdNodeObject`
+
+The credential to store in the verifiable credential.
+
+##### revocationIndex?
+
+`number`
+
+The bitmap revocation index of the credential, if undefined will not have revocation status.
+
+#### Returns
+
+`Promise`\<\{ `verifiableCredential`: `IDidVerifiableCredential`; `jwt`: `string`; \}\>
+
+The created verifiable credential and its token.
+
+#### Throws
+
+NotFoundError if the id can not be resolved.
+
+#### Implementation of
+
+`IIdentityComponent.verifiableCredentialCreate`
+
+***
+
+### verifiableCredentialVerify()
+
+> **verifiableCredentialVerify**(`credentialJwt`): `Promise`\<\{ `revoked`: `boolean`; `verifiableCredential`: `IDidVerifiableCredential`; \}\>
+
+Verify a verifiable credential is valid.
+
+#### Parameters
+
+##### credentialJwt
+
+`string`
+
+The credential to verify.
+
+#### Returns
+
+`Promise`\<\{ `revoked`: `boolean`; `verifiableCredential`: `IDidVerifiableCredential`; \}\>
+
+The credential stored in the jwt and the revocation status.
+
+#### Implementation of
+
+`IIdentityComponent.verifiableCredentialVerify`
+
+***
+
+### verifiableCredentialRevoke()
+
+> **verifiableCredentialRevoke**(`controller`, `issuerIdentity`, `credentialIndex`): `Promise`\<`void`\>
+
+Revoke verifiable credential.
+
+#### Parameters
+
+##### controller
+
+`string`
+
+The controller of the identity who can make changes.
+
+##### issuerIdentity
+
+`string`
+
+The id of the document to update the revocation list for.
+
+##### credentialIndex
+
+`number`
+
+The revocation bitmap index revoke.
+
+#### Returns
+
+`Promise`\<`void`\>
+
+Nothing.
+
+#### Implementation of
+
+`IIdentityComponent.verifiableCredentialRevoke`
+
+***
+
+### verifiableCredentialUnrevoke()
+
+> **verifiableCredentialUnrevoke**(`controller`, `issuerIdentity`, `credentialIndex`): `Promise`\<`void`\>
+
+Unrevoke verifiable credential.
+
+#### Parameters
+
+##### controller
+
+`string`
+
+The controller of the identity who can make changes.
+
+##### issuerIdentity
+
+`string`
+
+The id of the document to update the revocation list for.
+
+##### credentialIndex
+
+`number`
+
+The revocation bitmap index to un revoke.
+
+#### Returns
+
+`Promise`\<`void`\>
+
+Nothing.
+
+#### Implementation of
+
+`IIdentityComponent.verifiableCredentialUnrevoke`
+
+***
+
+### verifiablePresentationCreate()
+
+> **verifiablePresentationCreate**(`controller`, `presentationMethodId`, `presentationId`, `contexts`, `types`, `verifiableCredentials`, `expiresInMinutes`?): `Promise`\<\{ `verifiablePresentation`: `IDidVerifiablePresentation`; `jwt`: `string`; \}\>
+
+Create a verifiable presentation from the supplied verifiable credentials.
+
+#### Parameters
+
+##### controller
+
+`string`
+
+The controller of the identity who can make changes.
+
+##### presentationMethodId
+
+`string`
+
+The method to associate with the presentation.
+
+##### presentationId
+
+The id of the presentation.
+
+`undefined` | `string`
+
+##### contexts
+
+The contexts for the data stored in the verifiable credential.
+
+`undefined` | `IJsonLdContextDefinitionRoot`
+
+##### types
+
+The types for the data stored in the verifiable credential.
+
+`undefined` | `string` | `string`[]
+
+##### verifiableCredentials
+
+(`string` \| `IDidVerifiableCredential`)[]
+
+The credentials to use for creating the presentation in jwt format.
+
+##### expiresInMinutes?
+
+`number`
+
+The time in minutes for the presentation to expire.
+
+#### Returns
+
+`Promise`\<\{ `verifiablePresentation`: `IDidVerifiablePresentation`; `jwt`: `string`; \}\>
+
+The created verifiable presentation and its token.
+
+#### Throws
+
+NotFoundError if the id can not be resolved.
+
+#### Implementation of
+
+`IIdentityComponent.verifiablePresentationCreate`
+
+***
+
+### verifiablePresentationVerify()
+
+> **verifiablePresentationVerify**(`presentationJwt`): `Promise`\<\{ `revoked`: `boolean`; `verifiablePresentation`: `IDidVerifiablePresentation`; `issuers`: `IDidDocument`[]; \}\>
+
+Verify a verifiable presentation is valid.
+
+#### Parameters
+
+##### presentationJwt
+
+`string`
+
+The presentation to verify.
+
+#### Returns
+
+`Promise`\<\{ `revoked`: `boolean`; `verifiablePresentation`: `IDidVerifiablePresentation`; `issuers`: `IDidDocument`[]; \}\>
+
+The presentation stored in the jwt and the revocation status.
+
+#### Implementation of
+
+`IIdentityComponent.verifiablePresentationVerify`
+
+***
+
+### proofCreate()
+
+> **proofCreate**(`controller`, `verificationMethodId`, `bytes`): `Promise`\<`IDidProof`\>
+
+Create a proof for arbitrary data with the specified verification method.
+
+#### Parameters
+
+##### controller
+
+`string`
+
+The controller of the identity who can make changes.
+
+##### verificationMethodId
+
+`string`
+
+The verification method id to use.
+
+##### bytes
+
+`Uint8Array`
+
+The data bytes to sign.
+
+#### Returns
+
+`Promise`\<`IDidProof`\>
+
+The proof.
+
+#### Implementation of
+
+`IIdentityComponent.proofCreate`
+
+***
+
+### proofVerify()
+
+> **proofVerify**(`bytes`, `proof`): `Promise`\<`boolean`\>
+
+Verify proof for arbitrary data with the specified verification method.
+
+#### Parameters
+
+##### bytes
+
+`Uint8Array`
+
+The data bytes to verify.
+
+##### proof
+
+`IDidProof`
+
+The proof to verify.
+
+#### Returns
+
+`Promise`\<`boolean`\>
+
+True if the proof is verified.
+
+#### Implementation of
+
+`IIdentityComponent.proofVerify`

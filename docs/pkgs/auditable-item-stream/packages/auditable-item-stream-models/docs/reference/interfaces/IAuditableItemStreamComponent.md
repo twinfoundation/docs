@@ -16,28 +16,38 @@ Create a new stream.
 
 #### Parameters
 
-• **streamObject?**: `IJsonLdNodeObject`
+##### streamObject?
+
+`IJsonLdNodeObject`
 
 The object for the stream as JSON-LD.
 
-• **entries?**: `object`[]
+##### entries?
+
+`object`[]
 
 Entries to store in the stream.
 
-• **options?**
+##### options?
 
 Options for creating the stream.
 
-• **options.immutableInterval?**: `number`
+###### immutableInterval
+
+`number`
 
 After how many entries do we add immutable checks, defaults to service configured value.
 A value of 0 will disable immutable checks, 1 will be every item, or any other integer for an interval.
 
-• **userIdentity?**: `string`
+##### userIdentity?
+
+`string`
 
 The identity to create the auditable item stream operation with.
 
-• **nodeIdentity?**: `string`
+##### nodeIdentity?
+
+`string`
 
 The node identity to use for vault operations.
 
@@ -57,19 +67,27 @@ Update a stream.
 
 #### Parameters
 
-• **id**: `string`
+##### id
+
+`string`
 
 The id of the stream to update.
 
-• **streamObject?**: `IJsonLdNodeObject`
+##### streamObject?
+
+`IJsonLdNodeObject`
 
 The object for the stream as JSON-LD.
 
-• **userIdentity?**: `string`
+##### userIdentity?
+
+`string`
 
 The identity to create the auditable item stream operation with.
 
-• **nodeIdentity?**: `string`
+##### nodeIdentity?
+
+`string`
 
 The node identity to use for vault operations.
 
@@ -89,27 +107,37 @@ Get a stream header without the entries.
 
 #### Parameters
 
-• **id**: `string`
+##### id
+
+`string`
 
 The id of the stream to get.
 
-• **options?**
+##### options?
 
 Additional options for the get operation.
 
-• **options.includeEntries?**: `boolean`
+###### includeEntries
+
+`boolean`
 
 Whether to include the entries, defaults to false.
 
-• **options.includeDeleted?**: `boolean`
+###### includeDeleted
+
+`boolean`
 
 Whether to include deleted entries, defaults to false.
 
-• **options.verifyStream?**: `boolean`
+###### verifyStream
+
+`boolean`
 
 Should the stream be verified, defaults to false.
 
-• **options.verifyEntries?**: `boolean`
+###### verifyEntries
+
+`boolean`
 
 Should the entries be verified, defaults to false.
 
@@ -133,15 +161,21 @@ Delete the stream.
 
 #### Parameters
 
-• **id**: `string`
+##### id
+
+`string`
 
 The id of the stream to remove.
 
-• **userIdentity?**: `string`
+##### userIdentity?
+
+`string`
 
 The identity to create the auditable item stream operation with.
 
-• **nodeIdentity?**: `string`
+##### nodeIdentity?
+
+`string`
 
 The node identity to use for vault operations.
 
@@ -161,27 +195,39 @@ Query all the streams, will not return entries.
 
 #### Parameters
 
-• **conditions?**: `IComparator`[]
+##### conditions?
+
+`IComparator`[]
 
 Conditions to use in the query.
 
-• **orderBy?**: `"dateCreated"` \| `"dateModified"`
+##### orderBy?
 
 The order for the results, defaults to created.
 
-• **orderByDirection?**: `SortDirection`
+`"dateCreated"` | `"dateModified"`
+
+##### orderByDirection?
+
+`SortDirection`
 
 The direction for the order, defaults to descending.
 
-• **properties?**: keyof [`IAuditableItemStream`](IAuditableItemStream.md)[]
+##### properties?
+
+keyof [`IAuditableItemStream`](IAuditableItemStream.md)[]
 
 The properties to return, if not provided defaults to id, dateCreated, dateModified and streamObject.
 
-• **cursor?**: `string`
+##### cursor?
+
+`string`
 
 The cursor to request the next page of entities.
 
-• **pageSize?**: `number`
+##### pageSize?
+
+`number`
 
 The maximum number of entities in a page.
 
@@ -201,19 +247,27 @@ Create an entry in the stream.
 
 #### Parameters
 
-• **id**: `string`
+##### id
+
+`string`
 
 The id of the stream to update.
 
-• **entryObject**: `IJsonLdNodeObject`
+##### entryObject
+
+`IJsonLdNodeObject`
 
 The object for the stream as JSON-LD.
 
-• **userIdentity?**: `string`
+##### userIdentity?
+
+`string`
 
 The identity to create the auditable item stream operation with.
 
-• **nodeIdentity?**: `string`
+##### nodeIdentity?
+
+`string`
 
 The node identity to use for vault operations.
 
@@ -233,19 +287,25 @@ Get the entry from the stream.
 
 #### Parameters
 
-• **id**: `string`
+##### id
+
+`string`
 
 The id of the stream to get.
 
-• **entryId**: `string`
+##### entryId
+
+`string`
 
 The id of the stream entry to get.
 
-• **options?**
+##### options?
 
 Additional options for the get operation.
 
-• **options.verifyEntry?**: `boolean`
+###### verifyEntry
+
+`boolean`
 
 Should the entry be verified, defaults to false.
 
@@ -269,11 +329,15 @@ Get the entry object from the stream.
 
 #### Parameters
 
-• **id**: `string`
+##### id
+
+`string`
 
 The id of the stream to get.
 
-• **entryId**: `string`
+##### entryId
+
+`string`
 
 The id of the stream entry to get.
 
@@ -297,23 +361,33 @@ Update an entry in the stream.
 
 #### Parameters
 
-• **id**: `string`
+##### id
+
+`string`
 
 The id of the stream to update.
 
-• **entryId**: `string`
+##### entryId
+
+`string`
 
 The id of the entry to update.
 
-• **entryObject**: `IJsonLdNodeObject`
+##### entryObject
+
+`IJsonLdNodeObject`
 
 The object for the entry as JSON-LD.
 
-• **userIdentity?**: `string`
+##### userIdentity?
+
+`string`
 
 The identity to create the auditable item stream operation with.
 
-• **nodeIdentity?**: `string`
+##### nodeIdentity?
+
+`string`
 
 The node identity to use for vault operations.
 
@@ -333,19 +407,27 @@ Remove from the stream.
 
 #### Parameters
 
-• **id**: `string`
+##### id
+
+`string`
 
 The id of the stream to remove from.
 
-• **entryId**: `string`
+##### entryId
+
+`string`
 
 The id of the entry to delete.
 
-• **userIdentity?**: `string`
+##### userIdentity?
+
+`string`
 
 The identity to create the auditable item stream operation with.
 
-• **nodeIdentity?**: `string`
+##### nodeIdentity?
+
+`string`
 
 The node identity to use for vault operations.
 
@@ -365,39 +447,55 @@ Get the entries for the stream.
 
 #### Parameters
 
-• **id**: `string`
+##### id
+
+`string`
 
 The id of the stream to get.
 
-• **options?**
+##### options?
 
 Additional options for the get operation.
 
-• **options.conditions?**: `IComparator`[]
+###### conditions
+
+`IComparator`[]
 
 The conditions to filter the stream.
 
-• **options.includeDeleted?**: `boolean`
+###### includeDeleted
+
+`boolean`
 
 Whether to include deleted entries, defaults to false.
 
-• **options.verifyEntries?**: `boolean`
+###### verifyEntries
+
+`boolean`
 
 Should the entries be verified, defaults to false.
 
-• **options.entryObjects?**: `boolean`
+###### entryObjects
+
+`boolean`
 
 Return just the embedded entry objects, defaults to false.
 
-• **options.pageSize?**: `number`
+###### pageSize
+
+`number`
 
 How many entries to return.
 
-• **options.cursor?**: `string`
+###### cursor
+
+`string`
 
 Cursor to use for next chunk of data.
 
-• **options.order?**: `SortDirection`
+###### order
+
+`SortDirection`
 
 Retrieve the entries in ascending/descending time order, defaults to Ascending.
 
@@ -421,31 +519,43 @@ Get the entry objects for the stream.
 
 #### Parameters
 
-• **id**: `string`
+##### id
+
+`string`
 
 The id of the stream to get.
 
-• **options?**
+##### options?
 
 Additional options for the get operation.
 
-• **options.conditions?**: `IComparator`[]
+###### conditions
+
+`IComparator`[]
 
 The conditions to filter the stream.
 
-• **options.includeDeleted?**: `boolean`
+###### includeDeleted
+
+`boolean`
 
 Whether to include deleted entries, defaults to false.
 
-• **options.pageSize?**: `number`
+###### pageSize
+
+`number`
 
 How many entries to return.
 
-• **options.cursor?**: `string`
+###### cursor
+
+`string`
 
 Cursor to use for next chunk of data.
 
-• **options.order?**: `SortDirection`
+###### order
+
+`SortDirection`
 
 Retrieve the entries in ascending/descending time order, defaults to Ascending.
 
@@ -469,11 +579,15 @@ Remove the immutable storage for the stream and entries.
 
 #### Parameters
 
-• **id**: `string`
+##### id
+
+`string`
 
 The id of the stream to remove the storage from.
 
-• **nodeIdentity?**: `string`
+##### nodeIdentity?
+
+`string`
 
 The node identity to use for vault operations.
 

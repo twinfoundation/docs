@@ -62,7 +62,9 @@ Create configuration using defaults where necessary.
 
 #### Parameters
 
-• **config**: [`IIotaConfig`](../interfaces/IIotaConfig.md)
+##### config
+
+[`IIotaConfig`](../interfaces/IIotaConfig.md)
 
 The configuration to populate.
 
@@ -80,27 +82,39 @@ Get the addresses for the requested range.
 
 #### Parameters
 
-• **config**: [`IIotaConfig`](../interfaces/IIotaConfig.md)
+##### config
+
+[`IIotaConfig`](../interfaces/IIotaConfig.md)
 
 The configuration to use.
 
-• **vaultConnector**: `IVaultConnector`
+##### vaultConnector
+
+`IVaultConnector`
 
 The vault connector to use.
 
-• **identity**: `string`
+##### identity
+
+`string`
 
 The identity of the user to access the vault keys.
 
-• **accountIndex**: `number`
+##### accountIndex
+
+`number`
 
 The account index to get the addresses for.
 
-• **startAddressIndex**: `number`
+##### startAddressIndex
+
+`number`
 
 The start index for the addresses.
 
-• **count**: `number`
+##### count
+
+`number`
 
 The number of addresses to generate.
 
@@ -114,45 +128,47 @@ The list of addresses.
 
 ### prepareAndPostTransaction()
 
-> `static` **prepareAndPostTransaction**(`config`, `vaultConnector`, `identity`, `client`, `options`): `Promise`\<`object`\>
+> `static` **prepareAndPostTransaction**(`config`, `vaultConnector`, `identity`, `client`, `options`): `Promise`\<\{ `blockId`: `string`; `block`: `Block`; \}\>
 
 Prepare a transaction for sending, post and wait for inclusion.
 
 #### Parameters
 
-• **config**: [`IIotaConfig`](../interfaces/IIotaConfig.md)
+##### config
+
+[`IIotaConfig`](../interfaces/IIotaConfig.md)
 
 The configuration to use.
 
-• **vaultConnector**: `IVaultConnector`
+##### vaultConnector
+
+`IVaultConnector`
 
 The vault connector to use.
 
-• **identity**: `string`
+##### identity
+
+`string`
 
 The identity of the user to access the vault keys.
 
-• **client**: `Client`
+##### client
+
+`Client`
 
 The client to use.
 
-• **options**: `IBuildBlockOptions`
+##### options
+
+`IBuildBlockOptions`
 
 The options for the transaction.
 
 #### Returns
 
-`Promise`\<`object`\>
+`Promise`\<\{ `blockId`: `string`; `block`: `Block`; \}\>
 
 The block id and block.
-
-##### blockId
-
-> **blockId**: `string`
-
-##### block
-
-> **block**: `Block`
 
 ***
 
@@ -164,15 +180,21 @@ Get the seed from the vault.
 
 #### Parameters
 
-• **config**: [`IIotaConfig`](../interfaces/IIotaConfig.md)
+##### config
+
+[`IIotaConfig`](../interfaces/IIotaConfig.md)
 
 The configuration to use.
 
-• **vaultConnector**: `IVaultConnector`
+##### vaultConnector
+
+`IVaultConnector`
 
 The vault connector to use.
 
-• **identity**: `string`
+##### identity
+
+`string`
 
 The identity of the user to access the vault keys.
 
@@ -192,7 +214,9 @@ Extract error from SDK payload.
 
 #### Parameters
 
-• **error**: `unknown`
+##### error
+
+`unknown`
 
 The error to extract.
 
@@ -212,11 +236,15 @@ Build the key name to access the mnemonic in the vault.
 
 #### Parameters
 
-• **config**: [`IIotaConfig`](../interfaces/IIotaConfig.md)
+##### config
+
+[`IIotaConfig`](../interfaces/IIotaConfig.md)
 
 The configuration to use.
 
-• **identity**: `string`
+##### identity
+
+`string`
 
 The identity of the user to access the vault keys.
 
@@ -236,11 +264,15 @@ Build the key name to access the seed in the vault.
 
 #### Parameters
 
-• **config**: [`IIotaConfig`](../interfaces/IIotaConfig.md)
+##### config
+
+[`IIotaConfig`](../interfaces/IIotaConfig.md)
 
 The configuration to use.
 
-• **identity**: `string`
+##### identity
+
+`string`
 
 The identity of the user to access the vault keys.
 

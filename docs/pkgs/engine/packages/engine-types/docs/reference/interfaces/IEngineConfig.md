@@ -52,7 +52,7 @@ The types to initialise in the engine.
 
 #### Index Signature
 
- \[`type`: `string`\]: `IEngineCoreTypeConfig`[] \| `undefined`
+\[`type`: `string`\]: `undefined` \| `IEngineCoreTypeConfig`[]
 
 #### loggingConnector?
 
@@ -102,11 +102,47 @@ Telemetry connector options which can be overridden by individual components by 
 
 Telemetry component options which can be overridden by individual components by specifying types other than default.
 
+#### messagingEmailConnector?
+
+> `optional` **messagingEmailConnector**: `IEngineCoreTypeConfig`\<[`MessagingEmailConnectorConfig`](../type-aliases/MessagingEmailConnectorConfig.md)\>[]
+
+Messaging email connector options which can be overridden by individual components by specifying types other than default.
+
+#### messagingSmsConnector?
+
+> `optional` **messagingSmsConnector**: `IEngineCoreTypeConfig`\<[`MessagingSmsConnectorConfig`](../type-aliases/MessagingSmsConnectorConfig.md)\>[]
+
+Messaging SMS connector options which can be overridden by individual components by specifying types other than default.
+
+#### messagingPushNotificationConnector?
+
+> `optional` **messagingPushNotificationConnector**: `IEngineCoreTypeConfig`\<[`MessagingPushNotificationConnectorConfig`](../type-aliases/MessagingPushNotificationConnectorConfig.md)\>[]
+
+Messaging push notification connector options which can be overridden by individual components by specifying types other than default.
+
+#### messagingComponent?
+
+> `optional` **messagingComponent**: `IEngineCoreTypeConfig`\<[`MessagingComponentConfig`](../type-aliases/MessagingComponentConfig.md)\>[]
+
+Messaging component options which can be overridden by individual components by specifying types other than default.
+
 #### backgroundTaskConnector?
 
 > `optional` **backgroundTaskConnector**: `IEngineCoreTypeConfig`\<[`BackgroundTaskConnectorConfig`](../type-aliases/BackgroundTaskConnectorConfig.md)\>[]
 
 Background task connector options which can be overridden by individual components by specifying types other than default.
+
+#### eventBusConnector?
+
+> `optional` **eventBusConnector**: `IEngineCoreTypeConfig`\<[`EventBusConnectorConfig`](../type-aliases/EventBusConnectorConfig.md)\>[]
+
+Event bus connector options which can be overridden by individual components by specifying types other than default.
+
+#### eventBusComponent?
+
+> `optional` **eventBusComponent**: `IEngineCoreTypeConfig`\<[`EventBusComponentConfig`](../type-aliases/EventBusComponentConfig.md)\>[]
+
+Event bus component options which can be overridden by individual components by specifying types other than default.
 
 #### vaultConnector?
 
