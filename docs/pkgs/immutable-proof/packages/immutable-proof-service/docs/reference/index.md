@@ -8,6 +8,7 @@
 ## Interfaces
 
 - [IImmutableProofServiceConfig](interfaces/IImmutableProofServiceConfig.md)
+- [IImmutableProofServiceConstructorOptions](interfaces/IImmutableProofServiceConstructorOptions.md)
 
 ## Variables
 

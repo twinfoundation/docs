@@ -6,27 +6,37 @@ Action the nft burn command.
 
 ## Parameters
 
-• **opts**
+### opts
 
 The options for the command.
 
-• **opts.seed**: `string`
+#### seed
+
+`string`
 
 The seed required for signing by the issuer.
 
-• **opts.issuer**: `string`
+#### issuer
+
+`string`
 
 The issuer address of the NFT.
 
-• **opts.id**: `string`
+#### id
+
+`string`
 
 The id of the NFT to burn in urn format.
 
-• **opts.node**: `string`
+#### node
+
+`string`
 
 The node URL.
 
-• **opts.explorer**: `string`
+#### explorer
+
+`string`
 
 The explorer URL.
 

@@ -4,6 +4,10 @@
 
 - [TelemetryService](classes/TelemetryService.md)
 
+## Interfaces
+
+- [ITelemetryServiceConstructorOptions](interfaces/ITelemetryServiceConstructorOptions.md)
+
 ## Variables
 
 - [restEntryPoints](variables/restEntryPoints.md)

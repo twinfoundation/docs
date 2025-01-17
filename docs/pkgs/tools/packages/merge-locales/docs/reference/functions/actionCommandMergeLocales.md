@@ -6,11 +6,13 @@ Action the root command.
 
 ## Parameters
 
-• **opts**
+### opts
 
 The options for the command.
 
-• **opts.config?**: `string`
+#### config
+
+`string`
 
 The optional configuration file.
 

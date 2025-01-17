@@ -20,7 +20,9 @@ Create a new instance of LoggingClient.
 
 #### Parameters
 
-• **config**: `IBaseRestClientConfig`
+##### config
+
+`IBaseRestClientConfig`
 
 The configuration for the client.
 
@@ -54,7 +56,9 @@ Log an entry to the connector.
 
 #### Parameters
 
-• **logEntry**: `ILogEntry`
+##### logEntry
+
+`ILogEntry`
 
 The entry to log.
 
@@ -72,54 +76,54 @@ Nothing.
 
 ### query()
 
-> **query**(`level`?, `source`?, `timeStart`?, `timeEnd`?, `cursor`?, `pageSize`?): `Promise`\<`object`\>
+> **query**(`level`?, `source`?, `timeStart`?, `timeEnd`?, `cursor`?, `pageSize`?): `Promise`\<\{ `entities`: `ILogEntry`[]; `cursor`: `string`; \}\>
 
 Query the log entries.
 
 #### Parameters
 
-• **level?**: `LogLevel`
+##### level?
+
+`LogLevel`
 
 The level of the log entries.
 
-• **source?**: `string`
+##### source?
+
+`string`
 
 The source of the log entries.
 
-• **timeStart?**: `number`
+##### timeStart?
+
+`number`
 
 The inclusive time as the start of the log entries.
 
-• **timeEnd?**: `number`
+##### timeEnd?
+
+`number`
 
 The inclusive time as the end of the log entries.
 
-• **cursor?**: `string`
+##### cursor?
+
+`string`
 
 The cursor to request the next page of entities.
 
-• **pageSize?**: `number`
+##### pageSize?
+
+`number`
 
 The maximum number of entities in a page.
 
 #### Returns
 
-`Promise`\<`object`\>
+`Promise`\<\{ `entities`: `ILogEntry`[]; `cursor`: `string`; \}\>
 
 All the entities for the storage matching the conditions,
 and a cursor which can be used to request more entities.
-
-##### entities
-
-> **entities**: `ILogEntry`[]
-
-The entities, which can be partial if a limited keys list was provided.
-
-##### cursor?
-
-> `optional` **cursor**: `string`
-
-An optional cursor, when defined can be used to call find to get more entities.
 
 #### Throws
 

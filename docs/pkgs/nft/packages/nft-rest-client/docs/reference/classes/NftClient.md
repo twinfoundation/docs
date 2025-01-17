@@ -20,7 +20,9 @@ Create a new instance of NftClient.
 
 #### Parameters
 
-• **config**: `IBaseRestClientConfig`
+##### config
+
+`IBaseRestClientConfig`
 
 The configuration for the client.
 
@@ -60,23 +62,33 @@ Mint an NFT.
 
 #### Parameters
 
-• **issuer**: `string`
+##### issuer
+
+`string`
 
 The issuer for the NFT, will also be the initial owner.
 
-• **tag**: `string`
+##### tag
+
+`string`
 
 The tag for the NFT.
 
-• **immutableMetadata?**: `T`
+##### immutableMetadata?
+
+`T`
 
 The immutable metadata for the NFT.
 
-• **metadata?**: `U`
+##### metadata?
+
+`U`
 
 The metadata for the NFT.
 
-• **namespace?**: `string`
+##### namespace?
+
+`string`
 
 The namespace of the connector to use for the NFT, defaults to component configured namespace.
 
@@ -94,7 +106,7 @@ The id of the created NFT in urn format.
 
 ### resolve()
 
-> **resolve**\<`T`, `U`\>(`id`): `Promise`\<`object`\>
+> **resolve**\<`T`, `U`\>(`id`): `Promise`\<\{ `issuer`: `string`; `owner`: `string`; `tag`: `string`; `immutableMetadata`: `T`; `metadata`: `U`; \}\>
 
 Resolve an NFT.
 
@@ -106,35 +118,17 @@ Resolve an NFT.
 
 #### Parameters
 
-• **id**: `string`
+##### id
+
+`string`
 
 The id of the NFT to resolve.
 
 #### Returns
 
-`Promise`\<`object`\>
+`Promise`\<\{ `issuer`: `string`; `owner`: `string`; `tag`: `string`; `immutableMetadata`: `T`; `metadata`: `U`; \}\>
 
 The data for the NFT.
-
-##### issuer
-
-> **issuer**: `string`
-
-##### owner
-
-> **owner**: `string`
-
-##### tag
-
-> **tag**: `string`
-
-##### immutableMetadata?
-
-> `optional` **immutableMetadata**: `T`
-
-##### metadata?
-
-> `optional` **metadata**: `U`
 
 #### Implementation of
 
@@ -150,7 +144,9 @@ Burn an NFT.
 
 #### Parameters
 
-• **id**: `string`
+##### id
+
+`string`
 
 The id of the NFT to burn in urn format.
 
@@ -178,15 +174,21 @@ Transfer an NFT.
 
 #### Parameters
 
-• **id**: `string`
+##### id
+
+`string`
 
 The id of the NFT to transfer in urn format.
 
-• **recipient**: `string`
+##### recipient
+
+`string`
 
 The recipient of the NFT.
 
-• **metadata?**: `T`
+##### metadata?
+
+`T`
 
 Optional mutable data to include during the transfer.
 
@@ -214,11 +216,15 @@ Update the data of the NFT.
 
 #### Parameters
 
-• **id**: `string`
+##### id
+
+`string`
 
 The id of the NFT to update in urn format.
 
-• **metadata**: `T`
+##### metadata
+
+`T`
 
 The mutable data to update.
 

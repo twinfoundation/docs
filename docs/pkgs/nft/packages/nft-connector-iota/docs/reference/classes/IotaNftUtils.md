@@ -22,7 +22,9 @@ Convert an NFT id to a bech32 address.
 
 #### Parameters
 
-• **nftIdUrn**: `string`
+##### nftIdUrn
+
+`string`
 
 The NFT id to convert in urn format.
 

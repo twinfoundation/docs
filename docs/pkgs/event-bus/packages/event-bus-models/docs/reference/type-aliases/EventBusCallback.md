@@ -10,7 +10,9 @@ Interface describing a event bus callback method.
 
 ## Parameters
 
-• **event**: [`IEvent`](../interfaces/IEvent.md)\<`T`\>
+### event
+
+[`IEvent`](../interfaces/IEvent.md)\<`T`\>
 
 ## Returns
 

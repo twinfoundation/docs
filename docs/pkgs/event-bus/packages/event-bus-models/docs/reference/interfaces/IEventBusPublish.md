@@ -6,6 +6,6 @@ Publish an event on the bus.
 
 ### body
 
-> **body**: [`IEvent`](IEvent.md)\<`unknown`\>
+> **body**: [`IEvent`](IEvent.md)
 
 The parameters from the body.

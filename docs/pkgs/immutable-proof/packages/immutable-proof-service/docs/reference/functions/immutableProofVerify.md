@@ -6,15 +6,21 @@ Verify the proof.
 
 ## Parameters
 
-• **httpRequestContext**: `IHttpRequestContext`
+### httpRequestContext
+
+`IHttpRequestContext`
 
 The request context for the API.
 
-• **componentName**: `string`
+### componentName
+
+`string`
 
 The name of the component to use in the routes.
 
-• **request**: `IImmutableProofVerifyRequest`
+### request
+
+`IImmutableProofVerifyRequest`
 
 The request.
 

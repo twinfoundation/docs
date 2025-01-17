@@ -6,15 +6,19 @@ Initialize the schema for the identity entity storage connector.
 
 ## Parameters
 
-• **options?**
+### options?
 
 Options for which entities to register.
 
-• **options.includeDocument?**: `boolean`
+#### includeDocument
+
+`boolean`
 
 Whether to include the document entity, defaults to true.
 
-• **options.includeProfile?**: `boolean`
+#### includeProfile
+
+`boolean`
 
 Whether to include the profile entity, defaults to true.
 

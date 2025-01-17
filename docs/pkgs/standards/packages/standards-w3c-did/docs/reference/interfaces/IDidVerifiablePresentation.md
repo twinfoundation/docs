@@ -6,7 +6,7 @@ Interface describing a verifiable presentation.
 
 ### @context
 
-> **@context**: `"https://www.w3.org/ns/credentials/v2"` \| [`"https://www.w3.org/ns/credentials/v2"`, `...string[]`]
+> **@context**: `"https://www.w3.org/ns/credentials/v2"` \| \[`"https://www.w3.org/ns/credentials/v2"`, `...string[]`\]
 
 The context for the verifiable presentation.
 

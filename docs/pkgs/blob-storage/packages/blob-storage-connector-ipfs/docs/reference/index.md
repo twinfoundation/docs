@@ -7,3 +7,4 @@
 ## Interfaces
 
 - [IIpfsBlobStorageConnectorConfig](interfaces/IIpfsBlobStorageConnectorConfig.md)
+- [IIpfsBlobStorageConnectorConstructorOptions](interfaces/IIpfsBlobStorageConnectorConstructorOptions.md)

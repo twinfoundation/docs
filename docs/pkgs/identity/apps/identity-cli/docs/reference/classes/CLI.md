@@ -30,19 +30,25 @@ Run the app.
 
 #### Parameters
 
-• **argv**: `string`[]
+##### argv
+
+`string`[]
 
 The process arguments.
 
-• **localesDirectory?**: `string`
+##### localesDirectory?
+
+`string`
 
 The directory for the locales, default to relative to the script.
 
-• **options?**
+##### options?
 
 Additional options for the CLI.
 
-• **options.overrideOutputWidth?**: `number`
+###### overrideOutputWidth
+
+`number`
 
 The override output width.
 

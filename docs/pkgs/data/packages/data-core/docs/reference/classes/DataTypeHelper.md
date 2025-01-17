@@ -22,23 +22,33 @@ Validate a data type.
 
 #### Parameters
 
-• **propertyName**: `string`
+##### propertyName
+
+`string`
 
 The name of the property being validated to use in error messages.
 
-• **dataType**: `undefined` \| `string`
+##### dataType
 
 The data type to validate.
 
-• **data**: `unknown`
+`undefined` | `string`
+
+##### data
+
+`unknown`
 
 The data to validate.
 
-• **validationFailures**: `IValidationFailure`[]
+##### validationFailures
+
+`IValidationFailure`[]
 
 The list of validation failures to add to.
 
-• **validationMode?**: [`ValidationMode`](../type-aliases/ValidationMode.md)
+##### validationMode?
+
+[`ValidationMode`](../type-aliases/ValidationMode.md)
 
 The validation mode to use, defaults to either.
 

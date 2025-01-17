@@ -8,6 +8,7 @@
 
 - [IEntityStorageConfig](interfaces/IEntityStorageConfig.md)
 - [IEntityStorageRoutesExamples](interfaces/IEntityStorageRoutesExamples.md)
+- [IEntityStorageServiceConstructorOptions](interfaces/IEntityStorageServiceConstructorOptions.md)
 
 ## Variables
 

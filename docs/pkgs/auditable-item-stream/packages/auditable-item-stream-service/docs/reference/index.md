@@ -9,6 +9,7 @@
 ## Interfaces
 
 - [IAuditableItemStreamServiceConfig](interfaces/IAuditableItemStreamServiceConfig.md)
+- [IAuditableItemStreamServiceConstructorOptions](interfaces/IAuditableItemStreamServiceConstructorOptions.md)
 
 ## Variables
 

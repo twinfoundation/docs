@@ -4,7 +4,7 @@ Interface describing a DID credential status.
 
 ## Indexable
 
- \[`key`: `string`\]: `unknown`
+\[`key`: `string`\]: `unknown`
 
 ## Properties
 

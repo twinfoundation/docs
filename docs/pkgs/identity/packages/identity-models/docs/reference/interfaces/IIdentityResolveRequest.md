@@ -14,4 +14,4 @@ The path parameters.
 
 > **id**: `string`
 
-The identity to get the document for.
+The identity to resolve.

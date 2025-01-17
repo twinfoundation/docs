@@ -4,7 +4,7 @@ Definition of MySQL DB configuration.
 
 ## Extends
 
-- `IScyllaDBConfig`
+- [`IScyllaDBConfig`](IScyllaDBConfig.md)
 
 ## Extended by
 
@@ -20,7 +20,7 @@ The host to contact to.
 
 #### Inherited from
 
-`IScyllaDBConfig.hosts`
+[`IScyllaDBConfig`](IScyllaDBConfig.md).[`hosts`](IScyllaDBConfig.md#hosts)
 
 ***
 
@@ -32,7 +32,7 @@ The local data center.
 
 #### Inherited from
 
-`IScyllaDBConfig.localDataCenter`
+[`IScyllaDBConfig`](IScyllaDBConfig.md).[`localDataCenter`](IScyllaDBConfig.md#localdatacenter)
 
 ***
 
@@ -44,7 +44,7 @@ The keyspace to use.
 
 #### Inherited from
 
-`IScyllaDBConfig.keyspace`
+[`IScyllaDBConfig`](IScyllaDBConfig.md).[`keyspace`](IScyllaDBConfig.md#keyspace)
 
 ***
 

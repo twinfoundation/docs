@@ -10,9 +10,9 @@ Create an auditable item graph vertex.
 
 The data to be used in the vertex.
 
-#### vertexObject?
+#### annotationObject?
 
-> `optional` **vertexObject**: `IJsonLdNodeObject`
+> `optional` **annotationObject**: `IJsonLdNodeObject`
 
 The object to be used in the vertex as JSON-LD.
 

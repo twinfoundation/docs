@@ -8,9 +8,9 @@ Interface describing an auditable item graph vertex resource.
 
 ## Properties
 
-### id
+### id?
 
-> **id**: `string`
+> `optional` **id**: `string`
 
 The id of the element.
 
@@ -58,7 +58,7 @@ The date/time of when the element was deleted, as we never actually remove items
 
 ### @context
 
-> **@context**: `"https://schema.twindev.org/aig/"` \| [`"https://schema.twindev.org/aig/"`, `...string[]`]
+> **@context**: `"https://schema.twindev.org/aig/"` \| \[`"https://schema.twindev.org/aig/"`, `...string[]`\]
 
 JSON-LD Context.
 

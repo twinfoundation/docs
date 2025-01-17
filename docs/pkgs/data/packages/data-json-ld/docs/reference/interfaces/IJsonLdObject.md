@@ -55,7 +55,7 @@ https://www.w3.org/TR/json-ld11/#node-objects
 
 #### Index Signature
 
- \[`key`: `string`\]: [`IJsonLdKeyword`](../type-aliases/IJsonLdKeyword.md)\[`"@reverse"`\]
+\[`key`: `string`\]: `string`
 
 ***
 

@@ -6,11 +6,15 @@ Process a proof.
 
 ## Parameters
 
-• **engineCloneData**: `IEngineCoreClone`\<`IEngineCoreConfig`, `IEngineState`\>
+### engineCloneData
+
+`IEngineCoreClone`
 
 The engine clone data.
 
-• **payload**: [`IImmutableProofTaskPayload`](../interfaces/IImmutableProofTaskPayload.md)
+### payload
+
+[`IImmutableProofTaskPayload`](../interfaces/IImmutableProofTaskPayload.md)
 
 The payload to process.
 

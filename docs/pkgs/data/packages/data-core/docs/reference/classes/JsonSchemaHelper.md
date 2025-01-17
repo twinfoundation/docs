@@ -34,15 +34,19 @@ Validates data against the schema.
 
 #### Parameters
 
-• **schema**: `JSONSchema7`
+##### schema
+
+`JSONSchema7`
 
 The schema to validate the data with.
 
-• **data**: `T`
+##### data
+
+`T`
 
 The data to be validated.
 
-• **additionalTypes?**
+##### additionalTypes?
 
 Additional types to add for reference, not already in DataTypeHandlerFactory.
 
@@ -62,11 +66,15 @@ Get the property type from a schema.
 
 #### Parameters
 
-• **schema**: `JSONSchema7`
+##### schema
+
+`JSONSchema7`
 
 The schema to extract the types from.
 
-• **propertyName**: `string`
+##### propertyName
+
+`string`
 
 The name of the property to get the type for.
 
@@ -86,11 +94,15 @@ Convert an entity schema to JSON schema e.g https://example.com/schemas/.
 
 #### Parameters
 
-• **entitySchema**: `undefined` \| `IEntitySchema`\<`unknown`\>
+##### entitySchema
 
 The entity schema to convert.
 
-• **baseDomain?**: `string`
+`undefined` | `IEntitySchema`
+
+##### baseDomain?
+
+`string`
 
 The base domain for local schemas e.g. https://example.com/
 

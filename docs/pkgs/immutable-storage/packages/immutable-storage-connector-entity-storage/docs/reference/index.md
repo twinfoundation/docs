@@ -7,6 +7,7 @@
 
 ## Interfaces
 
+- [IEntityStorageImmutableStorageConnectorConstructorOptions](interfaces/IEntityStorageImmutableStorageConnectorConstructorOptions.md)
 - [IImmutableStorageEntityStorageReceipt](interfaces/IImmutableStorageEntityStorageReceipt.md)
 
 ## Type Aliases

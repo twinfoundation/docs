@@ -7,7 +7,7 @@ https://www.w3.org/TR/vc-data-integrity/
 
 ### @context
 
-> **@context**: `"https://w3id.org/security/data-integrity/v2"` \| [`"https://w3id.org/security/data-integrity/v2"`, `...string[]`]
+> **@context**: `"https://w3id.org/security/data-integrity/v2"` \| \[`"https://w3id.org/security/data-integrity/v2"`, `...string[]`\]
 
 JSON-LD Context.
 

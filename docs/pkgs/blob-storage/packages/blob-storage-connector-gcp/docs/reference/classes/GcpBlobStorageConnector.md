@@ -17,13 +17,11 @@ Create a new instance of GcpBlobStorageConnector.
 
 #### Parameters
 
-• **options**
+##### options
+
+[`IGcpBlobStorageConnectorConstructorOptions`](../interfaces/IGcpBlobStorageConnectorConstructorOptions.md)
 
 The options for the connector.
-
-• **options.config**: [`IGcpBlobStorageConnectorConfig`](../interfaces/IGcpBlobStorageConnectorConfig.md)
-
-The configuration for the connector.
 
 #### Returns
 
@@ -59,7 +57,9 @@ Bootstrap the component by creating and initializing any resources it needs.
 
 #### Parameters
 
-• **nodeLoggingConnectorType?**: `string`
+##### nodeLoggingConnectorType?
+
+`string`
 
 The node logging connector type, defaults to "node-logging".
 
@@ -83,7 +83,9 @@ Set the blob.
 
 #### Parameters
 
-• **blob**: `Uint8Array`
+##### blob
+
+`Uint8Array`
 
 The data for the blob.
 
@@ -107,7 +109,9 @@ Get the blob.
 
 #### Parameters
 
-• **id**: `string`
+##### id
+
+`string`
 
 The id of the blob to get in urn format.
 
@@ -131,7 +135,9 @@ Remove the blob.
 
 #### Parameters
 
-• **id**: `string`
+##### id
+
+`string`
 
 The id of the blob to remove in urn format.
 

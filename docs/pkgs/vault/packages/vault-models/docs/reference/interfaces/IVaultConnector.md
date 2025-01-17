@@ -16,11 +16,15 @@ Create a key in the vault.
 
 #### Parameters
 
-• **name**: `string`
+##### name
+
+`string`
 
 The name of the key to create in the vault.
 
-• **type**: [`VaultKeyType`](../type-aliases/VaultKeyType.md)
+##### type
+
+[`VaultKeyType`](../type-aliases/VaultKeyType.md)
 
 The type of key to create.
 
@@ -40,19 +44,27 @@ Add a key to the vault.
 
 #### Parameters
 
-• **name**: `string`
+##### name
+
+`string`
 
 The name of the key to add to the vault.
 
-• **type**: [`VaultKeyType`](../type-aliases/VaultKeyType.md)
+##### type
+
+[`VaultKeyType`](../type-aliases/VaultKeyType.md)
 
 The type of key to add.
 
-• **privateKey**: `Uint8Array`
+##### privateKey
+
+`Uint8Array`
 
 The private key.
 
-• **publicKey?**: `Uint8Array`
+##### publicKey?
+
+`Uint8Array`
 
 The public key, can be undefined if the key type is symmetric.
 
@@ -66,39 +78,23 @@ Nothing.
 
 ### getKey()
 
-> **getKey**(`name`): `Promise`\<`object`\>
+> **getKey**(`name`): `Promise`\<\{ `type`: [`VaultKeyType`](../type-aliases/VaultKeyType.md); `privateKey`: `Uint8Array`; `publicKey`: `Uint8Array`; \}\>
 
 Get a key from the vault.
 
 #### Parameters
 
-• **name**: `string`
+##### name
+
+`string`
 
 The name of the key to get from the vault.
 
 #### Returns
 
-`Promise`\<`object`\>
+`Promise`\<\{ `type`: [`VaultKeyType`](../type-aliases/VaultKeyType.md); `privateKey`: `Uint8Array`; `publicKey`: `Uint8Array`; \}\>
 
 The key, publicKey can be undefined if key is symmetric.
-
-##### type
-
-> **type**: [`VaultKeyType`](../type-aliases/VaultKeyType.md)
-
-The type of the key e.g. Ed25519, Secp256k1.
-
-##### privateKey
-
-> **privateKey**: `Uint8Array`
-
-The private key.
-
-##### publicKey?
-
-> `optional` **publicKey**: `Uint8Array`
-
-The public key, which can be undefined if key type is symmetric.
 
 ***
 
@@ -110,11 +106,15 @@ Rename a key in the vault.
 
 #### Parameters
 
-• **name**: `string`
+##### name
+
+`string`
 
 The name of the key to rename.
 
-• **newName**: `string`
+##### newName
+
+`string`
 
 The new name of the key.
 
@@ -134,7 +134,9 @@ Remove a key from the vault.
 
 #### Parameters
 
-• **name**: `string`
+##### name
+
+`string`
 
 The name of the key to remove from the vault.
 
@@ -154,11 +156,15 @@ Sign the data using a key in the vault.
 
 #### Parameters
 
-• **name**: `string`
+##### name
+
+`string`
 
 The name of the key to use for signing.
 
-• **data**: `Uint8Array`
+##### data
+
+`Uint8Array`
 
 The data to sign.
 
@@ -178,15 +184,21 @@ Verify the signature of the data using a key in the vault.
 
 #### Parameters
 
-• **name**: `string`
+##### name
+
+`string`
 
 The name of the key to use for verification.
 
-• **data**: `Uint8Array`
+##### data
+
+`Uint8Array`
 
 The data that was signed.
 
-• **signature**: `Uint8Array`
+##### signature
+
+`Uint8Array`
 
 The signature to verify.
 
@@ -206,15 +218,21 @@ Encrypt the data using a key in the vault.
 
 #### Parameters
 
-• **name**: `string`
+##### name
+
+`string`
 
 The name of the key to use for encryption.
 
-• **encryptionType**: `0`
+##### encryptionType
+
+`0`
 
 The type of encryption to use.
 
-• **data**: `Uint8Array`
+##### data
+
+`Uint8Array`
 
 The data to encrypt.
 
@@ -234,15 +252,21 @@ Decrypt the data using a key in the vault.
 
 #### Parameters
 
-• **name**: `string`
+##### name
+
+`string`
 
 The name of the key to use for decryption.
 
-• **encryptionType**: `0`
+##### encryptionType
+
+`0`
 
 The type of encryption to use.
 
-• **encryptedData**: `Uint8Array`
+##### encryptedData
+
+`Uint8Array`
 
 The data to decrypt.
 
@@ -266,11 +290,15 @@ Store a secret in the vault.
 
 #### Parameters
 
-• **name**: `string`
+##### name
+
+`string`
 
 The name of the secret in the vault to set.
 
-• **data**: `T`
+##### data
+
+`T`
 
 The secret to add to the vault.
 
@@ -294,7 +322,9 @@ Get a secret from the vault.
 
 #### Parameters
 
-• **name**: `string`
+##### name
+
+`string`
 
 The name of the secret in the vault to get.
 
@@ -318,7 +348,9 @@ Remove a secret from the vault.
 
 #### Parameters
 
-• **name**: `string`
+##### name
+
+`string`
 
 The name of the secret in the vault to remove.
 

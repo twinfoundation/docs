@@ -7,3 +7,4 @@
 ## Interfaces
 
 - [IS3BlobStorageConnectorConfig](interfaces/IS3BlobStorageConnectorConfig.md)
+- [IS3BlobStorageConnectorConstructorOptions](interfaces/IS3BlobStorageConnectorConstructorOptions.md)

@@ -16,15 +16,21 @@ Create a new authentication proof.
 
 #### Parameters
 
-• **proofObject**: `IJsonLdNodeObject`
+##### proofObject
+
+`IJsonLdNodeObject`
 
 The object for the proof as JSON-LD.
 
-• **userIdentity?**: `string`
+##### userIdentity?
+
+`string`
 
 The identity to create the immutable proof operation with.
 
-• **nodeIdentity?**: `string`
+##### nodeIdentity?
+
+`string`
 
 The node identity to use for vault operations.
 
@@ -44,7 +50,9 @@ Get an authentication proof.
 
 #### Parameters
 
-• **id**: `string`
+##### id
+
+`string`
 
 The id of the proof to get.
 
@@ -68,7 +76,9 @@ Verify an authentication proof.
 
 #### Parameters
 
-• **id**: `string`
+##### id
+
+`string`
 
 The id of the proof to verify.
 
@@ -92,11 +102,15 @@ Remove the immutable storage for the proof.
 
 #### Parameters
 
-• **id**: `string`
+##### id
+
+`string`
 
 The id of the proof to remove the storage from.
 
-• **nodeIdentity?**: `string`
+##### nodeIdentity?
+
+`string`
 
 The node identity to use for vault operations.
 

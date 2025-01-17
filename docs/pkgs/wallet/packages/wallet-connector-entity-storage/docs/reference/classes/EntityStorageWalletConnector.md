@@ -16,25 +16,11 @@ Create a new instance of EntityStorageWalletConnector.
 
 #### Parameters
 
-• **options?**
+##### options?
+
+[`IEntityStorageWalletConnectorConstructorOptions`](../interfaces/IEntityStorageWalletConnectorConstructorOptions.md)
 
 The options for the wallet connector.
-
-• **options.vaultConnectorType?**: `string`
-
-Vault connector to use for wallet secrets, defaults to "vault".
-
-• **options.faucetConnectorType?**: `string`
-
-Optional faucet for requesting funds, defaults to "faucet".
-
-• **options.walletAddressEntityStorageType?**: `string`
-
-The entity storage for wallets, defaults to "wallet-address".
-
-• **options.config?**: [`IEntityStorageWalletConnectorConfig`](../interfaces/IEntityStorageWalletConnectorConfig.md)
-
-The configuration to use.
 
 #### Returns
 
@@ -70,7 +56,9 @@ Create a new wallet.
 
 #### Parameters
 
-• **identity**: `string`
+##### identity
+
+`string`
 
 The identity of the user to access the vault keys.
 
@@ -94,19 +82,27 @@ Get the addresses for the requested range.
 
 #### Parameters
 
-• **identity**: `string`
+##### identity
+
+`string`
 
 The identity of the user to access the vault keys.
 
-• **accountIndex**: `number`
+##### accountIndex
+
+`number`
 
 The account index to get the addresses for.
 
-• **startAddressIndex**: `number`
+##### startAddressIndex
+
+`number`
 
 The start index for the addresses.
 
-• **count**: `number`
+##### count
+
+`number`
 
 The number of addresses to generate.
 
@@ -130,11 +126,15 @@ Get the balance for an address in a wallet.
 
 #### Parameters
 
-• **identity**: `string`
+##### identity
+
+`string`
 
 The identity of the user to access the vault keys.
 
-• **address**: `string`
+##### address
+
+`string`
 
 The bech32 encoded address.
 
@@ -158,19 +158,27 @@ Ensure the balance for an address in a wallet.
 
 #### Parameters
 
-• **identity**: `string`
+##### identity
+
+`string`
 
 The identity of the user to access the vault keys.
 
-• **address**: `string`
+##### address
+
+`string`
 
 The bech32 encoded address.
 
-• **ensureBalance**: `bigint`
+##### ensureBalance
+
+`bigint`
 
 The balance to ensure on the address.
 
-• **timeoutInSeconds?**: `number`
+##### timeoutInSeconds?
+
+`number`
 
 The timeout in seconds to wait for the funding to complete.
 
@@ -194,19 +202,27 @@ Transfer funds to an address.
 
 #### Parameters
 
-• **identity**: `string`
+##### identity
+
+`string`
 
 The identity of the user to access the vault keys.
 
-• **addressSource**: `string`
+##### addressSource
+
+`string`
 
 The bech32 encoded address to send the funds from.
 
-• **addressDest**: `string`
+##### addressDest
+
+`string`
 
 The bech32 encoded address to send the funds to.
 
-• **amount**: `bigint`
+##### amount
+
+`bigint`
 
 The amount to transfer.
 

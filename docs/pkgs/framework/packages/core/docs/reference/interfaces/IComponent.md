@@ -14,15 +14,21 @@ The name of the component.
 
 ### bootstrap()?
 
-> `optional` **bootstrap**(`nodeLoggingConnectorType`?): `Promise`\<`boolean`\>
+> `optional` **bootstrap**(`nodeLoggingConnectorType`, `componentState`?): `Promise`\<`boolean`\>
 
 Bootstrap the component by creating and initializing any resources it needs.
 
 #### Parameters
 
-• **nodeLoggingConnectorType?**: `string`
+##### nodeLoggingConnectorType
 
 The node logging connector type, defaults to "node-logging".
+
+`undefined` | `string`
+
+##### componentState?
+
+A persistent state which can be modified by the method.
 
 #### Returns
 
@@ -34,19 +40,27 @@ True if the bootstrapping process was successful.
 
 ### start()?
 
-> `optional` **start**(`nodeIdentity`, `nodeLoggingConnectorType`?): `Promise`\<`void`\>
+> `optional` **start**(`nodeIdentity`, `nodeLoggingConnectorType`, `componentState`?): `Promise`\<`void`\>
 
 The component needs to be started when the node is initialized.
 
 #### Parameters
 
-• **nodeIdentity**: `string`
+##### nodeIdentity
+
+`string`
 
 The identity of the node starting the component.
 
-• **nodeLoggingConnectorType?**: `string`
+##### nodeLoggingConnectorType
 
 The node logging connector type, defaults to "node-logging".
+
+`undefined` | `string`
+
+##### componentState?
+
+A persistent state which can be modified by the method.
 
 #### Returns
 
@@ -58,19 +72,27 @@ Nothing.
 
 ### stop()?
 
-> `optional` **stop**(`nodeIdentity`, `nodeLoggingConnectorType`?): `Promise`\<`void`\>
+> `optional` **stop**(`nodeIdentity`, `nodeLoggingConnectorType`, `componentState`?): `Promise`\<`void`\>
 
 The component needs to be stopped when the node is closed.
 
 #### Parameters
 
-• **nodeIdentity**: `string`
+##### nodeIdentity
+
+`string`
 
 The identity of the node stopping the component.
 
-• **nodeLoggingConnectorType?**: `string`
+##### nodeLoggingConnectorType
 
 The node logging connector type, defaults to "node-logging".
+
+`undefined` | `string`
+
+##### componentState?
+
+A persistent state which can be modified by the method.
 
 #### Returns
 

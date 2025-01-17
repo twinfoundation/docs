@@ -8,32 +8,8 @@ Immutable proof component config types.
 
 ### type
 
-> **type**: *typeof* `ImmutableProofComponentType.Service`
+> **type**: *typeof* [`Service`](../variables/ImmutableProofComponentType.md#service)
 
 ### options?
 
-> `optional` **options**: `object`
-
-### options.vaultConnectorType?
-
-> `optional` **vaultConnectorType**: `string`
-
-### options.immutableProofEntityStorageType?
-
-> `optional` **immutableProofEntityStorageType**: `string`
-
-### options.immutableStorageType?
-
-> `optional` **immutableStorageType**: `string`
-
-### options.identityConnectorType?
-
-> `optional` **identityConnectorType**: `string`
-
-### options.backgroundTaskConnectorType?
-
-> `optional` **backgroundTaskConnectorType**: `string`
-
-### options.config?
-
-> `optional` **config**: `IImmutableProofServiceConfig`
+> `optional` **options**: `IImmutableProofServiceConstructorOptions`

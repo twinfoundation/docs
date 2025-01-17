@@ -7,3 +7,4 @@
 ## Interfaces
 
 - [IFirestoreEntityStorageConnectorConfig](interfaces/IFirestoreEntityStorageConnectorConfig.md)
+- [IFirestoreEntityStorageConnectorConstructorOptions](interfaces/IFirestoreEntityStorageConnectorConstructorOptions.md)

@@ -26,15 +26,21 @@ Validate a JSON-LD document.
 
 #### Parameters
 
-• **document**: `T`
+##### document
+
+`T`
 
 The JSON-LD document to validate.
 
-• **validationFailures**: `IValidationFailure`[]
+##### validationFailures
+
+`IValidationFailure`[]
 
 The list of validation failures to add to.
 
-• **validationMode?**: `ValidationMode`
+##### validationMode?
+
+`ValidationMode`
 
 The validation mode to use, defaults to either.
 

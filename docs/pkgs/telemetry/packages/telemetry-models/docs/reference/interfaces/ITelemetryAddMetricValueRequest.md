@@ -38,4 +38,4 @@ The custom data for the update operation.
 
 ##### Index Signature
 
- \[`key`: `string`\]: `unknown`
+\[`key`: `string`\]: `unknown`

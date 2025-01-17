@@ -172,7 +172,7 @@
                                         "value": {
                                             "@context": [
                                                 "https://schema.twindev.org/attestation/",
-                                                "https://schema.org/"
+                                                "https://schema.org"
                                             ],
                                             "type": "Information",
                                             "id": "attestation:iota:aW90YS1uZnQ6dHN0OjB4NzYyYjljNDllYTg2OWUwZWJkYTliYmZhNzY5Mzk0NDdhNDI4ZGNmMTc4YzVkMTVhYjQ0N2UyZDRmYmJiNGViMg==",
@@ -197,7 +197,7 @@
                                         "value": {
                                             "@context": [
                                                 "https://schema.twindev.org/attestation/",
-                                                "https://schema.org/"
+                                                "https://schema.org"
                                             ],
                                             "type": "Information",
                                             "id": "attestation:iota:aW90YS1uZnQ6dHN0OjB4NzYyYjljNDllYTg2OWUwZWJkYTliYmZhNzY5Mzk0NDdhNDI4ZGNmMTc4YzVkMTVhYjQ0N2UyZDRmYmJiNGViMg==",
@@ -230,7 +230,7 @@
                                         "value": {
                                             "@context": [
                                                 "https://schema.twindev.org/attestation/",
-                                                "https://schema.org/"
+                                                "https://schema.org"
                                             ],
                                             "type": "Information",
                                             "id": "attestation:iota:aW90YS1uZnQ6dHN0OjB4NzYyYjljNDllYTg2OWUwZWJkYTliYmZhNzY5Mzk0NDdhNDI4ZGNmMTc4YzVkMTVhYjQ0N2UyZDRmYmJiNGViMg==",
@@ -255,7 +255,7 @@
                                         "value": {
                                             "@context": [
                                                 "https://schema.twindev.org/attestation/",
-                                                "https://schema.org/"
+                                                "https://schema.org"
                                             ],
                                             "type": "Information",
                                             "id": "attestation:iota:aW90YS1uZnQ6dHN0OjB4NzYyYjljNDllYTg2OWUwZWJkYTliYmZhNzY5Mzk0NDdhNDI4ZGNmMTc4YzVkMTVhYjQ0N2UyZDRmYmJiNGViMg==",

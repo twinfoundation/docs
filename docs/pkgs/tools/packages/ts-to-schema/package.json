@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/ts-to-schema",
-	"version": "0.0.1-next.13",
+	"version": "0.0.1-next.15",
 	"description": "Tool to convert TypeScript definitions to JSON schemas",
 	"repository": {
 		"type": "git",
@@ -32,27 +32,27 @@
 	"dependencies": {
 		"@twin.org/cli-core": "next",
 		"@twin.org/core": "next",
-		"@twin.org/nameof": "0.0.1-next.13",
-		"commander": "12.1.0",
+		"@twin.org/nameof": "0.0.1-next.15",
+		"commander": "13.0.0",
 		"glob": "11.0.0",
 		"jsonschema": "1.4.1",
 		"ts-json-schema-generator": "2.4.0-next.1"
 	},
 	"devDependencies": {
-		"@twin.org/merge-locales": "0.0.1-next.13",
-		"@twin.org/nameof-transformer": "0.0.1-next.13",
-		"@twin.org/nameof-vitest-plugin": "0.0.1-next.13",
-		"@types/node": "22.9.1",
-		"@vitest/coverage-v8": "2.1.5",
+		"@twin.org/merge-locales": "0.0.1-next.15",
+		"@twin.org/nameof-transformer": "0.0.1-next.15",
+		"@twin.org/nameof-vitest-plugin": "0.0.1-next.15",
+		"@types/node": "22.10.5",
+		"@vitest/coverage-v8": "2.1.8",
 		"copyfiles": "2.4.1",
 		"rimraf": "6.0.1",
-		"rollup": "4.27.3",
-		"ts-patch": "3.2.1",
+		"rollup": "4.30.0",
+		"ts-patch": "3.3.0",
 		"tsc-watch": "6.2.1",
-		"typedoc": "0.26.11",
-		"typedoc-plugin-markdown": "4.2.10",
-		"typescript": "5.6.3",
-		"vitest": "2.1.5"
+		"typedoc": "0.27.6",
+		"typedoc-plugin-markdown": "4.4.1",
+		"typescript": "5.7.2",
+		"vitest": "2.1.8"
 	},
 	"main": "./dist/cjs/index.cjs",
 	"module": "./dist/esm/index.mjs",

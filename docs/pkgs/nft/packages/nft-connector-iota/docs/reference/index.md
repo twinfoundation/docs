@@ -8,3 +8,4 @@
 ## Interfaces
 
 - [IIotaNftConnectorConfig](interfaces/IIotaNftConnectorConfig.md)
+- [IIotaNftConnectorConstructorOptions](interfaces/IIotaNftConnectorConstructorOptions.md)

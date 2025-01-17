@@ -22,7 +22,9 @@ The document loader to use.
 
 #### Parameters
 
-• **url**: `string`
+##### url
+
+`string`
 
 #### Returns
 
@@ -38,11 +40,15 @@ Compact a document according to a particular context.
 
 #### Parameters
 
-• **document**: [`IJsonLdDocument`](../type-aliases/IJsonLdDocument.md)
+##### document
+
+[`IJsonLdDocument`](../type-aliases/IJsonLdDocument.md)
 
 The JSON-LD document to compact.
 
-• **context?**: [`IJsonLdContextDefinitionRoot`](../type-aliases/IJsonLdContextDefinitionRoot.md)
+##### context?
+
+[`IJsonLdContextDefinitionRoot`](../type-aliases/IJsonLdContextDefinitionRoot.md)
 
 The context to compact the document to, if not provided will try and gather from the object.
 
@@ -62,7 +68,9 @@ Expand a document, removing its context.
 
 #### Parameters
 
-• **compacted**: [`IJsonLdDocument`](../type-aliases/IJsonLdDocument.md)
+##### compacted
+
+[`IJsonLdDocument`](../type-aliases/IJsonLdDocument.md)
 
 The compacted JSON-LD document to expand.
 
@@ -82,11 +90,15 @@ Add a redirect to use during document resolution.
 
 #### Parameters
 
-• **from**: `RegExp`
+##### from
+
+`RegExp`
 
 The URL to redirect from.
 
-• **to**: `string`
+##### to
+
+`string`
 
 The URL to redirect to.
 
@@ -104,13 +116,17 @@ Combine contexts.
 
 #### Parameters
 
-• **context1**: `undefined` \| [`IJsonLdContextDefinitionRoot`](../type-aliases/IJsonLdContextDefinitionRoot.md)
+##### context1
 
 The first JSON-LD context to combine.
 
-• **context2**: `undefined` \| [`IJsonLdContextDefinitionRoot`](../type-aliases/IJsonLdContextDefinitionRoot.md)
+`undefined` | [`IJsonLdContextDefinitionRoot`](../type-aliases/IJsonLdContextDefinitionRoot.md)
+
+##### context2
 
 The second JSON-LD context to combine.
+
+`undefined` | [`IJsonLdContextDefinitionRoot`](../type-aliases/IJsonLdContextDefinitionRoot.md)
 
 #### Returns
 
@@ -128,11 +144,13 @@ Gather all the contexts from the element and it's children.
 
 #### Parameters
 
-• **element**
+##### element
 
 The element to gather the contexts from.
 
-• **initial?**: [`IJsonLdContextDefinitionRoot`](../type-aliases/IJsonLdContextDefinitionRoot.md)
+##### initial?
+
+[`IJsonLdContextDefinitionRoot`](../type-aliases/IJsonLdContextDefinitionRoot.md)
 
 The initial context.
 
@@ -152,11 +170,15 @@ Remove all the contexts that match the pattern.
 
 #### Parameters
 
-• **context**: `undefined` \| [`IJsonLdContextDefinitionRoot`](../type-aliases/IJsonLdContextDefinitionRoot.md)
+##### context
 
 The context to remove the entries from.
 
-• **match?**: [`IJsonLdContextDefinitionElement`](../type-aliases/IJsonLdContextDefinitionElement.md)[]
+`undefined` | [`IJsonLdContextDefinitionRoot`](../type-aliases/IJsonLdContextDefinitionRoot.md)
+
+##### match?
+
+[`IJsonLdContextDefinitionElement`](../type-aliases/IJsonLdContextDefinitionElement.md)[]
 
 The element to try and match.
 

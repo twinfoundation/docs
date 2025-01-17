@@ -22,19 +22,27 @@ Register a handler for a task.
 
 #### Parameters
 
-• **taskType**: `string`
+##### taskType
+
+`string`
 
 The type of the task the handler can process.
 
-• **module**: `string`
+##### module
+
+`string`
 
 The module the handler is in.
 
-• **method**: `string`
+##### method
+
+`string`
 
 The method in the module to execute.
 
-• **stateChangeCallback?**
+##### stateChangeCallback?
+
+(`task`) => `Promise`\<`void`\>
 
 The callback to execute when the task state is updated.
 
@@ -54,7 +62,9 @@ Unregister a handler for a task.
 
 #### Parameters
 
-• **taskType**: `string`
+##### taskType
+
+`string`
 
 The type of the task handler to remove.
 
@@ -78,27 +88,37 @@ Create a new task.
 
 #### Parameters
 
-• **type**: `string`
+##### type
+
+`string`
 
 The type of the task.
 
-• **payload?**: `T`
+##### payload?
+
+`T`
 
 The payload for the task.
 
-• **options?**
+##### options?
 
 Additional options for the task.
 
-• **options.retryCount?**: `number`
+###### retryCount
+
+`number`
 
 The number of times to retry the task if it fails, leave undefined to retry forever.
 
-• **options.retryInterval?**: `number`
+###### retryInterval
+
+`number`
 
 The interval in milliseconds to wait between retries, defaults to 5000, leave undefined for default scheduling.
 
-• **options.retainFor?**: `number`
+###### retainFor
+
+`number`
 
 The amount of time in milliseconds to retain the result until removal, defaults to 0 for immediate removal, set to -1 to keep forever.
 
@@ -124,7 +144,9 @@ Get the task details.
 
 #### Parameters
 
-• **taskId**: `string`
+##### taskId
+
+`string`
 
 The id of the task to get the details for.
 
@@ -144,7 +166,9 @@ Retry a failed task immediately instead of waiting for it's next scheduled retry
 
 #### Parameters
 
-• **taskId**: `string`
+##### taskId
+
+`string`
 
 The id of the task to retry.
 
@@ -164,7 +188,9 @@ Remove a task ignoring any retain until date.
 
 #### Parameters
 
-• **taskId**: `string`
+##### taskId
+
+`string`
 
 The id of the task to remove.
 
@@ -184,7 +210,9 @@ Cancel a task, will only be actioned if the task is currently pending.
 
 #### Parameters
 
-• **taskId**: `string`
+##### taskId
+
+`string`
 
 The id of the task to cancel.
 
@@ -198,46 +226,50 @@ Nothing.
 
 ### query()
 
-> **query**(`taskType`?, `taskStatus`?, `sortProperty`?, `sortDirection`?, `cursor`?, `pageSize`?): `Promise`\<`object`\>
+> **query**(`taskType`?, `taskStatus`?, `sortProperty`?, `sortDirection`?, `cursor`?, `pageSize`?): `Promise`\<\{ `entities`: [`IBackgroundTask`](IBackgroundTask.md)[]; `cursor`: `string`; \}\>
 
 Get a list of tasks.
 
 #### Parameters
 
-• **taskType?**: `string`
+##### taskType?
+
+`string`
 
 The type of the task to get.
 
-• **taskStatus?**: [`TaskStatus`](../type-aliases/TaskStatus.md)
+##### taskStatus?
+
+[`TaskStatus`](../type-aliases/TaskStatus.md)
 
 The status of the task to get.
 
-• **sortProperty?**: `"status"` \| `"dateCreated"` \| `"dateModified"` \| `"dateCompleted"`
+##### sortProperty?
 
 The property to sort by, defaults to dateCreated.
 
-• **sortDirection?**: `SortDirection`
+`"status"` | `"dateCreated"` | `"dateModified"` | `"dateCompleted"`
+
+##### sortDirection?
+
+`SortDirection`
 
 The order to sort by, defaults to ascending.
 
-• **cursor?**: `string`
+##### cursor?
+
+`string`
 
 The cursor to get the next page of tasks.
 
-• **pageSize?**: `number`
+##### pageSize?
+
+`number`
 
 The maximum number of entities in a page.
 
 #### Returns
 
-`Promise`\<`object`\>
+`Promise`\<\{ `entities`: [`IBackgroundTask`](IBackgroundTask.md)[]; `cursor`: `string`; \}\>
 
 The list of tasks.
-
-##### entities
-
-> **entities**: [`IBackgroundTask`](IBackgroundTask.md)\<`any`, `any`\>[]
-
-##### cursor?
-
-> `optional` **cursor**: `string`

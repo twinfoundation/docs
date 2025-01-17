@@ -35,7 +35,7 @@
                 "parameters": [
                     {
                         "name": "id",
-                        "description": "The identity to get the document for.",
+                        "description": "The identity to resolve.",
                         "in": "path",
                         "required": true,
                         "schema": {

@@ -6,7 +6,9 @@ Build the root command to be consumed by the CLI.
 
 ## Parameters
 
-• **program**: `Command`
+### program
+
+`Command`
 
 The command to build on.
 

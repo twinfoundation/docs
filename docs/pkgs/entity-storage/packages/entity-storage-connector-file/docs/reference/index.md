@@ -7,3 +7,4 @@
 ## Interfaces
 
 - [IFileEntityStorageConnectorConfig](interfaces/IFileEntityStorageConnectorConfig.md)
+- [IFileEntityStorageConnectorConstructorOptions](interfaces/IFileEntityStorageConnectorConstructorOptions.md)

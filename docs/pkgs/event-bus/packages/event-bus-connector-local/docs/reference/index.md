@@ -3,3 +3,7 @@
 ## Classes
 
 - [LocalEventBusConnector](classes/LocalEventBusConnector.md)
+
+## Interfaces
+
+- [ILocalEventBusConnectorConstructorOptions](interfaces/ILocalEventBusConnectorConstructorOptions.md)

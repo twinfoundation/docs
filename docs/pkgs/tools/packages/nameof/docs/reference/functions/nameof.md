@@ -10,11 +10,15 @@ Placeholder method which substitutes the type name as a string at runtime.
 
 ## Parameters
 
-• **property?**: `unknown`
+### property?
+
+`unknown`
 
 The property to get the name of.
 
-• **replaceParent?**: `string`
+### replaceParent?
+
+`string`
 
 Optional object name to replace the top level object of a property path.
 

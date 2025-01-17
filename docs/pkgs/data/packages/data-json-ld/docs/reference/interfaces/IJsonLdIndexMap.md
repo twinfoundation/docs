@@ -9,4 +9,4 @@ https://www.w3.org/TR/json-ld11/#index-maps
 
 ## Indexable
 
- \[`key`: `string`\]: [`IJsonLdIndexMapItem`](../type-aliases/IJsonLdIndexMapItem.md) \| [`IJsonLdIndexMapItem`](../type-aliases/IJsonLdIndexMapItem.md)[]
+\[`key`: `string`\]: [`IJsonLdIndexMapItem`](../type-aliases/IJsonLdIndexMapItem.md) \| [`IJsonLdIndexMapItem`](../type-aliases/IJsonLdIndexMapItem.md)[]

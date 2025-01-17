@@ -40,7 +40,7 @@ The query parameters.
 
 > `optional` **conditions**: `string`
 
-The conditions to filter the stream, consist of property|comparison|value comma separated.
+The conditions to filter the stream, JSON stringified IComparator[].
 
 #### includeDeleted?
 

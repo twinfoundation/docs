@@ -13,7 +13,7 @@ https://www.w3.org/TR/json-ld11/#node-objects
 
 ## Indexable
 
- \[`key`: `string`\]: [`IJsonLdNodePrimitive`](../type-aliases/IJsonLdNodePrimitive.md) \| [`IJsonLdNodePrimitive`](../type-aliases/IJsonLdNodePrimitive.md)[] \| [`IJsonLdLanguageMap`](IJsonLdLanguageMap.md) \| [`IJsonLdIndexMap`](IJsonLdIndexMap.md) \| [`IJsonLdIncludedBlock`](../type-aliases/IJsonLdIncludedBlock.md) \| [`IJsonLdIdMap`](IJsonLdIdMap.md) \| [`IJsonLdTypeMap`](IJsonLdTypeMap.md) \| [`IJsonLdNodeObject`](IJsonLdNodeObject.md)\[keyof [`IJsonLdNodeObject`](IJsonLdNodeObject.md)\]
+\[`key`: `string`\]: `undefined` \| `null` \| `string` \| `number` \| `boolean` \| `string`[] \| [`IJsonLdNodeObject`](IJsonLdNodeObject.md) \| [`IJsonLdContextDefinition`](IJsonLdContextDefinition.md) \| [`IJsonLdContextDefinitionElement`](../type-aliases/IJsonLdContextDefinitionElement.md)[] \| `object` & `object` \| `object` & `object` \| `object` & `object` \| [`IJsonLdNodeObject`](IJsonLdNodeObject.md)[] \| [`IJsonLdGraphObject`](IJsonLdGraphObject.md) \| [`IJsonLdListObject`](IJsonLdListObject.md) \| [`IJsonLdSetObject`](IJsonLdSetObject.md) \| [`IJsonLdNodePrimitive`](../type-aliases/IJsonLdNodePrimitive.md)[] \| [`IJsonLdLanguageMap`](IJsonLdLanguageMap.md) \| [`IJsonLdIndexMap`](IJsonLdIndexMap.md) \| [`IJsonLdIdMap`](IJsonLdIdMap.md) \| [`IJsonLdTypeMap`](IJsonLdTypeMap.md) \| \{\} \| [`IJsonLdJsonObject`](IJsonLdJsonObject.md) \| [`IJsonLdJsonObject`](IJsonLdJsonObject.md)[]
 
 ## Properties
 
@@ -83,7 +83,7 @@ https://www.w3.org/TR/json-ld11/#node-objects
 
 #### Index Signature
 
- \[`key`: `string`\]: [`IJsonLdKeyword`](../type-aliases/IJsonLdKeyword.md)\[`"@reverse"`\]
+\[`key`: `string`\]: `string`
 
 #### Inherited from
 

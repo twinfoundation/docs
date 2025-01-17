@@ -20,7 +20,9 @@ Create a new instance of AuditableItemGraphClient.
 
 #### Parameters
 
-• **config**: `IBaseRestClientConfig`
+##### config
+
+`IBaseRestClientConfig`
 
 The configuration for the client.
 
@@ -48,25 +50,33 @@ Runtime name for the class.
 
 ### create()
 
-> **create**(`vertexObject`?, `aliases`?, `resources`?, `edges`?): `Promise`\<`string`\>
+> **create**(`annotationObject`?, `aliases`?, `resources`?, `edges`?): `Promise`\<`string`\>
 
 Create a new graph vertex.
 
 #### Parameters
 
-• **vertexObject?**: `IJsonLdNodeObject`
+##### annotationObject?
 
-The object for the vertex.
+`IJsonLdNodeObject`
 
-• **aliases?**: `object`[]
+The annotation object for the vertex.
+
+##### aliases?
+
+`object`[]
 
 Alternative aliases that can be used to identify the vertex.
 
-• **resources?**: `object`[]
+##### resources?
+
+`object`[]
 
 The resources attached to the vertex.
 
-• **edges?**: `object`[]
+##### edges?
+
+`object`[]
 
 The edges connected to the vertex.
 
@@ -90,23 +100,31 @@ Get a graph vertex.
 
 #### Parameters
 
-• **id**: `string`
+##### id
+
+`string`
 
 The id of the vertex to get.
 
-• **options?**
+##### options?
 
 Additional options for the get operation.
 
-• **options.includeDeleted?**: `boolean`
+###### includeDeleted
+
+`boolean`
 
 Whether to include deleted/updated aliases, resource, edges, defaults to false.
 
-• **options.includeChangesets?**: `boolean`
+###### includeChangesets
+
+`boolean`
 
 Whether to include the changesets of the vertex, defaults to false.
 
-• **options.verifySignatureDepth?**: `VerifyDepth`
+###### verifySignatureDepth
+
+`VerifyDepth`
 
 How many signatures to verify, defaults to "none".
 
@@ -128,29 +146,39 @@ NotFoundError if the vertex is not found.
 
 ### update()
 
-> **update**(`id`, `vertexObject`?, `aliases`?, `resources`?, `edges`?): `Promise`\<`void`\>
+> **update**(`id`, `annotationObject`?, `aliases`?, `resources`?, `edges`?): `Promise`\<`void`\>
 
 Update a graph vertex.
 
 #### Parameters
 
-• **id**: `string`
+##### id
+
+`string`
 
 The id of the vertex to update.
 
-• **vertexObject?**: `IJsonLdNodeObject`
+##### annotationObject?
 
-The object for the vertex as JSON-LD.
+`IJsonLdNodeObject`
 
-• **aliases?**: `object`[]
+The annotation object for the vertex as JSON-LD.
+
+##### aliases?
+
+`object`[]
 
 Alternative aliases that can be used to identify the vertex.
 
-• **resources?**: `object`[]
+##### resources?
+
+`object`[]
 
 The resources attached to the vertex.
 
-• **edges?**: `object`[]
+##### edges?
+
+`object`[]
 
 The edges connected to the vertex.
 
@@ -168,41 +196,61 @@ Nothing.
 
 ### query()
 
-> **query**(`options`?, `orderBy`?, `orderByDirection`?, `properties`?, `cursor`?, `pageSize`?): `Promise`\<`IAuditableItemGraphVertexList`\>
+> **query**(`options`?, `conditions`?, `orderBy`?, `orderByDirection`?, `properties`?, `cursor`?, `pageSize`?): `Promise`\<`IAuditableItemGraphVertexList`\>
 
 Query the graph for vertices.
 
 #### Parameters
 
-• **options?**
+##### options?
 
 The query options.
 
-• **options.id?**: `string`
+###### id
+
+`string`
 
 The optional id to look for.
 
-• **options.idMode?**: `"both"` \| `"id"` \| `"alias"`
+###### idMode
+
+`"both"` \| `"id"` \| `"alias"`
 
 Look in id, alias or both, defaults to both.
 
-• **orderBy?**: `"dateCreated"` \| `"dateModified"`
+##### conditions?
+
+`IComparator`[]
+
+Conditions to use in the query.
+
+##### orderBy?
 
 The order for the results, defaults to created.
 
-• **orderByDirection?**: `SortDirection`
+`"dateCreated"` | `"dateModified"`
+
+##### orderByDirection?
+
+`SortDirection`
 
 The direction for the order, defaults to descending.
 
-• **properties?**: keyof `IAuditableItemGraphVertex`[]
+##### properties?
+
+keyof `IAuditableItemGraphVertex`[]
 
 The properties to return, if not provided defaults to id, created, aliases and object.
 
-• **cursor?**: `string`
+##### cursor?
+
+`string`
 
 The cursor to request the next page of entities.
 
-• **pageSize?**: `number`
+##### pageSize?
+
+`number`
 
 The maximum number of entities in a page.
 

@@ -1,22 +1,34 @@
 # Function: buildEngineServerConfiguration()
 
-> **buildEngineServerConfiguration**(`envVars`, `coreEngineConfig`, `serverInfo`): `IEngineServerConfig`
+> **buildEngineServerConfiguration**(`envVars`, `coreEngineConfig`, `serverInfo`, `openApiSpecPath`?): `IEngineServerConfig`
 
 Handles the configuration of the server.
 
 ## Parameters
 
-• **envVars**: [`IEngineServerEnvironmentVariables`](../interfaces/IEngineServerEnvironmentVariables.md)
+### envVars
+
+[`IEngineServerEnvironmentVariables`](../interfaces/IEngineServerEnvironmentVariables.md)
 
 The environment variables.
 
-• **coreEngineConfig**: `IEngineCoreConfig`
+### coreEngineConfig
+
+`IEngineCoreConfig`
 
 The core engine config.
 
-• **serverInfo**: `IServerInfo`
+### serverInfo
+
+`IServerInfo`
 
 The server information.
+
+### openApiSpecPath?
+
+`string`
+
+The path to the open api spec.
 
 ## Returns
 

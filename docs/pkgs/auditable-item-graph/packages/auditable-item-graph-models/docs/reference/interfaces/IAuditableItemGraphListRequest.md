@@ -34,6 +34,12 @@ The id or alias to try and find.
 
 Which field to look in with the id, defaults to both.
 
+#### conditions?
+
+> `optional` **conditions**: `string`
+
+The conditions to filter the streams, JSON stringified IComparator[].
+
 #### orderBy?
 
 > `optional` **orderBy**: `"dateCreated"` \| `"dateModified"`
@@ -50,7 +56,7 @@ The direction for the order, defaults to desc.
 
 > `optional` **properties**: `string`
 
-The properties to return as a comma separated list, defaults to "id,dateCreated,aliases,vertexObject".
+The properties to return as a comma separated list, defaults to "id,dateCreated,aliases,annotationObject".
 
 #### cursor?
 

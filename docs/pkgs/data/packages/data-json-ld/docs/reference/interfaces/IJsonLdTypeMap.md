@@ -8,4 +8,4 @@ https://www.w3.org/TR/json-ld11/#type-maps
 
 ## Indexable
 
- \[`key`: `string`\]: `string` \| [`IJsonLdNodeObject`](IJsonLdNodeObject.md)
+\[`key`: `string`\]: `string` \| [`IJsonLdNodeObject`](IJsonLdNodeObject.md)

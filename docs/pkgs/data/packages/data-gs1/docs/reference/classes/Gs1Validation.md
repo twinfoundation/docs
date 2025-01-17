@@ -22,19 +22,27 @@ Validate if the property is a valid location.
 
 #### Parameters
 
-• **propertyName**: `string`
+##### propertyName
+
+`string`
 
 The name of the property being validated.
 
-• **value**: [`Gs1Location`](Gs1Location.md)
+##### value
+
+[`Gs1Location`](Gs1Location.md)
 
 The value to test.
 
-• **failures**: `IValidationFailure`[]
+##### failures
+
+`IValidationFailure`[]
 
 The list of failures to add to.
 
-• **container?**: `unknown`
+##### container?
+
+`unknown`
 
 The object which contains this one.
 

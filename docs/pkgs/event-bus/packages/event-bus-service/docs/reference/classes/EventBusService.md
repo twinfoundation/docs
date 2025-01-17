@@ -16,13 +16,11 @@ Create a new instance of EventBusService.
 
 #### Parameters
 
-• **options?**
+##### options?
+
+[`IEventBusServiceConstructorOptions`](../interfaces/IEventBusServiceConstructorOptions.md)
 
 The options for the connector.
-
-• **options.eventBusConnectorType?**: `string`
-
-The event bus connector type, defaults to "event-bus".
 
 #### Returns
 
@@ -62,11 +60,15 @@ Subscribe to the event bus.
 
 #### Parameters
 
-• **topic**: `string`
+##### topic
+
+`string`
 
 The topic being subscribed to.
 
-• **callback**: `EventBusCallback`\<`T`\>
+##### callback
+
+`EventBusCallback`\<`T`\>
 
 The callback to be called when the event occurs on the bus.
 
@@ -90,7 +92,9 @@ Unsubscribe from the event bus.
 
 #### Parameters
 
-• **subscriptionId**: `string`
+##### subscriptionId
+
+`string`
 
 The subscription to unsubscribe.
 
@@ -118,11 +122,15 @@ Publish an event to the bus.
 
 #### Parameters
 
-• **topic**: `string`
+##### topic
+
+`string`
 
 The topic to publish.
 
-• **data**: `T`
+##### data
+
+`T`
 
 The data to publish.
 

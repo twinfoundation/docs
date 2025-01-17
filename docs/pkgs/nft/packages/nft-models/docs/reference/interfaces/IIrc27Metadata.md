@@ -61,7 +61,7 @@ Object containing key value pair where payment address mapped to the payout perc
 
 #### Index Signature
 
- \[`id`: `string`\]: `number`
+\[`id`: `string`\]: `number`
 
 ***
 
@@ -86,3 +86,11 @@ Alphanumeric text string to define a basic description of the NFT.
 > `optional` **attributes**: `object`[]
 
 Array objects defining additional attributes of the NFT
+
+#### trait\_type
+
+> **trait\_type**: `string`
+
+#### value
+
+> **value**: `unknown`

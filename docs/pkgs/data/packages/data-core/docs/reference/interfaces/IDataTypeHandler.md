@@ -42,19 +42,27 @@ A method for validating the data type.
 
 #### Parameters
 
-• **propertyName**: `string`
+##### propertyName
+
+`string`
 
 The name of the property being validated.
 
-• **value**: `unknown`
+##### value
+
+`unknown`
 
 The value to validate.
 
-• **failures**: `IValidationFailure`[]
+##### failures
+
+`IValidationFailure`[]
 
 List of failures to add to.
 
-• **container?**: `unknown`
+##### container?
+
+`unknown`
 
 The object which contains this one.
 

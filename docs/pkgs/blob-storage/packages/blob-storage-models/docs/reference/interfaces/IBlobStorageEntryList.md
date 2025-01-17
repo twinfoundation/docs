@@ -6,7 +6,7 @@ Interface describing an blob storage entry list.
 
 ### @context
 
-> **@context**: `"https://schema.twindev.org/blob-storage/"` \| [`"https://schema.twindev.org/blob-storage/"`, `...string[]`]
+> **@context**: `"https://schema.twindev.org/blob-storage/"` \| \[`"https://schema.twindev.org/blob-storage/"`, `...string[]`\]
 
 JSON-LD Context.
 

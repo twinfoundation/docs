@@ -6,15 +6,21 @@ Create the stream.
 
 ## Parameters
 
-• **httpRequestContext**: `IHttpRequestContext`
+### httpRequestContext
+
+`IHttpRequestContext`
 
 The request context for the API.
 
-• **componentName**: `string`
+### componentName
+
+`string`
 
 The name of the component to use in the routes.
 
-• **request**: `IAuditableItemStreamCreateRequest`
+### request
+
+`IAuditableItemStreamCreateRequest`
 
 The request.
 

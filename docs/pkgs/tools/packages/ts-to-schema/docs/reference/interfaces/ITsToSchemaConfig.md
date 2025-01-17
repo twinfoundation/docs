@@ -36,4 +36,4 @@ External type references
 
 #### Index Signature
 
- \[`id`: `string`\]: `string`
+\[`id`: `string`\]: `string`

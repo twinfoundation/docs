@@ -6,6 +6,10 @@
 - [VaultSecret](classes/VaultSecret.md)
 - [EntityStorageVaultConnector](classes/EntityStorageVaultConnector.md)
 
+## Interfaces
+
+- [IEntityStorageVaultConnectorConstructorOptions](interfaces/IEntityStorageVaultConnectorConstructorOptions.md)
+
 ## Functions
 
 - [initSchema](functions/initSchema.md)

@@ -8,7 +8,9 @@
 
 ## Interfaces
 
+- [IEntityStorageFaucetConnectorConstructorOptions](interfaces/IEntityStorageFaucetConnectorConstructorOptions.md)
 - [IEntityStorageWalletConnectorConfig](interfaces/IEntityStorageWalletConnectorConfig.md)
+- [IEntityStorageWalletConnectorConstructorOptions](interfaces/IEntityStorageWalletConnectorConstructorOptions.md)
 
 ## Functions
 

@@ -54,4 +54,4 @@ The custom data for the metric value.
 
 #### Index Signature
 
- \[`key`: `string`\]: `unknown`
+\[`key`: `string`\]: `unknown`

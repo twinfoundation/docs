@@ -3,3 +3,7 @@
 ## Classes
 
 - [MemoryEntityStorageConnector](classes/MemoryEntityStorageConnector.md)
+
+## Interfaces
+
+- [IMemoryEntityStorageConnectorConstructorOptions](interfaces/IMemoryEntityStorageConnectorConstructorOptions.md)

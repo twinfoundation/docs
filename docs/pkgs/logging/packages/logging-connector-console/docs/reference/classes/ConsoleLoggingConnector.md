@@ -16,13 +16,11 @@ Create a new instance of ConsoleLoggingConnector.
 
 #### Parameters
 
-• **options?**
+##### options?
+
+[`IConsoleLoggingConnectorConstructorOptions`](../interfaces/IConsoleLoggingConnectorConstructorOptions.md)
 
 The options for the logging connector.
-
-• **options.config?**: [`IConsoleLoggingConnectorConfig`](../interfaces/IConsoleLoggingConnectorConfig.md)
-
-The configuration for the logging connector.
 
 #### Returns
 
@@ -58,7 +56,9 @@ Log an entry to the connector.
 
 #### Parameters
 
-• **logEntry**: `ILogEntry`
+##### logEntry
+
+`ILogEntry`
 
 The entry to log.
 
@@ -76,50 +76,48 @@ Nothing.
 
 ### query()
 
-> **query**(`conditions`?, `sortProperties`?, `properties`?, `cursor`?, `pageSize`?): `Promise`\<`object`\>
+> **query**(`conditions`?, `sortProperties`?, `properties`?, `cursor`?, `pageSize`?): `Promise`\<\{ `entities`: `Partial`\<`ILogEntry`\>[]; `cursor`: `string`; \}\>
 
 Query the log entries.
 
 #### Parameters
 
-• **conditions?**: `EntityCondition`\<`ILogEntry`\>
+##### conditions?
+
+`EntityCondition`\<`ILogEntry`\>
 
 The conditions to match for the entities.
 
-• **sortProperties?**: `object`[]
+##### sortProperties?
+
+`object`[]
 
 The optional sort order.
 
-• **properties?**: keyof `ILogEntry`[]
+##### properties?
+
+keyof `ILogEntry`[]
 
 The optional keys to return, defaults to all.
 
-• **cursor?**: `string`
+##### cursor?
+
+`string`
 
 The cursor to request the next page of entities.
 
-• **pageSize?**: `number`
+##### pageSize?
+
+`number`
 
 The maximum number of entities in a page.
 
 #### Returns
 
-`Promise`\<`object`\>
+`Promise`\<\{ `entities`: `Partial`\<`ILogEntry`\>[]; `cursor`: `string`; \}\>
 
 All the entities for the storage matching the conditions,
 and a cursor which can be used to request more entities.
-
-##### entities
-
-> **entities**: `Partial`\<`ILogEntry`\>[]
-
-The entities, which can be partial if a limited keys list was provided.
-
-##### cursor?
-
-> `optional` **cursor**: `string`
-
-An optional cursor, when defined can be used to call find to get more entities.
 
 #### Throws
 

@@ -6,15 +6,21 @@ Create an identity profile.
 
 ## Parameters
 
-• **httpRequestContext**: `IHttpRequestContext`
+### httpRequestContext
+
+`IHttpRequestContext`
 
 The request context for the API.
 
-• **componentName**: `string`
+### componentName
+
+`string`
 
 The name of the component to use in the routes stored in the ComponentFactory.
 
-• **request**: `IIdentityProfileCreateRequest`
+### request
+
+`IIdentityProfileCreateRequest`
 
 The request.
 

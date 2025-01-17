@@ -7,6 +7,7 @@
 ## Interfaces
 
 - [IAttestationServiceConfig](interfaces/IAttestationServiceConfig.md)
+- [IAttestationServiceConstructorOptions](interfaces/IAttestationServiceConstructorOptions.md)
 
 ## Variables
 

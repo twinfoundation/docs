@@ -6,15 +6,21 @@ Query the stream objects.
 
 ## Parameters
 
-• **httpRequestContext**: `IHttpRequestContext`
+### httpRequestContext
+
+`IHttpRequestContext`
 
 The request context for the API.
 
-• **componentName**: `string`
+### componentName
+
+`string`
 
 The name of the component to use in the routes.
 
-• **request**: `IAuditableItemStreamListEntryObjectsRequest`
+### request
+
+`IAuditableItemStreamListEntryObjectsRequest`
 
 The request.
 

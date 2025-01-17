@@ -14,9 +14,9 @@ Class describing the auditable item graph vertex resource.
 
 ## Properties
 
-### id
+### id?
 
-> **id**: `string`
+> `optional` **id**: `string`
 
 The id of the resource.
 

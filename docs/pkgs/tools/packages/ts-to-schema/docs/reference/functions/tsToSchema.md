@@ -6,15 +6,21 @@ Convert the TypeScript definitions to JSON Schemas.
 
 ## Parameters
 
-• **config**: [`ITsToSchemaConfig`](../interfaces/ITsToSchemaConfig.md)
+### config
+
+[`ITsToSchemaConfig`](../interfaces/ITsToSchemaConfig.md)
 
 The configuration for the app.
 
-• **outputFolder**: `string`
+### outputFolder
+
+`string`
 
 The location of the folder to output the JSON schemas.
 
-• **workingDirectory**: `string`
+### workingDirectory
+
+`string`
 
 The folder the app was run from.
 

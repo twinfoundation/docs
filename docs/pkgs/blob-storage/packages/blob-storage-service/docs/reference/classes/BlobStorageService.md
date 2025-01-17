@@ -16,21 +16,11 @@ Create a new instance of BlobStorageService.
 
 #### Parameters
 
-• **options?**
+##### options?
 
-The dependencies for the service.
+[`IBlobStorageServiceConstructorOptions`](../interfaces/IBlobStorageServiceConstructorOptions.md)
 
-• **options.entryEntityStorageType?**: `string`
-
-The type of the storage connector for the metadata, defaults to "blob-storage-entry".
-
-• **options.vaultConnectorType?**: `string`
-
-The type of the vault connector for encryption, if undefined no encryption will be performed.
-
-• **options.config?**: [`IBlobStorageServiceConfig`](../interfaces/IBlobStorageServiceConfig.md)
-
-The configuration for the service.
+The options for the service.
 
 #### Returns
 
@@ -66,31 +56,45 @@ Create the blob with some metadata.
 
 #### Parameters
 
-• **blob**: `string`
+##### blob
+
+`string`
 
 The data for the blob in base64 format.
 
-• **encodingFormat?**: `string`
+##### encodingFormat?
+
+`string`
 
 Mime type for the blob, will be detected if left undefined.
 
-• **fileExtension?**: `string`
+##### fileExtension?
+
+`string`
 
 Extension for the blob, will be detected if left undefined.
 
-• **metadata?**: `IJsonLdNodeObject`
+##### metadata?
+
+`IJsonLdNodeObject`
 
 Data for the custom metadata as JSON-LD.
 
-• **namespace?**: `string`
+##### namespace?
+
+`string`
 
 The namespace to use for storing, defaults to component configured namespace.
 
-• **userIdentity?**: `string`
+##### userIdentity?
+
+`string`
 
 The user identity to use with storage operations.
 
-• **nodeIdentity?**: `string`
+##### nodeIdentity?
+
+`string`
 
 The node identity to use with storage operations.
 
@@ -114,19 +118,27 @@ Get the blob entry.
 
 #### Parameters
 
-• **id**: `string`
+##### id
+
+`string`
 
 The id of the blob to get in urn format.
 
-• **includeContent**: `boolean`
+##### includeContent
+
+`boolean`
 
 Include the content, or just get the metadata.
 
-• **userIdentity?**: `string`
+##### userIdentity?
+
+`string`
 
 The user identity to use with storage operations.
 
-• **nodeIdentity?**: `string`
+##### nodeIdentity?
+
+`string`
 
 The node identity to use with storage operations.
 
@@ -154,27 +166,39 @@ Update the blob with metadata.
 
 #### Parameters
 
-• **id**: `string`
+##### id
+
+`string`
 
 The id of the blob entry to update.
 
-• **encodingFormat?**: `string`
+##### encodingFormat?
+
+`string`
 
 Mime type for the blob, will be detected if left undefined.
 
-• **fileExtension?**: `string`
+##### fileExtension?
+
+`string`
 
 Extension for the blob, will be detected if left undefined.
 
-• **metadata?**: `IJsonLdNodeObject`
+##### metadata?
+
+`IJsonLdNodeObject`
 
 Data for the custom metadata as JSON-LD.
 
-• **userIdentity?**: `string`
+##### userIdentity?
+
+`string`
 
 The user identity to use with storage operations.
 
-• **nodeIdentity?**: `string`
+##### nodeIdentity?
+
+`string`
 
 The node identity to use with storage operations.
 
@@ -202,15 +226,21 @@ Remove the blob.
 
 #### Parameters
 
-• **id**: `string`
+##### id
+
+`string`
 
 The id of the blob to remove in urn format.
 
-• **userIdentity?**: `string`
+##### userIdentity?
+
+`string`
 
 The user identity to use with storage operations.
 
-• **nodeIdentity?**: `string`
+##### nodeIdentity?
+
+`string`
 
 The node identity to use with storage operations.
 
@@ -234,31 +264,45 @@ Query all the blob storage entries which match the conditions.
 
 #### Parameters
 
-• **conditions?**: `EntityCondition`\<`IBlobStorageEntry`\>
+##### conditions?
+
+`EntityCondition`\<`IBlobStorageEntry`\>
 
 The conditions to match for the entries.
 
-• **orderBy?**: `"dateCreated"` \| `"dateModified"`
+##### orderBy?
 
 The order for the results, defaults to created.
 
-• **orderByDirection?**: `SortDirection`
+`"dateCreated"` | `"dateModified"`
+
+##### orderByDirection?
+
+`SortDirection`
 
 The direction for the order, defaults to descending.
 
-• **cursor?**: `string`
+##### cursor?
+
+`string`
 
 The cursor to request the next page of entries.
 
-• **pageSize?**: `number`
+##### pageSize?
+
+`number`
 
 The suggested number of entries to return in each chunk, in some scenarios can return a different amount.
 
-• **userIdentity?**: `string`
+##### userIdentity?
+
+`string`
 
 The user identity to use with storage operations.
 
-• **nodeIdentity?**: `string`
+##### nodeIdentity?
+
+`string`
 
 The node identity to use with storage operations.
 

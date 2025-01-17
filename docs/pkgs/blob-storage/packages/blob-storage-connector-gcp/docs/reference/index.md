@@ -7,3 +7,4 @@
 ## Interfaces
 
 - [IGcpBlobStorageConnectorConfig](interfaces/IGcpBlobStorageConnectorConfig.md)
+- [IGcpBlobStorageConnectorConstructorOptions](interfaces/IGcpBlobStorageConnectorConstructorOptions.md)

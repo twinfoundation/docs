@@ -20,7 +20,9 @@ Create a new instance of AttestationClient.
 
 #### Parameters
 
-• **config**: `IBaseRestClientConfig`
+##### config
+
+`IBaseRestClientConfig`
 
 The configuration for the client.
 
@@ -54,15 +56,21 @@ Attest the data and return the collated information.
 
 #### Parameters
 
-• **verificationMethodId**: `string`
+##### verificationMethodId
+
+`string`
 
 The identity verification method to use for attesting the data.
 
-• **attestationObject**: `IJsonLdNodeObject`
+##### attestationObject
+
+`IJsonLdNodeObject`
 
 The data to attest.
 
-• **namespace?**: `string`
+##### namespace?
+
+`string`
 
 The namespace of the connector to use for the attestation, defaults to component configured namespace.
 
@@ -86,7 +94,9 @@ Resolve and verify the attestation id.
 
 #### Parameters
 
-• **id**: `string`
+##### id
+
+`string`
 
 The attestation id to verify.
 
@@ -110,11 +120,15 @@ Transfer the attestation to a new holder.
 
 #### Parameters
 
-• **attestationId**: `string`
+##### attestationId
+
+`string`
 
 The attestation to transfer.
 
-• **holderIdentity**: `string`
+##### holderIdentity
+
+`string`
 
 The identity to transfer the attestation to.
 
@@ -138,7 +152,9 @@ Destroy the attestation.
 
 #### Parameters
 
-• **attestationId**: `string`
+##### attestationId
+
+`string`
 
 The attestation to transfer.
 

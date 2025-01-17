@@ -8,4 +8,4 @@ https://www.w3.org/TR/json-ld11/#id-maps
 
 ## Indexable
 
- \[`key`: `string`\]: [`IJsonLdNodeObject`](IJsonLdNodeObject.md)
+\[`key`: `string`\]: [`IJsonLdNodeObject`](IJsonLdNodeObject.md)
