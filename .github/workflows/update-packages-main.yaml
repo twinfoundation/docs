@@ -521,6 +521,28 @@ jobs:
           cp import-packages/auditable-item-stream/package.json docs/pkgs/auditable-item-stream/package.json
           rm -r import-packages/auditable-item-stream
 
+      ########### data-processing
+      - name: Checkout data-processing
+        uses: actions/checkout@v4
+        with:
+          repository: twinfoundation/data-processing
+          path: import-packages/data-processing
+          ref: ${{ env.gha-branch }}
+
+      - name: Copy data-processing to Docs
+        run: |
+          jq -r '.workspaces[]' import-packages/data-processing/package.json | while read pkg; do
+            rm -rf docs/pkgs/data-processing/$pkg
+            mkdir -p docs/pkgs/data-processing/$pkg
+            mkdir -p docs/pkgs/data-processing/$pkg/docs
+            cp -r import-packages/data-processing/$pkg/docs/* docs/pkgs/data-processing/$pkg/docs
+            cp -r import-packages/data-processing/$pkg/README.md docs/pkgs/data-processing/$pkg/index.md
+            cp -r import-packages/data-processing/$pkg/package.json docs/pkgs/data-processing/$pkg/package.json
+          done
+
+          cp import-packages/data-processing/package.json docs/pkgs/data-processing/package.json
+          rm -r import-packages/data-processing
+
       ########### ui
       - name: Checkout ui
         uses: actions/checkout@v4
