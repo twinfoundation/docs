@@ -1,5 +1,7 @@
 # Interface: IIdentityProfileServiceConstructorOptions
 
+Options for the identity profile service constructor.
+
 ## Properties
 
 ### profileEntityConnectorType?

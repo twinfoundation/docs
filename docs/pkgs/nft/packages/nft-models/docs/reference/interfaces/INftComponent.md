@@ -10,7 +10,7 @@ Interface describing an NFT component.
 
 ### mint()
 
-> **mint**\<`T`, `U`\>(`issuer`, `tag`, `immutableMetadata`?, `metadata`?, `namespace`?, `identity`?): `Promise`\<`string`\>
+> **mint**\<`T`, `U`\>(`tag`, `immutableMetadata`?, `metadata`?, `namespace`?, `identity`?): `Promise`\<`string`\>
 
 Mint an NFT.
 
@@ -21,12 +21,6 @@ Mint an NFT.
 • **U** = `unknown`
 
 #### Parameters
-
-##### issuer
-
-`string`
-
-The issuer for the NFT, will also be the initial owner.
 
 ##### tag
 
@@ -68,7 +62,7 @@ The id of the created NFT in urn format.
 
 ### resolve()
 
-> **resolve**\<`T`, `U`\>(`id`, `identity`?): `Promise`\<\{ `issuer`: `string`; `owner`: `string`; `tag`: `string`; `immutableMetadata`: `T`; `metadata`: `U`; \}\>
+> **resolve**\<`T`, `U`\>(`id`, `controllerIdentity`?): `Promise`\<\{ `issuer`: `string`; `owner`: `string`; `tag`: `string`; `immutableMetadata`: `T`; `metadata`: `U`; \}\>
 
 Resolve an NFT.
 
@@ -86,7 +80,7 @@ Resolve an NFT.
 
 The id of the NFT to resolve.
 
-##### identity?
+##### controllerIdentity?
 
 `string`
 
@@ -102,7 +96,7 @@ The data for the NFT.
 
 ### burn()
 
-> **burn**(`id`, `identity`?): `Promise`\<`void`\>
+> **burn**(`id`, `controllerIdentity`?): `Promise`\<`void`\>
 
 Burn an NFT.
 
@@ -114,7 +108,7 @@ Burn an NFT.
 
 The id of the NFT to burn in urn format.
 
-##### identity?
+##### controllerIdentity?
 
 `string`
 
@@ -130,13 +124,13 @@ Nothing.
 
 ### transfer()
 
-> **transfer**\<`T`\>(`id`, `recipient`, `metadata`?, `identity`?): `Promise`\<`void`\>
+> **transfer**\<`U`\>(`id`, `recipientIdentity`, `recipientAddress`, `metadata`?, `controllerIdentity`?): `Promise`\<`void`\>
 
 Transfer an NFT.
 
 #### Type Parameters
 
-• **T** = `unknown`
+• **U** = `unknown`
 
 #### Parameters
 
@@ -146,19 +140,25 @@ Transfer an NFT.
 
 The id of the NFT to transfer in urn format.
 
-##### recipient
+##### recipientIdentity
 
 `string`
 
-The recipient of the NFT.
+The recipient identity for the NFT.
+
+##### recipientAddress
+
+`string`
+
+The recipient address for the NFT.
 
 ##### metadata?
 
-`T`
+`U`
 
 Optional mutable data to include during the transfer.
 
-##### identity?
+##### controllerIdentity?
 
 `string`
 
@@ -174,13 +174,13 @@ Nothing.
 
 ### update()
 
-> **update**\<`T`\>(`id`, `metadata`, `identity`?): `Promise`\<`void`\>
+> **update**\<`U`\>(`id`, `metadata`, `controllerIdentity`?): `Promise`\<`void`\>
 
 Update the mutable data of the NFT.
 
 #### Type Parameters
 
-• **T** = `unknown`
+• **U** = `unknown`
 
 #### Parameters
 
@@ -192,11 +192,11 @@ The id of the NFT to update in urn format.
 
 ##### metadata
 
-`T`
+`U`
 
 The mutable data to update.
 
-##### identity?
+##### controllerIdentity?
 
 `string`
 

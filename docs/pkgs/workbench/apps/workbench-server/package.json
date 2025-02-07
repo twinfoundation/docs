@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/workbench-server",
-	"version": "0.0.1-next.9",
+	"version": "0.0.1-next.10",
 	"description": "Serve APIs using the specified configuration",
 	"repository": {
 		"type": "git",
@@ -46,8 +46,8 @@
 		"@twin.org/nameof-transformer": "next",
 		"@twin.org/nameof-vitest-plugin": "next",
 		"@twin.org/ts-to-openapi": "next",
-		"@vitest/coverage-v8": "2.1.8",
-		"@types/node": "22.10.5",
+		"@vitest/coverage-v8": "3.0.5",
+		"@types/node": "22.13.1",
 		"concurrently": "9.1.2",
 		"copyfiles": "2.4.1",
 		"cross-env": "7.0.3",
@@ -58,6 +58,6 @@
 		"typedoc": "0.27.6",
 		"typedoc-plugin-markdown": "4.4.1",
 		"typescript": "5.7.3",
-		"vitest": "2.1.8"
+		"vitest": "3.0.5"
 	}
 }

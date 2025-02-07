@@ -16,7 +16,9 @@ Create a new instance of IOTA Rebased Wallet Connector.
 
 #### Parameters
 
-• **options**: [`IIotaRebasedWalletConnectorConstructorOptions`](../interfaces/IIotaRebasedWalletConnectorConstructorOptions.md)
+##### options
+
+[`IIotaRebasedWalletConnectorConstructorOptions`](../interfaces/IIotaRebasedWalletConnectorConstructorOptions.md)
 
 The options for the wallet connector.
 
@@ -54,7 +56,9 @@ Create a new wallet.
 
 #### Parameters
 
-• **identity**: `string`
+##### identity
+
+`string`
 
 The identity of the user to access the vault keys.
 
@@ -78,23 +82,33 @@ Get the addresses for the identity.
 
 #### Parameters
 
-• **identity**: `string`
+##### identity
+
+`string`
 
 The identity to get the addresses for.
 
-• **accountIndex**: `number`
+##### accountIndex
+
+`number`
 
 The account index to get the addresses for.
 
-• **startAddressIndex**: `number`
+##### startAddressIndex
+
+`number`
 
 The start index for the addresses.
 
-• **count**: `number`
+##### count
+
+`number`
 
 The number of addresses to generate.
 
-• **isInternal?**: `boolean`
+##### isInternal?
+
+`boolean`
 
 Whether the addresses are internal.
 
@@ -118,11 +132,15 @@ Get the balance for the given address.
 
 #### Parameters
 
-• **identity**: `string`
+##### identity
+
+`string`
 
 The identity of the user to access the vault keys.
 
-• **address**: `string`
+##### address
+
+`string`
 
 The address to get the balance for.
 
@@ -146,19 +164,27 @@ Ensure the balance for the given address is at least the given amount.
 
 #### Parameters
 
-• **identity**: `string`
+##### identity
+
+`string`
 
 The identity of the user to access the vault keys.
 
-• **address**: `string`
+##### address
+
+`string`
 
 The address to ensure the balance for.
 
-• **ensureBalance**: `bigint`
+##### ensureBalance
+
+`bigint`
 
 The minimum balance to ensure.
 
-• **timeoutInSeconds?**: `number`
+##### timeoutInSeconds?
+
+`number`
 
 Optional timeout in seconds, defaults to 10 seconds.
 
@@ -182,19 +208,27 @@ Transfer an amount from one address to another.
 
 #### Parameters
 
-• **identity**: `string`
+##### identity
+
+`string`
 
 The identity of the user to access the vault keys.
 
-• **addressSource**: `string`
+##### addressSource
+
+`string`
 
 The source address to transfer from.
 
-• **addressDest**: `string`
+##### addressDest
+
+`string`
 
 The destination address to transfer to.
 
-• **amount**: `bigint`
+##### amount
+
+`bigint`
 
 The amount to transfer.
 

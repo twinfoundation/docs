@@ -22,14 +22,6 @@ The identity of the NFT.
 
 ***
 
-### controller
-
-> **controller**: `string`
-
-The controller of the NFT.
-
-***
-
 ### issuer
 
 > **issuer**: `string`

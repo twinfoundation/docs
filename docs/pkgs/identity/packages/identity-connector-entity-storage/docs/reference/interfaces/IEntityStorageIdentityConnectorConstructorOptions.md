@@ -2,6 +2,10 @@
 
 Options for the entity storage identity connector constructor.
 
+## Extends
+
+- [`IEntityStorageIdentityResolverConnectorConstructorOptions`](IEntityStorageIdentityResolverConnectorConstructorOptions.md)
+
 ## Properties
 
 ### didDocumentEntityStorageType?
@@ -16,6 +20,10 @@ The entity storage for the did documents.
 identity-document
 ```
 
+#### Inherited from
+
+[`IEntityStorageIdentityResolverConnectorConstructorOptions`](IEntityStorageIdentityResolverConnectorConstructorOptions.md).[`didDocumentEntityStorageType`](IEntityStorageIdentityResolverConnectorConstructorOptions.md#diddocumententitystoragetype)
+
 ***
 
 ### vaultConnectorType?
@@ -29,3 +37,7 @@ The vault for the private keys.
 ```ts
 vault
 ```
+
+#### Inherited from
+
+[`IEntityStorageIdentityResolverConnectorConstructorOptions`](IEntityStorageIdentityResolverConnectorConstructorOptions.md).[`vaultConnectorType`](IEntityStorageIdentityResolverConnectorConstructorOptions.md#vaultconnectortype)

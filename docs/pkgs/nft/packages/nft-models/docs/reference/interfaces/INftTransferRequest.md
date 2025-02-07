@@ -24,11 +24,17 @@ The id of the NFT to transfer in urn format.
 
 The data to be used in the transfer.
 
-#### recipient
+#### recipientIdentity
 
-> **recipient**: `string`
+> **recipientIdentity**: `string`
 
-The recipient for the NFT.
+The recipient identity for the NFT.
+
+#### recipientAddress
+
+> **recipientAddress**: `string`
+
+The recipient address for the NFT.
 
 #### metadata?
 

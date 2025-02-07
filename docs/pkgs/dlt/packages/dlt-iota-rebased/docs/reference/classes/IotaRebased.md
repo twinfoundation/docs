@@ -36,6 +36,14 @@ Default name for the seed secret.
 
 Default coin type.
 
+***
+
+### DEFAULT\_SCAN\_RANGE
+
+> `readonly` `static` **DEFAULT\_SCAN\_RANGE**: `number` = `1000`
+
+Default scan range.
+
 ## Methods
 
 ### createClient()
@@ -167,6 +175,12 @@ The client instance.
 ##### options
 
 The transaction options.
+
+###### source
+
+`string`
+
+The source address.
 
 ###### amount
 
@@ -314,6 +328,62 @@ The seed.
 
 ***
 
+### findAddress()
+
+> `static` **findAddress**(`maxScanRange`, `coinType`, `seed`, `address`): `object`
+
+Find the address in the seed.
+
+#### Parameters
+
+##### maxScanRange
+
+`number`
+
+The maximum range to scan.
+
+##### coinType
+
+`number`
+
+The coin type to use.
+
+##### seed
+
+`Uint8Array`
+
+The seed to use.
+
+##### address
+
+`string`
+
+The address to find.
+
+#### Returns
+
+`object`
+
+The address key pair.
+
+##### address
+
+> **address**: `string`
+
+##### privateKey
+
+> **privateKey**: `Uint8Array`
+
+##### publicKey
+
+> **publicKey**: `Uint8Array`
+
+#### Throws
+
+Error if the address is not found.
+
+***
+
 ### extractPayloadError()
 
 > `static` **extractPayloadError**(`error`): `IError`
@@ -418,3 +488,55 @@ The package ID to check.
 `Promise`\<`boolean`\>
 
 True if the package exists, false otherwise.
+
+***
+
+### dryRunTransaction()
+
+> `static` **dryRunTransaction**(`client`, `logging`, `className`, `txb`, `sender`, `operation`): `Promise`\<[`IIotaDryRun`](../interfaces/IIotaDryRun.md)\>
+
+Dry run a transaction and log the results.
+
+#### Parameters
+
+##### client
+
+`IotaClient`
+
+The IOTA client.
+
+##### logging
+
+The logging connector.
+
+`undefined` | `ILoggingConnector`
+
+##### className
+
+`string`
+
+The class name for logging.
+
+##### txb
+
+`Transaction`
+
+The transaction to dry run.
+
+##### sender
+
+`string`
+
+The sender address.
+
+##### operation
+
+`string`
+
+The operation to log.
+
+#### Returns
+
+`Promise`\<[`IIotaDryRun`](../interfaces/IIotaDryRun.md)\>
+
+void.

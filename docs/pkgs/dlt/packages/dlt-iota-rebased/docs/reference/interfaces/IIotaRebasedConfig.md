@@ -59,3 +59,17 @@ The coin type.
 ```ts
 IOTA 4218
 ```
+
+***
+
+### maxAddressScanRange?
+
+> `optional` **maxAddressScanRange**: `number`
+
+The maximum range to scan for addresses.
+
+#### Default
+
+```ts
+1000
+```

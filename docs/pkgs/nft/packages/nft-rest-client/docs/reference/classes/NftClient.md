@@ -50,7 +50,7 @@ Runtime name for the class.
 
 ### mint()
 
-> **mint**\<`T`, `U`\>(`issuer`, `tag`, `immutableMetadata`?, `metadata`?, `namespace`?): `Promise`\<`string`\>
+> **mint**\<`T`, `U`\>(`tag`, `immutableMetadata`?, `metadata`?, `namespace`?): `Promise`\<`string`\>
 
 Mint an NFT.
 
@@ -61,12 +61,6 @@ Mint an NFT.
 • **U** = `unknown`
 
 #### Parameters
-
-##### issuer
-
-`string`
-
-The issuer for the NFT, will also be the initial owner.
 
 ##### tag
 
@@ -164,7 +158,7 @@ Nothing.
 
 ### transfer()
 
-> **transfer**\<`T`\>(`id`, `recipient`, `metadata`?): `Promise`\<`void`\>
+> **transfer**\<`T`\>(`id`, `recipientIdentity`, `recipientAddress`, `metadata`?): `Promise`\<`void`\>
 
 Transfer an NFT.
 
@@ -180,11 +174,17 @@ Transfer an NFT.
 
 The id of the NFT to transfer in urn format.
 
-##### recipient
+##### recipientIdentity
 
 `string`
 
-The recipient of the NFT.
+The recipient identity for the NFT.
+
+##### recipientAddress
+
+`string`
+
+The recipient address for the NFT.
 
 ##### metadata?
 
@@ -206,13 +206,13 @@ Nothing.
 
 ### update()
 
-> **update**\<`T`\>(`id`, `metadata`): `Promise`\<`void`\>
+> **update**\<`U`\>(`id`, `metadata`): `Promise`\<`void`\>
 
 Update the data of the NFT.
 
 #### Type Parameters
 
-• **T** = `unknown`
+• **U** = `unknown`
 
 #### Parameters
 
@@ -224,7 +224,7 @@ The id of the NFT to update in urn format.
 
 ##### metadata
 
-`T`
+`U`
 
 The mutable data to update.
 

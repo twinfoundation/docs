@@ -86,7 +86,7 @@ void.
 
 ### mint()
 
-> **mint**\<`T`, `U`\>(`controller`, `issuer`, `tag`, `immutableMetadata`?, `metadata`?): `Promise`\<`string`\>
+> **mint**\<`T`, `U`\>(`controllerIdentity`, `tag`, `immutableMetadata`?, `metadata`?): `Promise`\<`string`\>
 
 Mint an NFT.
 
@@ -98,17 +98,11 @@ Mint an NFT.
 
 #### Parameters
 
-##### controller
+##### controllerIdentity
 
 `string`
 
 The identity of the user to access the vault keys.
-
-##### issuer
-
-`string`
-
-The issuer for the NFT, will also be the initial owner.
 
 ##### tag
 
@@ -174,13 +168,13 @@ The NFT details.
 
 ### burn()
 
-> **burn**(`controller`, `id`): `Promise`\<`void`\>
+> **burn**(`controllerIdentity`, `id`): `Promise`\<`void`\>
 
 Burn an NFT.
 
 #### Parameters
 
-##### controller
+##### controllerIdentity
 
 `string`
 
@@ -206,13 +200,13 @@ void.
 
 ### transfer()
 
-> **transfer**\<`T`\>(`controller`, `nftId`, `recipient`, `metadata`?): `Promise`\<`void`\>
+> **transfer**\<`U`\>(`controller`, `nftId`, `recipientIdentity`, `recipientAddress`, `metadata`?): `Promise`\<`void`\>
 
 Transfer an NFT to a new owner.
 
 #### Type Parameters
 
-• **T** = `unknown`
+• **U** = `unknown`
 
 #### Parameters
 
@@ -228,15 +222,21 @@ The identity of the user to access the vault keys.
 
 The id of the NFT to transfer.
 
-##### recipient
+##### recipientIdentity
 
 `string`
 
-The address to transfer the NFT to.
+The recipient identity for the NFT.
+
+##### recipientAddress
+
+`string`
+
+The recipient address for the NFT.
 
 ##### metadata?
 
-`T`
+`U`
 
 Optional metadata to update during transfer.
 
@@ -254,17 +254,17 @@ void.
 
 ### update()
 
-> **update**\<`T`\>(`controller`, `id`, `metadata`): `Promise`\<`void`\>
+> **update**\<`U`\>(`controllerIdentity`, `id`, `metadata`): `Promise`\<`void`\>
 
 Update the mutable data of an NFT.
 
 #### Type Parameters
 
-• **T** = `unknown`
+• **U** = `unknown`
 
 #### Parameters
 
-##### controller
+##### controllerIdentity
 
 `string`
 
@@ -278,7 +278,7 @@ The id of the NFT to update in urn format.
 
 ##### metadata
 
-`T`
+`U`
 
 The new metadata for the NFT.
 

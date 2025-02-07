@@ -217,7 +217,7 @@
                                                 {
                                                     "@context": [
                                                         "https://schema.twindev.org/blob-storage/",
-                                                        "https://schema.org/"
+                                                        "https://schema.org"
                                                     ],
                                                     "type": "BlobStorageEntry",
                                                     "id": "blob-memory:c57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70",
@@ -252,7 +252,7 @@
                                                 {
                                                     "@context": [
                                                         "https://schema.twindev.org/blob-storage/",
-                                                        "https://schema.org/"
+                                                        "https://schema.org"
                                                     ],
                                                     "type": "BlobStorageEntry",
                                                     "id": "blob-memory:c57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70",
@@ -412,7 +412,7 @@
                                         "value": {
                                             "@context": [
                                                 "https://schema.twindev.org/blob-storage/",
-                                                "https://schema.org/"
+                                                "https://schema.org"
                                             ],
                                             "type": "BlobStorageEntry",
                                             "id": "blob-memory:c57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70",
@@ -439,7 +439,7 @@
                                         "value": {
                                             "@context": [
                                                 "https://schema.twindev.org/blob-storage/",
-                                                "https://schema.org/"
+                                                "https://schema.org"
                                             ],
                                             "type": "BlobStorageEntry",
                                             "id": "blob-memory:c57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70",

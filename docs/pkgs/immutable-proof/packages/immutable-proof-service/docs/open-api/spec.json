@@ -1,698 +1,700 @@
 {
-    "openapi": "3.1.0",
-    "info": {
-        "title": "TWIN - Test Endpoints",
-        "description": "REST API for TWIN - Test Endpoints.",
-        "version": "1.0.0",
-        "license": {
-            "name": "Apache 2.0 License",
-            "url": "https://opensource.org/licenses/Apache-2.0"
-        }
-    },
-    "servers": [
-        {
-            "url": "https://localhost"
-        }
-    ],
-    "tags": [
-        {
-            "name": "Immutable Proof",
-            "description": "Endpoints which are modelled to access an immutable proof contract."
-        }
-    ],
-    "paths": {
-        "/immutable-proof": {
-            "post": {
-                "operationId": "immutableProofCreate",
-                "summary": "Create a proof",
-                "tags": [
-                    "Immutable Proof"
-                ],
-                "security": [
-                    {
-                        "jwtBearerAuthScheme": []
-                    }
-                ],
-                "requestBody": {
-                    "description": "Create a proof.",
-                    "required": true,
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/ImmutableProofCreateRequest"
-                            },
-                            "examples": {
-                                "immutableProofCreateRequestExample": {
-                                    "value": {
-                                        "proofObject": {
-                                            "@context": "http://schema.org",
-                                            "type": "Person",
-                                            "name": "John Smith"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                },
-                "responses": {
-                    "201": {
-                        "description": "The rest request ended in created response.",
-                        "headers": {
-                            "location": {
-                                "schema": {
-                                    "type": "string"
-                                },
-                                "description": "e.g. test:1234567890"
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "The server cannot process the request, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "GeneralError",
-                                            "message": "component.error",
-                                            "properties": {
-                                                "foo": "bar"
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "UnauthorizedError",
-                                            "message": "component.error"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "404": {
-                        "description": "The resource you tried to access does not exist, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/NotFoundResponse"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "NotFoundError",
-                                            "message": "component.error",
-                                            "properties": {
-                                                "notFoundId": "1"
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "500": {
-                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "InternalServerError",
-                                            "message": "component.error"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/immutable-proof/{id}": {
-            "get": {
-                "operationId": "immutableProofGet",
-                "summary": "Get a proof",
-                "tags": [
-                    "Immutable Proof"
-                ],
-                "parameters": [
-                    {
-                        "name": "id",
-                        "description": "The id of the immutable proof to get.",
-                        "in": "path",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "style": "simple",
-                        "example": "ais:1234567890"
-                    },
-                    {
-                        "name": "accept",
-                        "in": "header",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "style": "simple",
-                        "example": "application/json"
-                    }
-                ],
-                "security": [
-                    {
-                        "jwtBearerAuthScheme": []
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Response to getting an immutable proof.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "https://schema.twindev.org/immutable-proof/ImmutableProof"
-                                },
-                                "examples": {
-                                    "immutableProofGetResponseExample": {
-                                        "value": {
-                                            "@context": "https://schema.twindev.org/immutable-proof/",
-                                            "type": "ImmutableProof",
-                                            "id": "ais:1234567890",
-                                            "userIdentity": "user-1",
-                                            "proofObjectId": "test:1234567890",
-                                            "proofObjectHash": "EAOKyDN0mYQbBh91eMdVeroxQx1H4GfnRbmt6n/2L/Y=",
-                                            "proof": {
-                                                "@context": "https://w3id.org/security/data-integrity/v2",
-                                                "type": "DataIntegrityProof",
-                                                "cryptosuite": "eddsa-jcs-2022",
-                                                "created": "2024-08-22T11:56:56.272Z",
-                                                "proofPurpose": "assertionMethod",
-                                                "proofValue": "7DdiPPYtxLjCD3wA1po2rv..."
-                                            }
-                                        }
-                                    }
-                                }
-                            },
-                            "application/ld+json": {
-                                "schema": {
-                                    "$ref": "https://schema.twindev.org/immutable-proof/ImmutableProof"
-                                },
-                                "examples": {
-                                    "immutableProofJsonLdGetResponseExample": {
-                                        "value": {
-                                            "@context": "https://schema.twindev.org/immutable-proof/",
-                                            "type": "ImmutableProof",
-                                            "id": "ais:1234567890",
-                                            "userIdentity": "user-1",
-                                            "proofObjectId": "test:1234567890",
-                                            "proofObjectHash": "EAOKyDN0mYQbBh91eMdVeroxQx1H4GfnRbmt6n/2L/Y=",
-                                            "proof": {
-                                                "@context": "https://w3id.org/security/data-integrity/v2",
-                                                "type": "DataIntegrityProof",
-                                                "cryptosuite": "eddsa-jcs-2022",
-                                                "created": "2024-08-22T11:56:56.272Z",
-                                                "proofPurpose": "assertionMethod",
-                                                "proofValue": "7DdiPPYtxLjCD3wA1po2rv..."
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        },
-                        "headers": {
-                            "content-type": {
-                                "schema": {
-                                    "type": "string"
-                                },
-                                "description": "e.g. application/ld+json"
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "The server cannot process the request, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "GeneralError",
-                                            "message": "component.error",
-                                            "properties": {
-                                                "foo": "bar"
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "UnauthorizedError",
-                                            "message": "component.error"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "404": {
-                        "description": "The resource you tried to access does not exist, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/NotFoundResponse"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "NotFoundError",
-                                            "message": "component.error",
-                                            "properties": {
-                                                "notFoundId": "1"
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "500": {
-                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "InternalServerError",
-                                            "message": "component.error"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "post": {
-                "operationId": "immutableProofVerify",
-                "summary": "Verify a proof",
-                "tags": [
-                    "Immutable Proof"
-                ],
-                "parameters": [
-                    {
-                        "name": "id",
-                        "description": "The id of the immutable proof to verify.",
-                        "in": "path",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "style": "simple",
-                        "example": "ais:1234567890"
-                    },
-                    {
-                        "name": "accept",
-                        "in": "header",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "style": "simple"
-                    }
-                ],
-                "security": [
-                    {
-                        "jwtBearerAuthScheme": []
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Response to verifying an immutable proof.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "https://schema.twindev.org/immutable-proof/ImmutableProofVerification"
-                                },
-                                "examples": {
-                                    "immutableProofVerifyResponseExample": {
-                                        "value": {
-                                            "@context": "https://schema.twindev.org/immutable-proof/",
-                                            "type": "ImmutableProofVerification",
-                                            "verified": true
-                                        }
-                                    },
-                                    "immutableProofVerifyResponseFailExample": {
-                                        "value": {
-                                            "@context": "https://schema.twindev.org/immutable-proof/",
-                                            "type": "ImmutableProofVerification",
-                                            "verified": false,
-                                            "failure": "proofTypeMismatch"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "The server cannot process the request, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "GeneralError",
-                                            "message": "component.error",
-                                            "properties": {
-                                                "foo": "bar"
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "UnauthorizedError",
-                                            "message": "component.error"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "404": {
-                        "description": "The resource you tried to access does not exist, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/NotFoundResponse"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "NotFoundError",
-                                            "message": "component.error",
-                                            "properties": {
-                                                "notFoundId": "1"
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "500": {
-                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "InternalServerError",
-                                            "message": "component.error"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    },
-    "components": {
-        "schemas": {
-            "DidCryptoSuites": {
-                "anyOf": [
-                    {
-                        "type": "string",
-                        "const": "eddsa-jcs-2022",
-                        "description": "The type for EdDSA crypto suite for JSON Canonicalization Scheme [RFC8785]. https://www.w3.org/TR/vc-di-eddsa/#eddsa-jcs-2022"
-                    },
-                    {
-                        "type": "string",
-                        "const": "eddsa-rdfc-2022",
-                        "description": "The type for EdDSA crypto suite for RDF Dataset Canonicalization. https://www.w3.org/TR/vc-di-eddsa/#eddsa-rdfc-2022"
-                    }
-                ],
-                "description": "The types for DID Proof crypto suites."
-            },
-            "DidProof": {
-                "type": "object",
-                "properties": {
-                    "@context": {
-                        "anyOf": [
-                            {
-                                "type": "string",
-                                "const": "https://w3id.org/security/data-integrity/v2"
-                            },
-                            {
-                                "type": "array",
-                                "minItems": 1,
-                                "items": [
-                                    {
-                                        "type": "string",
-                                        "const": "https://w3id.org/security/data-integrity/v2"
-                                    }
-                                ],
-                                "additionalItems": {
-                                    "type": "string"
-                                }
-                            }
-                        ],
-                        "description": "JSON-LD Context."
-                    },
-                    "type": {
-                        "type": "string",
-                        "const": "DataIntegrityProof",
-                        "description": "JSON-LD Type."
-                    },
-                    "cryptosuite": {
-                        "anyOf": [
-                            {
-                                "$ref": "#/components/schemas/DidCryptoSuites"
-                            },
-                            {
-                                "type": "string"
-                            }
-                        ],
-                        "description": "An identifier for the cryptographic suite that can be used to verify the proof."
-                    },
-                    "id": {
-                        "type": "string",
-                        "description": "The id of the proof."
-                    },
-                    "proofPurpose": {
-                        "type": "string",
-                        "description": "The reason the proof was created."
-                    },
-                    "proofValue": {
-                        "type": "string",
-                        "description": "Contains the base-encoded binary data necessary to verify the digital proof using the verificationMethod specified."
-                    },
-                    "verificationMethod": {
-                        "type": "string",
-                        "description": "The verification method of the proof."
-                    },
-                    "created": {
-                        "type": "string",
-                        "description": "The iso date of when the proof was created."
-                    },
-                    "expires": {
-                        "type": "string",
-                        "description": "The iso date of when the proof expires."
-                    },
-                    "domain": {
-                        "anyOf": [
-                            {
-                                "type": "string"
-                            },
-                            {
-                                "type": "array",
-                                "items": {
-                                    "type": "string"
-                                }
-                            }
-                        ],
-                        "description": "One or more security domains in which the proof is meant to be used."
-                    },
-                    "challenge": {
-                        "anyOf": [
-                            {
-                                "type": "string"
-                            },
-                            {
-                                "type": "array",
-                                "items": {
-                                    "type": "string"
-                                }
-                            }
-                        ],
-                        "description": "Provided to mitigate replay attacks on domains."
-                    },
-                    "previousProof": {
-                        "type": "string",
-                        "description": "Identifies another data integrity proof that MUST verify before the current proof is processed"
-                    },
-                    "nonce": {
-                        "type": "string",
-                        "description": "Use of this field is to increase privacy by decreasing linkability that is the result of deterministically generated signatures."
-                    }
-                },
-                "required": [
-                    "@context",
-                    "type",
-                    "cryptosuite",
-                    "proofPurpose",
-                    "proofValue"
-                ],
-                "additionalProperties": false,
-                "description": "Interface describing a did proof. https://www.w3.org/TR/vc-data-integrity/"
-            },
-            "Error": {
-                "type": "object",
-                "properties": {
-                    "name": {
-                        "type": "string",
-                        "description": "The name for the error."
-                    },
-                    "message": {
-                        "type": "string",
-                        "description": "The message for the error."
-                    },
-                    "source": {
-                        "type": "string",
-                        "description": "The source of the error."
-                    },
-                    "properties": {
-                        "type": "object",
-                        "additionalProperties": {},
-                        "description": "Any additional information for the error."
-                    },
-                    "stack": {
-                        "type": "string",
-                        "description": "The stack trace for the error."
-                    },
-                    "inner": {
-                        "$ref": "#/components/schemas/Error"
-                    }
-                },
-                "required": [
-                    "name",
-                    "message"
-                ],
-                "additionalProperties": false,
-                "description": "Model to describe serialized error."
-            },
-            "ImmutableProofCreateRequest": {
-                "type": "object",
-                "properties": {
-                    "proofObject": {
-                        "$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-                    }
-                },
-                "required": [
-                    "proofObject"
-                ],
-                "additionalProperties": false,
-                "description": "The parameters from the body."
-            },
-            "NotFoundResponse": {
-                "type": "object",
-                "additionalProperties": false,
-                "properties": {
-                    "notFoundId": {
-                        "type": "string",
-                        "description": "The id if the item that was not found."
-                    },
-                    "name": {
-                        "type": "string",
-                        "description": "The name for the error."
-                    },
-                    "message": {
-                        "type": "string",
-                        "description": "The message for the error."
-                    },
-                    "source": {
-                        "type": "string",
-                        "description": "The source of the error."
-                    },
-                    "properties": {
-                        "type": "object",
-                        "additionalProperties": {},
-                        "description": "Any additional information for the error."
-                    },
-                    "stack": {
-                        "type": "string",
-                        "description": "The stack trace for the error."
-                    },
-                    "inner": {
-                        "$ref": "#/components/schemas/Error"
-                    }
-                },
-                "required": [
-                    "message",
-                    "name"
-                ],
-                "description": "The body which contains the error."
-            }
-        },
-        "securitySchemes": {
-            "jwtBearerAuthScheme": {
-                "type": "http",
-                "scheme": "bearer",
-                "bearerFormat": "JWT"
-            }
-        }
-    }
+	"openapi": "3.1.0",
+	"info": {
+		"title": "TWIN - Test Endpoints",
+		"description": "REST API for TWIN - Test Endpoints.",
+		"version": "1.0.0",
+		"license": {
+			"name": "Apache 2.0 License",
+			"url": "https://opensource.org/licenses/Apache-2.0"
+		}
+	},
+	"servers": [
+		{
+			"url": "https://localhost"
+		}
+	],
+	"tags": [
+		{
+			"name": "Immutable Proof",
+			"description": "Endpoints which are modelled to access an immutable proof contract."
+		}
+	],
+	"paths": {
+		"/immutable-proof": {
+			"post": {
+				"operationId": "immutableProofCreate",
+				"summary": "Create a proof",
+				"tags": [
+					"Immutable Proof"
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"requestBody": {
+					"description": "Create a proof.",
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/ImmutableProofCreateRequest"
+							},
+							"examples": {
+								"immutableProofCreateRequestExample": {
+									"value": {
+										"proofObject": {
+											"@context": "http://schema.org",
+											"type": "Person",
+											"name": "John Smith"
+										}
+									}
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"201": {
+						"description": "The rest request ended in created response.",
+						"headers": {
+							"location": {
+								"schema": {
+									"type": "string"
+								},
+								"description": "e.g. test:1234567890"
+							}
+						}
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "The resource you tried to access does not exist, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/NotFoundResponse"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "NotFoundError",
+											"message": "component.error",
+											"properties": {
+												"notFoundId": "1"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/immutable-proof/{id}": {
+			"get": {
+				"operationId": "immutableProofGet",
+				"summary": "Get a proof",
+				"tags": [
+					"Immutable Proof"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"description": "The id of the immutable proof to get.",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "ais:1234567890"
+					},
+					{
+						"name": "accept",
+						"in": "header",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "application/json"
+					}
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Response to getting an immutable proof.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "https://schema.twindev.org/immutable-proof/ImmutableProof"
+								},
+								"examples": {
+									"immutableProofGetResponseExample": {
+										"value": {
+											"@context": "https://schema.twindev.org/immutable-proof/",
+											"type": "ImmutableProof",
+											"id": "ais:1234567890",
+											"userIdentity": "user-1",
+											"proofObjectId": "test:1234567890",
+											"proofObjectHash": "EAOKyDN0mYQbBh91eMdVeroxQx1H4GfnRbmt6n/2L/Y=",
+											"proof": {
+												"@context": "https://w3id.org/security/data-integrity/v2",
+												"type": "DataIntegrityProof",
+												"cryptosuite": "eddsa-jcs-2022",
+												"created": "2024-08-22T11:56:56.272Z",
+												"proofPurpose": "assertionMethod",
+												"proofValue": "7DdiPPYtxLjCD3wA1po2rv..."
+											}
+										}
+									}
+								}
+							},
+							"application/ld+json": {
+								"schema": {
+									"$ref": "https://schema.twindev.org/immutable-proof/ImmutableProof"
+								},
+								"examples": {
+									"immutableProofJsonLdGetResponseExample": {
+										"value": {
+											"@context": "https://schema.twindev.org/immutable-proof/",
+											"type": "ImmutableProof",
+											"id": "ais:1234567890",
+											"userIdentity": "user-1",
+											"proofObjectId": "test:1234567890",
+											"proofObjectHash": "EAOKyDN0mYQbBh91eMdVeroxQx1H4GfnRbmt6n/2L/Y=",
+											"proof": {
+												"@context": "https://w3id.org/security/data-integrity/v2",
+												"type": "DataIntegrityProof",
+												"cryptosuite": "eddsa-jcs-2022",
+												"created": "2024-08-22T11:56:56.272Z",
+												"proofPurpose": "assertionMethod",
+												"proofValue": "7DdiPPYtxLjCD3wA1po2rv..."
+											}
+										}
+									}
+								}
+							}
+						},
+						"headers": {
+							"content-type": {
+								"schema": {
+									"type": "string"
+								},
+								"description": "e.g. application/ld+json"
+							}
+						}
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "The resource you tried to access does not exist, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/NotFoundResponse"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "NotFoundError",
+											"message": "component.error",
+											"properties": {
+												"notFoundId": "1"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/immutable-proof/{id}/verify": {
+			"get": {
+				"operationId": "immutableProofVerify",
+				"summary": "Verify a proof",
+				"tags": [
+					"Immutable Proof"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"description": "The id of the immutable proof to verify.",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "ais:1234567890"
+					},
+					{
+						"name": "accept",
+						"in": "header",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple"
+					}
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Response to verifying an immutable proof.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "https://schema.twindev.org/immutable-proof/ImmutableProofVerification"
+								},
+								"examples": {
+									"immutableProofVerifyResponseExample": {
+										"value": {
+											"@context": "https://schema.twindev.org/immutable-proof/",
+											"type": "ImmutableProofVerification",
+											"verified": true
+										}
+									},
+									"immutableProofVerifyResponseFailExample": {
+										"value": {
+											"@context": "https://schema.twindev.org/immutable-proof/",
+											"type": "ImmutableProofVerification",
+											"verified": false,
+											"failure": "proofTypeMismatch"
+										}
+									}
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "The resource you tried to access does not exist, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/NotFoundResponse"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "NotFoundError",
+											"message": "component.error",
+											"properties": {
+												"notFoundId": "1"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"components": {
+		"schemas": {
+			"DidCryptoSuites": {
+				"anyOf": [
+					{
+						"type": "string",
+						"const": "eddsa-jcs-2022",
+						"description": "The type for EdDSA crypto suite for JSON Canonicalization Scheme [RFC8785]. https://www.w3.org/TR/vc-di-eddsa/#eddsa-jcs-2022"
+					},
+					{
+						"type": "string",
+						"const": "eddsa-rdfc-2022",
+						"description": "The type for EdDSA crypto suite for RDF Dataset Canonicalization. https://www.w3.org/TR/vc-di-eddsa/#eddsa-rdfc-2022"
+					}
+				],
+				"description": "The types for DID Proof crypto suites."
+			},
+			"DidProof": {
+				"type": "object",
+				"properties": {
+					"@context": {
+						"anyOf": [
+							{
+								"type": "string",
+								"const": "https://w3id.org/security/data-integrity/v2"
+							},
+							{
+								"type": "array",
+								"minItems": 1,
+								"items": [
+									{
+										"type": "string",
+										"const": "https://w3id.org/security/data-integrity/v2"
+									}
+								],
+								"additionalItems": {
+									"type": "string"
+								}
+							}
+						],
+						"description": "JSON-LD Context."
+					},
+					"type": {
+						"type": "string",
+						"const": "DataIntegrityProof",
+						"description": "JSON-LD Type."
+					},
+					"cryptosuite": {
+						"anyOf": [
+							{
+								"$ref": "#/components/schemas/DidCryptoSuites"
+							},
+							{
+								"type": "string"
+							}
+						],
+						"description": "An identifier for the cryptographic suite that can be used to verify the proof."
+					},
+					"id": {
+						"type": "string",
+						"description": "The id of the proof."
+					},
+					"proofPurpose": {
+						"type": "string",
+						"description": "The reason the proof was created."
+					},
+					"proofValue": {
+						"type": "string",
+						"description": "Contains the base-encoded binary data necessary to verify the digital proof using the verificationMethod specified."
+					},
+					"verificationMethod": {
+						"type": "string",
+						"description": "The verification method of the proof."
+					},
+					"created": {
+						"type": "string",
+						"description": "The iso date of when the proof was created."
+					},
+					"expires": {
+						"type": "string",
+						"description": "The iso date of when the proof expires."
+					},
+					"domain": {
+						"anyOf": [
+							{
+								"type": "string"
+							},
+							{
+								"type": "array",
+								"items": {
+									"type": "string"
+								}
+							}
+						],
+						"description": "One or more security domains in which the proof is meant to be used."
+					},
+					"challenge": {
+						"anyOf": [
+							{
+								"type": "string"
+							},
+							{
+								"type": "array",
+								"items": {
+									"type": "string"
+								}
+							}
+						],
+						"description": "Provided to mitigate replay attacks on domains."
+					},
+					"previousProof": {
+						"type": "string",
+						"description": "Identifies another data integrity proof that MUST verify before the current proof is processed"
+					},
+					"nonce": {
+						"type": "string",
+						"description": "Use of this field is to increase privacy by decreasing linkability that is the result of deterministically generated signatures."
+					}
+				},
+				"required": [
+					"@context",
+					"type",
+					"cryptosuite",
+					"proofPurpose",
+					"proofValue"
+				],
+				"additionalProperties": false,
+				"description": "Interface describing a did proof. https://www.w3.org/TR/vc-data-integrity/"
+			},
+			"Error": {
+				"type": "object",
+				"properties": {
+					"name": {
+						"type": "string",
+						"description": "The name for the error."
+					},
+					"message": {
+						"type": "string",
+						"description": "The message for the error."
+					},
+					"source": {
+						"type": "string",
+						"description": "The source of the error."
+					},
+					"properties": {
+						"type": "object",
+						"additionalProperties": {},
+						"description": "Any additional information for the error."
+					},
+					"stack": {
+						"type": "string",
+						"description": "The stack trace for the error."
+					},
+					"inner": {
+						"$ref": "#/components/schemas/Error"
+					}
+				},
+				"required": [
+					"name",
+					"message"
+				],
+				"additionalProperties": false,
+				"description": "Model to describe serialized error."
+			},
+			"ImmutableProofCreateRequest": {
+				"type": "object",
+				"properties": {
+					"proofObject": {
+						"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
+					}
+				},
+				"required": [
+					"proofObject"
+				],
+				"additionalProperties": false,
+				"description": "The parameters from the body."
+			},
+			"NotFoundResponse": {
+				"type": "object",
+				"additionalProperties": false,
+				"properties": {
+					"notFoundId": {
+						"type": "string",
+						"description": "The id if the item that was not found."
+					},
+					"name": {
+						"type": "string",
+						"description": "The name for the error."
+					},
+					"message": {
+						"type": "string",
+						"description": "The message for the error."
+					},
+					"source": {
+						"type": "string",
+						"description": "The source of the error."
+					},
+					"properties": {
+						"type": "object",
+						"additionalProperties": {},
+						"description": "Any additional information for the error."
+					},
+					"stack": {
+						"type": "string",
+						"description": "The stack trace for the error."
+					},
+					"inner": {
+						"$ref": "#/components/schemas/Error"
+					}
+				},
+				"required": [
+					"message",
+					"name"
+				],
+				"description": "The body which contains the error."
+			}
+		},
+		"securitySchemes": {
+			"jwtBearerAuthScheme": {
+				"type": "http",
+				"scheme": "bearer",
+				"bearerFormat": "JWT"
+			}
+		}
+	}
 }

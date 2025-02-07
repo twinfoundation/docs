@@ -64,7 +64,7 @@ Creates a Decentralized Identifier (DID).
 
 Options:
   --seed <seed>              The seed for the controller address in hex or base64 used to create the DID, or start with ! to read environment variable.
-  --controller <controller>  The address which controls the identity in bech32 format, or start with ! to read environment variable.
+  --address-index <index>    The address index to use for the creation. (default: "0")
   --no-console               Hides the output in the console.
   --json <filename>          Creates a JSON file containing the output.
   --merge-json               If the JSON file already exists merge the data instead of overwriting.
@@ -81,7 +81,7 @@ The commands `mnemonic`, `address`, `faucet` and `transfer` are described in mor
 
 ### identity-create
 
-Use this command to create a new DID, the controller address must have sufficient funds to store the identity. The seed and the funds can be generated using the `mnemonic` and `faucet` commands.
+Use this command to create a new DID, the wallet address must have sufficient funds to store the identity. The seed and the funds can be generated using the `mnemonic` and `faucet` commands.
 
 ```shell
 # Generate a seed and mnemonic and store it in the env file
@@ -101,10 +101,10 @@ EXPLORER_URL="https://explorer.iota.org/iota-testnet/"
 To then request some funds and generate the identity you can issue the following commands:
 
 ```shell
-# Fund the controller address from the faucet loading the config and wallet env files
-twin-identity faucet --load-env config.env wallet.env --address !ADDRESS_0_BECH32
+# Fund the wallet address from the faucet loading the config and wallet env files
+twin-identity faucet --load-env config.env wallet.env --address !ADDRESS_0
 # Create an identity
-twin-identity identity-create --load-env config.env wallet.env --seed !SEED --controller !ADDRESS_0_BECH32 --env identity.env
+twin-identity identity-create --load-env config.env wallet.env --seed !SEED --env identity.env
 ```
 
 ### identity-resolve

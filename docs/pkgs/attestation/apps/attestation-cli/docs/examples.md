@@ -30,7 +30,7 @@ Options:
 
 Commands:
   mnemonic [options]                        Create a mnemonic.
-  address [options]                         Create bech32 addresses and keys from the seed.
+  address [options]                         Create addresses and keys from the seed.
   faucet [options]                          Request funds from the faucet.
   identity-create [options]                 Create a Decentralized Identifier (DID).
   identity-resolve [options]                Resolve a Decentralized Identifier (DID).
@@ -62,7 +62,7 @@ Create an attestation.
 
 Options:
   --seed <seed>                                      The seed for the owner address in hex or base64 used to fund the attested storage, or start with ! to read environment variable.
-  --owner <owner>                                    The bech32 address of the attestation owner, or start with ! to read environment variable.
+  --owner <owner>                                    The address of the attestation owner, or start with ! to read environment variable.
   --verification-method-id <verification-method-id>  The full verification method id including did, or start with ! to read environment variable.
   --private-key <private-key>                        The private key for the verification method id, in either hex or base64 form, or start with ! to read environment variable.
   --data-json <data-json>                            A JSON file to read which includes the data for attestation.
@@ -91,10 +91,10 @@ twin-attestation mnemonic --env wallet.env
 twin-attestation address --load-env wallet.env --hrp tst --seed !SEED --count 4 --env wallet.env --merge-env
 
 # Add some funds to the address generated in the previous step
-twin-attestation faucet --load-env config.env --address !ADDRESS_0_BECH32
+twin-attestation faucet --load-env config.env --address !ADDRESS_0
 
 # Create an identity to own the attestation
-twin-attestation identity-create --load-env config.env wallet.env --seed !SEED --controller !ADDRESS_0_BECH32 --env identity.env
+twin-attestation identity-create --load-env config.env wallet.env --seed !SEED --controller !ADDRESS_0 --env identity.env
 
 # Add a verification method to the identity
 twin-attestation verification-method-add --load-env config.env wallet.env identity.env --seed !SEED --did !DID --type verificationMethod --id attestation --env verification-method.env
@@ -123,7 +123,7 @@ To attest the data issue the following command:
 
 ```shell
 # Attest the data and store the id in the attestation.env file
-twin-attestation attestation-create --load-env config.env wallet.env verification-method.env --seed !SEED --owner !ADDRESS_0_BECH32 --verification-method-id !DID_VERIFICATION_METHOD_ID --private-key !DID_VERIFICATION_METHOD_PRIVATE_KEY --data-json data.json --env attestation.env
+twin-attestation attestation-create --load-env config.env wallet.env verification-method.env --seed !SEED --owner !ADDRESS_0 --verification-method-id !DID_VERIFICATION_METHOD_ID --private-key !DID_VERIFICATION_METHOD_PRIVATE_KEY --data-json data.json --env attestation.env
 ```
 
 ### attestation-get
@@ -159,13 +159,13 @@ You can transfer the attestation to another holder using the following command. 
 
 ```shell
 # Add some funds to the second address generated earlier
-twin-attestation faucet --load-env config.env --address !ADDRESS_1_BECH32
+twin-attestation faucet --load-env config.env --address !ADDRESS_1
 
 # Create new identity on the second address
-twin-attestation identity-create --load-env config.env wallet.env --seed !SEED --controller !ADDRESS_1_BECH32 --env identity2.env
+twin-attestation identity-create --load-env config.env wallet.env --seed !SEED --controller !ADDRESS_1 --env identity2.env
 
 # Transfer the attestation to the new holder (the original issuer is kept intact)
-twin-attestation attestation-transfer --load-env config.env wallet.env attestation.env identity2.env --seed !SEED --id !ATTESTATION_ID --holder-address !ADDRESS_1_BECH32 --holder-identity !DID
+twin-attestation attestation-transfer --load-env config.env wallet.env attestation.env identity2.env --seed !SEED --id !ATTESTATION_ID --holder-address !ADDRESS_1 --holder-identity !DID
 ```
 
 If you repeat the attestation-get command you should see the following updated details, with `holderIdentity` and `transferred` set.

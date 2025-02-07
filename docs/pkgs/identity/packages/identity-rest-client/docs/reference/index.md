@@ -4,3 +4,4 @@
 
 - [IdentityClient](classes/IdentityClient.md)
 - [IdentityProfileClient](classes/IdentityProfileClient.md)
+- [IdentityResolverClient](classes/IdentityResolverClient.md)

@@ -10,12 +10,6 @@ Mint the data and return the NFT id.
 
 The data to be used in the minting.
 
-#### issuer
-
-> **issuer**: `string`
-
-The issuer for the NFT, will also be the initial owner.
-
 #### tag
 
 > **tag**: `string`
