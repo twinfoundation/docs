@@ -30,7 +30,7 @@ Options:
 
 Commands:
   mnemonic [options]      Create a mnemonic.
-  address [options]       Create bech32 addresses and keys from the seed.
+  address [options]       Create addresses and keys from the seed.
   faucet [options]        Request funds from the faucet.
   nft-mint [options]      Mint an NFT.
   nft-resolve [options]   Resolve an NFT.
@@ -55,7 +55,7 @@ Mint an NFT.
 
 Options:
   --seed <seed>                      The seed for the issuer address in hex or base64 used to fund the minting, or start with ! to read environment variable.
-  --issuer <issuer>                  The bech32 address of the NFT issuer, or start with ! to read environment variable.
+  --issuer <issuer>                  The address of the NFT issuer, or start with ! to read environment variable.
   --tag <tag>                        The tag for the NFT.
   --immutable-json <immutable-json>  A JSON file to read which includes the immutable data for the NFT.
   --mutable-json <mutable-json>      A JSON file to read which includes the mutable data for the NFT.
@@ -111,10 +111,10 @@ To request some funds and mint the NFT you can issue the following commands:
 
 ```shell
 # Fund the controller address from the faucet loading the config and wallet env files
-twin-nft faucet --load-env config.env wallet.env --address !ADDRESS_0_BECH32
+twin-nft faucet --load-env config.env wallet.env --address !ADDRESS_0
 
 # Mint the NFT and store the id in the nft.env file
-twin-nft nft-mint --load-env config.env wallet.env --seed !SEED --issuer !ADDRESS_0_BECH32 --tag MY-NFT --immutable-json immutable.json --env nft.env
+twin-nft nft-mint --load-env config.env wallet.env --seed !SEED --issuer !ADDRESS_0 --tag MY-NFT --immutable-json immutable.json --env nft.env
 ```
 
 ### nft-resolve
@@ -130,7 +130,7 @@ twin-nft nft-resolve --load-env config.env nft.env --id !NFT_ID
 You can transfer the NFT to another address using the following command. You must provide the seed from the current issuer/owner so that it can be unlocked and transferred. In this example we read the nft id from the env file and transfer to the second address we created earlier.
 
 ```shell
-twin-nft nft-transfer --load-env config.env wallet.env nft.env --seed !SEED --id !NFT_ID --recipient !ADDRESS_1_BECH32
+twin-nft nft-transfer --load-env config.env wallet.env nft.env --seed !SEED --id !NFT_ID --recipient !ADDRESS_1
 ```
 
 ### nft-burn
@@ -138,5 +138,5 @@ twin-nft nft-transfer --load-env config.env wallet.env nft.env --seed !SEED --id
 To burn the NFT and reclaim the funds we issue the following command. We still require the seed as we need to transfer the deposit funds back to the issuer/owner.
 
 ```shell
-twin-nft nft-burn --load-env config.env wallet.env nft.env --seed !SEED --issuer !ADDRESS_1_BECH32 --id !NFT_ID
+twin-nft nft-burn --load-env config.env wallet.env nft.env --seed !SEED --issuer !ADDRESS_1 --id !NFT_ID
 ```

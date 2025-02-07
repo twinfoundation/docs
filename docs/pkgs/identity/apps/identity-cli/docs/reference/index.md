@@ -4,6 +4,14 @@
 
 - [CLI](classes/CLI.md)
 
+## Type Aliases
+
+- [IdentityConnectorTypes](type-aliases/IdentityConnectorTypes.md)
+
+## Variables
+
+- [IdentityConnectorTypes](variables/IdentityConnectorTypes.md)
+
 ## Functions
 
 - [buildCommandIdentityCreate](functions/buildCommandIdentityCreate.md)
@@ -18,6 +26,8 @@
 - [actionCommandServiceAdd](functions/actionCommandServiceAdd.md)
 - [buildCommandServiceRemove](functions/buildCommandServiceRemove.md)
 - [actionCommandServiceRemove](functions/actionCommandServiceRemove.md)
+- [setupVault](functions/setupVault.md)
+- [setupIdentityConnector](functions/setupIdentityConnector.md)
 - [buildCommandVerifiableCredentialCreate](functions/buildCommandVerifiableCredentialCreate.md)
 - [actionCommandVerifiableCredentialCreate](functions/actionCommandVerifiableCredentialCreate.md)
 - [buildCommandVerifiableCredentialRevoke](functions/buildCommandVerifiableCredentialRevoke.md)

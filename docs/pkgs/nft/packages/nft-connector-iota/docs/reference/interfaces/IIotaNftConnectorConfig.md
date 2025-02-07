@@ -12,7 +12,7 @@ Configuration for the IOTA NFT connector.
 
 > `optional` **walletAddressIndex**: `number`
 
-The wallet address index to use for funding and controlling the nfts.
+The wallet address index to use to store the NFTs on.
 
 #### Default
 

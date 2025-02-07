@@ -24,7 +24,7 @@ The faucet URL.
 
 #### connector
 
-`string`
+[`WalletConnectorTypes`](../type-aliases/WalletConnectorTypes.md)
 
 The connector to perform the operations with.
 

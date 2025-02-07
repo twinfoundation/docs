@@ -23,3 +23,17 @@ The vault connector type to use.
 ```ts
 "vault"
 ```
+
+***
+
+### loggingConnectorType?
+
+> `optional` **loggingConnectorType**: `string`
+
+The logging connector type.
+
+#### Default
+
+```ts
+logging
+```

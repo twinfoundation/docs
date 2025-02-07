@@ -4,6 +4,14 @@ Options for NFT transactions.
 
 ## Properties
 
+### owner
+
+> **owner**: `string`
+
+The owner address of the NFT.
+
+***
+
 ### transaction
 
 > **transaction**: `Transaction`

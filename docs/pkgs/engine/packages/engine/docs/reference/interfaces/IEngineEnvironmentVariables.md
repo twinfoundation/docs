@@ -32,7 +32,7 @@ The name of the state file.
 
 > `optional` **entityStorageConnectorType**: `string`
 
-The type of the default entity storage: file, memory, aws-dynamodb, azure-cosmosdb, gcp-firestoredb, scylladb.
+The type of the default entity storage: file, memory, aws-dynamodb, azure-cosmosdb, gcp-firestoredb, scylladb, mysql, mongodb, postgresql.
 
 ***
 
@@ -185,6 +185,126 @@ ScyllaDB keyspace.
 > `optional` **scylladbLocalDataCenter**: `string`
 
 ScyllaDB local data center.
+
+***
+
+### mySqlHost?
+
+> `optional` **mySqlHost**: `string`
+
+MySQL host.
+
+***
+
+### mySqlPort?
+
+> `optional` **mySqlPort**: `number`
+
+MySQL port.
+
+***
+
+### mySqlUser?
+
+> `optional` **mySqlUser**: `string`
+
+MySQL username.
+
+***
+
+### mySqlPassword?
+
+> `optional` **mySqlPassword**: `string`
+
+MySQL password.
+
+***
+
+### mySqlDatabase?
+
+> `optional` **mySqlDatabase**: `string`
+
+MySQL Database.
+
+***
+
+### mongoDbHost?
+
+> `optional` **mongoDbHost**: `string`
+
+MongoDB host.
+
+***
+
+### mongoDbPort?
+
+> `optional` **mongoDbPort**: `number`
+
+MongoDB port.
+
+***
+
+### mongoDbUser?
+
+> `optional` **mongoDbUser**: `string`
+
+MongoDB username.
+
+***
+
+### mongoDbPassword?
+
+> `optional` **mongoDbPassword**: `string`
+
+MongoDB password.
+
+***
+
+### mongoDbDatabase?
+
+> `optional` **mongoDbDatabase**: `string`
+
+MongoDB Database.
+
+***
+
+### postgreSqlHost?
+
+> `optional` **postgreSqlHost**: `string`
+
+PostgreSQl host.
+
+***
+
+### postgreSqlPort?
+
+> `optional` **postgreSqlPort**: `number`
+
+PostgreSQl port.
+
+***
+
+### postgreSqlUser?
+
+> `optional` **postgreSqlUser**: `string`
+
+PostgreSQl username.
+
+***
+
+### postgreSqlPassword?
+
+> `optional` **postgreSqlPassword**: `string`
+
+PostgreSQl password.
+
+***
+
+### postgreSqlDatabase?
+
+> `optional` **postgreSqlDatabase**: `string`
+
+PostgreSQl Database.
 
 ***
 
@@ -488,7 +608,15 @@ The type of NFT connector: entity-storage, iota.
 
 > `optional` **identityConnector**: `string`
 
-The type of identity connector: entity-storage, iota.
+The type of identity connector: entity-storage, iota, iota-rebased.
+
+***
+
+### identityResolverConnector?
+
+> `optional` **identityResolverConnector**: `string`
+
+The type of identity resolver connector: entity-storage, iota, iota-rebased.
 
 ***
 
@@ -516,6 +644,30 @@ IOTA Node Endpoint.
 
 ***
 
+### iotaBech32Hrp?
+
+> `optional` **iotaBech32Hrp**: `string`
+
+IOTA Bech32 HRP
+
+***
+
+### iotaCoinType?
+
+> `optional` **iotaCoinType**: `string`
+
+IOTA coin type.
+
+***
+
+### iotaExplorerEndpoint?
+
+> `optional` **iotaExplorerEndpoint**: `string`
+
+IOTA Explorer Endpoint.
+
+***
+
 ### iotaRebasedFaucetEndpoint?
 
 > `optional` **iotaRebasedFaucetEndpoint**: `string`
@@ -540,27 +692,19 @@ IOTA Rebased network.
 
 ***
 
-### iotaBech32Hrp?
+### iotaRebasedCoinType?
 
-> `optional` **iotaBech32Hrp**: `string`
+> `optional` **iotaRebasedCoinType**: `string`
 
-IOTA Bech32 HRP
-
-***
-
-### iotaCoinType?
-
-> `optional` **iotaCoinType**: `string`
-
-IOTA coin type.
+IOTA Rebased coin type.
 
 ***
 
-### iotaExplorerEndpoint?
+### iotaRebasedExplorerEndpoint?
 
-> `optional` **iotaExplorerEndpoint**: `string`
+> `optional` **iotaRebasedExplorerEndpoint**: `string`
 
-IOTA Explorer Endpoint.
+IOTA Rebased Explorer Endpoint.
 
 ***
 
@@ -601,3 +745,19 @@ The type of attestation connector: entity-storage, iota.
 > `optional` **attestationAssertionMethodId**: `string`
 
 The identity assertion method id to use with attestation.
+
+***
+
+### dataConverterConnectors?
+
+> `optional` **dataConverterConnectors**: `string`
+
+The type of the default data converters, can be a comma separated list: json, xml.
+
+***
+
+### dataExtractorConnectors?
+
+> `optional` **dataExtractorConnectors**: `string`
+
+The type of the default data extractor, can be a comma separated list: json-path.

@@ -10,8 +10,8 @@ Resolve an identity.
 
 The path parameters.
 
-#### id
+#### identity
 
-> **id**: `string`
+> **identity**: `string`
 
 The identity to resolve.

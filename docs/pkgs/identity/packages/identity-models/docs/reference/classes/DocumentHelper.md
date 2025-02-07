@@ -14,9 +14,9 @@ Helper methods for documents.
 
 ## Methods
 
-### parse()
+### parseId()
 
-> `static` **parse**(`documentId`): `object`
+> `static` **parseId**(`documentId`): `object`
 
 Parse the document id into its parts.
 
@@ -38,6 +38,34 @@ The parsed document id.
 
 > **id**: `string`
 
-##### hash
+##### fragment
 
-> **hash**: `undefined` \| `string`
+> **fragment**: `undefined` \| `string`
+
+***
+
+### joinId()
+
+> `static` **joinId**(`documentId`, `fragment`?): `string`
+
+Join the document id parts.
+
+#### Parameters
+
+##### documentId
+
+`string`
+
+The document id.
+
+##### fragment?
+
+`string`
+
+The fragment part for the identifier.
+
+#### Returns
+
+`string`
+
+The full id.

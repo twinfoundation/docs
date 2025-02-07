@@ -25,7 +25,7 @@
         }
     ],
     "paths": {
-        "/identity/{id}": {
+        "/identity/{identity}": {
             "get": {
                 "operationId": "identityResolve",
                 "summary": "Resolve an identity",
@@ -34,7 +34,7 @@
                 ],
                 "parameters": [
                     {
-                        "name": "id",
+                        "name": "identity",
                         "description": "The identity to resolve.",
                         "in": "path",
                         "required": true,
@@ -112,6 +112,1475 @@
                 }
             }
         },
+        "/identity": {
+            "post": {
+                "operationId": "identityCreate",
+                "summary": "Create an identity",
+                "tags": [
+                    "Identity"
+                ],
+                "security": [
+                    {
+                        "jwtBearerAuthScheme": []
+                    }
+                ],
+                "requestBody": {
+                    "description": "Request to create an identity.",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/IdentityCreateRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Response to creating an identity.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DidDocument"
+                                },
+                                "examples": {
+                                    "identityCreateResponseExample": {
+                                        "value": {
+                                            "id": "did:iota:tst:0xe3088ba9aa8c28e1d139708a14e8c0fdff11ee8223baac4aa5bcf3321e4bfc6a",
+                                            "service": [
+                                                {
+                                                    "id": "did:iota:tst:0xe3088ba9aa8c28e1d139708a14e8c0fdff11ee8223baac4aa5bcf3321e4bfc6a#revocation",
+                                                    "type": "RevocationBitmap2022",
+                                                    "serviceEndpoint": "data:application/octet-stream;base64,eJyzMmAAAwABr"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "The server cannot process the request, see the content for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "GeneralError",
+                                            "message": "component.error",
+                                            "properties": {
+                                                "foo": "bar"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "UnauthorizedError",
+                                            "message": "component.error"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "InternalServerError",
+                                            "message": "component.error"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/identity/{identity}/verification-method": {
+            "post": {
+                "operationId": "identityVerificationMethodCreate",
+                "summary": "Create an identity verification method",
+                "tags": [
+                    "Identity"
+                ],
+                "parameters": [
+                    {
+                        "name": "identity",
+                        "description": "The identity to create the verification method for.",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "style": "simple",
+                        "example": "did:iota:tst:0xe3088ba9aa8c28e1d139708a14e8c0fdff11ee8223baac4aa5bcf3321e4bfc6a"
+                    }
+                ],
+                "security": [
+                    {
+                        "jwtBearerAuthScheme": []
+                    }
+                ],
+                "requestBody": {
+                    "description": "Request to create a verification method.",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/IdentityVerificationMethodCreateRequest"
+                            },
+                            "examples": {
+                                "identityVerificationMethodCreateRequestExample": {
+                                    "value": {
+                                        "verificationMethodType": "assertionMethod",
+                                        "verificationMethodId": "my-assertion"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Response to creating a verification method.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DidDocumentVerificationMethod"
+                                },
+                                "examples": {
+                                    "identityVerificationMethodCreateResponseExample": {
+                                        "value": {
+                                            "id": "did:iota:tst:0x70ce5abe69e7c56dd69684dd6da65812b9758b03a0081331ca560b34d73d5ff0#my-assertion",
+                                            "controller": "did:iota:tst:0x70ce5abe69e7c56dd69684dd6da65812b9758b03a0081331ca560b34d73d5ff0",
+                                            "type": "JsonWebKey2020",
+                                            "publicKeyJwk": {
+                                                "kty": "OKP",
+                                                "alg": "EdDSA",
+                                                "kid": "f_fj3rGsZFSYvnS_xv5MgyIBlExq-lgDciu0YQ--S3s",
+                                                "crv": "Ed25519",
+                                                "x": "SFm32z7y9C17olpaTeocG25WV2CNTUl5MhM679Z4bok"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "The server cannot process the request, see the content for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "GeneralError",
+                                            "message": "component.error",
+                                            "properties": {
+                                                "foo": "bar"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "UnauthorizedError",
+                                            "message": "component.error"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "InternalServerError",
+                                            "message": "component.error"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/identity/{identity}/verification-method/{verificationMethodId}": {
+            "delete": {
+                "operationId": "identityVerificationMethodRemove",
+                "summary": "Remove an identity verification method",
+                "tags": [
+                    "Identity"
+                ],
+                "parameters": [
+                    {
+                        "name": "identity",
+                        "description": "The identity to remove the verification method from.",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "style": "simple",
+                        "example": "did:iota:tst:0xe3088ba9aa8c28e1d139708a14e8c0fdff11ee8223baac4aa5bcf3321e4bfc6a"
+                    },
+                    {
+                        "name": "verificationMethodId",
+                        "description": "The verification method to remove.",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "style": "simple",
+                        "example": "my-assertion"
+                    }
+                ],
+                "security": [
+                    {
+                        "jwtBearerAuthScheme": []
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "The rest request ended in success with no data."
+                    },
+                    "400": {
+                        "description": "The server cannot process the request, see the content for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "GeneralError",
+                                            "message": "component.error",
+                                            "properties": {
+                                                "foo": "bar"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "UnauthorizedError",
+                                            "message": "component.error"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "InternalServerError",
+                                            "message": "component.error"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/identity/{identity}/service": {
+            "post": {
+                "operationId": "identityServiceCreate",
+                "summary": "Create an identity service",
+                "tags": [
+                    "Identity"
+                ],
+                "parameters": [
+                    {
+                        "name": "identity",
+                        "description": "The identity to create the service for.",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "style": "simple",
+                        "example": "did:iota:tst:0xe3088ba9aa8c28e1d139708a14e8c0fdff11ee8223baac4aa5bcf3321e4bfc6a"
+                    }
+                ],
+                "security": [
+                    {
+                        "jwtBearerAuthScheme": []
+                    }
+                ],
+                "requestBody": {
+                    "description": "Request to create a service.",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/IdentityServiceCreateRequest"
+                            },
+                            "examples": {
+                                "identityServiceCreateRequestExample": {
+                                    "value": {
+                                        "serviceId": "did:example:123#linked-domain",
+                                        "type": "LinkedDomains",
+                                        "endpoint": "https://bar.example.com"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Response to creating a service.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DidService"
+                                },
+                                "examples": {
+                                    "identityServiceCreateResponseExample": {
+                                        "value": {
+                                            "id": "did:example:123#linked-domain",
+                                            "type": "LinkedDomains",
+                                            "serviceEndpoint": "https://bar.example.com"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "The server cannot process the request, see the content for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "GeneralError",
+                                            "message": "component.error",
+                                            "properties": {
+                                                "foo": "bar"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "UnauthorizedError",
+                                            "message": "component.error"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "InternalServerError",
+                                            "message": "component.error"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/identity/{identity}/service/{serviceId}": {
+            "delete": {
+                "operationId": "identityServiceRemove",
+                "summary": "Remove an identity service",
+                "tags": [
+                    "Identity"
+                ],
+                "parameters": [
+                    {
+                        "name": "identity",
+                        "description": "The identity to remove the service from.",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "style": "simple",
+                        "example": "did:iota:tst:0xe3088ba9aa8c28e1d139708a14e8c0fdff11ee8223baac4aa5bcf3321e4bfc6a"
+                    },
+                    {
+                        "name": "serviceId",
+                        "description": "The service to remove.",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "style": "simple",
+                        "example": "did:example:123#linked-domain"
+                    }
+                ],
+                "security": [
+                    {
+                        "jwtBearerAuthScheme": []
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "The rest request ended in success with no data."
+                    },
+                    "400": {
+                        "description": "The server cannot process the request, see the content for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "GeneralError",
+                                            "message": "component.error",
+                                            "properties": {
+                                                "foo": "bar"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "UnauthorizedError",
+                                            "message": "component.error"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "InternalServerError",
+                                            "message": "component.error"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/identity/{identity}/verifiable-credential": {
+            "post": {
+                "operationId": "identityVerifiableCredentialCreate",
+                "summary": "Create an identity verifiable credential",
+                "tags": [
+                    "Identity"
+                ],
+                "parameters": [
+                    {
+                        "name": "identity",
+                        "description": "The identity to create the verification credential for.",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "style": "simple",
+                        "example": "did:entity-storage:0x879c31386f992cfa29b77fe31e37256d69f6a57653cee4eb60ad4c4613c5515a"
+                    }
+                ],
+                "security": [
+                    {
+                        "jwtBearerAuthScheme": []
+                    }
+                ],
+                "requestBody": {
+                    "description": "Request to create a verifiable credential.",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/IdentityVerifiableCredentialCreateRequest"
+                            },
+                            "examples": {
+                                "identityVerifiableCredentialCreateRequestExample": {
+                                    "value": {
+                                        "credentialId": "https://example.com/credentials/3732",
+                                        "subject": {
+                                            "@context": "https://schema.org",
+                                            "@type": "Person",
+                                            "id": "did:entity-storage:0x4757993355b921a8229bd780f30921b6a0216a72e6c3f37a09d13b8426a17def",
+                                            "name": "Jane Doe"
+                                        },
+                                        "revocationIndex": 5
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Response to creating a verifiable credential.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/IdentityVerifiableCredentialCreateResponse"
+                                },
+                                "examples": {
+                                    "identityVerifiableCredentialCreateResponseExample": {
+                                        "value": {
+                                            "verifiableCredential": {
+                                                "@context": [
+                                                    "https://www.w3.org/ns/credentials/v2",
+                                                    "https://schema.org"
+                                                ],
+                                                "id": "https://example.com/credentials/3732",
+                                                "type": [
+                                                    "VerifiableCredential",
+                                                    "Person"
+                                                ],
+                                                "credentialSubject": {
+                                                    "id": "did:entity-storage:0x4757993355b921a8229bd780f30921b6a0216a72e6c3f37a09d13b8426a17def",
+                                                    "name": "Jane Doe"
+                                                },
+                                                "issuer": "did:entity-storage:0x879c31386f992cfa29b77fe31e37256d69f6a57653cee4eb60ad4c4613c5515a",
+                                                "issuanceDate": "2025-01-24T09:21:51.500Z",
+                                                "credentialStatus": {
+                                                    "id": "did:entity-storage:0x879c31386f992cfa29b77fe31e37256d69f6a57653cee4eb60ad4c4613c5515a#revocation",
+                                                    "type": "BitstringStatusList",
+                                                    "revocationBitmapIndex": "5"
+                                                }
+                                            },
+                                            "jwt": "eyJraWQiOi...D1Z3AQ"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "The server cannot process the request, see the content for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "GeneralError",
+                                            "message": "component.error",
+                                            "properties": {
+                                                "foo": "bar"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "UnauthorizedError",
+                                            "message": "component.error"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "InternalServerError",
+                                            "message": "component.error"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/identity/verifiable-credential/verify": {
+            "get": {
+                "operationId": "identityVerifiableCredentialVerify",
+                "summary": "Verify an identity verifiable credential",
+                "tags": [
+                    "Identity"
+                ],
+                "parameters": [
+                    {
+                        "name": "jwt",
+                        "description": "The jwt to verify.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "eyJraWQiOi...D1Z3AQ"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Response to verifying a verifiable credential.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/IdentityVerifiableCredentialVerifyResponse"
+                                },
+                                "examples": {
+                                    "identityVerifiableCredentialVerifyResponseExample": {
+                                        "value": {
+                                            "revoked": false,
+                                            "verifiableCredential": {
+                                                "@context": [
+                                                    "https://www.w3.org/ns/credentials/v2",
+                                                    "https://schema.org"
+                                                ],
+                                                "id": "https://example.com/credentials/3732",
+                                                "type": [
+                                                    "VerifiableCredential",
+                                                    "Person"
+                                                ],
+                                                "credentialSubject": {
+                                                    "id": "did:entity-storage:0x4757993355b921a8229bd780f30921b6a0216a72e6c3f37a09d13b8426a17def",
+                                                    "name": "Jane Doe"
+                                                },
+                                                "issuer": "did:entity-storage:0x879c31386f992cfa29b77fe31e37256d69f6a57653cee4eb60ad4c4613c5515a",
+                                                "issuanceDate": "2025-01-24T09:21:51.500Z",
+                                                "credentialStatus": {
+                                                    "id": "did:entity-storage:0x879c31386f992cfa29b77fe31e37256d69f6a57653cee4eb60ad4c4613c5515a#revocation",
+                                                    "type": "BitstringStatusList",
+                                                    "revocationBitmapIndex": "5"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "The server cannot process the request, see the content for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "GeneralError",
+                                            "message": "component.error",
+                                            "properties": {
+                                                "foo": "bar"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "InternalServerError",
+                                            "message": "component.error"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/identity/{identity}/verifiable-credential/revoke/{revocationIndex}": {
+            "get": {
+                "operationId": "identityVerifiableCredentialRevoke",
+                "summary": "Revoke an identity verifiable credential",
+                "tags": [
+                    "Identity"
+                ],
+                "parameters": [
+                    {
+                        "name": "identity",
+                        "description": "The identity to revoke the verification credential for.",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "style": "simple",
+                        "example": "did:entity-storage:0x879c31386f992cfa29b77fe31e37256d69f6a57653cee4eb60ad4c4613c5515a"
+                    },
+                    {
+                        "name": "revocationIndex",
+                        "description": "The revocation index to revoke.",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "number"
+                        },
+                        "style": "simple",
+                        "example": 5
+                    }
+                ],
+                "security": [
+                    {
+                        "jwtBearerAuthScheme": []
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "The rest request ended in success with no data."
+                    },
+                    "400": {
+                        "description": "The server cannot process the request, see the content for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "GeneralError",
+                                            "message": "component.error",
+                                            "properties": {
+                                                "foo": "bar"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "UnauthorizedError",
+                                            "message": "component.error"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "InternalServerError",
+                                            "message": "component.error"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/identity/{identity}/verifiable-credential/unrevoke/{revocationIndex}": {
+            "get": {
+                "operationId": "identityVerifiableCredentialUnrevoke",
+                "summary": "Unrevoke an identity verifiable credential",
+                "tags": [
+                    "Identity"
+                ],
+                "parameters": [
+                    {
+                        "name": "identity",
+                        "description": "The identity to unrevoke the verification credential for.",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "style": "simple",
+                        "example": "did:entity-storage:0x879c31386f992cfa29b77fe31e37256d69f6a57653cee4eb60ad4c4613c5515a"
+                    },
+                    {
+                        "name": "revocationIndex",
+                        "description": "The revocation index to unrevoke.",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "number"
+                        },
+                        "style": "simple",
+                        "example": 5
+                    }
+                ],
+                "security": [
+                    {
+                        "jwtBearerAuthScheme": []
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "The rest request ended in success with no data."
+                    },
+                    "400": {
+                        "description": "The server cannot process the request, see the content for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "GeneralError",
+                                            "message": "component.error",
+                                            "properties": {
+                                                "foo": "bar"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "UnauthorizedError",
+                                            "message": "component.error"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "InternalServerError",
+                                            "message": "component.error"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/identity/{identity}/verifiable-presentation": {
+            "post": {
+                "operationId": "identityVerifiablePresentationCreate",
+                "summary": "Create an identity verifiable presentation",
+                "tags": [
+                    "Identity"
+                ],
+                "parameters": [
+                    {
+                        "name": "identity",
+                        "description": "The identity to create the verification presentation for.",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "style": "simple",
+                        "example": "did:entity-storage:0x879c31386f992cfa29b77fe31e37256d69f6a57653cee4eb60ad4c4613c5515a"
+                    }
+                ],
+                "security": [
+                    {
+                        "jwtBearerAuthScheme": []
+                    }
+                ],
+                "requestBody": {
+                    "description": "Request to create a verifiable presentation.",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/IdentityVerifiablePresentationCreateRequest"
+                            },
+                            "examples": {
+                                "identityVerifiablePresentationCreateRequestExample": {
+                                    "value": {
+                                        "presentationId": "https://example.com/presentation/3732",
+                                        "verifiableCredentials": [
+                                            "eyJraWQiOi...D1Z3AQ"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Response to creating a verifiable presentation.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/IdentityVerifiablePresentationCreateResponse"
+                                },
+                                "examples": {
+                                    "IIdentityVerifiablePresentationCreateResponseExample": {
+                                        "value": {
+                                            "verifiablePresentation": {
+                                                "@context": [
+                                                    "https://www.w3.org/ns/credentials/v2",
+                                                    "https://schema.org"
+                                                ],
+                                                "id": "presentationId",
+                                                "type": [
+                                                    "VerifiablePresentation",
+                                                    "Person"
+                                                ],
+                                                "verifiableCredential": [
+                                                    "eyJraWQiOi...D1Z3AQ"
+                                                ],
+                                                "holder": "did:entity-storage:0xcea318e06e89f3fb4048160770effd84d0cfa5801fee13dfa6f9413a00429cec"
+                                            },
+                                            "jwt": "eyJraWQiOi...D1Z3AQ"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "The server cannot process the request, see the content for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "GeneralError",
+                                            "message": "component.error",
+                                            "properties": {
+                                                "foo": "bar"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "UnauthorizedError",
+                                            "message": "component.error"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "InternalServerError",
+                                            "message": "component.error"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/identity/verifiable-presentation/verify": {
+            "get": {
+                "operationId": "identityVerifiablePresentationVerify",
+                "summary": "Verify an identity verifiable presentation",
+                "tags": [
+                    "Identity"
+                ],
+                "parameters": [
+                    {
+                        "name": "jwt",
+                        "description": "The jwt to verify.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "eyJraWQiOi...D1Z3AQ"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Response to verifying a verifiable presentation.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/IdentityVerifiablePresentationVerifyResponse"
+                                },
+                                "examples": {
+                                    "identityVerifiablePresentationVerifyResponseExample": {
+                                        "value": {
+                                            "revoked": false,
+                                            "verifiablePresentation": {
+                                                "@context": [
+                                                    "https://www.w3.org/ns/credentials/v2",
+                                                    "https://schema.org"
+                                                ],
+                                                "id": "presentationId",
+                                                "type": [
+                                                    "VerifiablePresentation",
+                                                    "Person"
+                                                ],
+                                                "verifiableCredential": [
+                                                    "eyJraWQiOi...D1Z3AQ"
+                                                ],
+                                                "holder": "did:entity-storage:0xcea318e06e89f3fb4048160770effd84d0cfa5801fee13dfa6f9413a00429cec"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "The server cannot process the request, see the content for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "GeneralError",
+                                            "message": "component.error",
+                                            "properties": {
+                                                "foo": "bar"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "InternalServerError",
+                                            "message": "component.error"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/identity/{identity}/proof": {
+            "post": {
+                "operationId": "identityProofCreate",
+                "summary": "Create an identity proof",
+                "tags": [
+                    "Identity"
+                ],
+                "parameters": [
+                    {
+                        "name": "identity",
+                        "description": "The identity to create the proof for.",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "style": "simple",
+                        "example": "did:entity-storage:0xda2df3ebc91ee0d5229d6532ffd0f4426952a94f34988b0ca906694dfd366a6a"
+                    }
+                ],
+                "security": [
+                    {
+                        "jwtBearerAuthScheme": []
+                    }
+                ],
+                "requestBody": {
+                    "description": "Request to create a proof.",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/IdentityProofCreateRequest"
+                            },
+                            "examples": {
+                                "identityProofCreateRequestExample": {
+                                    "value": {
+                                        "bytes": "aGVsbG8gd29ybGQ="
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Response to creating a proof.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DidProof"
+                                },
+                                "examples": {
+                                    "identityProofCreateResponseExample": {
+                                        "value": {
+                                            "@context": "https://w3id.org/security/data-integrity/v2",
+                                            "type": "DataIntegrityProof",
+                                            "cryptosuite": "eddsa-jcs-2022",
+                                            "created": "2025-01-24T11:32:13.106Z",
+                                            "verificationMethod": "did:entity-storage:0xda2df3ebc91ee0d5229d6532ffd0f4426952a94f34988b0ca906694dfd366a6a#my-verification-id",
+                                            "proofPurpose": "assertionMethod",
+                                            "proofValue": "2fVLgANruCBoRPBCJavi54mZtkQdyMz6T2N4XVyB96asawiriKrVWoktcSQ7dMGrBTiemBBDpcLE2HfiTBCGuBmq"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "The server cannot process the request, see the content for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "GeneralError",
+                                            "message": "component.error",
+                                            "properties": {
+                                                "foo": "bar"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "UnauthorizedError",
+                                            "message": "component.error"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "InternalServerError",
+                                            "message": "component.error"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/identity/proof/verify": {
+            "post": {
+                "operationId": "identityProofVerify",
+                "summary": "Verify an identity proof",
+                "tags": [
+                    "Identity"
+                ],
+                "requestBody": {
+                    "description": "Request to verify a proof.",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/IdentityProofVerifyRequest"
+                            },
+                            "examples": {
+                                "identityProofVerifyRequestExample": {
+                                    "value": {
+                                        "bytes": "aGVsbG8gd29ybGQ=",
+                                        "proof": {
+                                            "@context": "https://w3id.org/security/data-integrity/v2",
+                                            "type": "DataIntegrityProof",
+                                            "cryptosuite": "eddsa-jcs-2022",
+                                            "created": "2025-01-24T11:32:13.106Z",
+                                            "verificationMethod": "did:entity-storage:0xda2df3ebc91ee0d5229d6532ffd0f4426952a94f34988b0ca906694dfd366a6a#my-verification-id",
+                                            "proofPurpose": "assertionMethod",
+                                            "proofValue": "2fVLgANruCBoRPBCJavi54mZtkQdyMz6T2N4XVyB96asawiriKrVWoktcSQ7dMGrBTiemBBDpcLE2HfiTBCGuBmq"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Response to verifying a proof.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/IdentityProofVerifyResponse"
+                                },
+                                "examples": {
+                                    "identityProofVerifyResponseExample": {
+                                        "value": {
+                                            "verified": true
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "The server cannot process the request, see the content for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "GeneralError",
+                                            "message": "component.error",
+                                            "properties": {
+                                                "foo": "bar"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                },
+                                "examples": {
+                                    "exampleResponse": {
+                                        "value": {
+                                            "name": "InternalServerError",
+                                            "message": "component.error"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/identity/profile": {
             "post": {
                 "operationId": "identityProfileCreate",
@@ -136,13 +1605,13 @@
                                 "identityProfileCreateRequestExample": {
                                     "value": {
                                         "publicProfile": {
-                                            "@context": "http://schema.org/",
+                                            "@context": "https://schema.org",
                                             "@type": "Person",
                                             "jobTitle": "Professor",
                                             "name": "Jane Doe"
                                         },
                                         "privateProfile": {
-                                            "@context": "http://schema.org/",
+                                            "@context": "https://schema.org",
                                             "@type": "Person",
                                             "telephone": "(425) 123-4567",
                                             "url": "http://www.janedoe.com"
@@ -284,7 +1753,7 @@
                                         "value": {
                                             "identity": "did:iota:tst:0xc57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70",
                                             "publicProfile": {
-                                                "@context": "http://schema.org/",
+                                                "@context": "https://schema.org",
                                                 "@type": "Person",
                                                 "jobTitle": "Professor",
                                                 "name": "Jane Doe"
@@ -398,13 +1867,13 @@
                                 "identityProfileUpdateRequestExample": {
                                     "value": {
                                         "publicProfile": {
-                                            "@context": "http://schema.org/",
+                                            "@context": "https://schema.org",
                                             "@type": "Person",
                                             "jobTitle": "Professor",
                                             "name": "Jane Doe"
                                         },
                                         "privateProfile": {
-                                            "@context": "http://schema.org/",
+                                            "@context": "https://schema.org",
                                             "@type": "Person",
                                             "telephone": "(425) 123-4567",
                                             "url": "http://www.janedoe.com"
@@ -636,7 +2105,7 @@
                                 "examples": {
                                     "identityGetPublicResponseExample": {
                                         "value": {
-                                            "@context": "http://schema.org/",
+                                            "@context": "https://schema.org",
                                             "@type": "Person",
                                             "jobTitle": "Professor",
                                             "name": "Jane Doe"
@@ -782,7 +2251,7 @@
                                                 {
                                                     "identity": "did:iota:tst:0xc57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70",
                                                     "publicProfile": {
-                                                        "@context": "http://schema.org/",
+                                                        "@context": "https://schema.org",
                                                         "@type": "Person",
                                                         "jobTitle": "Professor",
                                                         "name": "Jane Doe"
@@ -901,6 +2370,42 @@
                     "name"
                 ],
                 "description": "The body which contains the error."
+            },
+            "DidCredentialStatus": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "The URI id."
+                    },
+                    "type": {
+                        "type": "string",
+                        "description": "The credential status type."
+                    }
+                },
+                "required": [
+                    "id",
+                    "type"
+                ],
+                "additionalProperties": {
+                    "description": "Additional properties."
+                },
+                "description": "Interface describing a DID credential status."
+            },
+            "DidCryptoSuites": {
+                "anyOf": [
+                    {
+                        "type": "string",
+                        "const": "eddsa-jcs-2022",
+                        "description": "The type for EdDSA crypto suite for JSON Canonicalization Scheme [RFC8785]. https://www.w3.org/TR/vc-di-eddsa/#eddsa-jcs-2022"
+                    },
+                    {
+                        "type": "string",
+                        "const": "eddsa-rdfc-2022",
+                        "description": "The type for EdDSA crypto suite for RDF Dataset Canonicalization. https://www.w3.org/TR/vc-di-eddsa/#eddsa-rdfc-2022"
+                    }
+                ],
+                "description": "The types for DID Proof crypto suites."
             },
             "DidDocument": {
                 "type": "object",
@@ -1073,6 +2578,118 @@
                 "additionalProperties": false,
                 "description": "Interface describing a DID document verification method."
             },
+            "DidProof": {
+                "type": "object",
+                "properties": {
+                    "@context": {
+                        "anyOf": [
+                            {
+                                "type": "string",
+                                "const": "https://w3id.org/security/data-integrity/v2"
+                            },
+                            {
+                                "type": "array",
+                                "minItems": 1,
+                                "items": [
+                                    {
+                                        "type": "string",
+                                        "const": "https://w3id.org/security/data-integrity/v2"
+                                    }
+                                ],
+                                "additionalItems": {
+                                    "type": "string"
+                                }
+                            }
+                        ],
+                        "description": "JSON-LD Context."
+                    },
+                    "type": {
+                        "type": "string",
+                        "const": "DataIntegrityProof",
+                        "description": "JSON-LD Type."
+                    },
+                    "cryptosuite": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/components/schemas/DidCryptoSuites"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ],
+                        "description": "An identifier for the cryptographic suite that can be used to verify the proof."
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "The id of the proof."
+                    },
+                    "proofPurpose": {
+                        "type": "string",
+                        "description": "The reason the proof was created."
+                    },
+                    "proofValue": {
+                        "type": "string",
+                        "description": "Contains the base-encoded binary data necessary to verify the digital proof using the verificationMethod specified."
+                    },
+                    "verificationMethod": {
+                        "type": "string",
+                        "description": "The verification method of the proof."
+                    },
+                    "created": {
+                        "type": "string",
+                        "description": "The iso date of when the proof was created."
+                    },
+                    "expires": {
+                        "type": "string",
+                        "description": "The iso date of when the proof expires."
+                    },
+                    "domain": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        ],
+                        "description": "One or more security domains in which the proof is meant to be used."
+                    },
+                    "challenge": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        ],
+                        "description": "Provided to mitigate replay attacks on domains."
+                    },
+                    "previousProof": {
+                        "type": "string",
+                        "description": "Identifies another data integrity proof that MUST verify before the current proof is processed"
+                    },
+                    "nonce": {
+                        "type": "string",
+                        "description": "Use of this field is to increase privacy by decreasing linkability that is the result of deterministically generated signatures."
+                    }
+                },
+                "required": [
+                    "@context",
+                    "type",
+                    "cryptosuite",
+                    "proofPurpose",
+                    "proofValue"
+                ],
+                "additionalProperties": false,
+                "description": "Interface describing a did proof. https://www.w3.org/TR/vc-data-integrity/"
+            },
             "DidService": {
                 "type": "object",
                 "properties": {
@@ -1117,6 +2734,179 @@
                 "additionalProperties": false,
                 "description": "Interface describing a did document service."
             },
+            "DidVerifiableCredential": {
+                "type": "object",
+                "properties": {
+                    "@context": {
+                        "anyOf": [
+                            {
+                                "type": "string",
+                                "const": "https://www.w3.org/ns/credentials/v2"
+                            },
+                            {
+                                "type": "array",
+                                "minItems": 1,
+                                "items": [
+                                    {
+                                        "type": "string",
+                                        "const": "https://www.w3.org/ns/credentials/v2"
+                                    }
+                                ],
+                                "additionalItems": {
+                                    "type": "string"
+                                }
+                            }
+                        ],
+                        "description": "The context for the verifiable credential."
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "The identifier for the verifiable credential."
+                    },
+                    "type": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "The types of the data stored in the verifiable credential."
+                    },
+                    "credentialSubject": {
+                        "anyOf": [
+                            {
+                                "$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
+                                }
+                            }
+                        ],
+                        "description": "The data for the verifiable credential."
+                    },
+                    "credentialStatus": {
+                        "$ref": "#/components/schemas/DidCredentialStatus"
+                    },
+                    "issuer": {
+                        "type": "string",
+                        "description": "The issuing identity."
+                    },
+                    "issuanceDate": {
+                        "type": "string",
+                        "description": "The date the verifiable credential was issued."
+                    },
+                    "proof": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/components/schemas/DidProof"
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/components/schemas/DidProof"
+                                }
+                            }
+                        ],
+                        "description": "Proofs that the verifiable credential is valid. Optional if a different proof method is used, such as JWT."
+                    }
+                },
+                "required": [
+                    "@context",
+                    "type",
+                    "credentialSubject"
+                ],
+                "additionalProperties": false,
+                "description": "Interface describing a verifiable credential."
+            },
+            "DidVerifiablePresentation": {
+                "type": "object",
+                "properties": {
+                    "@context": {
+                        "anyOf": [
+                            {
+                                "type": "string",
+                                "const": "https://www.w3.org/ns/credentials/v2"
+                            },
+                            {
+                                "type": "array",
+                                "minItems": 1,
+                                "items": [
+                                    {
+                                        "type": "string",
+                                        "const": "https://www.w3.org/ns/credentials/v2"
+                                    }
+                                ],
+                                "additionalItems": {
+                                    "type": "string"
+                                }
+                            }
+                        ],
+                        "description": "The context for the verifiable presentation."
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "Provide a unique identifier for the presentation."
+                    },
+                    "type": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "The types of the data stored in the verifiable credential."
+                    },
+                    "verifiableCredential": {
+                        "type": "array",
+                        "items": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/DidVerifiableCredential"
+                                }
+                            ]
+                        },
+                        "description": "The data for the verifiable credentials."
+                    },
+                    "holder": {
+                        "type": "string",
+                        "description": "The entity generating the presentation."
+                    },
+                    "proof": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/components/schemas/DidProof"
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/components/schemas/DidProof"
+                                }
+                            }
+                        ],
+                        "description": "Proofs that the verifiable presentation is valid. Optional if a different proof method is used, such as JWT."
+                    }
+                },
+                "required": [
+                    "@context",
+                    "type",
+                    "verifiableCredential"
+                ],
+                "additionalProperties": false,
+                "description": "Interface describing a verifiable presentation."
+            },
+            "DidVerificationMethodType": {
+                "type": "string",
+                "enum": [
+                    "verificationMethod",
+                    "authentication",
+                    "assertionMethod",
+                    "keyAgreement",
+                    "capabilityInvocation",
+                    "capabilityDelegation"
+                ],
+                "description": "The types of verification method."
+            },
             "Error": {
                 "type": "object",
                 "properties": {
@@ -1151,6 +2941,17 @@
                 ],
                 "additionalProperties": false,
                 "description": "Model to describe serialized error."
+            },
+            "IdentityCreateRequest": {
+                "type": "object",
+                "properties": {
+                    "namespace": {
+                        "type": "string",
+                        "description": "The optional namespace to create the identity in."
+                    }
+                },
+                "additionalProperties": false,
+                "description": "The data for the request."
             },
             "IdentityProfileCreateRequest": {
                 "type": "object",
@@ -1229,6 +3030,259 @@
                         "$ref": "https://schema.twindev.org/json-ld/JsonLdDocument"
                     }
                 },
+                "additionalProperties": false,
+                "description": "The data for the request."
+            },
+            "IdentityProofCreateRequest": {
+                "type": "object",
+                "properties": {
+                    "bytes": {
+                        "type": "string",
+                        "description": "The data bytes base64 encoded."
+                    }
+                },
+                "required": [
+                    "bytes"
+                ],
+                "additionalProperties": false,
+                "description": "The data for the request."
+            },
+            "IdentityProofVerifyRequest": {
+                "type": "object",
+                "properties": {
+                    "bytes": {
+                        "type": "string",
+                        "description": "The data bytes base64 encoded."
+                    },
+                    "proof": {
+                        "$ref": "#/components/schemas/DidProof"
+                    }
+                },
+                "required": [
+                    "bytes",
+                    "proof"
+                ],
+                "additionalProperties": false,
+                "description": "The data for the request."
+            },
+            "IdentityProofVerifyResponse": {
+                "type": "object",
+                "properties": {
+                    "verified": {
+                        "type": "boolean"
+                    }
+                },
+                "required": [
+                    "verified"
+                ],
+                "additionalProperties": false,
+                "description": "The response payload."
+            },
+            "IdentityServiceCreateRequest": {
+                "type": "object",
+                "properties": {
+                    "serviceId": {
+                        "type": "string",
+                        "description": "The id of the service."
+                    },
+                    "type": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        ],
+                        "description": "The type of the service."
+                    },
+                    "endpoint": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        ],
+                        "description": "The endpoint for the service."
+                    }
+                },
+                "required": [
+                    "serviceId",
+                    "type",
+                    "endpoint"
+                ],
+                "additionalProperties": false,
+                "description": "The data for the request."
+            },
+            "IdentityVerifiableCredentialCreateRequest": {
+                "type": "object",
+                "properties": {
+                    "credentialId": {
+                        "type": "string",
+                        "description": "The id of the credential."
+                    },
+                    "subject": {
+                        "$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
+                    },
+                    "revocationIndex": {
+                        "type": "number",
+                        "description": "The bitmap revocation index of the credential, if undefined will not have revocation status."
+                    }
+                },
+                "required": [
+                    "subject"
+                ],
+                "additionalProperties": false,
+                "description": "The data for the request."
+            },
+            "IdentityVerifiableCredentialCreateResponse": {
+                "type": "object",
+                "properties": {
+                    "verifiableCredential": {
+                        "$ref": "#/components/schemas/DidVerifiableCredential"
+                    },
+                    "jwt": {
+                        "type": "string",
+                        "description": "The JWT token for the verifiable credential."
+                    }
+                },
+                "required": [
+                    "verifiableCredential",
+                    "jwt"
+                ],
+                "additionalProperties": false,
+                "description": "The response payload."
+            },
+            "IdentityVerifiableCredentialVerifyResponse": {
+                "type": "object",
+                "properties": {
+                    "revoked": {
+                        "type": "boolean",
+                        "description": "Has the credential been revoked."
+                    },
+                    "verifiableCredential": {
+                        "$ref": "#/components/schemas/DidVerifiableCredential"
+                    }
+                },
+                "required": [
+                    "revoked"
+                ],
+                "additionalProperties": false,
+                "description": "The response payload."
+            },
+            "IdentityVerifiablePresentationCreateRequest": {
+                "type": "object",
+                "properties": {
+                    "presentationId": {
+                        "type": "string",
+                        "description": "The id of the presentation."
+                    },
+                    "contexts": {
+                        "$ref": "https://schema.twindev.org/json-ld/JsonLdContextDefinitionRoot"
+                    },
+                    "types": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        ],
+                        "description": "The types of the presentation."
+                    },
+                    "verifiableCredentials": {
+                        "type": "array",
+                        "items": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/DidVerifiableCredential"
+                                }
+                            ]
+                        },
+                        "description": "The verifiable credentials to include in the presentation."
+                    },
+                    "expiresInMinutes": {
+                        "type": "number",
+                        "description": "The expiration time for the presentation."
+                    }
+                },
+                "required": [
+                    "verifiableCredentials"
+                ],
+                "additionalProperties": false,
+                "description": "The data for the request."
+            },
+            "IdentityVerifiablePresentationCreateResponse": {
+                "type": "object",
+                "properties": {
+                    "verifiablePresentation": {
+                        "$ref": "#/components/schemas/DidVerifiablePresentation"
+                    },
+                    "jwt": {
+                        "type": "string",
+                        "description": "The JWT token for the verifiable presentation."
+                    }
+                },
+                "required": [
+                    "verifiablePresentation",
+                    "jwt"
+                ],
+                "additionalProperties": false,
+                "description": "The response payload."
+            },
+            "IdentityVerifiablePresentationVerifyResponse": {
+                "type": "object",
+                "properties": {
+                    "revoked": {
+                        "type": "boolean",
+                        "description": "Has the presentation been revoked."
+                    },
+                    "verifiablePresentation": {
+                        "$ref": "#/components/schemas/DidVerifiablePresentation"
+                    },
+                    "issuers": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/DidDocument"
+                        },
+                        "description": "The issuers of the presentation."
+                    }
+                },
+                "required": [
+                    "revoked"
+                ],
+                "additionalProperties": false,
+                "description": "The response payload."
+            },
+            "IdentityVerificationMethodCreateRequest": {
+                "type": "object",
+                "properties": {
+                    "verificationMethodType": {
+                        "$ref": "#/components/schemas/DidVerificationMethodType"
+                    },
+                    "verificationMethodId": {
+                        "type": "string",
+                        "description": "The optional id for the verification method, will be allocated if not supplied."
+                    }
+                },
+                "required": [
+                    "verificationMethodType"
+                ],
                 "additionalProperties": false,
                 "description": "The data for the request."
             },

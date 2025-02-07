@@ -196,7 +196,19 @@ Identity connector options which can be overridden by individual components by s
 
 > `optional` **identityComponent**: `IEngineCoreTypeConfig`\<`IdentityComponentConfig`\>[]
 
-Identity component profile options which can be overridden by individual components by specifying types other than default.
+Identity component options which can be overridden by individual components by specifying types other than default.
+
+##### identityResolverConnector?
+
+> `optional` **identityResolverConnector**: `IEngineCoreTypeConfig`\<`IdentityResolverConnectorConfig`\>[]
+
+Identity resolver connector options which can be overridden by individual components by specifying types other than default.
+
+##### identityResolverComponent?
+
+> `optional` **identityResolverComponent**: `IEngineCoreTypeConfig`\<`IdentityResolverComponentConfig`\>[]
+
+Identity resolver component options which can be overridden by individual components by specifying types other than default.
 
 ##### identityProfileConnector?
 
@@ -208,7 +220,7 @@ Identity profile connector options which can be overridden by individual compone
 
 > `optional` **identityProfileComponent**: `IEngineCoreTypeConfig`\<`IdentityProfileComponentConfig`\>[]
 
-Identity profile component profile options which can be overridden by individual components by specifying types other than default.
+Identity profile component options which can be overridden by individual components by specifying types other than default.
 
 ##### nftConnector?
 
@@ -232,7 +244,7 @@ Attestation connector options which can be overridden by individual components b
 
 > `optional` **attestationComponent**: `IEngineCoreTypeConfig`\<`AttestationComponentConfig`\>[]
 
-Attestation component profile options which can be overridden by individual components by specifying types other than default.
+Attestation component options which can be overridden by individual components by specifying types other than default.
 
 ##### auditableItemGraphComponent?
 
@@ -244,7 +256,25 @@ Auditable item graph component options which can be overridden by individual com
 
 > `optional` **auditableItemStreamComponent**: `IEngineCoreTypeConfig`\<`AuditableItemStreamComponentConfig`\>[]
 
-Auditable item stream component profile options which can be overridden by individual components by specifying types other than default.
+Auditable item stream component  options which can be overridden by individual components by specifying types other than default.
+
+##### dataConverterConnector?
+
+> `optional` **dataConverterConnector**: `IEngineCoreTypeConfig`\<`DataConverterConnectorConfig`\>[]
+
+Data converter connector options which can be overridden by individual components by specifying types other than default.
+
+##### dataExtractorConnector?
+
+> `optional` **dataExtractorConnector**: `IEngineCoreTypeConfig`\<`DataExtractorConnectorConfig`\>[]
+
+Data extractor connector options which can be overridden by individual components by specifying types other than default.
+
+##### dataProcessingComponent?
+
+> `optional` **dataProcessingComponent**: `IEngineCoreTypeConfig`\<`DataProcessingComponentConfig`\>[]
+
+Date processing options which can be overridden by individual components by specifying types other than default.
 
 #### Type declaration
 

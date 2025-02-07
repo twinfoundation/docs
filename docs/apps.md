@@ -7,9 +7,19 @@ This is the overview of the applications.
 - [@twin.org/workbench-server](pkgs/workbench/apps/workbench-server/index.md) - Serve APIs using the specified configuration
 - [@twin.org/workbench-ui](pkgs/workbench/apps/workbench-ui/index.md) - UI to demonstrate the APIs
 
+## Tools
+
+- [@twin.org/merge-locales](pkgs/tools/apps/merge-locales/index.md) - Tool to merge locale files from all dependencies
+- [@twin.org/ts-to-openapi](pkgs/tools/apps/ts-to-openapi/index.md) - Tool to convert TypeScript REST route definitions to OpenAPI Specifications
+- [@twin.org/ts-to-schema](pkgs/tools/apps/ts-to-schema/index.md) - Tool to convert TypeScript definitions to JSON schemas
+
 ## Framework
 
 - [@twin.org/crypto-cli](pkgs/framework/apps/crypto-cli/index.md) - A command line interface for interacting with the crypto tools
+
+## Distributed Ledger
+
+- [@twin.org/move-to-json](pkgs/dlt/apps/move-to-json/index.md) - Tool to convert Move source files to JSON
 
 ## Wallet
 

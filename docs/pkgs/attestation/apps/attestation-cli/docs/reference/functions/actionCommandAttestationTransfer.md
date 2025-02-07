@@ -34,11 +34,23 @@ The new holder identity of the attestation.
 
 The new holder address of the attestation.
 
+#### connector
+
+[`AttestationConnectorTypes`](../type-aliases/AttestationConnectorTypes.md)
+
+The connector to perform the operations with.
+
 #### node
 
 `string`
 
 The node URL.
+
+#### network
+
+`string`
+
+The network to use for rebased connector.
 
 #### explorer
 

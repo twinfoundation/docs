@@ -23,3 +23,31 @@ The vault connector type to use.
 ```ts
 "vault"
 ```
+
+***
+
+### walletConnectorType?
+
+> `optional` **walletConnectorType**: `string`
+
+The wallet connector type to use.
+
+#### Default
+
+```ts
+"wallet"
+```
+
+***
+
+### loggingConnectorType?
+
+> `optional` **loggingConnectorType**: `string`
+
+The logging connector type.
+
+#### Default
+
+```ts
+logging
+```

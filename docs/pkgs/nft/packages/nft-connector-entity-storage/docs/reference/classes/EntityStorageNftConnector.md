@@ -50,7 +50,7 @@ Runtime name for the class.
 
 ### mint()
 
-> **mint**\<`T`, `U`\>(`controller`, `issuer`, `tag`, `immutableMetadata`?, `metadata`?): `Promise`\<`string`\>
+> **mint**\<`T`, `U`\>(`controllerIdentity`, `tag`, `immutableMetadata`?, `metadata`?): `Promise`\<`string`\>
 
 Mint an NFT.
 
@@ -62,17 +62,11 @@ Mint an NFT.
 
 #### Parameters
 
-##### controller
+##### controllerIdentity
 
 `string`
 
 The controller of the NFT who can make changes.
-
-##### issuer
-
-`string`
-
-The issuer for the NFT, will also be the initial owner.
 
 ##### tag
 
@@ -138,13 +132,13 @@ The data for the NFT.
 
 ### burn()
 
-> **burn**(`controller`, `id`): `Promise`\<`void`\>
+> **burn**(`controllerIdentity`, `id`): `Promise`\<`void`\>
 
 Burn an NFT.
 
 #### Parameters
 
-##### controller
+##### controllerIdentity
 
 `string`
 
@@ -170,7 +164,7 @@ Nothing.
 
 ### transfer()
 
-> **transfer**\<`T`\>(`controller`, `id`, `recipient`, `metadata`?): `Promise`\<`void`\>
+> **transfer**\<`T`\>(`controllerIdentity`, `id`, `recipientIdentity`, `recipientAddress`, `metadata`?): `Promise`\<`void`\>
 
 Transfer an NFT.
 
@@ -180,7 +174,7 @@ Transfer an NFT.
 
 #### Parameters
 
-##### controller
+##### controllerIdentity
 
 `string`
 
@@ -192,11 +186,17 @@ The controller of the NFT who can make changes.
 
 The id of the NFT to transfer in urn format.
 
-##### recipient
+##### recipientIdentity
 
 `string`
 
-The recipient of the NFT.
+The recipient identity for the NFT.
+
+##### recipientAddress
+
+`string`
+
+The recipient address for the NFT.
 
 ##### metadata?
 
@@ -218,7 +218,7 @@ Nothing.
 
 ### update()
 
-> **update**\<`T`\>(`controller`, `id`, `metadata`): `Promise`\<`void`\>
+> **update**\<`T`\>(`controllerIdentity`, `id`, `metadata`): `Promise`\<`void`\>
 
 Update the data of the NFT.
 
@@ -228,7 +228,7 @@ Update the data of the NFT.
 
 #### Parameters
 
-##### controller
+##### controllerIdentity
 
 `string`
 

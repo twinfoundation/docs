@@ -15,7 +15,7 @@ The tests developed are functional tests and need an instance of CosmosDB up and
 To run a Docker image of Azure CosmosDB:
 
 ```sh
-docker run -d --platform=linux/amd64 -p 8081:8081 -p 10250:10250 -p 10251:10251 -p 10252:10252 -p 10253:10253 -p 10254:10254 -m 3g --name twin-entity-cosmos -e AZURE_COSMOS_EMULATOR_PARTITION_COUNT=10 -e AZURE_COSMOS_EMULATOR_ENABLE_DATA_PERSISTENCE=true -e AZURE_COSMOS_EMULATOR_IP_ADDRESS_OVERRIDE='127.0.0.1' mcr.microsoft.com/cosmosdb/linux/azure-cosmos-emulator
+docker run -d --platform=linux/amd64 -p 8081:8081 -p 10250:10250 -p 10251:10251 -p 10252:10252 -p 10253:10253 -p 10254:10254 -m 3g --name twin-entity-storage-cosmos -e AZURE_COSMOS_EMULATOR_PARTITION_COUNT=10 -e AZURE_COSMOS_EMULATOR_ENABLE_DATA_PERSISTENCE=true -e AZURE_COSMOS_EMULATOR_IP_ADDRESS_OVERRIDE='127.0.0.1' mcr.microsoft.com/cosmosdb/linux/azure-cosmos-emulator
 ```
 
 Or

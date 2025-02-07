@@ -3,6 +3,7 @@
 ## Classes
 
 - [IotaRebasedNftConnector](classes/IotaRebasedNftConnector.md)
+- [IotaRebasedNftUtils](classes/IotaRebasedNftUtils.md)
 
 ## Interfaces
 

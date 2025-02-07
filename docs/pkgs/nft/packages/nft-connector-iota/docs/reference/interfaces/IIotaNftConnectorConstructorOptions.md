@@ -18,6 +18,20 @@ vault
 
 ***
 
+### walletConnectorType?
+
+> `optional` **walletConnectorType**: `string`
+
+The type of the wallet connector.
+
+#### Default
+
+```ts
+wallet
+```
+
+***
+
 ### config
 
 > **config**: [`IIotaNftConnectorConfig`](IIotaNftConnectorConfig.md)

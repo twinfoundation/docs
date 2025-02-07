@@ -190,7 +190,19 @@ Identity connector options which can be overridden by individual components by s
 
 > `optional` **identityComponent**: `IEngineCoreTypeConfig`\<[`IdentityComponentConfig`](../type-aliases/IdentityComponentConfig.md)\>[]
 
-Identity component profile options which can be overridden by individual components by specifying types other than default.
+Identity component options which can be overridden by individual components by specifying types other than default.
+
+#### identityResolverConnector?
+
+> `optional` **identityResolverConnector**: `IEngineCoreTypeConfig`\<[`IdentityResolverConnectorConfig`](../type-aliases/IdentityResolverConnectorConfig.md)\>[]
+
+Identity resolver connector options which can be overridden by individual components by specifying types other than default.
+
+#### identityResolverComponent?
+
+> `optional` **identityResolverComponent**: `IEngineCoreTypeConfig`\<[`IdentityResolverComponentConfig`](../type-aliases/IdentityResolverComponentConfig.md)\>[]
+
+Identity resolver component options which can be overridden by individual components by specifying types other than default.
 
 #### identityProfileConnector?
 
@@ -202,7 +214,7 @@ Identity profile connector options which can be overridden by individual compone
 
 > `optional` **identityProfileComponent**: `IEngineCoreTypeConfig`\<[`IdentityProfileComponentConfig`](../type-aliases/IdentityProfileComponentConfig.md)\>[]
 
-Identity profile component profile options which can be overridden by individual components by specifying types other than default.
+Identity profile component options which can be overridden by individual components by specifying types other than default.
 
 #### nftConnector?
 
@@ -226,7 +238,7 @@ Attestation connector options which can be overridden by individual components b
 
 > `optional` **attestationComponent**: `IEngineCoreTypeConfig`\<[`AttestationComponentConfig`](../type-aliases/AttestationComponentConfig.md)\>[]
 
-Attestation component profile options which can be overridden by individual components by specifying types other than default.
+Attestation component options which can be overridden by individual components by specifying types other than default.
 
 #### auditableItemGraphComponent?
 
@@ -238,7 +250,25 @@ Auditable item graph component options which can be overridden by individual com
 
 > `optional` **auditableItemStreamComponent**: `IEngineCoreTypeConfig`\<[`AuditableItemStreamComponentConfig`](../type-aliases/AuditableItemStreamComponentConfig.md)\>[]
 
-Auditable item stream component profile options which can be overridden by individual components by specifying types other than default.
+Auditable item stream component  options which can be overridden by individual components by specifying types other than default.
+
+#### dataConverterConnector?
+
+> `optional` **dataConverterConnector**: `IEngineCoreTypeConfig`\<[`DataConverterConnectorConfig`](../type-aliases/DataConverterConnectorConfig.md)\>[]
+
+Data converter connector options which can be overridden by individual components by specifying types other than default.
+
+#### dataExtractorConnector?
+
+> `optional` **dataExtractorConnector**: `IEngineCoreTypeConfig`\<[`DataExtractorConnectorConfig`](../type-aliases/DataExtractorConnectorConfig.md)\>[]
+
+Data extractor connector options which can be overridden by individual components by specifying types other than default.
+
+#### dataProcessingComponent?
+
+> `optional` **dataProcessingComponent**: `IEngineCoreTypeConfig`\<[`DataProcessingComponentConfig`](../type-aliases/DataProcessingComponentConfig.md)\>[]
+
+Date processing options which can be overridden by individual components by specifying types other than default.
 
 #### Overrides
 
