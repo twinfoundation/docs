@@ -72,6 +72,9 @@
 		"name": "data-processing"
 	},
 	{
+		"name": "document-management"
+	},
+	{
 		"name": "ui"
 	}
 ]

@@ -543,6 +543,28 @@ jobs:
           cp import-packages/data-processing/package.json docs/pkgs/data-processing/package.json
           rm -r import-packages/data-processing
 
+      ########### document-management
+      - name: Checkout document-management
+        uses: actions/checkout@v4
+        with:
+          repository: twinfoundation/document-management
+          path: import-packages/document-management
+          ref: ${{ env.gha-branch }}
+
+      - name: Copy document-management to Docs
+        run: |
+          jq -r '.workspaces[]' import-packages/document-management/package.json | while read pkg; do
+            rm -rf docs/pkgs/document-management/$pkg
+            mkdir -p docs/pkgs/document-management/$pkg
+            mkdir -p docs/pkgs/document-management/$pkg/docs
+            cp -r import-packages/document-management/$pkg/docs/* docs/pkgs/document-management/$pkg/docs
+            cp -r import-packages/document-management/$pkg/README.md docs/pkgs/document-management/$pkg/index.md
+            cp -r import-packages/document-management/$pkg/package.json docs/pkgs/document-management/$pkg/package.json
+          done
+
+          cp import-packages/document-management/package.json docs/pkgs/document-management/package.json
+          rm -r import-packages/document-management
+
       ########### ui
       - name: Checkout ui
         uses: actions/checkout@v4
