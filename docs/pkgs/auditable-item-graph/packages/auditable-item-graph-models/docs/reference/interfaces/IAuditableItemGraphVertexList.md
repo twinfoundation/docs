@@ -6,7 +6,7 @@ Interface describing an auditable item graph vertex list.
 
 ### @context
 
-> **@context**: `"https://schema.twindev.org/aig/"` \| \[`"https://schema.twindev.org/aig/"`, `...string[]`\]
+> **@context**: `"https://schema.twindev.org/aig/"` \| \[`"https://schema.twindev.org/aig/"`, `...IJsonLdContextDefinitionElement[]`\]
 
 JSON-LD Context.
 

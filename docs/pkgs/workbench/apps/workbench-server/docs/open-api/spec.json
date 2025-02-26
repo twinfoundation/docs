@@ -52,6 +52,10 @@
 			"description": "Endpoints which are modelled to access an attestation contract."
 		},
 		{
+			"name": "Immutable Proof",
+			"description": "Endpoints which are modelled to access an immutable proof contract."
+		},
+		{
 			"name": "Auditable Item Graph",
 			"description": "Endpoints which are modelled to access an auditable item graph contract."
 		},
@@ -619,6 +623,7 @@
 								"examples": {
 									"identityResolveResponseExample": {
 										"value": {
+											"@context": "https://www.w3.org/ns/did/v1",
 											"id": "did:iota:tst:0xe3088ba9aa8c28e1d139708a14e8c0fdff11ee8223baac4aa5bcf3321e4bfc6a",
 											"service": [
 												{
@@ -709,6 +714,7 @@
 								"examples": {
 									"identityCreateResponseExample": {
 										"value": {
+											"@context": "https://www.w3.org/ns/did/v1",
 											"id": "did:iota:tst:0xe3088ba9aa8c28e1d139708a14e8c0fdff11ee8223baac4aa5bcf3321e4bfc6a",
 											"service": [
 												{
@@ -2913,7 +2919,7 @@
 									"value": {
 										"blob": "VGhlIHF1aWNrIGJyb3duIGZveCBqdW1wcyBvdmVyIHRoZSBsYXp5IGRvZw==",
 										"metadata": {
-											"@context": "http://schema.org/",
+											"@context": "https://schema.org",
 											"@type": "DigitalDocument",
 											"name": "myfile.pdf"
 										}
@@ -3077,13 +3083,15 @@
 									"blobStorageListResponseExample": {
 										"value": {
 											"@context": [
-												"https://schema.twindev.org/blob-storage/"
+												"https://schema.twindev.org/blob-storage/",
+												"https://schema.twindev.org/common/"
 											],
 											"type": "BlobStorageEntryList",
 											"entries": [
 												{
 													"@context": [
 														"https://schema.twindev.org/blob-storage/",
+														"https://schema.twindev.org/common/",
 														"https://schema.org"
 													],
 													"type": "BlobStorageEntry",
@@ -3091,9 +3099,10 @@
 													"dateCreated": "2024-01-01T00:00:00Z",
 													"encodingFormat": "application/pdf",
 													"blobSize": 42,
+													"blobHash": "sha256:c57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70",
 													"fileExtension": "pdf",
 													"metadata": {
-														"@context": "http://schema.org/",
+														"@context": "https://schema.org",
 														"@type": "DigitalDocument",
 														"name": "myfile.pdf"
 													},
@@ -3112,13 +3121,15 @@
 									"blobStorageListResponseJsonLdExample": {
 										"value": {
 											"@context": [
-												"https://schema.twindev.org/blob-storage/"
+												"https://schema.twindev.org/blob-storage/",
+												"https://schema.twindev.org/common/"
 											],
 											"type": "BlobStorageEntryList",
 											"entries": [
 												{
 													"@context": [
 														"https://schema.twindev.org/blob-storage/",
+														"https://schema.twindev.org/common/",
 														"https://schema.org"
 													],
 													"type": "BlobStorageEntry",
@@ -3126,9 +3137,10 @@
 													"dateCreated": "2024-01-01T00:00:00Z",
 													"encodingFormat": "application/pdf",
 													"blobSize": 42,
+													"blobHash": "sha256:c57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70",
 													"fileExtension": "pdf",
 													"metadata": {
-														"@context": "http://schema.org/",
+														"@context": "https://schema.org",
 														"@type": "DigitalDocument",
 														"name": "myfile.pdf"
 													},
@@ -3279,6 +3291,7 @@
 										"value": {
 											"@context": [
 												"https://schema.twindev.org/blob-storage/",
+												"https://schema.twindev.org/common/",
 												"https://schema.org"
 											],
 											"type": "BlobStorageEntry",
@@ -3286,9 +3299,10 @@
 											"dateCreated": "2024-01-01T00:00:00Z",
 											"encodingFormat": "application/pdf",
 											"blobSize": 42,
+											"blobHash": "sha256:c57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70",
 											"fileExtension": "pdf",
 											"metadata": {
-												"@context": "http://schema.org/",
+												"@context": "https://schema.org",
 												"@type": "DigitalDocument",
 												"name": "myfile.pdf"
 											},
@@ -3306,6 +3320,7 @@
 										"value": {
 											"@context": [
 												"https://schema.twindev.org/blob-storage/",
+												"https://schema.twindev.org/common/",
 												"https://schema.org"
 											],
 											"type": "BlobStorageEntry",
@@ -3313,9 +3328,10 @@
 											"dateCreated": "2024-01-01T00:00:00Z",
 											"encodingFormat": "application/pdf",
 											"blobSize": 42,
+											"blobHash": "sha256:c57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70",
 											"fileExtension": "pdf",
 											"metadata": {
-												"@context": "http://schema.org/",
+												"@context": "https://schema.org",
 												"@type": "DigitalDocument",
 												"name": "myfile.pdf"
 											},
@@ -3442,7 +3458,7 @@
 								"blobStorageUpdateRequestExample": {
 									"value": {
 										"metadata": {
-											"@context": "http://schema.org/",
+											"@context": "https://schema.org",
 											"@type": "DigitalDocument",
 											"name": "myfile.pdf"
 										}
@@ -5382,7 +5398,6 @@
 							"examples": {
 								"attestationCreateRequestExample": {
 									"value": {
-										"verificationMethodId": "did:iota:tst:0xf0b95a98b3dbc5ce1c9ce59d70af95a97599f100a7296ecdd1eb108bebfa047f#attestation",
 										"attestationObject": {
 											"@context": "https://schema.org",
 											"type": "DigitalDocument",
@@ -5510,6 +5525,7 @@
 										"value": {
 											"@context": [
 												"https://schema.twindev.org/attestation/",
+												"https://schema.twindev.org/common/",
 												"https://schema.org"
 											],
 											"type": "Information",
@@ -5535,6 +5551,7 @@
 										"value": {
 											"@context": [
 												"https://schema.twindev.org/attestation/",
+												"https://schema.twindev.org/common/",
 												"https://schema.org"
 											],
 											"type": "Information",
@@ -5568,6 +5585,7 @@
 										"value": {
 											"@context": [
 												"https://schema.twindev.org/attestation/",
+												"https://schema.twindev.org/common/",
 												"https://schema.org"
 											],
 											"type": "Information",
@@ -5593,6 +5611,7 @@
 										"value": {
 											"@context": [
 												"https://schema.twindev.org/attestation/",
+												"https://schema.twindev.org/common/",
 												"https://schema.org"
 											],
 											"type": "Information",
@@ -5758,7 +5777,7 @@
 				"parameters": [
 					{
 						"name": "id",
-						"description": "The attestation id to verify.",
+						"description": "The attestation id to transfer.",
 						"in": "path",
 						"required": true,
 						"schema": {
@@ -5784,7 +5803,8 @@
 							"examples": {
 								"attestationTransferRequestExample": {
 									"value": {
-										"holderIdentity": "did:iota:tst:0x06ae1034f9f4af1b408a0b54e877bb476259666a14f221400d3746aecefa7105"
+										"holderIdentity": "did:iota:tst:0x06ae1034f9f4af1b408a0b54e877bb476259666a14f221400d3746aecefa7105",
+										"holderAddress": "tst1prctjk5ck0dutnsunnje6u90jk5htx03qznjjmkd6843pzltlgz87srjzzv"
 									}
 								}
 							}
@@ -5855,6 +5875,462 @@
 				}
 			}
 		},
+		"/immutable-proof": {
+			"post": {
+				"operationId": "immutableProofCreate",
+				"summary": "Create a proof",
+				"tags": [
+					"Immutable Proof"
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"requestBody": {
+					"description": "Create a proof.",
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/ImmutableProofCreateRequest"
+							},
+							"examples": {
+								"immutableProofCreateRequestExample": {
+									"value": {
+										"proofObject": {
+											"@context": "https://schema.org",
+											"type": "Person",
+											"name": "John Smith"
+										}
+									}
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"201": {
+						"description": "The rest request ended in created response.",
+						"headers": {
+							"location": {
+								"schema": {
+									"type": "string"
+								},
+								"description": "e.g. test:1234567890"
+							}
+						}
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "The resource you tried to access does not exist, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/NotFoundResponse"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "NotFoundError",
+											"message": "component.error",
+											"properties": {
+												"notFoundId": "1"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/immutable-proof/{id}": {
+			"get": {
+				"operationId": "immutableProofGet",
+				"summary": "Get a proof",
+				"tags": [
+					"Immutable Proof"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"description": "The id of the immutable proof to get.",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "ais:1234567890"
+					},
+					{
+						"name": "accept",
+						"in": "header",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "application/json"
+					}
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Response to getting an immutable proof.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ImmutableProof"
+								},
+								"examples": {
+									"immutableProofGetResponseExample": {
+										"value": {
+											"@context": [
+												"https://schema.twindev.org/immutable-proof/",
+												"https://schema.twindev.org/common/"
+											],
+											"type": "ImmutableProof",
+											"id": "ais:1234567890",
+											"userIdentity": "user-1",
+											"proofObjectId": "test:1234567890",
+											"proofObjectHash": "EAOKyDN0mYQbBh91eMdVeroxQx1H4GfnRbmt6n/2L/Y=",
+											"proof": {
+												"@context": "https://w3id.org/security/data-integrity/v2",
+												"type": "DataIntegrityProof",
+												"cryptosuite": "eddsa-jcs-2022",
+												"created": "2024-08-22T11:56:56.272Z",
+												"proofPurpose": "assertionMethod",
+												"proofValue": "7DdiPPYtxLjCD3wA1po2rv..."
+											}
+										}
+									}
+								}
+							},
+							"application/ld+json": {
+								"schema": {
+									"$ref": "#/components/schemas/ImmutableProof"
+								},
+								"examples": {
+									"immutableProofJsonLdGetResponseExample": {
+										"value": {
+											"@context": [
+												"https://schema.twindev.org/immutable-proof/",
+												"https://schema.twindev.org/common/"
+											],
+											"type": "ImmutableProof",
+											"id": "ais:1234567890",
+											"userIdentity": "user-1",
+											"proofObjectId": "test:1234567890",
+											"proofObjectHash": "EAOKyDN0mYQbBh91eMdVeroxQx1H4GfnRbmt6n/2L/Y=",
+											"proof": {
+												"@context": "https://w3id.org/security/data-integrity/v2",
+												"type": "DataIntegrityProof",
+												"cryptosuite": "eddsa-jcs-2022",
+												"created": "2024-08-22T11:56:56.272Z",
+												"proofPurpose": "assertionMethod",
+												"proofValue": "7DdiPPYtxLjCD3wA1po2rv..."
+											}
+										}
+									}
+								}
+							}
+						},
+						"headers": {
+							"content-type": {
+								"schema": {
+									"type": "string"
+								},
+								"description": "e.g. application/ld+json"
+							}
+						}
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "The resource you tried to access does not exist, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/NotFoundResponse"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "NotFoundError",
+											"message": "component.error",
+											"properties": {
+												"notFoundId": "1"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/immutable-proof/{id}/verify": {
+			"get": {
+				"operationId": "immutableProofVerify",
+				"summary": "Verify a proof",
+				"tags": [
+					"Immutable Proof"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"description": "The id of the immutable proof to verify.",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "ais:1234567890"
+					},
+					{
+						"name": "accept",
+						"in": "header",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple"
+					}
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Response to verifying an immutable proof.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ImmutableProofVerification"
+								},
+								"examples": {
+									"immutableProofVerifyResponseExample": {
+										"value": {
+											"@context": "https://schema.twindev.org/immutable-proof/",
+											"type": "ImmutableProofVerification",
+											"verified": true
+										}
+									},
+									"immutableProofVerifyResponseFailExample": {
+										"value": {
+											"@context": "https://schema.twindev.org/immutable-proof/",
+											"type": "ImmutableProofVerification",
+											"verified": false,
+											"failure": "proofTypeMismatch"
+										}
+									}
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "The resource you tried to access does not exist, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/NotFoundResponse"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "NotFoundError",
+											"message": "component.error",
+											"properties": {
+												"notFoundId": "1"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
 		"/aig": {
 			"post": {
 				"operationId": "auditableItemGraphCreate",
@@ -5879,7 +6355,7 @@
 								"auditableItemGraphCreateRequestExample": {
 									"value": {
 										"annotationObject": {
-											"@context": "http://schema.org/",
+											"@context": "https://schema.org",
 											"@type": "Note",
 											"content": "This is a simple note"
 										},
@@ -5887,7 +6363,7 @@
 											{
 												"id": "bar456",
 												"annotationObject": {
-													"@context": "http://schema.org/",
+													"@context": "https://schema.org",
 													"@type": "Note",
 													"content": "This is a simple note"
 												}
@@ -5895,7 +6371,7 @@
 											{
 												"id": "foo321",
 												"annotationObject": {
-													"@context": "http://schema.org/",
+													"@context": "https://schema.org",
 													"@type": "Note",
 													"content": "This is a simple note"
 												}
@@ -5905,7 +6381,7 @@
 											{
 												"id": "resource1",
 												"resourceObject": {
-													"@context": "http://schema.org/",
+													"@context": "https://schema.org",
 													"@type": "Note",
 													"content": "This is a simple note"
 												}
@@ -5913,7 +6389,7 @@
 											{
 												"id": "resource2",
 												"resourceObject": {
-													"@context": "http://schema.org/",
+													"@context": "https://schema.org",
 													"@type": "Note",
 													"content": "This is a simple note"
 												}
@@ -5924,7 +6400,7 @@
 												"id": "edge1",
 												"edgeRelationship": "frenemy",
 												"annotationObject": {
-													"@context": "http://schema.org/",
+													"@context": "https://schema.org",
 													"@type": "Note",
 													"content": "This is a simple note"
 												}
@@ -5933,7 +6409,7 @@
 												"id": "edge2",
 												"edgeRelationship": "end",
 												"annotationObject": {
-													"@context": "http://schema.org/",
+													"@context": "https://schema.org",
 													"@type": "Note",
 													"content": "This is a simple note"
 												}
@@ -6132,6 +6608,7 @@
 										"value": {
 											"@context": [
 												"https://schema.twindev.org/aig/",
+												"https://schema.twindev.org/common/",
 												"https://schema.org"
 											],
 											"type": "AuditableItemGraphVertexList",
@@ -6139,6 +6616,7 @@
 												{
 													"@context": [
 														"https://schema.twindev.org/aig/",
+														"https://schema.twindev.org/common/",
 														"https://schema.org"
 													],
 													"type": "AuditableItemGraphVertex",
@@ -6148,6 +6626,7 @@
 														{
 															"@context": [
 																"https://schema.twindev.org/aig/",
+																"https://schema.twindev.org/common/",
 																"https://schema.org"
 															],
 															"type": "AuditableItemGraphAlias",
@@ -6171,6 +6650,7 @@
 										"value": {
 											"@context": [
 												"https://schema.twindev.org/aig/",
+												"https://schema.twindev.org/common/",
 												"https://schema.org"
 											],
 											"type": "AuditableItemGraphVertexList",
@@ -6178,6 +6658,7 @@
 												{
 													"@context": [
 														"https://schema.twindev.org/aig/",
+														"https://schema.twindev.org/common/",
 														"https://schema.org"
 													],
 													"type": "AuditableItemGraphVertex",
@@ -6187,6 +6668,7 @@
 														{
 															"@context": [
 																"https://schema.twindev.org/aig/",
+																"https://schema.twindev.org/common/",
 																"https://schema.org"
 															],
 															"type": "AuditableItemGraphAlias",
@@ -6346,6 +6828,7 @@
 										"value": {
 											"@context": [
 												"https://schema.twindev.org/aig/",
+												"https://schema.twindev.org/common/",
 												"https://schema.org"
 											],
 											"type": "AuditableItemGraphVertex",
@@ -6353,7 +6836,7 @@
 											"dateCreated": "2024-08-22T11:55:16.271Z",
 											"dateModified": "2024-08-22T11:55:16.271Z",
 											"annotationObject": {
-												"@context": "http://schema.org/",
+												"@context": "https://schema.org",
 												"@type": "Note",
 												"content": "This is a simple note"
 											},
@@ -6361,6 +6844,7 @@
 												{
 													"@context": [
 														"https://schema.twindev.org/aig/",
+														"https://schema.twindev.org/common/",
 														"https://schema.org"
 													],
 													"type": "AuditableItemGraphAlias",
@@ -6381,6 +6865,7 @@
 										"value": {
 											"@context": [
 												"https://schema.twindev.org/aig/",
+												"https://schema.twindev.org/common/",
 												"https://schema.org"
 											],
 											"type": "AuditableItemGraphVertex",
@@ -6388,7 +6873,7 @@
 											"dateCreated": "2024-08-22T11:55:16.271Z",
 											"dateModified": "2024-08-22T11:55:16.271Z",
 											"annotationObject": {
-												"@context": "http://schema.org/",
+												"@context": "https://schema.org",
 												"@type": "Note",
 												"content": "This is a simple note"
 											},
@@ -6396,6 +6881,7 @@
 												{
 													"@context": [
 														"https://schema.twindev.org/aig/",
+														"https://schema.twindev.org/common/",
 														"https://schema.org"
 													],
 													"type": "AuditableItemGraphAlias",
@@ -6512,7 +6998,7 @@
 								"auditableItemGraphUpdateRequestExample": {
 									"value": {
 										"annotationObject": {
-											"@context": "http://schema.org/",
+											"@context": "https://schema.org",
 											"@type": "Note",
 											"content": "This is a simple note"
 										},
@@ -6520,7 +7006,7 @@
 											{
 												"id": "bar456",
 												"annotationObject": {
-													"@context": "http://schema.org/",
+													"@context": "https://schema.org",
 													"@type": "Note",
 													"content": "This is a simple note"
 												}
@@ -6528,7 +7014,7 @@
 											{
 												"id": "foo321",
 												"annotationObject": {
-													"@context": "http://schema.org/",
+													"@context": "https://schema.org",
 													"@type": "Note",
 													"content": "This is a simple note"
 												}
@@ -6538,7 +7024,7 @@
 											{
 												"id": "resource1",
 												"resourceObject": {
-													"@context": "http://schema.org/",
+													"@context": "https://schema.org",
 													"@type": "Note",
 													"content": "This is a simple note"
 												}
@@ -6546,7 +7032,7 @@
 											{
 												"id": "resource2",
 												"resourceObject": {
-													"@context": "http://schema.org/",
+													"@context": "https://schema.org",
 													"@type": "Note",
 													"content": "This is a simple note"
 												}
@@ -6557,7 +7043,7 @@
 												"id": "edge1",
 												"edgeRelationship": "frenemy",
 												"annotationObject": {
-													"@context": "http://schema.org/",
+													"@context": "https://schema.org",
 													"@type": "Note",
 													"content": "This is a simple note"
 												}
@@ -6566,7 +7052,7 @@
 												"id": "edge2",
 												"edgeRelationship": "end",
 												"annotationObject": {
-													"@context": "http://schema.org/",
+													"@context": "https://schema.org",
 													"@type": "Note",
 													"content": "This is a simple note"
 												}
@@ -6665,15 +7151,15 @@
 							"examples": {
 								"auditableItemStreamCreateRequestExample": {
 									"value": {
-										"streamObject": {
-											"@context": "http://schema.org/",
+										"annotationObject": {
+											"@context": "https://schema.org",
 											"@type": "Note",
 											"content": "This is a simple note"
 										},
 										"entries": [
 											{
 												"entryObject": {
-													"@context": "http://schema.org/",
+													"@context": "https://schema.org",
 													"@type": "Event",
 													"startDate": "2011-04-09T20:00:00Z",
 													"description": "A description of the event"
@@ -6848,17 +7334,23 @@
 								"examples": {
 									"auditableItemStreamListResponseExample": {
 										"value": {
-											"@context": "https://schema.twindev.org/ais/",
+											"@context": [
+												"https://schema.twindev.org/ais/",
+												"https://schema.twindev.org/common/"
+											],
 											"type": "AuditableItemStreamList",
-											"streams": [
+											"itemStreams": [
 												{
-													"@context": "https://schema.twindev.org/ais/",
+													"@context": [
+														"https://schema.twindev.org/ais/",
+														"https://schema.twindev.org/common/"
+													],
 													"type": "AuditableItemStream",
 													"id": "ais:1234567890",
 													"dateCreated": "2024-08-22T11:55:16.271Z",
 													"dateModified": "2024-08-22T11:55:16.271Z",
-													"streamObject": {
-														"@context": "http://schema.org/",
+													"annotationObject": {
+														"@context": "https://schema.org",
 														"@type": "Note",
 														"content": "This is a simple note"
 													},
@@ -6880,17 +7372,23 @@
 								"examples": {
 									"auditableItemStreamJsonLdListResponseExample": {
 										"value": {
-											"@context": "https://schema.twindev.org/ais/",
+											"@context": [
+												"https://schema.twindev.org/ais/",
+												"https://schema.twindev.org/common/"
+											],
 											"type": "AuditableItemStreamList",
-											"streams": [
+											"itemStreams": [
 												{
-													"@context": "https://schema.twindev.org/ais/",
+													"@context": [
+														"https://schema.twindev.org/ais/",
+														"https://schema.twindev.org/common/"
+													],
 													"type": "AuditableItemStream",
 													"id": "ais:1234567890",
 													"dateCreated": "2024-08-22T11:55:16.271Z",
 													"dateModified": "2024-08-22T11:55:16.271Z",
-													"streamObject": {
-														"@context": "http://schema.org/",
+													"annotationObject": {
+														"@context": "https://schema.org",
 														"@type": "Note",
 														"content": "This is a simple note"
 													},
@@ -7078,13 +7576,16 @@
 								"examples": {
 									"auditableItemStreamGetResponseExample": {
 										"value": {
-											"@context": "https://schema.twindev.org/ais/",
+											"@context": [
+												"https://schema.twindev.org/ais/",
+												"https://schema.twindev.org/common/"
+											],
 											"type": "AuditableItemStream",
 											"id": "ais:1234567890",
 											"dateCreated": "2024-08-22T11:55:16.271Z",
 											"dateModified": "2024-08-22T11:55:16.271Z",
-											"streamObject": {
-												"@context": "http://schema.org/",
+											"annotationObject": {
+												"@context": "https://schema.org",
 												"@type": "Note",
 												"content": "This is a simple note"
 											},
@@ -7094,14 +7595,17 @@
 											"immutableInterval": 10,
 											"entries": [
 												{
-													"@context": "https://schema.twindev.org/ais/",
+													"@context": [
+														"https://schema.twindev.org/ais/",
+														"https://schema.twindev.org/common/"
+													],
 													"type": "AuditableItemStreamEntry",
 													"id": "tst:1234567890",
 													"dateCreated": "2024-08-22T11:55:16.271Z",
 													"proofId": "0101010101010101010101010101010101010101010101010101010101010101",
 													"index": 0,
 													"entryObject": {
-														"@context": "http://schema.org/",
+														"@context": "https://schema.org",
 														"@type": "Event",
 														"startDate": "2011-04-09T20:00:00Z",
 														"description": "A description of the event"
@@ -7119,13 +7623,16 @@
 								"examples": {
 									"auditableItemStreamJsonLdGetResponseExample": {
 										"value": {
-											"@context": "https://schema.twindev.org/ais/",
+											"@context": [
+												"https://schema.twindev.org/ais/",
+												"https://schema.twindev.org/common/"
+											],
 											"type": "AuditableItemStream",
 											"id": "ais:1234567890",
 											"dateCreated": "2024-08-22T11:55:16.271Z",
 											"dateModified": "2024-08-22T11:55:16.271Z",
-											"streamObject": {
-												"@context": "http://schema.org/",
+											"annotationObject": {
+												"@context": "https://schema.org",
 												"@type": "Note",
 												"content": "This is a simple note"
 											},
@@ -7135,14 +7642,17 @@
 											"immutableInterval": 10,
 											"entries": [
 												{
-													"@context": "https://schema.twindev.org/ais/",
+													"@context": [
+														"https://schema.twindev.org/ais/",
+														"https://schema.twindev.org/common/"
+													],
 													"type": "AuditableItemStreamEntry",
 													"id": "tst:1234567890",
 													"dateCreated": "2024-08-22T11:55:16.271Z",
 													"proofId": "0101010101010101010101010101010101010101010101010101010101010101",
 													"index": 0,
 													"entryObject": {
-														"@context": "http://schema.org/",
+														"@context": "https://schema.org",
 														"@type": "Event",
 														"startDate": "2011-04-09T20:00:00Z",
 														"description": "A description of the event"
@@ -7278,8 +7788,8 @@
 							"examples": {
 								"auditableItemStreamUpdateRequestExample": {
 									"value": {
-										"streamObject": {
-											"@context": "http://schema.org/",
+										"annotationObject": {
+											"@context": "https://schema.org",
 											"@type": "Note",
 											"content": "This is a simple note"
 										}
@@ -7517,7 +8027,7 @@
 								"auditableItemStreamCreateEntryRequestExample": {
 									"value": {
 										"entryObject": {
-											"@context": "http://schema.org/",
+											"@context": "https://schema.org",
 											"@type": "Event",
 											"startDate": "2011-04-09T20:00:00Z",
 											"description": "A description of the event"
@@ -7665,14 +8175,17 @@
 								"examples": {
 									"auditableItemStreamGetEntryResponseExample": {
 										"value": {
-											"@context": "https://schema.twindev.org/ais/",
+											"@context": [
+												"https://schema.twindev.org/ais/",
+												"https://schema.twindev.org/common/"
+											],
 											"type": "AuditableItemStreamEntry",
 											"id": "tst:1234567890",
 											"dateCreated": "2024-08-22T11:55:16.271Z",
 											"proofId": "0101010101010101010101010101010101010101010101010101010101010101",
 											"index": 0,
 											"entryObject": {
-												"@context": "http://schema.org/",
+												"@context": "https://schema.org",
 												"@type": "Event",
 												"startDate": "2011-04-09T20:00:00Z",
 												"description": "A description of the event"
@@ -7688,14 +8201,17 @@
 								"examples": {
 									"auditableItemStreamJsonLdGetEntryResponseExample": {
 										"value": {
-											"@context": "https://schema.twindev.org/ais/",
+											"@context": [
+												"https://schema.twindev.org/ais/",
+												"https://schema.twindev.org/common/"
+											],
 											"type": "AuditableItemStreamEntry",
 											"id": "tst:1234567890",
 											"dateCreated": "2024-08-22T11:55:16.271Z",
 											"proofId": "0101010101010101010101010101010101010101010101010101010101010101",
 											"index": 0,
 											"entryObject": {
-												"@context": "http://schema.org/",
+												"@context": "https://schema.org",
 												"@type": "Event",
 												"startDate": "2011-04-09T20:00:00Z",
 												"description": "A description of the event"
@@ -7960,7 +8476,7 @@
 								"auditableItemStreamUpdateRequestExample": {
 									"value": {
 										"entryObject": {
-											"@context": "http://schema.org/",
+											"@context": "https://schema.org",
 											"@type": "Note",
 											"content": "This is a simple note"
 										}
@@ -8102,7 +8618,7 @@
 								"examples": {
 									"auditableItemStreamGetEntryObjectResponseExample": {
 										"value": {
-											"@context": "http://schema.org/",
+											"@context": "https://schema.org",
 											"@type": "Event",
 											"startDate": "2011-04-09T20:00:00Z",
 											"description": "A description of the event"
@@ -8292,18 +8808,24 @@
 								"examples": {
 									"auditableItemStreamListEntriesResponseExample": {
 										"value": {
-											"@context": "https://schema.twindev.org/ais/",
+											"@context": [
+												"https://schema.twindev.org/ais/",
+												"https://schema.twindev.org/common/"
+											],
 											"type": "AuditableItemStreamEntryList",
 											"entries": [
 												{
-													"@context": "https://schema.twindev.org/ais/",
+													"@context": [
+														"https://schema.twindev.org/ais/",
+														"https://schema.twindev.org/common/"
+													],
 													"type": "AuditableItemStreamEntry",
 													"id": "tst:1234567890",
 													"dateCreated": "2024-08-22T11:55:16.271Z",
 													"proofId": "0101010101010101010101010101010101010101010101010101010101010101",
 													"index": 0,
 													"entryObject": {
-														"@context": "http://schema.org/",
+														"@context": "https://schema.org",
 														"@type": "Event",
 														"startDate": "2011-04-09T20:00:00Z",
 														"description": "A description of the event"
@@ -8322,18 +8844,24 @@
 								"examples": {
 									"auditableItemStreamJsonLdListEntriesResponseExample": {
 										"value": {
-											"@context": "https://schema.twindev.org/ais/",
+											"@context": [
+												"https://schema.twindev.org/ais/",
+												"https://schema.twindev.org/common/"
+											],
 											"type": "AuditableItemStreamEntryList",
 											"entries": [
 												{
-													"@context": "https://schema.twindev.org/ais/",
+													"@context": [
+														"https://schema.twindev.org/ais/",
+														"https://schema.twindev.org/common/"
+													],
 													"type": "AuditableItemStreamEntry",
 													"id": "tst:1234567890",
 													"dateCreated": "2024-08-22T11:55:16.271Z",
 													"proofId": "0101010101010101010101010101010101010101010101010101010101010101",
 													"index": 0,
 													"entryObject": {
-														"@context": "http://schema.org/",
+														"@context": "https://schema.org",
 														"@type": "Event",
 														"startDate": "2011-04-09T20:00:00Z",
 														"description": "A description of the event"
@@ -8526,11 +9054,14 @@
 								"examples": {
 									"auditableItemStreamListEntryObjectsResponseExample": {
 										"value": {
-											"@context": "https://schema.twindev.org/ais/",
+											"@context": [
+												"https://schema.twindev.org/ais/",
+												"https://schema.twindev.org/common/"
+											],
 											"type": "AuditableItemStreamEntryObjectList",
 											"entryObjects": [
 												{
-													"@context": "http://schema.org/",
+													"@context": "https://schema.org",
 													"@type": "Event",
 													"startDate": "2011-04-09T20:00:00Z",
 													"description": "A description of the event"
@@ -8642,10 +9173,6 @@
 			"AttestationCreateRequest": {
 				"type": "object",
 				"properties": {
-					"verificationMethodId": {
-						"type": "string",
-						"description": "The identity verification method to use for attesting the data."
-					},
 					"attestationObject": {
 						"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
 					},
@@ -8655,7 +9182,6 @@
 					}
 				},
 				"required": [
-					"verificationMethodId",
 					"attestationObject"
 				],
 				"additionalProperties": false,
@@ -8665,25 +9191,25 @@
 				"type": "object",
 				"properties": {
 					"@context": {
-						"anyOf": [
+						"type": "array",
+						"minItems": 3,
+						"items": [
 							{
 								"type": "string",
 								"const": "https://schema.twindev.org/attestation/"
 							},
 							{
-								"type": "array",
-								"minItems": 1,
-								"items": [
-									{
-										"type": "string",
-										"const": "https://schema.twindev.org/attestation/"
-									}
-								],
-								"additionalItems": {
-									"type": "string"
-								}
+								"type": "string",
+								"const": "https://schema.twindev.org/common/"
+							},
+							{
+								"type": "string",
+								"const": "https://schema.org"
 							}
 						],
+						"additionalItems": {
+							"$ref": "https://schema.twindev.org/json-ld/JsonLdContextDefinitionElement"
+						},
 						"description": "JSON-LD Context."
 					},
 					"type": {
@@ -8743,10 +9269,15 @@
 					"holderIdentity": {
 						"type": "string",
 						"description": "The new holder identity."
+					},
+					"holderAddress": {
+						"type": "string",
+						"description": "The new holder address."
 					}
 				},
 				"required": [
-					"holderIdentity"
+					"holderIdentity",
+					"holderAddress"
 				],
 				"additionalProperties": false,
 				"description": "The parameters to be used in the transfer."
@@ -8909,7 +9440,7 @@
 			"AuditableItemStreamCreateRequest": {
 				"type": "object",
 				"properties": {
-					"streamObject": {
+					"annotationObject": {
 						"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
 					},
 					"entries": {
@@ -8952,7 +9483,7 @@
 			"AuditableItemStreamUpdateRequest": {
 				"type": "object",
 				"properties": {
-					"streamObject": {
+					"annotationObject": {
 						"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
 					}
 				},
@@ -8992,25 +9523,21 @@
 				"type": "object",
 				"properties": {
 					"@context": {
-						"anyOf": [
+						"type": "array",
+						"minItems": 2,
+						"items": [
 							{
 								"type": "string",
 								"const": "https://schema.twindev.org/blob-storage/"
 							},
 							{
-								"type": "array",
-								"minItems": 1,
-								"items": [
-									{
-										"type": "string",
-										"const": "https://schema.twindev.org/blob-storage/"
-									}
-								],
-								"additionalItems": {
-									"type": "string"
-								}
+								"type": "string",
+								"const": "https://schema.twindev.org/common/"
 							}
 						],
+						"additionalItems": {
+							"$ref": "https://schema.twindev.org/json-ld/JsonLdContextDefinitionElement"
+						},
 						"description": "JSON-LD Context."
 					},
 					"type": {
@@ -9034,6 +9561,10 @@
 						"type": "number",
 						"description": "The size of the data in the blob."
 					},
+					"blobHash": {
+						"type": "string",
+						"description": "The hash of the data in the blob."
+					},
 					"encodingFormat": {
 						"type": "string",
 						"description": "The mime type for the blob."
@@ -9047,7 +9578,7 @@
 					},
 					"blob": {
 						"type": "string",
-						"description": "The blob in base64 format, if the includeContent flag was set in the request."
+						"description": "The blob in base64 format, included if the includeContent flag was set in the request."
 					}
 				},
 				"required": [
@@ -9055,7 +9586,8 @@
 					"type",
 					"id",
 					"dateCreated",
-					"blobSize"
+					"blobSize",
+					"blobHash"
 				],
 				"additionalProperties": false,
 				"description": "Interface describing a blob storage entry."
@@ -9064,25 +9596,21 @@
 				"type": "object",
 				"properties": {
 					"@context": {
-						"anyOf": [
+						"type": "array",
+						"minItems": 2,
+						"items": [
 							{
 								"type": "string",
 								"const": "https://schema.twindev.org/blob-storage/"
 							},
 							{
-								"type": "array",
-								"minItems": 1,
-								"items": [
-									{
-										"type": "string",
-										"const": "https://schema.twindev.org/blob-storage/"
-									}
-								],
-								"additionalItems": {
-									"type": "string"
-								}
+								"type": "string",
+								"const": "https://schema.twindev.org/common/"
 							}
 						],
+						"additionalItems": {
+							"$ref": "https://schema.twindev.org/json-ld/JsonLdContextDefinitionElement"
+						},
 						"description": "JSON-LD Context."
 					},
 					"type": {
@@ -9171,6 +9699,25 @@
 				],
 				"description": "The body which contains the error."
 			},
+			"DidCredentialSchema": {
+				"type": "object",
+				"properties": {
+					"id": {
+						"type": "string",
+						"description": "The URI id."
+					},
+					"type": {
+						"type": "string",
+						"description": "The credential schema type."
+					}
+				},
+				"required": [
+					"id",
+					"type"
+				],
+				"additionalProperties": false,
+				"description": "Interface describing a DID credential schema."
+			},
 			"DidCredentialStatus": {
 				"type": "object",
 				"properties": {
@@ -9211,7 +9758,26 @@
 				"type": "object",
 				"properties": {
 					"@context": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdContextDefinitionRoot"
+						"anyOf": [
+							{
+								"type": "string",
+								"const": "https://www.w3.org/ns/did/v1"
+							},
+							{
+								"type": "array",
+								"minItems": 1,
+								"items": [
+									{
+										"type": "string",
+										"const": "https://www.w3.org/ns/did/v1"
+									}
+								],
+								"additionalItems": {
+									"$ref": "https://schema.twindev.org/json-ld/JsonLdContextDefinitionElement"
+								}
+							}
+						],
+						"description": "The context for the document."
 					},
 					"id": {
 						"type": "string",
@@ -9338,6 +9904,7 @@
 					}
 				},
 				"required": [
+					"@context",
 					"id"
 				],
 				"additionalProperties": false,
@@ -9397,7 +9964,7 @@
 									}
 								],
 								"additionalItems": {
-									"type": "string"
+									"$ref": "https://schema.twindev.org/json-ld/JsonLdContextDefinitionElement"
 								}
 							}
 						],
@@ -9405,7 +9972,6 @@
 					},
 					"type": {
 						"type": "string",
-						"const": "DataIntegrityProof",
 						"description": "JSON-LD Type."
 					},
 					"cryptosuite": {
@@ -9481,7 +10047,6 @@
 					}
 				},
 				"required": [
-					"@context",
 					"type",
 					"cryptosuite",
 					"proofPurpose",
@@ -9553,7 +10118,7 @@
 									}
 								],
 								"additionalItems": {
-									"type": "string"
+									"$ref": "https://schema.twindev.org/json-ld/JsonLdContextDefinitionElement"
 								}
 							}
 						],
@@ -9564,10 +10129,17 @@
 						"description": "The identifier for the verifiable credential."
 					},
 					"type": {
-						"type": "array",
-						"items": {
-							"type": "string"
-						},
+						"anyOf": [
+							{
+								"type": "string"
+							},
+							{
+								"type": "array",
+								"items": {
+									"type": "string"
+								}
+							}
+						],
 						"description": "The types of the data stored in the verifiable credential."
 					},
 					"credentialSubject": {
@@ -9585,15 +10157,138 @@
 						"description": "The data for the verifiable credential."
 					},
 					"credentialStatus": {
-						"$ref": "#/components/schemas/DidCredentialStatus"
+						"anyOf": [
+							{
+								"$ref": "#/components/schemas/DidCredentialStatus"
+							},
+							{
+								"type": "array",
+								"items": {
+									"$ref": "#/components/schemas/DidCredentialStatus"
+								}
+							}
+						],
+						"description": "Used to discover information about the current status of the verifiable credential, such as whether it is suspended or revoked."
+					},
+					"credentialSchema": {
+						"anyOf": [
+							{
+								"$ref": "#/components/schemas/DidCredentialSchema"
+							},
+							{
+								"type": "array",
+								"items": {
+									"$ref": "#/components/schemas/DidCredentialSchema"
+								}
+							}
+						],
+						"description": "Annotate type definitions or lock them to specific versions of the vocabulary."
 					},
 					"issuer": {
-						"type": "string",
+						"anyOf": [
+							{
+								"type": "string"
+							},
+							{
+								"type": "object",
+								"properties": {
+									"id": {
+										"type": "string"
+									}
+								},
+								"required": [
+									"id"
+								],
+								"additionalProperties": {}
+							}
+						],
 						"description": "The issuing identity."
 					},
 					"issuanceDate": {
 						"type": "string",
 						"description": "The date the verifiable credential was issued."
+					},
+					"name": {
+						"anyOf": [
+							{
+								"type": "string"
+							},
+							{
+								"type": "array",
+								"items": {
+									"type": "object",
+									"properties": {
+										"@value": {
+											"type": "string"
+										},
+										"@language": {
+											"type": "string"
+										},
+										"@direction": {
+											"type": "string"
+										}
+									},
+									"required": [
+										"@value",
+										"@language"
+									],
+									"additionalProperties": false
+								}
+							}
+						],
+						"description": "The name of the credential."
+					},
+					"description": {
+						"anyOf": [
+							{
+								"type": "string"
+							},
+							{
+								"type": "array",
+								"items": {
+									"type": "object",
+									"properties": {
+										"@value": {
+											"type": "string"
+										},
+										"@language": {
+											"type": "string"
+										},
+										"@direction": {
+											"type": "string"
+										}
+									},
+									"required": [
+										"@value",
+										"@language"
+									],
+									"additionalProperties": false
+								}
+							}
+						],
+						"description": "The description of the credential."
+					},
+					"validFrom": {
+						"type": "string",
+						"description": "The date the verifiable credential is valid from."
+					},
+					"validUntil": {
+						"type": "string",
+						"description": "The date the verifiable credential is valid until."
+					},
+					"evidence": {
+						"anyOf": [
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
+							},
+							{
+								"type": "array",
+								"items": {
+									"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
+								}
+							}
+						],
+						"description": "Evidence associated with the Credential."
 					},
 					"proof": {
 						"anyOf": [
@@ -9612,11 +10307,10 @@
 				},
 				"required": [
 					"@context",
-					"type",
-					"credentialSubject"
+					"type"
 				],
 				"additionalProperties": false,
-				"description": "Interface describing a verifiable credential."
+				"description": "Interface describing a verifiable credential. https://www.w3.org/TR/vc-data-model-2.0"
 			},
 			"DidVerifiablePresentation": {
 				"type": "object",
@@ -9637,7 +10331,7 @@
 									}
 								],
 								"additionalItems": {
-									"type": "string"
+									"$ref": "https://schema.twindev.org/json-ld/JsonLdContextDefinitionElement"
 								}
 							}
 						],
@@ -9648,10 +10342,17 @@
 						"description": "Provide a unique identifier for the presentation."
 					},
 					"type": {
-						"type": "array",
-						"items": {
-							"type": "string"
-						},
+						"anyOf": [
+							{
+								"type": "string"
+							},
+							{
+								"type": "array",
+								"items": {
+									"type": "string"
+								}
+							}
+						],
 						"description": "The types of the data stored in the verifiable credential."
 					},
 					"verifiableCredential": {
@@ -9689,8 +10390,7 @@
 				},
 				"required": [
 					"@context",
-					"type",
-					"verifiableCredential"
+					"type"
 				],
 				"additionalProperties": false,
 				"description": "Interface describing a verifiable presentation."
@@ -10143,6 +10843,78 @@
 				],
 				"additionalProperties": false,
 				"description": "The data for the request."
+			},
+			"ImmutableProof": {
+				"type": "object",
+				"properties": {
+					"@context": {
+						"type": "array",
+						"minItems": 2,
+						"items": [
+							{
+								"type": "string",
+								"const": "https://schema.twindev.org/immutable-proof/"
+							},
+							{
+								"type": "string",
+								"const": "https://schema.twindev.org/common/"
+							}
+						],
+						"additionalItems": {
+							"$ref": "https://schema.twindev.org/json-ld/JsonLdContextDefinitionElement"
+						},
+						"description": "JSON-LD Context."
+					},
+					"type": {
+						"type": "string",
+						"const": "ImmutableProof",
+						"description": "JSON-LD Type."
+					},
+					"id": {
+						"type": "string",
+						"description": "The id of the proof."
+					},
+					"userIdentity": {
+						"type": "string",
+						"description": "The id of the user who created the proof."
+					},
+					"proofObjectId": {
+						"type": "string",
+						"description": "The id of the object associated with the proof."
+					},
+					"proofObjectHash": {
+						"type": "string",
+						"description": "The hash of the object associated with the proof."
+					},
+					"proof": {
+						"$ref": "#/components/schemas/DidProof"
+					},
+					"immutableReceipt": {
+						"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
+					}
+				},
+				"required": [
+					"@context",
+					"type",
+					"id",
+					"userIdentity",
+					"proofObjectHash"
+				],
+				"additionalProperties": false,
+				"description": "Interface describing an immutable proof state."
+			},
+			"ImmutableProofCreateRequest": {
+				"type": "object",
+				"properties": {
+					"proofObject": {
+						"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
+					}
+				},
+				"required": [
+					"proofObject"
+				],
+				"additionalProperties": false,
+				"description": "The parameters from the body."
 			},
 			"ImmutableProofFailure": {
 				"anyOf": [

@@ -10,13 +10,13 @@ Initialize the schema for the identity entity storage connector.
 
 Options for which entities to register.
 
-#### includeDocument
+#### includeDocument?
 
 `boolean`
 
 Whether to include the document entity, defaults to true.
 
-#### includeProfile
+#### includeProfile?
 
 `boolean`
 

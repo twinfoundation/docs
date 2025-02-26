@@ -10,19 +10,23 @@ Interface describing an auditable item stream contract.
 
 ### create()
 
-> **create**(`streamObject`?, `entries`?, `options`?, `userIdentity`?, `nodeIdentity`?): `Promise`\<`string`\>
+> **create**(`stream`, `options`?, `userIdentity`?, `nodeIdentity`?): `Promise`\<`string`\>
 
 Create a new stream.
 
 #### Parameters
 
-##### streamObject?
+##### stream
+
+The stream to create.
+
+###### annotationObject?
 
 `IJsonLdNodeObject`
 
 The object for the stream as JSON-LD.
 
-##### entries?
+###### entries?
 
 `object`[]
 
@@ -32,7 +36,7 @@ Entries to store in the stream.
 
 Options for creating the stream.
 
-###### immutableInterval
+###### immutableInterval?
 
 `number`
 
@@ -61,19 +65,23 @@ The id of the new stream item.
 
 ### update()
 
-> **update**(`id`, `streamObject`?, `userIdentity`?, `nodeIdentity`?): `Promise`\<`void`\>
+> **update**(`stream`, `userIdentity`?, `nodeIdentity`?): `Promise`\<`void`\>
 
 Update a stream.
 
 #### Parameters
 
-##### id
+##### stream
+
+The stream to update.
+
+###### id
 
 `string`
 
 The id of the stream to update.
 
-##### streamObject?
+###### annotationObject?
 
 `IJsonLdNodeObject`
 
@@ -117,25 +125,25 @@ The id of the stream to get.
 
 Additional options for the get operation.
 
-###### includeEntries
+###### includeEntries?
 
 `boolean`
 
 Whether to include the entries, defaults to false.
 
-###### includeDeleted
+###### includeDeleted?
 
 `boolean`
 
 Whether to include deleted entries, defaults to false.
 
-###### verifyStream
+###### verifyStream?
 
 `boolean`
 
 Should the stream be verified, defaults to false.
 
-###### verifyEntries
+###### verifyEntries?
 
 `boolean`
 
@@ -217,7 +225,7 @@ The direction for the order, defaults to descending.
 
 keyof [`IAuditableItemStream`](IAuditableItemStream.md)[]
 
-The properties to return, if not provided defaults to id, dateCreated, dateModified and streamObject.
+The properties to return, if not provided defaults to id, dateCreated, dateModified and annotationObject.
 
 ##### cursor?
 
@@ -241,17 +249,17 @@ The entities, which can be partial if a limited keys list was provided.
 
 ### createEntry()
 
-> **createEntry**(`id`, `entryObject`, `userIdentity`?, `nodeIdentity`?): `Promise`\<`string`\>
+> **createEntry**(`streamId`, `entryObject`, `userIdentity`?, `nodeIdentity`?): `Promise`\<`string`\>
 
 Create an entry in the stream.
 
 #### Parameters
 
-##### id
+##### streamId
 
 `string`
 
-The id of the stream to update.
+The id of the stream to create the entry in.
 
 ##### entryObject
 
@@ -281,13 +289,13 @@ The id of the created entry, if not provided.
 
 ### getEntry()
 
-> **getEntry**(`id`, `entryId`, `options`?): `Promise`\<[`IAuditableItemStreamEntry`](IAuditableItemStreamEntry.md)\>
+> **getEntry**(`streamId`, `entryId`, `options`?): `Promise`\<[`IAuditableItemStreamEntry`](IAuditableItemStreamEntry.md)\>
 
 Get the entry from the stream.
 
 #### Parameters
 
-##### id
+##### streamId
 
 `string`
 
@@ -303,7 +311,7 @@ The id of the stream entry to get.
 
 Additional options for the get operation.
 
-###### verifyEntry
+###### verifyEntry?
 
 `boolean`
 
@@ -355,13 +363,13 @@ NotFoundError if the stream is not found.
 
 ### updateEntry()
 
-> **updateEntry**(`id`, `entryId`, `entryObject`, `userIdentity`?, `nodeIdentity`?): `Promise`\<`void`\>
+> **updateEntry**(`streamId`, `entryId`, `entryObject`, `userIdentity`?, `nodeIdentity`?): `Promise`\<`void`\>
 
 Update an entry in the stream.
 
 #### Parameters
 
-##### id
+##### streamId
 
 `string`
 
@@ -401,13 +409,13 @@ Nothing.
 
 ### removeEntry()
 
-> **removeEntry**(`id`, `entryId`, `userIdentity`?, `nodeIdentity`?): `Promise`\<`void`\>
+> **removeEntry**(`streamId`, `entryId`, `userIdentity`?, `nodeIdentity`?): `Promise`\<`void`\>
 
 Remove from the stream.
 
 #### Parameters
 
-##### id
+##### streamId
 
 `string`
 
@@ -441,13 +449,13 @@ Nothing.
 
 ### getEntries()
 
-> **getEntries**(`id`, `options`?): `Promise`\<[`IAuditableItemStreamEntryList`](IAuditableItemStreamEntryList.md)\>
+> **getEntries**(`streamId`, `options`?): `Promise`\<[`IAuditableItemStreamEntryList`](IAuditableItemStreamEntryList.md)\>
 
 Get the entries for the stream.
 
 #### Parameters
 
-##### id
+##### streamId
 
 `string`
 
@@ -457,43 +465,43 @@ The id of the stream to get.
 
 Additional options for the get operation.
 
-###### conditions
+###### conditions?
 
 `IComparator`[]
 
 The conditions to filter the stream.
 
-###### includeDeleted
+###### includeDeleted?
 
 `boolean`
 
 Whether to include deleted entries, defaults to false.
 
-###### verifyEntries
+###### verifyEntries?
 
 `boolean`
 
 Should the entries be verified, defaults to false.
 
-###### entryObjects
+###### entryObjects?
 
 `boolean`
 
 Return just the embedded entry objects, defaults to false.
 
-###### pageSize
+###### pageSize?
 
 `number`
 
 How many entries to return.
 
-###### cursor
+###### cursor?
 
 `string`
 
 Cursor to use for next chunk of data.
 
-###### order
+###### order?
 
 `SortDirection`
 
@@ -513,13 +521,13 @@ NotFoundError if the stream is not found.
 
 ### getEntryObjects()
 
-> **getEntryObjects**(`id`, `options`?): `Promise`\<[`IAuditableItemStreamEntryObjectList`](IAuditableItemStreamEntryObjectList.md)\>
+> **getEntryObjects**(`streamId`, `options`?): `Promise`\<[`IAuditableItemStreamEntryObjectList`](IAuditableItemStreamEntryObjectList.md)\>
 
 Get the entry objects for the stream.
 
 #### Parameters
 
-##### id
+##### streamId
 
 `string`
 
@@ -529,31 +537,31 @@ The id of the stream to get.
 
 Additional options for the get operation.
 
-###### conditions
+###### conditions?
 
 `IComparator`[]
 
 The conditions to filter the stream.
 
-###### includeDeleted
+###### includeDeleted?
 
 `boolean`
 
 Whether to include deleted entries, defaults to false.
 
-###### pageSize
+###### pageSize?
 
 `number`
 
 How many entries to return.
 
-###### cursor
+###### cursor?
 
 `string`
 
 Cursor to use for next chunk of data.
 
-###### order
+###### order?
 
 `SortDirection`
 
@@ -573,13 +581,13 @@ NotFoundError if the stream is not found.
 
 ### removeImmutable()
 
-> **removeImmutable**(`id`, `nodeIdentity`?): `Promise`\<`void`\>
+> **removeImmutable**(`streamId`, `nodeIdentity`?): `Promise`\<`void`\>
 
 Remove the immutable storage for the stream and entries.
 
 #### Parameters
 
-##### id
+##### streamId
 
 `string`
 

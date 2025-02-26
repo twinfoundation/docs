@@ -12,4 +12,4 @@ Configuration for the IOTA Faucet Connector.
 
 > **endpoint**: `string`
 
-The endpoint for the faucet.
+The faucet endpoint URL.

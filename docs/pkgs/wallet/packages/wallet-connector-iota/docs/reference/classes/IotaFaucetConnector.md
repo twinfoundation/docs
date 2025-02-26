@@ -32,7 +32,7 @@ The options for the connector.
 
 > `readonly` `static` **NAMESPACE**: `string` = `"iota"`
 
-The namespace supported by the wallet connector.
+The namespace supported by the faucet connector.
 
 ***
 
@@ -52,7 +52,7 @@ Runtime name for the class.
 
 > **fundAddress**(`identity`, `address`, `timeoutInSeconds`): `Promise`\<`bigint`\>
 
-Fund the wallet from the faucet.
+Fund an address with IOTA from the faucet.
 
 #### Parameters
 
@@ -66,7 +66,7 @@ The identity of the user to access the vault keys.
 
 `string`
 
-The bech32 encoded address of the address to fund.
+The address to fund.
 
 ##### timeoutInSeconds
 
@@ -78,7 +78,7 @@ The timeout in seconds to wait for the funding to complete.
 
 `Promise`\<`bigint`\>
 
-The amount added to the address by the faucet.
+The amount funded.
 
 #### Implementation of
 

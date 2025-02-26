@@ -4,9 +4,9 @@ Create an auditable item graph vertex.
 
 ## Properties
 
-### body?
+### body
 
-> `optional` **body**: `object`
+> **body**: `object`
 
 The data to be used in the vertex.
 

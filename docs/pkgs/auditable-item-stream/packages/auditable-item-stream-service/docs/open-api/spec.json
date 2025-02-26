@@ -1,2173 +1,2218 @@
 {
-    "openapi": "3.1.0",
-    "info": {
-        "title": "TWIN - Test Endpoints",
-        "description": "REST API for TWIN - Test Endpoints.",
-        "version": "1.0.0",
-        "license": {
-            "name": "Apache 2.0 License",
-            "url": "https://opensource.org/licenses/Apache-2.0"
-        }
-    },
-    "servers": [
-        {
-            "url": "https://localhost"
-        }
-    ],
-    "tags": [
-        {
-            "name": "Auditable Item Stream",
-            "description": "Endpoints which are modelled to access an auditable item stream contract."
-        }
-    ],
-    "paths": {
-        "/auditable-item-stream": {
-            "post": {
-                "operationId": "auditableItemStreamCreate",
-                "summary": "Create a new stream",
-                "tags": [
-                    "Auditable Item Stream"
-                ],
-                "security": [
-                    {
-                        "jwtBearerAuthScheme": []
-                    }
-                ],
-                "requestBody": {
-                    "description": "Create an auditable item stream.",
-                    "required": true,
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/AuditableItemStreamCreateRequest"
-                            },
-                            "examples": {
-                                "auditableItemStreamCreateRequestExample": {
-                                    "value": {
-                                        "streamObject": {
-                                            "@context": "http://schema.org/",
-                                            "@type": "Note",
-                                            "content": "This is a simple note"
-                                        },
-                                        "entries": [
-                                            {
-                                                "entryObject": {
-                                                    "@context": "http://schema.org/",
-                                                    "@type": "Event",
-                                                    "startDate": "2011-04-09T20:00:00Z",
-                                                    "description": "A description of the event"
-                                                }
-                                            }
-                                        ]
-                                    }
-                                }
-                            }
-                        }
-                    }
-                },
-                "responses": {
-                    "201": {
-                        "description": "The rest request ended in created response.",
-                        "headers": {
-                            "location": {
-                                "schema": {
-                                    "type": "string"
-                                },
-                                "description": "e.g. ais:1234567890"
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "The server cannot process the request, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "GeneralError",
-                                            "message": "component.error",
-                                            "properties": {
-                                                "foo": "bar"
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "UnauthorizedError",
-                                            "message": "component.error"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "500": {
-                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "InternalServerError",
-                                            "message": "component.error"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "get": {
-                "operationId": "auditableItemStreamList",
-                "summary": "Query streams",
-                "tags": [
-                    "Auditable Item Stream"
-                ],
-                "parameters": [
-                    {
-                        "name": "conditions",
-                        "description": "The conditions to filter the streams, JSON stringified IComparator[].",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "orderBy",
-                        "description": "The order for the results, default to created.",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "dateCreated",
-                                "dateModified"
-                            ]
-                        }
-                    },
-                    {
-                        "name": "orderByDirection",
-                        "description": "The direction for the order, defaults to desc.",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "$ref": "#/components/schemas/SortDirection"
-                        }
-                    },
-                    {
-                        "name": "properties",
-                        "description": "The properties to return as a comma separated list, defaults to \"id,object\".",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "cursor",
-                        "description": "The optional cursor to get next chunk.",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "pageSize",
-                        "description": "The maximum number of entities in a page.",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "number"
-                        }
-                    },
-                    {
-                        "name": "accept",
-                        "in": "header",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "style": "simple"
-                    }
-                ],
-                "security": [
-                    {
-                        "jwtBearerAuthScheme": []
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "The response to getting the a list of the streams.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "https://schema.twindev.org/ais/AuditableItemStreamList"
-                                },
-                                "examples": {
-                                    "auditableItemStreamListResponseExample": {
-                                        "value": {
-                                            "@context": "https://schema.twindev.org/ais/",
-                                            "type": "AuditableItemStreamList",
-                                            "streams": [
-                                                {
-                                                    "@context": "https://schema.twindev.org/ais/",
-                                                    "type": "AuditableItemStream",
-                                                    "id": "ais:1234567890",
-                                                    "dateCreated": "2024-08-22T11:55:16.271Z",
-                                                    "dateModified": "2024-08-22T11:55:16.271Z",
-                                                    "streamObject": {
-                                                        "@context": "http://schema.org/",
-                                                        "@type": "Note",
-                                                        "content": "This is a simple note"
-                                                    },
-                                                    "nodeIdentity": "tst:1234567890",
-                                                    "userIdentity": "tst:1234567890",
-                                                    "proofId": "0101010101010101010101010101010101010101010101010101010101010101",
-                                                    "immutableInterval": 10
-                                                }
-                                            ],
-                                            "cursor": "1"
-                                        }
-                                    }
-                                }
-                            },
-                            "application/ld+json": {
-                                "schema": {
-                                    "$ref": "https://schema.twindev.org/ais/AuditableItemStreamList"
-                                },
-                                "examples": {
-                                    "auditableItemStreamJsonLdListResponseExample": {
-                                        "value": {
-                                            "@context": "https://schema.twindev.org/ais/",
-                                            "type": "AuditableItemStreamList",
-                                            "streams": [
-                                                {
-                                                    "@context": "https://schema.twindev.org/ais/",
-                                                    "type": "AuditableItemStream",
-                                                    "id": "ais:1234567890",
-                                                    "dateCreated": "2024-08-22T11:55:16.271Z",
-                                                    "dateModified": "2024-08-22T11:55:16.271Z",
-                                                    "streamObject": {
-                                                        "@context": "http://schema.org/",
-                                                        "@type": "Note",
-                                                        "content": "This is a simple note"
-                                                    },
-                                                    "nodeIdentity": "tst:1234567890",
-                                                    "userIdentity": "tst:1234567890",
-                                                    "proofId": "0101010101010101010101010101010101010101010101010101010101010101",
-                                                    "immutableInterval": 10
-                                                }
-                                            ],
-                                            "cursor": "1"
-                                        }
-                                    }
-                                }
-                            }
-                        },
-                        "headers": {
-                            "content-type": {
-                                "schema": {
-                                    "type": "string"
-                                },
-                                "description": "e.g. application/ld+json"
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "The server cannot process the request, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "GeneralError",
-                                            "message": "component.error",
-                                            "properties": {
-                                                "foo": "bar"
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "UnauthorizedError",
-                                            "message": "component.error"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "404": {
-                        "description": "The resource you tried to access does not exist, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/NotFoundResponse"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "NotFoundError",
-                                            "message": "component.error",
-                                            "properties": {
-                                                "notFoundId": "1"
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "500": {
-                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "InternalServerError",
-                                            "message": "component.error"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/auditable-item-stream/{id}": {
-            "get": {
-                "operationId": "auditableItemStreamGet",
-                "summary": "Get a stream",
-                "tags": [
-                    "Auditable Item Stream"
-                ],
-                "parameters": [
-                    {
-                        "name": "id",
-                        "description": "The id of the stream to get.",
-                        "in": "path",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "style": "simple",
-                        "example": "ais:1234567890"
-                    },
-                    {
-                        "name": "includeEntries",
-                        "description": "Whether to include the entries, defaults to false. The entries will be limited to the first page of entries in date descending order. If you want to get more entries you can use the returned cursor with the get entries method.",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "boolean"
-                        }
-                    },
-                    {
-                        "name": "includeDeleted",
-                        "description": "Whether to include deleted entries, defaults to false.",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "boolean"
-                        }
-                    },
-                    {
-                        "name": "verifyStream",
-                        "description": "Should the stream be verified, defaults to false.",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "boolean"
-                        }
-                    },
-                    {
-                        "name": "verifyEntries",
-                        "description": "Should the entries be verified, defaults to false.",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "boolean"
-                        }
-                    },
-                    {
-                        "name": "accept",
-                        "in": "header",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "style": "simple",
-                        "example": "application/json"
-                    }
-                ],
-                "security": [
-                    {
-                        "jwtBearerAuthScheme": []
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Response to getting an auditable item stream.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "https://schema.twindev.org/ais/AuditableItemStream"
-                                },
-                                "examples": {
-                                    "auditableItemStreamGetResponseExample": {
-                                        "value": {
-                                            "@context": "https://schema.twindev.org/ais/",
-                                            "type": "AuditableItemStream",
-                                            "id": "ais:1234567890",
-                                            "dateCreated": "2024-08-22T11:55:16.271Z",
-                                            "dateModified": "2024-08-22T11:55:16.271Z",
-                                            "streamObject": {
-                                                "@context": "http://schema.org/",
-                                                "@type": "Note",
-                                                "content": "This is a simple note"
-                                            },
-                                            "nodeIdentity": "tst:1234567890",
-                                            "userIdentity": "tst:1234567890",
-                                            "proofId": "0101010101010101010101010101010101010101010101010101010101010101",
-                                            "immutableInterval": 10,
-                                            "entries": [
-                                                {
-                                                    "@context": "https://schema.twindev.org/ais/",
-                                                    "type": "AuditableItemStreamEntry",
-                                                    "id": "tst:1234567890",
-                                                    "dateCreated": "2024-08-22T11:55:16.271Z",
-                                                    "proofId": "0101010101010101010101010101010101010101010101010101010101010101",
-                                                    "index": 0,
-                                                    "entryObject": {
-                                                        "@context": "http://schema.org/",
-                                                        "@type": "Event",
-                                                        "startDate": "2011-04-09T20:00:00Z",
-                                                        "description": "A description of the event"
-                                                    }
-                                                }
-                                            ]
-                                        }
-                                    }
-                                }
-                            },
-                            "application/ld+json": {
-                                "schema": {
-                                    "$ref": "https://schema.twindev.org/ais/AuditableItemStream"
-                                },
-                                "examples": {
-                                    "auditableItemStreamJsonLdGetResponseExample": {
-                                        "value": {
-                                            "@context": "https://schema.twindev.org/ais/",
-                                            "type": "AuditableItemStream",
-                                            "id": "ais:1234567890",
-                                            "dateCreated": "2024-08-22T11:55:16.271Z",
-                                            "dateModified": "2024-08-22T11:55:16.271Z",
-                                            "streamObject": {
-                                                "@context": "http://schema.org/",
-                                                "@type": "Note",
-                                                "content": "This is a simple note"
-                                            },
-                                            "nodeIdentity": "tst:1234567890",
-                                            "userIdentity": "tst:1234567890",
-                                            "proofId": "0101010101010101010101010101010101010101010101010101010101010101",
-                                            "immutableInterval": 10,
-                                            "entries": [
-                                                {
-                                                    "@context": "https://schema.twindev.org/ais/",
-                                                    "type": "AuditableItemStreamEntry",
-                                                    "id": "tst:1234567890",
-                                                    "dateCreated": "2024-08-22T11:55:16.271Z",
-                                                    "proofId": "0101010101010101010101010101010101010101010101010101010101010101",
-                                                    "index": 0,
-                                                    "entryObject": {
-                                                        "@context": "http://schema.org/",
-                                                        "@type": "Event",
-                                                        "startDate": "2011-04-09T20:00:00Z",
-                                                        "description": "A description of the event"
-                                                    }
-                                                }
-                                            ]
-                                        }
-                                    }
-                                }
-                            }
-                        },
-                        "headers": {
-                            "content-type": {
-                                "schema": {
-                                    "type": "string"
-                                },
-                                "description": "e.g. application/ld+json"
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "The server cannot process the request, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "GeneralError",
-                                            "message": "component.error",
-                                            "properties": {
-                                                "foo": "bar"
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "UnauthorizedError",
-                                            "message": "component.error"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "404": {
-                        "description": "The resource you tried to access does not exist, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/NotFoundResponse"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "NotFoundError",
-                                            "message": "component.error",
-                                            "properties": {
-                                                "notFoundId": "1"
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "500": {
-                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "InternalServerError",
-                                            "message": "component.error"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "put": {
-                "operationId": "auditableItemStreamUpdate",
-                "summary": "Update a stream",
-                "tags": [
-                    "Auditable Item Stream"
-                ],
-                "parameters": [
-                    {
-                        "name": "id",
-                        "description": "The id of the stream to update.",
-                        "in": "path",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "style": "simple",
-                        "example": "ais:1234567890"
-                    }
-                ],
-                "security": [
-                    {
-                        "jwtBearerAuthScheme": []
-                    }
-                ],
-                "requestBody": {
-                    "description": "Update an auditable item stream.",
-                    "required": true,
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/AuditableItemStreamUpdateRequest"
-                            },
-                            "examples": {
-                                "auditableItemStreamUpdateRequestExample": {
-                                    "value": {
-                                        "streamObject": {
-                                            "@context": "http://schema.org/",
-                                            "@type": "Note",
-                                            "content": "This is a simple note"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                },
-                "responses": {
-                    "204": {
-                        "description": "The rest request ended in success with no data."
-                    },
-                    "400": {
-                        "description": "The server cannot process the request, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "GeneralError",
-                                            "message": "component.error",
-                                            "properties": {
-                                                "foo": "bar"
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "UnauthorizedError",
-                                            "message": "component.error"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "404": {
-                        "description": "The resource you tried to access does not exist, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/NotFoundResponse"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "NotFoundError",
-                                            "message": "component.error",
-                                            "properties": {
-                                                "notFoundId": "1"
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "500": {
-                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "InternalServerError",
-                                            "message": "component.error"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "delete": {
-                "operationId": "auditableItemStreamDelete",
-                "summary": "Delete a stream",
-                "tags": [
-                    "Auditable Item Stream"
-                ],
-                "parameters": [
-                    {
-                        "name": "id",
-                        "description": "The id of the stream to remove.",
-                        "in": "path",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "style": "simple",
-                        "example": "ais:1234567890"
-                    }
-                ],
-                "security": [
-                    {
-                        "jwtBearerAuthScheme": []
-                    }
-                ],
-                "responses": {
-                    "204": {
-                        "description": "The rest request ended in success with no data."
-                    },
-                    "400": {
-                        "description": "The server cannot process the request, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "GeneralError",
-                                            "message": "component.error",
-                                            "properties": {
-                                                "foo": "bar"
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "UnauthorizedError",
-                                            "message": "component.error"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "404": {
-                        "description": "The resource you tried to access does not exist, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/NotFoundResponse"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "NotFoundError",
-                                            "message": "component.error",
-                                            "properties": {
-                                                "notFoundId": "1"
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "500": {
-                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "InternalServerError",
-                                            "message": "component.error"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "post": {
-                "operationId": "auditableItemStreamCreateEntry",
-                "summary": "Create a new stream entry",
-                "tags": [
-                    "Auditable Item Stream"
-                ],
-                "parameters": [
-                    {
-                        "name": "id",
-                        "description": "The id of the stream to create the entry in.",
-                        "in": "path",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "style": "simple",
-                        "example": "ais:1234567890"
-                    }
-                ],
-                "security": [
-                    {
-                        "jwtBearerAuthScheme": []
-                    }
-                ],
-                "requestBody": {
-                    "description": "Append to an auditable item stream.",
-                    "required": true,
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/AuditableItemStreamCreateEntryRequest"
-                            },
-                            "examples": {
-                                "auditableItemStreamCreateEntryRequestExample": {
-                                    "value": {
-                                        "entryObject": {
-                                            "@context": "http://schema.org/",
-                                            "@type": "Event",
-                                            "startDate": "2011-04-09T20:00:00Z",
-                                            "description": "A description of the event"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                },
-                "responses": {
-                    "201": {
-                        "description": "The rest request ended in created response.",
-                        "headers": {
-                            "location": {
-                                "schema": {
-                                    "type": "string"
-                                },
-                                "description": "e.g. ais:1234567890:01010101010"
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "The server cannot process the request, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "GeneralError",
-                                            "message": "component.error",
-                                            "properties": {
-                                                "foo": "bar"
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "UnauthorizedError",
-                                            "message": "component.error"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "500": {
-                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "InternalServerError",
-                                            "message": "component.error"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/auditable-item-stream/{id}/{entryId}": {
-            "get": {
-                "operationId": "auditableItemStreamGetEntry",
-                "summary": "Get a stream entry",
-                "tags": [
-                    "Auditable Item Stream"
-                ],
-                "parameters": [
-                    {
-                        "name": "id",
-                        "description": "The id of the stream to update the get in.",
-                        "in": "path",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "style": "simple",
-                        "example": "ais:1234567890"
-                    },
-                    {
-                        "name": "entryId",
-                        "description": "The id of the entry to update.",
-                        "in": "path",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "style": "simple",
-                        "example": "ais:1234567890:01010101010"
-                    },
-                    {
-                        "name": "verifyEntry",
-                        "description": "Verify the entry, defaults to false.",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "boolean"
-                        }
-                    },
-                    {
-                        "name": "accept",
-                        "in": "header",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "style": "simple"
-                    }
-                ],
-                "security": [
-                    {
-                        "jwtBearerAuthScheme": []
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Response to getting an auditable item stream entry.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "https://schema.twindev.org/ais/AuditableItemStreamEntry"
-                                },
-                                "examples": {
-                                    "auditableItemStreamGetEntryResponseExample": {
-                                        "value": {
-                                            "@context": "https://schema.twindev.org/ais/",
-                                            "type": "AuditableItemStreamEntry",
-                                            "id": "tst:1234567890",
-                                            "dateCreated": "2024-08-22T11:55:16.271Z",
-                                            "proofId": "0101010101010101010101010101010101010101010101010101010101010101",
-                                            "index": 0,
-                                            "entryObject": {
-                                                "@context": "http://schema.org/",
-                                                "@type": "Event",
-                                                "startDate": "2011-04-09T20:00:00Z",
-                                                "description": "A description of the event"
-                                            }
-                                        }
-                                    }
-                                }
-                            },
-                            "application/ld+json": {
-                                "schema": {
-                                    "$ref": "https://schema.twindev.org/ais/AuditableItemStreamEntry"
-                                },
-                                "examples": {
-                                    "auditableItemStreamJsonLdGetEntryResponseExample": {
-                                        "value": {
-                                            "@context": "https://schema.twindev.org/ais/",
-                                            "type": "AuditableItemStreamEntry",
-                                            "id": "tst:1234567890",
-                                            "dateCreated": "2024-08-22T11:55:16.271Z",
-                                            "proofId": "0101010101010101010101010101010101010101010101010101010101010101",
-                                            "index": 0,
-                                            "entryObject": {
-                                                "@context": "http://schema.org/",
-                                                "@type": "Event",
-                                                "startDate": "2011-04-09T20:00:00Z",
-                                                "description": "A description of the event"
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        },
-                        "headers": {
-                            "content-type": {
-                                "schema": {
-                                    "type": "string"
-                                },
-                                "description": "e.g. application/ld+json"
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "The server cannot process the request, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "GeneralError",
-                                            "message": "component.error",
-                                            "properties": {
-                                                "foo": "bar"
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "UnauthorizedError",
-                                            "message": "component.error"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "404": {
-                        "description": "The resource you tried to access does not exist, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/NotFoundResponse"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "NotFoundError",
-                                            "message": "component.error",
-                                            "properties": {
-                                                "notFoundId": "1"
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "500": {
-                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "InternalServerError",
-                                            "message": "component.error"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "delete": {
-                "operationId": "auditableItemStreamDeleteEntry",
-                "summary": "Delete an entry from the stream",
-                "tags": [
-                    "Auditable Item Stream"
-                ],
-                "parameters": [
-                    {
-                        "name": "id",
-                        "description": "",
-                        "in": "path",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "style": "simple",
-                        "example": "ais:1234567890"
-                    },
-                    {
-                        "name": "entryId",
-                        "description": "",
-                        "in": "path",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "style": "simple",
-                        "example": "ais:1234567890:01010101010"
-                    }
-                ],
-                "security": [
-                    {
-                        "jwtBearerAuthScheme": []
-                    }
-                ],
-                "responses": {
-                    "204": {
-                        "description": "The rest request ended in success with no data."
-                    },
-                    "400": {
-                        "description": "The server cannot process the request, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "GeneralError",
-                                            "message": "component.error",
-                                            "properties": {
-                                                "foo": "bar"
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "UnauthorizedError",
-                                            "message": "component.error"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "404": {
-                        "description": "The resource you tried to access does not exist, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/NotFoundResponse"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "NotFoundError",
-                                            "message": "component.error",
-                                            "properties": {
-                                                "notFoundId": "1"
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "500": {
-                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "InternalServerError",
-                                            "message": "component.error"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "put": {
-                "operationId": "auditableItemStreamUpdateEntry",
-                "summary": "Update a stream entry",
-                "tags": [
-                    "Auditable Item Stream"
-                ],
-                "parameters": [
-                    {
-                        "name": "id",
-                        "description": "The id of the stream to update the entry in.",
-                        "in": "path",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "style": "simple",
-                        "example": "ais:1234567890"
-                    },
-                    {
-                        "name": "entryId",
-                        "description": "The id of the entry to update.",
-                        "in": "path",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "style": "simple",
-                        "example": "ais:1234567890:01010101010"
-                    }
-                ],
-                "security": [
-                    {
-                        "jwtBearerAuthScheme": []
-                    }
-                ],
-                "requestBody": {
-                    "description": "Update an entry in the auditable item stream.",
-                    "required": true,
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/AuditableItemStreamUpdateEntryRequest"
-                            },
-                            "examples": {
-                                "auditableItemStreamUpdateRequestExample": {
-                                    "value": {
-                                        "entryObject": {
-                                            "@context": "http://schema.org/",
-                                            "@type": "Note",
-                                            "content": "This is a simple note"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                },
-                "responses": {
-                    "204": {
-                        "description": "The rest request ended in success with no data."
-                    },
-                    "400": {
-                        "description": "The server cannot process the request, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "GeneralError",
-                                            "message": "component.error",
-                                            "properties": {
-                                                "foo": "bar"
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "UnauthorizedError",
-                                            "message": "component.error"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "404": {
-                        "description": "The resource you tried to access does not exist, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/NotFoundResponse"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "NotFoundError",
-                                            "message": "component.error",
-                                            "properties": {
-                                                "notFoundId": "1"
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "500": {
-                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "InternalServerError",
-                                            "message": "component.error"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/auditable-item-stream/{id}/{entryId}/object": {
-            "get": {
-                "operationId": "auditableItemStreamGetEntryObject",
-                "summary": "Get a stream entry",
-                "tags": [
-                    "Auditable Item Stream"
-                ],
-                "parameters": [
-                    {
-                        "name": "id",
-                        "description": "",
-                        "in": "path",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "style": "simple",
-                        "example": "ais:1234567890"
-                    },
-                    {
-                        "name": "entryId",
-                        "description": "",
-                        "in": "path",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "style": "simple",
-                        "example": "ais:1234567890:01010101010"
-                    }
-                ],
-                "security": [
-                    {
-                        "jwtBearerAuthScheme": []
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Response to getting an auditable item stream entry object.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-                                },
-                                "examples": {
-                                    "auditableItemStreamGetEntryObjectResponseExample": {
-                                        "value": {
-                                            "@context": "http://schema.org/",
-                                            "@type": "Event",
-                                            "startDate": "2011-04-09T20:00:00Z",
-                                            "description": "A description of the event"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "The server cannot process the request, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "GeneralError",
-                                            "message": "component.error",
-                                            "properties": {
-                                                "foo": "bar"
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "UnauthorizedError",
-                                            "message": "component.error"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "404": {
-                        "description": "The resource you tried to access does not exist, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/NotFoundResponse"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "NotFoundError",
-                                            "message": "component.error",
-                                            "properties": {
-                                                "notFoundId": "1"
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "500": {
-                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "InternalServerError",
-                                            "message": "component.error"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/auditable-item-stream/{id}/entries": {
-            "get": {
-                "operationId": "auditableItemStreamListEntries",
-                "summary": "Get the entry objects in a stream",
-                "tags": [
-                    "Auditable Item Stream"
-                ],
-                "parameters": [
-                    {
-                        "name": "id",
-                        "description": "The id of the stream to get.",
-                        "in": "path",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "style": "simple",
-                        "example": "ais:1234567890"
-                    },
-                    {
-                        "name": "conditions",
-                        "description": "The conditions to filter the stream, JSON stringified IComparator[].",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "includeDeleted",
-                        "description": "Whether to include deleted entries, defaults to false.",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "boolean"
-                        }
-                    },
-                    {
-                        "name": "verifyEntries",
-                        "description": "Should the entries be verified, defaults to false.",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "boolean"
-                        }
-                    },
-                    {
-                        "name": "order",
-                        "description": "Retrieve the entries in ascending/descending time order, defaults to Ascending.",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "$ref": "#/components/schemas/SortDirection"
-                        }
-                    },
-                    {
-                        "name": "pageSize",
-                        "description": "How many entries to return.",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "number"
-                        }
-                    },
-                    {
-                        "name": "cursor",
-                        "description": "Cursor to use for next chunk of data.",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "accept",
-                        "in": "header",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "style": "simple"
-                    }
-                ],
-                "security": [
-                    {
-                        "jwtBearerAuthScheme": []
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Response to getting an auditable item stream entries.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "https://schema.twindev.org/ais/AuditableItemStreamEntryList"
-                                },
-                                "examples": {
-                                    "auditableItemStreamListEntriesResponseExample": {
-                                        "value": {
-                                            "@context": "https://schema.twindev.org/ais/",
-                                            "type": "AuditableItemStreamEntryList",
-                                            "entries": [
-                                                {
-                                                    "@context": "https://schema.twindev.org/ais/",
-                                                    "type": "AuditableItemStreamEntry",
-                                                    "id": "tst:1234567890",
-                                                    "dateCreated": "2024-08-22T11:55:16.271Z",
-                                                    "proofId": "0101010101010101010101010101010101010101010101010101010101010101",
-                                                    "index": 0,
-                                                    "entryObject": {
-                                                        "@context": "http://schema.org/",
-                                                        "@type": "Event",
-                                                        "startDate": "2011-04-09T20:00:00Z",
-                                                        "description": "A description of the event"
-                                                    }
-                                                }
-                                            ],
-                                            "cursor": "1"
-                                        }
-                                    }
-                                }
-                            },
-                            "application/ld+json": {
-                                "schema": {
-                                    "$ref": "https://schema.twindev.org/ais/AuditableItemStreamEntryList"
-                                },
-                                "examples": {
-                                    "auditableItemStreamJsonLdListEntriesResponseExample": {
-                                        "value": {
-                                            "@context": "https://schema.twindev.org/ais/",
-                                            "type": "AuditableItemStreamEntryList",
-                                            "entries": [
-                                                {
-                                                    "@context": "https://schema.twindev.org/ais/",
-                                                    "type": "AuditableItemStreamEntry",
-                                                    "id": "tst:1234567890",
-                                                    "dateCreated": "2024-08-22T11:55:16.271Z",
-                                                    "proofId": "0101010101010101010101010101010101010101010101010101010101010101",
-                                                    "index": 0,
-                                                    "entryObject": {
-                                                        "@context": "http://schema.org/",
-                                                        "@type": "Event",
-                                                        "startDate": "2011-04-09T20:00:00Z",
-                                                        "description": "A description of the event"
-                                                    }
-                                                }
-                                            ],
-                                            "cursor": "1"
-                                        }
-                                    }
-                                }
-                            }
-                        },
-                        "headers": {
-                            "content-type": {
-                                "schema": {
-                                    "type": "string"
-                                },
-                                "description": "e.g. application/ld+json"
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "The server cannot process the request, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "GeneralError",
-                                            "message": "component.error",
-                                            "properties": {
-                                                "foo": "bar"
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "UnauthorizedError",
-                                            "message": "component.error"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "404": {
-                        "description": "The resource you tried to access does not exist, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/NotFoundResponse"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "NotFoundError",
-                                            "message": "component.error",
-                                            "properties": {
-                                                "notFoundId": "1"
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "500": {
-                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "InternalServerError",
-                                            "message": "component.error"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/auditable-item-stream/{id}/entries/objects": {
-            "get": {
-                "operationId": "auditableItemStreamListEntryObjects",
-                "summary": "Get the entry objects in a stream",
-                "tags": [
-                    "Auditable Item Stream"
-                ],
-                "parameters": [
-                    {
-                        "name": "id",
-                        "description": "The id of the stream to get.",
-                        "in": "path",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "style": "simple",
-                        "example": "ais:1234567890"
-                    },
-                    {
-                        "name": "conditions",
-                        "description": "The conditions to filter the stream, JSON stringified IComparator[].",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "includeDeleted",
-                        "description": "Whether to include deleted entries, defaults to false.",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "boolean"
-                        }
-                    },
-                    {
-                        "name": "order",
-                        "description": "Retrieve the entries in ascending/descending time order, defaults to Ascending.",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "$ref": "#/components/schemas/SortDirection"
-                        }
-                    },
-                    {
-                        "name": "pageSize",
-                        "description": "How many entries to return.",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "number"
-                        }
-                    },
-                    {
-                        "name": "cursor",
-                        "description": "Cursor to use for next chunk of data.",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "accept",
-                        "in": "header",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "style": "simple"
-                    }
-                ],
-                "security": [
-                    {
-                        "jwtBearerAuthScheme": []
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Response to getting an auditable item stream entries objects.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "https://schema.twindev.org/ais/AuditableItemStreamEntryObjectList"
-                                },
-                                "examples": {
-                                    "auditableItemStreamListEntryObjectsResponseExample": {
-                                        "value": {
-                                            "@context": "https://schema.twindev.org/ais/",
-                                            "type": "AuditableItemStreamEntryObjectList",
-                                            "entryObjects": [
-                                                {
-                                                    "@context": "http://schema.org/",
-                                                    "@type": "Event",
-                                                    "startDate": "2011-04-09T20:00:00Z",
-                                                    "description": "A description of the event"
-                                                }
-                                            ],
-                                            "cursor": "1"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "The server cannot process the request, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "GeneralError",
-                                            "message": "component.error",
-                                            "properties": {
-                                                "foo": "bar"
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "UnauthorizedError",
-                                            "message": "component.error"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "404": {
-                        "description": "The resource you tried to access does not exist, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/NotFoundResponse"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "NotFoundError",
-                                            "message": "component.error",
-                                            "properties": {
-                                                "notFoundId": "1"
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "500": {
-                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "InternalServerError",
-                                            "message": "component.error"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    },
-    "components": {
-        "schemas": {
-            "AuditableItemStreamCreateEntryRequest": {
-                "type": "object",
-                "properties": {
-                    "entryObject": {
-                        "$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-                    }
-                },
-                "required": [
-                    "entryObject"
-                ],
-                "additionalProperties": false,
-                "description": "The data to be used in the stream."
-            },
-            "AuditableItemStreamCreateRequest": {
-                "type": "object",
-                "properties": {
-                    "streamObject": {
-                        "$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-                    },
-                    "entries": {
-                        "type": "array",
-                        "items": {
-                            "type": "object",
-                            "properties": {
-                                "entryObject": {
-                                    "$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-                                }
-                            },
-                            "required": [
-                                "entryObject"
-                            ],
-                            "additionalProperties": false
-                        },
-                        "description": "The entries for the stream."
-                    },
-                    "immutableInterval": {
-                        "type": "number",
-                        "description": "After how many entries do we add immutable checks, defaults to service configured value. A value of 0 will disable immutable checks, 1 will be every item, or any other integer for an interval."
-                    }
-                },
-                "additionalProperties": false,
-                "description": "The data to be used in the stream."
-            },
-            "AuditableItemStreamUpdateEntryRequest": {
-                "type": "object",
-                "properties": {
-                    "entryObject": {
-                        "$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-                    }
-                },
-                "required": [
-                    "entryObject"
-                ],
-                "additionalProperties": false,
-                "description": "The data to be used in the entry."
-            },
-            "AuditableItemStreamUpdateRequest": {
-                "type": "object",
-                "properties": {
-                    "streamObject": {
-                        "$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-                    }
-                },
-                "additionalProperties": false,
-                "description": "The data to be used in the stream."
-            },
-            "Error": {
-                "type": "object",
-                "properties": {
-                    "name": {
-                        "type": "string",
-                        "description": "The name for the error."
-                    },
-                    "message": {
-                        "type": "string",
-                        "description": "The message for the error."
-                    },
-                    "source": {
-                        "type": "string",
-                        "description": "The source of the error."
-                    },
-                    "properties": {
-                        "type": "object",
-                        "additionalProperties": {},
-                        "description": "Any additional information for the error."
-                    },
-                    "stack": {
-                        "type": "string",
-                        "description": "The stack trace for the error."
-                    },
-                    "inner": {
-                        "$ref": "#/components/schemas/Error"
-                    }
-                },
-                "required": [
-                    "name",
-                    "message"
-                ],
-                "additionalProperties": false,
-                "description": "Model to describe serialized error."
-            },
-            "NotFoundResponse": {
-                "type": "object",
-                "additionalProperties": false,
-                "properties": {
-                    "notFoundId": {
-                        "type": "string",
-                        "description": "The id if the item that was not found."
-                    },
-                    "name": {
-                        "type": "string",
-                        "description": "The name for the error."
-                    },
-                    "message": {
-                        "type": "string",
-                        "description": "The message for the error."
-                    },
-                    "source": {
-                        "type": "string",
-                        "description": "The source of the error."
-                    },
-                    "properties": {
-                        "type": "object",
-                        "additionalProperties": {},
-                        "description": "Any additional information for the error."
-                    },
-                    "stack": {
-                        "type": "string",
-                        "description": "The stack trace for the error."
-                    },
-                    "inner": {
-                        "$ref": "#/components/schemas/Error"
-                    }
-                },
-                "required": [
-                    "message",
-                    "name"
-                ],
-                "description": "The body which contains the error."
-            },
-            "SortDirection": {
-                "anyOf": [
-                    {
-                        "type": "string",
-                        "const": "asc",
-                        "description": "Ascending."
-                    },
-                    {
-                        "type": "string",
-                        "const": "desc",
-                        "description": "Descending."
-                    }
-                ],
-                "description": "The sort directions."
-            }
-        },
-        "securitySchemes": {
-            "jwtBearerAuthScheme": {
-                "type": "http",
-                "scheme": "bearer",
-                "bearerFormat": "JWT"
-            }
-        }
-    }
+	"openapi": "3.1.0",
+	"info": {
+		"title": "TWIN - Test Endpoints",
+		"description": "REST API for TWIN - Test Endpoints.",
+		"version": "1.0.0",
+		"license": {
+			"name": "Apache 2.0 License",
+			"url": "https://opensource.org/licenses/Apache-2.0"
+		}
+	},
+	"servers": [
+		{
+			"url": "https://localhost"
+		}
+	],
+	"tags": [
+		{
+			"name": "Auditable Item Stream",
+			"description": "Endpoints which are modelled to access an auditable item stream contract."
+		}
+	],
+	"paths": {
+		"/auditable-item-stream": {
+			"post": {
+				"operationId": "auditableItemStreamCreate",
+				"summary": "Create a new stream",
+				"tags": [
+					"Auditable Item Stream"
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"requestBody": {
+					"description": "Create an auditable item stream.",
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/AuditableItemStreamCreateRequest"
+							},
+							"examples": {
+								"auditableItemStreamCreateRequestExample": {
+									"value": {
+										"annotationObject": {
+											"@context": "https://schema.org",
+											"@type": "Note",
+											"content": "This is a simple note"
+										},
+										"entries": [
+											{
+												"entryObject": {
+													"@context": "https://schema.org",
+													"@type": "Event",
+													"startDate": "2011-04-09T20:00:00Z",
+													"description": "A description of the event"
+												}
+											}
+										]
+									}
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"201": {
+						"description": "The rest request ended in created response.",
+						"headers": {
+							"location": {
+								"schema": {
+									"type": "string"
+								},
+								"description": "e.g. ais:1234567890"
+							}
+						}
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			"get": {
+				"operationId": "auditableItemStreamList",
+				"summary": "Query streams",
+				"tags": [
+					"Auditable Item Stream"
+				],
+				"parameters": [
+					{
+						"name": "conditions",
+						"description": "The conditions to filter the streams, JSON stringified IComparator[].",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"name": "orderBy",
+						"description": "The order for the results, default to created.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string",
+							"enum": [
+								"dateCreated",
+								"dateModified"
+							]
+						}
+					},
+					{
+						"name": "orderByDirection",
+						"description": "The direction for the order, defaults to desc.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"$ref": "#/components/schemas/SortDirection"
+						}
+					},
+					{
+						"name": "properties",
+						"description": "The properties to return as a comma separated list, defaults to \"id,object\".",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"name": "cursor",
+						"description": "The optional cursor to get next chunk.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"name": "pageSize",
+						"description": "The maximum number of entities in a page.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "number"
+						}
+					},
+					{
+						"name": "accept",
+						"in": "header",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple"
+					}
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "The response to getting the a list of the streams.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "https://schema.twindev.org/ais/AuditableItemStreamList"
+								},
+								"examples": {
+									"auditableItemStreamListResponseExample": {
+										"value": {
+											"@context": [
+												"https://schema.twindev.org/ais/",
+												"https://schema.twindev.org/common/"
+											],
+											"type": "AuditableItemStreamList",
+											"itemStreams": [
+												{
+													"@context": [
+														"https://schema.twindev.org/ais/",
+														"https://schema.twindev.org/common/"
+													],
+													"type": "AuditableItemStream",
+													"id": "ais:1234567890",
+													"dateCreated": "2024-08-22T11:55:16.271Z",
+													"dateModified": "2024-08-22T11:55:16.271Z",
+													"annotationObject": {
+														"@context": "https://schema.org",
+														"@type": "Note",
+														"content": "This is a simple note"
+													},
+													"nodeIdentity": "tst:1234567890",
+													"userIdentity": "tst:1234567890",
+													"proofId": "0101010101010101010101010101010101010101010101010101010101010101",
+													"immutableInterval": 10
+												}
+											],
+											"cursor": "1"
+										}
+									}
+								}
+							},
+							"application/ld+json": {
+								"schema": {
+									"$ref": "https://schema.twindev.org/ais/AuditableItemStreamList"
+								},
+								"examples": {
+									"auditableItemStreamJsonLdListResponseExample": {
+										"value": {
+											"@context": [
+												"https://schema.twindev.org/ais/",
+												"https://schema.twindev.org/common/"
+											],
+											"type": "AuditableItemStreamList",
+											"itemStreams": [
+												{
+													"@context": [
+														"https://schema.twindev.org/ais/",
+														"https://schema.twindev.org/common/"
+													],
+													"type": "AuditableItemStream",
+													"id": "ais:1234567890",
+													"dateCreated": "2024-08-22T11:55:16.271Z",
+													"dateModified": "2024-08-22T11:55:16.271Z",
+													"annotationObject": {
+														"@context": "https://schema.org",
+														"@type": "Note",
+														"content": "This is a simple note"
+													},
+													"nodeIdentity": "tst:1234567890",
+													"userIdentity": "tst:1234567890",
+													"proofId": "0101010101010101010101010101010101010101010101010101010101010101",
+													"immutableInterval": 10
+												}
+											],
+											"cursor": "1"
+										}
+									}
+								}
+							}
+						},
+						"headers": {
+							"content-type": {
+								"schema": {
+									"type": "string"
+								},
+								"description": "e.g. application/ld+json"
+							}
+						}
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "The resource you tried to access does not exist, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/NotFoundResponse"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "NotFoundError",
+											"message": "component.error",
+											"properties": {
+												"notFoundId": "1"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/auditable-item-stream/{id}": {
+			"get": {
+				"operationId": "auditableItemStreamGet",
+				"summary": "Get a stream",
+				"tags": [
+					"Auditable Item Stream"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"description": "The id of the stream to get.",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "ais:1234567890"
+					},
+					{
+						"name": "includeEntries",
+						"description": "Whether to include the entries, defaults to false. The entries will be limited to the first page of entries in date descending order. If you want to get more entries you can use the returned cursor with the get entries method.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "boolean"
+						}
+					},
+					{
+						"name": "includeDeleted",
+						"description": "Whether to include deleted entries, defaults to false.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "boolean"
+						}
+					},
+					{
+						"name": "verifyStream",
+						"description": "Should the stream be verified, defaults to false.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "boolean"
+						}
+					},
+					{
+						"name": "verifyEntries",
+						"description": "Should the entries be verified, defaults to false.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "boolean"
+						}
+					},
+					{
+						"name": "accept",
+						"in": "header",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "application/json"
+					}
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Response to getting an auditable item stream.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "https://schema.twindev.org/ais/AuditableItemStream"
+								},
+								"examples": {
+									"auditableItemStreamGetResponseExample": {
+										"value": {
+											"@context": [
+												"https://schema.twindev.org/ais/",
+												"https://schema.twindev.org/common/"
+											],
+											"type": "AuditableItemStream",
+											"id": "ais:1234567890",
+											"dateCreated": "2024-08-22T11:55:16.271Z",
+											"dateModified": "2024-08-22T11:55:16.271Z",
+											"annotationObject": {
+												"@context": "https://schema.org",
+												"@type": "Note",
+												"content": "This is a simple note"
+											},
+											"nodeIdentity": "tst:1234567890",
+											"userIdentity": "tst:1234567890",
+											"proofId": "0101010101010101010101010101010101010101010101010101010101010101",
+											"immutableInterval": 10,
+											"entries": [
+												{
+													"@context": [
+														"https://schema.twindev.org/ais/",
+														"https://schema.twindev.org/common/"
+													],
+													"type": "AuditableItemStreamEntry",
+													"id": "tst:1234567890",
+													"dateCreated": "2024-08-22T11:55:16.271Z",
+													"proofId": "0101010101010101010101010101010101010101010101010101010101010101",
+													"index": 0,
+													"entryObject": {
+														"@context": "https://schema.org",
+														"@type": "Event",
+														"startDate": "2011-04-09T20:00:00Z",
+														"description": "A description of the event"
+													}
+												}
+											]
+										}
+									}
+								}
+							},
+							"application/ld+json": {
+								"schema": {
+									"$ref": "https://schema.twindev.org/ais/AuditableItemStream"
+								},
+								"examples": {
+									"auditableItemStreamJsonLdGetResponseExample": {
+										"value": {
+											"@context": [
+												"https://schema.twindev.org/ais/",
+												"https://schema.twindev.org/common/"
+											],
+											"type": "AuditableItemStream",
+											"id": "ais:1234567890",
+											"dateCreated": "2024-08-22T11:55:16.271Z",
+											"dateModified": "2024-08-22T11:55:16.271Z",
+											"annotationObject": {
+												"@context": "https://schema.org",
+												"@type": "Note",
+												"content": "This is a simple note"
+											},
+											"nodeIdentity": "tst:1234567890",
+											"userIdentity": "tst:1234567890",
+											"proofId": "0101010101010101010101010101010101010101010101010101010101010101",
+											"immutableInterval": 10,
+											"entries": [
+												{
+													"@context": [
+														"https://schema.twindev.org/ais/",
+														"https://schema.twindev.org/common/"
+													],
+													"type": "AuditableItemStreamEntry",
+													"id": "tst:1234567890",
+													"dateCreated": "2024-08-22T11:55:16.271Z",
+													"proofId": "0101010101010101010101010101010101010101010101010101010101010101",
+													"index": 0,
+													"entryObject": {
+														"@context": "https://schema.org",
+														"@type": "Event",
+														"startDate": "2011-04-09T20:00:00Z",
+														"description": "A description of the event"
+													}
+												}
+											]
+										}
+									}
+								}
+							}
+						},
+						"headers": {
+							"content-type": {
+								"schema": {
+									"type": "string"
+								},
+								"description": "e.g. application/ld+json"
+							}
+						}
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "The resource you tried to access does not exist, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/NotFoundResponse"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "NotFoundError",
+											"message": "component.error",
+											"properties": {
+												"notFoundId": "1"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			"put": {
+				"operationId": "auditableItemStreamUpdate",
+				"summary": "Update a stream",
+				"tags": [
+					"Auditable Item Stream"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"description": "The id of the stream to update.",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "ais:1234567890"
+					}
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"requestBody": {
+					"description": "Update an auditable item stream.",
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/AuditableItemStreamUpdateRequest"
+							},
+							"examples": {
+								"auditableItemStreamUpdateRequestExample": {
+									"value": {
+										"annotationObject": {
+											"@context": "https://schema.org",
+											"@type": "Note",
+											"content": "This is a simple note"
+										}
+									}
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"204": {
+						"description": "The rest request ended in success with no data."
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "The resource you tried to access does not exist, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/NotFoundResponse"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "NotFoundError",
+											"message": "component.error",
+											"properties": {
+												"notFoundId": "1"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			"delete": {
+				"operationId": "auditableItemStreamDelete",
+				"summary": "Delete a stream",
+				"tags": [
+					"Auditable Item Stream"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"description": "The id of the stream to remove.",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "ais:1234567890"
+					}
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"responses": {
+					"204": {
+						"description": "The rest request ended in success with no data."
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "The resource you tried to access does not exist, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/NotFoundResponse"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "NotFoundError",
+											"message": "component.error",
+											"properties": {
+												"notFoundId": "1"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			"post": {
+				"operationId": "auditableItemStreamCreateEntry",
+				"summary": "Create a new stream entry",
+				"tags": [
+					"Auditable Item Stream"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"description": "The id of the stream to create the entry in.",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "ais:1234567890"
+					}
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"requestBody": {
+					"description": "Append to an auditable item stream.",
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/AuditableItemStreamCreateEntryRequest"
+							},
+							"examples": {
+								"auditableItemStreamCreateEntryRequestExample": {
+									"value": {
+										"entryObject": {
+											"@context": "https://schema.org",
+											"@type": "Event",
+											"startDate": "2011-04-09T20:00:00Z",
+											"description": "A description of the event"
+										}
+									}
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"201": {
+						"description": "The rest request ended in created response.",
+						"headers": {
+							"location": {
+								"schema": {
+									"type": "string"
+								},
+								"description": "e.g. ais:1234567890:01010101010"
+							}
+						}
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/auditable-item-stream/{id}/{entryId}": {
+			"get": {
+				"operationId": "auditableItemStreamGetEntry",
+				"summary": "Get a stream entry",
+				"tags": [
+					"Auditable Item Stream"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"description": "The id of the stream to update the get in.",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "ais:1234567890"
+					},
+					{
+						"name": "entryId",
+						"description": "The id of the entry to update.",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "ais:1234567890:01010101010"
+					},
+					{
+						"name": "verifyEntry",
+						"description": "Verify the entry, defaults to false.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "boolean"
+						}
+					},
+					{
+						"name": "accept",
+						"in": "header",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple"
+					}
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Response to getting an auditable item stream entry.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "https://schema.twindev.org/ais/AuditableItemStreamEntry"
+								},
+								"examples": {
+									"auditableItemStreamGetEntryResponseExample": {
+										"value": {
+											"@context": [
+												"https://schema.twindev.org/ais/",
+												"https://schema.twindev.org/common/"
+											],
+											"type": "AuditableItemStreamEntry",
+											"id": "tst:1234567890",
+											"dateCreated": "2024-08-22T11:55:16.271Z",
+											"proofId": "0101010101010101010101010101010101010101010101010101010101010101",
+											"index": 0,
+											"entryObject": {
+												"@context": "https://schema.org",
+												"@type": "Event",
+												"startDate": "2011-04-09T20:00:00Z",
+												"description": "A description of the event"
+											}
+										}
+									}
+								}
+							},
+							"application/ld+json": {
+								"schema": {
+									"$ref": "https://schema.twindev.org/ais/AuditableItemStreamEntry"
+								},
+								"examples": {
+									"auditableItemStreamJsonLdGetEntryResponseExample": {
+										"value": {
+											"@context": [
+												"https://schema.twindev.org/ais/",
+												"https://schema.twindev.org/common/"
+											],
+											"type": "AuditableItemStreamEntry",
+											"id": "tst:1234567890",
+											"dateCreated": "2024-08-22T11:55:16.271Z",
+											"proofId": "0101010101010101010101010101010101010101010101010101010101010101",
+											"index": 0,
+											"entryObject": {
+												"@context": "https://schema.org",
+												"@type": "Event",
+												"startDate": "2011-04-09T20:00:00Z",
+												"description": "A description of the event"
+											}
+										}
+									}
+								}
+							}
+						},
+						"headers": {
+							"content-type": {
+								"schema": {
+									"type": "string"
+								},
+								"description": "e.g. application/ld+json"
+							}
+						}
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "The resource you tried to access does not exist, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/NotFoundResponse"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "NotFoundError",
+											"message": "component.error",
+											"properties": {
+												"notFoundId": "1"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			"delete": {
+				"operationId": "auditableItemStreamDeleteEntry",
+				"summary": "Delete an entry from the stream",
+				"tags": [
+					"Auditable Item Stream"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"description": "",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "ais:1234567890"
+					},
+					{
+						"name": "entryId",
+						"description": "",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "ais:1234567890:01010101010"
+					}
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"responses": {
+					"204": {
+						"description": "The rest request ended in success with no data."
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "The resource you tried to access does not exist, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/NotFoundResponse"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "NotFoundError",
+											"message": "component.error",
+											"properties": {
+												"notFoundId": "1"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			"put": {
+				"operationId": "auditableItemStreamUpdateEntry",
+				"summary": "Update a stream entry",
+				"tags": [
+					"Auditable Item Stream"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"description": "The id of the stream to update the entry in.",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "ais:1234567890"
+					},
+					{
+						"name": "entryId",
+						"description": "The id of the entry to update.",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "ais:1234567890:01010101010"
+					}
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"requestBody": {
+					"description": "Update an entry in the auditable item stream.",
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/AuditableItemStreamUpdateEntryRequest"
+							},
+							"examples": {
+								"auditableItemStreamUpdateRequestExample": {
+									"value": {
+										"entryObject": {
+											"@context": "https://schema.org",
+											"@type": "Note",
+											"content": "This is a simple note"
+										}
+									}
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"204": {
+						"description": "The rest request ended in success with no data."
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "The resource you tried to access does not exist, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/NotFoundResponse"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "NotFoundError",
+											"message": "component.error",
+											"properties": {
+												"notFoundId": "1"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/auditable-item-stream/{id}/{entryId}/object": {
+			"get": {
+				"operationId": "auditableItemStreamGetEntryObject",
+				"summary": "Get a stream entry",
+				"tags": [
+					"Auditable Item Stream"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"description": "",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "ais:1234567890"
+					},
+					{
+						"name": "entryId",
+						"description": "",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "ais:1234567890:01010101010"
+					}
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Response to getting an auditable item stream entry object.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
+								},
+								"examples": {
+									"auditableItemStreamGetEntryObjectResponseExample": {
+										"value": {
+											"@context": "https://schema.org",
+											"@type": "Event",
+											"startDate": "2011-04-09T20:00:00Z",
+											"description": "A description of the event"
+										}
+									}
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "The resource you tried to access does not exist, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/NotFoundResponse"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "NotFoundError",
+											"message": "component.error",
+											"properties": {
+												"notFoundId": "1"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/auditable-item-stream/{id}/entries": {
+			"get": {
+				"operationId": "auditableItemStreamListEntries",
+				"summary": "Get the entry objects in a stream",
+				"tags": [
+					"Auditable Item Stream"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"description": "The id of the stream to get.",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "ais:1234567890"
+					},
+					{
+						"name": "conditions",
+						"description": "The conditions to filter the stream, JSON stringified IComparator[].",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"name": "includeDeleted",
+						"description": "Whether to include deleted entries, defaults to false.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "boolean"
+						}
+					},
+					{
+						"name": "verifyEntries",
+						"description": "Should the entries be verified, defaults to false.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "boolean"
+						}
+					},
+					{
+						"name": "order",
+						"description": "Retrieve the entries in ascending/descending time order, defaults to Ascending.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"$ref": "#/components/schemas/SortDirection"
+						}
+					},
+					{
+						"name": "pageSize",
+						"description": "How many entries to return.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "number"
+						}
+					},
+					{
+						"name": "cursor",
+						"description": "Cursor to use for next chunk of data.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"name": "accept",
+						"in": "header",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple"
+					}
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Response to getting an auditable item stream entries.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "https://schema.twindev.org/ais/AuditableItemStreamEntryList"
+								},
+								"examples": {
+									"auditableItemStreamListEntriesResponseExample": {
+										"value": {
+											"@context": [
+												"https://schema.twindev.org/ais/",
+												"https://schema.twindev.org/common/"
+											],
+											"type": "AuditableItemStreamEntryList",
+											"entries": [
+												{
+													"@context": [
+														"https://schema.twindev.org/ais/",
+														"https://schema.twindev.org/common/"
+													],
+													"type": "AuditableItemStreamEntry",
+													"id": "tst:1234567890",
+													"dateCreated": "2024-08-22T11:55:16.271Z",
+													"proofId": "0101010101010101010101010101010101010101010101010101010101010101",
+													"index": 0,
+													"entryObject": {
+														"@context": "https://schema.org",
+														"@type": "Event",
+														"startDate": "2011-04-09T20:00:00Z",
+														"description": "A description of the event"
+													}
+												}
+											],
+											"cursor": "1"
+										}
+									}
+								}
+							},
+							"application/ld+json": {
+								"schema": {
+									"$ref": "https://schema.twindev.org/ais/AuditableItemStreamEntryList"
+								},
+								"examples": {
+									"auditableItemStreamJsonLdListEntriesResponseExample": {
+										"value": {
+											"@context": [
+												"https://schema.twindev.org/ais/",
+												"https://schema.twindev.org/common/"
+											],
+											"type": "AuditableItemStreamEntryList",
+											"entries": [
+												{
+													"@context": [
+														"https://schema.twindev.org/ais/",
+														"https://schema.twindev.org/common/"
+													],
+													"type": "AuditableItemStreamEntry",
+													"id": "tst:1234567890",
+													"dateCreated": "2024-08-22T11:55:16.271Z",
+													"proofId": "0101010101010101010101010101010101010101010101010101010101010101",
+													"index": 0,
+													"entryObject": {
+														"@context": "https://schema.org",
+														"@type": "Event",
+														"startDate": "2011-04-09T20:00:00Z",
+														"description": "A description of the event"
+													}
+												}
+											],
+											"cursor": "1"
+										}
+									}
+								}
+							}
+						},
+						"headers": {
+							"content-type": {
+								"schema": {
+									"type": "string"
+								},
+								"description": "e.g. application/ld+json"
+							}
+						}
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "The resource you tried to access does not exist, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/NotFoundResponse"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "NotFoundError",
+											"message": "component.error",
+											"properties": {
+												"notFoundId": "1"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/auditable-item-stream/{id}/entries/objects": {
+			"get": {
+				"operationId": "auditableItemStreamListEntryObjects",
+				"summary": "Get the entry objects in a stream",
+				"tags": [
+					"Auditable Item Stream"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"description": "The id of the stream to get.",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "ais:1234567890"
+					},
+					{
+						"name": "conditions",
+						"description": "The conditions to filter the stream, JSON stringified IComparator[].",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"name": "includeDeleted",
+						"description": "Whether to include deleted entries, defaults to false.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "boolean"
+						}
+					},
+					{
+						"name": "order",
+						"description": "Retrieve the entries in ascending/descending time order, defaults to Ascending.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"$ref": "#/components/schemas/SortDirection"
+						}
+					},
+					{
+						"name": "pageSize",
+						"description": "How many entries to return.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "number"
+						}
+					},
+					{
+						"name": "cursor",
+						"description": "Cursor to use for next chunk of data.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"name": "accept",
+						"in": "header",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple"
+					}
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Response to getting an auditable item stream entries objects.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "https://schema.twindev.org/ais/AuditableItemStreamEntryObjectList"
+								},
+								"examples": {
+									"auditableItemStreamListEntryObjectsResponseExample": {
+										"value": {
+											"@context": [
+												"https://schema.twindev.org/ais/",
+												"https://schema.twindev.org/common/"
+											],
+											"type": "AuditableItemStreamEntryObjectList",
+											"entryObjects": [
+												{
+													"@context": "https://schema.org",
+													"@type": "Event",
+													"startDate": "2011-04-09T20:00:00Z",
+													"description": "A description of the event"
+												}
+											],
+											"cursor": "1"
+										}
+									}
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "The resource you tried to access does not exist, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/NotFoundResponse"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "NotFoundError",
+											"message": "component.error",
+											"properties": {
+												"notFoundId": "1"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"components": {
+		"schemas": {
+			"AuditableItemStreamCreateEntryRequest": {
+				"type": "object",
+				"properties": {
+					"entryObject": {
+						"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
+					}
+				},
+				"required": [
+					"entryObject"
+				],
+				"additionalProperties": false,
+				"description": "The data to be used in the stream."
+			},
+			"AuditableItemStreamCreateRequest": {
+				"type": "object",
+				"properties": {
+					"annotationObject": {
+						"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
+					},
+					"entries": {
+						"type": "array",
+						"items": {
+							"type": "object",
+							"properties": {
+								"entryObject": {
+									"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
+								}
+							},
+							"required": [
+								"entryObject"
+							],
+							"additionalProperties": false
+						},
+						"description": "The entries for the stream."
+					},
+					"immutableInterval": {
+						"type": "number",
+						"description": "After how many entries do we add immutable checks, defaults to service configured value. A value of 0 will disable immutable checks, 1 will be every item, or any other integer for an interval."
+					}
+				},
+				"additionalProperties": false,
+				"description": "The data to be used in the stream."
+			},
+			"AuditableItemStreamUpdateEntryRequest": {
+				"type": "object",
+				"properties": {
+					"entryObject": {
+						"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
+					}
+				},
+				"required": [
+					"entryObject"
+				],
+				"additionalProperties": false,
+				"description": "The data to be used in the entry."
+			},
+			"AuditableItemStreamUpdateRequest": {
+				"type": "object",
+				"properties": {
+					"annotationObject": {
+						"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
+					}
+				},
+				"additionalProperties": false,
+				"description": "The data to be used in the stream."
+			},
+			"Error": {
+				"type": "object",
+				"properties": {
+					"name": {
+						"type": "string",
+						"description": "The name for the error."
+					},
+					"message": {
+						"type": "string",
+						"description": "The message for the error."
+					},
+					"source": {
+						"type": "string",
+						"description": "The source of the error."
+					},
+					"properties": {
+						"type": "object",
+						"additionalProperties": {},
+						"description": "Any additional information for the error."
+					},
+					"stack": {
+						"type": "string",
+						"description": "The stack trace for the error."
+					},
+					"inner": {
+						"$ref": "#/components/schemas/Error"
+					}
+				},
+				"required": [
+					"name",
+					"message"
+				],
+				"additionalProperties": false,
+				"description": "Model to describe serialized error."
+			},
+			"NotFoundResponse": {
+				"type": "object",
+				"additionalProperties": false,
+				"properties": {
+					"notFoundId": {
+						"type": "string",
+						"description": "The id if the item that was not found."
+					},
+					"name": {
+						"type": "string",
+						"description": "The name for the error."
+					},
+					"message": {
+						"type": "string",
+						"description": "The message for the error."
+					},
+					"source": {
+						"type": "string",
+						"description": "The source of the error."
+					},
+					"properties": {
+						"type": "object",
+						"additionalProperties": {},
+						"description": "Any additional information for the error."
+					},
+					"stack": {
+						"type": "string",
+						"description": "The stack trace for the error."
+					},
+					"inner": {
+						"$ref": "#/components/schemas/Error"
+					}
+				},
+				"required": [
+					"message",
+					"name"
+				],
+				"description": "The body which contains the error."
+			},
+			"SortDirection": {
+				"anyOf": [
+					{
+						"type": "string",
+						"const": "asc",
+						"description": "Ascending."
+					},
+					{
+						"type": "string",
+						"const": "desc",
+						"description": "Descending."
+					}
+				],
+				"description": "The sort directions."
+			}
+		},
+		"securitySchemes": {
+			"jwtBearerAuthScheme": {
+				"type": "http",
+				"scheme": "bearer",
+				"bearerFormat": "JWT"
+			}
+		}
+	}
 }

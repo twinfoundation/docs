@@ -4,15 +4,15 @@ Create an auditable item stream.
 
 ## Properties
 
-### body?
+### body
 
-> `optional` **body**: `object`
+> **body**: `object`
 
 The data to be used in the stream.
 
-#### streamObject?
+#### annotationObject?
 
-> `optional` **streamObject**: `IJsonLdNodeObject`
+> `optional` **annotationObject**: `IJsonLdNodeObject`
 
 The object to be used in the stream as JSON-LD.
 

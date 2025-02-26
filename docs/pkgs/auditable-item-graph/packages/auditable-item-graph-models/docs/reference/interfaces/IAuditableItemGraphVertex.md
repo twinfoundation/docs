@@ -8,9 +8,9 @@ Interface describing an auditable item graph vertex.
 
 ## Properties
 
-### dateCreated
+### dateCreated?
 
-> **dateCreated**: `string`
+> `optional` **dateCreated**: `string`
 
 The date/time of when the element was created.
 
@@ -46,7 +46,7 @@ The date/time of when the element was deleted, as we never actually remove items
 
 ### @context
 
-> **@context**: `"https://schema.twindev.org/aig/"` \| \[`"https://schema.twindev.org/aig/"`, `...string[]`\]
+> **@context**: \[`"https://schema.twindev.org/aig/"`, `"https://schema.twindev.org/common/"`, `...IJsonLdContextDefinitionElement[]`\]
 
 JSON-LD Context.
 

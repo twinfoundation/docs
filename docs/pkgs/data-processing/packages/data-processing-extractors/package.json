@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/data-processing-extractors",
-	"version": "0.0.1-next.6",
+	"version": "0.0.1-next.7",
 	"description": "Data extractor connector implementations",
 	"repository": {
 		"type": "git",
@@ -27,11 +27,12 @@
 		"docs:generate": "typedoc",
 		"docs": "npm run docs:clean && npm run docs:generate",
 		"dist": "npm run clean && npm run build && npm run test && npm run bundle && npm run docs",
+		"dist:no-test": "npm run clean && npm run build && npm run bundle && npm run docs",
 		"prepare": "ts-patch install -s"
 	},
 	"dependencies": {
 		"@twin.org/core": "next",
-		"@twin.org/data-processing-models": "0.0.1-next.6",
+		"@twin.org/data-processing-models": "0.0.1-next.7",
 		"@twin.org/nameof": "next",
 		"@twin.org/web": "next",
 		"json-p3": "2.1.1"

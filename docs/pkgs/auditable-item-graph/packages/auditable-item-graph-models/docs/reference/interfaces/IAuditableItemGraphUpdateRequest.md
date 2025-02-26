@@ -18,9 +18,9 @@ The id of the vertex to update.
 
 ***
 
-### body?
+### body
 
-> `optional` **body**: `object`
+> **body**: `object`
 
 The data to be used in the vertex.
 

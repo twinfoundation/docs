@@ -6,7 +6,7 @@ Interface describing an auditable item stream list.
 
 ### @context
 
-> **@context**: `"https://schema.twindev.org/ais/"` \| \[`"https://schema.twindev.org/ais/"`, `...string[]`\]
+> **@context**: \[`"https://schema.twindev.org/ais/"`, `"https://schema.twindev.org/common/"`, `...IJsonLdContextDefinitionElement[]`\]
 
 JSON-LD Context.
 
@@ -20,11 +20,11 @@ JSON-LD Type.
 
 ***
 
-### streams
+### itemStreams
 
-> **streams**: [`IAuditableItemStream`](IAuditableItemStream.md)[]
+> **itemStreams**: [`IAuditableItemStream`](IAuditableItemStream.md)[]
 
-The streams.
+The item streams.
 
 ***
 

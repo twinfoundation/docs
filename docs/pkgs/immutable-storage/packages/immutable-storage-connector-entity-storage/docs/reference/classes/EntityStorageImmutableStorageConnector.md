@@ -82,7 +82,7 @@ The id of the stored immutable item in urn format.
 
 ### get()
 
-> **get**(`id`, `options`?): `Promise`\<\{ `data`: `Uint8Array`; `receipt`: `IJsonLdNodeObject`; \}\>
+> **get**(`id`, `options`?): `Promise`\<\{ `data`: `Uint8Array`\<`ArrayBufferLike`\>; `receipt`: `IJsonLdNodeObject`; \}\>
 
 Get an immutable item.
 
@@ -98,7 +98,7 @@ The id of the item to get.
 
 Additional options for getting the item.
 
-###### includeData
+###### includeData?
 
 `boolean`
 
@@ -106,7 +106,7 @@ Should the data be included in the response, defaults to true.
 
 #### Returns
 
-`Promise`\<\{ `data`: `Uint8Array`; `receipt`: `IJsonLdNodeObject`; \}\>
+`Promise`\<\{ `data`: `Uint8Array`\<`ArrayBufferLike`\>; `receipt`: `IJsonLdNodeObject`; \}\>
 
 The data for the item and the receipt.
 

@@ -28,7 +28,7 @@ The id of the document to revoke the index.
 
 The revocation index for the credential.
 
-#### connector
+#### connector?
 
 [`IdentityConnectorTypes`](../type-aliases/IdentityConnectorTypes.md)
 
@@ -40,11 +40,11 @@ The connector to perform the operations with.
 
 The node URL.
 
-#### network
+#### network?
 
 `string`
 
-The network to use for rebased connector.
+The network to use for connector.
 
 ## Returns
 

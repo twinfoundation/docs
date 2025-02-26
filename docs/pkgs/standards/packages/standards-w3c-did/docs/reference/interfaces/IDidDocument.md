@@ -5,9 +5,9 @@ Spec https://www.w3.org/TR/did-core/#did-document-properties.
 
 ## Properties
 
-### @context?
+### @context
 
-> `optional` **@context**: `IJsonLdContextDefinitionRoot`
+> **@context**: `"https://www.w3.org/ns/did/v1"` \| \[`"https://www.w3.org/ns/did/v1"`, `...IJsonLdContextDefinitionElement[]`\]
 
 The context for the document.
 

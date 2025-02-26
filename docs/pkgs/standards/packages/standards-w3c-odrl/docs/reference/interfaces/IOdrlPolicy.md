@@ -14,7 +14,7 @@ Interface representing an ODRL Policy.
 
 ### @context
 
-> **@context**: `"https://www.w3.org/ns/odrl.jsonld"` \| `IJsonLdContextDefinition` \| \[`"https://www.w3.org/ns/odrl.jsonld"`, `IJsonLdContextDefinition`\]
+> **@context**: `"https://www.w3.org/ns/odrl.jsonld"` \| \[`"https://www.w3.org/ns/odrl.jsonld"`, `...IJsonLdContextDefinitionElement[]`\]
 
 The context for the policy.
 Must include "https://www.w3.org/ns/odrl.jsonld"

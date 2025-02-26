@@ -4,11 +4,11 @@ Configuration for the immutable proof service.
 
 ## Properties
 
-### assertionMethodId?
+### verificationMethodId?
 
-> `optional` **assertionMethodId**: `string`
+> `optional` **verificationMethodId**: `string`
 
-The assertion method id to use for the stream.
+The verification method id to use for the proof.
 
 #### Default
 

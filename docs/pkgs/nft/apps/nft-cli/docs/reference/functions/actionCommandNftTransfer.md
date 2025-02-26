@@ -34,7 +34,7 @@ The recipient address of the NFT.
 
 The recipient address of the NFT.
 
-#### connector
+#### connector?
 
 [`NftConnectorTypes`](../type-aliases/NftConnectorTypes.md)
 
@@ -46,11 +46,11 @@ The connector to perform the operations with.
 
 The node URL.
 
-#### network
+#### network?
 
 `string`
 
-The network to use for rebased connector.
+The network to use for connector.
 
 #### explorer
 

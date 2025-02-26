@@ -16,13 +16,13 @@ The options for the wallet connector.
 
 The node endpoint.
 
-#### network
+#### network?
 
 `string`
 
 The network.
 
-#### vaultSeedId
+#### vaultSeedId?
 
 `string`
 

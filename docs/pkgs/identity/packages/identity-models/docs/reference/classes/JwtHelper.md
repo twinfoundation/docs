@@ -24,7 +24,7 @@ Runtime name for the class.
 
 ### parse()
 
-> `static` **parse**\<`U`, `T`\>(`jwt`, `paramsToCheck`?): `Promise`\<\{ `header`: `U`; `payload`: `T`; `signature`: `Uint8Array`; \}\>
+> `static` **parse**\<`U`, `T`\>(`jwt`, `paramsToCheck`?): `Promise`\<\{ `header`: `U`; `payload`: `T`; `signature`: `Uint8Array`\<`ArrayBufferLike`\>; \}\>
 
 Parse the token and check that the properties are valid.
 
@@ -50,7 +50,7 @@ Parameters to check they exist.
 
 #### Returns
 
-`Promise`\<\{ `header`: `U`; `payload`: `T`; `signature`: `Uint8Array`; \}\>
+`Promise`\<\{ `header`: `U`; `payload`: `T`; `signature`: `Uint8Array`\<`ArrayBufferLike`\>; \}\>
 
 The token components.
 
