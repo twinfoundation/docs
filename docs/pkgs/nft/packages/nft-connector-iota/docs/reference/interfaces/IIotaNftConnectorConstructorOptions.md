@@ -1,19 +1,27 @@
 # Interface: IIotaNftConnectorConstructorOptions
 
-Options for the IOTA nft connector constructor.
+Options for the IotaNftConnector.
 
 ## Properties
+
+### config
+
+> **config**: [`IIotaNftConnectorConfig`](IIotaNftConnectorConfig.md)
+
+The configuration to use for the connector.
+
+***
 
 ### vaultConnectorType?
 
 > `optional` **vaultConnectorType**: `string`
 
-The type of the vault connector.
+The vault connector type to use.
 
 #### Default
 
 ```ts
-vault
+"vault"
 ```
 
 ***
@@ -22,18 +30,24 @@ vault
 
 > `optional` **walletConnectorType**: `string`
 
-The type of the wallet connector.
+The wallet connector type to use.
 
 #### Default
 
 ```ts
-wallet
+"wallet"
 ```
 
 ***
 
-### config
+### loggingConnectorType?
 
-> **config**: [`IIotaNftConnectorConfig`](IIotaNftConnectorConfig.md)
+> `optional` **loggingConnectorType**: `string`
 
-The configuration for the connector.
+The logging connector type.
+
+#### Default
+
+```ts
+logging
+```

@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/dlt",
-	"version": "0.0.1-next.16",
+	"version": "0.0.1-next.17",
 	"description": "Distributed Ledger",
 	"repository": {
 		"type": "git",
@@ -36,11 +36,11 @@
 		"eslint-plugin-unused-imports": "3.2.0",
 		"fast-glob": "3.3.3",
 		"markdownlint-cli": "0.44.0",
-		"prettier": "3.4.2"
+		"prettier": "3.5.0"
 	},
 	"workspaces": [
 		"packages/dlt-iota",
-		"packages/dlt-iota-rebased",
+		"packages/dlt-iota-stardust",
 		"apps/move-to-json"
 	],
 	"type": "module"

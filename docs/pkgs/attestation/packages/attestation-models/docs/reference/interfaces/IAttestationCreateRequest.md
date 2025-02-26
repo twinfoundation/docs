@@ -10,12 +10,6 @@ Attest the data and return the id of the attestation.
 
 The data to be used in the signing.
 
-#### verificationMethodId
-
-> **verificationMethodId**: `string`
-
-The identity verification method to use for attesting the data.
-
 #### attestationObject
 
 > **attestationObject**: `IJsonLdNodeObject`

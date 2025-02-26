@@ -12,7 +12,7 @@ Class for performing identity operations on IOTA.
 
 > **new IotaIdentityResolverConnector**(`options`): [`IotaIdentityResolverConnector`](IotaIdentityResolverConnector.md)
 
-Create a new instance of IotaIdentityConnector.
+Create a new instance of IotaIdentityResolverConnector.
 
 #### Parameters
 

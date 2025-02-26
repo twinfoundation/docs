@@ -133,3 +133,32 @@ An optional override for the mime type, will auto detect if empty.
 `Promise`\<`unknown`\>
 
 The converted data.
+
+***
+
+### query()
+
+> **query**(`cursor`?, `pageSize`?): `Promise`\<\{ `entities`: [`IRuleGroup`](IRuleGroup.md)[]; `cursor`: `string`; \}\>
+
+Query the rule group entries.
+
+#### Parameters
+
+##### cursor?
+
+`string`
+
+The cursor to request the next page of entities.
+
+##### pageSize?
+
+`number`
+
+The maximum number of entities in a page.
+
+#### Returns
+
+`Promise`\<\{ `entities`: [`IRuleGroup`](IRuleGroup.md)[]; `cursor`: `string`; \}\>
+
+All the entities for the storage matching the conditions,
+and a cursor which can be used to request more entities.

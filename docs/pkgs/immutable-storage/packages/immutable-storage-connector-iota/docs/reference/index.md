@@ -3,6 +3,7 @@
 ## Classes
 
 - [IotaImmutableStorageConnector](classes/IotaImmutableStorageConnector.md)
+- [IotaImmutableStorageUtils](classes/IotaImmutableStorageUtils.md)
 
 ## Interfaces
 

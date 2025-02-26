@@ -22,7 +22,7 @@ The private key for the controller.
 
 The id of the verification method to remove.
 
-#### connector
+#### connector?
 
 [`IdentityConnectorTypes`](../type-aliases/IdentityConnectorTypes.md)
 
@@ -34,11 +34,11 @@ The connector to perform the operations with.
 
 The node URL.
 
-#### network
+#### network?
 
 `string`
 
-The network to use for rebased connector.
+The network to use for connector.
 
 #### explorer
 

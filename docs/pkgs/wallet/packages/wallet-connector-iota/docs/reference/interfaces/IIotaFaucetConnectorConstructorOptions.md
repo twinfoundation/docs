@@ -1,6 +1,6 @@
 # Interface: IIotaFaucetConnectorConstructorOptions
 
-Options for the IOTA faucet connector.
+Options for the IOTA Faucet Connector constructor.
 
 ## Properties
 
@@ -8,4 +8,12 @@ Options for the IOTA faucet connector.
 
 > **config**: [`IIotaFaucetConnectorConfig`](IIotaFaucetConnectorConfig.md)
 
-The configuration to use for the connector.
+The configuration for the connector.
+
+***
+
+### vaultConnectorType?
+
+> `optional` **vaultConnectorType**: `string`
+
+Vault connector to use for faucet secrets.

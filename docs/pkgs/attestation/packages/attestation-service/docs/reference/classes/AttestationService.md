@@ -50,17 +50,11 @@ Runtime name for the class.
 
 ### create()
 
-> **create**(`verificationMethodId`, `attestationObject`, `namespace`?, `identity`?, `nodeIdentity`?): `Promise`\<`string`\>
+> **create**(`attestationObject`, `namespace`?, `identity`?, `nodeIdentity`?): `Promise`\<`string`\>
 
 Attest the data and return the collated information.
 
 #### Parameters
-
-##### verificationMethodId
-
-`string`
-
-The identity verification method to use for attesting the data.
 
 ##### attestationObject
 

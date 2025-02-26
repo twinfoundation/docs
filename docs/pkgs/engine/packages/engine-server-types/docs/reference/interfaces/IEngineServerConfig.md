@@ -174,6 +174,12 @@ Wallet connector options which can be overridden by individual components by spe
 
 Immutable storage connector options which can be overridden by individual components by specifying types other than default.
 
+##### immutableStorageComponent?
+
+> `optional` **immutableStorageComponent**: `IEngineCoreTypeConfig`\<`ImmutableStorageComponentConfig`\>[]
+
+Immutable storage component options which can be overridden by individual components by specifying types other than default.
+
 ##### immutableProofComponent?
 
 > `optional` **immutableProofComponent**: `IEngineCoreTypeConfig`\<`ImmutableProofComponentConfig`\>[]
@@ -275,6 +281,12 @@ Data extractor connector options which can be overridden by individual component
 > `optional` **dataProcessingComponent**: `IEngineCoreTypeConfig`\<`DataProcessingComponentConfig`\>[]
 
 Date processing options which can be overridden by individual components by specifying types other than default.
+
+##### documentManagementComponent?
+
+> `optional` **documentManagementComponent**: `IEngineCoreTypeConfig`\<`DocumentManagementComponentConfig`\>[]
+
+Document management options which can be overridden by individual components by specifying types other than default.
 
 #### Type declaration
 

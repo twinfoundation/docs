@@ -50,17 +50,11 @@ Runtime name for the class.
 
 ### create()
 
-> **create**(`verificationMethodId`, `attestationObject`, `namespace`?): `Promise`\<`string`\>
+> **create**(`attestationObject`, `namespace`?): `Promise`\<`string`\>
 
 Attest the data and return the collated information.
 
 #### Parameters
-
-##### verificationMethodId
-
-`string`
-
-The identity verification method to use for attesting the data.
 
 ##### attestationObject
 
@@ -114,7 +108,7 @@ The verified attestation details.
 
 ### transfer()
 
-> **transfer**(`attestationId`, `holderIdentity`): `Promise`\<`void`\>
+> **transfer**(`attestationId`, `holderIdentity`, `holderAddress`): `Promise`\<`void`\>
 
 Transfer the attestation to a new holder.
 
@@ -131,6 +125,12 @@ The attestation to transfer.
 `string`
 
 The identity to transfer the attestation to.
+
+##### holderAddress
+
+`string`
+
+The address to transfer the attestation to.
 
 #### Returns
 

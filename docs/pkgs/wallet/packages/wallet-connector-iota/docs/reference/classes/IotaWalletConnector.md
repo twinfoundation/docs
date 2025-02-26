@@ -12,7 +12,7 @@ Class for performing wallet operations on IOTA.
 
 > **new IotaWalletConnector**(`options`): [`IotaWalletConnector`](IotaWalletConnector.md)
 
-Create a new instance of IotaWalletConnector.
+Create a new instance of IOTA Wallet Connector.
 
 #### Parameters
 
@@ -76,9 +76,9 @@ Nothing.
 
 ### getAddresses()
 
-> **getAddresses**(`identity`, `accountIndex`, `startAddressIndex`, `count`): `Promise`\<`string`[]\>
+> **getAddresses**(`identity`, `accountIndex`, `startAddressIndex`, `count`, `isInternal`?): `Promise`\<`string`[]\>
 
-Get the addresses for the requested range.
+Get the addresses for the identity.
 
 #### Parameters
 
@@ -86,7 +86,7 @@ Get the addresses for the requested range.
 
 `string`
 
-The identity of the user to access the vault keys.
+The identity to get the addresses for.
 
 ##### accountIndex
 
@@ -106,11 +106,17 @@ The start index for the addresses.
 
 The number of addresses to generate.
 
+##### isInternal?
+
+`boolean`
+
+Whether the addresses are internal.
+
 #### Returns
 
 `Promise`\<`string`[]\>
 
-The list of addresses.
+The addresses.
 
 #### Implementation of
 
@@ -122,7 +128,7 @@ The list of addresses.
 
 > **getBalance**(`identity`, `address`): `Promise`\<`bigint`\>
 
-Get the balance for an address in a wallet.
+Get the balance for the given address.
 
 #### Parameters
 
@@ -136,13 +142,13 @@ The identity of the user to access the vault keys.
 
 `string`
 
-The bech32 encoded address.
+The address to get the balance for.
 
 #### Returns
 
 `Promise`\<`bigint`\>
 
-The balance of the wallet address.
+The balance.
 
 #### Implementation of
 
@@ -154,7 +160,7 @@ The balance of the wallet address.
 
 > **ensureBalance**(`identity`, `address`, `ensureBalance`, `timeoutInSeconds`?): `Promise`\<`boolean`\>
 
-Ensure the balance for an address in a wallet.
+Ensure the balance for the given address is at least the given amount.
 
 #### Parameters
 
@@ -168,25 +174,25 @@ The identity of the user to access the vault keys.
 
 `string`
 
-The bech32 encoded address.
+The address to ensure the balance for.
 
 ##### ensureBalance
 
 `bigint`
 
-The balance to ensure on the address.
+The minimum balance to ensure.
 
 ##### timeoutInSeconds?
 
 `number`
 
-The timeout in seconds to wait for the funding to complete.
+Optional timeout in seconds, defaults to 10 seconds.
 
 #### Returns
 
 `Promise`\<`boolean`\>
 
-True if the balance has been ensured.
+True if the balance is at least the given amount, false otherwise.
 
 #### Implementation of
 
@@ -198,7 +204,7 @@ True if the balance has been ensured.
 
 > **transfer**(`identity`, `addressSource`, `addressDest`, `amount`): `Promise`\<`undefined` \| `string`\>
 
-Transfer funds to an address.
+Transfer an amount from one address to another.
 
 #### Parameters
 
@@ -212,13 +218,13 @@ The identity of the user to access the vault keys.
 
 `string`
 
-The bech32 encoded address to send the funds from.
+The source address to transfer from.
 
 ##### addressDest
 
 `string`
 
-The bech32 encoded address to send the funds to.
+The destination address to transfer to.
 
 ##### amount
 
@@ -230,7 +236,7 @@ The amount to transfer.
 
 `Promise`\<`undefined` \| `string`\>
 
-An identifier for the transfer if there was one.
+The transaction digest.
 
 #### Implementation of
 

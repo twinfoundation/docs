@@ -32,27 +32,41 @@ Default name for the seed secret.
 
 ### DEFAULT\_COIN\_TYPE
 
-> `readonly` `static` **DEFAULT\_COIN\_TYPE**: `number` = `CoinType.IOTA`
+> `readonly` `static` **DEFAULT\_COIN\_TYPE**: `number` = `4218`
 
 Default coin type.
 
 ***
 
-### DEFAULT\_BECH32\_HRP
+### DEFAULT\_SCAN\_RANGE
 
-> `readonly` `static` **DEFAULT\_BECH32\_HRP**: `string` = `"iota"`
+> `readonly` `static` **DEFAULT\_SCAN\_RANGE**: `number` = `1000`
 
-Default bech32 hrp.
-
-***
-
-### DEFAULT\_INCLUSION\_TIMEOUT
-
-> `readonly` `static` **DEFAULT\_INCLUSION\_TIMEOUT**: `number` = `60`
-
-The default length of time to wait for the inclusion of a transaction in seconds.
+Default scan range.
 
 ## Methods
+
+### createClient()
+
+> `static` **createClient**(`config`): `IotaClient`
+
+Create a new IOTA client.
+
+#### Parameters
+
+##### config
+
+[`IIotaConfig`](../interfaces/IIotaConfig.md)
+
+The configuration.
+
+#### Returns
+
+`IotaClient`
+
+The client instance.
+
+***
 
 ### populateConfig()
 
@@ -76,29 +90,23 @@ The configuration to populate.
 
 ### getAddresses()
 
-> `static` **getAddresses**(`config`, `vaultConnector`, `identity`, `accountIndex`, `startAddressIndex`, `count`): `Promise`\<`string`[]\>
+> `static` **getAddresses**(`seed`, `coinType`, `accountIndex`, `startAddressIndex`, `count`, `isInternal`?): `string`[]
 
-Get the addresses for the requested range.
+Get addresses for the identity.
 
 #### Parameters
 
-##### config
+##### seed
 
-[`IIotaConfig`](../interfaces/IIotaConfig.md)
+`Uint8Array`
 
-The configuration to use.
+The seed to use for generating addresses.
 
-##### vaultConnector
+##### coinType
 
-`IVaultConnector`
+`number`
 
-The vault connector to use.
-
-##### identity
-
-`string`
-
-The identity of the user to access the vault keys.
+The coin type to use.
 
 ##### accountIndex
 
@@ -118,9 +126,15 @@ The start index for the addresses.
 
 The number of addresses to generate.
 
+##### isInternal?
+
+`boolean`
+
+Whether the addresses are internal.
+
 #### Returns
 
-`Promise`\<`string`[]\>
+`string`[]
 
 The list of addresses.
 
@@ -128,9 +142,9 @@ The list of addresses.
 
 ### prepareAndPostTransaction()
 
-> `static` **prepareAndPostTransaction**(`config`, `vaultConnector`, `identity`, `client`, `options`): `Promise`\<\{ `blockId`: `string`; `block`: `Block`; \}\>
+> `static` **prepareAndPostTransaction**(`config`, `vaultConnector`, `identity`, `client`, `options`): `Promise`\<\{ `digest`: `string`; \}\>
 
-Prepare a transaction for sending, post and wait for inclusion.
+Prepare and post a transaction.
 
 #### Parameters
 
@@ -138,13 +152,13 @@ Prepare a transaction for sending, post and wait for inclusion.
 
 [`IIotaConfig`](../interfaces/IIotaConfig.md)
 
-The configuration to use.
+The configuration.
 
 ##### vaultConnector
 
 `IVaultConnector`
 
-The vault connector to use.
+The vault connector.
 
 ##### identity
 
@@ -154,27 +168,135 @@ The identity of the user to access the vault keys.
 
 ##### client
 
-`Client`
+`IotaClient`
 
-The client to use.
+The client instance.
 
 ##### options
 
-`IBuildBlockOptions`
+The transaction options.
 
-The options for the transaction.
+###### source
+
+`string`
+
+The source address.
+
+###### amount
+
+`bigint`
+
+The amount to transfer.
+
+###### recipient
+
+`string`
+
+The recipient address.
 
 #### Returns
 
-`Promise`\<\{ `blockId`: `string`; `block`: `Block`; \}\>
+`Promise`\<\{ `digest`: `string`; \}\>
 
-The block id and block.
+The transaction result.
+
+***
+
+### prepareAndPostNftTransaction()
+
+> `static` **prepareAndPostNftTransaction**(`config`, `vaultConnector`, `identity`, `client`, `options`): `Promise`\<[`IIotaNftTransactionResponse`](../interfaces/IIotaNftTransactionResponse.md)\>
+
+Prepare and post an NFT transaction.
+
+#### Parameters
+
+##### config
+
+[`IIotaConfig`](../interfaces/IIotaConfig.md)
+
+The configuration.
+
+##### vaultConnector
+
+`IVaultConnector`
+
+The vault connector.
+
+##### identity
+
+`string`
+
+The identity of the user to access the vault keys.
+
+##### client
+
+`IotaClient`
+
+The client instance.
+
+##### options
+
+[`IIotaNftTransactionOptions`](../interfaces/IIotaNftTransactionOptions.md)
+
+The NFT transaction options.
+
+#### Returns
+
+`Promise`\<[`IIotaNftTransactionResponse`](../interfaces/IIotaNftTransactionResponse.md)\>
+
+The transaction response.
+
+***
+
+### prepareAndPostStorageTransaction()
+
+> `static` **prepareAndPostStorageTransaction**(`config`, `vaultConnector`, `identity`, `client`, `options`): `Promise`\<`IotaTransactionBlockResponse`\>
+
+Prepare and post a storage transaction.
+
+#### Parameters
+
+##### config
+
+[`IIotaConfig`](../interfaces/IIotaConfig.md)
+
+The configuration.
+
+##### vaultConnector
+
+`IVaultConnector`
+
+The vault connector.
+
+##### identity
+
+`string`
+
+The identity of the user to access the vault keys.
+
+##### client
+
+`IotaClient`
+
+The client instance.
+
+##### options
+
+[`IIotaNftTransactionOptions`](../interfaces/IIotaNftTransactionOptions.md)
+
+The storage transaction options.
+
+#### Returns
+
+`Promise`\<`IotaTransactionBlockResponse`\>
+
+The transaction response.
 
 ***
 
 ### getSeed()
 
-> `static` **getSeed**(`config`, `vaultConnector`, `identity`): `Promise`\<`Uint8Array`\>
+> `static` **getSeed**(`config`, `vaultConnector`, `identity`): `Promise`\<`Uint8Array`\<`ArrayBufferLike`\>\>
 
 Get the seed from the vault.
 
@@ -200,9 +322,65 @@ The identity of the user to access the vault keys.
 
 #### Returns
 
-`Promise`\<`Uint8Array`\>
+`Promise`\<`Uint8Array`\<`ArrayBufferLike`\>\>
 
 The seed.
+
+***
+
+### findAddress()
+
+> `static` **findAddress**(`maxScanRange`, `coinType`, `seed`, `address`): `object`
+
+Find the address in the seed.
+
+#### Parameters
+
+##### maxScanRange
+
+`number`
+
+The maximum range to scan.
+
+##### coinType
+
+`number`
+
+The coin type to use.
+
+##### seed
+
+`Uint8Array`
+
+The seed to use.
+
+##### address
+
+`string`
+
+The address to find.
+
+#### Returns
+
+`object`
+
+The address key pair.
+
+##### address
+
+> **address**: `string`
+
+##### privateKey
+
+> **privateKey**: `Uint8Array`
+
+##### publicKey
+
+> **publicKey**: `Uint8Array`
+
+#### Throws
+
+Error if the address is not found.
 
 ***
 
@@ -211,6 +389,7 @@ The seed.
 > `static` **extractPayloadError**(`error`): `IError`
 
 Extract error from SDK payload.
+Errors from the IOTA SDK are usually not JSON strings but objects.
 
 #### Parameters
 
@@ -230,54 +409,134 @@ The extracted error.
 
 ### buildMnemonicKey()
 
-> `static` **buildMnemonicKey**(`config`, `identity`): `string`
+> `static` **buildMnemonicKey**(`identity`, `vaultMnemonicId`?): `string`
 
-Build the key name to access the mnemonic in the vault.
+Get the key for storing the mnemonic.
 
 #### Parameters
-
-##### config
-
-[`IIotaConfig`](../interfaces/IIotaConfig.md)
-
-The configuration to use.
 
 ##### identity
 
 `string`
 
-The identity of the user to access the vault keys.
+The identity to use.
+
+##### vaultMnemonicId?
+
+`string`
+
+The mnemonic ID to use.
 
 #### Returns
 
 `string`
 
-The vault key.
+The mnemonic key.
 
 ***
 
 ### buildSeedKey()
 
-> `static` **buildSeedKey**(`config`, `identity`): `string`
+> `static` **buildSeedKey**(`identity`, `vaultSeedId`?): `string`
 
-Build the key name to access the seed in the vault.
+Get the key for storing the seed.
 
 #### Parameters
-
-##### config
-
-[`IIotaConfig`](../interfaces/IIotaConfig.md)
-
-The configuration to use.
 
 ##### identity
 
 `string`
 
-The identity of the user to access the vault keys.
+The identity to use.
+
+##### vaultSeedId?
+
+`string`
+
+The seed ID to use.
 
 #### Returns
 
 `string`
 
-The vault key.
+The seed key.
+
+***
+
+### packageExistsOnNetwork()
+
+> `static` **packageExistsOnNetwork**(`client`, `packageId`): `Promise`\<`boolean`\>
+
+Check if the package exists on the network.
+
+#### Parameters
+
+##### client
+
+`IotaClient`
+
+The client to use.
+
+##### packageId
+
+`string`
+
+The package ID to check.
+
+#### Returns
+
+`Promise`\<`boolean`\>
+
+True if the package exists, false otherwise.
+
+***
+
+### dryRunTransaction()
+
+> `static` **dryRunTransaction**(`client`, `logging`, `className`, `txb`, `sender`, `operation`): `Promise`\<[`IIotaDryRun`](../interfaces/IIotaDryRun.md)\>
+
+Dry run a transaction and log the results.
+
+#### Parameters
+
+##### client
+
+`IotaClient`
+
+The IOTA client.
+
+##### logging
+
+The logging connector.
+
+`undefined` | `ILoggingConnector`
+
+##### className
+
+`string`
+
+The class name for logging.
+
+##### txb
+
+`Transaction`
+
+The transaction to dry run.
+
+##### sender
+
+`string`
+
+The sender address.
+
+##### operation
+
+`string`
+
+The operation to log.
+
+#### Returns
+
+`Promise`\<[`IIotaDryRun`](../interfaces/IIotaDryRun.md)\>
+
+void.

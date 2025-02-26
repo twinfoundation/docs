@@ -608,7 +608,7 @@ The type of NFT connector: entity-storage, iota.
 
 > `optional` **identityConnector**: `string`
 
-The type of identity connector: entity-storage, iota, iota-rebased.
+The type of identity connector: entity-storage, iota, iota-stardust.
 
 ***
 
@@ -616,7 +616,7 @@ The type of identity connector: entity-storage, iota, iota-rebased.
 
 > `optional` **identityResolverConnector**: `string`
 
-The type of identity resolver connector: entity-storage, iota, iota-rebased.
+The type of identity resolver connector: entity-storage, iota, iota-stardust.
 
 ***
 
@@ -625,6 +625,46 @@ The type of identity resolver connector: entity-storage, iota, iota-rebased.
 > `optional` **immutableStorageConnector**: `string`
 
 The type of immutable storage connector: entity-storage, iota.
+
+***
+
+### iotaStardustFaucetEndpoint?
+
+> `optional` **iotaStardustFaucetEndpoint**: `string`
+
+IOTA Stardust Faucet Endpoint.
+
+***
+
+### iotaStardustNodeEndpoint?
+
+> `optional` **iotaStardustNodeEndpoint**: `string`
+
+IOTA Stardust Node Endpoint.
+
+***
+
+### iotaStardustBech32Hrp?
+
+> `optional` **iotaStardustBech32Hrp**: `string`
+
+IOTA Stardust Bech32 HRP
+
+***
+
+### iotaStardustCoinType?
+
+> `optional` **iotaStardustCoinType**: `string`
+
+IOTA Stardust coin type.
+
+***
+
+### iotaStardustExplorerEndpoint?
+
+> `optional` **iotaStardustExplorerEndpoint**: `string`
+
+IOTA Stardust Explorer Endpoint.
 
 ***
 
@@ -644,11 +684,11 @@ IOTA Node Endpoint.
 
 ***
 
-### iotaBech32Hrp?
+### iotaNetwork?
 
-> `optional` **iotaBech32Hrp**: `string`
+> `optional` **iotaNetwork**: `string`
 
-IOTA Bech32 HRP
+IOTA network.
 
 ***
 
@@ -668,46 +708,6 @@ IOTA Explorer Endpoint.
 
 ***
 
-### iotaRebasedFaucetEndpoint?
-
-> `optional` **iotaRebasedFaucetEndpoint**: `string`
-
-IOTA Rebased Faucet Endpoint.
-
-***
-
-### iotaRebasedNodeEndpoint?
-
-> `optional` **iotaRebasedNodeEndpoint**: `string`
-
-IOTA Rebased Node Endpoint.
-
-***
-
-### iotaRebasedNetwork?
-
-> `optional` **iotaRebasedNetwork**: `string`
-
-IOTA Rebased network.
-
-***
-
-### iotaRebasedCoinType?
-
-> `optional` **iotaRebasedCoinType**: `string`
-
-IOTA Rebased coin type.
-
-***
-
-### iotaRebasedExplorerEndpoint?
-
-> `optional` **iotaRebasedExplorerEndpoint**: `string`
-
-IOTA Rebased Explorer Endpoint.
-
-***
-
 ### identityProfileConnector?
 
 > `optional` **identityProfileConnector**: `string`
@@ -716,11 +716,11 @@ The type of identity profile connector: entity-storage.
 
 ***
 
-### immutableProofAssertionMethodId?
+### immutableProofVerificationMethodId?
 
-> `optional` **immutableProofAssertionMethodId**: `string`
+> `optional` **immutableProofVerificationMethodId**: `string`
 
-The identity assertion method id to use with immutable proofs.
+The identity verification method id to use with immutable proofs.
 
 ***
 
@@ -740,11 +740,11 @@ The type of attestation connector: entity-storage, iota.
 
 ***
 
-### attestationAssertionMethodId?
+### attestationVerificationMethodId?
 
-> `optional` **attestationAssertionMethodId**: `string`
+> `optional` **attestationVerificationMethodId**: `string`
 
-The identity assertion method id to use with attestation.
+The identity verification method id to use with attestation.
 
 ***
 

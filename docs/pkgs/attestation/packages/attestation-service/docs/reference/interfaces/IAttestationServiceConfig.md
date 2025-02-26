@@ -26,14 +26,14 @@ The wallet address index to use for funding and controlling the attestations.
 
 ***
 
-### excludeNodeIdentity?
+### verificationMethodId?
 
-> `optional` **excludeNodeIdentity**: `boolean`
+> `optional` **verificationMethodId**: `string`
 
-The node identity automatically gets added to the data payload being attested. This can be excluded if required.
+The verification method id to use for the attestation.
 
 #### Default
 
 ```ts
-false
+attestation-assertion
 ```

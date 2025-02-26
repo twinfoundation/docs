@@ -178,7 +178,7 @@ Error if the item is not found.
 
 > **createKey**(`name`, `type`): `Promise`\<`Uint8Array`\>
 
-Create a key in the vault.
+Generate a new key and store it in the vault.
 
 #### Parameters
 
@@ -186,19 +186,19 @@ Create a key in the vault.
 
 `string`
 
-The name of the key to create.
+The name of the key to generate and store in the vault.
 
 ##### type
 
 `VaultKeyType`
 
-The type of the key to create.
+The type of key to create.
 
 #### Returns
 
 `Promise`\<`Uint8Array`\>
 
-The private key.
+The public key for the key pair.
 
 #### Implementation of
 
@@ -210,7 +210,7 @@ The private key.
 
 > **addKey**(`name`, `type`, `privateKey`, `publicKey`?): `Promise`\<`void`\>
 
-Add a key to the vault.
+Add an existing key to the vault.
 
 #### Parameters
 
@@ -218,19 +218,19 @@ Add a key to the vault.
 
 `string`
 
-The name of the key to add.
+The name of the key to add to the vault.
 
 ##### type
 
 `VaultKeyType`
 
-The type of the key to add.
+The type of key to add.
 
 ##### privateKey
 
 `Uint8Array`
 
-The private key to add.
+The private key.
 
 ##### publicKey?
 

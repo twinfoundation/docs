@@ -1,6 +1,6 @@
 # Class: TelemetryMetric
 
-Call defining a telemetry metric.
+Class defining a telemetry metric.
 
 ## Constructors
 
