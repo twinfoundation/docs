@@ -17,11 +17,12 @@
 		"lint:format": "prettier --config .prettierrc --check .",
 		"lint:markdown": "markdownlint docs/**/*.md --ignore **/docs/pkgs/**",
 		"lint:spell": "cspell **/*.md --no-progress",
-		"lint": "npm run lint:format && npm run lint:markdown && npm run lint:spell"
+		"lint": "npm run lint:format && npm run lint:markdown && npm run lint:spell",
+		"postinstall": "patch-package"
 	},
 	"dependencies": {
-		"@docusaurus/core": "^3.7.0",
-		"@docusaurus/preset-classic": "^3.7.0",
+		"@docusaurus/core": "3.7.0",
+		"@docusaurus/preset-classic": "3.7.0",
 		"@mdx-js/react": "3.1.0",
 		"clsx": "2.1.1",
 		"prism-react-renderer": "2.4.1",
@@ -29,11 +30,12 @@
 		"react-dom": "19.0.0"
 	},
 	"devDependencies": {
-		"@docusaurus/module-type-aliases": "^3.7.0",
-		"@docusaurus/tsconfig": "^3.7.0",
-		"@docusaurus/types": "^3.7.0",
+		"@docusaurus/module-type-aliases": "3.7.0",
+		"@docusaurus/tsconfig": "3.7.0",
+		"@docusaurus/types": "3.7.0",
 		"cspell": "8.17.5",
 		"markdownlint-cli": "0.44.0",
+		"patch-package": "^8.0.0",
 		"prettier": "3.5.2",
 		"typescript": "5.7.3"
 	},
