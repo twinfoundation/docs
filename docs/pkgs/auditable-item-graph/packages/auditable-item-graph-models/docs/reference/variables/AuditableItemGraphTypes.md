@@ -12,6 +12,12 @@ The types of auditable item graph data.
 
 The context root for the auditable item graph types.
 
+### ContextRootCommon
+
+> `readonly` **ContextRootCommon**: `"https://schema.twindev.org/common/"` = `"https://schema.twindev.org/common/"`
+
+The context root for the common types.
+
 ### Vertex
 
 > `readonly` **Vertex**: `"AuditableItemGraphVertex"` = `"AuditableItemGraphVertex"`

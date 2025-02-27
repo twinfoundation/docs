@@ -22,7 +22,7 @@ The seed required for signing by the issuer.
 
 The id of the NFT to burn in urn format.
 
-#### connector
+#### connector?
 
 [`NftConnectorTypes`](../type-aliases/NftConnectorTypes.md)
 
@@ -34,11 +34,11 @@ The connector to perform the operations with.
 
 The node URL.
 
-#### network
+#### network?
 
 `string`
 
-The network to use for rebased connector.
+The network to use for connector.
 
 #### explorer
 

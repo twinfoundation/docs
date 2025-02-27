@@ -45,7 +45,7 @@
 								"immutableProofCreateRequestExample": {
 									"value": {
 										"proofObject": {
-											"@context": "http://schema.org",
+											"@context": "https://schema.org",
 											"type": "Person",
 											"name": "John Smith"
 										}
@@ -194,7 +194,10 @@
 								"examples": {
 									"immutableProofGetResponseExample": {
 										"value": {
-											"@context": "https://schema.twindev.org/immutable-proof/",
+											"@context": [
+												"https://schema.twindev.org/immutable-proof/",
+												"https://schema.twindev.org/common/"
+											],
 											"type": "ImmutableProof",
 											"id": "ais:1234567890",
 											"userIdentity": "user-1",
@@ -219,7 +222,10 @@
 								"examples": {
 									"immutableProofJsonLdGetResponseExample": {
 										"value": {
-											"@context": "https://schema.twindev.org/immutable-proof/",
+											"@context": [
+												"https://schema.twindev.org/immutable-proof/",
+												"https://schema.twindev.org/common/"
+											],
 											"type": "ImmutableProof",
 											"id": "ais:1234567890",
 											"userIdentity": "user-1",
@@ -508,7 +514,7 @@
 									}
 								],
 								"additionalItems": {
-									"type": "string"
+									"$ref": "https://schema.twindev.org/json-ld/JsonLdContextDefinitionElement"
 								}
 							}
 						],
@@ -516,7 +522,6 @@
 					},
 					"type": {
 						"type": "string",
-						"const": "DataIntegrityProof",
 						"description": "JSON-LD Type."
 					},
 					"cryptosuite": {
@@ -592,7 +597,6 @@
 					}
 				},
 				"required": [
-					"@context",
 					"type",
 					"cryptosuite",
 					"proofPurpose",

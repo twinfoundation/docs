@@ -16,7 +16,7 @@ The options for the wallet connector.
 
 The node endpoint.
 
-#### network
+#### network?
 
 `string`
 
@@ -28,7 +28,7 @@ The network.
 
 The faucet endpoint.
 
-#### vaultSeedId
+#### vaultSeedId?
 
 `string`
 

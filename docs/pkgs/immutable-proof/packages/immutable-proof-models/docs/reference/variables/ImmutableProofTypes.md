@@ -12,6 +12,12 @@ The types of immutable proof data.
 
 The context root for the immutable proof types.
 
+### ContextRootCommon
+
+> `readonly` **ContextRootCommon**: `"https://schema.twindev.org/common/"` = `"https://schema.twindev.org/common/"`
+
+The context root for the common types.
+
 ### ImmutableProof
 
 > `readonly` **ImmutableProof**: `"ImmutableProof"` = `"ImmutableProof"`

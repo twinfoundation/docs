@@ -16,17 +16,23 @@ The options for the NFT connector.
 
 The node endpoint.
 
-#### network
+#### network?
 
 `string`
 
 The network.
 
-#### vaultSeedId
+#### vaultSeedId?
 
 `string`
 
 The vault seed ID.
+
+#### walletAddressIndex?
+
+`number`
+
+The wallet address index.
 
 ### connector?
 

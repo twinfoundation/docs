@@ -2,6 +2,7 @@
 
 ## Interfaces
 
+- [IDidCredentialSchema](interfaces/IDidCredentialSchema.md)
 - [IDidCredentialStatus](interfaces/IDidCredentialStatus.md)
 - [IDidDocument](interfaces/IDidDocument.md)
 - [IDidDocumentVerificationMethod](interfaces/IDidDocumentVerificationMethod.md)

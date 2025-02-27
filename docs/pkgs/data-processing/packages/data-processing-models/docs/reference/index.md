@@ -13,6 +13,8 @@
 - [IDataProcessingExtractResponse](interfaces/IDataProcessingExtractResponse.md)
 - [IDataProcessingRuleGroupGetRequest](interfaces/IDataProcessingRuleGroupGetRequest.md)
 - [IDataProcessingRuleGroupGetResponse](interfaces/IDataProcessingRuleGroupGetResponse.md)
+- [IDataProcessingRuleGroupListRequest](interfaces/IDataProcessingRuleGroupListRequest.md)
+- [IDataProcessingRuleGroupListResponse](interfaces/IDataProcessingRuleGroupListResponse.md)
 - [IDataProcessingRuleGroupRemoveRequest](interfaces/IDataProcessingRuleGroupRemoveRequest.md)
 - [IDataProcessingRuleGroupSetRequest](interfaces/IDataProcessingRuleGroupSetRequest.md)
 

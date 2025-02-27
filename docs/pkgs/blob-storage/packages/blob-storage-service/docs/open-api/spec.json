@@ -1,2212 +1,2242 @@
 {
-    "openapi": "3.1.0",
-    "info": {
-        "title": "TWIN - Test Endpoints",
-        "description": "REST API for TWIN - Test Endpoints.",
-        "version": "1.0.0",
-        "license": {
-            "name": "Apache 2.0 License",
-            "url": "https://opensource.org/licenses/Apache-2.0"
-        }
-    },
-    "servers": [
-        {
-            "url": "https://localhost"
-        }
-    ],
-    "tags": [
-        {
-            "name": "Blob Storage",
-            "description": "Endpoints which are modelled to access a blob storage contract."
-        }
-    ],
-    "paths": {
-        "/blob-storage": {
-            "post": {
-                "operationId": "blobStorageCreate",
-                "summary": "Create an entry in blob storage",
-                "tags": [
-                    "Blob Storage"
-                ],
-                "security": [
-                    {
-                        "jwtBearerAuthScheme": []
-                    }
-                ],
-                "requestBody": {
-                    "description": "Request to create an entry in blob storage.",
-                    "required": true,
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/BlobStorageCreateRequest"
-                            },
-                            "examples": {
-                                "blobStorageCreateRequestExample": {
-                                    "value": {
-                                        "blob": "VGhlIHF1aWNrIGJyb3duIGZveCBqdW1wcyBvdmVyIHRoZSBsYXp5IGRvZw==",
-                                        "metadata": {
-                                            "@context": "http://schema.org/",
-                                            "@type": "DigitalDocument",
-                                            "name": "myfile.pdf"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                },
-                "responses": {
-                    "201": {
-                        "description": "The rest request ended in created response.",
-                        "headers": {
-                            "location": {
-                                "schema": {
-                                    "type": "string"
-                                },
-                                "description": "e.g. blob-memory:c57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70"
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "The server cannot process the request, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "GeneralError",
-                                            "message": "component.error",
-                                            "properties": {
-                                                "foo": "bar"
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "UnauthorizedError",
-                                            "message": "component.error"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "500": {
-                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "InternalServerError",
-                                            "message": "component.error"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "get": {
-                "operationId": "blobStorageGet",
-                "summary": "Query the items from blob storage",
-                "tags": [
-                    "Blob Storage"
-                ],
-                "parameters": [
-                    {
-                        "name": "conditions",
-                        "description": "The condition for the query as JSON version of EntityCondition type.",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "orderBy",
-                        "description": "The order for the results, default to created.",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "dateCreated",
-                                "dateModified"
-                            ]
-                        }
-                    },
-                    {
-                        "name": "orderByDirection",
-                        "description": "The direction for the order, defaults to desc.",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "$ref": "#/components/schemas/SortDirection"
-                        }
-                    },
-                    {
-                        "name": "pageSize",
-                        "description": "The number of entries to return per page.",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "number"
-                        }
-                    },
-                    {
-                        "name": "cursor",
-                        "description": "The cursor to get next chunk of data, returned in previous response.",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "accept",
-                        "in": "header",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "style": "simple"
-                    }
-                ],
-                "security": [
-                    {
-                        "jwtBearerAuthScheme": []
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Response to getting the list of entries from a query.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/BlobStorageEntryList"
-                                },
-                                "examples": {
-                                    "blobStorageListResponseExample": {
-                                        "value": {
-                                            "@context": [
-                                                "https://schema.twindev.org/blob-storage/"
-                                            ],
-                                            "type": "BlobStorageEntryList",
-                                            "entries": [
-                                                {
-                                                    "@context": [
-                                                        "https://schema.twindev.org/blob-storage/",
-                                                        "https://schema.org"
-                                                    ],
-                                                    "type": "BlobStorageEntry",
-                                                    "id": "blob-memory:c57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70",
-                                                    "dateCreated": "2024-01-01T00:00:00Z",
-                                                    "encodingFormat": "application/pdf",
-                                                    "blobSize": 42,
-                                                    "fileExtension": "pdf",
-                                                    "metadata": {
-                                                        "@context": "http://schema.org/",
-                                                        "@type": "DigitalDocument",
-                                                        "name": "myfile.pdf"
-                                                    },
-                                                    "blob": "VGhlIHF1aWNrIGJyb3duIGZveCBqdW1wcyBvdmVyIHRoZSBsYXp5IGRvZw=="
-                                                }
-                                            ]
-                                        }
-                                    }
-                                }
-                            },
-                            "application/ld+json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/BlobStorageEntryList"
-                                },
-                                "examples": {
-                                    "blobStorageListResponseJsonLdExample": {
-                                        "value": {
-                                            "@context": [
-                                                "https://schema.twindev.org/blob-storage/"
-                                            ],
-                                            "type": "BlobStorageEntryList",
-                                            "entries": [
-                                                {
-                                                    "@context": [
-                                                        "https://schema.twindev.org/blob-storage/",
-                                                        "https://schema.org"
-                                                    ],
-                                                    "type": "BlobStorageEntry",
-                                                    "id": "blob-memory:c57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70",
-                                                    "dateCreated": "2024-01-01T00:00:00Z",
-                                                    "encodingFormat": "application/pdf",
-                                                    "blobSize": 42,
-                                                    "fileExtension": "pdf",
-                                                    "metadata": {
-                                                        "@context": "http://schema.org/",
-                                                        "@type": "DigitalDocument",
-                                                        "name": "myfile.pdf"
-                                                    },
-                                                    "blob": "VGhlIHF1aWNrIGJyb3duIGZveCBqdW1wcyBvdmVyIHRoZSBsYXp5IGRvZw=="
-                                                }
-                                            ]
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "The server cannot process the request, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "GeneralError",
-                                            "message": "component.error",
-                                            "properties": {
-                                                "foo": "bar"
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "UnauthorizedError",
-                                            "message": "component.error"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "404": {
-                        "description": "The resource you tried to access does not exist, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/NotFoundResponse"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "NotFoundError",
-                                            "message": "component.error",
-                                            "properties": {
-                                                "notFoundId": "1"
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "500": {
-                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "InternalServerError",
-                                            "message": "component.error"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/blob-storage/{id}": {
-            "get": {
-                "operationId": "blobStorageGet",
-                "summary": "Get the metadata for an item from blob storage",
-                "tags": [
-                    "Blob Storage"
-                ],
-                "parameters": [
-                    {
-                        "name": "id",
-                        "description": "The id of the blob to get in urn format.",
-                        "in": "path",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "style": "simple",
-                        "example": "blob-memory:c57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70"
-                    },
-                    {
-                        "name": "includeContent",
-                        "description": "Include the content in the response, otherwise only metadata is returned.",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "boolean"
-                        },
-                        "example": true
-                    },
-                    {
-                        "name": "accept",
-                        "in": "header",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "style": "simple"
-                    }
-                ],
-                "security": [
-                    {
-                        "jwtBearerAuthScheme": []
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Response to get an entry from blob storage.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/BlobStorageEntry"
-                                },
-                                "examples": {
-                                    "blobStorageGetResponseExample": {
-                                        "value": {
-                                            "@context": [
-                                                "https://schema.twindev.org/blob-storage/",
-                                                "https://schema.org"
-                                            ],
-                                            "type": "BlobStorageEntry",
-                                            "id": "blob-memory:c57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70",
-                                            "dateCreated": "2024-01-01T00:00:00Z",
-                                            "encodingFormat": "application/pdf",
-                                            "blobSize": 42,
-                                            "fileExtension": "pdf",
-                                            "metadata": {
-                                                "@context": "http://schema.org/",
-                                                "@type": "DigitalDocument",
-                                                "name": "myfile.pdf"
-                                            },
-                                            "blob": "VGhlIHF1aWNrIGJyb3duIGZveCBqdW1wcyBvdmVyIHRoZSBsYXp5IGRvZw=="
-                                        }
-                                    }
-                                }
-                            },
-                            "application/ld+json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/BlobStorageEntry"
-                                },
-                                "examples": {
-                                    "blobStorageGetResponseJsonLdExample": {
-                                        "value": {
-                                            "@context": [
-                                                "https://schema.twindev.org/blob-storage/",
-                                                "https://schema.org"
-                                            ],
-                                            "type": "BlobStorageEntry",
-                                            "id": "blob-memory:c57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70",
-                                            "dateCreated": "2024-01-01T00:00:00Z",
-                                            "encodingFormat": "application/pdf",
-                                            "blobSize": 42,
-                                            "fileExtension": "pdf",
-                                            "metadata": {
-                                                "@context": "http://schema.org/",
-                                                "@type": "DigitalDocument",
-                                                "name": "myfile.pdf"
-                                            },
-                                            "blob": "VGhlIHF1aWNrIGJyb3duIGZveCBqdW1wcyBvdmVyIHRoZSBsYXp5IGRvZw=="
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "The server cannot process the request, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "GeneralError",
-                                            "message": "component.error",
-                                            "properties": {
-                                                "foo": "bar"
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "UnauthorizedError",
-                                            "message": "component.error"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "404": {
-                        "description": "The resource you tried to access does not exist, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/NotFoundResponse"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "NotFoundError",
-                                            "message": "component.error",
-                                            "properties": {
-                                                "notFoundId": "1"
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "500": {
-                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "InternalServerError",
-                                            "message": "component.error"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "put": {
-                "operationId": "blobStorageUpdate",
-                "summary": "Update the metadata for an item in blob storage",
-                "tags": [
-                    "Blob Storage"
-                ],
-                "parameters": [
-                    {
-                        "name": "id",
-                        "description": "The id of the blob to get in urn format.",
-                        "in": "path",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "style": "simple",
-                        "example": "blob-memory:c57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70"
-                    }
-                ],
-                "security": [
-                    {
-                        "jwtBearerAuthScheme": []
-                    }
-                ],
-                "requestBody": {
-                    "description": "Request to update a blob entry.",
-                    "required": true,
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/BlobStorageUpdateRequest"
-                            },
-                            "examples": {
-                                "blobStorageUpdateRequestExample": {
-                                    "value": {
-                                        "metadata": {
-                                            "@context": "http://schema.org/",
-                                            "@type": "DigitalDocument",
-                                            "name": "myfile.pdf"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                },
-                "responses": {
-                    "204": {
-                        "description": "The rest request ended in success with no data."
-                    },
-                    "400": {
-                        "description": "The server cannot process the request, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "GeneralError",
-                                            "message": "component.error",
-                                            "properties": {
-                                                "foo": "bar"
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "UnauthorizedError",
-                                            "message": "component.error"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "500": {
-                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "InternalServerError",
-                                            "message": "component.error"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "delete": {
-                "operationId": "blobStorageRemove",
-                "summary": "Remove an item from blob storage",
-                "tags": [
-                    "Blob Storage"
-                ],
-                "parameters": [
-                    {
-                        "name": "id",
-                        "description": "The id of the blob to remove in urn format.",
-                        "in": "path",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "style": "simple",
-                        "example": "blob-memory:c57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70"
-                    }
-                ],
-                "security": [
-                    {
-                        "jwtBearerAuthScheme": []
-                    }
-                ],
-                "responses": {
-                    "204": {
-                        "description": "The rest request ended in success with no data."
-                    },
-                    "400": {
-                        "description": "The server cannot process the request, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "GeneralError",
-                                            "message": "component.error",
-                                            "properties": {
-                                                "foo": "bar"
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "UnauthorizedError",
-                                            "message": "component.error"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "404": {
-                        "description": "The resource you tried to access does not exist, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/NotFoundResponse"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "NotFoundError",
-                                            "message": "component.error",
-                                            "properties": {
-                                                "notFoundId": "1"
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "500": {
-                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "InternalServerError",
-                                            "message": "component.error"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/blob-storage/{id}/content": {
-            "get": {
-                "operationId": "blobStorageGetContent",
-                "summary": "Get the content for an item in blob storage",
-                "tags": [
-                    "Blob Storage"
-                ],
-                "parameters": [
-                    {
-                        "name": "id",
-                        "description": "",
-                        "in": "path",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "style": "simple",
-                        "example": "blob-memory:c57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70"
-                    }
-                ],
-                "security": [
-                    {
-                        "jwtBearerAuthScheme": []
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "The content of the blob, which will be a specific mime type if one can be detected from the content (or set as encodingFormat in the entry), or defaults to application/octet-stream.",
-                        "content": {
-                            "application/octet-stream": {
-                                "schema": {
-                                    "type": "string",
-                                    "format": "binary"
-                                },
-                                "examples": {
-                                    "blobStorageGetContentResponseExample": {
-                                        "summary": "Binary Data",
-                                        "value": ""
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "The server cannot process the request, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "GeneralError",
-                                            "message": "component.error",
-                                            "properties": {
-                                                "foo": "bar"
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "UnauthorizedError",
-                                            "message": "component.error"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "404": {
-                        "description": "The resource you tried to access does not exist, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/NotFoundResponse"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "NotFoundError",
-                                            "message": "component.error",
-                                            "properties": {
-                                                "notFoundId": "1"
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "500": {
-                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "InternalServerError",
-                                            "message": "component.error"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    },
-    "components": {
-        "schemas": {
-            "ArrayBuffer": {
-                "type": "object",
-                "properties": {
-                    "byteLength": {
-                        "type": "number"
-                    }
-                },
-                "required": [
-                    "byteLength"
-                ],
-                "additionalProperties": false
-            },
-            "BlobStorageCreateRequest": {
-                "type": "object",
-                "properties": {
-                    "blob": {
-                        "type": "string",
-                        "description": "The data to store in base64 encoding."
-                    },
-                    "encodingFormat": {
-                        "type": "string",
-                        "description": "The mime type of the blob, will be detected if left undefined."
-                    },
-                    "fileExtension": {
-                        "type": "string",
-                        "description": "The extension of the blob, will be detected if left undefined."
-                    },
-                    "metadata": {
-                        "$ref": "#/components/schemas/JsonLdNodeObject"
-                    },
-                    "namespace": {
-                        "type": "string",
-                        "description": "The namespace to store the data in, defaults to component configured namespace."
-                    }
-                },
-                "required": [
-                    "blob"
-                ],
-                "additionalProperties": false,
-                "description": "The body parameters."
-            },
-            "BlobStorageEntry": {
-                "type": "object",
-                "properties": {
-                    "@context": {
-                        "anyOf": [
-                            {
-                                "type": "string",
-                                "const": "https://schema.twindev.org/blob-storage/"
-                            },
-                            {
-                                "type": "array",
-                                "minItems": 1,
-                                "items": [
-                                    {
-                                        "type": "string",
-                                        "const": "https://schema.twindev.org/blob-storage/"
-                                    }
-                                ],
-                                "additionalItems": {
-                                    "type": "string"
-                                }
-                            }
-                        ],
-                        "description": "JSON-LD Context."
-                    },
-                    "type": {
-                        "type": "string",
-                        "const": "BlobStorageEntry",
-                        "description": "JSON-LD Type."
-                    },
-                    "id": {
-                        "type": "string",
-                        "description": "The id for the blob."
-                    },
-                    "dateCreated": {
-                        "type": "string",
-                        "description": "The date/time when the entry was created."
-                    },
-                    "dateModified": {
-                        "type": "string",
-                        "description": "The date/time when the entry was modified."
-                    },
-                    "blobSize": {
-                        "type": "number",
-                        "description": "The size of the data in the blob."
-                    },
-                    "encodingFormat": {
-                        "type": "string",
-                        "description": "The mime type for the blob."
-                    },
-                    "fileExtension": {
-                        "type": "string",
-                        "description": "The extension."
-                    },
-                    "metadata": {
-                        "$ref": "#/components/schemas/JsonLdNodeObject"
-                    },
-                    "blob": {
-                        "type": "string",
-                        "description": "The blob in base64 format, if the includeContent flag was set in the request."
-                    }
-                },
-                "required": [
-                    "@context",
-                    "type",
-                    "id",
-                    "dateCreated",
-                    "blobSize"
-                ],
-                "additionalProperties": false,
-                "description": "Interface describing a blob storage entry."
-            },
-            "BlobStorageEntryList": {
-                "type": "object",
-                "properties": {
-                    "@context": {
-                        "anyOf": [
-                            {
-                                "type": "string",
-                                "const": "https://schema.twindev.org/blob-storage/"
-                            },
-                            {
-                                "type": "array",
-                                "minItems": 1,
-                                "items": [
-                                    {
-                                        "type": "string",
-                                        "const": "https://schema.twindev.org/blob-storage/"
-                                    }
-                                ],
-                                "additionalItems": {
-                                    "type": "string"
-                                }
-                            }
-                        ],
-                        "description": "JSON-LD Context."
-                    },
-                    "type": {
-                        "type": "string",
-                        "const": "BlobStorageEntryList",
-                        "description": "JSON-LD Type."
-                    },
-                    "entries": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/BlobStorageEntry"
-                        },
-                        "description": "The list of entries."
-                    },
-                    "cursor": {
-                        "type": "string",
-                        "description": "The cursor to get the next chunk of entries."
-                    }
-                },
-                "required": [
-                    "@context",
-                    "type",
-                    "entries"
-                ],
-                "additionalProperties": false,
-                "description": "Interface describing an blob storage entry list."
-            },
-            "BlobStorageUpdateRequest": {
-                "type": "object",
-                "properties": {
-                    "encodingFormat": {
-                        "type": "string",
-                        "description": "The mime type of the blob, will be detected if left undefined."
-                    },
-                    "fileExtension": {
-                        "type": "string",
-                        "description": "The extension of the blob, will be detected if left undefined."
-                    },
-                    "metadata": {
-                        "$ref": "#/components/schemas/JsonLdNodeObject"
-                    }
-                },
-                "additionalProperties": false,
-                "description": "The body parameters."
-            },
-            "Error": {
-                "type": "object",
-                "properties": {
-                    "name": {
-                        "type": "string",
-                        "description": "The name for the error."
-                    },
-                    "message": {
-                        "type": "string",
-                        "description": "The message for the error."
-                    },
-                    "source": {
-                        "type": "string",
-                        "description": "The source of the error."
-                    },
-                    "properties": {
-                        "type": "object",
-                        "additionalProperties": {},
-                        "description": "Any additional information for the error."
-                    },
-                    "stack": {
-                        "type": "string",
-                        "description": "The stack trace for the error."
-                    },
-                    "inner": {
-                        "$ref": "#/components/schemas/Error"
-                    }
-                },
-                "required": [
-                    "name",
-                    "message"
-                ],
-                "additionalProperties": false,
-                "description": "Model to describe serialized error."
-            },
-            "JsonLdContainerType": {
-                "type": "string",
-                "enum": [
-                    "@language",
-                    "@index",
-                    "@id",
-                    "@graph",
-                    "@type"
-                ]
-            },
-            "JsonLdContainerTypeArray": {
-                "anyOf": [
-                    {
-                        "type": "array",
-                        "minItems": 2,
-                        "items": [
-                            {
-                                "type": "string",
-                                "const": "@graph"
-                            },
-                            {
-                                "type": "string",
-                                "const": "@id"
-                            }
-                        ],
-                        "maxItems": 2
-                    },
-                    {
-                        "type": "array",
-                        "minItems": 2,
-                        "items": [
-                            {
-                                "type": "string",
-                                "const": "@id"
-                            },
-                            {
-                                "type": "string",
-                                "const": "@graph"
-                            }
-                        ],
-                        "maxItems": 2
-                    },
-                    {
-                        "type": "array",
-                        "minItems": 3,
-                        "items": [
-                            {
-                                "type": "string",
-                                "const": "@set"
-                            },
-                            {
-                                "type": "string",
-                                "const": "@graph"
-                            },
-                            {
-                                "type": "string",
-                                "const": "@id"
-                            }
-                        ],
-                        "maxItems": 3
-                    },
-                    {
-                        "type": "array",
-                        "minItems": 3,
-                        "items": [
-                            {
-                                "type": "string",
-                                "const": "@set"
-                            },
-                            {
-                                "type": "string",
-                                "const": "@id"
-                            },
-                            {
-                                "type": "string",
-                                "const": "@graph"
-                            }
-                        ],
-                        "maxItems": 3
-                    },
-                    {
-                        "type": "array",
-                        "minItems": 3,
-                        "items": [
-                            {
-                                "type": "string",
-                                "const": "@graph"
-                            },
-                            {
-                                "type": "string",
-                                "const": "@set"
-                            },
-                            {
-                                "type": "string",
-                                "const": "@id"
-                            }
-                        ],
-                        "maxItems": 3
-                    },
-                    {
-                        "type": "array",
-                        "minItems": 3,
-                        "items": [
-                            {
-                                "type": "string",
-                                "const": "@id"
-                            },
-                            {
-                                "type": "string",
-                                "const": "@set"
-                            },
-                            {
-                                "type": "string",
-                                "const": "@graph"
-                            }
-                        ],
-                        "maxItems": 3
-                    },
-                    {
-                        "type": "array",
-                        "minItems": 3,
-                        "items": [
-                            {
-                                "type": "string",
-                                "const": "@graph"
-                            },
-                            {
-                                "type": "string",
-                                "const": "@id"
-                            },
-                            {
-                                "type": "string",
-                                "const": "@set"
-                            }
-                        ],
-                        "maxItems": 3
-                    },
-                    {
-                        "type": "array",
-                        "minItems": 3,
-                        "items": [
-                            {
-                                "type": "string",
-                                "const": "@id"
-                            },
-                            {
-                                "type": "string",
-                                "const": "@graph"
-                            },
-                            {
-                                "type": "string",
-                                "const": "@set"
-                            }
-                        ],
-                        "maxItems": 3
-                    },
-                    {
-                        "type": "array",
-                        "minItems": 2,
-                        "items": [
-                            {
-                                "type": "string",
-                                "const": "@set"
-                            },
-                            {
-                                "$ref": "#/components/schemas/JsonLdContainerType"
-                            }
-                        ],
-                        "maxItems": 2
-                    },
-                    {
-                        "type": "array",
-                        "minItems": 2,
-                        "items": [
-                            {
-                                "$ref": "#/components/schemas/JsonLdContainerType"
-                            },
-                            {
-                                "type": "string",
-                                "const": "@set"
-                            }
-                        ],
-                        "maxItems": 2
-                    }
-                ]
-            },
-            "JsonLdContextDefinition": {
-                "type": "object",
-                "properties": {
-                    "@base": {
-                        "$ref": "#/components/schemas/JsonLdKeyword"
-                    },
-                    "@direction": {
-                        "$ref": "#/components/schemas/JsonLdKeyword"
-                    },
-                    "@import": {
-                        "$ref": "#/components/schemas/JsonLdKeyword"
-                    },
-                    "@language": {
-                        "$ref": "#/components/schemas/JsonLdKeyword"
-                    },
-                    "@propagate": {
-                        "$ref": "#/components/schemas/JsonLdKeyword"
-                    },
-                    "@protected": {
-                        "$ref": "#/components/schemas/JsonLdKeyword"
-                    },
-                    "@type": {
-                        "type": "object",
-                        "properties": {
-                            "@container": {
-                                "type": "string",
-                                "const": "@set"
-                            },
-                            "@protected": {
-                                "$ref": "#/components/schemas/JsonLdKeyword"
-                            }
-                        },
-                        "required": [
-                            "@container"
-                        ],
-                        "additionalProperties": false
-                    },
-                    "@version": {
-                        "$ref": "#/components/schemas/JsonLdKeyword"
-                    },
-                    "@vocab": {
-                        "$ref": "#/components/schemas/JsonLdKeyword"
-                    }
-                },
-                "additionalProperties": {
-                    "anyOf": [
-                        {
-                            "type": "null"
-                        },
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "$ref": "#/components/schemas/JsonLdExpandedTermDefinition"
-                        }
-                    ]
-                },
-                "description": "A context definition defines a local context in a node object."
-            },
-            "JsonLdContextDefinitionElement": {
-                "anyOf": [
-                    {
-                        "type": "null"
-                    },
-                    {
-                        "type": "string"
-                    },
-                    {
-                        "$ref": "#/components/schemas/JsonLdContextDefinition"
-                    }
-                ],
-                "description": "A context definition element is used to define the types of a context definition."
-            },
-            "JsonLdContextDefinitionRoot": {
-                "anyOf": [
-                    {
-                        "$ref": "#/components/schemas/JsonLdContextDefinitionElement"
-                    },
-                    {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/JsonLdContextDefinitionElement"
-                        }
-                    }
-                ],
-                "description": "A context definition root is used to define the root of a context definition."
-            },
-            "JsonLdExpandedTermDefinition": {
-                "anyOf": [
-                    {
-                        "type": "object",
-                        "additionalProperties": false,
-                        "properties": {
-                            "@id": {
-                                "anyOf": [
-                                    {
-                                        "$ref": "#/components/schemas/JsonLdKeyword"
-                                    },
-                                    {
-                                        "type": "null"
-                                    }
-                                ]
-                            },
-                            "@nest": {
-                                "type": "string"
-                            },
-                            "@container": {
-                                "$ref": "#/components/schemas/JsonLdKeyword"
-                            },
-                            "@type": {
-                                "type": "string"
-                            },
-                            "@language": {
-                                "$ref": "#/components/schemas/JsonLdKeyword"
-                            },
-                            "@index": {
-                                "$ref": "#/components/schemas/JsonLdKeyword"
-                            },
-                            "@context": {
-                                "$ref": "#/components/schemas/JsonLdContextDefinition"
-                            },
-                            "@prefix": {
-                                "$ref": "#/components/schemas/JsonLdKeyword"
-                            },
-                            "@propagate": {
-                                "$ref": "#/components/schemas/JsonLdKeyword"
-                            },
-                            "@protected": {
-                                "$ref": "#/components/schemas/JsonLdKeyword"
-                            }
-                        }
-                    },
-                    {
-                        "type": "object",
-                        "additionalProperties": false,
-                        "properties": {
-                            "@reverse": {
-                                "$ref": "#/components/schemas/JsonLdKeyword"
-                            },
-                            "@container": {
-                                "type": [
-                                    "string",
-                                    "null"
-                                ],
-                                "enum": [
-                                    "@set",
-                                    "@index",
-                                    null
-                                ]
-                            },
-                            "@type": {
-                                "type": "string"
-                            },
-                            "@language": {
-                                "$ref": "#/components/schemas/JsonLdKeyword"
-                            },
-                            "@index": {
-                                "$ref": "#/components/schemas/JsonLdKeyword"
-                            },
-                            "@context": {
-                                "$ref": "#/components/schemas/JsonLdContextDefinition"
-                            },
-                            "@prefix": {
-                                "$ref": "#/components/schemas/JsonLdKeyword"
-                            },
-                            "@propagate": {
-                                "$ref": "#/components/schemas/JsonLdKeyword"
-                            },
-                            "@protected": {
-                                "$ref": "#/components/schemas/JsonLdKeyword"
-                            }
-                        },
-                        "required": [
-                            "@reverse"
-                        ]
-                    }
-                ],
-                "description": "An expanded term definition is used to describe the mapping between a term and its expanded identifier, as well as other properties of the value associated with the term when it is used as key in a node object."
-            },
-            "JsonLdGraphObject": {
-                "type": "object",
-                "properties": {
-                    "@graph": {
-                        "anyOf": [
-                            {
-                                "$ref": "#/components/schemas/JsonLdNodeObject"
-                            },
-                            {
-                                "type": "array",
-                                "items": {
-                                    "$ref": "#/components/schemas/JsonLdNodeObject"
-                                }
-                            }
-                        ]
-                    },
-                    "@index": {
-                        "type": "string"
-                    },
-                    "@id": {
-                        "anyOf": [
-                            {
-                                "type": "string"
-                            },
-                            {
-                                "type": "array",
-                                "items": {
-                                    "type": "string"
-                                }
-                            }
-                        ]
-                    },
-                    "@context": {
-                        "$ref": "#/components/schemas/JsonLdContextDefinitionRoot"
-                    }
-                },
-                "required": [
-                    "@graph"
-                ],
-                "additionalProperties": false,
-                "description": "A graph object represents a named graph, which MAY include an explicit graph name."
-            },
-            "JsonLdIdMap": {
-                "type": "object",
-                "additionalProperties": {
-                    "$ref": "#/components/schemas/JsonLdNodeObject"
-                },
-                "description": "An id map is used to associate an IRI with a value that allows easy programmatic access."
-            },
-            "JsonLdIncludedBlock": {
-                "anyOf": [
-                    {
-                        "$ref": "#/components/schemas/JsonLdNodeObject"
-                    },
-                    {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/JsonLdNodeObject"
-                        }
-                    }
-                ],
-                "description": "An included block is used to provide a set of node objects."
-            },
-            "JsonLdIndexMap": {
-                "type": "object",
-                "additionalProperties": {
-                    "anyOf": [
-                        {
-                            "$ref": "#/components/schemas/JsonLdIndexMapItem"
-                        },
-                        {
-                            "type": "array",
-                            "items": {
-                                "$ref": "#/components/schemas/JsonLdIndexMapItem"
-                            }
-                        }
-                    ]
-                },
-                "description": "An index map allows keys that have no semantic meaning, but should be preserved regardless, to be used in JSON-LD documents."
-            },
-            "JsonLdIndexMapItem": {
-                "anyOf": [
-                    {
-                        "type": "null"
-                    },
-                    {
-                        "type": "boolean"
-                    },
-                    {
-                        "type": "number"
-                    },
-                    {
-                        "type": "string"
-                    },
-                    {
-                        "$ref": "#/components/schemas/JsonLdNodeObject"
-                    },
-                    {
-                        "$ref": "#/components/schemas/JsonLdValueObject"
-                    },
-                    {
-                        "$ref": "#/components/schemas/JsonLdListObject"
-                    },
-                    {
-                        "$ref": "#/components/schemas/JsonLdSetObject"
-                    }
-                ],
-                "description": "The items that can be stored in an index map."
-            },
-            "JsonLdJsonArray": {
-                "type": "array",
-                "items": {
-                    "$ref": "#/components/schemas/JsonLdJsonValue"
-                }
-            },
-            "JsonLdJsonObject": {
-                "type": "object",
-                "additionalProperties": {
-                    "anyOf": [
-                        {
-                            "$ref": "#/components/schemas/JsonLdJsonValue"
-                        },
-                        {
-                            "not": {}
-                        }
-                    ]
-                }
-            },
-            "JsonLdJsonPrimitive": {
-                "type": [
-                    "string",
-                    "number",
-                    "boolean",
-                    "null"
-                ]
-            },
-            "JsonLdJsonValue": {
-                "anyOf": [
-                    {
-                        "$ref": "#/components/schemas/JsonLdJsonPrimitive"
-                    },
-                    {
-                        "$ref": "#/components/schemas/JsonLdJsonArray"
-                    },
-                    {
-                        "$ref": "#/components/schemas/JsonLdJsonObject"
-                    }
-                ]
-            },
-            "JsonLdKeyword": {
-                "type": "object",
-                "properties": {
-                    "@base": {
-                        "type": [
-                            "string",
-                            "null"
-                        ]
-                    },
-                    "@container": {
-                        "anyOf": [
-                            {
-                                "type": "string",
-                                "const": "@list"
-                            },
-                            {
-                                "type": "string",
-                                "const": "@set"
-                            },
-                            {
-                                "$ref": "#/components/schemas/JsonLdContainerType"
-                            },
-                            {
-                                "type": "array",
-                                "items": {
-                                    "anyOf": [
-                                        {
-                                            "type": "string",
-                                            "const": "@list"
-                                        },
-                                        {
-                                            "type": "string",
-                                            "const": "@set"
-                                        },
-                                        {
-                                            "$ref": "#/components/schemas/JsonLdContainerType"
-                                        }
-                                    ]
-                                }
-                            },
-                            {
-                                "$ref": "#/components/schemas/JsonLdContainerTypeArray"
-                            },
-                            {
-                                "type": "null"
-                            }
-                        ]
-                    },
-                    "@context": {
-                        "$ref": "#/components/schemas/JsonLdContextDefinitionRoot"
-                    },
-                    "@direction": {
-                        "type": [
-                            "string",
-                            "null"
-                        ],
-                        "enum": [
-                            "ltr",
-                            "rtl",
-                            null
-                        ]
-                    },
-                    "@graph": {
-                        "anyOf": [
-                            {
-                                "$ref": "#/components/schemas/JsonLdValueObject"
-                            },
-                            {
-                                "$ref": "#/components/schemas/JsonLdNodeObject"
-                            },
-                            {
-                                "type": "array",
-                                "items": {
-                                    "anyOf": [
-                                        {
-                                            "$ref": "#/components/schemas/JsonLdValueObject"
-                                        },
-                                        {
-                                            "$ref": "#/components/schemas/JsonLdNodeObject"
-                                        }
-                                    ]
-                                }
-                            }
-                        ]
-                    },
-                    "@id": {
-                        "anyOf": [
-                            {
-                                "type": "string"
-                            },
-                            {
-                                "type": "array",
-                                "items": {
-                                    "type": "string"
-                                }
-                            }
-                        ]
-                    },
-                    "@import": {
-                        "type": "string"
-                    },
-                    "@included": {
-                        "$ref": "#/components/schemas/JsonLdIncludedBlock"
-                    },
-                    "@index": {
-                        "type": "string"
-                    },
-                    "@json": {
-                        "type": "string",
-                        "const": "@json"
-                    },
-                    "@language": {
-                        "type": "string"
-                    },
-                    "@list": {
-                        "anyOf": [
-                            {
-                                "$ref": "#/components/schemas/JsonLdListOrSetItem"
-                            },
-                            {
-                                "type": "array",
-                                "items": {
-                                    "$ref": "#/components/schemas/JsonLdListOrSetItem"
-                                }
-                            }
-                        ]
-                    },
-                    "@nest": {
-                        "type": "object"
-                    },
-                    "@none": {
-                        "type": "string",
-                        "const": "@none"
-                    },
-                    "@prefix": {
-                        "type": "boolean"
-                    },
-                    "@propagate": {
-                        "type": "boolean"
-                    },
-                    "@protected": {
-                        "type": "boolean"
-                    },
-                    "@reverse": {
-                        "type": "string"
-                    },
-                    "@set": {
-                        "anyOf": [
-                            {
-                                "$ref": "#/components/schemas/JsonLdListOrSetItem"
-                            },
-                            {
-                                "type": "array",
-                                "items": {
-                                    "$ref": "#/components/schemas/JsonLdListOrSetItem"
-                                }
-                            }
-                        ]
-                    },
-                    "@type": {
-                        "type": "string"
-                    },
-                    "@value": {
-                        "type": [
-                            "null",
-                            "boolean",
-                            "number",
-                            "string"
-                        ]
-                    },
-                    "@version": {
-                        "type": "string",
-                        "const": "1.1"
-                    },
-                    "@vocab": {
-                        "type": [
-                            "string",
-                            "null"
-                        ]
-                    }
-                },
-                "required": [
-                    "@base",
-                    "@container",
-                    "@context",
-                    "@direction",
-                    "@graph",
-                    "@id",
-                    "@import",
-                    "@included",
-                    "@index",
-                    "@json",
-                    "@language",
-                    "@list",
-                    "@nest",
-                    "@none",
-                    "@prefix",
-                    "@propagate",
-                    "@protected",
-                    "@reverse",
-                    "@set",
-                    "@type",
-                    "@value",
-                    "@version",
-                    "@vocab"
-                ],
-                "additionalProperties": false,
-                "description": "A list of keywords and their types. Only used for internal reference; not an actual interface. Not for export."
-            },
-            "JsonLdLanguageMap": {
-                "type": "object",
-                "additionalProperties": {
-                    "anyOf": [
-                        {
-                            "type": "null"
-                        },
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "array",
-                            "items": {
-                                "type": "string"
-                            }
-                        }
-                    ]
-                },
-                "description": "A language map is used to associate a language with a value in a way that allows easy programmatic access."
-            },
-            "JsonLdListObject": {
-                "type": "object",
-                "properties": {
-                    "@list": {
-                        "anyOf": [
-                            {
-                                "$ref": "#/components/schemas/JsonLdListOrSetItem"
-                            },
-                            {
-                                "type": "array",
-                                "items": {
-                                    "$ref": "#/components/schemas/JsonLdListOrSetItem"
-                                }
-                            }
-                        ]
-                    },
-                    "@index": {
-                        "type": "string"
-                    }
-                },
-                "required": [
-                    "@list"
-                ],
-                "additionalProperties": false,
-                "description": "A list represents an ordered set of values."
-            },
-            "JsonLdListOrSetItem": {
-                "anyOf": [
-                    {
-                        "type": "null"
-                    },
-                    {
-                        "type": "boolean"
-                    },
-                    {
-                        "type": "number"
-                    },
-                    {
-                        "type": "string"
-                    },
-                    {
-                        "$ref": "#/components/schemas/JsonLdNodeObject"
-                    },
-                    {
-                        "$ref": "#/components/schemas/JsonLdValueObject"
-                    }
-                ],
-                "description": "A list or set item can be a null, boolean, number, string, node object, or value object."
-            },
-            "JsonLdNodeObject": {
-                "type": "object",
-                "additionalProperties": {
-                    "anyOf": [
-                        {
-                            "$ref": "#/components/schemas/JsonLdNodePrimitive"
-                        },
-                        {
-                            "$ref": "#/components/schemas/JsonLdLanguageMap"
-                        },
-                        {
-                            "$ref": "#/components/schemas/JsonLdIndexMap"
-                        },
-                        {
-                            "$ref": "#/components/schemas/JsonLdIncludedBlock"
-                        },
-                        {
-                            "$ref": "#/components/schemas/JsonLdIdMap"
-                        },
-                        {
-                            "$ref": "#/components/schemas/JsonLdTypeMap"
-                        },
-                        {
-                            "type": "array"
-                        }
-                    ]
-                },
-                "properties": {
-                    "@context": {
-                        "$ref": "#/components/schemas/JsonLdContextDefinitionRoot"
-                    },
-                    "@id": {
-                        "anyOf": [
-                            {
-                                "type": "string"
-                            },
-                            {
-                                "type": "array",
-                                "items": {
-                                    "type": "string"
-                                }
-                            }
-                        ]
-                    },
-                    "@included": {
-                        "$ref": "#/components/schemas/JsonLdIncludedBlock"
-                    },
-                    "@graph": {
-                        "anyOf": [
-                            {
-                                "$ref": "#/components/schemas/JsonLdNodeObject"
-                            },
-                            {
-                                "type": "array",
-                                "items": {
-                                    "$ref": "#/components/schemas/JsonLdNodeObject"
-                                }
-                            }
-                        ]
-                    },
-                    "@nest": {
-                        "anyOf": [
-                            {
-                                "$ref": "#/components/schemas/JsonLdJsonObject"
-                            },
-                            {
-                                "type": "array",
-                                "items": {
-                                    "$ref": "#/components/schemas/JsonLdJsonObject"
-                                }
-                            }
-                        ]
-                    },
-                    "@type": {
-                        "anyOf": [
-                            {
-                                "type": "string"
-                            },
-                            {
-                                "type": "array",
-                                "items": {
-                                    "type": "string"
-                                }
-                            }
-                        ]
-                    },
-                    "@reverse": {
-                        "type": "object",
-                        "additionalProperties": {
-                            "type": "string"
-                        }
-                    },
-                    "@index": {
-                        "type": "string"
-                    }
-                },
-                "description": "A node object represents zero or more properties of a node in the graph serialized by the JSON-LD document."
-            },
-            "JsonLdNodePrimitive": {
-                "anyOf": [
-                    {
-                        "type": "null"
-                    },
-                    {
-                        "type": "boolean"
-                    },
-                    {
-                        "type": "number"
-                    },
-                    {
-                        "type": "string"
-                    },
-                    {
-                        "$ref": "#/components/schemas/JsonLdNodeObject"
-                    },
-                    {
-                        "$ref": "#/components/schemas/JsonLdGraphObject"
-                    },
-                    {
-                        "$ref": "#/components/schemas/JsonLdValueObject"
-                    },
-                    {
-                        "$ref": "#/components/schemas/JsonLdListObject"
-                    },
-                    {
-                        "$ref": "#/components/schemas/JsonLdSetObject"
-                    }
-                ],
-                "description": "A node primitive is a JSON-LD value which is not one of the defined NodeObject properties."
-            },
-            "JsonLdSetObject": {
-                "type": "object",
-                "properties": {
-                    "@set": {
-                        "anyOf": [
-                            {
-                                "$ref": "#/components/schemas/JsonLdListOrSetItem"
-                            },
-                            {
-                                "type": "array",
-                                "items": {
-                                    "$ref": "#/components/schemas/JsonLdListOrSetItem"
-                                }
-                            }
-                        ]
-                    },
-                    "@index": {
-                        "type": "string"
-                    }
-                },
-                "required": [
-                    "@set"
-                ],
-                "additionalProperties": false,
-                "description": "A set represents an unordered set of values."
-            },
-            "JsonLdTypeMap": {
-                "type": "object",
-                "additionalProperties": {
-                    "anyOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "$ref": "#/components/schemas/JsonLdNodeObject"
-                        }
-                    ]
-                },
-                "description": "A type map is used to associate an IRI with a value that allows easy programmatic access."
-            },
-            "JsonLdValueObject": {
-                "anyOf": [
-                    {
-                        "type": "object",
-                        "additionalProperties": false,
-                        "properties": {
-                            "@value": {
-                                "$ref": "#/components/schemas/JsonLdKeyword"
-                            },
-                            "@language": {
-                                "$ref": "#/components/schemas/JsonLdKeyword"
-                            },
-                            "@direction": {
-                                "$ref": "#/components/schemas/JsonLdKeyword"
-                            },
-                            "@index": {
-                                "$ref": "#/components/schemas/JsonLdKeyword"
-                            },
-                            "@context": {
-                                "$ref": "#/components/schemas/JsonLdKeyword"
-                            }
-                        },
-                        "required": [
-                            "@value"
-                        ]
-                    },
-                    {
-                        "type": "object",
-                        "additionalProperties": false,
-                        "properties": {
-                            "@value": {
-                                "$ref": "#/components/schemas/JsonLdKeyword"
-                            },
-                            "@type": {
-                                "$ref": "#/components/schemas/JsonLdKeyword"
-                            },
-                            "@index": {
-                                "$ref": "#/components/schemas/JsonLdKeyword"
-                            },
-                            "@context": {
-                                "$ref": "#/components/schemas/JsonLdKeyword"
-                            }
-                        },
-                        "required": [
-                            "@type",
-                            "@value"
-                        ]
-                    },
-                    {
-                        "type": "object",
-                        "additionalProperties": false,
-                        "properties": {
-                            "@value": {
-                                "anyOf": [
-                                    {
-                                        "$ref": "#/components/schemas/JsonLdKeyword"
-                                    },
-                                    {
-                                        "$ref": "#/components/schemas/JsonLdJsonObject"
-                                    },
-                                    {
-                                        "$ref": "#/components/schemas/JsonLdJsonArray"
-                                    }
-                                ]
-                            },
-                            "@type": {
-                                "type": "string",
-                                "const": "@json"
-                            },
-                            "@index": {
-                                "$ref": "#/components/schemas/JsonLdKeyword"
-                            },
-                            "@context": {
-                                "$ref": "#/components/schemas/JsonLdKeyword"
-                            }
-                        },
-                        "required": [
-                            "@type",
-                            "@value"
-                        ]
-                    }
-                ],
-                "description": "A value object is used to explicitly associate a type or a language with a value to create a typed value or a language-tagged string and possibly associate a base direction."
-            },
-            "NotFoundResponse": {
-                "type": "object",
-                "additionalProperties": false,
-                "properties": {
-                    "notFoundId": {
-                        "type": "string",
-                        "description": "The id if the item that was not found."
-                    },
-                    "name": {
-                        "type": "string",
-                        "description": "The name for the error."
-                    },
-                    "message": {
-                        "type": "string",
-                        "description": "The message for the error."
-                    },
-                    "source": {
-                        "type": "string",
-                        "description": "The source of the error."
-                    },
-                    "properties": {
-                        "type": "object",
-                        "additionalProperties": {},
-                        "description": "Any additional information for the error."
-                    },
-                    "stack": {
-                        "type": "string",
-                        "description": "The stack trace for the error."
-                    },
-                    "inner": {
-                        "$ref": "#/components/schemas/Error"
-                    }
-                },
-                "required": [
-                    "message",
-                    "name"
-                ],
-                "description": "The body which contains the error."
-            },
-            "SortDirection": {
-                "anyOf": [
-                    {
-                        "type": "string",
-                        "const": "asc",
-                        "description": "Ascending."
-                    },
-                    {
-                        "type": "string",
-                        "const": "desc",
-                        "description": "Descending."
-                    }
-                ],
-                "description": "The sort directions."
-            }
-        },
-        "securitySchemes": {
-            "jwtBearerAuthScheme": {
-                "type": "http",
-                "scheme": "bearer",
-                "bearerFormat": "JWT"
-            }
-        }
-    }
+	"openapi": "3.1.0",
+	"info": {
+		"title": "TWIN - Test Endpoints",
+		"description": "REST API for TWIN - Test Endpoints.",
+		"version": "1.0.0",
+		"license": {
+			"name": "Apache 2.0 License",
+			"url": "https://opensource.org/licenses/Apache-2.0"
+		}
+	},
+	"servers": [
+		{
+			"url": "https://localhost"
+		}
+	],
+	"tags": [
+		{
+			"name": "Blob Storage",
+			"description": "Endpoints which are modelled to access a blob storage contract."
+		}
+	],
+	"paths": {
+		"/blob-storage": {
+			"post": {
+				"operationId": "blobStorageCreate",
+				"summary": "Create an entry in blob storage",
+				"tags": [
+					"Blob Storage"
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"requestBody": {
+					"description": "Request to create an entry in blob storage.",
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/BlobStorageCreateRequest"
+							},
+							"examples": {
+								"blobStorageCreateRequestExample": {
+									"value": {
+										"blob": "VGhlIHF1aWNrIGJyb3duIGZveCBqdW1wcyBvdmVyIHRoZSBsYXp5IGRvZw==",
+										"metadata": {
+											"@context": "https://schema.org",
+											"@type": "DigitalDocument",
+											"name": "myfile.pdf"
+										}
+									}
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"201": {
+						"description": "The rest request ended in created response.",
+						"headers": {
+							"location": {
+								"schema": {
+									"type": "string"
+								},
+								"description": "e.g. blob-memory:c57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70"
+							}
+						}
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			"get": {
+				"operationId": "blobStorageGet",
+				"summary": "Query the items from blob storage",
+				"tags": [
+					"Blob Storage"
+				],
+				"parameters": [
+					{
+						"name": "conditions",
+						"description": "The condition for the query as JSON version of EntityCondition type.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"name": "orderBy",
+						"description": "The order for the results, default to created.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string",
+							"enum": [
+								"dateCreated",
+								"dateModified"
+							]
+						}
+					},
+					{
+						"name": "orderByDirection",
+						"description": "The direction for the order, defaults to desc.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"$ref": "#/components/schemas/SortDirection"
+						}
+					},
+					{
+						"name": "pageSize",
+						"description": "The number of entries to return per page.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "number"
+						}
+					},
+					{
+						"name": "cursor",
+						"description": "The cursor to get next chunk of data, returned in previous response.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"name": "accept",
+						"in": "header",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple"
+					}
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Response to getting the list of entries from a query.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/BlobStorageEntryList"
+								},
+								"examples": {
+									"blobStorageListResponseExample": {
+										"value": {
+											"@context": [
+												"https://schema.twindev.org/blob-storage/",
+												"https://schema.twindev.org/common/"
+											],
+											"type": "BlobStorageEntryList",
+											"entries": [
+												{
+													"@context": [
+														"https://schema.twindev.org/blob-storage/",
+														"https://schema.twindev.org/common/",
+														"https://schema.org"
+													],
+													"type": "BlobStorageEntry",
+													"id": "blob-memory:c57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70",
+													"dateCreated": "2024-01-01T00:00:00Z",
+													"encodingFormat": "application/pdf",
+													"blobSize": 42,
+													"blobHash": "sha256:c57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70",
+													"fileExtension": "pdf",
+													"metadata": {
+														"@context": "https://schema.org",
+														"@type": "DigitalDocument",
+														"name": "myfile.pdf"
+													},
+													"blob": "VGhlIHF1aWNrIGJyb3duIGZveCBqdW1wcyBvdmVyIHRoZSBsYXp5IGRvZw=="
+												}
+											]
+										}
+									}
+								}
+							},
+							"application/ld+json": {
+								"schema": {
+									"$ref": "#/components/schemas/BlobStorageEntryList"
+								},
+								"examples": {
+									"blobStorageListResponseJsonLdExample": {
+										"value": {
+											"@context": [
+												"https://schema.twindev.org/blob-storage/",
+												"https://schema.twindev.org/common/"
+											],
+											"type": "BlobStorageEntryList",
+											"entries": [
+												{
+													"@context": [
+														"https://schema.twindev.org/blob-storage/",
+														"https://schema.twindev.org/common/",
+														"https://schema.org"
+													],
+													"type": "BlobStorageEntry",
+													"id": "blob-memory:c57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70",
+													"dateCreated": "2024-01-01T00:00:00Z",
+													"encodingFormat": "application/pdf",
+													"blobSize": 42,
+													"blobHash": "sha256:c57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70",
+													"fileExtension": "pdf",
+													"metadata": {
+														"@context": "https://schema.org",
+														"@type": "DigitalDocument",
+														"name": "myfile.pdf"
+													},
+													"blob": "VGhlIHF1aWNrIGJyb3duIGZveCBqdW1wcyBvdmVyIHRoZSBsYXp5IGRvZw=="
+												}
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "The resource you tried to access does not exist, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/NotFoundResponse"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "NotFoundError",
+											"message": "component.error",
+											"properties": {
+												"notFoundId": "1"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/blob-storage/{id}": {
+			"get": {
+				"operationId": "blobStorageGet",
+				"summary": "Get the metadata for an item from blob storage",
+				"tags": [
+					"Blob Storage"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"description": "The id of the blob to get in urn format.",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "blob-memory:c57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70"
+					},
+					{
+						"name": "includeContent",
+						"description": "Include the content in the response, otherwise only metadata is returned.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "boolean"
+						},
+						"example": true
+					},
+					{
+						"name": "accept",
+						"in": "header",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple"
+					}
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Response to get an entry from blob storage.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/BlobStorageEntry"
+								},
+								"examples": {
+									"blobStorageGetResponseExample": {
+										"value": {
+											"@context": [
+												"https://schema.twindev.org/blob-storage/",
+												"https://schema.twindev.org/common/",
+												"https://schema.org"
+											],
+											"type": "BlobStorageEntry",
+											"id": "blob-memory:c57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70",
+											"dateCreated": "2024-01-01T00:00:00Z",
+											"encodingFormat": "application/pdf",
+											"blobSize": 42,
+											"blobHash": "sha256:c57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70",
+											"fileExtension": "pdf",
+											"metadata": {
+												"@context": "https://schema.org",
+												"@type": "DigitalDocument",
+												"name": "myfile.pdf"
+											},
+											"blob": "VGhlIHF1aWNrIGJyb3duIGZveCBqdW1wcyBvdmVyIHRoZSBsYXp5IGRvZw=="
+										}
+									}
+								}
+							},
+							"application/ld+json": {
+								"schema": {
+									"$ref": "#/components/schemas/BlobStorageEntry"
+								},
+								"examples": {
+									"blobStorageGetResponseJsonLdExample": {
+										"value": {
+											"@context": [
+												"https://schema.twindev.org/blob-storage/",
+												"https://schema.twindev.org/common/",
+												"https://schema.org"
+											],
+											"type": "BlobStorageEntry",
+											"id": "blob-memory:c57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70",
+											"dateCreated": "2024-01-01T00:00:00Z",
+											"encodingFormat": "application/pdf",
+											"blobSize": 42,
+											"blobHash": "sha256:c57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70",
+											"fileExtension": "pdf",
+											"metadata": {
+												"@context": "https://schema.org",
+												"@type": "DigitalDocument",
+												"name": "myfile.pdf"
+											},
+											"blob": "VGhlIHF1aWNrIGJyb3duIGZveCBqdW1wcyBvdmVyIHRoZSBsYXp5IGRvZw=="
+										}
+									}
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "The resource you tried to access does not exist, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/NotFoundResponse"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "NotFoundError",
+											"message": "component.error",
+											"properties": {
+												"notFoundId": "1"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			"put": {
+				"operationId": "blobStorageUpdate",
+				"summary": "Update the metadata for an item in blob storage",
+				"tags": [
+					"Blob Storage"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"description": "The id of the blob to get in urn format.",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "blob-memory:c57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70"
+					}
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"requestBody": {
+					"description": "Request to update a blob entry.",
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/BlobStorageUpdateRequest"
+							},
+							"examples": {
+								"blobStorageUpdateRequestExample": {
+									"value": {
+										"metadata": {
+											"@context": "https://schema.org",
+											"@type": "DigitalDocument",
+											"name": "myfile.pdf"
+										}
+									}
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"204": {
+						"description": "The rest request ended in success with no data."
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			"delete": {
+				"operationId": "blobStorageRemove",
+				"summary": "Remove an item from blob storage",
+				"tags": [
+					"Blob Storage"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"description": "The id of the blob to remove in urn format.",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "blob-memory:c57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70"
+					}
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"responses": {
+					"204": {
+						"description": "The rest request ended in success with no data."
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "The resource you tried to access does not exist, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/NotFoundResponse"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "NotFoundError",
+											"message": "component.error",
+											"properties": {
+												"notFoundId": "1"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/blob-storage/{id}/content": {
+			"get": {
+				"operationId": "blobStorageGetContent",
+				"summary": "Get the content for an item in blob storage",
+				"tags": [
+					"Blob Storage"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"description": "",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "blob-memory:c57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70"
+					}
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "The content of the blob, which will be a specific mime type if one can be detected from the content (or set as encodingFormat in the entry), or defaults to application/octet-stream.",
+						"content": {
+							"application/octet-stream": {
+								"schema": {
+									"type": "string",
+									"format": "binary"
+								},
+								"examples": {
+									"blobStorageGetContentResponseExample": {
+										"summary": "Binary Data",
+										"value": ""
+									}
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "The resource you tried to access does not exist, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/NotFoundResponse"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "NotFoundError",
+											"message": "component.error",
+											"properties": {
+												"notFoundId": "1"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"components": {
+		"schemas": {
+			"ArrayBuffer": {
+				"type": "object",
+				"properties": {
+					"byteLength": {
+						"type": "number"
+					}
+				},
+				"required": [
+					"byteLength"
+				],
+				"additionalProperties": false
+			},
+			"BlobStorageCreateRequest": {
+				"type": "object",
+				"properties": {
+					"blob": {
+						"type": "string",
+						"description": "The data to store in base64 encoding."
+					},
+					"encodingFormat": {
+						"type": "string",
+						"description": "The mime type of the blob, will be detected if left undefined."
+					},
+					"fileExtension": {
+						"type": "string",
+						"description": "The extension of the blob, will be detected if left undefined."
+					},
+					"metadata": {
+						"$ref": "#/components/schemas/JsonLdNodeObject"
+					},
+					"namespace": {
+						"type": "string",
+						"description": "The namespace to store the data in, defaults to component configured namespace."
+					}
+				},
+				"required": [
+					"blob"
+				],
+				"additionalProperties": false,
+				"description": "The body parameters."
+			},
+			"BlobStorageEntry": {
+				"type": "object",
+				"properties": {
+					"@context": {
+						"type": "array",
+						"minItems": 2,
+						"items": [
+							{
+								"type": "string",
+								"const": "https://schema.twindev.org/blob-storage/"
+							},
+							{
+								"type": "string",
+								"const": "https://schema.twindev.org/common/"
+							}
+						],
+						"additionalItems": {
+							"$ref": "#/components/schemas/JsonLdContextDefinitionElement"
+						},
+						"description": "JSON-LD Context."
+					},
+					"type": {
+						"type": "string",
+						"const": "BlobStorageEntry",
+						"description": "JSON-LD Type."
+					},
+					"id": {
+						"type": "string",
+						"description": "The id for the blob."
+					},
+					"dateCreated": {
+						"type": "string",
+						"description": "The date/time when the entry was created."
+					},
+					"dateModified": {
+						"type": "string",
+						"description": "The date/time when the entry was modified."
+					},
+					"blobSize": {
+						"type": "number",
+						"description": "The size of the data in the blob."
+					},
+					"blobHash": {
+						"type": "string",
+						"description": "The hash of the data in the blob."
+					},
+					"encodingFormat": {
+						"type": "string",
+						"description": "The mime type for the blob."
+					},
+					"fileExtension": {
+						"type": "string",
+						"description": "The extension."
+					},
+					"metadata": {
+						"$ref": "#/components/schemas/JsonLdNodeObject"
+					},
+					"blob": {
+						"type": "string",
+						"description": "The blob in base64 format, included if the includeContent flag was set in the request."
+					}
+				},
+				"required": [
+					"@context",
+					"type",
+					"id",
+					"dateCreated",
+					"blobSize",
+					"blobHash"
+				],
+				"additionalProperties": false,
+				"description": "Interface describing a blob storage entry."
+			},
+			"BlobStorageEntryList": {
+				"type": "object",
+				"properties": {
+					"@context": {
+						"type": "array",
+						"minItems": 2,
+						"items": [
+							{
+								"type": "string",
+								"const": "https://schema.twindev.org/blob-storage/"
+							},
+							{
+								"type": "string",
+								"const": "https://schema.twindev.org/common/"
+							}
+						],
+						"additionalItems": {
+							"$ref": "#/components/schemas/JsonLdContextDefinitionElement"
+						},
+						"description": "JSON-LD Context."
+					},
+					"type": {
+						"type": "string",
+						"const": "BlobStorageEntryList",
+						"description": "JSON-LD Type."
+					},
+					"entries": {
+						"type": "array",
+						"items": {
+							"$ref": "#/components/schemas/BlobStorageEntry"
+						},
+						"description": "The list of entries."
+					},
+					"cursor": {
+						"type": "string",
+						"description": "The cursor to get the next chunk of entries."
+					}
+				},
+				"required": [
+					"@context",
+					"type",
+					"entries"
+				],
+				"additionalProperties": false,
+				"description": "Interface describing an blob storage entry list."
+			},
+			"BlobStorageUpdateRequest": {
+				"type": "object",
+				"properties": {
+					"encodingFormat": {
+						"type": "string",
+						"description": "The mime type of the blob, will be detected if left undefined."
+					},
+					"fileExtension": {
+						"type": "string",
+						"description": "The extension of the blob, will be detected if left undefined."
+					},
+					"metadata": {
+						"$ref": "#/components/schemas/JsonLdNodeObject"
+					}
+				},
+				"additionalProperties": false,
+				"description": "The body parameters."
+			},
+			"Error": {
+				"type": "object",
+				"properties": {
+					"name": {
+						"type": "string",
+						"description": "The name for the error."
+					},
+					"message": {
+						"type": "string",
+						"description": "The message for the error."
+					},
+					"source": {
+						"type": "string",
+						"description": "The source of the error."
+					},
+					"properties": {
+						"type": "object",
+						"additionalProperties": {},
+						"description": "Any additional information for the error."
+					},
+					"stack": {
+						"type": "string",
+						"description": "The stack trace for the error."
+					},
+					"inner": {
+						"$ref": "#/components/schemas/Error"
+					}
+				},
+				"required": [
+					"name",
+					"message"
+				],
+				"additionalProperties": false,
+				"description": "Model to describe serialized error."
+			},
+			"JsonLdContainerType": {
+				"type": "string",
+				"enum": [
+					"@language",
+					"@index",
+					"@id",
+					"@graph",
+					"@type"
+				],
+				"description": "Helper Types"
+			},
+			"JsonLdContainerTypeArray": {
+				"anyOf": [
+					{
+						"type": "array",
+						"minItems": 2,
+						"items": [
+							{
+								"type": "string",
+								"const": "@graph"
+							},
+							{
+								"type": "string",
+								"const": "@id"
+							}
+						],
+						"maxItems": 2
+					},
+					{
+						"type": "array",
+						"minItems": 2,
+						"items": [
+							{
+								"type": "string",
+								"const": "@id"
+							},
+							{
+								"type": "string",
+								"const": "@graph"
+							}
+						],
+						"maxItems": 2
+					},
+					{
+						"type": "array",
+						"minItems": 3,
+						"items": [
+							{
+								"type": "string",
+								"const": "@set"
+							},
+							{
+								"type": "string",
+								"const": "@graph"
+							},
+							{
+								"type": "string",
+								"const": "@id"
+							}
+						],
+						"maxItems": 3
+					},
+					{
+						"type": "array",
+						"minItems": 3,
+						"items": [
+							{
+								"type": "string",
+								"const": "@set"
+							},
+							{
+								"type": "string",
+								"const": "@id"
+							},
+							{
+								"type": "string",
+								"const": "@graph"
+							}
+						],
+						"maxItems": 3
+					},
+					{
+						"type": "array",
+						"minItems": 3,
+						"items": [
+							{
+								"type": "string",
+								"const": "@graph"
+							},
+							{
+								"type": "string",
+								"const": "@set"
+							},
+							{
+								"type": "string",
+								"const": "@id"
+							}
+						],
+						"maxItems": 3
+					},
+					{
+						"type": "array",
+						"minItems": 3,
+						"items": [
+							{
+								"type": "string",
+								"const": "@id"
+							},
+							{
+								"type": "string",
+								"const": "@set"
+							},
+							{
+								"type": "string",
+								"const": "@graph"
+							}
+						],
+						"maxItems": 3
+					},
+					{
+						"type": "array",
+						"minItems": 3,
+						"items": [
+							{
+								"type": "string",
+								"const": "@graph"
+							},
+							{
+								"type": "string",
+								"const": "@id"
+							},
+							{
+								"type": "string",
+								"const": "@set"
+							}
+						],
+						"maxItems": 3
+					},
+					{
+						"type": "array",
+						"minItems": 3,
+						"items": [
+							{
+								"type": "string",
+								"const": "@id"
+							},
+							{
+								"type": "string",
+								"const": "@graph"
+							},
+							{
+								"type": "string",
+								"const": "@set"
+							}
+						],
+						"maxItems": 3
+					},
+					{
+						"type": "array",
+						"minItems": 2,
+						"items": [
+							{
+								"type": "string",
+								"const": "@set"
+							},
+							{
+								"$ref": "#/components/schemas/JsonLdContainerType"
+							}
+						],
+						"maxItems": 2
+					},
+					{
+						"type": "array",
+						"minItems": 2,
+						"items": [
+							{
+								"$ref": "#/components/schemas/JsonLdContainerType"
+							},
+							{
+								"type": "string",
+								"const": "@set"
+							}
+						],
+						"maxItems": 2
+					}
+				],
+				"description": "Helper Types."
+			},
+			"JsonLdContextDefinition": {
+				"type": "object",
+				"properties": {
+					"@base": {
+						"type": [
+							"string",
+							"null"
+						]
+					},
+					"@direction": {
+						"type": [
+							"string",
+							"null"
+						],
+						"enum": [
+							"ltr",
+							"rtl",
+							null
+						]
+					},
+					"@import": {
+						"type": "string"
+					},
+					"@language": {
+						"type": "string"
+					},
+					"@propagate": {
+						"type": "boolean"
+					},
+					"@protected": {
+						"type": "boolean"
+					},
+					"@type": {
+						"type": "object",
+						"properties": {
+							"@container": {
+								"type": "string",
+								"const": "@set"
+							},
+							"@protected": {
+								"type": "boolean"
+							}
+						},
+						"required": [
+							"@container"
+						],
+						"additionalProperties": false
+					},
+					"@version": {
+						"type": "string",
+						"const": "1.1"
+					},
+					"@vocab": {
+						"type": [
+							"string",
+							"null"
+						]
+					}
+				},
+				"additionalProperties": {
+					"anyOf": [
+						{
+							"type": "null"
+						},
+						{
+							"type": "string"
+						},
+						{
+							"$ref": "#/components/schemas/JsonLdExpandedTermDefinition"
+						}
+					]
+				},
+				"description": "A context definition defines a local context in a node object."
+			},
+			"JsonLdContextDefinitionElement": {
+				"anyOf": [
+					{
+						"type": "null"
+					},
+					{
+						"type": "string"
+					},
+					{
+						"$ref": "#/components/schemas/JsonLdContextDefinition"
+					}
+				],
+				"description": "A context definition element is used to define the types of a context definition."
+			},
+			"JsonLdContextDefinitionRoot": {
+				"anyOf": [
+					{
+						"$ref": "#/components/schemas/JsonLdContextDefinitionElement"
+					},
+					{
+						"type": "array",
+						"items": {
+							"$ref": "#/components/schemas/JsonLdContextDefinitionElement"
+						}
+					}
+				],
+				"description": "A context definition root is used to define the root of a context definition."
+			},
+			"JsonLdExpandedTermDefinition": {
+				"anyOf": [
+					{
+						"type": "object",
+						"additionalProperties": false,
+						"properties": {
+							"@id": {
+								"anyOf": [
+									{
+										"type": "string"
+									},
+									{
+										"type": "array",
+										"items": {
+											"type": "string"
+										}
+									},
+									{
+										"type": "null"
+									}
+								]
+							},
+							"@nest": {
+								"type": "string"
+							},
+							"@container": {
+								"anyOf": [
+									{
+										"type": "string",
+										"const": "@list"
+									},
+									{
+										"type": "string",
+										"const": "@set"
+									},
+									{
+										"$ref": "#/components/schemas/JsonLdContainerType"
+									},
+									{
+										"type": "array",
+										"items": {
+											"anyOf": [
+												{
+													"type": "string",
+													"const": "@list"
+												},
+												{
+													"type": "string",
+													"const": "@set"
+												},
+												{
+													"$ref": "#/components/schemas/JsonLdContainerType"
+												}
+											]
+										}
+									},
+									{
+										"$ref": "#/components/schemas/JsonLdContainerTypeArray"
+									},
+									{
+										"type": "null"
+									}
+								]
+							},
+							"@type": {
+								"type": "string"
+							},
+							"@language": {
+								"type": "string"
+							},
+							"@index": {
+								"type": "string"
+							},
+							"@context": {
+								"$ref": "#/components/schemas/JsonLdContextDefinition"
+							},
+							"@prefix": {
+								"type": "boolean"
+							},
+							"@propagate": {
+								"type": "boolean"
+							},
+							"@protected": {
+								"type": "boolean"
+							}
+						}
+					},
+					{
+						"type": "object",
+						"additionalProperties": false,
+						"properties": {
+							"@reverse": {
+								"type": "string"
+							},
+							"@container": {
+								"type": [
+									"string",
+									"null"
+								],
+								"enum": [
+									"@set",
+									"@index",
+									null
+								]
+							},
+							"@type": {
+								"type": "string"
+							},
+							"@language": {
+								"type": "string"
+							},
+							"@index": {
+								"type": "string"
+							},
+							"@context": {
+								"$ref": "#/components/schemas/JsonLdContextDefinition"
+							},
+							"@prefix": {
+								"type": "boolean"
+							},
+							"@propagate": {
+								"type": "boolean"
+							},
+							"@protected": {
+								"type": "boolean"
+							}
+						},
+						"required": [
+							"@reverse"
+						]
+					}
+				],
+				"description": "An expanded term definition is used to describe the mapping between a term and its expanded identifier, as well as other properties of the value associated with the term when it is used as key in a node object."
+			},
+			"JsonLdGraphObject": {
+				"type": "object",
+				"properties": {
+					"@graph": {
+						"anyOf": [
+							{
+								"$ref": "#/components/schemas/JsonLdNodeObject"
+							},
+							{
+								"type": "array",
+								"items": {
+									"$ref": "#/components/schemas/JsonLdNodeObject"
+								}
+							}
+						]
+					},
+					"@index": {
+						"$ref": "#/components/schemas/JsonLdKeyword"
+					},
+					"@id": {
+						"$ref": "#/components/schemas/JsonLdKeyword"
+					},
+					"@context": {
+						"$ref": "#/components/schemas/JsonLdKeyword"
+					}
+				},
+				"required": [
+					"@graph"
+				],
+				"additionalProperties": false,
+				"description": "A graph object represents a named graph, which MAY include an explicit graph name."
+			},
+			"JsonLdIdMap": {
+				"type": "object",
+				"additionalProperties": {
+					"$ref": "#/components/schemas/JsonLdNodeObject"
+				},
+				"description": "An id map is used to associate an IRI with a value that allows easy programmatic access."
+			},
+			"JsonLdIncludedBlock": {
+				"anyOf": [
+					{
+						"$ref": "#/components/schemas/JsonLdNodeObject"
+					},
+					{
+						"type": "array",
+						"items": {
+							"$ref": "#/components/schemas/JsonLdNodeObject"
+						}
+					}
+				],
+				"description": "An included block is used to provide a set of node objects."
+			},
+			"JsonLdIndexMap": {
+				"type": "object",
+				"additionalProperties": {
+					"anyOf": [
+						{
+							"$ref": "#/components/schemas/JsonLdIndexMapItem"
+						},
+						{
+							"type": "array",
+							"items": {
+								"$ref": "#/components/schemas/JsonLdIndexMapItem"
+							}
+						}
+					]
+				},
+				"description": "An index map allows keys that have no semantic meaning, but should be preserved regardless, to be used in JSON-LD documents."
+			},
+			"JsonLdIndexMapItem": {
+				"anyOf": [
+					{
+						"type": "null"
+					},
+					{
+						"type": "boolean"
+					},
+					{
+						"type": "number"
+					},
+					{
+						"type": "string"
+					},
+					{
+						"$ref": "#/components/schemas/JsonLdNodeObject"
+					},
+					{
+						"$ref": "#/components/schemas/JsonLdValueObject"
+					},
+					{
+						"$ref": "#/components/schemas/JsonLdListObject"
+					},
+					{
+						"$ref": "#/components/schemas/JsonLdSetObject"
+					}
+				],
+				"description": "The items that can be stored in an index map."
+			},
+			"JsonLdJsonArray": {
+				"type": "array",
+				"items": {
+					"$ref": "#/components/schemas/JsonLdJsonValue"
+				},
+				"description": "JSON Type for array."
+			},
+			"JsonLdJsonObject": {
+				"type": "object",
+				"additionalProperties": {
+					"anyOf": [
+						{
+							"$ref": "#/components/schemas/JsonLdJsonValue"
+						},
+						{
+							"not": {}
+						}
+					]
+				},
+				"description": "JSON Type for object."
+			},
+			"JsonLdJsonPrimitive": {
+				"type": [
+					"string",
+					"number",
+					"boolean",
+					"null"
+				],
+				"description": "JSON Primitive."
+			},
+			"JsonLdJsonValue": {
+				"anyOf": [
+					{
+						"$ref": "#/components/schemas/JsonLdJsonPrimitive"
+					},
+					{
+						"$ref": "#/components/schemas/JsonLdJsonArray"
+					},
+					{
+						"$ref": "#/components/schemas/JsonLdJsonObject"
+					}
+				],
+				"description": "JSON Value."
+			},
+			"JsonLdKeyword": {
+				"type": "object",
+				"properties": {
+					"@base": {
+						"type": [
+							"string",
+							"null"
+						]
+					},
+					"@container": {
+						"anyOf": [
+							{
+								"type": "string",
+								"const": "@list"
+							},
+							{
+								"type": "string",
+								"const": "@set"
+							},
+							{
+								"$ref": "#/components/schemas/JsonLdContainerType"
+							},
+							{
+								"type": "array",
+								"items": {
+									"anyOf": [
+										{
+											"type": "string",
+											"const": "@list"
+										},
+										{
+											"type": "string",
+											"const": "@set"
+										},
+										{
+											"$ref": "#/components/schemas/JsonLdContainerType"
+										}
+									]
+								}
+							},
+							{
+								"$ref": "#/components/schemas/JsonLdContainerTypeArray"
+							},
+							{
+								"type": "null"
+							}
+						]
+					},
+					"@context": {
+						"$ref": "#/components/schemas/JsonLdContextDefinitionRoot"
+					},
+					"@direction": {
+						"type": [
+							"string",
+							"null"
+						],
+						"enum": [
+							"ltr",
+							"rtl",
+							null
+						]
+					},
+					"@graph": {
+						"anyOf": [
+							{
+								"$ref": "#/components/schemas/JsonLdValueObject"
+							},
+							{
+								"$ref": "#/components/schemas/JsonLdNodeObject"
+							},
+							{
+								"type": "array",
+								"items": {
+									"anyOf": [
+										{
+											"$ref": "#/components/schemas/JsonLdValueObject"
+										},
+										{
+											"$ref": "#/components/schemas/JsonLdNodeObject"
+										}
+									]
+								}
+							}
+						]
+					},
+					"@id": {
+						"anyOf": [
+							{
+								"type": "string"
+							},
+							{
+								"type": "array",
+								"items": {
+									"type": "string"
+								}
+							}
+						]
+					},
+					"@import": {
+						"type": "string"
+					},
+					"@included": {
+						"$ref": "#/components/schemas/JsonLdIncludedBlock"
+					},
+					"@index": {
+						"type": "string"
+					},
+					"@json": {
+						"type": "string",
+						"const": "@json"
+					},
+					"@language": {
+						"type": "string"
+					},
+					"@list": {
+						"anyOf": [
+							{
+								"$ref": "#/components/schemas/JsonLdListOrSetItem"
+							},
+							{
+								"type": "array",
+								"items": {
+									"$ref": "#/components/schemas/JsonLdListOrSetItem"
+								}
+							}
+						]
+					},
+					"@nest": {
+						"type": "object"
+					},
+					"@none": {
+						"type": "string",
+						"const": "@none"
+					},
+					"@prefix": {
+						"type": "boolean"
+					},
+					"@propagate": {
+						"type": "boolean"
+					},
+					"@protected": {
+						"type": "boolean"
+					},
+					"@reverse": {
+						"type": "string"
+					},
+					"@set": {
+						"anyOf": [
+							{
+								"$ref": "#/components/schemas/JsonLdListOrSetItem"
+							},
+							{
+								"type": "array",
+								"items": {
+									"$ref": "#/components/schemas/JsonLdListOrSetItem"
+								}
+							}
+						]
+					},
+					"@type": {
+						"type": "string"
+					},
+					"@value": {
+						"type": [
+							"null",
+							"boolean",
+							"number",
+							"string"
+						]
+					},
+					"@version": {
+						"type": "string",
+						"const": "1.1"
+					},
+					"@vocab": {
+						"type": [
+							"string",
+							"null"
+						]
+					}
+				},
+				"required": [
+					"@base",
+					"@container",
+					"@context",
+					"@direction",
+					"@graph",
+					"@id",
+					"@import",
+					"@included",
+					"@index",
+					"@json",
+					"@language",
+					"@list",
+					"@nest",
+					"@none",
+					"@prefix",
+					"@propagate",
+					"@protected",
+					"@reverse",
+					"@set",
+					"@type",
+					"@value",
+					"@version",
+					"@vocab"
+				],
+				"additionalProperties": false,
+				"description": "A list of keywords and their types. Only used for internal reference; not an actual interface. Not for export."
+			},
+			"JsonLdLanguageMap": {
+				"type": "object",
+				"additionalProperties": {
+					"anyOf": [
+						{
+							"type": "null"
+						},
+						{
+							"type": "string"
+						},
+						{
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						}
+					]
+				},
+				"description": "A language map is used to associate a language with a value in a way that allows easy programmatic access."
+			},
+			"JsonLdListObject": {
+				"type": "object",
+				"properties": {
+					"@list": {
+						"$ref": "#/components/schemas/JsonLdKeyword"
+					},
+					"@index": {
+						"$ref": "#/components/schemas/JsonLdKeyword"
+					}
+				},
+				"required": [
+					"@list"
+				],
+				"additionalProperties": false,
+				"description": "A list represents an ordered set of values."
+			},
+			"JsonLdListOrSetItem": {
+				"anyOf": [
+					{
+						"type": "null"
+					},
+					{
+						"type": "boolean"
+					},
+					{
+						"type": "number"
+					},
+					{
+						"type": "string"
+					},
+					{
+						"$ref": "#/components/schemas/JsonLdNodeObject"
+					},
+					{
+						"$ref": "#/components/schemas/JsonLdValueObject"
+					}
+				],
+				"description": "A list or set item can be a null, boolean, number, string, node object, or value object."
+			},
+			"JsonLdNodeObject": {
+				"type": "object",
+				"additionalProperties": {
+					"anyOf": [
+						{
+							"$ref": "#/components/schemas/JsonLdNodePrimitive"
+						},
+						{
+							"$ref": "#/components/schemas/JsonLdLanguageMap"
+						},
+						{
+							"$ref": "#/components/schemas/JsonLdIndexMap"
+						},
+						{
+							"$ref": "#/components/schemas/JsonLdIncludedBlock"
+						},
+						{
+							"$ref": "#/components/schemas/JsonLdIdMap"
+						},
+						{
+							"$ref": "#/components/schemas/JsonLdTypeMap"
+						},
+						{
+							"type": "array"
+						}
+					]
+				},
+				"properties": {
+					"@context": {
+						"$ref": "#/components/schemas/JsonLdKeyword"
+					},
+					"@id": {
+						"$ref": "#/components/schemas/JsonLdKeyword"
+					},
+					"@included": {
+						"$ref": "#/components/schemas/JsonLdKeyword"
+					},
+					"@graph": {
+						"anyOf": [
+							{
+								"$ref": "#/components/schemas/JsonLdNodeObject"
+							},
+							{
+								"type": "array",
+								"items": {
+									"$ref": "#/components/schemas/JsonLdNodeObject"
+								}
+							}
+						]
+					},
+					"@nest": {
+						"anyOf": [
+							{
+								"$ref": "#/components/schemas/JsonLdJsonObject"
+							},
+							{
+								"type": "array",
+								"items": {
+									"$ref": "#/components/schemas/JsonLdJsonObject"
+								}
+							}
+						]
+					},
+					"@type": {
+						"anyOf": [
+							{
+								"$ref": "#/components/schemas/JsonLdKeyword"
+							},
+							{
+								"type": "array",
+								"items": {
+									"$ref": "#/components/schemas/JsonLdKeyword"
+								}
+							}
+						]
+					},
+					"@reverse": {
+						"type": "object",
+						"additionalProperties": {
+							"$ref": "#/components/schemas/JsonLdKeyword"
+						}
+					},
+					"@index": {
+						"$ref": "#/components/schemas/JsonLdKeyword"
+					}
+				},
+				"description": "A node object represents zero or more properties of a node in the graph serialized by the JSON-LD document."
+			},
+			"JsonLdNodePrimitive": {
+				"anyOf": [
+					{
+						"type": "null"
+					},
+					{
+						"type": "boolean"
+					},
+					{
+						"type": "number"
+					},
+					{
+						"type": "string"
+					},
+					{
+						"$ref": "#/components/schemas/JsonLdNodeObject"
+					},
+					{
+						"$ref": "#/components/schemas/JsonLdGraphObject"
+					},
+					{
+						"$ref": "#/components/schemas/JsonLdValueObject"
+					},
+					{
+						"$ref": "#/components/schemas/JsonLdListObject"
+					},
+					{
+						"$ref": "#/components/schemas/JsonLdSetObject"
+					}
+				],
+				"description": "A node primitive is a JSON-LD value which is not one of the defined NodeObject properties."
+			},
+			"JsonLdSetObject": {
+				"type": "object",
+				"properties": {
+					"@set": {
+						"$ref": "#/components/schemas/JsonLdKeyword"
+					},
+					"@index": {
+						"$ref": "#/components/schemas/JsonLdKeyword"
+					}
+				},
+				"required": [
+					"@set"
+				],
+				"additionalProperties": false,
+				"description": "A set represents an unordered set of values."
+			},
+			"JsonLdTypeMap": {
+				"type": "object",
+				"additionalProperties": {
+					"anyOf": [
+						{
+							"type": "string"
+						},
+						{
+							"$ref": "#/components/schemas/JsonLdNodeObject"
+						}
+					]
+				},
+				"description": "A type map is used to associate an IRI with a value that allows easy programmatic access."
+			},
+			"JsonLdValueObject": {
+				"anyOf": [
+					{
+						"type": "object",
+						"additionalProperties": false,
+						"properties": {
+							"@value": {
+								"$ref": "#/components/schemas/JsonLdKeyword"
+							},
+							"@language": {
+								"$ref": "#/components/schemas/JsonLdKeyword"
+							},
+							"@direction": {
+								"$ref": "#/components/schemas/JsonLdKeyword"
+							},
+							"@index": {
+								"$ref": "#/components/schemas/JsonLdKeyword"
+							},
+							"@context": {
+								"$ref": "#/components/schemas/JsonLdKeyword"
+							}
+						},
+						"required": [
+							"@value"
+						]
+					},
+					{
+						"type": "object",
+						"additionalProperties": false,
+						"properties": {
+							"@value": {
+								"$ref": "#/components/schemas/JsonLdKeyword"
+							},
+							"@type": {
+								"$ref": "#/components/schemas/JsonLdKeyword"
+							},
+							"@index": {
+								"$ref": "#/components/schemas/JsonLdKeyword"
+							},
+							"@context": {
+								"$ref": "#/components/schemas/JsonLdKeyword"
+							}
+						},
+						"required": [
+							"@type",
+							"@value"
+						]
+					},
+					{
+						"type": "object",
+						"additionalProperties": false,
+						"properties": {
+							"@value": {
+								"anyOf": [
+									{
+										"$ref": "#/components/schemas/JsonLdKeyword"
+									},
+									{
+										"$ref": "#/components/schemas/JsonLdJsonObject"
+									},
+									{
+										"$ref": "#/components/schemas/JsonLdJsonArray"
+									}
+								]
+							},
+							"@type": {
+								"type": "string",
+								"const": "@json"
+							},
+							"@index": {
+								"$ref": "#/components/schemas/JsonLdKeyword"
+							},
+							"@context": {
+								"$ref": "#/components/schemas/JsonLdKeyword"
+							}
+						},
+						"required": [
+							"@type",
+							"@value"
+						]
+					}
+				],
+				"description": "A value object is used to explicitly associate a type or a language with a value to create a typed value or a language-tagged string and possibly associate a base direction."
+			},
+			"NotFoundResponse": {
+				"type": "object",
+				"additionalProperties": false,
+				"properties": {
+					"notFoundId": {
+						"type": "string",
+						"description": "The id if the item that was not found."
+					},
+					"name": {
+						"type": "string",
+						"description": "The name for the error."
+					},
+					"message": {
+						"type": "string",
+						"description": "The message for the error."
+					},
+					"source": {
+						"type": "string",
+						"description": "The source of the error."
+					},
+					"properties": {
+						"type": "object",
+						"additionalProperties": {},
+						"description": "Any additional information for the error."
+					},
+					"stack": {
+						"type": "string",
+						"description": "The stack trace for the error."
+					},
+					"inner": {
+						"$ref": "#/components/schemas/Error"
+					}
+				},
+				"required": [
+					"message",
+					"name"
+				],
+				"description": "The body which contains the error."
+			},
+			"SortDirection": {
+				"anyOf": [
+					{
+						"type": "string",
+						"const": "asc",
+						"description": "Ascending."
+					},
+					{
+						"type": "string",
+						"const": "desc",
+						"description": "Descending."
+					}
+				],
+				"description": "The sort directions."
+			}
+		},
+		"securitySchemes": {
+			"jwtBearerAuthScheme": {
+				"type": "http",
+				"scheme": "bearer",
+				"bearerFormat": "JWT"
+			}
+		}
+	}
 }

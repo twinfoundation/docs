@@ -10,7 +10,7 @@ Interface describing an attestation connector.
 
 ### create()
 
-> **create**(`controller`, `address`, `verificationMethodId`, `attestationObject`): `Promise`\<`string`\>
+> **create**(`controller`, `verificationMethodId`, `attestationObject`): `Promise`\<`string`\>
 
 Attest the data and return the collated information.
 
@@ -21,12 +21,6 @@ Attest the data and return the collated information.
 `string`
 
 The controller identity of the user to access the vault keys.
-
-##### address
-
-`string`
-
-The controller address for the attestation.
 
 ##### verificationMethodId
 

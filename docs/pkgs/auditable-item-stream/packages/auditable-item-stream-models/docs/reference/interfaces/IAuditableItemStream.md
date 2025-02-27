@@ -6,7 +6,7 @@ Interface describing an auditable item stream.
 
 ### @context
 
-> **@context**: `"https://schema.twindev.org/ais/"` \| \[`"https://schema.twindev.org/ais/"`, `...string[]`\]
+> **@context**: \[`"https://schema.twindev.org/ais/"`, `"https://schema.twindev.org/common/"`, `...IJsonLdContextDefinitionElement[]`\]
 
 JSON-LD Context.
 
@@ -60,9 +60,9 @@ The identity of the user who created the stream.
 
 ***
 
-### streamObject?
+### annotationObject?
 
-> `optional` **streamObject**: `IJsonLdNodeObject`
+> `optional` **annotationObject**: `IJsonLdNodeObject`
 
 The object to associate with the entry as JSON-LD.
 

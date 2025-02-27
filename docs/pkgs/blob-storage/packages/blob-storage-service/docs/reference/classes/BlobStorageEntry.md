@@ -46,6 +46,14 @@ The length of the data in the blob.
 
 ***
 
+### blobHash
+
+> **blobHash**: `string`
+
+The hash of the data in the blob.
+
+***
+
 ### encodingFormat?
 
 > `optional` **encodingFormat**: `string`

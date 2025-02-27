@@ -4,7 +4,6 @@
 
 - [IotaIdentityConnector](classes/IotaIdentityConnector.md)
 - [IotaIdentityResolverConnector](classes/IotaIdentityResolverConnector.md)
-- [IotaIdentityUtils](classes/IotaIdentityUtils.md)
 
 ## Interfaces
 

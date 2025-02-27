@@ -10,31 +10,35 @@ Interface describing an auditable item graph contract.
 
 ### create()
 
-> **create**(`annotationObject`?, `aliases`?, `resources`?, `edges`?, `userIdentity`?, `nodeIdentity`?): `Promise`\<`string`\>
+> **create**(`vertex`, `userIdentity`?, `nodeIdentity`?): `Promise`\<`string`\>
 
 Create a new graph vertex.
 
 #### Parameters
 
-##### annotationObject?
+##### vertex
+
+The vertex to create.
+
+###### annotationObject?
 
 `IJsonLdNodeObject`
 
 The annotation object for the vertex as JSON-LD.
 
-##### aliases?
+###### aliases?
 
 `object`[]
 
 Alternative aliases that can be used to identify the vertex.
 
-##### resources?
+###### resources?
 
 `object`[]
 
 The resources attached to the vertex.
 
-##### edges?
+###### edges?
 
 `object`[]
 
@@ -62,37 +66,41 @@ The id of the new graph item.
 
 ### update()
 
-> **update**(`id`, `annotationObject`?, `aliases`?, `resources`?, `edges`?, `userIdentity`?, `nodeIdentity`?): `Promise`\<`void`\>
+> **update**(`vertex`, `userIdentity`?, `nodeIdentity`?): `Promise`\<`void`\>
 
 Update a graph vertex.
 
 #### Parameters
 
-##### id
+##### vertex
+
+The vertex to update.
+
+###### id
 
 `string`
 
 The id of the vertex to update.
 
-##### annotationObject?
+###### annotationObject?
 
 `IJsonLdNodeObject`
 
 The annotation object for the vertex as JSON-LD.
 
-##### aliases?
+###### aliases?
 
 `object`[]
 
 Alternative aliases that can be used to identify the vertex.
 
-##### resources?
+###### resources?
 
 `object`[]
 
 The resources attached to the vertex.
 
-##### edges?
+###### edges?
 
 `object`[]
 
@@ -136,19 +144,19 @@ The id of the vertex to get.
 
 Additional options for the get operation.
 
-###### includeDeleted
+###### includeDeleted?
 
 `boolean`
 
 Whether to include deleted aliases, resource, edges, defaults to false.
 
-###### includeChangesets
+###### includeChangesets?
 
 `boolean`
 
 Whether to include the changesets of the vertex, defaults to false.
 
-###### verifySignatureDepth
+###### verifySignatureDepth?
 
 [`VerifyDepth`](../type-aliases/VerifyDepth.md)
 
@@ -210,13 +218,13 @@ Query the graph for vertices.
 
 The query options.
 
-###### id
+###### id?
 
 `string`
 
 The optional id to look for.
 
-###### idMode
+###### idMode?
 
 `"both"` \| `"id"` \| `"alias"`
 

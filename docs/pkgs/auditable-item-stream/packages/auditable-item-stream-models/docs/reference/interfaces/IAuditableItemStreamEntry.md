@@ -6,7 +6,7 @@ Interface describing an entry for the stream.
 
 ### @context
 
-> **@context**: `"https://schema.twindev.org/ais/"` \| \[`"https://schema.twindev.org/ais/"`, `...string[]`\]
+> **@context**: \[`"https://schema.twindev.org/ais/"`, `"https://schema.twindev.org/common/"`, `...IJsonLdContextDefinitionElement[]`\]
 
 JSON-LD Context.
 

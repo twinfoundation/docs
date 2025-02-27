@@ -2,7 +2,13 @@
 
 ## Interfaces
 
+- [IImmutableStorageComponent](interfaces/IImmutableStorageComponent.md)
 - [IImmutableStorageConnector](interfaces/IImmutableStorageConnector.md)
+- [IImmutableStorageGetRequest](interfaces/IImmutableStorageGetRequest.md)
+- [IImmutableStorageGetResponse](interfaces/IImmutableStorageGetResponse.md)
+- [IImmutableStorageRemoveRequest](interfaces/IImmutableStorageRemoveRequest.md)
+- [IImmutableStorageStoreRequest](interfaces/IImmutableStorageStoreRequest.md)
+- [IImmutableStorageStoreResponse](interfaces/IImmutableStorageStoreResponse.md)
 
 ## Type Aliases
 

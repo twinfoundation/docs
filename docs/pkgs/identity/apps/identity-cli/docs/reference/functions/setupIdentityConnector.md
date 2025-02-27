@@ -16,19 +16,19 @@ The options for the identity connector.
 
 The node endpoint.
 
-#### network
+#### network?
 
 `string`
 
 The network.
 
-#### addressIndex
+#### addressIndex?
 
 `number`
 
 The wallet index.
 
-#### vaultSeedId
+#### vaultSeedId?
 
 `string`
 

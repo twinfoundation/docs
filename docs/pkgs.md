@@ -120,14 +120,14 @@ This is the overview of the packages.
 ## Distributed Ledger
 
 - [@twin.org/dlt-iota](pkgs/dlt/packages/dlt-iota/index.md) - DLT helpers for use with IOTA
-- [@twin.org/dlt-iota-rebased](pkgs/dlt/packages/dlt-iota-rebased/index.md) - DLT helpers for use with IOTA Rebased
+- [@twin.org/dlt-iota-stardust](pkgs/dlt/packages/dlt-iota-stardust/index.md) - DLT helpers for use with IOTA Stardust
 
 ## Wallet
 
 - [@twin.org/wallet-models](pkgs/wallet/packages/wallet-models/index.md) - Models which define the structure of the wallet contracts and connectors
 - [@twin.org/wallet-connector-entity-storage](pkgs/wallet/packages/wallet-connector-entity-storage/index.md) - Wallet connector implementation using entity storage
 - [@twin.org/wallet-connector-iota](pkgs/wallet/packages/wallet-connector-iota/index.md) - Wallet connector implementation using IOTA
-- [@twin.org/wallet-connector-iota-rebased](pkgs/wallet/packages/wallet-connector-iota-rebased/index.md) - Wallet connector implementation using IOTA Rebased
+- [@twin.org/wallet-connector-iota-stardust](pkgs/wallet/packages/wallet-connector-iota-stardust/index.md) - Wallet connector implementation using IOTA Stardust
 
 ## Identity
 
@@ -136,23 +136,25 @@ This is the overview of the packages.
 - [@twin.org/identity-service](pkgs/identity/packages/identity-service/index.md) - Identity contract implementation and REST endpoint definitions
 - [@twin.org/identity-rest-client](pkgs/identity/packages/identity-rest-client/index.md) - Identity contract implementation which can connect to REST endpoints
 - [@twin.org/identity-connector-iota](pkgs/identity/packages/identity-connector-iota/index.md) - Identity connector implementation using IOTA
-- [@twin.org/identity-connector-iota-rebased](pkgs/identity/packages/identity-connector-iota-rebased/index.md) - Identity connector implementation using IOTA Rebased
+- [@twin.org/identity-connector-iota-stardust](pkgs/identity/packages/identity-connector-iota-stardust/index.md) - Identity connector implementation using IOTA Stardust
 
 ## NFT
 
 - [@twin.org/nft-models](pkgs/nft/packages/nft-models/index.md) - Contains models and classes for use with NFTs
-- [@twin.org/nft-connector-iota](pkgs/nft/packages/nft-connector-iota/index.md) - Implementation of the NFT connector using IOTA
+- [@twin.org/nft-connector-iota](pkgs/nft/packages/nft-connector-iota/index.md) - Implementation of the NFT connector using Iota
+- [@twin.org/nft-connector-iota-stardust](pkgs/nft/packages/nft-connector-iota-stardust/index.md) - Implementation of the NFT connector using IOTA Stardust
 - [@twin.org/nft-connector-entity-storage](pkgs/nft/packages/nft-connector-entity-storage/index.md) - Implementation of the NFT connector using entity storage
 - [@twin.org/nft-service](pkgs/nft/packages/nft-service/index.md) - NFT contract implementation and REST endpoint definitions
 - [@twin.org/nft-rest-client](pkgs/nft/packages/nft-rest-client/index.md) - NFT contract implementation which can connect to REST endpoints
-- [@twin.org/nft-connector-iota-rebased](pkgs/nft/packages/nft-connector-iota-rebased/index.md) - Implementation of the NFT connector using Iota Rebased
 
 ## Immutable Storage
 
 - [@twin.org/immutable-storage-models](pkgs/immutable-storage/packages/immutable-storage-models/index.md) - Contains models and classes for use with immutable storage
-- [@twin.org/immutable-storage-connector-iota](pkgs/immutable-storage/packages/immutable-storage-connector-iota/index.md) - Implementation of the Immutable Storage connector using IOTA
 - [@twin.org/immutable-storage-connector-entity-storage](pkgs/immutable-storage/packages/immutable-storage-connector-entity-storage/index.md) - Implementation of the Immutable Storage connector using entity storage
-- [@twin.org/immutable-storage-connector-iota-rebased](pkgs/immutable-storage/packages/immutable-storage-connector-iota-rebased/index.md) - Implementation of the Immutable Storage connector using IOTA Rebased
+- [@twin.org/immutable-storage-connector-iota](pkgs/immutable-storage/packages/immutable-storage-connector-iota/index.md) - Implementation of the Immutable Storage connector using IOTA
+- [@twin.org/immutable-storage-connector-iota-stardust](pkgs/immutable-storage/packages/immutable-storage-connector-iota-stardust/index.md) - Implementation of the Immutable Storage connector using IOTA Stardust
+- [@twin.org/immutable-storage-service](pkgs/immutable-storage/packages/immutable-storage-service/index.md) - Immutable Storage contract implementation and REST endpoint definitions
+- [@twin.org/immutable-storage-rest-client](pkgs/immutable-storage/packages/immutable-storage-rest-client/index.md) - Immutable Storage contract implementation which can connect to REST endpoints
 
 ## Immutable Proof
 
@@ -188,6 +190,12 @@ This is the overview of the packages.
 - [@twin.org/data-processing-extractors](pkgs/data-processing/packages/data-processing-extractors/index.md) - Data extractor connector implementations
 - [@twin.org/data-processing-service](pkgs/data-processing/packages/data-processing-service/index.md) - Data extractor connector implementations
 - [@twin.org/data-processing-rest-client](pkgs/data-processing/packages/data-processing-rest-client/index.md) - Data processing contract implementation which can connect to REST endpoints
+
+## Document Management
+
+- [@twin.org/document-management-models](pkgs/document-management/packages/document-management-models/index.md) - Models which define the structure of the document management connectors and services
+- [@twin.org/document-management-service](pkgs/document-management/packages/document-management-service/index.md) - Document management contract implementation and REST endpoint definitions
+- [@twin.org/document-management-rest-client](pkgs/document-management/packages/document-management-rest-client/index.md) - Document management contract implementation which can connect to REST endpoints
 
 ## UI
 

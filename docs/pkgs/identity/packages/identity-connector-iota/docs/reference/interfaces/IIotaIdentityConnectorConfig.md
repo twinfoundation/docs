@@ -6,6 +6,10 @@ Configuration for the IOTA Identity Connector.
 
 - `IIotaConfig`
 
+## Extended by
+
+- [`IIotaIdentityResolverConnectorConfig`](IIotaIdentityResolverConnectorConfig.md)
+
 ## Properties
 
 ### walletAddressIndex?

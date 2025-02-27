@@ -1,5 +1,5 @@
 # @twin.org/standards-unece - Changelog
 
-## v0.0.1-next.21
+## v0.0.1-next.24
 
 - Initial Release

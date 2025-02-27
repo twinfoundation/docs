@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/nft",
-	"version": "0.0.1-next.18",
+	"version": "0.0.1-next.21",
 	"description": "NFT",
 	"repository": {
 		"type": "git",
@@ -36,15 +36,15 @@
 		"eslint-plugin-unused-imports": "3.2.0",
 		"fast-glob": "3.3.3",
 		"markdownlint-cli": "0.44.0",
-		"prettier": "3.4.2"
+		"prettier": "3.5.0"
 	},
 	"workspaces": [
 		"packages/nft-models",
 		"packages/nft-connector-iota",
+		"packages/nft-connector-iota-stardust",
 		"packages/nft-connector-entity-storage",
 		"packages/nft-service",
 		"packages/nft-rest-client",
-		"packages/nft-connector-iota-rebased",
 		"apps/nft-cli"
 	],
 	"type": "module"

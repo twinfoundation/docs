@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/data-processing-rest-client",
-	"version": "0.0.1-next.6",
+	"version": "0.0.1-next.8",
 	"description": "Data processing contract implementation which can connect to REST endpoints",
 	"repository": {
 		"type": "git",
@@ -26,6 +26,7 @@
 		"docs:generate": "typedoc",
 		"docs": "npm run docs:clean && npm run docs:generate",
 		"dist": "npm run clean && npm run build && npm run test && npm run bundle && npm run docs",
+		"dist:no-test": "npm run clean && npm run build && npm run bundle && npm run docs",
 		"prepare": "ts-patch install -s"
 	},
 	"dependencies": {
@@ -34,7 +35,7 @@
 		"@twin.org/core": "next",
 		"@twin.org/entity": "next",
 		"@twin.org/nameof": "next",
-		"@twin.org/data-processing-models": "0.0.1-next.6",
+		"@twin.org/data-processing-models": "0.0.1-next.8",
 		"@twin.org/web": "next"
 	},
 	"devDependencies": {

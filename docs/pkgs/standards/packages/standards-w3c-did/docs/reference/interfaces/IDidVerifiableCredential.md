@@ -1,12 +1,13 @@
 # Interface: IDidVerifiableCredential
 
 Interface describing a verifiable credential.
+https://www.w3.org/TR/vc-data-model-2.0
 
 ## Properties
 
 ### @context
 
-> **@context**: `"https://www.w3.org/ns/credentials/v2"` \| \[`"https://www.w3.org/ns/credentials/v2"`, `...string[]`\]
+> **@context**: `"https://www.w3.org/ns/credentials/v2"` \| \[`"https://www.w3.org/ns/credentials/v2"`, `...IJsonLdContextDefinitionElement[]`\]
 
 The context for the verifiable credential.
 
@@ -22,15 +23,15 @@ The identifier for the verifiable credential.
 
 ### type
 
-> **type**: `string`[]
+> **type**: `string` \| `string`[]
 
 The types of the data stored in the verifiable credential.
 
 ***
 
-### credentialSubject
+### credentialSubject?
 
-> **credentialSubject**: `IJsonLdNodeObject` \| `IJsonLdNodeObject`[]
+> `optional` **credentialSubject**: `IJsonLdNodeObject` \| `IJsonLdNodeObject`[]
 
 The data for the verifiable credential.
 
@@ -38,16 +39,24 @@ The data for the verifiable credential.
 
 ### credentialStatus?
 
-> `optional` **credentialStatus**: [`IDidCredentialStatus`](IDidCredentialStatus.md)
+> `optional` **credentialStatus**: [`IDidCredentialStatus`](IDidCredentialStatus.md) \| [`IDidCredentialStatus`](IDidCredentialStatus.md)[]
 
 Used to discover information about the current status of the
 verifiable credential, such as whether it is suspended or revoked.
 
 ***
 
+### credentialSchema?
+
+> `optional` **credentialSchema**: [`IDidCredentialSchema`](IDidCredentialSchema.md) \| [`IDidCredentialSchema`](IDidCredentialSchema.md)[]
+
+Annotate type definitions or lock them to specific versions of the vocabulary.
+
+***
+
 ### issuer?
 
-> `optional` **issuer**: `string`
+> `optional` **issuer**: `string` \| \{ `[key: string]`: `unknown`;  `id`: `string`; \}
 
 The issuing identity.
 
@@ -58,6 +67,46 @@ The issuing identity.
 > `optional` **issuanceDate**: `string`
 
 The date the verifiable credential was issued.
+
+***
+
+### name?
+
+> `optional` **name**: `string` \| `object`[]
+
+The name of the credential.
+
+***
+
+### description?
+
+> `optional` **description**: `string` \| `object`[]
+
+The description of the credential.
+
+***
+
+### validFrom?
+
+> `optional` **validFrom**: `string`
+
+The date the verifiable credential is valid from.
+
+***
+
+### validUntil?
+
+> `optional` **validUntil**: `string`
+
+The date the verifiable credential is valid until.
+
+***
+
+### evidence?
+
+> `optional` **evidence**: `IJsonLdNodeObject` \| `IJsonLdNodeObject`[]
+
+Evidence associated with the Credential.
 
 ***
 

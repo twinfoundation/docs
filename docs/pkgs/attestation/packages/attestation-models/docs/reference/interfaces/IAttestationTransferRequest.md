@@ -14,7 +14,7 @@ The parameters to be used in the transfer.
 
 > **id**: `string`
 
-The attestation id to verify.
+The attestation id to transfer.
 
 ***
 
@@ -29,3 +29,9 @@ The parameters to be used in the transfer.
 > **holderIdentity**: `string`
 
 The new holder identity.
+
+#### holderAddress
+
+> **holderAddress**: `string`
+
+The new holder address.
