@@ -54,9 +54,9 @@ The identity of the user which created the stream.
 
 ***
 
-### streamObject?
+### annotationObject?
 
-> `optional` **streamObject**: `IJsonLdNodeObject`
+> `optional` **annotationObject**: `IJsonLdNodeObject`
 
 Object to associate with the stream as JSON-LD.
 

@@ -12,7 +12,7 @@ Interface describing a vault securely storing data.
 
 > **createKey**(`name`, `type`): `Promise`\<`Uint8Array`\>
 
-Create a key in the vault.
+Generate a new key and store it in the vault.
 
 #### Parameters
 
@@ -20,7 +20,7 @@ Create a key in the vault.
 
 `string`
 
-The name of the key to create in the vault.
+The name of the key to generate and store in the vault.
 
 ##### type
 
@@ -40,7 +40,7 @@ The public key for the key pair.
 
 > **addKey**(`name`, `type`, `privateKey`, `publicKey`?): `Promise`\<`void`\>
 
-Add a key to the vault.
+Add an existing key to the vault.
 
 #### Parameters
 

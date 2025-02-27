@@ -23,4 +23,5 @@
 - [dataProcessingRemoveRuleGroup](functions/dataProcessingRemoveRuleGroup.md)
 - [dataProcessingExtract](functions/dataProcessingExtract.md)
 - [dataProcessingConvert](functions/dataProcessingConvert.md)
+- [ruleGroupList](functions/ruleGroupList.md)
 - [initSchema](functions/initSchema.md)

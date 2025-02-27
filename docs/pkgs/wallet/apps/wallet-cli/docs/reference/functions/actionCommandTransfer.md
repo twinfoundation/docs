@@ -34,7 +34,7 @@ The address to send the funds to.
 
 The amount of funds to transfer.
 
-#### connector
+#### connector?
 
 [`WalletConnectorTypes`](../type-aliases/WalletConnectorTypes.md)
 
@@ -46,11 +46,11 @@ The connector to perform the operations with.
 
 The node URL.
 
-#### network
+#### network?
 
 `string`
 
-The network to use for rebased connector.
+The network to use for the connector.
 
 #### explorer
 

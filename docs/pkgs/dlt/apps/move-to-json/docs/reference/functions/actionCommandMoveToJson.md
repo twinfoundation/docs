@@ -22,7 +22,7 @@ Where we store the final compiled modules.
 
 Additional options, e.g. platform.
 
-#### platform
+#### platform?
 
 [`PlatformTypes`](../type-aliases/PlatformTypes.md)
 

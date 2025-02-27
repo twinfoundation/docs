@@ -7,3 +7,6 @@
 ## Interfaces
 
 - [IIotaConfig](interfaces/IIotaConfig.md)
+- [IIotaDryRun](interfaces/IIotaDryRun.md)
+- [IIotaNftTransactionOptions](interfaces/IIotaNftTransactionOptions.md)
+- [IIotaNftTransactionResponse](interfaces/IIotaNftTransactionResponse.md)

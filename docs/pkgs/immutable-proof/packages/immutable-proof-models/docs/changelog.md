@@ -1,5 +1,5 @@
 # @twin.org/immutable-proof-models - Changelog
 
-## v0.0.1-next.17
+## v0.0.1-next.25
 
 - Initial Release

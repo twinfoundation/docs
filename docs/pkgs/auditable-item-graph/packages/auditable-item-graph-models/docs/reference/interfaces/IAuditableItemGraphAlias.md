@@ -10,7 +10,7 @@ Interface describing an alias for a vertex.
 
 ### @context
 
-> **@context**: `"https://schema.twindev.org/aig/"` \| \[`"https://schema.twindev.org/aig/"`, `...string[]`\]
+> **@context**: `"https://schema.twindev.org/aig/"` \| \[`"https://schema.twindev.org/aig/"`, `...IJsonLdContextDefinitionElement[]`\]
 
 JSON-LD Context.
 
@@ -52,9 +52,9 @@ The format of the id in the alias.
 
 ***
 
-### dateCreated
+### dateCreated?
 
-> **dateCreated**: `string`
+> `optional` **dateCreated**: `string`
 
 The date/time of when the element was created.
 

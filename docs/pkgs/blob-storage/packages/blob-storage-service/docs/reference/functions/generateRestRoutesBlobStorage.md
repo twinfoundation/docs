@@ -1,6 +1,6 @@
 # Function: generateRestRoutesBlobStorage()
 
-> **generateRestRoutesBlobStorage**(`baseRouteName`, `componentName`, `options`?): `IRestRoute`[]
+> **generateRestRoutesBlobStorage**(`baseRouteName`, `componentName`, `options`?): `IRestRoute`\<`any`, `any`\>[]
 
 The REST routes for blob storage.
 
@@ -22,13 +22,13 @@ The name of the component to use in the routes stored in the ComponentFactory.
 
 Additional options for the routes.
 
-#### typeName
+#### typeName?
 
 `string`
 
 Optional type name to use in the routes, defaults to Blob Storage.
 
-#### tagName
+#### tagName?
 
 `string`
 
@@ -36,6 +36,6 @@ Optional name to use in OpenAPI spec for tag.
 
 ## Returns
 
-`IRestRoute`[]
+`IRestRoute`\<`any`, `any`\>[]
 
 The generated routes.

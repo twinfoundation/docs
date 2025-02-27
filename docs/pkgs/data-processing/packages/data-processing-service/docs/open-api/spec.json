@@ -547,6 +547,109 @@
 					}
 				}
 			}
+		},
+		"/data-processing/rule-group": {
+			"get": {
+				"operationId": "dataProcessingListRuleGroup",
+				"summary": "Get a list with rule groups for extraction.",
+				"tags": [
+					"Data Processing"
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Response for rule group entry list request.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/DataProcessingRuleGroupListResponse"
+								},
+								"examples": {
+									"ruleGroupListResponseExample": {
+										"value": {
+											"entities": [
+												{
+													"id": "my-rule-group",
+													"label": "My Rule Group",
+													"rules": [
+														{
+															"source": "$.foo",
+															"target": "goo",
+															"coerce": "bigint"
+														}
+													]
+												}
+											],
+											"cursor": "1"
+										}
+									}
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
 		}
 	},
 	"components": {
@@ -652,6 +755,27 @@
 			},
 			"DataProcessingExtractResponse": {
 				"description": "The extracted data in extended JSON format which keeps types like bigint, dates and uint8array intact. Use ObjectHelper.fromExtended to get the object with original types."
+			},
+			"DataProcessingRuleGroupListResponse": {
+				"type": "object",
+				"properties": {
+					"entities": {
+						"type": "array",
+						"items": {
+							"$ref": "#/components/schemas/RuleGroup"
+						},
+						"description": "The entities, which can be partial if a limited keys list was provided."
+					},
+					"cursor": {
+						"type": "string",
+						"description": "An optional cursor, when defined can be used to call find to get more entities."
+					}
+				},
+				"required": [
+					"entities"
+				],
+				"additionalProperties": false,
+				"description": "The response payload."
 			},
 			"DataProcessingRuleGroupSetRequest": {
 				"type": "object",

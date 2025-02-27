@@ -6,7 +6,7 @@ Interface describing the collated attestation information.
 
 ### @context
 
-> **@context**: `"https://schema.twindev.org/attestation/"` \| \[`"https://schema.twindev.org/attestation/"`, `...string[]`\]
+> **@context**: \[`"https://schema.twindev.org/attestation/"`, `"https://schema.twindev.org/common/"`, `"https://schema.org"`, `...IJsonLdContextDefinitionElement[]`\]
 
 JSON-LD Context.
 

@@ -1,1085 +1,1085 @@
 {
-    "openapi": "3.1.0",
-    "info": {
-        "title": "TWIN - Test Endpoints",
-        "description": "REST API for TWIN - Test Endpoints.",
-        "version": "1.0.0",
-        "license": {
-            "name": "Apache 2.0 License",
-            "url": "https://opensource.org/licenses/Apache-2.0"
-        }
-    },
-    "servers": [
-        {
-            "url": "https://localhost"
-        }
-    ],
-    "tags": [
-        {
-            "name": "Telemetry",
-            "description": "Endpoints which are modelled to access a telemetry contract."
-        }
-    ],
-    "paths": {
-        "/telemetry/metric": {
-            "post": {
-                "operationId": "telemetryCreateMetric",
-                "summary": "Create a telemetry metric",
-                "tags": [
-                    "Telemetry"
-                ],
-                "security": [
-                    {
-                        "jwtBearerAuthScheme": []
-                    }
-                ],
-                "requestBody": {
-                    "description": "Create a new telemetry metric.",
-                    "required": true,
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/TelemetryMetric"
-                            },
-                            "examples": {
-                                "telemetryCreateMetricRequestExample": {
-                                    "value": {
-                                        "id": "my-counter",
-                                        "label": "My Counter",
-                                        "description": "This is my counter",
-                                        "type": 0,
-                                        "unit": "KG"
-                                    }
-                                }
-                            }
-                        }
-                    }
-                },
-                "responses": {
-                    "201": {
-                        "description": "The rest request ended in created response.",
-                        "headers": {
-                            "location": {
-                                "schema": {
-                                    "type": "string"
-                                },
-                                "description": "e.g. my-counter"
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "The server cannot process the request, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "GeneralError",
-                                            "message": "component.error",
-                                            "properties": {
-                                                "foo": "bar"
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "UnauthorizedError",
-                                            "message": "component.error"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "500": {
-                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "InternalServerError",
-                                            "message": "component.error"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "get": {
-                "operationId": "telemetryListEntries",
-                "summary": "Get a list of the telemetry metrics",
-                "tags": [
-                    "Telemetry"
-                ],
-                "parameters": [
-                    {
-                        "name": "type",
-                        "description": "The type of the metric.",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "$ref": "#/components/schemas/MetricType"
-                        }
-                    },
-                    {
-                        "name": "cursor",
-                        "description": "The optional cursor to get next chunk.",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "pageSize",
-                        "description": "The maximum number of entities in a page.",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "number"
-                        }
-                    }
-                ],
-                "security": [
-                    {
-                        "jwtBearerAuthScheme": []
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Response for telemetry list request.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/TelemetryListResponse"
-                                },
-                                "examples": {
-                                    "telemetryListResponseExample": {
-                                        "value": {
-                                            "entities": [
-                                                {
-                                                    "id": "my-counter",
-                                                    "label": "My Counter",
-                                                    "type": 0,
-                                                    "unit": "KG"
-                                                },
-                                                {
-                                                    "id": "my-counter-2",
-                                                    "label": "My Counter 2",
-                                                    "type": 1,
-                                                    "unit": "M"
-                                                }
-                                            ],
-                                            "cursor": "1"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "The server cannot process the request, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "GeneralError",
-                                            "message": "component.error",
-                                            "properties": {
-                                                "foo": "bar"
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "UnauthorizedError",
-                                            "message": "component.error"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "500": {
-                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "InternalServerError",
-                                            "message": "component.error"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/telemetry/metric/{id}": {
-            "get": {
-                "operationId": "telemetryGetMetric",
-                "summary": "Get a telemetry metric and it's most recent value",
-                "tags": [
-                    "Telemetry"
-                ],
-                "parameters": [
-                    {
-                        "name": "id",
-                        "description": "The id of the metric.",
-                        "in": "path",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "style": "simple",
-                        "example": "my-counter"
-                    }
-                ],
-                "security": [
-                    {
-                        "jwtBearerAuthScheme": []
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Get a telemetry metric response.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/TelemetryGetMetricResponse"
-                                },
-                                "examples": {
-                                    "telemetryGetMetricResponseExample": {
-                                        "value": {
-                                            "metric": {
-                                                "id": "my-counter",
-                                                "label": "My Counter",
-                                                "description": "This is my counter",
-                                                "type": 0,
-                                                "unit": "KG"
-                                            },
-                                            "value": {
-                                                "id": "aabbccdd11223445566",
-                                                "ts": 1715252922273,
-                                                "value": 10
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "The server cannot process the request, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "GeneralError",
-                                            "message": "component.error",
-                                            "properties": {
-                                                "foo": "bar"
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "UnauthorizedError",
-                                            "message": "component.error"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "500": {
-                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "InternalServerError",
-                                            "message": "component.error"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "put": {
-                "operationId": "telemetryUpdateMetric",
-                "summary": "Update a telemetry metric",
-                "tags": [
-                    "Telemetry"
-                ],
-                "parameters": [
-                    {
-                        "name": "id",
-                        "description": "The id of the metric.",
-                        "in": "path",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "style": "simple",
-                        "example": "my-counter"
-                    }
-                ],
-                "security": [
-                    {
-                        "jwtBearerAuthScheme": []
-                    }
-                ],
-                "requestBody": {
-                    "description": "Update a telemetry metric.",
-                    "required": true,
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/TelemetryUpdateMetricRequest"
-                            },
-                            "examples": {
-                                "telemetryUpdateMetricRequestExample": {
-                                    "value": {
-                                        "label": "My New Label"
-                                    }
-                                }
-                            }
-                        }
-                    }
-                },
-                "responses": {
-                    "204": {
-                        "description": "The rest request ended in success with no data."
-                    },
-                    "400": {
-                        "description": "The server cannot process the request, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "GeneralError",
-                                            "message": "component.error",
-                                            "properties": {
-                                                "foo": "bar"
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "UnauthorizedError",
-                                            "message": "component.error"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "500": {
-                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "InternalServerError",
-                                            "message": "component.error"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "delete": {
-                "operationId": "telemetryRemoveMetric",
-                "summary": "Remove a telemetry metric and it's values.",
-                "tags": [
-                    "Telemetry"
-                ],
-                "parameters": [
-                    {
-                        "name": "id",
-                        "description": "The id of the metric.",
-                        "in": "path",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "style": "simple",
-                        "example": "my-counter"
-                    }
-                ],
-                "security": [
-                    {
-                        "jwtBearerAuthScheme": []
-                    }
-                ],
-                "responses": {
-                    "204": {
-                        "description": "The rest request ended in success with no data."
-                    },
-                    "400": {
-                        "description": "The server cannot process the request, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "GeneralError",
-                                            "message": "component.error",
-                                            "properties": {
-                                                "foo": "bar"
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "UnauthorizedError",
-                                            "message": "component.error"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "500": {
-                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "InternalServerError",
-                                            "message": "component.error"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/telemetry/metric/{id}/value": {
-            "post": {
-                "operationId": "telemetryAddMetricValue",
-                "summary": "Add a telemetry metric value",
-                "tags": [
-                    "Telemetry"
-                ],
-                "parameters": [
-                    {
-                        "name": "id",
-                        "description": "The id of the metric.",
-                        "in": "path",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "style": "simple",
-                        "example": "my-counter"
-                    }
-                ],
-                "security": [
-                    {
-                        "jwtBearerAuthScheme": []
-                    }
-                ],
-                "requestBody": {
-                    "description": "Add a telemetry metric value.",
-                    "required": true,
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/TelemetryAddMetricValueRequest"
-                            },
-                            "examples": {
-                                "telemetryAddMetricValueRequestExample": {
-                                    "value": {
-                                        "value": 10
-                                    }
-                                },
-                                "telemetryAddMetricValueIncRequestExample": {
-                                    "value": {
-                                        "value": "inc"
-                                    }
-                                }
-                            }
-                        }
-                    }
-                },
-                "responses": {
-                    "201": {
-                        "description": "The rest request ended in created response.",
-                        "headers": {
-                            "location": {
-                                "schema": {
-                                    "type": "string"
-                                },
-                                "description": "e.g. aabbccdd11223445566"
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "The server cannot process the request, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "GeneralError",
-                                            "message": "component.error",
-                                            "properties": {
-                                                "foo": "bar"
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "UnauthorizedError",
-                                            "message": "component.error"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "500": {
-                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "InternalServerError",
-                                            "message": "component.error"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "get": {
-                "operationId": "telemetryValuesListEntries",
-                "summary": "Get a list of the values for a telemetry metric",
-                "tags": [
-                    "Telemetry"
-                ],
-                "parameters": [
-                    {
-                        "name": "id",
-                        "description": "The id of the metric.",
-                        "in": "path",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "style": "simple",
-                        "example": "my-counter"
-                    },
-                    {
-                        "name": "timeStart",
-                        "description": "The start time of the metrics to retrieve as a timestamp in ms.",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "number"
-                        }
-                    },
-                    {
-                        "name": "timeEnd",
-                        "description": "The end time of the metrics to retrieve as a timestamp in ms.",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "number"
-                        }
-                    },
-                    {
-                        "name": "cursor",
-                        "description": "The optional cursor to get next chunk.",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "pageSize",
-                        "description": "The maximum number of entities in a page.",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "number"
-                        }
-                    }
-                ],
-                "security": [
-                    {
-                        "jwtBearerAuthScheme": []
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Response for telemetry list request.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/TelemetryValuesListResponse"
-                                },
-                                "examples": {
-                                    "telemetryValuesListResponseExample": {
-                                        "value": {
-                                            "metric": {
-                                                "id": "my-counter",
-                                                "label": "My Counter",
-                                                "type": 0,
-                                                "unit": "KG"
-                                            },
-                                            "entities": [
-                                                {
-                                                    "id": "aabbccdd11223445566",
-                                                    "ts": 1715252922273,
-                                                    "value": 10
-                                                },
-                                                {
-                                                    "id": "aabbccdd11223445566",
-                                                    "ts": 1715252922274,
-                                                    "value": 11
-                                                }
-                                            ],
-                                            "cursor": "1"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "The server cannot process the request, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "GeneralError",
-                                            "message": "component.error",
-                                            "properties": {
-                                                "foo": "bar"
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "401": {
-                        "description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "UnauthorizedError",
-                                            "message": "component.error"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "500": {
-                        "description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Error"
-                                },
-                                "examples": {
-                                    "exampleResponse": {
-                                        "value": {
-                                            "name": "InternalServerError",
-                                            "message": "component.error"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    },
-    "components": {
-        "schemas": {
-            "Error": {
-                "type": "object",
-                "properties": {
-                    "name": {
-                        "type": "string",
-                        "description": "The name for the error."
-                    },
-                    "message": {
-                        "type": "string",
-                        "description": "The message for the error."
-                    },
-                    "source": {
-                        "type": "string",
-                        "description": "The source of the error."
-                    },
-                    "properties": {
-                        "type": "object",
-                        "additionalProperties": {},
-                        "description": "Any additional information for the error."
-                    },
-                    "stack": {
-                        "type": "string",
-                        "description": "The stack trace for the error."
-                    },
-                    "inner": {
-                        "$ref": "#/components/schemas/Error"
-                    }
-                },
-                "required": [
-                    "name",
-                    "message"
-                ],
-                "additionalProperties": false,
-                "description": "Model to describe serialized error."
-            },
-            "MetricType": {
-                "anyOf": [
-                    {
-                        "type": "number",
-                        "const": 0,
-                        "description": "Counter."
-                    },
-                    {
-                        "type": "number",
-                        "const": 1,
-                        "description": "Increment Decrement Counter."
-                    },
-                    {
-                        "type": "number",
-                        "const": 2,
-                        "description": "Gauge."
-                    }
-                ],
-                "description": "The types of metrics."
-            },
-            "TelemetryAddMetricValueRequest": {
-                "type": "object",
-                "properties": {
-                    "value": {
-                        "anyOf": [
-                            {
-                                "type": "string",
-                                "const": "inc"
-                            },
-                            {
-                                "type": "string",
-                                "const": "dec"
-                            },
-                            {
-                                "type": "number"
-                            }
-                        ],
-                        "description": "The value for the update operation."
-                    },
-                    "customData": {
-                        "type": "object",
-                        "additionalProperties": {},
-                        "description": "The custom data for the update operation."
-                    }
-                },
-                "required": [
-                    "value"
-                ],
-                "additionalProperties": false,
-                "description": "The data to be used in the update."
-            },
-            "TelemetryGetMetricResponse": {
-                "type": "object",
-                "properties": {
-                    "metric": {
-                        "$ref": "#/components/schemas/TelemetryMetric"
-                    },
-                    "value": {
-                        "$ref": "#/components/schemas/TelemetryMetricValue"
-                    }
-                },
-                "required": [
-                    "metric",
-                    "value"
-                ],
-                "additionalProperties": false,
-                "description": "The body parameters."
-            },
-            "TelemetryListResponse": {
-                "type": "object",
-                "properties": {
-                    "entities": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/TelemetryMetric"
-                        },
-                        "description": "The metrics."
-                    },
-                    "cursor": {
-                        "type": "string",
-                        "description": "An optional cursor, when defined can be used to call find to get more entities."
-                    }
-                },
-                "required": [
-                    "entities"
-                ],
-                "additionalProperties": false,
-                "description": "The response payload."
-            },
-            "TelemetryMetric": {
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "type": "string",
-                        "description": "The id of the metric."
-                    },
-                    "label": {
-                        "type": "string",
-                        "description": "The label of the metric."
-                    },
-                    "type": {
-                        "$ref": "#/components/schemas/MetricType"
-                    },
-                    "description": {
-                        "type": "string",
-                        "description": "Description."
-                    },
-                    "unit": {
-                        "type": "string",
-                        "description": "The unit the metric describes."
-                    }
-                },
-                "required": [
-                    "id",
-                    "label",
-                    "type"
-                ],
-                "additionalProperties": false,
-                "description": "Interface describing a telemetry metric."
-            },
-            "TelemetryMetricValue": {
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "type": "string",
-                        "description": "The id of the metric value."
-                    },
-                    "ts": {
-                        "type": "number",
-                        "description": "The timestamp of the metric."
-                    },
-                    "value": {
-                        "type": "number",
-                        "description": "The value of the metric."
-                    },
-                    "customData": {
-                        "type": "object",
-                        "additionalProperties": {},
-                        "description": "The custom data for the metric value."
-                    }
-                },
-                "required": [
-                    "id",
-                    "ts",
-                    "value"
-                ],
-                "additionalProperties": false,
-                "description": "Interface describing a telemetry metric value."
-            },
-            "TelemetryUpdateMetricRequest": {
-                "type": "object",
-                "properties": {
-                    "label": {
-                        "type": "string",
-                        "description": "The label of the metric."
-                    },
-                    "description": {
-                        "type": "string",
-                        "description": "The description of the metric."
-                    },
-                    "unit": {
-                        "type": "string",
-                        "description": "The unit of the metric."
-                    }
-                },
-                "required": [
-                    "label"
-                ],
-                "additionalProperties": false,
-                "description": "The data to be used in the update."
-            },
-            "TelemetryValuesListResponse": {
-                "type": "object",
-                "properties": {
-                    "metric": {
-                        "$ref": "#/components/schemas/TelemetryMetric"
-                    },
-                    "entities": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/TelemetryMetricValue"
-                        },
-                        "description": "The metric values."
-                    },
-                    "cursor": {
-                        "type": "string",
-                        "description": "An optional cursor, when defined can be used to call find to get more entities."
-                    }
-                },
-                "required": [
-                    "metric",
-                    "entities"
-                ],
-                "additionalProperties": false,
-                "description": "The response payload."
-            }
-        },
-        "securitySchemes": {
-            "jwtBearerAuthScheme": {
-                "type": "http",
-                "scheme": "bearer",
-                "bearerFormat": "JWT"
-            }
-        }
-    }
+	"openapi": "3.1.0",
+	"info": {
+		"title": "TWIN - Test Endpoints",
+		"description": "REST API for TWIN - Test Endpoints.",
+		"version": "1.0.0",
+		"license": {
+			"name": "Apache 2.0 License",
+			"url": "https://opensource.org/licenses/Apache-2.0"
+		}
+	},
+	"servers": [
+		{
+			"url": "https://localhost"
+		}
+	],
+	"tags": [
+		{
+			"name": "Telemetry",
+			"description": "Endpoints which are modelled to access a telemetry contract."
+		}
+	],
+	"paths": {
+		"/telemetry/metric": {
+			"post": {
+				"operationId": "telemetryCreateMetric",
+				"summary": "Create a telemetry metric",
+				"tags": [
+					"Telemetry"
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"requestBody": {
+					"description": "Create a new telemetry metric.",
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/TelemetryMetric"
+							},
+							"examples": {
+								"telemetryCreateMetricRequestExample": {
+									"value": {
+										"id": "my-counter",
+										"label": "My Counter",
+										"description": "This is my counter",
+										"type": 0,
+										"unit": "KG"
+									}
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"201": {
+						"description": "The rest request ended in created response.",
+						"headers": {
+							"location": {
+								"schema": {
+									"type": "string"
+								},
+								"description": "e.g. my-counter"
+							}
+						}
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			"get": {
+				"operationId": "telemetryListEntries",
+				"summary": "Get a list of the telemetry metrics",
+				"tags": [
+					"Telemetry"
+				],
+				"parameters": [
+					{
+						"name": "type",
+						"description": "The type of the metric.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"$ref": "#/components/schemas/MetricType"
+						}
+					},
+					{
+						"name": "cursor",
+						"description": "The optional cursor to get next chunk.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"name": "pageSize",
+						"description": "The maximum number of entities in a page.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "number"
+						}
+					}
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Response for telemetry list request.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/TelemetryListResponse"
+								},
+								"examples": {
+									"telemetryListResponseExample": {
+										"value": {
+											"entities": [
+												{
+													"id": "my-counter",
+													"label": "My Counter",
+													"type": 0,
+													"unit": "KG"
+												},
+												{
+													"id": "my-counter-2",
+													"label": "My Counter 2",
+													"type": 1,
+													"unit": "M"
+												}
+											],
+											"cursor": "1"
+										}
+									}
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/telemetry/metric/{id}": {
+			"get": {
+				"operationId": "telemetryGetMetric",
+				"summary": "Get a telemetry metric and it's most recent value",
+				"tags": [
+					"Telemetry"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"description": "The id of the metric.",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "my-counter"
+					}
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Get a telemetry metric response.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/TelemetryGetMetricResponse"
+								},
+								"examples": {
+									"telemetryGetMetricResponseExample": {
+										"value": {
+											"metric": {
+												"id": "my-counter",
+												"label": "My Counter",
+												"description": "This is my counter",
+												"type": 0,
+												"unit": "KG"
+											},
+											"value": {
+												"id": "aabbccdd11223445566",
+												"ts": 1715252922273,
+												"value": 10
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			"put": {
+				"operationId": "telemetryUpdateMetric",
+				"summary": "Update a telemetry metric",
+				"tags": [
+					"Telemetry"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"description": "The id of the metric.",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "my-counter"
+					}
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"requestBody": {
+					"description": "Update a telemetry metric.",
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/TelemetryUpdateMetricRequest"
+							},
+							"examples": {
+								"telemetryUpdateMetricRequestExample": {
+									"value": {
+										"label": "My New Label"
+									}
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"204": {
+						"description": "The rest request ended in success with no data."
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			"delete": {
+				"operationId": "telemetryRemoveMetric",
+				"summary": "Remove a telemetry metric and it's values.",
+				"tags": [
+					"Telemetry"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"description": "The id of the metric.",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "my-counter"
+					}
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"responses": {
+					"204": {
+						"description": "The rest request ended in success with no data."
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/telemetry/metric/{id}/value": {
+			"post": {
+				"operationId": "telemetryAddMetricValue",
+				"summary": "Add a telemetry metric value",
+				"tags": [
+					"Telemetry"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"description": "The id of the metric.",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "my-counter"
+					}
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"requestBody": {
+					"description": "Add a telemetry metric value.",
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/TelemetryAddMetricValueRequest"
+							},
+							"examples": {
+								"telemetryAddMetricValueRequestExample": {
+									"value": {
+										"value": 10
+									}
+								},
+								"telemetryAddMetricValueIncRequestExample": {
+									"value": {
+										"value": "inc"
+									}
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"201": {
+						"description": "The rest request ended in created response.",
+						"headers": {
+							"location": {
+								"schema": {
+									"type": "string"
+								},
+								"description": "e.g. aabbccdd11223445566"
+							}
+						}
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			"get": {
+				"operationId": "telemetryValuesListEntries",
+				"summary": "Get a list of the values for a telemetry metric",
+				"tags": [
+					"Telemetry"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"description": "The id of the metric.",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "my-counter"
+					},
+					{
+						"name": "timeStart",
+						"description": "The start time of the metrics to retrieve as a timestamp in ms.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "number"
+						}
+					},
+					{
+						"name": "timeEnd",
+						"description": "The end time of the metrics to retrieve as a timestamp in ms.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "number"
+						}
+					},
+					{
+						"name": "cursor",
+						"description": "The optional cursor to get next chunk.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"name": "pageSize",
+						"description": "The maximum number of entities in a page.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "number"
+						}
+					}
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Response for telemetry list request.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/TelemetryValuesListResponse"
+								},
+								"examples": {
+									"telemetryValuesListResponseExample": {
+										"value": {
+											"metric": {
+												"id": "my-counter",
+												"label": "My Counter",
+												"type": 0,
+												"unit": "KG"
+											},
+											"entities": [
+												{
+													"id": "aabbccdd11223445566",
+													"ts": 1715252922273,
+													"value": 10
+												},
+												{
+													"id": "aabbccdd11223445566",
+													"ts": 1715252922274,
+													"value": 11
+												}
+											],
+											"cursor": "1"
+										}
+									}
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"components": {
+		"schemas": {
+			"Error": {
+				"type": "object",
+				"properties": {
+					"name": {
+						"type": "string",
+						"description": "The name for the error."
+					},
+					"message": {
+						"type": "string",
+						"description": "The message for the error."
+					},
+					"source": {
+						"type": "string",
+						"description": "The source of the error."
+					},
+					"properties": {
+						"type": "object",
+						"additionalProperties": {},
+						"description": "Any additional information for the error."
+					},
+					"stack": {
+						"type": "string",
+						"description": "The stack trace for the error."
+					},
+					"inner": {
+						"$ref": "#/components/schemas/Error"
+					}
+				},
+				"required": [
+					"name",
+					"message"
+				],
+				"additionalProperties": false,
+				"description": "Model to describe serialized error."
+			},
+			"MetricType": {
+				"anyOf": [
+					{
+						"type": "number",
+						"const": 0,
+						"description": "Counter."
+					},
+					{
+						"type": "number",
+						"const": 1,
+						"description": "Increment Decrement Counter."
+					},
+					{
+						"type": "number",
+						"const": 2,
+						"description": "Gauge."
+					}
+				],
+				"description": "The types of metrics."
+			},
+			"TelemetryAddMetricValueRequest": {
+				"type": "object",
+				"properties": {
+					"value": {
+						"anyOf": [
+							{
+								"type": "string",
+								"const": "inc"
+							},
+							{
+								"type": "string",
+								"const": "dec"
+							},
+							{
+								"type": "number"
+							}
+						],
+						"description": "The value for the update operation."
+					},
+					"customData": {
+						"type": "object",
+						"additionalProperties": {},
+						"description": "The custom data for the update operation."
+					}
+				},
+				"required": [
+					"value"
+				],
+				"additionalProperties": false,
+				"description": "The data to be used in the update."
+			},
+			"TelemetryGetMetricResponse": {
+				"type": "object",
+				"properties": {
+					"metric": {
+						"$ref": "#/components/schemas/TelemetryMetric"
+					},
+					"value": {
+						"$ref": "#/components/schemas/TelemetryMetricValue"
+					}
+				},
+				"required": [
+					"metric",
+					"value"
+				],
+				"additionalProperties": false,
+				"description": "The body parameters."
+			},
+			"TelemetryListResponse": {
+				"type": "object",
+				"properties": {
+					"entities": {
+						"type": "array",
+						"items": {
+							"$ref": "#/components/schemas/TelemetryMetric"
+						},
+						"description": "The metrics."
+					},
+					"cursor": {
+						"type": "string",
+						"description": "An optional cursor, when defined can be used to call find to get more entities."
+					}
+				},
+				"required": [
+					"entities"
+				],
+				"additionalProperties": false,
+				"description": "The response payload."
+			},
+			"TelemetryMetric": {
+				"type": "object",
+				"properties": {
+					"id": {
+						"type": "string",
+						"description": "The id of the metric."
+					},
+					"label": {
+						"type": "string",
+						"description": "The label of the metric."
+					},
+					"type": {
+						"$ref": "#/components/schemas/MetricType"
+					},
+					"description": {
+						"type": "string",
+						"description": "Description."
+					},
+					"unit": {
+						"type": "string",
+						"description": "The unit the metric describes."
+					}
+				},
+				"required": [
+					"id",
+					"label",
+					"type"
+				],
+				"additionalProperties": false,
+				"description": "Interface describing a telemetry metric."
+			},
+			"TelemetryMetricValue": {
+				"type": "object",
+				"properties": {
+					"id": {
+						"type": "string",
+						"description": "The id of the metric value."
+					},
+					"ts": {
+						"type": "number",
+						"description": "The timestamp of the metric."
+					},
+					"value": {
+						"type": "number",
+						"description": "The value of the metric."
+					},
+					"customData": {
+						"type": "object",
+						"additionalProperties": {},
+						"description": "The custom data for the metric value."
+					}
+				},
+				"required": [
+					"id",
+					"ts",
+					"value"
+				],
+				"additionalProperties": false,
+				"description": "Interface describing a telemetry metric value."
+			},
+			"TelemetryUpdateMetricRequest": {
+				"type": "object",
+				"properties": {
+					"label": {
+						"type": "string",
+						"description": "The label of the metric."
+					},
+					"description": {
+						"type": "string",
+						"description": "The description of the metric."
+					},
+					"unit": {
+						"type": "string",
+						"description": "The unit of the metric."
+					}
+				},
+				"required": [
+					"label"
+				],
+				"additionalProperties": false,
+				"description": "The data to be used in the update."
+			},
+			"TelemetryValuesListResponse": {
+				"type": "object",
+				"properties": {
+					"metric": {
+						"$ref": "#/components/schemas/TelemetryMetric"
+					},
+					"entities": {
+						"type": "array",
+						"items": {
+							"$ref": "#/components/schemas/TelemetryMetricValue"
+						},
+						"description": "The metric values."
+					},
+					"cursor": {
+						"type": "string",
+						"description": "An optional cursor, when defined can be used to call find to get more entities."
+					}
+				},
+				"required": [
+					"metric",
+					"entities"
+				],
+				"additionalProperties": false,
+				"description": "The response payload."
+			}
+		},
+		"securitySchemes": {
+			"jwtBearerAuthScheme": {
+				"type": "http",
+				"scheme": "bearer",
+				"bearerFormat": "JWT"
+			}
+		}
+	}
 }

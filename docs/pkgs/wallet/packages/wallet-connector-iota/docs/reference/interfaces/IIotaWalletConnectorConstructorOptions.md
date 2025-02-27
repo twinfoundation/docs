@@ -1,6 +1,6 @@
 # Interface: IIotaWalletConnectorConstructorOptions
 
-Options for the IOTA Wallet Connector.
+Options for the IOTA Wallet connector.
 
 ## Properties
 
@@ -8,13 +8,7 @@ Options for the IOTA Wallet Connector.
 
 > `optional` **vaultConnectorType**: `string`
 
-Vault connector to use for wallet secrets.
-
-#### Default
-
-```ts
-vault
-```
+Optional vault connector to use for wallet secrets.
 
 ***
 
@@ -22,13 +16,7 @@ vault
 
 > `optional` **faucetConnectorType**: `string`
 
-Optional faucet for requesting funds.
-
-#### Default
-
-```ts
-faucet
-```
+Optional faucet connector for requesting funds.
 
 ***
 

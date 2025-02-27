@@ -10,17 +10,11 @@ Interface describing an attestation contract.
 
 ### create()
 
-> **create**(`verificationMethodId`, `attestationObject`, `namespace`?, `identity`?, `nodeIdentity`?): `Promise`\<`string`\>
+> **create**(`attestationObject`, `namespace`?, `identity`?, `nodeIdentity`?): `Promise`\<`string`\>
 
 Attest the data and return the collated information.
 
 #### Parameters
-
-##### verificationMethodId
-
-`string`
-
-The identity verification method to use for attesting the data.
 
 ##### attestationObject
 
@@ -78,7 +72,7 @@ The verified attestation details.
 
 ### transfer()
 
-> **transfer**(`attestationId`, `holderIdentity`, `identity`?): `Promise`\<`void`\>
+> **transfer**(`attestationId`, `holderIdentity`, `holderAddress`, `identity`?): `Promise`\<`void`\>
 
 Transfer the attestation to a new holder.
 
@@ -95,6 +89,12 @@ The attestation to transfer.
 `string`
 
 The identity to transfer the attestation to.
+
+##### holderAddress
+
+`string`
+
+The address to transfer the attestation to.
 
 ##### identity?
 

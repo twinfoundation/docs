@@ -5,9 +5,9 @@ https://www.w3.org/TR/vc-data-integrity/
 
 ## Properties
 
-### @context
+### @context?
 
-> **@context**: `"https://w3id.org/security/data-integrity/v2"` \| \[`"https://w3id.org/security/data-integrity/v2"`, `...string[]`\]
+> `optional` **@context**: `"https://w3id.org/security/data-integrity/v2"` \| \[`"https://w3id.org/security/data-integrity/v2"`, `...IJsonLdContextDefinitionElement[]`\]
 
 JSON-LD Context.
 
@@ -15,7 +15,7 @@ JSON-LD Context.
 
 ### type
 
-> **type**: `"DataIntegrityProof"`
+> **type**: `string`
 
 JSON-LD Type.
 
