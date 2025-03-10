@@ -14,6 +14,6 @@ The proof id.
 
 ### proof
 
-> **proof**: `IDidProof`
+> **proof**: `IDataIntegrityProof`
 
 The proof.

@@ -1,5 +1,5 @@
 # @twin.org/entity-storage-connector-cosmosdb - Changelog
 
-## v0.0.1-next.21
+## v0.0.1-next.23
 
 - Initial Release

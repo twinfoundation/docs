@@ -3,7 +3,7 @@
 ## Classes
 
 - [DocumentHelper](classes/DocumentHelper.md)
-- [JwtHelper](classes/JwtHelper.md)
+- [VerificationHelper](classes/VerificationHelper.md)
 
 ## Interfaces
 

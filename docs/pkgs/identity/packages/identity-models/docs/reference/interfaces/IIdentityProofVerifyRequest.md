@@ -10,14 +10,14 @@ Request to verify a proof.
 
 The data for the request.
 
-#### bytes
+#### document
 
-> **bytes**: `string`
+> **document**: `IJsonLdNodeObject`
 
-The data bytes base64 encoded.
+The document to verify the proof for.
 
 #### proof
 
-> **proof**: `IDidProof`
+> **proof**: `IProof`
 
 The proof to verify.

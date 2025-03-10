@@ -7,8 +7,10 @@
 
 ## Type Aliases
 
+- [SchemaOrgContexts](type-aliases/SchemaOrgContexts.md)
 - [SchemaOrgTypes](type-aliases/SchemaOrgTypes.md)
 
 ## Variables
 
+- [SchemaOrgContexts](variables/SchemaOrgContexts.md)
 - [SchemaOrgTypes](variables/SchemaOrgTypes.md)

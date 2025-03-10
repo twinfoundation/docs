@@ -46,16 +46,16 @@ The tag for the nft.
 
 ***
 
-### immutableMetadata
+### immutableMetadata?
 
-> **immutableMetadata**: `unknown`
+> `optional` **immutableMetadata**: `unknown`
 
 The immutable metadata.
 
 ***
 
-### metadata
+### metadata?
 
-> **metadata**: `unknown`
+> `optional` **metadata**: `unknown`
 
 The mutable metadata.

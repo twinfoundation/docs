@@ -1,5 +1,9 @@
 # @twin.org/vault-models
 
+## Classes
+
+- [VaultConnectorHelper](classes/VaultConnectorHelper.md)
+
 ## Interfaces
 
 - [IVaultConnector](interfaces/IVaultConnector.md)

@@ -32,6 +32,8 @@
 		"@twin.org/crypto": "next",
 		"@twin.org/data-core": "next",
 		"@twin.org/data-json-ld": "next",
+		"@twin.org/data-processing-models": "next",
+		"@twin.org/data-processing-rest-client": "next",
 		"@twin.org/entity-storage-rest-client": "next",
 		"@twin.org/event-bus-socket-client": "next",
 		"@twin.org/identity-models": "next",
@@ -50,12 +52,12 @@
 		"@twin.org/ui-components-svelte": "next",
 		"@twin.org/web": "next",
 		"d3": "^7.9.0",
-		"schema-dts": "1.1.2"
+		"schema-dts": "1.1.5"
 	},
 	"devDependencies": {
-		"@playwright/test": "^1.49.1",
+		"@playwright/test": "^1.51.0",
 		"@sveltejs/adapter-auto": "^4.0.0",
-		"@sveltejs/kit": "^2.16.1",
+		"@sveltejs/kit": "^2.18.0",
 		"@sveltejs/vite-plugin-svelte": "^5.0.3",
 		"@twin.org/merge-locales": "next",
 		"@types/d3": "^7.4.3",
@@ -63,12 +65,12 @@
 		"globals": "^15.14.0",
 		"postcss": "^8.5.1",
 		"rollup-plugin-copy": "^3.5.0",
-		"svelte": "^5.19.2",
-		"svelte-check": "^4.1.4",
+		"svelte": "^5.22.6",
+		"svelte-check": "^4.1.5",
 		"tailwindcss": "^3.4.17",
-		"typescript": "^5.7.3",
-		"vite": "^6.0.11",
-		"vitest": "^3.0.3"
+		"typescript": "^5.8.2",
+		"vite": "^6.2.1",
+		"vitest": "^3.0.8"
 	},
 	"type": "module"
 }

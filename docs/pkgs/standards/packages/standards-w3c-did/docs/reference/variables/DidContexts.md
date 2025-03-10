@@ -36,8 +36,20 @@ The context root for security ed25519 suites.
 
 The context root for security jws-2020 suites.
 
-### ContextVCDataIntegrity
+### ContextDataIntegrity
 
-> `readonly` **ContextVCDataIntegrity**: `"https://w3id.org/security/data-integrity/v2"` = `"https://w3id.org/security/data-integrity/v2"`
+> `readonly` **ContextDataIntegrity**: `"https://www.w3.org/ns/credentials/v2"` = `"https://www.w3.org/ns/credentials/v2"`
 
 The context root for VC Data Integrity.
+
+### ContextControllerIdentifiers
+
+> `readonly` **ContextControllerIdentifiers**: `"https://www.w3.org/ns/cid/v1"` = `"https://www.w3.org/ns/cid/v1"`
+
+The context root for VC Data Integrity.
+
+### ContextSecurityMultikey
+
+> `readonly` **ContextSecurityMultikey**: `"https://w3id.org/security/multikey/v1"` = `"https://w3id.org/security/multikey/v1"`
+
+The context root for security multikey suites.

@@ -59,3 +59,15 @@ Additional information to associate with the document.
 > `optional` **createAttestation**: `boolean`
 
 Flag to create an attestation for the document, defaults to false
+
+#### includeIdAsAlias?
+
+> `optional` **includeIdAsAlias**: `boolean`
+
+Include the document id as an alias to the aig vertex, defaults to false.
+
+#### aliasAnnotationObject?
+
+> `optional` **aliasAnnotationObject**: `IJsonLdNodeObject`
+
+Additional information to associate with the alias.

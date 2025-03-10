@@ -30,8 +30,14 @@ The verification method id to use.
 
 The data for the request.
 
-#### bytes
+#### proofType
 
-> **bytes**: `string`
+> **proofType**: `ProofTypes`
 
-The data bytes base64 encoded.
+The type of proof to create.
+
+#### document
+
+> **document**: `IJsonLdNodeObject`
+
+The document to create the proof for.

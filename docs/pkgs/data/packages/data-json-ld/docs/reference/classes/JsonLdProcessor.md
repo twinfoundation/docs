@@ -90,6 +90,42 @@ The expanded JSON-LD document.
 
 ***
 
+### canonize()
+
+> `static` **canonize**\<`T`\>(`document`, `options`?): `Promise`\<`string`\>
+
+Canonize a document.
+
+#### Type Parameters
+
+• **T** *extends* [`IJsonLdNodeObject`](../interfaces/IJsonLdNodeObject.md)
+
+#### Parameters
+
+##### document
+
+`T`
+
+The document to canonize.
+
+##### options?
+
+The options for canonization.
+
+###### algorithm?
+
+`"URDNA2015"` \| `"URGNA2012"`
+
+The algorithm to use for canonization, defaults to URDNA2015.
+
+#### Returns
+
+`Promise`\<`string`\>
+
+The canonized document.
+
+***
+
 ### addRedirect()
 
 > `static` **addRedirect**(`from`, `to`): `void`

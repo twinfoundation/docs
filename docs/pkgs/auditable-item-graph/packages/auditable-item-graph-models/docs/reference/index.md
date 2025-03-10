@@ -26,12 +26,14 @@
 
 ## Type Aliases
 
+- [AuditableItemGraphContexts](type-aliases/AuditableItemGraphContexts.md)
 - [AuditableItemGraphTopics](type-aliases/AuditableItemGraphTopics.md)
 - [AuditableItemGraphTypes](type-aliases/AuditableItemGraphTypes.md)
 - [VerifyDepth](type-aliases/VerifyDepth.md)
 
 ## Variables
 
+- [AuditableItemGraphContexts](variables/AuditableItemGraphContexts.md)
 - [AuditableItemGraphTopics](variables/AuditableItemGraphTopics.md)
 - [AuditableItemGraphTypes](variables/AuditableItemGraphTypes.md)
 - [VerifyDepth](variables/VerifyDepth.md)

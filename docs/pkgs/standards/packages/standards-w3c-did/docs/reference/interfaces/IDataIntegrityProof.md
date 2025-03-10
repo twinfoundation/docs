@@ -1,4 +1,4 @@
-# Interface: IDidProof
+# Interface: IDataIntegrityProof
 
 Interface describing a did proof.
 https://www.w3.org/TR/vc-data-integrity/
@@ -7,7 +7,7 @@ https://www.w3.org/TR/vc-data-integrity/
 
 ### @context?
 
-> `optional` **@context**: `"https://w3id.org/security/data-integrity/v2"` \| \[`"https://w3id.org/security/data-integrity/v2"`, `...IJsonLdContextDefinitionElement[]`\]
+> `optional` **@context**: `"https://www.w3.org/ns/credentials/v2"` \| \[`"https://www.w3.org/ns/credentials/v2"`, `...IJsonLdContextDefinitionElement[]`\]
 
 JSON-LD Context.
 
@@ -15,7 +15,7 @@ JSON-LD Context.
 
 ### type
 
-> **type**: `string`
+> **type**: `"DataIntegrityProof"`
 
 JSON-LD Type.
 
@@ -45,9 +45,9 @@ The reason the proof was created.
 
 ***
 
-### proofValue
+### proofValue?
 
-> **proofValue**: `string`
+> `optional` **proofValue**: `string`
 
 Contains the base-encoded binary data necessary to verify the
 digital proof using the verificationMethod specified.

@@ -1,8 +1,8 @@
-# Variable: ImmutableStorageTypes
+# Variable: ImmutableStorageContexts
 
-> `const` **ImmutableStorageTypes**: `object`
+> `const` **ImmutableStorageContexts**: `object`
 
-The types of immutable storage data.
+The contexts of immutable storage data.
 
 ## Type declaration
 

@@ -1,6 +1,6 @@
 # Function: generateRestRoutesTelemetry()
 
-> **generateRestRoutesTelemetry**(`baseRouteName`, `componentName`): `IRestRoute`[]
+> **generateRestRoutesTelemetry**(`baseRouteName`, `componentName`): `IRestRoute`\<`any`, `any`\>[]
 
 The REST routes for telemetry.
 
@@ -20,6 +20,6 @@ The name of the component to use in the routes stored in the ComponentFactory.
 
 ## Returns
 
-`IRestRoute`[]
+`IRestRoute`\<`any`, `any`\>[]
 
 The generated routes.

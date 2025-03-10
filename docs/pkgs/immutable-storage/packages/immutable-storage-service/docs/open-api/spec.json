@@ -461,7 +461,8 @@
 					"@id",
 					"@graph",
 					"@type"
-				]
+				],
+				"description": "Helper Types"
 			},
 			"JsonLdContainerTypeArray": {
 				"anyOf": [
@@ -637,7 +638,8 @@
 						],
 						"maxItems": 2
 					}
-				]
+				],
+				"description": "Helper Types."
 			},
 			"JsonLdContextDefinition": {
 				"type": "object",
@@ -931,7 +933,8 @@
 				"type": "array",
 				"items": {
 					"$ref": "#/components/schemas/JsonLdJsonValue"
-				}
+				},
+				"description": "JSON Type for array."
 			},
 			"JsonLdJsonObject": {
 				"type": "object",
@@ -944,7 +947,8 @@
 							"not": {}
 						}
 					]
-				}
+				},
+				"description": "JSON Type for object."
 			},
 			"JsonLdJsonPrimitive": {
 				"type": [
@@ -952,7 +956,8 @@
 					"number",
 					"boolean",
 					"null"
-				]
+				],
+				"description": "JSON Primitive."
 			},
 			"JsonLdJsonValue": {
 				"anyOf": [
@@ -965,7 +970,8 @@
 					{
 						"$ref": "#/components/schemas/JsonLdJsonObject"
 					}
-				]
+				],
+				"description": "JSON Value."
 			},
 			"JsonLdKeyword": {
 				"type": "object",

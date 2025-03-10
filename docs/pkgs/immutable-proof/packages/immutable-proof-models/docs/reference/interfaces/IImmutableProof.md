@@ -28,6 +28,14 @@ The id of the proof.
 
 ***
 
+### nodeIdentity
+
+> **nodeIdentity**: `string`
+
+The id of the node who created the proof.
+
+***
+
 ### userIdentity
 
 > **userIdentity**: `string`
@@ -54,7 +62,7 @@ The hash of the object associated with the proof.
 
 ### proof?
 
-> `optional` **proof**: `IDidProof`
+> `optional` **proof**: `IDataIntegrityProof`
 
 The proof which can be undefined if it has not yet been issued.
 

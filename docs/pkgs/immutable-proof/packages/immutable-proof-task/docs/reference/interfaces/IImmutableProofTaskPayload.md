@@ -28,16 +28,16 @@ The identity connector type.
 
 ***
 
-### assertionMethodId
+### verificationMethodId
 
-> **assertionMethodId**: `string`
+> **verificationMethodId**: `string`
 
 The assertion method id.
 
 ***
 
-### hashData
+### document
 
-> **hashData**: `string`
+> **document**: `IJsonLdNodeObject`
 
-The hash data.
+The document to create the proof for.

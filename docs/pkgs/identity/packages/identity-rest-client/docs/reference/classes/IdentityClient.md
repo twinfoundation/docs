@@ -458,9 +458,9 @@ The presentation stored in the jwt and the revocation status.
 
 ### proofCreate()
 
-> **proofCreate**(`verificationMethodId`, `bytes`): `Promise`\<`IDidProof`\>
+> **proofCreate**(`verificationMethodId`, `proofType`, `unsecureDocument`): `Promise`\<`IProof`\>
 
-Create a proof for arbitrary data with the specified verification method.
+Create a proof for a document with the specified verification method.
 
 #### Parameters
 
@@ -470,15 +470,21 @@ Create a proof for arbitrary data with the specified verification method.
 
 The verification method id to use.
 
-##### bytes
+##### proofType
 
-`Uint8Array`
+`ProofTypes`
 
-The data bytes to sign.
+The type of proof to create.
+
+##### unsecureDocument
+
+`IJsonLdNodeObject`
+
+The unsecure document to create the proof for.
 
 #### Returns
 
-`Promise`\<`IDidProof`\>
+`Promise`\<`IProof`\>
 
 The proof.
 
@@ -490,21 +496,21 @@ The proof.
 
 ### proofVerify()
 
-> **proofVerify**(`bytes`, `proof`): `Promise`\<`boolean`\>
+> **proofVerify**(`document`, `proof`): `Promise`\<`boolean`\>
 
-Verify proof for arbitrary data with the specified verification method.
+Verify proof for a document with the specified verification method.
 
 #### Parameters
 
-##### bytes
+##### document
 
-`Uint8Array`
+`IJsonLdNodeObject`
 
-The data bytes to verify.
+The document to verify.
 
 ##### proof
 
-`IDidProof`
+`IProof`
 
 The proof to verify.
 

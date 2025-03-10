@@ -197,15 +197,15 @@ twin-identity verifiable-credential-unrevoke --load-env config.env wallet.env id
 This command will generate a proof using the specified verification method.
 
 ```shell
-twin-identity proof-create --load-env config.env verification-method.env --id !DID_VERIFICATION_METHOD_ID --private-key !DID_VERIFICATION_METHOD_PRIVATE_KEY --data aGVsbG8gd29ybGQ=
+twin-identity proof-create --load-env config.env verification-method.env --id !DID_VERIFICATION_METHOD_ID --private-key !DID_VERIFICATION_METHOD_PRIVATE_KEY --document-filename unsecured.json --json data-proof.json
 ```
 
-This will output the proof as a set of data containing the type and a value in base64.
+This will output the proof.
 
 ## proof-verify
 
-This command will verify a proof using the specified verification method.
+This command will verify a proof for a document.
 
 ```shell
-twin-identity proof-verify --load-env config.env verification-method.env --id !DID_VERIFICATION_METHOD_ID --data aGVsbG8gd29ybGQ= --cryptosuite eddsa-jcs-2022 --value 5LVrNuqQzQxnLMxwwpkE1smcD9Zpygg3gvJ6xvwdcLGrhk4yXFW8jewGY5Z3kRMKL1dasqw6ABBCcNgUv1pngnzA
+twin-identity proof-verify --load-env config.env verification-method.env --id !DID_VERIFICATION_METHOD_ID --document-filename unsecured.json --proof-filename data-proof.json
 ```

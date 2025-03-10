@@ -15,17 +15,3 @@ The verification method id to use for the proof.
 ```ts
 immutable-proof-assertion
 ```
-
-***
-
-### proofHashKeyId?
-
-> `optional` **proofHashKeyId**: `string`
-
-The key to use in the proof hash.
-
-#### Default
-
-```ts
-immutable-proof-hash
-```

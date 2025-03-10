@@ -44,7 +44,7 @@
 							"examples": {
 								"immutableProofCreateRequestExample": {
 									"value": {
-										"proofObject": {
+										"document": {
 											"@context": "https://schema.org",
 											"type": "Person",
 											"name": "John Smith"
@@ -200,11 +200,12 @@
 											],
 											"type": "ImmutableProof",
 											"id": "ais:1234567890",
+											"nodeIdentity": "node-1",
 											"userIdentity": "user-1",
 											"proofObjectId": "test:1234567890",
 											"proofObjectHash": "EAOKyDN0mYQbBh91eMdVeroxQx1H4GfnRbmt6n/2L/Y=",
 											"proof": {
-												"@context": "https://w3id.org/security/data-integrity/v2",
+												"@context": "https://www.w3.org/ns/credentials/v2",
 												"type": "DataIntegrityProof",
 												"cryptosuite": "eddsa-jcs-2022",
 												"created": "2024-08-22T11:56:56.272Z",
@@ -228,11 +229,12 @@
 											],
 											"type": "ImmutableProof",
 											"id": "ais:1234567890",
+											"nodeIdentity": "node-1",
 											"userIdentity": "user-1",
 											"proofObjectId": "test:1234567890",
 											"proofObjectHash": "EAOKyDN0mYQbBh91eMdVeroxQx1H4GfnRbmt6n/2L/Y=",
 											"proof": {
-												"@context": "https://w3id.org/security/data-integrity/v2",
+												"@context": "https://www.w3.org/ns/credentials/v2",
 												"type": "DataIntegrityProof",
 												"cryptosuite": "eddsa-jcs-2022",
 												"created": "2024-08-22T11:56:56.272Z",
@@ -480,29 +482,14 @@
 	},
 	"components": {
 		"schemas": {
-			"DidCryptoSuites": {
-				"anyOf": [
-					{
-						"type": "string",
-						"const": "eddsa-jcs-2022",
-						"description": "The type for EdDSA crypto suite for JSON Canonicalization Scheme [RFC8785]. https://www.w3.org/TR/vc-di-eddsa/#eddsa-jcs-2022"
-					},
-					{
-						"type": "string",
-						"const": "eddsa-rdfc-2022",
-						"description": "The type for EdDSA crypto suite for RDF Dataset Canonicalization. https://www.w3.org/TR/vc-di-eddsa/#eddsa-rdfc-2022"
-					}
-				],
-				"description": "The types for DID Proof crypto suites."
-			},
-			"DidProof": {
+			"DataIntegrityProof": {
 				"type": "object",
 				"properties": {
 					"@context": {
 						"anyOf": [
 							{
 								"type": "string",
-								"const": "https://w3id.org/security/data-integrity/v2"
+								"const": "https://www.w3.org/ns/credentials/v2"
 							},
 							{
 								"type": "array",
@@ -510,7 +497,7 @@
 								"items": [
 									{
 										"type": "string",
-										"const": "https://w3id.org/security/data-integrity/v2"
+										"const": "https://www.w3.org/ns/credentials/v2"
 									}
 								],
 								"additionalItems": {
@@ -522,6 +509,7 @@
 					},
 					"type": {
 						"type": "string",
+						"const": "DataIntegrityProof",
 						"description": "JSON-LD Type."
 					},
 					"cryptosuite": {
@@ -599,11 +587,25 @@
 				"required": [
 					"type",
 					"cryptosuite",
-					"proofPurpose",
-					"proofValue"
+					"proofPurpose"
 				],
 				"additionalProperties": false,
 				"description": "Interface describing a did proof. https://www.w3.org/TR/vc-data-integrity/"
+			},
+			"DidCryptoSuites": {
+				"anyOf": [
+					{
+						"type": "string",
+						"const": "eddsa-jcs-2022",
+						"description": "The type for EdDSA crypto suite for JSON Canonicalization Scheme [RFC8785]. https://www.w3.org/TR/vc-di-eddsa/#eddsa-jcs-2022"
+					},
+					{
+						"type": "string",
+						"const": "eddsa-rdfc-2022",
+						"description": "The type for EdDSA crypto suite for RDF Dataset Canonicalization. https://www.w3.org/TR/vc-di-eddsa/#eddsa-rdfc-2022"
+					}
+				],
+				"description": "The types for DID Proof crypto suites."
 			},
 			"Error": {
 				"type": "object",
@@ -643,12 +645,12 @@
 			"ImmutableProofCreateRequest": {
 				"type": "object",
 				"properties": {
-					"proofObject": {
+					"document": {
 						"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
 					}
 				},
 				"required": [
-					"proofObject"
+					"document"
 				],
 				"additionalProperties": false,
 				"description": "The parameters from the body."

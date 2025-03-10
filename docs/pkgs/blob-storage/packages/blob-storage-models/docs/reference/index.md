@@ -22,9 +22,11 @@
 
 ## Type Aliases
 
+- [BlobStorageContexts](type-aliases/BlobStorageContexts.md)
 - [BlobStorageTypes](type-aliases/BlobStorageTypes.md)
 
 ## Variables
 
 - [BlobStorageConnectorFactory](variables/BlobStorageConnectorFactory.md)
+- [BlobStorageContexts](variables/BlobStorageContexts.md)
 - [BlobStorageTypes](variables/BlobStorageTypes.md)

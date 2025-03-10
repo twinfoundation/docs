@@ -18,12 +18,14 @@
 
 ## Type Aliases
 
+- [ImmutableProofContexts](type-aliases/ImmutableProofContexts.md)
 - [ImmutableProofFailure](type-aliases/ImmutableProofFailure.md)
 - [ImmutableProofTopics](type-aliases/ImmutableProofTopics.md)
 - [ImmutableProofTypes](type-aliases/ImmutableProofTypes.md)
 
 ## Variables
 
+- [ImmutableProofContexts](variables/ImmutableProofContexts.md)
 - [ImmutableProofFailure](variables/ImmutableProofFailure.md)
 - [ImmutableProofTopics](variables/ImmutableProofTopics.md)
 - [ImmutableProofTypes](variables/ImmutableProofTypes.md)

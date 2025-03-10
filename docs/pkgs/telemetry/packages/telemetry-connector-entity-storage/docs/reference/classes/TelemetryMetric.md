@@ -38,16 +38,16 @@ The type of the metric.
 
 ***
 
-### unit
+### unit?
 
-> **unit**: `string`
+> `optional` **unit**: `string`
 
 The unit.
 
 ***
 
-### description
+### description?
 
-> **description**: `string`
+> `optional` **description**: `string`
 
 The description.

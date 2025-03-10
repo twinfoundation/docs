@@ -52,8 +52,16 @@
 			"description": "Endpoints which are modelled to access an attestation contract."
 		},
 		{
+			"name": "ImmutableStorage",
+			"description": "Endpoints which are modelled to access an Immutable Storage."
+		},
+		{
 			"name": "Immutable Proof",
 			"description": "Endpoints which are modelled to access an immutable proof contract."
+		},
+		{
+			"name": "Data Processing",
+			"description": "Endpoints which are modelled to access a data processing contract."
 		},
 		{
 			"name": "Auditable Item Graph",
@@ -1965,7 +1973,26 @@
 							"examples": {
 								"identityProofCreateRequestExample": {
 									"value": {
-										"bytes": "aGVsbG8gd29ybGQ="
+										"proofType": "DataIntegrityProof",
+										"document": {
+											"@context": [
+												"https://www.w3.org/ns/credentials/v2",
+												"https://www.w3.org/ns/credentials/examples/v2"
+											],
+											"id": "urn:uuid:58172aac-d8ba-11ed-83dd-0b3aef56cc33",
+											"type": [
+												"VerifiableCredential",
+												"AlumniCredential"
+											],
+											"name": "Alumni Credential",
+											"description": "A minimum viable example of an Alumni Credential.",
+											"issuer": "https://vc.example/issuers/5678",
+											"validFrom": "2023-01-01T00:00:00Z",
+											"credentialSubject": {
+												"id": "did:example:abcdefgh",
+												"alumniOf": "The School of Examples"
+											}
+										}
 									}
 								}
 							}
@@ -1978,18 +2005,21 @@
 						"content": {
 							"application/json": {
 								"schema": {
-									"$ref": "#/components/schemas/DidProof"
+									"$ref": "#/components/schemas/Proof"
 								},
 								"examples": {
 									"identityProofCreateResponseExample": {
 										"value": {
-											"@context": "https://w3id.org/security/data-integrity/v2",
+											"@context": [
+												"https://www.w3.org/ns/credentials/v2",
+												"https://www.w3.org/ns/credentials/examples/v2"
+											],
 											"type": "DataIntegrityProof",
 											"cryptosuite": "eddsa-jcs-2022",
-											"created": "2025-01-24T11:32:13.106Z",
-											"verificationMethod": "did:entity-storage:0xda2df3ebc91ee0d5229d6532ffd0f4426952a94f34988b0ca906694dfd366a6a#my-verification-id",
+											"created": "2024-01-31T16:00:45.490Z",
+											"verificationMethod": "did:entity-storage:0x0101010101010101010101010101010101010101010101010101010101010101#my-verification-id",
 											"proofPurpose": "assertionMethod",
-											"proofValue": "2fVLgANruCBoRPBCJavi54mZtkQdyMz6T2N4XVyB96asawiriKrVWoktcSQ7dMGrBTiemBBDpcLE2HfiTBCGuBmq"
+											"proofValue": "z2zGoejwpX6HH2T11BZaniEVZrqRKDpwbQSvPcL7eL9M7hV5P9zQQZxs85n6qyDzkkXCL8aFUWfwQD5bxVGqDK1fa"
 										}
 									}
 								}
@@ -2074,9 +2104,27 @@
 							"examples": {
 								"identityProofVerifyRequestExample": {
 									"value": {
-										"bytes": "aGVsbG8gd29ybGQ=",
+										"document": {
+											"@context": [
+												"https://www.w3.org/ns/credentials/v2",
+												"https://www.w3.org/ns/credentials/examples/v2"
+											],
+											"id": "urn:uuid:58172aac-d8ba-11ed-83dd-0b3aef56cc33",
+											"type": [
+												"VerifiableCredential",
+												"AlumniCredential"
+											],
+											"name": "Alumni Credential",
+											"description": "A minimum viable example of an Alumni Credential.",
+											"issuer": "https://vc.example/issuers/5678",
+											"validFrom": "2023-01-01T00:00:00Z",
+											"credentialSubject": {
+												"id": "did:example:abcdefgh",
+												"alumniOf": "The School of Examples"
+											}
+										},
 										"proof": {
-											"@context": "https://w3id.org/security/data-integrity/v2",
+											"@context": "https://www.w3.org/ns/credentials/v2",
 											"type": "DataIntegrityProof",
 											"cryptosuite": "eddsa-jcs-2022",
 											"created": "2025-01-24T11:32:13.106Z",
@@ -5875,6 +5923,333 @@
 				}
 			}
 		},
+		"/immutable": {
+			"post": {
+				"operationId": "immutableStorageStore",
+				"summary": "Store an item in immutable storage",
+				"tags": [
+					"ImmutableStorage"
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"requestBody": {
+					"description": "Store the data and return the Immutable Storage id.",
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/ImmutableStorageStoreRequest"
+							},
+							"examples": {
+								"immutableStorageStoreExample": {
+									"value": {
+										"data": "SGVsbG8gd29ybGQ="
+									}
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": "Response to storing the Immutable Storage.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ImmutableStorageStoreResponse"
+								},
+								"examples": {
+									"immutableStorageStoreResponseExample": {
+										"value": {
+											"receipt": {
+												"@context": "https://schema.twindev.org/immutable-storage/",
+												"type": "ImmutableStorageIotaReceipt"
+											},
+											"id": "immutable:iota:aW90YS1uZnQ6dHN0OjB4NzYyYjljNDllYTg2OWUwZWJkYTliYmZhNzY5Mzk0NDdhNDI4ZGNmMTc4YzVkMTVhYjQ0N2UyZDRmYmJiNGViMg=="
+										}
+									}
+								}
+							}
+						},
+						"headers": {
+							"location": {
+								"schema": {
+									"type": "string"
+								},
+								"description": "e.g. immutable:iota:aW90YS1uZnQ6dHN0OjB4NzYyYjljNDllYTg2OWUwZWJkYTliYmZhNzY5Mzk0NDdhNDI4ZGNmMTc4YzVkMTVhYjQ0N2UyZDRmYmJiNGViMg=="
+							}
+						}
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/immutable/{id}": {
+			"get": {
+				"operationId": "immutableStorageGet",
+				"summary": "Get an immutable storage item",
+				"tags": [
+					"ImmutableStorage"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"description": "The id of the Immutable Storage to resolve.",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "immutable:iota:aW90YS1uZnQ6dHN0OjB4NzYyYjljNDllYTg2OWUwZWJkYTliYmZhNzY5Mzk0NDdhNDI4ZGNmMTc4YzVkMTVhYjQ0N2UyZDRmYmJiNGViMg=="
+					}
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"requestBody": {
+					"description": "Get the Immutable Storage.",
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/ImmutableStorageGetRequest"
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": "Response to getting the Immutable Storage.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ImmutableStorageGetResponse"
+								},
+								"examples": {
+									"immutableStorageGetResponseExample": {
+										"value": {
+											"data": "SGVsbG8gd29ybGQ=",
+											"receipt": {
+												"@context": "https://www.w3.org/ns/activitystreams",
+												"type": "Create",
+												"actor": "https://example.org/actor",
+												"object": "https://example.org/object"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			"delete": {
+				"operationId": "immutableStorageRemove",
+				"summary": "Remove an item from immutable storage",
+				"tags": [
+					"ImmutableStorage"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"description": "The id of the Immutable Storage to remove.",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "immutable:iota:aW90YS1uZnQ6dHN0OjB4NzYyYjljNDllYTg2OWUwZWJkYTliYmZhNzY5Mzk0NDdhNDI4ZGNmMTc4YzVkMTVhYjQ0N2UyZDRmYmJiNGViMg=="
+					}
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"responses": {
+					"204": {
+						"description": "The rest request ended in success with no data."
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
 		"/immutable-proof": {
 			"post": {
 				"operationId": "immutableProofCreate",
@@ -5898,7 +6273,7 @@
 							"examples": {
 								"immutableProofCreateRequestExample": {
 									"value": {
-										"proofObject": {
+										"document": {
 											"@context": "https://schema.org",
 											"type": "Person",
 											"name": "John Smith"
@@ -6054,11 +6429,12 @@
 											],
 											"type": "ImmutableProof",
 											"id": "ais:1234567890",
+											"nodeIdentity": "node-1",
 											"userIdentity": "user-1",
 											"proofObjectId": "test:1234567890",
 											"proofObjectHash": "EAOKyDN0mYQbBh91eMdVeroxQx1H4GfnRbmt6n/2L/Y=",
 											"proof": {
-												"@context": "https://w3id.org/security/data-integrity/v2",
+												"@context": "https://www.w3.org/ns/credentials/v2",
 												"type": "DataIntegrityProof",
 												"cryptosuite": "eddsa-jcs-2022",
 												"created": "2024-08-22T11:56:56.272Z",
@@ -6082,11 +6458,12 @@
 											],
 											"type": "ImmutableProof",
 											"id": "ais:1234567890",
+											"nodeIdentity": "node-1",
 											"userIdentity": "user-1",
 											"proofObjectId": "test:1234567890",
 											"proofObjectHash": "EAOKyDN0mYQbBh91eMdVeroxQx1H4GfnRbmt6n/2L/Y=",
 											"proof": {
-												"@context": "https://w3id.org/security/data-integrity/v2",
+												"@context": "https://www.w3.org/ns/credentials/v2",
 												"type": "DataIntegrityProof",
 												"cryptosuite": "eddsa-jcs-2022",
 												"created": "2024-08-22T11:56:56.272Z",
@@ -6304,6 +6681,636 @@
 											"properties": {
 												"notFoundId": "1"
 											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/data-processing/rule-group/{id}": {
+			"put": {
+				"operationId": "dataProcessingSetRuleGroup",
+				"summary": "Store a rule group for extraction.",
+				"tags": [
+					"Data Processing"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"description": "The rule id to set.",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "my-rule-group"
+					}
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"requestBody": {
+					"description": "Set a rule group.",
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/DataProcessingRuleGroupSetRequest"
+							},
+							"examples": {
+								"dataProcessingRuleGroupSetRequestExample": {
+									"value": {
+										"label": "My Rule Group",
+										"rules": [
+											{
+												"source": "$.foo",
+												"target": "goo",
+												"coerce": "bigint"
+											}
+										]
+									}
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"204": {
+						"description": "The rest request ended in success with no data."
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			"get": {
+				"operationId": "dataProcessingGetRuleGroup",
+				"summary": "Get a rule group for extraction.",
+				"tags": [
+					"Data Processing"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"description": "The rule id to set.",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "my-rule-group"
+					}
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Get a rule group response.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/RuleGroup"
+								},
+								"examples": {
+									"dataProcessingRuleGroupSetResponseExample": {
+										"value": {
+											"id": "my-rule-group",
+											"label": "My Rule Group",
+											"rules": [
+												{
+													"source": "$.foo",
+													"target": "goo",
+													"coerce": "bigint"
+												}
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			"delete": {
+				"operationId": "dataProcessingRemoveRuleGroup",
+				"summary": "Remove an extraction rule group.",
+				"tags": [
+					"Data Processing"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"description": "The rule id to remove.",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "my-rule-group"
+					}
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"responses": {
+					"204": {
+						"description": "The rest request ended in success with no data."
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/data-processing/extract": {
+			"post": {
+				"operationId": "dataProcessingExtract",
+				"summary": "Extract data from a binary source using the specified rule group.",
+				"tags": [
+					"Data Processing"
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"requestBody": {
+					"description": "Perform an extraction on the data with the specified ruleset.",
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/DataProcessingExtractRequest"
+							},
+							"examples": {
+								"dataProcessingExtractRequestExample": {
+									"value": {
+										"ruleGroupId": "my-rule-group",
+										"data": "eyJmb28iOiAiYmFyIn0="
+									}
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": "Response to extracting data.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/DataProcessingExtractResponse"
+								},
+								"examples": {
+									"dataProcessingExtractResponseExample": {
+										"value": {
+											"foo": "bar"
+										}
+									}
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/data-processing/convert": {
+			"post": {
+				"operationId": "dataProcessingConvert",
+				"summary": "Convert data from a binary source and return structured object.",
+				"tags": [
+					"Data Processing"
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"requestBody": {
+					"description": "Perform a conversion on the data.",
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/DataProcessingConvertRequest"
+							},
+							"examples": {
+								"dataProcessingConvertRequestExample": {
+									"value": {
+										"data": "eyJmb28iOiAiYmFyIn0="
+									}
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": "Response to converting data.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/DataProcessingConvertResponse"
+								},
+								"examples": {
+									"dataProcessingConvertResponseExample": {
+										"value": {
+											"foo": "bar"
+										}
+									}
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/data-processing/rule-group": {
+			"get": {
+				"operationId": "dataProcessingListRuleGroup",
+				"summary": "Get a list with rule groups for extraction.",
+				"tags": [
+					"Data Processing"
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Response for rule group entry list request.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/DataProcessingRuleGroupListResponse"
+								},
+								"examples": {
+									"ruleGroupListResponseExample": {
+										"value": {
+											"entities": [
+												{
+													"id": "my-rule-group",
+													"label": "My Rule Group",
+													"rules": [
+														{
+															"source": "$.foo",
+															"target": "goo",
+															"coerce": "bigint"
+														}
+													]
+												}
+											],
+											"cursor": "1"
+										}
+									}
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
 										}
 									}
 								}
@@ -9656,6 +10663,61 @@
 				"additionalProperties": false,
 				"description": "The body parameters."
 			},
+			"CoerceType": {
+				"anyOf": [
+					{
+						"type": "string",
+						"const": "string",
+						"description": "String."
+					},
+					{
+						"type": "string",
+						"const": "number",
+						"description": "Number."
+					},
+					{
+						"type": "string",
+						"const": "integer",
+						"description": "Integer."
+					},
+					{
+						"type": "string",
+						"const": "boolean",
+						"description": "Boolean."
+					},
+					{
+						"type": "string",
+						"const": "bigint",
+						"description": "Big Integer."
+					},
+					{
+						"type": "string",
+						"const": "date",
+						"description": "Date."
+					},
+					{
+						"type": "string",
+						"const": "datetime",
+						"description": "Date Time."
+					},
+					{
+						"type": "string",
+						"const": "time",
+						"description": "Time."
+					},
+					{
+						"type": "string",
+						"const": "object",
+						"description": "Object."
+					},
+					{
+						"type": "string",
+						"const": "uint8array",
+						"description": "Uint8Array."
+					}
+				],
+				"description": "The types the extracted data can be coerced to."
+			},
 			"ConflictResponse": {
 				"type": "object",
 				"additionalProperties": false,
@@ -9698,6 +10760,206 @@
 					"name"
 				],
 				"description": "The body which contains the error."
+			},
+			"DataIntegrityProof": {
+				"type": "object",
+				"properties": {
+					"@context": {
+						"anyOf": [
+							{
+								"type": "string",
+								"const": "https://www.w3.org/ns/credentials/v2"
+							},
+							{
+								"type": "array",
+								"minItems": 1,
+								"items": [
+									{
+										"type": "string",
+										"const": "https://www.w3.org/ns/credentials/v2"
+									}
+								],
+								"additionalItems": {
+									"$ref": "https://schema.twindev.org/json-ld/JsonLdContextDefinitionElement"
+								}
+							}
+						],
+						"description": "JSON-LD Context."
+					},
+					"type": {
+						"type": "string",
+						"const": "DataIntegrityProof",
+						"description": "JSON-LD Type."
+					},
+					"cryptosuite": {
+						"anyOf": [
+							{
+								"$ref": "#/components/schemas/DidCryptoSuites"
+							},
+							{
+								"type": "string"
+							}
+						],
+						"description": "An identifier for the cryptographic suite that can be used to verify the proof."
+					},
+					"id": {
+						"type": "string",
+						"description": "The id of the proof."
+					},
+					"proofPurpose": {
+						"type": "string",
+						"description": "The reason the proof was created."
+					},
+					"proofValue": {
+						"type": "string",
+						"description": "Contains the base-encoded binary data necessary to verify the digital proof using the verificationMethod specified."
+					},
+					"verificationMethod": {
+						"type": "string",
+						"description": "The verification method of the proof."
+					},
+					"created": {
+						"type": "string",
+						"description": "The iso date of when the proof was created."
+					},
+					"expires": {
+						"type": "string",
+						"description": "The iso date of when the proof expires."
+					},
+					"domain": {
+						"anyOf": [
+							{
+								"type": "string"
+							},
+							{
+								"type": "array",
+								"items": {
+									"type": "string"
+								}
+							}
+						],
+						"description": "One or more security domains in which the proof is meant to be used."
+					},
+					"challenge": {
+						"anyOf": [
+							{
+								"type": "string"
+							},
+							{
+								"type": "array",
+								"items": {
+									"type": "string"
+								}
+							}
+						],
+						"description": "Provided to mitigate replay attacks on domains."
+					},
+					"previousProof": {
+						"type": "string",
+						"description": "Identifies another data integrity proof that MUST verify before the current proof is processed"
+					},
+					"nonce": {
+						"type": "string",
+						"description": "Use of this field is to increase privacy by decreasing linkability that is the result of deterministically generated signatures."
+					}
+				},
+				"required": [
+					"type",
+					"cryptosuite",
+					"proofPurpose"
+				],
+				"additionalProperties": false,
+				"description": "Interface describing a did proof. https://www.w3.org/TR/vc-data-integrity/"
+			},
+			"DataProcessingConvertRequest": {
+				"type": "object",
+				"properties": {
+					"data": {
+						"type": "string",
+						"description": "The binary data to convert in base64."
+					},
+					"overrideMimeType": {
+						"type": "string",
+						"description": "Use the specified mime type for conversion, will auto detect if undefined."
+					}
+				},
+				"required": [
+					"data"
+				],
+				"additionalProperties": false,
+				"description": "The params for the convert."
+			},
+			"DataProcessingConvertResponse": {
+				"description": "The converted data as an object."
+			},
+			"DataProcessingExtractRequest": {
+				"type": "object",
+				"properties": {
+					"ruleGroupId": {
+						"type": "string",
+						"description": "The rule group id to use for the extraction."
+					},
+					"data": {
+						"type": "string",
+						"description": "The binary data to extract from in base64."
+					},
+					"overrideExtractorType": {
+						"type": "string",
+						"description": "The default extractor connector will be used if not specified."
+					}
+				},
+				"required": [
+					"ruleGroupId",
+					"data"
+				],
+				"additionalProperties": false,
+				"description": "The params for the extract."
+			},
+			"DataProcessingExtractResponse": {
+				"description": "The extracted data in extended JSON format which keeps types like bigint, dates and uint8array intact. Use ObjectHelper.fromExtended to get the object with original types."
+			},
+			"DataProcessingRuleGroupListResponse": {
+				"type": "object",
+				"properties": {
+					"entities": {
+						"type": "array",
+						"items": {
+							"$ref": "#/components/schemas/RuleGroup"
+						},
+						"description": "The entities, which can be partial if a limited keys list was provided."
+					},
+					"cursor": {
+						"type": "string",
+						"description": "An optional cursor, when defined can be used to call find to get more entities."
+					}
+				},
+				"required": [
+					"entities"
+				],
+				"additionalProperties": false,
+				"description": "The response payload."
+			},
+			"DataProcessingRuleGroupSetRequest": {
+				"type": "object",
+				"properties": {
+					"label": {
+						"type": "string",
+						"description": "The label for the rule group."
+					},
+					"rules": {
+						"type": "array",
+						"items": {
+							"$ref": "#/components/schemas/Rule"
+						},
+						"description": "The rules."
+					}
+				},
+				"required": [
+					"label",
+					"rules"
+				],
+				"additionalProperties": false,
+				"description": "The data to be used in the store."
 			},
 			"DidCredentialSchema": {
 				"type": "object",
@@ -9913,6 +11175,63 @@
 			"DidDocumentVerificationMethod": {
 				"type": "object",
 				"properties": {
+					"@context": {
+						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
+					},
+					"@id": {
+						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
+					},
+					"@included": {
+						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
+					},
+					"@graph": {
+						"anyOf": [
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
+							},
+							{
+								"type": "array",
+								"items": {
+									"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
+								}
+							}
+						]
+					},
+					"@nest": {
+						"anyOf": [
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdJsonObject"
+							},
+							{
+								"type": "array",
+								"items": {
+									"$ref": "https://schema.twindev.org/json-ld/JsonLdJsonObject"
+								}
+							}
+						]
+					},
+					"@type": {
+						"anyOf": [
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
+							},
+							{
+								"type": "array",
+								"items": {
+									"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
+								}
+							}
+						]
+					},
+					"@reverse": {
+						"type": "object",
+						"additionalProperties": {
+							"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
+						}
+					},
+					"@index": {
+						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
+					},
 					"id": {
 						"type": "string",
 						"description": "The id of the entry."
@@ -9930,7 +11249,186 @@
 						"description": "The public key for the entry. Spec https://datatracker.ietf.org/doc/html/draft-multiformats-multibase-03 ."
 					},
 					"publicKeyJwk": {
-						"$ref": "#/components/schemas/Jwk"
+						"type": "object",
+						"additionalProperties": {
+							"anyOf": [
+								{
+									"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+								},
+								{
+									"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"
+								},
+								{
+									"$ref": "https://schema.twindev.org/json-ld/JsonLdIndexMap"
+								},
+								{
+									"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
+								},
+								{
+									"$ref": "https://schema.twindev.org/json-ld/JsonLdIdMap"
+								},
+								{
+									"$ref": "https://schema.twindev.org/json-ld/JsonLdTypeMap"
+								},
+								{
+									"type": "array"
+								}
+							]
+						},
+						"properties": {
+							"@context": {
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
+							},
+							"@id": {
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
+							},
+							"@included": {
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
+							},
+							"@graph": {
+								"anyOf": [
+									{
+										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
+									},
+									{
+										"type": "array",
+										"items": {
+											"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
+										}
+									}
+								]
+							},
+							"@nest": {
+								"anyOf": [
+									{
+										"$ref": "https://schema.twindev.org/json-ld/JsonLdJsonObject"
+									},
+									{
+										"type": "array",
+										"items": {
+											"$ref": "https://schema.twindev.org/json-ld/JsonLdJsonObject"
+										}
+									}
+								]
+							},
+							"@type": {
+								"anyOf": [
+									{
+										"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
+									},
+									{
+										"type": "array",
+										"items": {
+											"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
+										}
+									}
+								]
+							},
+							"@reverse": {
+								"type": "object",
+								"additionalProperties": {
+									"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
+								}
+							},
+							"@index": {
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
+							},
+							"kty": {
+								"type": "string",
+								"description": "JWK \"kty\" (Key Type) Parameter"
+							},
+							"alg": {
+								"type": "string",
+								"description": "JWK \"alg\" (Algorithm) Parameter"
+							},
+							"key_ops": {
+								"type": "array",
+								"items": {
+									"type": "string"
+								},
+								"description": "JWK \"key_ops\" (Key Operations) Parameter"
+							},
+							"ext": {
+								"type": "boolean",
+								"description": "JWK \"ext\" (Extractable) Parameter"
+							},
+							"use": {
+								"type": "string",
+								"description": "JWK \"use\" (Public Key Use) Parameter"
+							},
+							"x5c": {
+								"type": "array",
+								"items": {
+									"type": "string"
+								},
+								"description": "JWK \"x5c\" (X.509 Certificate Chain) Parameter"
+							},
+							"x5t": {
+								"type": "string",
+								"description": "JWK \"x5t\" (X.509 Certificate SHA-1 Thumbprint) Parameter"
+							},
+							"x5t#S256": {
+								"type": "string",
+								"description": "JWK \"x5t#S256\" (X.509 Certificate SHA-256 Thumbprint) Parameter"
+							},
+							"x5u": {
+								"type": "string",
+								"description": "JWK \"x5u\" (X.509 URL) Parameter"
+							},
+							"kid": {
+								"type": "string",
+								"description": "JWK \"kid\" (Key ID) Parameter"
+							},
+							"crv": {
+								"type": "string",
+								"description": "- EC JWK \"crv\" (Curve) Parameter\n- OKP JWK \"crv\" (The Subtype of Key Pair) Parameter"
+							},
+							"d": {
+								"type": "string",
+								"description": "- Private RSA JWK \"d\" (Private Exponent) Parameter\n- Private EC JWK \"d\" (ECC Private Key) Parameter\n- Private OKP JWK \"d\" (The Private Key) Parameter"
+							},
+							"dp": {
+								"type": "string",
+								"description": "Private RSA JWK \"dp\" (First Factor CRT Exponent) Parameter"
+							},
+							"dq": {
+								"type": "string",
+								"description": "Private RSA JWK \"dq\" (Second Factor CRT Exponent) Parameter"
+							},
+							"e": {
+								"type": "string",
+								"description": "RSA JWK \"e\" (Exponent) Parameter"
+							},
+							"k": {
+								"type": "string",
+								"description": "Oct JWK \"k\" (Key Value) Parameter"
+							},
+							"n": {
+								"type": "string",
+								"description": "RSA JWK \"n\" (Modulus) Parameter"
+							},
+							"p": {
+								"type": "string",
+								"description": "Private RSA JWK \"p\" (First Prime Factor) Parameter"
+							},
+							"q": {
+								"type": "string",
+								"description": "Private RSA JWK \"q\" (Second Prime Factor) Parameter"
+							},
+							"qi": {
+								"type": "string",
+								"description": "Private RSA JWK \"qi\" (First CRT Coefficient) Parameter"
+							},
+							"x": {
+								"type": "string",
+								"description": "- EC JWK \"x\" (X Coordinate) Parameter\n- OKP JWK \"x\" (The public key) Parameter"
+							},
+							"y": {
+								"type": "string",
+								"description": "EC JWK \"y\" (Y Coordinate) Parameter"
+							}
+						},
+						"description": "The public key for the entry as a JWK. Spec https://datatracker.ietf.org/doc/html/rfc7517 ."
 					},
 					"revocation": {
 						"type": "string",
@@ -9942,118 +11440,55 @@
 					"controller",
 					"type"
 				],
-				"additionalProperties": false,
+				"additionalProperties": {
+					"anyOf": [
+						{
+							"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+						},
+						{
+							"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"
+						},
+						{
+							"$ref": "https://schema.twindev.org/json-ld/JsonLdIndexMap"
+						},
+						{
+							"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
+						},
+						{
+							"$ref": "https://schema.twindev.org/json-ld/JsonLdIdMap"
+						},
+						{
+							"$ref": "https://schema.twindev.org/json-ld/JsonLdTypeMap"
+						},
+						{
+							"type": "array"
+						}
+					]
+				},
 				"description": "Interface describing a DID document verification method."
 			},
-			"DidProof": {
+			"DidLabel": {
 				"type": "object",
 				"properties": {
-					"@context": {
-						"anyOf": [
-							{
-								"type": "string",
-								"const": "https://w3id.org/security/data-integrity/v2"
-							},
-							{
-								"type": "array",
-								"minItems": 1,
-								"items": [
-									{
-										"type": "string",
-										"const": "https://w3id.org/security/data-integrity/v2"
-									}
-								],
-								"additionalItems": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdContextDefinitionElement"
-								}
-							}
-						],
-						"description": "JSON-LD Context."
-					},
-					"type": {
+					"@value": {
 						"type": "string",
-						"description": "JSON-LD Type."
+						"description": "The value for the label."
 					},
-					"cryptosuite": {
-						"anyOf": [
-							{
-								"$ref": "#/components/schemas/DidCryptoSuites"
-							},
-							{
-								"type": "string"
-							}
-						],
-						"description": "An identifier for the cryptographic suite that can be used to verify the proof."
-					},
-					"id": {
+					"@language": {
 						"type": "string",
-						"description": "The id of the proof."
+						"description": "The language for the label."
 					},
-					"proofPurpose": {
+					"@direction": {
 						"type": "string",
-						"description": "The reason the proof was created."
-					},
-					"proofValue": {
-						"type": "string",
-						"description": "Contains the base-encoded binary data necessary to verify the digital proof using the verificationMethod specified."
-					},
-					"verificationMethod": {
-						"type": "string",
-						"description": "The verification method of the proof."
-					},
-					"created": {
-						"type": "string",
-						"description": "The iso date of when the proof was created."
-					},
-					"expires": {
-						"type": "string",
-						"description": "The iso date of when the proof expires."
-					},
-					"domain": {
-						"anyOf": [
-							{
-								"type": "string"
-							},
-							{
-								"type": "array",
-								"items": {
-									"type": "string"
-								}
-							}
-						],
-						"description": "One or more security domains in which the proof is meant to be used."
-					},
-					"challenge": {
-						"anyOf": [
-							{
-								"type": "string"
-							},
-							{
-								"type": "array",
-								"items": {
-									"type": "string"
-								}
-							}
-						],
-						"description": "Provided to mitigate replay attacks on domains."
-					},
-					"previousProof": {
-						"type": "string",
-						"description": "Identifies another data integrity proof that MUST verify before the current proof is processed"
-					},
-					"nonce": {
-						"type": "string",
-						"description": "Use of this field is to increase privacy by decreasing linkability that is the result of deterministically generated signatures."
+						"description": "The direction of the label."
 					}
 				},
 				"required": [
-					"type",
-					"cryptosuite",
-					"proofPurpose",
-					"proofValue"
+					"@value",
+					"@language"
 				],
 				"additionalProperties": false,
-				"description": "Interface describing a did proof. https://www.w3.org/TR/vc-data-integrity/"
+				"description": "Interface describing a DID Label."
 			},
 			"DidService": {
 				"type": "object",
@@ -10106,7 +11541,24 @@
 						"anyOf": [
 							{
 								"type": "string",
+								"const": "https://www.w3.org/2018/credentials/v1"
+							},
+							{
+								"type": "string",
 								"const": "https://www.w3.org/ns/credentials/v2"
+							},
+							{
+								"type": "array",
+								"minItems": 1,
+								"items": [
+									{
+										"type": "string",
+										"const": "https://www.w3.org/2018/credentials/v1"
+									}
+								],
+								"additionalItems": {
+									"$ref": "https://schema.twindev.org/json-ld/JsonLdContextDefinitionElement"
+								}
 							},
 							{
 								"type": "array",
@@ -10194,12 +11646,38 @@
 								"properties": {
 									"id": {
 										"type": "string"
+									},
+									"name": {
+										"anyOf": [
+											{
+												"type": "string"
+											},
+											{
+												"type": "array",
+												"items": {
+													"$ref": "#/components/schemas/DidLabel"
+												}
+											}
+										]
+									},
+									"description": {
+										"anyOf": [
+											{
+												"type": "string"
+											},
+											{
+												"type": "array",
+												"items": {
+													"$ref": "#/components/schemas/DidLabel"
+												}
+											}
+										]
 									}
 								},
 								"required": [
 									"id"
 								],
-								"additionalProperties": {}
+								"additionalProperties": false
 							}
 						],
 						"description": "The issuing identity."
@@ -10216,23 +11694,7 @@
 							{
 								"type": "array",
 								"items": {
-									"type": "object",
-									"properties": {
-										"@value": {
-											"type": "string"
-										},
-										"@language": {
-											"type": "string"
-										},
-										"@direction": {
-											"type": "string"
-										}
-									},
-									"required": [
-										"@value",
-										"@language"
-									],
-									"additionalProperties": false
+									"$ref": "#/components/schemas/DidLabel"
 								}
 							}
 						],
@@ -10246,23 +11708,7 @@
 							{
 								"type": "array",
 								"items": {
-									"type": "object",
-									"properties": {
-										"@value": {
-											"type": "string"
-										},
-										"@language": {
-											"type": "string"
-										},
-										"@direction": {
-											"type": "string"
-										}
-									},
-									"required": [
-										"@value",
-										"@language"
-									],
-									"additionalProperties": false
+									"$ref": "#/components/schemas/DidLabel"
 								}
 							}
 						],
@@ -10293,12 +11739,12 @@
 					"proof": {
 						"anyOf": [
 							{
-								"$ref": "#/components/schemas/DidProof"
+								"$ref": "#/components/schemas/Proof"
 							},
 							{
 								"type": "array",
 								"items": {
-									"$ref": "#/components/schemas/DidProof"
+									"$ref": "#/components/schemas/Proof"
 								}
 							}
 						],
@@ -10376,12 +11822,12 @@
 					"proof": {
 						"anyOf": [
 							{
-								"$ref": "#/components/schemas/DidProof"
+								"$ref": "#/components/schemas/Proof"
 							},
 							{
 								"type": "array",
 								"items": {
-									"$ref": "#/components/schemas/DidProof"
+									"$ref": "#/components/schemas/Proof"
 								}
 							}
 						],
@@ -10594,13 +12040,16 @@
 			"IdentityProofCreateRequest": {
 				"type": "object",
 				"properties": {
-					"bytes": {
-						"type": "string",
-						"description": "The data bytes base64 encoded."
+					"proofType": {
+						"$ref": "#/components/schemas/ProofTypes"
+					},
+					"document": {
+						"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
 					}
 				},
 				"required": [
-					"bytes"
+					"proofType",
+					"document"
 				],
 				"additionalProperties": false,
 				"description": "The data for the request."
@@ -10608,16 +12057,15 @@
 			"IdentityProofVerifyRequest": {
 				"type": "object",
 				"properties": {
-					"bytes": {
-						"type": "string",
-						"description": "The data bytes base64 encoded."
+					"document": {
+						"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
 					},
 					"proof": {
-						"$ref": "#/components/schemas/DidProof"
+						"$ref": "#/components/schemas/Proof"
 					}
 				},
 				"required": [
-					"bytes",
+					"document",
 					"proof"
 				],
 				"additionalProperties": false,
@@ -10874,6 +12322,10 @@
 						"type": "string",
 						"description": "The id of the proof."
 					},
+					"nodeIdentity": {
+						"type": "string",
+						"description": "The id of the node who created the proof."
+					},
 					"userIdentity": {
 						"type": "string",
 						"description": "The id of the user who created the proof."
@@ -10887,7 +12339,7 @@
 						"description": "The hash of the object associated with the proof."
 					},
 					"proof": {
-						"$ref": "#/components/schemas/DidProof"
+						"$ref": "#/components/schemas/DataIntegrityProof"
 					},
 					"immutableReceipt": {
 						"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
@@ -10897,6 +12349,7 @@
 					"@context",
 					"type",
 					"id",
+					"nodeIdentity",
 					"userIdentity",
 					"proofObjectHash"
 				],
@@ -10906,12 +12359,12 @@
 			"ImmutableProofCreateRequest": {
 				"type": "object",
 				"properties": {
-					"proofObject": {
+					"document": {
 						"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
 					}
 				},
 				"required": [
-					"proofObject"
+					"document"
 				],
 				"additionalProperties": false,
 				"description": "The parameters from the body."
@@ -10921,7 +12374,7 @@
 					{
 						"type": "string",
 						"const": "notIssued",
-						"description": "Proof not yes issued."
+						"description": "Proof not yet issued."
 					},
 					{
 						"type": "string",
@@ -10975,86 +12428,126 @@
 				"additionalProperties": false,
 				"description": "Interface describing an immutable proof verification."
 			},
-			"Jwk": {
+			"ImmutableStorageGetRequest": {
 				"type": "object",
 				"properties": {
-					"alg": {
-						"$ref": "#/components/schemas/JwtAlgorithms"
-					},
-					"use": {
-						"type": "string",
-						"description": "The intended use for the key."
-					},
-					"key_ops": {
-						"type": "array",
-						"items": {
-							"type": "string"
-						},
-						"description": "The operation(s) that the key is intended to be used for."
-					},
-					"kty": {
-						"type": "string",
-						"description": "The key type parameter."
-					},
-					"n": {
-						"type": "string",
-						"description": "The public key parameters."
-					},
-					"e": {
-						"type": "string",
-						"description": "Exponent parameter."
-					},
-					"d": {
-						"type": "string",
-						"description": "The private key parameters."
-					},
-					"p": {
-						"type": "string",
-						"description": "The private key parameters."
-					},
-					"q": {
-						"type": "string",
-						"description": "The private key parameters."
-					},
-					"dp": {
-						"type": "string",
-						"description": "The private key parameters."
-					},
-					"dq": {
-						"type": "string",
-						"description": "The private key parameters."
-					},
-					"qi": {
-						"type": "string",
-						"description": "The private key parameters."
-					},
-					"kid": {
-						"type": "string",
-						"description": "The key ID."
+					"includeData": {
+						"type": "boolean",
+						"description": "The flag to include the data."
 					}
 				},
 				"required": [
-					"kty"
+					"includeData"
 				],
-				"additionalProperties": {
-					"description": "Additional fields in the key."
-				},
-				"description": "The fields in a JSON Web Key."
+				"additionalProperties": false,
+				"description": "The body optional param."
 			},
-			"JwtAlgorithms": {
-				"anyOf": [
-					{
-						"type": "string",
-						"const": "HS256",
-						"description": "HMAC using SHA-256."
+			"ImmutableStorageGetResponse": {
+				"type": "object",
+				"properties": {
+					"receipt": {
+						"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
 					},
-					{
+					"data": {
 						"type": "string",
-						"const": "EdDSA",
-						"description": "EdDSA using Ed25519."
+						"description": "The data of the Immutable Storage, this is a string serialized as base64."
 					}
+				},
+				"required": [
+					"receipt"
 				],
-				"description": "The cryptographic algorithms supported for JSON Web Tokens and JSON Web Keys."
+				"additionalProperties": false,
+				"description": "The data that was obtained."
+			},
+			"ImmutableStorageStoreRequest": {
+				"type": "object",
+				"properties": {
+					"data": {
+						"type": "string",
+						"description": "The data for the Immutable Storage, this is a string serialized as base64."
+					},
+					"namespace": {
+						"type": "string",
+						"description": "The namespace of the connector to use for the Immutable Storage, defaults to component configured namespace."
+					}
+				},
+				"required": [
+					"data"
+				],
+				"additionalProperties": false,
+				"description": "The data to be stored."
+			},
+			"ImmutableStorageStoreResponse": {
+				"type": "object",
+				"properties": {
+					"receipt": {
+						"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
+					},
+					"id": {
+						"type": "string",
+						"description": "The id of the Immutable Storage."
+					}
+				},
+				"required": [
+					"receipt",
+					"id"
+				],
+				"additionalProperties": false,
+				"description": "The data that was stored."
+			},
+			"JsonWebSignature2020Proof": {
+				"type": "object",
+				"properties": {
+					"@context": {
+						"anyOf": [
+							{
+								"type": "string",
+								"const": "https://w3id.org/security/suites/jws-2020/v1"
+							},
+							{
+								"type": "array",
+								"minItems": 1,
+								"items": [
+									{
+										"type": "string",
+										"const": "https://w3id.org/security/suites/jws-2020/v1"
+									}
+								],
+								"additionalItems": {
+									"$ref": "https://schema.twindev.org/json-ld/JsonLdContextDefinitionElement"
+								}
+							}
+						],
+						"description": "JSON-LD Context."
+					},
+					"type": {
+						"type": "string",
+						"const": "JsonWebSignature2020",
+						"description": "JSON-LD Type."
+					},
+					"proofPurpose": {
+						"type": "string",
+						"description": "The reason the proof was created."
+					},
+					"verificationMethod": {
+						"type": "string",
+						"description": "The verification method of the proof."
+					},
+					"created": {
+						"type": "string",
+						"description": "The iso date of when the proof was created."
+					},
+					"jws": {
+						"type": "string",
+						"description": "The JSON Web Signature."
+					}
+				},
+				"required": [
+					"type",
+					"proofPurpose"
+				],
+				"additionalProperties": false,
+				"description": "Interface describing a did proof in JSON Web Signature 2020 Format. https://www.w3.org/TR/vc-jws-2020/"
 			},
 			"LogEntry": {
 				"type": "object",
@@ -11305,6 +12798,32 @@
 				],
 				"description": "The body which contains the error."
 			},
+			"Proof": {
+				"anyOf": [
+					{
+						"$ref": "#/components/schemas/DataIntegrityProof"
+					},
+					{
+						"$ref": "#/components/schemas/JsonWebSignature2020Proof"
+					}
+				],
+				"description": "Interface describing a proof."
+			},
+			"ProofTypes": {
+				"anyOf": [
+					{
+						"type": "string",
+						"const": "DataIntegrityProof",
+						"description": "The type for Data Integrity Proof."
+					},
+					{
+						"type": "string",
+						"const": "JsonWebSignature2020",
+						"description": "The type for Json Web Signature 2020."
+					}
+				],
+				"description": "The types for proofs."
+			},
 			"RefreshTokenResponse": {
 				"type": "object",
 				"properties": {
@@ -11322,6 +12841,59 @@
 				],
 				"additionalProperties": false,
 				"description": "The refresh token details."
+			},
+			"Rule": {
+				"type": "object",
+				"properties": {
+					"source": {
+						"type": "string",
+						"description": "The path to the data in the document to extract. should be in JSONPath format https://www.rfc-editor.org/rfc/rfc9535.html."
+					},
+					"target": {
+						"type": "string",
+						"description": "The target path of where to store the extracted data. Supports simple dotted path notation, and numeric index notation."
+					},
+					"retainPathDepth": {
+						"type": "number",
+						"description": "When extracting objects, how much of the original path should be maintained in the target object."
+					},
+					"coerce": {
+						"$ref": "#/components/schemas/CoerceType"
+					}
+				},
+				"required": [
+					"source",
+					"target"
+				],
+				"additionalProperties": false,
+				"description": "Rule defining how to extract data from an object."
+			},
+			"RuleGroup": {
+				"type": "object",
+				"properties": {
+					"id": {
+						"type": "string",
+						"description": "The id for the rule group."
+					},
+					"label": {
+						"type": "string",
+						"description": "The label for the rule group."
+					},
+					"rules": {
+						"type": "array",
+						"items": {
+							"$ref": "#/components/schemas/Rule"
+						},
+						"description": "The rules."
+					}
+				},
+				"required": [
+					"id",
+					"label",
+					"rules"
+				],
+				"additionalProperties": false,
+				"description": "Group of rules for extraction."
 			},
 			"ServerInfo": {
 				"type": "object",

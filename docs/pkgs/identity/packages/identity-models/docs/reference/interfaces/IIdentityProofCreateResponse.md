@@ -6,6 +6,6 @@ Response to creating a proof.
 
 ### body
 
-> **body**: `IDidProof`
+> **body**: `IProof`
 
 The response payload.

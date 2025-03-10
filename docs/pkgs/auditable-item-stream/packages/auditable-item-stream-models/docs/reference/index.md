@@ -39,10 +39,12 @@
 
 ## Type Aliases
 
+- [AuditableItemStreamContexts](type-aliases/AuditableItemStreamContexts.md)
 - [AuditableItemStreamTopics](type-aliases/AuditableItemStreamTopics.md)
 - [AuditableItemStreamTypes](type-aliases/AuditableItemStreamTypes.md)
 
 ## Variables
 
+- [AuditableItemStreamContexts](variables/AuditableItemStreamContexts.md)
 - [AuditableItemStreamTopics](variables/AuditableItemStreamTopics.md)
 - [AuditableItemStreamTypes](variables/AuditableItemStreamTypes.md)

@@ -37,8 +37,10 @@
 - [IJsonLdListOrSetItem](type-aliases/IJsonLdListOrSetItem.md)
 - [IJsonLdNodePrimitive](type-aliases/IJsonLdNodePrimitive.md)
 - [IJsonLdValueObject](type-aliases/IJsonLdValueObject.md)
+- [JsonLdContexts](type-aliases/JsonLdContexts.md)
 - [JsonLdTypes](type-aliases/JsonLdTypes.md)
 
 ## Variables
 
+- [JsonLdContexts](variables/JsonLdContexts.md)
 - [JsonLdTypes](variables/JsonLdTypes.md)
