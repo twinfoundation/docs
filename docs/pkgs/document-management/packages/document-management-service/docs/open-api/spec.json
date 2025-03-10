@@ -1079,6 +1079,13 @@
 					"createAttestation": {
 						"type": "boolean",
 						"description": "Flag to create an attestation for the document, defaults to false"
+					},
+					"includeIdAsAlias": {
+						"type": "boolean",
+						"description": "Include the document id as an alias to the aig vertex, defaults to false."
+					},
+					"aliasAnnotationObject": {
+						"$ref": "#/components/schemas/JsonLdNodeObject"
 					}
 				},
 				"required": [

@@ -109,10 +109,6 @@ The maximum number of entities in a page.
 All the entities for the storage matching the conditions,
 and a cursor which can be used to request more entities.
 
-#### Throws
-
-NotImplementedError if the implementation does not support retrieval.
-
 #### Implementation of
 
 [`ILoggingConnector`](../interfaces/ILoggingConnector.md).[`query`](../interfaces/ILoggingConnector.md#query)

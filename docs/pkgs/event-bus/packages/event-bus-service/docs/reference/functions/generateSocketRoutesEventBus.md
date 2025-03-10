@@ -1,6 +1,6 @@
 # Function: generateSocketRoutesEventBus()
 
-> **generateSocketRoutesEventBus**(`baseRouteName`, `componentName`): `ISocketRoute`[]
+> **generateSocketRoutesEventBus**(`baseRouteName`, `componentName`): `ISocketRoute`\<`any`, `any`\>[]
 
 The socket routes for event bus.
 
@@ -20,6 +20,6 @@ The name of the component to use in the routes stored in the ComponentFactory.
 
 ## Returns
 
-`ISocketRoute`[]
+`ISocketRoute`\<`any`, `any`\>[]
 
 The generated routes.

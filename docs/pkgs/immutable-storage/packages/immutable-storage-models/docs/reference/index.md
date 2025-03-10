@@ -12,9 +12,9 @@
 
 ## Type Aliases
 
-- [ImmutableStorageTypes](type-aliases/ImmutableStorageTypes.md)
+- [ImmutableStorageContexts](type-aliases/ImmutableStorageContexts.md)
 
 ## Variables
 
 - [ImmutableStorageConnectorFactory](variables/ImmutableStorageConnectorFactory.md)
-- [ImmutableStorageTypes](variables/ImmutableStorageTypes.md)
+- [ImmutableStorageContexts](variables/ImmutableStorageContexts.md)

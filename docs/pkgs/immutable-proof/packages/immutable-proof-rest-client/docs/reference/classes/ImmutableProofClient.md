@@ -50,23 +50,23 @@ Runtime name for the class.
 
 ### create()
 
-> **create**(`proofObject`): `Promise`\<`string`\>
+> **create**(`document`): `Promise`\<`string`\>
 
-Create a new authentication proof.
+Create a new proof.
 
 #### Parameters
 
-##### proofObject
+##### document
 
 `IJsonLdNodeObject`
 
-The object for the proof as JSON-LD.
+The document to create the proof for.
 
 #### Returns
 
 `Promise`\<`string`\>
 
-The id of the new authentication proof.
+The id of the new proof.
 
 #### Implementation of
 
@@ -78,7 +78,7 @@ The id of the new authentication proof.
 
 > **get**(`id`): `Promise`\<`IImmutableProof`\>
 
-Get an authentication proof.
+Get a proof.
 
 #### Parameters
 
@@ -108,7 +108,7 @@ NotFoundError if the proof is not found.
 
 > **verify**(`id`): `Promise`\<`IImmutableProofVerification`\>
 
-Verify an authentication proof.
+Verify a proof.
 
 #### Parameters
 

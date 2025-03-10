@@ -7,7 +7,7 @@ https://www.w3.org/TR/vc-data-model-2.0
 
 ### @context
 
-> **@context**: `"https://www.w3.org/ns/credentials/v2"` \| \[`"https://www.w3.org/ns/credentials/v2"`, `...IJsonLdContextDefinitionElement[]`\]
+> **@context**: `"https://www.w3.org/2018/credentials/v1"` \| `"https://www.w3.org/ns/credentials/v2"` \| \[`"https://www.w3.org/ns/credentials/v2"`, `...IJsonLdContextDefinitionElement[]`\] \| \[`"https://www.w3.org/2018/credentials/v1"`, `...IJsonLdContextDefinitionElement[]`\]
 
 The context for the verifiable credential.
 
@@ -56,7 +56,7 @@ Annotate type definitions or lock them to specific versions of the vocabulary.
 
 ### issuer?
 
-> `optional` **issuer**: `string` \| \{ `[key: string]`: `unknown`;  `id`: `string`; \}
+> `optional` **issuer**: `string` \| \{ `id`: `string`; `name`: `string` \| [`IDidLabel`](IDidLabel.md)[]; `description`: `string` \| [`IDidLabel`](IDidLabel.md)[]; \}
 
 The issuing identity.
 
@@ -72,7 +72,7 @@ The date the verifiable credential was issued.
 
 ### name?
 
-> `optional` **name**: `string` \| `object`[]
+> `optional` **name**: `string` \| [`IDidLabel`](IDidLabel.md)[]
 
 The name of the credential.
 
@@ -80,7 +80,7 @@ The name of the credential.
 
 ### description?
 
-> `optional` **description**: `string` \| `object`[]
+> `optional` **description**: `string` \| [`IDidLabel`](IDidLabel.md)[]
 
 The description of the credential.
 
@@ -112,7 +112,7 @@ Evidence associated with the Credential.
 
 ### proof?
 
-> `optional` **proof**: [`IDidProof`](IDidProof.md) \| [`IDidProof`](IDidProof.md)[]
+> `optional` **proof**: [`IProof`](../type-aliases/IProof.md) \| [`IProof`](../type-aliases/IProof.md)[]
 
 Proofs that the verifiable credential is valid.
 Optional if a different proof method is used, such as JWT.

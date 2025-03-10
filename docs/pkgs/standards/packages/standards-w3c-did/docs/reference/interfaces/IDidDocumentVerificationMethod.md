@@ -2,6 +2,14 @@
 
 Interface describing a DID document verification method.
 
+## Extends
+
+- `IJsonLdNodeObject`
+
+## Indexable
+
+\[`key`: `string`\]: `undefined` \| `null` \| `string` \| `number` \| `boolean` \| `string`[] \| `IJsonLdContextDefinition` \| `IJsonLdContextDefinitionElement`[] \| `IJsonLdIdMap` \| `IJsonLdNodeObject` \| `IJsonLdListObject` \| `object` & `object` \| `object` & `object` \| `object` & `object` \| `IJsonLdSetObject` \| `IJsonLdJsonObject` \| `IJsonLdIndexMap` \| `IJsonLdLanguageMap` \| `IJsonLdGraphObject` \| `IJsonLdNodeObject`[] \| `IJsonLdJsonObject`[] \| \{\} \| `IJsonLdTypeMap` \| `IJsonLdNodePrimitive`[]
+
 ## Properties
 
 ### id
@@ -39,7 +47,7 @@ Spec https://datatracker.ietf.org/doc/html/draft-multiformats-multibase-03 .
 
 ### publicKeyJwk?
 
-> `optional` **publicKeyJwk**: `IJwk`
+> `optional` **publicKeyJwk**: `IJwk` & `IJsonLdNodeObject`
 
 The public key for the entry as a JWK.
 Spec https://datatracker.ietf.org/doc/html/rfc7517 .

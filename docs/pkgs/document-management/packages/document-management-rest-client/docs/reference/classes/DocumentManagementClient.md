@@ -50,7 +50,7 @@ Runtime name for the class.
 
 ### set()
 
-> **set**(`auditableItemGraphId`, `documentId`, `documentIdFormat`, `documentCode`, `blob`, `annotationObject`?, `createAttestation`?): `Promise`\<`string`\>
+> **set**(`auditableItemGraphId`, `documentId`, `documentIdFormat`, `documentCode`, `blob`, `annotationObject`?, `options`?): `Promise`\<`string`\>
 
 Store a document in an auditable item graph vertex and add its content to blob storage.
 If the document id already exists and the blob data is different a new revision will be created.
@@ -94,11 +94,27 @@ The data to create the document.
 
 Additional information to associate with the document.
 
-##### createAttestation?
+##### options?
+
+Additional options for the set operation.
+
+###### createAttestation?
 
 `boolean`
 
 Flag to create an attestation for the document, defaults to false.
+
+###### includeIdAsAlias?
+
+`boolean`
+
+Include the document id as an alias to the aig vertex, defaults to false.
+
+###### aliasAnnotationObject?
+
+`IJsonLdNodeObject`
+
+Additional information to associate with the alias.
 
 #### Returns
 

@@ -4,6 +4,8 @@
 
 - [FetchError](classes/FetchError.md)
 - [FetchHelper](classes/FetchHelper.md)
+- [Jwk](classes/Jwk.md)
+- [Jws](classes/Jws.md)
 - [Jwt](classes/Jwt.md)
 - [MimeTypeHelper](classes/MimeTypeHelper.md)
 
@@ -20,7 +22,7 @@
 - [HeaderTypes](type-aliases/HeaderTypes.md)
 - [HttpMethod](type-aliases/HttpMethod.md)
 - [HttpStatusCode](type-aliases/HttpStatusCode.md)
-- [JwtAlgorithms](type-aliases/JwtAlgorithms.md)
+- [JwkCryptoKey](type-aliases/JwkCryptoKey.md)
 - [MimeTypes](type-aliases/MimeTypes.md)
 
 ## Variables
@@ -28,5 +30,4 @@
 - [HeaderTypes](variables/HeaderTypes.md)
 - [HttpMethod](variables/HttpMethod.md)
 - [HttpStatusCode](variables/HttpStatusCode.md)
-- [JwtAlgorithms](variables/JwtAlgorithms.md)
 - [MimeTypes](variables/MimeTypes.md)

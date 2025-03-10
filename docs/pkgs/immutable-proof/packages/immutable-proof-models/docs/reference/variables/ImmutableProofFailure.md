@@ -10,7 +10,7 @@ The failure reason of the proof.
 
 > `readonly` **NotIssued**: `"notIssued"` = `"notIssued"`
 
-Proof not yes issued.
+Proof not yet issued.
 
 ### ProofMissing
 

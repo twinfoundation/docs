@@ -18,9 +18,11 @@
 
 ## Type Aliases
 
+- [AttestationContexts](type-aliases/AttestationContexts.md)
 - [AttestationTypes](type-aliases/AttestationTypes.md)
 
 ## Variables
 
 - [AttestationConnectorFactory](variables/AttestationConnectorFactory.md)
+- [AttestationContexts](variables/AttestationContexts.md)
 - [AttestationTypes](variables/AttestationTypes.md)

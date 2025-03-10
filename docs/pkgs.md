@@ -38,6 +38,7 @@ This is the overview of the packages.
 - [@twin.org/standards-gs1](pkgs/standards/packages/standards-gs1/index.md) - Models which define the structure of GS1 Standard
 - [@twin.org/standards-unece](pkgs/standards/packages/standards-unece/index.md) - Models which define the structure of UN/CEFACT Standard
 - [@twin.org/standards-vda](pkgs/standards/packages/standards-vda/index.md) - Models which define the structure of VDA JAIF Standard
+- [@twin.org/standards-gaia-x](pkgs/standards/packages/standards-gaia-x/index.md) - Models which define the structure of Gaia-x
 
 ## Data
 
@@ -67,10 +68,10 @@ This is the overview of the packages.
 - [@twin.org/entity-storage-connector-scylladb](pkgs/entity-storage/packages/entity-storage-connector-scylladb/index.md) - Entity Storage connector implementation using ScyllaDB
 - [@twin.org/entity-storage-connector-dynamodb](pkgs/entity-storage/packages/entity-storage-connector-dynamodb/index.md) - Entity Storage connector implementation using DynamoDb storage
 - [@twin.org/entity-storage-connector-gcp-firestore](pkgs/entity-storage/packages/entity-storage-connector-gcp-firestore/index.md) - Entity Storage connector implementation using GCP Firestore storage
-- [@twin.org/entity-storage-connector-cosmosdb](pkgs/entity-storage/packages/entity-storage-connector-cosmosdb/index.md) - Entity Storage connector implementation using CosmosDB storage
 - [@twin.org/entity-storage-connector-mysql](pkgs/entity-storage/packages/entity-storage-connector-mysql/index.md) - Entity Storage connector implementation using MySQL storage
 - [@twin.org/entity-storage-connector-mongodb](pkgs/entity-storage/packages/entity-storage-connector-mongodb/index.md) - Entity Storage connector implementation using MongoDb storage
 - [@twin.org/entity-storage-connector-postgresql](pkgs/entity-storage/packages/entity-storage-connector-postgresql/index.md) - Entity Storage connector implementation using PostgreSql storage
+- [@twin.org/entity-storage-connector-cosmosdb](pkgs/entity-storage/packages/entity-storage-connector-cosmosdb/index.md) - Entity Storage connector implementation using CosmosDB storage
 
 ## Blob Storage
 

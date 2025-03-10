@@ -212,19 +212,19 @@ The payload for the task.
 
 Additional options for the task.
 
-###### retryCount
+###### retryCount?
 
 `number`
 
 The number of times to retry the task if it fails, leave undefined to retry forever.
 
-###### retryInterval
+###### retryInterval?
 
 `number`
 
 The interval in milliseconds to wait between retries, defaults to 5000, leave undefined for default scheduling.
 
-###### retainFor
+###### retainFor?
 
 `number`
 
@@ -354,7 +354,7 @@ Nothing.
 
 ### query()
 
-> **query**(`taskType`?, `taskStatus`?, `sortProperty`?, `sortDirection`?, `cursor`?, `pageSize`?): `Promise`\<\{ `entities`: `IBackgroundTask`[]; `cursor`: `string`; \}\>
+> **query**(`taskType`?, `taskStatus`?, `sortProperty`?, `sortDirection`?, `cursor`?, `pageSize`?): `Promise`\<\{ `entities`: `IBackgroundTask`\<`any`, `any`\>[]; `cursor`: `string`; \}\>
 
 Get a list of tasks.
 
@@ -398,7 +398,7 @@ The maximum number of entities in a page.
 
 #### Returns
 
-`Promise`\<\{ `entities`: `IBackgroundTask`[]; `cursor`: `string`; \}\>
+`Promise`\<\{ `entities`: `IBackgroundTask`\<`any`, `any`\>[]; `cursor`: `string`; \}\>
 
 The list of tasks.
 

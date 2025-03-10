@@ -4,20 +4,6 @@ Options for the immutable proof service constructor.
 
 ## Properties
 
-### vaultConnectorType?
-
-> `optional` **vaultConnectorType**: `string`
-
-The vault connector type.
-
-#### Default
-
-```ts
-vault
-```
-
-***
-
 ### immutableProofEntityStorageType?
 
 > `optional` **immutableProofEntityStorageType**: `string`

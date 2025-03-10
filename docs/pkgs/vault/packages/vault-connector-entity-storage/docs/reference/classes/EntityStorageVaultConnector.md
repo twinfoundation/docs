@@ -50,7 +50,7 @@ Runtime name for the class.
 
 ### createKey()
 
-> **createKey**(`name`, `type`): `Promise`\<`Uint8Array`\>
+> **createKey**(`name`, `type`): `Promise`\<`Uint8Array`\<`ArrayBufferLike`\>\>
 
 Generate a new key and store it in the vault.
 
@@ -70,7 +70,7 @@ The type of key to create.
 
 #### Returns
 
-`Promise`\<`Uint8Array`\>
+`Promise`\<`Uint8Array`\<`ArrayBufferLike`\>\>
 
 The public key for the key pair.
 
@@ -108,7 +108,7 @@ The private key.
 
 ##### publicKey?
 
-`Uint8Array`
+`Uint8Array`\<`ArrayBufferLike`\>
 
 The public key, can be undefined if the key type is symmetric.
 
@@ -126,7 +126,7 @@ Nothing.
 
 ### getKey()
 
-> **getKey**(`name`): `Promise`\<\{ `type`: `VaultKeyType`; `privateKey`: `Uint8Array`; `publicKey`: `Uint8Array`; \}\>
+> **getKey**(`name`): `Promise`\<\{ `type`: `VaultKeyType`; `privateKey`: `Uint8Array`; `publicKey`: `Uint8Array`\<`ArrayBufferLike`\>; \}\>
 
 Get a key from the vault.
 
@@ -140,7 +140,7 @@ The name of the key to get from the vault.
 
 #### Returns
 
-`Promise`\<\{ `type`: `VaultKeyType`; `privateKey`: `Uint8Array`; `publicKey`: `Uint8Array`; \}\>
+`Promise`\<\{ `type`: `VaultKeyType`; `privateKey`: `Uint8Array`; `publicKey`: `Uint8Array`\<`ArrayBufferLike`\>; \}\>
 
 The key, publicKey can be undefined if key is symmetric.
 
@@ -210,7 +210,7 @@ Nothing.
 
 ### sign()
 
-> **sign**(`name`, `data`): `Promise`\<`Uint8Array`\>
+> **sign**(`name`, `data`): `Promise`\<`Uint8Array`\<`ArrayBufferLike`\>\>
 
 Sign the data using a key in the vault.
 
@@ -230,7 +230,7 @@ The data to sign.
 
 #### Returns
 
-`Promise`\<`Uint8Array`\>
+`Promise`\<`Uint8Array`\<`ArrayBufferLike`\>\>
 
 The signature for the data.
 
@@ -280,7 +280,7 @@ True if the verification is successful.
 
 ### encrypt()
 
-> **encrypt**(`name`, `encryptionType`, `data`): `Promise`\<`Uint8Array`\>
+> **encrypt**(`name`, `encryptionType`, `data`): `Promise`\<`Uint8Array`\<`ArrayBufferLike`\>\>
 
 Encrypt the data using a key in the vault.
 
@@ -306,7 +306,7 @@ The data to encrypt in base64.
 
 #### Returns
 
-`Promise`\<`Uint8Array`\>
+`Promise`\<`Uint8Array`\<`ArrayBufferLike`\>\>
 
 The encrypted data in base64.
 
@@ -318,7 +318,7 @@ The encrypted data in base64.
 
 ### decrypt()
 
-> **decrypt**(`name`, `encryptionType`, `encryptedData`): `Promise`\<`Uint8Array`\>
+> **decrypt**(`name`, `encryptionType`, `encryptedData`): `Promise`\<`Uint8Array`\<`ArrayBufferLike`\>\>
 
 Decrypt the data using a key in the vault.
 
@@ -344,7 +344,7 @@ The data to decrypt in base64.
 
 #### Returns
 
-`Promise`\<`Uint8Array`\>
+`Promise`\<`Uint8Array`\<`ArrayBufferLike`\>\>
 
 The decrypted data in base64.
 

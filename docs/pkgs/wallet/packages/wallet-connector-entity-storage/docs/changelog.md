@@ -1,5 +1,5 @@
 # @twin.org/wallet-connector-entity-storage - Changelog
 
-## v0.0.1-next.16
+## v0.0.1-next.17
 
 - Initial Release

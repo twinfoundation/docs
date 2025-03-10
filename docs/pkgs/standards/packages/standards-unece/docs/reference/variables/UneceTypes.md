@@ -6,12 +6,6 @@ The types of UNECE data.
 
 ## Type declaration
 
-### ContextRoot
-
-> `readonly` **ContextRoot**: `"https://vocabulary.uncefact.org/"` = `"https://vocabulary.uncefact.org/"`
-
-Context Root.
-
 ### Document
 
 > `readonly` **Document**: `"Document"` = `"Document"`

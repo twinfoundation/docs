@@ -15,8 +15,10 @@
 
 ## Type Aliases
 
+- [DocumentContexts](type-aliases/DocumentContexts.md)
 - [DocumentTypes](type-aliases/DocumentTypes.md)
 
 ## Variables
 
+- [DocumentContexts](variables/DocumentContexts.md)
 - [DocumentTypes](variables/DocumentTypes.md)

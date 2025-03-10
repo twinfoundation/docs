@@ -10,8 +10,8 @@ Create a proof.
 
 The parameters from the body.
 
-#### proofObject
+#### document
 
-> **proofObject**: `IJsonLdNodeObject`
+> **document**: `IJsonLdNodeObject`
 
-The proof object to create the proof for.
+The document to create the proof for.

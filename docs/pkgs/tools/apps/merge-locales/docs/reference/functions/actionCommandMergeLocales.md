@@ -10,7 +10,7 @@ Action the root command.
 
 The options for the command.
 
-#### config
+#### config?
 
 `string`
 

@@ -176,7 +176,7 @@ Error if the item is not found.
 
 ### createKey()
 
-> **createKey**(`name`, `type`): `Promise`\<`Uint8Array`\>
+> **createKey**(`name`, `type`): `Promise`\<`Uint8Array`\<`ArrayBufferLike`\>\>
 
 Generate a new key and store it in the vault.
 
@@ -196,7 +196,7 @@ The type of key to create.
 
 #### Returns
 
-`Promise`\<`Uint8Array`\>
+`Promise`\<`Uint8Array`\<`ArrayBufferLike`\>\>
 
 The public key for the key pair.
 
@@ -234,7 +234,7 @@ The private key.
 
 ##### publicKey?
 
-`Uint8Array`
+`Uint8Array`\<`ArrayBufferLike`\>
 
 The public key, can be undefined if the key type is symmetric.
 
@@ -252,7 +252,7 @@ Nothing.
 
 ### getKey()
 
-> **getKey**(`name`): `Promise`\<\{ `type`: `VaultKeyType`; `privateKey`: `Uint8Array`; `publicKey`: `Uint8Array`; \}\>
+> **getKey**(`name`): `Promise`\<\{ `type`: `VaultKeyType`; `privateKey`: `Uint8Array`; `publicKey`: `Uint8Array`\<`ArrayBufferLike`\>; \}\>
 
 Get a key from the vault.
 
@@ -266,7 +266,7 @@ The name of the key to get.
 
 #### Returns
 
-`Promise`\<\{ `type`: `VaultKeyType`; `privateKey`: `Uint8Array`; `publicKey`: `Uint8Array`; \}\>
+`Promise`\<\{ `type`: `VaultKeyType`; `privateKey`: `Uint8Array`; `publicKey`: `Uint8Array`\<`ArrayBufferLike`\>; \}\>
 
 The key, publicKey can be undefined if key is symmetric.
 
@@ -336,7 +336,7 @@ Nothing.
 
 ### sign()
 
-> **sign**(`name`, `data`): `Promise`\<`Uint8Array`\>
+> **sign**(`name`, `data`): `Promise`\<`Uint8Array`\<`ArrayBufferLike`\>\>
 
 Sign data.
 
@@ -356,7 +356,7 @@ The data to sign.
 
 #### Returns
 
-`Promise`\<`Uint8Array`\>
+`Promise`\<`Uint8Array`\<`ArrayBufferLike`\>\>
 
 The signature.
 
@@ -406,7 +406,7 @@ True if the signature is valid.
 
 ### encrypt()
 
-> **encrypt**(`name`, `encryptionType`, `data`): `Promise`\<`Uint8Array`\>
+> **encrypt**(`name`, `encryptionType`, `data`): `Promise`\<`Uint8Array`\<`ArrayBufferLike`\>\>
 
 Encrypt data.
 
@@ -432,7 +432,7 @@ The data to encrypt.
 
 #### Returns
 
-`Promise`\<`Uint8Array`\>
+`Promise`\<`Uint8Array`\<`ArrayBufferLike`\>\>
 
 The encrypted data.
 
@@ -444,7 +444,7 @@ The encrypted data.
 
 ### decrypt()
 
-> **decrypt**(`name`, `encryptionType`, `encryptedData`): `Promise`\<`Uint8Array`\>
+> **decrypt**(`name`, `encryptionType`, `encryptedData`): `Promise`\<`Uint8Array`\<`ArrayBufferLike`\>\>
 
 Decrypt data.
 
@@ -470,7 +470,7 @@ The encrypted data to decrypt.
 
 #### Returns
 
-`Promise`\<`Uint8Array`\>
+`Promise`\<`Uint8Array`\<`ArrayBufferLike`\>\>
 
 The decrypted data.
 
