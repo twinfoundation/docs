@@ -18,16 +18,16 @@ immutable-proof
 
 ***
 
-### immutableStorageType?
+### verifiableStorageType?
 
-> `optional` **immutableStorageType**: `string`
+> `optional` **verifiableStorageType**: `string`
 
-The immutable storage.
+The verifiable storage.
 
 #### Default
 
 ```ts
-immutable-storage
+verifiable-storage
 ```
 
 ***

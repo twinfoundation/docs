@@ -38,17 +38,6 @@ sudo yum install nginx -y
 nginx -v
 ```
 
-## Install certbot
-
-To generate and install the certificate. The certbot command will prompt you for the name of the server i.e. the domain you aliased to the instance `workbench-api.example.com`
-
-```shell
-sudo python3 -m venv /opt/certbot/
-sudo /opt/certbot/bin/pip install --upgrade pip
-sudo /opt/certbot/bin/pip install certbot certbot-nginx
-sudo certbot --nginx
-```
-
 ## Configuring nginx
 
 We need to configure nginx to use the certificate and reverse proxy https traffic to the node server.
@@ -74,10 +63,8 @@ server {
 
     server_name workbench-api.example.com;
 
-    ssl_certificate /etc/letsencrypt/live/workbench-api.example.com/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/workbench-api.example.com/privkey.pem;
-    include /etc/letsencrypt/options-ssl-nginx.conf;
-    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
+    ssl_certificate /etc/ssl/certs/nginx-selfsigned.crt;
+    ssl_certificate_key /etc/ssl/private/nginx-selfsigned.key;
 
     location / {
         # Redirect the https traffic to the node instance
@@ -184,6 +171,7 @@ To upgrade a previous installation on an EC2 instance with the latest version.
 ```shell
 sudo systemctl stop workbench.service
 cd apps
+git reset --hard
 git pull
 npm i
 cd apps/workbench-server
@@ -191,6 +179,10 @@ npm run dist
 
 # Update any env vars if necessary
 # nano .env
+
+# If you want to start from clean configuration you should remove the databases manually
+# and also remove the engine-state file
+# rm /home/ec2-user/workbench/engine-state.json
 
 # To perform a test run before launching the service permanently
 # npm run start

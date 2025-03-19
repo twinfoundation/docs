@@ -20,6 +20,7 @@
 		"lint:markdown": "markdownlint **/*.md --ignore **/node_modules/** --ignore **/docs/reference/**",
 		"lint:spell": "cspell ** --no-progress",
 		"lint": "npm run lint:format && npm run lint:code && npm run lint:markdown && npm run lint:spell",
+		"local-link": "node ./scripts/local-link.mjs",
 		"postinstall": "npx playwright install"
 	},
 	"devDependencies": {
@@ -45,5 +46,8 @@
 		"apps/workbench-server",
 		"apps/workbench-ui"
 	],
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"@twin.org/core": "^0.0.1-next.48"
+	}
 }

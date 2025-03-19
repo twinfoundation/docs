@@ -579,11 +579,11 @@ NotFoundError if the stream is not found.
 
 ***
 
-### removeImmutable()
+### removeVerifiable()
 
-> **removeImmutable**(`streamId`, `nodeIdentity`?): `Promise`\<`void`\>
+> **removeVerifiable**(`streamId`, `nodeIdentity`?): `Promise`\<`void`\>
 
-Remove the immutable storage for the stream and entries.
+Remove the verifiable storage for the stream and entries.
 
 #### Parameters
 

@@ -174,11 +174,11 @@ NotFoundError if the vertex is not found.
 
 ***
 
-### removeImmutable()
+### removeVerifiable()
 
-> **removeImmutable**(`id`, `nodeIdentity`?): `Promise`\<`void`\>
+> **removeVerifiable**(`id`, `nodeIdentity`?): `Promise`\<`void`\>
 
-Remove the immutable storage for an item.
+Remove the verifiable storage for an item.
 
 #### Parameters
 

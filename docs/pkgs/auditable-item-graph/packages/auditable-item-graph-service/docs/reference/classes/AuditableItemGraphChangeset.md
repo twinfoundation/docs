@@ -54,8 +54,8 @@ The patches in the changeset.
 
 ***
 
-### proofId
+### proofId?
 
-> **proofId**: `string`
+> `optional` **proofId**: `string`
 
 The immutable proof id which contains the signature for this changeset.

@@ -146,11 +146,11 @@ NotFoundError if the proof is not found.
 
 ***
 
-### removeImmutable()
+### removeVerifiable()
 
-> **removeImmutable**(`id`, `nodeIdentity`?): `Promise`\<`void`\>
+> **removeVerifiable**(`id`, `nodeIdentity`?): `Promise`\<`void`\>
 
-Remove the immutable storage for the proof.
+Remove the verifiable storage for the proof.
 
 #### Parameters
 
@@ -178,4 +178,4 @@ NotFoundError if the proof is not found.
 
 #### Implementation of
 
-`IImmutableProofComponent.removeImmutable`
+`IImmutableProofComponent.removeVerifiable`
