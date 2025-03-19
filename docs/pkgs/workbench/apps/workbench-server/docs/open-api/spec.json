@@ -52,8 +52,8 @@
 			"description": "Endpoints which are modelled to access an attestation contract."
 		},
 		{
-			"name": "ImmutableStorage",
-			"description": "Endpoints which are modelled to access an Immutable Storage."
+			"name": "VerifiableStorage",
+			"description": "Endpoints which are modelled to access an Verifiable Storage."
 		},
 		{
 			"name": "Immutable Proof",
@@ -5923,12 +5923,12 @@
 				}
 			}
 		},
-		"/immutable": {
+		"/verifiable": {
 			"post": {
-				"operationId": "immutableStorageStore",
-				"summary": "Store an item in immutable storage",
+				"operationId": "verifiableStorageCreate",
+				"summary": "Create an item in verifiable storage",
 				"tags": [
-					"ImmutableStorage"
+					"VerifiableStorage"
 				],
 				"security": [
 					{
@@ -5936,15 +5936,15 @@
 					}
 				],
 				"requestBody": {
-					"description": "Store the data and return the Immutable Storage id.",
+					"description": "Store the data and return the Verifiable Storage id.",
 					"required": true,
 					"content": {
 						"application/json": {
 							"schema": {
-								"$ref": "#/components/schemas/ImmutableStorageStoreRequest"
+								"$ref": "#/components/schemas/VerifiableStorageCreateRequest"
 							},
 							"examples": {
-								"immutableStorageStoreExample": {
+								"verifiableStorageCreateExample": {
 									"value": {
 										"data": "SGVsbG8gd29ybGQ="
 									}
@@ -5955,20 +5955,20 @@
 				},
 				"responses": {
 					"200": {
-						"description": "Response to storing the Immutable Storage.",
+						"description": "Response to storing the Verifiable Storage.",
 						"content": {
 							"application/json": {
 								"schema": {
-									"$ref": "#/components/schemas/ImmutableStorageStoreResponse"
+									"$ref": "#/components/schemas/VerifiableStorageCreateResponse"
 								},
 								"examples": {
-									"immutableStorageStoreResponseExample": {
+									"verifiableStorageCreateResponseExample": {
 										"value": {
 											"receipt": {
-												"@context": "https://schema.twindev.org/immutable-storage/",
-												"type": "ImmutableStorageIotaReceipt"
+												"@context": "https://schema.twindev.org/verifiable-storage/",
+												"type": "VerifiableStorageIotaReceipt"
 											},
-											"id": "immutable:iota:aW90YS1uZnQ6dHN0OjB4NzYyYjljNDllYTg2OWUwZWJkYTliYmZhNzY5Mzk0NDdhNDI4ZGNmMTc4YzVkMTVhYjQ0N2UyZDRmYmJiNGViMg=="
+											"id": "verifiable:iota:aW90YS1uZnQ6dHN0OjB4NzYyYjljNDllYTg2OWUwZWJkYTliYmZhNzY5Mzk0NDdhNDI4ZGNmMTc4YzVkMTVhYjQ0N2UyZDRmYmJiNGViMg=="
 										}
 									}
 								}
@@ -5979,7 +5979,7 @@
 								"schema": {
 									"type": "string"
 								},
-								"description": "e.g. immutable:iota:aW90YS1uZnQ6dHN0OjB4NzYyYjljNDllYTg2OWUwZWJkYTliYmZhNzY5Mzk0NDdhNDI4ZGNmMTc4YzVkMTVhYjQ0N2UyZDRmYmJiNGViMg=="
+								"description": "e.g. verifiable:iota:aW90YS1uZnQ6dHN0OjB4NzYyYjljNDllYTg2OWUwZWJkYTliYmZhNzY5Mzk0NDdhNDI4ZGNmMTc4YzVkMTVhYjQ0N2UyZDRmYmJiNGViMg=="
 							}
 						}
 					},
@@ -6043,24 +6043,24 @@
 				}
 			}
 		},
-		"/immutable/{id}": {
-			"get": {
-				"operationId": "immutableStorageGet",
-				"summary": "Get an immutable storage item",
+		"/verifiable/{id}": {
+			"put": {
+				"operationId": "verifiableStorageUpdate",
+				"summary": "Update an item in verifiable storage",
 				"tags": [
-					"ImmutableStorage"
+					"VerifiableStorage"
 				],
 				"parameters": [
 					{
 						"name": "id",
-						"description": "The id of the Immutable Storage to resolve.",
+						"description": "The id of the Verifiable Storage to update.",
 						"in": "path",
 						"required": true,
 						"schema": {
 							"type": "string"
 						},
 						"style": "simple",
-						"example": "immutable:iota:aW90YS1uZnQ6dHN0OjB4NzYyYjljNDllYTg2OWUwZWJkYTliYmZhNzY5Mzk0NDdhNDI4ZGNmMTc4YzVkMTVhYjQ0N2UyZDRmYmJiNGViMg=="
+						"example": "verifiable:iota:aW90YS1uZnQ6dHN0OjB4NzYyYjljNDllYTg2OWUwZWJkYTliYmZhNzY5Mzk0NDdhNDI4ZGNmMTc4YzVkMTVhYjQ0N2UyZDRmYmJiNGViMg=="
 					}
 				],
 				"security": [
@@ -6069,26 +6069,146 @@
 					}
 				],
 				"requestBody": {
-					"description": "Get the Immutable Storage.",
+					"description": "Update the data and return the receipt.",
 					"required": true,
 					"content": {
 						"application/json": {
 							"schema": {
-								"$ref": "#/components/schemas/ImmutableStorageGetRequest"
+								"$ref": "#/components/schemas/VerifiableStorageUpdateRequest"
+							},
+							"examples": {
+								"verifiableStorageUpdateExample": {
+									"value": {
+										"data": "SGVsbG8gd29ybGQ="
+									}
+								}
 							}
 						}
 					}
 				},
 				"responses": {
 					"200": {
-						"description": "Response to getting the Immutable Storage.",
+						"description": "Response to updating the Verifiable Storage.",
 						"content": {
 							"application/json": {
 								"schema": {
-									"$ref": "#/components/schemas/ImmutableStorageGetResponse"
+									"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
 								},
 								"examples": {
-									"immutableStorageGetResponseExample": {
+									"verifiableStorageUpdateResponseExample": {
+										"value": {
+											"@context": "https://schema.twindev.org/verifiable-storage/",
+											"type": "VerifiableStorageIotaReceipt"
+										}
+									}
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			"get": {
+				"operationId": "verifiableStorageGet",
+				"summary": "Get an verifiable storage item",
+				"tags": [
+					"VerifiableStorage"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"description": "The id of the Verifiable Storage to resolve.",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "verifiable:iota:aW90YS1uZnQ6dHN0OjB4NzYyYjljNDllYTg2OWUwZWJkYTliYmZhNzY5Mzk0NDdhNDI4ZGNmMTc4YzVkMTVhYjQ0N2UyZDRmYmJiNGViMg=="
+					}
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"requestBody": {
+					"description": "Get the Verifiable Storage.",
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/VerifiableStorageGetRequest"
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": "Response to getting the Verifiable Storage.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/VerifiableStorageGetResponse"
+								},
+								"examples": {
+									"verifiableStorageGetResponseExample": {
 										"value": {
 											"data": "SGVsbG8gd29ybGQ=",
 											"receipt": {
@@ -6163,22 +6283,22 @@
 				}
 			},
 			"delete": {
-				"operationId": "immutableStorageRemove",
-				"summary": "Remove an item from immutable storage",
+				"operationId": "verifiableStorageRemove",
+				"summary": "Remove an item from verifiable storage",
 				"tags": [
-					"ImmutableStorage"
+					"VerifiableStorage"
 				],
 				"parameters": [
 					{
 						"name": "id",
-						"description": "The id of the Immutable Storage to remove.",
+						"description": "The id of the Verifiable Storage to remove.",
 						"in": "path",
 						"required": true,
 						"schema": {
 							"type": "string"
 						},
 						"style": "simple",
-						"example": "immutable:iota:aW90YS1uZnQ6dHN0OjB4NzYyYjljNDllYTg2OWUwZWJkYTliYmZhNzY5Mzk0NDdhNDI4ZGNmMTc4YzVkMTVhYjQ0N2UyZDRmYmJiNGViMg=="
+						"example": "verifiable:iota:aW90YS1uZnQ6dHN0OjB4NzYyYjljNDllYTg2OWUwZWJkYTliYmZhNzY5Mzk0NDdhNDI4ZGNmMTc4YzVkMTVhYjQ0N2UyZDRmYmJiNGViMg=="
 					}
 				],
 				"security": [
@@ -12428,73 +12548,6 @@
 				"additionalProperties": false,
 				"description": "Interface describing an immutable proof verification."
 			},
-			"ImmutableStorageGetRequest": {
-				"type": "object",
-				"properties": {
-					"includeData": {
-						"type": "boolean",
-						"description": "The flag to include the data."
-					}
-				},
-				"required": [
-					"includeData"
-				],
-				"additionalProperties": false,
-				"description": "The body optional param."
-			},
-			"ImmutableStorageGetResponse": {
-				"type": "object",
-				"properties": {
-					"receipt": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-					},
-					"data": {
-						"type": "string",
-						"description": "The data of the Immutable Storage, this is a string serialized as base64."
-					}
-				},
-				"required": [
-					"receipt"
-				],
-				"additionalProperties": false,
-				"description": "The data that was obtained."
-			},
-			"ImmutableStorageStoreRequest": {
-				"type": "object",
-				"properties": {
-					"data": {
-						"type": "string",
-						"description": "The data for the Immutable Storage, this is a string serialized as base64."
-					},
-					"namespace": {
-						"type": "string",
-						"description": "The namespace of the connector to use for the Immutable Storage, defaults to component configured namespace."
-					}
-				},
-				"required": [
-					"data"
-				],
-				"additionalProperties": false,
-				"description": "The data to be stored."
-			},
-			"ImmutableStorageStoreResponse": {
-				"type": "object",
-				"properties": {
-					"receipt": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-					},
-					"id": {
-						"type": "string",
-						"description": "The id of the Immutable Storage."
-					}
-				},
-				"required": [
-					"receipt",
-					"id"
-				],
-				"additionalProperties": false,
-				"description": "The data that was stored."
-			},
 			"JsonWebSignature2020Proof": {
 				"type": "object",
 				"properties": {
@@ -13107,6 +13160,87 @@
 				],
 				"additionalProperties": false,
 				"description": "The response payload."
+			},
+			"VerifiableStorageCreateRequest": {
+				"type": "object",
+				"properties": {
+					"data": {
+						"type": "string",
+						"description": "The data for the Verifiable Storage, this is a string serialized as base64."
+					},
+					"namespace": {
+						"type": "string",
+						"description": "The namespace of the connector to use for the Verifiable Storage, defaults to component configured namespace."
+					}
+				},
+				"required": [
+					"data"
+				],
+				"additionalProperties": false,
+				"description": "The data to be stored."
+			},
+			"VerifiableStorageCreateResponse": {
+				"type": "object",
+				"properties": {
+					"receipt": {
+						"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
+					},
+					"id": {
+						"type": "string",
+						"description": "The id of the Verifiable Storage."
+					}
+				},
+				"required": [
+					"receipt",
+					"id"
+				],
+				"additionalProperties": false,
+				"description": "The data that was stored."
+			},
+			"VerifiableStorageGetRequest": {
+				"type": "object",
+				"properties": {
+					"includeData": {
+						"type": "boolean",
+						"description": "The flag to include the data."
+					}
+				},
+				"required": [
+					"includeData"
+				],
+				"additionalProperties": false,
+				"description": "The body optional param."
+			},
+			"VerifiableStorageGetResponse": {
+				"type": "object",
+				"properties": {
+					"receipt": {
+						"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
+					},
+					"data": {
+						"type": "string",
+						"description": "The data of the Verifiable Storage, this is a string serialized as base64."
+					}
+				},
+				"required": [
+					"receipt"
+				],
+				"additionalProperties": false,
+				"description": "The data that was obtained."
+			},
+			"VerifiableStorageUpdateRequest": {
+				"type": "object",
+				"properties": {
+					"data": {
+						"type": "string",
+						"description": "The data for the Verifiable Storage, this is a string serialized as base64."
+					}
+				},
+				"required": [
+					"data"
+				],
+				"additionalProperties": false,
+				"description": "The data to be updated."
 			},
 			"VerifyDepth": {
 				"anyOf": [

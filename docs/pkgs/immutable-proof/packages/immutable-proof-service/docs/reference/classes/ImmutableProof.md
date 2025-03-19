@@ -62,8 +62,8 @@ The associated hash for the item.
 
 ***
 
-### immutableStorageId?
+### verifiableStorageId?
 
-> `optional` **immutableStorageId**: `string`
+> `optional` **verifiableStorageId**: `string`
 
-The immutable storage id.
+The verifiable storage id.

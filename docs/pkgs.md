@@ -138,6 +138,7 @@ This is the overview of the packages.
 - [@twin.org/identity-rest-client](pkgs/identity/packages/identity-rest-client/index.md) - Identity contract implementation which can connect to REST endpoints
 - [@twin.org/identity-connector-iota](pkgs/identity/packages/identity-connector-iota/index.md) - Identity connector implementation using IOTA
 - [@twin.org/identity-connector-iota-stardust](pkgs/identity/packages/identity-connector-iota-stardust/index.md) - Identity connector implementation using IOTA Stardust
+- [@twin.org/identity-connector-universal](pkgs/identity/packages/identity-connector-universal/index.md) - Identity connector implementation using universal resolver
 
 ## NFT
 
@@ -148,14 +149,14 @@ This is the overview of the packages.
 - [@twin.org/nft-service](pkgs/nft/packages/nft-service/index.md) - NFT contract implementation and REST endpoint definitions
 - [@twin.org/nft-rest-client](pkgs/nft/packages/nft-rest-client/index.md) - NFT contract implementation which can connect to REST endpoints
 
-## Immutable Storage
+## Verifiable Storage
 
-- [@twin.org/immutable-storage-models](pkgs/immutable-storage/packages/immutable-storage-models/index.md) - Contains models and classes for use with immutable storage
-- [@twin.org/immutable-storage-connector-entity-storage](pkgs/immutable-storage/packages/immutable-storage-connector-entity-storage/index.md) - Implementation of the Immutable Storage connector using entity storage
-- [@twin.org/immutable-storage-connector-iota](pkgs/immutable-storage/packages/immutable-storage-connector-iota/index.md) - Implementation of the Immutable Storage connector using IOTA
-- [@twin.org/immutable-storage-connector-iota-stardust](pkgs/immutable-storage/packages/immutable-storage-connector-iota-stardust/index.md) - Implementation of the Immutable Storage connector using IOTA Stardust
-- [@twin.org/immutable-storage-service](pkgs/immutable-storage/packages/immutable-storage-service/index.md) - Immutable Storage contract implementation and REST endpoint definitions
-- [@twin.org/immutable-storage-rest-client](pkgs/immutable-storage/packages/immutable-storage-rest-client/index.md) - Immutable Storage contract implementation which can connect to REST endpoints
+- [@twin.org/verifiable-storage-models](pkgs/immutable-storage/packages/verifiable-storage-models/index.md) - Contains models and classes for use with verifiable storage
+- [@twin.org/verifiable-storage-connector-entity-storage](pkgs/immutable-storage/packages/verifiable-storage-connector-entity-storage/index.md) - Implementation of the Verifiable Storage connector using entity storage
+- [@twin.org/verifiable-storage-connector-iota](pkgs/immutable-storage/packages/verifiable-storage-connector-iota/index.md) - Implementation of the Verifiable Storage connector using IOTA
+- [@twin.org/verifiable-storage-connector-iota-stardust](pkgs/immutable-storage/packages/verifiable-storage-connector-iota-stardust/index.md) - Implementation of the Verifiable Storage connector using IOTA Stardust
+- [@twin.org/verifiable-storage-service](pkgs/immutable-storage/packages/verifiable-storage-service/index.md) - Verifiable Storage contract implementation and REST endpoint definitions
+- [@twin.org/verifiable-storage-rest-client](pkgs/immutable-storage/packages/verifiable-storage-rest-client/index.md) - Verifiable Storage contract implementation which can connect to REST endpoints
 
 ## Immutable Proof
 

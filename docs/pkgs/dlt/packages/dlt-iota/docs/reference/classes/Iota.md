@@ -140,6 +140,60 @@ The list of addresses.
 
 ***
 
+### getKeyPair()
+
+> `static` **getKeyPair**(`seed`, `coinType`, `accountIndex`, `addressIndex`, `isInternal`?): `object`
+
+Get a key pair for the specified index.
+
+#### Parameters
+
+##### seed
+
+`Uint8Array`
+
+The seed to use for generating the key pair.
+
+##### coinType
+
+`number`
+
+The coin type to use.
+
+##### accountIndex
+
+`number`
+
+The account index to get the key pair for.
+
+##### addressIndex
+
+`number`
+
+The address index to get the key pair for.
+
+##### isInternal?
+
+`boolean`
+
+Whether the address is internal.
+
+#### Returns
+
+`object`
+
+The key pair containing private key and public key.
+
+##### privateKey
+
+> **privateKey**: `Uint8Array`
+
+##### publicKey
+
+> **publicKey**: `Uint8Array`
+
+***
+
 ### prepareAndPostTransaction()
 
 > `static` **prepareAndPostTransaction**(`config`, `vaultConnector`, `identity`, `client`, `options`): `Promise`\<\{ `digest`: `string`; \}\>
