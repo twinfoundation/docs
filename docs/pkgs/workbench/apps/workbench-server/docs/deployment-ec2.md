@@ -87,6 +87,8 @@ server {
 
 Once configured you can restart nginx with `sudo systemctl restart nginx`
 
+Run `sudo systemctl enable nginx` to auto start the server on instance startup.
+
 ## Building the server
 
 We clone the repo, build it and then make a copy of the relevant .env file.
