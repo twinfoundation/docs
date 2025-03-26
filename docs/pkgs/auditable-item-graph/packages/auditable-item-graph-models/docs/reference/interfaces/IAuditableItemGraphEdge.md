@@ -80,8 +80,8 @@ The JSON-LD annotation object for the edge.
 
 ***
 
-### edgeRelationship
+### edgeRelationships
 
-> **edgeRelationship**: `string`
+> **edgeRelationships**: `string`[]
 
-The relationship between the two vertices.
+The relationships between the two vertices.

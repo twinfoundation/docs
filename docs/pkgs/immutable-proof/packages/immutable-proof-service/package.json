@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/immutable-proof-service",
-	"version": "0.0.1-next.28",
+	"version": "0.0.1-next.30",
 	"description": "Immutable proof contract implementation and REST endpoint definitions",
 	"repository": {
 		"type": "git",
@@ -40,8 +40,8 @@
 		"@twin.org/entity-storage-models": "next",
 		"@twin.org/event-bus-models": "next",
 		"@twin.org/identity-models": "next",
-		"@twin.org/immutable-proof-models": "0.0.1-next.28",
-		"@twin.org/immutable-proof-task": "0.0.1-next.28",
+		"@twin.org/immutable-proof-models": "0.0.1-next.30",
+		"@twin.org/immutable-proof-task": "0.0.1-next.30",
 		"@twin.org/verifiable-storage-models": "next",
 		"@twin.org/nameof": "next",
 		"@twin.org/standards-w3c-did": "next",

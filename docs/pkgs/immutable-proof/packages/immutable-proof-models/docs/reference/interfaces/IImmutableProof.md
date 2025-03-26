@@ -60,6 +60,14 @@ The hash of the object associated with the proof.
 
 ***
 
+### verifiableStorageId?
+
+> `optional` **verifiableStorageId**: `string`
+
+The verifiable storage id for where the proof is stored.
+
+***
+
 ### proof?
 
 > `optional` **proof**: `IDataIntegrityProof`

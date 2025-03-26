@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/standards-w3c-odrl",
-	"version": "0.0.1-next.31",
+	"version": "0.0.1-next.32",
 	"description": "Models which define the structure of W3C ODRL Standard",
 	"repository": {
 		"type": "git",
@@ -34,8 +34,8 @@
 	"dependencies": {
 		"@twin.org/data-json-ld": "next",
 		"@twin.org/web": "next",
-		"@twin.org/standards-w3c-vcard": "0.0.1-next.31",
-		"@twin.org/standards-dublin-core": "0.0.1-next.31"
+		"@twin.org/standards-w3c-vcard": "0.0.1-next.32",
+		"@twin.org/standards-dublin-core": "0.0.1-next.32"
 	},
 	"devDependencies": {
 		"@twin.org/nameof-transformer": "next",

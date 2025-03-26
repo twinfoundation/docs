@@ -46,11 +46,11 @@ The timestamp of when the edge was deleted, as we never actually remove items.
 
 ***
 
-### edgeRelationship
+### edgeRelationships
 
-> **edgeRelationship**: `string`
+> **edgeRelationships**: `string`[]
 
-The relationship between the two vertices.
+The relationships between the two vertices.
 
 ***
 
