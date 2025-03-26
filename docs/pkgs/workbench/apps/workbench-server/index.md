@@ -4,6 +4,8 @@ A REST server implementation support the routes from various packages.
 
 A deployment of this API can be found here [https://workbench-api.twindev.org/info](https://workbench-api.twindev.org/info)
 
+The OpenAPI Spec can be found here [Workbench OpenAPI Spec](https://editor-next.swagger.io/?url=https://raw.githubusercontent.com/twinfoundation/workbench/refs/heads/next/apps/workbench-server/docs/open-api/spec.json)
+
 ## Building and running the application
 
 To install the dependencies, perform a full build and start the server.
