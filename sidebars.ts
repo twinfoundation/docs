@@ -13,84 +13,144 @@ import fs from "fs";
  Create as many sidebars as you want.
  */
 const sidebars: SidebarsConfig = {
-	// By default, Docusaurus generates a sidebar from the docs folder structure
 	introductionSidebar: ["intro"],
-
-	// But you can create a sidebar manually
-	packagesSidebar: ["packages", ...buildPackages()]
+	appsSidebar: ["apps", ...buildPkgs("apps")],
+	packagesSidebar: ["pkgs", ...buildPkgs("packages")]
 };
 
-function buildPackages(): any {
+function buildPkgs(packageType): any {
 	try {
-		const packageGroupsFilename = path.join(__dirname, "docs", "packages", "package-groups.json");
-		const packageGroupsContent = fs.readFileSync(packageGroupsFilename, "utf-8");
-		const packageGroups = JSON.parse(packageGroupsContent);
+		const reposFilename = path.join(__dirname, "docs", "repos.json");
+		const reposContent = fs.readFileSync(reposFilename, "utf-8");
+		const reposJson = JSON.parse(reposContent);
 
 		const groups = [];
 
-		for (const packageGroup of packageGroups) {
-			const packageFilename = path.join(__dirname, "docs", "packages", `${packageGroup}.json`);
-			const packageContent = fs.readFileSync(packageFilename, "utf-8");
-			groups.push(JSON.parse(packageContent));
+		for (const repo of reposJson) {
+			try {
+				const packageFilename = path.join(__dirname, "docs", "pkgs", repo.name, "package.json");
+
+				if (fileExists(packageFilename)) {
+					const packageContent = fs.readFileSync(packageFilename, "utf-8");
+					const packageContentJson = JSON.parse(packageContent);
+
+					const items = [];
+
+					for (const p of packageContentJson.workspaces) {
+						if (p.includes(`${packageType}/`)) {
+							items.push(
+								generatePackageItems(repo.name, packageType, p.replace(`${packageType}/`, ""))
+							);
+						}
+					}
+
+					if (items.length > 0) {
+						groups.push({
+							type: "category",
+							label: packageContentJson.description,
+							items
+						});
+					}
+				} else {
+					console.debug("! File not found", packageFilename);
+				}
+			} catch (error) {
+				console.debug(error);
+			}
 		}
 
-		return groups.map((pkg) => ({
-			type: "category",
-			label: pkg.label,
-			items: pkg.packages.map((p) => generatePackageItems(p.name))
-		}));
-	} catch {}
+		return groups;
+	} catch (error) {
+		console.debug(error);
+	}
 
 	return [];
 }
 
-function generatePackageItems(packageName: string): any {
+function generatePackageItems(packageGroup: string, packageType: string, packageName: string): any {
 	const referenceItems = [
-		dirExists(packageName, "reference/enums", "Enums"),
-		dirExists(packageName, "reference/classes", "Classes"),
-		dirExists(packageName, "reference/interfaces", "Interfaces")
+		dirExists(packageGroup, packageType, packageName, "docs/reference/classes", "Classes"),
+		dirExists(packageGroup, packageType, packageName, "docs/reference/interfaces", "Interfaces"),
+		dirExists(
+			packageGroup,
+			packageType,
+			packageName,
+			"docs/reference/types-aliases",
+			"Type Aliases"
+		),
+		dirExists(packageGroup, packageType, packageName, "docs/reference/functions", "Functions"),
+		dirExists(packageGroup, packageType, packageName, "docs/reference/variables", "Variables")
 	].filter(Boolean);
 
 	return {
 		type: "category",
 		label: packageName,
 		items: [
-			fileExists(packageName, "overview", "Overview"),
-			fileExists(packageName, "examples", "Examples"),
-			fileExists(packageName, "configuration", "Configuration"),
+			packageFileExists(packageGroup, packageType, packageName, "index", "Overview"),
+			packageFileExists(packageGroup, packageType, packageName, "docs/examples", "Examples"),
+			packageFileExists(
+				packageGroup,
+				packageType,
+				packageName,
+				"docs/configuration",
+				"Configuration"
+			),
+			packageFileExists(packageGroup, packageType, packageName, "docs/deployment", "Deployment"),
 			referenceItems.length > 0 && {
 				type: "category",
 				label: "Reference",
 				link: {
 					type: "doc",
-					id: `packages/${packageName.toLowerCase()}/reference/modules`
+					id: `pkgs/${packageGroup}/${packageType}/${packageName.toLowerCase()}/docs/reference/index`
 				},
 				items: referenceItems
 			},
-			fileExists(packageName, "changelog", "Changelog")
+			packageFileExists(packageGroup, packageType, packageName, "docs/changelog", "Changelog")
 		].filter(Boolean)
 	};
 }
 
-function fileExists(packageName: string, id: string, label: string): any {
-	const dirName = `packages/${packageName.toLowerCase()}/${id}`;
+function packageFileExists(
+	packageGroup: string,
+	packageType: string,
+	packageName: string,
+	id: string,
+	label: string
+): any {
+	const dirName = `pkgs/${packageGroup}/${packageType}/${packageName.toLowerCase()}/${id}`;
 	const file = path.join(__dirname, "docs", dirName);
 
-	try {
-		const st = fs.statSync(`${file}.md`);
+	const exists = fileExists(`${file}.md`);
 
-		if (st.isFile()) {
-			return {
-				type: "doc",
-				id: dirName,
-				label
-			};
-		}
-	} catch {}
+	if (exists) {
+		return {
+			type: "doc",
+			id: dirName,
+			label
+		};
+	}
 }
 
-function dirExists(packageName: string, id: string, label: string): any {
-	const dirName = `packages/${packageName.toLowerCase()}/${id}`;
+function fileExists(filename: string): boolean {
+	try {
+		const st = fs.statSync(filename);
+
+		if (st.isFile()) {
+			return true;
+		}
+	} catch {}
+
+	return false;
+}
+
+function dirExists(
+	packageGroup: string,
+	packageType: string,
+	packageName: string,
+	id: string,
+	label: string
+): any {
+	const dirName = `pkgs/${packageGroup}/${packageType}/${packageName.toLowerCase()}/${id}`;
 	const dir = path.join(__dirname, "docs", dirName);
 
 	try {

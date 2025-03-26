@@ -1,19 +1,20 @@
 import { themes as prismThemes } from "prism-react-renderer";
 import type { Config } from "@docusaurus/types";
-import type * as Preset from "@docusaurus/preset-classic";
+import * as Preset from "@docusaurus/preset-classic";
 
 const config: Config = {
-	title: "GTSC",
-	tagline: "Global Trade and Supply Chain",
+	title: "TWIN",
+	tagline: "Trade Worldwide Information Network",
 	favicon: "img/favicon.ico",
 
-	url: "https://docs.gtsc.io",
+	url: "https://twindev.org",
 	baseUrl: "/",
-	organizationName: "gtscio",
+	organizationName: "TWIN",
 	projectName: "docs",
 
 	onBrokenLinks: "throw",
 	onBrokenMarkdownLinks: "warn",
+	onBrokenAnchors: "log",
 
 	i18n: {
 		defaultLocale: "en",
@@ -22,6 +23,31 @@ const config: Config = {
 
 	plugins: ["./plugins/package-index.ts"],
 
+	headTags: [
+		{
+			tagName: "link",
+			attributes: {
+				rel: "preconnect",
+				href: "https://fonts.googleapis.com"
+			}
+		},
+		{
+			tagName: "link",
+			attributes: {
+				rel: "preconnect",
+				href: "https://fonts.gstatic.com",
+				crossOrigin: "true"
+			}
+		},
+		{
+			tagName: "link",
+			attributes: {
+				rel: "stylesheet",
+				href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+			}
+		}
+	],
+
 	presets: [
 		[
 			"classic",
@@ -29,7 +55,7 @@ const config: Config = {
 			{
 				docs: {
 					sidebarPath: "./sidebars.ts",
-					editUrl: "https://github.com/gtscio/docs/tree/main/"
+					editUrl: "https://github.com/twinfoundation/docs/tree/main/"
 				},
 				theme: {
 					customCss: "./src/css/custom.css"
@@ -41,12 +67,12 @@ const config: Config = {
 	themeConfig:
 		/** @type {import('@docusaurus/preset-classic').ThemeConfig} */
 		{
-			image: "img/gtsc.svg",
+			image: "img/logo.svg",
 			navbar: {
-				title: "GTSC",
+				title: "TWIN",
 				logo: {
-					alt: "GTSC",
-					src: "img/gtsc.svg"
+					alt: "TWIN",
+					src: "img/logo.svg"
 				},
 				items: [
 					{
@@ -57,19 +83,24 @@ const config: Config = {
 					},
 					{
 						type: "docSidebar",
+						sidebarId: "appsSidebar",
+						position: "left",
+						label: "Applications"
+					},
+					{
+						type: "docSidebar",
 						sidebarId: "packagesSidebar",
 						position: "left",
 						label: "Packages"
 					},
 					{
-						href: "https://github.com/gtscio/docs",
+						href: "https://github.com/twinfoundation/docs",
 						label: "GitHub",
 						position: "right"
 					}
 				]
 			},
 			footer: {
-				style: "dark",
 				links: [
 					{
 						title: "Docs",
@@ -79,8 +110,12 @@ const config: Config = {
 								to: "/docs/intro"
 							},
 							{
+								label: "Applications",
+								to: "/docs/apps"
+							},
+							{
 								label: "Packages",
-								to: "/docs/packages"
+								to: "/docs/pkgs"
 							}
 						]
 					},
@@ -106,12 +141,12 @@ const config: Config = {
 							},
 							{
 								label: "GitHub",
-								href: "https://github.com/iotaledger"
+								href: "https://github.com/twinfoundation"
 							}
 						]
 					}
 				],
-				copyright: `Copyright © ${new Date().getFullYear()} GTSC`
+				copyright: `Copyright © ${new Date().getFullYear()} TWIN`
 			},
 			prism: {
 				theme: prismThemes.github,

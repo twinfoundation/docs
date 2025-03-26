@@ -1,11 +1,45 @@
 .features {
 	display: flex;
+	flex-direction: row;
 	align-items: center;
-	padding: 2rem 0;
 	width: 100%;
 }
 
-.featureSvg {
-	height: 200px;
-	width: 200px;
+.featuresRow {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 10px;
+	margin: 20px;
+}
+
+.feature {
+	color: inherit;
+	cursor: pointer;
+	flex: 1;
+	border: 1px solid #eeeeee;
+	border-radius: 10px;
+	padding: 20px;
+	min-width: 200px;
+	overflow: hidden;
+}
+
+.featureImg {
+	height: 32px;
+	width: 32px;
+}
+
+.featureHeader {
+	display: flex;
+	flex-direction: row;
+	gap: 10px;
+	align-items: center;
+}
+
+.featureHeader > h3 {
+	margin: 0;
+}
+
+.featureDescription {
+	padding-top: 10px;
 }

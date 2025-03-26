@@ -1,0 +1,899 @@
+{
+	"openapi": "3.1.0",
+	"info": {
+		"title": "TWIN - Test Endpoints",
+		"description": "REST API for TWIN - Test Endpoints.",
+		"version": "1.0.0",
+		"license": {
+			"name": "Apache 2.0 License",
+			"url": "https://opensource.org/licenses/Apache-2.0"
+		}
+	},
+	"servers": [
+		{
+			"url": "https://localhost"
+		}
+	],
+	"tags": [
+		{
+			"name": "Data Processing",
+			"description": "Endpoints which are modelled to access a data processing contract."
+		}
+	],
+	"paths": {
+		"/data-processing/rule-group/{id}": {
+			"put": {
+				"operationId": "dataProcessingSetRuleGroup",
+				"summary": "Store a rule group for extraction.",
+				"tags": [
+					"Data Processing"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"description": "The rule id to set.",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "my-rule-group"
+					}
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"requestBody": {
+					"description": "Set a rule group.",
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/DataProcessingRuleGroupSetRequest"
+							},
+							"examples": {
+								"dataProcessingRuleGroupSetRequestExample": {
+									"value": {
+										"label": "My Rule Group",
+										"rules": [
+											{
+												"source": "$.foo",
+												"target": "goo",
+												"coerce": "bigint"
+											}
+										]
+									}
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"204": {
+						"description": "The rest request ended in success with no data."
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			"get": {
+				"operationId": "dataProcessingGetRuleGroup",
+				"summary": "Get a rule group for extraction.",
+				"tags": [
+					"Data Processing"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"description": "The rule id to set.",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "my-rule-group"
+					}
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Get a rule group response.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/RuleGroup"
+								},
+								"examples": {
+									"dataProcessingRuleGroupSetResponseExample": {
+										"value": {
+											"id": "my-rule-group",
+											"label": "My Rule Group",
+											"rules": [
+												{
+													"source": "$.foo",
+													"target": "goo",
+													"coerce": "bigint"
+												}
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			"delete": {
+				"operationId": "dataProcessingRemoveRuleGroup",
+				"summary": "Remove an extraction rule group.",
+				"tags": [
+					"Data Processing"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"description": "The rule id to remove.",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "my-rule-group"
+					}
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"responses": {
+					"204": {
+						"description": "The rest request ended in success with no data."
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/data-processing/extract": {
+			"post": {
+				"operationId": "dataProcessingExtract",
+				"summary": "Extract data from a binary source using the specified rule group.",
+				"tags": [
+					"Data Processing"
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"requestBody": {
+					"description": "Perform an extraction on the data with the specified ruleset.",
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/DataProcessingExtractRequest"
+							},
+							"examples": {
+								"dataProcessingExtractRequestExample": {
+									"value": {
+										"ruleGroupId": "my-rule-group",
+										"data": "eyJmb28iOiAiYmFyIn0="
+									}
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": "Response to extracting data.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/DataProcessingExtractResponse"
+								},
+								"examples": {
+									"dataProcessingExtractResponseExample": {
+										"value": {
+											"foo": "bar"
+										}
+									}
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/data-processing/convert": {
+			"post": {
+				"operationId": "dataProcessingConvert",
+				"summary": "Convert data from a binary source and return structured object.",
+				"tags": [
+					"Data Processing"
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"requestBody": {
+					"description": "Perform a conversion on the data.",
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/DataProcessingConvertRequest"
+							},
+							"examples": {
+								"dataProcessingConvertRequestExample": {
+									"value": {
+										"data": "eyJmb28iOiAiYmFyIn0="
+									}
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": "Response to converting data.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/DataProcessingConvertResponse"
+								},
+								"examples": {
+									"dataProcessingConvertResponseExample": {
+										"value": {
+											"foo": "bar"
+										}
+									}
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/data-processing/rule-group": {
+			"get": {
+				"operationId": "dataProcessingListRuleGroup",
+				"summary": "Get a list with rule groups for extraction.",
+				"tags": [
+					"Data Processing"
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Response for rule group entry list request.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/DataProcessingRuleGroupListResponse"
+								},
+								"examples": {
+									"ruleGroupListResponseExample": {
+										"value": {
+											"entities": [
+												{
+													"id": "my-rule-group",
+													"label": "My Rule Group",
+													"rules": [
+														{
+															"source": "$.foo",
+															"target": "goo",
+															"coerce": "bigint"
+														}
+													]
+												}
+											],
+											"cursor": "1"
+										}
+									}
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"components": {
+		"schemas": {
+			"CoerceType": {
+				"anyOf": [
+					{
+						"type": "string",
+						"const": "string",
+						"description": "String."
+					},
+					{
+						"type": "string",
+						"const": "number",
+						"description": "Number."
+					},
+					{
+						"type": "string",
+						"const": "integer",
+						"description": "Integer."
+					},
+					{
+						"type": "string",
+						"const": "boolean",
+						"description": "Boolean."
+					},
+					{
+						"type": "string",
+						"const": "bigint",
+						"description": "Big Integer."
+					},
+					{
+						"type": "string",
+						"const": "date",
+						"description": "Date."
+					},
+					{
+						"type": "string",
+						"const": "datetime",
+						"description": "Date Time."
+					},
+					{
+						"type": "string",
+						"const": "time",
+						"description": "Time."
+					},
+					{
+						"type": "string",
+						"const": "object",
+						"description": "Object."
+					},
+					{
+						"type": "string",
+						"const": "uint8array",
+						"description": "Uint8Array."
+					}
+				],
+				"description": "The types the extracted data can be coerced to."
+			},
+			"DataProcessingConvertRequest": {
+				"type": "object",
+				"properties": {
+					"data": {
+						"type": "string",
+						"description": "The binary data to convert in base64."
+					},
+					"overrideMimeType": {
+						"type": "string",
+						"description": "Use the specified mime type for conversion, will auto detect if undefined."
+					}
+				},
+				"required": [
+					"data"
+				],
+				"additionalProperties": false,
+				"description": "The params for the convert."
+			},
+			"DataProcessingConvertResponse": {
+				"description": "The converted data as an object."
+			},
+			"DataProcessingExtractRequest": {
+				"type": "object",
+				"properties": {
+					"ruleGroupId": {
+						"type": "string",
+						"description": "The rule group id to use for the extraction."
+					},
+					"data": {
+						"type": "string",
+						"description": "The binary data to extract from in base64."
+					},
+					"overrideExtractorType": {
+						"type": "string",
+						"description": "The default extractor connector will be used if not specified."
+					}
+				},
+				"required": [
+					"ruleGroupId",
+					"data"
+				],
+				"additionalProperties": false,
+				"description": "The params for the extract."
+			},
+			"DataProcessingExtractResponse": {
+				"description": "The extracted data in extended JSON format which keeps types like bigint, dates and uint8array intact. Use ObjectHelper.fromExtended to get the object with original types."
+			},
+			"DataProcessingRuleGroupListResponse": {
+				"type": "object",
+				"properties": {
+					"entities": {
+						"type": "array",
+						"items": {
+							"$ref": "#/components/schemas/RuleGroup"
+						},
+						"description": "The entities, which can be partial if a limited keys list was provided."
+					},
+					"cursor": {
+						"type": "string",
+						"description": "An optional cursor, when defined can be used to call find to get more entities."
+					}
+				},
+				"required": [
+					"entities"
+				],
+				"additionalProperties": false,
+				"description": "The response payload."
+			},
+			"DataProcessingRuleGroupSetRequest": {
+				"type": "object",
+				"properties": {
+					"label": {
+						"type": "string",
+						"description": "The label for the rule group."
+					},
+					"rules": {
+						"type": "array",
+						"items": {
+							"$ref": "#/components/schemas/Rule"
+						},
+						"description": "The rules."
+					}
+				},
+				"required": [
+					"label",
+					"rules"
+				],
+				"additionalProperties": false,
+				"description": "The data to be used in the store."
+			},
+			"Error": {
+				"type": "object",
+				"properties": {
+					"name": {
+						"type": "string",
+						"description": "The name for the error."
+					},
+					"message": {
+						"type": "string",
+						"description": "The message for the error."
+					},
+					"source": {
+						"type": "string",
+						"description": "The source of the error."
+					},
+					"properties": {
+						"type": "object",
+						"additionalProperties": {},
+						"description": "Any additional information for the error."
+					},
+					"stack": {
+						"type": "string",
+						"description": "The stack trace for the error."
+					},
+					"inner": {
+						"$ref": "#/components/schemas/Error"
+					}
+				},
+				"required": [
+					"name",
+					"message"
+				],
+				"additionalProperties": false,
+				"description": "Model to describe serialized error."
+			},
+			"Rule": {
+				"type": "object",
+				"properties": {
+					"source": {
+						"type": "string",
+						"description": "The path to the data in the document to extract. should be in JSONPath format https://www.rfc-editor.org/rfc/rfc9535.html."
+					},
+					"target": {
+						"type": "string",
+						"description": "The target path of where to store the extracted data. Supports simple dotted path notation, and numeric index notation."
+					},
+					"retainPathDepth": {
+						"type": "number",
+						"description": "When extracting objects, how much of the original path should be maintained in the target object."
+					},
+					"coerce": {
+						"$ref": "#/components/schemas/CoerceType"
+					}
+				},
+				"required": [
+					"source",
+					"target"
+				],
+				"additionalProperties": false,
+				"description": "Rule defining how to extract data from an object."
+			},
+			"RuleGroup": {
+				"type": "object",
+				"properties": {
+					"id": {
+						"type": "string",
+						"description": "The id for the rule group."
+					},
+					"label": {
+						"type": "string",
+						"description": "The label for the rule group."
+					},
+					"rules": {
+						"type": "array",
+						"items": {
+							"$ref": "#/components/schemas/Rule"
+						},
+						"description": "The rules."
+					}
+				},
+				"required": [
+					"id",
+					"label",
+					"rules"
+				],
+				"additionalProperties": false,
+				"description": "Group of rules for extraction."
+			}
+		},
+		"securitySchemes": {
+			"jwtBearerAuthScheme": {
+				"type": "http",
+				"scheme": "bearer",
+				"bearerFormat": "JWT"
+			}
+		}
+	}
+}

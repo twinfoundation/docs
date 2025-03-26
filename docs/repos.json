@@ -1,0 +1,80 @@
+[
+	{
+		"name": "workbench"
+	},
+	{
+		"name": "engine"
+	},
+	{
+		"name": "tools"
+	},
+	{
+		"name": "framework"
+	},
+	{
+		"name": "standards"
+	},
+	{
+		"name": "data"
+	},
+	{
+		"name": "api"
+	},
+	{
+		"name": "entity-storage"
+	},
+	{
+		"name": "blob-storage"
+	},
+	{
+		"name": "logging"
+	},
+	{
+		"name": "telemetry"
+	},
+	{
+		"name": "background-task"
+	},
+	{
+		"name": "event-bus"
+	},
+	{
+		"name": "vault"
+	},
+	{
+		"name": "dlt"
+	},
+	{
+		"name": "wallet"
+	},
+	{
+		"name": "identity"
+	},
+	{
+		"name": "nft"
+	},
+	{
+		"name": "immutable-storage"
+	},
+	{
+		"name": "immutable-proof"
+	},
+	{
+		"name": "attestation"
+	},
+	{
+		"name": "auditable-item-graph"
+	},
+	{
+		"name": "auditable-item-stream"
+	},
+	{
+		"name": "data-processing"
+	},
+	{
+		"name": "document-management"
+	},
+	{
+		"name": "ui"
+	}
+]
