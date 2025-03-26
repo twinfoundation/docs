@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/auditable-item-graph-rest-client",
-	"version": "0.0.1-next.32",
+	"version": "0.0.1-next.33",
 	"description": "Auditable Item Graph contract implementation which can connect to REST endpoints",
 	"repository": {
 		"type": "git",
@@ -32,7 +32,7 @@
 	"dependencies": {
 		"@twin.org/api-core": "next",
 		"@twin.org/api-models": "next",
-		"@twin.org/auditable-item-graph-models": "0.0.1-next.32",
+		"@twin.org/auditable-item-graph-models": "0.0.1-next.33",
 		"@twin.org/core": "next",
 		"@twin.org/data-json-ld": "next",
 		"@twin.org/entity": "next",

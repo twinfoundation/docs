@@ -88,7 +88,9 @@
 										"edges": [
 											{
 												"id": "edge1",
-												"edgeRelationship": "frenemy",
+												"edgeRelationships": [
+													"frenemy"
+												],
 												"annotationObject": {
 													"@context": "https://schema.org",
 													"@type": "Note",
@@ -97,7 +99,9 @@
 											},
 											{
 												"id": "edge2",
-												"edgeRelationship": "end",
+												"edgeRelationships": [
+													"end"
+												],
 												"annotationObject": {
 													"@context": "https://schema.org",
 													"@type": "Note",
@@ -731,7 +735,9 @@
 										"edges": [
 											{
 												"id": "edge1",
-												"edgeRelationship": "frenemy",
+												"edgeRelationships": [
+													"frenemy"
+												],
 												"annotationObject": {
 													"@context": "https://schema.org",
 													"@type": "Note",
@@ -740,7 +746,9 @@
 											},
 											{
 												"id": "edge2",
-												"edgeRelationship": "end",
+												"edgeRelationships": [
+													"end"
+												],
 												"annotationObject": {
 													"@context": "https://schema.org",
 													"@type": "Note",
@@ -873,8 +881,11 @@
 								"id": {
 									"type": "string"
 								},
-								"edgeRelationship": {
-									"type": "string"
+								"edgeRelationships": {
+									"type": "array",
+									"items": {
+										"type": "string"
+									}
 								},
 								"annotationObject": {
 									"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
@@ -882,7 +893,7 @@
 							},
 							"required": [
 								"id",
-								"edgeRelationship"
+								"edgeRelationships"
 							],
 							"additionalProperties": false
 						},
@@ -944,8 +955,11 @@
 								"id": {
 									"type": "string"
 								},
-								"edgeRelationship": {
-									"type": "string"
+								"edgeRelationships": {
+									"type": "array",
+									"items": {
+										"type": "string"
+									}
 								},
 								"annotationObject": {
 									"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
@@ -953,7 +967,7 @@
 							},
 							"required": [
 								"id",
-								"edgeRelationship"
+								"edgeRelationships"
 							],
 							"additionalProperties": false
 						},

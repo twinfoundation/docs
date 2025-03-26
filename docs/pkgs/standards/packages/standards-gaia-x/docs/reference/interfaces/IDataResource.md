@@ -69,7 +69,7 @@ the third case covers the idiom where a JSON-LD Node is supplied with id and typ
 
 ### producedBy
 
-> **producedBy**: `string`
+> **producedBy**: `string` \| [`IParticipant`](IParticipant.md)
 
 Who is the data producer
 
@@ -85,7 +85,7 @@ Pointer (URL) to the license
 
 ### copyrightOwnedBy
 
-> **copyrightOwnedBy**: `string`
+> **copyrightOwnedBy**: `string` \| [`IParticipant`](IParticipant.md)
 
 Copyright owner
 

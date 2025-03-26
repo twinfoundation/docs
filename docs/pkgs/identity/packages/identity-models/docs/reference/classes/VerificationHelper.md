@@ -38,7 +38,7 @@ Verified the JWT.
 
 ##### resolver
 
-[`IIdentityResolverConnector`](../interfaces/IIdentityResolverConnector.md)
+[`IIdentityResolverComponent`](../interfaces/IIdentityResolverComponent.md)
 
 The resolver to use for finding the document.
 
@@ -66,7 +66,7 @@ Verified the proof for the document e.g. verifiable credential.
 
 ##### resolver
 
-[`IIdentityResolverConnector`](../interfaces/IIdentityResolverConnector.md)
+[`IIdentityResolverComponent`](../interfaces/IIdentityResolverComponent.md)
 
 The resolver to use for finding the document.
 

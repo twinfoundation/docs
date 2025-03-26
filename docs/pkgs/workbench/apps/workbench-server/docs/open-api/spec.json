@@ -7525,7 +7525,9 @@
 										"edges": [
 											{
 												"id": "edge1",
-												"edgeRelationship": "frenemy",
+												"edgeRelationships": [
+													"frenemy"
+												],
 												"annotationObject": {
 													"@context": "https://schema.org",
 													"@type": "Note",
@@ -7534,7 +7536,9 @@
 											},
 											{
 												"id": "edge2",
-												"edgeRelationship": "end",
+												"edgeRelationships": [
+													"end"
+												],
 												"annotationObject": {
 													"@context": "https://schema.org",
 													"@type": "Note",
@@ -8168,7 +8172,9 @@
 										"edges": [
 											{
 												"id": "edge1",
-												"edgeRelationship": "frenemy",
+												"edgeRelationships": [
+													"frenemy"
+												],
 												"annotationObject": {
 													"@context": "https://schema.org",
 													"@type": "Note",
@@ -8177,7 +8183,9 @@
 											},
 											{
 												"id": "edge2",
-												"edgeRelationship": "end",
+												"edgeRelationships": [
+													"end"
+												],
 												"annotationObject": {
 													"@context": "https://schema.org",
 													"@type": "Note",
@@ -10461,8 +10469,11 @@
 								"id": {
 									"type": "string"
 								},
-								"edgeRelationship": {
-									"type": "string"
+								"edgeRelationships": {
+									"type": "array",
+									"items": {
+										"type": "string"
+									}
 								},
 								"annotationObject": {
 									"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
@@ -10470,7 +10481,7 @@
 							},
 							"required": [
 								"id",
-								"edgeRelationship"
+								"edgeRelationships"
 							],
 							"additionalProperties": false
 						},
@@ -10532,8 +10543,11 @@
 								"id": {
 									"type": "string"
 								},
-								"edgeRelationship": {
-									"type": "string"
+								"edgeRelationships": {
+									"type": "array",
+									"items": {
+										"type": "string"
+									}
 								},
 								"annotationObject": {
 									"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
@@ -10541,7 +10555,7 @@
 							},
 							"required": [
 								"id",
-								"edgeRelationship"
+								"edgeRelationships"
 							],
 							"additionalProperties": false
 						},
@@ -11296,13 +11310,23 @@
 				"type": "object",
 				"properties": {
 					"@context": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
+						"$ref": "https://schema.twindev.org/json-ld/JsonLdContextDefinitionRoot"
 					},
 					"@id": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
+						"anyOf": [
+							{
+								"type": "string"
+							},
+							{
+								"type": "array",
+								"items": {
+									"type": "string"
+								}
+							}
+						]
 					},
 					"@included": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
+						"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
 					},
 					"@graph": {
 						"anyOf": [
@@ -11333,12 +11357,12 @@
 					"@type": {
 						"anyOf": [
 							{
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
+								"type": "string"
 							},
 							{
 								"type": "array",
 								"items": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
+									"type": "string"
 								}
 							}
 						]
@@ -11346,11 +11370,11 @@
 					"@reverse": {
 						"type": "object",
 						"additionalProperties": {
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
+							"type": "string"
 						}
 					},
 					"@index": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
+						"type": "string"
 					},
 					"id": {
 						"type": "string",
@@ -11397,13 +11421,23 @@
 						},
 						"properties": {
 							"@context": {
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdContextDefinitionRoot"
 							},
 							"@id": {
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
+								"anyOf": [
+									{
+										"type": "string"
+									},
+									{
+										"type": "array",
+										"items": {
+											"type": "string"
+										}
+									}
+								]
 							},
 							"@included": {
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
 							},
 							"@graph": {
 								"anyOf": [
@@ -11434,12 +11468,12 @@
 							"@type": {
 								"anyOf": [
 									{
-										"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
+										"type": "string"
 									},
 									{
 										"type": "array",
 										"items": {
-											"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
+											"type": "string"
 										}
 									}
 								]
@@ -11447,11 +11481,11 @@
 							"@reverse": {
 								"type": "object",
 								"additionalProperties": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
+									"type": "string"
 								}
 							},
 							"@index": {
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
+								"type": "string"
 							},
 							"kty": {
 								"type": "string",
@@ -12457,6 +12491,10 @@
 					"proofObjectHash": {
 						"type": "string",
 						"description": "The hash of the object associated with the proof."
+					},
+					"verifiableStorageId": {
+						"type": "string",
+						"description": "The verifiable storage id for where the proof is stored."
 					},
 					"proof": {
 						"$ref": "#/components/schemas/DataIntegrityProof"
