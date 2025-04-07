@@ -4,7 +4,7 @@ import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import styles from './index.module.css';
 
 function HomepageHeader() {
-	return <img src="/img/banners/banner-ship.jpg" />;
+	return <img src="/img/banners/banner.jpg" />;
 }
 
 export default function Home(): JSX.Element {
