@@ -136,8 +136,8 @@ const config: Config = {
 						title: "More",
 						items: [
 							{
-								label: "Blog",
-								to: "https://blog.iota.org"
+								label: "www.twin.org",
+								href: "https://www.twin.org"
 							},
 							{
 								label: "GitHub",
