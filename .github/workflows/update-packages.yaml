@@ -616,7 +616,7 @@ jobs:
           git config --global user.name 'TWIN CI'
           git config --global user.email 'ci@twindev.org'
           git add .
-          git commit -am "Update Packages Documentation"
+          git commit -am "docs: update packages documentation"
           git push --set-upstream origin docs/update-${{ github.ref_name }}-${{ github.sha }}
           # Enable GitHub Actions Read and write permissions under Org -> Settings > Actions
           # Allow GitHub Actions to create and approve pull requests under Org -> Settings > Actions
