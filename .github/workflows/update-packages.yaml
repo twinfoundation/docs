@@ -620,6 +620,6 @@ jobs:
           git push --set-upstream origin docs/update-${{ github.ref_name }}-${{ github.sha }}
           # Enable GitHub Actions Read and write permissions under Org -> Settings > Actions
           # Allow GitHub Actions to create and approve pull requests under Org -> Settings > Actions
-          gh pr create -B ${{ github.ref_name }} -H docs/update-${{ github.ref_name }}-${{ github.sha }} --title 'Merge packages documentation into ${{ github.ref_name }}' --body 'Merges the docs from the packages into ${{ github.ref_name }}'
+          gh pr create -B ${{ github.ref_name }} -H docs/update-${{ github.ref_name }}-${{ github.sha }} --title 'docs: merge packages documentation into ${{ github.ref_name }}' --body 'Merges the docs from the packages into ${{ github.ref_name }}'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
