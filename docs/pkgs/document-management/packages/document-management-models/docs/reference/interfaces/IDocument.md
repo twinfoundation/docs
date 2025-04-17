@@ -145,19 +145,3 @@ The node which added the document to the graph.
 > **userIdentity**: `string`
 
 The user who added the document to the graph.
-
-***
-
-### revisions?
-
-> `optional` **revisions**: [`IDocument`](IDocument.md)[]
-
-The previous revisions of the document.
-
-***
-
-### revisionCursor?
-
-> `optional` **revisionCursor**: `string`
-
-The cursor to get the next chunk of revisions.

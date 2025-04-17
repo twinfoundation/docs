@@ -8,9 +8,9 @@ Class for performing identity operations on IOTA Stardust.
 
 ## Constructors
 
-### new IotaStardustIdentityResolverConnector()
+### Constructor
 
-> **new IotaStardustIdentityResolverConnector**(`options`): [`IotaStardustIdentityResolverConnector`](IotaStardustIdentityResolverConnector.md)
+> **new IotaStardustIdentityResolverConnector**(`options`): `IotaStardustIdentityResolverConnector`
 
 Create a new instance of IotaStardustIdentityResolverConnector.
 
@@ -24,7 +24,7 @@ The options for the identity connector.
 
 #### Returns
 
-[`IotaStardustIdentityResolverConnector`](IotaStardustIdentityResolverConnector.md)
+`IotaStardustIdentityResolverConnector`
 
 ## Properties
 

@@ -1,7 +1,8 @@
 {
 	"name": "@twin.org/workbench-server",
-	"version": "0.0.1-next.10",
+	"version": "0.0.1-next.11",
 	"description": "Serve APIs using the specified configuration",
+	"private": true,
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/twinfoundation/workbench.git",

@@ -12,9 +12,9 @@ Client for performing auditable item graph through to REST endpoints.
 
 ## Constructors
 
-### new AuditableItemGraphClient()
+### Constructor
 
-> **new AuditableItemGraphClient**(`config`): [`AuditableItemGraphClient`](AuditableItemGraphClient.md)
+> **new AuditableItemGraphClient**(`config`): `AuditableItemGraphClient`
 
 Create a new instance of AuditableItemGraphClient.
 
@@ -28,7 +28,7 @@ The configuration for the client.
 
 #### Returns
 
-[`AuditableItemGraphClient`](AuditableItemGraphClient.md)
+`AuditableItemGraphClient`
 
 #### Overrides
 
@@ -98,7 +98,7 @@ The id of the new graph item.
 
 ### get()
 
-> **get**(`id`, `options`?): `Promise`\<`IAuditableItemGraphVertex`\>
+> **get**(`id`, `options?`): `Promise`\<`IAuditableItemGraphVertex`\>
 
 Get a graph vertex.
 
@@ -204,7 +204,7 @@ Nothing.
 
 ### query()
 
-> **query**(`options`?, `conditions`?, `orderBy`?, `orderByDirection`?, `properties`?, `cursor`?, `pageSize`?): `Promise`\<`IAuditableItemGraphVertexList`\>
+> **query**(`options?`, `conditions?`, `orderBy?`, `orderByDirection?`, `properties?`, `cursor?`, `pageSize?`): `Promise`\<`IAuditableItemGraphVertexList`\>
 
 Query the graph for vertices.
 
@@ -225,6 +225,12 @@ The optional id to look for.
 `"both"` \| `"id"` \| `"alias"`
 
 Look in id, alias or both, defaults to both.
+
+###### resourceTypes?
+
+`string`[]
+
+Include vertices with specific resource types.
 
 ##### conditions?
 

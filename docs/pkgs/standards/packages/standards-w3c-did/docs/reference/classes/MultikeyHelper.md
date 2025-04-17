@@ -4,13 +4,13 @@ Helper methods for multikey.
 
 ## Constructors
 
-### new MultikeyHelper()
+### Constructor
 
-> **new MultikeyHelper**(): [`MultikeyHelper`](MultikeyHelper.md)
+> **new MultikeyHelper**(): `MultikeyHelper`
 
 #### Returns
 
-[`MultikeyHelper`](MultikeyHelper.md)
+`MultikeyHelper`
 
 ## Properties
 

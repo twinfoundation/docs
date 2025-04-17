@@ -10,7 +10,7 @@ Interface describing an attestation contract.
 
 ### create()
 
-> **create**(`attestationObject`, `namespace`?, `identity`?, `nodeIdentity`?): `Promise`\<`string`\>
+> **create**(`attestationObject`, `namespace?`, `identity?`, `nodeIdentity?`): `Promise`\<`string`\>
 
 Attest the data and return the collated information.
 
@@ -72,7 +72,7 @@ The verified attestation details.
 
 ### transfer()
 
-> **transfer**(`attestationId`, `holderIdentity`, `holderAddress`, `identity`?): `Promise`\<`void`\>
+> **transfer**(`attestationId`, `holderIdentity`, `holderAddress`, `identity?`): `Promise`\<`void`\>
 
 Transfer the attestation to a new holder.
 
@@ -112,7 +112,7 @@ Nothing.
 
 ### destroy()
 
-> **destroy**(`attestationId`, `identity`?): `Promise`\<`void`\>
+> **destroy**(`attestationId`, `identity?`): `Promise`\<`void`\>
 
 Destroy the attestation.
 

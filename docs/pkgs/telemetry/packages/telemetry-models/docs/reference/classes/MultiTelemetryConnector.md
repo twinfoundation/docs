@@ -8,9 +8,9 @@ Class for performing telemetry operations on multiple connectors.
 
 ## Constructors
 
-### new MultiTelemetryConnector()
+### Constructor
 
-> **new MultiTelemetryConnector**(`options`): [`MultiTelemetryConnector`](MultiTelemetryConnector.md)
+> **new MultiTelemetryConnector**(`options`): `MultiTelemetryConnector`
 
 Create a new instance of MultiTelemetryConnector.
 
@@ -24,7 +24,7 @@ The options for the connector.
 
 #### Returns
 
-[`MultiTelemetryConnector`](MultiTelemetryConnector.md)
+`MultiTelemetryConnector`
 
 ## Properties
 
@@ -120,7 +120,7 @@ Nothing.
 
 ### addMetricValue()
 
-> **addMetricValue**(`id`, `value`, `customData`?): `Promise`\<`string`\>
+> **addMetricValue**(`id`, `value`, `customData?`): `Promise`\<`string`\>
 
 Add a metric value.
 
@@ -182,7 +182,7 @@ Nothing.
 
 ### query()
 
-> **query**(`type`?, `cursor`?, `pageSize`?): `Promise`\<\{ `entities`: [`ITelemetryMetric`](../interfaces/ITelemetryMetric.md)[]; `cursor`: `string`; \}\>
+> **query**(`type?`, `cursor?`, `pageSize?`): `Promise`\<\{ `entities`: [`ITelemetryMetric`](../interfaces/ITelemetryMetric.md)[]; `cursor`: `string`; \}\>
 
 Query the metrics.
 
@@ -225,7 +225,7 @@ NotImplementedError if the implementation does not support retrieval.
 
 ### queryValues()
 
-> **queryValues**(`id`, `timeStart`?, `timeEnd`?, `cursor`?, `pageSize`?): `Promise`\<\{ `metric`: [`ITelemetryMetric`](../interfaces/ITelemetryMetric.md); `entities`: [`ITelemetryMetricValue`](../interfaces/ITelemetryMetricValue.md)[]; `cursor`: `string`; \}\>
+> **queryValues**(`id`, `timeStart?`, `timeEnd?`, `cursor?`, `pageSize?`): `Promise`\<\{ `metric`: [`ITelemetryMetric`](../interfaces/ITelemetryMetric.md); `entities`: [`ITelemetryMetricValue`](../interfaces/ITelemetryMetricValue.md)[]; `cursor`: `string`; \}\>
 
 Query the metric values.
 

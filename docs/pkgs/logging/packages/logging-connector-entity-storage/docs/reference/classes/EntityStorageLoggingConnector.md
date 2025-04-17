@@ -8,9 +8,9 @@ Class for performing logging operations in entity storage.
 
 ## Constructors
 
-### new EntityStorageLoggingConnector()
+### Constructor
 
-> **new EntityStorageLoggingConnector**(`options`?): [`EntityStorageLoggingConnector`](EntityStorageLoggingConnector.md)
+> **new EntityStorageLoggingConnector**(`options?`): `EntityStorageLoggingConnector`
 
 Create a new instance of EntityStorageLoggingConnector.
 
@@ -24,7 +24,7 @@ The options for the connector.
 
 #### Returns
 
-[`EntityStorageLoggingConnector`](EntityStorageLoggingConnector.md)
+`EntityStorageLoggingConnector`
 
 ## Properties
 
@@ -76,7 +76,7 @@ Nothing.
 
 ### query()
 
-> **query**(`conditions`?, `sortProperties`?, `properties`?, `cursor`?, `pageSize`?): `Promise`\<\{ `entities`: `Partial`\<`ILogEntry`\>[]; `cursor`: `string`; \}\>
+> **query**(`conditions?`, `sortProperties?`, `properties?`, `cursor?`, `pageSize?`): `Promise`\<\{ `entities`: `Partial`\<`ILogEntry`\>[]; `cursor`: `string`; \}\>
 
 Query the log entries.
 

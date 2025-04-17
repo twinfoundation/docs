@@ -8,7 +8,9 @@ Store entities using ScyllaDB.
 
 ## Type Parameters
 
-• **T** = `unknown`
+### T
+
+`T` = `unknown`
 
 ## Implements
 
@@ -16,9 +18,9 @@ Store entities using ScyllaDB.
 
 ## Constructors
 
-### new ScyllaDBTableConnector()
+### Constructor
 
-> **new ScyllaDBTableConnector**\<`T`\>(`options`): [`ScyllaDBTableConnector`](ScyllaDBTableConnector.md)\<`T`\>
+> **new ScyllaDBTableConnector**\<`T`\>(`options`): `ScyllaDBTableConnector`\<`T`\>
 
 Create a new instance of ScyllaDBTableConnector.
 
@@ -32,7 +34,7 @@ The options for the connector.
 
 #### Returns
 
-[`ScyllaDBTableConnector`](ScyllaDBTableConnector.md)\<`T`\>
+`ScyllaDBTableConnector`\<`T`\>
 
 #### Overrides
 
@@ -80,7 +82,7 @@ The schema for the entities.
 
 ### get()
 
-> **get**(`id`, `secondaryIndex`?, `conditions`?): `Promise`\<`undefined` \| `T`\>
+> **get**(`id`, `secondaryIndex?`, `conditions?`): `Promise`\<`undefined` \| `T`\>
 
 Get an entity.
 
@@ -122,7 +124,7 @@ The object if it can be found or undefined.
 
 ### query()
 
-> **query**(`conditions`?, `sortProperties`?, `properties`?, `cursor`?, `pageSize`?): `Promise`\<\{ `entities`: `Partial`\<`T`\>[]; `cursor`: `string`; \}\>
+> **query**(`conditions?`, `sortProperties?`, `properties?`, `cursor?`, `pageSize?`): `Promise`\<\{ `entities`: `Partial`\<`T`\>[]; `cursor`: `string`; \}\>
 
 Find all the entities which match the conditions.
 
@@ -177,7 +179,7 @@ and a cursor which can be used to request more entities.
 
 ### bootstrap()
 
-> **bootstrap**(`nodeLoggingConnectorType`?): `Promise`\<`boolean`\>
+> **bootstrap**(`nodeLoggingConnectorType?`): `Promise`\<`boolean`\>
 
 Bootstrap the component by creating and initializing any resources it needs.
 
@@ -203,7 +205,7 @@ True if the bootstrapping process was successful.
 
 ### set()
 
-> **set**(`entity`, `conditions`?): `Promise`\<`void`\>
+> **set**(`entity`, `conditions?`): `Promise`\<`void`\>
 
 Set an entity.
 
@@ -233,7 +235,7 @@ The optional conditions to match for the entities.
 
 ### remove()
 
-> **remove**(`id`, `conditions`?): `Promise`\<`void`\>
+> **remove**(`id`, `conditions?`): `Promise`\<`void`\>
 
 Remove the entity.
 

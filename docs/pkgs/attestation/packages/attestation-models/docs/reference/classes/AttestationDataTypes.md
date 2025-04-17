@@ -4,13 +4,13 @@ Handle all the data types for attestation.
 
 ## Constructors
 
-### new AttestationDataTypes()
+### Constructor
 
-> **new AttestationDataTypes**(): [`AttestationDataTypes`](AttestationDataTypes.md)
+> **new AttestationDataTypes**(): `AttestationDataTypes`
 
 #### Returns
 
-[`AttestationDataTypes`](AttestationDataTypes.md)
+`AttestationDataTypes`
 
 ## Methods
 

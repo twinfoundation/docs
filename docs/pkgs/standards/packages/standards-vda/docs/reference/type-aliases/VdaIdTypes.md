@@ -1,5 +1,5 @@
 # Type Alias: VdaIdTypes
 
-> **VdaIdTypes**: *typeof* [`VdaIdTypes`](../variables/VdaIdTypes.md)\[keyof *typeof* [`VdaIdTypes`](../variables/VdaIdTypes.md)\]
+> **VdaIdTypes** = *typeof* [`VdaIdTypes`](../variables/VdaIdTypes.md)\[keyof *typeof* [`VdaIdTypes`](../variables/VdaIdTypes.md)\]
 
 VDA identifiers.

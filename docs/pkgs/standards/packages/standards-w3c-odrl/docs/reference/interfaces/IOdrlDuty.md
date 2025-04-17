@@ -10,7 +10,7 @@ A Duty is fulfilled if all constraints are satisfied and if its action has been 
 
 ## Indexable
 
-\[`key`: `string`\]: `undefined` \| `null` \| `string` \| `number` \| `boolean` \| `string`[] \| `IJsonLdContextDefinition` \| `IJsonLdContextDefinitionElement`[] \| `IJsonLdIdMap` \| `IJsonLdNodeObject` \| `IJsonLdListObject` \| `object` & `object` \| `object` & `object` \| `object` & `object` \| `IJsonLdSetObject` \| `IJsonLdJsonObject` \| `IJsonLdIndexMap` \| `IJsonLdLanguageMap` \| `IJsonLdGraphObject` \| `IJsonLdNodeObject`[] \| `IJsonLdJsonObject`[] \| \{\} \| `IJsonLdTypeMap` \| `IJsonLdNodePrimitive`[]
+\[`key`: `string`\]: `undefined` \| `null` \| `string` \| `number` \| `boolean` \| `string`[] \| `IJsonLdContextDefinition` \| `IJsonLdContextDefinitionElement`[] \| `IJsonLdIdMap` \| `IJsonLdNodeObject` \| `IJsonLdListObject` \| `object` & `object` \| `object` & `object` \| `object` & `object` \| `IJsonLdSetObject` \| `IJsonLdJsonObject` \| `IJsonLdIndexMap` \| `IJsonLdLanguageMap` \| `IJsonLdGraphObject` \| `IJsonLdNodeObject`[] \| `IJsonLdJsonObject`[] \| \{[`key`: `string`]: `string`; \} \| `IJsonLdTypeMap` \| `IJsonLdNodePrimitive`[]
 
 ## Properties
 
@@ -34,7 +34,7 @@ Used when the duty involves tracking
 
 ### consequence?
 
-> `optional` **consequence**: [`IOdrlDuty`](IOdrlDuty.md)[]
+> `optional` **consequence**: `IOdrlDuty`[]
 
 The consequences if the duty is not fulfilled.
 Only applicable when the Duty is referenced by a Rule with duty or obligation
@@ -44,7 +44,7 @@ properties.
 
 ### remedy?
 
-> `optional` **remedy**: [`IOdrlDuty`](IOdrlDuty.md)[]
+> `optional` **remedy**: `IOdrlDuty`[]
 
 The remedies that may be fulfilled to cure the violation.
 

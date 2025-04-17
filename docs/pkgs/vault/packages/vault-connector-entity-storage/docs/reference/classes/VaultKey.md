@@ -4,13 +4,13 @@ Class defining a vault key.
 
 ## Constructors
 
-### new VaultKey()
+### Constructor
 
-> **new VaultKey**(): [`VaultKey`](VaultKey.md)
+> **new VaultKey**(): `VaultKey`
 
 #### Returns
 
-[`VaultKey`](VaultKey.md)
+`VaultKey`
 
 ## Properties
 

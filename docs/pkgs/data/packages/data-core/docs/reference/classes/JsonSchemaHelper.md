@@ -4,13 +4,13 @@ A helper for JSON schemas.
 
 ## Constructors
 
-### new JsonSchemaHelper()
+### Constructor
 
-> **new JsonSchemaHelper**(): [`JsonSchemaHelper`](JsonSchemaHelper.md)
+> **new JsonSchemaHelper**(): `JsonSchemaHelper`
 
 #### Returns
 
-[`JsonSchemaHelper`](JsonSchemaHelper.md)
+`JsonSchemaHelper`
 
 ## Properties
 
@@ -24,13 +24,15 @@ The schema version.
 
 ### validate()
 
-> `static` **validate**\<`T`\>(`schema`, `data`, `additionalTypes`?): `Promise`\<[`ISchemaValidationResult`](../interfaces/ISchemaValidationResult.md)\>
+> `static` **validate**\<`T`\>(`schema`, `data`, `additionalTypes?`): `Promise`\<[`ISchemaValidationResult`](../interfaces/ISchemaValidationResult.md)\>
 
 Validates data against the schema.
 
 #### Type Parameters
 
-• **T** = `unknown`
+##### T
+
+`T` = `unknown`
 
 #### Parameters
 
@@ -88,7 +90,7 @@ The types of the property.
 
 ### entitySchemaToJsonSchema()
 
-> `static` **entitySchemaToJsonSchema**(`entitySchema`, `baseDomain`?): `JSONSchema7`
+> `static` **entitySchemaToJsonSchema**(`entitySchema`, `baseDomain?`): `JSONSchema7`
 
 Convert an entity schema to JSON schema e.g https://example.com/schemas/.
 

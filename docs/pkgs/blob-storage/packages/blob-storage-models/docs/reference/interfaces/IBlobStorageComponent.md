@@ -10,7 +10,7 @@ Interface describing an blob storage component.
 
 ### create()
 
-> **create**(`blob`, `encodingFormat`?, `fileExtension`?, `metadata`?, `namespace`?, `userIdentity`?, `nodeIdentity`?): `Promise`\<`string`\>
+> **create**(`blob`, `encodingFormat?`, `fileExtension?`, `metadata?`, `namespace?`, `userIdentity?`, `nodeIdentity?`): `Promise`\<`string`\>
 
 Create the blob with some metadata.
 
@@ -68,7 +68,7 @@ The id of the stored blob in urn format.
 
 ### get()
 
-> **get**(`id`, `includeContent`, `userIdentity`?, `nodeIdentity`?): `Promise`\<[`IBlobStorageEntry`](IBlobStorageEntry.md)\>
+> **get**(`id`, `includeContent`, `userIdentity?`, `nodeIdentity?`): `Promise`\<[`IBlobStorageEntry`](IBlobStorageEntry.md)\>
 
 Get the blob and metadata.
 
@@ -112,7 +112,7 @@ Not found error if the blob cannot be found.
 
 ### update()
 
-> **update**(`id`, `encodingFormat`?, `fileExtension`?, `metadata`?, `userIdentity`?, `nodeIdentity`?): `Promise`\<`void`\>
+> **update**(`id`, `encodingFormat?`, `fileExtension?`, `metadata?`, `userIdentity?`, `nodeIdentity?`): `Promise`\<`void`\>
 
 Update the blob with metadata.
 
@@ -168,7 +168,7 @@ Not found error if the blob cannot be found.
 
 ### remove()
 
-> **remove**(`id`, `userIdentity`?, `nodeIdentity`?): `Promise`\<`void`\>
+> **remove**(`id`, `userIdentity?`, `nodeIdentity?`): `Promise`\<`void`\>
 
 Remove the blob.
 
@@ -206,7 +206,7 @@ Not found error if the blob cannot be found.
 
 ### query()
 
-> **query**(`conditions`?, `orderBy`?, `orderByDirection`?, `cursor`?, `pageSize`?, `userIdentity`?, `nodeIdentity`?): `Promise`\<[`IBlobStorageEntryList`](IBlobStorageEntryList.md)\>
+> **query**(`conditions?`, `orderBy?`, `orderByDirection?`, `cursor?`, `pageSize?`, `userIdentity?`, `nodeIdentity?`): `Promise`\<[`IBlobStorageEntryList`](IBlobStorageEntryList.md)\>
 
 Query all the blob storage entries which match the conditions.
 

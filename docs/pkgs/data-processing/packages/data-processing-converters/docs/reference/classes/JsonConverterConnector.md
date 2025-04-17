@@ -8,13 +8,13 @@ Class for converting data to JSON from bytes.
 
 ## Constructors
 
-### new JsonConverterConnector()
+### Constructor
 
-> **new JsonConverterConnector**(): [`JsonConverterConnector`](JsonConverterConnector.md)
+> **new JsonConverterConnector**(): `JsonConverterConnector`
 
 #### Returns
 
-[`JsonConverterConnector`](JsonConverterConnector.md)
+`JsonConverterConnector`
 
 ## Properties
 

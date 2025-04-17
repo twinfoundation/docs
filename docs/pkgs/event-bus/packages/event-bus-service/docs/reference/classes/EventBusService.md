@@ -8,9 +8,9 @@ Class for performing event bus operations over web sockets.
 
 ## Constructors
 
-### new EventBusService()
+### Constructor
 
-> **new EventBusService**(`options`?): [`EventBusService`](EventBusService.md)
+> **new EventBusService**(`options?`): `EventBusService`
 
 Create a new instance of EventBusService.
 
@@ -24,7 +24,7 @@ The options for the connector.
 
 #### Returns
 
-[`EventBusService`](EventBusService.md)
+`EventBusService`
 
 ## Properties
 
@@ -56,7 +56,9 @@ Subscribe to the event bus.
 
 #### Type Parameters
 
-• **T**
+##### T
+
+`T`
 
 #### Parameters
 
@@ -118,7 +120,9 @@ Publish an event to the bus.
 
 #### Type Parameters
 
-• **T**
+##### T
+
+`T`
 
 #### Parameters
 

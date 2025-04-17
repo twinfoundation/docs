@@ -8,9 +8,9 @@ Class for performing wallet operations on IOTA.
 
 ## Constructors
 
-### new IotaWalletConnector()
+### Constructor
 
-> **new IotaWalletConnector**(`options`): [`IotaWalletConnector`](IotaWalletConnector.md)
+> **new IotaWalletConnector**(`options`): `IotaWalletConnector`
 
 Create a new instance of IOTA Wallet Connector.
 
@@ -24,7 +24,7 @@ The options for the wallet connector.
 
 #### Returns
 
-[`IotaWalletConnector`](IotaWalletConnector.md)
+`IotaWalletConnector`
 
 ## Properties
 
@@ -76,7 +76,7 @@ Nothing.
 
 ### getAddresses()
 
-> **getAddresses**(`identity`, `accountIndex`, `startAddressIndex`, `count`, `isInternal`?): `Promise`\<`string`[]\>
+> **getAddresses**(`identity`, `accountIndex`, `startAddressIndex`, `count`, `isInternal?`): `Promise`\<`string`[]\>
 
 Get the addresses for the identity.
 
@@ -158,7 +158,7 @@ The balance.
 
 ### ensureBalance()
 
-> **ensureBalance**(`identity`, `address`, `ensureBalance`, `timeoutInSeconds`?): `Promise`\<`boolean`\>
+> **ensureBalance**(`identity`, `address`, `ensureBalance`, `timeoutInSeconds?`): `Promise`\<`boolean`\>
 
 Ensure the balance for the given address is at least the given amount.
 

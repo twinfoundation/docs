@@ -8,9 +8,9 @@ Class for performing background task operations in entity storage.
 
 ## Constructors
 
-### new EntityStorageBackgroundTaskConnector()
+### Constructor
 
-> **new EntityStorageBackgroundTaskConnector**(`options`?): [`EntityStorageBackgroundTaskConnector`](EntityStorageBackgroundTaskConnector.md)
+> **new EntityStorageBackgroundTaskConnector**(`options?`): `EntityStorageBackgroundTaskConnector`
 
 Create a new instance of EntityStorageBackgroundTaskConnector.
 
@@ -24,7 +24,7 @@ The options for the connector.
 
 #### Returns
 
-[`EntityStorageBackgroundTaskConnector`](EntityStorageBackgroundTaskConnector.md)
+`EntityStorageBackgroundTaskConnector`
 
 ## Properties
 
@@ -50,7 +50,7 @@ Runtime name for the class.
 
 ### start()
 
-> **start**(`nodeIdentity`, `nodeLoggingConnectorType`?): `Promise`\<`void`\>
+> **start**(`nodeIdentity`, `nodeLoggingConnectorType?`): `Promise`\<`void`\>
 
 The component needs to be started when the node is initialized.
 
@@ -82,7 +82,7 @@ Nothing.
 
 ### stop()
 
-> **stop**(`nodeIdentity`, `nodeLoggingConnectorType`?): `Promise`\<`void`\>
+> **stop**(`nodeIdentity`, `nodeLoggingConnectorType?`): `Promise`\<`void`\>
 
 The component needs to be stopped when the node is closed.
 
@@ -114,15 +114,19 @@ Nothing.
 
 ### registerHandler()
 
-> **registerHandler**\<`T`, `U`\>(`taskType`, `module`, `method`, `stateChangeCallback`?): `Promise`\<`void`\>
+> **registerHandler**\<`T`, `U`\>(`taskType`, `module`, `method`, `stateChangeCallback?`): `Promise`\<`void`\>
 
 Register a handler for a task.
 
 #### Type Parameters
 
-• **T**
+##### T
 
-• **U**
+`T`
+
+##### U
+
+`U`
 
 #### Parameters
 
@@ -186,13 +190,15 @@ The type of the task handler to remove.
 
 ### create()
 
-> **create**\<`T`\>(`type`, `payload`?, `options`?): `Promise`\<`string`\>
+> **create**\<`T`\>(`type`, `payload?`, `options?`): `Promise`\<`string`\>
 
 Create a new task.
 
 #### Type Parameters
 
-• **T**
+##### T
+
+`T`
 
 #### Parameters
 
@@ -250,9 +256,13 @@ Get the task details.
 
 #### Type Parameters
 
-• **T**
+##### T
 
-• **U**
+`T`
+
+##### U
+
+`U`
 
 #### Parameters
 
@@ -354,7 +364,7 @@ Nothing.
 
 ### query()
 
-> **query**(`taskType`?, `taskStatus`?, `sortProperty`?, `sortDirection`?, `cursor`?, `pageSize`?): `Promise`\<\{ `entities`: `IBackgroundTask`\<`any`, `any`\>[]; `cursor`: `string`; \}\>
+> **query**(`taskType?`, `taskStatus?`, `sortProperty?`, `sortDirection?`, `cursor?`, `pageSize?`): `Promise`\<\{ `entities`: `IBackgroundTask`\<`any`, `any`\>[]; `cursor`: `string`; \}\>
 
 Get a list of tasks.
 

@@ -8,9 +8,9 @@ Class for performing attestation operations in entity storage.
 
 ## Constructors
 
-### new OpenAttestationConnector()
+### Constructor
 
-> **new OpenAttestationConnector**(`options`): [`OpenAttestationConnector`](OpenAttestationConnector.md)
+> **new OpenAttestationConnector**(`options`): `OpenAttestationConnector`
 
 Create a new instance of OpenAttestationConnector.
 
@@ -24,7 +24,7 @@ The options for the attestation connector.
 
 #### Returns
 
-[`OpenAttestationConnector`](OpenAttestationConnector.md)
+`OpenAttestationConnector`
 
 ## Properties
 

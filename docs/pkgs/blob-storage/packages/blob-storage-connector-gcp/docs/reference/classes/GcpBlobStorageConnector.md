@@ -9,9 +9,9 @@ See https://cloud.google.com/storage/docs/reference/libraries for more informati
 
 ## Constructors
 
-### new GcpBlobStorageConnector()
+### Constructor
 
-> **new GcpBlobStorageConnector**(`options`): [`GcpBlobStorageConnector`](GcpBlobStorageConnector.md)
+> **new GcpBlobStorageConnector**(`options`): `GcpBlobStorageConnector`
 
 Create a new instance of GcpBlobStorageConnector.
 
@@ -25,7 +25,7 @@ The options for the connector.
 
 #### Returns
 
-[`GcpBlobStorageConnector`](GcpBlobStorageConnector.md)
+`GcpBlobStorageConnector`
 
 ## Properties
 
@@ -51,7 +51,7 @@ Runtime name for the class.
 
 ### bootstrap()
 
-> **bootstrap**(`nodeLoggingConnectorType`?): `Promise`\<`boolean`\>
+> **bootstrap**(`nodeLoggingConnectorType?`): `Promise`\<`boolean`\>
 
 Bootstrap the component by creating and initializing any resources it needs.
 

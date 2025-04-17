@@ -4,13 +4,13 @@ Helpers for vault connectors.
 
 ## Constructors
 
-### new VaultConnectorHelper()
+### Constructor
 
-> **new VaultConnectorHelper**(): [`VaultConnectorHelper`](VaultConnectorHelper.md)
+> **new VaultConnectorHelper**(): `VaultConnectorHelper`
 
 #### Returns
 
-[`VaultConnectorHelper`](VaultConnectorHelper.md)
+`VaultConnectorHelper`
 
 ## Methods
 
@@ -62,9 +62,13 @@ Verify a JWT using a vault connector.
 
 #### Type Parameters
 
-• **T** *extends* `IJwtHeader`
+##### T
 
-• **U** *extends* `IJwtPayload`
+`T` *extends* `IJwtHeader`
+
+##### U
+
+`U` *extends* `IJwtPayload`
 
 #### Parameters
 

@@ -8,13 +8,13 @@ Class for performing logging operations to nowhere.
 
 ## Constructors
 
-### new SilentLoggingConnector()
+### Constructor
 
-> **new SilentLoggingConnector**(): [`SilentLoggingConnector`](SilentLoggingConnector.md)
+> **new SilentLoggingConnector**(): `SilentLoggingConnector`
 
 #### Returns
 
-[`SilentLoggingConnector`](SilentLoggingConnector.md)
+`SilentLoggingConnector`
 
 ## Properties
 
@@ -66,7 +66,7 @@ Nothing.
 
 ### query()
 
-> **query**(`conditions`?, `sortProperties`?, `properties`?, `cursor`?, `pageSize`?): `Promise`\<\{ `entities`: `Partial`\<[`ILogEntry`](../interfaces/ILogEntry.md)\>[]; `cursor`: `string`; \}\>
+> **query**(`conditions?`, `sortProperties?`, `properties?`, `cursor?`, `pageSize?`): `Promise`\<\{ `entities`: `Partial`\<[`ILogEntry`](../interfaces/ILogEntry.md)\>[]; `cursor`: `string`; \}\>
 
 Query the log entries.
 

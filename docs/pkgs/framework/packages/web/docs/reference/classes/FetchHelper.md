@@ -4,19 +4,19 @@ Class to helper with fetch operations.
 
 ## Constructors
 
-### new FetchHelper()
+### Constructor
 
-> **new FetchHelper**(): [`FetchHelper`](FetchHelper.md)
+> **new FetchHelper**(): `FetchHelper`
 
 #### Returns
 
-[`FetchHelper`](FetchHelper.md)
+`FetchHelper`
 
 ## Methods
 
 ### fetch()
 
-> `static` **fetch**(`source`, `url`, `method`, `body`?, `options`?): `Promise`\<`Response`\>
+> `static` **fetch**(`source`, `url`, `method`, `body?`, `options?`): `Promise`\<`Response`\>
 
 Perform a fetch request.
 
@@ -62,15 +62,19 @@ The response.
 
 ### fetchJson()
 
-> `static` **fetchJson**\<`T`, `U`\>(`source`, `url`, `method`, `requestData`?, `options`?): `Promise`\<`U`\>
+> `static` **fetchJson**\<`T`, `U`\>(`source`, `url`, `method`, `requestData?`, `options?`): `Promise`\<`U`\>
 
 Perform a request in json format.
 
 #### Type Parameters
 
-• **T**
+##### T
 
-• **U**
+`T`
+
+##### U
+
+`U`
 
 #### Parameters
 
@@ -114,13 +118,15 @@ The response.
 
 ### fetchBinary()
 
-> `static` **fetchBinary**\<`T`\>(`source`, `url`, `method`, `requestData`?, `options`?): `Promise`\<`Uint8Array`\<`ArrayBufferLike`\> \| `T`\>
+> `static` **fetchBinary**\<`T`\>(`source`, `url`, `method`, `requestData?`, `options?`): `Promise`\<`Uint8Array`\<`ArrayBufferLike`\> \| `T`\>
 
 Perform a request for binary data.
 
 #### Type Parameters
 
-• **T**
+##### T
+
+`T`
 
 #### Parameters
 
@@ -182,7 +188,9 @@ Get a cache entry.
 
 #### Type Parameters
 
-• **T**
+##### T
+
+`T`
 
 #### Parameters
 
@@ -195,6 +203,40 @@ The url for the request.
 #### Returns
 
 `Promise`\<`undefined` \| `T`\>
+
+The cache entry if it exists.
+
+***
+
+### setCacheEntry()
+
+> `static` **setCacheEntry**\<`T`\>(`url`, `value`): `Promise`\<`void`\>
+
+Set a cache entry.
+
+#### Type Parameters
+
+##### T
+
+`T`
+
+#### Parameters
+
+##### url
+
+`string`
+
+The url for the request.
+
+##### value
+
+`T`
+
+The value to cache.
+
+#### Returns
+
+`Promise`\<`void`\>
 
 The cache entry if it exists.
 

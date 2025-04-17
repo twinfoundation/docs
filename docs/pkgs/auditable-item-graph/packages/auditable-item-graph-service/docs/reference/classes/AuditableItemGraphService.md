@@ -8,9 +8,9 @@ Class for performing auditable item graph operations.
 
 ## Constructors
 
-### new AuditableItemGraphService()
+### Constructor
 
-> **new AuditableItemGraphService**(`options`?): [`AuditableItemGraphService`](AuditableItemGraphService.md)
+> **new AuditableItemGraphService**(`options?`): `AuditableItemGraphService`
 
 Create a new instance of AuditableItemGraphService.
 
@@ -24,7 +24,7 @@ The dependencies for the auditable item graph connector.
 
 #### Returns
 
-[`AuditableItemGraphService`](AuditableItemGraphService.md)
+`AuditableItemGraphService`
 
 ## Properties
 
@@ -58,7 +58,7 @@ Runtime name for the class.
 
 ### create()
 
-> **create**(`vertex`, `userIdentity`?, `nodeIdentity`?): `Promise`\<`string`\>
+> **create**(`vertex`, `userIdentity?`, `nodeIdentity?`): `Promise`\<`string`\>
 
 Create a new graph vertex.
 
@@ -118,7 +118,7 @@ The id of the new graph item.
 
 ### get()
 
-> **get**(`id`, `options`?): `Promise`\<`IAuditableItemGraphVertex`\>
+> **get**(`id`, `options?`): `Promise`\<`IAuditableItemGraphVertex`\>
 
 Get a graph vertex.
 
@@ -170,7 +170,7 @@ NotFoundError if the vertex is not found.
 
 ### update()
 
-> **update**(`vertex`, `userIdentity`?, `nodeIdentity`?): `Promise`\<`void`\>
+> **update**(`vertex`, `userIdentity?`, `nodeIdentity?`): `Promise`\<`void`\>
 
 Update a graph vertex.
 
@@ -236,7 +236,7 @@ Nothing.
 
 ### removeVerifiable()
 
-> **removeVerifiable**(`id`, `nodeIdentity`?): `Promise`\<`void`\>
+> **removeVerifiable**(`id`, `nodeIdentity?`): `Promise`\<`void`\>
 
 Remove the verifiable storage for an item.
 
@@ -272,7 +272,7 @@ NotFoundError if the vertex is not found.
 
 ### query()
 
-> **query**(`options`?, `conditions`?, `orderBy`?, `orderByDirection`?, `properties`?, `cursor`?, `pageSize`?): `Promise`\<`IAuditableItemGraphVertexList`\>
+> **query**(`options?`, `conditions?`, `orderBy?`, `orderByDirection?`, `properties?`, `cursor?`, `pageSize?`): `Promise`\<`IAuditableItemGraphVertexList`\>
 
 Query the graph for vertices.
 
@@ -293,6 +293,12 @@ The optional id to look for.
 `"both"` \| `"id"` \| `"alias"`
 
 Look in id, alias or both, defaults to both.
+
+###### includesResourceTypes?
+
+`string`[]
+
+Include vertices with specific resource types.
 
 ##### conditions?
 

@@ -8,9 +8,9 @@ Class for performing verifiable storage operations on IOTA.
 
 ## Constructors
 
-### new IotaVerifiableStorageConnector()
+### Constructor
 
-> **new IotaVerifiableStorageConnector**(`options`): [`IotaVerifiableStorageConnector`](IotaVerifiableStorageConnector.md)
+> **new IotaVerifiableStorageConnector**(`options`): `IotaVerifiableStorageConnector`
 
 Create a new instance of IotaVerifiableStorageConnector.
 
@@ -24,7 +24,7 @@ The options for the storage connector.
 
 #### Returns
 
-[`IotaVerifiableStorageConnector`](IotaVerifiableStorageConnector.md)
+`IotaVerifiableStorageConnector`
 
 ## Properties
 
@@ -50,7 +50,7 @@ Runtime name for the class.
 
 ### start()
 
-> **start**(`nodeIdentity`, `nodeLoggingConnectorType`?, `componentState`?): `Promise`\<`void`\>
+> **start**(`nodeIdentity`, `nodeLoggingConnectorType?`, `componentState?`): `Promise`\<`void`\>
 
 Bootstrap the Verifiable Storage contract.
 
@@ -154,7 +154,7 @@ The updated receipt.
 
 ### get()
 
-> **get**(`id`, `options`?): `Promise`\<\{ `data`: `Uint8Array`\<`ArrayBufferLike`\>; `receipt`: `IJsonLdNodeObject`; \}\>
+> **get**(`id`, `options?`): `Promise`\<\{ `data`: `Uint8Array`\<`ArrayBufferLike`\>; `receipt`: `IJsonLdNodeObject`; \}\>
 
 Get a verifiable item.
 

@@ -76,7 +76,7 @@ Nothing.
 
 ### extract()
 
-> **extract**(`ruleGroupId`, `data`, `overrideExtractorType`?): `Promise`\<`unknown`\>
+> **extract**(`ruleGroupId`, `data`, `overrideExtractorType?`): `Promise`\<`unknown`\>
 
 Extracts data from the provided input.
 
@@ -110,7 +110,7 @@ The extracted data.
 
 ### convert()
 
-> **convert**(`data`, `overrideMimeType`?): `Promise`\<`unknown`\>
+> **convert**(`data`, `overrideMimeType?`): `Promise`\<`unknown`\>
 
 Converts data from the provided input to a structured JSON document.
 
@@ -138,7 +138,7 @@ The converted data.
 
 ### query()
 
-> **query**(`cursor`?, `pageSize`?): `Promise`\<\{ `entities`: [`IRuleGroup`](IRuleGroup.md)[]; `cursor`: `string`; \}\>
+> **query**(`cursor?`, `pageSize?`): `Promise`\<\{ `entities`: [`IRuleGroup`](IRuleGroup.md)[]; `cursor`: `string`; \}\>
 
 Query the rule group entries.
 

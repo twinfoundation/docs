@@ -8,9 +8,9 @@ Class for performing blob storage operations in file.
 
 ## Constructors
 
-### new FileBlobStorageConnector()
+### Constructor
 
-> **new FileBlobStorageConnector**(`options`): [`FileBlobStorageConnector`](FileBlobStorageConnector.md)
+> **new FileBlobStorageConnector**(`options`): `FileBlobStorageConnector`
 
 Create a new instance of FileBlobStorageConnector.
 
@@ -24,7 +24,7 @@ The options for the connector.
 
 #### Returns
 
-[`FileBlobStorageConnector`](FileBlobStorageConnector.md)
+`FileBlobStorageConnector`
 
 ## Properties
 
@@ -50,7 +50,7 @@ Runtime name for the class.
 
 ### bootstrap()
 
-> **bootstrap**(`nodeLoggingConnectorType`?): `Promise`\<`boolean`\>
+> **bootstrap**(`nodeLoggingConnectorType?`): `Promise`\<`boolean`\>
 
 Bootstrap the component by creating and initializing any resources it needs.
 

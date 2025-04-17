@@ -4,25 +4,27 @@ Class to help with JSON LD.
 
 ## Constructors
 
-### new JsonLdHelper()
+### Constructor
 
-> **new JsonLdHelper**(): [`JsonLdHelper`](JsonLdHelper.md)
+> **new JsonLdHelper**(): `JsonLdHelper`
 
 #### Returns
 
-[`JsonLdHelper`](JsonLdHelper.md)
+`JsonLdHelper`
 
 ## Methods
 
 ### validate()
 
-> `static` **validate**\<`T`\>(`document`, `validationFailures`, `validationMode`?): `Promise`\<`boolean`\>
+> `static` **validate**\<`T`\>(`document`, `validationFailures`, `validationMode?`): `Promise`\<`boolean`\>
 
 Validate a JSON-LD document.
 
 #### Type Parameters
 
-• **T** *extends* [`IJsonLdDocument`](../type-aliases/IJsonLdDocument.md) = [`IJsonLdDocument`](../type-aliases/IJsonLdDocument.md)
+##### T
+
+`T` *extends* [`IJsonLdDocument`](../type-aliases/IJsonLdDocument.md) = [`IJsonLdDocument`](../type-aliases/IJsonLdDocument.md)
 
 #### Parameters
 

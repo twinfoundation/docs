@@ -4,13 +4,13 @@ Class describing the verifiable item.
 
 ## Constructors
 
-### new VerifiableItem()
+### Constructor
 
-> **new VerifiableItem**(): [`VerifiableItem`](VerifiableItem.md)
+> **new VerifiableItem**(): `VerifiableItem`
 
 #### Returns
 
-[`VerifiableItem`](VerifiableItem.md)
+`VerifiableItem`
 
 ## Properties
 

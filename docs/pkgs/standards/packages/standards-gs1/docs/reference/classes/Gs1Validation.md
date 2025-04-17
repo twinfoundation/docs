@@ -4,19 +4,19 @@ Validation for GS1 types.
 
 ## Constructors
 
-### new Gs1Validation()
+### Constructor
 
-> **new Gs1Validation**(): [`Gs1Validation`](Gs1Validation.md)
+> **new Gs1Validation**(): `Gs1Validation`
 
 #### Returns
 
-[`Gs1Validation`](Gs1Validation.md)
+`Gs1Validation`
 
 ## Methods
 
 ### locationMasterData()
 
-> `static` **locationMasterData**(`propertyName`, `value`, `failures`, `container`?): `value is Gs1Location`
+> `static` **locationMasterData**(`propertyName`, `value`, `failures`, `container?`): `value is Gs1Location`
 
 Validate if the property is a valid location.
 

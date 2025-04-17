@@ -8,9 +8,9 @@ Class for performing verifiable storage operations on IOTA Stardust.
 
 ## Constructors
 
-### new IotaStardustVerifiableStorageConnector()
+### Constructor
 
-> **new IotaStardustVerifiableStorageConnector**(`options`): [`IotaStardustVerifiableStorageConnector`](IotaStardustVerifiableStorageConnector.md)
+> **new IotaStardustVerifiableStorageConnector**(`options`): `IotaStardustVerifiableStorageConnector`
 
 Create a new instance of IotaStardustVerifiableStorageConnector.
 
@@ -24,7 +24,7 @@ The options for the connector.
 
 #### Returns
 
-[`IotaStardustVerifiableStorageConnector`](IotaStardustVerifiableStorageConnector.md)
+`IotaStardustVerifiableStorageConnector`
 
 ## Properties
 
@@ -120,7 +120,7 @@ The updated receipt.
 
 ### get()
 
-> **get**(`id`, `options`?): `Promise`\<\{ `data`: `Uint8Array`\<`ArrayBufferLike`\>; `receipt`: `IJsonLdNodeObject`; \}\>
+> **get**(`id`, `options?`): `Promise`\<\{ `data`: `Uint8Array`\<`ArrayBufferLike`\>; `receipt`: `IJsonLdNodeObject`; \}\>
 
 Get a verifiable item.
 

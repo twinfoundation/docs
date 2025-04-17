@@ -34,6 +34,12 @@ The id or alias to try and find.
 
 Which field to look in with the id, defaults to both.
 
+#### resourceTypes?
+
+> `optional` **resourceTypes**: `string`
+
+Include vertices with specific resource types, comma separated.
+
 #### conditions?
 
 > `optional` **conditions**: `string`

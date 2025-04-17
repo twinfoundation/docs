@@ -1,6 +1,6 @@
 # Function: setupFaucetConnector()
 
-> **setupFaucetConnector**(`options`, `connector`?): `IFaucetConnector`
+> **setupFaucetConnector**(`options`, `connector?`): `IFaucetConnector`
 
 Setup the faucet connector for use in the CLI commands.
 

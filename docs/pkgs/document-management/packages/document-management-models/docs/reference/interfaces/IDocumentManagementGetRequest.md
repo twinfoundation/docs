@@ -22,15 +22,9 @@ The headers which can be used to determine the response data type.
 
 The path parameters.
 
-#### auditableItemGraphId
+#### auditableItemGraphDocumentId
 
-> **auditableItemGraphId**: `string`
-
-The id of the auditable item graph vertex to store the document on.
-
-#### documentId
-
-> **documentId**: `string`
+> **auditableItemGraphDocumentId**: `string`
 
 The full id of the document to get.
 
@@ -90,20 +84,20 @@ Include deleted documents in the response.
 false
 ```
 
-#### maxRevisionCount?
+#### pageSize?
 
-> `optional` **maxRevisionCount**: `number`
+> `optional` **pageSize**: `string`
 
-Max number of revisions to return.
+Page size of items to return, defaults to 1 so only most recent is returned.
 
 ##### Default
 
 ```ts
-0
+1
 ```
 
-#### revisionCursor?
+#### cursor?
 
-> `optional` **revisionCursor**: `string`
+> `optional` **cursor**: `string`
 
 The cursor to get the next chunk of revisions.

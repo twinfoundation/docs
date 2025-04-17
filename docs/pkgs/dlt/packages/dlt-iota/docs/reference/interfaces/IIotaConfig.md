@@ -73,3 +73,17 @@ The maximum range to scan for addresses.
 ```ts
 1000
 ```
+
+***
+
+### inclusionTimeoutSeconds?
+
+> `optional` **inclusionTimeoutSeconds**: `number`
+
+The length of time to wait for the inclusion of a transaction in seconds.
+
+#### Default
+
+```ts
+60
+```

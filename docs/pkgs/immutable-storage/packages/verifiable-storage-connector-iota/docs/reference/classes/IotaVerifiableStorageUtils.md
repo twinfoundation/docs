@@ -4,13 +4,13 @@ Utility functions for the iota verifiable storage.
 
 ## Constructors
 
-### new IotaVerifiableStorageUtils()
+### Constructor
 
-> **new IotaVerifiableStorageUtils**(): [`IotaVerifiableStorageUtils`](IotaVerifiableStorageUtils.md)
+> **new IotaVerifiableStorageUtils**(): `IotaVerifiableStorageUtils`
 
 #### Returns
 
-[`IotaVerifiableStorageUtils`](IotaVerifiableStorageUtils.md)
+`IotaVerifiableStorageUtils`
 
 ## Properties
 

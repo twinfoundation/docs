@@ -1,8 +1,8 @@
-# Function: documentManagementSet()
+# Function: documentManagementCreate()
 
-> **documentManagementSet**(`httpRequestContext`, `componentName`, `request`): `Promise`\<`ICreatedResponse`\>
+> **documentManagementCreate**(`httpRequestContext`, `componentName`, `request`): `Promise`\<`ICreatedResponse`\>
 
-Set a document in to an auditable item graph vertex.
+Create a document as an auditable item graph vertex.
 
 ## Parameters
 
@@ -20,7 +20,7 @@ The name of the component to use in the routes.
 
 ### request
 
-`IDocumentManagementSetRequest`
+`IDocumentManagementCreateRequest`
 
 The request.
 

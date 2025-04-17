@@ -1,5 +1,5 @@
 # Type Alias: IIotaWalletConnectorConfig
 
-> **IIotaWalletConnectorConfig**: `IIotaConfig`
+> **IIotaWalletConnectorConfig** = `IIotaConfig`
 
 Configuration for the IOTA Wallet Connector.

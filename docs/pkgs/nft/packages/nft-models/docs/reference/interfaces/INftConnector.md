@@ -10,15 +10,19 @@ Interface describing an NFT connector.
 
 ### mint()
 
-> **mint**\<`T`, `U`\>(`controllerIdentity`, `tag`, `immutableMetadata`?, `metadata`?): `Promise`\<`string`\>
+> **mint**\<`T`, `U`\>(`controllerIdentity`, `tag`, `immutableMetadata?`, `metadata?`): `Promise`\<`string`\>
 
 Mint an NFT.
 
 #### Type Parameters
 
-• **T** = `unknown`
+##### T
 
-• **U** = `unknown`
+`T` = `unknown`
+
+##### U
+
+`U` = `unknown`
 
 #### Parameters
 
@@ -62,9 +66,13 @@ Resolve an NFT.
 
 #### Type Parameters
 
-• **T** = `unknown`
+##### T
 
-• **U** = `unknown`
+`T` = `unknown`
+
+##### U
+
+`U` = `unknown`
 
 #### Parameters
 
@@ -112,13 +120,15 @@ Nothing.
 
 ### transfer()
 
-> **transfer**\<`U`\>(`controllerIdentity`, `id`, `recipientIdentity`, `recipientAddress`, `metadata`?): `Promise`\<`void`\>
+> **transfer**\<`U`\>(`controllerIdentity`, `id`, `recipientIdentity`, `recipientAddress`, `metadata?`): `Promise`\<`void`\>
 
 Transfer an NFT.
 
 #### Type Parameters
 
-• **U** = `unknown`
+##### U
+
+`U` = `unknown`
 
 #### Parameters
 
@@ -168,7 +178,9 @@ Update the mutable data of the NFT.
 
 #### Type Parameters
 
-• **U** = `unknown`
+##### U
+
+`U` = `unknown`
 
 #### Parameters
 

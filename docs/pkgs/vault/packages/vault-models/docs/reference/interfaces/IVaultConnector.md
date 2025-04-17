@@ -38,7 +38,7 @@ The public key for the key pair.
 
 ### addKey()
 
-> **addKey**(`name`, `type`, `privateKey`, `publicKey`?): `Promise`\<`void`\>
+> **addKey**(`name`, `type`, `privateKey`, `publicKey?`): `Promise`\<`void`\>
 
 Add an existing key to the vault.
 
@@ -286,7 +286,9 @@ Store a secret in the vault.
 
 #### Type Parameters
 
-• **T**
+##### T
+
+`T`
 
 #### Parameters
 
@@ -318,7 +320,9 @@ Get a secret from the vault.
 
 #### Type Parameters
 
-• **T**
+##### T
+
+`T`
 
 #### Parameters
 

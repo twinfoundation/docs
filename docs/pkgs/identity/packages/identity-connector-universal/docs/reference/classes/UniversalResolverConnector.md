@@ -1,6 +1,6 @@
 # Class: UniversalResolverConnector
 
-Class for performing identity operations on universal resolver.
+Class for performing identity operations on a universal resolver.
 
 ## Implements
 
@@ -8,9 +8,9 @@ Class for performing identity operations on universal resolver.
 
 ## Constructors
 
-### new UniversalResolverConnector()
+### Constructor
 
-> **new UniversalResolverConnector**(`options`): [`UniversalResolverConnector`](UniversalResolverConnector.md)
+> **new UniversalResolverConnector**(`options`): `UniversalResolverConnector`
 
 Create a new instance of UniversalResolverConnector.
 
@@ -24,7 +24,7 @@ The options for the identity connector.
 
 #### Returns
 
-[`UniversalResolverConnector`](UniversalResolverConnector.md)
+`UniversalResolverConnector`
 
 ## Properties
 

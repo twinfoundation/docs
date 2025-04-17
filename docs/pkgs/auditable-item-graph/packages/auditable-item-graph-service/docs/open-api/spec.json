@@ -217,6 +217,15 @@
 						}
 					},
 					{
+						"name": "resourceTypes",
+						"description": "Include vertices with specific resource types, comma separated.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
 						"name": "conditions",
 						"description": "The conditions to filter the streams, JSON stringified IComparator[].",
 						"in": "query",

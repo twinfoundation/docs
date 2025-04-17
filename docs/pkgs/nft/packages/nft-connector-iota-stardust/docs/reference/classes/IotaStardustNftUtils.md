@@ -4,13 +4,13 @@ Utility functions for the IOTA Stardust NFTs.
 
 ## Constructors
 
-### new IotaStardustNftUtils()
+### Constructor
 
-> **new IotaStardustNftUtils**(): [`IotaStardustNftUtils`](IotaStardustNftUtils.md)
+> **new IotaStardustNftUtils**(): `IotaStardustNftUtils`
 
 #### Returns
 
-[`IotaStardustNftUtils`](IotaStardustNftUtils.md)
+`IotaStardustNftUtils`
 
 ## Methods
 

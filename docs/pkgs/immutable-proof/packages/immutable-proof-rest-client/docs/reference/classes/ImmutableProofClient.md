@@ -12,9 +12,9 @@ Client for performing immutable proof through to REST endpoints.
 
 ## Constructors
 
-### new ImmutableProofClient()
+### Constructor
 
-> **new ImmutableProofClient**(`config`): [`ImmutableProofClient`](ImmutableProofClient.md)
+> **new ImmutableProofClient**(`config`): `ImmutableProofClient`
 
 Create a new instance of ImmutableProofClient.
 
@@ -28,7 +28,7 @@ The configuration for the client.
 
 #### Returns
 
-[`ImmutableProofClient`](ImmutableProofClient.md)
+`ImmutableProofClient`
 
 #### Overrides
 

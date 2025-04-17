@@ -36,7 +36,7 @@ The JSON schema for the data type.
 
 ### validate()?
 
-> `optional` **validate**(`propertyName`, `value`, `failures`, `container`?): `Promise`\<`boolean`\>
+> `optional` **validate**(`propertyName`, `value`, `failures`, `container?`): `Promise`\<`boolean`\>
 
 A method for validating the data type.
 

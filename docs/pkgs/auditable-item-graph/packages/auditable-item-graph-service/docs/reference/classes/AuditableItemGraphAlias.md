@@ -4,13 +4,13 @@ Class describing the auditable item graph alias.
 
 ## Constructors
 
-### new AuditableItemGraphAlias()
+### Constructor
 
-> **new AuditableItemGraphAlias**(): [`AuditableItemGraphAlias`](AuditableItemGraphAlias.md)
+> **new AuditableItemGraphAlias**(): `AuditableItemGraphAlias`
 
 #### Returns
 
-[`AuditableItemGraphAlias`](AuditableItemGraphAlias.md)
+`AuditableItemGraphAlias`
 
 ## Properties
 

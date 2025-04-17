@@ -8,7 +8,9 @@ Manage entities using ScyllaDB Views.
 
 ## Type Parameters
 
-• **T**
+### T
+
+`T`
 
 ## Implements
 
@@ -16,9 +18,9 @@ Manage entities using ScyllaDB Views.
 
 ## Constructors
 
-### new ScyllaDBViewConnector()
+### Constructor
 
-> **new ScyllaDBViewConnector**\<`T`\>(`options`): [`ScyllaDBViewConnector`](ScyllaDBViewConnector.md)\<`T`\>
+> **new ScyllaDBViewConnector**\<`T`\>(`options`): `ScyllaDBViewConnector`\<`T`\>
 
 Create a new instance of ScyllaDBViewConnector.
 
@@ -32,7 +34,7 @@ The options for the connector.
 
 #### Returns
 
-[`ScyllaDBViewConnector`](ScyllaDBViewConnector.md)\<`T`\>
+`ScyllaDBViewConnector`\<`T`\>
 
 #### Overrides
 
@@ -80,7 +82,7 @@ The schema for the entities.
 
 ### get()
 
-> **get**(`id`, `secondaryIndex`?, `conditions`?): `Promise`\<`undefined` \| `T`\>
+> **get**(`id`, `secondaryIndex?`, `conditions?`): `Promise`\<`undefined` \| `T`\>
 
 Get an entity.
 
@@ -122,7 +124,7 @@ The object if it can be found or undefined.
 
 ### query()
 
-> **query**(`conditions`?, `sortProperties`?, `properties`?, `cursor`?, `pageSize`?): `Promise`\<\{ `entities`: `Partial`\<`T`\>[]; `cursor`: `string`; \}\>
+> **query**(`conditions?`, `sortProperties?`, `properties?`, `cursor?`, `pageSize?`): `Promise`\<\{ `entities`: `Partial`\<`T`\>[]; `cursor`: `string`; \}\>
 
 Find all the entities which match the conditions.
 
@@ -177,7 +179,7 @@ and a cursor which can be used to request more entities.
 
 ### bootstrap()
 
-> **bootstrap**(`nodeLoggingConnectorType`?): `Promise`\<`boolean`\>
+> **bootstrap**(`nodeLoggingConnectorType?`): `Promise`\<`boolean`\>
 
 Bootstrap the component by creating and initializing any resources it needs.
 

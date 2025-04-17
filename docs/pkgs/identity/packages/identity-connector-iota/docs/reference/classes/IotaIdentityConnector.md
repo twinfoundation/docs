@@ -8,9 +8,9 @@ Class for performing identity operations on IOTA.
 
 ## Constructors
 
-### new IotaIdentityConnector()
+### Constructor
 
-> **new IotaIdentityConnector**(`options`): [`IotaIdentityConnector`](IotaIdentityConnector.md)
+> **new IotaIdentityConnector**(`options`): `IotaIdentityConnector`
 
 Create a new instance of IotaIdentityConnector.
 
@@ -24,7 +24,7 @@ The options for the identity connector.
 
 #### Returns
 
-[`IotaIdentityConnector`](IotaIdentityConnector.md)
+`IotaIdentityConnector`
 
 ## Properties
 
@@ -76,7 +76,7 @@ The created document.
 
 ### addVerificationMethod()
 
-> **addVerificationMethod**(`controller`, `documentId`, `verificationMethodType`, `verificationMethodId`?): `Promise`\<`IDidDocumentVerificationMethod`\>
+> **addVerificationMethod**(`controller`, `documentId`, `verificationMethodType`, `verificationMethodId?`): `Promise`\<`IDidDocumentVerificationMethod`\>
 
 Add a verification method to the document in JSON Web key Format.
 
@@ -258,7 +258,7 @@ NotFoundError if the id can not be resolved.
 
 ### createVerifiableCredential()
 
-> **createVerifiableCredential**(`controller`, `verificationMethodId`, `id`, `subject`, `revocationIndex`?): `Promise`\<\{ `verifiableCredential`: `IDidVerifiableCredential`; `jwt`: `string`; \}\>
+> **createVerifiableCredential**(`controller`, `verificationMethodId`, `id`, `subject`, `revocationIndex?`): `Promise`\<\{ `verifiableCredential`: `IDidVerifiableCredential`; `jwt`: `string`; \}\>
 
 Create a verifiable credential for a verification method.
 
@@ -414,7 +414,7 @@ Nothing.
 
 ### createVerifiablePresentation()
 
-> **createVerifiablePresentation**(`controller`, `verificationMethodId`, `presentationId`, `contexts`, `types`, `verifiableCredentials`, `expiresInMinutes`?): `Promise`\<\{ `verifiablePresentation`: `IDidVerifiablePresentation`; `jwt`: `string`; \}\>
+> **createVerifiablePresentation**(`controller`, `verificationMethodId`, `presentationId`, `contexts`, `types`, `verifiableCredentials`, `expiresInMinutes?`): `Promise`\<\{ `verifiablePresentation`: `IDidVerifiablePresentation`; `jwt`: `string`; \}\>
 
 Create a verifiable presentation from the supplied verifiable credentials.
 

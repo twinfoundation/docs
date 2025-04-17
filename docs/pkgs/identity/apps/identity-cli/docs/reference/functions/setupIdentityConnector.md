@@ -1,6 +1,6 @@
 # Function: setupIdentityConnector()
 
-> **setupIdentityConnector**(`options`, `connector`?): `IIdentityConnector`
+> **setupIdentityConnector**(`options`, `connector?`): `IIdentityConnector`
 
 Setup the identity connector for use in the CLI commands.
 

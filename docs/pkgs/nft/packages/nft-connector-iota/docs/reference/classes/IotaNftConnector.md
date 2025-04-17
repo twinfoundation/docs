@@ -8,9 +8,9 @@ Class for performing NFT operations on IOTA.
 
 ## Constructors
 
-### new IotaNftConnector()
+### Constructor
 
-> **new IotaNftConnector**(`options`): [`IotaNftConnector`](IotaNftConnector.md)
+> **new IotaNftConnector**(`options`): `IotaNftConnector`
 
 Create a new instance of IotaNftConnector.
 
@@ -24,7 +24,7 @@ The options for the connector.
 
 #### Returns
 
-[`IotaNftConnector`](IotaNftConnector.md)
+`IotaNftConnector`
 
 ## Properties
 
@@ -50,7 +50,7 @@ Runtime name for the class.
 
 ### start()
 
-> **start**(`nodeIdentity`, `nodeLoggingConnectorType`?, `componentState`?): `Promise`\<`void`\>
+> **start**(`nodeIdentity`, `nodeLoggingConnectorType?`, `componentState?`): `Promise`\<`void`\>
 
 Bootstrap the NFT contract.
 
@@ -86,15 +86,19 @@ void.
 
 ### mint()
 
-> **mint**\<`T`, `U`\>(`controllerIdentity`, `tag`, `immutableMetadata`?, `metadata`?): `Promise`\<`string`\>
+> **mint**\<`T`, `U`\>(`controllerIdentity`, `tag`, `immutableMetadata?`, `metadata?`): `Promise`\<`string`\>
 
 Mint an NFT.
 
 #### Type Parameters
 
-• **T** = `unknown`
+##### T
 
-• **U** = `unknown`
+`T` = `unknown`
+
+##### U
+
+`U` = `unknown`
 
 #### Parameters
 
@@ -142,9 +146,13 @@ Resolve an NFT to get its details.
 
 #### Type Parameters
 
-• **T** = `unknown`
+##### T
 
-• **U** = `unknown`
+`T` = `unknown`
+
+##### U
+
+`U` = `unknown`
 
 #### Parameters
 
@@ -200,13 +208,15 @@ void.
 
 ### transfer()
 
-> **transfer**\<`U`\>(`controller`, `nftId`, `recipientIdentity`, `recipientAddress`, `metadata`?): `Promise`\<`void`\>
+> **transfer**\<`U`\>(`controller`, `nftId`, `recipientIdentity`, `recipientAddress`, `metadata?`): `Promise`\<`void`\>
 
 Transfer an NFT to a new owner.
 
 #### Type Parameters
 
-• **U** = `unknown`
+##### U
+
+`U` = `unknown`
 
 #### Parameters
 
@@ -260,7 +270,9 @@ Update the mutable data of an NFT.
 
 #### Type Parameters
 
-• **U** = `unknown`
+##### U
+
+`U` = `unknown`
 
 #### Parameters
 

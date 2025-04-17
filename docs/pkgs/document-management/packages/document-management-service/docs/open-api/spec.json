@@ -21,25 +21,12 @@
 		}
 	],
 	"paths": {
-		"/documents/{auditableItemGraphId}": {
+		"/documents": {
 			"post": {
 				"operationId": "DocumentManagementSet",
 				"summary": "Store a document in an auditable item graph vertex and add its content to blob storage.",
 				"tags": [
 					"Document Management"
-				],
-				"parameters": [
-					{
-						"name": "auditableItemGraphId",
-						"description": "The id of the auditable item graph vertex to store the document on.",
-						"in": "path",
-						"required": true,
-						"schema": {
-							"type": "string"
-						},
-						"style": "simple",
-						"example": "aig:123456"
-					}
 				],
 				"security": [
 					{
@@ -47,15 +34,15 @@
 					}
 				],
 				"requestBody": {
-					"description": "Request to set a document in an auditable item graph vertex.",
+					"description": "Request to create a document as an auditable item graph vertex.",
 					"required": true,
 					"content": {
 						"application/json": {
 							"schema": {
-								"$ref": "#/components/schemas/DocumentManagementSetRequest"
+								"$ref": "#/components/schemas/DocumentManagementCreateRequest"
 							},
 							"examples": {
-								"DocumentManagementSetRequestExample": {
+								"DocumentManagementCreateRequestExample": {
 									"value": {
 										"documentId": "2721000",
 										"documentIdFormat": "bol",
@@ -81,7 +68,7 @@
 								"schema": {
 									"type": "string"
 								},
-								"description": "e.g. documents:123456:705:2721000"
+								"description": "e.g. aig:123456"
 							}
 						}
 					},
@@ -152,46 +139,27 @@
 				],
 				"parameters": [
 					{
-						"name": "auditableItemGraphId",
-						"description": "The id of the auditable item graph vertex which contains the documents.",
-						"in": "path",
-						"required": true,
+						"name": "documentId",
+						"description": "The id of the document id we are trying to find.",
+						"in": "query",
+						"required": false,
 						"schema": {
 							"type": "string"
 						},
-						"style": "simple",
-						"example": "aig:123456"
-					},
-					{
-						"name": "documentCodes",
-						"description": "List of comma separated document codes to filter the query.",
-						"in": "query",
-						"required": false,
-						"schema": {
-							"type": "string"
-						}
-					},
-					{
-						"name": "includeRemoved",
-						"description": "Include deleted documents in the response.",
-						"in": "query",
-						"required": false,
-						"schema": {
-							"type": "boolean"
-						}
-					},
-					{
-						"name": "includeMostRecentRevisions",
-						"description": "Include the most recent 5 revisions, use the individual get to retrieve more.",
-						"in": "query",
-						"required": false,
-						"schema": {
-							"type": "boolean"
-						}
+						"example": "2721000"
 					},
 					{
 						"name": "cursor",
 						"description": "The cursor to get the next chunk of documents.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"name": "pageSize",
+						"description": "The number of documents to return.",
 						"in": "query",
 						"required": false,
 						"schema": {
@@ -214,93 +182,6 @@
 					}
 				],
 				"responses": {
-					"200": {
-						"description": "Response to query the documents from an auditable item graph vertex.",
-						"content": {
-							"application/json": {
-								"schema": {
-									"$ref": "#/components/schemas/DocumentList"
-								},
-								"examples": {
-									"DocumentManagementQueryResponseExample": {
-										"value": {
-											"@context": [
-												"https://schema.twindev.org/documents/",
-												"https://schema.twindev.org/common/"
-											],
-											"type": "DocumentList",
-											"documents": [
-												{
-													"@context": [
-														"https://schema.twindev.org/documents/",
-														"https://schema.twindev.org/common/",
-														"https://schema.org"
-													],
-													"type": "Document",
-													"id": "documents:705:2721000:rev-0",
-													"documentId": "2721000",
-													"documentIdFormat": "bol",
-													"documentCode": "unece:DocumentCodeList#705",
-													"documentRevision": 0,
-													"blobStorageId": "blob-memory:c57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70",
-													"blobHash": "sha256:123456",
-													"dateCreated": "2024-01-01T00:00:00Z",
-													"annotationObject": {
-														"@context": "https://schema.org",
-														"@type": "DigitalDocument",
-														"name": "myfile.pdf"
-													},
-													"nodeIdentity": "did:entity-storage:0x6363636363636363636363636363636363636363636363636363636363636363",
-													"userIdentity": "did:entity-storage:0x6363636363636363636363636363636363636363636363636363636363636363"
-												}
-											]
-										}
-									}
-								}
-							},
-							"application/ld+json": {
-								"schema": {
-									"$ref": "#/components/schemas/DocumentList"
-								},
-								"examples": {
-									"DocumentManagementListResponseJsonLdExample": {
-										"value": {
-											"@context": [
-												"https://schema.twindev.org/documents/",
-												"https://schema.twindev.org/common/"
-											],
-											"type": "DocumentList",
-											"documents": [
-												{
-													"@context": [
-														"https://schema.twindev.org/documents/",
-														"https://schema.twindev.org/common/",
-														"https://schema.org"
-													],
-													"type": "Document",
-													"id": "documents:705:2721000:rev-0",
-													"documentId": "2721000",
-													"documentIdFormat": "bol",
-													"documentCode": "unece:DocumentCodeList#705",
-													"documentRevision": 0,
-													"blobStorageId": "blob-memory:c57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70",
-													"blobHash": "sha256:123456",
-													"dateCreated": "2024-01-01T00:00:00Z",
-													"annotationObject": {
-														"@context": "https://schema.org",
-														"@type": "DigitalDocument",
-														"name": "myfile.pdf"
-													},
-													"nodeIdentity": "did:entity-storage:0x6363636363636363636363636363636363636363636363636363636363636363",
-													"userIdentity": "did:entity-storage:0x6363636363636363636363636363636363636363636363636363636363636363"
-												}
-											]
-										}
-									}
-								}
-							}
-						}
-					},
 					"400": {
 						"description": "The server cannot process the request, see the content for more details.",
 						"content": {
@@ -361,7 +242,117 @@
 				}
 			}
 		},
-		"/documents/{auditableItemGraphId}/{documentId}": {
+		"/documents/{auditableItemGraphDocumentId}": {
+			"put": {
+				"operationId": "DocumentManagementUpdate",
+				"summary": "Update a document in an auditable item graph vertex and add its content to blob storage.",
+				"tags": [
+					"Document Management"
+				],
+				"parameters": [
+					{
+						"name": "auditableItemGraphDocumentId",
+						"description": "The full id of the document to get.",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "aig:123456"
+					}
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"requestBody": {
+					"description": "Request to update a document as an auditable item graph vertex.",
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/DocumentManagementUpdateRequest"
+							},
+							"examples": {
+								"DocumentManagementUpdateRequestExample": {
+									"value": {
+										"blob": "SGVsbG8gV29ybGQ=",
+										"annotationObject": {
+											"@context": "https://schema.org",
+											"@type": "DigitalDocument",
+											"name": "myfile.pdf"
+										}
+									}
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"204": {
+						"description": "The rest request ended in success with no data."
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			},
 			"get": {
 				"operationId": "DocumentManagementGet",
 				"summary": "Get the data for a document from document management",
@@ -370,18 +361,7 @@
 				],
 				"parameters": [
 					{
-						"name": "auditableItemGraphId",
-						"description": "The id of the auditable item graph vertex to store the document on.",
-						"in": "path",
-						"required": true,
-						"schema": {
-							"type": "string"
-						},
-						"style": "simple",
-						"example": "aig:1234"
-					},
-					{
-						"name": "documentId",
+						"name": "auditableItemGraphDocumentId",
 						"description": "The full id of the document to get.",
 						"in": "path",
 						"required": true,
@@ -389,7 +369,7 @@
 							"type": "string"
 						},
 						"style": "simple",
-						"example": "documents:123456:705:2721000"
+						"example": "aig:123456"
 					},
 					{
 						"name": "includeBlobStorageMetadata",
@@ -428,16 +408,16 @@
 						}
 					},
 					{
-						"name": "maxRevisionCount",
-						"description": "Max number of revisions to return.",
+						"name": "pageSize",
+						"description": "Page size of items to return, defaults to 1 so only most recent is returned.",
 						"in": "query",
 						"required": false,
 						"schema": {
-							"type": "number"
+							"type": "string"
 						}
 					},
 					{
-						"name": "revisionCursor",
+						"name": "cursor",
 						"description": "The cursor to get the next chunk of revisions.",
 						"in": "query",
 						"required": false,
@@ -466,64 +446,82 @@
 						"content": {
 							"application/json": {
 								"schema": {
-									"$ref": "#/components/schemas/Document"
+									"$ref": "#/components/schemas/DocumentList"
 								},
 								"examples": {
 									"DocumentManagementGetResponseExample": {
 										"value": {
 											"@context": [
 												"https://schema.twindev.org/documents/",
-												"https://schema.twindev.org/common/",
-												"https://schema.org"
+												"https://schema.twindev.org/common/"
 											],
-											"type": "Document",
-											"id": "documents:705:2721000:rev-0",
-											"documentId": "2721000",
-											"documentIdFormat": "bol",
-											"documentCode": "unece:DocumentCodeList#705",
-											"documentRevision": 0,
-											"blobStorageId": "blob-memory:c57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70",
-											"blobHash": "sha256:123456",
-											"dateCreated": "2024-01-01T00:00:00Z",
-											"annotationObject": {
-												"@context": "https://schema.org",
-												"@type": "DigitalDocument",
-												"name": "myfile.pdf"
-											},
-											"nodeIdentity": "did:entity-storage:0x6363636363636363636363636363636363636363636363636363636363636363",
-											"userIdentity": "did:entity-storage:0x6363636363636363636363636363636363636363636363636363636363636363"
+											"type": "DocumentList",
+											"documents": [
+												{
+													"@context": [
+														"https://schema.twindev.org/documents/",
+														"https://schema.twindev.org/common/",
+														"https://schema.org"
+													],
+													"type": "Document",
+													"id": "2721000:0",
+													"documentId": "2721000",
+													"documentIdFormat": "bol",
+													"documentCode": "unece:DocumentCodeList#705",
+													"documentRevision": 0,
+													"blobStorageId": "blob-memory:c57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70",
+													"blobHash": "sha256:123456",
+													"dateCreated": "2024-01-01T00:00:00Z",
+													"annotationObject": {
+														"@context": "https://schema.org",
+														"@type": "DigitalDocument",
+														"name": "myfile.pdf"
+													},
+													"nodeIdentity": "did:entity-storage:0x6363636363636363636363636363636363636363636363636363636363636363",
+													"userIdentity": "did:entity-storage:0x6363636363636363636363636363636363636363636363636363636363636363"
+												}
+											]
 										}
 									}
 								}
 							},
 							"application/ld+json": {
 								"schema": {
-									"$ref": "#/components/schemas/Document"
+									"$ref": "#/components/schemas/DocumentList"
 								},
 								"examples": {
 									"DocumentManagementGetResponseExample": {
 										"value": {
 											"@context": [
 												"https://schema.twindev.org/documents/",
-												"https://schema.twindev.org/common/",
-												"https://schema.org"
+												"https://schema.twindev.org/common/"
 											],
-											"type": "Document",
-											"id": "documents:705:2721000:rev-0",
-											"documentId": "2721000",
-											"documentIdFormat": "bol",
-											"documentCode": "unece:DocumentCodeList#705",
-											"documentRevision": 0,
-											"blobStorageId": "blob-memory:c57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70",
-											"blobHash": "sha256:123456",
-											"dateCreated": "2024-01-01T00:00:00Z",
-											"annotationObject": {
-												"@context": "https://schema.org",
-												"@type": "DigitalDocument",
-												"name": "myfile.pdf"
-											},
-											"nodeIdentity": "did:entity-storage:0x6363636363636363636363636363636363636363636363636363636363636363",
-											"userIdentity": "did:entity-storage:0x6363636363636363636363636363636363636363636363636363636363636363"
+											"type": "DocumentList",
+											"documents": [
+												{
+													"@context": [
+														"https://schema.twindev.org/documents/",
+														"https://schema.twindev.org/common/",
+														"https://schema.org"
+													],
+													"type": "Document",
+													"id": "2721000:0",
+													"documentId": "2721000",
+													"documentIdFormat": "bol",
+													"documentCode": "unece:DocumentCodeList#705",
+													"documentRevision": 0,
+													"blobStorageId": "blob-memory:c57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70",
+													"blobHash": "sha256:123456",
+													"dateCreated": "2024-01-01T00:00:00Z",
+													"annotationObject": {
+														"@context": "https://schema.org",
+														"@type": "DigitalDocument",
+														"name": "myfile.pdf"
+													},
+													"nodeIdentity": "did:entity-storage:0x6363636363636363636363636363636363636363636363636363636363636363",
+													"userIdentity": "did:entity-storage:0x6363636363636363636363636363636363636363636363636363636363636363"
+												}
+											]
 										}
 									}
 								}
@@ -609,7 +607,9 @@
 						}
 					}
 				}
-			},
+			}
+		},
+		"/documents/{auditableItemGraphDocumentId}/{revision}": {
 			"delete": {
 				"operationId": "DocumentManagementRemove",
 				"summary": "Remove an document from an auditable item graph vertex",
@@ -618,8 +618,8 @@
 				],
 				"parameters": [
 					{
-						"name": "auditableItemGraphId",
-						"description": "The id of the auditable item graph vertex to remove the document from.",
+						"name": "auditableItemGraphDocumentId",
+						"description": "The id of the auditable item graph vertex to remove the revision from.",
 						"in": "path",
 						"required": true,
 						"schema": {
@@ -629,24 +629,15 @@
 						"example": "aig:1234"
 					},
 					{
-						"name": "documentId",
-						"description": "The full id of the document to remove.",
+						"name": "revision",
+						"description": "The revision of the document to remove.",
 						"in": "path",
 						"required": true,
 						"schema": {
 							"type": "string"
 						},
 						"style": "simple",
-						"example": "documents:123456:705:2721000"
-					},
-					{
-						"name": "removeAllRevisions",
-						"description": "Flag to remove all revisions of the document.",
-						"in": "query",
-						"required": false,
-						"schema": {
-							"type": "boolean"
-						}
+						"example": "1"
 					}
 				],
 				"security": [
@@ -980,17 +971,6 @@
 					"userIdentity": {
 						"type": "string",
 						"description": "The user who added the document to the graph."
-					},
-					"revisions": {
-						"type": "array",
-						"items": {
-							"$ref": "#/components/schemas/Document"
-						},
-						"description": "The previous revisions of the document."
-					},
-					"revisionCursor": {
-						"type": "string",
-						"description": "The cursor to get the next chunk of revisions."
 					}
 				},
 				"required": [
@@ -1042,6 +1022,13 @@
 						},
 						"description": "The list of documents."
 					},
+					"edges": {
+						"type": "array",
+						"items": {
+							"type": "string"
+						},
+						"description": "The ids of the other vertices which are connected to the document."
+					},
 					"cursor": {
 						"type": "string",
 						"description": "The cursor to get the next chunk of documents."
@@ -1053,9 +1040,9 @@
 					"documents"
 				],
 				"additionalProperties": false,
-				"description": "Interface describing a document entry list."
+				"description": "Interface describing a list of document entries."
 			},
-			"DocumentManagementSetRequest": {
+			"DocumentManagementCreateRequest": {
 				"type": "object",
 				"properties": {
 					"documentId": {
@@ -1076,13 +1063,35 @@
 					"annotationObject": {
 						"$ref": "#/components/schemas/JsonLdNodeObject"
 					},
+					"auditableItemGraphEdges": {
+						"type": "array",
+						"items": {
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string"
+								},
+								"addAlias": {
+									"type": "boolean"
+								},
+								"aliasAnnotationObject": {
+									"$ref": "#/components/schemas/JsonLdNodeObject"
+								}
+							},
+							"required": [
+								"id"
+							],
+							"additionalProperties": false
+						},
+						"description": "The auditable item graph vertices to connect the document to."
+					},
 					"createAttestation": {
 						"type": "boolean",
-						"description": "Flag to create an attestation for the document, defaults to false"
+						"description": "Flag to create an attestation for the document, defaults to false."
 					},
-					"includeIdAsAlias": {
+					"addAlias": {
 						"type": "boolean",
-						"description": "Include the document id as an alias to the aig vertex, defaults to false."
+						"description": "Flag to add the document id as an alias to the aig vertex, defaults to true."
 					},
 					"aliasAnnotationObject": {
 						"$ref": "#/components/schemas/JsonLdNodeObject"
@@ -1093,6 +1102,42 @@
 					"documentCode",
 					"blob"
 				],
+				"additionalProperties": false,
+				"description": "The body parameters."
+			},
+			"DocumentManagementUpdateRequest": {
+				"type": "object",
+				"properties": {
+					"blob": {
+						"type": "string",
+						"description": "The data to create the document with, in base64."
+					},
+					"annotationObject": {
+						"$ref": "#/components/schemas/JsonLdNodeObject"
+					},
+					"auditableItemGraphEdges": {
+						"type": "array",
+						"items": {
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string"
+								},
+								"addAlias": {
+									"type": "boolean"
+								},
+								"aliasAnnotationObject": {
+									"$ref": "#/components/schemas/JsonLdNodeObject"
+								}
+							},
+							"required": [
+								"id"
+							],
+							"additionalProperties": false
+						},
+						"description": "The auditable item graph vertices to connect the document to."
+					}
+				},
 				"additionalProperties": false,
 				"description": "The body parameters."
 			},

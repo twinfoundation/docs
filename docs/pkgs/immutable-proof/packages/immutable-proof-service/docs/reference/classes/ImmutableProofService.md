@@ -8,9 +8,9 @@ Class for performing immutable proof operations.
 
 ## Constructors
 
-### new ImmutableProofService()
+### Constructor
 
-> **new ImmutableProofService**(`options`?): [`ImmutableProofService`](ImmutableProofService.md)
+> **new ImmutableProofService**(`options?`): `ImmutableProofService`
 
 Create a new instance of ImmutableProofService.
 
@@ -24,7 +24,7 @@ The dependencies for the immutable proof connector.
 
 #### Returns
 
-[`ImmutableProofService`](ImmutableProofService.md)
+`ImmutableProofService`
 
 ## Properties
 
@@ -50,7 +50,7 @@ Runtime name for the class.
 
 ### create()
 
-> **create**(`document`, `userIdentity`?, `nodeIdentity`?): `Promise`\<`string`\>
+> **create**(`document`, `userIdentity?`, `nodeIdentity?`): `Promise`\<`string`\>
 
 Create a new proof.
 
@@ -148,7 +148,7 @@ NotFoundError if the proof is not found.
 
 ### removeVerifiable()
 
-> **removeVerifiable**(`id`, `nodeIdentity`?): `Promise`\<`void`\>
+> **removeVerifiable**(`id`, `nodeIdentity?`): `Promise`\<`void`\>
 
 Remove the verifiable storage for the proof.
 

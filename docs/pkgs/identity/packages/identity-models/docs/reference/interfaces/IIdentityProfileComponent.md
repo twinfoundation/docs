@@ -8,15 +8,19 @@ Interface describing a contract which provides profile operations.
 
 ## Type Parameters
 
-• **T** *extends* `IJsonLdDocument` = `IJsonLdDocument`
+### T
 
-• **U** *extends* `IJsonLdDocument` = `IJsonLdDocument`
+`T` *extends* `IJsonLdDocument` = `IJsonLdDocument`
+
+### U
+
+`U` *extends* `IJsonLdDocument` = `IJsonLdDocument`
 
 ## Methods
 
 ### create()
 
-> **create**(`publicProfile`?, `privateProfile`?, `identity`?): `Promise`\<`void`\>
+> **create**(`publicProfile?`, `privateProfile?`, `identity?`): `Promise`\<`void`\>
 
 Create the profile properties for an identity.
 
@@ -50,7 +54,7 @@ Nothing.
 
 ### get()
 
-> **get**(`publicPropertyNames`?, `privatePropertyNames`?, `identity`?): `Promise`\<\{ `identity`: `string`; `publicProfile`: `Partial`\<`T`\>; `privateProfile`: `Partial`\<`U`\>; \}\>
+> **get**(`publicPropertyNames?`, `privatePropertyNames?`, `identity?`): `Promise`\<\{ `identity`: `string`; `publicProfile`: `Partial`\<`T`\>; `privateProfile`: `Partial`\<`U`\>; \}\>
 
 Get the profile properties for an identity.
 
@@ -84,7 +88,7 @@ The items identity and the properties.
 
 ### getPublic()
 
-> **getPublic**(`identity`, `propertyNames`?): `Promise`\<`Partial`\<`T`\>\>
+> **getPublic**(`identity`, `propertyNames?`): `Promise`\<`Partial`\<`T`\>\>
 
 Get the public profile properties for an identity.
 
@@ -112,7 +116,7 @@ The items properties.
 
 ### update()
 
-> **update**(`publicProfile`?, `privateProfile`?, `identity`?): `Promise`\<`void`\>
+> **update**(`publicProfile?`, `privateProfile?`, `identity?`): `Promise`\<`void`\>
 
 Update the profile properties of an identity.
 
@@ -146,7 +150,7 @@ Nothing.
 
 ### remove()
 
-> **remove**(`identity`?): `Promise`\<`void`\>
+> **remove**(`identity?`): `Promise`\<`void`\>
 
 Delete the profile for an identity.
 
@@ -168,7 +172,7 @@ Nothing.
 
 ### list()
 
-> **list**(`publicFilters`?, `publicPropertyNames`?, `cursor`?, `pageSize`?): `Promise`\<\{ `items`: `object`[]; `cursor`: `string`; \}\>
+> **list**(`publicFilters?`, `publicPropertyNames?`, `cursor?`, `pageSize?`): `Promise`\<\{ `items`: `object`[]; `cursor`: `string`; \}\>
 
 Get a list of the requested identities.
 

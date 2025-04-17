@@ -16,58 +16,26 @@ The headers which can be used to determine the response data type.
 
 ***
 
-### pathParams
+### query
 
-> **pathParams**: `object`
-
-The path parameters.
-
-#### auditableItemGraphId
-
-> **auditableItemGraphId**: `string`
-
-The id of the auditable item graph vertex which contains the documents.
-
-***
-
-### query?
-
-> `optional` **query**: `object`
+> **query**: `object`
 
 The query parameters.
 
-#### documentCodes?
+#### documentId
 
-> `optional` **documentCodes**: `string`
+> **documentId**: `string`
 
-List of comma separated document codes to filter the query.
-
-#### includeRemoved?
-
-> `optional` **includeRemoved**: `boolean`
-
-Include deleted documents in the response.
-
-##### Default
-
-```ts
-false
-```
-
-#### includeMostRecentRevisions?
-
-> `optional` **includeMostRecentRevisions**: `boolean`
-
-Include the most recent 5 revisions, use the individual get to retrieve more.
-
-##### Default
-
-```ts
-false
-```
+The id of the document id we are trying to find.
 
 #### cursor?
 
 > `optional` **cursor**: `string`
 
 The cursor to get the next chunk of documents.
+
+#### pageSize?
+
+> `optional` **pageSize**: `string`
+
+The number of documents to return.

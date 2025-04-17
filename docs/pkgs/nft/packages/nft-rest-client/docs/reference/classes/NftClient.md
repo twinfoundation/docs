@@ -12,9 +12,9 @@ Client for performing NFT through to REST endpoints.
 
 ## Constructors
 
-### new NftClient()
+### Constructor
 
-> **new NftClient**(`config`): [`NftClient`](NftClient.md)
+> **new NftClient**(`config`): `NftClient`
 
 Create a new instance of NftClient.
 
@@ -28,7 +28,7 @@ The configuration for the client.
 
 #### Returns
 
-[`NftClient`](NftClient.md)
+`NftClient`
 
 #### Overrides
 
@@ -50,15 +50,19 @@ Runtime name for the class.
 
 ### mint()
 
-> **mint**\<`T`, `U`\>(`tag`, `immutableMetadata`?, `metadata`?, `namespace`?): `Promise`\<`string`\>
+> **mint**\<`T`, `U`\>(`tag`, `immutableMetadata?`, `metadata?`, `namespace?`): `Promise`\<`string`\>
 
 Mint an NFT.
 
 #### Type Parameters
 
-• **T** = `unknown`
+##### T
 
-• **U** = `unknown`
+`T` = `unknown`
+
+##### U
+
+`U` = `unknown`
 
 #### Parameters
 
@@ -106,9 +110,13 @@ Resolve an NFT.
 
 #### Type Parameters
 
-• **T** = `unknown`
+##### T
 
-• **U** = `unknown`
+`T` = `unknown`
+
+##### U
+
+`U` = `unknown`
 
 #### Parameters
 
@@ -158,13 +166,15 @@ Nothing.
 
 ### transfer()
 
-> **transfer**\<`T`\>(`id`, `recipientIdentity`, `recipientAddress`, `metadata`?): `Promise`\<`void`\>
+> **transfer**\<`T`\>(`id`, `recipientIdentity`, `recipientAddress`, `metadata?`): `Promise`\<`void`\>
 
 Transfer an NFT.
 
 #### Type Parameters
 
-• **T** = `unknown`
+##### T
+
+`T` = `unknown`
 
 #### Parameters
 
@@ -212,7 +222,9 @@ Update the data of the NFT.
 
 #### Type Parameters
 
-• **U** = `unknown`
+##### U
+
+`U` = `unknown`
 
 #### Parameters
 

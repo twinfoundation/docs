@@ -8,9 +8,9 @@ Service for performing telemetry operations to a connector.
 
 ## Constructors
 
-### new TelemetryService()
+### Constructor
 
-> **new TelemetryService**(`options`?): [`TelemetryService`](TelemetryService.md)
+> **new TelemetryService**(`options?`): `TelemetryService`
 
 Create a new instance of TelemetryService.
 
@@ -24,7 +24,7 @@ The options for the connector.
 
 #### Returns
 
-[`TelemetryService`](TelemetryService.md)
+`TelemetryService`
 
 ## Properties
 
@@ -128,7 +128,7 @@ Nothing.
 
 ### addMetricValue()
 
-> **addMetricValue**(`id`, `value`, `customData`?): `Promise`\<`string`\>
+> **addMetricValue**(`id`, `value`, `customData?`): `Promise`\<`string`\>
 
 Add a metric value.
 
@@ -190,7 +190,7 @@ Nothing.
 
 ### query()
 
-> **query**(`type`?, `cursor`?, `pageSize`?): `Promise`\<\{ `entities`: `ITelemetryMetric`[]; `cursor`: `string`; \}\>
+> **query**(`type?`, `cursor?`, `pageSize?`): `Promise`\<\{ `entities`: `ITelemetryMetric`[]; `cursor`: `string`; \}\>
 
 Query the metrics.
 
@@ -233,7 +233,7 @@ NotImplementedError if the implementation does not support retrieval.
 
 ### queryValues()
 
-> **queryValues**(`id`, `timeStart`?, `timeEnd`?, `cursor`?, `pageSize`?): `Promise`\<\{ `metric`: `ITelemetryMetric`; `entities`: `ITelemetryMetricValue`[]; `cursor`: `string`; \}\>
+> **queryValues**(`id`, `timeStart?`, `timeEnd?`, `cursor?`, `pageSize?`): `Promise`\<\{ `metric`: `ITelemetryMetric`; `entities`: `ITelemetryMetricValue`[]; `cursor`: `string`; \}\>
 
 Query the metric values.
 

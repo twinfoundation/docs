@@ -1,6 +1,6 @@
 # Interface: IDocumentList
 
-Interface describing a document entry list.
+Interface describing a list of document entries.
 
 ## Properties
 
@@ -25,6 +25,14 @@ JSON-LD Type.
 > **documents**: [`IDocument`](IDocument.md)[]
 
 The list of documents.
+
+***
+
+### edges?
+
+> `optional` **edges**: `string`[]
+
+The ids of the other vertices which are connected to the document.
 
 ***
 

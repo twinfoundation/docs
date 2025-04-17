@@ -4,13 +4,13 @@ Class defining a background task.
 
 ## Constructors
 
-### new BackgroundTask()
+### Constructor
 
-> **new BackgroundTask**(): [`BackgroundTask`](BackgroundTask.md)
+> **new BackgroundTask**(): `BackgroundTask`
 
 #### Returns
 
-[`BackgroundTask`](BackgroundTask.md)
+`BackgroundTask`
 
 ## Properties
 

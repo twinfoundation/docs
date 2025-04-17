@@ -32,7 +32,7 @@ Nothing.
 
 ### query()?
 
-> `optional` **query**(`conditions`?, `sortProperties`?, `properties`?, `cursor`?, `pageSize`?): `Promise`\<\{ `entities`: `Partial`\<[`ILogEntry`](ILogEntry.md)\>[]; `cursor`: `string`; \}\>
+> `optional` **query**(`conditions?`, `sortProperties?`, `properties?`, `cursor?`, `pageSize?`): `Promise`\<\{ `entities`: `Partial`\<[`ILogEntry`](ILogEntry.md)\>[]; `cursor`: `string`; \}\>
 
 Query the log entries.
 

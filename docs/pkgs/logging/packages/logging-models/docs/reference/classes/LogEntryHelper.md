@@ -4,13 +4,13 @@ Helper class for log entry operations.
 
 ## Constructors
 
-### new LogEntryHelper()
+### Constructor
 
-> **new LogEntryHelper**(): [`LogEntryHelper`](LogEntryHelper.md)
+> **new LogEntryHelper**(): `LogEntryHelper`
 
 #### Returns
 
-[`LogEntryHelper`](LogEntryHelper.md)
+`LogEntryHelper`
 
 ## Methods
 

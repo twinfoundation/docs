@@ -9,9 +9,9 @@ See https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/client/s3/ for more i
 
 ## Constructors
 
-### new S3BlobStorageConnector()
+### Constructor
 
-> **new S3BlobStorageConnector**(`options`): [`S3BlobStorageConnector`](S3BlobStorageConnector.md)
+> **new S3BlobStorageConnector**(`options`): `S3BlobStorageConnector`
 
 Create a new instance of S3BlobStorageConnector.
 
@@ -25,7 +25,7 @@ The options for the connector.
 
 #### Returns
 
-[`S3BlobStorageConnector`](S3BlobStorageConnector.md)
+`S3BlobStorageConnector`
 
 ## Properties
 
@@ -51,7 +51,7 @@ Runtime name for the class.
 
 ### bootstrap()
 
-> **bootstrap**(`nodeLoggingConnectorType`?): `Promise`\<`boolean`\>
+> **bootstrap**(`nodeLoggingConnectorType?`): `Promise`\<`boolean`\>
 
 Bootstrap the component by creating and initializing any resources it needs.
 

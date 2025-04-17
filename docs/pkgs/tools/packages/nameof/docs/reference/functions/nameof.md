@@ -1,12 +1,14 @@
 # Function: nameof()
 
-> **nameof**\<`T`\>(`property`?, `replaceParent`?): `string`
+> **nameof**\<`T`\>(`property?`, `replaceParent?`): `string`
 
 Placeholder method which substitutes the type name as a string at runtime.
 
 ## Type Parameters
 
-• **T**
+### T
+
+`T`
 
 ## Parameters
 

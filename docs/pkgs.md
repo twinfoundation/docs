@@ -39,6 +39,7 @@ This is the overview of the packages.
 - [@twin.org/standards-unece](pkgs/standards/packages/standards-unece/index.md) - Models which define the structure of UN/CEFACT Standard
 - [@twin.org/standards-vda](pkgs/standards/packages/standards-vda/index.md) - Models which define the structure of VDA JAIF Standard
 - [@twin.org/standards-gaia-x](pkgs/standards/packages/standards-gaia-x/index.md) - Models which define the structure of Gaia-x
+- [@twin.org/standards-ld-contexts](pkgs/standards/packages/standards-ld-contexts/index.md) - Local copies of standard LD contexts which can be used for offline development
 
 ## Data
 

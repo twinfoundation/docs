@@ -76,7 +76,7 @@ Nothing.
 
 ### addMetricValue()
 
-> **addMetricValue**(`id`, `value`, `customData`?): `Promise`\<`string`\>
+> **addMetricValue**(`id`, `value`, `customData?`): `Promise`\<`string`\>
 
 Add a metric value.
 
@@ -130,7 +130,7 @@ Nothing.
 
 ### query()
 
-> **query**(`type`?, `cursor`?, `pageSize`?): `Promise`\<\{ `entities`: [`ITelemetryMetric`](ITelemetryMetric.md)[]; `cursor`: `string`; \}\>
+> **query**(`type?`, `cursor?`, `pageSize?`): `Promise`\<\{ `entities`: [`ITelemetryMetric`](ITelemetryMetric.md)[]; `cursor`: `string`; \}\>
 
 Query the metrics.
 
@@ -169,7 +169,7 @@ NotImplementedError if the implementation does not support retrieval.
 
 ### queryValues()
 
-> **queryValues**(`id`, `timeStart`?, `timeEnd`?, `cursor`?, `pageSize`?): `Promise`\<\{ `metric`: [`ITelemetryMetric`](ITelemetryMetric.md); `entities`: [`ITelemetryMetricValue`](ITelemetryMetricValue.md)[]; `cursor`: `string`; \}\>
+> **queryValues**(`id`, `timeStart?`, `timeEnd?`, `cursor?`, `pageSize?`): `Promise`\<\{ `metric`: [`ITelemetryMetric`](ITelemetryMetric.md); `entities`: [`ITelemetryMetricValue`](ITelemetryMetricValue.md)[]; `cursor`: `string`; \}\>
 
 Query the metric values.
 

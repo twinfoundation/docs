@@ -8,15 +8,19 @@ Interface describing a contract which provides profile operations.
 
 ## Type Parameters
 
-• **T** *extends* `IJsonLdDocument` = `IJsonLdDocument`
+### T
 
-• **U** *extends* `IJsonLdDocument` = `IJsonLdDocument`
+`T` *extends* `IJsonLdDocument` = `IJsonLdDocument`
+
+### U
+
+`U` *extends* `IJsonLdDocument` = `IJsonLdDocument`
 
 ## Methods
 
 ### create()
 
-> **create**(`identity`, `publicProfile`?, `privateProfile`?): `Promise`\<`void`\>
+> **create**(`identity`, `publicProfile?`, `privateProfile?`): `Promise`\<`void`\>
 
 Create the profile properties for an identity.
 
@@ -50,7 +54,7 @@ Nothing.
 
 ### get()
 
-> **get**(`identity`, `publicPropertyNames`?, `privatePropertyNames`?): `Promise`\<\{ `publicProfile`: `Partial`\<`T`\>; `privateProfile`: `Partial`\<`U`\>; \}\>
+> **get**(`identity`, `publicPropertyNames?`, `privatePropertyNames?`): `Promise`\<\{ `publicProfile`: `Partial`\<`T`\>; `privateProfile`: `Partial`\<`U`\>; \}\>
 
 Get the profile properties for an identity.
 
@@ -84,7 +88,7 @@ The identity profile, will only return private data if you have correct permissi
 
 ### update()
 
-> **update**(`identity`, `publicProfile`?, `privateProfile`?): `Promise`\<`void`\>
+> **update**(`identity`, `publicProfile?`, `privateProfile?`): `Promise`\<`void`\>
 
 Update the profile properties of an identity.
 
@@ -140,7 +144,7 @@ Nothing.
 
 ### list()
 
-> **list**(`publicFilters`?, `privateFilters`?, `publicPropertyNames`?, `privatePropertyNames`?, `cursor`?, `pageSize`?): `Promise`\<\{ `items`: `object`[]; `cursor`: `string`; \}\>
+> **list**(`publicFilters?`, `privateFilters?`, `publicPropertyNames?`, `privatePropertyNames?`, `cursor?`, `pageSize?`): `Promise`\<\{ `items`: `object`[]; `cursor`: `string`; \}\>
 
 Get a list of the requested identities.
 

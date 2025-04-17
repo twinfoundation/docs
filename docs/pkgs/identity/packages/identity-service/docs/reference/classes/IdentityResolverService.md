@@ -8,9 +8,9 @@ Class which implements the identity resolver contract.
 
 ## Constructors
 
-### new IdentityResolverService()
+### Constructor
 
-> **new IdentityResolverService**(`options`?): [`IdentityResolverService`](IdentityResolverService.md)
+> **new IdentityResolverService**(`options?`): `IdentityResolverService`
 
 Create a new instance of IdentityResolverService.
 
@@ -24,7 +24,7 @@ The options for the service.
 
 #### Returns
 
-[`IdentityResolverService`](IdentityResolverService.md)
+`IdentityResolverService`
 
 ## Properties
 

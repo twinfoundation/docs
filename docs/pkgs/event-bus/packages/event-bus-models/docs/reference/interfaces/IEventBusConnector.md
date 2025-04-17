@@ -16,7 +16,9 @@ Subscribe to the event bus.
 
 #### Type Parameters
 
-• **T**
+##### T
+
+`T`
 
 #### Parameters
 
@@ -70,7 +72,9 @@ Publish an event to the bus.
 
 #### Type Parameters
 
-• **T**
+##### T
+
+`T`
 
 #### Parameters
 
