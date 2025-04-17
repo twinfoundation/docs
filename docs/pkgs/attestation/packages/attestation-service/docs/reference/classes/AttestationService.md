@@ -8,9 +8,9 @@ Service for performing attestation operations to a connector.
 
 ## Constructors
 
-### new AttestationService()
+### Constructor
 
-> **new AttestationService**(`options`?): [`AttestationService`](AttestationService.md)
+> **new AttestationService**(`options?`): `AttestationService`
 
 Create a new instance of AttestationService.
 
@@ -24,7 +24,7 @@ The options for the service.
 
 #### Returns
 
-[`AttestationService`](AttestationService.md)
+`AttestationService`
 
 ## Properties
 
@@ -50,7 +50,7 @@ Runtime name for the class.
 
 ### create()
 
-> **create**(`attestationObject`, `namespace`?, `identity`?, `nodeIdentity`?): `Promise`\<`string`\>
+> **create**(`attestationObject`, `namespace?`, `identity?`, `nodeIdentity?`): `Promise`\<`string`\>
 
 Attest the data and return the collated information.
 
@@ -158,7 +158,7 @@ The updated attestation details.
 
 ### destroy()
 
-> **destroy**(`attestationId`, `identity`?): `Promise`\<`void`\>
+> **destroy**(`attestationId`, `identity?`): `Promise`\<`void`\>
 
 Destroy the attestation.
 

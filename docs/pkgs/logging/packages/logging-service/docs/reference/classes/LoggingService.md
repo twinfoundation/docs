@@ -8,9 +8,9 @@ Service for performing logging operations to a connector.
 
 ## Constructors
 
-### new LoggingService()
+### Constructor
 
-> **new LoggingService**(`options`?): [`LoggingService`](LoggingService.md)
+> **new LoggingService**(`options?`): `LoggingService`
 
 Create a new instance of LoggingService.
 
@@ -24,7 +24,7 @@ The options for the connector.
 
 #### Returns
 
-[`LoggingService`](LoggingService.md)
+`LoggingService`
 
 ## Properties
 
@@ -76,7 +76,7 @@ Nothing.
 
 ### query()
 
-> **query**(`level`?, `source`?, `timeStart`?, `timeEnd`?, `cursor`?, `pageSize`?): `Promise`\<\{ `entities`: `ILogEntry`[]; `cursor`: `string`; \}\>
+> **query**(`level?`, `source?`, `timeStart?`, `timeEnd?`, `cursor?`, `pageSize?`): `Promise`\<\{ `entities`: `ILogEntry`[]; `cursor`: `string`; \}\>
 
 Query the log entries.
 

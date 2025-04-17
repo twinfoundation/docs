@@ -12,9 +12,9 @@ Client for performing identity through to REST endpoints.
 
 ## Constructors
 
-### new IdentityResolverClient()
+### Constructor
 
-> **new IdentityResolverClient**(`config`): [`IdentityResolverClient`](IdentityResolverClient.md)
+> **new IdentityResolverClient**(`config`): `IdentityResolverClient`
 
 Create a new instance of IdentityClient.
 
@@ -28,7 +28,7 @@ The configuration for the client.
 
 #### Returns
 
-[`IdentityResolverClient`](IdentityResolverClient.md)
+`IdentityResolverClient`
 
 #### Overrides
 

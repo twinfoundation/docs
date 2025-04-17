@@ -1,22 +1,8 @@
-# Interface: IDocumentManagementSetRequest
+# Interface: IDocumentManagementCreateRequest
 
-Request to set a document in an auditable item graph vertex.
+Request to create a document as an auditable item graph vertex.
 
 ## Properties
-
-### pathParams
-
-> **pathParams**: `object`
-
-The path parameters.
-
-#### auditableItemGraphId
-
-> **auditableItemGraphId**: `string`
-
-The id of the auditable item graph vertex to store the document on.
-
-***
 
 ### body
 
@@ -54,20 +40,26 @@ The data to create the document with, in base64.
 
 Additional information to associate with the document.
 
+#### auditableItemGraphEdges?
+
+> `optional` **auditableItemGraphEdges**: `object`[]
+
+The auditable item graph vertices to connect the document to.
+
 #### createAttestation?
 
 > `optional` **createAttestation**: `boolean`
 
-Flag to create an attestation for the document, defaults to false
+Flag to create an attestation for the document, defaults to false.
 
-#### includeIdAsAlias?
+#### addAlias?
 
-> `optional` **includeIdAsAlias**: `boolean`
+> `optional` **addAlias**: `boolean`
 
-Include the document id as an alias to the aig vertex, defaults to false.
+Flag to add the document id as an alias to the aig vertex, defaults to true.
 
 #### aliasAnnotationObject?
 
 > `optional` **aliasAnnotationObject**: `IJsonLdNodeObject`
 
-Additional information to associate with the alias.
+Annotation object for the alias.

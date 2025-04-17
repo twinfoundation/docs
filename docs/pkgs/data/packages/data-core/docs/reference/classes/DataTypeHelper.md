@@ -4,19 +4,19 @@ Class to help with data types.
 
 ## Constructors
 
-### new DataTypeHelper()
+### Constructor
 
-> **new DataTypeHelper**(): [`DataTypeHelper`](DataTypeHelper.md)
+> **new DataTypeHelper**(): `DataTypeHelper`
 
 #### Returns
 
-[`DataTypeHelper`](DataTypeHelper.md)
+`DataTypeHelper`
 
 ## Methods
 
 ### validate()
 
-> `static` **validate**(`propertyName`, `dataType`, `data`, `validationFailures`, `validationMode`?): `Promise`\<`boolean`\>
+> `static` **validate**(`propertyName`, `dataType`, `data`, `validationFailures`, `validationMode?`): `Promise`\<`boolean`\>
 
 Validate a data type.
 

@@ -8,9 +8,9 @@ Service for performing NFT operations to a connector.
 
 ## Constructors
 
-### new NftService()
+### Constructor
 
-> **new NftService**(`options`?): [`NftService`](NftService.md)
+> **new NftService**(`options?`): `NftService`
 
 Create a new instance of NftService.
 
@@ -24,7 +24,7 @@ The options for the service.
 
 #### Returns
 
-[`NftService`](NftService.md)
+`NftService`
 
 ## Properties
 
@@ -50,15 +50,19 @@ Runtime name for the class.
 
 ### mint()
 
-> **mint**\<`T`, `U`\>(`tag`, `immutableMetadata`?, `metadata`?, `namespace`?, `identity`?): `Promise`\<`string`\>
+> **mint**\<`T`, `U`\>(`tag`, `immutableMetadata?`, `metadata?`, `namespace?`, `identity?`): `Promise`\<`string`\>
 
 Mint an NFT.
 
 #### Type Parameters
 
-• **T** = `unknown`
+##### T
 
-• **U** = `unknown`
+`T` = `unknown`
+
+##### U
+
+`U` = `unknown`
 
 #### Parameters
 
@@ -106,15 +110,19 @@ The id of the created NFT in urn format.
 
 ### resolve()
 
-> **resolve**\<`T`, `U`\>(`id`, `identity`?): `Promise`\<\{ `issuer`: `string`; `owner`: `string`; `tag`: `string`; `immutableMetadata`: `T`; `metadata`: `U`; \}\>
+> **resolve**\<`T`, `U`\>(`id`, `identity?`): `Promise`\<\{ `issuer`: `string`; `owner`: `string`; `tag`: `string`; `immutableMetadata`: `T`; `metadata`: `U`; \}\>
 
 Resolve an NFT.
 
 #### Type Parameters
 
-• **T** = `unknown`
+##### T
 
-• **U** = `unknown`
+`T` = `unknown`
+
+##### U
+
+`U` = `unknown`
 
 #### Parameters
 
@@ -144,7 +152,7 @@ The data for the NFT.
 
 ### burn()
 
-> **burn**(`id`, `identity`?): `Promise`\<`void`\>
+> **burn**(`id`, `identity?`): `Promise`\<`void`\>
 
 Burn an NFT.
 
@@ -176,13 +184,15 @@ Nothing.
 
 ### transfer()
 
-> **transfer**\<`U`\>(`id`, `recipientIdentity`, `recipientAddress`, `metadata`?, `identity`?): `Promise`\<`void`\>
+> **transfer**\<`U`\>(`id`, `recipientIdentity`, `recipientAddress`, `metadata?`, `identity?`): `Promise`\<`void`\>
 
 Transfer an NFT.
 
 #### Type Parameters
 
-• **U** = `unknown`
+##### U
+
+`U` = `unknown`
 
 #### Parameters
 
@@ -230,13 +240,15 @@ Nothing.
 
 ### update()
 
-> **update**\<`U`\>(`id`, `metadata`, `identity`?): `Promise`\<`void`\>
+> **update**\<`U`\>(`id`, `metadata`, `identity?`): `Promise`\<`void`\>
 
 Update the data of the NFT.
 
 #### Type Parameters
 
-• **U** = `unknown`
+##### U
+
+`U` = `unknown`
 
 #### Parameters
 

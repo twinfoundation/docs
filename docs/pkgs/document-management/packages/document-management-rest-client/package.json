@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/document-management-rest-client",
-	"version": "0.0.1-next.7",
+	"version": "0.0.1-next.9",
 	"description": "Document management contract implementation which can connect to REST endpoints",
 	"repository": {
 		"type": "git",
@@ -32,9 +32,10 @@
 	"dependencies": {
 		"@twin.org/api-core": "next",
 		"@twin.org/api-models": "next",
+		"@twin.org/auditable-item-graph-models": "next",
 		"@twin.org/core": "next",
 		"@twin.org/data-json-ld": "next",
-		"@twin.org/document-management-models": "0.0.1-next.7",
+		"@twin.org/document-management-models": "0.0.1-next.9",
 		"@twin.org/entity": "next",
 		"@twin.org/nameof": "next",
 		"@twin.org/standards-unece": "next",
@@ -43,16 +44,16 @@
 	"devDependencies": {
 		"@twin.org/nameof-transformer": "next",
 		"@twin.org/nameof-vitest-plugin": "next",
-		"@vitest/coverage-v8": "3.0.8",
+		"@vitest/coverage-v8": "3.1.1",
 		"copyfiles": "2.4.1",
 		"nodemon": "3.1.9",
 		"rimraf": "6.0.1",
-		"rollup": "4.34.9",
+		"rollup": "4.40.0",
 		"ts-patch": "3.3.0",
-		"typedoc": "0.27.9",
-		"typedoc-plugin-markdown": "4.4.2",
-		"typescript": "5.8.2",
-		"vitest": "3.0.8"
+		"typedoc": "0.28.2",
+		"typedoc-plugin-markdown": "4.6.2",
+		"typescript": "5.8.3",
+		"vitest": "3.1.1"
 	},
 	"main": "./dist/cjs/index.cjs",
 	"module": "./dist/esm/index.mjs",

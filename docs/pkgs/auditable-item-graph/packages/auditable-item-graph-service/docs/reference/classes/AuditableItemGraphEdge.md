@@ -4,13 +4,13 @@ Class describing the auditable item graph edge.
 
 ## Constructors
 
-### new AuditableItemGraphEdge()
+### Constructor
 
-> **new AuditableItemGraphEdge**(): [`AuditableItemGraphEdge`](AuditableItemGraphEdge.md)
+> **new AuditableItemGraphEdge**(): `AuditableItemGraphEdge`
 
 #### Returns
 
-[`AuditableItemGraphEdge`](AuditableItemGraphEdge.md)
+`AuditableItemGraphEdge`
 
 ## Properties
 

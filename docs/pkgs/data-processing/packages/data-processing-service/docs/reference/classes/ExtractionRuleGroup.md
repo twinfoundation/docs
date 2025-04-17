@@ -4,13 +4,13 @@ Class defining an extraction rule group.
 
 ## Constructors
 
-### new ExtractionRuleGroup()
+### Constructor
 
-> **new ExtractionRuleGroup**(): [`ExtractionRuleGroup`](ExtractionRuleGroup.md)
+> **new ExtractionRuleGroup**(): `ExtractionRuleGroup`
 
 #### Returns
 
-[`ExtractionRuleGroup`](ExtractionRuleGroup.md)
+`ExtractionRuleGroup`
 
 ## Properties
 

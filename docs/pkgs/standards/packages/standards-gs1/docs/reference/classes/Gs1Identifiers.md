@@ -4,13 +4,13 @@ Handle all identifier types for GS1.
 
 ## Constructors
 
-### new Gs1Identifiers()
+### Constructor
 
-> **new Gs1Identifiers**(): [`Gs1Identifiers`](Gs1Identifiers.md)
+> **new Gs1Identifiers**(): `Gs1Identifiers`
 
 #### Returns
 
-[`Gs1Identifiers`](Gs1Identifiers.md)
+`Gs1Identifiers`
 
 ## Methods
 

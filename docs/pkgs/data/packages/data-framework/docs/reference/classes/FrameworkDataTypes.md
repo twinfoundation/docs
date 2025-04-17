@@ -4,13 +4,13 @@ Handle all the framework data types.
 
 ## Constructors
 
-### new FrameworkDataTypes()
+### Constructor
 
-> **new FrameworkDataTypes**(): [`FrameworkDataTypes`](FrameworkDataTypes.md)
+> **new FrameworkDataTypes**(): `FrameworkDataTypes`
 
 #### Returns
 
-[`FrameworkDataTypes`](FrameworkDataTypes.md)
+`FrameworkDataTypes`
 
 ## Methods
 

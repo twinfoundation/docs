@@ -8,13 +8,13 @@ The main entry point for the CLI.
 
 ## Constructors
 
-### new CLI()
+### Constructor
 
-> **new CLI**(): [`CLI`](CLI.md)
+> **new CLI**(): `CLI`
 
 #### Returns
 
-[`CLI`](CLI.md)
+`CLI`
 
 #### Inherited from
 
@@ -24,7 +24,7 @@ The main entry point for the CLI.
 
 ### run()
 
-> **run**(`argv`, `localesDirectory`?, `options`?): `Promise`\<`number`\>
+> **run**(`argv`, `localesDirectory?`, `options?`): `Promise`\<`number`\>
 
 Run the app.
 

@@ -1,6 +1,6 @@
 # Interface: IAuditableItemGraphChangeset
 
-Interface describing a set of updates to the vertex.
+Interface describing a set of changes to the vertex.
 
 ## Properties
 

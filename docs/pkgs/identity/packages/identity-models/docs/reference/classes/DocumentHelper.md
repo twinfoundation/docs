@@ -4,13 +4,13 @@ Helper methods for documents.
 
 ## Constructors
 
-### new DocumentHelper()
+### Constructor
 
-> **new DocumentHelper**(): [`DocumentHelper`](DocumentHelper.md)
+> **new DocumentHelper**(): `DocumentHelper`
 
 #### Returns
 
-[`DocumentHelper`](DocumentHelper.md)
+`DocumentHelper`
 
 ## Properties
 
@@ -54,7 +54,7 @@ The parsed document id.
 
 ### joinId()
 
-> `static` **joinId**(`documentId`, `fragment`?): `string`
+> `static` **joinId**(`documentId`, `fragment?`): `string`
 
 Join the document id parts.
 
@@ -82,7 +82,7 @@ The full id.
 
 ### getVerificationMethod()
 
-> `static` **getVerificationMethod**(`didDocument`, `methodName`, `methodType`?): `IDidDocumentVerificationMethod`
+> `static` **getVerificationMethod**(`didDocument`, `methodName`, `methodType?`): `IDidDocumentVerificationMethod`
 
 Get a verification method from a DID document.
 
@@ -120,7 +120,7 @@ Error if the method is not found.
 
 ### getJwk()
 
-> `static` **getJwk**(`didDocument`, `methodName`, `methodType`?): `IJwk`
+> `static` **getJwk**(`didDocument`, `methodName`, `methodType?`): `IJwk`
 
 Gets a JWK from a DID document verification method.
 

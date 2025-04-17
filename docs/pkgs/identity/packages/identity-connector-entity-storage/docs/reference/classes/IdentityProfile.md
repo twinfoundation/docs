@@ -4,13 +4,13 @@ Class representing profile details for the identity.
 
 ## Constructors
 
-### new IdentityProfile()
+### Constructor
 
-> **new IdentityProfile**(): [`IdentityProfile`](IdentityProfile.md)
+> **new IdentityProfile**(): `IdentityProfile`
 
 #### Returns
 
-[`IdentityProfile`](IdentityProfile.md)
+`IdentityProfile`
 
 ## Properties
 

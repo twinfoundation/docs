@@ -4,13 +4,13 @@ Utility functions for the iota nfts.
 
 ## Constructors
 
-### new IotaNftUtils()
+### Constructor
 
-> **new IotaNftUtils**(): [`IotaNftUtils`](IotaNftUtils.md)
+> **new IotaNftUtils**(): `IotaNftUtils`
 
 #### Returns
 
-[`IotaNftUtils`](IotaNftUtils.md)
+`IotaNftUtils`
 
 ## Properties
 

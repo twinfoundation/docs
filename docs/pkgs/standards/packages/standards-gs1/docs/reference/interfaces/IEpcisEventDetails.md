@@ -20,7 +20,7 @@ JSON-LD @context.
 
 #### Inherited from
 
-[`IEpcisEvent`](IEpcisEvent.md).[`@context`](IEpcisEvent.md#@context)
+[`IEpcisEvent`](IEpcisEvent.md).[`@context`](IEpcisEvent.md#context)
 
 ***
 

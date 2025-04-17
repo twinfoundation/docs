@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/identity-rest-client",
-	"version": "0.0.1-next.39",
+	"version": "0.0.1-next.42",
 	"description": "Identity contract implementation which can connect to REST endpoints",
 	"repository": {
 		"type": "git",
@@ -38,21 +38,21 @@
 		"@twin.org/entity": "next",
 		"@twin.org/nameof": "next",
 		"@twin.org/standards-w3c-did": "next",
-		"@twin.org/identity-models": "0.0.1-next.39"
+		"@twin.org/identity-models": "0.0.1-next.42"
 	},
 	"devDependencies": {
 		"@twin.org/nameof-transformer": "next",
 		"@twin.org/nameof-vitest-plugin": "next",
-		"@vitest/coverage-v8": "3.0.8",
+		"@vitest/coverage-v8": "3.1.1",
 		"copyfiles": "2.4.1",
 		"nodemon": "3.1.9",
 		"rimraf": "6.0.1",
-		"rollup": "4.34.9",
+		"rollup": "4.40.0",
 		"ts-patch": "3.3.0",
-		"typedoc": "0.27.9",
-		"typedoc-plugin-markdown": "4.4.2",
-		"typescript": "5.8.2",
-		"vitest": "3.0.8"
+		"typedoc": "0.28.2",
+		"typedoc-plugin-markdown": "4.6.2",
+		"typescript": "5.8.3",
+		"vitest": "3.1.1"
 	},
 	"main": "./dist/cjs/index.cjs",
 	"module": "./dist/esm/index.mjs",

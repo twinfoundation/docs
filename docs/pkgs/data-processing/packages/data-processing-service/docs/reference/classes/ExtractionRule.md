@@ -4,13 +4,13 @@ Class defining an extraction rule.
 
 ## Constructors
 
-### new ExtractionRule()
+### Constructor
 
-> **new ExtractionRule**(): [`ExtractionRule`](ExtractionRule.md)
+> **new ExtractionRule**(): `ExtractionRule`
 
 #### Returns
 
-[`ExtractionRule`](ExtractionRule.md)
+`ExtractionRule`
 
 ## Properties
 

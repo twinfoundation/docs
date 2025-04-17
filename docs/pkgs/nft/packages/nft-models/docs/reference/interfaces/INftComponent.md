@@ -10,15 +10,19 @@ Interface describing an NFT component.
 
 ### mint()
 
-> **mint**\<`T`, `U`\>(`tag`, `immutableMetadata`?, `metadata`?, `namespace`?, `identity`?): `Promise`\<`string`\>
+> **mint**\<`T`, `U`\>(`tag`, `immutableMetadata?`, `metadata?`, `namespace?`, `identity?`): `Promise`\<`string`\>
 
 Mint an NFT.
 
 #### Type Parameters
 
-• **T** = `unknown`
+##### T
 
-• **U** = `unknown`
+`T` = `unknown`
+
+##### U
+
+`U` = `unknown`
 
 #### Parameters
 
@@ -62,15 +66,19 @@ The id of the created NFT in urn format.
 
 ### resolve()
 
-> **resolve**\<`T`, `U`\>(`id`, `controllerIdentity`?): `Promise`\<\{ `issuer`: `string`; `owner`: `string`; `tag`: `string`; `immutableMetadata`: `T`; `metadata`: `U`; \}\>
+> **resolve**\<`T`, `U`\>(`id`, `controllerIdentity?`): `Promise`\<\{ `issuer`: `string`; `owner`: `string`; `tag`: `string`; `immutableMetadata`: `T`; `metadata`: `U`; \}\>
 
 Resolve an NFT.
 
 #### Type Parameters
 
-• **T** = `unknown`
+##### T
 
-• **U** = `unknown`
+`T` = `unknown`
+
+##### U
+
+`U` = `unknown`
 
 #### Parameters
 
@@ -96,7 +104,7 @@ The data for the NFT.
 
 ### burn()
 
-> **burn**(`id`, `controllerIdentity`?): `Promise`\<`void`\>
+> **burn**(`id`, `controllerIdentity?`): `Promise`\<`void`\>
 
 Burn an NFT.
 
@@ -124,13 +132,15 @@ Nothing.
 
 ### transfer()
 
-> **transfer**\<`U`\>(`id`, `recipientIdentity`, `recipientAddress`, `metadata`?, `controllerIdentity`?): `Promise`\<`void`\>
+> **transfer**\<`U`\>(`id`, `recipientIdentity`, `recipientAddress`, `metadata?`, `controllerIdentity?`): `Promise`\<`void`\>
 
 Transfer an NFT.
 
 #### Type Parameters
 
-• **U** = `unknown`
+##### U
+
+`U` = `unknown`
 
 #### Parameters
 
@@ -174,13 +184,15 @@ Nothing.
 
 ### update()
 
-> **update**\<`U`\>(`id`, `metadata`, `controllerIdentity`?): `Promise`\<`void`\>
+> **update**\<`U`\>(`id`, `metadata`, `controllerIdentity?`): `Promise`\<`void`\>
 
 Update the mutable data of the NFT.
 
 #### Type Parameters
 
-• **U** = `unknown`
+##### U
+
+`U` = `unknown`
 
 #### Parameters
 

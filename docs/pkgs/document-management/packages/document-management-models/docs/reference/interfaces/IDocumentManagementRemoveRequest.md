@@ -1,6 +1,6 @@
 # Interface: IDocumentManagementRemoveRequest
 
-Request to remove a document from an auditable item graph.
+Request to remove a document revision from an auditable item graph.
 
 ## Properties
 
@@ -10,34 +10,14 @@ Request to remove a document from an auditable item graph.
 
 The path parameters.
 
-#### auditableItemGraphId
+#### auditableItemGraphDocumentId
 
-> **auditableItemGraphId**: `string`
+> **auditableItemGraphDocumentId**: `string`
 
-The id of the auditable item graph vertex to remove the document from.
+The id of the auditable item graph vertex to remove the revision from.
 
-#### documentId
+#### revision
 
-> **documentId**: `string`
+> **revision**: `string`
 
-The full id of the document to remove.
-
-***
-
-### query?
-
-> `optional` **query**: `object`
-
-The query parameters.
-
-#### removeAllRevisions?
-
-> `optional` **removeAllRevisions**: `boolean`
-
-Flag to remove all revisions of the document.
-
-##### Default
-
-```ts
-false
-```
+The revision of the document to remove.

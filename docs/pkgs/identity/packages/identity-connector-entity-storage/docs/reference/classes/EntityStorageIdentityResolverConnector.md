@@ -8,9 +8,9 @@ Class for performing identity operations using entity storage.
 
 ## Constructors
 
-### new EntityStorageIdentityResolverConnector()
+### Constructor
 
-> **new EntityStorageIdentityResolverConnector**(`options`?): [`EntityStorageIdentityResolverConnector`](EntityStorageIdentityResolverConnector.md)
+> **new EntityStorageIdentityResolverConnector**(`options?`): `EntityStorageIdentityResolverConnector`
 
 Create a new instance of EntityStorageIdentityResolverConnector.
 
@@ -24,7 +24,7 @@ The options for the identity connector.
 
 #### Returns
 
-[`EntityStorageIdentityResolverConnector`](EntityStorageIdentityResolverConnector.md)
+`EntityStorageIdentityResolverConnector`
 
 ## Properties
 

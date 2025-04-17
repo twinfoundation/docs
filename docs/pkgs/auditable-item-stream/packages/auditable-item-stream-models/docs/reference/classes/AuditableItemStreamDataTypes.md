@@ -4,13 +4,13 @@ Handle all the data types for auditable item stream.
 
 ## Constructors
 
-### new AuditableItemStreamDataTypes()
+### Constructor
 
-> **new AuditableItemStreamDataTypes**(): [`AuditableItemStreamDataTypes`](AuditableItemStreamDataTypes.md)
+> **new AuditableItemStreamDataTypes**(): `AuditableItemStreamDataTypes`
 
 #### Returns
 
-[`AuditableItemStreamDataTypes`](AuditableItemStreamDataTypes.md)
+`AuditableItemStreamDataTypes`
 
 ## Methods
 

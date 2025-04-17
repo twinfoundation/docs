@@ -4,13 +4,13 @@ Handle all the data types for immutable proof.
 
 ## Constructors
 
-### new ImmutableProofDataTypes()
+### Constructor
 
-> **new ImmutableProofDataTypes**(): [`ImmutableProofDataTypes`](ImmutableProofDataTypes.md)
+> **new ImmutableProofDataTypes**(): `ImmutableProofDataTypes`
 
 #### Returns
 
-[`ImmutableProofDataTypes`](ImmutableProofDataTypes.md)
+`ImmutableProofDataTypes`
 
 ## Methods
 

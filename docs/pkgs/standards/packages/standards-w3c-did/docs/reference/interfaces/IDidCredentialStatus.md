@@ -6,6 +6,8 @@ Interface describing a DID credential status.
 
 \[`key`: `string`\]: `unknown`
 
+Additional properties.
+
 ## Properties
 
 ### id

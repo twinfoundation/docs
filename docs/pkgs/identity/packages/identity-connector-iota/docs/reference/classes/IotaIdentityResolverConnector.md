@@ -8,9 +8,9 @@ Class for performing identity operations on IOTA.
 
 ## Constructors
 
-### new IotaIdentityResolverConnector()
+### Constructor
 
-> **new IotaIdentityResolverConnector**(`options`): [`IotaIdentityResolverConnector`](IotaIdentityResolverConnector.md)
+> **new IotaIdentityResolverConnector**(`options`): `IotaIdentityResolverConnector`
 
 Create a new instance of IotaIdentityResolverConnector.
 
@@ -24,7 +24,7 @@ The options for the identity connector.
 
 #### Returns
 
-[`IotaIdentityResolverConnector`](IotaIdentityResolverConnector.md)
+`IotaIdentityResolverConnector`
 
 ## Properties
 

@@ -12,9 +12,9 @@ Event bus which publishes using REST API and websockets.
 
 ## Constructors
 
-### new EventBusSocketClient()
+### Constructor
 
-> **new EventBusSocketClient**(`options`): [`EventBusSocketClient`](EventBusSocketClient.md)
+> **new EventBusSocketClient**(`options`): `EventBusSocketClient`
 
 Create a new instance of EventBusSocketClient.
 
@@ -28,7 +28,7 @@ Options for the client.
 
 #### Returns
 
-[`EventBusSocketClient`](EventBusSocketClient.md)
+`EventBusSocketClient`
 
 #### Overrides
 
@@ -56,7 +56,9 @@ Subscribe to the event bus.
 
 #### Type Parameters
 
-• **T**
+##### T
+
+`T`
 
 #### Parameters
 
@@ -118,7 +120,9 @@ Publish an event to the bus.
 
 #### Type Parameters
 
-• **T**
+##### T
+
+`T`
 
 #### Parameters
 

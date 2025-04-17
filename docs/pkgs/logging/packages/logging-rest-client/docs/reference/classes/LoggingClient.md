@@ -12,9 +12,9 @@ Client for performing logging through to REST endpoints.
 
 ## Constructors
 
-### new LoggingClient()
+### Constructor
 
-> **new LoggingClient**(`config`): [`LoggingClient`](LoggingClient.md)
+> **new LoggingClient**(`config`): `LoggingClient`
 
 Create a new instance of LoggingClient.
 
@@ -28,7 +28,7 @@ The configuration for the client.
 
 #### Returns
 
-[`LoggingClient`](LoggingClient.md)
+`LoggingClient`
 
 #### Overrides
 
@@ -76,7 +76,7 @@ Nothing.
 
 ### query()
 
-> **query**(`level`?, `source`?, `timeStart`?, `timeEnd`?, `cursor`?, `pageSize`?): `Promise`\<\{ `entities`: `ILogEntry`[]; `cursor`: `string`; \}\>
+> **query**(`level?`, `source?`, `timeStart?`, `timeEnd?`, `cursor?`, `pageSize?`): `Promise`\<\{ `entities`: `ILogEntry`[]; `cursor`: `string`; \}\>
 
 Query the log entries.
 

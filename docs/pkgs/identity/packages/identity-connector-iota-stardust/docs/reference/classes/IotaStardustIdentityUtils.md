@@ -4,13 +4,13 @@ Utility functions for the iota identity.
 
 ## Constructors
 
-### new IotaStardustIdentityUtils()
+### Constructor
 
-> **new IotaStardustIdentityUtils**(): [`IotaStardustIdentityUtils`](IotaStardustIdentityUtils.md)
+> **new IotaStardustIdentityUtils**(): `IotaStardustIdentityUtils`
 
 #### Returns
 
-[`IotaStardustIdentityUtils`](IotaStardustIdentityUtils.md)
+`IotaStardustIdentityUtils`
 
 ## Methods
 

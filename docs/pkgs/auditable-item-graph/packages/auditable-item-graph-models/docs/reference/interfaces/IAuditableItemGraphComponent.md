@@ -10,7 +10,7 @@ Interface describing an auditable item graph contract.
 
 ### create()
 
-> **create**(`vertex`, `userIdentity`?, `nodeIdentity`?): `Promise`\<`string`\>
+> **create**(`vertex`, `userIdentity?`, `nodeIdentity?`): `Promise`\<`string`\>
 
 Create a new graph vertex.
 
@@ -66,7 +66,7 @@ The id of the new graph item.
 
 ### update()
 
-> **update**(`vertex`, `userIdentity`?, `nodeIdentity`?): `Promise`\<`void`\>
+> **update**(`vertex`, `userIdentity?`, `nodeIdentity?`): `Promise`\<`void`\>
 
 Update a graph vertex.
 
@@ -128,7 +128,7 @@ Nothing.
 
 ### get()
 
-> **get**(`id`, `options`?): `Promise`\<[`IAuditableItemGraphVertex`](IAuditableItemGraphVertex.md)\>
+> **get**(`id`, `options?`): `Promise`\<[`IAuditableItemGraphVertex`](IAuditableItemGraphVertex.md)\>
 
 Get a graph vertex.
 
@@ -176,7 +176,7 @@ NotFoundError if the vertex is not found.
 
 ### removeVerifiable()
 
-> **removeVerifiable**(`id`, `nodeIdentity`?): `Promise`\<`void`\>
+> **removeVerifiable**(`id`, `nodeIdentity?`): `Promise`\<`void`\>
 
 Remove the verifiable storage for an item.
 
@@ -208,7 +208,7 @@ NotFoundError if the vertex is not found.
 
 ### query()
 
-> **query**(`options`?, `conditions`?, `orderBy`?, `orderByDirection`?, `properties`?, `cursor`?, `pageSize`?): `Promise`\<[`IAuditableItemGraphVertexList`](IAuditableItemGraphVertexList.md)\>
+> **query**(`options?`, `conditions?`, `orderBy?`, `orderByDirection?`, `properties?`, `cursor?`, `pageSize?`): `Promise`\<[`IAuditableItemGraphVertexList`](IAuditableItemGraphVertexList.md)\>
 
 Query the graph for vertices.
 
@@ -229,6 +229,12 @@ The optional id to look for.
 `"both"` \| `"id"` \| `"alias"`
 
 Look in id, alias or both, defaults to both.
+
+###### resourceTypes?
+
+`string`[]
+
+Include vertices with specific resource types.
 
 ##### conditions?
 

@@ -100,7 +100,7 @@ The balance of the wallet address.
 
 ### ensureBalance()
 
-> **ensureBalance**(`identity`, `address`, `ensureBalance`, `timeoutInSeconds`?): `Promise`\<`boolean`\>
+> **ensureBalance**(`identity`, `address`, `ensureBalance`, `timeoutInSeconds?`): `Promise`\<`boolean`\>
 
 Ensure the balance for an address in a wallet.
 

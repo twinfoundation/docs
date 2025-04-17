@@ -4,13 +4,13 @@ Utility functions for the entity storage attestation.
 
 ## Constructors
 
-### new NftAttestationUtils()
+### Constructor
 
-> **new NftAttestationUtils**(): [`NftAttestationUtils`](NftAttestationUtils.md)
+> **new NftAttestationUtils**(): `NftAttestationUtils`
 
 #### Returns
 
-[`NftAttestationUtils`](NftAttestationUtils.md)
+`NftAttestationUtils`
 
 ## Methods
 

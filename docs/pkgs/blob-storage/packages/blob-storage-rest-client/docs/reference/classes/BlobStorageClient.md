@@ -12,9 +12,9 @@ Client for performing blob storage through to REST endpoints.
 
 ## Constructors
 
-### new BlobStorageClient()
+### Constructor
 
-> **new BlobStorageClient**(`config`): [`BlobStorageClient`](BlobStorageClient.md)
+> **new BlobStorageClient**(`config`): `BlobStorageClient`
 
 Create a new instance of BlobStorageClient.
 
@@ -28,7 +28,7 @@ The configuration for the client.
 
 #### Returns
 
-[`BlobStorageClient`](BlobStorageClient.md)
+`BlobStorageClient`
 
 #### Overrides
 
@@ -50,7 +50,7 @@ Runtime name for the class.
 
 ### create()
 
-> **create**(`blob`, `encodingFormat`?, `fileExtension`?, `metadata`?, `namespace`?): `Promise`\<`string`\>
+> **create**(`blob`, `encodingFormat?`, `fileExtension?`, `metadata?`, `namespace?`): `Promise`\<`string`\>
 
 Create the blob with some metadata.
 
@@ -136,7 +136,7 @@ Not found error if the blob cannot be found.
 
 ### update()
 
-> **update**(`id`, `encodingFormat`?, `fileExtension`?, `metadata`?): `Promise`\<`void`\>
+> **update**(`id`, `encodingFormat?`, `fileExtension?`, `metadata?`): `Promise`\<`void`\>
 
 Update the blob with metadata.
 
@@ -210,7 +210,7 @@ Nothing.
 
 ### query()
 
-> **query**(`conditions`?, `orderBy`?, `orderByDirection`?, `cursor`?, `pageSize`?): `Promise`\<`IBlobStorageEntryList`\>
+> **query**(`conditions?`, `orderBy?`, `orderByDirection?`, `cursor?`, `pageSize?`): `Promise`\<`IBlobStorageEntryList`\>
 
 Query all the blob storage entries which match the conditions.
 
@@ -261,7 +261,7 @@ and a cursor which can be used to request more entities.
 
 ### createDownloadLink()
 
-> **createDownloadLink**(`id`, `download`?, `filename`?): `string`
+> **createDownloadLink**(`id`, `download?`, `filename?`): `string`
 
 Create a download link for the blob.
 

@@ -4,13 +4,13 @@ Class describing the auditable item graph vertex resource.
 
 ## Constructors
 
-### new AuditableItemGraphResource()
+### Constructor
 
-> **new AuditableItemGraphResource**(): [`AuditableItemGraphResource`](AuditableItemGraphResource.md)
+> **new AuditableItemGraphResource**(): `AuditableItemGraphResource`
 
 #### Returns
 
-[`AuditableItemGraphResource`](AuditableItemGraphResource.md)
+`AuditableItemGraphResource`
 
 ## Properties
 

@@ -17,7 +17,8 @@
 ## Functions
 
 - [generateRestRoutesDocumentManagement](functions/generateRestRoutesDocumentManagement.md)
-- [documentManagementSet](functions/documentManagementSet.md)
+- [documentManagementCreate](functions/documentManagementCreate.md)
 - [documentManagementGet](functions/documentManagementGet.md)
+- [documentManagementUpdate](functions/documentManagementUpdate.md)
 - [documentManagementRemove](functions/documentManagementRemove.md)
 - [documentManagementQuery](functions/documentManagementQuery.md)

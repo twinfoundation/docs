@@ -4,13 +4,13 @@ Class describing a set of updates to the vertex.
 
 ## Constructors
 
-### new AuditableItemGraphChangeset()
+### Constructor
 
-> **new AuditableItemGraphChangeset**(): [`AuditableItemGraphChangeset`](AuditableItemGraphChangeset.md)
+> **new AuditableItemGraphChangeset**(): `AuditableItemGraphChangeset`
 
 #### Returns
 
-[`AuditableItemGraphChangeset`](AuditableItemGraphChangeset.md)
+`AuditableItemGraphChangeset`
 
 ## Properties
 

@@ -10,7 +10,7 @@ Interface describing an immutable proof contract.
 
 ### create()
 
-> **create**(`document`, `userIdentity`?, `nodeIdentity`?): `Promise`\<`string`\>
+> **create**(`document`, `userIdentity?`, `nodeIdentity?`): `Promise`\<`string`\>
 
 Create a new proof.
 
@@ -96,7 +96,7 @@ NotFoundError if the proof is not found.
 
 ### removeVerifiable()
 
-> **removeVerifiable**(`id`, `nodeIdentity`?): `Promise`\<`void`\>
+> **removeVerifiable**(`id`, `nodeIdentity?`): `Promise`\<`void`\>
 
 Remove the verifiable storage for the proof.
 

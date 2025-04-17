@@ -8,9 +8,9 @@ Class for performing logging operations in the console.
 
 ## Constructors
 
-### new ConsoleLoggingConnector()
+### Constructor
 
-> **new ConsoleLoggingConnector**(`options`?): [`ConsoleLoggingConnector`](ConsoleLoggingConnector.md)
+> **new ConsoleLoggingConnector**(`options?`): `ConsoleLoggingConnector`
 
 Create a new instance of ConsoleLoggingConnector.
 
@@ -24,7 +24,7 @@ The options for the logging connector.
 
 #### Returns
 
-[`ConsoleLoggingConnector`](ConsoleLoggingConnector.md)
+`ConsoleLoggingConnector`
 
 ## Properties
 

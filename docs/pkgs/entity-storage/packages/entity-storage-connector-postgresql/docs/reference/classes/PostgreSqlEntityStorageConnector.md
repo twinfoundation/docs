@@ -4,7 +4,9 @@ Class for performing entity storage operations using ql.
 
 ## Type Parameters
 
-• **T** = `unknown`
+### T
+
+`T` = `unknown`
 
 ## Implements
 
@@ -12,9 +14,9 @@ Class for performing entity storage operations using ql.
 
 ## Constructors
 
-### new PostgreSqlEntityStorageConnector()
+### Constructor
 
-> **new PostgreSqlEntityStorageConnector**\<`T`\>(`options`): [`PostgreSqlEntityStorageConnector`](PostgreSqlEntityStorageConnector.md)\<`T`\>
+> **new PostgreSqlEntityStorageConnector**\<`T`\>(`options`): `PostgreSqlEntityStorageConnector`\<`T`\>
 
 Create a new instance of PostgreSqlEntityStorageConnector.
 
@@ -28,7 +30,7 @@ The options for the connector.
 
 #### Returns
 
-[`PostgreSqlEntityStorageConnector`](PostgreSqlEntityStorageConnector.md)\<`T`\>
+`PostgreSqlEntityStorageConnector`\<`T`\>
 
 ## Properties
 
@@ -46,7 +48,7 @@ Runtime name for the class.
 
 ### bootstrap()
 
-> **bootstrap**(`nodeLoggingConnectorType`?): `Promise`\<`boolean`\>
+> **bootstrap**(`nodeLoggingConnectorType?`): `Promise`\<`boolean`\>
 
 Initialize the PostgreSql environment.
 
@@ -90,7 +92,7 @@ The schema for the entities.
 
 ### get()
 
-> **get**(`id`, `secondaryIndex`?, `conditions`?): `Promise`\<`undefined` \| `T`\>
+> **get**(`id`, `secondaryIndex?`, `conditions?`): `Promise`\<`undefined` \| `T`\>
 
 Get an entity from PostgreSql.
 
@@ -128,7 +130,7 @@ The object if it can be found or undefined.
 
 ### set()
 
-> **set**(`entity`, `conditions`?): `Promise`\<`void`\>
+> **set**(`entity`, `conditions?`): `Promise`\<`void`\>
 
 Set an entity.
 
@@ -160,7 +162,7 @@ The id of the entity.
 
 ### remove()
 
-> **remove**(`id`, `conditions`?): `Promise`\<`void`\>
+> **remove**(`id`, `conditions?`): `Promise`\<`void`\>
 
 Remove the entity.
 
@@ -192,7 +194,7 @@ Nothing.
 
 ### query()
 
-> **query**(`conditions`?, `sortProperties`?, `properties`?, `cursor`?, `pageSize`?): `Promise`\<\{ `entities`: `Partial`\<`T`\>[]; `cursor`: `string`; \}\>
+> **query**(`conditions?`, `sortProperties?`, `properties?`, `cursor?`, `pageSize?`): `Promise`\<\{ `entities`: `Partial`\<`T`\>[]; `cursor`: `string`; \}\>
 
 Find all the entities which match the conditions.
 

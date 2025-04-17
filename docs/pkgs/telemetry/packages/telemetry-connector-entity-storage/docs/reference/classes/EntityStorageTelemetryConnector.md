@@ -8,9 +8,9 @@ Class for performing telemetry operations in entity storage.
 
 ## Constructors
 
-### new EntityStorageTelemetryConnector()
+### Constructor
 
-> **new EntityStorageTelemetryConnector**(`options`?): [`EntityStorageTelemetryConnector`](EntityStorageTelemetryConnector.md)
+> **new EntityStorageTelemetryConnector**(`options?`): `EntityStorageTelemetryConnector`
 
 Create a new instance of EntityStorageTelemetryConnector.
 
@@ -24,7 +24,7 @@ The options for the connector.
 
 #### Returns
 
-[`EntityStorageTelemetryConnector`](EntityStorageTelemetryConnector.md)
+`EntityStorageTelemetryConnector`
 
 ## Properties
 
@@ -128,7 +128,7 @@ Nothing.
 
 ### addMetricValue()
 
-> **addMetricValue**(`id`, `value`, `customData`?): `Promise`\<`string`\>
+> **addMetricValue**(`id`, `value`, `customData?`): `Promise`\<`string`\>
 
 Add a metric value.
 
@@ -190,7 +190,7 @@ Nothing.
 
 ### query()
 
-> **query**(`type`?, `cursor`?, `pageSize`?): `Promise`\<\{ `entities`: `ITelemetryMetric`[]; `cursor`: `string`; \}\>
+> **query**(`type?`, `cursor?`, `pageSize?`): `Promise`\<\{ `entities`: `ITelemetryMetric`[]; `cursor`: `string`; \}\>
 
 Query the metrics.
 
@@ -233,7 +233,7 @@ NotImplementedError if the implementation does not support retrieval.
 
 ### queryValues()
 
-> **queryValues**(`id`, `timeStart`?, `timeEnd`?, `cursor`?, `pageSize`?): `Promise`\<\{ `metric`: `ITelemetryMetric`; `entities`: `ITelemetryMetricValue`[]; `cursor`: `string`; \}\>
+> **queryValues**(`id`, `timeStart?`, `timeEnd?`, `cursor?`, `pageSize?`): `Promise`\<\{ `metric`: `ITelemetryMetric`; `entities`: `ITelemetryMetricValue`[]; `cursor`: `string`; \}\>
 
 Query the metrics.
 

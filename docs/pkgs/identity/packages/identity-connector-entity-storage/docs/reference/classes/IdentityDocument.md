@@ -4,13 +4,13 @@ Class describing the identity document.
 
 ## Constructors
 
-### new IdentityDocument()
+### Constructor
 
-> **new IdentityDocument**(): [`IdentityDocument`](IdentityDocument.md)
+> **new IdentityDocument**(): `IdentityDocument`
 
 #### Returns
 
-[`IdentityDocument`](IdentityDocument.md)
+`IdentityDocument`
 
 ## Properties
 

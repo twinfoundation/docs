@@ -1,5 +1,5 @@
 # Type Alias: LogLevel
 
-> **LogLevel**: `"info"` \| `"error"` \| `"warn"` \| `"trace"` \| `"debug"`
+> **LogLevel** = `"info"` \| `"error"` \| `"warn"` \| `"trace"` \| `"debug"`
 
 Log level.

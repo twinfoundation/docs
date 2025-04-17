@@ -4,13 +4,13 @@ Class for performing operations on IOTA.
 
 ## Constructors
 
-### new IotaStardust()
+### Constructor
 
-> **new IotaStardust**(): [`IotaStardust`](IotaStardust.md)
+> **new IotaStardust**(): `IotaStardust`
 
 #### Returns
 
-[`IotaStardust`](IotaStardust.md)
+`IotaStardust`
 
 ## Properties
 

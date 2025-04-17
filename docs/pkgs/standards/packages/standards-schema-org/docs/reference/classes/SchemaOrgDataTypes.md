@@ -4,13 +4,13 @@ Handle all the data types for schema.org.
 
 ## Constructors
 
-### new SchemaOrgDataTypes()
+### Constructor
 
-> **new SchemaOrgDataTypes**(): [`SchemaOrgDataTypes`](SchemaOrgDataTypes.md)
+> **new SchemaOrgDataTypes**(): `SchemaOrgDataTypes`
 
 #### Returns
 
-[`SchemaOrgDataTypes`](SchemaOrgDataTypes.md)
+`SchemaOrgDataTypes`
 
 ## Methods
 

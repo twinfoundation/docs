@@ -8,9 +8,9 @@ Class for performing logging operations on multiple connectors.
 
 ## Constructors
 
-### new MultiLoggingConnector()
+### Constructor
 
-> **new MultiLoggingConnector**(`options`): [`MultiLoggingConnector`](MultiLoggingConnector.md)
+> **new MultiLoggingConnector**(`options`): `MultiLoggingConnector`
 
 Create a new instance of MultiLoggingConnector.
 
@@ -24,7 +24,7 @@ The options for the connector.
 
 #### Returns
 
-[`MultiLoggingConnector`](MultiLoggingConnector.md)
+`MultiLoggingConnector`
 
 ## Properties
 
@@ -76,7 +76,7 @@ Nothing.
 
 ### query()
 
-> **query**(`conditions`?, `sortProperties`?, `properties`?, `cursor`?, `pageSize`?): `Promise`\<\{ `entities`: `Partial`\<[`ILogEntry`](../interfaces/ILogEntry.md)\>[]; `cursor`: `string`; \}\>
+> **query**(`conditions?`, `sortProperties?`, `properties?`, `cursor?`, `pageSize?`): `Promise`\<\{ `entities`: `Partial`\<[`ILogEntry`](../interfaces/ILogEntry.md)\>[]; `cursor`: `string`; \}\>
 
 Query the log entries.
 

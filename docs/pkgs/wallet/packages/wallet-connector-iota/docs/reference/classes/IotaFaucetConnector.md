@@ -8,9 +8,9 @@ Class for performing faucet operations on IOTA.
 
 ## Constructors
 
-### new IotaFaucetConnector()
+### Constructor
 
-> **new IotaFaucetConnector**(`options`): [`IotaFaucetConnector`](IotaFaucetConnector.md)
+> **new IotaFaucetConnector**(`options`): `IotaFaucetConnector`
 
 Create a new instance of IotaFaucetConnector.
 
@@ -24,7 +24,7 @@ The options for the connector.
 
 #### Returns
 
-[`IotaFaucetConnector`](IotaFaucetConnector.md)
+`IotaFaucetConnector`
 
 ## Properties
 

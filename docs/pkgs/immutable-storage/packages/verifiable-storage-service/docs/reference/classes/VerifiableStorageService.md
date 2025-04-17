@@ -8,9 +8,9 @@ Service for performing Verifiable Storage operations to a connector.
 
 ## Constructors
 
-### new VerifiableStorageService()
+### Constructor
 
-> **new VerifiableStorageService**(`options`?): [`VerifiableStorageService`](VerifiableStorageService.md)
+> **new VerifiableStorageService**(`options?`): `VerifiableStorageService`
 
 Create a new instance of VerifiableStorageService.
 
@@ -24,7 +24,7 @@ The options for the service.
 
 #### Returns
 
-[`VerifiableStorageService`](VerifiableStorageService.md)
+`VerifiableStorageService`
 
 ## Properties
 
@@ -50,7 +50,7 @@ Runtime name for the class.
 
 ### create()
 
-> **create**(`data`, `identity`?, `namespace`?): `Promise`\<\{ `id`: `string`; `receipt`: `IJsonLdNodeObject`; \}\>
+> **create**(`data`, `identity?`, `namespace?`): `Promise`\<\{ `id`: `string`; `receipt`: `IJsonLdNodeObject`; \}\>
 
 Create an Verifiable Storage.
 
@@ -88,7 +88,7 @@ The id of the created Verifiable Storage in urn format.
 
 ### update()
 
-> **update**(`id`, `data`, `identity`?): `Promise`\<`IJsonLdNodeObject`\>
+> **update**(`id`, `data`, `identity?`): `Promise`\<`IJsonLdNodeObject`\>
 
 Update an item in verifiable storage.
 
@@ -126,7 +126,7 @@ The updated receipt.
 
 ### get()
 
-> **get**(`id`, `options`?): `Promise`\<\{ `data`: `Uint8Array`\<`ArrayBufferLike`\>; `receipt`: `IJsonLdNodeObject`; \}\>
+> **get**(`id`, `options?`): `Promise`\<\{ `data`: `Uint8Array`\<`ArrayBufferLike`\>; `receipt`: `IJsonLdNodeObject`; \}\>
 
 Get an Verifiable Storage.
 
@@ -162,7 +162,7 @@ The data for the Verifiable Storage.
 
 ### remove()
 
-> **remove**(`id`, `identity`?): `Promise`\<`void`\>
+> **remove**(`id`, `identity?`): `Promise`\<`void`\>
 
 Remove an Verifiable Storage.
 

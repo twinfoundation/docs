@@ -4,13 +4,13 @@ Class defining a vault secret.
 
 ## Constructors
 
-### new VaultSecret()
+### Constructor
 
-> **new VaultSecret**(): [`VaultSecret`](VaultSecret.md)
+> **new VaultSecret**(): `VaultSecret`
 
 #### Returns
 
-[`VaultSecret`](VaultSecret.md)
+`VaultSecret`
 
 ## Properties
 

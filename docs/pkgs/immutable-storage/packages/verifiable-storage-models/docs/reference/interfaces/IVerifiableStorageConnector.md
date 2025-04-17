@@ -1,6 +1,6 @@
 # Interface: IVerifiableStorageConnector
 
-Interface describing an verifiable storage connector.
+Interface describing a verifiable storage connector.
 
 ## Extends
 
@@ -72,7 +72,7 @@ The updated receipt.
 
 ### get()
 
-> **get**(`id`, `options`?): `Promise`\<\{ `data`: `Uint8Array`\<`ArrayBufferLike`\>; `receipt`: `IJsonLdNodeObject`; \}\>
+> **get**(`id`, `options?`): `Promise`\<\{ `data`: `Uint8Array`\<`ArrayBufferLike`\>; `receipt`: `IJsonLdNodeObject`; \}\>
 
 Get an verifiable item.
 

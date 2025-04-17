@@ -8,13 +8,13 @@ Class for extracting data from a JSON source.
 
 ## Constructors
 
-### new JsonPathExtractorConnector()
+### Constructor
 
-> **new JsonPathExtractorConnector**(): [`JsonPathExtractorConnector`](JsonPathExtractorConnector.md)
+> **new JsonPathExtractorConnector**(): `JsonPathExtractorConnector`
 
 #### Returns
 
-[`JsonPathExtractorConnector`](JsonPathExtractorConnector.md)
+`JsonPathExtractorConnector`
 
 ## Properties
 

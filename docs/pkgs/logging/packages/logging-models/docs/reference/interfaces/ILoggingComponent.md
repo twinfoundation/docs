@@ -32,7 +32,7 @@ Nothing.
 
 ### query()
 
-> **query**(`level`?, `source`?, `timeStart`?, `timeEnd`?, `cursor`?, `pageSize`?): `Promise`\<\{ `entities`: [`ILogEntry`](ILogEntry.md)[]; `cursor`: `string`; \}\>
+> **query**(`level?`, `source?`, `timeStart?`, `timeEnd?`, `cursor?`, `pageSize?`): `Promise`\<\{ `entities`: [`ILogEntry`](ILogEntry.md)[]; `cursor`: `string`; \}\>
 
 Query the log entries.
 

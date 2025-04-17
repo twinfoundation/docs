@@ -8,7 +8,9 @@ Client for performing entity storage through to REST endpoints.
 
 ## Type Parameters
 
-• **T**
+### T
+
+`T`
 
 ## Implements
 
@@ -16,9 +18,9 @@ Client for performing entity storage through to REST endpoints.
 
 ## Constructors
 
-### new EntityStorageClient()
+### Constructor
 
-> **new EntityStorageClient**\<`T`\>(`config`): [`EntityStorageClient`](EntityStorageClient.md)\<`T`\>
+> **new EntityStorageClient**\<`T`\>(`config`): `EntityStorageClient`\<`T`\>
 
 Create a new instance of EntityStorageClient.
 
@@ -32,7 +34,7 @@ The configuration for the client.
 
 #### Returns
 
-[`EntityStorageClient`](EntityStorageClient.md)\<`T`\>
+`EntityStorageClient`\<`T`\>
 
 #### Overrides
 
@@ -80,7 +82,7 @@ The id of the entity.
 
 ### get()
 
-> **get**(`id`, `secondaryIndex`?): `Promise`\<`undefined` \| `T`\>
+> **get**(`id`, `secondaryIndex?`): `Promise`\<`undefined` \| `T`\>
 
 Get an entity.
 
@@ -138,7 +140,7 @@ Nothing.
 
 ### query()
 
-> **query**(`conditions`?, `orderBy`?, `orderByDirection`?, `properties`?, `cursor`?, `pageSize`?): `Promise`\<\{ `entities`: `Partial`\<`T`\>[]; `cursor`: `string`; \}\>
+> **query**(`conditions?`, `orderBy?`, `orderByDirection?`, `properties?`, `cursor?`, `pageSize?`): `Promise`\<\{ `entities`: `Partial`\<`T`\>[]; `cursor`: `string`; \}\>
 
 Query all the entities which match the conditions.
 

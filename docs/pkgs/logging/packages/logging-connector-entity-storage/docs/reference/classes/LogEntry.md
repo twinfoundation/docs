@@ -4,13 +4,13 @@ Call defining a log entry.
 
 ## Constructors
 
-### new LogEntry()
+### Constructor
 
-> **new LogEntry**(): [`LogEntry`](LogEntry.md)
+> **new LogEntry**(): `LogEntry`
 
 #### Returns
 
-[`LogEntry`](LogEntry.md)
+`LogEntry`
 
 ## Properties
 

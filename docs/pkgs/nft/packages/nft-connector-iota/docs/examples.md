@@ -53,7 +53,7 @@ In this repository's GitHub Actions, we install the Linux x86_64 binary because 
 ```yaml
 name: Download & Install IOTA CLI
 run: |
-  wget https://github.com/iotaledger/iota/releases/download/v0.9.0-alpha/iota-v0.9.0-alpha-linux-x86_64.tgz -O iota-cli.tgz
+  wget https://github.com/iotaledger/iota/releases/download/v0.12.0-rc/iota-v0.12.0-rc-linux-x86_64.tgz -O iota-cli.tgz
   tar xzf iota-cli.tgz
   chmod +x iota
   sudo mv iota /usr/local/bin/iota

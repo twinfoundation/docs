@@ -1,6 +1,6 @@
 # Function: generateRestRoutesEntityStorage()
 
-> **generateRestRoutesEntityStorage**(`baseRouteName`, `componentName`, `options`?): `IRestRoute`\<`any`, `any`\>[]
+> **generateRestRoutesEntityStorage**(`baseRouteName`, `componentName`, `options?`): `IRestRoute`\<`any`, `any`\>[]
 
 The REST routes for entity storage.
 

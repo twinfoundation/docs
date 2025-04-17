@@ -1,6 +1,6 @@
 # Type Alias: IJsonLdExpandedTermDefinition
 
-> **IJsonLdExpandedTermDefinition**: `object` & \{ `@id`: [`IJsonLdKeyword`](IJsonLdKeyword.md)\[`"@id"`\] \| `null`; `@nest`: `"@nest"` \| `string`; `@container`: [`IJsonLdKeyword`](IJsonLdKeyword.md)\[`"@container"`\]; \} \| \{ `@reverse`: [`IJsonLdKeyword`](IJsonLdKeyword.md)\[`"@reverse"`\]; `@container`: `"@set"` \| `"@index"` \| `null`; \}
+> **IJsonLdExpandedTermDefinition** = `object` & \{ `@id`: [`IJsonLdKeyword`](IJsonLdKeyword.md)\[`"@id"`\] \| `null`; `@nest`: `"@nest"` \| `string`; `@container`: [`IJsonLdKeyword`](IJsonLdKeyword.md)\[`"@container"`\]; \} \| \{ `@reverse`: [`IJsonLdKeyword`](IJsonLdKeyword.md)\[`"@reverse"`\]; `@container`: `"@set"` \| `"@index"` \| `null`; \}
 
 An expanded term definition is used to describe the mapping between a term
 and its expanded identifier, as well as other properties of the value

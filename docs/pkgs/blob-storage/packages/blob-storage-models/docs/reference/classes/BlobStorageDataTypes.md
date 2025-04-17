@@ -4,13 +4,13 @@ Handle all the data types for blob storage.
 
 ## Constructors
 
-### new BlobStorageDataTypes()
+### Constructor
 
-> **new BlobStorageDataTypes**(): [`BlobStorageDataTypes`](BlobStorageDataTypes.md)
+> **new BlobStorageDataTypes**(): `BlobStorageDataTypes`
 
 #### Returns
 
-[`BlobStorageDataTypes`](BlobStorageDataTypes.md)
+`BlobStorageDataTypes`
 
 ## Methods
 

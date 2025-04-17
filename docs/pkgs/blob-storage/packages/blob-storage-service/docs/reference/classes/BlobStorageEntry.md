@@ -4,13 +4,13 @@ Class representing entry for the blob storage.
 
 ## Constructors
 
-### new BlobStorageEntry()
+### Constructor
 
-> **new BlobStorageEntry**(): [`BlobStorageEntry`](BlobStorageEntry.md)
+> **new BlobStorageEntry**(): `BlobStorageEntry`
 
 #### Returns
 
-[`BlobStorageEntry`](BlobStorageEntry.md)
+`BlobStorageEntry`
 
 ## Properties
 

@@ -1,6 +1,6 @@
 # Function: setupWalletConnector()
 
-> **setupWalletConnector**(`options`, `connector`?): `IWalletConnector`
+> **setupWalletConnector**(`options`, `connector?`): `IWalletConnector`
 
 Setup the wallet connector for use in the CLI commands.
 
