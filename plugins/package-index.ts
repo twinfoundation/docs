@@ -101,7 +101,7 @@ function buildOverview(packageType, outputFilename, description) {
 	const repoContent = [];
 
 	try {
-		const reposFilename = path.join(__dirname, "..", "docs", "repos.json");
+		const reposFilename = path.join(__dirname, "..", "repos.json");
 		const reposContent = fs.readFileSync(reposFilename, "utf-8");
 		const reposJson = JSON.parse(reposContent);
 

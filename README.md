@@ -30,6 +30,4 @@ The `preview` version is deployed to vercel when you perform changes on a branch
 
 ## Adding a new package group
 
-To add a new package group modify `docs/repos.json`
-
-You should also update the `.github/workflows/update-packages-dev.yaml` and `.github/workflows/update-packages-main.yaml` files to include a new `Copy x to Docs` section for your new package group.
+To add a new package group modify `repos.json`, the order in the file determines the ordering on the published docs page.
