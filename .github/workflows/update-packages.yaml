@@ -24,7 +24,7 @@ jobs:
           # Use Node.js to read the workspaces array from package.json
           REPOS=$(node -e '
             const repos = JSON.parse(require("fs").readFileSync("./repos.json", "utf8"));
-            console.log(JSON.stringify(repos.maps(r => r.name)));
+            console.log(JSON.stringify(repos.map(r => r.name)));
           ')
           echo "Found repos: $REPOS"
           # Set the output for use in the matrix strategy
