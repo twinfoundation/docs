@@ -89,7 +89,7 @@ jobs:
   # Finalise the PR with the updated docs
   finalise-docs:
     runs-on: ubuntu-latest
-    needs: update-repos # Wait for the update-repos job to complete
+    needs: update-docs # Wait for the update-docs job to complete
 
     steps:
       # Get the full branch
