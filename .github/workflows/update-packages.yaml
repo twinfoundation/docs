@@ -32,7 +32,7 @@ jobs:
 
       # Cache the docs directory so we can update it in each matrix job
       - name: Cache a directory
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           path: ./docs/pkgs/
           key: docs-cache-${{ github.sha }}
@@ -51,7 +51,7 @@ jobs:
     steps:
       # Restore the cache for the docs directory
       - name: Restore cache
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           path: ./docs/pkgs/
           key: docs-cache-${{ github.sha }}
@@ -81,7 +81,7 @@ jobs:
 
       # Cache the updated docs directory so we can update it in each matrix job
       - name: Cache a directory
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           path: ./docs/pkgs/
           key: docs-cache-${{ github.sha }}
@@ -104,7 +104,7 @@ jobs:
 
       # Restore the cache for the docs directory
       - name: Restore cache
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           path: ./docs/pkgs/
           key: docs-cache-${{ github.sha }}
