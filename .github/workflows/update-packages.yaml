@@ -35,7 +35,7 @@ jobs:
           echo "repos=$REPOS" >> $GITHUB_OUTPUT
 
       # Cache the docs directory so we can update it in each matrix job
-      - name: Cache a directory
+      - name: Cache docs/pkgs directory
         uses: actions/cache@v4
         with:
           path: ./docs/pkgs/
@@ -85,7 +85,7 @@ jobs:
           rm -r import-packages/${{ matrix.repo }}
 
       # Cache the updated docs directory so we can update it in each matrix job
-      - name: Cache a directory
+      - name: Cache docs/pkgs directory
         uses: actions/cache@v4
         with:
           path: ./docs/pkgs/
@@ -104,11 +104,11 @@ jobs:
           ref: ${{ github.ref_name }}
 
         # Remove the original docs directory
-      - name: Remove original docs
+      - name: Remove repo docs/pkgs
         run: rm -rf docs/pkgs/
 
       # Restore the cache for the docs directory
-      - name: Restore cache
+      - name: Restore docs/pkgs cache
         uses: actions/cache@v4
         with:
           path: ./docs/pkgs/
@@ -121,9 +121,11 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      # Build docusaurus to make sure all the new content is correctly formatted
       - name: Build
         run: npm run build
 
+      # Create a PR for the new changes
       - name: Create Pull Request
         run: |
           git checkout -b chore/docs-update-${{ github.ref_name }}-${{ github.sha }}
