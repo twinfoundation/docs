@@ -23,7 +23,7 @@ jobs:
 
       # Read the repos.json file to get the list of repos and store it in a variable
       - name: Get list of repos
-        id: read-repos
+        id: get-repos
         run: |
           # Use Node.js to read the workspaces array from package.json
           REPOS=$(node -e '
