@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       # This output will be consumed by the update-docs job's matrix
-      packages: ${{ steps.get-repos.outputs.repos }}
+      repos: ${{ steps.get-repos.outputs.repos }}
 
     steps:
       - name: Checkout Docs
