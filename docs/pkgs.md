@@ -150,15 +150,6 @@ This is the overview of the packages.
 - [@twin.org/nft-service](pkgs/nft/packages/nft-service/index.md) - NFT contract implementation and REST endpoint definitions
 - [@twin.org/nft-rest-client](pkgs/nft/packages/nft-rest-client/index.md) - NFT contract implementation which can connect to REST endpoints
 
-## Verifiable Storage
-
-- [@twin.org/verifiable-storage-models](pkgs/immutable-storage/packages/verifiable-storage-models/index.md) - Contains models and classes for use with verifiable storage
-- [@twin.org/verifiable-storage-connector-entity-storage](pkgs/immutable-storage/packages/verifiable-storage-connector-entity-storage/index.md) - Implementation of the Verifiable Storage connector using entity storage
-- [@twin.org/verifiable-storage-connector-iota](pkgs/immutable-storage/packages/verifiable-storage-connector-iota/index.md) - Implementation of the Verifiable Storage connector using IOTA
-- [@twin.org/verifiable-storage-connector-iota-stardust](pkgs/immutable-storage/packages/verifiable-storage-connector-iota-stardust/index.md) - Implementation of the Verifiable Storage connector using IOTA Stardust
-- [@twin.org/verifiable-storage-service](pkgs/immutable-storage/packages/verifiable-storage-service/index.md) - Verifiable Storage contract implementation and REST endpoint definitions
-- [@twin.org/verifiable-storage-rest-client](pkgs/immutable-storage/packages/verifiable-storage-rest-client/index.md) - Verifiable Storage contract implementation which can connect to REST endpoints
-
 ## Immutable Proof
 
 - [@twin.org/immutable-proof-models](pkgs/immutable-proof/packages/immutable-proof-models/index.md) - Models which define the structure of the immutable proof connectors and services
