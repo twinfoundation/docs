@@ -8,9 +8,9 @@ Class for performing NFT operations on entity storage.
 
 ## Constructors
 
-### new EntityStorageNftConnector()
+### Constructor
 
-> **new EntityStorageNftConnector**(`options`?): [`EntityStorageNftConnector`](EntityStorageNftConnector.md)
+> **new EntityStorageNftConnector**(`options?`): `EntityStorageNftConnector`
 
 Create a new instance of EntityStorageNftConnector.
 
@@ -24,7 +24,7 @@ The dependencies for the class.
 
 #### Returns
 
-[`EntityStorageNftConnector`](EntityStorageNftConnector.md)
+`EntityStorageNftConnector`
 
 ## Properties
 
@@ -50,15 +50,19 @@ Runtime name for the class.
 
 ### mint()
 
-> **mint**\<`T`, `U`\>(`controllerIdentity`, `tag`, `immutableMetadata`?, `metadata`?): `Promise`\<`string`\>
+> **mint**\<`T`, `U`\>(`controllerIdentity`, `tag`, `immutableMetadata?`, `metadata?`): `Promise`\<`string`\>
 
 Mint an NFT.
 
 #### Type Parameters
 
-• **T** = `unknown`
+##### T
 
-• **U** = `unknown`
+`T` = `unknown`
+
+##### U
+
+`U` = `unknown`
 
 #### Parameters
 
@@ -106,9 +110,13 @@ Resolve an NFT.
 
 #### Type Parameters
 
-• **T** = `unknown`
+##### T
 
-• **U** = `unknown`
+`T` = `unknown`
+
+##### U
+
+`U` = `unknown`
 
 #### Parameters
 
@@ -164,13 +172,15 @@ Nothing.
 
 ### transfer()
 
-> **transfer**\<`T`\>(`controllerIdentity`, `id`, `recipientIdentity`, `recipientAddress`, `metadata`?): `Promise`\<`void`\>
+> **transfer**\<`T`\>(`controllerIdentity`, `id`, `recipientIdentity`, `recipientAddress`, `metadata?`): `Promise`\<`void`\>
 
 Transfer an NFT.
 
 #### Type Parameters
 
-• **T** = `unknown`
+##### T
+
+`T` = `unknown`
 
 #### Parameters
 
@@ -224,7 +234,9 @@ Update the data of the NFT.
 
 #### Type Parameters
 
-• **T** = `unknown`
+##### T
+
+`T` = `unknown`
 
 #### Parameters
 

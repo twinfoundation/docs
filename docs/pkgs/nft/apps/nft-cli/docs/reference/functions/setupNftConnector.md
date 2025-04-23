@@ -1,6 +1,6 @@
 # Function: setupNftConnector()
 
-> **setupNftConnector**(`options`, `connector`?): `INftConnector`
+> **setupNftConnector**(`options`, `connector?`): `INftConnector`
 
 Setup the NFT connector for use in the CLI commands.
 

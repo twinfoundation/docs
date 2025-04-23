@@ -14,59 +14,6 @@
 		"node": ">=20.0.0"
 	},
 	"sideEffects": false,
-	"scripts": {
-		"clean": "rimraf dist",
-		"prebuild": "node scripts/generate-exports.js",
-		"build": "tsc",
-		"bundle:esm": "rollup --config rollup.config.mjs --environment MODULE:esm",
-		"bundle:cjs": "rollup --config rollup.config.mjs --environment MODULE:cjs",
-		"bundle": "npm run bundle:esm && npm run bundle:cjs",
-		"dist": "npm run clean && npm run build && npm run bundle",
-		"dev:watch": "concurrently \"npm run build -- --watch\" \"nodemon --watch src --ext ts,tsx --ignore dist/ --exec \\\"npm run bundle\\\"\"",
-		"dev": "npm run clean && npm run build && npm run dev:watch",
-		"dist:no-test": "npm run clean && npm run build && npm run bundle",
-		"lint": "eslint .",
-		"lint:fix": "eslint . --fix",
-		"postbundle": "node scripts/copy-compatibility.js"
-	},
-	"dependencies": {
-		"@twin.org/ui-tailwind": "0.0.1-next.43",
-		"flowbite-react-icons": "1.2.0",
-		"prop-types": "15.8.1"
-	},
-	"devDependencies": {
-		"@eslint/js": "8.57.0",
-		"@rollup/plugin-dynamic-import-vars": "2.1.5",
-		"@rollup/plugin-json": "6.1.0",
-		"@rollup/plugin-node-resolve": "15.2.3",
-		"@rollup/plugin-terser": "0.4.4",
-		"@svgr/rollup": "8.1.0",
-		"@types/prop-types": "15.7.14",
-		"@types/react": "19.0.10",
-		"@types/react-dom": "19.0.4",
-		"autoprefixer": "10.4.20",
-		"concurrently": "7.6.0",
-		"eslint": "8.57.0",
-		"eslint-plugin-react-hooks": "4.6.0",
-		"globals": "14.0.0",
-		"nodemon": "2.0.22",
-		"postcss": "8.5.2",
-		"rimraf": "6.0.1",
-		"rollup": "4.34.6",
-		"rollup-plugin-copy": "3.5.0",
-		"rollup-plugin-peer-deps-external": "2.2.4",
-		"rollup-plugin-postcss": "4.0.2",
-		"tailwindcss": "3.4.17",
-		"typescript": "5.7.3",
-		"typescript-eslint": "7.13.1"
-	},
-	"peerDependencies": {
-		"flowbite": "2.5.2",
-		"flowbite-react": "0.10.2",
-		"react": ">=18",
-		"react-dom": ">=18",
-		"tailwindcss": "3"
-	},
 	"exports": {
 		".": {
 			"types": "./dist/types/index.d.ts",
