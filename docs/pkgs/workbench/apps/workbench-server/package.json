@@ -37,7 +37,7 @@
 		"@twin.org/engine-server-types": "next",
 		"@twin.org/engine-types": "next",
 		"@twin.org/entity": "next",
-		"dotenv": "16.4.7",
+		"dotenv": "16.5.0",
 		"schema-dts": "1.1.5"
 	},
 	"devDependencies": {
@@ -46,17 +46,17 @@
 		"@twin.org/nameof-transformer": "next",
 		"@twin.org/nameof-vitest-plugin": "next",
 		"@twin.org/ts-to-openapi": "next",
-		"@types/node": "22.13.9",
-		"@vitest/coverage-v8": "3.0.8",
+		"@types/node": "22.14.1",
+		"@vitest/coverage-v8": "3.1.1",
 		"concurrently": "9.1.2",
 		"copyfiles": "2.4.1",
 		"cross-env": "7.0.3",
 		"nodemon": "3.1.9",
 		"rimraf": "6.0.1",
 		"ts-patch": "3.3.0",
-		"typedoc": "0.27.9",
-		"typedoc-plugin-markdown": "4.4.2",
-		"typescript": "5.8.2",
-		"vitest": "3.0.8"
+		"typedoc": "0.28.2",
+		"typedoc-plugin-markdown": "4.6.2",
+		"typescript": "5.8.3",
+		"vitest": "3.1.1"
 	}
 }
