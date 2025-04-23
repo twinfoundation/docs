@@ -34,12 +34,13 @@ jobs:
           # Set the output for use in the matrix strategy
           echo "repos=$REPOS" >> $GITHUB_OUTPUT
 
-      # Cache the docs directory so we can update it in each matrix job
-      - name: Create docs/pkgs Cache
-        uses: actions/cache@v4
+      # Create an artifact for the docs directory so we can update it in each matrix job
+      - name: Create docs/pkgs Artifact
+        id: upload-artifact
+        uses: actions/upload-artifact@v4
         with:
           path: ./docs/pkgs/
-          key: docs-cache-${{ github.sha }}
+          name: docs-artifact-${{ github.sha }}
 
   # Update from the individual repos with the latest docs
   update-docs:
@@ -54,12 +55,12 @@ jobs:
         repo: ${{ fromJson(needs.get-repos.outputs.repos) }} # Each pattern becomes a separate job
 
     steps:
-      # Use the cache for the docs directory so we can update it in each matrix job
-      - name: Use docs/pkgs Cache
-        uses: actions/cache@v4
+      # Download the artifact for the docs directory so we can update it in each matrix job
+      - name: Download docs/pkgs Artifact
+        uses: actions/download-artifact@v4
         with:
           path: ./docs/pkgs/
-          key: docs-cache-${{ github.sha }}
+          name: docs-artifact-${{ github.sha }}
 
       # Checkout the individual repo from the matrix
       - name: Checkout ${{ matrix.repo }}
@@ -84,6 +85,14 @@ jobs:
           cp import-packages/${{ matrix.repo }}/package.json docs/pkgs/${{ matrix.repo }}/package.json
           rm -r import-packages/${{ matrix.repo }}
 
+      # Update the artifact for the docs directory so we can update it in each matrix job
+      - name: Update docs/pkgs Artifact
+        id: upload-artifact
+        uses: actions/upload-artifact@v4
+        with:
+          path: ./docs/pkgs/
+          name: docs-artifact-${{ github.sha }}
+
   # Finalise the PR with the updated docs
   finalise-docs:
     runs-on: ubuntu-latest
@@ -96,16 +105,16 @@ jobs:
         with:
           ref: ${{ github.ref_name }}
 
-        # Remove the original docs directory
+      # Remove the original docs directory
       - name: Remove repo docs/pkgs
         run: rm -rf docs/pkgs/
 
-      # Restore the cache for the docs directory
-      - name: Restore docs/pkgs Cache
-        uses: actions/cache@v4
+      # Download the artifact for the docs directory so we can use it to create the PR
+      - name: Download docs/pkgs Artifact
+        uses: actions/download-artifact@v4
         with:
           path: ./docs/pkgs/
-          key: docs-cache-${{ github.sha }}
+          name: docs-artifact-${{ github.sha }}
 
       - uses: actions/setup-node@v4
         with:
