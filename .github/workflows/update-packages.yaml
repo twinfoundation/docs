@@ -50,7 +50,7 @@ jobs:
     # Use a matrix strategy to process each package pattern in parallel
     # but limit to one at a time for controlled publishing order
     strategy:
-      max-parallel: 1 # Process one package at a time (important for docs cache)
+      max-parallel: 1 # Process one package at a time (important for docs artifacts)
       matrix:
         repo: ${{ fromJson(needs.get-repos.outputs.repos) }} # Each pattern becomes a separate job
 
