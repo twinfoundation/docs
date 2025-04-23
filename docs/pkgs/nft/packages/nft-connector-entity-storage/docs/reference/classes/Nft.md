@@ -4,13 +4,13 @@ Class describing the nft.
 
 ## Constructors
 
-### new Nft()
+### Constructor
 
-> **new Nft**(): [`Nft`](Nft.md)
+> **new Nft**(): `Nft`
 
 #### Returns
 
-[`Nft`](Nft.md)
+`Nft`
 
 ## Properties
 

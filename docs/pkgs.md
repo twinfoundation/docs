@@ -152,12 +152,12 @@ This is the overview of the packages.
 
 ## Verifiable Storage
 
-- [@twin.org/verifiable-storage-models](pkgs/immutable-storage/packages/verifiable-storage-models/index.md) - Contains models and classes for use with verifiable storage
-- [@twin.org/verifiable-storage-connector-entity-storage](pkgs/immutable-storage/packages/verifiable-storage-connector-entity-storage/index.md) - Implementation of the Verifiable Storage connector using entity storage
-- [@twin.org/verifiable-storage-connector-iota](pkgs/immutable-storage/packages/verifiable-storage-connector-iota/index.md) - Implementation of the Verifiable Storage connector using IOTA
-- [@twin.org/verifiable-storage-connector-iota-stardust](pkgs/immutable-storage/packages/verifiable-storage-connector-iota-stardust/index.md) - Implementation of the Verifiable Storage connector using IOTA Stardust
-- [@twin.org/verifiable-storage-service](pkgs/immutable-storage/packages/verifiable-storage-service/index.md) - Verifiable Storage contract implementation and REST endpoint definitions
-- [@twin.org/verifiable-storage-rest-client](pkgs/immutable-storage/packages/verifiable-storage-rest-client/index.md) - Verifiable Storage contract implementation which can connect to REST endpoints
+- [@twin.org/verifiable-storage-models](pkgs/verifiable-storage/packages/verifiable-storage-models/index.md) - Contains models and classes for use with verifiable storage
+- [@twin.org/verifiable-storage-connector-entity-storage](pkgs/verifiable-storage/packages/verifiable-storage-connector-entity-storage/index.md) - Implementation of the Verifiable Storage connector using entity storage
+- [@twin.org/verifiable-storage-connector-iota](pkgs/verifiable-storage/packages/verifiable-storage-connector-iota/index.md) - Implementation of the Verifiable Storage connector using IOTA
+- [@twin.org/verifiable-storage-connector-iota-stardust](pkgs/verifiable-storage/packages/verifiable-storage-connector-iota-stardust/index.md) - Implementation of the Verifiable Storage connector using IOTA Stardust
+- [@twin.org/verifiable-storage-service](pkgs/verifiable-storage/packages/verifiable-storage-service/index.md) - Verifiable Storage contract implementation and REST endpoint definitions
+- [@twin.org/verifiable-storage-rest-client](pkgs/verifiable-storage/packages/verifiable-storage-rest-client/index.md) - Verifiable Storage contract implementation which can connect to REST endpoints
 
 ## Immutable Proof
 

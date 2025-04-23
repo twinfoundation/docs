@@ -5944,7 +5944,7 @@
 								"$ref": "#/components/schemas/VerifiableStorageCreateRequest"
 							},
 							"examples": {
-								"verifiableStorageCreateExample": {
+								"verifiableStorageCreateRequestExample": {
 									"value": {
 										"data": "SGVsbG8gd29ybGQ="
 									}
@@ -6077,7 +6077,7 @@
 								"$ref": "#/components/schemas/VerifiableStorageUpdateRequest"
 							},
 							"examples": {
-								"verifiableStorageUpdateExample": {
+								"verifiableStorageUpdateRequestExample": {
 									"value": {
 										"data": "SGVsbG8gd29ybGQ="
 									}
@@ -7651,6 +7651,15 @@
 								"alias",
 								"both"
 							]
+						}
+					},
+					{
+						"name": "resourceTypes",
+						"description": "Include vertices with specific resource types, comma separated.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string"
 						}
 					},
 					{
