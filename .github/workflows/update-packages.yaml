@@ -54,9 +54,9 @@ jobs:
         repo: ${{ fromJson(needs.get-repos.outputs.repos) }} # Each pattern becomes a separate job
 
     steps:
-      # Restore the cache for the docs directory
+      # Restore the cache for the docs directory so we can update it in each matrix job
       - name: Restore cache
-        uses: actions/cache@v4
+        uses: actions/cache/restore@v4
         with:
           path: ./docs/pkgs/
           key: docs-cache-${{ github.sha }}
@@ -70,7 +70,7 @@ jobs:
           ref: ${{ github.ref_name }}
 
       # Copy the updated docs from the repo to the docs directory
-      - name: Copy ${{ matrix.repo }} to Docs
+      - name: Copy to Docs
         run: |
           jq -r '.workspaces[]' import-packages/${{ matrix.repo }}/package.json | while read pkg; do
             rm -rf docs/pkgs/${{ matrix.repo }}/$pkg
@@ -86,7 +86,7 @@ jobs:
 
       # Cache the updated docs directory so we can update it in each matrix job
       - name: Cache docs/pkgs directory
-        uses: actions/cache@v4
+        uses: actions/cache/save@v4
         with:
           path: ./docs/pkgs/
           key: docs-cache-${{ github.sha }}
@@ -109,7 +109,7 @@ jobs:
 
       # Restore the cache for the docs directory
       - name: Restore docs/pkgs cache
-        uses: actions/cache@v4
+        uses: actions/cache/restore@v4
         with:
           path: ./docs/pkgs/
           key: docs-cache-${{ github.sha }}

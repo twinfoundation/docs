@@ -52,7 +52,7 @@ function buildPkgs(packageType): any {
 						});
 					}
 				} else {
-					console.debug("! File not found", packageFilename);
+					console.debug("! File not found in buildPkgs", packageFilename);
 				}
 			} catch (error) {
 				console.debug(error);

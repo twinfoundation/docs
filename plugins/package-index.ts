@@ -50,7 +50,7 @@ function buildGroupContent(packageGroup, packageType) {
 			content += `\n## ${groupJson.description}\n\n${combinedPackageContent}`;
 		}
 	} else {
-		console.debug("      ! File not found", packageGroupFilename);
+		console.debug("      ! File not found in buildContentGroup", packageGroupFilename);
 	}
 
 	return content;
@@ -78,7 +78,7 @@ function buildPackageContent(packageGroup, packageType, packageName) {
 
 		content += `- [${packageJson.name}](pkgs/${packageGroup}/${packageType}/${packageJson.name.replace("@twin.org/", "")}/index.md) - ${packageJson.description}\n`;
 	} else {
-		console.debug("        ! File not found", packageFilename);
+		console.debug("        ! File not found in buildPackageContent", packageFilename);
 	}
 
 	return content;
