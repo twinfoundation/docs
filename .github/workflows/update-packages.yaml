@@ -92,6 +92,7 @@ jobs:
         with:
           path: ./docs/pkgs/
           name: docs-artifact-${{ github.sha }}
+          overwrite: true
 
   # Finalise the PR with the updated docs
   finalise-docs:
