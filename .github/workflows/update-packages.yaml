@@ -36,7 +36,7 @@ jobs:
 
       # Cache the docs directory so we can update it in each matrix job
       - name: Cache docs/pkgs directory
-        uses: actions/cache@v4
+        uses: actions/cache/save@v4
         with:
           path: ./docs/pkgs/
           key: docs-cache-${{ github.sha }}
