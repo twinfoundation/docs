@@ -80,21 +80,18 @@ jobs:
             cp -r import-packages/${{ matrix.repo }}/$pkg/docs/* docs/pkgs/${{ matrix.repo }}/$pkg/docs
             cp -r import-packages/${{ matrix.repo }}/$pkg/README.md docs/pkgs/${{ matrix.repo }}/$pkg/index.md
             cp -r import-packages/${{ matrix.repo }}/$pkg/package.json docs/pkgs/${{ matrix.repo }}/$pkg/package.json
-            cd docs/pkgs/${{ matrix.repo }}/$pkg/
-            npm pkg delete scripts
-            npm pkg delete devDependencies
-            npm pkg delete dependencies
-            npm pkg delete peerDependencies
-            cd ../../../../
+            npm pkg delete scripts --prefix docs/pkgs/${{ matrix.repo }}/$pkg/
+            npm pkg delete devDependencies --prefix docs/pkgs/${{ matrix.repo }}/$pkg/
+            npm pkg delete dependencies --prefix docs/pkgs/${{ matrix.repo }}/$pkg/
+            npm pkg delete peerDependencies --prefix docs/pkgs/${{ matrix.repo }}/$pkg/
           done
 
           cp import-packages/${{ matrix.repo }}/package.json docs/pkgs/${{ matrix.repo }}/package.json
           rm -r import-packages/${{ matrix.repo }}
-          cd docs/pkgs/${{ matrix.repo }}/
-          npm pkg delete scripts
-          npm pkg delete devDependencies
-          npm pkg delete dependencies
-          npm pkg delete peerDependencies
+          npm pkg delete scripts --prefix docs/pkgs/${{ matrix.repo }}/
+          npm pkg delete devDependencies --prefix docs/pkgs/${{ matrix.repo }}/
+          npm pkg delete dependencies --prefix docs/pkgs/${{ matrix.repo }}/
+          npm pkg delete peerDependencies --prefix docs/pkgs/${{ matrix.repo }}/
 
       # Update the artifact for the docs directory so we can update it in each matrix job
       - name: Update docs/pkgs Artifact
