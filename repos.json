@@ -54,7 +54,7 @@
 		"name": "nft"
 	},
 	{
-		"name": "immutable-storage"
+		"name": "verifiable-storage"
 	},
 	{
 		"name": "immutable-proof"
