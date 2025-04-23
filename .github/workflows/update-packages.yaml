@@ -35,8 +35,8 @@ jobs:
           echo "repos=$REPOS" >> $GITHUB_OUTPUT
 
       # Cache the docs directory so we can update it in each matrix job
-      - name: Cache docs/pkgs directory
-        uses: actions/cache/save@v4
+      - name: Create docs/pkgs Cache
+        uses: actions/cache@v4
         with:
           path: ./docs/pkgs/
           key: docs-cache-${{ github.sha }}
@@ -54,9 +54,9 @@ jobs:
         repo: ${{ fromJson(needs.get-repos.outputs.repos) }} # Each pattern becomes a separate job
 
     steps:
-      # Restore the cache for the docs directory so we can update it in each matrix job
-      - name: Restore cache
-        uses: actions/cache/restore@v4
+      # Use the cache for the docs directory so we can update it in each matrix job
+      - name: Use docs/pkgs Cache
+        uses: actions/cache@v4
         with:
           path: ./docs/pkgs/
           key: docs-cache-${{ github.sha }}
@@ -84,13 +84,6 @@ jobs:
           cp import-packages/${{ matrix.repo }}/package.json docs/pkgs/${{ matrix.repo }}/package.json
           rm -r import-packages/${{ matrix.repo }}
 
-      # Cache the updated docs directory so we can update it in each matrix job
-      - name: Cache docs/pkgs directory
-        uses: actions/cache/save@v4
-        with:
-          path: ./docs/pkgs/
-          key: docs-cache-${{ github.sha }}
-
   # Finalise the PR with the updated docs
   finalise-docs:
     runs-on: ubuntu-latest
@@ -108,8 +101,8 @@ jobs:
         run: rm -rf docs/pkgs/
 
       # Restore the cache for the docs directory
-      - name: Restore docs/pkgs cache
-        uses: actions/cache/restore@v4
+      - name: Restore docs/pkgs Cache
+        uses: actions/cache@v4
         with:
           path: ./docs/pkgs/
           key: docs-cache-${{ github.sha }}
