@@ -1,5 +1,42 @@
 # @twin.org/nft-service - Changelog
 
+## [0.0.1-next.28](https://github.com/twinfoundation/nft/compare/nft-service-v0.0.1-next.27...nft-service-v0.0.1-next.28) (2025-05-06)
+
+
+### Features
+
+* iota rebased release ([bfdd233](https://github.com/twinfoundation/nft/commit/bfdd23330e168962f7ad0a6fcd2c9c9a38a11697))
+
+
+### Bug Fixes
+
+* params order modified ([#19](https://github.com/twinfoundation/nft/issues/19)) ([c2ceb30](https://github.com/twinfoundation/nft/commit/c2ceb3040c12286d4fac09d51db77465366ba89d))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/nft-models bumped from 0.0.1-next.27 to 0.0.1-next.28
+  * devDependencies
+    * @twin.org/nft-connector-entity-storage bumped from 0.0.1-next.27 to 0.0.1-next.28
+
+## [0.0.1-next.27](https://github.com/twinfoundation/nft/compare/nft-service-v0.0.1-next.26...nft-service-v0.0.1-next.27) (2025-04-24)
+
+
+### Miscellaneous Chores
+
+* **nft-service:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/nft-models bumped from 0.0.1-next.26 to 0.0.1-next.27
+  * devDependencies
+    * @twin.org/nft-connector-entity-storage bumped from 0.0.1-next.26 to 0.0.1-next.27
+
 ## [0.0.1-next.26](https://github.com/twinfoundation/nft/compare/nft-service-v0.0.1-next.25...nft-service-v0.0.1-next.26) (2025-04-17)
 
 

@@ -1,5 +1,33 @@
 # @twin.org/nft-rest-client - Changelog
 
+## [0.0.1-next.28](https://github.com/twinfoundation/nft/compare/nft-rest-client-v0.0.1-next.27...nft-rest-client-v0.0.1-next.28) (2025-05-06)
+
+
+### Miscellaneous Chores
+
+* **nft-rest-client:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/nft-models bumped from 0.0.1-next.27 to 0.0.1-next.28
+
+## [0.0.1-next.27](https://github.com/twinfoundation/nft/compare/nft-rest-client-v0.0.1-next.26...nft-rest-client-v0.0.1-next.27) (2025-04-24)
+
+
+### Miscellaneous Chores
+
+* **nft-rest-client:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/nft-models bumped from 0.0.1-next.26 to 0.0.1-next.27
+
 ## [0.0.1-next.26](https://github.com/twinfoundation/nft/compare/nft-rest-client-v0.0.1-next.25...nft-rest-client-v0.0.1-next.26) (2025-04-17)
 
 

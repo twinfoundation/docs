@@ -1,5 +1,33 @@
 # @twin.org/data-processing-rest-client - Changelog
 
+## [0.0.1-next.14](https://github.com/twinfoundation/data-processing/compare/data-processing-rest-client-v0.0.1-next.13...data-processing-rest-client-v0.0.1-next.14) (2025-04-28)
+
+
+### Features
+
+* pass the mimeTypeOverride through the component extract method ([#9](https://github.com/twinfoundation/data-processing/issues/9)) ([a2b36de](https://github.com/twinfoundation/data-processing/commit/a2b36de5c19c56e4172d3f22b176aa83e1df84c8))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/data-processing-models bumped from 0.0.1-next.13 to 0.0.1-next.14
+
+## [0.0.1-next.13](https://github.com/twinfoundation/data-processing/compare/data-processing-rest-client-v0.0.1-next.12...data-processing-rest-client-v0.0.1-next.13) (2025-04-24)
+
+
+### Miscellaneous Chores
+
+* **data-processing-rest-client:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/data-processing-models bumped from 0.0.1-next.12 to 0.0.1-next.13
+
 ## [0.0.1-next.12](https://github.com/twinfoundation/data-processing/compare/data-processing-rest-client-v0.0.1-next.11...data-processing-rest-client-v0.0.1-next.12) (2025-04-17)
 
 

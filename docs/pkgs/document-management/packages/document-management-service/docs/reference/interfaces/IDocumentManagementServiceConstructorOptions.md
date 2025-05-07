@@ -46,6 +46,20 @@ attestation
 
 ***
 
+### dataProcessingComponentType?
+
+> `optional` **dataProcessingComponentType**: `string`
+
+The type of the data processing component.
+
+#### Default
+
+```ts
+data-processing
+```
+
+***
+
 ### config?
 
 > `optional` **config**: [`IDocumentManagementServiceConfig`](IDocumentManagementServiceConfig.md)

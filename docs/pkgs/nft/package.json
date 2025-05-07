@@ -15,7 +15,6 @@
 	"workspaces": [
 		"packages/nft-models",
 		"packages/nft-connector-iota",
-		"packages/nft-connector-iota-stardust",
 		"packages/nft-connector-entity-storage",
 		"packages/nft-service",
 		"packages/nft-rest-client",

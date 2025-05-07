@@ -24,7 +24,7 @@ The faucet URL.
 
 #### connector?
 
-[`WalletConnectorTypes`](../type-aliases/WalletConnectorTypes.md)
+`"iota"`
 
 The connector to perform the operations with.
 

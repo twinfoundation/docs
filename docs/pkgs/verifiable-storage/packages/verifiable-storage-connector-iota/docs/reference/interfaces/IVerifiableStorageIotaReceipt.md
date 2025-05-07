@@ -17,3 +17,19 @@ JSON-LD Context.
 > **type**: `"VerifiableStorageIotaReceipt"`
 
 JSON-LD Type.
+
+***
+
+### epoch
+
+> **epoch**: `string`
+
+The epoch of the transaction.
+
+***
+
+### digest
+
+> **digest**: `string`
+
+The digest of the transaction.

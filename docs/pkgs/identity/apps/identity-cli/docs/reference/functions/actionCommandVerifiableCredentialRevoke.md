@@ -30,7 +30,7 @@ The revocation index for the credential.
 
 #### connector?
 
-[`IdentityConnectorTypes`](../type-aliases/IdentityConnectorTypes.md)
+`"iota"`
 
 The connector to perform the operations with.
 

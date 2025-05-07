@@ -70,6 +70,10 @@
 		{
 			"name": "Auditable Item Stream",
 			"description": "Endpoints which are modelled to access an auditable item stream contract."
+		},
+		{
+			"name": "Document Management",
+			"description": "Endpoints which are modelled to access a document management contract."
 		}
 	],
 	"paths": {
@@ -10298,6 +10302,988 @@
 					}
 				}
 			}
+		},
+		"/document-management": {
+			"post": {
+				"operationId": "DocumentManagementSet",
+				"summary": "Store a document in an auditable item graph vertex and add its content to blob storage.",
+				"tags": [
+					"Document Management"
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"requestBody": {
+					"description": "Request to create a document as an auditable item graph vertex.",
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/DocumentManagementCreateRequest"
+							},
+							"examples": {
+								"DocumentManagementCreateRequestExample": {
+									"value": {
+										"documentId": "2721000",
+										"documentIdFormat": "bol",
+										"documentCode": "unece:DocumentCodeList#705",
+										"blob": "SGVsbG8gV29ybGQ=",
+										"annotationObject": {
+											"@context": "https://schema.org",
+											"@type": "DigitalDocument",
+											"name": "myfile.pdf"
+										},
+										"createAttestation": true
+									}
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"201": {
+						"description": "The rest request ended in created response.",
+						"headers": {
+							"location": {
+								"schema": {
+									"type": "string"
+								},
+								"description": "e.g. aig:123456"
+							}
+						}
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			"get": {
+				"operationId": "DocumentManagementQuery",
+				"summary": "Query the items from an auditable item graph vertex",
+				"tags": [
+					"Document Management"
+				],
+				"parameters": [
+					{
+						"name": "documentId",
+						"description": "The id of the document id we are trying to find.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string"
+						},
+						"example": "2721000"
+					},
+					{
+						"name": "cursor",
+						"description": "The cursor to get the next chunk of documents.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"name": "pageSize",
+						"description": "The number of documents to return.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"name": "accept",
+						"in": "header",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple"
+					}
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Response to query the documents from an auditable item graph vertex.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "https://schema.twindev.org/aig/AuditableItemGraphVertexList"
+								},
+								"examples": {
+									"DocumentManagementQueryResponseExample": {
+										"value": {
+											"@context": [
+												"https://schema.twindev.org/aig/"
+											],
+											"type": "AuditableItemGraphVertexList",
+											"vertices": [
+												{
+													"@context": [
+														"https://schema.twindev.org/aig/",
+														"https://schema.twindev.org/common/"
+													],
+													"id": "aig:c7c7c7c7c7c7c7c7c7c7c7c7c7c7c7c7c7c7c7c7c7c7c7c7c7c7c7c7c7c7c7c7",
+													"type": "AuditableItemGraphVertex",
+													"dateCreated": "2024-08-22T04:13:20.000Z",
+													"aliases": [
+														{
+															"@context": [
+																"https://schema.twindev.org/aig/"
+															],
+															"id": "test-id-0",
+															"type": "AuditableItemGraphAlias",
+															"dateCreated": "2024-08-22T04:13:20.000Z"
+														}
+													],
+													"resources": [
+														{
+															"@context": "https://schema.twindev.org/aig/",
+															"type": "AuditableItemGraphResource",
+															"dateCreated": "2024-08-22T04:13:20.000Z",
+															"resourceObject": {
+																"@context": [
+																	"https://schema.twindev.org/documents/",
+																	"https://schema.twindev.org/common/",
+																	"https://schema.org"
+																],
+																"type": "Document",
+																"id": "test-id-0:0",
+																"documentId": "test-id-0",
+																"documentCode": "unece:DocumentCodeList#705",
+																"documentRevision": 0,
+																"annotationObject": {
+																	"@context": "https://schema.org",
+																	"type": "DigitalDocument",
+																	"name": "bill-of-lading"
+																},
+																"blobHash": "sha256:E3Duqrp6bHojSx+CzDttAToAiP1eFkCDAPBbKLABVGM=",
+																"blobStorageId": "blob:memory:1370eeaaba7a6c7a234b1f82cc3b6d013a0088fd5e16408300f05b28b0015463",
+																"dateCreated": "2024-08-22T04:13:20.000Z",
+																"nodeIdentity": "did:entity-storage:0x0101010101010101010101010101010101010101010101010101010101010101",
+																"userIdentity": "did:entity-storage:0x0404040404040404040404040404040404040404040404040404040404040404"
+															}
+														}
+													]
+												}
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/document-management/{auditableItemGraphDocumentId}": {
+			"put": {
+				"operationId": "DocumentManagementUpdate",
+				"summary": "Update a document in an auditable item graph vertex and add its content to blob storage.",
+				"tags": [
+					"Document Management"
+				],
+				"parameters": [
+					{
+						"name": "auditableItemGraphDocumentId",
+						"description": "The full id of the document to get.",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "aig:123456"
+					}
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"requestBody": {
+					"description": "Request to update a document as an auditable item graph vertex.",
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/DocumentManagementUpdateRequest"
+							},
+							"examples": {
+								"DocumentManagementUpdateRequestExample": {
+									"value": {
+										"blob": "SGVsbG8gV29ybGQ=",
+										"annotationObject": {
+											"@context": "https://schema.org",
+											"@type": "DigitalDocument",
+											"name": "myfile.pdf"
+										}
+									}
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"204": {
+						"description": "The rest request ended in success with no data."
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			"get": {
+				"operationId": "DocumentManagementGet",
+				"summary": "Get the data for a document from document management",
+				"tags": [
+					"Document Management"
+				],
+				"parameters": [
+					{
+						"name": "auditableItemGraphDocumentId",
+						"description": "The full id of the document to get.",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "aig:123456"
+					},
+					{
+						"name": "includeBlobStorageMetadata",
+						"description": "Include the blob storage metadata in the response.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "boolean"
+						}
+					},
+					{
+						"name": "includeBlobStorageData",
+						"description": "Include the blob storage data in the response.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "boolean"
+						}
+					},
+					{
+						"name": "includeAttestation",
+						"description": "Include the attestation information in the response.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "boolean"
+						}
+					},
+					{
+						"name": "includeRemoved",
+						"description": "Include deleted documents in the response.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "boolean"
+						}
+					},
+					{
+						"name": "extractRuleGroupId",
+						"description": "If provided will extract data from the document using the specified rule group id.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"name": "extractMimeType",
+						"description": "By default extraction will auto detect the mime type of the document, this can be used to override the detection.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"name": "pageSize",
+						"description": "Page size of items to return, defaults to 1 so only most recent is returned.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"name": "cursor",
+						"description": "The cursor to get the next chunk of revisions.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"name": "accept",
+						"in": "header",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple"
+					}
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Response to get a document and optionally revisions from an auditable item graph vertex.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/DocumentList"
+								},
+								"examples": {
+									"DocumentManagementGetResponseExample": {
+										"value": {
+											"@context": [
+												"https://schema.twindev.org/documents/",
+												"https://schema.twindev.org/common/"
+											],
+											"type": "DocumentList",
+											"documents": [
+												{
+													"@context": [
+														"https://schema.twindev.org/documents/",
+														"https://schema.twindev.org/common/",
+														"https://schema.org"
+													],
+													"type": "Document",
+													"id": "2721000:0",
+													"documentId": "2721000",
+													"documentIdFormat": "bol",
+													"documentCode": "unece:DocumentCodeList#705",
+													"documentRevision": 0,
+													"blobStorageId": "blob-memory:c57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70",
+													"blobHash": "sha256:123456",
+													"dateCreated": "2024-01-01T00:00:00Z",
+													"annotationObject": {
+														"@context": "https://schema.org",
+														"@type": "DigitalDocument",
+														"name": "myfile.pdf"
+													},
+													"nodeIdentity": "did:entity-storage:0x6363636363636363636363636363636363636363636363636363636363636363",
+													"userIdentity": "did:entity-storage:0x6363636363636363636363636363636363636363636363636363636363636363"
+												}
+											]
+										}
+									}
+								}
+							},
+							"application/ld+json": {
+								"schema": {
+									"$ref": "#/components/schemas/DocumentList"
+								},
+								"examples": {
+									"DocumentManagementGetResponseExample": {
+										"value": {
+											"@context": [
+												"https://schema.twindev.org/documents/",
+												"https://schema.twindev.org/common/"
+											],
+											"type": "DocumentList",
+											"documents": [
+												{
+													"@context": [
+														"https://schema.twindev.org/documents/",
+														"https://schema.twindev.org/common/",
+														"https://schema.org"
+													],
+													"type": "Document",
+													"id": "2721000:0",
+													"documentId": "2721000",
+													"documentIdFormat": "bol",
+													"documentCode": "unece:DocumentCodeList#705",
+													"documentRevision": 0,
+													"blobStorageId": "blob-memory:c57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70",
+													"blobHash": "sha256:123456",
+													"dateCreated": "2024-01-01T00:00:00Z",
+													"annotationObject": {
+														"@context": "https://schema.org",
+														"@type": "DigitalDocument",
+														"name": "myfile.pdf"
+													},
+													"nodeIdentity": "did:entity-storage:0x6363636363636363636363636363636363636363636363636363636363636363",
+													"userIdentity": "did:entity-storage:0x6363636363636363636363636363636363636363636363636363636363636363"
+												}
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "The resource you tried to access does not exist, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/NotFoundResponse"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "NotFoundError",
+											"message": "component.error",
+											"properties": {
+												"notFoundId": "1"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/document-management/{auditableItemGraphDocumentId}/{revision}": {
+			"get": {
+				"operationId": "DocumentManagementGetRevision",
+				"summary": "Get the data for a document revision from document management",
+				"tags": [
+					"Document Management"
+				],
+				"parameters": [
+					{
+						"name": "auditableItemGraphDocumentId",
+						"description": "",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "aig:123456"
+					},
+					{
+						"name": "revision",
+						"description": "",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "1"
+					}
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Response to get a document revision from an auditable item graph vertex.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Document"
+								},
+								"examples": {
+									"DocumentManagementGetRevisionResponseExample": {
+										"value": {
+											"@context": [
+												"https://schema.twindev.org/documents/",
+												"https://schema.twindev.org/common/",
+												"https://schema.org"
+											],
+											"type": "Document",
+											"id": "2721000:0",
+											"documentId": "2721000",
+											"documentIdFormat": "bol",
+											"documentCode": "unece:DocumentCodeList#705",
+											"documentRevision": 1,
+											"blobStorageId": "blob-memory:c57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70",
+											"blobHash": "sha256:123456",
+											"dateCreated": "2024-01-01T00:00:00Z",
+											"annotationObject": {
+												"@context": "https://schema.org",
+												"@type": "DigitalDocument",
+												"name": "myfile.pdf"
+											},
+											"nodeIdentity": "did:entity-storage:0x6363636363636363636363636363636363636363636363636363636363636363",
+											"userIdentity": "did:entity-storage:0x6363636363636363636363636363636363636363636363636363636363636363"
+										}
+									}
+								}
+							},
+							"application/ld+json": {
+								"schema": {
+									"$ref": "#/components/schemas/Document"
+								},
+								"examples": {
+									"DocumentManagementGetRevisionResponseExample": {
+										"value": {
+											"@context": [
+												"https://schema.twindev.org/documents/",
+												"https://schema.twindev.org/common/",
+												"https://schema.org"
+											],
+											"type": "Document",
+											"id": "2721000:0",
+											"documentId": "2721000",
+											"documentIdFormat": "bol",
+											"documentCode": "unece:DocumentCodeList#705",
+											"documentRevision": 1,
+											"blobStorageId": "blob-memory:c57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70",
+											"blobHash": "sha256:123456",
+											"dateCreated": "2024-01-01T00:00:00Z",
+											"annotationObject": {
+												"@context": "https://schema.org",
+												"@type": "DigitalDocument",
+												"name": "myfile.pdf"
+											},
+											"nodeIdentity": "did:entity-storage:0x6363636363636363636363636363636363636363636363636363636363636363",
+											"userIdentity": "did:entity-storage:0x6363636363636363636363636363636363636363636363636363636363636363"
+										}
+									}
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "The resource you tried to access does not exist, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/NotFoundResponse"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "NotFoundError",
+											"message": "component.error",
+											"properties": {
+												"notFoundId": "1"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			"delete": {
+				"operationId": "DocumentManagementRemove",
+				"summary": "Remove an document from an auditable item graph vertex",
+				"tags": [
+					"Document Management"
+				],
+				"parameters": [
+					{
+						"name": "auditableItemGraphDocumentId",
+						"description": "The id of the auditable item graph vertex to remove the revision from.",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "aig:1234"
+					},
+					{
+						"name": "revision",
+						"description": "The revision of the document to remove.",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "1"
+					}
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"responses": {
+					"204": {
+						"description": "The rest request ended in success with no data."
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "The resource you tried to access does not exist, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/NotFoundResponse"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "NotFoundError",
+											"message": "component.error",
+											"properties": {
+												"notFoundId": "1"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
 		}
 	},
 	"components": {
@@ -11049,6 +12035,10 @@
 					"overrideExtractorType": {
 						"type": "string",
 						"description": "The default extractor connector will be used if not specified."
+					},
+					"overrideMimeType": {
+						"type": "string",
+						"description": "An optional override for the mime type for conversion, will auto detect if not provided."
 					}
 				},
 				"required": [
@@ -11995,6 +12985,268 @@
 					"capabilityDelegation"
 				],
 				"description": "The types of verification method."
+			},
+			"Document": {
+				"type": "object",
+				"properties": {
+					"@context": {
+						"type": "array",
+						"minItems": 3,
+						"items": [
+							{
+								"type": "string",
+								"const": "https://schema.twindev.org/documents/"
+							},
+							{
+								"type": "string",
+								"const": "https://schema.twindev.org/common/"
+							},
+							{
+								"type": "string",
+								"const": "https://schema.org"
+							}
+						],
+						"additionalItems": {
+							"$ref": "https://schema.twindev.org/json-ld/JsonLdContextDefinitionElement"
+						},
+						"description": "JSON-LD Context."
+					},
+					"type": {
+						"type": "string",
+						"const": "Document",
+						"description": "JSON-LD Type."
+					},
+					"id": {
+						"type": "string",
+						"description": "The full id of the document."
+					},
+					"documentId": {
+						"type": "string",
+						"description": "The id of the document."
+					},
+					"documentIdFormat": {
+						"type": "string",
+						"description": "The format of the document id."
+					},
+					"documentCode": {
+						"$ref": "#/components/schemas/UneceDocumentCodes"
+					},
+					"documentRevision": {
+						"type": "number",
+						"description": "The revision of the document as a 0 based index."
+					},
+					"annotationObject": {
+						"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
+					},
+					"blobStorageId": {
+						"type": "string",
+						"description": "The blob storage id for the document."
+					},
+					"blobHash": {
+						"type": "string",
+						"description": "The hash of the blob data."
+					},
+					"blobStorageEntry": {
+						"$ref": "#/components/schemas/BlobStorageEntry"
+					},
+					"extractedData": {
+						"description": "The data extracted from the document using data extraction services."
+					},
+					"attestationId": {
+						"type": "string",
+						"description": "The attestation for the document if one was created."
+					},
+					"attestationInformation": {
+						"$ref": "#/components/schemas/AttestationInformation"
+					},
+					"dateCreated": {
+						"type": "string",
+						"description": "The date/time of when the document was created."
+					},
+					"dateModified": {
+						"type": "string",
+						"description": "The date/time of when the document was modified."
+					},
+					"dateDeleted": {
+						"type": "string",
+						"description": "The date/time of when the document was deleted, as we never actually remove items."
+					},
+					"nodeIdentity": {
+						"type": "string",
+						"description": "The node which added the document to the graph."
+					},
+					"userIdentity": {
+						"type": "string",
+						"description": "The user who added the document to the graph."
+					}
+				},
+				"required": [
+					"@context",
+					"type",
+					"id",
+					"documentId",
+					"documentCode",
+					"documentRevision",
+					"blobStorageId",
+					"blobHash",
+					"dateCreated",
+					"nodeIdentity",
+					"userIdentity"
+				],
+				"additionalProperties": false,
+				"description": "Interface describing a document."
+			},
+			"DocumentList": {
+				"type": "object",
+				"properties": {
+					"@context": {
+						"type": "array",
+						"minItems": 2,
+						"items": [
+							{
+								"type": "string",
+								"const": "https://schema.twindev.org/documents/"
+							},
+							{
+								"type": "string",
+								"const": "https://schema.twindev.org/common/"
+							}
+						],
+						"additionalItems": {
+							"$ref": "https://schema.twindev.org/json-ld/JsonLdContextDefinitionElement"
+						},
+						"description": "JSON-LD Context."
+					},
+					"type": {
+						"type": "string",
+						"const": "DocumentList",
+						"description": "JSON-LD Type."
+					},
+					"documents": {
+						"type": "array",
+						"items": {
+							"$ref": "#/components/schemas/Document"
+						},
+						"description": "The list of documents."
+					},
+					"edges": {
+						"type": "array",
+						"items": {
+							"type": "string"
+						},
+						"description": "The ids of the other vertices which are connected to the document."
+					},
+					"cursor": {
+						"type": "string",
+						"description": "The cursor to get the next chunk of documents."
+					}
+				},
+				"required": [
+					"@context",
+					"type",
+					"documents"
+				],
+				"additionalProperties": false,
+				"description": "Interface describing a list of document entries."
+			},
+			"DocumentManagementCreateRequest": {
+				"type": "object",
+				"properties": {
+					"documentId": {
+						"type": "string",
+						"description": "The document id to create."
+					},
+					"documentIdFormat": {
+						"type": "string",
+						"description": "The format of the document identifier."
+					},
+					"documentCode": {
+						"$ref": "#/components/schemas/UneceDocumentCodes"
+					},
+					"blob": {
+						"type": "string",
+						"description": "The data to create the document with, in base64."
+					},
+					"annotationObject": {
+						"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
+					},
+					"auditableItemGraphEdges": {
+						"type": "array",
+						"items": {
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string"
+								},
+								"addAlias": {
+									"type": "boolean"
+								},
+								"aliasAnnotationObject": {
+									"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
+								}
+							},
+							"required": [
+								"id"
+							],
+							"additionalProperties": false
+						},
+						"description": "The auditable item graph vertices to connect the document to."
+					},
+					"createAttestation": {
+						"type": "boolean",
+						"description": "Flag to create an attestation for the document, defaults to false."
+					},
+					"addAlias": {
+						"type": "boolean",
+						"description": "Flag to add the document id as an alias to the aig vertex, defaults to true."
+					},
+					"aliasAnnotationObject": {
+						"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
+					}
+				},
+				"required": [
+					"documentId",
+					"documentCode",
+					"blob"
+				],
+				"additionalProperties": false,
+				"description": "The body parameters."
+			},
+			"DocumentManagementUpdateRequest": {
+				"type": "object",
+				"properties": {
+					"blob": {
+						"type": "string",
+						"description": "The data to create the document with, in base64."
+					},
+					"annotationObject": {
+						"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
+					},
+					"auditableItemGraphEdges": {
+						"type": "array",
+						"items": {
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string"
+								},
+								"addAlias": {
+									"type": "boolean"
+								},
+								"aliasAnnotationObject": {
+									"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
+								}
+							},
+							"required": [
+								"id"
+							],
+							"additionalProperties": false
+						},
+						"description": "The auditable item graph vertices to connect the document to."
+					}
+				},
+				"additionalProperties": false,
+				"description": "The body parameters."
 			},
 			"Error": {
 				"type": "object",
@@ -13187,6 +14439,3223 @@
 				],
 				"additionalProperties": false,
 				"description": "The response payload."
+			},
+			"UneceDocumentCodes": {
+				"anyOf": [
+					{
+						"type": "string",
+						"description": "Certificate of analysis: 1."
+					},
+					{
+						"type": "string",
+						"description": "Party information: 10."
+					},
+					{
+						"type": "string",
+						"description": "Excise certificate: 100."
+					},
+					{
+						"type": "string",
+						"description": "Registration document: 101."
+					},
+					{
+						"type": "string",
+						"description": "Tax notification: 102."
+					},
+					{
+						"type": "string",
+						"description": "Transport equipment direct interchange report: 103."
+					},
+					{
+						"type": "string",
+						"description": "Transport equipment impending arrival advice: 104."
+					},
+					{
+						"type": "string",
+						"description": "Purchase order: 105."
+					},
+					{
+						"type": "string",
+						"description": "Transport equipment damage report: 106."
+					},
+					{
+						"type": "string",
+						"description": "Transport equipment maintenance and repair work estimate advice: 107."
+					},
+					{
+						"type": "string",
+						"description": "Transport equipment empty release instruction: 108."
+					},
+					{
+						"type": "string",
+						"description": "Transport movement gate in report: 109."
+					},
+					{
+						"type": "string",
+						"description": "Federal label approval: 11."
+					},
+					{
+						"type": "string",
+						"description": "Manufacturing instructions: 110."
+					},
+					{
+						"type": "string",
+						"description": "Transport movement gate out report: 111."
+					},
+					{
+						"type": "string",
+						"description": "Transport equipment unpacking instruction: 112."
+					},
+					{
+						"type": "string",
+						"description": "Transport equipment unpacking report: 113."
+					},
+					{
+						"type": "string",
+						"description": "Transport equipment pick-up availability request: 114."
+					},
+					{
+						"type": "string",
+						"description": "Transport equipment pick-up availability confirmation: 115."
+					},
+					{
+						"type": "string",
+						"description": "Transport equipment pick-up report: 116."
+					},
+					{
+						"type": "string",
+						"description": "Transport equipment shift report: 117."
+					},
+					{
+						"type": "string",
+						"description": "Transport discharge instruction: 118."
+					},
+					{
+						"type": "string",
+						"description": "Transport discharge report: 119."
+					},
+					{
+						"type": "string",
+						"description": "Mill certificate: 12."
+					},
+					{
+						"type": "string",
+						"description": "Stores requisition: 120."
+					},
+					{
+						"type": "string",
+						"description": "Transport loading instruction: 121."
+					},
+					{
+						"type": "string",
+						"description": "Transport loading report: 122."
+					},
+					{
+						"type": "string",
+						"description": "Transport equipment maintenance and repair work authorisation: 123."
+					},
+					{
+						"type": "string",
+						"description": "Transport departure report: 124."
+					},
+					{
+						"type": "string",
+						"description": "Transport empty equipment advice: 125."
+					},
+					{
+						"type": "string",
+						"description": "Transport equipment acceptance order: 126."
+					},
+					{
+						"type": "string",
+						"description": "Transport equipment special service instruction: 127."
+					},
+					{
+						"type": "string",
+						"description": "Transport equipment stock report: 128."
+					},
+					{
+						"type": "string",
+						"description": "Transport cargo release order: 129."
+					},
+					{
+						"type": "string",
+						"description": "Post receipt: 13."
+					},
+					{
+						"type": "string",
+						"description": "Invoicing data sheet: 130."
+					},
+					{
+						"type": "string",
+						"description": "Transport equipment packing instruction: 131."
+					},
+					{
+						"type": "string",
+						"description": "Customs clearance notice: 132."
+					},
+					{
+						"type": "string",
+						"description": "Customs documents expiration notice: 133."
+					},
+					{
+						"type": "string",
+						"description": "Transport equipment on-hire request: 134."
+					},
+					{
+						"type": "string",
+						"description": "Transport equipment on-hire order: 135."
+					},
+					{
+						"type": "string",
+						"description": "Transport equipment off-hire request: 136."
+					},
+					{
+						"type": "string",
+						"description": "Transport equipment survey order: 137."
+					},
+					{
+						"type": "string",
+						"description": "Transport equipment survey order response: 138."
+					},
+					{
+						"type": "string",
+						"description": "Transport equipment survey report: 139."
+					},
+					{
+						"type": "string",
+						"description": "Weight certificate: 14."
+					},
+					{
+						"type": "string",
+						"description": "Packing instructions: 140."
+					},
+					{
+						"type": "string",
+						"description": "Advising items to be booked to a financial account: 141."
+					},
+					{
+						"type": "string",
+						"description": "Transport equipment maintenance and repair work estimate order: 142."
+					},
+					{
+						"type": "string",
+						"description": "Transport equipment maintenance and repair notice: 143."
+					},
+					{
+						"type": "string",
+						"description": "Empty container disposition order: 144."
+					},
+					{
+						"type": "string",
+						"description": "Cargo vessel discharge order: 145."
+					},
+					{
+						"type": "string",
+						"description": "Cargo vessel loading order: 146."
+					},
+					{
+						"type": "string",
+						"description": "Multidrop order: 147."
+					},
+					{
+						"type": "string",
+						"description": "Bailment contract: 148."
+					},
+					{
+						"type": "string",
+						"description": "Basic agreement: 149."
+					},
+					{
+						"type": "string",
+						"description": "Weight list: 15."
+					},
+					{
+						"type": "string",
+						"description": "Internal transport order: 150."
+					},
+					{
+						"type": "string",
+						"description": "Grant: 151."
+					},
+					{
+						"type": "string",
+						"description": "Indefinite delivery indefinite quantity contract: 152."
+					},
+					{
+						"type": "string",
+						"description": "Indefinite delivery definite quantity contract: 153."
+					},
+					{
+						"type": "string",
+						"description": "Requirements contract: 154."
+					},
+					{
+						"type": "string",
+						"description": "Task order: 155."
+					},
+					{
+						"type": "string",
+						"description": "Make or buy plan: 156."
+					},
+					{
+						"type": "string",
+						"description": "Subcontractor plan: 157."
+					},
+					{
+						"type": "string",
+						"description": "Cost data summary: 158."
+					},
+					{
+						"type": "string",
+						"description": "Certified cost and price data: 159."
+					},
+					{
+						"type": "string",
+						"description": "Certificate: 16."
+					},
+					{
+						"type": "string",
+						"description": "Wage determination: 160."
+					},
+					{
+						"type": "string",
+						"description": "Contract Funds Status Report (CFSR): 161."
+					},
+					{
+						"type": "string",
+						"description": "Certified inspection and test results: 162."
+					},
+					{
+						"type": "string",
+						"description": "Material inspection and receiving report: 163."
+					},
+					{
+						"type": "string",
+						"description": "Purchasing specification: 164."
+					},
+					{
+						"type": "string",
+						"description": "Payment or performance bond: 165."
+					},
+					{
+						"type": "string",
+						"description": "Contract security classification specification: 166."
+					},
+					{
+						"type": "string",
+						"description": "Manufacturing specification: 167."
+					},
+					{
+						"type": "string",
+						"description": "Buy America certificate of compliance: 168."
+					},
+					{
+						"type": "string",
+						"description": "Container off-hire notice: 169."
+					},
+					{
+						"type": "string",
+						"description": "Combined certificate of value and origin: 17."
+					},
+					{
+						"type": "string",
+						"description": "Cargo acceptance order: 170."
+					},
+					{
+						"type": "string",
+						"description": "Pick-up notice: 171."
+					},
+					{
+						"type": "string",
+						"description": "Authorisation to plan and suggest orders: 172."
+					},
+					{
+						"type": "string",
+						"description": "Authorisation to plan and ship orders: 173."
+					},
+					{
+						"type": "string",
+						"description": "Drawing: 174."
+					},
+					{
+						"type": "string",
+						"description": "Cost Performance Report (CPR) format 2: 175."
+					},
+					{
+						"type": "string",
+						"description": "Cost Schedule Status Report (CSSR): 176."
+					},
+					{
+						"type": "string",
+						"description": "Cost Performance Report (CPR) format 1: 177."
+					},
+					{
+						"type": "string",
+						"description": "Cost Performance Report (CPR) format 3: 178."
+					},
+					{
+						"type": "string",
+						"description": "Cost Performance Report (CPR) format 4: 179."
+					},
+					{
+						"type": "string",
+						"description": "Movement certificate A.TR.1: 18."
+					},
+					{
+						"type": "string",
+						"description": "Cost Performance Report (CPR) format 5: 180."
+					},
+					{
+						"type": "string",
+						"description": "Progressive discharge report: 181."
+					},
+					{
+						"type": "string",
+						"description": "Balance confirmation: 182."
+					},
+					{
+						"type": "string",
+						"description": "Container stripping order: 183."
+					},
+					{
+						"type": "string",
+						"description": "Container stuffing order: 184."
+					},
+					{
+						"type": "string",
+						"description": "Conveyance declaration (arrival): 185."
+					},
+					{
+						"type": "string",
+						"description": "Conveyance declaration (departure): 186."
+					},
+					{
+						"type": "string",
+						"description": "Conveyance declaration (combined): 187."
+					},
+					{
+						"type": "string",
+						"description": "Project recovery plan: 188."
+					},
+					{
+						"type": "string",
+						"description": "Project production plan: 189."
+					},
+					{
+						"type": "string",
+						"description": "Certificate of quantity: 19."
+					},
+					{
+						"type": "string",
+						"description": "Statistical and other administrative internal documents: 190."
+					},
+					{
+						"type": "string",
+						"description": "Project master schedule: 191."
+					},
+					{
+						"type": "string",
+						"description": "Priced alternate tender bill of quantity: 192."
+					},
+					{
+						"type": "string",
+						"description": "Estimated priced bill of quantity: 193."
+					},
+					{
+						"type": "string",
+						"description": "Draft bill of quantity: 194."
+					},
+					{
+						"type": "string",
+						"description": "Documentary credit collection instruction: 195."
+					},
+					{
+						"type": "string",
+						"description": "Request for an amendment of a documentary credit: 196."
+					},
+					{
+						"type": "string",
+						"description": "Documentary credit amendment information: 197."
+					},
+					{
+						"type": "string",
+						"description": "Advice of an amendment of a documentary credit: 198."
+					},
+					{
+						"type": "string",
+						"description": "Response to an amendment of a documentary credit: 199."
+					},
+					{
+						"type": "string",
+						"description": "Certificate of conformity: 2."
+					},
+					{
+						"type": "string",
+						"description": "Quality data message: 20."
+					},
+					{
+						"type": "string",
+						"description": "Documentary credit issuance information: 200."
+					},
+					{
+						"type": "string",
+						"description": "Direct payment valuation request: 201."
+					},
+					{
+						"type": "string",
+						"description": "Direct payment valuation: 202."
+					},
+					{
+						"type": "string",
+						"description": "Provisional payment valuation: 203."
+					},
+					{
+						"type": "string",
+						"description": "Payment valuation: 204."
+					},
+					{
+						"type": "string",
+						"description": "Quantity valuation: 205."
+					},
+					{
+						"type": "string",
+						"description": "Quantity valuation request: 206."
+					},
+					{
+						"type": "string",
+						"description": "Contract bill of quantities - BOQ: 207."
+					},
+					{
+						"type": "string",
+						"description": "Unpriced bill of quantity: 208."
+					},
+					{
+						"type": "string",
+						"description": "Priced tender BOQ: 209."
+					},
+					{
+						"type": "string",
+						"description": "Query: 21."
+					},
+					{
+						"type": "string",
+						"description": "Enquiry: 210."
+					},
+					{
+						"type": "string",
+						"description": "Interim application for payment: 211."
+					},
+					{
+						"type": "string",
+						"description": "Agreement to pay: 212."
+					},
+					{
+						"type": "string",
+						"description": "Request for financial cancellation: 213."
+					},
+					{
+						"type": "string",
+						"description": "Pre-authorised direct debit(s): 214."
+					},
+					{
+						"type": "string",
+						"description": "Letter of intent: 215."
+					},
+					{
+						"type": "string",
+						"description": "Approved unpriced bill of quantity: 216."
+					},
+					{
+						"type": "string",
+						"description": "Payment valuation for unscheduled items: 217."
+					},
+					{
+						"type": "string",
+						"description": "Final payment request based on completion of work: 218."
+					},
+					{
+						"type": "string",
+						"description": "Payment request for completed units: 219."
+					},
+					{
+						"type": "string",
+						"description": "Response to query: 22."
+					},
+					{
+						"type": "string",
+						"description": "Order: 220."
+					},
+					{
+						"type": "string",
+						"description": "Blanket order: 221."
+					},
+					{
+						"type": "string",
+						"description": "Spot order: 222."
+					},
+					{
+						"type": "string",
+						"description": "Lease order: 223."
+					},
+					{
+						"type": "string",
+						"description": "Rush order: 224."
+					},
+					{
+						"type": "string",
+						"description": "Repair order: 225."
+					},
+					{
+						"type": "string",
+						"description": "Call off order: 226."
+					},
+					{
+						"type": "string",
+						"description": "Consignment order: 227."
+					},
+					{
+						"type": "string",
+						"description": "Sample order: 228."
+					},
+					{
+						"type": "string",
+						"description": "Swap order: 229."
+					},
+					{
+						"type": "string",
+						"description": "Status information: 23."
+					},
+					{
+						"type": "string",
+						"description": "Purchase order change request: 230."
+					},
+					{
+						"type": "string",
+						"description": "Purchase order response: 231."
+					},
+					{
+						"type": "string",
+						"description": "Hire order: 232."
+					},
+					{
+						"type": "string",
+						"description": "Spare parts order: 233."
+					},
+					{
+						"type": "string",
+						"description": "Campaign price/sales catalogue: 234."
+					},
+					{
+						"type": "string",
+						"description": "Container list: 235."
+					},
+					{
+						"type": "string",
+						"description": "Delivery forecast: 236."
+					},
+					{
+						"type": "string",
+						"description": "Cross docking services order: 237."
+					},
+					{
+						"type": "string",
+						"description": "Non-pre-authorised direct debit(s): 238."
+					},
+					{
+						"type": "string",
+						"description": "Rejected direct debit(s): 239."
+					},
+					{
+						"type": "string",
+						"description": "Restow: 24."
+					},
+					{
+						"type": "string",
+						"description": "Delivery instructions: 240."
+					},
+					{
+						"type": "string",
+						"description": "Delivery schedule: 241."
+					},
+					{
+						"type": "string",
+						"description": "Delivery just-in-time: 242."
+					},
+					{
+						"type": "string",
+						"description": "Pre-authorised direct debit request(s): 243."
+					},
+					{
+						"type": "string",
+						"description": "Non-pre-authorised direct debit request(s): 244."
+					},
+					{
+						"type": "string",
+						"description": "Delivery release: 245."
+					},
+					{
+						"type": "string",
+						"description": "Settlement of a letter of credit: 246."
+					},
+					{
+						"type": "string",
+						"description": "Bank to bank funds transfer: 247."
+					},
+					{
+						"type": "string",
+						"description": "Customer payment order(s): 248."
+					},
+					{
+						"type": "string",
+						"description": "Low value payment order(s): 249."
+					},
+					{
+						"type": "string",
+						"description": "Container discharge list: 25."
+					},
+					{
+						"type": "string",
+						"description": "Crew list declaration: 250."
+					},
+					{
+						"type": "string",
+						"description": "Inquiry: 251."
+					},
+					{
+						"type": "string",
+						"description": "Response to previous banking status message: 252."
+					},
+					{
+						"type": "string",
+						"description": "Project master plan: 253."
+					},
+					{
+						"type": "string",
+						"description": "Project plan: 254."
+					},
+					{
+						"type": "string",
+						"description": "Project schedule: 255."
+					},
+					{
+						"type": "string",
+						"description": "Project planning available resources: 256."
+					},
+					{
+						"type": "string",
+						"description": "Project planning calendar: 257."
+					},
+					{
+						"type": "string",
+						"description": "Standing order: 258."
+					},
+					{
+						"type": "string",
+						"description": "Cargo movement event log: 259."
+					},
+					{
+						"type": "string",
+						"description": "Corporate superannuation contributions advice: 26."
+					},
+					{
+						"type": "string",
+						"description": "Cargo analysis voyage report: 260."
+					},
+					{
+						"type": "string",
+						"description": "Self billed credit note: 261."
+					},
+					{
+						"type": "string",
+						"description": "Consolidated credit note - goods and services: 262."
+					},
+					{
+						"type": "string",
+						"description": "Inventory adjustment status report: 263."
+					},
+					{
+						"type": "string",
+						"description": "Transport equipment movement instruction: 264."
+					},
+					{
+						"type": "string",
+						"description": "Transport equipment movement report: 265."
+					},
+					{
+						"type": "string",
+						"description": "Transport equipment status change report: 266."
+					},
+					{
+						"type": "string",
+						"description": "Fumigation certificate: 267."
+					},
+					{
+						"type": "string",
+						"description": "Wine certificate: 268."
+					},
+					{
+						"type": "string",
+						"description": "Wool health certificate: 269."
+					},
+					{
+						"type": "string",
+						"description": "Industry superannuation contributions advice: 27."
+					},
+					{
+						"type": "string",
+						"description": "Delivery note: 270."
+					},
+					{
+						"type": "string",
+						"description": "Packing list: 271."
+					},
+					{
+						"type": "string",
+						"description": "New code request: 272."
+					},
+					{
+						"type": "string",
+						"description": "Code change request: 273."
+					},
+					{
+						"type": "string",
+						"description": "Simple data element request: 274."
+					},
+					{
+						"type": "string",
+						"description": "Simple data element change request: 275."
+					},
+					{
+						"type": "string",
+						"description": "Composite data element request: 276."
+					},
+					{
+						"type": "string",
+						"description": "Composite data element change request: 277."
+					},
+					{
+						"type": "string",
+						"description": "Segment request: 278."
+					},
+					{
+						"type": "string",
+						"description": "Segment change request: 279."
+					},
+					{
+						"type": "string",
+						"description": "Corporate superannuation member maintenance message: 28."
+					},
+					{
+						"type": "string",
+						"description": "New message request: 280."
+					},
+					{
+						"type": "string",
+						"description": "Message in development request: 281."
+					},
+					{
+						"type": "string",
+						"description": "Modification of existing message: 282."
+					},
+					{
+						"type": "string",
+						"description": "Tracking number assignment report: 283."
+					},
+					{
+						"type": "string",
+						"description": "User directory definition: 284."
+					},
+					{
+						"type": "string",
+						"description": "United Nations standard message request: 285."
+					},
+					{
+						"type": "string",
+						"description": "Service directory definition: 286."
+					},
+					{
+						"type": "string",
+						"description": "Status report: 287."
+					},
+					{
+						"type": "string",
+						"description": "Kanban schedule: 288."
+					},
+					{
+						"type": "string",
+						"description": "Product data message: 289."
+					},
+					{
+						"type": "string",
+						"description": "Industry superannuation member maintenance message: 29."
+					},
+					{
+						"type": "string",
+						"description": "A claim for parts and/or labour charges: 290."
+					},
+					{
+						"type": "string",
+						"description": "Delivery schedule response: 291."
+					},
+					{
+						"type": "string",
+						"description": "Inspection request: 292."
+					},
+					{
+						"type": "string",
+						"description": "Inspection report: 293."
+					},
+					{
+						"type": "string",
+						"description": "Application acknowledgement and error report: 294."
+					},
+					{
+						"type": "string",
+						"description": "Price variation invoice: 295."
+					},
+					{
+						"type": "string",
+						"description": "Credit note for price variation: 296."
+					},
+					{
+						"type": "string",
+						"description": "Instruction to collect: 297."
+					},
+					{
+						"type": "string",
+						"description": "Dangerous goods list: 298."
+					},
+					{
+						"type": "string",
+						"description": "Registration renewal: 299."
+					},
+					{
+						"type": "string",
+						"description": "Certificate of quality: 3."
+					},
+					{
+						"type": "string",
+						"description": "Life insurance payroll deductions advice: 30."
+					},
+					{
+						"type": "string",
+						"description": "Registration change: 300."
+					},
+					{
+						"type": "string",
+						"description": "Response to registration: 301."
+					},
+					{
+						"type": "string",
+						"description": "Implementation guideline: 302."
+					},
+					{
+						"type": "string",
+						"description": "Request for transfer: 303."
+					},
+					{
+						"type": "string",
+						"description": "Cost performance report: 304."
+					},
+					{
+						"type": "string",
+						"description": "Application error and acknowledgement: 305."
+					},
+					{
+						"type": "string",
+						"description": "Cash pool financial statement: 306."
+					},
+					{
+						"type": "string",
+						"description": "Sequenced delivery schedule: 307."
+					},
+					{
+						"type": "string",
+						"description": "Delcredere credit note: 308."
+					},
+					{
+						"type": "string",
+						"description": "Healthcare discharge report, final: 309."
+					},
+					{
+						"type": "string",
+						"description": "Underbond request: 31."
+					},
+					{
+						"type": "string",
+						"description": "Offer / quotation: 310."
+					},
+					{
+						"type": "string",
+						"description": "Request for quote: 311."
+					},
+					{
+						"type": "string",
+						"description": "Acknowledgement message: 312."
+					},
+					{
+						"type": "string",
+						"description": "Application error message: 313."
+					},
+					{
+						"type": "string",
+						"description": "Cargo movement voyage summary: 314."
+					},
+					{
+						"type": "string",
+						"description": "Contract: 315."
+					},
+					{
+						"type": "string",
+						"description": "Application for usage of berth or mooring facilities: 316."
+					},
+					{
+						"type": "string",
+						"description": "Application for designation of berthing places: 317."
+					},
+					{
+						"type": "string",
+						"description": "Application for shifting from the designated place in port: 318."
+					},
+					{
+						"type": "string",
+						"description": "Supplementary document for application for cargo operation of dangerous goods: 319."
+					},
+					{
+						"type": "string",
+						"description": "Underbond approval: 32."
+					},
+					{
+						"type": "string",
+						"description": "Acknowledgement of order: 320."
+					},
+					{
+						"type": "string",
+						"description": "Supplementary document for application for transport of dangerous goods: 321."
+					},
+					{
+						"type": "string",
+						"description": "Optical Character Reading (OCR) payment: 322."
+					},
+					{
+						"type": "string",
+						"description": "Preliminary sales report: 323."
+					},
+					{
+						"type": "string",
+						"description": "Transport emergency card: 324."
+					},
+					{
+						"type": "string",
+						"description": "Proforma invoice: 325."
+					},
+					{
+						"type": "string",
+						"description": "Partial invoice: 326."
+					},
+					{
+						"type": "string",
+						"description": "Operating instructions: 327."
+					},
+					{
+						"type": "string",
+						"description": "Name/product plate: 328."
+					},
+					{
+						"type": "string",
+						"description": "Co-insurance ceding bordereau: 329."
+					},
+					{
+						"type": "string",
+						"description": "Certificate of sealing of export meat lockers: 33."
+					},
+					{
+						"type": "string",
+						"description": "Request for delivery instructions: 330."
+					},
+					{
+						"type": "string",
+						"description": "Commercial invoice which includes a packing list: 331."
+					},
+					{
+						"type": "string",
+						"description": "Trade data: 332."
+					},
+					{
+						"type": "string",
+						"description": "Customs declaration for cargo examination: 333."
+					},
+					{
+						"type": "string",
+						"description": "Customs declaration for cargo examination, alternate: 334."
+					},
+					{
+						"type": "string",
+						"description": "Booking request: 335."
+					},
+					{
+						"type": "string",
+						"description": "Customs crew and conveyance: 336."
+					},
+					{
+						"type": "string",
+						"description": "Customs summary declaration with commercial detail, alternate: 337."
+					},
+					{
+						"type": "string",
+						"description": "Items booked to a financial account report: 338."
+					},
+					{
+						"type": "string",
+						"description": "Report of transactions which need further information from the receiver: 339."
+					},
+					{
+						"type": "string",
+						"description": "Cargo status: 34."
+					},
+					{
+						"type": "string",
+						"description": "Shipping instructions: 340."
+					},
+					{
+						"type": "string",
+						"description": "Shipper's letter of instructions (air): 341."
+					},
+					{
+						"type": "string",
+						"description": "Report of transactions for information only: 342."
+					},
+					{
+						"type": "string",
+						"description": "Cartage order (local transport): 343."
+					},
+					{
+						"type": "string",
+						"description": "EDI associated object administration message: 344."
+					},
+					{
+						"type": "string",
+						"description": "Ready for despatch advice: 345."
+					},
+					{
+						"type": "string",
+						"description": "Summary sales report: 346."
+					},
+					{
+						"type": "string",
+						"description": "Order status enquiry: 347."
+					},
+					{
+						"type": "string",
+						"description": "Order status report: 348."
+					},
+					{
+						"type": "string",
+						"description": "Declaration regarding the inward and outward movement of vessel: 349."
+					},
+					{
+						"type": "string",
+						"description": "Inventory report: 35."
+					},
+					{
+						"type": "string",
+						"description": "Despatch order: 350."
+					},
+					{
+						"type": "string",
+						"description": "Despatch advice: 351."
+					},
+					{
+						"type": "string",
+						"description": "Notification of usage of berth or mooring facilities: 352."
+					},
+					{
+						"type": "string",
+						"description": "Application for vessel's entering into port area in night- time: 353."
+					},
+					{
+						"type": "string",
+						"description": "Notification of emergency shifting from the designated place in port: 354."
+					},
+					{
+						"type": "string",
+						"description": "Customs summary declaration without commercial detail, alternate: 355."
+					},
+					{
+						"type": "string",
+						"description": "Performance bond: 356."
+					},
+					{
+						"type": "string",
+						"description": "Payment bond: 357."
+					},
+					{
+						"type": "string",
+						"description": "Healthcare discharge report, preliminary: 358."
+					},
+					{
+						"type": "string",
+						"description": "Request for provision of a health service: 359."
+					},
+					{
+						"type": "string",
+						"description": "Identity card: 36."
+					},
+					{
+						"type": "string",
+						"description": "Request for price quote: 360."
+					},
+					{
+						"type": "string",
+						"description": "Price quote: 361."
+					},
+					{
+						"type": "string",
+						"description": "Delivery quote: 362."
+					},
+					{
+						"type": "string",
+						"description": "Price and delivery quote: 363."
+					},
+					{
+						"type": "string",
+						"description": "Contract price quote: 364."
+					},
+					{
+						"type": "string",
+						"description": "Contract price and delivery quote: 365."
+					},
+					{
+						"type": "string",
+						"description": "Price quote, specified end-customer: 366."
+					},
+					{
+						"type": "string",
+						"description": "Price and delivery quote, specified end-customer: 367."
+					},
+					{
+						"type": "string",
+						"description": "Price quote, ship and debit: 368."
+					},
+					{
+						"type": "string",
+						"description": "Price and delivery quote, ship and debit: 369."
+					},
+					{
+						"type": "string",
+						"description": "Response to a trade statistics message: 37."
+					},
+					{
+						"type": "string",
+						"description": "Advice of distribution of documents: 370."
+					},
+					{
+						"type": "string",
+						"description": "Plan for provision of health service: 371."
+					},
+					{
+						"type": "string",
+						"description": "Prescription: 372."
+					},
+					{
+						"type": "string",
+						"description": "Prescription request: 373."
+					},
+					{
+						"type": "string",
+						"description": "Prescription dispensing report: 374."
+					},
+					{
+						"type": "string",
+						"description": "Certificate of shipment: 375."
+					},
+					{
+						"type": "string",
+						"description": "Standing inquiry on product information: 376."
+					},
+					{
+						"type": "string",
+						"description": "Party credit information: 377."
+					},
+					{
+						"type": "string",
+						"description": "Party payment behaviour information: 378."
+					},
+					{
+						"type": "string",
+						"description": "Request for metering point information: 379."
+					},
+					{
+						"type": "string",
+						"description": "Vaccination certificate: 38."
+					},
+					{
+						"type": "string",
+						"description": "Commercial invoice: 380."
+					},
+					{
+						"type": "string",
+						"description": "Credit note: 381."
+					},
+					{
+						"type": "string",
+						"description": "Commission note: 382."
+					},
+					{
+						"type": "string",
+						"description": "Debit note: 383."
+					},
+					{
+						"type": "string",
+						"description": "Corrected invoice: 384."
+					},
+					{
+						"type": "string",
+						"description": "Consolidated invoice: 385."
+					},
+					{
+						"type": "string",
+						"description": "Prepayment invoice: 386."
+					},
+					{
+						"type": "string",
+						"description": "Hire invoice: 387."
+					},
+					{
+						"type": "string",
+						"description": "Tax invoice: 388."
+					},
+					{
+						"type": "string",
+						"description": "Self-billed invoice: 389."
+					},
+					{
+						"type": "string",
+						"description": "Passport: 39."
+					},
+					{
+						"type": "string",
+						"description": "Delcredere invoice: 390."
+					},
+					{
+						"type": "string",
+						"description": "Metering point information response: 391."
+					},
+					{
+						"type": "string",
+						"description": "Notification of change of supplier: 392."
+					},
+					{
+						"type": "string",
+						"description": "Factored invoice: 393."
+					},
+					{
+						"type": "string",
+						"description": "Lease invoice: 394."
+					},
+					{
+						"type": "string",
+						"description": "Consignment invoice: 395."
+					},
+					{
+						"type": "string",
+						"description": "Factored credit note: 396."
+					},
+					{
+						"type": "string",
+						"description": "Commercial account summary response: 397."
+					},
+					{
+						"type": "string",
+						"description": "Cross docking despatch advice: 398."
+					},
+					{
+						"type": "string",
+						"description": "Transshipment despatch advice: 399."
+					},
+					{
+						"type": "string",
+						"description": "Test report: 4."
+					},
+					{
+						"type": "string",
+						"description": "Driving licence (national): 40."
+					},
+					{
+						"type": "string",
+						"description": "Exceptional order: 400."
+					},
+					{
+						"type": "string",
+						"description": "Pre-packed cross docking order: 401."
+					},
+					{
+						"type": "string",
+						"description": "Intermediate handling cross docking order: 402."
+					},
+					{
+						"type": "string",
+						"description": "Means of transportation availability information: 403."
+					},
+					{
+						"type": "string",
+						"description": "Means of transportation schedule information: 404."
+					},
+					{
+						"type": "string",
+						"description": "Transport equipment delivery notice: 405."
+					},
+					{
+						"type": "string",
+						"description": "Notification to supplier of contract termination: 406."
+					},
+					{
+						"type": "string",
+						"description": "Notification to supplier of metering point changes: 407."
+					},
+					{
+						"type": "string",
+						"description": "Notification of meter change: 408."
+					},
+					{
+						"type": "string",
+						"description": "Instructions for bank transfer: 409."
+					},
+					{
+						"type": "string",
+						"description": "Driving licence (international): 41."
+					},
+					{
+						"type": "string",
+						"description": "Notification of metering point identification change: 410."
+					},
+					{
+						"type": "string",
+						"description": "Utilities time series message: 411."
+					},
+					{
+						"type": "string",
+						"description": "Application for banker's draft: 412."
+					},
+					{
+						"type": "string",
+						"description": "Infrastructure condition: 413."
+					},
+					{
+						"type": "string",
+						"description": "Acknowledgement of change of supplier: 414."
+					},
+					{
+						"type": "string",
+						"description": "Data Plot Sheet: 415."
+					},
+					{
+						"type": "string",
+						"description": "Soil analysis: 416."
+					},
+					{
+						"type": "string",
+						"description": "Farmyard manure analysis: 417."
+					},
+					{
+						"type": "string",
+						"description": "WCO Cargo Report Export, Rail or Road: 418."
+					},
+					{
+						"type": "string",
+						"description": "WCO Cargo Report Export, Air or Maritime: 419."
+					},
+					{
+						"type": "string",
+						"description": "Free pass: 42."
+					},
+					{
+						"type": "string",
+						"description": "Optical Character Reading (OCR) payment credit note: 420."
+					},
+					{
+						"type": "string",
+						"description": "WCO Cargo Report Import, Rail or Road: 421."
+					},
+					{
+						"type": "string",
+						"description": "WCO Cargo Report Import, Air or Maritime: 422."
+					},
+					{
+						"type": "string",
+						"description": "WCO one-step export declaration: 423."
+					},
+					{
+						"type": "string",
+						"description": "WCO first step of two-step export declaration: 424."
+					},
+					{
+						"type": "string",
+						"description": "Collection payment advice: 425."
+					},
+					{
+						"type": "string",
+						"description": "Documentary credit payment advice: 426."
+					},
+					{
+						"type": "string",
+						"description": "Documentary credit acceptance advice: 427."
+					},
+					{
+						"type": "string",
+						"description": "Documentary credit negotiation advice: 428."
+					},
+					{
+						"type": "string",
+						"description": "Application for banker's guarantee: 429."
+					},
+					{
+						"type": "string",
+						"description": "Season ticket: 43."
+					},
+					{
+						"type": "string",
+						"description": "Banker's guarantee: 430."
+					},
+					{
+						"type": "string",
+						"description": "Documentary credit letter of indemnity: 431."
+					},
+					{
+						"type": "string",
+						"description": "Notification to grid operator of contract termination: 432."
+					},
+					{
+						"type": "string",
+						"description": "Notification to grid operator of metering point changes: 433."
+					},
+					{
+						"type": "string",
+						"description": "Notification of balance responsible entity change: 434."
+					},
+					{
+						"type": "string",
+						"description": "Preadvice of a credit: 435."
+					},
+					{
+						"type": "string",
+						"description": "Transport equipment profile report: 436."
+					},
+					{
+						"type": "string",
+						"description": "Request for price and delivery quote, specified end-user: 437."
+					},
+					{
+						"type": "string",
+						"description": "Request for price quote, ship and debit: 438."
+					},
+					{
+						"type": "string",
+						"description": "Request for price and delivery quote, ship and debit: 439."
+					},
+					{
+						"type": "string",
+						"description": "Transport status report: 44."
+					},
+					{
+						"type": "string",
+						"description": "Delivery point list.: 440."
+					},
+					{
+						"type": "string",
+						"description": "Transport routing information: 441."
+					},
+					{
+						"type": "string",
+						"description": "Request for delivery quote: 442."
+					},
+					{
+						"type": "string",
+						"description": "Request for price and delivery quote: 443."
+					},
+					{
+						"type": "string",
+						"description": "Request for contract price quote: 444."
+					},
+					{
+						"type": "string",
+						"description": "Request for contract price and delivery quote: 445."
+					},
+					{
+						"type": "string",
+						"description": "Request for price quote, specified end-customer: 446."
+					},
+					{
+						"type": "string",
+						"description": "Collection order: 447."
+					},
+					{
+						"type": "string",
+						"description": "Documents presentation form: 448."
+					},
+					{
+						"type": "string",
+						"description": "Identification match: 449."
+					},
+					{
+						"type": "string",
+						"description": "Transport status request: 45."
+					},
+					{
+						"type": "string",
+						"description": "Payment order: 450."
+					},
+					{
+						"type": "string",
+						"description": "Extended payment order: 451."
+					},
+					{
+						"type": "string",
+						"description": "Multiple payment order: 452."
+					},
+					{
+						"type": "string",
+						"description": "Notice that circumstances prevent payment of delivered goods: 453."
+					},
+					{
+						"type": "string",
+						"description": "Credit advice: 454."
+					},
+					{
+						"type": "string",
+						"description": "Extended credit advice: 455."
+					},
+					{
+						"type": "string",
+						"description": "Debit advice: 456."
+					},
+					{
+						"type": "string",
+						"description": "Reversal of debit: 457."
+					},
+					{
+						"type": "string",
+						"description": "Reversal of credit: 458."
+					},
+					{
+						"type": "string",
+						"description": "Travel ticket: 459."
+					},
+					{
+						"type": "string",
+						"description": "Banking status: 46."
+					},
+					{
+						"type": "string",
+						"description": "Documentary credit application: 460."
+					},
+					{
+						"type": "string",
+						"description": "Payment card: 461."
+					},
+					{
+						"type": "string",
+						"description": "Ready for transshipment despatch advice: 462."
+					},
+					{
+						"type": "string",
+						"description": "Pre-packed cross docking despatch advice: 463."
+					},
+					{
+						"type": "string",
+						"description": "Intermediate handling cross docking despatch advice: 464."
+					},
+					{
+						"type": "string",
+						"description": "Documentary credit: 465."
+					},
+					{
+						"type": "string",
+						"description": "Documentary credit notification: 466."
+					},
+					{
+						"type": "string",
+						"description": "Documentary credit transfer advice: 467."
+					},
+					{
+						"type": "string",
+						"description": "Documentary credit amendment notification: 468."
+					},
+					{
+						"type": "string",
+						"description": "Documentary credit amendment: 469."
+					},
+					{
+						"type": "string",
+						"description": "Extra-Community trade statistical declaration: 47."
+					},
+					{
+						"type": "string",
+						"description": "Waste disposal report: 470."
+					},
+					{
+						"type": "string",
+						"description": "Written instructions in conformance with ADR article number 10385: 48."
+					},
+					{
+						"type": "string",
+						"description": "Remittance advice: 481."
+					},
+					{
+						"type": "string",
+						"description": "Port authority waste disposal report: 482."
+					},
+					{
+						"type": "string",
+						"description": "Visa: 483."
+					},
+					{
+						"type": "string",
+						"description": "Multiple direct debit request: 484."
+					},
+					{
+						"type": "string",
+						"description": "Banker's draft: 485."
+					},
+					{
+						"type": "string",
+						"description": "Multiple direct debit: 486."
+					},
+					{
+						"type": "string",
+						"description": "Certificate of disembarkation permission: 487."
+					},
+					{
+						"type": "string",
+						"description": "Deratting exemption certificate: 488."
+					},
+					{
+						"type": "string",
+						"description": "Reefer connection order: 489."
+					},
+					{
+						"type": "string",
+						"description": "Damage certification: 49."
+					},
+					{
+						"type": "string",
+						"description": "Bill of exchange: 490."
+					},
+					{
+						"type": "string",
+						"description": "Promissory note: 491."
+					},
+					{
+						"type": "string",
+						"description": "Statement of account message: 493."
+					},
+					{
+						"type": "string",
+						"description": "Direct delivery (transport): 494."
+					},
+					{
+						"type": "string",
+						"description": "WCO second step of two-step export declaration: 495."
+					},
+					{
+						"type": "string",
+						"description": "WCO one-step import declaration: 496."
+					},
+					{
+						"type": "string",
+						"description": "WCO first step of two-step import declaration: 497."
+					},
+					{
+						"type": "string",
+						"description": "WCO second step of two-step import declaration: 498."
+					},
+					{
+						"type": "string",
+						"description": "Previous transport document: 499."
+					},
+					{
+						"type": "string",
+						"description": "Product performance report: 5."
+					},
+					{
+						"type": "string",
+						"description": "Validated priced tender: 50."
+					},
+					{
+						"type": "string",
+						"description": "Price/sales catalogue response: 51."
+					},
+					{
+						"type": "string",
+						"description": "Price negotiation result: 52."
+					},
+					{
+						"type": "string",
+						"description": "Insurance certificate: 520."
+					},
+					{
+						"type": "string",
+						"description": "Special requirements permit related to the transport of cargo: 521."
+					},
+					{
+						"type": "string",
+						"description": "Dangerous Goods Notification for Tanker vessel: 522."
+					},
+					{
+						"type": "string",
+						"description": "Dangerous Goods Notification for non-tanker vessel: 523."
+					},
+					{
+						"type": "string",
+						"description": "WCO Conveyance Arrival Report: 524."
+					},
+					{
+						"type": "string",
+						"description": "WCO Conveyance Departure Report: 525."
+					},
+					{
+						"type": "string",
+						"description": "Accounting voucher: 526."
+					},
+					{
+						"type": "string",
+						"description": "Self billed debit note: 527."
+					},
+					{
+						"type": "string",
+						"description": "Military Identification Card: 528."
+					},
+					{
+						"type": "string",
+						"description": "Re-Entry Permit: 529."
+					},
+					{
+						"type": "string",
+						"description": "Safety and hazard data sheet: 53."
+					},
+					{
+						"type": "string",
+						"description": "Insurance policy: 530."
+					},
+					{
+						"type": "string",
+						"description": "Refugee Permit: 531."
+					},
+					{
+						"type": "string",
+						"description": "Forwarder’s credit note: 532."
+					},
+					{
+						"type": "string",
+						"description": "Original accounting voucher: 533."
+					},
+					{
+						"type": "string",
+						"description": "Copy accounting voucher: 534."
+					},
+					{
+						"type": "string",
+						"description": "Pro-forma accounting voucher: 535."
+					},
+					{
+						"type": "string",
+						"description": "International Ship Security Certificate: 536."
+					},
+					{
+						"type": "string",
+						"description": "Interim International Ship Security Certificate: 537."
+					},
+					{
+						"type": "string",
+						"description": "Good Manufacturing Practice (GMP) Certificate: 538."
+					},
+					{
+						"type": "string",
+						"description": "Framework Agreement: 539."
+					},
+					{
+						"type": "string",
+						"description": "Legal statement of an account: 54."
+					},
+					{
+						"type": "string",
+						"description": "Listing statement of an account: 55."
+					},
+					{
+						"type": "string",
+						"description": "Insurance declaration sheet (bordereau): 550."
+					},
+					{
+						"type": "string",
+						"description": "Transport capacity offer: 551."
+					},
+					{
+						"type": "string",
+						"description": "Ship Security Plan: 552."
+					},
+					{
+						"type": "string",
+						"description": "Forwarder’s invoice discrepancy report: 553."
+					},
+					{
+						"type": "string",
+						"description": "Storage capacity offer: 554."
+					},
+					{
+						"type": "string",
+						"description": "Closing statement of an account: 56."
+					},
+					{
+						"type": "string",
+						"description": "Transport equipment on-hire report: 57."
+					},
+					{
+						"type": "string",
+						"description": "Insurer's invoice: 575."
+					},
+					{
+						"type": "string",
+						"description": "Storage capacity request: 576."
+					},
+					{
+						"type": "string",
+						"description": "Transport capacity request: 577."
+					},
+					{
+						"type": "string",
+						"description": "EU Customs declaration for External Community Transit (T1): 578."
+					},
+					{
+						"type": "string",
+						"description": "EU Customs declaration for internal Community Transit (T2): 579."
+					},
+					{
+						"type": "string",
+						"description": "Transport equipment off-hire report: 58."
+					},
+					{
+						"type": "string",
+						"description": "Cover note: 580."
+					},
+					{
+						"type": "string",
+						"description": "EU Customs declaration for non-fiscal area internal Community Transit (T2F): 581."
+					},
+					{
+						"type": "string",
+						"description": "EU Customs declaration for internal transit to San Marino (T2SM): 582."
+					},
+					{
+						"type": "string",
+						"description": "EU Customs declaration for mixed consignments (T): 583."
+					},
+					{
+						"type": "string",
+						"description": "EU Document for establishing the Community status of goods (T2L): 584."
+					},
+					{
+						"type": "string",
+						"description": "EU Document for establishing the Community status of goods for certain fiscal purposes (T2LF): 585."
+					},
+					{
+						"type": "string",
+						"description": "Document for establishing the Customs Status of goods for San Marino (T2LSM): 586."
+					},
+					{
+						"type": "string",
+						"description": "Customs declaration for TIR Carnet goods: 587."
+					},
+					{
+						"type": "string",
+						"description": "Transport Means Security Report: 588."
+					},
+					{
+						"type": "string",
+						"description": "Halal Slaughtering Certificate: 589."
+					},
+					{
+						"type": "string",
+						"description": "Treatment - nil outturn: 59."
+					},
+					{
+						"type": "string",
+						"description": "Product specification report: 6."
+					},
+					{
+						"type": "string",
+						"description": "Treatment - time-up underbond: 60."
+					},
+					{
+						"type": "string",
+						"description": "Treatment - underbond by sea: 61."
+					},
+					{
+						"type": "string",
+						"description": "Forwarding instructions: 610."
+					},
+					{
+						"type": "string",
+						"description": "Treatment - personal effect: 62."
+					},
+					{
+						"type": "string",
+						"description": "Forwarder's advice to import agent: 621."
+					},
+					{
+						"type": "string",
+						"description": "Forwarder's advice to exporter: 622."
+					},
+					{
+						"type": "string",
+						"description": "Forwarder's invoice: 623."
+					},
+					{
+						"type": "string",
+						"description": "Forwarder's certificate of receipt: 624."
+					},
+					{
+						"type": "string",
+						"description": "Heat Treatment Certificate: 625."
+					},
+					{
+						"type": "string",
+						"description": "Convention on International Trade in Endangered Species of Wild Fauna and Flora (CITES) Certificate: 626."
+					},
+					{
+						"type": "string",
+						"description": "Free Sale Certificate in the Country of Origin: 627."
+					},
+					{
+						"type": "string",
+						"description": "Transit license: 628."
+					},
+					{
+						"type": "string",
+						"description": "Veterinary quarantine certificate: 629."
+					},
+					{
+						"type": "string",
+						"description": "Treatment - timber: 63."
+					},
+					{
+						"type": "string",
+						"description": "Shipping note: 630."
+					},
+					{
+						"type": "string",
+						"description": "Forwarder's warehouse receipt: 631."
+					},
+					{
+						"type": "string",
+						"description": "Goods receipt: 632."
+					},
+					{
+						"type": "string",
+						"description": "Port charges documents: 633."
+					},
+					{
+						"type": "string",
+						"description": "Certified list of ingredients: 634."
+					},
+					{
+						"type": "string",
+						"description": "Warehouse warrant: 635."
+					},
+					{
+						"type": "string",
+						"description": "Health certificate: 636."
+					},
+					{
+						"type": "string",
+						"description": "Food grade certificate: 637."
+					},
+					{
+						"type": "string",
+						"description": "Certificate of suitability for transport of grains and legumes: 638."
+					},
+					{
+						"type": "string",
+						"description": "Certificate of refrigerated transport equipment inspection: 639."
+					},
+					{
+						"type": "string",
+						"description": "Preliminary credit assessment: 64."
+					},
+					{
+						"type": "string",
+						"description": "Delivery order: 640."
+					},
+					{
+						"type": "string",
+						"description": "Thermographic reading report: 641."
+					},
+					{
+						"type": "string",
+						"description": "Certificate of food item transport readiness: 642."
+					},
+					{
+						"type": "string",
+						"description": "Food packaging contact certificate: 643."
+					},
+					{
+						"type": "string",
+						"description": "Packaging material composition report: 644."
+					},
+					{
+						"type": "string",
+						"description": "Export price certificate: 645."
+					},
+					{
+						"type": "string",
+						"description": "Public price certificate: 646."
+					},
+					{
+						"type": "string",
+						"description": "Drug shelf life study report: 647."
+					},
+					{
+						"type": "string",
+						"description": "Certificate of compliance with standards of the World Organization for Animal Health (OIE): 648."
+					},
+					{
+						"type": "string",
+						"description": "Production facility license: 649."
+					},
+					{
+						"type": "string",
+						"description": "Credit cover: 65."
+					},
+					{
+						"type": "string",
+						"description": "Handling order: 650."
+					},
+					{
+						"type": "string",
+						"description": "Manufacturing license: 651."
+					},
+					{
+						"type": "string",
+						"description": "Low risk country formal letter: 652."
+					},
+					{
+						"type": "string",
+						"description": "Previous correspondence: 653."
+					},
+					{
+						"type": "string",
+						"description": "Declaration for radioactive material: 654."
+					},
+					{
+						"type": "string",
+						"description": "Gate pass: 655."
+					},
+					{
+						"type": "string",
+						"description": "Resale information: 656."
+					},
+					{
+						"type": "string",
+						"description": "Phytosanitary Re-export Certificate: 657."
+					},
+					{
+						"type": "string",
+						"description": "Bayplan/stowage plan, full: 658."
+					},
+					{
+						"type": "string",
+						"description": "Bayplan/stowage plan, partial: 659."
+					},
+					{
+						"type": "string",
+						"description": "Current account: 66."
+					},
+					{
+						"type": "string",
+						"description": "Commercial dispute: 67."
+					},
+					{
+						"type": "string",
+						"description": "Chargeback: 68."
+					},
+					{
+						"type": "string",
+						"description": "Reassignment: 69."
+					},
+					{
+						"type": "string",
+						"description": "Process data report: 7."
+					},
+					{
+						"type": "string",
+						"description": "Collateral account: 70."
+					},
+					{
+						"type": "string",
+						"description": "Waybill: 700."
+					},
+					{
+						"type": "string",
+						"description": "Universal (multipurpose) transport document: 701."
+					},
+					{
+						"type": "string",
+						"description": "Goods receipt, carriage: 702."
+					},
+					{
+						"type": "string",
+						"description": "House waybill: 703."
+					},
+					{
+						"type": "string",
+						"description": "Master bill of lading: 704."
+					},
+					{
+						"type": "string",
+						"description": "Bill of lading: 705."
+					},
+					{
+						"type": "string",
+						"description": "Bill of lading original: 706."
+					},
+					{
+						"type": "string",
+						"description": "Bill of lading copy: 707."
+					},
+					{
+						"type": "string",
+						"description": "Empty container bill: 708."
+					},
+					{
+						"type": "string",
+						"description": "Tanker bill of lading: 709."
+					},
+					{
+						"type": "string",
+						"description": "Request for payment: 71."
+					},
+					{
+						"type": "string",
+						"description": "Sea waybill: 710."
+					},
+					{
+						"type": "string",
+						"description": "Inland waterway bill of lading: 711."
+					},
+					{
+						"type": "string",
+						"description": "Non-negotiable maritime transport document (generic): 712."
+					},
+					{
+						"type": "string",
+						"description": "Mate's receipt: 713."
+					},
+					{
+						"type": "string",
+						"description": "House bill of lading: 714."
+					},
+					{
+						"type": "string",
+						"description": "Letter of indemnity for non-surrender of bill of lading: 715."
+					},
+					{
+						"type": "string",
+						"description": "Forwarder's bill of lading: 716."
+					},
+					{
+						"type": "string",
+						"description": "Residence permit: 717."
+					},
+					{
+						"type": "string",
+						"description": "Seaman’s book: 718."
+					},
+					{
+						"type": "string",
+						"description": "General message: 719."
+					},
+					{
+						"type": "string",
+						"description": "Unship permit: 72."
+					},
+					{
+						"type": "string",
+						"description": "Rail consignment note (generic term): 720."
+					},
+					{
+						"type": "string",
+						"description": "Product data response: 721."
+					},
+					{
+						"type": "string",
+						"description": "Road list-SMGS: 722."
+					},
+					{
+						"type": "string",
+						"description": "Escort official recognition: 723."
+					},
+					{
+						"type": "string",
+						"description": "Recharging document: 724."
+					},
+					{
+						"type": "string",
+						"description": "Manufacturer raised order: 725."
+					},
+					{
+						"type": "string",
+						"description": "Manufacturer raised consignment order: 726."
+					},
+					{
+						"type": "string",
+						"description": "Price/sales catalogue not containing commercial information: 727."
+					},
+					{
+						"type": "string",
+						"description": "Price/sales catalogue containing commercial information: 728."
+					},
+					{
+						"type": "string",
+						"description": "Returns advice: 729."
+					},
+					{
+						"type": "string",
+						"description": "Statistical definitions: 73."
+					},
+					{
+						"type": "string",
+						"description": "Road consignment note: 730."
+					},
+					{
+						"type": "string",
+						"description": "Commercial account summary: 731."
+					},
+					{
+						"type": "string",
+						"description": "Announcement for returns: 732."
+					},
+					{
+						"type": "string",
+						"description": "Instruction for returns: 733."
+					},
+					{
+						"type": "string",
+						"description": "Sales forecast report: 734."
+					},
+					{
+						"type": "string",
+						"description": "Sales data report: 735."
+					},
+					{
+						"type": "string",
+						"description": "Standing inquiry on complete product information: 736."
+					},
+					{
+						"type": "string",
+						"description": "Proof of delivery: 737."
+					},
+					{
+						"type": "string",
+						"description": "Cargo/goods handling and movement message: 738."
+					},
+					{
+						"type": "string",
+						"description": "Metered services consumption report supporting an invoice: 739."
+					},
+					{
+						"type": "string",
+						"description": "Statistical data: 74."
+					},
+					{
+						"type": "string",
+						"description": "Air waybill: 740."
+					},
+					{
+						"type": "string",
+						"description": "Master air waybill: 741."
+					},
+					{
+						"type": "string",
+						"description": "Metered services consumption report: 742."
+					},
+					{
+						"type": "string",
+						"description": "Substitute air waybill: 743."
+					},
+					{
+						"type": "string",
+						"description": "Crew's effects declaration: 744."
+					},
+					{
+						"type": "string",
+						"description": "Passenger list: 745."
+					},
+					{
+						"type": "string",
+						"description": "Delivery notice (rail transport): 746."
+					},
+					{
+						"type": "string",
+						"description": "Payroll deductions advice: 747."
+					},
+					{
+						"type": "string",
+						"description": "Consignment despatch advice: 748."
+					},
+					{
+						"type": "string",
+						"description": "Transport equipment gross mass verification message: 749."
+					},
+					{
+						"type": "string",
+						"description": "Request for statistical data: 75."
+					},
+					{
+						"type": "string",
+						"description": "Despatch note (post parcels): 750."
+					},
+					{
+						"type": "string",
+						"description": "Invoice information for accounting purposes: 751."
+					},
+					{
+						"type": "string",
+						"description": "Plant Passport: 752."
+					},
+					{
+						"type": "string",
+						"description": "Certificate of sustainability: 753."
+					},
+					{
+						"type": "string",
+						"description": "Call for tender: 754."
+					},
+					{
+						"type": "string",
+						"description": "Invitation to tender: 755."
+					},
+					{
+						"type": "string",
+						"description": "European Single Procurement Document request: 756."
+					},
+					{
+						"type": "string",
+						"description": "Tendering price/sales catalogue request: 757."
+					},
+					{
+						"type": "string",
+						"description": "Tender: 758."
+					},
+					{
+						"type": "string",
+						"description": "European Single Procurement Document: 759."
+					},
+					{
+						"type": "string",
+						"description": "Call-off delivery: 76."
+					},
+					{
+						"type": "string",
+						"description": "Multimodal/combined transport document (generic): 760."
+					},
+					{
+						"type": "string",
+						"description": "Through bill of lading: 761."
+					},
+					{
+						"type": "string",
+						"description": "Tendering price/sales catalogue: 762."
+					},
+					{
+						"type": "string",
+						"description": "Forwarder's certificate of transport: 763."
+					},
+					{
+						"type": "string",
+						"description": "Combined transport document (generic): 764."
+					},
+					{
+						"type": "string",
+						"description": "Multimodal transport document (generic): 765."
+					},
+					{
+						"type": "string",
+						"description": "Combined transport bill of lading/multimodal bill of lading: 766."
+					},
+					{
+						"type": "string",
+						"description": "Acknowledgment of receipt: 767."
+					},
+					{
+						"type": "string",
+						"description": "Civil status document: 768."
+					},
+					{
+						"type": "string",
+						"description": "Advice report: 769."
+					},
+					{
+						"type": "string",
+						"description": "Consignment status report: 77."
+					},
+					{
+						"type": "string",
+						"description": "Booking confirmation: 770."
+					},
+					{
+						"type": "string",
+						"description": "Binding offer: 771."
+					},
+					{
+						"type": "string",
+						"description": "Binding customer agreement for contract: 772."
+					},
+					{
+						"type": "string",
+						"description": "Coverage confirmation note: 773."
+					},
+					{
+						"type": "string",
+						"description": "General terms and conditions: 774."
+					},
+					{
+						"type": "string",
+						"description": "Calling forward notice: 775."
+					},
+					{
+						"type": "string",
+						"description": "Contract clauses: 776."
+					},
+					{
+						"type": "string",
+						"description": "Specific contract conditions: 777."
+					},
+					{
+						"type": "string",
+						"description": "Group insurance rules: 778."
+					},
+					{
+						"type": "string",
+						"description": "Questionnaire: 779."
+					},
+					{
+						"type": "string",
+						"description": "Inventory movement advice: 78."
+					},
+					{
+						"type": "string",
+						"description": "Freight invoice: 780."
+					},
+					{
+						"type": "string",
+						"description": "Arrival notice (goods): 781."
+					},
+					{
+						"type": "string",
+						"description": "Notice of circumstances preventing delivery (goods): 782."
+					},
+					{
+						"type": "string",
+						"description": "Notice of circumstances preventing transport (goods): 783."
+					},
+					{
+						"type": "string",
+						"description": "Delivery notice (goods): 784."
+					},
+					{
+						"type": "string",
+						"description": "Cargo manifest: 785."
+					},
+					{
+						"type": "string",
+						"description": "Freight manifest: 786."
+					},
+					{
+						"type": "string",
+						"description": "Bordereau: 787."
+					},
+					{
+						"type": "string",
+						"description": "Container manifest (unit packing list): 788."
+					},
+					{
+						"type": "string",
+						"description": "Charges note: 789."
+					},
+					{
+						"type": "string",
+						"description": "Inventory status advice: 79."
+					},
+					{
+						"type": "string",
+						"description": "Advice of collection: 790."
+					},
+					{
+						"type": "string",
+						"description": "Safety of ship certificate: 791."
+					},
+					{
+						"type": "string",
+						"description": "Safety of radio certificate: 792."
+					},
+					{
+						"type": "string",
+						"description": "Safety of equipment certificate: 793."
+					},
+					{
+						"type": "string",
+						"description": "Civil liability for oil certificate: 794."
+					},
+					{
+						"type": "string",
+						"description": "Loadline document: 795."
+					},
+					{
+						"type": "string",
+						"description": "Derat document: 796."
+					},
+					{
+						"type": "string",
+						"description": "Maritime declaration of health: 797."
+					},
+					{
+						"type": "string",
+						"description": "Certificate of registry: 798."
+					},
+					{
+						"type": "string",
+						"description": "Ship's stores declaration: 799."
+					},
+					{
+						"type": "string",
+						"description": "First sample test report: 8."
+					},
+					{
+						"type": "string",
+						"description": "Debit note related to goods or services: 80."
+					},
+					{
+						"type": "string",
+						"description": "Credit note related to goods or services: 81."
+					},
+					{
+						"type": "string",
+						"description": "Export licence, application for: 810."
+					},
+					{
+						"type": "string",
+						"description": "Export licence: 811."
+					},
+					{
+						"type": "string",
+						"description": "Exchange control declaration, export: 812."
+					},
+					{
+						"type": "string",
+						"description": "Declaration of final beneficiary: 813."
+					},
+					{
+						"type": "string",
+						"description": "US, FATCA statement: 814."
+					},
+					{
+						"type": "string",
+						"description": "Insured status report: 815."
+					},
+					{
+						"type": "string",
+						"description": "Group pension commitment information: 816."
+					},
+					{
+						"type": "string",
+						"description": "Claim notification: 817."
+					},
+					{
+						"type": "string",
+						"description": "Assessment report: 818."
+					},
+					{
+						"type": "string",
+						"description": "Loss statement: 819."
+					},
+					{
+						"type": "string",
+						"description": "Metered services invoice: 82."
+					},
+					{
+						"type": "string",
+						"description": "Despatch note model T: 820."
+					},
+					{
+						"type": "string",
+						"description": "Despatch note model T1: 821."
+					},
+					{
+						"type": "string",
+						"description": "Despatch note model T2: 822."
+					},
+					{
+						"type": "string",
+						"description": "Control document T5: 823."
+					},
+					{
+						"type": "string",
+						"description": "Re-sending consignment note: 824."
+					},
+					{
+						"type": "string",
+						"description": "Despatch note model T2L: 825."
+					},
+					{
+						"type": "string",
+						"description": "Guarantee of cost acceptance: 826."
+					},
+					{
+						"type": "string",
+						"description": "Close of claim: 827."
+					},
+					{
+						"type": "string",
+						"description": "Refusal of claim: 828."
+					},
+					{
+						"type": "string",
+						"description": "Valuation report: 829."
+					},
+					{
+						"type": "string",
+						"description": "Credit note related to financial adjustments: 83."
+					},
+					{
+						"type": "string",
+						"description": "Goods declaration for exportation: 830."
+					},
+					{
+						"type": "string",
+						"description": "Claim history certificate: 831."
+					},
+					{
+						"type": "string",
+						"description": "Accounting statement: 832."
+					},
+					{
+						"type": "string",
+						"description": "Cargo declaration (departure): 833."
+					},
+					{
+						"type": "string",
+						"description": "Payment receipt confirmation: 834."
+					},
+					{
+						"type": "string",
+						"description": "Certificate of paid insurance premium: 835."
+					},
+					{
+						"type": "string",
+						"description": "Insured party payment report: 836."
+					},
+					{
+						"type": "string",
+						"description": "Third party payment report: 837."
+					},
+					{
+						"type": "string",
+						"description": "Direct debit authorisation: 838."
+					},
+					{
+						"type": "string",
+						"description": "Physician report: 839."
+					},
+					{
+						"type": "string",
+						"description": "Debit note related to financial adjustments: 84."
+					},
+					{
+						"type": "string",
+						"description": "Application for goods control certificate: 840."
+					},
+					{
+						"type": "string",
+						"description": "Goods control certificate: 841."
+					},
+					{
+						"type": "string",
+						"description": "Medical certificate: 842."
+					},
+					{
+						"type": "string",
+						"description": "Witness report: 843."
+					},
+					{
+						"type": "string",
+						"description": "Calculation note: 844."
+					},
+					{
+						"type": "string",
+						"description": "Communication from opposite party: 845."
+					},
+					{
+						"type": "string",
+						"description": "Amicable agreement: 846."
+					},
+					{
+						"type": "string",
+						"description": "Out of court settlement: 847."
+					},
+					{
+						"type": "string",
+						"description": "Legal action: 848."
+					},
+					{
+						"type": "string",
+						"description": "Summons: 849."
+					},
+					{
+						"type": "string",
+						"description": "Customs manifest: 85."
+					},
+					{
+						"type": "string",
+						"description": "Application for phytosanitary certificate: 850."
+					},
+					{
+						"type": "string",
+						"description": "Phytosanitary certificate: 851."
+					},
+					{
+						"type": "string",
+						"description": "Sanitary certificate: 852."
+					},
+					{
+						"type": "string",
+						"description": "Veterinary certificate: 853."
+					},
+					{
+						"type": "string",
+						"description": "Court judgment: 854."
+					},
+					{
+						"type": "string",
+						"description": "Application for inspection certificate: 855."
+					},
+					{
+						"type": "string",
+						"description": "Inspection certificate: 856."
+					},
+					{
+						"type": "string",
+						"description": "Vehicle aboard document: 857."
+					},
+					{
+						"type": "string",
+						"description": "Image: 858."
+					},
+					{
+						"type": "string",
+						"description": "Audio: 859."
+					},
+					{
+						"type": "string",
+						"description": "Vessel unpack report: 86."
+					},
+					{
+						"type": "string",
+						"description": "Certificate of origin, application for: 860."
+					},
+					{
+						"type": "string",
+						"description": "Certificate of origin: 861."
+					},
+					{
+						"type": "string",
+						"description": "Declaration of origin: 862."
+					},
+					{
+						"type": "string",
+						"description": "Regional appellation certificate: 863."
+					},
+					{
+						"type": "string",
+						"description": "Preference certificate of origin: 864."
+					},
+					{
+						"type": "string",
+						"description": "Certificate of origin form GSP: 865."
+					},
+					{
+						"type": "string",
+						"description": "Video: 866."
+					},
+					{
+						"type": "string",
+						"description": "Introductory letter: 867."
+					},
+					{
+						"type": "string",
+						"description": "Data protection regulations statement: 868."
+					},
+					{
+						"type": "string",
+						"description": "Exclusive brokerage mandate: 869."
+					},
+					{
+						"type": "string",
+						"description": "General cargo summary manifest report: 87."
+					},
+					{
+						"type": "string",
+						"description": "Consular invoice: 870."
+					},
+					{
+						"type": "string",
+						"description": "Inquiry mandate: 871."
+					},
+					{
+						"type": "string",
+						"description": "Risk analysis: 872."
+					},
+					{
+						"type": "string",
+						"description": "Transport equipment movement report, partial: 873."
+					},
+					{
+						"type": "string",
+						"description": "Conveyance declaration: 874."
+					},
+					{
+						"type": "string",
+						"description": "Partial construction invoice: 875."
+					},
+					{
+						"type": "string",
+						"description": "Partial final construction invoice: 876."
+					},
+					{
+						"type": "string",
+						"description": "Final construction invoice: 877."
+					},
+					{
+						"type": "string",
+						"description": "AEO Certificate of Security and/or Safety: 878."
+					},
+					{
+						"type": "string",
+						"description": "AEO Certificate of Conformity or Compliance: 879."
+					},
+					{
+						"type": "string",
+						"description": "Consignment unpack report: 88."
+					},
+					{
+						"type": "string",
+						"description": "Meat and meat by-products sanitary certificate: 89."
+					},
+					{
+						"type": "string",
+						"description": "Dangerous goods declaration: 890."
+					},
+					{
+						"type": "string",
+						"description": "AEO Certificate Full: 891."
+					},
+					{
+						"type": "string",
+						"description": "Purchase Order Financing Request: 892."
+					},
+					{
+						"type": "string",
+						"description": "Purchase Order Financing Request Status: 893."
+					},
+					{
+						"type": "string",
+						"description": "Purchase Order Financing Request Cancellation: 894."
+					},
+					{
+						"type": "string",
+						"description": "Statistical document, export: 895."
+					},
+					{
+						"type": "string",
+						"description": "INTRASTAT declaration: 896."
+					},
+					{
+						"type": "string",
+						"description": "Transit certificate of approval: 897."
+					},
+					{
+						"type": "string",
+						"description": "Pre-packed cross docking consignment order: 898."
+					},
+					{
+						"type": "string",
+						"description": "Traceability event declaration: 899."
+					},
+					{
+						"type": "string",
+						"description": "Price/sales catalogue: 9."
+					},
+					{
+						"type": "string",
+						"description": "Meat food products sanitary certificate: 90."
+					},
+					{
+						"type": "string",
+						"description": "Sustainability data request: 900."
+					},
+					{
+						"type": "string",
+						"description": "Delivery verification certificate: 901."
+					},
+					{
+						"type": "string",
+						"description": "Sustainability data response: 902."
+					},
+					{
+						"type": "string",
+						"description": "Sustainability Inspection request: 903."
+					},
+					{
+						"type": "string",
+						"description": "Sustainability Inspection response: 904."
+					},
+					{
+						"type": "string",
+						"description": "Air Consignment Security Declaration: 905."
+					},
+					{
+						"type": "string",
+						"description": "Poultry sanitary certificate: 91."
+					},
+					{
+						"type": "string",
+						"description": "Import licence, application for: 910."
+					},
+					{
+						"type": "string",
+						"description": "Import licence: 911."
+					},
+					{
+						"type": "string",
+						"description": "Customs declaration without commercial detail: 913."
+					},
+					{
+						"type": "string",
+						"description": "Customs declaration with commercial and item detail: 914."
+					},
+					{
+						"type": "string",
+						"description": "Customs declaration without item detail: 915."
+					},
+					{
+						"type": "string",
+						"description": "Related document: 916."
+					},
+					{
+						"type": "string",
+						"description": "Receipt (Customs): 917."
+					},
+					{
+						"type": "string",
+						"description": "Horsemeat sanitary certificate: 92."
+					},
+					{
+						"type": "string",
+						"description": "Application for exchange allocation: 925."
+					},
+					{
+						"type": "string",
+						"description": "Foreign exchange permit: 926."
+					},
+					{
+						"type": "string",
+						"description": "Exchange control declaration (import): 927."
+					},
+					{
+						"type": "string",
+						"description": "Goods declaration for importation: 929."
+					},
+					{
+						"type": "string",
+						"description": "Casing sanitary certificate: 93."
+					},
+					{
+						"type": "string",
+						"description": "Goods declaration for home use: 930."
+					},
+					{
+						"type": "string",
+						"description": "Customs immediate release declaration: 931."
+					},
+					{
+						"type": "string",
+						"description": "Customs delivery note: 932."
+					},
+					{
+						"type": "string",
+						"description": "Cargo declaration (arrival): 933."
+					},
+					{
+						"type": "string",
+						"description": "Value declaration: 934."
+					},
+					{
+						"type": "string",
+						"description": "Customs invoice: 935."
+					},
+					{
+						"type": "string",
+						"description": "Customs declaration (post parcels): 936."
+					},
+					{
+						"type": "string",
+						"description": "Tax declaration (value added tax): 937."
+					},
+					{
+						"type": "string",
+						"description": "Tax declaration (general): 938."
+					},
+					{
+						"type": "string",
+						"description": "Pharmaceutical sanitary certificate: 94."
+					},
+					{
+						"type": "string",
+						"description": "Tax demand: 940."
+					},
+					{
+						"type": "string",
+						"description": "Embargo permit: 941."
+					},
+					{
+						"type": "string",
+						"description": "Inedible sanitary certificate: 95."
+					},
+					{
+						"type": "string",
+						"description": "Goods declaration for Customs transit: 950."
+					},
+					{
+						"type": "string",
+						"description": "TIF form: 951."
+					},
+					{
+						"type": "string",
+						"description": "TIR carnet: 952."
+					},
+					{
+						"type": "string",
+						"description": "EC carnet: 953."
+					},
+					{
+						"type": "string",
+						"description": "EUR 1 certificate of origin: 954."
+					},
+					{
+						"type": "string",
+						"description": "ATA carnet: 955."
+					},
+					{
+						"type": "string",
+						"description": "Impending arrival: 96."
+					},
+					{
+						"type": "string",
+						"description": "Single administrative document: 960."
+					},
+					{
+						"type": "string",
+						"description": "General response (Customs): 961."
+					},
+					{
+						"type": "string",
+						"description": "Document response (Customs): 962."
+					},
+					{
+						"type": "string",
+						"description": "Error response (Customs): 963."
+					},
+					{
+						"type": "string",
+						"description": "Package response (Customs): 964."
+					},
+					{
+						"type": "string",
+						"description": "Tax calculation/confirmation response (Customs): 965."
+					},
+					{
+						"type": "string",
+						"description": "Quota prior allocation certificate: 966."
+					},
+					{
+						"type": "string",
+						"description": "Means of transport advice: 97."
+					},
+					{
+						"type": "string",
+						"description": "Wagon report: 970."
+					},
+					{
+						"type": "string",
+						"description": "Transit Conveyor Document: 971."
+					},
+					{
+						"type": "string",
+						"description": "Rail consignment note forwarder copy: 972."
+					},
+					{
+						"type": "string",
+						"description": "Duty suspended goods: 974."
+					},
+					{
+						"type": "string",
+						"description": "Proof of transit declaration: 975."
+					},
+					{
+						"type": "string",
+						"description": "Container transfer note: 976."
+					},
+					{
+						"type": "string",
+						"description": "NATO transit document: 977."
+					},
+					{
+						"type": "string",
+						"description": "Transfrontier waste shipment authorization: 978."
+					},
+					{
+						"type": "string",
+						"description": "Transfrontier waste shipment movement document: 979."
+					},
+					{
+						"type": "string",
+						"description": "Arrival information: 98."
+					},
+					{
+						"type": "string",
+						"description": "Cargo release notification: 99."
+					},
+					{
+						"type": "string",
+						"description": "End use authorization: 990."
+					},
+					{
+						"type": "string",
+						"description": "Government contract: 991."
+					},
+					{
+						"type": "string",
+						"description": "Statistical document, import: 995."
+					},
+					{
+						"type": "string",
+						"description": "Application for documentary credit: 996."
+					},
+					{
+						"type": "string",
+						"description": "Previous Customs document/message: 998."
+					}
+				],
+				"description": "A character string denoting the type of a document. [Reference United Nations Code List (UNCL) 1001] https://vocabulary.uncefact.org/DocumentCodeList https://github.com/uncefact/vocabulary-outputs/blob/main/_data/documentcodelist.json"
 			},
 			"VerifiableStorageCreateRequest": {
 				"type": "object",

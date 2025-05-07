@@ -1,5 +1,19 @@
 # @twin.org/data-processing-models - Changelog
 
+## [0.0.1-next.14](https://github.com/twinfoundation/data-processing/compare/data-processing-models-v0.0.1-next.13...data-processing-models-v0.0.1-next.14) (2025-04-28)
+
+
+### Features
+
+* pass the mimeTypeOverride through the component extract method ([#9](https://github.com/twinfoundation/data-processing/issues/9)) ([a2b36de](https://github.com/twinfoundation/data-processing/commit/a2b36de5c19c56e4172d3f22b176aa83e1df84c8))
+
+## [0.0.1-next.13](https://github.com/twinfoundation/data-processing/compare/data-processing-models-v0.0.1-next.12...data-processing-models-v0.0.1-next.13) (2025-04-24)
+
+
+### Miscellaneous Chores
+
+* **data-processing-models:** Synchronize repo versions
+
 ## [0.0.1-next.12](https://github.com/twinfoundation/data-processing/compare/data-processing-models-v0.0.1-next.11...data-processing-models-v0.0.1-next.12) (2025-04-17)
 
 

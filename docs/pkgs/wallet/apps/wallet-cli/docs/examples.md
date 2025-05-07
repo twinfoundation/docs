@@ -86,7 +86,7 @@ Request funds from the faucet for the supplied address.
 
 Options:
   --address <address>      The address to fill from the faucet, or start with ! to read environment variable.
-  --connector <connector>  The connector to use for the wallet operation. (default: ["iota","iota-stardust"])
+  --connector <connector>  The connector to use for the wallet operation. (default: ["iota"])
   --node <url>             The url for the node endpoint, or an environment variable name containing the url. (default: "!NODE_URL")
   --network <network>      The network to use for the identity operation. (default: "!NETWORK")
   --faucet <url>           The url for the faucet endpoint, or an environment variable name containing the url. (default: "!FAUCET_URL")

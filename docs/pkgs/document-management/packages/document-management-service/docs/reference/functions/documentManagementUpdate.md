@@ -2,7 +2,7 @@
 
 > **documentManagementUpdate**(`httpRequestContext`, `componentName`, `request`): `Promise`\<`INoContentResponse`\>
 
-UPdate the document from the auditable item graph vertex.
+Update the document from the auditable item graph vertex.
 
 ## Parameters
 

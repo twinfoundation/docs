@@ -1,5 +1,21 @@
 # @twin.org/attestation-service - Changelog
 
+## [0.0.1-next.27](https://github.com/twinfoundation/attestation/compare/attestation-service-v0.0.1-next.26...attestation-service-v0.0.1-next.27) (2025-05-06)
+
+
+### Bug Fixes
+
+* adjusting transfer method param ([#7](https://github.com/twinfoundation/attestation/issues/7)) ([39c09f4](https://github.com/twinfoundation/attestation/commit/39c09f4054d3fe8c12ed04e9927c42e877d49241))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/attestation-models bumped from 0.0.1-next.26 to 0.0.1-next.27
+  * devDependencies
+    * @twin.org/attestation-connector-nft bumped from 0.0.1-next.26 to 0.0.1-next.27
+
 ## [0.0.1-next.26](https://github.com/twinfoundation/attestation/compare/attestation-service-v0.0.1-next.25...attestation-service-v0.0.1-next.26) (2025-04-17)
 
 

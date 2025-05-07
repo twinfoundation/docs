@@ -1,5 +1,50 @@
 # @twin.org/identity-service - Changelog
 
+## [0.0.1-next.45](https://github.com/twinfoundation/identity/compare/identity-service-v0.0.1-next.44...identity-service-v0.0.1-next.45) (2025-05-06)
+
+
+### Miscellaneous Chores
+
+* **identity-service:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/identity-models bumped from 0.0.1-next.44 to 0.0.1-next.45
+    * @twin.org/identity-connector-entity-storage bumped from 0.0.1-next.44 to 0.0.1-next.45
+
+## [0.0.1-next.44](https://github.com/twinfoundation/identity/compare/identity-service-v0.0.1-next.43...identity-service-v0.0.1-next.44) (2025-04-30)
+
+
+### Miscellaneous Chores
+
+* **identity-service:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/identity-models bumped from 0.0.1-next.43 to 0.0.1-next.44
+    * @twin.org/identity-connector-entity-storage bumped from 0.0.1-next.43 to 0.0.1-next.44
+
+## [0.0.1-next.43](https://github.com/twinfoundation/identity/compare/identity-service-v0.0.1-next.42...identity-service-v0.0.1-next.43) (2025-04-25)
+
+
+### Miscellaneous Chores
+
+* **identity-service:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/identity-models bumped from 0.0.1-next.42 to 0.0.1-next.43
+    * @twin.org/identity-connector-entity-storage bumped from 0.0.1-next.42 to 0.0.1-next.43
+
 ## [0.0.1-next.42](https://github.com/twinfoundation/identity/compare/identity-service-v0.0.1-next.41...identity-service-v0.0.1-next.42) (2025-04-17)
 
 

@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/crypto",
-	"version": "0.0.1-next.52",
+	"version": "0.0.1-next.55",
 	"description": "Contains helper methods and classes which implement cryptographic functions",
 	"repository": {
 		"type": "git",

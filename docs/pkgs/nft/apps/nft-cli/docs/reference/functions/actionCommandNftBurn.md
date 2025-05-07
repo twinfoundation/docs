@@ -24,7 +24,7 @@ The id of the NFT to burn in urn format.
 
 #### connector?
 
-[`NftConnectorTypes`](../type-aliases/NftConnectorTypes.md)
+`"iota"`
 
 The connector to perform the operations with.
 

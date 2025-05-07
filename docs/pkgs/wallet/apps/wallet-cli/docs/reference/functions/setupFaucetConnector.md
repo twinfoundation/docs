@@ -36,7 +36,7 @@ The vault seed ID.
 
 ### connector?
 
-[`WalletConnectorTypes`](../type-aliases/WalletConnectorTypes.md)
+`"iota"`
 
 The connector to use.
 

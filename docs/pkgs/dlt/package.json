@@ -14,7 +14,6 @@
 	},
 	"workspaces": [
 		"packages/dlt-iota",
-		"packages/dlt-iota-stardust",
 		"apps/move-to-json"
 	],
 	"type": "module"

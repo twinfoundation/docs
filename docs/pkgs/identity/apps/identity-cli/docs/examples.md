@@ -93,9 +93,11 @@ twin-identity address --load-env wallet.env --hrp tst --seed !SEED --count 4 --e
 To run this on the IOTA testnet you will need an env file with the following settings. Store the following config as config.env
 
 ```shell
-NODE_URL="https://api.testnet.iotaledger.net"
-FAUCET_URL="https://faucet.testnet.iotaledger.net/api/enqueue"
-EXPLORER_URL="https://explorer.iota.org/iota-testnet/"
+NODE_URL="https://api.devnet.iota.cafe"
+FAUCET_URL="https://faucet.devnet.iota.cafe"
+COIN_TYPE="4218"
+NETWORK="devnet"
+EXPLORER_URL="https://explorer.rebased.iota.org/"
 ```
 
 To then request some funds and generate the identity you can issue the following commands:
