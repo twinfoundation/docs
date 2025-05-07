@@ -7,10 +7,12 @@
 ## Type Aliases
 
 - [IdentityConnectorTypes](type-aliases/IdentityConnectorTypes.md)
+- [IdentityResolverConnectorTypes](type-aliases/IdentityResolverConnectorTypes.md)
 
 ## Variables
 
 - [IdentityConnectorTypes](variables/IdentityConnectorTypes.md)
+- [IdentityResolverConnectorTypes](variables/IdentityResolverConnectorTypes.md)
 
 ## Functions
 
@@ -28,6 +30,7 @@
 - [actionCommandServiceRemove](functions/actionCommandServiceRemove.md)
 - [setupVault](functions/setupVault.md)
 - [setupIdentityConnector](functions/setupIdentityConnector.md)
+- [setupIdentityResolverConnector](functions/setupIdentityResolverConnector.md)
 - [buildCommandVerifiableCredentialCreate](functions/buildCommandVerifiableCredentialCreate.md)
 - [actionCommandVerifiableCredentialCreate](functions/actionCommandVerifiableCredentialCreate.md)
 - [buildCommandVerifiableCredentialRevoke](functions/buildCommandVerifiableCredentialRevoke.md)

@@ -36,7 +36,7 @@ The wallet address index.
 
 ### connector?
 
-[`NftConnectorTypes`](../type-aliases/NftConnectorTypes.md)
+`"iota"`
 
 The connector to use.
 

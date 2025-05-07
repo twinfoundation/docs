@@ -1,5 +1,33 @@
 # @twin.org/standards-ld-contexts - Changelog
 
+## [0.0.1-next.39](https://github.com/twinfoundation/standards/compare/standards-ld-contexts-v0.0.1-next.38...standards-ld-contexts-v0.0.1-next.39) (2025-05-07)
+
+
+### Miscellaneous Chores
+
+* **standards-ld-contexts:** Synchronize repo versions
+
+## [0.0.1-next.38](https://github.com/twinfoundation/standards/compare/standards-ld-contexts-v0.0.1-next.37...standards-ld-contexts-v0.0.1-next.38) (2025-05-07)
+
+
+### Features
+
+* add extra ld contexts needed ([#17](https://github.com/twinfoundation/standards/issues/17)) ([d9f1be2](https://github.com/twinfoundation/standards/commit/d9f1be2a852f776cb3a8f00bb4dd631da0fe848e))
+
+## [0.0.1-next.37](https://github.com/twinfoundation/standards/compare/standards-ld-contexts-v0.0.1-next.36...standards-ld-contexts-v0.0.1-next.37) (2025-05-06)
+
+
+### Miscellaneous Chores
+
+* **standards-ld-contexts:** Synchronize repo versions
+
+## [0.0.1-next.36](https://github.com/twinfoundation/standards/compare/standards-ld-contexts-v0.0.1-next.35...standards-ld-contexts-v0.0.1-next.36) (2025-04-30)
+
+
+### Miscellaneous Chores
+
+* **standards-ld-contexts:** Synchronize repo versions
+
 ## [0.0.1-next.35](https://github.com/twinfoundation/standards/compare/standards-ld-contexts-v0.0.1-next.34...standards-ld-contexts-v0.0.1-next.35) (2025-04-17)
 
 

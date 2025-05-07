@@ -744,6 +744,10 @@
 					"overrideExtractorType": {
 						"type": "string",
 						"description": "The default extractor connector will be used if not specified."
+					},
+					"overrideMimeType": {
+						"type": "string",
+						"description": "An optional override for the mime type for conversion, will auto detect if not provided."
 					}
 				},
 				"required": [

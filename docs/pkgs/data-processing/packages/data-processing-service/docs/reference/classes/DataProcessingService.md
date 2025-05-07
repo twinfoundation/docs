@@ -128,7 +128,7 @@ Nothing.
 
 ### extract()
 
-> **extract**(`ruleGroupId`, `data`, `overrideExtractorType?`): `Promise`\<`unknown`\>
+> **extract**(`ruleGroupId`, `data`, `overrideExtractorType?`, `overrideMimeType?`): `Promise`\<`unknown`\>
 
 Extracts data from the from the provided input.
 
@@ -151,6 +151,12 @@ The data to extract from.
 `string`
 
 An optional override for the extractor type.
+
+##### overrideMimeType?
+
+`string`
+
+An optional override for the mime type for conversion, will auto detect if not provided.
 
 #### Returns
 

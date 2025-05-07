@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/standards-dublin-core",
-	"version": "0.0.1-next.35",
+	"version": "0.0.1-next.39",
 	"description": "Models which define the structure of Dublin Core Standard",
 	"repository": {
 		"type": "git",

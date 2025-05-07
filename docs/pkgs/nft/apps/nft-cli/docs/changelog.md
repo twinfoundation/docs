@@ -1,5 +1,33 @@
 # @twin.org/nft-cli - Changelog
 
+## [0.0.1-next.28](https://github.com/twinfoundation/nft/compare/nft-cli-v0.0.1-next.27...nft-cli-v0.0.1-next.28) (2025-05-06)
+
+
+### Features
+
+* iota rebased release ([8d05d1f](https://github.com/twinfoundation/nft/commit/8d05d1f58c1aacac983c100697ab40a314ad34ea))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/nft-connector-iota bumped from 0.0.1-next.27 to 0.0.1-next.28
+
+## [0.0.1-next.27](https://github.com/twinfoundation/nft/compare/nft-cli-v0.0.1-next.26...nft-cli-v0.0.1-next.27) (2025-04-24)
+
+
+### Miscellaneous Chores
+
+* **nft-cli:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/nft-connector-iota bumped from 0.0.1-next.26 to 0.0.1-next.27
+
 ## [0.0.1-next.26](https://github.com/twinfoundation/nft/compare/nft-cli-v0.0.1-next.25...nft-cli-v0.0.1-next.26) (2025-04-17)
 
 
@@ -13,7 +41,6 @@
 * The following workspace dependencies were updated
   * dependencies
     * @twin.org/nft-connector-iota bumped from 0.0.1-next.25 to 0.0.1-next.26
-    * @twin.org/nft-connector-iota-stardust bumped from 0.0.1-next.25 to 0.0.1-next.26
 
 ## [0.0.1-next.25](https://github.com/twinfoundation/nft/compare/nft-cli-v0.0.1-next.24...nft-cli-v0.0.1-next.25) (2025-04-17)
 
@@ -28,7 +55,6 @@
 * The following workspace dependencies were updated
   * dependencies
     * @twin.org/nft-connector-iota bumped from 0.0.1-next.24 to 0.0.1-next.25
-    * @twin.org/nft-connector-iota-stardust bumped from 0.0.1-next.24 to 0.0.1-next.25
 
 ## [0.0.1-next.24](https://github.com/twinfoundation/nft/compare/nft-cli-v0.0.1-next.23...nft-cli-v0.0.1-next.24) (2025-03-28)
 
@@ -43,7 +69,6 @@
 * The following workspace dependencies were updated
   * dependencies
     * @twin.org/nft-connector-iota bumped from 0.0.1-next.23 to 0.0.1-next.24
-    * @twin.org/nft-connector-iota-stardust bumped from 0.0.1-next.23 to 0.0.1-next.24
 
 ## v0.0.1-next.23
 

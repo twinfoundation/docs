@@ -16,7 +16,6 @@
 		"packages/verifiable-storage-models",
 		"packages/verifiable-storage-connector-entity-storage",
 		"packages/verifiable-storage-connector-iota",
-		"packages/verifiable-storage-connector-iota-stardust",
 		"packages/verifiable-storage-service",
 		"packages/verifiable-storage-rest-client"
 	],

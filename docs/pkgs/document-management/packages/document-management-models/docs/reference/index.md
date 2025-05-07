@@ -9,6 +9,8 @@
 - [IDocumentManagementCreateRequest](interfaces/IDocumentManagementCreateRequest.md)
 - [IDocumentManagementGetRequest](interfaces/IDocumentManagementGetRequest.md)
 - [IDocumentManagementGetResponse](interfaces/IDocumentManagementGetResponse.md)
+- [IDocumentManagementGetRevisionRequest](interfaces/IDocumentManagementGetRevisionRequest.md)
+- [IDocumentManagementGetRevisionResponse](interfaces/IDocumentManagementGetRevisionResponse.md)
 - [IDocumentManagementQueryRequest](interfaces/IDocumentManagementQueryRequest.md)
 - [IDocumentManagementQueryResponse](interfaces/IDocumentManagementQueryResponse.md)
 - [IDocumentManagementRemoveRequest](interfaces/IDocumentManagementRemoveRequest.md)

@@ -16,7 +16,6 @@
 		"packages/wallet-models",
 		"packages/wallet-connector-entity-storage",
 		"packages/wallet-connector-iota",
-		"packages/wallet-connector-iota-stardust",
 		"apps/wallet-cli"
 	],
 	"type": "module"

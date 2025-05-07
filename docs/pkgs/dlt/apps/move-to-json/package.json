@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/move-to-json",
-	"version": "0.0.1-next.22",
+	"version": "0.0.1-next.23",
 	"description": "Tool to convert Move source files to JSON",
 	"repository": {
 		"type": "git",

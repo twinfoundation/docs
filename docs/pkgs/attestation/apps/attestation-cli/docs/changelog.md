@@ -1,5 +1,19 @@
 # @twin.org/attestation-cli - Changelog
 
+## [0.0.1-next.27](https://github.com/twinfoundation/attestation/compare/attestation-cli-v0.0.1-next.26...attestation-cli-v0.0.1-next.27) (2025-05-06)
+
+
+### Features
+
+* iota rebased release ([74ccfb1](https://github.com/twinfoundation/attestation/commit/74ccfb1eebbdfe0ec8bfd616f44ae87be9556509))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/attestation-connector-nft bumped from 0.0.1-next.26 to 0.0.1-next.27
+
 ## [0.0.1-next.26](https://github.com/twinfoundation/attestation/compare/attestation-cli-v0.0.1-next.25...attestation-cli-v0.0.1-next.26) (2025-04-17)
 
 

@@ -1,5 +1,26 @@
 # @twin.org/auditable-item-stream-models - Changelog
 
+## [0.0.1-next.31](https://github.com/twinfoundation/auditable-item-stream/compare/auditable-item-stream-models-v0.0.1-next.30...auditable-item-stream-models-v0.0.1-next.31) (2025-04-25)
+
+
+### Miscellaneous Chores
+
+* **auditable-item-stream-models:** Synchronize repo versions
+
+## [0.0.1-next.30](https://github.com/twinfoundation/auditable-item-stream/compare/auditable-item-stream-models-v0.0.1-next.29...auditable-item-stream-models-v0.0.1-next.30) (2025-04-25)
+
+
+### Miscellaneous Chores
+
+* **auditable-item-stream-models:** Synchronize repo versions
+
+## [0.0.1-next.29](https://github.com/twinfoundation/auditable-item-stream/compare/auditable-item-stream-models-v0.0.1-next.28...auditable-item-stream-models-v0.0.1-next.29) (2025-04-25)
+
+
+### Miscellaneous Chores
+
+* **auditable-item-stream-models:** Synchronize repo versions
+
 ## [0.0.1-next.28](https://github.com/twinfoundation/auditable-item-stream/compare/auditable-item-stream-models-v0.0.1-next.27...auditable-item-stream-models-v0.0.1-next.28) (2025-04-17)
 
 

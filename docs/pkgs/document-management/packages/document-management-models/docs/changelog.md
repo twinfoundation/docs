@@ -1,5 +1,33 @@
 # @twin.org/document-management-models - Changelog
 
+## [0.0.1-next.13](https://github.com/twinfoundation/document-management/compare/document-management-models-v0.0.1-next.12...document-management-models-v0.0.1-next.13) (2025-04-30)
+
+
+### Miscellaneous Chores
+
+* **document-management-models:** Synchronize repo versions
+
+## [0.0.1-next.12](https://github.com/twinfoundation/document-management/compare/document-management-models-v0.0.1-next.11...document-management-models-v0.0.1-next.12) (2025-04-30)
+
+
+### Features
+
+* get document revision ([080eddc](https://github.com/twinfoundation/document-management/commit/080eddcc024c622dda6bb36f60f5fa80a86cf5bb))
+
+## [0.0.1-next.11](https://github.com/twinfoundation/document-management/compare/document-management-models-v0.0.1-next.10...document-management-models-v0.0.1-next.11) (2025-04-28)
+
+
+### Features
+
+* document get can perform extraction ([#6](https://github.com/twinfoundation/document-management/issues/6)) ([5ce6d37](https://github.com/twinfoundation/document-management/commit/5ce6d37432ad271ca5783f422846f4be98ec2215))
+
+## [0.0.1-next.10](https://github.com/twinfoundation/document-management/compare/document-management-models-v0.0.1-next.9...document-management-models-v0.0.1-next.10) (2025-04-25)
+
+
+### Miscellaneous Chores
+
+* **document-management-models:** Synchronize repo versions
+
 ## [0.0.1-next.9](https://github.com/twinfoundation/document-management/compare/document-management-models-v0.0.1-next.8...document-management-models-v0.0.1-next.9) (2025-04-17)
 
 

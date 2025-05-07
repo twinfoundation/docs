@@ -36,7 +36,7 @@ The recipient address of the NFT.
 
 #### connector?
 
-[`NftConnectorTypes`](../type-aliases/NftConnectorTypes.md)
+`"iota"`
 
 The connector to perform the operations with.
 

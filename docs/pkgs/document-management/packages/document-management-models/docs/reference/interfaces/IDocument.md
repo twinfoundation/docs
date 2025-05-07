@@ -92,6 +92,14 @@ The additional JSON-LD for blob storage if it was requested.
 
 ***
 
+### extractedData?
+
+> `optional` **extractedData**: `unknown`
+
+The data extracted from the document using data extraction services.
+
+***
+
 ### attestationId?
 
 > `optional` **attestationId**: `string`

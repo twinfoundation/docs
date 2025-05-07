@@ -84,6 +84,18 @@ Include deleted documents in the response.
 false
 ```
 
+#### extractRuleGroupId?
+
+> `optional` **extractRuleGroupId**: `string`
+
+If provided will extract data from the document using the specified rule group id.
+
+#### extractMimeType?
+
+> `optional` **extractMimeType**: `string`
+
+By default extraction will auto detect the mime type of the document, this can be used to override the detection.
+
 #### pageSize?
 
 > `optional` **pageSize**: `string`

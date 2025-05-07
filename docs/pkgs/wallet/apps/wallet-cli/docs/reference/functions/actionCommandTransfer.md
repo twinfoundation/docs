@@ -36,7 +36,7 @@ The amount of funds to transfer.
 
 #### connector?
 
-[`WalletConnectorTypes`](../type-aliases/WalletConnectorTypes.md)
+`"iota"`
 
 The connector to perform the operations with.
 

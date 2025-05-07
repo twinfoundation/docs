@@ -122,14 +122,12 @@ This is the overview of the packages.
 ## Distributed Ledger
 
 - [@twin.org/dlt-iota](pkgs/dlt/packages/dlt-iota/index.md) - DLT helpers for use with IOTA
-- [@twin.org/dlt-iota-stardust](pkgs/dlt/packages/dlt-iota-stardust/index.md) - DLT helpers for use with IOTA Stardust
 
 ## Wallet
 
 - [@twin.org/wallet-models](pkgs/wallet/packages/wallet-models/index.md) - Models which define the structure of the wallet contracts and connectors
 - [@twin.org/wallet-connector-entity-storage](pkgs/wallet/packages/wallet-connector-entity-storage/index.md) - Wallet connector implementation using entity storage
 - [@twin.org/wallet-connector-iota](pkgs/wallet/packages/wallet-connector-iota/index.md) - Wallet connector implementation using IOTA
-- [@twin.org/wallet-connector-iota-stardust](pkgs/wallet/packages/wallet-connector-iota-stardust/index.md) - Wallet connector implementation using IOTA Stardust
 
 ## Identity
 
@@ -138,14 +136,12 @@ This is the overview of the packages.
 - [@twin.org/identity-service](pkgs/identity/packages/identity-service/index.md) - Identity contract implementation and REST endpoint definitions
 - [@twin.org/identity-rest-client](pkgs/identity/packages/identity-rest-client/index.md) - Identity contract implementation which can connect to REST endpoints
 - [@twin.org/identity-connector-iota](pkgs/identity/packages/identity-connector-iota/index.md) - Identity connector implementation using IOTA
-- [@twin.org/identity-connector-iota-stardust](pkgs/identity/packages/identity-connector-iota-stardust/index.md) - Identity connector implementation using IOTA Stardust
 - [@twin.org/identity-connector-universal](pkgs/identity/packages/identity-connector-universal/index.md) - Identity connector implementation using universal resolver
 
 ## NFT
 
 - [@twin.org/nft-models](pkgs/nft/packages/nft-models/index.md) - Contains models and classes for use with NFTs
 - [@twin.org/nft-connector-iota](pkgs/nft/packages/nft-connector-iota/index.md) - Implementation of the NFT connector using Iota
-- [@twin.org/nft-connector-iota-stardust](pkgs/nft/packages/nft-connector-iota-stardust/index.md) - Implementation of the NFT connector using IOTA Stardust
 - [@twin.org/nft-connector-entity-storage](pkgs/nft/packages/nft-connector-entity-storage/index.md) - Implementation of the NFT connector using entity storage
 - [@twin.org/nft-service](pkgs/nft/packages/nft-service/index.md) - NFT contract implementation and REST endpoint definitions
 - [@twin.org/nft-rest-client](pkgs/nft/packages/nft-rest-client/index.md) - NFT contract implementation which can connect to REST endpoints
@@ -155,7 +151,6 @@ This is the overview of the packages.
 - [@twin.org/verifiable-storage-models](pkgs/verifiable-storage/packages/verifiable-storage-models/index.md) - Contains models and classes for use with verifiable storage
 - [@twin.org/verifiable-storage-connector-entity-storage](pkgs/verifiable-storage/packages/verifiable-storage-connector-entity-storage/index.md) - Implementation of the Verifiable Storage connector using entity storage
 - [@twin.org/verifiable-storage-connector-iota](pkgs/verifiable-storage/packages/verifiable-storage-connector-iota/index.md) - Implementation of the Verifiable Storage connector using IOTA
-- [@twin.org/verifiable-storage-connector-iota-stardust](pkgs/verifiable-storage/packages/verifiable-storage-connector-iota-stardust/index.md) - Implementation of the Verifiable Storage connector using IOTA Stardust
 - [@twin.org/verifiable-storage-service](pkgs/verifiable-storage/packages/verifiable-storage-service/index.md) - Verifiable Storage contract implementation and REST endpoint definitions
 - [@twin.org/verifiable-storage-rest-client](pkgs/verifiable-storage/packages/verifiable-storage-rest-client/index.md) - Verifiable Storage contract implementation which can connect to REST endpoints
 

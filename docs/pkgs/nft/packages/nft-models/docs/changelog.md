@@ -1,5 +1,19 @@
 # @twin.org/nft-models - Changelog
 
+## [0.0.1-next.28](https://github.com/twinfoundation/nft/compare/nft-models-v0.0.1-next.27...nft-models-v0.0.1-next.28) (2025-05-06)
+
+
+### Miscellaneous Chores
+
+* **nft-models:** Synchronize repo versions
+
+## [0.0.1-next.27](https://github.com/twinfoundation/nft/compare/nft-models-v0.0.1-next.26...nft-models-v0.0.1-next.27) (2025-04-24)
+
+
+### Miscellaneous Chores
+
+* **nft-models:** Synchronize repo versions
+
 ## [0.0.1-next.26](https://github.com/twinfoundation/nft/compare/nft-models-v0.0.1-next.25...nft-models-v0.0.1-next.26) (2025-04-17)
 
 

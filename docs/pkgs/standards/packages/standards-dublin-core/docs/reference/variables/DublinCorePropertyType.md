@@ -70,3 +70,10 @@ Using "@id" references is preferred for comparison purposes.
 
 The identifier of a Policy that supersedes this Policy.
 Using "@id" references is preferred for comparison purposes.
+
+### HasPart
+
+> `readonly` **HasPart**: `"hasPart"` = `"hasPart"`
+
+See Description at
+https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/hasPart

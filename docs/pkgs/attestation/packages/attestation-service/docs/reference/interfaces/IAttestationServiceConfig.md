@@ -12,20 +12,6 @@ What is the default connector to use for attestation. If not provided the first 
 
 ***
 
-### walletAddressIndex?
-
-> `optional` **walletAddressIndex**: `number`
-
-The wallet address index to use for funding and controlling the attestations.
-
-#### Default
-
-```ts
-0
-```
-
-***
-
 ### verificationMethodId?
 
 > `optional` **verificationMethodId**: `string`

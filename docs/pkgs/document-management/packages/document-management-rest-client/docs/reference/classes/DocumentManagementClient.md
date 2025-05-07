@@ -216,6 +216,18 @@ Flag to include the attestation information for the document, defaults to false.
 
 Flag to include deleted documents, defaults to false.
 
+###### extractRuleGroupId?
+
+`string`
+
+If provided will extract data from the document using the specified rule group id.
+
+###### extractMimeType?
+
+`string`
+
+By default extraction will auto detect the mime type of the document, this can be used to override the detection.
+
 ##### cursor?
 
 `string`
@@ -237,6 +249,72 @@ The documents and revisions if requested, ordered by revision descending, cursor
 #### Implementation of
 
 `IDocumentManagementComponent.get`
+
+***
+
+### getRevision()
+
+> **getRevision**(`auditableItemGraphDocumentId`, `revision`, `options?`): `Promise`\<`IDocument`\>
+
+Get a document revision using it's auditable item graph vertex id.
+
+#### Parameters
+
+##### auditableItemGraphDocumentId
+
+`string`
+
+The auditable item graph vertex id which contains the document.
+
+##### revision
+
+`number`
+
+The revision id for the document.
+
+##### options?
+
+Additional options for the get operation.
+
+###### includeBlobStorageMetadata?
+
+`boolean`
+
+Flag to include the blob storage metadata for the document, defaults to false.
+
+###### includeBlobStorageData?
+
+`boolean`
+
+Flag to include the blob storage data for the document, defaults to false.
+
+###### includeAttestation?
+
+`boolean`
+
+Flag to include the attestation information for the document, defaults to false.
+
+###### extractRuleGroupId?
+
+`string`
+
+If provided will extract data from the document using the specified rule group id.
+
+###### extractMimeType?
+
+`string`
+
+By default extraction will auto detect the mime type of the document, this can be used to override the detection.
+
+#### Returns
+
+`Promise`\<`IDocument`\>
+
+The documents and revisions if requested, ordered by revision descending, cursor is set if there are more document revisions.
+
+#### Implementation of
+
+`IDocumentManagementComponent.getRevision`
 
 ***
 

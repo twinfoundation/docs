@@ -18,7 +18,6 @@
 		"packages/identity-service",
 		"packages/identity-rest-client",
 		"packages/identity-connector-iota",
-		"packages/identity-connector-iota-stardust",
 		"packages/identity-connector-universal",
 		"apps/identity-cli"
 	],
