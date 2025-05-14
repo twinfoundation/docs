@@ -124,11 +124,11 @@ const config: Config = {
 						items: [
 							{
 								label: "X",
-								href: "https://x.com/iota"
+								href: "https://x.com/TWINGlobalOrg"
 							},
 							{
 								label: "LinkedIn",
-								href: "https://www.linkedin.com/company/iotafoundation/"
+								href: "https://www.linkedin.com/company/twinfoundation/"
 							}
 						]
 					},
