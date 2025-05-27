@@ -78,7 +78,8 @@
 		"name": "document-management"
 	},
 	{
-		"name": "federated-catalogue"
+		"name": "federated-catalogue",
+		"ignore": ["apps/federated-catalogue-rest-server"]
 	},
 	{
 		"name": "ui"

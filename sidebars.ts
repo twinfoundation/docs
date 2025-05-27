@@ -31,15 +31,16 @@ function buildPkgs(packageType): any {
 				const packageFilename = path.join(__dirname, "docs", "pkgs", repo.name, "package.json");
 
 				if (fileExists(packageFilename)) {
+					const ignoredPackages = repo.ignore ?? [];
 					const packageContent = fs.readFileSync(packageFilename, "utf-8");
 					const packageContentJson = JSON.parse(packageContent);
 
 					const items = [];
 
-					for (const p of packageContentJson.workspaces) {
-						if (p.includes(`${packageType}/`)) {
+					for (const pkg of packageContentJson.workspaces) {
+						if (pkg.includes(`${packageType}/`) && !ignoredPackages.includes(pkg)) {
 							items.push(
-								generatePackageItems(repo.name, packageType, p.replace(`${packageType}/`, ""))
+								generatePackageItems(repo.name, packageType, pkg.replace(`${packageType}/`, ""))
 							);
 						}
 					}
