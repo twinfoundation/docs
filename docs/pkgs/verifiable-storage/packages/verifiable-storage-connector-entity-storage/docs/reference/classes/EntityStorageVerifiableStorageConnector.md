@@ -50,7 +50,7 @@ Runtime name for the class.
 
 ### create()
 
-> **create**(`controller`, `data`): `Promise`\<\{ `id`: `string`; `receipt`: `IJsonLdNodeObject`; \}\>
+> **create**(`controller`, `data`, `allowList?`, `options?`): `Promise`\<\{ `id`: `string`; `receipt`: `IJsonLdNodeObject`; \}\>
 
 Create an item in verifiable storage.
 
@@ -68,11 +68,27 @@ The identity of the user to access the vault keys.
 
 The data to store.
 
+##### allowList?
+
+`string`[]
+
+The list of identities that are allowed to modify the item.
+
+##### options?
+
+Additional options for creating the item.
+
+###### maxAllowListSize?
+
+`number`
+
+The maximum size of the allow list.
+
 #### Returns
 
 `Promise`\<\{ `id`: `string`; `receipt`: `IJsonLdNodeObject`; \}\>
 
-The id of the stored verifiable item in urn format.
+The id of the stored verifiable item in URN format and the receipt.
 
 #### Implementation of
 
@@ -82,7 +98,7 @@ The id of the stored verifiable item in urn format.
 
 ### update()
 
-> **update**(`controller`, `id`, `data`): `Promise`\<`IJsonLdNodeObject`\>
+> **update**(`controller`, `id`, `data?`, `allowList?`): `Promise`\<`IJsonLdNodeObject`\>
 
 Update an item in verifiable storage.
 
@@ -100,11 +116,17 @@ The identity of the user to access the vault keys.
 
 The id of the item to update.
 
-##### data
+##### data?
 
-`Uint8Array`
+`Uint8Array`\<`ArrayBufferLike`\>
 
 The data to store.
+
+##### allowList?
+
+`string`[]
+
+Updated list of identities that are allowed to modify the item.
 
 #### Returns
 
@@ -120,7 +142,7 @@ The updated receipt.
 
 ### get()
 
-> **get**(`id`, `options?`): `Promise`\<\{ `data`: `Uint8Array`\<`ArrayBufferLike`\>; `receipt`: `IJsonLdNodeObject`; \}\>
+> **get**(`id`, `options?`): `Promise`\<\{ `data`: `Uint8Array`\<`ArrayBufferLike`\>; `receipt`: `IJsonLdNodeObject`; `allowList`: `string`[]; \}\>
 
 Get a verifiable item.
 
@@ -142,11 +164,17 @@ Additional options for getting the item.
 
 Should the data be included in the response, defaults to true.
 
+###### includeAllowList?
+
+`boolean`
+
+Should the allow list be included in the response, defaults to true.
+
 #### Returns
 
-`Promise`\<\{ `data`: `Uint8Array`\<`ArrayBufferLike`\>; `receipt`: `IJsonLdNodeObject`; \}\>
+`Promise`\<\{ `data`: `Uint8Array`\<`ArrayBufferLike`\>; `receipt`: `IJsonLdNodeObject`; `allowList`: `string`[]; \}\>
 
-The data for the item and the receipt.
+The data for the item, the receipt and the allowlist.
 
 #### Implementation of
 

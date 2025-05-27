@@ -1,5 +1,26 @@
 # @twin.org/identity-service - Changelog
 
+## [0.0.1-next.46](https://github.com/twinfoundation/identity/compare/identity-service-v0.0.1-next.45...identity-service-v0.0.1-next.46) (2025-05-20)
+
+
+### Features
+
+* use shared store mechanism ([#27](https://github.com/twinfoundation/identity/issues/27)) ([ce41f3f](https://github.com/twinfoundation/identity/commit/ce41f3fc3da1b206ec06da7ea5b2c968f788804d))
+
+
+### Bug Fixes
+
+* Import path and bump version ([#21](https://github.com/twinfoundation/identity/issues/21)) ([ccea845](https://github.com/twinfoundation/identity/commit/ccea845bf32562267280bc1b3dde1c9af1a00360))
+* Install sdk-wasm ([#20](https://github.com/twinfoundation/identity/issues/20)) ([75ec14e](https://github.com/twinfoundation/identity/commit/75ec14e072f8c219863a1c028a3b0783802086e9))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/identity-models bumped from 0.0.1-next.45 to 0.0.1-next.46
+    * @twin.org/identity-connector-entity-storage bumped from 0.0.1-next.45 to 0.0.1-next.46
+
 ## [0.0.1-next.45](https://github.com/twinfoundation/identity/compare/identity-service-v0.0.1-next.44...identity-service-v0.0.1-next.45) (2025-05-06)
 
 

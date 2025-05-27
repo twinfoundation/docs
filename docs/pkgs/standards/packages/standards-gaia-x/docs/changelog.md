@@ -1,5 +1,33 @@
 # @twin.org/standards-gaia-x - Changelog
 
+## [0.0.1-next.43](https://github.com/twinfoundation/standards/compare/standards-gaia-x-v0.0.1-next.42...standards-gaia-x-v0.0.1-next.43) (2025-05-20)
+
+
+### Features
+
+* align Data Resource and Service Offering definition (ODRL polic… ([#27](https://github.com/twinfoundation/standards/issues/27)) ([20797be](https://github.com/twinfoundation/standards/commit/20797beff059c6fb253401d49b654cd7a57762d5))
+
+## [0.0.1-next.42](https://github.com/twinfoundation/standards/compare/standards-gaia-x-v0.0.1-next.41...standards-gaia-x-v0.0.1-next.42) (2025-05-09)
+
+
+### Bug Fixes
+
+* refine the LD Context of Gaia-X entities ([#24](https://github.com/twinfoundation/standards/issues/24)) ([151c7f9](https://github.com/twinfoundation/standards/commit/151c7f940c900daac6c98a6f89ea5f708b25a1bd))
+
+## [0.0.1-next.41](https://github.com/twinfoundation/standards/compare/standards-gaia-x-v0.0.1-next.40...standards-gaia-x-v0.0.1-next.41) (2025-05-08)
+
+
+### Miscellaneous Chores
+
+* **standards-gaia-x:** Synchronize repo versions
+
+## [0.0.1-next.40](https://github.com/twinfoundation/standards/compare/standards-gaia-x-v0.0.1-next.39...standards-gaia-x-v0.0.1-next.40) (2025-05-08)
+
+
+### Miscellaneous Chores
+
+* **standards-gaia-x:** Synchronize repo versions
+
 ## [0.0.1-next.39](https://github.com/twinfoundation/standards/compare/standards-gaia-x-v0.0.1-next.38...standards-gaia-x-v0.0.1-next.39) (2025-05-07)
 
 

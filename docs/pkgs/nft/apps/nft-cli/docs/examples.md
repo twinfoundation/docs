@@ -84,12 +84,12 @@ twin-nft mnemonic --env wallet.env
 twin-nft address --load-env wallet.env --hrp tst --seed !SEED --count 4 --env wallet.env --merge-env
 ```
 
-To run this on the IOTA testnet you will need an env file with the following settings. Store the following config as config.env
+To run this on the IOTA devnet you will need an env file with the following settings. Store the following config as config.env
 
 ```shell
-NODE_URL="https://api.testnet.iotaledger.net"
-FAUCET_URL="https://faucet.testnet.iotaledger.net/api/enqueue"
-EXPLORER_URL="https://explorer.iota.org/iota-testnet/"
+NODE_URL="https://api.devnet.iota.cafe"
+FAUCET_URL="https://faucet.devnet.iota.cafe"
+EXPLORER_URL="https://explorer.iota.org/?network=devnet"
 ```
 
 We also need to create a JSON file containing the immutable metadata for the NFT. The following JSON file follows the IRC27 standard for NFT data. Save this file as `immutable.json` to use in the following scripts.

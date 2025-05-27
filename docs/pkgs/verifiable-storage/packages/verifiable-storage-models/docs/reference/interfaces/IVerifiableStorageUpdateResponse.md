@@ -1,6 +1,6 @@
 # Interface: IVerifiableStorageUpdateResponse
 
-Response to updating the Verifiable Storage.
+Response to updating the verifiable storage item.
 
 ## Properties
 

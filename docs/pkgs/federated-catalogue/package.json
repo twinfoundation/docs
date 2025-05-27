@@ -1,0 +1,22 @@
+{
+	"name": "@twin.org/federated-catalogue",
+	"version": "0.0.0",
+	"description": "Federated Catalogue",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/twinfoundation/federated-catalogue.git"
+	},
+	"author": "jose.cantera@iota.org",
+	"license": "Apache-2.0",
+	"private": true,
+	"engines": {
+		"node": ">=20.0.0"
+	},
+	"workspaces": [
+		"packages/federated-catalogue-models",
+		"packages/federated-catalogue-service",
+		"packages/federated-catalogue-rest-client",
+		"apps/federated-catalogue-rest-server"
+	],
+	"type": "module"
+}

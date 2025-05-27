@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/standards-w3c-odrl",
-	"version": "0.0.1-next.39",
+	"version": "0.0.1-next.43",
 	"description": "Models which define the structure of W3C ODRL Standard",
 	"repository": {
 		"type": "git",

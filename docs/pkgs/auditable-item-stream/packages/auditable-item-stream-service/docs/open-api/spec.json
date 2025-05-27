@@ -228,11 +228,12 @@
 									"auditableItemStreamListResponseExample": {
 										"value": {
 											"@context": [
+												"https://schema.org",
 												"https://schema.twindev.org/ais/",
 												"https://schema.twindev.org/common/"
 											],
-											"type": "AuditableItemStreamList",
-											"itemStreams": [
+											"type": "ItemList",
+											"itemListElement": [
 												{
 													"@context": [
 														"https://schema.twindev.org/ais/",
@@ -253,7 +254,7 @@
 													"immutableInterval": 10
 												}
 											],
-											"cursor": "1"
+											"nextItem": "1"
 										}
 									}
 								}
@@ -266,11 +267,12 @@
 									"auditableItemStreamJsonLdListResponseExample": {
 										"value": {
 											"@context": [
+												"https://schema.org",
 												"https://schema.twindev.org/ais/",
 												"https://schema.twindev.org/common/"
 											],
-											"type": "AuditableItemStreamList",
-											"itemStreams": [
+											"type": "ItemList",
+											"itemListElement": [
 												{
 													"@context": [
 														"https://schema.twindev.org/ais/",
@@ -291,7 +293,7 @@
 													"immutableInterval": 10
 												}
 											],
-											"cursor": "1"
+											"nextItem": "1"
 										}
 									}
 								}
@@ -1702,11 +1704,12 @@
 									"auditableItemStreamListEntriesResponseExample": {
 										"value": {
 											"@context": [
+												"https://schema.org",
 												"https://schema.twindev.org/ais/",
 												"https://schema.twindev.org/common/"
 											],
-											"type": "AuditableItemStreamEntryList",
-											"entries": [
+											"type": "ItemList",
+											"itemListElement": [
 												{
 													"@context": [
 														"https://schema.twindev.org/ais/",
@@ -1725,7 +1728,7 @@
 													}
 												}
 											],
-											"cursor": "1"
+											"nextItem": "1"
 										}
 									}
 								}
@@ -1738,11 +1741,12 @@
 									"auditableItemStreamJsonLdListEntriesResponseExample": {
 										"value": {
 											"@context": [
+												"https://schema.org",
 												"https://schema.twindev.org/ais/",
 												"https://schema.twindev.org/common/"
 											],
-											"type": "AuditableItemStreamEntryList",
-											"entries": [
+											"type": "ItemList",
+											"itemListElement": [
 												{
 													"@context": [
 														"https://schema.twindev.org/ais/",
@@ -1761,7 +1765,7 @@
 													}
 												}
 											],
-											"cursor": "1"
+											"nextItem": "1"
 										}
 									}
 								}
@@ -1948,11 +1952,12 @@
 									"auditableItemStreamListEntryObjectsResponseExample": {
 										"value": {
 											"@context": [
+												"https://schema.org",
 												"https://schema.twindev.org/ais/",
 												"https://schema.twindev.org/common/"
 											],
-											"type": "AuditableItemStreamEntryObjectList",
-											"entryObjects": [
+											"type": "ItemList",
+											"itemListElement": [
 												{
 													"@context": "https://schema.org",
 													"@type": "Event",
@@ -1960,7 +1965,7 @@
 													"description": "A description of the event"
 												}
 											],
-											"cursor": "1"
+											"nextItem": "1"
 										}
 									}
 								}

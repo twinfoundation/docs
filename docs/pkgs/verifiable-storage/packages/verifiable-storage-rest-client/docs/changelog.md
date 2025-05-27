@@ -1,5 +1,33 @@
 # @twin.org/verifiable-storage-rest-client - Changelog
 
+## [0.0.1-next.11](https://github.com/twinfoundation/verifiable-storage/compare/verifiable-storage-rest-client-v0.0.1-next.10...verifiable-storage-rest-client-v0.0.1-next.11) (2025-05-22)
+
+
+### Miscellaneous Chores
+
+* **verifiable-storage-rest-client:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/verifiable-storage-models bumped from 0.0.1-next.10 to 0.0.1-next.11
+
+## [0.0.1-next.10](https://github.com/twinfoundation/verifiable-storage/compare/verifiable-storage-rest-client-v0.0.1-next.9...verifiable-storage-rest-client-v0.0.1-next.10) (2025-05-22)
+
+
+### Features
+
+* add support for allowlist ([#17](https://github.com/twinfoundation/verifiable-storage/issues/17)) ([9341ea6](https://github.com/twinfoundation/verifiable-storage/commit/9341ea6b95dfbf2a5dc70a53e5979d7d0e8b2de6))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/verifiable-storage-models bumped from 0.0.1-next.9 to 0.0.1-next.10
+
 ## [0.0.1-next.9](https://github.com/twinfoundation/verifiable-storage/compare/verifiable-storage-rest-client-v0.0.1-next.8...verifiable-storage-rest-client-v0.0.1-next.9) (2025-05-06)
 
 

@@ -1,5 +1,21 @@
 # @twin.org/blob-storage-service - Changelog
 
+## [0.0.1-next.31](https://github.com/twinfoundation/blob-storage/compare/blob-storage-service-v0.0.1-next.30...blob-storage-service-v0.0.1-next.31) (2025-05-08)
+
+
+### Features
+
+* use standard list json ld types ([d6bdfd6](https://github.com/twinfoundation/blob-storage/commit/d6bdfd68af47f70f3cc53658b4a12543497e1f48))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/blob-storage-models bumped from 0.0.1-next.30 to 0.0.1-next.31
+  * devDependencies
+    * @twin.org/blob-storage-connector-memory bumped from 0.0.1-next.30 to 0.0.1-next.31
+
 ## [0.0.1-next.30](https://github.com/twinfoundation/blob-storage/compare/blob-storage-service-v0.0.1-next.29...blob-storage-service-v0.0.1-next.30) (2025-04-17)
 
 

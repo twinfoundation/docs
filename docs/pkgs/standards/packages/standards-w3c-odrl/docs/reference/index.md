@@ -18,6 +18,7 @@
 
 ## Type Aliases
 
+- [OdrlContextType](type-aliases/OdrlContextType.md)
 - [OdrlContexts](type-aliases/OdrlContexts.md)
 - [ActionType](type-aliases/ActionType.md)
 - [ConflictStrategyType](type-aliases/ConflictStrategyType.md)

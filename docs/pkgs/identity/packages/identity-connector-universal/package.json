@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/identity-connector-universal",
-	"version": "0.0.1-next.45",
+	"version": "0.0.1-next.46",
 	"description": "Identity connector implementation using universal resolver",
 	"repository": {
 		"type": "git",

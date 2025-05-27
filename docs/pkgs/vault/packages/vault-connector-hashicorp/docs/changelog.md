@@ -1,5 +1,19 @@
 # @twin.org/vault-connector-hashicorp - Changelog
 
+## [0.0.1-next.18](https://github.com/twinfoundation/vault/compare/vault-connector-hashicorp-v0.0.1-next.17...vault-connector-hashicorp-v0.0.1-next.18) (2025-05-20)
+
+
+### Bug Fixes
+
+* trim trailing slashes from base url ([dc7a93a](https://github.com/twinfoundation/vault/commit/dc7a93a615ed0071a08ee6bc27bde7d263a55d24))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/vault-models bumped from 0.0.1-next.17 to 0.0.1-next.18
+
 ## [0.0.1-next.17](https://github.com/twinfoundation/vault/compare/vault-connector-hashicorp-v0.0.1-next.16...vault-connector-hashicorp-v0.0.1-next.17) (2025-04-17)
 
 

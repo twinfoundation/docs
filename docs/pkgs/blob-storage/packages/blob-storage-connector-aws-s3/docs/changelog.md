@@ -1,5 +1,19 @@
 # @twin.org/blob-storage-connector-aws-s3 - Changelog
 
+## [0.0.1-next.31](https://github.com/twinfoundation/blob-storage/compare/blob-storage-connector-aws-s3-v0.0.1-next.30...blob-storage-connector-aws-s3-v0.0.1-next.31) (2025-05-08)
+
+
+### Miscellaneous Chores
+
+* **blob-storage-connector-aws-s3:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/blob-storage-models bumped from 0.0.1-next.30 to 0.0.1-next.31
+
 ## [0.0.1-next.30](https://github.com/twinfoundation/blob-storage/compare/blob-storage-connector-aws-s3-v0.0.1-next.29...blob-storage-connector-aws-s3-v0.0.1-next.30) (2025-04-17)
 
 

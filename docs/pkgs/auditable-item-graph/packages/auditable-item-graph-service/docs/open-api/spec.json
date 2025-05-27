@@ -310,12 +310,12 @@
 									"auditableItemGraphListResponseExample": {
 										"value": {
 											"@context": [
+												"https://schema.org",
 												"https://schema.twindev.org/aig/",
-												"https://schema.twindev.org/common/",
-												"https://schema.org"
+												"https://schema.twindev.org/common/"
 											],
-											"type": "AuditableItemGraphVertexList",
-											"vertices": [
+											"type": "ItemList",
+											"itemListElement": [
 												{
 													"@context": [
 														"https://schema.twindev.org/aig/",
@@ -339,7 +339,7 @@
 													]
 												}
 											],
-											"cursor": "1"
+											"nextItem": "1"
 										}
 									}
 								}
@@ -352,12 +352,12 @@
 									"auditableItemGraphJsonLdListResponseExample": {
 										"value": {
 											"@context": [
+												"https://schema.org",
 												"https://schema.twindev.org/aig/",
-												"https://schema.twindev.org/common/",
-												"https://schema.org"
+												"https://schema.twindev.org/common/"
 											],
-											"type": "AuditableItemGraphVertexList",
-											"vertices": [
+											"type": "ItemList",
+											"itemListElement": [
 												{
 													"@context": [
 														"https://schema.twindev.org/aig/",
@@ -381,7 +381,7 @@
 													]
 												}
 											],
-											"cursor": "1"
+											"nextItem": "1"
 										}
 									}
 								}

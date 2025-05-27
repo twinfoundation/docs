@@ -6,7 +6,7 @@ Interface describing a list of document entries.
 
 ### @context
 
-> **@context**: \[`"https://schema.twindev.org/documents/"`, `"https://schema.twindev.org/common/"`, `...IJsonLdContextDefinitionElement[]`\]
+> **@context**: \[`"https://schema.org"`, `"https://schema.twindev.org/documents/"`, `"https://schema.twindev.org/common/"`, `...IJsonLdContextDefinitionElement[]`\]
 
 JSON-LD Context.
 
@@ -14,15 +14,15 @@ JSON-LD Context.
 
 ### type
 
-> **type**: `"DocumentList"`
+> **type**: `"ItemList"`
 
 JSON-LD Type.
 
 ***
 
-### documents
+### itemListElement
 
-> **documents**: [`IDocument`](IDocument.md)[]
+> **itemListElement**: [`IDocument`](IDocument.md)[]
 
 The list of documents.
 
@@ -36,8 +36,8 @@ The ids of the other vertices which are connected to the document.
 
 ***
 
-### cursor?
+### nextItem?
 
-> `optional` **cursor**: `string`
+> `optional` **nextItem**: `string`
 
 The cursor to get the next chunk of documents.

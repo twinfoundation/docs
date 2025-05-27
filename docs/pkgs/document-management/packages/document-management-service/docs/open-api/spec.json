@@ -193,10 +193,11 @@
 									"DocumentManagementQueryResponseExample": {
 										"value": {
 											"@context": [
+												"https://schema.org",
 												"https://schema.twindev.org/aig/"
 											],
-											"type": "AuditableItemGraphVertexList",
-											"vertices": [
+											"type": "ItemList",
+											"itemListElement": [
 												{
 													"@context": [
 														"https://schema.twindev.org/aig/",
@@ -540,11 +541,12 @@
 									"DocumentManagementGetResponseExample": {
 										"value": {
 											"@context": [
+												"https://schema.org",
 												"https://schema.twindev.org/documents/",
 												"https://schema.twindev.org/common/"
 											],
-											"type": "DocumentList",
-											"documents": [
+											"type": "ItemList",
+											"itemListElement": [
 												{
 													"@context": [
 														"https://schema.twindev.org/documents/",
@@ -581,11 +583,12 @@
 									"DocumentManagementGetResponseExample": {
 										"value": {
 											"@context": [
+												"https://schema.org",
 												"https://schema.twindev.org/documents/",
 												"https://schema.twindev.org/common/"
 											],
-											"type": "DocumentList",
-											"documents": [
+											"type": "ItemList",
+											"itemListElement": [
 												{
 													"@context": [
 														"https://schema.twindev.org/documents/",
@@ -1488,40 +1491,36 @@
 				"type": "object",
 				"properties": {
 					"@context": {
-						"anyOf": [
+						"type": "array",
+						"minItems": 2,
+						"items": [
+							{
+								"type": "string",
+								"const": "https://schema.org"
+							},
 							{
 								"type": "string",
 								"const": "https://schema.twindev.org/aig/"
-							},
-							{
-								"type": "array",
-								"minItems": 1,
-								"items": [
-									{
-										"type": "string",
-										"const": "https://schema.twindev.org/aig/"
-									}
-								],
-								"additionalItems": {
-									"$ref": "#/components/schemas/JsonLdContextDefinitionElement"
-								}
 							}
 						],
+						"additionalItems": {
+							"$ref": "#/components/schemas/JsonLdContextDefinitionElement"
+						},
 						"description": "JSON-LD Context."
 					},
 					"type": {
 						"type": "string",
-						"const": "AuditableItemGraphVertexList",
+						"const": "ItemList",
 						"description": "JSON-LD Type."
 					},
-					"vertices": {
+					"itemListElement": {
 						"type": "array",
 						"items": {
 							"$ref": "#/components/schemas/AuditableItemGraphVertex"
 						},
 						"description": "The list of vertices."
 					},
-					"cursor": {
+					"nextItem": {
 						"type": "string",
 						"description": "The cursor to get the next chunk of vertices."
 					}
@@ -1529,7 +1528,7 @@
 				"required": [
 					"@context",
 					"type",
-					"vertices"
+					"itemListElement"
 				],
 				"additionalProperties": false,
 				"description": "Interface describing an auditable item graph vertex list."
@@ -1722,8 +1721,12 @@
 				"properties": {
 					"@context": {
 						"type": "array",
-						"minItems": 2,
+						"minItems": 3,
 						"items": [
+							{
+								"type": "string",
+								"const": "https://schema.org"
+							},
 							{
 								"type": "string",
 								"const": "https://schema.twindev.org/documents/"
@@ -1740,10 +1743,10 @@
 					},
 					"type": {
 						"type": "string",
-						"const": "DocumentList",
+						"const": "ItemList",
 						"description": "JSON-LD Type."
 					},
-					"documents": {
+					"itemListElement": {
 						"type": "array",
 						"items": {
 							"$ref": "#/components/schemas/Document"
@@ -1757,7 +1760,7 @@
 						},
 						"description": "The ids of the other vertices which are connected to the document."
 					},
-					"cursor": {
+					"nextItem": {
 						"type": "string",
 						"description": "The cursor to get the next chunk of documents."
 					}
@@ -1765,7 +1768,7 @@
 				"required": [
 					"@context",
 					"type",
-					"documents"
+					"itemListElement"
 				],
 				"additionalProperties": false,
 				"description": "Interface describing a list of document entries."

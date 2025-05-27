@@ -1,6 +1,6 @@
 # Interface: IVerifiableStorageGetRequest
 
-Get the Verifiable Storage.
+Get the verifiable storage item.
 
 ## Properties
 
@@ -14,7 +14,7 @@ The data to be requested.
 
 > **id**: `string`
 
-The id of the Verifiable Storage to resolve.
+The id of the verifiable storage item to resolve.
 
 ***
 
@@ -24,8 +24,26 @@ The id of the Verifiable Storage to resolve.
 
 The body optional param.
 
-#### includeData
+#### includeData?
 
-> **includeData**: `boolean`
+> `optional` **includeData**: `boolean`
 
 The flag to include the data.
+
+##### Default
+
+```ts
+true
+```
+
+#### includeAllowList?
+
+> `optional` **includeAllowList**: `boolean`
+
+The flag to include the allow list.
+
+##### Default
+
+```ts
+true
+```

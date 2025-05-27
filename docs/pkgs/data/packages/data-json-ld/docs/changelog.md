@@ -1,5 +1,19 @@
 # @twin.org/data-json-ld - Changelog
 
+## [0.0.1-next.31](https://github.com/twinfoundation/data/compare/data-json-ld-v0.0.1-next.30...data-json-ld-v0.0.1-next.31) (2025-05-08)
+
+
+### Bug Fixes
+
+* itemListElement compaction override ([d908a10](https://github.com/twinfoundation/data/commit/d908a1043d7792e31b3101221d17850757b6c2a6))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/data-core bumped from 0.0.1-next.30 to 0.0.1-next.31
+
 ## [0.0.1-next.30](https://github.com/twinfoundation/data/compare/data-json-ld-v0.0.1-next.29...data-json-ld-v0.0.1-next.30) (2025-04-17)
 
 

@@ -15,7 +15,7 @@ See also W3C DCAT Dataset https://www.w3.org/TR/vocab-dcat-3/.
 
 ### @context
 
-> **@context**: `"https://w3id.org/gaia-x/development"` \| \[`"https://w3id.org/gaia-x/development"`, `...IJsonLdContextDefinitionElement[]`\]
+> **@context**: [`GaiaXContextType`](../type-aliases/GaiaXContextType.md)
 
 The LD Context
 
@@ -93,6 +93,6 @@ Copyright owner
 
 ### resourcePolicy
 
-> **resourcePolicy**: `IJsonLdNodeObject`
+> **resourcePolicy**: `ObjectOrArray`\<`IJsonLdNodeObject`\>
 
 ODRL Policy

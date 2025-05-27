@@ -10,7 +10,7 @@ Interface describing a Verifiable Storage component.
 
 ### create()
 
-> **create**(`data`, `identity?`, `namespace?`): `Promise`\<\{ `id`: `string`; `receipt`: `IJsonLdNodeObject`; \}\>
+> **create**(`data`, `allowList?`, `options?`, `identity?`, `namespace?`): `Promise`\<\{ `id`: `string`; `receipt`: `IJsonLdNodeObject`; \}\>
 
 Create an item in verifiable storage.
 
@@ -21,6 +21,22 @@ Create an item in verifiable storage.
 `Uint8Array`
 
 The data to store.
+
+##### allowList?
+
+`string`[]
+
+The list of identities that are allowed to modify the item.
+
+##### options?
+
+Additional options for creating the item.
+
+###### maxAllowListSize?
+
+`number`
+
+The maximum size of the allow list.
 
 ##### identity?
 
@@ -44,7 +60,7 @@ The id of the stored verifiable item in urn format and the receipt.
 
 ### update()
 
-> **update**(`id`, `data`, `identity?`): `Promise`\<`IJsonLdNodeObject`\>
+> **update**(`id`, `data?`, `allowList?`, `identity?`): `Promise`\<`IJsonLdNodeObject`\>
 
 Update an item in verifiable storage.
 
@@ -56,11 +72,17 @@ Update an item in verifiable storage.
 
 The id of the item to update.
 
-##### data
+##### data?
 
-`Uint8Array`
+`Uint8Array`\<`ArrayBufferLike`\>
 
-The data to store.
+The data to store, optional if updating the allow list.
+
+##### allowList?
+
+`string`[]
+
+Updated list of identities that are allowed to modify the item.
 
 ##### identity?
 
@@ -78,7 +100,7 @@ The updated receipt.
 
 ### get()
 
-> **get**(`id`, `options?`): `Promise`\<\{ `data`: `Uint8Array`\<`ArrayBufferLike`\>; `receipt`: `IJsonLdNodeObject`; \}\>
+> **get**(`id`, `options?`): `Promise`\<\{ `data`: `Uint8Array`\<`ArrayBufferLike`\>; `receipt`: `IJsonLdNodeObject`; `allowList`: `string`[]; \}\>
 
 Get an verifiable item.
 
@@ -100,9 +122,15 @@ Additional options for getting the item.
 
 Should the data be included in the response, defaults to true.
 
+###### includeAllowList?
+
+`boolean`
+
+Should the allow list be included in the response, defaults to true.
+
 #### Returns
 
-`Promise`\<\{ `data`: `Uint8Array`\<`ArrayBufferLike`\>; `receipt`: `IJsonLdNodeObject`; \}\>
+`Promise`\<\{ `data`: `Uint8Array`\<`ArrayBufferLike`\>; `receipt`: `IJsonLdNodeObject`; `allowList`: `string`[]; \}\>
 
 The data for the item and the receipt.
 

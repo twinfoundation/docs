@@ -17,7 +17,7 @@
 	"tags": [
 		{
 			"name": "VerifiableStorage",
-			"description": "Endpoints which are modelled to access an Verifiable Storage."
+			"description": "Endpoints which are modelled to access a verifiable storage."
 		}
 	],
 	"paths": {
@@ -34,7 +34,7 @@
 					}
 				],
 				"requestBody": {
-					"description": "Store the data and return the Verifiable Storage id.",
+					"description": "Store the data and return the verifiable storage item id.",
 					"required": true,
 					"content": {
 						"application/json": {
@@ -53,7 +53,7 @@
 				},
 				"responses": {
 					"200": {
-						"description": "Response to storing the Verifiable Storage.",
+						"description": "Response to storing the verifiable storage item.",
 						"content": {
 							"application/json": {
 								"schema": {
@@ -151,7 +151,7 @@
 				"parameters": [
 					{
 						"name": "id",
-						"description": "The id of the Verifiable Storage to update.",
+						"description": "The id of the verifiable storage item to update.",
 						"in": "path",
 						"required": true,
 						"schema": {
@@ -186,7 +186,7 @@
 				},
 				"responses": {
 					"200": {
-						"description": "Response to updating the Verifiable Storage.",
+						"description": "Response to updating the verifiable storage item.",
 						"content": {
 							"application/json": {
 								"schema": {
@@ -271,7 +271,7 @@
 				"parameters": [
 					{
 						"name": "id",
-						"description": "The id of the Verifiable Storage to resolve.",
+						"description": "The id of the verifiable storage item to resolve.",
 						"in": "path",
 						"required": true,
 						"schema": {
@@ -287,7 +287,7 @@
 					}
 				],
 				"requestBody": {
-					"description": "Get the Verifiable Storage.",
+					"description": "Get the verifiable storage item.",
 					"required": true,
 					"content": {
 						"application/json": {
@@ -299,7 +299,7 @@
 				},
 				"responses": {
 					"200": {
-						"description": "Response to getting the Verifiable Storage.",
+						"description": "Response to getting the verifiable storage item.",
 						"content": {
 							"application/json": {
 								"schema": {
@@ -389,7 +389,7 @@
 				"parameters": [
 					{
 						"name": "id",
-						"description": "The id of the Verifiable Storage to remove.",
+						"description": "The id of the verifiable storage item to remove.",
 						"in": "path",
 						"required": true,
 						"schema": {
@@ -1563,11 +1563,23 @@
 				"properties": {
 					"data": {
 						"type": "string",
-						"description": "The data for the Verifiable Storage, this is a string serialized as base64."
+						"description": "The data for the verifiable storage item, this is a string serialized as base64."
+					},
+					"allowList": {
+						"type": "array",
+						"items": {
+							"type": "string"
+						},
+						"description": "The list of identities that are allowed to modify the item."
+					},
+					"maxAllowListSize": {
+						"type": "number",
+						"description": "The maximum size of the allow list.",
+						"default": 100
 					},
 					"namespace": {
 						"type": "string",
-						"description": "The namespace of the connector to use for the Verifiable Storage, defaults to component configured namespace."
+						"description": "The namespace of the connector to use for the verifiable storage item, defaults to component configured namespace."
 					}
 				},
 				"required": [
@@ -1584,7 +1596,7 @@
 					},
 					"id": {
 						"type": "string",
-						"description": "The id of the Verifiable Storage."
+						"description": "The id of the verifiable storage item."
 					}
 				},
 				"required": [
@@ -1599,12 +1611,15 @@
 				"properties": {
 					"includeData": {
 						"type": "boolean",
-						"description": "The flag to include the data."
+						"description": "The flag to include the data.",
+						"default": true
+					},
+					"includeAllowList": {
+						"type": "boolean",
+						"description": "The flag to include the allow list.",
+						"default": true
 					}
 				},
-				"required": [
-					"includeData"
-				],
 				"additionalProperties": false,
 				"description": "The body optional param."
 			},
@@ -1616,7 +1631,14 @@
 					},
 					"data": {
 						"type": "string",
-						"description": "The data of the Verifiable Storage, this is a string serialized as base64."
+						"description": "The data of the verifiable storage item, this is a string serialized as base64."
+					},
+					"allowList": {
+						"type": "array",
+						"items": {
+							"type": "string"
+						},
+						"description": "The list of identities that are allowed to modify the item."
 					}
 				},
 				"required": [
@@ -1630,12 +1652,16 @@
 				"properties": {
 					"data": {
 						"type": "string",
-						"description": "The data for the Verifiable Storage, this is a string serialized as base64."
+						"description": "The data which is a string serialized as base64, leave empty if just updating the allowlist."
+					},
+					"allowList": {
+						"type": "array",
+						"items": {
+							"type": "string"
+						},
+						"description": "An updated list of identities that are allowed to modify the item, send an empty list to remove all entries."
 					}
 				},
-				"required": [
-					"data"
-				],
 				"additionalProperties": false,
 				"description": "The data to be updated."
 			}

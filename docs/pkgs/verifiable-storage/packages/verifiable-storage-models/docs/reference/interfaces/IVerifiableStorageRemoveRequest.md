@@ -1,6 +1,6 @@
 # Interface: IVerifiableStorageRemoveRequest
 
-Remove the Verifiable Storage.
+Remove the verifiable storage item.
 
 ## Properties
 
@@ -14,4 +14,4 @@ The data to be used for resolving.
 
 > **id**: `string`
 
-The id of the Verifiable Storage to remove.
+The id of the verifiable storage item to remove.

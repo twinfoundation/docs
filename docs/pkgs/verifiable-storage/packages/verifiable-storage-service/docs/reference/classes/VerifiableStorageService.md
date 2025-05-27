@@ -50,9 +50,9 @@ Runtime name for the class.
 
 ### create()
 
-> **create**(`data`, `identity?`, `namespace?`): `Promise`\<\{ `id`: `string`; `receipt`: `IJsonLdNodeObject`; \}\>
+> **create**(`data`, `allowList?`, `options?`, `identity?`, `namespace?`): `Promise`\<\{ `id`: `string`; `receipt`: `IJsonLdNodeObject`; \}\>
 
-Create an Verifiable Storage.
+Create a verifiable storage item.
 
 #### Parameters
 
@@ -60,7 +60,23 @@ Create an Verifiable Storage.
 
 `Uint8Array`
 
-The data of the Verifiable Storage.
+The data for the verifiable storage item.
+
+##### allowList?
+
+`string`[]
+
+The list of identities that are allowed to modify the item.
+
+##### options?
+
+Additional options for creating the item.
+
+###### maxAllowListSize?
+
+`number`
+
+The maximum size of the allow list.
 
 ##### identity?
 
@@ -78,7 +94,7 @@ The namespace to use for the Verifiable Storage.
 
 `Promise`\<\{ `id`: `string`; `receipt`: `IJsonLdNodeObject`; \}\>
 
-The id of the created Verifiable Storage in urn format.
+The id of the created verifiable storage item.
 
 #### Implementation of
 
@@ -88,7 +104,7 @@ The id of the created Verifiable Storage in urn format.
 
 ### update()
 
-> **update**(`id`, `data`, `identity?`): `Promise`\<`IJsonLdNodeObject`\>
+> **update**(`id`, `data?`, `allowList?`, `identity?`): `Promise`\<`IJsonLdNodeObject`\>
 
 Update an item in verifiable storage.
 
@@ -100,11 +116,17 @@ Update an item in verifiable storage.
 
 The id of the item to update.
 
-##### data
+##### data?
 
-`Uint8Array`
+`Uint8Array`\<`ArrayBufferLike`\>
 
-The data to store.
+The data to store, optional if updating the allow list.
+
+##### allowList?
+
+`string`[]
+
+Updated list of identities that are allowed to modify the item.
 
 ##### identity?
 
@@ -136,11 +158,11 @@ Get an Verifiable Storage.
 
 `string`
 
-The id of the Verifiable Storage to get.
+The id of the verifiable storage item to get.
 
 ##### options?
 
-Additional options for getting the Verifiable Storage.
+Additional options for getting the verifiable storage item.
 
 ###### includeData?
 
@@ -148,11 +170,17 @@ Additional options for getting the Verifiable Storage.
 
 Should the data be included in the response, defaults to true.
 
+###### includeAllowList?
+
+`boolean`
+
+Should the allow list be included in the response, defaults to true.
+
 #### Returns
 
 `Promise`\<\{ `data`: `Uint8Array`\<`ArrayBufferLike`\>; `receipt`: `IJsonLdNodeObject`; \}\>
 
-The data for the Verifiable Storage.
+The data for the verifiable storage item.
 
 #### Implementation of
 
@@ -164,7 +192,7 @@ The data for the Verifiable Storage.
 
 > **remove**(`id`, `identity?`): `Promise`\<`void`\>
 
-Remove an Verifiable Storage.
+Remove a verifiable storage item.
 
 #### Parameters
 

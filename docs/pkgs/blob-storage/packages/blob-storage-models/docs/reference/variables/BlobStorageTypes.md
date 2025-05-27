@@ -11,9 +11,3 @@ The types of blob storage data.
 > `readonly` **Entry**: `"BlobStorageEntry"` = `"BlobStorageEntry"`
 
 Represents blob storage entry.
-
-### EntryList
-
-> `readonly` **EntryList**: `"BlobStorageEntryList"` = `"BlobStorageEntryList"`
-
-Represents blob storage entry list.

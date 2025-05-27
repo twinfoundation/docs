@@ -1,5 +1,33 @@
 # @twin.org/ui-components-react - Changelog
 
+## [0.0.1-next.47](https://github.com/twinfoundation/ui/compare/ui-components-react-v0.0.1-next.46...ui-components-react-v0.0.1-next.47) (2025-05-22)
+
+
+### Features
+
+* button - add ghost color/variant to the component ([#58](https://github.com/twinfoundation/ui/issues/58)) ([ed2ad38](https://github.com/twinfoundation/ui/commit/ed2ad38fac00617004be5c7b15dab73cf818ecc5))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/ui-tailwind bumped from 0.0.1-next.46 to 0.0.1-next.47
+
+## [0.0.1-next.46](https://github.com/twinfoundation/ui/compare/ui-components-react-v0.0.1-next.45...ui-components-react-v0.0.1-next.46) (2025-05-21)
+
+
+### Features
+
+* pass all props for Modal footerButtons array to be able to pass `data-testid` to them ([#56](https://github.com/twinfoundation/ui/issues/56)) ([adf96de](https://github.com/twinfoundation/ui/commit/adf96de722bd0a1f6613808296e1bad5d9581e9a))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/ui-tailwind bumped from 0.0.1-next.45 to 0.0.1-next.46
+
 ## [0.0.1-next.45](https://github.com/twinfoundation/ui/compare/ui-components-react-v0.0.1-next.44...ui-components-react-v0.0.1-next.45) (2025-04-30)
 
 

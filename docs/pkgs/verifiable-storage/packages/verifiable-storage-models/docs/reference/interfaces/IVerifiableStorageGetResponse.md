@@ -1,6 +1,6 @@
 # Interface: IVerifiableStorageGetResponse
 
-Response to getting the Verifiable Storage.
+Response to getting the verifiable storage item.
 
 ## Properties
 
@@ -14,10 +14,16 @@ The data that was obtained.
 
 > **receipt**: `IJsonLdNodeObject`
 
-The receipt associated to the Verifiable Storage.
+The receipt associated to the verifiable storage item.
 
 #### data?
 
 > `optional` **data**: `string`
 
-The data of the Verifiable Storage, this is a string serialized as base64.
+The data of the verifiable storage item, this is a string serialized as base64.
+
+#### allowList?
+
+> `optional` **allowList**: `string`[]
+
+The list of identities that are allowed to modify the item.

@@ -2,6 +2,10 @@
 
 This is the overview of the applications.
 
+## TWIN Node
+
+- [@twin.org/node](pkgs/node/apps/node/index.md) - TWIN Node serving APIs using the specified configuration
+
 ## Workbench
 
 - [@twin.org/workbench-server](pkgs/workbench/apps/workbench-server/index.md) - Serve APIs using the specified configuration

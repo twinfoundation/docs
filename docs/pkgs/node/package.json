@@ -1,0 +1,20 @@
+{
+	"name": "@twin.org/node",
+	"version": "0.0.0",
+	"description": "TWIN Node",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/twinfoundation/node.git"
+	},
+	"author": "martyn.janes@iota.org",
+	"license": "Apache-2.0",
+	"private": true,
+	"engines": {
+		"node": ">=20.0.0"
+	},
+	"workspaces": [
+		"packages/node-core",
+		"apps/node"
+	],
+	"type": "module"
+}

@@ -1,5 +1,65 @@
 # @twin.org/standards-w3c-odrl - Changelog
 
+## [0.0.1-next.43](https://github.com/twinfoundation/standards/compare/standards-w3c-odrl-v0.0.1-next.42...standards-w3c-odrl-v0.0.1-next.43) (2025-05-20)
+
+
+### Features
+
+* improve LD Context definition for ODRL ([#28](https://github.com/twinfoundation/standards/issues/28)) ([3362fb0](https://github.com/twinfoundation/standards/commit/3362fb0fe301bef56f4d67955f21e44b9119b8ef))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/standards-w3c-vcard bumped from 0.0.1-next.42 to 0.0.1-next.43
+    * @twin.org/standards-dublin-core bumped from 0.0.1-next.42 to 0.0.1-next.43
+
+## [0.0.1-next.42](https://github.com/twinfoundation/standards/compare/standards-w3c-odrl-v0.0.1-next.41...standards-w3c-odrl-v0.0.1-next.42) (2025-05-09)
+
+
+### Miscellaneous Chores
+
+* **standards-w3c-odrl:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/standards-w3c-vcard bumped from 0.0.1-next.41 to 0.0.1-next.42
+    * @twin.org/standards-dublin-core bumped from 0.0.1-next.41 to 0.0.1-next.42
+
+## [0.0.1-next.41](https://github.com/twinfoundation/standards/compare/standards-w3c-odrl-v0.0.1-next.40...standards-w3c-odrl-v0.0.1-next.41) (2025-05-08)
+
+
+### Miscellaneous Chores
+
+* **standards-w3c-odrl:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/standards-w3c-vcard bumped from 0.0.1-next.40 to 0.0.1-next.41
+    * @twin.org/standards-dublin-core bumped from 0.0.1-next.40 to 0.0.1-next.41
+
+## [0.0.1-next.40](https://github.com/twinfoundation/standards/compare/standards-w3c-odrl-v0.0.1-next.39...standards-w3c-odrl-v0.0.1-next.40) (2025-05-08)
+
+
+### Miscellaneous Chores
+
+* **standards-w3c-odrl:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/standards-w3c-vcard bumped from 0.0.1-next.39 to 0.0.1-next.40
+    * @twin.org/standards-dublin-core bumped from 0.0.1-next.39 to 0.0.1-next.40
+
 ## [0.0.1-next.39](https://github.com/twinfoundation/standards/compare/standards-w3c-odrl-v0.0.1-next.38...standards-w3c-odrl-v0.0.1-next.39) (2025-05-07)
 
 

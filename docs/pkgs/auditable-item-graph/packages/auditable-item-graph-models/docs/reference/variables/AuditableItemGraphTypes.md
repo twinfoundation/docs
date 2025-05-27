@@ -41,9 +41,3 @@ Represents auditable item graph  changeset.
 > `readonly` **PatchOperation**: `"AuditableItemGraphPatchOperation"` = `"AuditableItemGraphPatchOperation"`
 
 Represents patch operation.
-
-### VertexList
-
-> `readonly` **VertexList**: `"AuditableItemGraphVertexList"` = `"AuditableItemGraphVertexList"`
-
-Represents auditable item stream vertex list.
