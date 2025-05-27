@@ -1,5 +1,12 @@
 # @twin.org/auditable-item-graph-models - Changelog
 
+## [0.0.1-next.39](https://github.com/twinfoundation/auditable-item-graph/compare/auditable-item-graph-models-v0.0.1-next.38...auditable-item-graph-models-v0.0.1-next.39) (2025-05-08)
+
+
+### Features
+
+* use standard list json ld types ([8f53836](https://github.com/twinfoundation/auditable-item-graph/commit/8f53836d4c83a98d64d7f5fe0531bb9af09464ae))
+
 ## [0.0.1-next.38](https://github.com/twinfoundation/auditable-item-graph/compare/auditable-item-graph-models-v0.0.1-next.37...auditable-item-graph-models-v0.0.1-next.38) (2025-04-17)
 
 

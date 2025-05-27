@@ -128,7 +128,7 @@ The registered redirects.
 
 ### compact()
 
-> `static` **compact**\<`T`\>(`document`, `context?`): `Promise`\<`T`\>
+> `static` **compact**\<`T`\>(`document`, `context?`, `options?`): `Promise`\<`T`\>
 
 Compact a document according to a particular context.
 
@@ -150,7 +150,17 @@ The JSON-LD document to compact.
 
 [`IJsonLdContextDefinitionRoot`](../type-aliases/IJsonLdContextDefinitionRoot.md)
 
-The context to compact the document to, if not provided will try and gather from the object.
+The context to compact the document to, if not provided will use the one in the document.
+
+##### options?
+
+The options for compacting the document.
+
+###### itemListOverride
+
+`boolean`
+
+Whether to override the itemListElement context with a set, defaults to true.
 
 #### Returns
 

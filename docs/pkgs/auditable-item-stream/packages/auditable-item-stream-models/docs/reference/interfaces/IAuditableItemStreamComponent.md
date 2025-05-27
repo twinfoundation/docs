@@ -483,12 +483,6 @@ Whether to include deleted entries, defaults to false.
 
 Should the entries be verified, defaults to false.
 
-###### entryObjects?
-
-`boolean`
-
-Return just the embedded entry objects, defaults to false.
-
 ###### pageSize?
 
 `number`

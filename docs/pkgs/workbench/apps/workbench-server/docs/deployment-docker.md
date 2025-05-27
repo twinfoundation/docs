@@ -42,9 +42,7 @@ This will build and deploy an image called `workbench-server` to your docker ser
 
 ## Bootstrapping
 
-To initialise the server instance on the first run it will perform the `bootstrap` operations. If you have any entity storage configured to use `file` storage you should map a folder on the local host to contain the data, so that it remains persistent.
-
-If the server does not find `engine-state.json` in the `file` storage it will automatically trigger bootstrap mode:
+Whenever the server starts it bootstraps all the components. Components can store state during the bootstrap process so they can determine if they need to bootstrap elements or not. If you have any entity storage configured to use `file` storage you should map a folder on the local host to contain the data, so that it remains persistent.
 
 ```shell
 docker run -t -i -v /home/workbench/data:/workbench/data -p 3000:3000 workbench-server
@@ -113,7 +111,7 @@ To run the bootstrap again you would have to manually remove the `engine-state.j
 
 ## Docker Running
 
-To run the server we use exactly the same command as before, when the `engine-state.json` is found the bootstrap process will not be repeated, unless new components have not yet been bootstrapped.
+To run the server we use exactly the same command as before, when the `engine-state.json` exists the component states are passed in to the components.
 
 ```shell
 docker run -t -i -v /home/workbench/data:/workbench/data -p 3000:3000 workbench-server

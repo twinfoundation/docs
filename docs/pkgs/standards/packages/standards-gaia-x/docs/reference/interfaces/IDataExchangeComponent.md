@@ -13,6 +13,18 @@ https://docs.gaia-x.eu/ontology/development/classes/DataExchangeComponent
 
 ## Properties
 
+### @context
+
+> **@context**: [`GaiaXContextType`](../type-aliases/GaiaXContextType.md)
+
+The LD Context
+
+#### Overrides
+
+`IJsonLdNodeObject.@context`
+
+***
+
 ### type
 
 > **type**: `"DataExchangeComponent"` \| \[`"DataExchangeComponent"`, `...string[]`\]

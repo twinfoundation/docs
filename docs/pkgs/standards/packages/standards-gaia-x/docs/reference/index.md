@@ -12,6 +12,7 @@
 
 ## Type Aliases
 
+- [GaiaXContextType](type-aliases/GaiaXContextType.md)
 - [GaiaXContexts](type-aliases/GaiaXContexts.md)
 - [GaiaXTypes](type-aliases/GaiaXTypes.md)
 

@@ -1,6 +1,6 @@
 # Interface: IVerifiableStorageCreateResponse
 
-Response to storing the Verifiable Storage.
+Response to storing the verifiable storage item.
 
 ## Extends
 
@@ -18,10 +18,10 @@ The data that was stored.
 
 > **receipt**: `IJsonLdNodeObject`
 
-The receipt associated to the Verifiable Storage.
+The receipt associated to the verifiable storage item.
 
 #### id
 
 > **id**: `string`
 
-The id of the Verifiable Storage.
+The id of the verifiable storage item.

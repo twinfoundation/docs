@@ -2,7 +2,7 @@
 
 > **verifiableStorageCreate**(`httpRequestContext`, `componentName`, `request`): `Promise`\<`IVerifiableStorageCreateResponse`\>
 
-Create an Verifiable Storage.
+Create a verifiable storage item.
 
 ## Parameters
 

@@ -2,6 +2,10 @@
 
 This is the overview of the packages.
 
+## TWIN Node
+
+- [@twin.org/node-core](pkgs/node/packages/node-core/index.md) - TWIN Node Core for serving APIs using the specified configuration
+
 ## Engine
 
 - [@twin.org/engine-models](pkgs/engine/packages/engine-models/index.md) - Models which define the structure of the engine.
@@ -194,6 +198,12 @@ This is the overview of the packages.
 - [@twin.org/document-management-models](pkgs/document-management/packages/document-management-models/index.md) - Models which define the structure of the document management connectors and services
 - [@twin.org/document-management-service](pkgs/document-management/packages/document-management-service/index.md) - Document management contract implementation and REST endpoint definitions
 - [@twin.org/document-management-rest-client](pkgs/document-management/packages/document-management-rest-client/index.md) - Document management contract implementation which can connect to REST endpoints
+
+## Federated Catalogue
+
+- [@twin.org/federated-catalogue-models](pkgs/federated-catalogue/packages/federated-catalogue-models/index.md) - Models which define the structure of the Federated Catalogue Service
+- [@twin.org/federated-catalogue-service](pkgs/federated-catalogue/packages/federated-catalogue-service/index.md) - Federated Catalogue contract implementation and REST endpoint definitions
+- [@twin.org/federated-catalogue-rest-client](pkgs/federated-catalogue/packages/federated-catalogue-rest-client/index.md) - Federated Catalogue contract implementation which can connect to REST endpoints
 
 ## UI
 

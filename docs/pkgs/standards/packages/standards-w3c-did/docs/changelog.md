@@ -1,5 +1,33 @@
 # @twin.org/standards-w3c-did - Changelog
 
+## [0.0.1-next.43](https://github.com/twinfoundation/standards/compare/standards-w3c-did-v0.0.1-next.42...standards-w3c-did-v0.0.1-next.43) (2025-05-20)
+
+
+### Miscellaneous Chores
+
+* **standards-w3c-did:** Synchronize repo versions
+
+## [0.0.1-next.42](https://github.com/twinfoundation/standards/compare/standards-w3c-did-v0.0.1-next.41...standards-w3c-did-v0.0.1-next.42) (2025-05-09)
+
+
+### Miscellaneous Chores
+
+* **standards-w3c-did:** Synchronize repo versions
+
+## [0.0.1-next.41](https://github.com/twinfoundation/standards/compare/standards-w3c-did-v0.0.1-next.40...standards-w3c-did-v0.0.1-next.41) (2025-05-08)
+
+
+### Miscellaneous Chores
+
+* **standards-w3c-did:** Synchronize repo versions
+
+## [0.0.1-next.40](https://github.com/twinfoundation/standards/compare/standards-w3c-did-v0.0.1-next.39...standards-w3c-did-v0.0.1-next.40) (2025-05-08)
+
+
+### Miscellaneous Chores
+
+* **standards-w3c-did:** Synchronize repo versions
+
 ## [0.0.1-next.39](https://github.com/twinfoundation/standards/compare/standards-w3c-did-v0.0.1-next.38...standards-w3c-did-v0.0.1-next.39) (2025-05-07)
 
 

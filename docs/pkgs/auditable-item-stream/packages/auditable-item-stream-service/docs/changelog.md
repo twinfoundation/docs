@@ -1,5 +1,19 @@
 # @twin.org/auditable-item-stream-service - Changelog
 
+## [0.0.1-next.32](https://github.com/twinfoundation/auditable-item-stream/compare/auditable-item-stream-service-v0.0.1-next.31...auditable-item-stream-service-v0.0.1-next.32) (2025-05-08)
+
+
+### Features
+
+* use standard list json ld types ([54ee4d7](https://github.com/twinfoundation/auditable-item-stream/commit/54ee4d78c42cfd39745ee7d93903334c398ec8c8))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/auditable-item-stream-models bumped from 0.0.1-next.31 to 0.0.1-next.32
+
 ## [0.0.1-next.31](https://github.com/twinfoundation/auditable-item-stream/compare/auditable-item-stream-service-v0.0.1-next.30...auditable-item-stream-service-v0.0.1-next.31) (2025-04-25)
 
 

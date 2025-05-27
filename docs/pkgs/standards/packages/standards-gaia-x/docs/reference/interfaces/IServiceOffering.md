@@ -14,7 +14,7 @@ A Service offering
 
 ### @context
 
-> **@context**: `"https://w3id.org/gaia-x/development"` \| \[`"https://w3id.org/gaia-x/development"`, `...IJsonLdContextDefinitionElement[]`\]
+> **@context**: [`GaiaXContextType`](../type-aliases/GaiaXContextType.md)
 
 The LD context
 
@@ -66,7 +66,7 @@ Participant that provides the offering
 
 ### servicePolicy
 
-> **servicePolicy**: `IJsonLdNodeObject`
+> **servicePolicy**: `ObjectOrArray`\<`IJsonLdNodeObject`\>
 
 ODRL policy associated to the service offering
 

@@ -1,5 +1,19 @@
 # @twin.org/auditable-item-graph-rest-client - Changelog
 
+## [0.0.1-next.39](https://github.com/twinfoundation/auditable-item-graph/compare/auditable-item-graph-rest-client-v0.0.1-next.38...auditable-item-graph-rest-client-v0.0.1-next.39) (2025-05-08)
+
+
+### Miscellaneous Chores
+
+* **auditable-item-graph-rest-client:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/auditable-item-graph-models bumped from 0.0.1-next.38 to 0.0.1-next.39
+
 ## [0.0.1-next.38](https://github.com/twinfoundation/auditable-item-graph/compare/auditable-item-graph-rest-client-v0.0.1-next.37...auditable-item-graph-rest-client-v0.0.1-next.38) (2025-04-17)
 
 

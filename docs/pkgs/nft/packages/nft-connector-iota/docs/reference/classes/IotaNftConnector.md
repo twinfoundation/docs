@@ -72,6 +72,12 @@ The node logging connector type, defaults to "node-logging".
 
 The component state.
 
+###### contractDeployments?
+
+\{[`id`: `string`]: `string`; \}
+
+The contract deployments.
+
 #### Returns
 
 `Promise`\<`void`\>

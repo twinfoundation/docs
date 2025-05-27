@@ -6,7 +6,7 @@ Interface describing an auditable item graph vertex list.
 
 ### @context
 
-> **@context**: `"https://schema.twindev.org/aig/"` \| \[`"https://schema.twindev.org/aig/"`, `...IJsonLdContextDefinitionElement[]`\]
+> **@context**: \[`"https://schema.org"`, `"https://schema.twindev.org/aig/"`, `...IJsonLdContextDefinitionElement[]`\]
 
 JSON-LD Context.
 
@@ -14,22 +14,22 @@ JSON-LD Context.
 
 ### type
 
-> **type**: `"AuditableItemGraphVertexList"`
+> **type**: `"ItemList"`
 
 JSON-LD Type.
 
 ***
 
-### vertices
+### itemListElement
 
-> **vertices**: [`IAuditableItemGraphVertex`](IAuditableItemGraphVertex.md)[]
+> **itemListElement**: [`IAuditableItemGraphVertex`](IAuditableItemGraphVertex.md)[]
 
 The list of vertices.
 
 ***
 
-### cursor?
+### nextItem?
 
-> `optional` **cursor**: `string`
+> `optional` **nextItem**: `string`
 
 The cursor to get the next chunk of vertices.

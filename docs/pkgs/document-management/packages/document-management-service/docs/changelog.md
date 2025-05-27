@@ -1,5 +1,19 @@
 # @twin.org/document-management-service - Changelog
 
+## [0.0.1-next.14](https://github.com/twinfoundation/document-management/compare/document-management-service-v0.0.1-next.13...document-management-service-v0.0.1-next.14) (2025-05-08)
+
+
+### Features
+
+* use standard list json ld types ([20ea04b](https://github.com/twinfoundation/document-management/commit/20ea04b05fd4bc4fcedce8f66958942c3c2fa303))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/document-management-models bumped from 0.0.1-next.13 to 0.0.1-next.14
+
 ## [0.0.1-next.13](https://github.com/twinfoundation/document-management/compare/document-management-service-v0.0.1-next.12...document-management-service-v0.0.1-next.13) (2025-04-30)
 
 

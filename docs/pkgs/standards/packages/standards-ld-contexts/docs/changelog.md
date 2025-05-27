@@ -1,5 +1,33 @@
 # @twin.org/standards-ld-contexts - Changelog
 
+## [0.0.1-next.43](https://github.com/twinfoundation/standards/compare/standards-ld-contexts-v0.0.1-next.42...standards-ld-contexts-v0.0.1-next.43) (2025-05-20)
+
+
+### Bug Fixes
+
+* federated catalogue terms ld context last version copied ([#26](https://github.com/twinfoundation/standards/issues/26)) ([37f4ff0](https://github.com/twinfoundation/standards/commit/37f4ff00664e8b5efc7d24f1e2417061fd2bda56))
+
+## [0.0.1-next.42](https://github.com/twinfoundation/standards/compare/standards-ld-contexts-v0.0.1-next.41...standards-ld-contexts-v0.0.1-next.42) (2025-05-09)
+
+
+### Miscellaneous Chores
+
+* **standards-ld-contexts:** Synchronize repo versions
+
+## [0.0.1-next.41](https://github.com/twinfoundation/standards/compare/standards-ld-contexts-v0.0.1-next.40...standards-ld-contexts-v0.0.1-next.41) (2025-05-08)
+
+
+### Miscellaneous Chores
+
+* **standards-ld-contexts:** Synchronize repo versions
+
+## [0.0.1-next.40](https://github.com/twinfoundation/standards/compare/standards-ld-contexts-v0.0.1-next.39...standards-ld-contexts-v0.0.1-next.40) (2025-05-08)
+
+
+### Bug Fixes
+
+* add extra ld contexts associated to URLs. cache ([#21](https://github.com/twinfoundation/standards/issues/21)) ([05f7bba](https://github.com/twinfoundation/standards/commit/05f7bbafd0efbff445b878ccc2709975e50a7773))
+
 ## [0.0.1-next.39](https://github.com/twinfoundation/standards/compare/standards-ld-contexts-v0.0.1-next.38...standards-ld-contexts-v0.0.1-next.39) (2025-05-07)
 
 

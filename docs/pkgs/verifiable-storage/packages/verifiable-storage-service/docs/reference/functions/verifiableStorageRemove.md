@@ -2,7 +2,7 @@
 
 > **verifiableStorageRemove**(`httpRequestContext`, `componentName`, `request`): `Promise`\<`INoContentResponse`\>
 
-Remove an Verifiable Storage.
+Remove a verifiable storage item.
 
 ## Parameters
 

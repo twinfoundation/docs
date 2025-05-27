@@ -210,11 +210,12 @@
 									"blobStorageListResponseExample": {
 										"value": {
 											"@context": [
+												"https://schema.org",
 												"https://schema.twindev.org/blob-storage/",
 												"https://schema.twindev.org/common/"
 											],
-											"type": "BlobStorageEntryList",
-											"entries": [
+											"type": "ItemList",
+											"itemListElement": [
 												{
 													"@context": [
 														"https://schema.twindev.org/blob-storage/",
@@ -248,11 +249,12 @@
 									"blobStorageListResponseJsonLdExample": {
 										"value": {
 											"@context": [
+												"https://schema.org",
 												"https://schema.twindev.org/blob-storage/",
 												"https://schema.twindev.org/common/"
 											],
-											"type": "BlobStorageEntryList",
-											"entries": [
+											"type": "ItemList",
+											"itemListElement": [
 												{
 													"@context": [
 														"https://schema.twindev.org/blob-storage/",
@@ -1013,8 +1015,12 @@
 				"properties": {
 					"@context": {
 						"type": "array",
-						"minItems": 2,
+						"minItems": 3,
 						"items": [
+							{
+								"type": "string",
+								"const": "https://schema.org"
+							},
 							{
 								"type": "string",
 								"const": "https://schema.twindev.org/blob-storage/"
@@ -1031,17 +1037,17 @@
 					},
 					"type": {
 						"type": "string",
-						"const": "BlobStorageEntryList",
+						"const": "ItemList",
 						"description": "JSON-LD Type."
 					},
-					"entries": {
+					"itemListElement": {
 						"type": "array",
 						"items": {
 							"$ref": "#/components/schemas/BlobStorageEntry"
 						},
 						"description": "The list of entries."
 					},
-					"cursor": {
+					"nextItem": {
 						"type": "string",
 						"description": "The cursor to get the next chunk of entries."
 					}
@@ -1049,7 +1055,7 @@
 				"required": [
 					"@context",
 					"type",
-					"entries"
+					"itemListElement"
 				],
 				"additionalProperties": false,
 				"description": "Interface describing an blob storage entry list."

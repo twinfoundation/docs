@@ -6,7 +6,7 @@ Interface describing an blob storage entry list.
 
 ### @context
 
-> **@context**: \[`"https://schema.twindev.org/blob-storage/"`, `"https://schema.twindev.org/common/"`, `...IJsonLdContextDefinitionElement[]`\]
+> **@context**: \[`"https://schema.org"`, `"https://schema.twindev.org/blob-storage/"`, `"https://schema.twindev.org/common/"`, `...IJsonLdContextDefinitionElement[]`\]
 
 JSON-LD Context.
 
@@ -14,22 +14,22 @@ JSON-LD Context.
 
 ### type
 
-> **type**: `"BlobStorageEntryList"`
+> **type**: `"ItemList"`
 
 JSON-LD Type.
 
 ***
 
-### entries
+### itemListElement
 
-> **entries**: [`IBlobStorageEntry`](IBlobStorageEntry.md)[]
+> **itemListElement**: [`IBlobStorageEntry`](IBlobStorageEntry.md)[]
 
 The list of entries.
 
 ***
 
-### cursor?
+### nextItem?
 
-> `optional` **cursor**: `string`
+> `optional` **nextItem**: `string`
 
 The cursor to get the next chunk of entries.

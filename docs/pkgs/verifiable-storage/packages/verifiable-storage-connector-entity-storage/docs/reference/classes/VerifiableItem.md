@@ -22,11 +22,11 @@ The id of the item.
 
 ***
 
-### controller
+### creator
 
-> **controller**: `string`
+> **creator**: `string`
 
-The controller of the item.
+The creator of the item.
 
 ***
 
@@ -35,3 +35,19 @@ The controller of the item.
 > **data**: `string`
 
 The data base64 encoded.
+
+***
+
+### allowlist
+
+> **allowlist**: `string`[]
+
+The allow list for modifying the data.
+
+***
+
+### maxAllowListSize
+
+> **maxAllowListSize**: `number`
+
+The maximum size of the allow list.
