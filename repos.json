@@ -1,5 +1,8 @@
 [
 	{
+		"name": "node"
+	},
+	{
 		"name": "workbench"
 	},
 	{
@@ -73,6 +76,9 @@
 	},
 	{
 		"name": "document-management"
+	},
+	{
+		"name": "federated-catalogue"
 	},
 	{
 		"name": "ui"
