@@ -123,6 +123,13 @@ This is the overview of the packages.
 - [@twin.org/vault-connector-entity-storage](pkgs/vault/packages/vault-connector-entity-storage/index.md) - Vault connector implementation using entity storage
 - [@twin.org/vault-connector-hashicorp](pkgs/vault/packages/vault-connector-hashicorp/index.md) - Vault connector implementation using Hashicorp storage
 
+## Rights Management
+
+- [@twin.org/rights-management-models](pkgs/rights-management/packages/rights-management-models/index.md) - Models which define the structure of the rights management connectors and services
+- [@twin.org/rights-management-pap-service](pkgs/rights-management/packages/rights-management-pap-service/index.md) - Policy administration point implementation
+- [@twin.org/rights-management-service](pkgs/rights-management/packages/rights-management-service/index.md) - Rights Management service implementation and REST endpoint definitions
+- [@twin.org/rights-management-rest-client](pkgs/rights-management/packages/rights-management-rest-client/index.md) - Rights management implementation which can connect to REST endpoints
+
 ## Distributed Ledger
 
 - [@twin.org/dlt-iota](pkgs/dlt/packages/dlt-iota/index.md) - DLT helpers for use with IOTA

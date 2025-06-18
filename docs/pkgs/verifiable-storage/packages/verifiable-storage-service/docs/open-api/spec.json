@@ -515,7 +515,7 @@
 					"@graph",
 					"@type"
 				],
-				"description": "Helper Types"
+				"description": "JSON-LD container types."
 			},
 			"JsonLdContainerTypeArray": {
 				"anyOf": [
@@ -692,28 +692,39 @@
 						"maxItems": 2
 					}
 				],
-				"description": "Helper Types."
+				"description": "JSON-LD container type array."
 			},
 			"JsonLdContextDefinition": {
 				"type": "object",
 				"properties": {
 					"@base": {
-						"$ref": "#/components/schemas/JsonLdKeyword"
+						"type": [
+							"string",
+							"null"
+						]
 					},
 					"@direction": {
-						"$ref": "#/components/schemas/JsonLdKeyword"
+						"type": [
+							"string",
+							"null"
+						],
+						"enum": [
+							"ltr",
+							"rtl",
+							null
+						]
 					},
 					"@import": {
-						"$ref": "#/components/schemas/JsonLdKeyword"
+						"type": "string"
 					},
 					"@language": {
-						"$ref": "#/components/schemas/JsonLdKeyword"
+						"type": "string"
 					},
 					"@propagate": {
-						"$ref": "#/components/schemas/JsonLdKeyword"
+						"type": "boolean"
 					},
 					"@protected": {
-						"$ref": "#/components/schemas/JsonLdKeyword"
+						"type": "boolean"
 					},
 					"@type": {
 						"type": "object",
@@ -723,7 +734,7 @@
 								"const": "@set"
 							},
 							"@protected": {
-								"$ref": "#/components/schemas/JsonLdKeyword"
+								"type": "boolean"
 							}
 						},
 						"required": [
@@ -732,10 +743,14 @@
 						"additionalProperties": false
 					},
 					"@version": {
-						"$ref": "#/components/schemas/JsonLdKeyword"
+						"type": "string",
+						"const": "1.1"
 					},
 					"@vocab": {
-						"$ref": "#/components/schemas/JsonLdKeyword"
+						"type": [
+							"string",
+							"null"
+						]
 					}
 				},
 				"additionalProperties": {
@@ -790,7 +805,13 @@
 							"@id": {
 								"anyOf": [
 									{
-										"$ref": "#/components/schemas/JsonLdKeyword"
+										"type": "string"
+									},
+									{
+										"type": "array",
+										"items": {
+											"type": "string"
+										}
 									},
 									{
 										"type": "null"
@@ -801,28 +822,64 @@
 								"type": "string"
 							},
 							"@container": {
-								"$ref": "#/components/schemas/JsonLdKeyword"
+								"anyOf": [
+									{
+										"type": "string",
+										"const": "@list"
+									},
+									{
+										"type": "string",
+										"const": "@set"
+									},
+									{
+										"$ref": "#/components/schemas/JsonLdContainerType"
+									},
+									{
+										"type": "array",
+										"items": {
+											"anyOf": [
+												{
+													"type": "string",
+													"const": "@list"
+												},
+												{
+													"type": "string",
+													"const": "@set"
+												},
+												{
+													"$ref": "#/components/schemas/JsonLdContainerType"
+												}
+											]
+										}
+									},
+									{
+										"$ref": "#/components/schemas/JsonLdContainerTypeArray"
+									},
+									{
+										"type": "null"
+									}
+								]
 							},
 							"@type": {
 								"type": "string"
 							},
 							"@language": {
-								"$ref": "#/components/schemas/JsonLdKeyword"
+								"type": "string"
 							},
 							"@index": {
-								"$ref": "#/components/schemas/JsonLdKeyword"
+								"type": "string"
 							},
 							"@context": {
 								"$ref": "#/components/schemas/JsonLdContextDefinition"
 							},
 							"@prefix": {
-								"$ref": "#/components/schemas/JsonLdKeyword"
+								"type": "boolean"
 							},
 							"@propagate": {
-								"$ref": "#/components/schemas/JsonLdKeyword"
+								"type": "boolean"
 							},
 							"@protected": {
-								"$ref": "#/components/schemas/JsonLdKeyword"
+								"type": "boolean"
 							}
 						}
 					},
@@ -831,7 +888,7 @@
 						"additionalProperties": false,
 						"properties": {
 							"@reverse": {
-								"$ref": "#/components/schemas/JsonLdKeyword"
+								"type": "string"
 							},
 							"@container": {
 								"type": [
@@ -848,22 +905,22 @@
 								"type": "string"
 							},
 							"@language": {
-								"$ref": "#/components/schemas/JsonLdKeyword"
+								"type": "string"
 							},
 							"@index": {
-								"$ref": "#/components/schemas/JsonLdKeyword"
+								"type": "string"
 							},
 							"@context": {
 								"$ref": "#/components/schemas/JsonLdContextDefinition"
 							},
 							"@prefix": {
-								"$ref": "#/components/schemas/JsonLdKeyword"
+								"type": "boolean"
 							},
 							"@propagate": {
-								"$ref": "#/components/schemas/JsonLdKeyword"
+								"type": "boolean"
 							},
 							"@protected": {
-								"$ref": "#/components/schemas/JsonLdKeyword"
+								"type": "boolean"
 							}
 						},
 						"required": [
@@ -1025,215 +1082,6 @@
 					}
 				],
 				"description": "JSON Value."
-			},
-			"JsonLdKeyword": {
-				"type": "object",
-				"properties": {
-					"@base": {
-						"type": [
-							"string",
-							"null"
-						]
-					},
-					"@container": {
-						"anyOf": [
-							{
-								"type": "string",
-								"const": "@list"
-							},
-							{
-								"type": "string",
-								"const": "@set"
-							},
-							{
-								"$ref": "#/components/schemas/JsonLdContainerType"
-							},
-							{
-								"type": "array",
-								"items": {
-									"anyOf": [
-										{
-											"type": "string",
-											"const": "@list"
-										},
-										{
-											"type": "string",
-											"const": "@set"
-										},
-										{
-											"$ref": "#/components/schemas/JsonLdContainerType"
-										}
-									]
-								}
-							},
-							{
-								"$ref": "#/components/schemas/JsonLdContainerTypeArray"
-							},
-							{
-								"type": "null"
-							}
-						]
-					},
-					"@context": {
-						"$ref": "#/components/schemas/JsonLdContextDefinitionRoot"
-					},
-					"@direction": {
-						"type": [
-							"string",
-							"null"
-						],
-						"enum": [
-							"ltr",
-							"rtl",
-							null
-						]
-					},
-					"@graph": {
-						"anyOf": [
-							{
-								"$ref": "#/components/schemas/JsonLdValueObject"
-							},
-							{
-								"$ref": "#/components/schemas/JsonLdNodeObject"
-							},
-							{
-								"type": "array",
-								"items": {
-									"anyOf": [
-										{
-											"$ref": "#/components/schemas/JsonLdValueObject"
-										},
-										{
-											"$ref": "#/components/schemas/JsonLdNodeObject"
-										}
-									]
-								}
-							}
-						]
-					},
-					"@id": {
-						"anyOf": [
-							{
-								"type": "string"
-							},
-							{
-								"type": "array",
-								"items": {
-									"type": "string"
-								}
-							}
-						]
-					},
-					"@import": {
-						"type": "string"
-					},
-					"@included": {
-						"$ref": "#/components/schemas/JsonLdIncludedBlock"
-					},
-					"@index": {
-						"type": "string"
-					},
-					"@json": {
-						"type": "string",
-						"const": "@json"
-					},
-					"@language": {
-						"type": "string"
-					},
-					"@list": {
-						"anyOf": [
-							{
-								"$ref": "#/components/schemas/JsonLdListOrSetItem"
-							},
-							{
-								"type": "array",
-								"items": {
-									"$ref": "#/components/schemas/JsonLdListOrSetItem"
-								}
-							}
-						]
-					},
-					"@nest": {
-						"type": "object"
-					},
-					"@none": {
-						"type": "string",
-						"const": "@none"
-					},
-					"@prefix": {
-						"type": "boolean"
-					},
-					"@propagate": {
-						"type": "boolean"
-					},
-					"@protected": {
-						"type": "boolean"
-					},
-					"@reverse": {
-						"type": "string"
-					},
-					"@set": {
-						"anyOf": [
-							{
-								"$ref": "#/components/schemas/JsonLdListOrSetItem"
-							},
-							{
-								"type": "array",
-								"items": {
-									"$ref": "#/components/schemas/JsonLdListOrSetItem"
-								}
-							}
-						]
-					},
-					"@type": {
-						"type": "string"
-					},
-					"@value": {
-						"type": [
-							"null",
-							"boolean",
-							"number",
-							"string"
-						]
-					},
-					"@version": {
-						"type": "string",
-						"const": "1.1"
-					},
-					"@vocab": {
-						"type": [
-							"string",
-							"null"
-						]
-					}
-				},
-				"required": [
-					"@base",
-					"@container",
-					"@context",
-					"@direction",
-					"@graph",
-					"@id",
-					"@import",
-					"@included",
-					"@index",
-					"@json",
-					"@language",
-					"@list",
-					"@nest",
-					"@none",
-					"@prefix",
-					"@propagate",
-					"@protected",
-					"@reverse",
-					"@set",
-					"@type",
-					"@value",
-					"@version",
-					"@vocab"
-				],
-				"additionalProperties": false,
-				"description": "A list of keywords and their types. Only used for internal reference; not an actual interface. Not for export."
 			},
 			"JsonLdLanguageMap": {
 				"type": "object",
@@ -1481,19 +1329,32 @@
 						"additionalProperties": false,
 						"properties": {
 							"@value": {
-								"$ref": "#/components/schemas/JsonLdKeyword"
+								"type": [
+									"null",
+									"boolean",
+									"number",
+									"string"
+								]
 							},
 							"@language": {
-								"$ref": "#/components/schemas/JsonLdKeyword"
+								"type": "string"
 							},
 							"@direction": {
-								"$ref": "#/components/schemas/JsonLdKeyword"
+								"type": [
+									"string",
+									"null"
+								],
+								"enum": [
+									"ltr",
+									"rtl",
+									null
+								]
 							},
 							"@index": {
-								"$ref": "#/components/schemas/JsonLdKeyword"
+								"type": "string"
 							},
 							"@context": {
-								"$ref": "#/components/schemas/JsonLdKeyword"
+								"$ref": "#/components/schemas/JsonLdContextDefinitionRoot"
 							}
 						},
 						"required": [
@@ -1505,16 +1366,21 @@
 						"additionalProperties": false,
 						"properties": {
 							"@value": {
-								"$ref": "#/components/schemas/JsonLdKeyword"
+								"type": [
+									"null",
+									"boolean",
+									"number",
+									"string"
+								]
 							},
 							"@type": {
-								"$ref": "#/components/schemas/JsonLdKeyword"
+								"type": "string"
 							},
 							"@index": {
-								"$ref": "#/components/schemas/JsonLdKeyword"
+								"type": "string"
 							},
 							"@context": {
-								"$ref": "#/components/schemas/JsonLdKeyword"
+								"$ref": "#/components/schemas/JsonLdContextDefinitionRoot"
 							}
 						},
 						"required": [
@@ -1529,7 +1395,16 @@
 							"@value": {
 								"anyOf": [
 									{
-										"$ref": "#/components/schemas/JsonLdKeyword"
+										"type": "null"
+									},
+									{
+										"type": "boolean"
+									},
+									{
+										"type": "number"
+									},
+									{
+										"type": "string"
 									},
 									{
 										"$ref": "#/components/schemas/JsonLdJsonObject"
@@ -1544,10 +1419,10 @@
 								"const": "@json"
 							},
 							"@index": {
-								"$ref": "#/components/schemas/JsonLdKeyword"
+								"type": "string"
 							},
 							"@context": {
-								"$ref": "#/components/schemas/JsonLdKeyword"
+								"$ref": "#/components/schemas/JsonLdContextDefinitionRoot"
 							}
 						},
 						"required": [
@@ -1652,7 +1527,7 @@
 				"properties": {
 					"data": {
 						"type": "string",
-						"description": "The data which is a string serialized as base64, leave empty if just updating the allowlist."
+						"description": "The data which is a string serialized as base64, leave empty if just updating the allow list."
 					},
 					"allowList": {
 						"type": "array",

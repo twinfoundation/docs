@@ -38,7 +38,7 @@ Validates data against the schema.
 
 ##### schema
 
-`JSONSchema7`
+`SchemaObject`
 
 The schema to validate the data with.
 
@@ -70,7 +70,7 @@ Get the property type from a schema.
 
 ##### schema
 
-`JSONSchema7`
+`SchemaObject`
 
 The schema to extract the types from.
 
@@ -90,7 +90,7 @@ The types of the property.
 
 ### entitySchemaToJsonSchema()
 
-> `static` **entitySchemaToJsonSchema**(`entitySchema`, `baseDomain?`): `JSONSchema7`
+> `static` **entitySchemaToJsonSchema**(`entitySchema`, `baseDomain?`): `SchemaObject`
 
 Convert an entity schema to JSON schema e.g https://example.com/schemas/.
 
@@ -110,6 +110,6 @@ The base domain for local schemas e.g. https://example.com/
 
 #### Returns
 
-`JSONSchema7`
+`SchemaObject`
 
 The JSON schema for the entity.

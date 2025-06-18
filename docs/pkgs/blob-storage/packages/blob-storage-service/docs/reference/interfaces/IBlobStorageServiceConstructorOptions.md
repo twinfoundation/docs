@@ -22,7 +22,7 @@ blob-storage-entry
 
 > `optional` **vaultConnectorType**: `string`
 
-The type of the vault connector for encryption, if undefined no encryption will be performed.
+The type of the vault connector for encryption.
 
 ***
 

@@ -1,5 +1,33 @@
 # @twin.org/ui-tailwind - Changelog
 
+## [0.0.1-next.51](https://github.com/twinfoundation/ui/compare/ui-tailwind-v0.0.1-next.50...ui-tailwind-v0.0.1-next.51) (2025-06-11)
+
+
+### Miscellaneous Chores
+
+* **ui-tailwind:** Synchronize repo versions
+
+## [0.0.1-next.50](https://github.com/twinfoundation/ui/compare/ui-tailwind-v0.0.1-next.49...ui-tailwind-v0.0.1-next.50) (2025-06-05)
+
+
+### Miscellaneous Chores
+
+* **ui-tailwind:** Synchronize repo versions
+
+## [0.0.1-next.49](https://github.com/twinfoundation/ui/compare/ui-tailwind-v0.0.1-next.48...ui-tailwind-v0.0.1-next.49) (2025-05-29)
+
+
+### Miscellaneous Chores
+
+* **ui-tailwind:** Synchronize repo versions
+
+## [0.0.1-next.48](https://github.com/twinfoundation/ui/compare/ui-tailwind-v0.0.1-next.47...ui-tailwind-v0.0.1-next.48) (2025-05-28)
+
+
+### Features
+
+* migrate icon system and update types ([#62](https://github.com/twinfoundation/ui/issues/62)) ([ab81824](https://github.com/twinfoundation/ui/commit/ab81824e06cf0f03ed1d888f2db9b642574d8b42))
+
 ## [0.0.1-next.47](https://github.com/twinfoundation/ui/compare/ui-tailwind-v0.0.1-next.46...ui-tailwind-v0.0.1-next.47) (2025-05-22)
 
 

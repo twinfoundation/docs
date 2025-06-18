@@ -144,7 +144,7 @@ Nothing.
 
 ### list()
 
-> **list**(`publicFilters?`, `privateFilters?`, `publicPropertyNames?`, `privatePropertyNames?`, `cursor?`, `pageSize?`): `Promise`\<\{ `items`: `object`[]; `cursor`: `string`; \}\>
+> **list**(`publicFilters?`, `privateFilters?`, `publicPropertyNames?`, `privatePropertyNames?`, `cursor?`, `pageSize?`): `Promise`\<\{ `items`: `object`[]; `cursor?`: `string`; \}\>
 
 Get a list of the requested identities.
 
@@ -188,6 +188,6 @@ The maximum number of items in a page.
 
 #### Returns
 
-`Promise`\<\{ `items`: `object`[]; `cursor`: `string`; \}\>
+`Promise`\<\{ `items`: `object`[]; `cursor?`: `string`; \}\>
 
 The list of items and cursor for paging.

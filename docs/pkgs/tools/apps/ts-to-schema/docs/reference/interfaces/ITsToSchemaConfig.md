@@ -12,19 +12,11 @@ The base url for the type references e.g. https://schema.twindev.org/my-namespac
 
 ***
 
-### sources
-
-> **sources**: `string`[]
-
-The list of glob sources that can be used to generate the schemas.
-
-***
-
 ### types
 
 > **types**: `string`[]
 
-The list of types to generate.
+The source files to generate the types from.
 
 ***
 
@@ -37,3 +29,15 @@ External type references
 #### Index Signature
 
 \[`id`: `string`\]: `string`
+
+***
+
+### overrides?
+
+> `optional` **overrides**: `object`
+
+Override for specific types, to be used when the type cannot be generated automatically, or is generated incorrectly.
+
+#### Index Signature
+
+\[`id`: `string`\]: `AnySchemaObject`

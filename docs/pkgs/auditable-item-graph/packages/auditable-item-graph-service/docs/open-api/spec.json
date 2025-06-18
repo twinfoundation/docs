@@ -314,7 +314,10 @@
 												"https://schema.twindev.org/aig/",
 												"https://schema.twindev.org/common/"
 											],
-											"type": "ItemList",
+											"type": [
+												"ItemList",
+												"AuditableItemGraphVertexList"
+											],
 											"itemListElement": [
 												{
 													"@context": [
@@ -356,7 +359,10 @@
 												"https://schema.twindev.org/aig/",
 												"https://schema.twindev.org/common/"
 											],
-											"type": "ItemList",
+											"type": [
+												"ItemList",
+												"AuditableItemGraphVertexList"
+											],
 											"itemListElement": [
 												{
 													"@context": [
@@ -846,67 +852,73 @@
 					},
 					"aliases": {
 						"type": "array",
-						"items": {
-							"type": "object",
-							"properties": {
-								"id": {
-									"type": "string"
+						"description": "Alternative aliases that can be used to identify the vertex.",
+						"prefixItems": [
+							{
+								"type": "object",
+								"properties": {
+									"id": {
+										"type": "string"
+									},
+									"aliasFormat": {
+										"type": "string"
+									},
+									"annotationObject": {
+										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
+									}
 								},
-								"aliasFormat": {
-									"type": "string"
-								},
-								"annotationObject": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-								}
-							},
-							"required": [
-								"id"
-							],
-							"additionalProperties": false
-						},
-						"description": "Alternative aliases that can be used to identify the vertex."
+								"required": [
+									"id"
+								],
+								"additionalProperties": false
+							}
+						]
 					},
 					"resources": {
 						"type": "array",
-						"items": {
-							"type": "object",
-							"properties": {
-								"id": {
-									"type": "string"
+						"description": "The resources attached to the vertex.",
+						"prefixItems": [
+							{
+								"type": "object",
+								"properties": {
+									"id": {
+										"type": "string"
+									},
+									"resourceObject": {
+										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
+									}
 								},
-								"resourceObject": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-								}
-							},
-							"additionalProperties": false
-						},
-						"description": "The resources attached to the vertex."
+								"additionalProperties": false
+							}
+						]
 					},
 					"edges": {
 						"type": "array",
-						"items": {
-							"type": "object",
-							"properties": {
-								"id": {
-									"type": "string"
-								},
-								"edgeRelationships": {
-									"type": "array",
-									"items": {
+						"description": "The edges connected to the vertex.",
+						"prefixItems": [
+							{
+								"type": "object",
+								"properties": {
+									"id": {
 										"type": "string"
+									},
+									"edgeRelationships": {
+										"type": "array",
+										"items": {
+											"type": "string"
+										}
+									},
+									"annotationObject": {
+										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
 									}
 								},
-								"annotationObject": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-								}
-							},
-							"required": [
-								"id",
-								"edgeRelationships"
-							],
-							"additionalProperties": false
-						},
-						"description": "The edges connected to the vertex."
+								"required": [
+									"id",
+									"edgeRelationships"
+								],
+								"additionalProperties": false
+							}
+						]
 					}
 				},
 				"additionalProperties": false,
@@ -920,67 +932,73 @@
 					},
 					"aliases": {
 						"type": "array",
-						"items": {
-							"type": "object",
-							"properties": {
-								"id": {
-									"type": "string"
+						"description": "Alternative aliases that can be used to identify the vertex.",
+						"prefixItems": [
+							{
+								"type": "object",
+								"properties": {
+									"id": {
+										"type": "string"
+									},
+									"aliasFormat": {
+										"type": "string"
+									},
+									"annotationObject": {
+										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
+									}
 								},
-								"aliasFormat": {
-									"type": "string"
-								},
-								"annotationObject": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-								}
-							},
-							"required": [
-								"id"
-							],
-							"additionalProperties": false
-						},
-						"description": "Alternative aliases that can be used to identify the vertex."
+								"required": [
+									"id"
+								],
+								"additionalProperties": false
+							}
+						]
 					},
 					"resources": {
 						"type": "array",
-						"items": {
-							"type": "object",
-							"properties": {
-								"id": {
-									"type": "string"
+						"description": "The resources attached to the vertex.",
+						"prefixItems": [
+							{
+								"type": "object",
+								"properties": {
+									"id": {
+										"type": "string"
+									},
+									"resourceObject": {
+										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
+									}
 								},
-								"resourceObject": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-								}
-							},
-							"additionalProperties": false
-						},
-						"description": "The resources attached to the vertex."
+								"additionalProperties": false
+							}
+						]
 					},
 					"edges": {
 						"type": "array",
-						"items": {
-							"type": "object",
-							"properties": {
-								"id": {
-									"type": "string"
-								},
-								"edgeRelationships": {
-									"type": "array",
-									"items": {
+						"description": "The edges connected to the vertex.",
+						"prefixItems": [
+							{
+								"type": "object",
+								"properties": {
+									"id": {
 										"type": "string"
+									},
+									"edgeRelationships": {
+										"type": "array",
+										"items": {
+											"type": "string"
+										}
+									},
+									"annotationObject": {
+										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
 									}
 								},
-								"annotationObject": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-								}
-							},
-							"required": [
-								"id",
-								"edgeRelationships"
-							],
-							"additionalProperties": false
-						},
-						"description": "The edges connected to the vertex."
+								"required": [
+									"id",
+									"edgeRelationships"
+								],
+								"additionalProperties": false
+							}
+						]
 					}
 				},
 				"additionalProperties": false,

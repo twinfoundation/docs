@@ -12,11 +12,11 @@ The types of auditable item stream data.
 
 Represents auditable item stream.
 
-### StreamCredential
+### StreamList
 
-> `readonly` **StreamCredential**: `"AuditableItemStreamCredential"` = `"AuditableItemStreamCredential"`
+> `readonly` **StreamList**: `"AuditableItemStreamList"` = `"AuditableItemStreamList"`
 
-Represents auditable item stream credential.
+Represents auditable item stream list.
 
 ### StreamEntry
 
@@ -24,20 +24,14 @@ Represents auditable item stream credential.
 
 Represents auditable item stream entry.
 
-### StreamEntryCredential
+### StreamEntryList
 
-> `readonly` **StreamEntryCredential**: `"AuditableItemStreamEntryCredential"` = `"AuditableItemStreamEntryCredential"`
+> `readonly` **StreamEntryList**: `"AuditableItemStreamEntryList"` = `"AuditableItemStreamEntryList"`
 
-Represents auditable item stream entry credential.
+Represents auditable item stream entry list.
 
-### Verification
+### StreamEntryObjectList
 
-> `readonly` **Verification**: `"AuditableItemStreamVerification"` = `"AuditableItemStreamVerification"`
+> `readonly` **StreamEntryObjectList**: `"AuditableItemStreamEntryObjectList"` = `"AuditableItemStreamEntryObjectList"`
 
-Represents auditable item stream verification.
-
-### VerificationState
-
-> `readonly` **VerificationState**: `"AuditableItemStreamVerificationState"` = `"AuditableItemStreamVerificationState"`
-
-Represents auditable item stream verification state.
+Represents auditable item stream entry object list.

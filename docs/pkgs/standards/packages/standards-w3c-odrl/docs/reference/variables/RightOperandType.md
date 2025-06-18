@@ -1,6 +1,6 @@
-# Variable: RightOperandTypes
+# Variable: RightOperandType
 
-> `const` **RightOperandTypes**: `object`
+> `const` **RightOperandType**: `object`
 
 Right operand types for ODRL constraints
 

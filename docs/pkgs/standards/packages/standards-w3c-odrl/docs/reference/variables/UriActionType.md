@@ -1,6 +1,6 @@
-# Variable: UriActionTypes
+# Variable: UriActionType
 
-> `const` **UriActionTypes**: `object`
+> `const` **UriActionType**: `object`
 
 The types for ODRL Actions.
 URI action types (for use with rdf:value/@id)

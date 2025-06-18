@@ -204,7 +204,7 @@ The converted data.
 
 ### query()
 
-> **query**(`cursor?`, `pageSize?`): `Promise`\<\{ `entities`: `IRuleGroup`[]; `cursor`: `string`; \}\>
+> **query**(`cursor?`, `pageSize?`): `Promise`\<\{ `entities`: `IRuleGroup`[]; `cursor?`: `string`; \}\>
 
 Query the rule group entries.
 
@@ -224,7 +224,7 @@ The maximum number of entities in a page.
 
 #### Returns
 
-`Promise`\<\{ `entities`: `IRuleGroup`[]; `cursor`: `string`; \}\>
+`Promise`\<\{ `entities`: `IRuleGroup`[]; `cursor?`: `string`; \}\>
 
 All the entities for the storage matching the conditions,
 and a cursor which can be used to request more entities.

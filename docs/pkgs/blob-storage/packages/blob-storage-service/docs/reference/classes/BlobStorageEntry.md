@@ -78,6 +78,14 @@ The metadata for the blob as JSON-LD.
 
 ***
 
+### isEncrypted
+
+> **isEncrypted**: `boolean`
+
+Is the entry encrypted.
+
+***
+
 ### userIdentity?
 
 > `optional` **userIdentity**: `string`

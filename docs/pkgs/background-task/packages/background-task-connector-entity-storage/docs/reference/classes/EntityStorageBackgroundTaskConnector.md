@@ -364,7 +364,7 @@ Nothing.
 
 ### query()
 
-> **query**(`taskType?`, `taskStatus?`, `sortProperty?`, `sortDirection?`, `cursor?`, `pageSize?`): `Promise`\<\{ `entities`: `IBackgroundTask`\<`any`, `any`\>[]; `cursor`: `string`; \}\>
+> **query**(`taskType?`, `taskStatus?`, `sortProperty?`, `sortDirection?`, `cursor?`, `pageSize?`): `Promise`\<\{ `entities`: `IBackgroundTask`\<`any`, `any`\>[]; `cursor?`: `string`; \}\>
 
 Get a list of tasks.
 
@@ -386,7 +386,7 @@ The status of the task to get.
 
 The property to sort by, defaults to dateCreated.
 
-`"status"` | `"dateCreated"` | `"dateModified"` | `"dateCompleted"`
+`"dateCreated"` | `"dateModified"` | `"dateCompleted"` | `"status"`
 
 ##### sortDirection?
 
@@ -408,7 +408,7 @@ The maximum number of entities in a page.
 
 #### Returns
 
-`Promise`\<\{ `entities`: `IBackgroundTask`\<`any`, `any`\>[]; `cursor`: `string`; \}\>
+`Promise`\<\{ `entities`: `IBackgroundTask`\<`any`, `any`\>[]; `cursor?`: `string`; \}\>
 
 The list of tasks.
 

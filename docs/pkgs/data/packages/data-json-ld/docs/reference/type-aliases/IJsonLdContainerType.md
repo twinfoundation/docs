@@ -2,4 +2,4 @@
 
 > **IJsonLdContainerType** = `"@language"` \| `"@index"` \| `"@id"` \| `"@graph"` \| `"@type"`
 
-Helper Types
+JSON-LD container types.

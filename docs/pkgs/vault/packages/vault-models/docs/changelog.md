@@ -1,5 +1,12 @@
 # @twin.org/vault-models - Changelog
 
+## [0.0.1-next.19](https://github.com/twinfoundation/vault/compare/vault-models-v0.0.1-next.18...vault-models-v0.0.1-next.19) (2025-06-12)
+
+
+### Features
+
+* update dependencies ([2de56e0](https://github.com/twinfoundation/vault/commit/2de56e06a662bd3eab83ee8e517d5ab327caaa9b))
+
 ## [0.0.1-next.18](https://github.com/twinfoundation/vault/compare/vault-models-v0.0.1-next.17...vault-models-v0.0.1-next.18) (2025-05-20)
 
 

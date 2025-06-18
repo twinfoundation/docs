@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/engine-server",
-	"version": "0.0.1-next.74",
+	"version": "0.0.1-next.79",
 	"description": "Engine implementation for a server.",
 	"repository": {
 		"type": "git",

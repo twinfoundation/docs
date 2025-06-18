@@ -1,5 +1,5 @@
 # Type Alias: ConflictStrategyType
 
-> **ConflictStrategyType** = *typeof* [`ConflictStrategyTypes`](../variables/ConflictStrategyTypes.md)\[keyof *typeof* [`ConflictStrategyTypes`](../variables/ConflictStrategyTypes.md)\]
+> **ConflictStrategyType** = *typeof* [`ConflictStrategyType`](../variables/ConflictStrategyType.md)\[keyof *typeof* [`ConflictStrategyType`](../variables/ConflictStrategyType.md)\]
 
 The types for ODRL Conflict Resolution Strategies.

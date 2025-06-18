@@ -2,6 +2,7 @@
 
 ## Classes
 
+- [VerifiableStorageConnectorEntityStorageDataTypes](classes/VerifiableStorageConnectorEntityStorageDataTypes.md)
 - [VerifiableItem](classes/VerifiableItem.md)
 - [EntityStorageVerifiableStorageConnector](classes/EntityStorageVerifiableStorageConnector.md)
 

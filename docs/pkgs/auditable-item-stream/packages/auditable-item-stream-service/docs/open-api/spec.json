@@ -232,7 +232,10 @@
 												"https://schema.twindev.org/ais/",
 												"https://schema.twindev.org/common/"
 											],
-											"type": "ItemList",
+											"type": [
+												"ItemList",
+												"AuditableItemStreamList"
+											],
 											"itemListElement": [
 												{
 													"@context": [
@@ -271,7 +274,10 @@
 												"https://schema.twindev.org/ais/",
 												"https://schema.twindev.org/common/"
 											],
-											"type": "ItemList",
+											"type": [
+												"ItemList",
+												"AuditableItemStreamList"
+											],
 											"itemListElement": [
 												{
 													"@context": [
@@ -1708,7 +1714,10 @@
 												"https://schema.twindev.org/ais/",
 												"https://schema.twindev.org/common/"
 											],
-											"type": "ItemList",
+											"type": [
+												"ItemList",
+												"AuditableItemStreamEntryList"
+											],
 											"itemListElement": [
 												{
 													"@context": [
@@ -1745,7 +1754,10 @@
 												"https://schema.twindev.org/ais/",
 												"https://schema.twindev.org/common/"
 											],
-											"type": "ItemList",
+											"type": [
+												"ItemList",
+												"AuditableItemStreamEntryList"
+											],
 											"itemListElement": [
 												{
 													"@context": [
@@ -1956,7 +1968,10 @@
 												"https://schema.twindev.org/ais/",
 												"https://schema.twindev.org/common/"
 											],
-											"type": "ItemList",
+											"type": [
+												"ItemList",
+												"AuditableItemStreamEntryObjectList"
+											],
 											"itemListElement": [
 												{
 													"@context": "https://schema.org",

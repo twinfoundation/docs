@@ -1,5 +1,61 @@
 # @twin.org/auditable-item-stream-rest-client - Changelog
 
+## [0.0.1-next.36](https://github.com/twinfoundation/auditable-item-stream/compare/auditable-item-stream-rest-client-v0.0.1-next.35...auditable-item-stream-rest-client-v0.0.1-next.36) (2025-06-18)
+
+
+### Miscellaneous Chores
+
+* **auditable-item-stream-rest-client:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/auditable-item-stream-models bumped from 0.0.1-next.35 to 0.0.1-next.36
+
+## [0.0.1-next.35](https://github.com/twinfoundation/auditable-item-stream/compare/auditable-item-stream-rest-client-v0.0.1-next.34...auditable-item-stream-rest-client-v0.0.1-next.35) (2025-06-12)
+
+
+### Features
+
+* update dependencies ([9ff038b](https://github.com/twinfoundation/auditable-item-stream/commit/9ff038b7e76e9fb586be4f2321231f04258ef794))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/auditable-item-stream-models bumped from 0.0.1-next.34 to 0.0.1-next.35
+
+## [0.0.1-next.34](https://github.com/twinfoundation/auditable-item-stream/compare/auditable-item-stream-rest-client-v0.0.1-next.33...auditable-item-stream-rest-client-v0.0.1-next.34) (2025-06-03)
+
+
+### Miscellaneous Chores
+
+* **auditable-item-stream-rest-client:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/auditable-item-stream-models bumped from 0.0.1-next.33 to 0.0.1-next.34
+
+## [0.0.1-next.33](https://github.com/twinfoundation/auditable-item-stream/compare/auditable-item-stream-rest-client-v0.0.1-next.32...auditable-item-stream-rest-client-v0.0.1-next.33) (2025-05-28)
+
+
+### Miscellaneous Chores
+
+* **auditable-item-stream-rest-client:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/auditable-item-stream-models bumped from 0.0.1-next.32 to 0.0.1-next.33
+
 ## [0.0.1-next.32](https://github.com/twinfoundation/auditable-item-stream/compare/auditable-item-stream-rest-client-v0.0.1-next.31...auditable-item-stream-rest-client-v0.0.1-next.32) (2025-05-08)
 
 

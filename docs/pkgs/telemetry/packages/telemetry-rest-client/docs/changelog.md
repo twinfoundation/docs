@@ -1,5 +1,19 @@
 # @twin.org/telemetry-rest-client - Changelog
 
+## [0.0.1-next.17](https://github.com/twinfoundation/telemetry/compare/telemetry-rest-client-v0.0.1-next.16...telemetry-rest-client-v0.0.1-next.17) (2025-06-12)
+
+
+### Features
+
+* update dependencies ([0e55c48](https://github.com/twinfoundation/telemetry/commit/0e55c48de4139c6fe66b823101ca17973e60847c))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/telemetry-models bumped from 0.0.1-next.16 to 0.0.1-next.17
+
 ## [0.0.1-next.16](https://github.com/twinfoundation/telemetry/compare/telemetry-rest-client-v0.0.1-next.15...telemetry-rest-client-v0.0.1-next.16) (2025-04-17)
 
 

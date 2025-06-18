@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/verifiable-storage-connector-entity-storage",
-	"version": "0.0.1-next.11",
+	"version": "0.0.1-next.16",
 	"description": "Implementation of the Verifiable Storage connector using entity storage",
 	"repository": {
 		"type": "git",

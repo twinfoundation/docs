@@ -634,7 +634,7 @@
 						"content": {
 							"application/json": {
 								"schema": {
-									"$ref": "#/components/schemas/DidDocument"
+									"$ref": "https://schema.twindev.org/did/DidDocument"
 								},
 								"examples": {
 									"identityResolveResponseExample": {
@@ -725,7 +725,7 @@
 						"content": {
 							"application/json": {
 								"schema": {
-									"$ref": "#/components/schemas/DidDocument"
+									"$ref": "https://schema.twindev.org/did/DidDocument"
 								},
 								"examples": {
 									"identityCreateResponseExample": {
@@ -855,7 +855,7 @@
 						"content": {
 							"application/json": {
 								"schema": {
-									"$ref": "#/components/schemas/DidDocumentVerificationMethod"
+									"$ref": "https://schema.twindev.org/did/DidDocumentVerificationMethod"
 								},
 								"examples": {
 									"identityVerificationMethodCreateResponseExample": {
@@ -1087,7 +1087,7 @@
 						"content": {
 							"application/json": {
 								"schema": {
-									"$ref": "#/components/schemas/DidService"
+									"$ref": "https://schema.twindev.org/did/DidService"
 								},
 								"examples": {
 									"identityServiceCreateResponseExample": {
@@ -3057,7 +3057,7 @@
 				}
 			},
 			"get": {
-				"operationId": "blobStorageGet",
+				"operationId": "blobStorageQuery",
 				"summary": "Query the items from blob storage",
 				"tags": [
 					"Blob Storage"
@@ -3133,7 +3133,7 @@
 						"content": {
 							"application/json": {
 								"schema": {
-									"$ref": "#/components/schemas/BlobStorageEntryList"
+									"$ref": "https://schema.twindev.org/blob-storage/BlobStorageEntryList"
 								},
 								"examples": {
 									"blobStorageListResponseExample": {
@@ -3172,7 +3172,7 @@
 							},
 							"application/ld+json": {
 								"schema": {
-									"$ref": "#/components/schemas/BlobStorageEntryList"
+									"$ref": "https://schema.twindev.org/blob-storage/BlobStorageEntryList"
 								},
 								"examples": {
 									"blobStorageListResponseJsonLdExample": {
@@ -3317,9 +3317,27 @@
 						"in": "query",
 						"required": false,
 						"schema": {
-							"type": "boolean"
+							"type": "string"
 						},
-						"example": true
+						"example": "true"
+					},
+					{
+						"name": "disableDecryption",
+						"description": "Disables decryption if enabled by default.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"name": "overrideVaultKeyId",
+						"description": "Use a different vault key id for decryption, if not provided the default vault key id will be used.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
 					},
 					{
 						"name": "accept",
@@ -3342,7 +3360,7 @@
 						"content": {
 							"application/json": {
 								"schema": {
-									"$ref": "#/components/schemas/BlobStorageEntry"
+									"$ref": "https://schema.twindev.org/blob-storage/BlobStorageEntry"
 								},
 								"examples": {
 									"blobStorageGetResponseExample": {
@@ -3371,7 +3389,7 @@
 							},
 							"application/ld+json": {
 								"schema": {
-									"$ref": "#/components/schemas/BlobStorageEntry"
+									"$ref": "https://schema.twindev.org/blob-storage/BlobStorageEntry"
 								},
 								"examples": {
 									"blobStorageGetResponseJsonLdExample": {
@@ -5576,7 +5594,7 @@
 						"content": {
 							"application/json": {
 								"schema": {
-									"$ref": "#/components/schemas/AttestationInformation"
+									"$ref": "https://schema.twindev.org/attestation/AttestationInformation"
 								},
 								"examples": {
 									"attestationGetResponseExample": {
@@ -5636,7 +5654,7 @@
 							},
 							"application/ld+json": {
 								"schema": {
-									"$ref": "#/components/schemas/AttestationInformation"
+									"$ref": "https://schema.twindev.org/attestation/AttestationInformation"
 								},
 								"examples": {
 									"attestationGetResponseExample": {
@@ -6548,7 +6566,7 @@
 						"content": {
 							"application/json": {
 								"schema": {
-									"$ref": "#/components/schemas/ImmutableProof"
+									"$ref": "https://schema.twindev.org/immutable-proof/ImmutableProof"
 								},
 								"examples": {
 									"immutableProofGetResponseExample": {
@@ -6577,7 +6595,7 @@
 							},
 							"application/ld+json": {
 								"schema": {
-									"$ref": "#/components/schemas/ImmutableProof"
+									"$ref": "https://schema.twindev.org/immutable-proof/ImmutableProof"
 								},
 								"examples": {
 									"immutableProofJsonLdGetResponseExample": {
@@ -6735,7 +6753,7 @@
 						"content": {
 							"application/json": {
 								"schema": {
-									"$ref": "#/components/schemas/ImmutableProofVerification"
+									"$ref": "https://schema.twindev.org/immutable-proof/ImmutableProofVerification"
 								},
 								"examples": {
 									"immutableProofVerifyResponseExample": {
@@ -7604,7 +7622,10 @@
 												"https://schema.org",
 												"https://schema.twindev.org/aig/"
 											],
-											"type": "ItemList",
+											"type": [
+												"ItemList",
+												"AuditableItemGraphVertexList"
+											],
 											"itemListElement": [
 												{
 													"@context": [
@@ -7862,7 +7883,7 @@
 						"content": {
 							"application/json": {
 								"schema": {
-									"$ref": "#/components/schemas/DocumentList"
+									"$ref": "https://schema.twindev.org/documents/DocumentList"
 								},
 								"examples": {
 									"DocumentManagementGetResponseExample": {
@@ -7904,7 +7925,7 @@
 							},
 							"application/ld+json": {
 								"schema": {
-									"$ref": "#/components/schemas/DocumentList"
+									"$ref": "https://schema.twindev.org/documents/DocumentList"
 								},
 								"examples": {
 									"DocumentManagementGetResponseExample": {
@@ -8069,7 +8090,7 @@
 						"content": {
 							"application/json": {
 								"schema": {
-									"$ref": "#/components/schemas/Document"
+									"$ref": "https://schema.twindev.org/documents/Document"
 								},
 								"examples": {
 									"DocumentManagementGetRevisionResponseExample": {
@@ -8101,7 +8122,7 @@
 							},
 							"application/ld+json": {
 								"schema": {
-									"$ref": "#/components/schemas/Document"
+									"$ref": "https://schema.twindev.org/documents/Document"
 								},
 								"examples": {
 									"DocumentManagementGetRevisionResponseExample": {
@@ -8626,7 +8647,10 @@
 												"https://schema.twindev.org/aig/",
 												"https://schema.twindev.org/common/"
 											],
-											"type": "ItemList",
+											"type": [
+												"ItemList",
+												"AuditableItemGraphVertexList"
+											],
 											"itemListElement": [
 												{
 													"@context": [
@@ -8668,7 +8692,10 @@
 												"https://schema.twindev.org/aig/",
 												"https://schema.twindev.org/common/"
 											],
-											"type": "ItemList",
+											"type": [
+												"ItemList",
+												"AuditableItemGraphVertexList"
+											],
 											"itemListElement": [
 												{
 													"@context": [
@@ -9358,7 +9385,10 @@
 												"https://schema.twindev.org/ais/",
 												"https://schema.twindev.org/common/"
 											],
-											"type": "ItemList",
+											"type": [
+												"ItemList",
+												"AuditableItemStreamList"
+											],
 											"itemListElement": [
 												{
 													"@context": [
@@ -9397,7 +9427,10 @@
 												"https://schema.twindev.org/ais/",
 												"https://schema.twindev.org/common/"
 											],
-											"type": "ItemList",
+											"type": [
+												"ItemList",
+												"AuditableItemStreamList"
+											],
 											"itemListElement": [
 												{
 													"@context": [
@@ -10834,7 +10867,10 @@
 												"https://schema.twindev.org/ais/",
 												"https://schema.twindev.org/common/"
 											],
-											"type": "ItemList",
+											"type": [
+												"ItemList",
+												"AuditableItemStreamEntryList"
+											],
 											"itemListElement": [
 												{
 													"@context": [
@@ -10871,7 +10907,10 @@
 												"https://schema.twindev.org/ais/",
 												"https://schema.twindev.org/common/"
 											],
-											"type": "ItemList",
+											"type": [
+												"ItemList",
+												"AuditableItemStreamEntryList"
+											],
 											"itemListElement": [
 												{
 													"@context": [
@@ -11082,7 +11121,10 @@
 												"https://schema.twindev.org/ais/",
 												"https://schema.twindev.org/common/"
 											],
-											"type": "ItemList",
+											"type": [
+												"ItemList",
+												"AuditableItemStreamEntryObjectList"
+											],
 											"itemListElement": [
 												{
 													"@context": "https://schema.org",
@@ -11694,7 +11736,7 @@
 						"content": {
 							"application/json": {
 								"schema": {
-									"$ref": "#/components/schemas/ParticipantList"
+									"$ref": "https://schema.twindev.org/federated-catalogue/ParticipantList"
 								},
 								"examples": {
 									"participantListResponseExample": {
@@ -11702,7 +11744,7 @@
 											"@context": [
 												"https://schema.org",
 												"https://w3id.org/gaia-x/development",
-												"https://schema.twindev.org/federated-catalogue/types.jsonld"
+												"https://schema.twindev.org/federated-catalogue/"
 											],
 											"type": "ItemList",
 											"itemListElement": [
@@ -11710,7 +11752,7 @@
 													"@context": [
 														"https://schema.org",
 														"https://w3id.org/gaia-x/development",
-														"https://schema.twindev.org/federated-catalogue/types.jsonld"
+														"https://schema.twindev.org/federated-catalogue/"
 													],
 													"id": "did:iota:xxx",
 													"type": "LegalPerson",
@@ -11838,7 +11880,7 @@
 						"content": {
 							"application/json": {
 								"schema": {
-									"$ref": "#/components/schemas/ParticipantEntry"
+									"$ref": "https://schema.twindev.org/federated-catalogue/ParticipantEntry"
 								},
 								"examples": {
 									"participantGetResponseExample": {
@@ -11846,7 +11888,7 @@
 											"@context": [
 												"https://schema.org",
 												"https://w3id.org/gaia-x/development",
-												"https://schema.twindev.org/federated-catalogue/types.jsonld"
+												"https://schema.twindev.org/federated-catalogue/"
 											],
 											"id": "did:iota:xxx",
 											"type": "LegalPerson",
@@ -11998,7 +12040,7 @@
 						"content": {
 							"application/json": {
 								"schema": {
-									"$ref": "#/components/schemas/ServiceOfferingList"
+									"$ref": "https://schema.twindev.org/federated-catalogue/ServiceOfferingList"
 								},
 								"examples": {
 									"serviceOfferingListResponseExample": {
@@ -12006,7 +12048,7 @@
 											"@context": [
 												"https://schema.org",
 												"https://w3id.org/gaia-x/development",
-												"https://schema.twindev.org/federated-catalogue/types.jsonld"
+												"https://schema.twindev.org/federated-catalogue/"
 											],
 											"type": "ItemList",
 											"itemListElement": [
@@ -12014,7 +12056,7 @@
 													"@context": [
 														"https://schema.org",
 														"https://w3id.org/gaia-x/development",
-														"https://schema.twindev.org/federated-catalogue/types.jsonld"
+														"https://schema.twindev.org/federated-catalogue/"
 													],
 													"id": "http://example.org/is123456",
 													"name": "Service 1",
@@ -12022,7 +12064,7 @@
 													"servicePolicy": [
 														{
 															"@context": [
-																"https://www.w3.org/ns/odrl.jsonld",
+																"https://www.w3.org/ns/odrl/2/",
 																{
 																	"twin": "https://schema.twindev.org/odrl/",
 																	"jsonPathSelector": "twin:jsonPathSelector"
@@ -12161,7 +12203,7 @@
 						"content": {
 							"application/json": {
 								"schema": {
-									"$ref": "#/components/schemas/ServiceOfferingEntry"
+									"$ref": "https://schema.twindev.org/federated-catalogue/ServiceOfferingEntry"
 								},
 								"examples": {
 									"serviceOfferingGetResponseExample": {
@@ -12169,7 +12211,7 @@
 											"@context": [
 												"https://schema.org",
 												"https://w3id.org/gaia-x/development",
-												"https://schema.twindev.org/federated-catalogue/types.jsonld"
+												"https://schema.twindev.org/federated-catalogue/"
 											],
 											"id": "http://example.org/is123456",
 											"name": "Service 1",
@@ -12177,7 +12219,7 @@
 											"servicePolicy": [
 												{
 													"@context": [
-														"https://www.w3.org/ns/odrl.jsonld",
+														"https://www.w3.org/ns/odrl/2/",
 														{
 															"twin": "https://schema.twindev.org/odrl/",
 															"jsonPathSelector": "twin:jsonPathSelector"
@@ -12349,7 +12391,7 @@
 						"content": {
 							"application/json": {
 								"schema": {
-									"$ref": "#/components/schemas/DataResourceList"
+									"$ref": "https://schema.twindev.org/federated-catalogue/DataResourceList"
 								},
 								"examples": {
 									"dataResourceListResponseExample": {
@@ -12357,7 +12399,7 @@
 											"@context": [
 												"https://schema.org",
 												"https://w3id.org/gaia-x/development",
-												"https://schema.twindev.org/federated-catalogue/types.jsonld"
+												"https://schema.twindev.org/federated-catalogue/"
 											],
 											"type": "ItemList",
 											"itemListElement": [
@@ -12365,7 +12407,7 @@
 													"@context": [
 														"https://schema.org",
 														"https://w3id.org/gaia-x/development",
-														"https://schema.twindev.org/federated-catalogue/types.jsonld"
+														"https://schema.twindev.org/federated-catalogue/"
 													],
 													"id": "http://example.org/is123456",
 													"name": "Data Resource 1",
@@ -12374,9 +12416,7 @@
 													"license": "http://licenses.example.org/12345",
 													"resourcePolicy": [
 														{
-															"@context": [
-																"https://www.w3.org/ns/odrl.jsonld"
-															],
+															"@context": "https://www.w3.org/ns/odrl/2/",
 															"@type": "Offer",
 															"uid": "http://example.com/policy:1010",
 															"assigner": "did:iota:testnet:0x1a7bded4d22dc54722435d624e4323e10fcbc570cd57462eabbf3a5ab2ced24f",
@@ -12498,7 +12538,7 @@
 						"content": {
 							"application/json": {
 								"schema": {
-									"$ref": "#/components/schemas/DataResourceEntry"
+									"$ref": "https://schema.twindev.org/federated-catalogue/DataResourceEntry"
 								},
 								"examples": {
 									"dataResourceGetResponseExample": {
@@ -12506,7 +12546,7 @@
 											"@context": [
 												"https://schema.org",
 												"https://w3id.org/gaia-x/development",
-												"https://schema.twindev.org/federated-catalogue/types.jsonld"
+												"https://schema.twindev.org/federated-catalogue/"
 											],
 											"id": "http://example.org/is123456",
 											"name": "Data Resource 1",
@@ -12515,9 +12555,7 @@
 											"license": "http://licenses.example.org/12345",
 											"resourcePolicy": [
 												{
-													"@context": [
-														"https://www.w3.org/ns/odrl.jsonld"
-													],
+													"@context": "https://www.w3.org/ns/odrl/2/",
 													"@type": "Offer",
 													"uid": "http://example.com/policy:1010",
 													"assigner": "did:iota:testnet:0x1a7bded4d22dc54722435d624e4323e10fcbc570cd57462eabbf3a5ab2ced24f",
@@ -12672,7 +12710,7 @@
 						"content": {
 							"application/json": {
 								"schema": {
-									"$ref": "#/components/schemas/DataSpaceConnectorList"
+									"$ref": "https://schema.twindev.org/federated-catalogue/DataSpaceConnectorList"
 								},
 								"examples": {
 									"dataSpaceConnectorListResponseExample": {
@@ -12680,7 +12718,7 @@
 											"@context": [
 												"https://schema.org",
 												"https://w3id.org/gaia-x/development",
-												"https://schema.twindev.org/federated-catalogue/types.jsonld"
+												"https://schema.twindev.org/federated-catalogue/"
 											],
 											"type": "ItemList",
 											"itemListElement": [
@@ -12688,7 +12726,7 @@
 													"@context": [
 														"https://schema.org",
 														"https://w3id.org/gaia-x/development",
-														"https://schema.twindev.org/federated-catalogue/types.jsonld"
+														"https://schema.twindev.org/federated-catalogue/"
 													],
 													"id": "https://my-ds-connectors.example.org/ds-connector-ABCD",
 													"type": [
@@ -12822,7 +12860,7 @@
 						"content": {
 							"application/json": {
 								"schema": {
-									"$ref": "#/components/schemas/DataSpaceConnectorEntry"
+									"$ref": "https://schema.twindev.org/federated-catalogue/DataSpaceConnectorEntry"
 								},
 								"examples": {
 									"dataSpaceConnectorGetResponseExample": {
@@ -12830,7 +12868,7 @@
 											"@context": [
 												"https://schema.org",
 												"https://w3id.org/gaia-x/development",
-												"https://schema.twindev.org/federated-catalogue/types.jsonld"
+												"https://schema.twindev.org/federated-catalogue/"
 											],
 											"id": "https://my-ds-connectors.example.org/ds-connector-ABCD",
 											"type": [
@@ -12934,381 +12972,6 @@
 	},
 	"components": {
 		"schemas": {
-			"ActionType": {
-				"anyOf": [
-					{
-						"type": "string",
-						"const": "use",
-						"description": "To use the Asset - actions that involve general usage by parties."
-					},
-					{
-						"type": "string",
-						"const": "transfer",
-						"description": "To transfer the ownership to third parties."
-					},
-					{
-						"type": "string",
-						"const": "acceptTracking",
-						"description": "To accept that the use of the Asset may be tracked."
-					},
-					{
-						"type": "string",
-						"const": "aggregate",
-						"description": "To use the Asset or parts of it as part of a composite collection."
-					},
-					{
-						"type": "string",
-						"const": "annotate",
-						"description": "To add explanatory notations/commentaries to the Asset without modifying the Asset in any other way."
-					},
-					{
-						"type": "string",
-						"const": "anonymize",
-						"description": "To anonymize all or parts of the Asset."
-					},
-					{
-						"type": "string",
-						"const": "archive",
-						"description": "To store the Asset (in a non-transient form)."
-					},
-					{
-						"type": "string",
-						"const": "attribute",
-						"description": "To attribute the use of the Asset."
-					},
-					{
-						"type": "string",
-						"const": "attribution",
-						"description": "Credit be given to copyright holder and/or author."
-					},
-					{
-						"type": "string",
-						"const": "commercialUse",
-						"description": "Exercising rights for commercial purposes."
-					},
-					{
-						"type": "string",
-						"const": "compensate",
-						"description": "To compensate by transfer of some amount of value for using or selling the Asset."
-					},
-					{
-						"type": "string",
-						"const": "concurrentUse",
-						"description": "To create multiple copies of the Asset that are being concurrently used."
-					},
-					{
-						"type": "string",
-						"const": "delete",
-						"description": "To permanently remove all copies of the Asset after it has been used."
-					},
-					{
-						"type": "string",
-						"const": "derive",
-						"description": "To create a new derivative Asset from this Asset and to edit or modify the derivative."
-					},
-					{
-						"type": "string",
-						"const": "derivativeWorks",
-						"description": "Distribution of derivative works."
-					},
-					{
-						"type": "string",
-						"const": "digitize",
-						"description": "To produce a digital copy of (or otherwise digitize) the Asset from its analogue form."
-					},
-					{
-						"type": "string",
-						"const": "display",
-						"description": "To create a static and transient rendition of an Asset."
-					},
-					{
-						"type": "string",
-						"const": "distribute",
-						"description": "To supply the Asset to third-parties."
-					},
-					{
-						"type": "string",
-						"const": "distribution",
-						"description": "Distribution, public display, and publicly performance."
-					},
-					{
-						"type": "string",
-						"const": "ensureExclusivity",
-						"description": "To ensure that the Rule on the Asset is exclusive."
-					},
-					{
-						"type": "string",
-						"const": "execute",
-						"description": "To run the computer program Asset."
-					},
-					{
-						"type": "string",
-						"const": "extract",
-						"description": "To extract parts of the Asset and to use it as a new Asset."
-					},
-					{
-						"type": "string",
-						"const": "give",
-						"description": "To transfer the ownership without compensation and while deleting the original asset."
-					},
-					{
-						"type": "string",
-						"const": "grantUse",
-						"description": "To grant the use of the Asset to third parties."
-					},
-					{
-						"type": "string",
-						"const": "include",
-						"description": "To include other related assets in the Asset."
-					},
-					{
-						"type": "string",
-						"const": "index",
-						"description": "To record the Asset in an index."
-					},
-					{
-						"type": "string",
-						"const": "inform",
-						"description": "To inform that an action has been performed on or in relation to the Asset."
-					},
-					{
-						"type": "string",
-						"const": "install",
-						"description": "To load the computer program Asset onto a storage device."
-					},
-					{
-						"type": "string",
-						"const": "modify",
-						"description": "To change existing content of the Asset without creating a new asset."
-					},
-					{
-						"type": "string",
-						"const": "move",
-						"description": "To move the Asset from one digital location to another including deleting the original copy."
-					},
-					{
-						"type": "string",
-						"const": "nextPolicy",
-						"description": "To grant the specified Policy to a third party for their use of the Asset."
-					},
-					{
-						"type": "string",
-						"const": "notice",
-						"description": "Copyright and license notices be kept intact."
-					},
-					{
-						"type": "string",
-						"const": "obtainConsent",
-						"description": "To obtain verifiable consent to perform the requested action."
-					},
-					{
-						"type": "string",
-						"const": "play",
-						"description": "To create a sequential and transient rendition of an Asset."
-					},
-					{
-						"type": "string",
-						"const": "present",
-						"description": "To publicly perform the Asset."
-					},
-					{
-						"type": "string",
-						"const": "print",
-						"description": "To create a tangible and permanent rendition of an Asset."
-					},
-					{
-						"type": "string",
-						"const": "read",
-						"description": "To obtain data from the Asset."
-					},
-					{
-						"type": "string",
-						"const": "reproduce",
-						"description": "To make duplicate copies of the Asset in any material form."
-					},
-					{
-						"type": "string",
-						"const": "reproduction",
-						"description": "Making multiple copies."
-					},
-					{
-						"type": "string",
-						"const": "reviewPolicy",
-						"description": "To review the Policy applicable to the Asset."
-					},
-					{
-						"type": "string",
-						"const": "sell",
-						"description": "To transfer the ownership with compensation and while deleting the original asset."
-					},
-					{
-						"type": "string",
-						"const": "shareAlike",
-						"description": "Derivative works be licensed under the same terms or compatible terms."
-					},
-					{
-						"type": "string",
-						"const": "sharing",
-						"description": "Permits commercial derivatives, but only non-commercial distribution."
-					},
-					{
-						"type": "string",
-						"const": "sourceCode",
-						"description": "Source code must be provided when exercising some rights."
-					},
-					{
-						"type": "string",
-						"const": "stream",
-						"description": "To deliver the Asset in real-time."
-					},
-					{
-						"type": "string",
-						"const": "synchronize",
-						"description": "To use the Asset in timed relations with media elements of another Asset."
-					},
-					{
-						"type": "string",
-						"const": "textToSpeech",
-						"description": "To have a text Asset read out loud."
-					},
-					{
-						"type": "string",
-						"const": "transform",
-						"description": "To convert the Asset into a different format."
-					},
-					{
-						"type": "string",
-						"const": "translate",
-						"description": "To translate the Asset into another natural language."
-					},
-					{
-						"type": "string",
-						"const": "uninstall",
-						"description": "To unload and delete the computer program Asset."
-					},
-					{
-						"type": "string",
-						"const": "watermark",
-						"description": "To apply a watermark to the Asset."
-					}
-				],
-				"description": "The types for ODRL Actions."
-			},
-			"Address": {
-				"type": "object",
-				"properties": {
-					"@context": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-					},
-					"@id": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-					},
-					"@included": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-					},
-					"@graph": {
-						"anyOf": [
-							{
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-							},
-							{
-								"type": "array",
-								"items": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-								}
-							}
-						]
-					},
-					"@nest": {
-						"anyOf": [
-							{
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdJsonObject"
-							},
-							{
-								"type": "array",
-								"items": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdJsonObject"
-								}
-							}
-						]
-					},
-					"@type": {
-						"anyOf": [
-							{
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-							},
-							{
-								"type": "array",
-								"items": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-								}
-							}
-						]
-					},
-					"@reverse": {
-						"type": "object",
-						"additionalProperties": {
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-						}
-					},
-					"@index": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-					},
-					"type": {
-						"type": "string",
-						"const": "Address",
-						"description": "JSON-LD @ type. In this case it is allowed to be omitted as it is usually a child node."
-					},
-					"countryCode": {
-						"type": [
-							"string",
-							"number"
-						],
-						"description": "Country code in ISO 3166-1 alpha2, alpha-3 or numeric format"
-					}
-				},
-				"required": [
-					"countryCode"
-				],
-				"additionalProperties": {
-					"anyOf": [
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdIndexMap"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdIdMap"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdTypeMap"
-						},
-						{
-							"type": "array"
-						}
-					]
-				},
-				"description": "Address as defined by Gaia-X https://docs.gaia-x.eu/ontology/development/classes/Address/"
-			},
-			"ArrayBuffer": {
-				"type": "object",
-				"properties": {
-					"byteLength": {
-						"type": "number"
-					}
-				},
-				"required": [
-					"byteLength"
-				],
-				"additionalProperties": false
-			},
 			"AttestationCreateRequest": {
 				"type": "object",
 				"properties": {
@@ -13325,82 +12988,6 @@
 				],
 				"additionalProperties": false,
 				"description": "The data to be used in the signing."
-			},
-			"AttestationInformation": {
-				"type": "object",
-				"properties": {
-					"@context": {
-						"type": "array",
-						"minItems": 3,
-						"items": [
-							{
-								"type": "string",
-								"const": "https://schema.twindev.org/attestation/"
-							},
-							{
-								"type": "string",
-								"const": "https://schema.twindev.org/common/"
-							},
-							{
-								"type": "string",
-								"const": "https://schema.org"
-							}
-						],
-						"additionalItems": {
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdContextDefinitionElement"
-						},
-						"description": "JSON-LD Context."
-					},
-					"type": {
-						"type": "string",
-						"const": "Information",
-						"description": "JSON-LD Type."
-					},
-					"id": {
-						"type": "string",
-						"description": "The unique identifier of the attestation."
-					},
-					"dateCreated": {
-						"type": "string",
-						"description": "Created date/time of the attestation in ISO format."
-					},
-					"dateTransferred": {
-						"type": "string",
-						"description": "Transferred date/time of the attestation in ISO format, can be blank if holder identity is owner."
-					},
-					"ownerIdentity": {
-						"type": "string",
-						"description": "The identity of the owner."
-					},
-					"holderIdentity": {
-						"type": "string",
-						"description": "The identity of the current holder, can be undefined if owner is still the holder."
-					},
-					"attestationObject": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-					},
-					"proof": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-					},
-					"verified": {
-						"type": "boolean",
-						"description": "Whether the attestation has been verified."
-					},
-					"verificationFailure": {
-						"type": "string",
-						"description": "The verification failure message."
-					}
-				},
-				"required": [
-					"@context",
-					"type",
-					"id",
-					"dateCreated",
-					"ownerIdentity",
-					"attestationObject"
-				],
-				"additionalProperties": false,
-				"description": "Interface describing the collated attestation information."
 			},
 			"AttestationTransferRequest": {
 				"type": "object",
@@ -13429,67 +13016,73 @@
 					},
 					"aliases": {
 						"type": "array",
-						"items": {
-							"type": "object",
-							"properties": {
-								"id": {
-									"type": "string"
+						"description": "Alternative aliases that can be used to identify the vertex.",
+						"prefixItems": [
+							{
+								"type": "object",
+								"properties": {
+									"id": {
+										"type": "string"
+									},
+									"aliasFormat": {
+										"type": "string"
+									},
+									"annotationObject": {
+										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
+									}
 								},
-								"aliasFormat": {
-									"type": "string"
-								},
-								"annotationObject": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-								}
-							},
-							"required": [
-								"id"
-							],
-							"additionalProperties": false
-						},
-						"description": "Alternative aliases that can be used to identify the vertex."
+								"required": [
+									"id"
+								],
+								"additionalProperties": false
+							}
+						]
 					},
 					"resources": {
 						"type": "array",
-						"items": {
-							"type": "object",
-							"properties": {
-								"id": {
-									"type": "string"
+						"description": "The resources attached to the vertex.",
+						"prefixItems": [
+							{
+								"type": "object",
+								"properties": {
+									"id": {
+										"type": "string"
+									},
+									"resourceObject": {
+										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
+									}
 								},
-								"resourceObject": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-								}
-							},
-							"additionalProperties": false
-						},
-						"description": "The resources attached to the vertex."
+								"additionalProperties": false
+							}
+						]
 					},
 					"edges": {
 						"type": "array",
-						"items": {
-							"type": "object",
-							"properties": {
-								"id": {
-									"type": "string"
-								},
-								"edgeRelationships": {
-									"type": "array",
-									"items": {
+						"description": "The edges connected to the vertex.",
+						"prefixItems": [
+							{
+								"type": "object",
+								"properties": {
+									"id": {
 										"type": "string"
+									},
+									"edgeRelationships": {
+										"type": "array",
+										"items": {
+											"type": "string"
+										}
+									},
+									"annotationObject": {
+										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
 									}
 								},
-								"annotationObject": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-								}
-							},
-							"required": [
-								"id",
-								"edgeRelationships"
-							],
-							"additionalProperties": false
-						},
-						"description": "The edges connected to the vertex."
+								"required": [
+									"id",
+									"edgeRelationships"
+								],
+								"additionalProperties": false
+							}
+						]
 					}
 				},
 				"additionalProperties": false,
@@ -13503,67 +13096,73 @@
 					},
 					"aliases": {
 						"type": "array",
-						"items": {
-							"type": "object",
-							"properties": {
-								"id": {
-									"type": "string"
+						"description": "Alternative aliases that can be used to identify the vertex.",
+						"prefixItems": [
+							{
+								"type": "object",
+								"properties": {
+									"id": {
+										"type": "string"
+									},
+									"aliasFormat": {
+										"type": "string"
+									},
+									"annotationObject": {
+										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
+									}
 								},
-								"aliasFormat": {
-									"type": "string"
-								},
-								"annotationObject": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-								}
-							},
-							"required": [
-								"id"
-							],
-							"additionalProperties": false
-						},
-						"description": "Alternative aliases that can be used to identify the vertex."
+								"required": [
+									"id"
+								],
+								"additionalProperties": false
+							}
+						]
 					},
 					"resources": {
 						"type": "array",
-						"items": {
-							"type": "object",
-							"properties": {
-								"id": {
-									"type": "string"
+						"description": "The resources attached to the vertex.",
+						"prefixItems": [
+							{
+								"type": "object",
+								"properties": {
+									"id": {
+										"type": "string"
+									},
+									"resourceObject": {
+										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
+									}
 								},
-								"resourceObject": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-								}
-							},
-							"additionalProperties": false
-						},
-						"description": "The resources attached to the vertex."
+								"additionalProperties": false
+							}
+						]
 					},
 					"edges": {
 						"type": "array",
-						"items": {
-							"type": "object",
-							"properties": {
-								"id": {
-									"type": "string"
-								},
-								"edgeRelationships": {
-									"type": "array",
-									"items": {
+						"description": "The edges connected to the vertex.",
+						"prefixItems": [
+							{
+								"type": "object",
+								"properties": {
+									"id": {
 										"type": "string"
+									},
+									"edgeRelationships": {
+										"type": "array",
+										"items": {
+											"type": "string"
+										}
+									},
+									"annotationObject": {
+										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
 									}
 								},
-								"annotationObject": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-								}
-							},
-							"required": [
-								"id",
-								"edgeRelationships"
-							],
-							"additionalProperties": false
-						},
-						"description": "The edges connected to the vertex."
+								"required": [
+									"id",
+									"edgeRelationships"
+								],
+								"additionalProperties": false
+							}
+						]
 					}
 				},
 				"additionalProperties": false,
@@ -13590,19 +13189,21 @@
 					},
 					"entries": {
 						"type": "array",
-						"items": {
-							"type": "object",
-							"properties": {
-								"entryObject": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-								}
-							},
-							"required": [
-								"entryObject"
-							],
-							"additionalProperties": false
-						},
-						"description": "The entries for the stream."
+						"description": "The entries for the stream.",
+						"prefixItems": [
+							{
+								"type": "object",
+								"properties": {
+									"entryObject": {
+										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
+									}
+								},
+								"required": [
+									"entryObject"
+								],
+								"additionalProperties": false
+							}
+						]
 					},
 					"immutableInterval": {
 						"type": "number",
@@ -13653,6 +13254,16 @@
 					"metadata": {
 						"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
 					},
+					"disableEncryption": {
+						"type": "boolean",
+						"description": "Disables encryption if enabled by default.",
+						"default": false
+					},
+					"overrideVaultKeyId": {
+						"type": "string",
+						"description": "Use a different vault key id for encryption, if not provided the default vault key id will be used.",
+						"default": "undefined"
+					},
 					"namespace": {
 						"type": "string",
 						"description": "The namespace to store the data in, defaults to component configured namespace."
@@ -13663,129 +13274,6 @@
 				],
 				"additionalProperties": false,
 				"description": "The body parameters."
-			},
-			"BlobStorageEntry": {
-				"type": "object",
-				"properties": {
-					"@context": {
-						"type": "array",
-						"minItems": 2,
-						"items": [
-							{
-								"type": "string",
-								"const": "https://schema.twindev.org/blob-storage/"
-							},
-							{
-								"type": "string",
-								"const": "https://schema.twindev.org/common/"
-							}
-						],
-						"additionalItems": {
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdContextDefinitionElement"
-						},
-						"description": "JSON-LD Context."
-					},
-					"type": {
-						"type": "string",
-						"const": "BlobStorageEntry",
-						"description": "JSON-LD Type."
-					},
-					"id": {
-						"type": "string",
-						"description": "The id for the blob."
-					},
-					"dateCreated": {
-						"type": "string",
-						"description": "The date/time when the entry was created."
-					},
-					"dateModified": {
-						"type": "string",
-						"description": "The date/time when the entry was modified."
-					},
-					"blobSize": {
-						"type": "number",
-						"description": "The size of the data in the blob."
-					},
-					"blobHash": {
-						"type": "string",
-						"description": "The hash of the data in the blob."
-					},
-					"encodingFormat": {
-						"type": "string",
-						"description": "The mime type for the blob."
-					},
-					"fileExtension": {
-						"type": "string",
-						"description": "The extension."
-					},
-					"metadata": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-					},
-					"blob": {
-						"type": "string",
-						"description": "The blob in base64 format, included if the includeContent flag was set in the request."
-					}
-				},
-				"required": [
-					"@context",
-					"type",
-					"id",
-					"dateCreated",
-					"blobSize",
-					"blobHash"
-				],
-				"additionalProperties": false,
-				"description": "Interface describing a blob storage entry."
-			},
-			"BlobStorageEntryList": {
-				"type": "object",
-				"properties": {
-					"@context": {
-						"type": "array",
-						"minItems": 3,
-						"items": [
-							{
-								"type": "string",
-								"const": "https://schema.org"
-							},
-							{
-								"type": "string",
-								"const": "https://schema.twindev.org/blob-storage/"
-							},
-							{
-								"type": "string",
-								"const": "https://schema.twindev.org/common/"
-							}
-						],
-						"additionalItems": {
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdContextDefinitionElement"
-						},
-						"description": "JSON-LD Context."
-					},
-					"type": {
-						"type": "string",
-						"const": "ItemList",
-						"description": "JSON-LD Type."
-					},
-					"itemListElement": {
-						"type": "array",
-						"items": {
-							"$ref": "#/components/schemas/BlobStorageEntry"
-						},
-						"description": "The list of entries."
-					},
-					"nextItem": {
-						"type": "string",
-						"description": "The cursor to get the next chunk of entries."
-					}
-				},
-				"required": [
-					"@context",
-					"type",
-					"itemListElement"
-				],
-				"additionalProperties": false,
-				"description": "Interface describing an blob storage entry list."
 			},
 			"BlobStorageUpdateRequest": {
 				"type": "object",
@@ -13800,6 +13288,16 @@
 					},
 					"metadata": {
 						"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
+					},
+					"disableEncryption": {
+						"type": "boolean",
+						"description": "Disables encryption if enabled by default.",
+						"default": false
+					},
+					"overrideVaultKeyId": {
+						"type": "string",
+						"description": "Use a different vault key id for encryption, if not provided the default vault key id will be used.",
+						"default": "undefined"
 					}
 				},
 				"additionalProperties": false,
@@ -13870,10 +13368,12 @@
 				"properties": {
 					"conflicts": {
 						"type": "array",
-						"items": {
-							"type": "string"
-						},
-						"description": "The conflicting items."
+						"description": "The conflicting items.",
+						"prefixItems": [
+							{
+								"type": "string"
+							}
+						]
 					},
 					"name": {
 						"type": "string",
@@ -13906,136 +13406,6 @@
 					"name"
 				],
 				"description": "The body which contains the error."
-			},
-			"ConflictStrategyType": {
-				"anyOf": [
-					{
-						"type": "string",
-						"const": "perm",
-						"description": "Permission type."
-					},
-					{
-						"type": "string",
-						"const": "prohibit",
-						"description": "Prohibition type."
-					},
-					{
-						"type": "string",
-						"const": "invalid",
-						"description": "Invalid type."
-					}
-				],
-				"description": "The types for ODRL Conflict Resolution Strategies."
-			},
-			"DataIntegrityProof": {
-				"type": "object",
-				"properties": {
-					"@context": {
-						"anyOf": [
-							{
-								"type": "string",
-								"const": "https://www.w3.org/ns/credentials/v2"
-							},
-							{
-								"type": "array",
-								"minItems": 1,
-								"items": [
-									{
-										"type": "string",
-										"const": "https://www.w3.org/ns/credentials/v2"
-									}
-								],
-								"additionalItems": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdContextDefinitionElement"
-								}
-							}
-						],
-						"description": "JSON-LD Context."
-					},
-					"type": {
-						"type": "string",
-						"const": "DataIntegrityProof",
-						"description": "JSON-LD Type."
-					},
-					"cryptosuite": {
-						"anyOf": [
-							{
-								"$ref": "#/components/schemas/DidCryptoSuites"
-							},
-							{
-								"type": "string"
-							}
-						],
-						"description": "An identifier for the cryptographic suite that can be used to verify the proof."
-					},
-					"id": {
-						"type": "string",
-						"description": "The id of the proof."
-					},
-					"proofPurpose": {
-						"type": "string",
-						"description": "The reason the proof was created."
-					},
-					"proofValue": {
-						"type": "string",
-						"description": "Contains the base-encoded binary data necessary to verify the digital proof using the verificationMethod specified."
-					},
-					"verificationMethod": {
-						"type": "string",
-						"description": "The verification method of the proof."
-					},
-					"created": {
-						"type": "string",
-						"description": "The iso date of when the proof was created."
-					},
-					"expires": {
-						"type": "string",
-						"description": "The iso date of when the proof expires."
-					},
-					"domain": {
-						"anyOf": [
-							{
-								"type": "string"
-							},
-							{
-								"type": "array",
-								"items": {
-									"type": "string"
-								}
-							}
-						],
-						"description": "One or more security domains in which the proof is meant to be used."
-					},
-					"challenge": {
-						"anyOf": [
-							{
-								"type": "string"
-							},
-							{
-								"type": "array",
-								"items": {
-									"type": "string"
-								}
-							}
-						],
-						"description": "Provided to mitigate replay attacks on domains."
-					},
-					"previousProof": {
-						"type": "string",
-						"description": "Identifies another data integrity proof that MUST verify before the current proof is processed"
-					},
-					"nonce": {
-						"type": "string",
-						"description": "Use of this field is to increase privacy by decreasing linkability that is the result of deterministically generated signatures."
-					}
-				},
-				"required": [
-					"type",
-					"cryptosuite",
-					"proofPurpose"
-				],
-				"additionalProperties": false,
-				"description": "Interface describing a did proof. https://www.w3.org/TR/vc-data-integrity/"
 			},
 			"DataProcessingConvertRequest": {
 				"type": "object",
@@ -14093,10 +13463,12 @@
 				"properties": {
 					"entities": {
 						"type": "array",
-						"items": {
-							"$ref": "#/components/schemas/RuleGroup"
-						},
-						"description": "The entities, which can be partial if a limited keys list was provided."
+						"description": "The entities, which can be partial if a limited keys list was provided.",
+						"prefixItems": [
+							{
+								"$ref": "#/components/schemas/RuleGroup"
+							}
+						]
 					},
 					"cursor": {
 						"type": "string",
@@ -14118,10 +13490,12 @@
 					},
 					"rules": {
 						"type": "array",
-						"items": {
-							"$ref": "#/components/schemas/Rule"
-						},
-						"description": "The rules."
+						"description": "The rules.",
+						"prefixItems": [
+							{
+								"$ref": "#/components/schemas/Rule"
+							}
+						]
 					}
 				},
 				"required": [
@@ -14130,1518 +13504,6 @@
 				],
 				"additionalProperties": false,
 				"description": "The data to be used in the store."
-			},
-			"DataResourceEntry": {
-				"type": "object",
-				"properties": {
-					"@context": {
-						"$ref": "#/components/schemas/FederatedCatalogueContextType"
-					},
-					"@id": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-					},
-					"@included": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-					},
-					"@graph": {
-						"anyOf": [
-							{
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-							},
-							{
-								"type": "array",
-								"items": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-								}
-							}
-						]
-					},
-					"@nest": {
-						"anyOf": [
-							{
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdJsonObject"
-							},
-							{
-								"type": "array",
-								"items": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdJsonObject"
-								}
-							}
-						]
-					},
-					"@type": {
-						"anyOf": [
-							{
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-							},
-							{
-								"type": "array",
-								"items": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-								}
-							}
-						]
-					},
-					"@reverse": {
-						"type": "object",
-						"additionalProperties": {
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-						}
-					},
-					"@index": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-					},
-					"id": {
-						"type": "string",
-						"description": "Subject Id"
-					},
-					"type": {
-						"type": "string",
-						"const": "DataResource",
-						"description": "Subject type"
-					},
-					"description": {
-						"type": "string",
-						"description": "Description"
-					},
-					"name": {
-						"type": "string",
-						"description": "The Resource Name"
-					},
-					"exposedThrough": {
-						"type": "string",
-						"description": "Overwriting exposedThrough as we only store the id of the Data Exchange Component"
-					},
-					"producedBy": {
-						"type": "string",
-						"description": "Overwriting producedBy as we only store the identifier"
-					},
-					"license": {
-						"type": "string",
-						"description": "Pointer (URL) to the license"
-					},
-					"copyrightOwnedBy": {
-						"type": "string",
-						"description": "Overwriting copyrightOwnedBy as we only store the identifier"
-					},
-					"resourcePolicy": {
-						"type": "array",
-						"items": {
-							"$ref": "#/components/schemas/OdrlPolicy"
-						},
-						"description": "Overwriting to ensure always an array is stored"
-					},
-					"issuer": {
-						"type": "string",
-						"description": "The trusted issuer of the compliance credential"
-					},
-					"validFrom": {
-						"type": "string",
-						"description": "Valid from (as per W3C VC Data Model v2)"
-					},
-					"validUntil": {
-						"type": "string",
-						"description": "Valid until (as per W3C VC Data Model v2)"
-					},
-					"dateCreated": {
-						"type": "string",
-						"description": "The creation date."
-					},
-					"evidence": {
-						"type": "array",
-						"items": {
-							"type": "string"
-						},
-						"description": "The evidences concerning the data resource."
-					}
-				},
-				"required": [
-					"@context",
-					"copyrightOwnedBy",
-					"dateCreated",
-					"evidence",
-					"exposedThrough",
-					"id",
-					"issuer",
-					"license",
-					"name",
-					"producedBy",
-					"resourcePolicy",
-					"type",
-					"validFrom",
-					"validUntil"
-				],
-				"additionalProperties": {
-					"anyOf": [
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdIndexMap"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdIdMap"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdTypeMap"
-						},
-						{
-							"type": "array"
-						}
-					]
-				},
-				"description": "Interface describing a Data Resource entry."
-			},
-			"DataResourceList": {
-				"type": "object",
-				"properties": {
-					"@context": {
-						"$ref": "#/components/schemas/FederatedCatalogueContextType"
-					},
-					"type": {
-						"type": "string",
-						"const": "ItemList",
-						"description": "The type"
-					},
-					"itemListElement": {
-						"type": "array",
-						"items": {
-							"$ref": "#/components/schemas/Omit%3CIDataResourceEntry%2C%22%40context%22%3E"
-						},
-						"description": "The components of the Collection"
-					},
-					"nextItem": {
-						"type": "string",
-						"description": "Next item cursor."
-					}
-				},
-				"required": [
-					"@context",
-					"type",
-					"itemListElement"
-				],
-				"additionalProperties": false,
-				"description": "Interface describing a list of Data Resource entries."
-			},
-			"DataSpaceConnectorEntry": {
-				"type": "object",
-				"properties": {
-					"issuer": {
-						"type": "string",
-						"description": "The trusted issuer of the compliance credential"
-					},
-					"validFrom": {
-						"type": "string",
-						"description": "Valid from (as per W3C VC Data Model v2)"
-					},
-					"validUntil": {
-						"type": "string",
-						"description": "Valid until (as per W3C VC Data Model v2)"
-					},
-					"dateCreated": {
-						"type": "string",
-						"description": "The creation date."
-					},
-					"evidence": {
-						"type": "array",
-						"items": {
-							"type": "string"
-						},
-						"description": "The evidences concerning the data resource."
-					},
-					"@context": {
-						"$ref": "#/components/schemas/FederatedCatalogueContextType"
-					},
-					"@id": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-					},
-					"@included": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-					},
-					"@graph": {
-						"anyOf": [
-							{
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-							},
-							{
-								"type": "array",
-								"items": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-								}
-							}
-						]
-					},
-					"@nest": {
-						"anyOf": [
-							{
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdJsonObject"
-							},
-							{
-								"type": "array",
-								"items": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdJsonObject"
-								}
-							}
-						]
-					},
-					"@type": {
-						"anyOf": [
-							{
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-							},
-							{
-								"type": "array",
-								"items": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-								}
-							}
-						]
-					},
-					"@reverse": {
-						"type": "object",
-						"additionalProperties": {
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-						}
-					},
-					"@index": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-					},
-					"type": {
-						"type": "array",
-						"minItems": 2,
-						"items": [
-							{
-								"type": "string",
-								"const": "DataExchangeComponent"
-							},
-							{
-								"type": "string",
-								"const": "DataSpaceConnector"
-							}
-						],
-						"additionalItems": {
-							"type": "string"
-						},
-						"description": "A Connector is a Data Exchange Component"
-					},
-					"id": {
-						"type": "string",
-						"description": "A unique identifier given to this Data Space Connector."
-					},
-					"identity": {
-						"type": "string",
-						"description": "Connector's Identity that allows to know public key of this Connector."
-					},
-					"maintainer": {
-						"type": "string",
-						"description": "Who maintains this Data Space Connector."
-					},
-					"name": {
-						"type": "string",
-						"description": "The name of this Data Space Connector"
-					},
-					"description": {
-						"type": "string",
-						"description": "A description of this Data Space Connector"
-					},
-					"defaultEndpoint": {
-						"$ref": "#/components/schemas/Endpoint"
-					},
-					"subscriptionActivityEndpoint": {
-						"$ref": "#/components/schemas/Endpoint"
-					},
-					"pushActivityEndpoint": {
-						"$ref": "#/components/schemas/Endpoint"
-					},
-					"pullDataEndpoint": {
-						"$ref": "#/components/schemas/Endpoint"
-					},
-					"offeredResource": {
-						"type": "array",
-						"items": {
-							"type": "string"
-						},
-						"description": "Offered resources. Probably in the future this wll be separated in a different entry so that a  Data Space Connector entry does not need to be modified when a new Data Resource is offered."
-					}
-				},
-				"required": [
-					"@context",
-					"dateCreated",
-					"defaultEndpoint",
-					"evidence",
-					"id",
-					"identity",
-					"issuer",
-					"maintainer",
-					"offeredResource",
-					"pullDataEndpoint",
-					"pushActivityEndpoint",
-					"type",
-					"validFrom",
-					"validUntil"
-				],
-				"additionalProperties": {
-					"anyOf": [
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdIndexMap"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdIdMap"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdTypeMap"
-						},
-						{
-							"type": "array"
-						}
-					]
-				},
-				"description": "Interface describing a participant."
-			},
-			"DataSpaceConnectorList": {
-				"type": "object",
-				"properties": {
-					"@context": {
-						"$ref": "#/components/schemas/FederatedCatalogueContextType"
-					},
-					"type": {
-						"type": "string",
-						"const": "ItemList",
-						"description": "The type"
-					},
-					"itemListElement": {
-						"type": "array",
-						"items": {
-							"$ref": "#/components/schemas/Omit%3CIDataSpaceConnectorEntry%2C%22%40context%22%3E"
-						},
-						"description": "The components of the Collection"
-					},
-					"nextItem": {
-						"type": "string",
-						"description": "Next item cursor."
-					}
-				},
-				"required": [
-					"@context",
-					"type",
-					"itemListElement"
-				],
-				"additionalProperties": false,
-				"description": "Interface describing a list of Data Space Connectors."
-			},
-			"DataType": {
-				"anyOf": [
-					{
-						"type": "string",
-						"const": "xsd:string",
-						"description": "String type."
-					},
-					{
-						"type": "string",
-						"const": "xsd:boolean",
-						"description": "Boolean type."
-					},
-					{
-						"type": "string",
-						"const": "xsd:integer",
-						"description": "Integer type."
-					},
-					{
-						"type": "string",
-						"const": "xsd:decimal",
-						"description": "Decimal type."
-					},
-					{
-						"type": "string",
-						"const": "xsd:double",
-						"description": "Double type."
-					},
-					{
-						"type": "string",
-						"const": "xsd:date",
-						"description": "Date type."
-					},
-					{
-						"type": "string",
-						"const": "xsd:dateTime",
-						"description": "DateTime type."
-					}
-				],
-				"description": "The types for ODRL Data Types."
-			},
-			"DidCredentialSchema": {
-				"type": "object",
-				"properties": {
-					"id": {
-						"type": "string",
-						"description": "The URI id."
-					},
-					"type": {
-						"type": "string",
-						"description": "The credential schema type."
-					}
-				},
-				"required": [
-					"id",
-					"type"
-				],
-				"additionalProperties": false,
-				"description": "Interface describing a DID credential schema."
-			},
-			"DidCredentialStatus": {
-				"type": "object",
-				"properties": {
-					"id": {
-						"type": "string",
-						"description": "The URI id."
-					},
-					"type": {
-						"type": "string",
-						"description": "The credential status type."
-					}
-				},
-				"required": [
-					"id",
-					"type"
-				],
-				"additionalProperties": {
-					"description": "Additional properties."
-				},
-				"description": "Interface describing a DID credential status."
-			},
-			"DidCryptoSuites": {
-				"anyOf": [
-					{
-						"type": "string",
-						"const": "eddsa-jcs-2022",
-						"description": "The type for EdDSA crypto suite for JSON Canonicalization Scheme [RFC8785]. https://www.w3.org/TR/vc-di-eddsa/#eddsa-jcs-2022"
-					},
-					{
-						"type": "string",
-						"const": "eddsa-rdfc-2022",
-						"description": "The type for EdDSA crypto suite for RDF Dataset Canonicalization. https://www.w3.org/TR/vc-di-eddsa/#eddsa-rdfc-2022"
-					}
-				],
-				"description": "The types for DID Proof crypto suites."
-			},
-			"DidDocument": {
-				"type": "object",
-				"properties": {
-					"@context": {
-						"anyOf": [
-							{
-								"type": "string",
-								"const": "https://www.w3.org/ns/did/v1"
-							},
-							{
-								"type": "array",
-								"minItems": 1,
-								"items": [
-									{
-										"type": "string",
-										"const": "https://www.w3.org/ns/did/v1"
-									}
-								],
-								"additionalItems": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdContextDefinitionElement"
-								}
-							}
-						],
-						"description": "The context for the document."
-					},
-					"id": {
-						"type": "string",
-						"description": "The id for the document."
-					},
-					"alsoKnownAs": {
-						"anyOf": [
-							{
-								"type": "string"
-							},
-							{
-								"type": "array",
-								"items": {
-									"type": "string"
-								}
-							}
-						],
-						"description": "Aliases for the document."
-					},
-					"controller": {
-						"anyOf": [
-							{
-								"type": "string"
-							},
-							{
-								"type": "array",
-								"items": {
-									"type": "string"
-								}
-							}
-						],
-						"description": "The controller for the document."
-					},
-					"verificationMethod": {
-						"type": "array",
-						"items": {
-							"anyOf": [
-								{
-									"type": "string"
-								},
-								{
-									"$ref": "#/components/schemas/DidDocumentVerificationMethod"
-								}
-							]
-						},
-						"description": "The verification methods."
-					},
-					"authentication": {
-						"type": "array",
-						"items": {
-							"anyOf": [
-								{
-									"type": "string"
-								},
-								{
-									"$ref": "#/components/schemas/DidDocumentVerificationMethod"
-								}
-							]
-						},
-						"description": "The authentication methods."
-					},
-					"assertionMethod": {
-						"type": "array",
-						"items": {
-							"anyOf": [
-								{
-									"type": "string"
-								},
-								{
-									"$ref": "#/components/schemas/DidDocumentVerificationMethod"
-								}
-							]
-						},
-						"description": "The assertion methods."
-					},
-					"keyAgreement": {
-						"type": "array",
-						"items": {
-							"anyOf": [
-								{
-									"type": "string"
-								},
-								{
-									"$ref": "#/components/schemas/DidDocumentVerificationMethod"
-								}
-							]
-						},
-						"description": "The key agreements."
-					},
-					"capabilityInvocation": {
-						"type": "array",
-						"items": {
-							"anyOf": [
-								{
-									"type": "string"
-								},
-								{
-									"$ref": "#/components/schemas/DidDocumentVerificationMethod"
-								}
-							]
-						},
-						"description": "The capability invocations."
-					},
-					"capabilityDelegation": {
-						"type": "array",
-						"items": {
-							"anyOf": [
-								{
-									"type": "string"
-								},
-								{
-									"$ref": "#/components/schemas/DidDocumentVerificationMethod"
-								}
-							]
-						},
-						"description": "The capability delegations."
-					},
-					"service": {
-						"type": "array",
-						"items": {
-							"$ref": "#/components/schemas/DidService"
-						},
-						"description": "The services."
-					}
-				},
-				"required": [
-					"@context",
-					"id"
-				],
-				"additionalProperties": false,
-				"description": "Interface describing a DID Document. Spec https://www.w3.org/TR/did-core/#did-document-properties."
-			},
-			"DidDocumentVerificationMethod": {
-				"type": "object",
-				"properties": {
-					"@context": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-					},
-					"@id": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-					},
-					"@included": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-					},
-					"@graph": {
-						"anyOf": [
-							{
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-							},
-							{
-								"type": "array",
-								"items": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-								}
-							}
-						]
-					},
-					"@nest": {
-						"anyOf": [
-							{
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdJsonObject"
-							},
-							{
-								"type": "array",
-								"items": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdJsonObject"
-								}
-							}
-						]
-					},
-					"@type": {
-						"anyOf": [
-							{
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-							},
-							{
-								"type": "array",
-								"items": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-								}
-							}
-						]
-					},
-					"@reverse": {
-						"type": "object",
-						"additionalProperties": {
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-						}
-					},
-					"@index": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-					},
-					"id": {
-						"type": "string",
-						"description": "The id of the entry."
-					},
-					"controller": {
-						"type": "string",
-						"description": "The controller for the entry."
-					},
-					"type": {
-						"type": "string",
-						"description": "The type of the entry."
-					},
-					"publicKeyMultibase": {
-						"type": "string",
-						"description": "The public key for the entry. Spec https://datatracker.ietf.org/doc/html/draft-multiformats-multibase-03 ."
-					},
-					"publicKeyJwk": {
-						"type": "object",
-						"additionalProperties": {
-							"anyOf": [
-								{
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
-								},
-								{
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"
-								},
-								{
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdIndexMap"
-								},
-								{
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
-								},
-								{
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdIdMap"
-								},
-								{
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdTypeMap"
-								},
-								{
-									"type": "array"
-								}
-							]
-						},
-						"properties": {
-							"@context": {
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-							},
-							"@id": {
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-							},
-							"@included": {
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-							},
-							"@graph": {
-								"anyOf": [
-									{
-										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-									},
-									{
-										"type": "array",
-										"items": {
-											"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-										}
-									}
-								]
-							},
-							"@nest": {
-								"anyOf": [
-									{
-										"$ref": "https://schema.twindev.org/json-ld/JsonLdJsonObject"
-									},
-									{
-										"type": "array",
-										"items": {
-											"$ref": "https://schema.twindev.org/json-ld/JsonLdJsonObject"
-										}
-									}
-								]
-							},
-							"@type": {
-								"anyOf": [
-									{
-										"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-									},
-									{
-										"type": "array",
-										"items": {
-											"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-										}
-									}
-								]
-							},
-							"@reverse": {
-								"type": "object",
-								"additionalProperties": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-								}
-							},
-							"@index": {
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-							},
-							"kty": {
-								"type": "string",
-								"description": "JWK \"kty\" (Key Type) Parameter"
-							},
-							"alg": {
-								"type": "string",
-								"description": "JWK \"alg\" (Algorithm) Parameter"
-							},
-							"key_ops": {
-								"type": "array",
-								"items": {
-									"type": "string"
-								},
-								"description": "JWK \"key_ops\" (Key Operations) Parameter"
-							},
-							"ext": {
-								"type": "boolean",
-								"description": "JWK \"ext\" (Extractable) Parameter"
-							},
-							"use": {
-								"type": "string",
-								"description": "JWK \"use\" (Public Key Use) Parameter"
-							},
-							"x5c": {
-								"type": "array",
-								"items": {
-									"type": "string"
-								},
-								"description": "JWK \"x5c\" (X.509 Certificate Chain) Parameter"
-							},
-							"x5t": {
-								"type": "string",
-								"description": "JWK \"x5t\" (X.509 Certificate SHA-1 Thumbprint) Parameter"
-							},
-							"x5t#S256": {
-								"type": "string",
-								"description": "JWK \"x5t#S256\" (X.509 Certificate SHA-256 Thumbprint) Parameter"
-							},
-							"x5u": {
-								"type": "string",
-								"description": "JWK \"x5u\" (X.509 URL) Parameter"
-							},
-							"kid": {
-								"type": "string",
-								"description": "JWK \"kid\" (Key ID) Parameter"
-							},
-							"crv": {
-								"type": "string",
-								"description": "- EC JWK \"crv\" (Curve) Parameter\n- OKP JWK \"crv\" (The Subtype of Key Pair) Parameter"
-							},
-							"d": {
-								"type": "string",
-								"description": "- Private RSA JWK \"d\" (Private Exponent) Parameter\n- Private EC JWK \"d\" (ECC Private Key) Parameter\n- Private OKP JWK \"d\" (The Private Key) Parameter"
-							},
-							"dp": {
-								"type": "string",
-								"description": "Private RSA JWK \"dp\" (First Factor CRT Exponent) Parameter"
-							},
-							"dq": {
-								"type": "string",
-								"description": "Private RSA JWK \"dq\" (Second Factor CRT Exponent) Parameter"
-							},
-							"e": {
-								"type": "string",
-								"description": "RSA JWK \"e\" (Exponent) Parameter"
-							},
-							"k": {
-								"type": "string",
-								"description": "Oct JWK \"k\" (Key Value) Parameter"
-							},
-							"n": {
-								"type": "string",
-								"description": "RSA JWK \"n\" (Modulus) Parameter"
-							},
-							"p": {
-								"type": "string",
-								"description": "Private RSA JWK \"p\" (First Prime Factor) Parameter"
-							},
-							"q": {
-								"type": "string",
-								"description": "Private RSA JWK \"q\" (Second Prime Factor) Parameter"
-							},
-							"qi": {
-								"type": "string",
-								"description": "Private RSA JWK \"qi\" (First CRT Coefficient) Parameter"
-							},
-							"x": {
-								"type": "string",
-								"description": "- EC JWK \"x\" (X Coordinate) Parameter\n- OKP JWK \"x\" (The public key) Parameter"
-							},
-							"y": {
-								"type": "string",
-								"description": "EC JWK \"y\" (Y Coordinate) Parameter"
-							}
-						},
-						"description": "The public key for the entry as a JWK. Spec https://datatracker.ietf.org/doc/html/rfc7517 ."
-					},
-					"revocation": {
-						"type": "string",
-						"description": "Multi key partial revocation."
-					}
-				},
-				"required": [
-					"id",
-					"controller",
-					"type"
-				],
-				"additionalProperties": {
-					"anyOf": [
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdIndexMap"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdIdMap"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdTypeMap"
-						},
-						{
-							"type": "array"
-						}
-					]
-				},
-				"description": "Interface describing a DID document verification method."
-			},
-			"DidLabel": {
-				"type": "object",
-				"properties": {
-					"@value": {
-						"type": "string",
-						"description": "The value for the label."
-					},
-					"@language": {
-						"type": "string",
-						"description": "The language for the label."
-					},
-					"@direction": {
-						"type": "string",
-						"description": "The direction of the label."
-					}
-				},
-				"required": [
-					"@value",
-					"@language"
-				],
-				"additionalProperties": false,
-				"description": "Interface describing a DID Label."
-			},
-			"DidService": {
-				"type": "object",
-				"properties": {
-					"id": {
-						"type": "string",
-						"description": "The id of the service."
-					},
-					"type": {
-						"anyOf": [
-							{
-								"type": "string"
-							},
-							{
-								"type": "array",
-								"items": {
-									"type": "string"
-								}
-							}
-						],
-						"description": "The type of the service."
-					},
-					"serviceEndpoint": {
-						"anyOf": [
-							{
-								"type": "string"
-							},
-							{
-								"type": "array",
-								"items": {
-									"type": "string"
-								}
-							}
-						],
-						"description": "The endpoint for the service."
-					}
-				},
-				"required": [
-					"id",
-					"type",
-					"serviceEndpoint"
-				],
-				"additionalProperties": false,
-				"description": "Interface describing a did document service."
-			},
-			"DidVerifiableCredential": {
-				"type": "object",
-				"properties": {
-					"@context": {
-						"anyOf": [
-							{
-								"type": "string",
-								"const": "https://www.w3.org/2018/credentials/v1"
-							},
-							{
-								"type": "string",
-								"const": "https://www.w3.org/ns/credentials/v2"
-							},
-							{
-								"type": "array",
-								"minItems": 1,
-								"items": [
-									{
-										"type": "string",
-										"const": "https://www.w3.org/2018/credentials/v1"
-									}
-								],
-								"additionalItems": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdContextDefinitionElement"
-								}
-							},
-							{
-								"type": "array",
-								"minItems": 1,
-								"items": [
-									{
-										"type": "string",
-										"const": "https://www.w3.org/ns/credentials/v2"
-									}
-								],
-								"additionalItems": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdContextDefinitionElement"
-								}
-							}
-						],
-						"description": "The context for the verifiable credential."
-					},
-					"id": {
-						"type": "string",
-						"description": "The identifier for the verifiable credential."
-					},
-					"type": {
-						"anyOf": [
-							{
-								"type": "string"
-							},
-							{
-								"type": "array",
-								"items": {
-									"type": "string"
-								}
-							}
-						],
-						"description": "The types of the data stored in the verifiable credential."
-					},
-					"credentialSubject": {
-						"anyOf": [
-							{
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-							},
-							{
-								"type": "array",
-								"items": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-								}
-							}
-						],
-						"description": "The data for the verifiable credential."
-					},
-					"credentialStatus": {
-						"anyOf": [
-							{
-								"$ref": "#/components/schemas/DidCredentialStatus"
-							},
-							{
-								"type": "array",
-								"items": {
-									"$ref": "#/components/schemas/DidCredentialStatus"
-								}
-							}
-						],
-						"description": "Used to discover information about the current status of the verifiable credential, such as whether it is suspended or revoked."
-					},
-					"credentialSchema": {
-						"anyOf": [
-							{
-								"$ref": "#/components/schemas/DidCredentialSchema"
-							},
-							{
-								"type": "array",
-								"items": {
-									"$ref": "#/components/schemas/DidCredentialSchema"
-								}
-							}
-						],
-						"description": "Annotate type definitions or lock them to specific versions of the vocabulary."
-					},
-					"issuer": {
-						"anyOf": [
-							{
-								"type": "string"
-							},
-							{
-								"type": "object",
-								"properties": {
-									"id": {
-										"type": "string"
-									},
-									"name": {
-										"anyOf": [
-											{
-												"type": "string"
-											},
-											{
-												"type": "array",
-												"items": {
-													"$ref": "#/components/schemas/DidLabel"
-												}
-											}
-										]
-									},
-									"description": {
-										"anyOf": [
-											{
-												"type": "string"
-											},
-											{
-												"type": "array",
-												"items": {
-													"$ref": "#/components/schemas/DidLabel"
-												}
-											}
-										]
-									}
-								},
-								"required": [
-									"id"
-								],
-								"additionalProperties": false
-							}
-						],
-						"description": "The issuing identity."
-					},
-					"issuanceDate": {
-						"type": "string",
-						"description": "The date the verifiable credential was issued."
-					},
-					"name": {
-						"anyOf": [
-							{
-								"type": "string"
-							},
-							{
-								"type": "array",
-								"items": {
-									"$ref": "#/components/schemas/DidLabel"
-								}
-							}
-						],
-						"description": "The name of the credential."
-					},
-					"description": {
-						"anyOf": [
-							{
-								"type": "string"
-							},
-							{
-								"type": "array",
-								"items": {
-									"$ref": "#/components/schemas/DidLabel"
-								}
-							}
-						],
-						"description": "The description of the credential."
-					},
-					"validFrom": {
-						"type": "string",
-						"description": "The date the verifiable credential is valid from."
-					},
-					"validUntil": {
-						"type": "string",
-						"description": "The date the verifiable credential is valid until."
-					},
-					"evidence": {
-						"anyOf": [
-							{
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-							},
-							{
-								"type": "array",
-								"items": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-								}
-							}
-						],
-						"description": "Evidence associated with the Credential."
-					},
-					"proof": {
-						"anyOf": [
-							{
-								"$ref": "#/components/schemas/Proof"
-							},
-							{
-								"type": "array",
-								"items": {
-									"$ref": "#/components/schemas/Proof"
-								}
-							}
-						],
-						"description": "Proofs that the verifiable credential is valid. Optional if a different proof method is used, such as JWT."
-					}
-				},
-				"required": [
-					"@context",
-					"type"
-				],
-				"additionalProperties": false,
-				"description": "Interface describing a verifiable credential. https://www.w3.org/TR/vc-data-model-2.0"
-			},
-			"DidVerifiablePresentation": {
-				"type": "object",
-				"properties": {
-					"@context": {
-						"anyOf": [
-							{
-								"type": "string",
-								"const": "https://www.w3.org/ns/credentials/v2"
-							},
-							{
-								"type": "array",
-								"minItems": 1,
-								"items": [
-									{
-										"type": "string",
-										"const": "https://www.w3.org/ns/credentials/v2"
-									}
-								],
-								"additionalItems": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdContextDefinitionElement"
-								}
-							}
-						],
-						"description": "The context for the verifiable presentation."
-					},
-					"id": {
-						"type": "string",
-						"description": "Provide a unique identifier for the presentation."
-					},
-					"type": {
-						"anyOf": [
-							{
-								"type": "string"
-							},
-							{
-								"type": "array",
-								"items": {
-									"type": "string"
-								}
-							}
-						],
-						"description": "The types of the data stored in the verifiable credential."
-					},
-					"verifiableCredential": {
-						"type": "array",
-						"items": {
-							"anyOf": [
-								{
-									"type": "string"
-								},
-								{
-									"$ref": "#/components/schemas/DidVerifiableCredential"
-								}
-							]
-						},
-						"description": "The data for the verifiable credentials."
-					},
-					"holder": {
-						"type": "string",
-						"description": "The entity generating the presentation."
-					},
-					"proof": {
-						"anyOf": [
-							{
-								"$ref": "#/components/schemas/Proof"
-							},
-							{
-								"type": "array",
-								"items": {
-									"$ref": "#/components/schemas/Proof"
-								}
-							}
-						],
-						"description": "Proofs that the verifiable presentation is valid. Optional if a different proof method is used, such as JWT."
-					}
-				},
-				"required": [
-					"@context",
-					"type"
-				],
-				"additionalProperties": false,
-				"description": "Interface describing a verifiable presentation."
-			},
-			"DidVerificationMethodType": {
-				"type": "string",
-				"enum": [
-					"verificationMethod",
-					"authentication",
-					"assertionMethod",
-					"keyAgreement",
-					"capabilityInvocation",
-					"capabilityDelegation"
-				],
-				"description": "The types of verification method."
-			},
-			"Document": {
-				"type": "object",
-				"properties": {
-					"@context": {
-						"type": "array",
-						"minItems": 3,
-						"items": [
-							{
-								"type": "string",
-								"const": "https://schema.twindev.org/documents/"
-							},
-							{
-								"type": "string",
-								"const": "https://schema.twindev.org/common/"
-							},
-							{
-								"type": "string",
-								"const": "https://schema.org"
-							}
-						],
-						"additionalItems": {
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdContextDefinitionElement"
-						},
-						"description": "JSON-LD Context."
-					},
-					"type": {
-						"type": "string",
-						"const": "Document",
-						"description": "JSON-LD Type."
-					},
-					"id": {
-						"type": "string",
-						"description": "The full id of the document."
-					},
-					"documentId": {
-						"type": "string",
-						"description": "The id of the document."
-					},
-					"documentIdFormat": {
-						"type": "string",
-						"description": "The format of the document id."
-					},
-					"documentCode": {
-						"$ref": "#/components/schemas/UneceDocumentCodes"
-					},
-					"documentRevision": {
-						"type": "number",
-						"description": "The revision of the document as a 0 based index."
-					},
-					"annotationObject": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-					},
-					"blobStorageId": {
-						"type": "string",
-						"description": "The blob storage id for the document."
-					},
-					"blobHash": {
-						"type": "string",
-						"description": "The hash of the blob data."
-					},
-					"blobStorageEntry": {
-						"$ref": "#/components/schemas/BlobStorageEntry"
-					},
-					"extractedData": {
-						"description": "The data extracted from the document using data extraction services."
-					},
-					"attestationId": {
-						"type": "string",
-						"description": "The attestation for the document if one was created."
-					},
-					"attestationInformation": {
-						"$ref": "#/components/schemas/AttestationInformation"
-					},
-					"dateCreated": {
-						"type": "string",
-						"description": "The date/time of when the document was created."
-					},
-					"dateModified": {
-						"type": "string",
-						"description": "The date/time of when the document was modified."
-					},
-					"dateDeleted": {
-						"type": "string",
-						"description": "The date/time of when the document was deleted, as we never actually remove items."
-					},
-					"nodeIdentity": {
-						"type": "string",
-						"description": "The node which added the document to the graph."
-					},
-					"userIdentity": {
-						"type": "string",
-						"description": "The user who added the document to the graph."
-					}
-				},
-				"required": [
-					"@context",
-					"type",
-					"id",
-					"documentId",
-					"documentCode",
-					"documentRevision",
-					"blobStorageId",
-					"blobHash",
-					"dateCreated",
-					"nodeIdentity",
-					"userIdentity"
-				],
-				"additionalProperties": false,
-				"description": "Interface describing a document."
-			},
-			"DocumentList": {
-				"type": "object",
-				"properties": {
-					"@context": {
-						"type": "array",
-						"minItems": 3,
-						"items": [
-							{
-								"type": "string",
-								"const": "https://schema.org"
-							},
-							{
-								"type": "string",
-								"const": "https://schema.twindev.org/documents/"
-							},
-							{
-								"type": "string",
-								"const": "https://schema.twindev.org/common/"
-							}
-						],
-						"additionalItems": {
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdContextDefinitionElement"
-						},
-						"description": "JSON-LD Context."
-					},
-					"type": {
-						"type": "string",
-						"const": "ItemList",
-						"description": "JSON-LD Type."
-					},
-					"itemListElement": {
-						"type": "array",
-						"items": {
-							"$ref": "#/components/schemas/Document"
-						},
-						"description": "The list of documents."
-					},
-					"edges": {
-						"type": "array",
-						"items": {
-							"type": "string"
-						},
-						"description": "The ids of the other vertices which are connected to the document."
-					},
-					"nextItem": {
-						"type": "string",
-						"description": "The cursor to get the next chunk of documents."
-					}
-				},
-				"required": [
-					"@context",
-					"type",
-					"itemListElement"
-				],
-				"additionalProperties": false,
-				"description": "Interface describing a list of document entries."
 			},
 			"DocumentManagementCreateRequest": {
 				"type": "object",
@@ -15666,25 +13528,27 @@
 					},
 					"auditableItemGraphEdges": {
 						"type": "array",
-						"items": {
-							"type": "object",
-							"properties": {
-								"id": {
-									"type": "string"
+						"description": "The auditable item graph vertices to connect the document to.",
+						"prefixItems": [
+							{
+								"type": "object",
+								"properties": {
+									"id": {
+										"type": "string"
+									},
+									"addAlias": {
+										"type": "boolean"
+									},
+									"aliasAnnotationObject": {
+										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
+									}
 								},
-								"addAlias": {
-									"type": "boolean"
-								},
-								"aliasAnnotationObject": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-								}
-							},
-							"required": [
-								"id"
-							],
-							"additionalProperties": false
-						},
-						"description": "The auditable item graph vertices to connect the document to."
+								"required": [
+									"id"
+								],
+								"additionalProperties": false
+							}
+						]
 					},
 					"createAttestation": {
 						"type": "boolean",
@@ -15718,136 +13582,31 @@
 					},
 					"auditableItemGraphEdges": {
 						"type": "array",
-						"items": {
-							"type": "object",
-							"properties": {
-								"id": {
-									"type": "string"
+						"description": "The auditable item graph vertices to connect the document to.",
+						"prefixItems": [
+							{
+								"type": "object",
+								"properties": {
+									"id": {
+										"type": "string"
+									},
+									"addAlias": {
+										"type": "boolean"
+									},
+									"aliasAnnotationObject": {
+										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
+									}
 								},
-								"addAlias": {
-									"type": "boolean"
-								},
-								"aliasAnnotationObject": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-								}
-							},
-							"required": [
-								"id"
-							],
-							"additionalProperties": false
-						},
-						"description": "The auditable item graph vertices to connect the document to."
+								"required": [
+									"id"
+								],
+								"additionalProperties": false
+							}
+						]
 					}
 				},
 				"additionalProperties": false,
 				"description": "The body parameters."
-			},
-			"Endpoint": {
-				"type": "object",
-				"properties": {
-					"@context": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-					},
-					"@id": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-					},
-					"@included": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-					},
-					"@graph": {
-						"anyOf": [
-							{
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-							},
-							{
-								"type": "array",
-								"items": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-								}
-							}
-						]
-					},
-					"@nest": {
-						"anyOf": [
-							{
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdJsonObject"
-							},
-							{
-								"type": "array",
-								"items": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdJsonObject"
-								}
-							}
-						]
-					},
-					"@type": {
-						"anyOf": [
-							{
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-							},
-							{
-								"type": "array",
-								"items": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-								}
-							}
-						]
-					},
-					"@reverse": {
-						"type": "object",
-						"additionalProperties": {
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-						}
-					},
-					"@index": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-					},
-					"type": {
-						"type": "string",
-						"const": "Endpoint",
-						"description": "The type of JSON-LD node. In this case it is allowed to be omitted as it is usually a child node."
-					},
-					"endpointURL": {
-						"type": "string",
-						"description": "The endpoint URL"
-					},
-					"formalDescription": {
-						"type": "string",
-						"description": "The formal description"
-					},
-					"standardConformity": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-					}
-				},
-				"required": [
-					"endpointURL"
-				],
-				"additionalProperties": {
-					"anyOf": [
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdIndexMap"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdIdMap"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdTypeMap"
-						},
-						{
-							"type": "array"
-						}
-					]
-				},
-				"description": "Endpoint as defined by the Gaia-X ontology. https://docs.gaia-x.eu/ontology/development/classes/Endpoint"
 			},
 			"Error": {
 				"type": "object",
@@ -15884,26 +13643,6 @@
 				"additionalProperties": false,
 				"description": "Model to describe serialized error."
 			},
-			"FederatedCatalogueContextType": {
-				"type": "array",
-				"minItems": 3,
-				"items": [
-					{
-						"type": "string",
-						"const": "https://schema.org"
-					},
-					{
-						"type": "string",
-						"const": "https://w3id.org/gaia-x/development"
-					},
-					{
-						"type": "string",
-						"const": "https://schema.twindev.org/federated-catalogue/types.jsonld"
-					}
-				],
-				"maxItems": 3,
-				"description": "Type that defines the LD Context for the Federated Catalogue entities and entries."
-			},
 			"HealthInfo": {
 				"type": "object",
 				"properties": {
@@ -15912,28 +13651,30 @@
 					},
 					"components": {
 						"type": "array",
-						"items": {
-							"type": "object",
-							"properties": {
-								"name": {
-									"type": "string",
-									"description": "The name of the component."
+						"description": "The status of the components.",
+						"prefixItems": [
+							{
+								"type": "object",
+								"properties": {
+									"name": {
+										"type": "string",
+										"description": "The name of the component."
+									},
+									"status": {
+										"$ref": "#/components/schemas/HealthStatus"
+									},
+									"details": {
+										"type": "string",
+										"description": "The details for the status."
+									}
 								},
-								"status": {
-									"$ref": "#/components/schemas/HealthStatus"
-								},
-								"details": {
-									"type": "string",
-									"description": "The details for the status."
-								}
-							},
-							"required": [
-								"name",
-								"status"
-							],
-							"additionalProperties": false
-						},
-						"description": "The status of the components."
+								"required": [
+									"name",
+									"status"
+								],
+								"additionalProperties": false
+							}
+						]
 					}
 				},
 				"required": [
@@ -16011,23 +13752,25 @@
 				"properties": {
 					"items": {
 						"type": "array",
-						"items": {
-							"type": "object",
-							"properties": {
-								"identity": {
-									"type": "string",
-									"description": "The identity."
+						"description": "The identities.",
+						"prefixItems": [
+							{
+								"type": "object",
+								"properties": {
+									"identity": {
+										"type": "string",
+										"description": "The identity."
+									},
+									"publicProfile": {
+										"$ref": "https://schema.twindev.org/json-ld/JsonLdDocument"
+									}
 								},
-								"publicProfile": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdDocument"
-								}
-							},
-							"required": [
-								"identity"
-							],
-							"additionalProperties": false
-						},
-						"description": "The identities."
+								"required": [
+									"identity"
+								],
+								"additionalProperties": false
+							}
+						]
 					},
 					"cursor": {
 						"type": "string",
@@ -16114,9 +13857,11 @@
 							},
 							{
 								"type": "array",
-								"items": {
-									"type": "string"
-								}
+								"prefixItems": [
+									{
+										"type": "string"
+									}
+								]
 							}
 						],
 						"description": "The type of the service."
@@ -16128,9 +13873,11 @@
 							},
 							{
 								"type": "array",
-								"items": {
-									"type": "string"
-								}
+								"prefixItems": [
+									{
+										"type": "string"
+									}
+								]
 							}
 						],
 						"description": "The endpoint for the service."
@@ -16169,7 +13916,7 @@
 				"type": "object",
 				"properties": {
 					"verifiableCredential": {
-						"$ref": "#/components/schemas/DidVerifiableCredential"
+						"$ref": "https://schema.twindev.org/did/DidVerifiableCredential"
 					},
 					"jwt": {
 						"type": "string",
@@ -16191,7 +13938,7 @@
 						"description": "Has the credential been revoked."
 					},
 					"verifiableCredential": {
-						"$ref": "#/components/schemas/DidVerifiableCredential"
+						"$ref": "https://schema.twindev.org/did/DidVerifiableCredential"
 					}
 				},
 				"required": [
@@ -16217,26 +13964,30 @@
 							},
 							{
 								"type": "array",
-								"items": {
-									"type": "string"
-								}
+								"prefixItems": [
+									{
+										"type": "string"
+									}
+								]
 							}
 						],
 						"description": "The types of the presentation."
 					},
 					"verifiableCredentials": {
 						"type": "array",
-						"items": {
-							"anyOf": [
-								{
-									"type": "string"
-								},
-								{
-									"$ref": "#/components/schemas/DidVerifiableCredential"
-								}
-							]
-						},
-						"description": "The verifiable credentials to include in the presentation."
+						"description": "The verifiable credentials to include in the presentation.",
+						"prefixItems": [
+							{
+								"anyOf": [
+									{
+										"type": "string"
+									},
+									{
+										"$ref": "https://schema.twindev.org/did/DidVerifiableCredential"
+									}
+								]
+							}
+						]
 					},
 					"expiresInMinutes": {
 						"type": "number",
@@ -16253,7 +14004,7 @@
 				"type": "object",
 				"properties": {
 					"verifiablePresentation": {
-						"$ref": "#/components/schemas/DidVerifiablePresentation"
+						"$ref": "https://schema.twindev.org/did/DidVerifiablePresentation"
 					},
 					"jwt": {
 						"type": "string",
@@ -16275,14 +14026,16 @@
 						"description": "Has the presentation been revoked."
 					},
 					"verifiablePresentation": {
-						"$ref": "#/components/schemas/DidVerifiablePresentation"
+						"$ref": "https://schema.twindev.org/did/DidVerifiablePresentation"
 					},
 					"issuers": {
 						"type": "array",
-						"items": {
-							"$ref": "#/components/schemas/DidDocument"
-						},
-						"description": "The issuers of the presentation."
+						"description": "The issuers of the presentation.",
+						"prefixItems": [
+							{
+								"$ref": "https://schema.twindev.org/did/DidDocument"
+							}
+						]
 					}
 				},
 				"required": [
@@ -16295,7 +14048,7 @@
 				"type": "object",
 				"properties": {
 					"verificationMethodType": {
-						"$ref": "#/components/schemas/DidVerificationMethodType"
+						"$ref": "https://schema.twindev.org/did/DidVerificationMethodType"
 					},
 					"verificationMethodId": {
 						"type": "string",
@@ -16307,74 +14060,6 @@
 				],
 				"additionalProperties": false,
 				"description": "The data for the request."
-			},
-			"ImmutableProof": {
-				"type": "object",
-				"properties": {
-					"@context": {
-						"type": "array",
-						"minItems": 2,
-						"items": [
-							{
-								"type": "string",
-								"const": "https://schema.twindev.org/immutable-proof/"
-							},
-							{
-								"type": "string",
-								"const": "https://schema.twindev.org/common/"
-							}
-						],
-						"additionalItems": {
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdContextDefinitionElement"
-						},
-						"description": "JSON-LD Context."
-					},
-					"type": {
-						"type": "string",
-						"const": "ImmutableProof",
-						"description": "JSON-LD Type."
-					},
-					"id": {
-						"type": "string",
-						"description": "The id of the proof."
-					},
-					"nodeIdentity": {
-						"type": "string",
-						"description": "The id of the node who created the proof."
-					},
-					"userIdentity": {
-						"type": "string",
-						"description": "The id of the user who created the proof."
-					},
-					"proofObjectId": {
-						"type": "string",
-						"description": "The id of the object associated with the proof."
-					},
-					"proofObjectHash": {
-						"type": "string",
-						"description": "The hash of the object associated with the proof."
-					},
-					"verifiableStorageId": {
-						"type": "string",
-						"description": "The verifiable storage id for where the proof is stored."
-					},
-					"proof": {
-						"$ref": "#/components/schemas/DataIntegrityProof"
-					},
-					"immutableReceipt": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-					}
-				},
-				"required": [
-					"@context",
-					"type",
-					"id",
-					"nodeIdentity",
-					"userIdentity",
-					"proofObjectHash"
-				],
-				"additionalProperties": false,
-				"description": "Interface describing an immutable proof state."
 			},
 			"ImmutableProofCreateRequest": {
 				"type": "object",
@@ -16388,284 +14073,6 @@
 				],
 				"additionalProperties": false,
 				"description": "The parameters from the body."
-			},
-			"ImmutableProofFailure": {
-				"anyOf": [
-					{
-						"type": "string",
-						"const": "notIssued",
-						"description": "Proof not yet issued."
-					},
-					{
-						"type": "string",
-						"const": "proofMissing",
-						"description": "Proof missing."
-					},
-					{
-						"type": "string",
-						"const": "cryptoSuiteMismatch",
-						"description": "Crypto suite mismatch."
-					},
-					{
-						"type": "string",
-						"const": "proofTypeMismatch",
-						"description": "Proof type."
-					},
-					{
-						"type": "string",
-						"const": "signatureMismatch",
-						"description": "Signature mismatch."
-					}
-				],
-				"description": "The failure reason of the proof."
-			},
-			"ImmutableProofVerification": {
-				"type": "object",
-				"properties": {
-					"@context": {
-						"type": "string",
-						"const": "https://schema.twindev.org/immutable-proof/",
-						"description": "JSON-LD Context."
-					},
-					"type": {
-						"type": "string",
-						"const": "ImmutableProofVerification",
-						"description": "JSON-LD Type."
-					},
-					"verified": {
-						"type": "boolean",
-						"description": "Was the verification successful."
-					},
-					"failure": {
-						"$ref": "#/components/schemas/ImmutableProofFailure"
-					}
-				},
-				"required": [
-					"@context",
-					"type",
-					"verified"
-				],
-				"additionalProperties": false,
-				"description": "Interface describing an immutable proof verification."
-			},
-			"JsonWebSignature2020Proof": {
-				"type": "object",
-				"properties": {
-					"@context": {
-						"anyOf": [
-							{
-								"type": "string",
-								"const": "https://w3id.org/security/suites/jws-2020/v1"
-							},
-							{
-								"type": "array",
-								"minItems": 1,
-								"items": [
-									{
-										"type": "string",
-										"const": "https://w3id.org/security/suites/jws-2020/v1"
-									}
-								],
-								"additionalItems": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdContextDefinitionElement"
-								}
-							}
-						],
-						"description": "JSON-LD Context."
-					},
-					"type": {
-						"type": "string",
-						"const": "JsonWebSignature2020",
-						"description": "JSON-LD Type."
-					},
-					"proofPurpose": {
-						"type": "string",
-						"description": "The reason the proof was created."
-					},
-					"verificationMethod": {
-						"type": "string",
-						"description": "The verification method of the proof."
-					},
-					"created": {
-						"type": "string",
-						"description": "The iso date of when the proof was created."
-					},
-					"jws": {
-						"type": "string",
-						"description": "The JSON Web Signature."
-					}
-				},
-				"required": [
-					"type",
-					"proofPurpose"
-				],
-				"additionalProperties": false,
-				"description": "Interface describing a did proof in JSON Web Signature 2020 Format. https://www.w3.org/TR/vc-jws-2020/"
-			},
-			"LeftOperandType": {
-				"anyOf": [
-					{
-						"type": "string",
-						"const": "absolutePosition",
-						"description": "Absolute Position type."
-					},
-					{
-						"type": "string",
-						"const": "absoluteSpatialPosition",
-						"description": "Absolute Spatial Position type."
-					},
-					{
-						"type": "string",
-						"const": "absoluteTemporalPosition",
-						"description": "Absolute Temporal Position type."
-					},
-					{
-						"type": "string",
-						"const": "absoluteSize",
-						"description": "Absolute Size type."
-					},
-					{
-						"type": "string",
-						"const": "count",
-						"description": "Count type."
-					},
-					{
-						"type": "string",
-						"const": "dateTime",
-						"description": "DateTime type."
-					},
-					{
-						"type": "string",
-						"const": "delayPeriod",
-						"description": "Delay Period type."
-					},
-					{
-						"type": "string",
-						"const": "deliveryChannel",
-						"description": "Delivery Channel type."
-					},
-					{
-						"type": "string",
-						"const": "elapsedTime",
-						"description": "Elapsed Time type."
-					},
-					{
-						"type": "string",
-						"const": "event",
-						"description": "Event type."
-					},
-					{
-						"type": "string",
-						"const": "fileFormat",
-						"description": "File Format type."
-					},
-					{
-						"type": "string",
-						"const": "industry",
-						"description": "Industry type."
-					},
-					{
-						"type": "string",
-						"const": "language",
-						"description": "Language type."
-					},
-					{
-						"type": "string",
-						"const": "media",
-						"description": "Media type."
-					},
-					{
-						"type": "string",
-						"const": "meteredTime",
-						"description": "Metered Time type."
-					},
-					{
-						"type": "string",
-						"const": "payAmount",
-						"description": "Pay Amount type."
-					},
-					{
-						"type": "string",
-						"const": "percentage",
-						"description": "Percentage type."
-					},
-					{
-						"type": "string",
-						"const": "product",
-						"description": "Product type."
-					},
-					{
-						"type": "string",
-						"const": "purpose",
-						"description": "Purpose type."
-					},
-					{
-						"type": "string",
-						"const": "recipient",
-						"description": "Recipient type."
-					},
-					{
-						"type": "string",
-						"const": "relativePosition",
-						"description": "Relative Position type."
-					},
-					{
-						"type": "string",
-						"const": "relativeSpatialPosition",
-						"description": "Relative Spatial Position type."
-					},
-					{
-						"type": "string",
-						"const": "relativeTemporalPosition",
-						"description": "Relative Temporal Position type."
-					},
-					{
-						"type": "string",
-						"const": "relativeSize",
-						"description": "Relative Size type."
-					},
-					{
-						"type": "string",
-						"const": "resolution",
-						"description": "Resolution type."
-					},
-					{
-						"type": "string",
-						"const": "spatial",
-						"description": "Spatial type."
-					},
-					{
-						"type": "string",
-						"const": "spatialCoordinates",
-						"description": "Spatial Coordinates type."
-					},
-					{
-						"type": "string",
-						"const": "systemDevice",
-						"description": "System Device type."
-					},
-					{
-						"type": "string",
-						"const": "timeInterval",
-						"description": "Time Interval type."
-					},
-					{
-						"type": "string",
-						"const": "unitOfCount",
-						"description": "Unit of Count type."
-					},
-					{
-						"type": "string",
-						"const": "version",
-						"description": "Version type."
-					},
-					{
-						"type": "string",
-						"const": "virtualLocation",
-						"description": "Virtual Location type."
-					}
-				],
-				"description": "The types for ODRL Data Types."
 			},
 			"LogEntry": {
 				"type": "object",
@@ -16718,10 +14125,12 @@
 				"properties": {
 					"entities": {
 						"type": "array",
-						"items": {
-							"$ref": "#/components/schemas/LogEntry"
-						},
-						"description": "The entities, which can be partial if a limited keys list was provided."
+						"description": "The entities, which can be partial if a limited keys list was provided.",
+						"prefixItems": [
+							{
+								"$ref": "#/components/schemas/LogEntry"
+							}
+						]
 					},
 					"cursor": {
 						"type": "string",
@@ -16916,2044 +14325,13 @@
 				],
 				"description": "The body which contains the error."
 			},
-			"OdrlAction": {
-				"type": "object",
-				"properties": {
-					"@context": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-					},
-					"@id": {
-						"type": "string",
-						"description": "Direct action identifier. Used in simple action references."
-					},
-					"@included": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-					},
-					"@graph": {
-						"anyOf": [
-							{
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-							},
-							{
-								"type": "array",
-								"items": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-								}
-							}
-						]
-					},
-					"@nest": {
-						"anyOf": [
-							{
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdJsonObject"
-							},
-							{
-								"type": "array",
-								"items": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdJsonObject"
-								}
-							}
-						]
-					},
-					"@type": {
-						"anyOf": [
-							{
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-							},
-							{
-								"type": "array",
-								"items": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-								}
-							}
-						]
-					},
-					"@reverse": {
-						"type": "object",
-						"additionalProperties": {
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-						}
-					},
-					"@index": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-					},
-					"rdf:value": {
-						"type": "object",
-						"properties": {
-							"@id": {
-								"type": "string"
-							}
-						},
-						"required": [
-							"@id"
-						],
-						"additionalProperties": false,
-						"description": "The value/identifier of the action. Used in complex action definitions."
-					},
-					"refinement": {
-						"anyOf": [
-							{
-								"$ref": "#/components/schemas/OdrlConstraint"
-							},
-							{
-								"$ref": "#/components/schemas/OdrlLogicalConstraint"
-							},
-							{
-								"type": "array",
-								"items": {
-									"anyOf": [
-										{
-											"$ref": "#/components/schemas/OdrlConstraint"
-										},
-										{
-											"$ref": "#/components/schemas/OdrlLogicalConstraint"
-										}
-									]
-								}
-							}
-						],
-						"description": "Refinements applied to the action."
-					},
-					"includedIn": {
-						"$ref": "#/components/schemas/ActionType"
-					},
-					"implies": {
-						"type": "array",
-						"items": {
-							"$ref": "#/components/schemas/ActionType"
-						},
-						"description": "References to actions this action implies."
-					}
-				},
-				"additionalProperties": {
-					"anyOf": [
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdIndexMap"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdIdMap"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdTypeMap"
-						},
-						{
-							"type": "array"
-						}
-					]
-				},
-				"description": "Interface for ODRL Actions."
-			},
-			"OdrlAsset": {
-				"type": "object",
-				"properties": {
-					"@context": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-					},
-					"@id": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-					},
-					"@included": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-					},
-					"@graph": {
-						"anyOf": [
-							{
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-							},
-							{
-								"type": "array",
-								"items": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-								}
-							}
-						]
-					},
-					"@nest": {
-						"anyOf": [
-							{
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdJsonObject"
-							},
-							{
-								"type": "array",
-								"items": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdJsonObject"
-								}
-							}
-						]
-					},
-					"@type": {
-						"type": "string",
-						"description": "The type of the asset. Can be used to specify additional type information."
-					},
-					"@reverse": {
-						"type": "object",
-						"additionalProperties": {
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-						}
-					},
-					"@index": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-					},
-					"uid": {
-						"type": "string",
-						"description": "The unique identifier for the asset. Should be an IRI."
-					},
-					"partOf": {
-						"anyOf": [
-							{
-								"type": "string"
-							},
-							{
-								"$ref": "#/components/schemas/OdrlAssetCollection"
-							}
-						],
-						"description": "Reference to the asset collection this asset is part of. Used to identify an AssetCollection that this Asset is a member of."
-					},
-					"hasPolicy": {
-						"type": "string",
-						"description": "Reference to the policy that governs this asset. Used to identify the Policy that governs this Asset."
-					}
-				},
-				"additionalProperties": {
-					"anyOf": [
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdIndexMap"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdIdMap"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdTypeMap"
-						},
-						{
-							"type": "array"
-						}
-					]
-				},
-				"description": "Interface for ODRL Assets."
-			},
-			"OdrlAssetCollection": {
-				"type": "object",
-				"properties": {
-					"@context": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-					},
-					"@id": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-					},
-					"@included": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-					},
-					"@graph": {
-						"anyOf": [
-							{
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-							},
-							{
-								"type": "array",
-								"items": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-								}
-							}
-						]
-					},
-					"@nest": {
-						"anyOf": [
-							{
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdJsonObject"
-							},
-							{
-								"type": "array",
-								"items": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdJsonObject"
-								}
-							}
-						]
-					},
-					"@type": {
-						"type": "string",
-						"description": "The type of the asset. Can be used to specify additional type information."
-					},
-					"@reverse": {
-						"type": "object",
-						"additionalProperties": {
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-						}
-					},
-					"@index": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-					},
-					"uid": {
-						"type": "string",
-						"description": "The unique identifier for the asset. Should be an IRI."
-					},
-					"partOf": {
-						"anyOf": [
-							{
-								"type": "string"
-							},
-							{
-								"$ref": "#/components/schemas/OdrlAssetCollection"
-							}
-						],
-						"description": "Reference to the asset collection this asset is part of. Used to identify an AssetCollection that this Asset is a member of."
-					},
-					"hasPolicy": {
-						"type": "string",
-						"description": "Reference to the policy that governs this asset. Used to identify the Policy that governs this Asset."
-					},
-					"source": {
-						"type": "string",
-						"description": "Reference to the source of the asset collection. Must be an IRI that references the AssetCollection."
-					},
-					"refinement": {
-						"type": "array",
-						"items": {
-							"$ref": "#/components/schemas/OdrlConstraint"
-						},
-						"description": "Refinements applied to the asset collection. Used to specify the refinement context under which to identify individual Asset(s) of the complete collection. The refinement applies to the characteristics of each member of the collection (not the resource as a whole)."
-					}
-				},
-				"required": [
-					"source"
-				],
-				"additionalProperties": {
-					"anyOf": [
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdIndexMap"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdIdMap"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdTypeMap"
-						},
-						{
-							"type": "array"
-						}
-					]
-				},
-				"description": "Interface for ODRL Asset Collections. An AssetCollection is a single resource representing a set of member resources, where all members of the set will be the subject of the Rule."
-			},
-			"OdrlConstraint": {
-				"type": "object",
-				"properties": {
-					"@context": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-					},
-					"@id": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-					},
-					"@included": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-					},
-					"@graph": {
-						"anyOf": [
-							{
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-							},
-							{
-								"type": "array",
-								"items": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-								}
-							}
-						]
-					},
-					"@nest": {
-						"anyOf": [
-							{
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdJsonObject"
-							},
-							{
-								"type": "array",
-								"items": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdJsonObject"
-								}
-							}
-						]
-					},
-					"@type": {
-						"anyOf": [
-							{
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-							},
-							{
-								"type": "array",
-								"items": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-								}
-							}
-						]
-					},
-					"@reverse": {
-						"type": "object",
-						"additionalProperties": {
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-						}
-					},
-					"@index": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-					},
-					"uid": {
-						"type": "string",
-						"description": "Optional unique identifier for the constraint."
-					},
-					"leftOperand": {
-						"anyOf": [
-							{
-								"type": "string"
-							},
-							{
-								"$ref": "#/components/schemas/LeftOperandType"
-							}
-						],
-						"description": "The left operand of the constraint."
-					},
-					"operator": {
-						"$ref": "#/components/schemas/OperatorType"
-					},
-					"rightOperand": {
-						"anyOf": [
-							{
-								"type": "string"
-							},
-							{
-								"type": "object",
-								"properties": {
-									"@value": {
-										"type": "string"
-									},
-									"@type": {
-										"$ref": "#/components/schemas/DataType"
-									}
-								},
-								"required": [
-									"@value"
-								],
-								"additionalProperties": false
-							},
-							{
-								"type": "object",
-								"properties": {
-									"@id": {
-										"type": "string"
-									}
-								},
-								"required": [
-									"@id"
-								],
-								"additionalProperties": false
-							}
-						],
-						"description": "The right operand of the constraint. value with optional"
-					},
-					"rightOperandReference": {
-						"type": "string",
-						"description": "Reference to the right operand."
-					},
-					"dataType": {
-						"$ref": "#/components/schemas/DataType"
-					},
-					"unit": {
-						"type": "string",
-						"description": "The unit for the right operand value."
-					},
-					"status": {
-						"$ref": "#/components/schemas/StatusType"
-					}
-				},
-				"required": [
-					"leftOperand",
-					"operator"
-				],
-				"additionalProperties": {
-					"anyOf": [
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdIndexMap"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdIdMap"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdTypeMap"
-						},
-						{
-							"type": "array"
-						}
-					]
-				},
-				"description": "Interface for ODRL Constraints."
-			},
-			"OdrlContextType": {
-				"anyOf": [
-					{
-						"type": "string",
-						"const": "https://www.w3.org/ns/odrl.jsonld"
-					},
-					{
-						"type": "array",
-						"minItems": 1,
-						"items": [
-							{
-								"type": "string",
-								"const": "https://www.w3.org/ns/odrl.jsonld"
-							}
-						],
-						"additionalItems": {
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdContextDefinitionElement"
-						}
-					},
-					{
-						"type": "array",
-						"minItems": 2,
-						"items": [
-							{
-								"type": "string",
-								"const": "https://www.w3.org/ns/odrl.jsonld"
-							},
-							{
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdContextDefinitionElement"
-							}
-						],
-						"additionalItems": {
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdContextDefinitionElement"
-						}
-					},
-					{
-						"type": "array",
-						"minItems": 2,
-						"items": [
-							{
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdContextDefinitionElement"
-							},
-							{
-								"type": "string",
-								"const": "https://www.w3.org/ns/odrl.jsonld"
-							}
-						],
-						"additionalItems": {
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdContextDefinitionElement"
-						}
-					}
-				],
-				"description": "The ODRL JSON-LD context type."
-			},
-			"OdrlDuty": {
-				"type": "object",
-				"properties": {
-					"@context": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-					},
-					"@id": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-					},
-					"@included": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-					},
-					"@graph": {
-						"anyOf": [
-							{
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-							},
-							{
-								"type": "array",
-								"items": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-								}
-							}
-						]
-					},
-					"@nest": {
-						"anyOf": [
-							{
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdJsonObject"
-							},
-							{
-								"type": "array",
-								"items": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdJsonObject"
-								}
-							}
-						]
-					},
-					"@type": {
-						"anyOf": [
-							{
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-							},
-							{
-								"type": "array",
-								"items": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-								}
-							}
-						]
-					},
-					"@reverse": {
-						"type": "object",
-						"additionalProperties": {
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-						}
-					},
-					"@index": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-					},
-					"uid": {
-						"type": "string",
-						"description": "Optional unique identifier for the rule."
-					},
-					"action": {
-						"anyOf": [
-							{
-								"$ref": "#/components/schemas/ActionType"
-							},
-							{
-								"$ref": "#/components/schemas/OdrlAction"
-							},
-							{
-								"type": "array",
-								"items": {
-									"anyOf": [
-										{
-											"$ref": "#/components/schemas/ActionType"
-										},
-										{
-											"$ref": "#/components/schemas/OdrlAction"
-										}
-									]
-								}
-							}
-						],
-						"description": "The action associated with the rule."
-					},
-					"target": {
-						"anyOf": [
-							{
-								"type": "string"
-							},
-							{
-								"$ref": "#/components/schemas/OdrlAsset"
-							},
-							{
-								"type": "array",
-								"items": {
-									"anyOf": [
-										{
-											"type": "string"
-										},
-										{
-											"$ref": "#/components/schemas/OdrlAsset"
-										}
-									]
-								}
-							}
-						],
-						"description": "The target asset for the rule."
-					},
-					"assigner": {
-						"anyOf": [
-							{
-								"type": "string"
-							},
-							{
-								"$ref": "#/components/schemas/OdrlParty"
-							}
-						],
-						"description": "The assigner of the rule."
-					},
-					"assignee": {
-						"anyOf": [
-							{
-								"type": "string"
-							},
-							{
-								"$ref": "#/components/schemas/OdrlParty"
-							}
-						],
-						"description": "The assignee of the rule."
-					},
-					"constraint": {
-						"type": "array",
-						"items": {
-							"$ref": "#/components/schemas/OdrlConstraint"
-						},
-						"description": "Constraints applied to the rule."
-					},
-					"summary": {
-						"type": "string",
-						"description": "Additional relation sub-properties as defined in ODRL profiles. For example, 'summary' in profile \"http://example.com/odrl:profile:03\" indicates where the output should be stored."
-					},
-					"attributedParty": {
-						"type": "string",
-						"description": "The party to be attributed Used when the duty involves attribution"
-					},
-					"trackingParty": {
-						"type": "string",
-						"description": "The party performing the tracking Used when the duty involves tracking"
-					},
-					"consequence": {
-						"type": "array",
-						"items": {
-							"$ref": "#/components/schemas/OdrlDuty"
-						},
-						"description": "The consequences if the duty is not fulfilled. Only applicable when the Duty is referenced by a Rule with duty or obligation properties."
-					},
-					"remedy": {
-						"type": "array",
-						"items": {
-							"$ref": "#/components/schemas/OdrlDuty"
-						},
-						"description": "The remedies that may be fulfilled to cure the violation."
-					},
-					"compensatedParty": {
-						"type": "string",
-						"description": "The party to be compensated Used when the duty involves compensation"
-					}
-				},
-				"additionalProperties": {
-					"anyOf": [
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdIndexMap"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdIdMap"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdTypeMap"
-						},
-						{
-							"type": "array"
-						}
-					]
-				},
-				"description": "Interface for Duty Rules. A Duty is the obligation to exercise an action, with all refinements satisfied. A Duty is fulfilled if all constraints are satisfied and if its action has been exercised."
-			},
-			"OdrlLogicalConstraint": {
-				"type": "object",
-				"properties": {
-					"@context": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-					},
-					"@id": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-					},
-					"@included": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-					},
-					"@graph": {
-						"anyOf": [
-							{
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-							},
-							{
-								"type": "array",
-								"items": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-								}
-							}
-						]
-					},
-					"@nest": {
-						"anyOf": [
-							{
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdJsonObject"
-							},
-							{
-								"type": "array",
-								"items": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdJsonObject"
-								}
-							}
-						]
-					},
-					"@type": {
-						"anyOf": [
-							{
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-							},
-							{
-								"type": "array",
-								"items": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-								}
-							}
-						]
-					},
-					"@reverse": {
-						"type": "object",
-						"additionalProperties": {
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-						}
-					},
-					"@index": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-					},
-					"uid": {
-						"type": "string",
-						"description": "Optional unique identifier for the logical constraint. Must be an IRI."
-					},
-					"and": {
-						"type": "object",
-						"properties": {
-							"@list": {
-								"type": "array",
-								"items": {
-									"type": "object",
-									"properties": {
-										"@id": {
-											"type": "string"
-										}
-									},
-									"required": [
-										"@id"
-									],
-									"additionalProperties": false
-								}
-							}
-						},
-						"required": [
-							"@list"
-						],
-						"additionalProperties": false,
-						"description": "AND operator - all constraints must be satisfied."
-					},
-					"or": {
-						"type": "object",
-						"properties": {
-							"@list": {
-								"type": "array",
-								"items": {
-									"type": "object",
-									"properties": {
-										"@id": {
-											"type": "string"
-										}
-									},
-									"required": [
-										"@id"
-									],
-									"additionalProperties": false
-								}
-							}
-						},
-						"required": [
-							"@list"
-						],
-						"additionalProperties": false,
-						"description": "OR operator - at least one constraint must be satisfied."
-					},
-					"xone": {
-						"type": "object",
-						"properties": {
-							"@list": {
-								"type": "array",
-								"items": {
-									"type": "object",
-									"properties": {
-										"@id": {
-											"type": "string"
-										}
-									},
-									"required": [
-										"@id"
-									],
-									"additionalProperties": false
-								}
-							}
-						},
-						"required": [
-							"@list"
-						],
-						"additionalProperties": false,
-						"description": "XOR operator - exactly one constraint must be satisfied."
-					},
-					"andSequence": {
-						"type": "object",
-						"properties": {
-							"@list": {
-								"type": "array",
-								"items": {
-									"type": "object",
-									"properties": {
-										"@id": {
-											"type": "string"
-										}
-									},
-									"required": [
-										"@id"
-									],
-									"additionalProperties": false
-								}
-							}
-						},
-						"required": [
-							"@list"
-						],
-						"additionalProperties": false,
-						"description": "AND Sequence operator - all constraints must be satisfied in order."
-					}
-				},
-				"additionalProperties": {
-					"anyOf": [
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdIndexMap"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdIdMap"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdTypeMap"
-						},
-						{
-							"type": "array"
-						}
-					]
-				},
-				"description": "Interface for ODRL Logical Constraints. A Logical Constraint compares two or more existing Constraints by one logical operator. If the comparison returns a logical match, then the Logical Constraint is satisfied."
-			},
-			"OdrlParty": {
-				"type": "object",
-				"properties": {
-					"@context": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-					},
-					"@id": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-					},
-					"@included": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-					},
-					"@graph": {
-						"anyOf": [
-							{
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-							},
-							{
-								"type": "array",
-								"items": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-								}
-							}
-						]
-					},
-					"@nest": {
-						"anyOf": [
-							{
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdJsonObject"
-							},
-							{
-								"type": "array",
-								"items": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdJsonObject"
-								}
-							}
-						]
-					},
-					"@type": {
-						"anyOf": [
-							{
-								"type": "string"
-							},
-							{
-								"type": "array",
-								"items": {
-									"type": "string"
-								}
-							}
-						],
-						"description": "The type of the party. Can be used to specify additional type information (e.g., \"Party\", \"vcard:Organization\", \"vcard:Individual\")."
-					},
-					"@reverse": {
-						"type": "object",
-						"additionalProperties": {
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-						}
-					},
-					"@index": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-					},
-					"uid": {
-						"type": "string",
-						"description": "The unique identifier for the party. Must be an IRI."
-					},
-					"partOf": {
-						"anyOf": [
-							{
-								"type": "string"
-							},
-							{
-								"$ref": "#/components/schemas/OdrlPartyCollection"
-							}
-						],
-						"description": "Reference to the party collection this party is part of. Used to identify a PartyCollection that a Party entity is a member of."
-					},
-					"assigneeOf": {
-						"type": "string",
-						"description": "Reference to a policy where this party is an assignee. When assigneeOf is asserted, the Party MUST be inferred to undertake the assignee functional role of all the Rules of that Policy."
-					},
-					"assignerOf": {
-						"type": "string",
-						"description": "Reference to a policy where this party is an assigner. When assignerOf is asserted, the Party MUST be inferred to undertake the assigner functional role of all the Rules of that Policy."
-					}
-				},
-				"additionalProperties": {
-					"anyOf": [
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdIndexMap"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdIdMap"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdTypeMap"
-						},
-						{
-							"type": "array"
-						}
-					]
-				},
-				"description": "Interface for ODRL Parties."
-			},
-			"OdrlPartyCollection": {
-				"type": "object",
-				"properties": {
-					"@context": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-					},
-					"@id": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-					},
-					"@included": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-					},
-					"@graph": {
-						"anyOf": [
-							{
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-							},
-							{
-								"type": "array",
-								"items": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-								}
-							}
-						]
-					},
-					"@nest": {
-						"anyOf": [
-							{
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdJsonObject"
-							},
-							{
-								"type": "array",
-								"items": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdJsonObject"
-								}
-							}
-						]
-					},
-					"@type": {
-						"anyOf": [
-							{
-								"type": "string"
-							},
-							{
-								"type": "array",
-								"items": {
-									"type": "string"
-								}
-							}
-						],
-						"description": "The type of the party. Can be used to specify additional type information (e.g., \"Party\", \"vcard:Organization\", \"vcard:Individual\")."
-					},
-					"@reverse": {
-						"type": "object",
-						"additionalProperties": {
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-						}
-					},
-					"@index": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-					},
-					"uid": {
-						"type": "string",
-						"description": "The unique identifier for the party. Must be an IRI."
-					},
-					"partOf": {
-						"anyOf": [
-							{
-								"type": "string"
-							},
-							{
-								"$ref": "#/components/schemas/OdrlPartyCollection"
-							}
-						],
-						"description": "Reference to the party collection this party is part of. Used to identify a PartyCollection that a Party entity is a member of."
-					},
-					"assigneeOf": {
-						"type": "string",
-						"description": "Reference to a policy where this party is an assignee. When assigneeOf is asserted, the Party MUST be inferred to undertake the assignee functional role of all the Rules of that Policy."
-					},
-					"assignerOf": {
-						"type": "string",
-						"description": "Reference to a policy where this party is an assigner. When assignerOf is asserted, the Party MUST be inferred to undertake the assigner functional role of all the Rules of that Policy."
-					},
-					"source": {
-						"type": "string",
-						"description": "Reference to the source of the party collection. Used to identify the origin or location of the collection."
-					},
-					"refinement": {
-						"type": "array",
-						"items": {
-							"$ref": "#/components/schemas/OdrlConstraint"
-						},
-						"description": "Refinements applied to the party collection. Used to specify constraints that apply to all members of the collection."
-					}
-				},
-				"required": [
-					"source"
-				],
-				"additionalProperties": {
-					"anyOf": [
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdIndexMap"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdIdMap"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdTypeMap"
-						},
-						{
-							"type": "array"
-						}
-					]
-				},
-				"description": "Interface for ODRL Party Collections. A PartyCollection identifies a collection of entities and is a subclass of Party."
-			},
-			"OdrlPermission": {
-				"type": "object",
-				"properties": {
-					"@context": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-					},
-					"@id": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-					},
-					"@included": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-					},
-					"@graph": {
-						"anyOf": [
-							{
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-							},
-							{
-								"type": "array",
-								"items": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-								}
-							}
-						]
-					},
-					"@nest": {
-						"anyOf": [
-							{
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdJsonObject"
-							},
-							{
-								"type": "array",
-								"items": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdJsonObject"
-								}
-							}
-						]
-					},
-					"@type": {
-						"anyOf": [
-							{
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-							},
-							{
-								"type": "array",
-								"items": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-								}
-							}
-						]
-					},
-					"@reverse": {
-						"type": "object",
-						"additionalProperties": {
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-						}
-					},
-					"@index": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-					},
-					"uid": {
-						"type": "string",
-						"description": "Optional unique identifier for the rule."
-					},
-					"action": {
-						"anyOf": [
-							{
-								"$ref": "#/components/schemas/ActionType"
-							},
-							{
-								"$ref": "#/components/schemas/OdrlAction"
-							},
-							{
-								"type": "array",
-								"items": {
-									"anyOf": [
-										{
-											"$ref": "#/components/schemas/ActionType"
-										},
-										{
-											"$ref": "#/components/schemas/OdrlAction"
-										}
-									]
-								}
-							}
-						],
-						"description": "The action associated with the rule."
-					},
-					"target": {
-						"anyOf": [
-							{
-								"type": "string"
-							},
-							{
-								"$ref": "#/components/schemas/OdrlAsset"
-							},
-							{
-								"type": "array",
-								"items": {
-									"anyOf": [
-										{
-											"type": "string"
-										},
-										{
-											"$ref": "#/components/schemas/OdrlAsset"
-										}
-									]
-								}
-							}
-						],
-						"description": "The target asset for the rule."
-					},
-					"assigner": {
-						"anyOf": [
-							{
-								"type": "string"
-							},
-							{
-								"$ref": "#/components/schemas/OdrlParty"
-							}
-						],
-						"description": "The assigner of the rule."
-					},
-					"assignee": {
-						"anyOf": [
-							{
-								"type": "string"
-							},
-							{
-								"$ref": "#/components/schemas/OdrlParty"
-							}
-						],
-						"description": "The assignee of the rule."
-					},
-					"constraint": {
-						"type": "array",
-						"items": {
-							"$ref": "#/components/schemas/OdrlConstraint"
-						},
-						"description": "Constraints applied to the rule."
-					},
-					"summary": {
-						"type": "string",
-						"description": "Additional relation sub-properties as defined in ODRL profiles. For example, 'summary' in profile \"http://example.com/odrl:profile:03\" indicates where the output should be stored."
-					},
-					"duty": {
-						"type": "array",
-						"items": {
-							"$ref": "#/components/schemas/OdrlDuty"
-						},
-						"description": "The duties that must be fulfilled before the permission can be exercised. A Permission MAY have none, one, or more duty property values."
-					}
-				},
-				"additionalProperties": {
-					"anyOf": [
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdIndexMap"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdIdMap"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdTypeMap"
-						},
-						{
-							"type": "array"
-						}
-					]
-				},
-				"description": "Interface for Permission Rules. A Permission allows an action to be exercised on an Asset if all constraints are satisfied and if all duties are fulfilled."
-			},
-			"OdrlPolicy": {
-				"type": "object",
-				"properties": {
-					"@context": {
-						"$ref": "#/components/schemas/OdrlContextType"
-					},
-					"@id": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-					},
-					"@included": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-					},
-					"@graph": {
-						"anyOf": [
-							{
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-							},
-							{
-								"type": "array",
-								"items": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-								}
-							}
-						]
-					},
-					"@nest": {
-						"anyOf": [
-							{
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdJsonObject"
-							},
-							{
-								"type": "array",
-								"items": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdJsonObject"
-								}
-							}
-						]
-					},
-					"@type": {
-						"$ref": "#/components/schemas/PolicyType"
-					},
-					"@reverse": {
-						"type": "object",
-						"additionalProperties": {
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-						}
-					},
-					"@index": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-					},
-					"uid": {
-						"type": "string",
-						"description": "The unique identifier for the policy. Must be an IRI."
-					},
-					"profile": {
-						"anyOf": [
-							{
-								"type": "string"
-							},
-							{
-								"type": "array",
-								"items": {
-									"type": "string"
-								}
-							}
-						],
-						"description": "The profile(s) this policy conforms to. IRIs identifying the ODRL Profile(s)."
-					},
-					"assigner": {
-						"anyOf": [
-							{
-								"type": "string"
-							},
-							{
-								"$ref": "#/components/schemas/OdrlParty"
-							}
-						],
-						"description": "The assigner of the policy. Applies to all rules unless overridden at rule level."
-					},
-					"assignee": {
-						"anyOf": [
-							{
-								"type": "string"
-							},
-							{
-								"$ref": "#/components/schemas/OdrlParty"
-							}
-						],
-						"description": "The assignee of the policy. Applies to all rules unless overridden at rule level."
-					},
-					"target": {
-						"anyOf": [
-							{
-								"type": "string"
-							},
-							{
-								"$ref": "#/components/schemas/OdrlAsset"
-							},
-							{
-								"type": "array",
-								"items": {
-									"anyOf": [
-										{
-											"type": "string"
-										},
-										{
-											"$ref": "#/components/schemas/OdrlAsset"
-										}
-									]
-								}
-							}
-						],
-						"description": "The target asset for the rule."
-					},
-					"action": {
-						"anyOf": [
-							{
-								"$ref": "#/components/schemas/ActionType"
-							},
-							{
-								"$ref": "#/components/schemas/OdrlAction"
-							},
-							{
-								"type": "array",
-								"items": {
-									"anyOf": [
-										{
-											"$ref": "#/components/schemas/ActionType"
-										},
-										{
-											"$ref": "#/components/schemas/OdrlAction"
-										}
-									]
-								}
-							}
-						],
-						"description": "The action associated with the rule."
-					},
-					"inheritFrom": {
-						"anyOf": [
-							{
-								"type": "string"
-							},
-							{
-								"type": "array",
-								"items": {
-									"type": "string"
-								}
-							}
-						],
-						"description": "The parent policy(ies) this policy inherits from. IRIs identifying the parent Policy(ies)."
-					},
-					"conflict": {
-						"$ref": "#/components/schemas/ConflictStrategyType"
-					},
-					"permission": {
-						"type": "array",
-						"items": {
-							"$ref": "#/components/schemas/OdrlPermission"
-						},
-						"description": "The permissions in the policy. At least one of permission, prohibition, or obligation must be present."
-					},
-					"prohibition": {
-						"type": "array",
-						"items": {
-							"$ref": "#/components/schemas/OdrlProhibition"
-						},
-						"description": "The prohibitions in the policy. At least one of permission, prohibition, or obligation must be present."
-					},
-					"obligation": {
-						"type": "array",
-						"items": {
-							"$ref": "#/components/schemas/OdrlDuty"
-						},
-						"description": "The obligations in the policy. At least one of permission, prohibition, or obligation must be present."
-					}
-				},
-				"required": [
-					"@context",
-					"@type",
-					"uid"
-				],
-				"additionalProperties": {
-					"anyOf": [
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdIndexMap"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdIdMap"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdTypeMap"
-						},
-						{
-							"type": "array"
-						}
-					]
-				},
-				"description": "Interface representing an ODRL Policy."
-			},
-			"OdrlProhibition": {
-				"type": "object",
-				"properties": {
-					"@context": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-					},
-					"@id": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-					},
-					"@included": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-					},
-					"@graph": {
-						"anyOf": [
-							{
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-							},
-							{
-								"type": "array",
-								"items": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-								}
-							}
-						]
-					},
-					"@nest": {
-						"anyOf": [
-							{
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdJsonObject"
-							},
-							{
-								"type": "array",
-								"items": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdJsonObject"
-								}
-							}
-						]
-					},
-					"@type": {
-						"anyOf": [
-							{
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-							},
-							{
-								"type": "array",
-								"items": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-								}
-							}
-						]
-					},
-					"@reverse": {
-						"type": "object",
-						"additionalProperties": {
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-						}
-					},
-					"@index": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-					},
-					"uid": {
-						"type": "string",
-						"description": "Optional unique identifier for the rule."
-					},
-					"action": {
-						"anyOf": [
-							{
-								"$ref": "#/components/schemas/ActionType"
-							},
-							{
-								"$ref": "#/components/schemas/OdrlAction"
-							},
-							{
-								"type": "array",
-								"items": {
-									"anyOf": [
-										{
-											"$ref": "#/components/schemas/ActionType"
-										},
-										{
-											"$ref": "#/components/schemas/OdrlAction"
-										}
-									]
-								}
-							}
-						],
-						"description": "The action associated with the rule."
-					},
-					"target": {
-						"anyOf": [
-							{
-								"type": "string"
-							},
-							{
-								"$ref": "#/components/schemas/OdrlAsset"
-							},
-							{
-								"type": "array",
-								"items": {
-									"anyOf": [
-										{
-											"type": "string"
-										},
-										{
-											"$ref": "#/components/schemas/OdrlAsset"
-										}
-									]
-								}
-							}
-						],
-						"description": "The target asset for the rule."
-					},
-					"assigner": {
-						"anyOf": [
-							{
-								"type": "string"
-							},
-							{
-								"$ref": "#/components/schemas/OdrlParty"
-							}
-						],
-						"description": "The assigner of the rule."
-					},
-					"assignee": {
-						"anyOf": [
-							{
-								"type": "string"
-							},
-							{
-								"$ref": "#/components/schemas/OdrlParty"
-							}
-						],
-						"description": "The assignee of the rule."
-					},
-					"constraint": {
-						"type": "array",
-						"items": {
-							"$ref": "#/components/schemas/OdrlConstraint"
-						},
-						"description": "Constraints applied to the rule."
-					},
-					"summary": {
-						"type": "string",
-						"description": "Additional relation sub-properties as defined in ODRL profiles. For example, 'summary' in profile \"http://example.com/odrl:profile:03\" indicates where the output should be stored."
-					},
-					"remedy": {
-						"type": "array",
-						"items": {
-							"$ref": "#/components/schemas/OdrlDuty"
-						},
-						"description": "The remedies that must be fulfilled if prohibition is violated."
-					}
-				},
-				"additionalProperties": {
-					"anyOf": [
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdIndexMap"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdIdMap"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdTypeMap"
-						},
-						{
-							"type": "array"
-						}
-					]
-				},
-				"description": "Interface for Prohibition Rules."
-			},
-			"OperatorType": {
-				"anyOf": [
-					{
-						"type": "string",
-						"const": "eq",
-						"description": "Equal type."
-					},
-					{
-						"type": "string",
-						"const": "gt",
-						"description": "Greater than type."
-					},
-					{
-						"type": "string",
-						"const": "gteq",
-						"description": "Greater than or equal to type."
-					},
-					{
-						"type": "string",
-						"const": "lt",
-						"description": "Less than type."
-					},
-					{
-						"type": "string",
-						"const": "lteq",
-						"description": "Less than or equal to type."
-					},
-					{
-						"type": "string",
-						"const": "neq",
-						"description": "Not equal to type."
-					},
-					{
-						"type": "string",
-						"const": "isA",
-						"description": "Is a type."
-					},
-					{
-						"type": "string",
-						"const": "hasPart",
-						"description": "Has part type."
-					},
-					{
-						"type": "string",
-						"const": "isPartOf",
-						"description": "Is part of type."
-					},
-					{
-						"type": "string",
-						"const": "isAllOf",
-						"description": "Is all of type."
-					},
-					{
-						"type": "string",
-						"const": "isAnyOf",
-						"description": "Is any of type."
-					},
-					{
-						"type": "string",
-						"const": "isNoneOf",
-						"description": "Is none of type."
-					},
-					{
-						"type": "string",
-						"const": "locTimeEq",
-						"description": "Location time equal to type."
-					},
-					{
-						"type": "string",
-						"const": "locTimeGteq",
-						"description": "Location time greater than or equal to type."
-					}
-				],
-				"description": "The types for ODRL Operators."
-			},
-			"ParticipantEntry": {
-				"type": "object",
-				"properties": {
-					"issuer": {
-						"type": "string",
-						"description": "The trusted issuer of the compliance credential"
-					},
-					"validFrom": {
-						"type": "string",
-						"description": "Valid from (as per W3C VC Data Model v2)"
-					},
-					"validUntil": {
-						"type": "string",
-						"description": "Valid until (as per W3C VC Data Model v2)"
-					},
-					"dateCreated": {
-						"type": "string",
-						"description": "The creation date."
-					},
-					"evidence": {
-						"type": "array",
-						"items": {
-							"type": "string"
-						},
-						"description": "The evidences concerning the data resource."
-					},
-					"@context": {
-						"$ref": "#/components/schemas/FederatedCatalogueContextType"
-					},
-					"@id": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-					},
-					"@included": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-					},
-					"@graph": {
-						"anyOf": [
-							{
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-							},
-							{
-								"type": "array",
-								"items": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-								}
-							}
-						]
-					},
-					"@nest": {
-						"anyOf": [
-							{
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdJsonObject"
-							},
-							{
-								"type": "array",
-								"items": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdJsonObject"
-								}
-							}
-						]
-					},
-					"@type": {
-						"anyOf": [
-							{
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-							},
-							{
-								"type": "array",
-								"items": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-								}
-							}
-						]
-					},
-					"@reverse": {
-						"type": "object",
-						"additionalProperties": {
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-						}
-					},
-					"@index": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-					},
-					"id": {
-						"type": "string",
-						"description": "The participant Id."
-					},
-					"type": {
-						"type": "string",
-						"const": "LegalPerson",
-						"description": "JSON-LD type."
-					},
-					"registrationNumber": {
-						"$ref": "#/components/schemas/RegistrationNumber"
-					},
-					"legalName": {
-						"type": "string",
-						"description": "The legal name."
-					},
-					"legalAddress": {
-						"$ref": "#/components/schemas/Address"
-					}
-				},
-				"required": [
-					"@context",
-					"dateCreated",
-					"evidence",
-					"id",
-					"issuer",
-					"legalAddress",
-					"legalName",
-					"registrationNumber",
-					"type",
-					"validFrom",
-					"validUntil"
-				],
-				"additionalProperties": {
-					"anyOf": [
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdIndexMap"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdIdMap"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdTypeMap"
-						},
-						{
-							"type": "array"
-						}
-					]
-				},
-				"description": "Interface describing a participant."
-			},
-			"ParticipantList": {
-				"type": "object",
-				"properties": {
-					"@context": {
-						"$ref": "#/components/schemas/FederatedCatalogueContextType"
-					},
-					"type": {
-						"type": "string",
-						"const": "ItemList",
-						"description": "The type"
-					},
-					"itemListElement": {
-						"type": "array",
-						"items": {
-							"$ref": "#/components/schemas/Omit%3CIParticipantEntry%2C%22%40context%22%3E"
-						},
-						"description": "The components of the Collection"
-					},
-					"nextItem": {
-						"type": "string",
-						"description": "Next item cursor."
-					}
-				},
-				"required": [
-					"@context",
-					"type",
-					"itemListElement"
-				],
-				"additionalProperties": false,
-				"description": "Interface describing a participant entry list."
-			},
-			"PolicyType": {
-				"anyOf": [
-					{
-						"type": "string",
-						"const": "Policy",
-						"description": "Policy type."
-					},
-					{
-						"type": "string",
-						"const": "Set",
-						"description": "Set type."
-					},
-					{
-						"type": "string",
-						"const": "Offer",
-						"description": "Offer type."
-					},
-					{
-						"type": "string",
-						"const": "Agreement",
-						"description": "Agreement type."
-					}
-				],
-				"description": "The types for ODRL Policies."
-			},
 			"Proof": {
 				"anyOf": [
 					{
-						"$ref": "#/components/schemas/DataIntegrityProof"
+						"$ref": "https://schema.twindev.org/did/DataIntegrityProof"
 					},
 					{
-						"$ref": "#/components/schemas/JsonWebSignature2020Proof"
+						"$ref": "https://schema.twindev.org/did/JsonWebSignature2020Proof"
 					}
 				],
 				"description": "Interface describing a proof."
@@ -18990,146 +14368,6 @@
 				],
 				"additionalProperties": false,
 				"description": "The refresh token details."
-			},
-			"RegistrationNumber": {
-				"type": "object",
-				"properties": {
-					"@context": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-					},
-					"@id": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-					},
-					"@included": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-					},
-					"@graph": {
-						"anyOf": [
-							{
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-							},
-							{
-								"type": "array",
-								"items": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-								}
-							}
-						]
-					},
-					"@nest": {
-						"anyOf": [
-							{
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdJsonObject"
-							},
-							{
-								"type": "array",
-								"items": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdJsonObject"
-								}
-							}
-						]
-					},
-					"@type": {
-						"anyOf": [
-							{
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-							},
-							{
-								"type": "array",
-								"items": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-								}
-							}
-						]
-					},
-					"@reverse": {
-						"type": "object",
-						"additionalProperties": {
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-						}
-					},
-					"@index": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-					},
-					"type": {
-						"type": "string",
-						"enum": [
-							"RegistrationNumber",
-							"LocalRegistrationNumber",
-							"EORI",
-							"EUID",
-							"LeiCode",
-							"TaxID",
-							"VatID"
-						],
-						"description": "JSON-LD Type."
-					},
-					"local": {
-						"type": "string",
-						"description": "Local Registration."
-					},
-					"countryCode": {
-						"type": "string",
-						"description": "Country code. See https://docs.gaia-x.eu/ontology/development/enums/CountryNameAlpha2/"
-					},
-					"subdivisionCountryCode": {
-						"type": "string",
-						"description": "Subdivision country code. See https://docs.gaia-x.eu/ontology/development/enums/RegionCode/"
-					},
-					"vatID": {
-						"type": "string",
-						"description": "The VAT identification number."
-					},
-					"leiCode": {
-						"type": "string",
-						"description": "Unique LEI number as defined by GLEIF."
-					},
-					"eori": {
-						"type": "string",
-						"description": "The Economic Operators Registration and Identification number (EORI)."
-					},
-					"country": {
-						"type": "string",
-						"description": "The country where the EORI is registered written in plain english"
-					},
-					"euid": {
-						"type": "string",
-						"description": "The European Unique Identifier (EUID) for business located in the European Ec."
-					},
-					"taxId": {
-						"type": "string",
-						"description": "The company tax ID."
-					}
-				},
-				"required": [
-					"type"
-				],
-				"additionalProperties": {
-					"anyOf": [
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdIndexMap"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdIdMap"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdTypeMap"
-						},
-						{
-							"type": "array"
-						}
-					]
-				},
-				"description": "Registration Number as defined by the Gaia-X ontology. https://docs.gaia-x.eu/ontology/development/classes/RegistrationNumber/"
 			},
 			"Rule": {
 				"type": "object",
@@ -19170,10 +14408,12 @@
 					},
 					"rules": {
 						"type": "array",
-						"items": {
-							"$ref": "#/components/schemas/Rule"
-						},
-						"description": "The rules."
+						"description": "The rules.",
+						"prefixItems": [
+							{
+								"$ref": "#/components/schemas/Rule"
+							}
+						]
 					}
 				},
 				"required": [
@@ -19206,200 +14446,6 @@
 			"ServerSpecResponse": {
 				"description": "The spec for the server."
 			},
-			"ServiceOfferingEntry": {
-				"type": "object",
-				"properties": {
-					"@context": {
-						"$ref": "#/components/schemas/FederatedCatalogueContextType"
-					},
-					"@id": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-					},
-					"@included": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-					},
-					"@graph": {
-						"anyOf": [
-							{
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-							},
-							{
-								"type": "array",
-								"items": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-								}
-							}
-						]
-					},
-					"@nest": {
-						"anyOf": [
-							{
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdJsonObject"
-							},
-							{
-								"type": "array",
-								"items": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdJsonObject"
-								}
-							}
-						]
-					},
-					"@type": {
-						"anyOf": [
-							{
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-							},
-							{
-								"type": "array",
-								"items": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-								}
-							}
-						]
-					},
-					"@reverse": {
-						"type": "object",
-						"additionalProperties": {
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-						}
-					},
-					"@index": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-					},
-					"id": {
-						"type": "string",
-						"description": "Id"
-					},
-					"type": {
-						"type": "string",
-						"const": "ServiceOffering",
-						"description": "Type"
-					},
-					"description": {
-						"type": "string",
-						"description": "Description"
-					},
-					"name": {
-						"type": "string",
-						"description": "Name"
-					},
-					"providedBy": {
-						"type": "string",
-						"description": "Overwrites providedBy as we only store identifier as string"
-					},
-					"servicePolicy": {
-						"type": "array",
-						"items": {
-							"$ref": "#/components/schemas/OdrlPolicy"
-						},
-						"description": "The service policy is always stored as an array"
-					},
-					"aggregationOfResources": {
-						"type": "array",
-						"items": {
-							"type": "string"
-						},
-						"description": "Overwrites aggregationOfResources as we only store identifier as string"
-					},
-					"endpoint": {
-						"$ref": "#/components/schemas/Endpoint"
-					},
-					"issuer": {
-						"type": "string",
-						"description": "The trusted issuer of the compliance credential"
-					},
-					"validFrom": {
-						"type": "string",
-						"description": "Valid from (as per W3C VC Data Model v2)"
-					},
-					"validUntil": {
-						"type": "string",
-						"description": "Valid until (as per W3C VC Data Model v2)"
-					},
-					"dateCreated": {
-						"type": "string",
-						"description": "The creation date."
-					},
-					"evidence": {
-						"type": "array",
-						"items": {
-							"type": "string"
-						},
-						"description": "The evidences concerning the data resource."
-					}
-				},
-				"required": [
-					"@context",
-					"dateCreated",
-					"endpoint",
-					"evidence",
-					"id",
-					"issuer",
-					"name",
-					"providedBy",
-					"servicePolicy",
-					"type",
-					"validFrom",
-					"validUntil"
-				],
-				"additionalProperties": {
-					"anyOf": [
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdIndexMap"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdIdMap"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdTypeMap"
-						},
-						{
-							"type": "array"
-						}
-					]
-				},
-				"description": "Interface describing a Service Offering."
-			},
-			"ServiceOfferingList": {
-				"type": "object",
-				"properties": {
-					"@context": {
-						"$ref": "#/components/schemas/FederatedCatalogueContextType"
-					},
-					"type": {
-						"type": "string",
-						"const": "ItemList",
-						"description": "The type"
-					},
-					"itemListElement": {
-						"type": "array",
-						"items": {
-							"$ref": "#/components/schemas/Omit%3CIServiceOfferingEntry%2C%22%40context%22%3E"
-						},
-						"description": "The components of the Collection"
-					},
-					"nextItem": {
-						"type": "string",
-						"description": "Next item cursor."
-					}
-				},
-				"required": [
-					"@context",
-					"type",
-					"itemListElement"
-				],
-				"additionalProperties": false,
-				"description": "Interface describing a list of Service Offering Entries."
-			},
 			"SortDirection": {
 				"anyOf": [
 					{
@@ -19414,31 +14460,6 @@
 					}
 				],
 				"description": "The sort directions."
-			},
-			"StatusType": {
-				"anyOf": [
-					{
-						"type": "string",
-						"const": "active",
-						"description": "Active type."
-					},
-					{
-						"type": "string",
-						"const": "inactive",
-						"description": "Inactive type."
-					},
-					{
-						"type": "string",
-						"const": "pending",
-						"description": "Pending type."
-					},
-					{
-						"type": "string",
-						"const": "revoked",
-						"description": "Revoked type."
-					}
-				],
-				"description": "The types for ODRL Status."
 			},
 			"TelemetryAddMetricValueRequest": {
 				"type": "object",
@@ -19493,10 +14514,12 @@
 				"properties": {
 					"entities": {
 						"type": "array",
-						"items": {
-							"$ref": "#/components/schemas/TelemetryMetric"
-						},
-						"description": "The metrics."
+						"description": "The metrics.",
+						"prefixItems": [
+							{
+								"$ref": "#/components/schemas/TelemetryMetric"
+							}
+						]
 					},
 					"cursor": {
 						"type": "string",
@@ -19599,10 +14622,12 @@
 					},
 					"entities": {
 						"type": "array",
-						"items": {
-							"$ref": "#/components/schemas/TelemetryMetricValue"
-						},
-						"description": "The metric values."
+						"description": "The metric values.",
+						"prefixItems": [
+							{
+								"$ref": "#/components/schemas/TelemetryMetricValue"
+							}
+						]
 					},
 					"cursor": {
 						"type": "string",
@@ -22842,10 +17867,12 @@
 					},
 					"allowList": {
 						"type": "array",
-						"items": {
-							"type": "string"
-						},
-						"description": "The list of identities that are allowed to modify the item."
+						"description": "The list of identities that are allowed to modify the item.",
+						"prefixItems": [
+							{
+								"type": "string"
+							}
+						]
 					},
 					"maxAllowListSize": {
 						"type": "number",
@@ -22910,10 +17937,12 @@
 					},
 					"allowList": {
 						"type": "array",
-						"items": {
-							"type": "string"
-						},
-						"description": "The list of identities that are allowed to modify the item."
+						"description": "The list of identities that are allowed to modify the item.",
+						"prefixItems": [
+							{
+								"type": "string"
+							}
+						]
 					}
 				},
 				"required": [
@@ -22927,14 +17956,16 @@
 				"properties": {
 					"data": {
 						"type": "string",
-						"description": "The data which is a string serialized as base64, leave empty if just updating the allowlist."
+						"description": "The data which is a string serialized as base64, leave empty if just updating the allow list."
 					},
 					"allowList": {
 						"type": "array",
-						"items": {
-							"type": "string"
-						},
-						"description": "An updated list of identities that are allowed to modify the item, send an empty list to remove all entries."
+						"description": "An updated list of identities that are allowed to modify the item, send an empty list to remove all entries.",
+						"prefixItems": [
+							{
+								"type": "string"
+							}
+						]
 					}
 				},
 				"additionalProperties": false,

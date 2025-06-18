@@ -184,7 +184,7 @@ The updated receipt.
 
 ### get()
 
-> **get**(`id`, `options?`): `Promise`\<\{ `data`: `Uint8Array`\<`ArrayBufferLike`\>; `receipt`: `IJsonLdNodeObject`; `allowList`: `string`[]; \}\>
+> **get**(`id`, `options?`): `Promise`\<\{ `data?`: `Uint8Array`\<`ArrayBufferLike`\>; `receipt`: `IJsonLdNodeObject`; `allowList?`: `string`[]; \}\>
 
 Get a verifiable item.
 
@@ -214,9 +214,9 @@ Should the allow list be included in the response, defaults to true.
 
 #### Returns
 
-`Promise`\<\{ `data`: `Uint8Array`\<`ArrayBufferLike`\>; `receipt`: `IJsonLdNodeObject`; `allowList`: `string`[]; \}\>
+`Promise`\<\{ `data?`: `Uint8Array`\<`ArrayBufferLike`\>; `receipt`: `IJsonLdNodeObject`; `allowList?`: `string`[]; \}\>
 
-The data for the item, the receipt and the allowlist.
+The data for the item, the receipt and the allow list.
 
 #### Implementation of
 

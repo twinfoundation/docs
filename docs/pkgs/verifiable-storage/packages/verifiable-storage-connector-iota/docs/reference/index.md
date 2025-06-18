@@ -2,6 +2,7 @@
 
 ## Classes
 
+- [VerifiableStorageConnectorIotaDataTypes](classes/VerifiableStorageConnectorIotaDataTypes.md)
 - [IotaVerifiableStorageConnector](classes/IotaVerifiableStorageConnector.md)
 - [IotaVerifiableStorageUtils](classes/IotaVerifiableStorageUtils.md)
 

@@ -38,7 +38,7 @@ The query parameters.
 
 #### includeContent?
 
-> `optional` **includeContent**: `boolean`
+> `optional` **includeContent**: `string`
 
 Include the content in the response, otherwise only metadata is returned.
 
@@ -46,4 +46,28 @@ Include the content in the response, otherwise only metadata is returned.
 
 ```ts
 false
+```
+
+#### disableDecryption?
+
+> `optional` **disableDecryption**: `string`
+
+Disables decryption if enabled by default.
+
+##### Default
+
+```ts
+false
+```
+
+#### overrideVaultKeyId?
+
+> `optional` **overrideVaultKeyId**: `string`
+
+Use a different vault key id for decryption, if not provided the default vault key id will be used.
+
+##### Default
+
+```ts
+undefined
 ```

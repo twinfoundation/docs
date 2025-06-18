@@ -1,5 +1,61 @@
 # @twin.org/auditable-item-graph-rest-client - Changelog
 
+## [0.0.1-next.43](https://github.com/twinfoundation/auditable-item-graph/compare/auditable-item-graph-rest-client-v0.0.1-next.42...auditable-item-graph-rest-client-v0.0.1-next.43) (2025-06-17)
+
+
+### Miscellaneous Chores
+
+* **auditable-item-graph-rest-client:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/auditable-item-graph-models bumped from 0.0.1-next.42 to 0.0.1-next.43
+
+## [0.0.1-next.42](https://github.com/twinfoundation/auditable-item-graph/compare/auditable-item-graph-rest-client-v0.0.1-next.41...auditable-item-graph-rest-client-v0.0.1-next.42) (2025-06-12)
+
+
+### Features
+
+* update dependencies ([6986689](https://github.com/twinfoundation/auditable-item-graph/commit/698668957a1fcb7f85ce2f117914d5980043924f))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/auditable-item-graph-models bumped from 0.0.1-next.41 to 0.0.1-next.42
+
+## [0.0.1-next.41](https://github.com/twinfoundation/auditable-item-graph/compare/auditable-item-graph-rest-client-v0.0.1-next.40...auditable-item-graph-rest-client-v0.0.1-next.41) (2025-06-03)
+
+
+### Miscellaneous Chores
+
+* **auditable-item-graph-rest-client:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/auditable-item-graph-models bumped from 0.0.1-next.40 to 0.0.1-next.41
+
+## [0.0.1-next.40](https://github.com/twinfoundation/auditable-item-graph/compare/auditable-item-graph-rest-client-v0.0.1-next.39...auditable-item-graph-rest-client-v0.0.1-next.40) (2025-05-28)
+
+
+### Miscellaneous Chores
+
+* **auditable-item-graph-rest-client:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/auditable-item-graph-models bumped from 0.0.1-next.39 to 0.0.1-next.40
+
 ## [0.0.1-next.39](https://github.com/twinfoundation/auditable-item-graph/compare/auditable-item-graph-rest-client-v0.0.1-next.38...auditable-item-graph-rest-client-v0.0.1-next.39) (2025-05-08)
 
 

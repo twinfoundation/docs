@@ -1,5 +1,33 @@
 # @twin.org/api-processors - Changelog
 
+## [0.0.1-next.36](https://github.com/twinfoundation/api/compare/api-processors-v0.0.1-next.35...api-processors-v0.0.1-next.36) (2025-06-17)
+
+
+### Miscellaneous Chores
+
+* **api-processors:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/api-models bumped from 0.0.1-next.35 to 0.0.1-next.36
+
+## [0.0.1-next.35](https://github.com/twinfoundation/api/compare/api-processors-v0.0.1-next.34...api-processors-v0.0.1-next.35) (2025-06-11)
+
+
+### Features
+
+* update dependencies ([1171dc4](https://github.com/twinfoundation/api/commit/1171dc416a9481737f6a640e3cf30145768f37e9))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/api-models bumped from 0.0.1-next.34 to 0.0.1-next.35
+
 ## [0.0.1-next.34](https://github.com/twinfoundation/api/compare/api-processors-v0.0.1-next.33...api-processors-v0.0.1-next.34) (2025-05-27)
 
 

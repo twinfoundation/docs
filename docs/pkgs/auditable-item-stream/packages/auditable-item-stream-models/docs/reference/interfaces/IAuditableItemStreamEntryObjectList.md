@@ -14,7 +14,7 @@ JSON-LD Context.
 
 ### type
 
-> **type**: `"ItemList"`
+> **type**: \[`"ItemList"`, `"AuditableItemStreamEntryObjectList"`\]
 
 JSON-LD Type.
 

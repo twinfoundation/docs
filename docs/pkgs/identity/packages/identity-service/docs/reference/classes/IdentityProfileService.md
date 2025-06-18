@@ -98,7 +98,7 @@ Nothing.
 
 ### get()
 
-> **get**(`publicPropertyNames?`, `privatePropertyNames?`, `identity?`): `Promise`\<\{ `identity`: `string`; `publicProfile`: `Partial`\<`T`\>; `privateProfile`: `Partial`\<`U`\>; \}\>
+> **get**(`publicPropertyNames?`, `privatePropertyNames?`, `identity?`): `Promise`\<\{ `identity`: `string`; `publicProfile?`: `Partial`\<`T`\>; `privateProfile?`: `Partial`\<`U`\>; \}\>
 
 Get the profile properties for an identity.
 
@@ -124,7 +124,7 @@ The identity to perform the profile operation on.
 
 #### Returns
 
-`Promise`\<\{ `identity`: `string`; `publicProfile`: `Partial`\<`T`\>; `privateProfile`: `Partial`\<`U`\>; \}\>
+`Promise`\<\{ `identity`: `string`; `publicProfile?`: `Partial`\<`T`\>; `privateProfile?`: `Partial`\<`U`\>; \}\>
 
 The items identity and the properties.
 
@@ -232,7 +232,7 @@ Nothing.
 
 ### list()
 
-> **list**(`publicFilters?`, `publicPropertyNames?`, `cursor?`, `pageSize?`): `Promise`\<\{ `items`: `object`[]; `cursor`: `string`; \}\>
+> **list**(`publicFilters?`, `publicPropertyNames?`, `cursor?`, `pageSize?`): `Promise`\<\{ `items`: `object`[]; `cursor?`: `string`; \}\>
 
 Get a list of the requested types.
 
@@ -264,7 +264,7 @@ The maximum number of items in a page.
 
 #### Returns
 
-`Promise`\<\{ `items`: `object`[]; `cursor`: `string`; \}\>
+`Promise`\<\{ `items`: `object`[]; `cursor?`: `string`; \}\>
 
 The list of items and cursor for paging.
 

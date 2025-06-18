@@ -28,7 +28,7 @@ The data to be updated.
 
 > `optional` **data**: `string`
 
-The data which is a string serialized as base64, leave empty if just updating the allowlist.
+The data which is a string serialized as base64, leave empty if just updating the allow list.
 
 #### allowList?
 

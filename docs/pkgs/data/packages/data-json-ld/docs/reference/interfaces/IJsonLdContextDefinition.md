@@ -8,7 +8,7 @@ https://www.w3.org/TR/json-ld11/#context-definitions
 
 ## Indexable
 
-\[`key`: `string`\]: `undefined` \| `null` \| `string` \| `boolean` \| [`IJsonLdExpandedTermDefinition`](../type-aliases/IJsonLdExpandedTermDefinition.md) \| \{ `@container`: `"@set"`; `@protected`: `boolean`; \}
+\[`key`: `string`\]: `undefined` \| `null` \| `string` \| `boolean` \| [`IJsonLdExpandedTermDefinition`](../type-aliases/IJsonLdExpandedTermDefinition.md) \| \{ `@container`: `"@set"`; `@protected?`: `boolean`; \}
 
 ## Properties
 

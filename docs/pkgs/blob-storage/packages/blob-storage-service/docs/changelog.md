@@ -1,5 +1,69 @@
 # @twin.org/blob-storage-service - Changelog
 
+## [0.0.1-next.35](https://github.com/twinfoundation/blob-storage/compare/blob-storage-service-v0.0.1-next.34...blob-storage-service-v0.0.1-next.35) (2025-06-17)
+
+
+### Features
+
+* additional encryption options on per item basis ([4b95a65](https://github.com/twinfoundation/blob-storage/commit/4b95a656d19e3b571cea905e36f29b679b13e1e8))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/blob-storage-models bumped from 0.0.1-next.34 to 0.0.1-next.35
+  * devDependencies
+    * @twin.org/blob-storage-connector-memory bumped from 0.0.1-next.34 to 0.0.1-next.35
+
+## [0.0.1-next.34](https://github.com/twinfoundation/blob-storage/compare/blob-storage-service-v0.0.1-next.33...blob-storage-service-v0.0.1-next.34) (2025-06-12)
+
+
+### Features
+
+* update dependencies ([56f0094](https://github.com/twinfoundation/blob-storage/commit/56f0094b68d8bd22864cd899ac1b61d95540f719))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/blob-storage-models bumped from 0.0.1-next.33 to 0.0.1-next.34
+  * devDependencies
+    * @twin.org/blob-storage-connector-memory bumped from 0.0.1-next.33 to 0.0.1-next.34
+
+## [0.0.1-next.33](https://github.com/twinfoundation/blob-storage/compare/blob-storage-service-v0.0.1-next.32...blob-storage-service-v0.0.1-next.33) (2025-06-03)
+
+
+### Miscellaneous Chores
+
+* **blob-storage-service:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/blob-storage-models bumped from 0.0.1-next.32 to 0.0.1-next.33
+  * devDependencies
+    * @twin.org/blob-storage-connector-memory bumped from 0.0.1-next.32 to 0.0.1-next.33
+
+## [0.0.1-next.32](https://github.com/twinfoundation/blob-storage/compare/blob-storage-service-v0.0.1-next.31...blob-storage-service-v0.0.1-next.32) (2025-05-28)
+
+
+### Features
+
+* update to support fully qualified data type names ([3297d69](https://github.com/twinfoundation/blob-storage/commit/3297d69d332058b0f0141002087f56ba230620e1))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/blob-storage-models bumped from 0.0.1-next.31 to 0.0.1-next.32
+  * devDependencies
+    * @twin.org/blob-storage-connector-memory bumped from 0.0.1-next.31 to 0.0.1-next.32
+
 ## [0.0.1-next.31](https://github.com/twinfoundation/blob-storage/compare/blob-storage-service-v0.0.1-next.30...blob-storage-service-v0.0.1-next.31) (2025-05-08)
 
 

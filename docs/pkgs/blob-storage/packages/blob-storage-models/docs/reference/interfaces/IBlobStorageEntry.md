@@ -68,6 +68,14 @@ The mime type for the blob.
 
 ***
 
+### isEncrypted?
+
+> `optional` **isEncrypted**: `boolean`
+
+Indicates if the blob is encrypted.
+
+***
+
 ### fileExtension?
 
 > `optional` **fileExtension**: `string`

@@ -16,7 +16,7 @@ Class to help with JSON LD.
 
 ### validate()
 
-> `static` **validate**\<`T`\>(`document`, `validationFailures`, `validationMode?`): `Promise`\<`boolean`\>
+> `static` **validate**\<`T`\>(`document`, `validationFailures`, `options?`): `Promise`\<`boolean`\>
 
 Validate a JSON-LD document.
 
@@ -40,11 +40,21 @@ The JSON-LD document to validate.
 
 The list of validation failures to add to.
 
-##### validationMode?
+##### options?
+
+Optional options for validation.
+
+###### validationMode?
 
 `ValidationMode`
 
 The validation mode to use, defaults to either.
+
+###### failOnMissingType?
+
+`boolean`
+
+If true, will fail validation if the data type is missing, defaults to false.
 
 #### Returns
 

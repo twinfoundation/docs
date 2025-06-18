@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/telemetry-service",
-	"version": "0.0.1-next.16",
+	"version": "0.0.1-next.17",
 	"description": "Telemetry contract implementation and REST endpoint definitions",
 	"repository": {
 		"type": "git",

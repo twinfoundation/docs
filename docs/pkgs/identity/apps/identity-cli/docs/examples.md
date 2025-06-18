@@ -97,7 +97,7 @@ NODE_URL="https://api.devnet.iota.cafe"
 FAUCET_URL="https://faucet.devnet.iota.cafe"
 COIN_TYPE="4218"
 NETWORK="devnet"
-EXPLORER_URL="https://explorer.rebased.iota.org/"
+EXPLORER_URL="https://explorer.iota.org/"
 ```
 
 To then request some funds and generate the identity you can issue the following commands:

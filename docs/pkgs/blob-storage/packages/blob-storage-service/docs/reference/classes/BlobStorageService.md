@@ -50,7 +50,7 @@ Runtime name for the class.
 
 ### create()
 
-> **create**(`blob`, `encodingFormat?`, `fileExtension?`, `metadata?`, `namespace?`, `userIdentity?`, `nodeIdentity?`): `Promise`\<`string`\>
+> **create**(`blob`, `encodingFormat?`, `fileExtension?`, `metadata?`, `options?`, `userIdentity?`, `nodeIdentity?`): `Promise`\<`string`\>
 
 Create the blob with some metadata.
 
@@ -80,7 +80,23 @@ Extension for the blob, will be detected if left undefined.
 
 Data for the custom metadata as JSON-LD.
 
-##### namespace?
+##### options?
+
+Optional options for the creation of the blob.
+
+###### disableEncryption?
+
+`boolean`
+
+Disables encryption if enabled by default.
+
+###### overrideVaultKeyId?
+
+`string`
+
+Use a different vault key id for encryption, if not provided the default vault key id will be used.
+
+###### namespace?
 
 `string`
 
@@ -112,7 +128,7 @@ The id of the stored blob in urn format.
 
 ### get()
 
-> **get**(`id`, `includeContent`, `userIdentity?`, `nodeIdentity?`): `Promise`\<`IBlobStorageEntry`\>
+> **get**(`id`, `options?`, `userIdentity?`, `nodeIdentity?`): `Promise`\<`IBlobStorageEntry`\>
 
 Get the blob entry.
 
@@ -124,11 +140,27 @@ Get the blob entry.
 
 The id of the blob to get in urn format.
 
-##### includeContent
+##### options?
+
+Optional options for the retrieval of the blob.
+
+###### includeContent?
 
 `boolean`
 
 Include the content, or just get the metadata.
+
+###### disableDecryption?
+
+`boolean`
+
+Disables decryption if enabled by default.
+
+###### overrideVaultKeyId?
+
+`string`
+
+Use a different vault key id for decryption, if not provided the default vault key id will be used.
 
 ##### userIdentity?
 
