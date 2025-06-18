@@ -1,5 +1,61 @@
 # @twin.org/ui-components-react - Changelog
 
+## [0.0.1-next.51](https://github.com/twinfoundation/ui/compare/ui-storybook-react-v0.0.1-next.50...ui-storybook-react-v0.0.1-next.51) (2025-06-11)
+
+
+### Miscellaneous Chores
+
+* **ui-storybook-react:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/ui-components-react bumped from 0.0.1-next.50 to 0.0.1-next.51
+
+## [0.0.1-next.50](https://github.com/twinfoundation/ui/compare/ui-storybook-react-v0.0.1-next.49...ui-storybook-react-v0.0.1-next.50) (2025-06-05)
+
+
+### Features
+
+* icons migration svg flat ([#68](https://github.com/twinfoundation/ui/issues/68)) ([1d4b707](https://github.com/twinfoundation/ui/commit/1d4b7073afe736a0d1b203d0fc079d2d3848760c))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/ui-components-react bumped from 0.0.1-next.49 to 0.0.1-next.50
+
+## [0.0.1-next.49](https://github.com/twinfoundation/ui/compare/ui-storybook-react-v0.0.1-next.48...ui-storybook-react-v0.0.1-next.49) (2025-05-29)
+
+
+### Miscellaneous Chores
+
+* **ui-storybook-react:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/ui-components-react bumped from 0.0.1-next.48 to 0.0.1-next.49
+
+## [0.0.1-next.48](https://github.com/twinfoundation/ui/compare/ui-storybook-react-v0.0.1-next.47...ui-storybook-react-v0.0.1-next.48) (2025-05-28)
+
+
+### Features
+
+* migrate icon system and update types ([#62](https://github.com/twinfoundation/ui/issues/62)) ([ab81824](https://github.com/twinfoundation/ui/commit/ab81824e06cf0f03ed1d888f2db9b642574d8b42))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/ui-components-react bumped from 0.0.1-next.47 to 0.0.1-next.48
+
 ## [0.0.1-next.47](https://github.com/twinfoundation/ui/compare/ui-storybook-react-v0.0.1-next.46...ui-storybook-react-v0.0.1-next.47) (2025-05-22)
 
 

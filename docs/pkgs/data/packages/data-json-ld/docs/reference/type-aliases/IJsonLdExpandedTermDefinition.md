@@ -1,6 +1,6 @@
 # Type Alias: IJsonLdExpandedTermDefinition
 
-> **IJsonLdExpandedTermDefinition** = `object` & \{ `@id`: [`IJsonLdKeyword`](IJsonLdKeyword.md)\[`"@id"`\] \| `null`; `@nest`: `"@nest"` \| `string`; `@container`: [`IJsonLdKeyword`](IJsonLdKeyword.md)\[`"@container"`\]; \} \| \{ `@reverse`: [`IJsonLdKeyword`](IJsonLdKeyword.md)\[`"@reverse"`\]; `@container`: `"@set"` \| `"@index"` \| `null`; \}
+> **IJsonLdExpandedTermDefinition** = `object` & \{ `@id?`: `string` \| `string`[] \| `null`; `@nest?`: `"@nest"` \| `string`; `@container?`: `"@list"` \| `"@set"` \| [`IJsonLdContainerType`](IJsonLdContainerType.md) \| (`"@list"` \| `"@set"` \| [`IJsonLdContainerType`](IJsonLdContainerType.md))[] \| [`IJsonLdContainerTypeArray`](IJsonLdContainerTypeArray.md) \| `null`; \} \| \{ `@reverse`: `string`; `@container?`: `"@set"` \| `"@index"` \| `null`; \}
 
 An expanded term definition is used to describe the mapping between a term
 and its expanded identifier, as well as other properties of the value
@@ -14,11 +14,11 @@ associated with the term when it is used as key in a node object.
 
 ### @language?
 
-> `optional` **@language**: [`IJsonLdKeyword`](IJsonLdKeyword.md)\[`"@language"`\]
+> `optional` **@language**: `string`
 
 ### @index?
 
-> `optional` **@index**: [`IJsonLdKeyword`](IJsonLdKeyword.md)\[`"@index"`\]
+> `optional` **@index**: `string`
 
 ### @context?
 
@@ -26,15 +26,15 @@ associated with the term when it is used as key in a node object.
 
 ### @prefix?
 
-> `optional` **@prefix**: [`IJsonLdKeyword`](IJsonLdKeyword.md)\[`"@prefix"`\]
+> `optional` **@prefix**: `boolean`
 
 ### @propagate?
 
-> `optional` **@propagate**: [`IJsonLdKeyword`](IJsonLdKeyword.md)\[`"@propagate"`\]
+> `optional` **@propagate**: `boolean`
 
 ### @protected?
 
-> `optional` **@protected**: [`IJsonLdKeyword`](IJsonLdKeyword.md)\[`"@protected"`\]
+> `optional` **@protected**: `boolean`
 
 ## See
 

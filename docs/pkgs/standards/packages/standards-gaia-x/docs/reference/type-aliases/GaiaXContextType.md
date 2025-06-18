@@ -1,5 +1,5 @@
 # Type Alias: GaiaXContextType
 
-> **GaiaXContextType** = *typeof* [`GaiaXLdContext`](../variables/GaiaXContexts.md#gaiaxldcontext) \| \[`...IJsonLdContextDefinitionElement[]`, *typeof* [`GaiaXLdContext`](../variables/GaiaXContexts.md#gaiaxldcontext), `IJsonLdContextDefinitionElement`\] \| \[`IJsonLdContextDefinitionElement`, *typeof* [`GaiaXLdContext`](../variables/GaiaXContexts.md#gaiaxldcontext), `...IJsonLdContextDefinitionElement[]`\]
+> **GaiaXContextType** = *typeof* [`ContextRoot`](../variables/GaiaXContexts.md#contextroot) \| \[`...IJsonLdContextDefinitionElement[]`, *typeof* [`ContextRoot`](../variables/GaiaXContexts.md#contextroot), `IJsonLdContextDefinitionElement`\] \| \[`IJsonLdContextDefinitionElement`, *typeof* [`ContextRoot`](../variables/GaiaXContexts.md#contextroot), `...IJsonLdContextDefinitionElement[]`\]
 
 The Gaia-X JSON-LD context type.

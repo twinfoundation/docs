@@ -1,5 +1,9 @@
 # @twin.org/document-management-models
 
+## Classes
+
+- [DocumentManagementDataTypes](classes/DocumentManagementDataTypes.md)
+
 ## Interfaces
 
 - [IDocument](interfaces/IDocument.md)

@@ -33,7 +33,6 @@
 - [IJsonLdJsonArray](type-aliases/IJsonLdJsonArray.md)
 - [IJsonLdJsonPrimitive](type-aliases/IJsonLdJsonPrimitive.md)
 - [IJsonLdJsonValue](type-aliases/IJsonLdJsonValue.md)
-- [IJsonLdKeyword](type-aliases/IJsonLdKeyword.md)
 - [IJsonLdListOrSetItem](type-aliases/IJsonLdListOrSetItem.md)
 - [IJsonLdNodePrimitive](type-aliases/IJsonLdNodePrimitive.md)
 - [IJsonLdValueObject](type-aliases/IJsonLdValueObject.md)

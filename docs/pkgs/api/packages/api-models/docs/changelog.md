@@ -1,5 +1,19 @@
 # @twin.org/api-models - Changelog
 
+## [0.0.1-next.36](https://github.com/twinfoundation/api/compare/api-models-v0.0.1-next.35...api-models-v0.0.1-next.36) (2025-06-17)
+
+
+### Features
+
+* use new includeStackTrace flag for toJsonObject ([6452b15](https://github.com/twinfoundation/api/commit/6452b153af786eee14b21152420f8a2578b70593))
+
+## [0.0.1-next.35](https://github.com/twinfoundation/api/compare/api-models-v0.0.1-next.34...api-models-v0.0.1-next.35) (2025-06-11)
+
+
+### Features
+
+* update dependencies ([1171dc4](https://github.com/twinfoundation/api/commit/1171dc416a9481737f6a640e3cf30145768f37e9))
+
 ## [0.0.1-next.34](https://github.com/twinfoundation/api/compare/api-models-v0.0.1-next.33...api-models-v0.0.1-next.34) (2025-05-27)
 
 

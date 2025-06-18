@@ -1,0 +1,22 @@
+{
+	"name": "@twin.org/rights-management",
+	"version": "0.0.0",
+	"description": "Rights Management",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/twinfoundation/rights-management.git"
+	},
+	"author": "martyn.janes@iota.org",
+	"license": "Apache-2.0",
+	"private": true,
+	"engines": {
+		"node": ">=20.0.0"
+	},
+	"workspaces": [
+		"packages/rights-management-models",
+		"packages/rights-management-pap-service",
+		"packages/rights-management-service",
+		"packages/rights-management-rest-client"
+	],
+	"type": "module"
+}

@@ -1,5 +1,21 @@
 # @twin.org/event-bus-service - Changelog
 
+## [0.0.1-next.11](https://github.com/twinfoundation/event-bus/compare/event-bus-service-v0.0.1-next.10...event-bus-service-v0.0.1-next.11) (2025-06-12)
+
+
+### Features
+
+* update dependencies ([a313000](https://github.com/twinfoundation/event-bus/commit/a313000b9c3264e8ed2602622219be2cefcf0474))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/event-bus-models bumped from 0.0.1-next.10 to 0.0.1-next.11
+  * devDependencies
+    * @twin.org/event-bus-connector-local bumped from 0.0.1-next.10 to 0.0.1-next.11
+
 ## [0.0.1-next.10](https://github.com/twinfoundation/event-bus/compare/event-bus-service-v0.0.1-next.9...event-bus-service-v0.0.1-next.10) (2025-04-17)
 
 

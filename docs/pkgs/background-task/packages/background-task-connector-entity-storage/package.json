@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/background-task-connector-entity-storage",
-	"version": "0.0.1-next.15",
+	"version": "0.0.1-next.17",
 	"description": "Background task connector implementation using entity storage",
 	"repository": {
 		"type": "git",

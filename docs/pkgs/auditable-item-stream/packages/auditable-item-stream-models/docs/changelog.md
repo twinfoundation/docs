@@ -1,5 +1,34 @@
 # @twin.org/auditable-item-stream-models - Changelog
 
+## [0.0.1-next.36](https://github.com/twinfoundation/auditable-item-stream/compare/auditable-item-stream-models-v0.0.1-next.35...auditable-item-stream-models-v0.0.1-next.36) (2025-06-18)
+
+
+### Features
+
+* improve schemas ([a658264](https://github.com/twinfoundation/auditable-item-stream/commit/a65826423f57ca18d9de44e7e75cb06ab9dd12cb))
+* improve schemas ([b253580](https://github.com/twinfoundation/auditable-item-stream/commit/b2535806321f39c7c02db0e04f65fb04c0595dd0))
+
+## [0.0.1-next.35](https://github.com/twinfoundation/auditable-item-stream/compare/auditable-item-stream-models-v0.0.1-next.34...auditable-item-stream-models-v0.0.1-next.35) (2025-06-12)
+
+
+### Features
+
+* update dependencies ([9ff038b](https://github.com/twinfoundation/auditable-item-stream/commit/9ff038b7e76e9fb586be4f2321231f04258ef794))
+
+## [0.0.1-next.34](https://github.com/twinfoundation/auditable-item-stream/compare/auditable-item-stream-models-v0.0.1-next.33...auditable-item-stream-models-v0.0.1-next.34) (2025-06-03)
+
+
+### Features
+
+* update ts-to-schema generation ([91a7790](https://github.com/twinfoundation/auditable-item-stream/commit/91a779029dbefeb4af640a9aa54880493521bb7c))
+
+## [0.0.1-next.33](https://github.com/twinfoundation/auditable-item-stream/compare/auditable-item-stream-models-v0.0.1-next.32...auditable-item-stream-models-v0.0.1-next.33) (2025-05-28)
+
+
+### Features
+
+* data types registered with fully qualified names ([3bcd927](https://github.com/twinfoundation/auditable-item-stream/commit/3bcd92788bfe4976bc88caf230501f5bbf8637f9))
+
 ## [0.0.1-next.32](https://github.com/twinfoundation/auditable-item-stream/compare/auditable-item-stream-models-v0.0.1-next.31...auditable-item-stream-models-v0.0.1-next.32) (2025-05-08)
 
 

@@ -1,5 +1,33 @@
 # @twin.org/blob-storage-models - Changelog
 
+## [0.0.1-next.35](https://github.com/twinfoundation/blob-storage/compare/blob-storage-models-v0.0.1-next.34...blob-storage-models-v0.0.1-next.35) (2025-06-17)
+
+
+### Features
+
+* additional encryption options on per item basis ([4b95a65](https://github.com/twinfoundation/blob-storage/commit/4b95a656d19e3b571cea905e36f29b679b13e1e8))
+
+## [0.0.1-next.34](https://github.com/twinfoundation/blob-storage/compare/blob-storage-models-v0.0.1-next.33...blob-storage-models-v0.0.1-next.34) (2025-06-12)
+
+
+### Features
+
+* update dependencies ([56f0094](https://github.com/twinfoundation/blob-storage/commit/56f0094b68d8bd22864cd899ac1b61d95540f719))
+
+## [0.0.1-next.33](https://github.com/twinfoundation/blob-storage/compare/blob-storage-models-v0.0.1-next.32...blob-storage-models-v0.0.1-next.33) (2025-06-03)
+
+
+### Features
+
+* update ts-to-schema generation ([03439c7](https://github.com/twinfoundation/blob-storage/commit/03439c726108bf645941290e41824c57a6a23de3))
+
+## [0.0.1-next.32](https://github.com/twinfoundation/blob-storage/compare/blob-storage-models-v0.0.1-next.31...blob-storage-models-v0.0.1-next.32) (2025-05-28)
+
+
+### Features
+
+* update to support fully qualified data type names ([3297d69](https://github.com/twinfoundation/blob-storage/commit/3297d69d332058b0f0141002087f56ba230620e1))
+
 ## [0.0.1-next.31](https://github.com/twinfoundation/blob-storage/compare/blob-storage-models-v0.0.1-next.30...blob-storage-models-v0.0.1-next.31) (2025-05-08)
 
 

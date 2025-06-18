@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/document-management-service",
-	"version": "0.0.1-next.14",
+	"version": "0.0.1-next.18",
 	"description": "Document management contract implementation and REST endpoint definitions",
 	"repository": {
 		"type": "git",

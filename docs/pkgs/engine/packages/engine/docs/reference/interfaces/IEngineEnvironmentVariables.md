@@ -737,3 +737,11 @@ Federated catalog TTL for the cache.
 > `optional` **federatedCatalogueClearingHouseApproverList**: `string`
 
 Federated catalog clearing house approver list, stringified array of DIDs.
+
+***
+
+### rightsManagementEnabled?
+
+> `optional` **rightsManagementEnabled**: `string`
+
+Is the rights management enabled.

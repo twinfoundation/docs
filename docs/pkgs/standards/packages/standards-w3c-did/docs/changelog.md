@@ -1,5 +1,47 @@
 # @twin.org/standards-w3c-did - Changelog
 
+## [0.0.1-next.49](https://github.com/twinfoundation/standards/compare/standards-w3c-did-v0.0.1-next.48...standards-w3c-did-v0.0.1-next.49) (2025-06-18)
+
+
+### Miscellaneous Chores
+
+* **standards-w3c-did:** Synchronize repo versions
+
+## [0.0.1-next.48](https://github.com/twinfoundation/standards/compare/standards-w3c-did-v0.0.1-next.47...standards-w3c-did-v0.0.1-next.48) (2025-06-11)
+
+
+### Features
+
+* update to latest JSON schema spec ([7a23930](https://github.com/twinfoundation/standards/commit/7a2393032d7f48bfb20d3a484f981fb6dd83a92c))
+
+## [0.0.1-next.47](https://github.com/twinfoundation/standards/compare/standards-w3c-did-v0.0.1-next.46...standards-w3c-did-v0.0.1-next.47) (2025-06-05)
+
+
+### Features
+
+* update ts-to-schema generation ([ba4e76d](https://github.com/twinfoundation/standards/commit/ba4e76d677556a1817092f8079d4cce67dee94bc))
+
+## [0.0.1-next.46](https://github.com/twinfoundation/standards/compare/standards-w3c-did-v0.0.1-next.45...standards-w3c-did-v0.0.1-next.46) (2025-06-03)
+
+
+### Features
+
+* update ts-to-schema generation ([0905daa](https://github.com/twinfoundation/standards/commit/0905daa4a344ed35fc37b7f12fcf9ce9d34e4bd6))
+
+## [0.0.1-next.45](https://github.com/twinfoundation/standards/compare/standards-w3c-did-v0.0.1-next.44...standards-w3c-did-v0.0.1-next.45) (2025-06-02)
+
+
+### Miscellaneous Chores
+
+* **standards-w3c-did:** Synchronize repo versions
+
+## [0.0.1-next.44](https://github.com/twinfoundation/standards/compare/standards-w3c-did-v0.0.1-next.43...standards-w3c-did-v0.0.1-next.44) (2025-05-28)
+
+
+### Miscellaneous Chores
+
+* **standards-w3c-did:** Synchronize repo versions
+
 ## [0.0.1-next.43](https://github.com/twinfoundation/standards/compare/standards-w3c-did-v0.0.1-next.42...standards-w3c-did-v0.0.1-next.43) (2025-05-20)
 
 

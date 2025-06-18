@@ -1,5 +1,61 @@
 # @twin.org/blob-storage-connector-ipfs - Changelog
 
+## [0.0.1-next.35](https://github.com/twinfoundation/blob-storage/compare/blob-storage-connector-ipfs-v0.0.1-next.34...blob-storage-connector-ipfs-v0.0.1-next.35) (2025-06-17)
+
+
+### Miscellaneous Chores
+
+* **blob-storage-connector-ipfs:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/blob-storage-models bumped from 0.0.1-next.34 to 0.0.1-next.35
+
+## [0.0.1-next.34](https://github.com/twinfoundation/blob-storage/compare/blob-storage-connector-ipfs-v0.0.1-next.33...blob-storage-connector-ipfs-v0.0.1-next.34) (2025-06-12)
+
+
+### Features
+
+* update dependencies ([56f0094](https://github.com/twinfoundation/blob-storage/commit/56f0094b68d8bd22864cd899ac1b61d95540f719))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/blob-storage-models bumped from 0.0.1-next.33 to 0.0.1-next.34
+
+## [0.0.1-next.33](https://github.com/twinfoundation/blob-storage/compare/blob-storage-connector-ipfs-v0.0.1-next.32...blob-storage-connector-ipfs-v0.0.1-next.33) (2025-06-03)
+
+
+### Miscellaneous Chores
+
+* **blob-storage-connector-ipfs:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/blob-storage-models bumped from 0.0.1-next.32 to 0.0.1-next.33
+
+## [0.0.1-next.32](https://github.com/twinfoundation/blob-storage/compare/blob-storage-connector-ipfs-v0.0.1-next.31...blob-storage-connector-ipfs-v0.0.1-next.32) (2025-05-28)
+
+
+### Miscellaneous Chores
+
+* **blob-storage-connector-ipfs:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/blob-storage-models bumped from 0.0.1-next.31 to 0.0.1-next.32
+
 ## [0.0.1-next.31](https://github.com/twinfoundation/blob-storage/compare/blob-storage-connector-ipfs-v0.0.1-next.30...blob-storage-connector-ipfs-v0.0.1-next.31) (2025-05-08)
 
 

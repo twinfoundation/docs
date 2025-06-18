@@ -30,7 +30,7 @@ The id or alias to try and find.
 
 #### idMode?
 
-> `optional` **idMode**: `"both"` \| `"id"` \| `"alias"`
+> `optional` **idMode**: `"id"` \| `"alias"` \| `"both"`
 
 Which field to look in with the id, defaults to both.
 

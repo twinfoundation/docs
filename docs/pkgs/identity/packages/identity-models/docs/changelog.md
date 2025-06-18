@@ -1,5 +1,19 @@
 # @twin.org/identity-service-models - Changelog
 
+## [0.0.1-next.48](https://github.com/twinfoundation/identity/compare/identity-models-v0.0.1-next.47...identity-models-v0.0.1-next.48) (2025-06-17)
+
+
+### Miscellaneous Chores
+
+* **identity-models:** Synchronize repo versions
+
+## [0.0.1-next.47](https://github.com/twinfoundation/identity/compare/identity-models-v0.0.1-next.46...identity-models-v0.0.1-next.47) (2025-06-12)
+
+
+### Features
+
+* identity key separator use slash ([1319d0d](https://github.com/twinfoundation/identity/commit/1319d0d07164a36b3ec279e6421b8835ffefc3d3))
+
 ## [0.0.1-next.46](https://github.com/twinfoundation/identity/compare/identity-models-v0.0.1-next.45...identity-models-v0.0.1-next.46) (2025-05-20)
 
 

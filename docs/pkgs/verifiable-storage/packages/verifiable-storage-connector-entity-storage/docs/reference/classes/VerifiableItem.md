@@ -38,9 +38,9 @@ The data base64 encoded.
 
 ***
 
-### allowlist
+### allowList
 
-> **allowlist**: `string`[]
+> **allowList**: `string`[]
 
 The allow list for modifying the data.
 

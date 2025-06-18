@@ -256,7 +256,7 @@ Nothing.
 
 ### getKey()
 
-> **getKey**(`name`): `Promise`\<\{ `type`: `VaultKeyType`; `privateKey`: `Uint8Array`; `publicKey`: `Uint8Array`\<`ArrayBufferLike`\>; \}\>
+> **getKey**(`name`): `Promise`\<\{ `type`: `VaultKeyType`; `privateKey`: `Uint8Array`; `publicKey?`: `Uint8Array`\<`ArrayBufferLike`\>; \}\>
 
 Get a key from the vault.
 
@@ -270,7 +270,7 @@ The name of the key to get.
 
 #### Returns
 
-`Promise`\<\{ `type`: `VaultKeyType`; `privateKey`: `Uint8Array`; `publicKey`: `Uint8Array`\<`ArrayBufferLike`\>; \}\>
+`Promise`\<\{ `type`: `VaultKeyType`; `privateKey`: `Uint8Array`; `publicKey?`: `Uint8Array`\<`ArrayBufferLike`\>; \}\>
 
 The key, publicKey can be undefined if key is symmetric.
 
@@ -620,7 +620,7 @@ The name of the key.
 
 The path of the key. Defaults to "signing-key".
 
-`"public-key"` | `"signing-key"` | `"encryption-key"`
+`"signing-key"` | `"encryption-key"` | `"public-key"`
 
 ##### version?
 

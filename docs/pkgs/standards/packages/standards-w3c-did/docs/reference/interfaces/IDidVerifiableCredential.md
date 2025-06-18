@@ -56,7 +56,7 @@ Annotate type definitions or lock them to specific versions of the vocabulary.
 
 ### issuer?
 
-> `optional` **issuer**: `string` \| \{ `id`: `string`; `name`: `string` \| [`IDidLabel`](IDidLabel.md)[]; `description`: `string` \| [`IDidLabel`](IDidLabel.md)[]; \}
+> `optional` **issuer**: `string` \| \{ `id`: `string`; `name?`: `string` \| [`IDidLabel`](IDidLabel.md)[]; `description?`: `string` \| [`IDidLabel`](IDidLabel.md)[]; \}
 
 The issuing identity.
 

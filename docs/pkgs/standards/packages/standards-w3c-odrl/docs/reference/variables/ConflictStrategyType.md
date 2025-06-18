@@ -1,6 +1,6 @@
-# Variable: ConflictStrategyTypes
+# Variable: ConflictStrategyType
 
-> `const` **ConflictStrategyTypes**: `object`
+> `const` **ConflictStrategyType**: `object`
 
 The types for ODRL Conflict Resolution Strategies.
 

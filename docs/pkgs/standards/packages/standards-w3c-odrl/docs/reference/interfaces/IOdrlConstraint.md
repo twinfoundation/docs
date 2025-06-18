@@ -8,7 +8,7 @@ Interface for ODRL Constraints.
 
 ## Indexable
 
-\[`key`: `string`\]: `undefined` \| `null` \| `string` \| `number` \| `boolean` \| `string`[] \| `IJsonLdContextDefinition` \| `IJsonLdContextDefinitionElement`[] \| `IJsonLdIdMap` \| `IJsonLdNodeObject` \| `IJsonLdListObject` \| `object` & `object` \| `object` & `object` \| `object` & `object` \| `IJsonLdSetObject` \| `IJsonLdJsonObject` \| `IJsonLdIndexMap` \| `IJsonLdLanguageMap` \| `IJsonLdGraphObject` \| `IJsonLdNodeObject`[] \| `IJsonLdJsonObject`[] \| \{[`key`: `string`]: `string`; \} \| `IJsonLdTypeMap` \| `IJsonLdNodePrimitive`[]
+\[`key`: `string`\]: `undefined` \| `null` \| `string` \| `number` \| `boolean` \| `string`[] \| `IJsonLdNodeObject` \| `IJsonLdGraphObject` \| `object` & `object` \| `object` & `object` \| `object` & `object` \| `IJsonLdListObject` \| `IJsonLdSetObject` \| `IJsonLdNodePrimitive`[] \| `IJsonLdLanguageMap` \| `IJsonLdIndexMap` \| `IJsonLdNodeObject`[] \| `IJsonLdIdMap` \| `IJsonLdTypeMap` \| `IJsonLdContextDefinition` \| `IJsonLdContextDefinitionElement`[] \| `IJsonLdJsonObject` \| `IJsonLdJsonObject`[] \| \{[`key`: `string`]: `string`; \}
 
 ## Properties
 
@@ -38,7 +38,7 @@ The operator of the constraint.
 
 ### rightOperand?
 
-> `optional` **rightOperand**: `string` \| \{ `@value`: `string`; `@type`: [`DataType`](../type-aliases/DataType.md); \} \| \{ `@id`: `string`; \}
+> `optional` **rightOperand**: `string` \| \{ `@value`: `string`; `@type?`: `string`; \} \| \{ `@id`: `string`; \}
 
 The right operand of the constraint.
 value with optional
@@ -55,7 +55,7 @@ Reference to the right operand.
 
 ### dataType?
 
-> `optional` **dataType**: [`DataType`](../type-aliases/DataType.md)
+> `optional` **dataType**: `string`
 
 The data type of the right operand.
 

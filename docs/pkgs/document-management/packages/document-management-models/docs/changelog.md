@@ -1,5 +1,33 @@
 # @twin.org/document-management-models - Changelog
 
+## [0.0.1-next.18](https://github.com/twinfoundation/document-management/compare/document-management-models-v0.0.1-next.17...document-management-models-v0.0.1-next.18) (2025-06-18)
+
+
+### Miscellaneous Chores
+
+* **document-management-models:** Synchronize repo versions
+
+## [0.0.1-next.17](https://github.com/twinfoundation/document-management/compare/document-management-models-v0.0.1-next.16...document-management-models-v0.0.1-next.17) (2025-06-12)
+
+
+### Features
+
+* update dependencies ([f9d8641](https://github.com/twinfoundation/document-management/commit/f9d86417dba24027699225ec7473296e361dcb00))
+
+## [0.0.1-next.16](https://github.com/twinfoundation/document-management/compare/document-management-models-v0.0.1-next.15...document-management-models-v0.0.1-next.16) (2025-06-03)
+
+
+### Features
+
+* update ts-to-schema generation ([01a5335](https://github.com/twinfoundation/document-management/commit/01a5335372f6a4764a74d56c446d669724a308aa))
+
+## [0.0.1-next.15](https://github.com/twinfoundation/document-management/compare/document-management-models-v0.0.1-next.14...document-management-models-v0.0.1-next.15) (2025-05-28)
+
+
+### Features
+
+* data type registration use fully qualified names ([18d27d0](https://github.com/twinfoundation/document-management/commit/18d27d0c21d0f652b7df4b409bb2d3c66cf22f84))
+
 ## [0.0.1-next.14](https://github.com/twinfoundation/document-management/compare/document-management-models-v0.0.1-next.13...document-management-models-v0.0.1-next.14) (2025-05-08)
 
 

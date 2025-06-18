@@ -96,6 +96,18 @@ Represents JSON-LD Included block.
 
 Represents JSON-LD Context Definition.
 
+### ContextDefinitionElement
+
+> `readonly` **ContextDefinitionElement**: `"JsonLdContextDefinitionElement"` = `"JsonLdContextDefinitionElement"`
+
+Represents JSON-LD Context Definition Element.
+
+### ContextDefinitionRoot
+
+> `readonly` **ContextDefinitionRoot**: `"JsonLdContextDefinitionRoot"` = `"JsonLdContextDefinitionRoot"`
+
+Represents JSON-LD Context Definition Root.
+
 ### ExpandedTermDefinition
 
 > `readonly` **ExpandedTermDefinition**: `"JsonLdExpandedTermDefinition"` = `"JsonLdExpandedTermDefinition"`

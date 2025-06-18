@@ -1,5 +1,47 @@
 # @twin.org/standards-schema-org - Changelog
 
+## [0.0.1-next.49](https://github.com/twinfoundation/standards/compare/standards-schema-org-v0.0.1-next.48...standards-schema-org-v0.0.1-next.49) (2025-06-18)
+
+
+### Features
+
+* unused dependencies ([f8bc5bf](https://github.com/twinfoundation/standards/commit/f8bc5bfbccdc6036cbac9a3b3ff91e3de90c8a9b))
+
+## [0.0.1-next.48](https://github.com/twinfoundation/standards/compare/standards-schema-org-v0.0.1-next.47...standards-schema-org-v0.0.1-next.48) (2025-06-11)
+
+
+### Features
+
+* update to latest JSON schema spec ([7a23930](https://github.com/twinfoundation/standards/commit/7a2393032d7f48bfb20d3a484f981fb6dd83a92c))
+
+## [0.0.1-next.47](https://github.com/twinfoundation/standards/compare/standards-schema-org-v0.0.1-next.46...standards-schema-org-v0.0.1-next.47) (2025-06-05)
+
+
+### Miscellaneous Chores
+
+* **standards-schema-org:** Synchronize repo versions
+
+## [0.0.1-next.46](https://github.com/twinfoundation/standards/compare/standards-schema-org-v0.0.1-next.45...standards-schema-org-v0.0.1-next.46) (2025-06-03)
+
+
+### Miscellaneous Chores
+
+* **standards-schema-org:** Synchronize repo versions
+
+## [0.0.1-next.45](https://github.com/twinfoundation/standards/compare/standards-schema-org-v0.0.1-next.44...standards-schema-org-v0.0.1-next.45) (2025-06-02)
+
+
+### Miscellaneous Chores
+
+* **standards-schema-org:** Synchronize repo versions
+
+## [0.0.1-next.44](https://github.com/twinfoundation/standards/compare/standards-schema-org-v0.0.1-next.43...standards-schema-org-v0.0.1-next.44) (2025-05-28)
+
+
+### Features
+
+* data types registered with full qualified names ([d64bd08](https://github.com/twinfoundation/standards/commit/d64bd082084172da543e9bfaffb78cdc34e6641d))
+
 ## [0.0.1-next.43](https://github.com/twinfoundation/standards/compare/standards-schema-org-v0.0.1-next.42...standards-schema-org-v0.0.1-next.43) (2025-05-20)
 
 

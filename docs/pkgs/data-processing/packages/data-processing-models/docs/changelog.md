@@ -1,5 +1,12 @@
 # @twin.org/data-processing-models - Changelog
 
+## [0.0.1-next.15](https://github.com/twinfoundation/data-processing/compare/data-processing-models-v0.0.1-next.14...data-processing-models-v0.0.1-next.15) (2025-06-12)
+
+
+### Features
+
+* update dependencies ([21b8e80](https://github.com/twinfoundation/data-processing/commit/21b8e8007c87136a09f0a8e35ffde13a07ff4711))
+
 ## [0.0.1-next.14](https://github.com/twinfoundation/data-processing/compare/data-processing-models-v0.0.1-next.13...data-processing-models-v0.0.1-next.14) (2025-04-28)
 
 

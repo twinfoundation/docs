@@ -1,6 +1,6 @@
-# Variable: ActionTypes
+# Variable: ActionType
 
-> `const` **ActionTypes**: `object`
+> `const` **ActionType**: `object`
 
 The types for ODRL Actions.
 Simple action types (for direct string usage)

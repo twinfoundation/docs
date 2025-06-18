@@ -1,5 +1,84 @@
 # @twin.org/verifiable-storage-connector-entity-storage - Changelog
 
+## [0.0.1-next.16](https://github.com/twinfoundation/verifiable-storage/compare/verifiable-storage-connector-entity-storage-v0.0.1-next.15...verifiable-storage-connector-entity-storage-v0.0.1-next.16) (2025-06-12)
+
+
+### Features
+
+* update dependencies ([a16a772](https://github.com/twinfoundation/verifiable-storage/commit/a16a77244cb1d312ea5ee74232bcdadd25f2b330))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/verifiable-storage-models bumped from 0.0.1-next.15 to 0.0.1-next.16
+
+## [0.0.1-next.15](https://github.com/twinfoundation/verifiable-storage/compare/verifiable-storage-connector-entity-storage-v0.0.1-next.14...verifiable-storage-connector-entity-storage-v0.0.1-next.15) (2025-06-03)
+
+
+### Features
+
+* update ts-to-schema generation ([cd41401](https://github.com/twinfoundation/verifiable-storage/commit/cd41401dd4e91f111ddf8ae68eb7b40a976fb232))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/verifiable-storage-models bumped from 0.0.1-next.14 to 0.0.1-next.15
+
+## [0.0.1-next.14](https://github.com/twinfoundation/verifiable-storage/compare/verifiable-storage-connector-entity-storage-v0.0.1-next.13...verifiable-storage-connector-entity-storage-v0.0.1-next.14) (2025-05-28)
+
+
+### Features
+
+* add data types ([d9ad58a](https://github.com/twinfoundation/verifiable-storage/commit/d9ad58afb0c86b80bcb1229d87d2d7f522b20fcd))
+* add support for allowlist ([#17](https://github.com/twinfoundation/verifiable-storage/issues/17)) ([9341ea6](https://github.com/twinfoundation/verifiable-storage/commit/9341ea6b95dfbf2a5dc70a53e5979d7d0e8b2de6))
+* update allow list name case ([278a787](https://github.com/twinfoundation/verifiable-storage/commit/278a787e96864c95438f87adaac6f2fc8b6bebcd))
+* use new dlt packages with latency fix ([#6](https://github.com/twinfoundation/verifiable-storage/issues/6)) ([d81c45b](https://github.com/twinfoundation/verifiable-storage/commit/d81c45bce035864a41bbd498815169d7257fbcb8))
+* use shared store mechanism ([#8](https://github.com/twinfoundation/verifiable-storage/issues/8)) ([8c8ecb8](https://github.com/twinfoundation/verifiable-storage/commit/8c8ecb83d32431952c594ea23d37040991f5b4d3))
+
+
+### Bug Fixes
+
+* add missing rollup plugin ([274bd09](https://github.com/twinfoundation/verifiable-storage/commit/274bd090cf013e49d14c90185ff7248000adcde3))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/verifiable-storage-models bumped from 0.0.1-next.13 to 0.0.1-next.14
+
+## [0.0.1-next.13](https://github.com/twinfoundation/verifiable-storage/compare/verifiable-storage-connector-entity-storage-v0.0.1-next.12...verifiable-storage-connector-entity-storage-v0.0.1-next.13) (2025-05-28)
+
+
+### Features
+
+* add data types ([d9ad58a](https://github.com/twinfoundation/verifiable-storage/commit/d9ad58afb0c86b80bcb1229d87d2d7f522b20fcd))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/verifiable-storage-models bumped from 0.0.1-next.12 to 0.0.1-next.13
+
+## [0.0.1-next.12](https://github.com/twinfoundation/verifiable-storage/compare/verifiable-storage-connector-entity-storage-v0.0.1-next.11...verifiable-storage-connector-entity-storage-v0.0.1-next.12) (2025-05-28)
+
+
+### Features
+
+* update allow list name case ([278a787](https://github.com/twinfoundation/verifiable-storage/commit/278a787e96864c95438f87adaac6f2fc8b6bebcd))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/verifiable-storage-models bumped from 0.0.1-next.11 to 0.0.1-next.12
+
 ## [0.0.1-next.11](https://github.com/twinfoundation/verifiable-storage/compare/verifiable-storage-connector-entity-storage-v0.0.1-next.10...verifiable-storage-connector-entity-storage-v0.0.1-next.11) (2025-05-22)
 
 

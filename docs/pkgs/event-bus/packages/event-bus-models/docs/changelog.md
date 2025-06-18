@@ -1,5 +1,12 @@
 # @twin.org/event-bus-models - Changelog
 
+## [0.0.1-next.11](https://github.com/twinfoundation/event-bus/compare/event-bus-models-v0.0.1-next.10...event-bus-models-v0.0.1-next.11) (2025-06-12)
+
+
+### Features
+
+* update dependencies ([a313000](https://github.com/twinfoundation/event-bus/commit/a313000b9c3264e8ed2602622219be2cefcf0474))
+
 ## [0.0.1-next.10](https://github.com/twinfoundation/event-bus/compare/event-bus-models-v0.0.1-next.9...event-bus-models-v0.0.1-next.10) (2025-04-17)
 
 

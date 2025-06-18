@@ -2738,13 +2738,23 @@
 				"type": "object",
 				"properties": {
 					"@context": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
+						"$ref": "https://schema.twindev.org/json-ld/JsonLdContextDefinitionRoot"
 					},
 					"@id": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
+						"anyOf": [
+							{
+								"type": "string"
+							},
+							{
+								"type": "array",
+								"items": {
+									"type": "string"
+								}
+							}
+						]
 					},
 					"@included": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
+						"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
 					},
 					"@graph": {
 						"anyOf": [
@@ -2775,12 +2785,12 @@
 					"@type": {
 						"anyOf": [
 							{
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
+								"type": "string"
 							},
 							{
 								"type": "array",
 								"items": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
+									"type": "string"
 								}
 							}
 						]
@@ -2788,11 +2798,11 @@
 					"@reverse": {
 						"type": "object",
 						"additionalProperties": {
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
+							"type": "string"
 						}
 					},
 					"@index": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
+						"type": "string"
 					},
 					"id": {
 						"type": "string",
@@ -2839,13 +2849,23 @@
 						},
 						"properties": {
 							"@context": {
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdContextDefinitionRoot"
 							},
 							"@id": {
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
+								"anyOf": [
+									{
+										"type": "string"
+									},
+									{
+										"type": "array",
+										"items": {
+											"type": "string"
+										}
+									}
+								]
 							},
 							"@included": {
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
 							},
 							"@graph": {
 								"anyOf": [
@@ -2876,12 +2896,12 @@
 							"@type": {
 								"anyOf": [
 									{
-										"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
+										"type": "string"
 									},
 									{
 										"type": "array",
 										"items": {
-											"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
+											"type": "string"
 										}
 									}
 								]
@@ -2889,11 +2909,11 @@
 							"@reverse": {
 								"type": "object",
 								"additionalProperties": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
+									"type": "string"
 								}
 							},
 							"@index": {
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
+								"type": "string"
 							},
 							"kty": {
 								"type": "string",

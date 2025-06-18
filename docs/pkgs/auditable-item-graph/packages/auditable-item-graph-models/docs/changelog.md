@@ -1,5 +1,33 @@
 # @twin.org/auditable-item-graph-models - Changelog
 
+## [0.0.1-next.43](https://github.com/twinfoundation/auditable-item-graph/compare/auditable-item-graph-models-v0.0.1-next.42...auditable-item-graph-models-v0.0.1-next.43) (2025-06-17)
+
+
+### Features
+
+* improve JSON schemas ([bec8dc1](https://github.com/twinfoundation/auditable-item-graph/commit/bec8dc1f270c6c9710623a192b984cf46f8a5613))
+
+## [0.0.1-next.42](https://github.com/twinfoundation/auditable-item-graph/compare/auditable-item-graph-models-v0.0.1-next.41...auditable-item-graph-models-v0.0.1-next.42) (2025-06-12)
+
+
+### Features
+
+* update dependencies ([6986689](https://github.com/twinfoundation/auditable-item-graph/commit/698668957a1fcb7f85ce2f117914d5980043924f))
+
+## [0.0.1-next.41](https://github.com/twinfoundation/auditable-item-graph/compare/auditable-item-graph-models-v0.0.1-next.40...auditable-item-graph-models-v0.0.1-next.41) (2025-06-03)
+
+
+### Features
+
+* update ts-to-schema generation ([edce91e](https://github.com/twinfoundation/auditable-item-graph/commit/edce91e8272ab361595489458066040caf582df2))
+
+## [0.0.1-next.40](https://github.com/twinfoundation/auditable-item-graph/compare/auditable-item-graph-models-v0.0.1-next.39...auditable-item-graph-models-v0.0.1-next.40) (2025-05-28)
+
+
+### Features
+
+* add data types with fully qualified name ([93e1ee7](https://github.com/twinfoundation/auditable-item-graph/commit/93e1ee7c0f7bad81f003787f797f363864e201af))
+
 ## [0.0.1-next.39](https://github.com/twinfoundation/auditable-item-graph/compare/auditable-item-graph-models-v0.0.1-next.38...auditable-item-graph-models-v0.0.1-next.39) (2025-05-08)
 
 

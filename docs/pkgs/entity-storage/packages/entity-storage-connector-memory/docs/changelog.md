@@ -1,5 +1,19 @@
 # @twin.org/entity-storage-connector-memory - Changelog
 
+## [0.0.1-next.30](https://github.com/twinfoundation/entity-storage/compare/entity-storage-connector-memory-v0.0.1-next.29...entity-storage-connector-memory-v0.0.1-next.30) (2025-06-12)
+
+
+### Features
+
+* update dependencies ([7ccc0c4](https://github.com/twinfoundation/entity-storage/commit/7ccc0c429125d073dc60b3de6cf101abc8cc6cba))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/entity-storage-models bumped from 0.0.1-next.29 to 0.0.1-next.30
+
 ## [0.0.1-next.29](https://github.com/twinfoundation/entity-storage/compare/entity-storage-connector-memory-v0.0.1-next.28...entity-storage-connector-memory-v0.0.1-next.29) (2025-04-17)
 
 

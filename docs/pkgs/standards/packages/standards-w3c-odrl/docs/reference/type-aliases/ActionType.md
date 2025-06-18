@@ -1,5 +1,5 @@
 # Type Alias: ActionType
 
-> **ActionType** = *typeof* [`ActionTypes`](../variables/ActionTypes.md)\[keyof *typeof* [`ActionTypes`](../variables/ActionTypes.md)\]
+> **ActionType** = *typeof* [`ActionType`](../variables/ActionType.md)\[keyof *typeof* [`ActionType`](../variables/ActionType.md)\]
 
 The types for ODRL Actions.

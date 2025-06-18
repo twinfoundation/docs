@@ -32,7 +32,7 @@ Nothing.
 
 ### query()
 
-> **query**(`level?`, `source?`, `timeStart?`, `timeEnd?`, `cursor?`, `pageSize?`): `Promise`\<\{ `entities`: [`ILogEntry`](ILogEntry.md)[]; `cursor`: `string`; \}\>
+> **query**(`level?`, `source?`, `timeStart?`, `timeEnd?`, `cursor?`, `pageSize?`): `Promise`\<\{ `entities`: [`ILogEntry`](ILogEntry.md)[]; `cursor?`: `string`; \}\>
 
 Query the log entries.
 
@@ -76,7 +76,7 @@ The maximum number of entities in a page.
 
 #### Returns
 
-`Promise`\<\{ `entities`: [`ILogEntry`](ILogEntry.md)[]; `cursor`: `string`; \}\>
+`Promise`\<\{ `entities`: [`ILogEntry`](ILogEntry.md)[]; `cursor?`: `string`; \}\>
 
 All the entities for the storage matching the conditions,
 and a cursor which can be used to request more entities.

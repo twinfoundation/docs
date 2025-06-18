@@ -1,5 +1,61 @@
 # @twin.org/document-management-service - Changelog
 
+## [0.0.1-next.18](https://github.com/twinfoundation/document-management/compare/document-management-service-v0.0.1-next.17...document-management-service-v0.0.1-next.18) (2025-06-18)
+
+
+### Features
+
+* update blob storage component ([63fe802](https://github.com/twinfoundation/document-management/commit/63fe8023bdae76631e324e6fee753c7e9243acfe))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/document-management-models bumped from 0.0.1-next.17 to 0.0.1-next.18
+
+## [0.0.1-next.17](https://github.com/twinfoundation/document-management/compare/document-management-service-v0.0.1-next.16...document-management-service-v0.0.1-next.17) (2025-06-12)
+
+
+### Features
+
+* update dependencies ([f9d8641](https://github.com/twinfoundation/document-management/commit/f9d86417dba24027699225ec7473296e361dcb00))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/document-management-models bumped from 0.0.1-next.16 to 0.0.1-next.17
+
+## [0.0.1-next.16](https://github.com/twinfoundation/document-management/compare/document-management-service-v0.0.1-next.15...document-management-service-v0.0.1-next.16) (2025-06-03)
+
+
+### Miscellaneous Chores
+
+* **document-management-service:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/document-management-models bumped from 0.0.1-next.15 to 0.0.1-next.16
+
+## [0.0.1-next.15](https://github.com/twinfoundation/document-management/compare/document-management-service-v0.0.1-next.14...document-management-service-v0.0.1-next.15) (2025-05-28)
+
+
+### Miscellaneous Chores
+
+* **document-management-service:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/document-management-models bumped from 0.0.1-next.14 to 0.0.1-next.15
+
 ## [0.0.1-next.14](https://github.com/twinfoundation/document-management/compare/document-management-service-v0.0.1-next.13...document-management-service-v0.0.1-next.14) (2025-05-08)
 
 

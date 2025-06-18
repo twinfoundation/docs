@@ -16,7 +16,7 @@ Class describing the auditable item graph patches.
 
 ### op
 
-> **op**: `"replace"` \| `"add"` \| `"remove"` \| `"copy"` \| `"move"` \| `"test"`
+> **op**: `"add"` \| `"remove"` \| `"replace"` \| `"move"` \| `"copy"` \| `"test"`
 
 The operation for the patch.
 

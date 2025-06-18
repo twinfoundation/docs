@@ -1,5 +1,19 @@
 # @twin.org/background-task-models - Changelog
 
+## [0.0.1-next.17](https://github.com/twinfoundation/background-task/compare/background-task-models-v0.0.1-next.16...background-task-models-v0.0.1-next.17) (2025-06-12)
+
+
+### Features
+
+* update dependencies ([8e65767](https://github.com/twinfoundation/background-task/commit/8e657679f5e4305dbcb15ac7bcb3ab8a4613a60b))
+
+## [0.0.1-next.16](https://github.com/twinfoundation/background-task/compare/background-task-models-v0.0.1-next.15...background-task-models-v0.0.1-next.16) (2025-06-05)
+
+
+### Miscellaneous Chores
+
+* **background-task-models:** Synchronize repo versions
+
 ## [0.0.1-next.15](https://github.com/twinfoundation/background-task/compare/background-task-models-v0.0.1-next.14...background-task-models-v0.0.1-next.15) (2025-04-17)
 
 

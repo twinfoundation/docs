@@ -290,7 +290,7 @@ The optional id to look for.
 
 ###### idMode?
 
-`"both"` \| `"id"` \| `"alias"`
+`"id"` \| `"alias"` \| `"both"`
 
 Look in id, alias or both, defaults to both.
 
