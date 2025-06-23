@@ -1,5 +1,19 @@
 # @twin.org/logging-connector-console - Changelog
 
+## [0.0.1-next.16](https://github.com/twinfoundation/logging/compare/logging-connector-console-v0.0.1-next.15...logging-connector-console-v0.0.1-next.16) (2025-06-20)
+
+
+### Miscellaneous Chores
+
+* **logging-connector-console:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/logging-models bumped from 0.0.1-next.15 to 0.0.1-next.16
+
 ## [0.0.1-next.15](https://github.com/twinfoundation/logging/compare/logging-connector-console-v0.0.1-next.14...logging-connector-console-v0.0.1-next.15) (2025-06-12)
 
 

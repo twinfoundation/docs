@@ -1,5 +1,21 @@
 # @twin.org/entity-storage-service - Changelog
 
+## [0.0.1-next.31](https://github.com/twinfoundation/entity-storage/compare/entity-storage-service-v0.0.1-next.30...entity-storage-service-v0.0.1-next.31) (2025-06-20)
+
+
+### Bug Fixes
+
+* query params force coercion ([dd6aa87](https://github.com/twinfoundation/entity-storage/commit/dd6aa87efdfb60bab7d6756a86888863c45c51a7))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/entity-storage-models bumped from 0.0.1-next.30 to 0.0.1-next.31
+  * devDependencies
+    * @twin.org/entity-storage-connector-memory bumped from 0.0.1-next.30 to 0.0.1-next.31
+
 ## [0.0.1-next.30](https://github.com/twinfoundation/entity-storage/compare/entity-storage-service-v0.0.1-next.29...entity-storage-service-v0.0.1-next.30) (2025-06-12)
 
 

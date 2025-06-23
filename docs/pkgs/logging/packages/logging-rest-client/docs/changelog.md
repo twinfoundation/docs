@@ -1,5 +1,19 @@
 # @twin.org/logging-rest-client - Changelog
 
+## [0.0.1-next.16](https://github.com/twinfoundation/logging/compare/logging-rest-client-v0.0.1-next.15...logging-rest-client-v0.0.1-next.16) (2025-06-20)
+
+
+### Miscellaneous Chores
+
+* **logging-rest-client:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/logging-models bumped from 0.0.1-next.15 to 0.0.1-next.16
+
 ## [0.0.1-next.15](https://github.com/twinfoundation/logging/compare/logging-rest-client-v0.0.1-next.14...logging-rest-client-v0.0.1-next.15) (2025-06-12)
 
 

@@ -36,6 +36,6 @@ The cursor to get the next chunk of documents.
 
 #### pageSize?
 
-> `optional` **pageSize**: `string`
+> `optional` **pageSize**: `string` \| `number`
 
 The number of documents to return.

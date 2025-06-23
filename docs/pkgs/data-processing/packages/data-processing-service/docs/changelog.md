@@ -1,5 +1,22 @@
 # @twin.org/data-processing-service - Changelog
 
+## [0.0.1-next.16](https://github.com/twinfoundation/data-processing/compare/data-processing-service-v0.0.1-next.15...data-processing-service-v0.0.1-next.16) (2025-06-20)
+
+
+### Miscellaneous Chores
+
+* **data-processing-service:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/data-processing-models bumped from 0.0.1-next.15 to 0.0.1-next.16
+  * devDependencies
+    * @twin.org/data-processing-converters bumped from 0.0.1-next.15 to 0.0.1-next.16
+    * @twin.org/data-processing-extractors bumped from 0.0.1-next.15 to 0.0.1-next.16
+
 ## [0.0.1-next.15](https://github.com/twinfoundation/data-processing/compare/data-processing-service-v0.0.1-next.14...data-processing-service-v0.0.1-next.15) (2025-06-12)
 
 

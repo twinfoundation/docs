@@ -1,5 +1,19 @@
 # @twin.org/blob-storage-models - Changelog
 
+## [0.0.1-next.37](https://github.com/twinfoundation/blob-storage/compare/blob-storage-models-v0.0.1-next.36...blob-storage-models-v0.0.1-next.37) (2025-06-20)
+
+
+### Bug Fixes
+
+* query params force coercion ([a5e547a](https://github.com/twinfoundation/blob-storage/commit/a5e547a775f8997cb04780938c7a9561ddb048d1))
+
+## [0.0.1-next.36](https://github.com/twinfoundation/blob-storage/compare/blob-storage-models-v0.0.1-next.35...blob-storage-models-v0.0.1-next.36) (2025-06-19)
+
+
+### Features
+
+* add compression support ([67d239b](https://github.com/twinfoundation/blob-storage/commit/67d239bca8321bd90bf4ff93167c564130309730))
+
 ## [0.0.1-next.35](https://github.com/twinfoundation/blob-storage/compare/blob-storage-models-v0.0.1-next.34...blob-storage-models-v0.0.1-next.35) (2025-06-17)
 
 

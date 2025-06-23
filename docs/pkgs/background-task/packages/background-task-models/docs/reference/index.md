@@ -4,6 +4,9 @@
 
 - [IBackgroundTask](interfaces/IBackgroundTask.md)
 - [IBackgroundTaskConnector](interfaces/IBackgroundTaskConnector.md)
+- [IScheduledTaskInfo](interfaces/IScheduledTaskInfo.md)
+- [IScheduledTaskTime](interfaces/IScheduledTaskTime.md)
+- [ITaskSchedulerComponent](interfaces/ITaskSchedulerComponent.md)
 
 ## Type Aliases
 

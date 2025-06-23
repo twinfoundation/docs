@@ -1,5 +1,12 @@
 # @twin.org/data-processing-models - Changelog
 
+## [0.0.1-next.16](https://github.com/twinfoundation/data-processing/compare/data-processing-models-v0.0.1-next.15...data-processing-models-v0.0.1-next.16) (2025-06-20)
+
+
+### Bug Fixes
+
+* query params force coercion ([f60b278](https://github.com/twinfoundation/data-processing/commit/f60b278f86d59dd77abadf9899309e2d8c80305e))
+
 ## [0.0.1-next.15](https://github.com/twinfoundation/data-processing/compare/data-processing-models-v0.0.1-next.14...data-processing-models-v0.0.1-next.15) (2025-06-12)
 
 

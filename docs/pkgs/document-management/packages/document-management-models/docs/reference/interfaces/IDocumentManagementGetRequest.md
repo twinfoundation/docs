@@ -38,7 +38,7 @@ The query parameters.
 
 #### includeBlobStorageMetadata?
 
-> `optional` **includeBlobStorageMetadata**: `boolean`
+> `optional` **includeBlobStorageMetadata**: `string` \| `boolean`
 
 Include the blob storage metadata in the response.
 
@@ -50,7 +50,7 @@ false
 
 #### includeBlobStorageData?
 
-> `optional` **includeBlobStorageData**: `boolean`
+> `optional` **includeBlobStorageData**: `string` \| `boolean`
 
 Include the blob storage data in the response.
 
@@ -62,7 +62,7 @@ false
 
 #### includeAttestation?
 
-> `optional` **includeAttestation**: `boolean`
+> `optional` **includeAttestation**: `string` \| `boolean`
 
 Include the attestation information in the response.
 
@@ -74,7 +74,7 @@ false
 
 #### includeRemoved?
 
-> `optional` **includeRemoved**: `boolean`
+> `optional` **includeRemoved**: `string` \| `boolean`
 
 Include deleted documents in the response.
 
@@ -98,7 +98,7 @@ By default extraction will auto detect the mime type of the document, this can b
 
 #### pageSize?
 
-> `optional` **pageSize**: `string`
+> `optional` **pageSize**: `string` \| `number`
 
 Page size of items to return, defaults to 1 so only most recent is returned.
 

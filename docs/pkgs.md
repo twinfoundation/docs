@@ -109,6 +109,7 @@ This is the overview of the packages.
 
 - [@twin.org/background-task-models](pkgs/background-task/packages/background-task-models/index.md) - Models which define the structure of the background task contracts and connectors
 - [@twin.org/background-task-connector-entity-storage](pkgs/background-task/packages/background-task-connector-entity-storage/index.md) - Background task connector implementation using entity storage
+- [@twin.org/background-task-scheduler](pkgs/background-task/packages/background-task-scheduler/index.md) - Background task scheduler
 
 ## Event Bus
 

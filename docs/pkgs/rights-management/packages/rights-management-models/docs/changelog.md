@@ -1,5 +1,12 @@
 # @twin.org/rights-management-models - Changelog
 
+## [0.0.1-next.11](https://github.com/twinfoundation/rights-management/compare/rights-management-models-v0.0.1-next.10...rights-management-models-v0.0.1-next.11) (2025-06-20)
+
+
+### Bug Fixes
+
+* query params force coercion ([8590a0d](https://github.com/twinfoundation/rights-management/commit/8590a0da92584c04b67e73c448319f96f70c34a5))
+
 ## [0.0.1-next.10](https://github.com/twinfoundation/rights-management/compare/rights-management-models-v0.0.1-next.9...rights-management-models-v0.0.1-next.10) (2025-06-12)
 
 

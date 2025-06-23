@@ -38,7 +38,7 @@ The query parameters.
 
 #### includeContent?
 
-> `optional` **includeContent**: `string`
+> `optional` **includeContent**: `string` \| `boolean`
 
 Include the content in the response, otherwise only metadata is returned.
 
@@ -48,16 +48,16 @@ Include the content in the response, otherwise only metadata is returned.
 false
 ```
 
-#### disableDecryption?
+#### decompress?
 
-> `optional` **disableDecryption**: `string`
+> `optional` **decompress**: `string` \| `boolean`
 
-Disables decryption if enabled by default.
+If the content should be decompressed, if it was compressed when stored, defaults to true.
 
 ##### Default
 
 ```ts
-false
+true
 ```
 
 #### overrideVaultKeyId?

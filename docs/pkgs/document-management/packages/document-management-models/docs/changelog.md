@@ -1,5 +1,31 @@
 # @twin.org/document-management-models - Changelog
 
+## [0.0.1-next.20](https://github.com/twinfoundation/document-management/compare/document-management-models-v0.0.1-next.19...document-management-models-v0.0.1-next.20) (2025-06-20)
+
+
+### Features
+
+* data type registration use fully qualified names ([18d27d0](https://github.com/twinfoundation/document-management/commit/18d27d0c21d0f652b7df4b409bb2d3c66cf22f84))
+* document get can perform extraction ([#6](https://github.com/twinfoundation/document-management/issues/6)) ([5ce6d37](https://github.com/twinfoundation/document-management/commit/5ce6d37432ad271ca5783f422846f4be98ec2215))
+* get document revision ([080eddc](https://github.com/twinfoundation/document-management/commit/080eddcc024c622dda6bb36f60f5fa80a86cf5bb))
+* improve comments ([4d2f094](https://github.com/twinfoundation/document-management/commit/4d2f094b23e3320cb739917246c1ee5f6ad41c11))
+* store document as a vertex ([#2](https://github.com/twinfoundation/document-management/issues/2)) ([7febedc](https://github.com/twinfoundation/document-management/commit/7febedc3fb31de9c19565d6326341046834f2c74))
+* update dependencies ([f9d8641](https://github.com/twinfoundation/document-management/commit/f9d86417dba24027699225ec7473296e361dcb00))
+* update ts-to-schema generation ([01a5335](https://github.com/twinfoundation/document-management/commit/01a5335372f6a4764a74d56c446d669724a308aa))
+* use standard list json ld types ([20ea04b](https://github.com/twinfoundation/document-management/commit/20ea04b05fd4bc4fcedce8f66958942c3c2fa303))
+
+
+### Bug Fixes
+
+* query params force coercion ([d667d0f](https://github.com/twinfoundation/document-management/commit/d667d0f195accca2887a5ca732e9790063763996))
+
+## [0.0.1-next.19](https://github.com/twinfoundation/document-management/compare/document-management-models-v0.0.1-next.18...document-management-models-v0.0.1-next.19) (2025-06-20)
+
+
+### Bug Fixes
+
+* query params force coercion ([d667d0f](https://github.com/twinfoundation/document-management/commit/d667d0f195accca2887a5ca732e9790063763996))
+
 ## [0.0.1-next.18](https://github.com/twinfoundation/document-management/compare/document-management-models-v0.0.1-next.17...document-management-models-v0.0.1-next.18) (2025-06-18)
 
 

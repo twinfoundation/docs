@@ -1,5 +1,19 @@
 # @twin.org/data-processing-extractors - Changelog
 
+## [0.0.1-next.16](https://github.com/twinfoundation/data-processing/compare/data-processing-extractors-v0.0.1-next.15...data-processing-extractors-v0.0.1-next.16) (2025-06-20)
+
+
+### Miscellaneous Chores
+
+* **data-processing-extractors:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/data-processing-models bumped from 0.0.1-next.15 to 0.0.1-next.16
+
 ## [0.0.1-next.15](https://github.com/twinfoundation/data-processing/compare/data-processing-extractors-v0.0.1-next.14...data-processing-extractors-v0.0.1-next.15) (2025-06-12)
 
 

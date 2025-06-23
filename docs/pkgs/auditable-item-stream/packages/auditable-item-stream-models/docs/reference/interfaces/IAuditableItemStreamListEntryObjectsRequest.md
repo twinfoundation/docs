@@ -44,7 +44,7 @@ The conditions to filter the stream, JSON stringified IComparator[].
 
 #### includeDeleted?
 
-> `optional` **includeDeleted**: `boolean`
+> `optional` **includeDeleted**: `string` \| `boolean`
 
 Whether to include deleted entries, defaults to false.
 
@@ -56,7 +56,7 @@ Retrieve the entries in ascending/descending time order, defaults to Ascending.
 
 #### pageSize?
 
-> `optional` **pageSize**: `number`
+> `optional` **pageSize**: `string` \| `number`
 
 How many entries to return.
 

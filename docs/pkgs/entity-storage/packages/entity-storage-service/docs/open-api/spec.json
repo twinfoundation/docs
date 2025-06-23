@@ -164,7 +164,10 @@
 						"in": "query",
 						"required": false,
 						"schema": {
-							"type": "number"
+							"type": [
+								"number",
+								"string"
+							]
 						}
 					},
 					{
@@ -518,8 +521,10 @@
 				"properties": {
 					"entities": {
 						"type": "array",
-						"items": {},
-						"description": "The entities from the query."
+						"description": "The entities from the query.",
+						"prefixItems": [
+							{}
+						]
 					},
 					"cursor": {
 						"type": "string",

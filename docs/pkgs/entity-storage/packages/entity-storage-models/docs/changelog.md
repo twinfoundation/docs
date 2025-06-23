@@ -1,5 +1,12 @@
 # @twin.org/entity-storage-models - Changelog
 
+## [0.0.1-next.31](https://github.com/twinfoundation/entity-storage/compare/entity-storage-models-v0.0.1-next.30...entity-storage-models-v0.0.1-next.31) (2025-06-20)
+
+
+### Bug Fixes
+
+* query params force coercion ([dd6aa87](https://github.com/twinfoundation/entity-storage/commit/dd6aa87efdfb60bab7d6756a86888863c45c51a7))
+
 ## [0.0.1-next.30](https://github.com/twinfoundation/entity-storage/compare/entity-storage-models-v0.0.1-next.29...entity-storage-models-v0.0.1-next.30) (2025-06-12)
 
 

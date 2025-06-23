@@ -18,7 +18,7 @@ The condition for the query.
 
 #### pageSize?
 
-> `optional` **pageSize**: `string`
+> `optional` **pageSize**: `string` \| `number`
 
 The number of entries to return per page.
 
