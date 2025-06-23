@@ -4,9 +4,9 @@ Get the a list of the log entries.
 
 ## Properties
 
-### query
+### query?
 
-> **query**: `object`
+> `optional` **query**: `object`
 
 The query parameters.
 
@@ -24,13 +24,13 @@ The source of the log entries to retrieve.
 
 #### timeStart?
 
-> `optional` **timeStart**: `number`
+> `optional` **timeStart**: `string` \| `number`
 
 The start time of the metrics to retrieve as a timestamp in ms.
 
 #### timeEnd?
 
-> `optional` **timeEnd**: `number`
+> `optional` **timeEnd**: `string` \| `number`
 
 The end time of the metrics to retrieve as a timestamp in ms.
 
@@ -42,6 +42,6 @@ The optional cursor to get next chunk.
 
 #### pageSize?
 
-> `optional` **pageSize**: `number`
+> `optional` **pageSize**: `string` \| `number`
 
 The maximum number of entities in a page.

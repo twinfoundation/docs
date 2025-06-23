@@ -1,5 +1,19 @@
 # @twin.org/auditable-item-stream-rest-client - Changelog
 
+## [0.0.1-next.37](https://github.com/twinfoundation/auditable-item-stream/compare/auditable-item-stream-rest-client-v0.0.1-next.36...auditable-item-stream-rest-client-v0.0.1-next.37) (2025-06-20)
+
+
+### Bug Fixes
+
+* query params force coercion ([fcdd52c](https://github.com/twinfoundation/auditable-item-stream/commit/fcdd52cf8262a3bc19f6e7e9e6ef145890a9c8aa))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/auditable-item-stream-models bumped from 0.0.1-next.36 to 0.0.1-next.37
+
 ## [0.0.1-next.36](https://github.com/twinfoundation/auditable-item-stream/compare/auditable-item-stream-rest-client-v0.0.1-next.35...auditable-item-stream-rest-client-v0.0.1-next.36) (2025-06-18)
 
 

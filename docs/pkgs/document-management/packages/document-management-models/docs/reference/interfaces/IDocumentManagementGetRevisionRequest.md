@@ -44,7 +44,7 @@ The query parameters.
 
 #### includeBlobStorageMetadata?
 
-> `optional` **includeBlobStorageMetadata**: `boolean`
+> `optional` **includeBlobStorageMetadata**: `string` \| `boolean`
 
 Include the blob storage metadata in the response.
 
@@ -56,7 +56,7 @@ false
 
 #### includeBlobStorageData?
 
-> `optional` **includeBlobStorageData**: `boolean`
+> `optional` **includeBlobStorageData**: `string` \| `boolean`
 
 Include the blob storage data in the response.
 
@@ -68,7 +68,7 @@ false
 
 #### includeAttestation?
 
-> `optional` **includeAttestation**: `boolean`
+> `optional` **includeAttestation**: `string` \| `boolean`
 
 Include the attestation information in the response.
 

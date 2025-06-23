@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/blob-storage-connector-aws-s3",
-	"version": "0.0.1-next.35",
+	"version": "0.0.1-next.37",
 	"description": "Blob Storage connector implementation using AWS S3",
 	"repository": {
 		"type": "git",

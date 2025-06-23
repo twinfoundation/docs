@@ -198,7 +198,10 @@
 						"in": "query",
 						"required": false,
 						"schema": {
-							"type": "number"
+							"type": [
+								"number",
+								"string"
+							]
 						}
 					},
 					{
@@ -420,7 +423,10 @@
 						"in": "query",
 						"required": false,
 						"schema": {
-							"type": "boolean"
+							"type": [
+								"boolean",
+								"string"
+							]
 						}
 					},
 					{
@@ -429,7 +435,10 @@
 						"in": "query",
 						"required": false,
 						"schema": {
-							"type": "boolean"
+							"type": [
+								"boolean",
+								"string"
+							]
 						}
 					},
 					{
@@ -438,7 +447,10 @@
 						"in": "query",
 						"required": false,
 						"schema": {
-							"type": "boolean"
+							"type": [
+								"boolean",
+								"string"
+							]
 						}
 					},
 					{
@@ -447,7 +459,10 @@
 						"in": "query",
 						"required": false,
 						"schema": {
-							"type": "boolean"
+							"type": [
+								"boolean",
+								"string"
+							]
 						}
 					},
 					{
@@ -1047,7 +1062,10 @@
 						"in": "query",
 						"required": false,
 						"schema": {
-							"type": "boolean"
+							"type": [
+								"boolean",
+								"string"
+							]
 						}
 					},
 					{
@@ -1644,7 +1662,10 @@
 						"in": "query",
 						"required": false,
 						"schema": {
-							"type": "boolean"
+							"type": [
+								"boolean",
+								"string"
+							]
 						}
 					},
 					{
@@ -1653,7 +1674,10 @@
 						"in": "query",
 						"required": false,
 						"schema": {
-							"type": "boolean"
+							"type": [
+								"boolean",
+								"string"
+							]
 						}
 					},
 					{
@@ -1671,7 +1695,10 @@
 						"in": "query",
 						"required": false,
 						"schema": {
-							"type": "number"
+							"type": [
+								"boolean",
+								"string"
+							]
 						}
 					},
 					{
@@ -1907,7 +1934,10 @@
 						"in": "query",
 						"required": false,
 						"schema": {
-							"type": "boolean"
+							"type": [
+								"boolean",
+								"string"
+							]
 						}
 					},
 					{
@@ -1925,7 +1955,10 @@
 						"in": "query",
 						"required": false,
 						"schema": {
-							"type": "number"
+							"type": [
+								"number",
+								"string"
+							]
 						}
 					},
 					{

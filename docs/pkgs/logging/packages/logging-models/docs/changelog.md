@@ -1,5 +1,12 @@
 # @twin.org/logging-models - Changelog
 
+## [0.0.1-next.16](https://github.com/twinfoundation/logging/compare/logging-models-v0.0.1-next.15...logging-models-v0.0.1-next.16) (2025-06-20)
+
+
+### Bug Fixes
+
+* query params force coercion ([71c5329](https://github.com/twinfoundation/logging/commit/71c53292d300acae0369bd7937c5ca3ab5430689))
+
 ## [0.0.1-next.15](https://github.com/twinfoundation/logging/compare/logging-models-v0.0.1-next.14...logging-models-v0.0.1-next.15) (2025-06-12)
 
 

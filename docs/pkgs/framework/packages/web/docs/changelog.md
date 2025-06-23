@@ -1,5 +1,50 @@
 # @twin.org/web - Changelog
 
+## [0.0.1-next.65](https://github.com/twinfoundation/framework/compare/web-v0.0.1-next.64...web-v0.0.1-next.65) (2025-06-19)
+
+
+### Miscellaneous Chores
+
+* **web:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/core bumped from 0.0.1-next.64 to 0.0.1-next.65
+    * @twin.org/crypto bumped from 0.0.1-next.64 to 0.0.1-next.65
+
+## [0.0.1-next.64](https://github.com/twinfoundation/framework/compare/web-v0.0.1-next.63...web-v0.0.1-next.64) (2025-06-19)
+
+
+### Features
+
+* add zlib/deflate mime types detection ([72c472b](https://github.com/twinfoundation/framework/commit/72c472b5a35a973e7109336f5b6cdd84dbb8bbcb))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/core bumped from 0.0.1-next.63 to 0.0.1-next.64
+    * @twin.org/crypto bumped from 0.0.1-next.63 to 0.0.1-next.64
+
+## [0.0.1-next.63](https://github.com/twinfoundation/framework/compare/web-v0.0.1-next.62...web-v0.0.1-next.63) (2025-06-18)
+
+
+### Features
+
+* add kid method to Jwk ([bc9239e](https://github.com/twinfoundation/framework/commit/bc9239ed9896a053d83e00ca221e962704ebc277))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/core bumped from 0.0.1-next.62 to 0.0.1-next.63
+    * @twin.org/crypto bumped from 0.0.1-next.62 to 0.0.1-next.63
+
 ## [0.0.1-next.62](https://github.com/twinfoundation/framework/compare/web-v0.0.1-next.61...web-v0.0.1-next.62) (2025-06-17)
 
 

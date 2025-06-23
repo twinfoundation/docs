@@ -1,5 +1,12 @@
 # @twin.org/auditable-item-stream-models - Changelog
 
+## [0.0.1-next.37](https://github.com/twinfoundation/auditable-item-stream/compare/auditable-item-stream-models-v0.0.1-next.36...auditable-item-stream-models-v0.0.1-next.37) (2025-06-20)
+
+
+### Bug Fixes
+
+* query params force coercion ([fcdd52c](https://github.com/twinfoundation/auditable-item-stream/commit/fcdd52cf8262a3bc19f6e7e9e6ef145890a9c8aa))
+
 ## [0.0.1-next.36](https://github.com/twinfoundation/auditable-item-stream/compare/auditable-item-stream-models-v0.0.1-next.35...auditable-item-stream-models-v0.0.1-next.36) (2025-06-18)
 
 

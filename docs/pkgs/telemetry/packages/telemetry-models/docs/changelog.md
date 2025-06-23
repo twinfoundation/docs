@@ -1,5 +1,12 @@
 # @twin.org/telemetry-models - Changelog
 
+## [0.0.1-next.18](https://github.com/twinfoundation/telemetry/compare/telemetry-models-v0.0.1-next.17...telemetry-models-v0.0.1-next.18) (2025-06-20)
+
+
+### Bug Fixes
+
+* query params force coercion ([ec7999e](https://github.com/twinfoundation/telemetry/commit/ec7999eadb66c65585efa19f3ce4cabb50eed761))
+
 ## [0.0.1-next.17](https://github.com/twinfoundation/telemetry/compare/telemetry-models-v0.0.1-next.16...telemetry-models-v0.0.1-next.17) (2025-06-12)
 
 

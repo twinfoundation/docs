@@ -1,5 +1,20 @@
 # @twin.org/rights-management-pap-service - Changelog
 
+## [0.0.1-next.11](https://github.com/twinfoundation/rights-management/compare/rights-management-service-v0.0.1-next.10...rights-management-service-v0.0.1-next.11) (2025-06-20)
+
+
+### Bug Fixes
+
+* query params force coercion ([8590a0d](https://github.com/twinfoundation/rights-management/commit/8590a0da92584c04b67e73c448319f96f70c34a5))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/rights-management-models bumped from 0.0.1-next.10 to 0.0.1-next.11
+    * @twin.org/rights-management-pap-service bumped from 0.0.1-next.10 to 0.0.1-next.11
+
 ## [0.0.1-next.10](https://github.com/twinfoundation/rights-management/compare/rights-management-service-v0.0.1-next.9...rights-management-service-v0.0.1-next.10) (2025-06-12)
 
 

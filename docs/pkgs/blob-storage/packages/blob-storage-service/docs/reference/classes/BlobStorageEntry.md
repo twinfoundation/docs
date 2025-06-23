@@ -86,6 +86,14 @@ Is the entry encrypted.
 
 ***
 
+### compression?
+
+> `optional` **compression**: `BlobStorageCompressionType`
+
+Is the entry compressed.
+
+***
+
 ### userIdentity?
 
 > `optional` **userIdentity**: `string`

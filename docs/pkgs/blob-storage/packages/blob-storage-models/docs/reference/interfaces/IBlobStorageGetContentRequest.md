@@ -24,16 +24,16 @@ The id of the blob to get in urn format.
 
 The query parameters.
 
-#### disableDecryption?
+#### decompress?
 
-> `optional` **disableDecryption**: `string`
+> `optional` **decompress**: `string` \| `boolean`
 
-Disables decryption if enabled by default.
+If the content should be decompressed, if it was compressed when stored, defaults to true.
 
 ##### Default
 
 ```ts
-false
+true
 ```
 
 #### overrideVaultKeyId?
@@ -50,7 +50,7 @@ undefined
 
 #### download?
 
-> `optional` **download**: `string`
+> `optional` **download**: `string` \| `boolean`
 
 Set the download flag which should prompt the browser to save the file.
 Otherwise the browser should show the content inside the page.

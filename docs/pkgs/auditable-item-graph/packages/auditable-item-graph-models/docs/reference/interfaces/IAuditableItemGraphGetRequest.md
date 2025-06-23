@@ -38,13 +38,13 @@ The query parameters.
 
 #### includeDeleted?
 
-> `optional` **includeDeleted**: `boolean`
+> `optional` **includeDeleted**: `string` \| `boolean`
 
 Whether to include deleted aliases, resource, edges, defaults to false.
 
 #### includeChangesets?
 
-> `optional` **includeChangesets**: `boolean`
+> `optional` **includeChangesets**: `string` \| `boolean`
 
 Whether to include the changesets of the vertex, defaults to false.
 

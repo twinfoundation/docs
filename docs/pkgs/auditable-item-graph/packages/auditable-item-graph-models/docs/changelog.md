@@ -1,5 +1,12 @@
 # @twin.org/auditable-item-graph-models - Changelog
 
+## [0.0.1-next.44](https://github.com/twinfoundation/auditable-item-graph/compare/auditable-item-graph-models-v0.0.1-next.43...auditable-item-graph-models-v0.0.1-next.44) (2025-06-20)
+
+
+### Bug Fixes
+
+* query params force coercion ([2dd9afe](https://github.com/twinfoundation/auditable-item-graph/commit/2dd9afe9ec37e2a91c110317fe289f7495c187a0))
+
 ## [0.0.1-next.43](https://github.com/twinfoundation/auditable-item-graph/compare/auditable-item-graph-models-v0.0.1-next.42...auditable-item-graph-models-v0.0.1-next.43) (2025-06-17)
 
 

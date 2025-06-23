@@ -11,3 +11,9 @@ The types of blob storage data.
 > `readonly` **Entry**: `"BlobStorageEntry"` = `"BlobStorageEntry"`
 
 Represents blob storage entry.
+
+### CompressionType
+
+> `readonly` **CompressionType**: `"BlobStorageCompressionType"` = `"BlobStorageCompressionType"`
+
+Represents blob storage entry compression.

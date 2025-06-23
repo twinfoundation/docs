@@ -96,6 +96,12 @@ Disables encryption if enabled by default.
 
 Use a different vault key id for encryption, if not provided the default vault key id will be used.
 
+###### compress?
+
+`BlobStorageCompressionType`
+
+Optional compression type to use for the blob, defaults to no compression.*
+
 ###### namespace?
 
 `string`
@@ -150,11 +156,11 @@ Optional options for the retrieval of the blob.
 
 Include the content, or just get the metadata.
 
-###### disableDecryption?
+###### decompress?
 
 `boolean`
 
-Disables decryption if enabled by default.
+If the content should be decompressed, if it was compressed when stored, defaults to true.
 
 ###### overrideVaultKeyId?
 

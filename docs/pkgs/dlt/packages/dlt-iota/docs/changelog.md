@@ -1,5 +1,19 @@
 # @twin.org/dlt-iota - Changelog
 
+## [0.0.1-next.28](https://github.com/twinfoundation/dlt/compare/dlt-iota-v0.0.1-next.27...dlt-iota-v0.0.1-next.28) (2025-06-23)
+
+
+### Features
+
+* improve prepareAndPostGasStationTransaction with options parameter ([#20](https://github.com/twinfoundation/dlt/issues/20)) ([778365d](https://github.com/twinfoundation/dlt/commit/778365d535965fb67583db93d9611bfbb944b64d))
+
+## [0.0.1-next.27](https://github.com/twinfoundation/dlt/compare/dlt-iota-v0.0.1-next.26...dlt-iota-v0.0.1-next.27) (2025-06-18)
+
+
+### Features
+
+* gas station integration ([#17](https://github.com/twinfoundation/dlt/issues/17)) ([23c7c96](https://github.com/twinfoundation/dlt/commit/23c7c96858dd6a91d01306983080e1eb8860115a))
+
 ## [0.0.1-next.26](https://github.com/twinfoundation/dlt/compare/dlt-iota-v0.0.1-next.25...dlt-iota-v0.0.1-next.26) (2025-06-12)
 
 

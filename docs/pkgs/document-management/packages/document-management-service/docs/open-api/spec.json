@@ -163,7 +163,10 @@
 						"in": "query",
 						"required": false,
 						"schema": {
-							"type": "string"
+							"type": [
+								"number",
+								"string"
+							]
 						}
 					},
 					{
@@ -451,7 +454,10 @@
 						"in": "query",
 						"required": false,
 						"schema": {
-							"type": "boolean"
+							"type": [
+								"boolean",
+								"string"
+							]
 						}
 					},
 					{
@@ -460,7 +466,10 @@
 						"in": "query",
 						"required": false,
 						"schema": {
-							"type": "boolean"
+							"type": [
+								"boolean",
+								"string"
+							]
 						}
 					},
 					{
@@ -469,7 +478,10 @@
 						"in": "query",
 						"required": false,
 						"schema": {
-							"type": "boolean"
+							"type": [
+								"boolean",
+								"string"
+							]
 						}
 					},
 					{
@@ -478,7 +490,10 @@
 						"in": "query",
 						"required": false,
 						"schema": {
-							"type": "boolean"
+							"type": [
+								"boolean",
+								"string"
+							]
 						}
 					},
 					{
@@ -505,7 +520,10 @@
 						"in": "query",
 						"required": false,
 						"schema": {
-							"type": "string"
+							"type": [
+								"number",
+								"string"
+							]
 						}
 					},
 					{

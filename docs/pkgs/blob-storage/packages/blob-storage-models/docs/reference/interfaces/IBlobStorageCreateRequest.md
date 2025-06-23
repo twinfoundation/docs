@@ -46,6 +46,12 @@ Disables encryption if enabled by default.
 false
 ```
 
+#### compress?
+
+> `optional` **compress**: [`BlobStorageCompressionType`](../type-aliases/BlobStorageCompressionType.md)
+
+Optional compression type to use for the blob, defaults to no compression.
+
 #### overrideVaultKeyId?
 
 > `optional` **overrideVaultKeyId**: `string`

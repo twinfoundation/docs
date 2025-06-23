@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/rights-management-service",
-	"version": "0.0.1-next.10",
+	"version": "0.0.1-next.11",
 	"description": "Rights Management service implementation and REST endpoint definitions",
 	"repository": {
 		"type": "git",
