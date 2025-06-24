@@ -22,20 +22,6 @@ The name of the contract to use.
 
 ***
 
-### gasBudget?
-
-> `optional` **gasBudget**: `number`
-
-The gas budget to use for transactions.
-
-#### Default
-
-```ts
-1_000_000_000
-```
-
-***
-
 ### packageControllerAddressIndex?
 
 > `optional` **packageControllerAddressIndex**: `number`
