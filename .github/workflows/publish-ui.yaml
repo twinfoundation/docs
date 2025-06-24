@@ -46,8 +46,7 @@ jobs:
           --token=${{ secrets.VERCEL_TOKEN }} \
           --scope=${{ secrets.VERCEL_SCOPE }} \
           --target=${{ github.event.inputs.environment == 'prod' && 'production' || 'dev' }} \
-          --force \
-          --cwd=apps/playground-ui)
+          --force)
           echo "deployment-url=$DEPLOYMENT_URL" >> $GITHUB_OUTPUT
 
       # Use the deployment URL to set an alias for the deployment
