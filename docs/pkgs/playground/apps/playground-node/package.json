@@ -1,0 +1,17 @@
+{
+	"name": "@twin.org/playground-node",
+	"version": "0.0.1-next.1",
+	"description": "Serve APIs using the specified configuration",
+	"private": true,
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/twinfoundation/playground.git",
+		"directory": "apps/playground-node"
+	},
+	"author": "martyn.janes@iota.org",
+	"license": "Apache-2.0",
+	"type": "module",
+	"engines": {
+		"node": ">=20.0.0"
+	}
+}
