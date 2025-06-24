@@ -1,45 +1,60 @@
 name: Publish UI to Vercel
 
-env:
-  gha-production: ${{ github.ref_name == 'main' }}
-  gha-domain: ${{ github.ref_name == 'main' && secrets.DOMAIN_PROD_DOCS || secrets.DOMAIN_PREVIEW_DOCS }}
-
 on:
   workflow_dispatch:
+    inputs:
+      environment:
+        type: choice
+        description: Environment
+        options:
+          - dev
+          - prod
 
 permissions:
   contents: read
   pull-requests: write
   deployments: write
 
+env:
+  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID_DOCS }}
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
+    # Only allow main branch to deploy to production and next branch to deploy to development
+    if: (github.ref == 'refs/heads/main' && github.event.inputs.environment == 'prod') || (github.ref == 'refs/heads/next' && github.event.inputs.environment == 'dev')
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          ref: ${{ github.ref_name }}
 
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      # Install older version of Vercel CLI until this issue is fixed
-      # https://github.com/BetaHuhn/deploy-to-vercel-action/issues/393
       - name: Install Vercel CLI
-        run: npm install -g vercel@22.0.1
+        run: npm install -g vercel
 
+      # Deploy To vercel and output the deployment URL as a GitHub output from the step
       - name: Deploy to Vercel
-        uses: BetaHuhn/deploy-to-vercel-action@v1.10.0
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID_DOCS }}
-          VERCEL_SCOPE: ${{ secrets.VERCEL_SCOPE }}
-          ALIAS_DOMAINS: ${{ env.gha-domain }}
-          PRODUCTION: ${{ env.gha-production }}
-          FORCE: true
+        id: deploy
+        run: |
+          DEPLOYMENT_URL=$(vercel deploy \
+          --token=${{ secrets.VERCEL_TOKEN }} \
+          --scope=${{ secrets.VERCEL_SCOPE }} \
+          --target=${{ github.event.inputs.environment == 'prod' && 'production' || 'dev' }} \
+          --force \
+          --cwd=apps/playground-ui)
+          echo "deployment-url=$DEPLOYMENT_URL" >> $GITHUB_OUTPUT
+
+      # Use the deployment URL to set an alias for the deployment
+      - name: Set Alias
+        run: |
+          vercel alias set \
+          ${{ steps.deploy.outputs.deployment-url }} \
+          ${{ github.event.inputs.environment == 'prod' && secrets.DOMAIN_DOCS_PROD || secrets.DOMAIN_DOCS_DEV }} \
+          --token=${{ secrets.VERCEL_TOKEN }} \
+          --scope=${{ secrets.VERCEL_SCOPE }}
