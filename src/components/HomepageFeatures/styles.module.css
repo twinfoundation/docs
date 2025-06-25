@@ -50,3 +50,22 @@
 .featureDescription {
 	padding-top: 10px;
 }
+
+/* 700px breakpoint - make all cards same width */
+@media (max-width: 700px) {
+	.features .featuresRow:last-child {
+		max-width: 100%;
+		margin-left: 0;
+		margin-right: 0;
+		margin: 20px;
+	}
+
+	.featuresRow {
+		flex-direction: column;
+	}
+
+	.feature {
+		max-width: none;
+		flex: 1 1 auto;
+	}
+}

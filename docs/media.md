@@ -4,8 +4,8 @@ This is the overview of media resources including webinars, presentations, and o
 
 ## Webinars
 
-### TWIN Whitepaper Discussion Webinar - 2025/03/26
+### TWIN White Paper Discussion Webinar - 2025/03/26
 
-Join us for an in-depth discussion of the TWIN whitepaper, covering the core concepts, architecture, and implementation strategies of the Trade Worldwide Information Network.
+Join us for an in-depth discussion of the TWIN white paper, covering the core concepts, architecture, and implementation strategies of the Trade Worldwide Information Network.
 
-🎥 [TWIN Whitepaper Discussion Webinar](https://drive.google.com/file/d/1u2l8cw1jLQTtiUt0ElhYaplrZNdLwlhe/view)
+🎥 [TWIN White Paper Discussion Webinar](https://drive.google.com/file/d/1u2l8cw1jLQTtiUt0ElhYaplrZNdLwlhe/view)
