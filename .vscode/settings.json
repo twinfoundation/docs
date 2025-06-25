@@ -1,0 +1,8 @@
+{
+	"markdownlint.lintWorkspaceGlobs": [
+		"**/*.{md,mkd,mdwn,mdown,markdown,markdn,mdtxt,mdtext,workbook}",
+		"!**/node_modules",
+		"!**/.git",
+		"!**/docs/pkgs"
+	]
+}
