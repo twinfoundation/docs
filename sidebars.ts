@@ -15,7 +15,9 @@ import fs from "fs";
 const sidebars: SidebarsConfig = {
 	introductionSidebar: ["intro"],
 	appsSidebar: ["apps", ...buildPkgs("apps")],
-	packagesSidebar: ["pkgs", ...buildPkgs("packages")]
+	packagesSidebar: ["pkgs", ...buildPkgs("packages")],
+	mediaSidebar: ["media"],
+	roadmapSidebar: ["roadmap"]
 };
 
 function buildPkgs(packageType): any {
