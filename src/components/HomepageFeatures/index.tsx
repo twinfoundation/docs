@@ -1,3 +1,4 @@
+import React from 'react';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
 
@@ -8,7 +9,7 @@ type FeatureItem = {
 	href: string;
 };
 
-const FeatureList: FeatureItem[] = [
+const FirstRowFeatures: FeatureItem[] = [
 	{
 		title: 'Introduction',
 		svg: '/img/logo.svg',
@@ -29,6 +30,21 @@ const FeatureList: FeatureItem[] = [
 	}
 ];
 
+const SecondRowFeatures: FeatureItem[] = [
+	{
+		title: 'Media',
+		svg: '/img/logo.svg',
+		description: 'Webinars and multimedia content about TWIN.',
+		href: '/docs/media'
+	},
+	{
+		title: 'Roadmap',
+		svg: '/img/logo.svg',
+		description: 'Development progress and future milestones.',
+		href: '/docs/roadmap'
+	}
+];
+
 function Feature({ title, svg, description, href }: FeatureItem) {
 	return (
 		<a href={href} className={styles.feature}>
@@ -43,12 +59,17 @@ function Feature({ title, svg, description, href }: FeatureItem) {
 	);
 }
 
-export default function HomepageFeatures(): JSX.Element {
+export default function HomepageFeatures(): React.JSX.Element {
 	return (
 		<section className={styles.features}>
 			<div className="container">
 				<div className={styles.featuresRow}>
-					{FeatureList.map((props, idx) => (
+					{FirstRowFeatures.map((props, idx) => (
+						<Feature key={idx} {...props} />
+					))}
+				</div>
+				<div className={styles.featuresRow}>
+					{SecondRowFeatures.map((props, idx) => (
 						<Feature key={idx} {...props} />
 					))}
 				</div>

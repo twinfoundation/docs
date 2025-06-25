@@ -1,3 +1,4 @@
+import React from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
@@ -7,7 +8,7 @@ function HomepageHeader() {
 	return <img src="/img/banners/banner.jpg" />;
 }
 
-export default function Home(): JSX.Element {
+export default function Home(): React.JSX.Element {
 	const { siteConfig } = useDocusaurusContext();
 	return (
 		<Layout title={siteConfig.title} description="Trade Worldwide Information Network">
