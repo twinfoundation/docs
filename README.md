@@ -43,4 +43,3 @@ npx patch-package @docusaurus/plugin-content-docs
 ```
 
 The patch is installed, in the `postinstall` script in package.json.
-

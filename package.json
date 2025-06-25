@@ -15,7 +15,7 @@
 		"typecheck": "tsc",
 		"format": "prettier --config .prettierrc --write .",
 		"lint:format": "prettier --config .prettierrc --check .",
-		"lint:markdown": "markdownlint docs/**/*.md --ignore **/docs/pkgs/**",
+		"lint:markdown": "markdownlint docs/**/*.md --ignore docs/pkgs/**",
 		"lint:spell": "cspell **/*.md --no-progress",
 		"lint": "npm run lint:format && npm run lint:markdown && npm run lint:spell",
 		"dist": "npm run clear && npm run build",
