@@ -85,7 +85,7 @@ const config: Config = {
 						type: "docSidebar",
 						sidebarId: "twinWhitePaperSidebar",
 						position: "left",
-						label: "TWIN White Paper"
+						label: "White Paper"
 					},
 					{
 						type: "docSidebar",
