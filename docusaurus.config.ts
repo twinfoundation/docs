@@ -83,6 +83,12 @@ const config: Config = {
 					},
 					{
 						type: "docSidebar",
+						sidebarId: "twinWhitePaperSidebar",
+						position: "left",
+						label: "TWIN White Paper"
+					},
+					{
+						type: "docSidebar",
 						sidebarId: "appsSidebar",
 						position: "left",
 						label: "Applications"
@@ -130,7 +136,7 @@ const config: Config = {
 								to: "/docs/pkgs"
 							},
 							{
-								label: "Twin White Paper",
+								label: "TWIN White Paper",
 								href: "/pdf/twin-whitepaper.pdf",
 								target: "_blank"
 							}
