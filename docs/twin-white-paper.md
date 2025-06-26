@@ -1,4 +1,4 @@
-# TWIN Reference Architecture: Building the Future of Global Trade
+# White Paper
 
 ## Seamless Trading for All Through Open, Interoperable Infrastructure
 
