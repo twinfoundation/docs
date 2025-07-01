@@ -10,7 +10,7 @@ Interface describing a faucet connector.
 
 ### fundAddress()
 
-> **fundAddress**(`identity`, `address`, `timeoutInSeconds`?): `Promise`\<`bigint`\>
+> **fundAddress**(`identity`, `address`, `timeoutInSeconds?`): `Promise`\<`bigint`\>
 
 Fund the wallet from the faucet.
 

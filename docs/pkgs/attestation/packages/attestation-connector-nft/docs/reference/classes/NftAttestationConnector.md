@@ -8,9 +8,9 @@ Class for performing attestation operations in nfts.
 
 ## Constructors
 
-### new NftAttestationConnector()
+### Constructor
 
-> **new NftAttestationConnector**(`options`?): [`NftAttestationConnector`](NftAttestationConnector.md)
+> **new NftAttestationConnector**(`options?`): `NftAttestationConnector`
 
 Create a new instance of NftAttestationConnector.
 
@@ -24,7 +24,7 @@ The options for the attestation connector.
 
 #### Returns
 
-[`NftAttestationConnector`](NftAttestationConnector.md)
+`NftAttestationConnector`
 
 ## Properties
 

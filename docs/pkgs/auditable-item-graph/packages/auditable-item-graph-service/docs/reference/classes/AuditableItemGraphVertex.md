@@ -4,13 +4,13 @@ Class describing the auditable item graph vertex.
 
 ## Constructors
 
-### new AuditableItemGraphVertex()
+### Constructor
 
-> **new AuditableItemGraphVertex**(): [`AuditableItemGraphVertex`](AuditableItemGraphVertex.md)
+> **new AuditableItemGraphVertex**(): `AuditableItemGraphVertex`
 
 #### Returns
 
-[`AuditableItemGraphVertex`](AuditableItemGraphVertex.md)
+`AuditableItemGraphVertex`
 
 ## Properties
 
@@ -51,6 +51,14 @@ The date/time of when the vertex was last modified.
 > `optional` **aliasIndex**: `string`
 
 Combined alias index for the vertex used for querying.
+
+***
+
+### resourceTypeIndex?
+
+> `optional` **resourceTypeIndex**: `string`
+
+Combined resource type index for the vertex used for querying.
 
 ***
 

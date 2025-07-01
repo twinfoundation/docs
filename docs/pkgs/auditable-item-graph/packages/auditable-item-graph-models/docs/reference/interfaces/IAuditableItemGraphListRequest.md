@@ -30,9 +30,15 @@ The id or alias to try and find.
 
 #### idMode?
 
-> `optional` **idMode**: `"both"` \| `"id"` \| `"alias"`
+> `optional` **idMode**: `"id"` \| `"alias"` \| `"both"`
 
 Which field to look in with the id, defaults to both.
+
+#### resourceTypes?
+
+> `optional` **resourceTypes**: `string`
+
+Include vertices with specific resource types, comma separated.
 
 #### conditions?
 
@@ -66,6 +72,6 @@ The optional cursor to get next chunk.
 
 #### pageSize?
 
-> `optional` **pageSize**: `number`
+> `optional` **pageSize**: `string` \| `number`
 
 The maximum number of entities in a page.

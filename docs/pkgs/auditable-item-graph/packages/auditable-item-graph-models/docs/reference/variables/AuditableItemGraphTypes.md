@@ -12,6 +12,12 @@ The types of auditable item graph data.
 
 Represents auditable item graph vertex.
 
+### VertexList
+
+> `readonly` **VertexList**: `"AuditableItemGraphVertexList"` = `"AuditableItemGraphVertexList"`
+
+Represents auditable item graph vertex list.
+
 ### Alias
 
 > `readonly` **Alias**: `"AuditableItemGraphAlias"` = `"AuditableItemGraphAlias"`
@@ -41,9 +47,3 @@ Represents auditable item graph  changeset.
 > `readonly` **PatchOperation**: `"AuditableItemGraphPatchOperation"` = `"AuditableItemGraphPatchOperation"`
 
 Represents patch operation.
-
-### VertexList
-
-> `readonly` **VertexList**: `"AuditableItemGraphVertexList"` = `"AuditableItemGraphVertexList"`
-
-Represents auditable item stream vertex list.

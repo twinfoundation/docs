@@ -4,13 +4,13 @@ Call defining a log entry error.
 
 ## Constructors
 
-### new LogEntryError()
+### Constructor
 
-> **new LogEntryError**(): [`LogEntryError`](LogEntryError.md)
+> **new LogEntryError**(): `LogEntryError`
 
 #### Returns
 
-[`LogEntryError`](LogEntryError.md)
+`LogEntryError`
 
 ## Properties
 

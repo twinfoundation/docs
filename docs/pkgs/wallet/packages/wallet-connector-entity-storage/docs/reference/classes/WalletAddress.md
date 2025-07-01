@@ -4,13 +4,13 @@ Class describing a wallet address.
 
 ## Constructors
 
-### new WalletAddress()
+### Constructor
 
-> **new WalletAddress**(): [`WalletAddress`](WalletAddress.md)
+> **new WalletAddress**(): `WalletAddress`
 
 #### Returns
 
-[`WalletAddress`](WalletAddress.md)
+`WalletAddress`
 
 ## Properties
 

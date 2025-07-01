@@ -24,7 +24,7 @@ The id of the service to remove.
 
 #### connector?
 
-[`IdentityConnectorTypes`](../type-aliases/IdentityConnectorTypes.md)
+`"iota"`
 
 The connector to perform the operations with.
 

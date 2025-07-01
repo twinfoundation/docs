@@ -1,5 +1,5 @@
 {
 	"language": "en-GB",
 	"ignorePaths": ["**/node_modules/**", "docs/pkgs/**/*", "docs/pkgs.md"],
-	"words": ["TWIN", "nameof", "Stiftung"]
+	"words": ["TWIN", "nameof", "Stiftung", "IDSA", "ODRL", "IPFS", "CEFACT"]
 }

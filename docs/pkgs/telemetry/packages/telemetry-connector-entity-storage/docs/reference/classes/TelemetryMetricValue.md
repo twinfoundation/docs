@@ -4,13 +4,13 @@ Class defining a telemetry metric value.
 
 ## Constructors
 
-### new TelemetryMetricValue()
+### Constructor
 
-> **new TelemetryMetricValue**(): [`TelemetryMetricValue`](TelemetryMetricValue.md)
+> **new TelemetryMetricValue**(): `TelemetryMetricValue`
 
 #### Returns
 
-[`TelemetryMetricValue`](TelemetryMetricValue.md)
+`TelemetryMetricValue`
 
 ## Properties
 

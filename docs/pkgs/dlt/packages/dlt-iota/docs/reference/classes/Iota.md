@@ -4,13 +4,13 @@ Class for performing operations on IOTA.
 
 ## Constructors
 
-### new Iota()
+### Constructor
 
-> **new Iota**(): [`Iota`](Iota.md)
+> **new Iota**(): `Iota`
 
 #### Returns
 
-[`Iota`](Iota.md)
+`Iota`
 
 ## Properties
 
@@ -43,6 +43,14 @@ Default coin type.
 > `readonly` `static` **DEFAULT\_SCAN\_RANGE**: `number` = `1000`
 
 Default scan range.
+
+***
+
+### DEFAULT\_INCLUSION\_TIMEOUT
+
+> `readonly` `static` **DEFAULT\_INCLUSION\_TIMEOUT**: `number` = `60`
+
+Default inclusion timeout.
 
 ## Methods
 
@@ -90,7 +98,7 @@ The configuration to populate.
 
 ### getAddresses()
 
-> `static` **getAddresses**(`seed`, `coinType`, `accountIndex`, `startAddressIndex`, `count`, `isInternal`?): `string`[]
+> `static` **getAddresses**(`seed`, `coinType`, `accountIndex`, `startAddressIndex`, `count`, `isInternal?`): `string`[]
 
 Get addresses for the identity.
 
@@ -142,7 +150,7 @@ The list of addresses.
 
 ### getKeyPair()
 
-> `static` **getKeyPair**(`seed`, `coinType`, `accountIndex`, `addressIndex`, `isInternal`?): `object`
+> `static` **getKeyPair**(`seed`, `coinType`, `accountIndex`, `addressIndex`, `isInternal?`): `object`
 
 Get a key pair for the specified index.
 
@@ -194,9 +202,9 @@ The key pair containing private key and public key.
 
 ***
 
-### prepareAndPostTransaction()
+### prepareAndPostValueTransaction()
 
-> `static` **prepareAndPostTransaction**(`config`, `vaultConnector`, `identity`, `client`, `options`): `Promise`\<\{ `digest`: `string`; \}\>
+> `static` **prepareAndPostValueTransaction**(`config`, `vaultConnector`, `loggingConnector`, `identity`, `client`, `source`, `amount`, `recipient`, `options?`): `Promise`\<`IotaTransactionBlockResponse`\>
 
 Prepare and post a transaction.
 
@@ -214,6 +222,12 @@ The configuration.
 
 The vault connector.
 
+##### loggingConnector
+
+The logging connector.
+
+`undefined` | `ILoggingConnector`
+
 ##### identity
 
 `string`
@@ -226,87 +240,43 @@ The identity of the user to access the vault keys.
 
 The client instance.
 
-##### options
-
-The transaction options.
-
-###### source
+##### source
 
 `string`
 
 The source address.
 
-###### amount
+##### amount
 
 `bigint`
 
 The amount to transfer.
 
-###### recipient
+##### recipient
 
 `string`
 
 The recipient address.
 
+##### options?
+
+[`IIotaResponseOptions`](../interfaces/IIotaResponseOptions.md)
+
+The transaction options.
+
 #### Returns
 
-`Promise`\<\{ `digest`: `string`; \}\>
+`Promise`\<`IotaTransactionBlockResponse`\>
 
 The transaction result.
 
 ***
 
-### prepareAndPostNftTransaction()
+### prepareAndPostTransaction()
 
-> `static` **prepareAndPostNftTransaction**(`config`, `vaultConnector`, `identity`, `client`, `options`): `Promise`\<[`IIotaNftTransactionResponse`](../interfaces/IIotaNftTransactionResponse.md)\>
+> `static` **prepareAndPostTransaction**(`config`, `vaultConnector`, `loggingConnector`, `identity`, `client`, `owner`, `transaction`, `options?`): `Promise`\<`IotaTransactionBlockResponse`\>
 
-Prepare and post an NFT transaction.
-
-#### Parameters
-
-##### config
-
-[`IIotaConfig`](../interfaces/IIotaConfig.md)
-
-The configuration.
-
-##### vaultConnector
-
-`IVaultConnector`
-
-The vault connector.
-
-##### identity
-
-`string`
-
-The identity of the user to access the vault keys.
-
-##### client
-
-`IotaClient`
-
-The client instance.
-
-##### options
-
-[`IIotaNftTransactionOptions`](../interfaces/IIotaNftTransactionOptions.md)
-
-The NFT transaction options.
-
-#### Returns
-
-`Promise`\<[`IIotaNftTransactionResponse`](../interfaces/IIotaNftTransactionResponse.md)\>
-
-The transaction response.
-
-***
-
-### prepareAndPostStorageTransaction()
-
-> `static` **prepareAndPostStorageTransaction**(`config`, `vaultConnector`, `identity`, `client`, `options`): `Promise`\<`IotaTransactionBlockResponse`\>
-
-Prepare and post a storage transaction.
+Prepare and post a transaction.
 
 #### Parameters
 
@@ -322,6 +292,12 @@ The configuration.
 
 The vault connector.
 
+##### loggingConnector
+
+The logging connector.
+
+`undefined` | `ILoggingConnector`
+
 ##### identity
 
 `string`
@@ -334,11 +310,23 @@ The identity of the user to access the vault keys.
 
 The client instance.
 
-##### options
+##### owner
 
-[`IIotaNftTransactionOptions`](../interfaces/IIotaNftTransactionOptions.md)
+`string`
 
-The storage transaction options.
+The owner of the address.
+
+##### transaction
+
+`Transaction`
+
+The transaction to execute.
+
+##### options?
+
+[`IIotaResponseOptions`](../interfaces/IIotaResponseOptions.md)
+
+The transaction options.
 
 #### Returns
 
@@ -463,7 +451,7 @@ The extracted error.
 
 ### buildMnemonicKey()
 
-> `static` **buildMnemonicKey**(`identity`, `vaultMnemonicId`?): `string`
+> `static` **buildMnemonicKey**(`identity`, `vaultMnemonicId?`): `string`
 
 Get the key for storing the mnemonic.
 
@@ -491,7 +479,7 @@ The mnemonic key.
 
 ### buildSeedKey()
 
-> `static` **buildSeedKey**(`identity`, `vaultSeedId`?): `string`
+> `static` **buildSeedKey**(`identity`, `vaultSeedId?`): `string`
 
 Get the key for storing the seed.
 
@@ -547,7 +535,7 @@ True if the package exists, false otherwise.
 
 ### dryRunTransaction()
 
-> `static` **dryRunTransaction**(`client`, `logging`, `className`, `txb`, `sender`, `operation`): `Promise`\<[`IIotaDryRun`](../interfaces/IIotaDryRun.md)\>
+> `static` **dryRunTransaction**(`client`, `logging`, `txb`, `sender`, `operation`): `Promise`\<[`IIotaDryRun`](../interfaces/IIotaDryRun.md)\>
 
 Dry run a transaction and log the results.
 
@@ -564,12 +552,6 @@ The IOTA client.
 The logging connector.
 
 `undefined` | `ILoggingConnector`
-
-##### className
-
-`string`
-
-The class name for logging.
 
 ##### txb
 
@@ -594,3 +576,265 @@ The operation to log.
 `Promise`\<[`IIotaDryRun`](../interfaces/IIotaDryRun.md)\>
 
 void.
+
+***
+
+### waitForTransactionConfirmation()
+
+> `static` **waitForTransactionConfirmation**(`client`, `digest`, `config`, `options?`): `Promise`\<`IotaTransactionBlockResponse`\>
+
+Wait for a transaction to be indexed and available over the API.
+
+#### Parameters
+
+##### client
+
+`IotaClient`
+
+The IOTA client instance.
+
+##### digest
+
+`string`
+
+The digest of the transaction to wait for.
+
+##### config
+
+[`IIotaConfig`](../interfaces/IIotaConfig.md)
+
+The IOTA configuration.
+
+##### options?
+
+Additional options for the transaction query.
+
+###### showEffects?
+
+`boolean`
+
+Whether to show effects.
+
+###### showEvents?
+
+`boolean`
+
+Whether to show events.
+
+###### showObjectChanges?
+
+`boolean`
+
+Whether to show object changes.
+
+#### Returns
+
+`Promise`\<`IotaTransactionBlockResponse`\>
+
+The confirmed transaction response.
+
+***
+
+### isAbortError()
+
+> `static` **isAbortError**(`error`, `code?`): `boolean`
+
+Check if the error is an abort error.
+
+#### Parameters
+
+##### error
+
+`unknown`
+
+The error to check.
+
+##### code?
+
+`number`
+
+The error code to check for.
+
+#### Returns
+
+`boolean`
+
+True if the error is an abort error, false otherwise.
+
+***
+
+### prepareAndPostGasStationTransaction()
+
+> `static` **prepareAndPostGasStationTransaction**(`config`, `vaultConnector`, `identity`, `client`, `owner`, `transaction`, `options?`): `Promise`\<`IotaTransactionBlockResponse`\>
+
+Prepare and post a transaction using gas station sponsoring.
+
+#### Parameters
+
+##### config
+
+[`IIotaConfig`](../interfaces/IIotaConfig.md)
+
+The configuration.
+
+##### vaultConnector
+
+`IVaultConnector`
+
+The vault connector.
+
+##### identity
+
+`string`
+
+The identity of the user to access the vault keys.
+
+##### client
+
+`IotaClient`
+
+The client instance.
+
+##### owner
+
+`string`
+
+The owner of the address.
+
+##### transaction
+
+`Transaction`
+
+The transaction to execute.
+
+##### options?
+
+[`IIotaResponseOptions`](../interfaces/IIotaResponseOptions.md)
+
+Response options including confirmation behavior.
+
+#### Returns
+
+`Promise`\<`IotaTransactionBlockResponse`\>
+
+The transaction response.
+
+***
+
+### reserveGas()
+
+> `static` **reserveGas**(`config`, `gasBudget`): `Promise`\<[`IGasReservationResult`](../interfaces/IGasReservationResult.md)\>
+
+Reserve gas from the gas station.
+
+#### Parameters
+
+##### config
+
+[`IIotaConfig`](../interfaces/IIotaConfig.md)
+
+The configuration containing gas station settings.
+
+##### gasBudget
+
+`number`
+
+The gas budget to reserve.
+
+#### Returns
+
+`Promise`\<[`IGasReservationResult`](../interfaces/IGasReservationResult.md)\>
+
+The gas reservation result.
+
+***
+
+### executeGasStationTransaction()
+
+> `static` **executeGasStationTransaction**(`config`, `reservationId`, `transactionBytes`, `userSignature`): `Promise`\<`IotaTransactionBlockResponse`\>
+
+Execute a sponsored transaction through the gas station.
+
+#### Parameters
+
+##### config
+
+[`IIotaConfig`](../interfaces/IIotaConfig.md)
+
+The configuration containing gas station settings.
+
+##### reservationId
+
+`number`
+
+The reservation ID from gas reservation.
+
+##### transactionBytes
+
+`Uint8Array`
+
+The unsigned transaction bytes.
+
+##### userSignature
+
+`string`
+
+The user's signature.
+
+#### Returns
+
+`Promise`\<`IotaTransactionBlockResponse`\>
+
+The transaction response.
+
+***
+
+### executeAndConfirmGasStationTransaction()
+
+> `static` **executeAndConfirmGasStationTransaction**(`config`, `client`, `reservationId`, `transactionBytes`, `userSignature`, `options?`): `Promise`\<`IotaTransactionBlockResponse`\>
+
+Execute and confirm a gas station transaction.
+
+#### Parameters
+
+##### config
+
+[`IIotaConfig`](../interfaces/IIotaConfig.md)
+
+The configuration containing gas station settings.
+
+##### client
+
+`IotaClient`
+
+The IOTA client for confirmation.
+
+##### reservationId
+
+`number`
+
+The reservation ID from gas reservation.
+
+##### transactionBytes
+
+`Uint8Array`
+
+The unsigned transaction bytes.
+
+##### userSignature
+
+`string`
+
+The user's signature.
+
+##### options?
+
+[`IIotaResponseOptions`](../interfaces/IIotaResponseOptions.md)
+
+Response options including confirmation behavior.
+
+#### Returns
+
+`Promise`\<`IotaTransactionBlockResponse`\>
+
+The transaction response (confirmed if waitForConfirmation is true).

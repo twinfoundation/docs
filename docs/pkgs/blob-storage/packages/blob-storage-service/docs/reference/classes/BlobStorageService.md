@@ -8,9 +8,9 @@ Service for performing blob storage operations to a connector.
 
 ## Constructors
 
-### new BlobStorageService()
+### Constructor
 
-> **new BlobStorageService**(`options`?): [`BlobStorageService`](BlobStorageService.md)
+> **new BlobStorageService**(`options?`): `BlobStorageService`
 
 Create a new instance of BlobStorageService.
 
@@ -24,7 +24,7 @@ The options for the service.
 
 #### Returns
 
-[`BlobStorageService`](BlobStorageService.md)
+`BlobStorageService`
 
 ## Properties
 
@@ -50,7 +50,7 @@ Runtime name for the class.
 
 ### create()
 
-> **create**(`blob`, `encodingFormat`?, `fileExtension`?, `metadata`?, `namespace`?, `userIdentity`?, `nodeIdentity`?): `Promise`\<`string`\>
+> **create**(`blob`, `encodingFormat?`, `fileExtension?`, `metadata?`, `options?`, `userIdentity?`, `nodeIdentity?`): `Promise`\<`string`\>
 
 Create the blob with some metadata.
 
@@ -80,7 +80,29 @@ Extension for the blob, will be detected if left undefined.
 
 Data for the custom metadata as JSON-LD.
 
-##### namespace?
+##### options?
+
+Optional options for the creation of the blob.
+
+###### disableEncryption?
+
+`boolean`
+
+Disables encryption if enabled by default.
+
+###### overrideVaultKeyId?
+
+`string`
+
+Use a different vault key id for encryption, if not provided the default vault key id will be used.
+
+###### compress?
+
+`BlobStorageCompressionType`
+
+Optional compression type to use for the blob, defaults to no compression.*
+
+###### namespace?
 
 `string`
 
@@ -112,7 +134,7 @@ The id of the stored blob in urn format.
 
 ### get()
 
-> **get**(`id`, `includeContent`, `userIdentity`?, `nodeIdentity`?): `Promise`\<`IBlobStorageEntry`\>
+> **get**(`id`, `options?`, `userIdentity?`, `nodeIdentity?`): `Promise`\<`IBlobStorageEntry`\>
 
 Get the blob entry.
 
@@ -124,11 +146,27 @@ Get the blob entry.
 
 The id of the blob to get in urn format.
 
-##### includeContent
+##### options?
+
+Optional options for the retrieval of the blob.
+
+###### includeContent?
 
 `boolean`
 
 Include the content, or just get the metadata.
+
+###### decompress?
+
+`boolean`
+
+If the content should be decompressed, if it was compressed when stored, defaults to true.
+
+###### overrideVaultKeyId?
+
+`string`
+
+Use a different vault key id for decryption, if not provided the default vault key id will be used.
 
 ##### userIdentity?
 
@@ -160,7 +198,7 @@ Not found error if the blob cannot be found.
 
 ### update()
 
-> **update**(`id`, `encodingFormat`?, `fileExtension`?, `metadata`?, `userIdentity`?, `nodeIdentity`?): `Promise`\<`void`\>
+> **update**(`id`, `encodingFormat?`, `fileExtension?`, `metadata?`, `userIdentity?`, `nodeIdentity?`): `Promise`\<`void`\>
 
 Update the blob with metadata.
 
@@ -220,7 +258,7 @@ Not found error if the blob cannot be found.
 
 ### remove()
 
-> **remove**(`id`, `userIdentity`?, `nodeIdentity`?): `Promise`\<`void`\>
+> **remove**(`id`, `userIdentity?`, `nodeIdentity?`): `Promise`\<`void`\>
 
 Remove the blob.
 
@@ -258,7 +296,7 @@ Nothing.
 
 ### query()
 
-> **query**(`conditions`?, `orderBy`?, `orderByDirection`?, `cursor`?, `pageSize`?, `userIdentity`?, `nodeIdentity`?): `Promise`\<`IBlobStorageEntryList`\>
+> **query**(`conditions?`, `orderBy?`, `orderByDirection?`, `cursor?`, `pageSize?`, `userIdentity?`, `nodeIdentity?`): `Promise`\<`IBlobStorageEntryList`\>
 
 Query all the blob storage entries which match the conditions.
 

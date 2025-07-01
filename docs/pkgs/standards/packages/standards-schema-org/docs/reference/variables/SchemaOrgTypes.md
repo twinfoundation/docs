@@ -71,3 +71,21 @@ Represents a location.
 > `readonly` **StructuredValue**: `"StructuredValue"` = `"StructuredValue"`
 
 Represents a structured value.
+
+### ItemList
+
+> `readonly` **ItemList**: `"ItemList"` = `"ItemList"`
+
+Represents an item list.
+
+### ItemListElement
+
+> `readonly` **ItemListElement**: `"itemListElement"` = `"itemListElement"`
+
+Represents an item list element.
+
+### NextItem
+
+> `readonly` **NextItem**: `"nextItem"` = `"nextItem"`
+
+Represents a next item (can be used as a cursor).

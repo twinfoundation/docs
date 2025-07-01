@@ -1,5 +1,5 @@
 # Type Alias: RightOperandType
 
-> **RightOperandType**: *typeof* [`RightOperandTypes`](../variables/RightOperandTypes.md)\[keyof *typeof* [`RightOperandTypes`](../variables/RightOperandTypes.md)\]
+> **RightOperandType** = *typeof* [`RightOperandType`](../variables/RightOperandType.md)\[keyof *typeof* [`RightOperandType`](../variables/RightOperandType.md)\]
 
 The types for ODRL Right Operand Types.

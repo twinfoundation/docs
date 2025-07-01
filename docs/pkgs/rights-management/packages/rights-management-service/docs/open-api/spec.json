@@ -1,0 +1,648 @@
+{
+	"openapi": "3.1.0",
+	"info": {
+		"title": "TWIN - Test Endpoints",
+		"description": "REST API for TWIN - Test Endpoints.",
+		"version": "1.0.0",
+		"license": {
+			"name": "Apache 2.0 License",
+			"url": "https://opensource.org/licenses/Apache-2.0"
+		}
+	},
+	"servers": [
+		{
+			"url": "https://localhost"
+		}
+	],
+	"tags": [
+		{
+			"name": "Policy Administration Point",
+			"description": "Endpoints for managing ODRL policies in the Policy Administration Point"
+		}
+	],
+	"paths": {
+		"/rights-management/pap": {
+			"post": {
+				"operationId": "papCreate",
+				"summary": "Create a policy",
+				"tags": [
+					"Policy Administration Point"
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"requestBody": {
+					"description": "The request structure for creating a policy.",
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "https://schema.twindev.org/odrl/OdrlPolicy"
+							},
+							"examples": {
+								"papCreateExample": {
+									"value": {
+										"@context": "https://www.w3.org/ns/odrl/2/",
+										"@type": "Set",
+										"permission": [
+											{
+												"target": "http://example.com/asset/1",
+												"action": "use"
+											}
+										]
+									}
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"201": {
+						"description": "The rest request ended in created response.",
+						"headers": {
+							"location": {
+								"schema": {
+									"type": "string"
+								},
+								"description": "e.g. urn:rights-management:abc123def456"
+							}
+						}
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/rights-management/pap/{id}": {
+			"put": {
+				"operationId": "papUpdate",
+				"summary": "Update a policy",
+				"tags": [
+					"Policy Administration Point"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"description": "The ID of the policy to update.",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "urn:rights-management:abc123def456"
+					}
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"requestBody": {
+					"description": "The request structure for updating a policy.",
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "https://schema.twindev.org/odrl/OdrlPolicy"
+							},
+							"examples": {
+								"papUpdateExample": {
+									"value": {
+										"@context": "https://www.w3.org/ns/odrl/2/",
+										"@type": "Set",
+										"uid": "urn:rights-management:abc123def456",
+										"permission": [
+											{
+												"target": "http://example.com/asset/2",
+												"action": "read"
+											}
+										]
+									}
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"204": {
+						"description": "The rest request ended in success with no data."
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			"get": {
+				"operationId": "papRetrieve",
+				"summary": "Retrieve a policy",
+				"tags": [
+					"Policy Administration Point"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"description": "The ID of the policy to retrieve.",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "urn:rights-management:abc123def456"
+					}
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "The response structure for retrieving a policy.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "https://schema.twindev.org/odrl/OdrlPolicy"
+								},
+								"examples": {
+									"papRetrieveResponseExample": {
+										"value": {
+											"@context": "https://www.w3.org/ns/odrl/2/",
+											"@type": "Set",
+											"uid": "urn:rights-management:abc123def456",
+											"permission": [
+												{
+													"target": "http://example.com/asset/1",
+													"action": "use"
+												}
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			"delete": {
+				"operationId": "papRemove",
+				"summary": "Remove a policy",
+				"tags": [
+					"Policy Administration Point"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"description": "The ID of the policy to remove.",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "urn:rights-management:abc123def456"
+					}
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"responses": {
+					"204": {
+						"description": "The rest request ended in success with no data."
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/rights-management/pap/query": {
+			"get": {
+				"operationId": "papQuery",
+				"summary": "Query policies",
+				"tags": [
+					"Policy Administration Point"
+				],
+				"parameters": [
+					{
+						"name": "conditions",
+						"description": "The condition for the query.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"name": "pageSize",
+						"description": "The number of entries to return per page.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": [
+								"number",
+								"string"
+							]
+						}
+					},
+					{
+						"name": "cursor",
+						"description": "The cursor to get next chunk of data, returned in previous response.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string"
+						},
+						"example": "optional-pagination-cursor"
+					}
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "The response structure for querying policies.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/PapQueryResponse"
+								},
+								"examples": {
+									"papQueryResponseExample": {
+										"value": {
+											"cursor": "next-page-cursor",
+											"policies": [
+												{
+													"@context": "https://www.w3.org/ns/odrl/2/",
+													"@type": "Set",
+													"uid": "urn:rights-management:abc123def456",
+													"permission": [
+														{
+															"target": "http://example.com/asset/1",
+															"action": "use"
+														}
+													]
+												}
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"components": {
+		"schemas": {
+			"Error": {
+				"type": "object",
+				"properties": {
+					"name": {
+						"type": "string",
+						"description": "The name for the error."
+					},
+					"message": {
+						"type": "string",
+						"description": "The message for the error."
+					},
+					"source": {
+						"type": "string",
+						"description": "The source of the error."
+					},
+					"properties": {
+						"type": "object",
+						"additionalProperties": {},
+						"description": "Any additional information for the error."
+					},
+					"stack": {
+						"type": "string",
+						"description": "The stack trace for the error."
+					},
+					"inner": {
+						"$ref": "#/components/schemas/Error"
+					}
+				},
+				"required": [
+					"name",
+					"message"
+				],
+				"additionalProperties": false,
+				"description": "Model to describe serialized error."
+			},
+			"PapQueryResponse": {
+				"type": "object",
+				"properties": {
+					"cursor": {
+						"type": "string",
+						"description": "The cursor for the next page of results, if there are more results available."
+					},
+					"policies": {
+						"type": "array",
+						"items": {
+							"$ref": "https://schema.twindev.org/odrl/OdrlPolicy"
+						},
+						"description": "The policies matching the query."
+					}
+				},
+				"required": [
+					"policies"
+				],
+				"additionalProperties": false,
+				"description": "The body of the response."
+			}
+		},
+		"securitySchemes": {
+			"jwtBearerAuthScheme": {
+				"type": "http",
+				"scheme": "bearer",
+				"bearerFormat": "JWT"
+			}
+		}
+	}
+}

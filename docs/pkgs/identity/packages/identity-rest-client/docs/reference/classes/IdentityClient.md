@@ -12,9 +12,9 @@ Client for performing identity through to REST endpoints.
 
 ## Constructors
 
-### new IdentityClient()
+### Constructor
 
-> **new IdentityClient**(`config`): [`IdentityClient`](IdentityClient.md)
+> **new IdentityClient**(`config`): `IdentityClient`
 
 Create a new instance of IdentityClient.
 
@@ -28,7 +28,7 @@ The configuration for the client.
 
 #### Returns
 
-[`IdentityClient`](IdentityClient.md)
+`IdentityClient`
 
 #### Overrides
 
@@ -50,7 +50,7 @@ Runtime name for the class.
 
 ### identityCreate()
 
-> **identityCreate**(`namespace`?): `Promise`\<`IDidDocument`\>
+> **identityCreate**(`namespace?`): `Promise`\<`IDidDocument`\>
 
 Create a new identity.
 
@@ -76,7 +76,7 @@ The created identity document.
 
 ### verificationMethodCreate()
 
-> **verificationMethodCreate**(`identity`, `verificationMethodType`, `verificationMethodId`?): `Promise`\<`IDidDocumentVerificationMethod`\>
+> **verificationMethodCreate**(`identity`, `verificationMethodType`, `verificationMethodId?`): `Promise`\<`IDidDocumentVerificationMethod`\>
 
 Add a verification method to the document in JSON Web key Format.
 
@@ -234,7 +234,7 @@ NotFoundError if the id can not be resolved.
 
 ### verifiableCredentialCreate()
 
-> **verifiableCredentialCreate**(`verificationMethodId`, `id`, `subject`, `revocationIndex`?): `Promise`\<\{ `verifiableCredential`: `IDidVerifiableCredential`; `jwt`: `string`; \}\>
+> **verifiableCredentialCreate**(`verificationMethodId`, `id`, `subject`, `revocationIndex?`): `Promise`\<\{ `verifiableCredential`: `IDidVerifiableCredential`; `jwt`: `string`; \}\>
 
 Create a verifiable credential for a verification method.
 
@@ -282,7 +282,7 @@ NotFoundError if the id can not be resolved.
 
 ### verifiableCredentialVerify()
 
-> **verifiableCredentialVerify**(`credentialJwt`): `Promise`\<\{ `revoked`: `boolean`; `verifiableCredential`: `IDidVerifiableCredential`; \}\>
+> **verifiableCredentialVerify**(`credentialJwt`): `Promise`\<\{ `revoked`: `boolean`; `verifiableCredential?`: `IDidVerifiableCredential`; \}\>
 
 Verify a verifiable credential is valid.
 
@@ -296,7 +296,7 @@ The credential to verify.
 
 #### Returns
 
-`Promise`\<\{ `revoked`: `boolean`; `verifiableCredential`: `IDidVerifiableCredential`; \}\>
+`Promise`\<\{ `revoked`: `boolean`; `verifiableCredential?`: `IDidVerifiableCredential`; \}\>
 
 The credential stored in the jwt and the revocation status.
 
@@ -372,7 +372,7 @@ Nothing.
 
 ### verifiablePresentationCreate()
 
-> **verifiablePresentationCreate**(`verificationMethodId`, `presentationId`, `contexts`, `types`, `verifiableCredentials`, `expiresInMinutes`?): `Promise`\<\{ `verifiablePresentation`: `IDidVerifiablePresentation`; `jwt`: `string`; \}\>
+> **verifiablePresentationCreate**(`verificationMethodId`, `presentationId`, `contexts`, `types`, `verifiableCredentials`, `expiresInMinutes?`): `Promise`\<\{ `verifiablePresentation`: `IDidVerifiablePresentation`; `jwt`: `string`; \}\>
 
 Create a verifiable presentation from the supplied verifiable credentials.
 
@@ -432,7 +432,7 @@ NotFoundError if the id can not be resolved.
 
 ### verifiablePresentationVerify()
 
-> **verifiablePresentationVerify**(`presentationJwt`): `Promise`\<\{ `revoked`: `boolean`; `verifiablePresentation`: `IDidVerifiablePresentation`; `issuers`: `IDidDocument`[]; \}\>
+> **verifiablePresentationVerify**(`presentationJwt`): `Promise`\<\{ `revoked`: `boolean`; `verifiablePresentation?`: `IDidVerifiablePresentation`; `issuers?`: `IDidDocument`[]; \}\>
 
 Verify a verifiable presentation is valid.
 
@@ -446,7 +446,7 @@ The presentation to verify.
 
 #### Returns
 
-`Promise`\<\{ `revoked`: `boolean`; `verifiablePresentation`: `IDidVerifiablePresentation`; `issuers`: `IDidDocument`[]; \}\>
+`Promise`\<\{ `revoked`: `boolean`; `verifiablePresentation?`: `IDidVerifiablePresentation`; `issuers?`: `IDidDocument`[]; \}\>
 
 The presentation stored in the jwt and the revocation status.
 

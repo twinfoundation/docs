@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/ui-components-svelte",
-	"version": "0.0.1-next.40",
+	"version": "0.0.1-next.52",
 	"description": "UI components for svelte",
 	"repository": {
 		"type": "git",
@@ -12,49 +12,6 @@
 	"type": "module",
 	"engines": {
 		"node": ">=20.0.0"
-	},
-	"scripts": {
-		"clean": "rimraf dist",
-		"dev": "vite dev",
-		"build": "vite build",
-		"preview": "vite preview",
-		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-		"merge-locales": "merge-locales --config ./merge-locales-config.json",
-		"docs:clean": "echo Nothing to clean",
-		"docs": "npm run docs:clean",
-		"package": "svelte-package",
-		"dist": "npm run clean && npm run build && npm run check && npm run merge-locales && npm run docs && npm run package",
-		"dist:no-test": "npm run clean && npm run build && npm run check && npm run merge-locales && npm run docs && npm run package"
-	},
-	"dependencies": {
-		"@twin.org/core": "next",
-		"@twin.org/qr": "next",
-		"@twin.org/ui-tailwind": "0.0.1-next.40",
-		"flowbite-svelte": "0.47.4",
-		"flowbite-svelte-blocks": "1.1.4",
-		"flowbite-svelte-icons": "2.0.2",
-		"flowbite-typography": "1.0.5"
-	},
-	"peerDependencies": {
-		"@sveltejs/kit": "2.19.2",
-		"svelte": "5.23.1"
-	},
-	"devDependencies": {
-		"@sveltejs/package": "2.3.10",
-		"@sveltejs/adapter-auto": "4.0.0",
-		"@tailwindcss/typography": "0.5.16",
-		"@twin.org/merge-locales": "next",
-		"autoprefixer": "10.4.20",
-		"globals": "15.14.0",
-		"postcss": "8.5.2",
-		"rimraf": "6.0.1",
-		"rollup-plugin-copy": "3.5.0",
-		"svelte-check": "4.1.4",
-		"tailwindcss": "3.4.17",
-		"typescript": "5.7.3",
-		"vite": "6.1.0",
-		"vitest": "3.0.5"
 	},
 	"exports": {
 		".": {

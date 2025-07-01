@@ -1,12 +1,12 @@
 # Interface: IDocumentList
 
-Interface describing a document entry list.
+Interface describing a list of document entries.
 
 ## Properties
 
 ### @context
 
-> **@context**: \[`"https://schema.twindev.org/documents/"`, `"https://schema.twindev.org/common/"`, `...IJsonLdContextDefinitionElement[]`\]
+> **@context**: \[`"https://schema.org"`, `"https://schema.twindev.org/documents/"`, `"https://schema.twindev.org/common/"`, `...IJsonLdContextDefinitionElement[]`\]
 
 JSON-LD Context.
 
@@ -14,22 +14,30 @@ JSON-LD Context.
 
 ### type
 
-> **type**: `"DocumentList"`
+> **type**: `"ItemList"`
 
 JSON-LD Type.
 
 ***
 
-### documents
+### itemListElement
 
-> **documents**: [`IDocument`](IDocument.md)[]
+> **itemListElement**: [`IDocument`](IDocument.md)[]
 
 The list of documents.
 
 ***
 
-### cursor?
+### edges?
 
-> `optional` **cursor**: `string`
+> `optional` **edges**: `string`[]
+
+The ids of the other vertices which are connected to the document.
+
+***
+
+### nextItem?
+
+> `optional` **nextItem**: `string`
 
 The cursor to get the next chunk of documents.

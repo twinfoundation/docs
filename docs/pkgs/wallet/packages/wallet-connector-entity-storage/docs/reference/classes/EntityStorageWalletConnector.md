@@ -8,9 +8,9 @@ Class for performing wallet operations using in-memory storage.
 
 ## Constructors
 
-### new EntityStorageWalletConnector()
+### Constructor
 
-> **new EntityStorageWalletConnector**(`options`?): [`EntityStorageWalletConnector`](EntityStorageWalletConnector.md)
+> **new EntityStorageWalletConnector**(`options?`): `EntityStorageWalletConnector`
 
 Create a new instance of EntityStorageWalletConnector.
 
@@ -24,7 +24,7 @@ The options for the wallet connector.
 
 #### Returns
 
-[`EntityStorageWalletConnector`](EntityStorageWalletConnector.md)
+`EntityStorageWalletConnector`
 
 ## Properties
 
@@ -152,7 +152,7 @@ The balance of the wallet address.
 
 ### ensureBalance()
 
-> **ensureBalance**(`identity`, `address`, `ensureBalance`, `timeoutInSeconds`?): `Promise`\<`boolean`\>
+> **ensureBalance**(`identity`, `address`, `ensureBalance`, `timeoutInSeconds?`): `Promise`\<`boolean`\>
 
 Ensure the balance for an address in a wallet.
 

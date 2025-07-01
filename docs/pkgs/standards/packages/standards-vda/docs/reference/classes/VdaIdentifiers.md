@@ -4,13 +4,13 @@ Handle all identifier types for VDA.
 
 ## Constructors
 
-### new VdaIdentifiers()
+### Constructor
 
-> **new VdaIdentifiers**(): [`VdaIdentifiers`](VdaIdentifiers.md)
+> **new VdaIdentifiers**(): `VdaIdentifiers`
 
 #### Returns
 
-[`VdaIdentifiers`](VdaIdentifiers.md)
+`VdaIdentifiers`
 
 ## Methods
 

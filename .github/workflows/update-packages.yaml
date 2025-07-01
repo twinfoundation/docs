@@ -1,0 +1,152 @@
+name: Create a PR with updated Docs
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  # Get the list of all the repos to update
+  get-repos:
+    runs-on: ubuntu-latest
+    outputs:
+      # This output will be consumed by the update-docs job's matrix
+      repos: ${{ steps.get-repos.outputs.repos }}
+
+    steps:
+      - name: Checkout Docs
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      # Read the repos.json file to get the list of repos and store it in a variable
+      - name: Get list of repos
+        id: get-repos
+        run: |
+          # Use Node.js to read the workspaces array from package.json
+          REPOS=$(node -e '
+            const repos = JSON.parse(require("fs").readFileSync("./repos.json", "utf8"));
+            console.log(JSON.stringify(repos.map(r => r.name)));
+          ')
+          echo "Found repos: $REPOS"
+          # Set the output for use in the matrix strategy
+          echo "repos=$REPOS" >> $GITHUB_OUTPUT
+
+      # Create an artifact for the docs directory so we can update it in each matrix job
+      - name: Create docs/pkgs Artifact
+        id: upload-artifact
+        uses: actions/upload-artifact@v4
+        with:
+          path: ./docs/pkgs/
+          name: docs-artifact-${{ github.sha }}
+
+  # Update from the individual repos with the latest docs
+  update-docs:
+    runs-on: ubuntu-latest
+    needs: get-repos # Wait for the get-repos job to complete
+
+    # Use a matrix strategy to process each package pattern in parallel
+    # but limit to one at a time for controlled publishing order
+    strategy:
+      max-parallel: 1 # Process one package at a time (important for docs artifacts)
+      matrix:
+        repo: ${{ fromJson(needs.get-repos.outputs.repos) }} # Each pattern becomes a separate job
+
+    steps:
+      # Download the artifact for the docs directory so we can update it in each matrix job
+      - name: Download docs/pkgs Artifact
+        uses: actions/download-artifact@v4
+        with:
+          path: ./docs/pkgs/
+          name: docs-artifact-${{ github.sha }}
+
+      # Checkout the individual repo from the matrix
+      - name: Checkout ${{ matrix.repo }}
+        uses: actions/checkout@v4
+        with:
+          repository: twinfoundation/${{ matrix.repo }}
+          path: import-packages/${{ matrix.repo }}
+          ref: ${{ github.ref_name }}
+
+      # Copy the updated docs from the repo to the docs directory
+      - name: Copy to Docs
+        run: |
+          jq -r '.workspaces[]' import-packages/${{ matrix.repo }}/package.json | while read pkg; do
+            rm -rf docs/pkgs/${{ matrix.repo }}/$pkg
+            mkdir -p docs/pkgs/${{ matrix.repo }}/$pkg
+            mkdir -p docs/pkgs/${{ matrix.repo }}/$pkg/docs
+            cp -r import-packages/${{ matrix.repo }}/$pkg/docs/* docs/pkgs/${{ matrix.repo }}/$pkg/docs
+            cp -r import-packages/${{ matrix.repo }}/$pkg/README.md docs/pkgs/${{ matrix.repo }}/$pkg/index.md
+            cp -r import-packages/${{ matrix.repo }}/$pkg/package.json docs/pkgs/${{ matrix.repo }}/$pkg/package.json
+            npm pkg delete scripts --prefix docs/pkgs/${{ matrix.repo }}/$pkg/
+            npm pkg delete devDependencies --prefix docs/pkgs/${{ matrix.repo }}/$pkg/
+            npm pkg delete dependencies --prefix docs/pkgs/${{ matrix.repo }}/$pkg/
+            npm pkg delete peerDependencies --prefix docs/pkgs/${{ matrix.repo }}/$pkg/
+          done
+
+          cp import-packages/${{ matrix.repo }}/package.json docs/pkgs/${{ matrix.repo }}/package.json
+          rm -r import-packages/${{ matrix.repo }}
+          npm pkg delete scripts --prefix docs/pkgs/${{ matrix.repo }}/
+          npm pkg delete devDependencies --prefix docs/pkgs/${{ matrix.repo }}/
+          npm pkg delete dependencies --prefix docs/pkgs/${{ matrix.repo }}/
+          npm pkg delete peerDependencies --prefix docs/pkgs/${{ matrix.repo }}/
+
+      # Update the artifact for the docs directory so we can update it in each matrix job
+      - name: Update docs/pkgs Artifact
+        id: upload-artifact
+        uses: actions/upload-artifact@v4
+        with:
+          path: ./docs/pkgs/
+          name: docs-artifact-${{ github.sha }}
+          overwrite: true
+
+  # Finalise the PR with the updated docs
+  finalise-docs:
+    runs-on: ubuntu-latest
+    needs: update-docs # Wait for the update-docs job to complete
+
+    steps:
+      # Get the full branch
+      - name: Checkout Docs
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      # Remove the original docs directory
+      - name: Remove repo docs/pkgs
+        run: rm -rf docs/pkgs/
+
+      # Download the artifact for the docs directory so we can use it to create the PR
+      - name: Download docs/pkgs Artifact
+        uses: actions/download-artifact@v4
+        with:
+          path: ./docs/pkgs/
+          name: docs-artifact-${{ github.sha }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm ci
+
+      # Build docusaurus to make sure all the new content is correctly formatted
+      - name: Build
+        run: npm run build
+
+      # Create a PR for the new changes
+      - name: Create Pull Request
+        run: |
+          git checkout -b chore/docs-update-${{ github.ref_name }}-${{ github.sha }}
+          git config --global user.name 'TWIN CI'
+          git config --global user.email 'ci@twindev.org'
+          git add .
+          git commit -am "docs: update packages documentation"
+          git push --set-upstream origin chore/docs-update-${{ github.ref_name }}-${{ github.sha }}
+          # Enable GitHub Actions Read and write permissions under Org -> Settings > Actions
+          # Allow GitHub Actions to create and approve pull requests under Org -> Settings > Actions
+          gh pr create -B ${{ github.ref_name }} -H chore/docs-update-${{ github.ref_name }}-${{ github.sha }} --title 'chore: merge packages documentation into ${{ github.ref_name }}' --body 'Merges the docs from the packages into ${{ github.ref_name }}'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

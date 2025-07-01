@@ -14,7 +14,7 @@ ${description}
 	return content;
 }
 
-function buildGroupContent(packageGroup, packageType) {
+function buildGroupContent(repo, packageType) {
 	let content = "";
 
 	const packageGroupFilename = path.join(
@@ -22,24 +22,26 @@ function buildGroupContent(packageGroup, packageType) {
 		"..",
 		"docs",
 		"pkgs",
-		packageGroup.name,
+		repo.name,
 		"package.json"
 	);
 
 	if (fileExists(packageGroupFilename)) {
+		const ignoredPackages = repo.ignore ?? [];
+
 		const packageContent = fs.readFileSync(packageGroupFilename, "utf-8");
 		const groupJson = JSON.parse(packageContent);
 
 		let combinedPackageContent = "";
 		let displayedGroup = false;
 		for (const pkg of groupJson.workspaces) {
-			if (pkg.includes(`${packageType}/`)) {
+			if (pkg.includes(`${packageType}/`) && !ignoredPackages.includes(pkg)) {
 				if (!displayedGroup) {
-					console.debug("  Group", packageGroup);
+					console.debug("  Group", repo);
 					displayedGroup = true;
 				}
 				combinedPackageContent += buildPackageContent(
-					packageGroup.name,
+					repo.name,
 					packageType,
 					pkg.replace(`${packageType}/`, "")
 				);
@@ -50,7 +52,7 @@ function buildGroupContent(packageGroup, packageType) {
 			content += `\n## ${groupJson.description}\n\n${combinedPackageContent}`;
 		}
 	} else {
-		console.debug("      ! File not found", packageGroupFilename);
+		console.debug("      ! File not found in buildContentGroup", packageGroupFilename);
 	}
 
 	return content;
@@ -78,7 +80,7 @@ function buildPackageContent(packageGroup, packageType, packageName) {
 
 		content += `- [${packageJson.name}](pkgs/${packageGroup}/${packageType}/${packageJson.name.replace("@twin.org/", "")}/index.md) - ${packageJson.description}\n`;
 	} else {
-		console.debug("        ! File not found", packageFilename);
+		console.debug("        ! File not found in buildPackageContent", packageFilename);
 	}
 
 	return content;
@@ -101,7 +103,7 @@ function buildOverview(packageType, outputFilename, description) {
 	const repoContent = [];
 
 	try {
-		const reposFilename = path.join(__dirname, "..", "docs", "repos.json");
+		const reposFilename = path.join(__dirname, "..", "repos.json");
 		const reposContent = fs.readFileSync(reposFilename, "utf-8");
 		const reposJson = JSON.parse(reposContent);
 

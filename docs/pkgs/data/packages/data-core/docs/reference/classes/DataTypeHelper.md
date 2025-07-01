@@ -4,19 +4,19 @@ Class to help with data types.
 
 ## Constructors
 
-### new DataTypeHelper()
+### Constructor
 
-> **new DataTypeHelper**(): [`DataTypeHelper`](DataTypeHelper.md)
+> **new DataTypeHelper**(): `DataTypeHelper`
 
 #### Returns
 
-[`DataTypeHelper`](DataTypeHelper.md)
+`DataTypeHelper`
 
 ## Methods
 
 ### validate()
 
-> `static` **validate**(`propertyName`, `dataType`, `data`, `validationFailures`, `validationMode`?): `Promise`\<`boolean`\>
+> `static` **validate**(`propertyName`, `dataType`, `data`, `validationFailures`, `options?`): `Promise`\<`boolean`\>
 
 Validate a data type.
 
@@ -46,11 +46,21 @@ The data to validate.
 
 The list of validation failures to add to.
 
-##### validationMode?
+##### options?
+
+Optional options for validation.
+
+###### validationMode?
 
 [`ValidationMode`](../type-aliases/ValidationMode.md)
 
 The validation mode to use, defaults to either.
+
+###### failOnMissingType?
+
+`boolean`
+
+If true, will fail validation if the data type is missing, defaults to false.
 
 #### Returns
 

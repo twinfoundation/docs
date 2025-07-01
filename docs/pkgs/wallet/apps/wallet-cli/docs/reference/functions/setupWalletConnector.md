@@ -1,6 +1,6 @@
 # Function: setupWalletConnector()
 
-> **setupWalletConnector**(`options`, `connector`?): `IWalletConnector`
+> **setupWalletConnector**(`options`, `connector?`): `IWalletConnector`
 
 Setup the wallet connector for use in the CLI commands.
 
@@ -30,7 +30,7 @@ The vault seed ID.
 
 ### connector?
 
-[`WalletConnectorTypes`](../type-aliases/WalletConnectorTypes.md)
+`"iota"`
 
 The connector to use.
 

@@ -17,9 +17,3 @@ Represents a document.
 > `readonly` **DocumentAttestation**: `"DocumentAttestation"` = `"DocumentAttestation"`
 
 Represents a document attestation.
-
-### DocumentList
-
-> `readonly` **DocumentList**: `"DocumentList"` = `"DocumentList"`
-
-Represents a document list.

@@ -13,7 +13,7 @@ https://www.w3.org/TR/json-ld11/#node-objects
 
 ## Indexable
 
-\[`key`: `string`\]: `undefined` \| `null` \| `string` \| `number` \| `boolean` \| `string`[] \| [`IJsonLdContextDefinition`](IJsonLdContextDefinition.md) \| [`IJsonLdContextDefinitionElement`](../type-aliases/IJsonLdContextDefinitionElement.md)[] \| [`IJsonLdIdMap`](IJsonLdIdMap.md) \| [`IJsonLdNodeObject`](IJsonLdNodeObject.md) \| [`IJsonLdListObject`](IJsonLdListObject.md) \| `object` & `object` \| `object` & `object` \| `object` & `object` \| [`IJsonLdSetObject`](IJsonLdSetObject.md) \| [`IJsonLdJsonObject`](IJsonLdJsonObject.md) \| [`IJsonLdIndexMap`](IJsonLdIndexMap.md) \| [`IJsonLdLanguageMap`](IJsonLdLanguageMap.md) \| [`IJsonLdGraphObject`](IJsonLdGraphObject.md) \| [`IJsonLdNodeObject`](IJsonLdNodeObject.md)[] \| [`IJsonLdJsonObject`](IJsonLdJsonObject.md)[] \| \{\} \| [`IJsonLdTypeMap`](IJsonLdTypeMap.md) \| [`IJsonLdNodePrimitive`](../type-aliases/IJsonLdNodePrimitive.md)[]
+\[`key`: `string`\]: `undefined` \| `null` \| `string` \| `number` \| `boolean` \| `string`[] \| [`IJsonLdContextDefinition`](IJsonLdContextDefinition.md) \| [`IJsonLdContextDefinitionElement`](../type-aliases/IJsonLdContextDefinitionElement.md)[] \| [`IJsonLdIdMap`](IJsonLdIdMap.md) \| `IJsonLdNodeObject` \| `IJsonLdNodeObject`[] \| [`IJsonLdJsonObject`](IJsonLdJsonObject.md) \| `object` & `object` \| `object` & `object` \| `object` & `object` \| [`IJsonLdListObject`](IJsonLdListObject.md) \| [`IJsonLdSetObject`](IJsonLdSetObject.md) \| [`IJsonLdIndexMap`](IJsonLdIndexMap.md) \| [`IJsonLdLanguageMap`](IJsonLdLanguageMap.md) \| [`IJsonLdGraphObject`](IJsonLdGraphObject.md) \| [`IJsonLdJsonObject`](IJsonLdJsonObject.md)[] \| \{[`key`: `string`]: `string`; \} \| [`IJsonLdTypeMap`](IJsonLdTypeMap.md) \| [`IJsonLdNodePrimitive`](../type-aliases/IJsonLdNodePrimitive.md)[]
 
 ## Properties
 
@@ -23,7 +23,7 @@ https://www.w3.org/TR/json-ld11/#node-objects
 
 #### Inherited from
 
-[`IJsonLdObject`](IJsonLdObject.md).[`@context`](IJsonLdObject.md#@context)
+[`IJsonLdObject`](IJsonLdObject.md).[`@context`](IJsonLdObject.md#context)
 
 ***
 
@@ -33,7 +33,7 @@ https://www.w3.org/TR/json-ld11/#node-objects
 
 #### Inherited from
 
-[`IJsonLdObject`](IJsonLdObject.md).[`@id`](IJsonLdObject.md#@id)
+[`IJsonLdObject`](IJsonLdObject.md).[`@id`](IJsonLdObject.md#id)
 
 ***
 
@@ -43,17 +43,17 @@ https://www.w3.org/TR/json-ld11/#node-objects
 
 #### Inherited from
 
-[`IJsonLdObject`](IJsonLdObject.md).[`@included`](IJsonLdObject.md#@included)
+[`IJsonLdObject`](IJsonLdObject.md).[`@included`](IJsonLdObject.md#included)
 
 ***
 
 ### @graph?
 
-> `optional` **@graph**: [`IJsonLdNodeObject`](IJsonLdNodeObject.md) \| [`IJsonLdNodeObject`](IJsonLdNodeObject.md)[]
+> `optional` **@graph**: `IJsonLdNodeObject` \| `IJsonLdNodeObject`[]
 
 #### Inherited from
 
-[`IJsonLdObject`](IJsonLdObject.md).[`@graph`](IJsonLdObject.md#@graph)
+[`IJsonLdObject`](IJsonLdObject.md).[`@graph`](IJsonLdObject.md#graph)
 
 ***
 
@@ -63,7 +63,7 @@ https://www.w3.org/TR/json-ld11/#node-objects
 
 #### Inherited from
 
-[`IJsonLdObject`](IJsonLdObject.md).[`@nest`](IJsonLdObject.md#@nest)
+[`IJsonLdObject`](IJsonLdObject.md).[`@nest`](IJsonLdObject.md#nest)
 
 ***
 
@@ -73,7 +73,7 @@ https://www.w3.org/TR/json-ld11/#node-objects
 
 #### Inherited from
 
-[`IJsonLdObject`](IJsonLdObject.md).[`@type`](IJsonLdObject.md#@type)
+[`IJsonLdObject`](IJsonLdObject.md).[`@type`](IJsonLdObject.md#type)
 
 ***
 
@@ -87,7 +87,7 @@ https://www.w3.org/TR/json-ld11/#node-objects
 
 #### Inherited from
 
-[`IJsonLdObject`](IJsonLdObject.md).[`@reverse`](IJsonLdObject.md#@reverse)
+[`IJsonLdObject`](IJsonLdObject.md).[`@reverse`](IJsonLdObject.md#reverse)
 
 ***
 
@@ -97,4 +97,4 @@ https://www.w3.org/TR/json-ld11/#node-objects
 
 #### Inherited from
 
-[`IJsonLdObject`](IJsonLdObject.md).[`@index`](IJsonLdObject.md#@index)
+[`IJsonLdObject`](IJsonLdObject.md).[`@index`](IJsonLdObject.md#index)

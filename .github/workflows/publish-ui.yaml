@@ -1,0 +1,59 @@
+name: Publish UI to Vercel
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        type: choice
+        description: Environment
+        options:
+          - dev
+          - prod
+
+permissions:
+  contents: read
+  pull-requests: write
+  deployments: write
+
+env:
+  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID_DOCS }}
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    # Only allow main branch to deploy to production and next branch to deploy to development
+    if: (github.ref == 'refs/heads/main' && github.event.inputs.environment == 'prod') || (github.ref == 'refs/heads/next' && github.event.inputs.environment == 'dev')
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Vercel CLI
+        run: npm install -g vercel
+
+      # Deploy To vercel and output the deployment URL as a GitHub output from the step
+      - name: Deploy to Vercel
+        id: deploy
+        run: |
+          DEPLOYMENT_URL=$(vercel deploy \
+          --token=${{ secrets.VERCEL_TOKEN }} \
+          --scope=${{ secrets.VERCEL_SCOPE }} \
+          --target=${{ github.event.inputs.environment == 'prod' && 'production' || 'dev' }} \
+          --force)
+          echo "deployment-url=$DEPLOYMENT_URL" >> $GITHUB_OUTPUT
+
+      # Use the deployment URL to set an alias for the deployment
+      - name: Set Alias
+        run: |
+          vercel alias set \
+          ${{ steps.deploy.outputs.deployment-url }} \
+          ${{ github.event.inputs.environment == 'prod' && secrets.DOMAIN_DOCS_PROD || secrets.DOMAIN_DOCS_DEV }} \
+          --token=${{ secrets.VERCEL_TOKEN }} \
+          --scope=${{ secrets.VERCEL_SCOPE }}

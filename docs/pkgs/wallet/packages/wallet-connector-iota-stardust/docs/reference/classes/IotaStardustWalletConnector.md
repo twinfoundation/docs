@@ -8,9 +8,9 @@ Class for performing wallet operations on IOTA Stardust.
 
 ## Constructors
 
-### new IotaStardustWalletConnector()
+### Constructor
 
-> **new IotaStardustWalletConnector**(`options`): [`IotaStardustWalletConnector`](IotaStardustWalletConnector.md)
+> **new IotaStardustWalletConnector**(`options`): `IotaStardustWalletConnector`
 
 Create a new instance of IotaWalletConnector.
 
@@ -24,7 +24,7 @@ The options for the wallet connector.
 
 #### Returns
 
-[`IotaStardustWalletConnector`](IotaStardustWalletConnector.md)
+`IotaStardustWalletConnector`
 
 ## Properties
 
@@ -152,7 +152,7 @@ The balance of the wallet address.
 
 ### ensureBalance()
 
-> **ensureBalance**(`identity`, `address`, `ensureBalance`, `timeoutInSeconds`?): `Promise`\<`boolean`\>
+> **ensureBalance**(`identity`, `address`, `ensureBalance`, `timeoutInSeconds?`): `Promise`\<`boolean`\>
 
 Ensure the balance for an address in a wallet.
 

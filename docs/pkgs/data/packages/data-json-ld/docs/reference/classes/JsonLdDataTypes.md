@@ -4,13 +4,13 @@ Handle all the data types for JSON-LD.
 
 ## Constructors
 
-### new JsonLdDataTypes()
+### Constructor
 
-> **new JsonLdDataTypes**(): [`JsonLdDataTypes`](JsonLdDataTypes.md)
+> **new JsonLdDataTypes**(): `JsonLdDataTypes`
 
 #### Returns
 
-[`JsonLdDataTypes`](JsonLdDataTypes.md)
+`JsonLdDataTypes`
 
 ## Methods
 

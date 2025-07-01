@@ -132,6 +132,12 @@ Messaging component options which can be overridden by individual components by 
 
 Background task connector options which can be overridden by individual components by specifying types other than default.
 
+#### taskSchedulerComponent?
+
+> `optional` **taskSchedulerComponent**: `IEngineCoreTypeConfig`\<[`TaskSchedulerComponentConfig`](../type-aliases/TaskSchedulerComponentConfig.md)\>[]
+
+Task scheduler component options which can be overridden by individual components by specifying types other than default.
+
 #### eventBusConnector?
 
 > `optional` **eventBusConnector**: `IEngineCoreTypeConfig`\<[`EventBusConnectorConfig`](../type-aliases/EventBusConnectorConfig.md)\>[]
@@ -281,6 +287,24 @@ Date processing options which can be overridden by individual components by spec
 > `optional` **documentManagementComponent**: `IEngineCoreTypeConfig`\<[`DocumentManagementComponentConfig`](../type-aliases/DocumentManagementComponentConfig.md)\>[]
 
 Document management options which can be overridden by individual components by specifying types other than default.
+
+#### federatedCatalogueComponent?
+
+> `optional` **federatedCatalogueComponent**: `IEngineCoreTypeConfig`\<[`FederatedCatalogueComponentConfig`](../type-aliases/FederatedCatalogueComponentConfig.md)\>[]
+
+Federated catalogue options which can be overridden by individual components by specifying types other than default.
+
+#### rightsManagementComponent?
+
+> `optional` **rightsManagementComponent**: `IEngineCoreTypeConfig`\<[`RightsManagementComponentConfig`](../type-aliases/RightsManagementComponentConfig.md)\>[]
+
+Rights management options which can be overridden by individual components by specifying types other than default.
+
+#### rightsManagementPapComponent?
+
+> `optional` **rightsManagementPapComponent**: `IEngineCoreTypeConfig`\<[`RightsManagementPapComponentConfig`](../type-aliases/RightsManagementPapComponentConfig.md)\>[]
+
+Rights management PAP options which can be overridden by individual components by specifying types other than default.
 
 #### Overrides
 

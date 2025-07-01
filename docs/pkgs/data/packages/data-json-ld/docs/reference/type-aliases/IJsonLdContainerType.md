@@ -1,5 +1,5 @@
 # Type Alias: IJsonLdContainerType
 
-> **IJsonLdContainerType**: `"@language"` \| `"@index"` \| `"@id"` \| `"@graph"` \| `"@type"`
+> **IJsonLdContainerType** = `"@language"` \| `"@index"` \| `"@id"` \| `"@graph"` \| `"@type"`
 
-Helper Types
+JSON-LD container types.

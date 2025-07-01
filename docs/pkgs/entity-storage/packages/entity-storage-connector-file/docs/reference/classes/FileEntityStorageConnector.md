@@ -4,7 +4,9 @@ Class for performing entity storage operations in file.
 
 ## Type Parameters
 
-• **T** = `unknown`
+### T
+
+`T` = `unknown`
 
 ## Implements
 
@@ -12,9 +14,9 @@ Class for performing entity storage operations in file.
 
 ## Constructors
 
-### new FileEntityStorageConnector()
+### Constructor
 
-> **new FileEntityStorageConnector**\<`T`\>(`options`): [`FileEntityStorageConnector`](FileEntityStorageConnector.md)\<`T`\>
+> **new FileEntityStorageConnector**\<`T`\>(`options`): `FileEntityStorageConnector`\<`T`\>
 
 Create a new instance of FileEntityStorageConnector.
 
@@ -28,7 +30,7 @@ The options for the connector.
 
 #### Returns
 
-[`FileEntityStorageConnector`](FileEntityStorageConnector.md)\<`T`\>
+`FileEntityStorageConnector`\<`T`\>
 
 ## Properties
 
@@ -46,7 +48,7 @@ Runtime name for the class.
 
 ### bootstrap()
 
-> **bootstrap**(`nodeLoggingConnectorType`?): `Promise`\<`boolean`\>
+> **bootstrap**(`nodeLoggingConnectorType?`): `Promise`\<`boolean`\>
 
 Bootstrap the connector by creating and initializing any resources it needs.
 
@@ -90,7 +92,7 @@ The schema for the entities.
 
 ### get()
 
-> **get**(`id`, `secondaryIndex`?, `conditions`?): `Promise`\<`undefined` \| `T`\>
+> **get**(`id`, `secondaryIndex?`, `conditions?`): `Promise`\<`undefined` \| `T`\>
 
 Get an entity.
 
@@ -128,7 +130,7 @@ The object if it can be found or undefined.
 
 ### set()
 
-> **set**(`entity`, `conditions`?): `Promise`\<`void`\>
+> **set**(`entity`, `conditions?`): `Promise`\<`void`\>
 
 Set an entity.
 
@@ -160,7 +162,7 @@ The id of the entity.
 
 ### remove()
 
-> **remove**(`id`, `conditions`?): `Promise`\<`void`\>
+> **remove**(`id`, `conditions?`): `Promise`\<`void`\>
 
 Remove the entity.
 
@@ -192,7 +194,7 @@ Nothing.
 
 ### query()
 
-> **query**(`conditions`?, `sortProperties`?, `properties`?, `cursor`?, `pageSize`?): `Promise`\<\{ `entities`: `Partial`\<`T`\>[]; `cursor`: `string`; \}\>
+> **query**(`conditions?`, `sortProperties?`, `properties?`, `cursor?`, `pageSize?`): `Promise`\<\{ `entities`: `Partial`\<`T`\>[]; `cursor`: `string`; \}\>
 
 Find all the entities which match the conditions.
 

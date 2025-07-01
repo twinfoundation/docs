@@ -1,5 +1,5 @@
 # Type Alias: ISchemaValidationError
 
-> **ISchemaValidationError**: `ErrorObject`[]
+> **ISchemaValidationError** = `ErrorObject`[]
 
 Schema validation error.

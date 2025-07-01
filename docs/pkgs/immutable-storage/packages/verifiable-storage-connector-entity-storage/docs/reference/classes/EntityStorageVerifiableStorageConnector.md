@@ -8,9 +8,9 @@ Class for performing verifiable storage operations on entity storage.
 
 ## Constructors
 
-### new EntityStorageVerifiableStorageConnector()
+### Constructor
 
-> **new EntityStorageVerifiableStorageConnector**(`options`?): [`EntityStorageVerifiableStorageConnector`](EntityStorageVerifiableStorageConnector.md)
+> **new EntityStorageVerifiableStorageConnector**(`options?`): `EntityStorageVerifiableStorageConnector`
 
 Create a new instance of EntityStorageVerifiableStorageConnector.
 
@@ -24,7 +24,7 @@ The options for the class.
 
 #### Returns
 
-[`EntityStorageVerifiableStorageConnector`](EntityStorageVerifiableStorageConnector.md)
+`EntityStorageVerifiableStorageConnector`
 
 ## Properties
 
@@ -120,7 +120,7 @@ The updated receipt.
 
 ### get()
 
-> **get**(`id`, `options`?): `Promise`\<\{ `data`: `Uint8Array`\<`ArrayBufferLike`\>; `receipt`: `IJsonLdNodeObject`; \}\>
+> **get**(`id`, `options?`): `Promise`\<\{ `data`: `Uint8Array`\<`ArrayBufferLike`\>; `receipt`: `IJsonLdNodeObject`; \}\>
 
 Get a verifiable item.
 

@@ -22,15 +22,9 @@ The headers which can be used to determine the response data type.
 
 The path parameters.
 
-#### auditableItemGraphId
+#### auditableItemGraphDocumentId
 
-> **auditableItemGraphId**: `string`
-
-The id of the auditable item graph vertex to store the document on.
-
-#### documentId
-
-> **documentId**: `string`
+> **auditableItemGraphDocumentId**: `string`
 
 The full id of the document to get.
 
@@ -44,7 +38,7 @@ The query parameters.
 
 #### includeBlobStorageMetadata?
 
-> `optional` **includeBlobStorageMetadata**: `boolean`
+> `optional` **includeBlobStorageMetadata**: `string` \| `boolean`
 
 Include the blob storage metadata in the response.
 
@@ -56,7 +50,7 @@ false
 
 #### includeBlobStorageData?
 
-> `optional` **includeBlobStorageData**: `boolean`
+> `optional` **includeBlobStorageData**: `string` \| `boolean`
 
 Include the blob storage data in the response.
 
@@ -68,7 +62,7 @@ false
 
 #### includeAttestation?
 
-> `optional` **includeAttestation**: `boolean`
+> `optional` **includeAttestation**: `string` \| `boolean`
 
 Include the attestation information in the response.
 
@@ -80,7 +74,7 @@ false
 
 #### includeRemoved?
 
-> `optional` **includeRemoved**: `boolean`
+> `optional` **includeRemoved**: `string` \| `boolean`
 
 Include deleted documents in the response.
 
@@ -90,20 +84,32 @@ Include deleted documents in the response.
 false
 ```
 
-#### maxRevisionCount?
+#### extractRuleGroupId?
 
-> `optional` **maxRevisionCount**: `number`
+> `optional` **extractRuleGroupId**: `string`
 
-Max number of revisions to return.
+If provided will extract data from the document using the specified rule group id.
+
+#### extractMimeType?
+
+> `optional` **extractMimeType**: `string`
+
+By default extraction will auto detect the mime type of the document, this can be used to override the detection.
+
+#### pageSize?
+
+> `optional` **pageSize**: `string` \| `number`
+
+Page size of items to return, defaults to 1 so only most recent is returned.
 
 ##### Default
 
 ```ts
-0
+1
 ```
 
-#### revisionCursor?
+#### cursor?
 
-> `optional` **revisionCursor**: `string`
+> `optional` **cursor**: `string`
 
 The cursor to get the next chunk of revisions.

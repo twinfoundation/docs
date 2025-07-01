@@ -51,7 +51,7 @@
 						"content": {
 							"application/json": {
 								"schema": {
-									"$ref": "#/components/schemas/DidDocument"
+									"$ref": "https://schema.twindev.org/did/DidDocument"
 								},
 								"examples": {
 									"identityResolveResponseExample": {
@@ -142,7 +142,7 @@
 						"content": {
 							"application/json": {
 								"schema": {
-									"$ref": "#/components/schemas/DidDocument"
+									"$ref": "https://schema.twindev.org/did/DidDocument"
 								},
 								"examples": {
 									"identityCreateResponseExample": {
@@ -272,7 +272,7 @@
 						"content": {
 							"application/json": {
 								"schema": {
-									"$ref": "#/components/schemas/DidDocumentVerificationMethod"
+									"$ref": "https://schema.twindev.org/did/DidDocumentVerificationMethod"
 								},
 								"examples": {
 									"identityVerificationMethodCreateResponseExample": {
@@ -504,7 +504,7 @@
 						"content": {
 							"application/json": {
 								"schema": {
-									"$ref": "#/components/schemas/DidService"
+									"$ref": "https://schema.twindev.org/did/DidService"
 								},
 								"examples": {
 									"identityServiceCreateResponseExample": {
@@ -1430,7 +1430,7 @@
 						"content": {
 							"application/json": {
 								"schema": {
-									"$ref": "#/components/schemas/Proof"
+									"$ref": "https://schema.twindev.org/did/Proof"
 								},
 								"examples": {
 									"identityProofCreateResponseExample": {
@@ -2269,7 +2269,10 @@
 						"in": "query",
 						"required": false,
 						"schema": {
-							"type": "number"
+							"type": [
+								"number",
+								"string"
+							]
 						}
 					}
 				],
@@ -2376,10 +2379,12 @@
 				"properties": {
 					"conflicts": {
 						"type": "array",
-						"items": {
-							"type": "string"
-						},
-						"description": "The conflicting items."
+						"description": "The conflicting items.",
+						"prefixItems": [
+							{
+								"type": "string"
+							}
+						]
 					},
 					"name": {
 						"type": "string",
@@ -2412,1008 +2417,6 @@
 					"name"
 				],
 				"description": "The body which contains the error."
-			},
-			"DataIntegrityProof": {
-				"type": "object",
-				"properties": {
-					"@context": {
-						"anyOf": [
-							{
-								"type": "string",
-								"const": "https://www.w3.org/ns/credentials/v2"
-							},
-							{
-								"type": "array",
-								"minItems": 1,
-								"items": [
-									{
-										"type": "string",
-										"const": "https://www.w3.org/ns/credentials/v2"
-									}
-								],
-								"additionalItems": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdContextDefinitionElement"
-								}
-							}
-						],
-						"description": "JSON-LD Context."
-					},
-					"type": {
-						"type": "string",
-						"const": "DataIntegrityProof",
-						"description": "JSON-LD Type."
-					},
-					"cryptosuite": {
-						"anyOf": [
-							{
-								"$ref": "#/components/schemas/DidCryptoSuites"
-							},
-							{
-								"type": "string"
-							}
-						],
-						"description": "An identifier for the cryptographic suite that can be used to verify the proof."
-					},
-					"id": {
-						"type": "string",
-						"description": "The id of the proof."
-					},
-					"proofPurpose": {
-						"type": "string",
-						"description": "The reason the proof was created."
-					},
-					"proofValue": {
-						"type": "string",
-						"description": "Contains the base-encoded binary data necessary to verify the digital proof using the verificationMethod specified."
-					},
-					"verificationMethod": {
-						"type": "string",
-						"description": "The verification method of the proof."
-					},
-					"created": {
-						"type": "string",
-						"description": "The iso date of when the proof was created."
-					},
-					"expires": {
-						"type": "string",
-						"description": "The iso date of when the proof expires."
-					},
-					"domain": {
-						"anyOf": [
-							{
-								"type": "string"
-							},
-							{
-								"type": "array",
-								"items": {
-									"type": "string"
-								}
-							}
-						],
-						"description": "One or more security domains in which the proof is meant to be used."
-					},
-					"challenge": {
-						"anyOf": [
-							{
-								"type": "string"
-							},
-							{
-								"type": "array",
-								"items": {
-									"type": "string"
-								}
-							}
-						],
-						"description": "Provided to mitigate replay attacks on domains."
-					},
-					"previousProof": {
-						"type": "string",
-						"description": "Identifies another data integrity proof that MUST verify before the current proof is processed"
-					},
-					"nonce": {
-						"type": "string",
-						"description": "Use of this field is to increase privacy by decreasing linkability that is the result of deterministically generated signatures."
-					}
-				},
-				"required": [
-					"type",
-					"cryptosuite",
-					"proofPurpose"
-				],
-				"additionalProperties": false,
-				"description": "Interface describing a did proof. https://www.w3.org/TR/vc-data-integrity/"
-			},
-			"DidCredentialSchema": {
-				"type": "object",
-				"properties": {
-					"id": {
-						"type": "string",
-						"description": "The URI id."
-					},
-					"type": {
-						"type": "string",
-						"description": "The credential schema type."
-					}
-				},
-				"required": [
-					"id",
-					"type"
-				],
-				"additionalProperties": false,
-				"description": "Interface describing a DID credential schema."
-			},
-			"DidCredentialStatus": {
-				"type": "object",
-				"properties": {
-					"id": {
-						"type": "string",
-						"description": "The URI id."
-					},
-					"type": {
-						"type": "string",
-						"description": "The credential status type."
-					}
-				},
-				"required": [
-					"id",
-					"type"
-				],
-				"additionalProperties": {
-					"description": "Additional properties."
-				},
-				"description": "Interface describing a DID credential status."
-			},
-			"DidCryptoSuites": {
-				"anyOf": [
-					{
-						"type": "string",
-						"const": "eddsa-jcs-2022",
-						"description": "The type for EdDSA crypto suite for JSON Canonicalization Scheme [RFC8785]. https://www.w3.org/TR/vc-di-eddsa/#eddsa-jcs-2022"
-					},
-					{
-						"type": "string",
-						"const": "eddsa-rdfc-2022",
-						"description": "The type for EdDSA crypto suite for RDF Dataset Canonicalization. https://www.w3.org/TR/vc-di-eddsa/#eddsa-rdfc-2022"
-					}
-				],
-				"description": "The types for DID Proof crypto suites."
-			},
-			"DidDocument": {
-				"type": "object",
-				"properties": {
-					"@context": {
-						"anyOf": [
-							{
-								"type": "string",
-								"const": "https://www.w3.org/ns/did/v1"
-							},
-							{
-								"type": "array",
-								"minItems": 1,
-								"items": [
-									{
-										"type": "string",
-										"const": "https://www.w3.org/ns/did/v1"
-									}
-								],
-								"additionalItems": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdContextDefinitionElement"
-								}
-							}
-						],
-						"description": "The context for the document."
-					},
-					"id": {
-						"type": "string",
-						"description": "The id for the document."
-					},
-					"alsoKnownAs": {
-						"anyOf": [
-							{
-								"type": "string"
-							},
-							{
-								"type": "array",
-								"items": {
-									"type": "string"
-								}
-							}
-						],
-						"description": "Aliases for the document."
-					},
-					"controller": {
-						"anyOf": [
-							{
-								"type": "string"
-							},
-							{
-								"type": "array",
-								"items": {
-									"type": "string"
-								}
-							}
-						],
-						"description": "The controller for the document."
-					},
-					"verificationMethod": {
-						"type": "array",
-						"items": {
-							"anyOf": [
-								{
-									"type": "string"
-								},
-								{
-									"$ref": "#/components/schemas/DidDocumentVerificationMethod"
-								}
-							]
-						},
-						"description": "The verification methods."
-					},
-					"authentication": {
-						"type": "array",
-						"items": {
-							"anyOf": [
-								{
-									"type": "string"
-								},
-								{
-									"$ref": "#/components/schemas/DidDocumentVerificationMethod"
-								}
-							]
-						},
-						"description": "The authentication methods."
-					},
-					"assertionMethod": {
-						"type": "array",
-						"items": {
-							"anyOf": [
-								{
-									"type": "string"
-								},
-								{
-									"$ref": "#/components/schemas/DidDocumentVerificationMethod"
-								}
-							]
-						},
-						"description": "The assertion methods."
-					},
-					"keyAgreement": {
-						"type": "array",
-						"items": {
-							"anyOf": [
-								{
-									"type": "string"
-								},
-								{
-									"$ref": "#/components/schemas/DidDocumentVerificationMethod"
-								}
-							]
-						},
-						"description": "The key agreements."
-					},
-					"capabilityInvocation": {
-						"type": "array",
-						"items": {
-							"anyOf": [
-								{
-									"type": "string"
-								},
-								{
-									"$ref": "#/components/schemas/DidDocumentVerificationMethod"
-								}
-							]
-						},
-						"description": "The capability invocations."
-					},
-					"capabilityDelegation": {
-						"type": "array",
-						"items": {
-							"anyOf": [
-								{
-									"type": "string"
-								},
-								{
-									"$ref": "#/components/schemas/DidDocumentVerificationMethod"
-								}
-							]
-						},
-						"description": "The capability delegations."
-					},
-					"service": {
-						"type": "array",
-						"items": {
-							"$ref": "#/components/schemas/DidService"
-						},
-						"description": "The services."
-					}
-				},
-				"required": [
-					"@context",
-					"id"
-				],
-				"additionalProperties": false,
-				"description": "Interface describing a DID Document. Spec https://www.w3.org/TR/did-core/#did-document-properties."
-			},
-			"DidDocumentVerificationMethod": {
-				"type": "object",
-				"properties": {
-					"@context": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-					},
-					"@id": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-					},
-					"@included": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-					},
-					"@graph": {
-						"anyOf": [
-							{
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-							},
-							{
-								"type": "array",
-								"items": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-								}
-							}
-						]
-					},
-					"@nest": {
-						"anyOf": [
-							{
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdJsonObject"
-							},
-							{
-								"type": "array",
-								"items": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdJsonObject"
-								}
-							}
-						]
-					},
-					"@type": {
-						"anyOf": [
-							{
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-							},
-							{
-								"type": "array",
-								"items": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-								}
-							}
-						]
-					},
-					"@reverse": {
-						"type": "object",
-						"additionalProperties": {
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-						}
-					},
-					"@index": {
-						"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-					},
-					"id": {
-						"type": "string",
-						"description": "The id of the entry."
-					},
-					"controller": {
-						"type": "string",
-						"description": "The controller for the entry."
-					},
-					"type": {
-						"type": "string",
-						"description": "The type of the entry."
-					},
-					"publicKeyMultibase": {
-						"type": "string",
-						"description": "The public key for the entry. Spec https://datatracker.ietf.org/doc/html/draft-multiformats-multibase-03 ."
-					},
-					"publicKeyJwk": {
-						"type": "object",
-						"additionalProperties": {
-							"anyOf": [
-								{
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
-								},
-								{
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"
-								},
-								{
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdIndexMap"
-								},
-								{
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
-								},
-								{
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdIdMap"
-								},
-								{
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdTypeMap"
-								},
-								{
-									"type": "array"
-								}
-							]
-						},
-						"properties": {
-							"@context": {
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-							},
-							"@id": {
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-							},
-							"@included": {
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-							},
-							"@graph": {
-								"anyOf": [
-									{
-										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-									},
-									{
-										"type": "array",
-										"items": {
-											"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-										}
-									}
-								]
-							},
-							"@nest": {
-								"anyOf": [
-									{
-										"$ref": "https://schema.twindev.org/json-ld/JsonLdJsonObject"
-									},
-									{
-										"type": "array",
-										"items": {
-											"$ref": "https://schema.twindev.org/json-ld/JsonLdJsonObject"
-										}
-									}
-								]
-							},
-							"@type": {
-								"anyOf": [
-									{
-										"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-									},
-									{
-										"type": "array",
-										"items": {
-											"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-										}
-									}
-								]
-							},
-							"@reverse": {
-								"type": "object",
-								"additionalProperties": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-								}
-							},
-							"@index": {
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdKeyword"
-							},
-							"kty": {
-								"type": "string",
-								"description": "JWK \"kty\" (Key Type) Parameter"
-							},
-							"alg": {
-								"type": "string",
-								"description": "JWK \"alg\" (Algorithm) Parameter"
-							},
-							"key_ops": {
-								"type": "array",
-								"items": {
-									"type": "string"
-								},
-								"description": "JWK \"key_ops\" (Key Operations) Parameter"
-							},
-							"ext": {
-								"type": "boolean",
-								"description": "JWK \"ext\" (Extractable) Parameter"
-							},
-							"use": {
-								"type": "string",
-								"description": "JWK \"use\" (Public Key Use) Parameter"
-							},
-							"x5c": {
-								"type": "array",
-								"items": {
-									"type": "string"
-								},
-								"description": "JWK \"x5c\" (X.509 Certificate Chain) Parameter"
-							},
-							"x5t": {
-								"type": "string",
-								"description": "JWK \"x5t\" (X.509 Certificate SHA-1 Thumbprint) Parameter"
-							},
-							"x5t#S256": {
-								"type": "string",
-								"description": "JWK \"x5t#S256\" (X.509 Certificate SHA-256 Thumbprint) Parameter"
-							},
-							"x5u": {
-								"type": "string",
-								"description": "JWK \"x5u\" (X.509 URL) Parameter"
-							},
-							"kid": {
-								"type": "string",
-								"description": "JWK \"kid\" (Key ID) Parameter"
-							},
-							"crv": {
-								"type": "string",
-								"description": "- EC JWK \"crv\" (Curve) Parameter\n- OKP JWK \"crv\" (The Subtype of Key Pair) Parameter"
-							},
-							"d": {
-								"type": "string",
-								"description": "- Private RSA JWK \"d\" (Private Exponent) Parameter\n- Private EC JWK \"d\" (ECC Private Key) Parameter\n- Private OKP JWK \"d\" (The Private Key) Parameter"
-							},
-							"dp": {
-								"type": "string",
-								"description": "Private RSA JWK \"dp\" (First Factor CRT Exponent) Parameter"
-							},
-							"dq": {
-								"type": "string",
-								"description": "Private RSA JWK \"dq\" (Second Factor CRT Exponent) Parameter"
-							},
-							"e": {
-								"type": "string",
-								"description": "RSA JWK \"e\" (Exponent) Parameter"
-							},
-							"k": {
-								"type": "string",
-								"description": "Oct JWK \"k\" (Key Value) Parameter"
-							},
-							"n": {
-								"type": "string",
-								"description": "RSA JWK \"n\" (Modulus) Parameter"
-							},
-							"p": {
-								"type": "string",
-								"description": "Private RSA JWK \"p\" (First Prime Factor) Parameter"
-							},
-							"q": {
-								"type": "string",
-								"description": "Private RSA JWK \"q\" (Second Prime Factor) Parameter"
-							},
-							"qi": {
-								"type": "string",
-								"description": "Private RSA JWK \"qi\" (First CRT Coefficient) Parameter"
-							},
-							"x": {
-								"type": "string",
-								"description": "- EC JWK \"x\" (X Coordinate) Parameter\n- OKP JWK \"x\" (The public key) Parameter"
-							},
-							"y": {
-								"type": "string",
-								"description": "EC JWK \"y\" (Y Coordinate) Parameter"
-							}
-						},
-						"description": "The public key for the entry as a JWK. Spec https://datatracker.ietf.org/doc/html/rfc7517 ."
-					},
-					"revocation": {
-						"type": "string",
-						"description": "Multi key partial revocation."
-					}
-				},
-				"required": [
-					"id",
-					"controller",
-					"type"
-				],
-				"additionalProperties": {
-					"anyOf": [
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdIndexMap"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdIdMap"
-						},
-						{
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdTypeMap"
-						},
-						{
-							"type": "array"
-						}
-					]
-				},
-				"description": "Interface describing a DID document verification method."
-			},
-			"DidLabel": {
-				"type": "object",
-				"properties": {
-					"@value": {
-						"type": "string",
-						"description": "The value for the label."
-					},
-					"@language": {
-						"type": "string",
-						"description": "The language for the label."
-					},
-					"@direction": {
-						"type": "string",
-						"description": "The direction of the label."
-					}
-				},
-				"required": [
-					"@value",
-					"@language"
-				],
-				"additionalProperties": false,
-				"description": "Interface describing a DID Label."
-			},
-			"DidService": {
-				"type": "object",
-				"properties": {
-					"id": {
-						"type": "string",
-						"description": "The id of the service."
-					},
-					"type": {
-						"anyOf": [
-							{
-								"type": "string"
-							},
-							{
-								"type": "array",
-								"items": {
-									"type": "string"
-								}
-							}
-						],
-						"description": "The type of the service."
-					},
-					"serviceEndpoint": {
-						"anyOf": [
-							{
-								"type": "string"
-							},
-							{
-								"type": "array",
-								"items": {
-									"type": "string"
-								}
-							}
-						],
-						"description": "The endpoint for the service."
-					}
-				},
-				"required": [
-					"id",
-					"type",
-					"serviceEndpoint"
-				],
-				"additionalProperties": false,
-				"description": "Interface describing a did document service."
-			},
-			"DidVerifiableCredential": {
-				"type": "object",
-				"properties": {
-					"@context": {
-						"anyOf": [
-							{
-								"type": "string",
-								"const": "https://www.w3.org/2018/credentials/v1"
-							},
-							{
-								"type": "string",
-								"const": "https://www.w3.org/ns/credentials/v2"
-							},
-							{
-								"type": "array",
-								"minItems": 1,
-								"items": [
-									{
-										"type": "string",
-										"const": "https://www.w3.org/2018/credentials/v1"
-									}
-								],
-								"additionalItems": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdContextDefinitionElement"
-								}
-							},
-							{
-								"type": "array",
-								"minItems": 1,
-								"items": [
-									{
-										"type": "string",
-										"const": "https://www.w3.org/ns/credentials/v2"
-									}
-								],
-								"additionalItems": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdContextDefinitionElement"
-								}
-							}
-						],
-						"description": "The context for the verifiable credential."
-					},
-					"id": {
-						"type": "string",
-						"description": "The identifier for the verifiable credential."
-					},
-					"type": {
-						"anyOf": [
-							{
-								"type": "string"
-							},
-							{
-								"type": "array",
-								"items": {
-									"type": "string"
-								}
-							}
-						],
-						"description": "The types of the data stored in the verifiable credential."
-					},
-					"credentialSubject": {
-						"anyOf": [
-							{
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-							},
-							{
-								"type": "array",
-								"items": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-								}
-							}
-						],
-						"description": "The data for the verifiable credential."
-					},
-					"credentialStatus": {
-						"anyOf": [
-							{
-								"$ref": "#/components/schemas/DidCredentialStatus"
-							},
-							{
-								"type": "array",
-								"items": {
-									"$ref": "#/components/schemas/DidCredentialStatus"
-								}
-							}
-						],
-						"description": "Used to discover information about the current status of the verifiable credential, such as whether it is suspended or revoked."
-					},
-					"credentialSchema": {
-						"anyOf": [
-							{
-								"$ref": "#/components/schemas/DidCredentialSchema"
-							},
-							{
-								"type": "array",
-								"items": {
-									"$ref": "#/components/schemas/DidCredentialSchema"
-								}
-							}
-						],
-						"description": "Annotate type definitions or lock them to specific versions of the vocabulary."
-					},
-					"issuer": {
-						"anyOf": [
-							{
-								"type": "string"
-							},
-							{
-								"type": "object",
-								"properties": {
-									"id": {
-										"type": "string"
-									},
-									"name": {
-										"anyOf": [
-											{
-												"type": "string"
-											},
-											{
-												"type": "array",
-												"items": {
-													"$ref": "#/components/schemas/DidLabel"
-												}
-											}
-										]
-									},
-									"description": {
-										"anyOf": [
-											{
-												"type": "string"
-											},
-											{
-												"type": "array",
-												"items": {
-													"$ref": "#/components/schemas/DidLabel"
-												}
-											}
-										]
-									}
-								},
-								"required": [
-									"id"
-								],
-								"additionalProperties": false
-							}
-						],
-						"description": "The issuing identity."
-					},
-					"issuanceDate": {
-						"type": "string",
-						"description": "The date the verifiable credential was issued."
-					},
-					"name": {
-						"anyOf": [
-							{
-								"type": "string"
-							},
-							{
-								"type": "array",
-								"items": {
-									"$ref": "#/components/schemas/DidLabel"
-								}
-							}
-						],
-						"description": "The name of the credential."
-					},
-					"description": {
-						"anyOf": [
-							{
-								"type": "string"
-							},
-							{
-								"type": "array",
-								"items": {
-									"$ref": "#/components/schemas/DidLabel"
-								}
-							}
-						],
-						"description": "The description of the credential."
-					},
-					"validFrom": {
-						"type": "string",
-						"description": "The date the verifiable credential is valid from."
-					},
-					"validUntil": {
-						"type": "string",
-						"description": "The date the verifiable credential is valid until."
-					},
-					"evidence": {
-						"anyOf": [
-							{
-								"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-							},
-							{
-								"type": "array",
-								"items": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-								}
-							}
-						],
-						"description": "Evidence associated with the Credential."
-					},
-					"proof": {
-						"anyOf": [
-							{
-								"$ref": "#/components/schemas/Proof"
-							},
-							{
-								"type": "array",
-								"items": {
-									"$ref": "#/components/schemas/Proof"
-								}
-							}
-						],
-						"description": "Proofs that the verifiable credential is valid. Optional if a different proof method is used, such as JWT."
-					}
-				},
-				"required": [
-					"@context",
-					"type"
-				],
-				"additionalProperties": false,
-				"description": "Interface describing a verifiable credential. https://www.w3.org/TR/vc-data-model-2.0"
-			},
-			"DidVerifiablePresentation": {
-				"type": "object",
-				"properties": {
-					"@context": {
-						"anyOf": [
-							{
-								"type": "string",
-								"const": "https://www.w3.org/ns/credentials/v2"
-							},
-							{
-								"type": "array",
-								"minItems": 1,
-								"items": [
-									{
-										"type": "string",
-										"const": "https://www.w3.org/ns/credentials/v2"
-									}
-								],
-								"additionalItems": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdContextDefinitionElement"
-								}
-							}
-						],
-						"description": "The context for the verifiable presentation."
-					},
-					"id": {
-						"type": "string",
-						"description": "Provide a unique identifier for the presentation."
-					},
-					"type": {
-						"anyOf": [
-							{
-								"type": "string"
-							},
-							{
-								"type": "array",
-								"items": {
-									"type": "string"
-								}
-							}
-						],
-						"description": "The types of the data stored in the verifiable credential."
-					},
-					"verifiableCredential": {
-						"type": "array",
-						"items": {
-							"anyOf": [
-								{
-									"type": "string"
-								},
-								{
-									"$ref": "#/components/schemas/DidVerifiableCredential"
-								}
-							]
-						},
-						"description": "The data for the verifiable credentials."
-					},
-					"holder": {
-						"type": "string",
-						"description": "The entity generating the presentation."
-					},
-					"proof": {
-						"anyOf": [
-							{
-								"$ref": "#/components/schemas/Proof"
-							},
-							{
-								"type": "array",
-								"items": {
-									"$ref": "#/components/schemas/Proof"
-								}
-							}
-						],
-						"description": "Proofs that the verifiable presentation is valid. Optional if a different proof method is used, such as JWT."
-					}
-				},
-				"required": [
-					"@context",
-					"type"
-				],
-				"additionalProperties": false,
-				"description": "Interface describing a verifiable presentation."
-			},
-			"DidVerificationMethodType": {
-				"type": "string",
-				"enum": [
-					"verificationMethod",
-					"authentication",
-					"assertionMethod",
-					"keyAgreement",
-					"capabilityInvocation",
-					"capabilityDelegation"
-				],
-				"description": "The types of verification method."
 			},
 			"Error": {
 				"type": "object",
@@ -3499,23 +2502,25 @@
 				"properties": {
 					"items": {
 						"type": "array",
-						"items": {
-							"type": "object",
-							"properties": {
-								"identity": {
-									"type": "string",
-									"description": "The identity."
+						"description": "The identities.",
+						"prefixItems": [
+							{
+								"type": "object",
+								"properties": {
+									"identity": {
+										"type": "string",
+										"description": "The identity."
+									},
+									"publicProfile": {
+										"$ref": "https://schema.twindev.org/json-ld/JsonLdDocument"
+									}
 								},
-								"publicProfile": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdDocument"
-								}
-							},
-							"required": [
-								"identity"
-							],
-							"additionalProperties": false
-						},
-						"description": "The identities."
+								"required": [
+									"identity"
+								],
+								"additionalProperties": false
+							}
+						]
 					},
 					"cursor": {
 						"type": "string",
@@ -3545,7 +2550,7 @@
 				"type": "object",
 				"properties": {
 					"proofType": {
-						"$ref": "#/components/schemas/ProofTypes"
+						"$ref": "https://schema.twindev.org/did/ProofTypes"
 					},
 					"document": {
 						"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
@@ -3565,7 +2570,7 @@
 						"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
 					},
 					"proof": {
-						"$ref": "#/components/schemas/Proof"
+						"$ref": "https://schema.twindev.org/did/Proof"
 					}
 				},
 				"required": [
@@ -3602,9 +2607,11 @@
 							},
 							{
 								"type": "array",
-								"items": {
-									"type": "string"
-								}
+								"prefixItems": [
+									{
+										"type": "string"
+									}
+								]
 							}
 						],
 						"description": "The type of the service."
@@ -3616,9 +2623,11 @@
 							},
 							{
 								"type": "array",
-								"items": {
-									"type": "string"
-								}
+								"prefixItems": [
+									{
+										"type": "string"
+									}
+								]
 							}
 						],
 						"description": "The endpoint for the service."
@@ -3657,7 +2666,7 @@
 				"type": "object",
 				"properties": {
 					"verifiableCredential": {
-						"$ref": "#/components/schemas/DidVerifiableCredential"
+						"$ref": "https://schema.twindev.org/did/DidVerifiableCredential"
 					},
 					"jwt": {
 						"type": "string",
@@ -3679,7 +2688,7 @@
 						"description": "Has the credential been revoked."
 					},
 					"verifiableCredential": {
-						"$ref": "#/components/schemas/DidVerifiableCredential"
+						"$ref": "https://schema.twindev.org/did/DidVerifiableCredential"
 					}
 				},
 				"required": [
@@ -3705,26 +2714,30 @@
 							},
 							{
 								"type": "array",
-								"items": {
-									"type": "string"
-								}
+								"prefixItems": [
+									{
+										"type": "string"
+									}
+								]
 							}
 						],
 						"description": "The types of the presentation."
 					},
 					"verifiableCredentials": {
 						"type": "array",
-						"items": {
-							"anyOf": [
-								{
-									"type": "string"
-								},
-								{
-									"$ref": "#/components/schemas/DidVerifiableCredential"
-								}
-							]
-						},
-						"description": "The verifiable credentials to include in the presentation."
+						"description": "The verifiable credentials to include in the presentation.",
+						"prefixItems": [
+							{
+								"anyOf": [
+									{
+										"type": "string"
+									},
+									{
+										"$ref": "https://schema.twindev.org/did/DidVerifiableCredential"
+									}
+								]
+							}
+						]
 					},
 					"expiresInMinutes": {
 						"type": "number",
@@ -3741,7 +2754,7 @@
 				"type": "object",
 				"properties": {
 					"verifiablePresentation": {
-						"$ref": "#/components/schemas/DidVerifiablePresentation"
+						"$ref": "https://schema.twindev.org/did/DidVerifiablePresentation"
 					},
 					"jwt": {
 						"type": "string",
@@ -3763,14 +2776,16 @@
 						"description": "Has the presentation been revoked."
 					},
 					"verifiablePresentation": {
-						"$ref": "#/components/schemas/DidVerifiablePresentation"
+						"$ref": "https://schema.twindev.org/did/DidVerifiablePresentation"
 					},
 					"issuers": {
 						"type": "array",
-						"items": {
-							"$ref": "#/components/schemas/DidDocument"
-						},
-						"description": "The issuers of the presentation."
+						"description": "The issuers of the presentation.",
+						"prefixItems": [
+							{
+								"$ref": "https://schema.twindev.org/did/DidDocument"
+							}
+						]
 					}
 				},
 				"required": [
@@ -3783,7 +2798,7 @@
 				"type": "object",
 				"properties": {
 					"verificationMethodType": {
-						"$ref": "#/components/schemas/DidVerificationMethodType"
+						"$ref": "https://schema.twindev.org/did/DidVerificationMethodType"
 					},
 					"verificationMethodId": {
 						"type": "string",
@@ -3795,60 +2810,6 @@
 				],
 				"additionalProperties": false,
 				"description": "The data for the request."
-			},
-			"JsonWebSignature2020Proof": {
-				"type": "object",
-				"properties": {
-					"@context": {
-						"anyOf": [
-							{
-								"type": "string",
-								"const": "https://w3id.org/security/suites/jws-2020/v1"
-							},
-							{
-								"type": "array",
-								"minItems": 1,
-								"items": [
-									{
-										"type": "string",
-										"const": "https://w3id.org/security/suites/jws-2020/v1"
-									}
-								],
-								"additionalItems": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdContextDefinitionElement"
-								}
-							}
-						],
-						"description": "JSON-LD Context."
-					},
-					"type": {
-						"type": "string",
-						"const": "JsonWebSignature2020",
-						"description": "JSON-LD Type."
-					},
-					"proofPurpose": {
-						"type": "string",
-						"description": "The reason the proof was created."
-					},
-					"verificationMethod": {
-						"type": "string",
-						"description": "The verification method of the proof."
-					},
-					"created": {
-						"type": "string",
-						"description": "The iso date of when the proof was created."
-					},
-					"jws": {
-						"type": "string",
-						"description": "The JSON Web Signature."
-					}
-				},
-				"required": [
-					"type",
-					"proofPurpose"
-				],
-				"additionalProperties": false,
-				"description": "Interface describing a did proof in JSON Web Signature 2020 Format. https://www.w3.org/TR/vc-jws-2020/"
 			},
 			"NotFoundResponse": {
 				"type": "object",
@@ -3888,32 +2849,6 @@
 					"name"
 				],
 				"description": "The body which contains the error."
-			},
-			"Proof": {
-				"anyOf": [
-					{
-						"$ref": "#/components/schemas/DataIntegrityProof"
-					},
-					{
-						"$ref": "#/components/schemas/JsonWebSignature2020Proof"
-					}
-				],
-				"description": "Interface describing a proof."
-			},
-			"ProofTypes": {
-				"anyOf": [
-					{
-						"type": "string",
-						"const": "DataIntegrityProof",
-						"description": "The type for Data Integrity Proof."
-					},
-					{
-						"type": "string",
-						"const": "JsonWebSignature2020",
-						"description": "The type for Json Web Signature 2020."
-					}
-				],
-				"description": "The types for proofs."
 			}
 		},
 		"securitySchemes": {

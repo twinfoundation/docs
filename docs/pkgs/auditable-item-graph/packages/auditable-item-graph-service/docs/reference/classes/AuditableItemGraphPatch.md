@@ -4,19 +4,19 @@ Class describing the auditable item graph patches.
 
 ## Constructors
 
-### new AuditableItemGraphPatch()
+### Constructor
 
-> **new AuditableItemGraphPatch**(): [`AuditableItemGraphPatch`](AuditableItemGraphPatch.md)
+> **new AuditableItemGraphPatch**(): `AuditableItemGraphPatch`
 
 #### Returns
 
-[`AuditableItemGraphPatch`](AuditableItemGraphPatch.md)
+`AuditableItemGraphPatch`
 
 ## Properties
 
 ### op
 
-> **op**: `"replace"` \| `"add"` \| `"remove"` \| `"copy"` \| `"move"` \| `"test"`
+> **op**: `"add"` \| `"remove"` \| `"replace"` \| `"move"` \| `"copy"` \| `"test"`
 
 The operation for the patch.
 

@@ -4,13 +4,13 @@ Handle all the data types for auditable item graph.
 
 ## Constructors
 
-### new AuditableItemGraphDataTypes()
+### Constructor
 
-> **new AuditableItemGraphDataTypes**(): [`AuditableItemGraphDataTypes`](AuditableItemGraphDataTypes.md)
+> **new AuditableItemGraphDataTypes**(): `AuditableItemGraphDataTypes`
 
 #### Returns
 
-[`AuditableItemGraphDataTypes`](AuditableItemGraphDataTypes.md)
+`AuditableItemGraphDataTypes`
 
 ## Methods
 

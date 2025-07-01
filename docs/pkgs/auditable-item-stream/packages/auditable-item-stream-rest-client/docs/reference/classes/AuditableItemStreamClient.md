@@ -12,9 +12,9 @@ Client for performing auditable item stream through to REST endpoints.
 
 ## Constructors
 
-### new AuditableItemStreamClient()
+### Constructor
 
-> **new AuditableItemStreamClient**(`config`): [`AuditableItemStreamClient`](AuditableItemStreamClient.md)
+> **new AuditableItemStreamClient**(`config`): `AuditableItemStreamClient`
 
 Create a new instance of AuditableItemStreamClient.
 
@@ -28,7 +28,7 @@ The configuration for the client.
 
 #### Returns
 
-[`AuditableItemStreamClient`](AuditableItemStreamClient.md)
+`AuditableItemStreamClient`
 
 #### Overrides
 
@@ -50,7 +50,7 @@ Runtime name for the class.
 
 ### create()
 
-> **create**(`stream`, `options`?): `Promise`\<`string`\>
+> **create**(`stream`, `options?`): `Promise`\<`string`\>
 
 Create a new stream.
 
@@ -97,7 +97,7 @@ The id of the new stream item.
 
 ### get()
 
-> **get**(`id`, `options`?): `Promise`\<`IAuditableItemStream`\>
+> **get**(`id`, `options?`): `Promise`\<`IAuditableItemStream`\>
 
 Get a stream header without the entries.
 
@@ -217,7 +217,7 @@ Nothing.
 
 ### query()
 
-> **query**(`conditions`?, `orderBy`?, `orderByDirection`?, `properties`?, `cursor`?, `pageSize`?): `Promise`\<`IAuditableItemStreamList`\>
+> **query**(`conditions?`, `orderBy?`, `orderByDirection?`, `properties?`, `cursor?`, `pageSize?`): `Promise`\<`IAuditableItemStreamList`\>
 
 Query all the streams, will not return entries.
 
@@ -305,7 +305,7 @@ The id of the created entry, if not provided.
 
 ### getEntry()
 
-> **getEntry**(`id`, `entryId`, `options`?): `Promise`\<`IAuditableItemStreamEntry`\>
+> **getEntry**(`id`, `entryId`, `options?`): `Promise`\<`IAuditableItemStreamEntry`\>
 
 Get the entry from the stream.
 
@@ -457,7 +457,7 @@ Nothing.
 
 ### getEntries()
 
-> **getEntries**(`id`, `options`?): `Promise`\<`IAuditableItemStreamEntryList`\>
+> **getEntries**(`id`, `options?`): `Promise`\<`IAuditableItemStreamEntryList`\>
 
 Get the entries for the stream.
 
@@ -527,7 +527,7 @@ NotFoundError if the stream is not found.
 
 ### getEntryObjects()
 
-> **getEntryObjects**(`id`, `options`?): `Promise`\<`IAuditableItemStreamEntryObjectList`\>
+> **getEntryObjects**(`id`, `options?`): `Promise`\<`IAuditableItemStreamEntryObjectList`\>
 
 Get the entry objects for the stream.
 

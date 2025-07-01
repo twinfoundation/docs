@@ -10,15 +10,19 @@ Interface describing an NFT connector.
 
 ### mint()
 
-> **mint**\<`T`, `U`\>(`controllerIdentity`, `tag`, `immutableMetadata`?, `metadata`?): `Promise`\<`string`\>
+> **mint**\<`T`, `U`\>(`controllerIdentity`, `tag`, `immutableMetadata?`, `metadata?`): `Promise`\<`string`\>
 
 Mint an NFT.
 
 #### Type Parameters
 
-• **T** = `unknown`
+##### T
 
-• **U** = `unknown`
+`T` = `unknown`
+
+##### U
+
+`U` = `unknown`
 
 #### Parameters
 
@@ -56,15 +60,19 @@ The id of the created NFT in urn format.
 
 ### resolve()
 
-> **resolve**\<`T`, `U`\>(`id`): `Promise`\<\{ `issuer`: `string`; `owner`: `string`; `tag`: `string`; `immutableMetadata`: `T`; `metadata`: `U`; \}\>
+> **resolve**\<`T`, `U`\>(`id`): `Promise`\<\{ `issuer`: `string`; `owner`: `string`; `tag`: `string`; `immutableMetadata?`: `T`; `metadata?`: `U`; \}\>
 
 Resolve an NFT.
 
 #### Type Parameters
 
-• **T** = `unknown`
+##### T
 
-• **U** = `unknown`
+`T` = `unknown`
+
+##### U
+
+`U` = `unknown`
 
 #### Parameters
 
@@ -76,7 +84,7 @@ The id of the NFT to resolve.
 
 #### Returns
 
-`Promise`\<\{ `issuer`: `string`; `owner`: `string`; `tag`: `string`; `immutableMetadata`: `T`; `metadata`: `U`; \}\>
+`Promise`\<\{ `issuer`: `string`; `owner`: `string`; `tag`: `string`; `immutableMetadata?`: `T`; `metadata?`: `U`; \}\>
 
 The data for the NFT.
 
@@ -112,13 +120,15 @@ Nothing.
 
 ### transfer()
 
-> **transfer**\<`U`\>(`controllerIdentity`, `id`, `recipientIdentity`, `recipientAddress`, `metadata`?): `Promise`\<`void`\>
+> **transfer**\<`U`\>(`controllerIdentity`, `id`, `recipientIdentity`, `recipientAddress`, `metadata?`): `Promise`\<`void`\>
 
 Transfer an NFT.
 
 #### Type Parameters
 
-• **U** = `unknown`
+##### U
+
+`U` = `unknown`
 
 #### Parameters
 
@@ -168,7 +178,9 @@ Update the mutable data of the NFT.
 
 #### Type Parameters
 
-• **U** = `unknown`
+##### U
+
+`U` = `unknown`
 
 #### Parameters
 

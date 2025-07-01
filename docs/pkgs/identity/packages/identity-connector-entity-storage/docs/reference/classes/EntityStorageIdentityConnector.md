@@ -8,9 +8,9 @@ Class for performing identity operations using entity storage.
 
 ## Constructors
 
-### new EntityStorageIdentityConnector()
+### Constructor
 
-> **new EntityStorageIdentityConnector**(`options`?): [`EntityStorageIdentityConnector`](EntityStorageIdentityConnector.md)
+> **new EntityStorageIdentityConnector**(`options?`): `EntityStorageIdentityConnector`
 
 Create a new instance of EntityStorageIdentityConnector.
 
@@ -24,7 +24,7 @@ The options for the identity connector.
 
 #### Returns
 
-[`EntityStorageIdentityConnector`](EntityStorageIdentityConnector.md)
+`EntityStorageIdentityConnector`
 
 ## Properties
 
@@ -76,7 +76,7 @@ The created document.
 
 ### addVerificationMethod()
 
-> **addVerificationMethod**(`controller`, `documentId`, `verificationMethodType`, `verificationMethodId`?): `Promise`\<`IDidDocumentVerificationMethod`\>
+> **addVerificationMethod**(`controller`, `documentId`, `verificationMethodType`, `verificationMethodId?`): `Promise`\<`IDidDocumentVerificationMethod`\>
 
 Add a verification method to the document in JSON Web key Format.
 
@@ -258,7 +258,7 @@ NotFoundError if the id can not be resolved.
 
 ### createVerifiableCredential()
 
-> **createVerifiableCredential**(`controller`, `verificationMethodId`, `id`, `subject`, `revocationIndex`?): `Promise`\<\{ `verifiableCredential`: `IDidVerifiableCredential`; `jwt`: `string`; \}\>
+> **createVerifiableCredential**(`controller`, `verificationMethodId`, `id`, `subject`, `revocationIndex?`): `Promise`\<\{ `verifiableCredential`: `IDidVerifiableCredential`; `jwt`: `string`; \}\>
 
 Create a verifiable credential for a verification method.
 
@@ -312,7 +312,7 @@ NotFoundError if the id can not be resolved.
 
 ### checkVerifiableCredential()
 
-> **checkVerifiableCredential**(`credentialJwt`): `Promise`\<\{ `revoked`: `boolean`; `verifiableCredential`: `IDidVerifiableCredential`; \}\>
+> **checkVerifiableCredential**(`credentialJwt`): `Promise`\<\{ `revoked`: `boolean`; `verifiableCredential?`: `IDidVerifiableCredential`; \}\>
 
 Check a verifiable credential is valid.
 
@@ -326,7 +326,7 @@ The credential to verify.
 
 #### Returns
 
-`Promise`\<\{ `revoked`: `boolean`; `verifiableCredential`: `IDidVerifiableCredential`; \}\>
+`Promise`\<\{ `revoked`: `boolean`; `verifiableCredential?`: `IDidVerifiableCredential`; \}\>
 
 The credential stored in the jwt and the revocation status.
 
@@ -414,7 +414,7 @@ Nothing.
 
 ### createVerifiablePresentation()
 
-> **createVerifiablePresentation**(`controller`, `verificationMethodId`, `presentationId`, `contexts`, `types`, `verifiableCredentials`, `expiresInMinutes`?): `Promise`\<\{ `verifiablePresentation`: `IDidVerifiablePresentation`; `jwt`: `string`; \}\>
+> **createVerifiablePresentation**(`controller`, `verificationMethodId`, `presentationId`, `contexts`, `types`, `verifiableCredentials`, `expiresInMinutes?`): `Promise`\<\{ `verifiablePresentation`: `IDidVerifiablePresentation`; `jwt`: `string`; \}\>
 
 Create a verifiable presentation from the supplied verifiable credentials.
 
@@ -480,7 +480,7 @@ NotFoundError if the id can not be resolved.
 
 ### checkVerifiablePresentation()
 
-> **checkVerifiablePresentation**(`presentationJwt`): `Promise`\<\{ `revoked`: `boolean`; `verifiablePresentation`: `IDidVerifiablePresentation`; `issuers`: `IDidDocument`[]; \}\>
+> **checkVerifiablePresentation**(`presentationJwt`): `Promise`\<\{ `revoked`: `boolean`; `verifiablePresentation?`: `IDidVerifiablePresentation`; `issuers?`: `IDidDocument`[]; \}\>
 
 Check a verifiable presentation is valid.
 
@@ -494,7 +494,7 @@ The presentation to verify.
 
 #### Returns
 
-`Promise`\<\{ `revoked`: `boolean`; `verifiablePresentation`: `IDidVerifiablePresentation`; `issuers`: `IDidDocument`[]; \}\>
+`Promise`\<\{ `revoked`: `boolean`; `verifiablePresentation?`: `IDidVerifiablePresentation`; `issuers?`: `IDidDocument`[]; \}\>
 
 The presentation stored in the jwt and the revocation status.
 

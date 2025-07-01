@@ -4,7 +4,9 @@ Class for performing entity storage operations in-memory.
 
 ## Type Parameters
 
-• **T** = `unknown`
+### T
+
+`T` = `unknown`
 
 ## Implements
 
@@ -12,9 +14,9 @@ Class for performing entity storage operations in-memory.
 
 ## Constructors
 
-### new MemoryEntityStorageConnector()
+### Constructor
 
-> **new MemoryEntityStorageConnector**\<`T`\>(`options`): [`MemoryEntityStorageConnector`](MemoryEntityStorageConnector.md)\<`T`\>
+> **new MemoryEntityStorageConnector**\<`T`\>(`options`): `MemoryEntityStorageConnector`\<`T`\>
 
 Create a new instance of MemoryEntityStorageConnector.
 
@@ -28,7 +30,7 @@ The options for the connector.
 
 #### Returns
 
-[`MemoryEntityStorageConnector`](MemoryEntityStorageConnector.md)\<`T`\>
+`MemoryEntityStorageConnector`\<`T`\>
 
 ## Properties
 
@@ -64,7 +66,7 @@ The schema for the entities.
 
 ### get()
 
-> **get**(`id`, `secondaryIndex`?, `conditions`?): `Promise`\<`undefined` \| `T`\>
+> **get**(`id`, `secondaryIndex?`, `conditions?`): `Promise`\<`undefined` \| `T`\>
 
 Get an entity.
 
@@ -102,7 +104,7 @@ The object if it can be found or undefined.
 
 ### set()
 
-> **set**(`entity`, `conditions`?): `Promise`\<`void`\>
+> **set**(`entity`, `conditions?`): `Promise`\<`void`\>
 
 Set an entity.
 
@@ -134,7 +136,7 @@ The id of the entity.
 
 ### remove()
 
-> **remove**(`id`, `conditions`?): `Promise`\<`void`\>
+> **remove**(`id`, `conditions?`): `Promise`\<`void`\>
 
 Remove the entity.
 
@@ -166,7 +168,7 @@ Nothing.
 
 ### query()
 
-> **query**(`conditions`?, `sortProperties`?, `properties`?, `cursor`?, `pageSize`?): `Promise`\<\{ `entities`: `Partial`\<`T`\>[]; `cursor`: `string`; \}\>
+> **query**(`conditions?`, `sortProperties?`, `properties?`, `cursor?`, `pageSize?`): `Promise`\<\{ `entities`: `Partial`\<`T`\>[]; `cursor`: `string`; \}\>
 
 Find all the entities which match the conditions.
 

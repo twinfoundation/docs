@@ -42,7 +42,7 @@ The direction for the order, defaults to desc.
 
 #### pageSize?
 
-> `optional` **pageSize**: `number`
+> `optional` **pageSize**: `string` \| `number`
 
 The number of entries to return per page.
 

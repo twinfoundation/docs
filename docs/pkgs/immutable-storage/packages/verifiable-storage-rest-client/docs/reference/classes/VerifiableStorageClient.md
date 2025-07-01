@@ -12,9 +12,9 @@ Client for performing Verifiable Storage through to REST endpoints.
 
 ## Constructors
 
-### new VerifiableStorageClient()
+### Constructor
 
-> **new VerifiableStorageClient**(`config`): [`VerifiableStorageClient`](VerifiableStorageClient.md)
+> **new VerifiableStorageClient**(`config`): `VerifiableStorageClient`
 
 Create a new instance of VerifiableStorageClient.
 
@@ -28,7 +28,7 @@ The configuration for the client.
 
 #### Returns
 
-[`VerifiableStorageClient`](VerifiableStorageClient.md)
+`VerifiableStorageClient`
 
 #### Overrides
 
@@ -108,7 +108,7 @@ The updated receipt.
 
 ### get()
 
-> **get**(`id`, `options`?): `Promise`\<\{ `data`: `Uint8Array`\<`ArrayBufferLike`\>; `receipt`: `IJsonLdNodeObject`; \}\>
+> **get**(`id`, `options?`): `Promise`\<\{ `data`: `Uint8Array`\<`ArrayBufferLike`\>; `receipt`: `IJsonLdNodeObject`; \}\>
 
 Get an Verifiable Storage.
 

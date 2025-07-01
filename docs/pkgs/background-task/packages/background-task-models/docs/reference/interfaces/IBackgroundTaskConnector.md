@@ -10,15 +10,19 @@ Interface describing a background task connector.
 
 ### registerHandler()
 
-> **registerHandler**\<`T`, `U`\>(`taskType`, `module`, `method`, `stateChangeCallback`?): `Promise`\<`void`\>
+> **registerHandler**\<`T`, `U`\>(`taskType`, `module`, `method`, `stateChangeCallback?`): `Promise`\<`void`\>
 
 Register a handler for a task.
 
 #### Type Parameters
 
-• **T**
+##### T
 
-• **U**
+`T`
+
+##### U
+
+`U`
 
 #### Parameters
 
@@ -78,13 +82,15 @@ Nothing.
 
 ### create()
 
-> **create**\<`T`\>(`type`, `payload`?, `options`?): `Promise`\<`string`\>
+> **create**\<`T`\>(`type`, `payload?`, `options?`): `Promise`\<`string`\>
 
 Create a new task.
 
 #### Type Parameters
 
-• **T**
+##### T
+
+`T`
 
 #### Parameters
 
@@ -138,9 +144,13 @@ Get the task details.
 
 #### Type Parameters
 
-• **T**
+##### T
 
-• **U**
+`T`
+
+##### U
+
+`U`
 
 #### Parameters
 
@@ -226,7 +236,7 @@ Nothing.
 
 ### query()
 
-> **query**(`taskType`?, `taskStatus`?, `sortProperty`?, `sortDirection`?, `cursor`?, `pageSize`?): `Promise`\<\{ `entities`: [`IBackgroundTask`](IBackgroundTask.md)\<`any`, `any`\>[]; `cursor`: `string`; \}\>
+> **query**(`taskType?`, `taskStatus?`, `sortProperty?`, `sortDirection?`, `cursor?`, `pageSize?`): `Promise`\<\{ `entities`: [`IBackgroundTask`](IBackgroundTask.md)\<`any`, `any`\>[]; `cursor?`: `string`; \}\>
 
 Get a list of tasks.
 
@@ -248,7 +258,7 @@ The status of the task to get.
 
 The property to sort by, defaults to dateCreated.
 
-`"status"` | `"dateCreated"` | `"dateModified"` | `"dateCompleted"`
+`"dateCreated"` | `"dateModified"` | `"dateCompleted"` | `"status"`
 
 ##### sortDirection?
 
@@ -270,6 +280,6 @@ The maximum number of entities in a page.
 
 #### Returns
 
-`Promise`\<\{ `entities`: [`IBackgroundTask`](IBackgroundTask.md)\<`any`, `any`\>[]; `cursor`: `string`; \}\>
+`Promise`\<\{ `entities`: [`IBackgroundTask`](IBackgroundTask.md)\<`any`, `any`\>[]; `cursor?`: `string`; \}\>
 
 The list of tasks.

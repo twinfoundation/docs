@@ -138,6 +138,12 @@ Messaging component options which can be overridden by individual components by 
 
 Background task connector options which can be overridden by individual components by specifying types other than default.
 
+##### taskSchedulerComponent?
+
+> `optional` **taskSchedulerComponent**: `IEngineCoreTypeConfig`\<`TaskSchedulerComponentConfig`\>[]
+
+Task scheduler component options which can be overridden by individual components by specifying types other than default.
+
 ##### eventBusConnector?
 
 > `optional` **eventBusConnector**: `IEngineCoreTypeConfig`\<`EventBusConnectorConfig`\>[]
@@ -287,6 +293,24 @@ Date processing options which can be overridden by individual components by spec
 > `optional` **documentManagementComponent**: `IEngineCoreTypeConfig`\<`DocumentManagementComponentConfig`\>[]
 
 Document management options which can be overridden by individual components by specifying types other than default.
+
+##### federatedCatalogueComponent?
+
+> `optional` **federatedCatalogueComponent**: `IEngineCoreTypeConfig`\<`FederatedCatalogueComponentConfig`\>[]
+
+Federated catalogue options which can be overridden by individual components by specifying types other than default.
+
+##### rightsManagementComponent?
+
+> `optional` **rightsManagementComponent**: `IEngineCoreTypeConfig`\<`RightsManagementComponentConfig`\>[]
+
+Rights management options which can be overridden by individual components by specifying types other than default.
+
+##### rightsManagementPapComponent?
+
+> `optional` **rightsManagementPapComponent**: `IEngineCoreTypeConfig`\<`RightsManagementPapComponentConfig`\>[]
+
+Rights management PAP options which can be overridden by individual components by specifying types other than default.
 
 #### Type declaration
 

@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/ts-to-openapi",
-	"version": "0.0.1-next.18",
+	"version": "0.0.1-next.28",
 	"description": "Tool to convert TypeScript REST route definitions to OpenAPI Specifications",
 	"repository": {
 		"type": "git",
@@ -12,50 +12,6 @@
 	"type": "module",
 	"engines": {
 		"node": ">=20.0.0"
-	},
-	"scripts": {
-		"clean": "rimraf dist coverage",
-		"build": "tsc",
-		"dev": "nodemon --watch src --ext ts --exec \"npm run build && npm run bundle:esm\"",
-		"merge-locales": "merge-locales",
-		"test": "vitest --run --config ./vitest.config.ts --no-cache",
-		"coverage": "vitest --run --coverage --config ./vitest.config.ts --no-cache",
-		"bundle:esm": "rollup --config rollup.config.mjs --environment MODULE:esm",
-		"bundle:cjs": "rollup --config rollup.config.mjs --environment MODULE:cjs",
-		"bundle": "npm run bundle:esm && npm run bundle:cjs",
-		"docs:clean": "rimraf docs/reference",
-		"docs:generate": "typedoc",
-		"docs": "npm run docs:clean && npm run docs:generate",
-		"dist": "npm run clean && npm run build && npm run merge-locales && npm run test && npm run bundle && npm run docs",
-		"dist:no-test": "npm run clean && npm run build && npm run merge-locales && npm run bundle && npm run docs",
-		"prepare": "ts-patch install -s"
-	},
-	"dependencies": {
-		"@twin.org/api-models": "next",
-		"@twin.org/cli-core": "next",
-		"@twin.org/core": "next",
-		"@twin.org/nameof": "0.0.1-next.18",
-		"@twin.org/web": "next",
-		"commander": "13.1.0",
-		"glob": "11.0.1",
-		"jsonschema": "1.5.0",
-		"ts-json-schema-generator": "2.4.0-next.1"
-	},
-	"devDependencies": {
-		"@twin.org/merge-locales": "0.0.1-next.18",
-		"@twin.org/nameof-transformer": "0.0.1-next.18",
-		"@twin.org/nameof-vitest-plugin": "0.0.1-next.18",
-		"@types/node": "22.13.9",
-		"@vitest/coverage-v8": "3.0.8",
-		"copyfiles": "2.4.1",
-		"nodemon": "3.1.9",
-		"rimraf": "6.0.1",
-		"rollup": "4.34.9",
-		"ts-patch": "3.3.0",
-		"typedoc": "0.27.9",
-		"typedoc-plugin-markdown": "4.4.2",
-		"typescript": "5.8.2",
-		"vitest": "3.0.8"
 	},
 	"main": "./dist/cjs/index.cjs",
 	"module": "./dist/esm/index.mjs",

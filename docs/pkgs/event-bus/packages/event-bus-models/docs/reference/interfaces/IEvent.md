@@ -4,7 +4,9 @@ Event record.
 
 ## Type Parameters
 
-• **T** = `unknown`
+### T
+
+`T` = `unknown`
 
 ## Properties
 

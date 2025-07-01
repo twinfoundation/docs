@@ -8,9 +8,9 @@ Class for performing event bus operations locally.
 
 ## Constructors
 
-### new LocalEventBusConnector()
+### Constructor
 
-> **new LocalEventBusConnector**(`options`?): [`LocalEventBusConnector`](LocalEventBusConnector.md)
+> **new LocalEventBusConnector**(`options?`): `LocalEventBusConnector`
 
 Create a new instance of LocalEventBusConnector.
 
@@ -24,7 +24,7 @@ The options for the connector.
 
 #### Returns
 
-[`LocalEventBusConnector`](LocalEventBusConnector.md)
+`LocalEventBusConnector`
 
 ## Properties
 
@@ -56,7 +56,9 @@ Subscribe to the event bus.
 
 #### Type Parameters
 
-• **T**
+##### T
+
+`T`
 
 #### Parameters
 
@@ -118,7 +120,9 @@ Publish an event to the bus.
 
 #### Type Parameters
 
-• **T**
+##### T
+
+`T`
 
 #### Parameters
 

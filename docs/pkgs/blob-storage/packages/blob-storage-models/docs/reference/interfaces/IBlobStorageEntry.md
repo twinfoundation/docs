@@ -68,6 +68,22 @@ The mime type for the blob.
 
 ***
 
+### isEncrypted?
+
+> `optional` **isEncrypted**: `boolean`
+
+Indicates if the blob is encrypted.
+
+***
+
+### compression?
+
+> `optional` **compression**: [`BlobStorageCompressionType`](../type-aliases/BlobStorageCompressionType.md)
+
+The type of compression used for the blob, if not set it is not stored with compression.
+
+***
+
 ### fileExtension?
 
 > `optional` **fileExtension**: `string`

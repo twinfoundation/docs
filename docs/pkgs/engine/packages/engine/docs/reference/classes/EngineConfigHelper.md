@@ -4,13 +4,13 @@ Helper methods for engine config.
 
 ## Constructors
 
-### new EngineConfigHelper()
+### Constructor
 
-> **new EngineConfigHelper**(): [`EngineConfigHelper`](EngineConfigHelper.md)
+> **new EngineConfigHelper**(): `EngineConfigHelper`
 
 #### Returns
 
-[`EngineConfigHelper`](EngineConfigHelper.md)
+`EngineConfigHelper`
 
 ## Properties
 
@@ -24,13 +24,15 @@ Runtime name for the class.
 
 ### addCustomEntityStorage()
 
-> `static` **addCustomEntityStorage**\<`T`\>(`engineConfig`, `entityTypeName`, `entitySchema`, `restPath`, `options`?): `void`
+> `static` **addCustomEntityStorage**\<`T`\>(`engineConfig`, `entityTypeName`, `entitySchema`, `restPath?`, `options?`): `void`
 
 Add a custom entity storage to the engine configuration.
 
 #### Type Parameters
 
-• **T**
+##### T
+
+`T`
 
 #### Parameters
 
@@ -52,11 +54,11 @@ The entity type name.
 
 The entity schema.
 
-##### restPath
+##### restPath?
 
 `string`
 
-The rest path to serve the entity storage from.
+The rest path to serve the entity storage from, leave undefined for no endpoints.
 
 ##### options?
 

@@ -9,9 +9,9 @@ See https://docs.ipfs.tech/reference/kubo/rpc/ for more information.
 
 ## Constructors
 
-### new IpfsBlobStorageConnector()
+### Constructor
 
-> **new IpfsBlobStorageConnector**(`options`): [`IpfsBlobStorageConnector`](IpfsBlobStorageConnector.md)
+> **new IpfsBlobStorageConnector**(`options`): `IpfsBlobStorageConnector`
 
 Create a new instance of IpfsBlobStorageConnector.
 
@@ -25,7 +25,7 @@ The options for the connector.
 
 #### Returns
 
-[`IpfsBlobStorageConnector`](IpfsBlobStorageConnector.md)
+`IpfsBlobStorageConnector`
 
 ## Properties
 

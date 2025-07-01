@@ -8,13 +8,13 @@ Class for converting data to XML from bytes.
 
 ## Constructors
 
-### new XmlConverterConnector()
+### Constructor
 
-> **new XmlConverterConnector**(): [`XmlConverterConnector`](XmlConverterConnector.md)
+> **new XmlConverterConnector**(): `XmlConverterConnector`
 
 #### Returns
 
-[`XmlConverterConnector`](XmlConverterConnector.md)
+`XmlConverterConnector`
 
 ## Properties
 

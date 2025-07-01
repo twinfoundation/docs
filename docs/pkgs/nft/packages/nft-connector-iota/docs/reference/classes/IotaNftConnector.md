@@ -8,9 +8,9 @@ Class for performing NFT operations on IOTA.
 
 ## Constructors
 
-### new IotaNftConnector()
+### Constructor
 
-> **new IotaNftConnector**(`options`): [`IotaNftConnector`](IotaNftConnector.md)
+> **new IotaNftConnector**(`options`): `IotaNftConnector`
 
 Create a new instance of IotaNftConnector.
 
@@ -24,7 +24,7 @@ The options for the connector.
 
 #### Returns
 
-[`IotaNftConnector`](IotaNftConnector.md)
+`IotaNftConnector`
 
 ## Properties
 
@@ -50,7 +50,7 @@ Runtime name for the class.
 
 ### start()
 
-> **start**(`nodeIdentity`, `nodeLoggingConnectorType`?, `componentState`?): `Promise`\<`void`\>
+> **start**(`nodeIdentity`, `nodeLoggingConnectorType?`, `componentState?`): `Promise`\<`void`\>
 
 Bootstrap the NFT contract.
 
@@ -72,6 +72,12 @@ The node logging connector type, defaults to "node-logging".
 
 The component state.
 
+###### contractDeployments?
+
+\{[`id`: `string`]: `string`; \}
+
+The contract deployments.
+
 #### Returns
 
 `Promise`\<`void`\>
@@ -86,15 +92,19 @@ void.
 
 ### mint()
 
-> **mint**\<`T`, `U`\>(`controllerIdentity`, `tag`, `immutableMetadata`?, `metadata`?): `Promise`\<`string`\>
+> **mint**\<`T`, `U`\>(`controllerIdentity`, `tag`, `immutableMetadata?`, `metadata?`): `Promise`\<`string`\>
 
 Mint an NFT.
 
 #### Type Parameters
 
-• **T** = `unknown`
+##### T
 
-• **U** = `unknown`
+`T` = `unknown`
+
+##### U
+
+`U` = `unknown`
 
 #### Parameters
 
@@ -136,15 +146,19 @@ The id of the created NFT in urn format.
 
 ### resolve()
 
-> **resolve**\<`T`, `U`\>(`nftId`): `Promise`\<\{ `issuer`: `string`; `owner`: `string`; `tag`: `string`; `immutableMetadata`: `T`; `metadata`: `U`; \}\>
+> **resolve**\<`T`, `U`\>(`nftId`): `Promise`\<\{ `issuer`: `string`; `owner`: `string`; `tag`: `string`; `immutableMetadata?`: `T`; `metadata?`: `U`; \}\>
 
 Resolve an NFT to get its details.
 
 #### Type Parameters
 
-• **T** = `unknown`
+##### T
 
-• **U** = `unknown`
+`T` = `unknown`
+
+##### U
+
+`U` = `unknown`
 
 #### Parameters
 
@@ -156,7 +170,7 @@ The id of the NFT to resolve.
 
 #### Returns
 
-`Promise`\<\{ `issuer`: `string`; `owner`: `string`; `tag`: `string`; `immutableMetadata`: `T`; `metadata`: `U`; \}\>
+`Promise`\<\{ `issuer`: `string`; `owner`: `string`; `tag`: `string`; `immutableMetadata?`: `T`; `metadata?`: `U`; \}\>
 
 The NFT details.
 
@@ -200,13 +214,15 @@ void.
 
 ### transfer()
 
-> **transfer**\<`U`\>(`controller`, `nftId`, `recipientIdentity`, `recipientAddress`, `metadata`?): `Promise`\<`void`\>
+> **transfer**\<`U`\>(`controller`, `nftId`, `recipientIdentity`, `recipientAddress`, `metadata?`): `Promise`\<`void`\>
 
 Transfer an NFT to a new owner.
 
 #### Type Parameters
 
-• **U** = `unknown`
+##### U
+
+`U` = `unknown`
 
 #### Parameters
 
@@ -260,7 +276,9 @@ Update the mutable data of an NFT.
 
 #### Type Parameters
 
-• **U** = `unknown`
+##### U
+
+`U` = `unknown`
 
 #### Parameters
 

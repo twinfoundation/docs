@@ -4,13 +4,13 @@ Class describing the auditable item stream.
 
 ## Constructors
 
-### new AuditableItemStream()
+### Constructor
 
-> **new AuditableItemStream**(): [`AuditableItemStream`](AuditableItemStream.md)
+> **new AuditableItemStream**(): `AuditableItemStream`
 
 #### Returns
 
-[`AuditableItemStream`](AuditableItemStream.md)
+`AuditableItemStream`
 
 ## Properties
 

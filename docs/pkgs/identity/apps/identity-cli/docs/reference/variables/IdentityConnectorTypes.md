@@ -11,9 +11,3 @@ The identity connector types.
 > `readonly` **Iota**: `"iota"` = `"iota"`
 
 IOTA.
-
-### IotaStardust
-
-> `readonly` **IotaStardust**: `"iota-stardust"` = `"iota-stardust"`
-
-IOTA Stardust.

@@ -1,0 +1,23 @@
+{
+	"name": "@twin.org/verifiable-storage",
+	"version": "0.0.0",
+	"description": "Verifiable Storage",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/twinfoundation/verifiable-storage.git"
+	},
+	"author": "martyn.janes@iota.org",
+	"license": "Apache-2.0",
+	"private": true,
+	"engines": {
+		"node": ">=20.0.0"
+	},
+	"workspaces": [
+		"packages/verifiable-storage-models",
+		"packages/verifiable-storage-connector-entity-storage",
+		"packages/verifiable-storage-connector-iota",
+		"packages/verifiable-storage-service",
+		"packages/verifiable-storage-rest-client"
+	],
+	"type": "module"
+}

@@ -1,6 +1,6 @@
 # Type Alias: IJsonLdValueObject
 
-> **IJsonLdValueObject**: `object` & \{ `@value`: [`IJsonLdKeyword`](IJsonLdKeyword.md)\[`"@value"`\]; `@language`: [`IJsonLdKeyword`](IJsonLdKeyword.md)\[`"@language"`\]; `@direction`: [`IJsonLdKeyword`](IJsonLdKeyword.md)\[`"@direction"`\]; \} \| \{ `@value`: [`IJsonLdKeyword`](IJsonLdKeyword.md)\[`"@value"`\]; `@type`: [`IJsonLdKeyword`](IJsonLdKeyword.md)\[`"@type"`\]; \} \| \{ `@value`: [`IJsonLdKeyword`](IJsonLdKeyword.md)\[`"@value"`\] \| [`IJsonLdJsonObject`](../interfaces/IJsonLdJsonObject.md) \| [`IJsonLdJsonArray`](IJsonLdJsonArray.md); `@type`: `"@json"`; \}
+> **IJsonLdValueObject** = `object` & \{ `@value`: `null` \| `boolean` \| `number` \| `string`; `@language?`: `string`; `@direction?`: `"ltr"` \| `"rtl"` \| `null`; \} \| \{ `@value`: `null` \| `boolean` \| `number` \| `string`; `@type`: `string`; \} \| \{ `@value`: `null` \| `boolean` \| `number` \| `string` \| [`IJsonLdJsonObject`](../interfaces/IJsonLdJsonObject.md) \| [`IJsonLdJsonArray`](IJsonLdJsonArray.md); `@type`: `"@json"`; \}
 
 A value object is used to explicitly associate a type or a language with a value
 to create a typed value or a language-tagged string and possibly associate a base direction.
@@ -9,11 +9,11 @@ to create a typed value or a language-tagged string and possibly associate a bas
 
 ### @index?
 
-> `optional` **@index**: [`IJsonLdKeyword`](IJsonLdKeyword.md)\[`"@index"`\]
+> `optional` **@index**: `string`
 
 ### @context?
 
-> `optional` **@context**: [`IJsonLdKeyword`](IJsonLdKeyword.md)\[`"@context"`\]
+> `optional` **@context**: [`IJsonLdContextDefinitionRoot`](IJsonLdContextDefinitionRoot.md)
 
 ## See
 

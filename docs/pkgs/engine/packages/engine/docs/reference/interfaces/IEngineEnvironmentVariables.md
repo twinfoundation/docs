@@ -608,7 +608,7 @@ The type of NFT connector: entity-storage, iota.
 
 > `optional` **identityConnector**: `string`
 
-The type of identity connector: entity-storage, iota, iota-stardust.
+The type of identity connector: entity-storage, iota.
 
 ***
 
@@ -616,7 +616,7 @@ The type of identity connector: entity-storage, iota, iota-stardust.
 
 > `optional` **identityResolverConnector**: `string`
 
-The type of identity resolver connector: entity-storage, iota, iota-stardust.
+The type of identity resolver connector: entity-storage, iota.
 
 ***
 
@@ -625,46 +625,6 @@ The type of identity resolver connector: entity-storage, iota, iota-stardust.
 > `optional` **verifiableStorageConnector**: `string`
 
 The type of verifiable storage connector: entity-storage, iota.
-
-***
-
-### iotaStardustFaucetEndpoint?
-
-> `optional` **iotaStardustFaucetEndpoint**: `string`
-
-IOTA Stardust Faucet Endpoint.
-
-***
-
-### iotaStardustNodeEndpoint?
-
-> `optional` **iotaStardustNodeEndpoint**: `string`
-
-IOTA Stardust Node Endpoint.
-
-***
-
-### iotaStardustBech32Hrp?
-
-> `optional` **iotaStardustBech32Hrp**: `string`
-
-IOTA Stardust Bech32 HRP
-
-***
-
-### iotaStardustCoinType?
-
-> `optional` **iotaStardustCoinType**: `string`
-
-IOTA Stardust coin type.
-
-***
-
-### iotaStardustExplorerEndpoint?
-
-> `optional` **iotaStardustExplorerEndpoint**: `string`
-
-IOTA Stardust Explorer Endpoint.
 
 ***
 
@@ -761,3 +721,35 @@ The type of the default data converters, can be a comma separated list: json, xm
 > `optional` **dataExtractorConnectors**: `string`
 
 The type of the default data extractor, can be a comma separated list: json-path.
+
+***
+
+### federatedCatalogueCacheTtlMs?
+
+> `optional` **federatedCatalogueCacheTtlMs**: `number`
+
+Federated catalog TTL for the cache.
+
+***
+
+### federatedCatalogueClearingHouseApproverList?
+
+> `optional` **federatedCatalogueClearingHouseApproverList**: `string`
+
+Federated catalog clearing house approver list, stringified array of DIDs.
+
+***
+
+### rightsManagementEnabled?
+
+> `optional` **rightsManagementEnabled**: `string`
+
+Is the rights management enabled, defaults to false.
+
+***
+
+### taskSchedulerEnabled?
+
+> `optional` **taskSchedulerEnabled**: `string`
+
+Is the task scheduler enabled, defaults to true.

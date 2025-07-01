@@ -9,13 +9,13 @@ https://www.w3.org/TR/vc-di-eddsa/#eddsa-jcs-2022
 
 ## Constructors
 
-### new DataIntegrityProofSignerVerifier()
+### Constructor
 
-> **new DataIntegrityProofSignerVerifier**(): [`DataIntegrityProofSignerVerifier`](DataIntegrityProofSignerVerifier.md)
+> **new DataIntegrityProofSignerVerifier**(): `DataIntegrityProofSignerVerifier`
 
 #### Returns
 
-[`DataIntegrityProofSignerVerifier`](DataIntegrityProofSignerVerifier.md)
+`DataIntegrityProofSignerVerifier`
 
 ## Properties
 

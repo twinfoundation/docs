@@ -4,13 +4,13 @@ Class describing the immutable proof.
 
 ## Constructors
 
-### new ImmutableProof()
+### Constructor
 
-> **new ImmutableProof**(): [`ImmutableProof`](ImmutableProof.md)
+> **new ImmutableProof**(): `ImmutableProof`
 
 #### Returns
 
-[`ImmutableProof`](ImmutableProof.md)
+`ImmutableProof`
 
 ## Properties
 

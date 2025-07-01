@@ -14,13 +14,16 @@ import fs from "fs";
  */
 const sidebars: SidebarsConfig = {
 	introductionSidebar: ["intro"],
+	twinWhitePaperSidebar: ["twin-white-paper"],
 	appsSidebar: ["apps", ...buildPkgs("apps")],
-	packagesSidebar: ["pkgs", ...buildPkgs("packages")]
+	packagesSidebar: ["pkgs", ...buildPkgs("packages")],
+	mediaSidebar: ["media"],
+	roadmapSidebar: ["roadmap"]
 };
 
 function buildPkgs(packageType): any {
 	try {
-		const reposFilename = path.join(__dirname, "docs", "repos.json");
+		const reposFilename = path.join(__dirname, "repos.json");
 		const reposContent = fs.readFileSync(reposFilename, "utf-8");
 		const reposJson = JSON.parse(reposContent);
 
@@ -31,15 +34,16 @@ function buildPkgs(packageType): any {
 				const packageFilename = path.join(__dirname, "docs", "pkgs", repo.name, "package.json");
 
 				if (fileExists(packageFilename)) {
+					const ignoredPackages = repo.ignore ?? [];
 					const packageContent = fs.readFileSync(packageFilename, "utf-8");
 					const packageContentJson = JSON.parse(packageContent);
 
 					const items = [];
 
-					for (const p of packageContentJson.workspaces) {
-						if (p.includes(`${packageType}/`)) {
+					for (const pkg of packageContentJson.workspaces) {
+						if (pkg.includes(`${packageType}/`) && !ignoredPackages.includes(pkg)) {
 							items.push(
-								generatePackageItems(repo.name, packageType, p.replace(`${packageType}/`, ""))
+								generatePackageItems(repo.name, packageType, pkg.replace(`${packageType}/`, ""))
 							);
 						}
 					}
@@ -52,7 +56,7 @@ function buildPkgs(packageType): any {
 						});
 					}
 				} else {
-					console.debug("! File not found", packageFilename);
+					console.debug("! File not found in buildPkgs", packageFilename);
 				}
 			} catch (error) {
 				console.debug(error);

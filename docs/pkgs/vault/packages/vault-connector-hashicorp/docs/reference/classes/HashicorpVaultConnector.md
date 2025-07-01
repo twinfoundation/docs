@@ -8,9 +8,9 @@ Class for performing vault operations in entity storage.
 
 ## Constructors
 
-### new HashicorpVaultConnector()
+### Constructor
 
-> **new HashicorpVaultConnector**(`options`): [`HashicorpVaultConnector`](HashicorpVaultConnector.md)
+> **new HashicorpVaultConnector**(`options`): `HashicorpVaultConnector`
 
 Create a new instance of HashicorpVaultConnector.
 
@@ -24,7 +24,7 @@ The options for the vault connector.
 
 #### Returns
 
-[`HashicorpVaultConnector`](HashicorpVaultConnector.md)
+`HashicorpVaultConnector`
 
 ## Properties
 
@@ -50,7 +50,7 @@ Runtime name for the class.
 
 ### bootstrap()
 
-> **bootstrap**(`nodeLoggingConnectorType`?): `Promise`\<`boolean`\>
+> **bootstrap**(`nodeLoggingConnectorType?`): `Promise`\<`boolean`\>
 
 Bootstrap the vault connector and ensure connectivity.
 
@@ -82,7 +82,9 @@ Store a secret in the vault.
 
 #### Type Parameters
 
-• **T**
+##### T
+
+`T`
 
 #### Parameters
 
@@ -118,7 +120,9 @@ Get a secret from the vault.
 
 #### Type Parameters
 
-• **T**
+##### T
+
+`T`
 
 #### Parameters
 
@@ -208,7 +212,7 @@ The public key for the key pair.
 
 ### addKey()
 
-> **addKey**(`name`, `type`, `privateKey`, `publicKey`?): `Promise`\<`void`\>
+> **addKey**(`name`, `type`, `privateKey`, `publicKey?`): `Promise`\<`void`\>
 
 Add an existing key to the vault.
 
@@ -252,7 +256,7 @@ Nothing.
 
 ### getKey()
 
-> **getKey**(`name`): `Promise`\<\{ `type`: `VaultKeyType`; `privateKey`: `Uint8Array`; `publicKey`: `Uint8Array`\<`ArrayBufferLike`\>; \}\>
+> **getKey**(`name`): `Promise`\<\{ `type`: `VaultKeyType`; `privateKey`: `Uint8Array`; `publicKey?`: `Uint8Array`\<`ArrayBufferLike`\>; \}\>
 
 Get a key from the vault.
 
@@ -266,7 +270,7 @@ The name of the key to get.
 
 #### Returns
 
-`Promise`\<\{ `type`: `VaultKeyType`; `privateKey`: `Uint8Array`; `publicKey`: `Uint8Array`\<`ArrayBufferLike`\>; \}\>
+`Promise`\<\{ `type`: `VaultKeyType`; `privateKey`: `Uint8Array`; `publicKey?`: `Uint8Array`\<`ArrayBufferLike`\>; \}\>
 
 The key, publicKey can be undefined if key is symmetric.
 
@@ -508,7 +512,7 @@ Error if the secret is not found.
 
 ### updateKeyConfig()
 
-> **updateKeyConfig**(`name`, `deletionAllowed`?, `exportable`?): `Promise`\<`void`\>
+> **updateKeyConfig**(`name`, `deletionAllowed?`, `exportable?`): `Promise`\<`void`\>
 
 Update the configuration of a key.
 
@@ -600,7 +604,7 @@ Error if the key cannot be restored.
 
 ### exportKey()
 
-> **exportKey**(`name`, `keyPath`, `version`?): `Promise`\<\{ `type`: `VaultKeyType`; `key`: `Uint8Array`; `name`: `string`; \}\>
+> **exportKey**(`name`, `keyPath`, `version?`): `Promise`\<\{ `type`: `VaultKeyType`; `key`: `Uint8Array`; `name`: `string`; \}\>
 
 Export the key from the vault.
 
@@ -616,7 +620,7 @@ The name of the key.
 
 The path of the key. Defaults to "signing-key".
 
-`"public-key"` | `"signing-key"` | `"encryption-key"`
+`"signing-key"` | `"encryption-key"` | `"public-key"`
 
 ##### version?
 

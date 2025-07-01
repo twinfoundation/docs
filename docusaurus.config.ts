@@ -83,6 +83,12 @@ const config: Config = {
 					},
 					{
 						type: "docSidebar",
+						sidebarId: "twinWhitePaperSidebar",
+						position: "left",
+						label: "White Paper"
+					},
+					{
+						type: "docSidebar",
 						sidebarId: "appsSidebar",
 						position: "left",
 						label: "Applications"
@@ -92,6 +98,18 @@ const config: Config = {
 						sidebarId: "packagesSidebar",
 						position: "left",
 						label: "Packages"
+					},
+					{
+						type: "docSidebar",
+						sidebarId: "mediaSidebar",
+						position: "left",
+						label: "Media"
+					},
+					{
+						type: "docSidebar",
+						sidebarId: "roadmapSidebar",
+						position: "left",
+						label: "Roadmap"
 					},
 					{
 						href: "https://github.com/twinfoundation/docs",
@@ -116,6 +134,11 @@ const config: Config = {
 							{
 								label: "Packages",
 								to: "/docs/pkgs"
+							},
+							{
+								label: "White Paper",
+								href: "/pdf/twin-whitepaper.pdf",
+								target: "_blank"
 							}
 						]
 					},
@@ -124,11 +147,32 @@ const config: Config = {
 						items: [
 							{
 								label: "X",
-								href: "https://x.com/iota"
+								href: "https://x.com/TWINGlobalOrg"
 							},
 							{
 								label: "LinkedIn",
-								href: "https://www.linkedin.com/company/iotafoundation/"
+								href: "https://www.linkedin.com/company/twinfoundation/"
+							},
+							{
+								label: "YouTube",
+								href: "https://www.youtube.com/@TWINFoundation"
+							},
+							{
+								label: "GitHub",
+								href: "https://github.com/twinfoundation"
+							}
+						]
+					},
+					{
+						title: "Resources",
+						items: [
+							{
+								label: "Media",
+								to: "/docs/media"
+							},
+							{
+								label: "Roadmap",
+								to: "/docs/roadmap"
 							}
 						]
 					},
@@ -136,12 +180,16 @@ const config: Config = {
 						title: "More",
 						items: [
 							{
-								label: "Blog",
-								to: "https://blog.iota.org"
+								label: "www.twin.org",
+								href: "https://www.twin.org"
 							},
 							{
-								label: "GitHub",
-								href: "https://github.com/twinfoundation"
+								label: "IOTA",
+								href: "https://www.iota.org/"
+							},
+							{
+								label: "TWIN Schemas",
+								href: "https://schema.twindev.org/"
 							}
 						]
 					}

@@ -36,7 +36,7 @@ The properties to return in the response as a comma separated list, by default r
 
 #### pageSize?
 
-> `optional` **pageSize**: `number`
+> `optional` **pageSize**: `string` \| `number`
 
 The number of entries to return per page.
 

@@ -18,6 +18,6 @@ The headers which can be used to determine the response data type.
 
 ### body
 
-> **body**: [`IDocument`](IDocument.md)
+> **body**: [`IDocumentList`](IDocumentList.md)
 
 The body parameters.

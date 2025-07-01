@@ -30,6 +30,6 @@ The cursor for paged requests.
 
 #### pageSize?
 
-> `optional` **pageSize**: `number`
+> `optional` **pageSize**: `string` \| `number`
 
 Number of items to return.

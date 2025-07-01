@@ -9,9 +9,9 @@ See https://learn.microsoft.com/en-us/azure/storage/common/storage-samples-javas
 
 ## Constructors
 
-### new AzureBlobStorageConnector()
+### Constructor
 
-> **new AzureBlobStorageConnector**(`options`): [`AzureBlobStorageConnector`](AzureBlobStorageConnector.md)
+> **new AzureBlobStorageConnector**(`options`): `AzureBlobStorageConnector`
 
 Create a new instance of AzureBlobStorageConnector.
 
@@ -25,7 +25,7 @@ The options for the connector.
 
 #### Returns
 
-[`AzureBlobStorageConnector`](AzureBlobStorageConnector.md)
+`AzureBlobStorageConnector`
 
 ## Properties
 
@@ -51,7 +51,7 @@ Runtime name for the class.
 
 ### bootstrap()
 
-> **bootstrap**(`nodeLoggingConnectorType`?): `Promise`\<`boolean`\>
+> **bootstrap**(`nodeLoggingConnectorType?`): `Promise`\<`boolean`\>
 
 Bootstrap the component by creating and initializing any resources it needs.
 

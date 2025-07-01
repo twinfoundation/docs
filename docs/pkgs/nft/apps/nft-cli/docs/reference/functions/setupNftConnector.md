@@ -1,6 +1,6 @@
 # Function: setupNftConnector()
 
-> **setupNftConnector**(`options`, `connector`?): `INftConnector`
+> **setupNftConnector**(`options`, `connector?`): `INftConnector`
 
 Setup the NFT connector for use in the CLI commands.
 
@@ -36,7 +36,7 @@ The wallet address index.
 
 ### connector?
 
-[`NftConnectorTypes`](../type-aliases/NftConnectorTypes.md)
+`"iota"`
 
 The connector to use.
 

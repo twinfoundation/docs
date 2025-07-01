@@ -8,7 +8,9 @@ Interface describing an entity storage connector.
 
 ## Type Parameters
 
-• **T** = `unknown`
+### T
+
+`T` = `unknown`
 
 ## Methods
 
@@ -28,7 +30,7 @@ The schema for the entities.
 
 ### set()
 
-> **set**(`entity`, `conditions`?): `Promise`\<`void`\>
+> **set**(`entity`, `conditions?`): `Promise`\<`void`\>
 
 Set an entity.
 
@@ -56,7 +58,7 @@ The id of the entity.
 
 ### get()
 
-> **get**(`id`, `secondaryIndex`?, `conditions`?): `Promise`\<`undefined` \| `T`\>
+> **get**(`id`, `secondaryIndex?`, `conditions?`): `Promise`\<`undefined` \| `T`\>
 
 Get an entity.
 
@@ -90,7 +92,7 @@ The object if it can be found or undefined.
 
 ### remove()
 
-> **remove**(`id`, `conditions`?): `Promise`\<`void`\>
+> **remove**(`id`, `conditions?`): `Promise`\<`void`\>
 
 Remove the entity.
 
@@ -118,7 +120,7 @@ Nothing.
 
 ### query()
 
-> **query**(`conditions`?, `sortProperties`?, `properties`?, `cursor`?, `pageSize`?): `Promise`\<\{ `entities`: `Partial`\<`T`\>[]; `cursor`: `string`; \}\>
+> **query**(`conditions?`, `sortProperties?`, `properties?`, `cursor?`, `pageSize?`): `Promise`\<\{ `entities`: `Partial`\<`T`\>[]; `cursor`: `string`; \}\>
 
 Query all the entities which match the conditions.
 

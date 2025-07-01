@@ -4,13 +4,13 @@ Class defining a telemetry metric.
 
 ## Constructors
 
-### new TelemetryMetric()
+### Constructor
 
-> **new TelemetryMetric**(): [`TelemetryMetric`](TelemetryMetric.md)
+> **new TelemetryMetric**(): `TelemetryMetric`
 
 #### Returns
 
-[`TelemetryMetric`](TelemetryMetric.md)
+`TelemetryMetric`
 
 ## Properties
 

@@ -2,6 +2,10 @@
 
 This is the overview of the packages.
 
+## TWIN Node
+
+- [@twin.org/node-core](pkgs/node/packages/node-core/index.md) - TWIN Node Core for serving APIs using the specified configuration
+
 ## Engine
 
 - [@twin.org/engine-models](pkgs/engine/packages/engine-models/index.md) - Models which define the structure of the engine.
@@ -39,6 +43,7 @@ This is the overview of the packages.
 - [@twin.org/standards-unece](pkgs/standards/packages/standards-unece/index.md) - Models which define the structure of UN/CEFACT Standard
 - [@twin.org/standards-vda](pkgs/standards/packages/standards-vda/index.md) - Models which define the structure of VDA JAIF Standard
 - [@twin.org/standards-gaia-x](pkgs/standards/packages/standards-gaia-x/index.md) - Models which define the structure of Gaia-x
+- [@twin.org/standards-ld-contexts](pkgs/standards/packages/standards-ld-contexts/index.md) - Local copies of standard LD contexts which can be used for offline development
 
 ## Data
 
@@ -104,6 +109,7 @@ This is the overview of the packages.
 
 - [@twin.org/background-task-models](pkgs/background-task/packages/background-task-models/index.md) - Models which define the structure of the background task contracts and connectors
 - [@twin.org/background-task-connector-entity-storage](pkgs/background-task/packages/background-task-connector-entity-storage/index.md) - Background task connector implementation using entity storage
+- [@twin.org/background-task-scheduler](pkgs/background-task/packages/background-task-scheduler/index.md) - Background task scheduler
 
 ## Event Bus
 
@@ -118,17 +124,22 @@ This is the overview of the packages.
 - [@twin.org/vault-connector-entity-storage](pkgs/vault/packages/vault-connector-entity-storage/index.md) - Vault connector implementation using entity storage
 - [@twin.org/vault-connector-hashicorp](pkgs/vault/packages/vault-connector-hashicorp/index.md) - Vault connector implementation using Hashicorp storage
 
+## Rights Management
+
+- [@twin.org/rights-management-models](pkgs/rights-management/packages/rights-management-models/index.md) - Models which define the structure of the rights management connectors and services
+- [@twin.org/rights-management-pap-service](pkgs/rights-management/packages/rights-management-pap-service/index.md) - Policy administration point implementation
+- [@twin.org/rights-management-service](pkgs/rights-management/packages/rights-management-service/index.md) - Rights Management service implementation and REST endpoint definitions
+- [@twin.org/rights-management-rest-client](pkgs/rights-management/packages/rights-management-rest-client/index.md) - Rights management implementation which can connect to REST endpoints
+
 ## Distributed Ledger
 
 - [@twin.org/dlt-iota](pkgs/dlt/packages/dlt-iota/index.md) - DLT helpers for use with IOTA
-- [@twin.org/dlt-iota-stardust](pkgs/dlt/packages/dlt-iota-stardust/index.md) - DLT helpers for use with IOTA Stardust
 
 ## Wallet
 
 - [@twin.org/wallet-models](pkgs/wallet/packages/wallet-models/index.md) - Models which define the structure of the wallet contracts and connectors
 - [@twin.org/wallet-connector-entity-storage](pkgs/wallet/packages/wallet-connector-entity-storage/index.md) - Wallet connector implementation using entity storage
 - [@twin.org/wallet-connector-iota](pkgs/wallet/packages/wallet-connector-iota/index.md) - Wallet connector implementation using IOTA
-- [@twin.org/wallet-connector-iota-stardust](pkgs/wallet/packages/wallet-connector-iota-stardust/index.md) - Wallet connector implementation using IOTA Stardust
 
 ## Identity
 
@@ -137,26 +148,23 @@ This is the overview of the packages.
 - [@twin.org/identity-service](pkgs/identity/packages/identity-service/index.md) - Identity contract implementation and REST endpoint definitions
 - [@twin.org/identity-rest-client](pkgs/identity/packages/identity-rest-client/index.md) - Identity contract implementation which can connect to REST endpoints
 - [@twin.org/identity-connector-iota](pkgs/identity/packages/identity-connector-iota/index.md) - Identity connector implementation using IOTA
-- [@twin.org/identity-connector-iota-stardust](pkgs/identity/packages/identity-connector-iota-stardust/index.md) - Identity connector implementation using IOTA Stardust
 - [@twin.org/identity-connector-universal](pkgs/identity/packages/identity-connector-universal/index.md) - Identity connector implementation using universal resolver
 
 ## NFT
 
 - [@twin.org/nft-models](pkgs/nft/packages/nft-models/index.md) - Contains models and classes for use with NFTs
 - [@twin.org/nft-connector-iota](pkgs/nft/packages/nft-connector-iota/index.md) - Implementation of the NFT connector using Iota
-- [@twin.org/nft-connector-iota-stardust](pkgs/nft/packages/nft-connector-iota-stardust/index.md) - Implementation of the NFT connector using IOTA Stardust
 - [@twin.org/nft-connector-entity-storage](pkgs/nft/packages/nft-connector-entity-storage/index.md) - Implementation of the NFT connector using entity storage
 - [@twin.org/nft-service](pkgs/nft/packages/nft-service/index.md) - NFT contract implementation and REST endpoint definitions
 - [@twin.org/nft-rest-client](pkgs/nft/packages/nft-rest-client/index.md) - NFT contract implementation which can connect to REST endpoints
 
 ## Verifiable Storage
 
-- [@twin.org/verifiable-storage-models](pkgs/immutable-storage/packages/verifiable-storage-models/index.md) - Contains models and classes for use with verifiable storage
-- [@twin.org/verifiable-storage-connector-entity-storage](pkgs/immutable-storage/packages/verifiable-storage-connector-entity-storage/index.md) - Implementation of the Verifiable Storage connector using entity storage
-- [@twin.org/verifiable-storage-connector-iota](pkgs/immutable-storage/packages/verifiable-storage-connector-iota/index.md) - Implementation of the Verifiable Storage connector using IOTA
-- [@twin.org/verifiable-storage-connector-iota-stardust](pkgs/immutable-storage/packages/verifiable-storage-connector-iota-stardust/index.md) - Implementation of the Verifiable Storage connector using IOTA Stardust
-- [@twin.org/verifiable-storage-service](pkgs/immutable-storage/packages/verifiable-storage-service/index.md) - Verifiable Storage contract implementation and REST endpoint definitions
-- [@twin.org/verifiable-storage-rest-client](pkgs/immutable-storage/packages/verifiable-storage-rest-client/index.md) - Verifiable Storage contract implementation which can connect to REST endpoints
+- [@twin.org/verifiable-storage-models](pkgs/verifiable-storage/packages/verifiable-storage-models/index.md) - Contains models and classes for use with verifiable storage
+- [@twin.org/verifiable-storage-connector-entity-storage](pkgs/verifiable-storage/packages/verifiable-storage-connector-entity-storage/index.md) - Implementation of the Verifiable Storage connector using entity storage
+- [@twin.org/verifiable-storage-connector-iota](pkgs/verifiable-storage/packages/verifiable-storage-connector-iota/index.md) - Implementation of the Verifiable Storage connector using IOTA
+- [@twin.org/verifiable-storage-service](pkgs/verifiable-storage/packages/verifiable-storage-service/index.md) - Verifiable Storage contract implementation and REST endpoint definitions
+- [@twin.org/verifiable-storage-rest-client](pkgs/verifiable-storage/packages/verifiable-storage-rest-client/index.md) - Verifiable Storage contract implementation which can connect to REST endpoints
 
 ## Immutable Proof
 
@@ -198,6 +206,12 @@ This is the overview of the packages.
 - [@twin.org/document-management-models](pkgs/document-management/packages/document-management-models/index.md) - Models which define the structure of the document management connectors and services
 - [@twin.org/document-management-service](pkgs/document-management/packages/document-management-service/index.md) - Document management contract implementation and REST endpoint definitions
 - [@twin.org/document-management-rest-client](pkgs/document-management/packages/document-management-rest-client/index.md) - Document management contract implementation which can connect to REST endpoints
+
+## Federated Catalogue
+
+- [@twin.org/federated-catalogue-models](pkgs/federated-catalogue/packages/federated-catalogue-models/index.md) - Models which define the structure of the Federated Catalogue Service
+- [@twin.org/federated-catalogue-service](pkgs/federated-catalogue/packages/federated-catalogue-service/index.md) - Federated Catalogue contract implementation and REST endpoint definitions
+- [@twin.org/federated-catalogue-rest-client](pkgs/federated-catalogue/packages/federated-catalogue-rest-client/index.md) - Federated Catalogue contract implementation which can connect to REST endpoints
 
 ## UI
 

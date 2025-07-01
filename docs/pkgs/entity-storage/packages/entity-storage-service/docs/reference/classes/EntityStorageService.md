@@ -4,7 +4,9 @@ Class for performing entity service operations.
 
 ## Type Parameters
 
-• **T** = `any`
+### T
+
+`T` = `any`
 
 ## Implements
 
@@ -12,9 +14,9 @@ Class for performing entity service operations.
 
 ## Constructors
 
-### new EntityStorageService()
+### Constructor
 
-> **new EntityStorageService**\<`T`\>(`options`): [`EntityStorageService`](EntityStorageService.md)\<`T`\>
+> **new EntityStorageService**\<`T`\>(`options`): `EntityStorageService`\<`T`\>
 
 Create a new instance of EntityStorageService.
 
@@ -28,7 +30,7 @@ The dependencies for the entity storage service.
 
 #### Returns
 
-[`EntityStorageService`](EntityStorageService.md)\<`T`\>
+`EntityStorageService`\<`T`\>
 
 ## Properties
 
@@ -46,7 +48,7 @@ Runtime name for the class.
 
 ### set()
 
-> **set**(`entity`, `userIdentity`?, `nodeIdentity`?): `Promise`\<`void`\>
+> **set**(`entity`, `userIdentity?`, `nodeIdentity?`): `Promise`\<`void`\>
 
 Set an entity.
 
@@ -84,7 +86,7 @@ The id of the entity.
 
 ### get()
 
-> **get**(`id`, `secondaryIndex`?, `userIdentity`?, `nodeIdentity`?): `Promise`\<`undefined` \| `T`\>
+> **get**(`id`, `secondaryIndex?`, `userIdentity?`, `nodeIdentity?`): `Promise`\<`undefined` \| `T`\>
 
 Get an entity.
 
@@ -128,7 +130,7 @@ The object if it can be found or undefined.
 
 ### remove()
 
-> **remove**(`id`, `userIdentity`?, `nodeIdentity`?): `Promise`\<`void`\>
+> **remove**(`id`, `userIdentity?`, `nodeIdentity?`): `Promise`\<`void`\>
 
 Remove the entity.
 
@@ -166,7 +168,7 @@ Nothing.
 
 ### query()
 
-> **query**(`conditions`?, `orderBy`?, `orderByDirection`?, `properties`?, `cursor`?, `pageSize`?, `userIdentity`?, `nodeIdentity`?): `Promise`\<\{ `entities`: `Partial`\<`T`\>[]; `cursor`: `string`; \}\>
+> **query**(`conditions?`, `orderBy?`, `orderByDirection?`, `properties?`, `cursor?`, `pageSize?`, `userIdentity?`, `nodeIdentity?`): `Promise`\<\{ `entities`: `Partial`\<`T`\>[]; `cursor`: `string`; \}\>
 
 Query all the entities which match the conditions.
 

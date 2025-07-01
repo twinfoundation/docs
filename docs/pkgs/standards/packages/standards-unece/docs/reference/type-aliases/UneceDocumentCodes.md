@@ -1,6 +1,6 @@
 # Type Alias: UneceDocumentCodes
 
-> **UneceDocumentCodes**: *typeof* [`UneceDocumentCodes`](../variables/UneceDocumentCodes.md)\[keyof *typeof* [`UneceDocumentCodes`](../variables/UneceDocumentCodes.md)\]
+> **UneceDocumentCodes** = *typeof* [`UneceDocumentCodes`](../variables/UneceDocumentCodes.md)\[keyof *typeof* [`UneceDocumentCodes`](../variables/UneceDocumentCodes.md)\]
 
 A character string denoting the type of a document. [Reference United Nations Code List (UNCL) 1001]
 https://vocabulary.uncefact.org/DocumentCodeList

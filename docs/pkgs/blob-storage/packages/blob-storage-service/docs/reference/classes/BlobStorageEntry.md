@@ -4,13 +4,13 @@ Class representing entry for the blob storage.
 
 ## Constructors
 
-### new BlobStorageEntry()
+### Constructor
 
-> **new BlobStorageEntry**(): [`BlobStorageEntry`](BlobStorageEntry.md)
+> **new BlobStorageEntry**(): `BlobStorageEntry`
 
 #### Returns
 
-[`BlobStorageEntry`](BlobStorageEntry.md)
+`BlobStorageEntry`
 
 ## Properties
 
@@ -75,6 +75,22 @@ The extension.
 > `optional` **metadata**: `IJsonLdNodeObject`
 
 The metadata for the blob as JSON-LD.
+
+***
+
+### isEncrypted
+
+> **isEncrypted**: `boolean`
+
+Is the entry encrypted.
+
+***
+
+### compression?
+
+> `optional` **compression**: `BlobStorageCompressionType`
+
+Is the entry compressed.
 
 ***
 

@@ -8,13 +8,7 @@ Configuration for the blob storage service.
 
 > `optional` **vaultKeyId**: `string`
 
-The name of the vault key to use for encryption if the service has a vault connector configured.
-
-#### Default
-
-```ts
-blob-storage.
-```
+The name of the vault key to use for encryption, if not configured no encryption will happen.
 
 ***
 

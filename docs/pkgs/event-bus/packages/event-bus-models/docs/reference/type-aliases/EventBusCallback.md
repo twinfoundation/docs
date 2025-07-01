@@ -1,12 +1,14 @@
 # Type Alias: EventBusCallback()\<T\>
 
-> **EventBusCallback**\<`T`\>: (`event`) => `Promise`\<`void`\>
+> **EventBusCallback**\<`T`\> = (`event`) => `Promise`\<`void`\>
 
 Interface describing a event bus callback method.
 
 ## Type Parameters
 
-• **T**
+### T
+
+`T`
 
 ## Parameters
 

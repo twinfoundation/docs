@@ -12,9 +12,9 @@ Client for performing blob storage through to REST endpoints.
 
 ## Constructors
 
-### new BlobStorageClient()
+### Constructor
 
-> **new BlobStorageClient**(`config`): [`BlobStorageClient`](BlobStorageClient.md)
+> **new BlobStorageClient**(`config`): `BlobStorageClient`
 
 Create a new instance of BlobStorageClient.
 
@@ -28,7 +28,7 @@ The configuration for the client.
 
 #### Returns
 
-[`BlobStorageClient`](BlobStorageClient.md)
+`BlobStorageClient`
 
 #### Overrides
 
@@ -50,7 +50,7 @@ Runtime name for the class.
 
 ### create()
 
-> **create**(`blob`, `encodingFormat`?, `fileExtension`?, `metadata`?, `namespace`?): `Promise`\<`string`\>
+> **create**(`blob`, `encodingFormat?`, `fileExtension?`, `metadata?`, `options?`): `Promise`\<`string`\>
 
 Create the blob with some metadata.
 
@@ -80,7 +80,23 @@ Extension for the blob, will be detected if left undefined.
 
 Data for the custom metadata as JSON-LD.
 
-##### namespace?
+##### options?
+
+Optional options for the creation of the blob.
+
+###### disableEncryption?
+
+`boolean`
+
+Disables encryption if enabled by default.
+
+###### overrideVaultKeyId?
+
+`string`
+
+Use a different vault key id for encryption, if not provided the default vault key id will be used.
+
+###### namespace?
 
 `string`
 
@@ -100,7 +116,7 @@ The id of the stored blob in urn format.
 
 ### get()
 
-> **get**(`id`, `includeContent`): `Promise`\<`IBlobStorageEntry`\>
+> **get**(`id`, `options?`): `Promise`\<`IBlobStorageEntry`\>
 
 Get the blob and metadata.
 
@@ -112,11 +128,27 @@ Get the blob and metadata.
 
 The id of the blob to get in urn format.
 
-##### includeContent
+##### options?
+
+Optional options for the retrieval of the blob.
+
+###### includeContent?
 
 `boolean`
 
 Include the content, or just get the metadata.
+
+###### decompress?
+
+`boolean`
+
+If the content should be decompressed, if it was compressed when stored, defaults to true.
+
+###### overrideVaultKeyId?
+
+`string`
+
+Use a different vault key id for decryption, if not provided the default vault key id will be used.
 
 #### Returns
 
@@ -136,7 +168,7 @@ Not found error if the blob cannot be found.
 
 ### update()
 
-> **update**(`id`, `encodingFormat`?, `fileExtension`?, `metadata`?): `Promise`\<`void`\>
+> **update**(`id`, `encodingFormat?`, `fileExtension?`, `metadata?`): `Promise`\<`void`\>
 
 Update the blob with metadata.
 
@@ -210,7 +242,7 @@ Nothing.
 
 ### query()
 
-> **query**(`conditions`?, `orderBy`?, `orderByDirection`?, `cursor`?, `pageSize`?): `Promise`\<`IBlobStorageEntryList`\>
+> **query**(`conditions?`, `orderBy?`, `orderByDirection?`, `cursor?`, `pageSize?`): `Promise`\<`IBlobStorageEntryList`\>
 
 Query all the blob storage entries which match the conditions.
 
@@ -261,7 +293,7 @@ and a cursor which can be used to request more entities.
 
 ### createDownloadLink()
 
-> **createDownloadLink**(`id`, `download`?, `filename`?): `string`
+> **createDownloadLink**(`id`, `download?`, `filename?`): `string`
 
 Create a download link for the blob.
 

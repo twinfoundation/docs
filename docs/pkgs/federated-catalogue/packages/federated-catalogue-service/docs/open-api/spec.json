@@ -1,0 +1,3446 @@
+{
+	"openapi": "3.1.0",
+	"info": {
+		"title": "TWIN - Test Endpoints",
+		"description": "REST API for TWIN - Test Endpoints.",
+		"version": "1.0.0",
+		"license": {
+			"name": "Apache 2.0 License",
+			"url": "https://opensource.org/licenses/Apache-2.0"
+		}
+	},
+	"servers": [
+		{
+			"url": "https://localhost"
+		}
+	],
+	"tags": [
+		{
+			"name": "Federated Catalogue",
+			"description": "Endpoints to access a Federated Catalogue."
+		}
+	],
+	"paths": {
+		"/federated-catalogue/participant-credentials": {
+			"post": {
+				"operationId": "compliancePresentationRequest",
+				"summary": "Present a Compliance Credential",
+				"tags": [
+					"Federated Catalogue"
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"requestBody": {
+					"description": "Register a new Compliance Credential.",
+					"required": true,
+					"content": {
+						"application/jwt": {
+							"schema": {
+								"$ref": "#/components/schemas/CompliancePresentationRequest"
+							},
+							"examples": {
+								"compliancePresentationRequestExample": {
+									"value": "ey..."
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"201": {
+						"description": "The rest request ended in created response."
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"422": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnprocessableError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/federated-catalogue/service-offering-credentials": {
+			"post": {
+				"operationId": "serviceOfferingPresentationRequest",
+				"summary": "Present a Service Offering Credential",
+				"tags": [
+					"Federated Catalogue"
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"requestBody": {
+					"description": "Register a new Compliance Credential.",
+					"required": true,
+					"content": {
+						"application/jwt": {
+							"schema": {
+								"$ref": "#/components/schemas/CompliancePresentationRequest"
+							},
+							"examples": {
+								"serviceOfferingPresentationRequestExample": {
+									"value": "ey..."
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"201": {
+						"description": "The rest request ended in created response."
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"422": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnprocessableError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/federated-catalogue/data-resource-credentials": {
+			"post": {
+				"operationId": "dataResourcePresentationRequest",
+				"summary": "Present a Data Resource Credential",
+				"tags": [
+					"Federated Catalogue"
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"requestBody": {
+					"description": "Register a new Compliance Credential.",
+					"required": true,
+					"content": {
+						"application/jwt": {
+							"schema": {
+								"$ref": "#/components/schemas/CompliancePresentationRequest"
+							},
+							"examples": {
+								"dataResourcePresentationRequestExample": {
+									"value": "ey..."
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"201": {
+						"description": "The rest request ended in created response."
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"422": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnprocessableError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/federated-catalogue/data-space-connector-credentials": {
+			"post": {
+				"operationId": "dataSpaceConnectorPresentationRequest",
+				"summary": "Present a Data Space Connector Credential",
+				"tags": [
+					"Federated Catalogue"
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"requestBody": {
+					"description": "Register a new Compliance Credential.",
+					"required": true,
+					"content": {
+						"application/jwt": {
+							"schema": {
+								"$ref": "#/components/schemas/CompliancePresentationRequest"
+							},
+							"examples": {
+								"dataSpaceConnectorPresentationRequestExample": {
+									"value": "ey..."
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"201": {
+						"description": "The rest request ended in created response."
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"422": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnprocessableError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/federated-catalogue/participants": {
+			"get": {
+				"operationId": "federatedCatalogueListParticipants",
+				"summary": "Get a list of the participant entries",
+				"tags": [
+					"Federated Catalogue"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"description": "The participant Id.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"name": "registrationNumber",
+						"description": "The legal registration number.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string"
+						},
+						"example": "abc"
+					},
+					{
+						"name": "lrnType",
+						"description": "The legal registration number type.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"name": "cursor",
+						"description": "The optional cursor to get next chunk.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"name": "pageSize",
+						"description": "The maximum number of entities in a page.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": [
+								"number",
+								"string"
+							]
+						}
+					},
+					{
+						"name": "accept",
+						"in": "header",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple"
+					}
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Response for participant list query",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ParticipantList"
+								},
+								"examples": {
+									"participantListResponseExample": {
+										"value": {
+											"@context": [
+												"https://schema.org",
+												"https://w3id.org/gaia-x/development",
+												"https://schema.twindev.org/federated-catalogue/"
+											],
+											"type": "ItemList",
+											"itemListElement": [
+												{
+													"@context": [
+														"https://schema.org",
+														"https://w3id.org/gaia-x/development",
+														"https://schema.twindev.org/federated-catalogue/"
+													],
+													"id": "did:iota:xxx",
+													"type": "LegalPerson",
+													"registrationNumber": {
+														"type": "LocalRegistrationNumber",
+														"local": "P1234567"
+													},
+													"legalName": "A Inc.",
+													"issuer": "did:iota:zzz",
+													"legalAddress": {
+														"type": "Address",
+														"countryCode": "KE"
+													},
+													"validFrom": "2024-08-01T12:00:00Z",
+													"validUntil": "2025-08-01T12:00:00Z",
+													"dateCreated": "2024-08-02T13:45:00Z",
+													"evidence": [
+														"https://credentials.example.org/1234567"
+													]
+												}
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/federated-catalogue/participants/{id}": {
+			"get": {
+				"operationId": "federatedCatalogueGetParticipant",
+				"summary": "Get a participant",
+				"tags": [
+					"Federated Catalogue"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"description": "The ID of the entry (Participant, Service, etc.) to get.",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "did:iota:123456"
+					},
+					{
+						"name": "accept",
+						"in": "header",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple"
+					}
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Response for a Participant Entry.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ParticipantEntry"
+								},
+								"examples": {
+									"participantGetResponseExample": {
+										"value": {
+											"@context": [
+												"https://schema.org",
+												"https://w3id.org/gaia-x/development",
+												"https://schema.twindev.org/federated-catalogue/"
+											],
+											"id": "did:iota:xxx",
+											"type": "LegalPerson",
+											"registrationNumber": {
+												"type": "LocalRegistrationNumber",
+												"local": "P1234567"
+											},
+											"legalName": "A Inc.",
+											"issuer": "did:iota:zzz",
+											"legalAddress": {
+												"type": "Address",
+												"countryCode": "KE"
+											},
+											"validFrom": "2024-08-01T12:00:00Z",
+											"validUntil": "2025-08-01T12:00:00Z",
+											"dateCreated": "2024-08-02T13:45:00Z",
+											"evidence": [
+												"https://credentials.example.org/1234567"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/federated-catalogue/service-offerings": {
+			"get": {
+				"operationId": "federatedCatalogueListServices",
+				"summary": "Get a list of the service entries",
+				"tags": [
+					"Federated Catalogue"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"description": "The Service Offering Id.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"name": "providedBy",
+						"description": "The service provider.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string"
+						},
+						"example": "did:iota:1234"
+					},
+					{
+						"name": "cursor",
+						"description": "The optional cursor to get next chunk.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"name": "pageSize",
+						"description": "The maximum number of entities in a page.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": [
+								"number",
+								"string"
+							]
+						}
+					},
+					{
+						"name": "accept",
+						"in": "header",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple"
+					}
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Response for Service Offering list",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceOfferingList"
+								},
+								"examples": {
+									"serviceOfferingListResponseExample": {
+										"value": {
+											"@context": [
+												"https://schema.org",
+												"https://w3id.org/gaia-x/development",
+												"https://schema.twindev.org/federated-catalogue/"
+											],
+											"type": "ItemList",
+											"itemListElement": [
+												{
+													"@context": [
+														"https://schema.org",
+														"https://w3id.org/gaia-x/development",
+														"https://schema.twindev.org/federated-catalogue/"
+													],
+													"id": "http://example.org/is123456",
+													"name": "Service 1",
+													"type": "ServiceOffering",
+													"servicePolicy": [
+														{
+															"@context": [
+																"https://www.w3.org/ns/odrl/2/",
+																{
+																	"twin": "https://schema.twindev.org/odrl/",
+																	"jsonPathSelector": "twin:jsonPathSelector"
+																}
+															],
+															"@type": "Agreement",
+															"uid": "http://example.com/policy:1010",
+															"assigner": "did:iota:testnet:0x1a7bded4d22dc54722435d624e4323e10fcbc570cd57462eabbf3a5ab2ced24f",
+															"assignee": "did:iota:testnet:0x119adb64d01d3b0fa0d308c67db90ab1c6e0df6aebe5b7e0250783f57cd10c21",
+															"permission": [
+																{
+																	"target": {
+																		"type": "https://vocabulary.uncefact.org/Document",
+																		"refinement": {
+																			"leftOperand": {
+																				"@id": "https://w3id.org/twin/odrl/propertyValue",
+																				"jsonPathSelector": ".documentTypeCode"
+																			},
+																			"operator": "eq",
+																			"rightOperand": "https://vocabulary.uncefact.org/DocumentCodeList#331"
+																		}
+																	},
+																	"action": "extract"
+																}
+															]
+														}
+													],
+													"endpoint": {
+														"type": "Endpoint",
+														"endpointURL": "https://endpoint.example.org/api"
+													},
+													"issuer": "did:iota:7890",
+													"providedBy": "did:iota:1234567",
+													"validFrom": "2024-08-01T12:00:00Z",
+													"validUntil": "2025-08-01T12:00:00Z",
+													"dateCreated": "2024-08-02T13:45:00Z",
+													"evidence": [
+														"https://credentials.example.org/1234567"
+													]
+												}
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/federated-catalogue/service-offerings/{id}": {
+			"get": {
+				"operationId": "federatedCatalogueGetService",
+				"summary": "Get a Service Offering entry",
+				"tags": [
+					"Federated Catalogue"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"description": "",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "https://my-services.example.org/service1"
+					}
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Service Offering response",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceOfferingEntry"
+								},
+								"examples": {
+									"serviceOfferingGetResponseExample": {
+										"value": {
+											"@context": [
+												"https://schema.org",
+												"https://w3id.org/gaia-x/development",
+												"https://schema.twindev.org/federated-catalogue/"
+											],
+											"id": "http://example.org/is123456",
+											"name": "Service 1",
+											"type": "ServiceOffering",
+											"servicePolicy": [
+												{
+													"@context": [
+														"https://www.w3.org/ns/odrl/2/",
+														{
+															"twin": "https://schema.twindev.org/odrl/",
+															"jsonPathSelector": "twin:jsonPathSelector"
+														}
+													],
+													"@type": "Agreement",
+													"uid": "http://example.com/policy:1010",
+													"assigner": "did:iota:testnet:0x1a7bded4d22dc54722435d624e4323e10fcbc570cd57462eabbf3a5ab2ced24f",
+													"assignee": "did:iota:testnet:0x119adb64d01d3b0fa0d308c67db90ab1c6e0df6aebe5b7e0250783f57cd10c21",
+													"permission": [
+														{
+															"target": {
+																"type": "https://vocabulary.uncefact.org/Document",
+																"refinement": {
+																	"leftOperand": {
+																		"@id": "https://w3id.org/twin/odrl/propertyValue",
+																		"jsonPathSelector": ".documentTypeCode"
+																	},
+																	"operator": "eq",
+																	"rightOperand": "https://vocabulary.uncefact.org/DocumentCodeList#331"
+																}
+															},
+															"action": "extract"
+														}
+													]
+												}
+											],
+											"endpoint": {
+												"type": "Endpoint",
+												"endpointURL": "https://endpoint.example.org/api"
+											},
+											"issuer": "did:iota:7890",
+											"providedBy": "did:iota:1234567",
+											"validFrom": "2024-08-01T12:00:00Z",
+											"validUntil": "2025-08-01T12:00:00Z",
+											"dateCreated": "2024-08-02T13:45:00Z",
+											"evidence": [
+												"https://credentials.example.org/1234567"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/federated-catalogue/data-resources": {
+			"get": {
+				"operationId": "federatedCatalogueListResources",
+				"summary": "Get a list of the data resource entries",
+				"tags": [
+					"Federated Catalogue"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"description": "The Id of the Data Resource.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"name": "producedBy",
+						"description": "The service provider.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string"
+						},
+						"example": "did:iota:1234"
+					},
+					{
+						"name": "cursor",
+						"description": "The optional cursor to get next chunk.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"name": "pageSize",
+						"description": "The maximum number of entities in a page.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": [
+								"number",
+								"string"
+							]
+						}
+					},
+					{
+						"name": "accept",
+						"in": "header",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple"
+					}
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Response fo data resource list.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/DataResourceList"
+								},
+								"examples": {
+									"dataResourceListResponseExample": {
+										"value": {
+											"@context": [
+												"https://schema.org",
+												"https://w3id.org/gaia-x/development",
+												"https://schema.twindev.org/federated-catalogue/"
+											],
+											"type": "ItemList",
+											"itemListElement": [
+												{
+													"@context": [
+														"https://schema.org",
+														"https://w3id.org/gaia-x/development",
+														"https://schema.twindev.org/federated-catalogue/"
+													],
+													"id": "http://example.org/is123456",
+													"name": "Data Resource 1",
+													"type": "DataResource",
+													"copyrightOwnedBy": "did:iota:1234",
+													"license": "http://licenses.example.org/12345",
+													"resourcePolicy": [
+														{
+															"@context": "https://www.w3.org/ns/odrl/2/",
+															"@type": "Offer",
+															"uid": "http://example.com/policy:1010",
+															"assigner": "did:iota:testnet:0x1a7bded4d22dc54722435d624e4323e10fcbc570cd57462eabbf3a5ab2ced24f",
+															"permission": [
+																{
+																	"target": {
+																		"type": "https://vocabulary.uncefact.org/Document"
+																	},
+																	"action": "extract"
+																}
+															]
+														}
+													],
+													"exposedThrough": "https://ds-connectors.example.org/ds1",
+													"producedBy": "did:iota:1234567",
+													"issuer": "did:iota:987654",
+													"validFrom": "2024-08-01T12:00:00Z",
+													"validUntil": "2025-08-01T12:00:00Z",
+													"dateCreated": "2024-08-02T13:45:00Z",
+													"evidence": [
+														"https://credentials.example.org/1234567"
+													]
+												}
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/federated-catalogue/data-resources/{id}": {
+			"get": {
+				"operationId": "federatedCatalogueGetDataResource",
+				"summary": "Get a Data Resource entry",
+				"tags": [
+					"Federated Catalogue"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"description": "",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "https://data-resources.example.org/drs1"
+					}
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Service Offering response",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/DataResourceEntry"
+								},
+								"examples": {
+									"dataResourceGetResponseExample": {
+										"value": {
+											"@context": [
+												"https://schema.org",
+												"https://w3id.org/gaia-x/development",
+												"https://schema.twindev.org/federated-catalogue/"
+											],
+											"id": "http://example.org/is123456",
+											"name": "Data Resource 1",
+											"type": "DataResource",
+											"copyrightOwnedBy": "did:iota:1234",
+											"license": "http://licenses.example.org/12345",
+											"resourcePolicy": [
+												{
+													"@context": "https://www.w3.org/ns/odrl/2/",
+													"@type": "Offer",
+													"uid": "http://example.com/policy:1010",
+													"assigner": "did:iota:testnet:0x1a7bded4d22dc54722435d624e4323e10fcbc570cd57462eabbf3a5ab2ced24f",
+													"permission": [
+														{
+															"target": {
+																"type": "https://vocabulary.uncefact.org/Document"
+															},
+															"action": "extract"
+														}
+													]
+												}
+											],
+											"exposedThrough": "https://ds-connectors.example.org/ds1",
+											"producedBy": "did:iota:1234567",
+											"issuer": "did:iota:987654",
+											"validFrom": "2024-08-01T12:00:00Z",
+											"validUntil": "2025-08-01T12:00:00Z",
+											"dateCreated": "2024-08-02T13:45:00Z",
+											"evidence": [
+												"https://credentials.example.org/1234567"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/federated-catalogue/data-space-connectors": {
+			"get": {
+				"operationId": "federatedCatalogueListDataSpaceConnectors",
+				"summary": "Get a list of the Data Space connectors entries",
+				"tags": [
+					"Federated Catalogue"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"description": "The id of the Data Space Connector.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"name": "maintainedBy",
+						"description": "The maintainer",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string"
+						},
+						"example": "did:iota:1234"
+					},
+					{
+						"name": "cursor",
+						"description": "The optional cursor to get next chunk.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"name": "pageSize",
+						"description": "The maximum number of entities in a page.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": [
+								"number",
+								"string"
+							]
+						}
+					},
+					{
+						"name": "accept",
+						"in": "header",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple"
+					}
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Response for Data Space Connector list",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/DataSpaceConnectorList"
+								},
+								"examples": {
+									"dataSpaceConnectorListResponseExample": {
+										"value": {
+											"@context": [
+												"https://schema.org",
+												"https://w3id.org/gaia-x/development",
+												"https://schema.twindev.org/federated-catalogue/"
+											],
+											"type": "ItemList",
+											"itemListElement": [
+												{
+													"@context": [
+														"https://schema.org",
+														"https://w3id.org/gaia-x/development",
+														"https://schema.twindev.org/federated-catalogue/"
+													],
+													"id": "https://my-ds-connectors.example.org/ds-connector-ABCD",
+													"type": [
+														"DataExchangeComponent",
+														"DataSpaceConnector"
+													],
+													"identity": "did:iota:testnet:123456",
+													"defaultEndpoint": {
+														"type": "Endpoint",
+														"endpointURL": "https://my-twin-node.example.org:9000/twin-ds-connector"
+													},
+													"subscriptionActivityEndpoint": {
+														"type": "Endpoint",
+														"endpointURL": "/subscriptions"
+													},
+													"pushActivityEndpoint": {
+														"type": "Endpoint",
+														"endpointURL": "/notify"
+													},
+													"pullDataEndpoint": {
+														"type": "Endpoint",
+														"endpointURL": "/data"
+													},
+													"maintainer": "did:iota:99999",
+													"offeredResource": [
+														"https://my-data-resource.example.org"
+													],
+													"issuer": "did:iota:987654",
+													"validFrom": "2024-08-01T12:00:00Z",
+													"validUntil": "2025-08-01T12:00:00Z",
+													"dateCreated": "2024-08-02T13:45:00Z",
+													"evidence": [
+														"https://credentials.example.org/1234567"
+													]
+												}
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/federated-catalogue/data-space-connectors/{id}": {
+			"get": {
+				"operationId": "federatedCatalogueGetDataSpaceConnector",
+				"summary": "Get a Data Space Connector entry",
+				"tags": [
+					"Federated Catalogue"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"description": "",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "https://ds-connectors.example.org/ds1"
+					}
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Service Offering response",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/DataSpaceConnectorEntry"
+								},
+								"examples": {
+									"dataSpaceConnectorGetResponseExample": {
+										"value": {
+											"@context": [
+												"https://schema.org",
+												"https://w3id.org/gaia-x/development",
+												"https://schema.twindev.org/federated-catalogue/"
+											],
+											"id": "https://my-ds-connectors.example.org/ds-connector-ABCD",
+											"type": [
+												"DataExchangeComponent",
+												"DataSpaceConnector"
+											],
+											"identity": "did:iota:testnet:123456",
+											"defaultEndpoint": {
+												"type": "Endpoint",
+												"endpointURL": "https://my-twin-node.example.org:9000/twin-ds-connector"
+											},
+											"subscriptionActivityEndpoint": {
+												"type": "Endpoint",
+												"endpointURL": "/subscriptions"
+											},
+											"pushActivityEndpoint": {
+												"type": "Endpoint",
+												"endpointURL": "/notify"
+											},
+											"pullDataEndpoint": {
+												"type": "Endpoint",
+												"endpointURL": "/data"
+											},
+											"maintainer": "did:iota:99999",
+											"offeredResource": [
+												"https://my-data-resource.example.org"
+											],
+											"issuer": "did:iota:987654",
+											"validFrom": "2024-08-01T12:00:00Z",
+											"validUntil": "2025-08-01T12:00:00Z",
+											"dateCreated": "2024-08-02T13:45:00Z",
+											"evidence": [
+												"https://credentials.example.org/1234567"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"components": {
+		"schemas": {
+			"CompliancePresentationRequest": {
+				"type": "string",
+				"description": "The data to be used in the create."
+			},
+			"DataResourceEntry": {
+				"type": "object",
+				"properties": {
+					"producedBy": {
+						"type": "string",
+						"description": "Overwriting producedBy as we only store the identifier"
+					},
+					"copyrightOwnedBy": {
+						"type": "string",
+						"description": "Overwriting copyrightOwnedBy as we only store the identifier"
+					},
+					"exposedThrough": {
+						"type": "string",
+						"description": "Overwriting exposedThrough as we only store the id of the Data Exchange Component"
+					},
+					"resourcePolicy": {
+						"type": "array",
+						"description": "Overwriting to ensure always an array is stored",
+						"prefixItems": [
+							{
+								"$ref": "https://schema.twindev.org/odrl/OdrlPolicy"
+							}
+						]
+					},
+					"issuer": {
+						"type": "string",
+						"description": "The trusted issuer of the compliance credential"
+					},
+					"validFrom": {
+						"type": "string",
+						"description": "Valid from (as per W3C VC Data Model v2)"
+					},
+					"validUntil": {
+						"type": "string",
+						"description": "Valid until (as per W3C VC Data Model v2)"
+					},
+					"dateCreated": {
+						"type": "string",
+						"description": "The creation date."
+					},
+					"evidence": {
+						"type": "array",
+						"description": "The evidences concerning the data resource.",
+						"prefixItems": [
+							{
+								"type": "string"
+							}
+						]
+					},
+					"id": {
+						"type": "string",
+						"description": "Subject Id"
+					},
+					"type": {
+						"type": "string",
+						"const": "DataResource",
+						"description": "Subject type"
+					},
+					"description": {
+						"type": "string",
+						"description": "Description"
+					},
+					"name": {
+						"type": "string",
+						"description": "The Resource Name"
+					},
+					"license": {
+						"type": "string",
+						"description": "Pointer (URL) to the license"
+					},
+					"@id": {
+						"anyOf": [
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+							},
+							{
+								"type": "array",
+								"prefixItems": [
+									{
+										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+									}
+								]
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIndexMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIdMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdTypeMap"
+							}
+						]
+					},
+					"@included": {
+						"anyOf": [
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+							},
+							{
+								"type": "array",
+								"prefixItems": [
+									{
+										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+									}
+								]
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIndexMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIdMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdTypeMap"
+							}
+						]
+					},
+					"@graph": {
+						"anyOf": [
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+							},
+							{
+								"type": "array",
+								"prefixItems": [
+									{
+										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+									}
+								]
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIndexMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIdMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdTypeMap"
+							}
+						]
+					},
+					"@nest": {
+						"anyOf": [
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+							},
+							{
+								"type": "array",
+								"prefixItems": [
+									{
+										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+									}
+								]
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIndexMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIdMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdTypeMap"
+							}
+						]
+					},
+					"@type": {
+						"anyOf": [
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+							},
+							{
+								"type": "array",
+								"prefixItems": [
+									{
+										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+									}
+								]
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIndexMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIdMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdTypeMap"
+							}
+						]
+					},
+					"@reverse": {
+						"anyOf": [
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+							},
+							{
+								"type": "array",
+								"prefixItems": [
+									{
+										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+									}
+								]
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIndexMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIdMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdTypeMap"
+							}
+						]
+					},
+					"@index": {
+						"anyOf": [
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+							},
+							{
+								"type": "array",
+								"prefixItems": [
+									{
+										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+									}
+								]
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIndexMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIdMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdTypeMap"
+							}
+						]
+					}
+				},
+				"required": [
+					"producedBy",
+					"copyrightOwnedBy",
+					"exposedThrough",
+					"resourcePolicy",
+					"issuer",
+					"validFrom",
+					"validUntil",
+					"dateCreated",
+					"evidence",
+					"id",
+					"type",
+					"name",
+					"license",
+					"@id",
+					"@included",
+					"@graph",
+					"@nest",
+					"@type",
+					"@reverse",
+					"@index"
+				],
+				"additionalProperties": false
+			},
+			"DataResourceList": {
+				"type": "object",
+				"properties": {
+					"@context": {
+						"$ref": "#/components/schemas/FederatedCatalogueContextType"
+					},
+					"type": {
+						"type": "string",
+						"const": "ItemList",
+						"description": "The type"
+					},
+					"itemListElement": {
+						"type": "array",
+						"description": "The components of the Collection",
+						"prefixItems": [
+							{
+								"$ref": "#/components/schemas/DataResourceEntry"
+							}
+						]
+					},
+					"nextItem": {
+						"type": "string",
+						"description": "Next item cursor."
+					}
+				},
+				"required": [
+					"@context",
+					"type",
+					"itemListElement"
+				],
+				"additionalProperties": false,
+				"description": "Interface describing a list of Data Resource entries."
+			},
+			"DataSpaceConnectorEntry": {
+				"type": "object",
+				"properties": {
+					"offeredResource": {
+						"type": "array",
+						"description": "Offered resources. Probably in the future this wll be separated in a different entry so that a  Data Space Connector entry does not need to be modified when a new Data Resource is offered.",
+						"prefixItems": [
+							{
+								"type": "string"
+							}
+						]
+					},
+					"id": {
+						"type": "string",
+						"description": "A unique identifier given to this Data Space Connector."
+					},
+					"type": {
+						"type": "array",
+						"minItems": 2,
+						"description": "A Connector is a Data Exchange Component",
+						"prefixItems": [
+							{
+								"type": "string",
+								"const": "DataExchangeComponent"
+							},
+							{
+								"type": "string",
+								"const": "DataSpaceConnector"
+							}
+						],
+						"items": {
+							"type": "string"
+						}
+					},
+					"identity": {
+						"type": "string",
+						"description": "Connector's Identity that allows to know public key of this Connector."
+					},
+					"maintainer": {
+						"type": "string",
+						"description": "Who maintains this Data Space Connector."
+					},
+					"name": {
+						"type": "string",
+						"description": "The name of this Data Space Connector"
+					},
+					"description": {
+						"type": "string",
+						"description": "A description of this Data Space Connector"
+					},
+					"defaultEndpoint": {
+						"$ref": "https://schema.twindev.org/gaia-x/Endpoint"
+					},
+					"subscriptionActivityEndpoint": {
+						"$ref": "https://schema.twindev.org/gaia-x/Endpoint"
+					},
+					"pushActivityEndpoint": {
+						"$ref": "https://schema.twindev.org/gaia-x/Endpoint"
+					},
+					"pullDataEndpoint": {
+						"$ref": "https://schema.twindev.org/gaia-x/Endpoint"
+					},
+					"@id": {
+						"anyOf": [
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+							},
+							{
+								"type": "array",
+								"prefixItems": [
+									{
+										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+									}
+								]
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIndexMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIdMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdTypeMap"
+							}
+						]
+					},
+					"@included": {
+						"anyOf": [
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+							},
+							{
+								"type": "array",
+								"prefixItems": [
+									{
+										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+									}
+								]
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIndexMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIdMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdTypeMap"
+							}
+						]
+					},
+					"@graph": {
+						"anyOf": [
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+							},
+							{
+								"type": "array",
+								"prefixItems": [
+									{
+										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+									}
+								]
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIndexMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIdMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdTypeMap"
+							}
+						]
+					},
+					"@nest": {
+						"anyOf": [
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+							},
+							{
+								"type": "array",
+								"prefixItems": [
+									{
+										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+									}
+								]
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIndexMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIdMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdTypeMap"
+							}
+						]
+					},
+					"@type": {
+						"anyOf": [
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+							},
+							{
+								"type": "array",
+								"prefixItems": [
+									{
+										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+									}
+								]
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIndexMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIdMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdTypeMap"
+							}
+						]
+					},
+					"@reverse": {
+						"anyOf": [
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+							},
+							{
+								"type": "array",
+								"prefixItems": [
+									{
+										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+									}
+								]
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIndexMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIdMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdTypeMap"
+							}
+						]
+					},
+					"@index": {
+						"anyOf": [
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+							},
+							{
+								"type": "array",
+								"prefixItems": [
+									{
+										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+									}
+								]
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIndexMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIdMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdTypeMap"
+							}
+						]
+					},
+					"issuer": {
+						"anyOf": [
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+							},
+							{
+								"type": "array",
+								"prefixItems": [
+									{
+										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+									}
+								]
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIndexMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIdMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdTypeMap"
+							}
+						]
+					},
+					"validFrom": {
+						"anyOf": [
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+							},
+							{
+								"type": "array",
+								"prefixItems": [
+									{
+										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+									}
+								]
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIndexMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIdMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdTypeMap"
+							}
+						]
+					},
+					"validUntil": {
+						"anyOf": [
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+							},
+							{
+								"type": "array",
+								"prefixItems": [
+									{
+										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+									}
+								]
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIndexMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIdMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdTypeMap"
+							}
+						]
+					},
+					"dateCreated": {
+						"anyOf": [
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+							},
+							{
+								"type": "array",
+								"prefixItems": [
+									{
+										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+									}
+								]
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIndexMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIdMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdTypeMap"
+							}
+						]
+					},
+					"evidence": {
+						"anyOf": [
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+							},
+							{
+								"type": "array",
+								"prefixItems": [
+									{
+										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+									}
+								]
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIndexMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIdMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdTypeMap"
+							}
+						]
+					}
+				},
+				"required": [
+					"offeredResource",
+					"id",
+					"type",
+					"identity",
+					"maintainer",
+					"defaultEndpoint",
+					"pushActivityEndpoint",
+					"pullDataEndpoint",
+					"@id",
+					"@included",
+					"@graph",
+					"@nest",
+					"@type",
+					"@reverse",
+					"@index",
+					"issuer",
+					"validFrom",
+					"validUntil",
+					"dateCreated",
+					"evidence"
+				],
+				"additionalProperties": false
+			},
+			"DataSpaceConnectorList": {
+				"type": "object",
+				"properties": {
+					"@context": {
+						"$ref": "#/components/schemas/FederatedCatalogueContextType"
+					},
+					"type": {
+						"type": "string",
+						"const": "ItemList",
+						"description": "The type"
+					},
+					"itemListElement": {
+						"type": "array",
+						"description": "The components of the Collection",
+						"prefixItems": [
+							{
+								"$ref": "#/components/schemas/DataSpaceConnectorEntry"
+							}
+						]
+					},
+					"nextItem": {
+						"type": "string",
+						"description": "Next item cursor."
+					}
+				},
+				"required": [
+					"@context",
+					"type",
+					"itemListElement"
+				],
+				"additionalProperties": false,
+				"description": "Interface describing a list of Data Space Connectors."
+			},
+			"Error": {
+				"type": "object",
+				"properties": {
+					"name": {
+						"type": "string",
+						"description": "The name for the error."
+					},
+					"message": {
+						"type": "string",
+						"description": "The message for the error."
+					},
+					"source": {
+						"type": "string",
+						"description": "The source of the error."
+					},
+					"properties": {
+						"type": "object",
+						"additionalProperties": {},
+						"description": "Any additional information for the error."
+					},
+					"stack": {
+						"type": "string",
+						"description": "The stack trace for the error."
+					},
+					"inner": {
+						"$ref": "#/components/schemas/Error"
+					}
+				},
+				"required": [
+					"name",
+					"message"
+				],
+				"additionalProperties": false,
+				"description": "Model to describe serialized error."
+			},
+			"FederatedCatalogueContextType": {
+				"type": "array",
+				"minItems": 3,
+				"maxItems": 3,
+				"description": "Type that defines the LD Context for the Federated Catalogue entities and entries.",
+				"prefixItems": [
+					{
+						"type": "string",
+						"const": "https://schema.org"
+					},
+					{
+						"type": "string",
+						"const": "https://w3id.org/gaia-x/development"
+					},
+					{
+						"type": "string",
+						"const": "https://schema.twindev.org/federated-catalogue/"
+					}
+				]
+			},
+			"ParticipantEntry": {
+				"type": "object",
+				"properties": {
+					"id": {
+						"type": "string",
+						"description": "The participant Id."
+					},
+					"type": {
+						"type": "string",
+						"const": "LegalPerson",
+						"description": "JSON-LD type."
+					},
+					"registrationNumber": {
+						"$ref": "https://schema.twindev.org/gaia-x/RegistrationNumber"
+					},
+					"legalName": {
+						"type": "string",
+						"description": "The legal name."
+					},
+					"legalAddress": {
+						"$ref": "https://schema.twindev.org/gaia-x/Address"
+					},
+					"@id": {
+						"anyOf": [
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+							},
+							{
+								"type": "array",
+								"prefixItems": [
+									{
+										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+									}
+								]
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIndexMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIdMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdTypeMap"
+							}
+						]
+					},
+					"@included": {
+						"anyOf": [
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+							},
+							{
+								"type": "array",
+								"prefixItems": [
+									{
+										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+									}
+								]
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIndexMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIdMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdTypeMap"
+							}
+						]
+					},
+					"@graph": {
+						"anyOf": [
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+							},
+							{
+								"type": "array",
+								"prefixItems": [
+									{
+										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+									}
+								]
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIndexMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIdMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdTypeMap"
+							}
+						]
+					},
+					"@nest": {
+						"anyOf": [
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+							},
+							{
+								"type": "array",
+								"prefixItems": [
+									{
+										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+									}
+								]
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIndexMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIdMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdTypeMap"
+							}
+						]
+					},
+					"@type": {
+						"anyOf": [
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+							},
+							{
+								"type": "array",
+								"prefixItems": [
+									{
+										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+									}
+								]
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIndexMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIdMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdTypeMap"
+							}
+						]
+					},
+					"@reverse": {
+						"anyOf": [
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+							},
+							{
+								"type": "array",
+								"prefixItems": [
+									{
+										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+									}
+								]
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIndexMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIdMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdTypeMap"
+							}
+						]
+					},
+					"@index": {
+						"anyOf": [
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+							},
+							{
+								"type": "array",
+								"prefixItems": [
+									{
+										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+									}
+								]
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIndexMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIdMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdTypeMap"
+							}
+						]
+					},
+					"issuer": {
+						"anyOf": [
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+							},
+							{
+								"type": "array",
+								"prefixItems": [
+									{
+										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+									}
+								]
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIndexMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIdMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdTypeMap"
+							}
+						]
+					},
+					"validFrom": {
+						"anyOf": [
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+							},
+							{
+								"type": "array",
+								"prefixItems": [
+									{
+										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+									}
+								]
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIndexMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIdMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdTypeMap"
+							}
+						]
+					},
+					"validUntil": {
+						"anyOf": [
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+							},
+							{
+								"type": "array",
+								"prefixItems": [
+									{
+										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+									}
+								]
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIndexMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIdMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdTypeMap"
+							}
+						]
+					},
+					"dateCreated": {
+						"anyOf": [
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+							},
+							{
+								"type": "array",
+								"prefixItems": [
+									{
+										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+									}
+								]
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIndexMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIdMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdTypeMap"
+							}
+						]
+					},
+					"evidence": {
+						"anyOf": [
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+							},
+							{
+								"type": "array",
+								"prefixItems": [
+									{
+										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+									}
+								]
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIndexMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIdMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdTypeMap"
+							}
+						]
+					}
+				},
+				"required": [
+					"id",
+					"type",
+					"registrationNumber",
+					"legalName",
+					"legalAddress",
+					"@id",
+					"@included",
+					"@graph",
+					"@nest",
+					"@type",
+					"@reverse",
+					"@index",
+					"issuer",
+					"validFrom",
+					"validUntil",
+					"dateCreated",
+					"evidence"
+				],
+				"additionalProperties": false
+			},
+			"ParticipantList": {
+				"type": "object",
+				"properties": {
+					"@context": {
+						"$ref": "#/components/schemas/FederatedCatalogueContextType"
+					},
+					"type": {
+						"type": "string",
+						"const": "ItemList",
+						"description": "The type"
+					},
+					"itemListElement": {
+						"type": "array",
+						"description": "The components of the Collection",
+						"prefixItems": [
+							{
+								"$ref": "#/components/schemas/ParticipantEntry"
+							}
+						]
+					},
+					"nextItem": {
+						"type": "string",
+						"description": "Next item cursor."
+					}
+				},
+				"required": [
+					"@context",
+					"type",
+					"itemListElement"
+				],
+				"additionalProperties": false,
+				"description": "Interface describing a participant entry list."
+			},
+			"ServiceOfferingEntry": {
+				"type": "object",
+				"properties": {
+					"providedBy": {
+						"type": "string",
+						"description": "Overwrites providedBy as we only store identifier as string"
+					},
+					"aggregationOfResources": {
+						"type": "array",
+						"description": "Overwrites aggregationOfResources as we only store identifier as string",
+						"prefixItems": [
+							{
+								"type": "string"
+							}
+						]
+					},
+					"servicePolicy": {
+						"type": "array",
+						"description": "The service policy is always stored as an array",
+						"prefixItems": [
+							{
+								"$ref": "https://schema.twindev.org/odrl/OdrlPolicy"
+							}
+						]
+					},
+					"issuer": {
+						"type": "string",
+						"description": "The trusted issuer of the compliance credential"
+					},
+					"validFrom": {
+						"type": "string",
+						"description": "Valid from (as per W3C VC Data Model v2)"
+					},
+					"validUntil": {
+						"type": "string",
+						"description": "Valid until (as per W3C VC Data Model v2)"
+					},
+					"dateCreated": {
+						"type": "string",
+						"description": "The creation date."
+					},
+					"evidence": {
+						"type": "array",
+						"description": "The evidences concerning the data resource.",
+						"prefixItems": [
+							{
+								"type": "string"
+							}
+						]
+					},
+					"id": {
+						"type": "string",
+						"description": "Id"
+					},
+					"type": {
+						"type": "string",
+						"const": "ServiceOffering",
+						"description": "Type"
+					},
+					"description": {
+						"type": "string",
+						"description": "Description"
+					},
+					"name": {
+						"type": "string",
+						"description": "Name"
+					},
+					"endpoint": {
+						"$ref": "https://schema.twindev.org/gaia-x/Endpoint"
+					},
+					"@id": {
+						"anyOf": [
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+							},
+							{
+								"type": "array",
+								"prefixItems": [
+									{
+										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+									}
+								]
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIndexMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIdMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdTypeMap"
+							}
+						]
+					},
+					"@included": {
+						"anyOf": [
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+							},
+							{
+								"type": "array",
+								"prefixItems": [
+									{
+										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+									}
+								]
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIndexMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIdMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdTypeMap"
+							}
+						]
+					},
+					"@graph": {
+						"anyOf": [
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+							},
+							{
+								"type": "array",
+								"prefixItems": [
+									{
+										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+									}
+								]
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIndexMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIdMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdTypeMap"
+							}
+						]
+					},
+					"@nest": {
+						"anyOf": [
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+							},
+							{
+								"type": "array",
+								"prefixItems": [
+									{
+										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+									}
+								]
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIndexMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIdMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdTypeMap"
+							}
+						]
+					},
+					"@type": {
+						"anyOf": [
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+							},
+							{
+								"type": "array",
+								"prefixItems": [
+									{
+										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+									}
+								]
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIndexMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIdMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdTypeMap"
+							}
+						]
+					},
+					"@reverse": {
+						"anyOf": [
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+							},
+							{
+								"type": "array",
+								"prefixItems": [
+									{
+										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+									}
+								]
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIndexMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIdMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdTypeMap"
+							}
+						]
+					},
+					"@index": {
+						"anyOf": [
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+							},
+							{
+								"type": "array",
+								"prefixItems": [
+									{
+										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+									}
+								]
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIndexMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdIdMap"
+							},
+							{
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdTypeMap"
+							}
+						]
+					}
+				},
+				"required": [
+					"providedBy",
+					"servicePolicy",
+					"issuer",
+					"validFrom",
+					"validUntil",
+					"dateCreated",
+					"evidence",
+					"id",
+					"type",
+					"name",
+					"endpoint",
+					"@id",
+					"@included",
+					"@graph",
+					"@nest",
+					"@type",
+					"@reverse",
+					"@index"
+				],
+				"additionalProperties": false
+			},
+			"ServiceOfferingList": {
+				"type": "object",
+				"properties": {
+					"@context": {
+						"$ref": "#/components/schemas/FederatedCatalogueContextType"
+					},
+					"type": {
+						"type": "string",
+						"const": "ItemList",
+						"description": "The type"
+					},
+					"itemListElement": {
+						"type": "array",
+						"description": "The components of the Collection",
+						"prefixItems": [
+							{
+								"$ref": "#/components/schemas/ServiceOfferingEntry"
+							}
+						]
+					},
+					"nextItem": {
+						"type": "string",
+						"description": "Next item cursor."
+					}
+				},
+				"required": [
+					"@context",
+					"type",
+					"itemListElement"
+				],
+				"additionalProperties": false,
+				"description": "Interface describing a list of Service Offering Entries."
+			}
+		},
+		"securitySchemes": {
+			"jwtBearerAuthScheme": {
+				"type": "http",
+				"scheme": "bearer",
+				"bearerFormat": "JWT"
+			}
+		}
+	}
+}

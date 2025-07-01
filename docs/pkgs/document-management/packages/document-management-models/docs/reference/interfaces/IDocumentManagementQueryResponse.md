@@ -18,6 +18,6 @@ The headers which can be used to determine the response data type.
 
 ### body
 
-> **body**: [`IDocumentList`](IDocumentList.md)
+> **body**: `IAuditableItemGraphVertexList`
 
 The body parameters.

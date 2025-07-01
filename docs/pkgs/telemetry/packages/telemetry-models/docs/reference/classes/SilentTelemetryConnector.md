@@ -8,13 +8,13 @@ Class for performing telemetry operations to nowhere.
 
 ## Constructors
 
-### new SilentTelemetryConnector()
+### Constructor
 
-> **new SilentTelemetryConnector**(): [`SilentTelemetryConnector`](SilentTelemetryConnector.md)
+> **new SilentTelemetryConnector**(): `SilentTelemetryConnector`
 
 #### Returns
 
-[`SilentTelemetryConnector`](SilentTelemetryConnector.md)
+`SilentTelemetryConnector`
 
 ## Properties
 
@@ -110,7 +110,7 @@ Nothing.
 
 ### addMetricValue()
 
-> **addMetricValue**(`id`, `value`, `customData`?): `Promise`\<`string`\>
+> **addMetricValue**(`id`, `value`, `customData?`): `Promise`\<`string`\>
 
 Update metric value.
 
@@ -172,7 +172,7 @@ Nothing.
 
 ### query()
 
-> **query**(`type`?, `cursor`?, `pageSize`?): `Promise`\<\{ `entities`: [`ITelemetryMetric`](../interfaces/ITelemetryMetric.md)[]; `cursor`: `string`; \}\>
+> **query**(`type?`, `cursor?`, `pageSize?`): `Promise`\<\{ `entities`: [`ITelemetryMetric`](../interfaces/ITelemetryMetric.md)[]; `cursor?`: `string`; \}\>
 
 Query the metrics.
 
@@ -198,7 +198,7 @@ The maximum number of entities in a page.
 
 #### Returns
 
-`Promise`\<\{ `entities`: [`ITelemetryMetric`](../interfaces/ITelemetryMetric.md)[]; `cursor`: `string`; \}\>
+`Promise`\<\{ `entities`: [`ITelemetryMetric`](../interfaces/ITelemetryMetric.md)[]; `cursor?`: `string`; \}\>
 
 All the entities for the storage matching the conditions,
 and a cursor which can be used to request more entities.
@@ -215,7 +215,7 @@ NotImplementedError if the implementation does not support retrieval.
 
 ### queryValues()
 
-> **queryValues**(`id`, `timeStart`?, `timeEnd`?, `cursor`?, `pageSize`?): `Promise`\<\{ `metric`: [`ITelemetryMetric`](../interfaces/ITelemetryMetric.md); `entities`: [`ITelemetryMetricValue`](../interfaces/ITelemetryMetricValue.md)[]; `cursor`: `string`; \}\>
+> **queryValues**(`id`, `timeStart?`, `timeEnd?`, `cursor?`, `pageSize?`): `Promise`\<\{ `metric`: [`ITelemetryMetric`](../interfaces/ITelemetryMetric.md); `entities`: [`ITelemetryMetricValue`](../interfaces/ITelemetryMetricValue.md)[]; `cursor?`: `string`; \}\>
 
 Query the metric values.
 
@@ -253,7 +253,7 @@ The maximum number of entities in a page.
 
 #### Returns
 
-`Promise`\<\{ `metric`: [`ITelemetryMetric`](../interfaces/ITelemetryMetric.md); `entities`: [`ITelemetryMetricValue`](../interfaces/ITelemetryMetricValue.md)[]; `cursor`: `string`; \}\>
+`Promise`\<\{ `metric`: [`ITelemetryMetric`](../interfaces/ITelemetryMetric.md); `entities`: [`ITelemetryMetricValue`](../interfaces/ITelemetryMetricValue.md)[]; `cursor?`: `string`; \}\>
 
 All the entities for the storage matching the conditions,
 and a cursor which can be used to request more entities.

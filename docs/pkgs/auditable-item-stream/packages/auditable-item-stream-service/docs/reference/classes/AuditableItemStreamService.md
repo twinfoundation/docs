@@ -8,9 +8,9 @@ Class for performing auditable item stream operations.
 
 ## Constructors
 
-### new AuditableItemStreamService()
+### Constructor
 
-> **new AuditableItemStreamService**(`options`?): [`AuditableItemStreamService`](AuditableItemStreamService.md)
+> **new AuditableItemStreamService**(`options?`): `AuditableItemStreamService`
 
 Create a new instance of AuditableItemStreamService.
 
@@ -24,7 +24,7 @@ The dependencies for the auditable item stream connector.
 
 #### Returns
 
-[`AuditableItemStreamService`](AuditableItemStreamService.md)
+`AuditableItemStreamService`
 
 ## Properties
 
@@ -50,7 +50,7 @@ Runtime name for the class.
 
 ### create()
 
-> **create**(`stream`, `options`?, `userIdentity`?, `nodeIdentity`?): `Promise`\<`string`\>
+> **create**(`stream`, `options?`, `userIdentity?`, `nodeIdentity?`): `Promise`\<`string`\>
 
 Create a new stream.
 
@@ -109,7 +109,7 @@ The id of the new stream item.
 
 ### get()
 
-> **get**(`id`, `options`?): `Promise`\<`IAuditableItemStream`\>
+> **get**(`id`, `options?`): `Promise`\<`IAuditableItemStream`\>
 
 Get a stream header without the entries.
 
@@ -167,7 +167,7 @@ NotFoundError if the stream is not found
 
 ### update()
 
-> **update**(`stream`, `userIdentity`?, `nodeIdentity`?): `Promise`\<`void`\>
+> **update**(`stream`, `userIdentity?`, `nodeIdentity?`): `Promise`\<`void`\>
 
 Update a stream.
 
@@ -215,7 +215,7 @@ Nothing.
 
 ### remove()
 
-> **remove**(`id`, `userIdentity`?, `nodeIdentity`?): `Promise`\<`void`\>
+> **remove**(`id`, `userIdentity?`, `nodeIdentity?`): `Promise`\<`void`\>
 
 Delete the stream.
 
@@ -253,7 +253,7 @@ Nothing.
 
 ### query()
 
-> **query**(`conditions`?, `orderBy`?, `orderByDirection`?, `properties`?, `cursor`?, `pageSize`?): `Promise`\<`IAuditableItemStreamList`\>
+> **query**(`conditions?`, `orderBy?`, `orderByDirection?`, `properties?`, `cursor?`, `pageSize?`): `Promise`\<`IAuditableItemStreamList`\>
 
 Query all the streams, will not return entries.
 
@@ -309,7 +309,7 @@ The entities, which can be partial if a limited keys list was provided.
 
 ### createEntry()
 
-> **createEntry**(`streamId`, `entryObject`, `userIdentity`?, `nodeIdentity`?): `Promise`\<`string`\>
+> **createEntry**(`streamId`, `entryObject`, `userIdentity?`, `nodeIdentity?`): `Promise`\<`string`\>
 
 Create an entry in the stream.
 
@@ -353,7 +353,7 @@ The id of the created entry, if not provided.
 
 ### getEntry()
 
-> **getEntry**(`streamId`, `entryId`, `options`?): `Promise`\<`IAuditableItemStreamEntry`\>
+> **getEntry**(`streamId`, `entryId`, `options?`): `Promise`\<`IAuditableItemStreamEntry`\>
 
 Get the entry from the stream.
 
@@ -435,7 +435,7 @@ NotFoundError if the stream is not found.
 
 ### updateEntry()
 
-> **updateEntry**(`streamId`, `entryId`, `entryObject`, `userIdentity`?, `nodeIdentity`?): `Promise`\<`void`\>
+> **updateEntry**(`streamId`, `entryId`, `entryObject`, `userIdentity?`, `nodeIdentity?`): `Promise`\<`void`\>
 
 Update an entry in the stream.
 
@@ -485,7 +485,7 @@ Nothing.
 
 ### removeEntry()
 
-> **removeEntry**(`streamId`, `entryId`, `userIdentity`?, `nodeIdentity`?): `Promise`\<`void`\>
+> **removeEntry**(`streamId`, `entryId`, `userIdentity?`, `nodeIdentity?`): `Promise`\<`void`\>
 
 Delete from the stream.
 
@@ -529,7 +529,7 @@ Nothing.
 
 ### getEntries()
 
-> **getEntries**(`streamId`, `options`?): `Promise`\<`IAuditableItemStreamEntryList`\>
+> **getEntries**(`streamId`, `options?`): `Promise`\<`IAuditableItemStreamEntryList`\>
 
 Get the entries for the stream.
 
@@ -599,7 +599,7 @@ NotFoundError if the stream is not found.
 
 ### getEntryObjects()
 
-> **getEntryObjects**(`streamId`, `options`?): `Promise`\<`IAuditableItemStreamEntryObjectList`\>
+> **getEntryObjects**(`streamId`, `options?`): `Promise`\<`IAuditableItemStreamEntryObjectList`\>
 
 Get the entry objects for the stream.
 
@@ -663,7 +663,7 @@ NotFoundError if the stream is not found.
 
 ### removeVerifiable()
 
-> **removeVerifiable**(`streamId`, `nodeIdentity`?): `Promise`\<`void`\>
+> **removeVerifiable**(`streamId`, `nodeIdentity?`): `Promise`\<`void`\>
 
 Remove the verifiable storage for the stream and entries.
 

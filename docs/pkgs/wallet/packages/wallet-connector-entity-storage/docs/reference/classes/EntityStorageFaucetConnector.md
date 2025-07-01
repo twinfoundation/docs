@@ -8,9 +8,9 @@ Class for performing faucet operations using entity storage.
 
 ## Constructors
 
-### new EntityStorageFaucetConnector()
+### Constructor
 
-> **new EntityStorageFaucetConnector**(`options`?): [`EntityStorageFaucetConnector`](EntityStorageFaucetConnector.md)
+> **new EntityStorageFaucetConnector**(`options?`): `EntityStorageFaucetConnector`
 
 Create a new instance of EntityStorageFaucetConnector.
 
@@ -24,7 +24,7 @@ The options for the wallet connector.
 
 #### Returns
 
-[`EntityStorageFaucetConnector`](EntityStorageFaucetConnector.md)
+`EntityStorageFaucetConnector`
 
 ## Properties
 

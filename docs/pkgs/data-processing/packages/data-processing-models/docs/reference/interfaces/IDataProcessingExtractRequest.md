@@ -27,3 +27,9 @@ The binary data to extract from in base64.
 > `optional` **overrideExtractorType**: `string`
 
 The default extractor connector will be used if not specified.
+
+#### overrideMimeType?
+
+> `optional` **overrideMimeType**: `string`
+
+An optional override for the mime type for conversion, will auto detect if not provided.

@@ -73,3 +73,40 @@ The maximum range to scan for addresses.
 ```ts
 1000
 ```
+
+***
+
+### inclusionTimeoutSeconds?
+
+> `optional` **inclusionTimeoutSeconds**: `number`
+
+The length of time to wait for the inclusion of a transaction in seconds.
+
+#### Default
+
+```ts
+60
+```
+
+***
+
+### gasStation?
+
+> `optional` **gasStation**: [`IGasStationConfig`](IGasStationConfig.md)
+
+Gas station configuration for sponsored transactions.
+If provided, transactions will be processed through the gas station.
+
+***
+
+### gasBudget?
+
+> `optional` **gasBudget**: `number`
+
+The default gas budget for all transactions (including sponsored and direct).
+
+#### Default
+
+```ts
+50000000
+```

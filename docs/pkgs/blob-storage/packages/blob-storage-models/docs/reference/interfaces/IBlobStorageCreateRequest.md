@@ -34,6 +34,36 @@ The extension of the blob, will be detected if left undefined.
 
 Custom metadata to associate with the blob as JSON-LD.
 
+#### disableEncryption?
+
+> `optional` **disableEncryption**: `boolean`
+
+Disables encryption if enabled by default.
+
+##### Default
+
+```ts
+false
+```
+
+#### compress?
+
+> `optional` **compress**: [`BlobStorageCompressionType`](../type-aliases/BlobStorageCompressionType.md)
+
+Optional compression type to use for the blob, defaults to no compression.
+
+#### overrideVaultKeyId?
+
+> `optional` **overrideVaultKeyId**: `string`
+
+Use a different vault key id for encryption, if not provided the default vault key id will be used.
+
+##### Default
+
+```ts
+undefined
+```
+
 #### namespace?
 
 > `optional` **namespace**: `string`

@@ -23,3 +23,9 @@ Use the JSON Schema methods of the data type.
 > `readonly` **Either**: `"either"` = `"either"`
 
 Use either validation mode.
+
+### Both
+
+> `readonly` **Both**: `"both"` = `"both"`
+
+Use both validation modes.

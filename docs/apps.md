@@ -2,10 +2,14 @@
 
 This is the overview of the applications.
 
-## Workbench
+## TWIN Node
 
-- [@twin.org/workbench-server](pkgs/workbench/apps/workbench-server/index.md) - Serve APIs using the specified configuration
-- [@twin.org/workbench-ui](pkgs/workbench/apps/workbench-ui/index.md) - UI to demonstrate the APIs
+- [@twin.org/node](pkgs/node/apps/node/index.md) - TWIN Node serving APIs using the specified configuration
+
+## Playground
+
+- [@twin.org/playground-node](pkgs/playground/apps/playground-node/index.md) - Serve APIs using the specified configuration
+- [@twin.org/playground-ui](pkgs/playground/apps/playground-ui/index.md) - UI to demonstrate the APIs
 
 ## Tools
 

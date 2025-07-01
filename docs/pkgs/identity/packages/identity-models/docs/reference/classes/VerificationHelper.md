@@ -4,13 +4,13 @@ Helper methods for verification.
 
 ## Constructors
 
-### new VerificationHelper()
+### Constructor
 
-> **new VerificationHelper**(): [`VerificationHelper`](VerificationHelper.md)
+> **new VerificationHelper**(): `VerificationHelper`
 
 #### Returns
 
-[`VerificationHelper`](VerificationHelper.md)
+`VerificationHelper`
 
 ## Properties
 
@@ -30,9 +30,13 @@ Verified the JWT.
 
 #### Type Parameters
 
-• **T** *extends* `IJwtHeader`
+##### T
 
-• **U** *extends* `IJwtPayload`
+`T` *extends* `IJwtHeader`
+
+##### U
+
+`U` *extends* `IJwtPayload`
 
 #### Parameters
 

@@ -36,7 +36,7 @@ The new holder address of the attestation.
 
 #### connector?
 
-[`AttestationConnectorTypes`](../type-aliases/AttestationConnectorTypes.md)
+`"iota"`
 
 The connector to perform the operations with.
 

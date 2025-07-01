@@ -10,7 +10,7 @@ Interface describing an blob storage component.
 
 ### create()
 
-> **create**(`blob`, `encodingFormat`?, `fileExtension`?, `metadata`?, `namespace`?, `userIdentity`?, `nodeIdentity`?): `Promise`\<`string`\>
+> **create**(`blob`, `encodingFormat?`, `fileExtension?`, `metadata?`, `options?`, `userIdentity?`, `nodeIdentity?`): `Promise`\<`string`\>
 
 Create the blob with some metadata.
 
@@ -40,7 +40,29 @@ Extension for the blob, will be detected if left undefined.
 
 Data for the custom metadata as JSON-LD.
 
-##### namespace?
+##### options?
+
+Optional options for the creation of the blob.
+
+###### disableEncryption?
+
+`boolean`
+
+Disables encryption if enabled by default.
+
+###### overrideVaultKeyId?
+
+`string`
+
+Use a different vault key id for encryption, if not provided the default vault key id will be used.
+
+###### compress?
+
+[`BlobStorageCompressionType`](../type-aliases/BlobStorageCompressionType.md)
+
+Optional compression type to use for the blob, defaults to no compression.
+
+###### namespace?
 
 `string`
 
@@ -68,7 +90,7 @@ The id of the stored blob in urn format.
 
 ### get()
 
-> **get**(`id`, `includeContent`, `userIdentity`?, `nodeIdentity`?): `Promise`\<[`IBlobStorageEntry`](IBlobStorageEntry.md)\>
+> **get**(`id`, `options?`, `userIdentity?`, `nodeIdentity?`): `Promise`\<[`IBlobStorageEntry`](IBlobStorageEntry.md)\>
 
 Get the blob and metadata.
 
@@ -80,11 +102,27 @@ Get the blob and metadata.
 
 The id of the blob to get in urn format.
 
-##### includeContent
+##### options?
+
+Optional options for the retrieval of the blob.
+
+###### includeContent?
 
 `boolean`
 
 Include the content, or just get the metadata.
+
+###### decompress?
+
+`boolean`
+
+If the content should be decompressed, if it was compressed when stored, defaults to true.
+
+###### overrideVaultKeyId?
+
+`string`
+
+Use a different vault key id for decryption, if not provided the default vault key id will be used.
 
 ##### userIdentity?
 
@@ -112,7 +150,7 @@ Not found error if the blob cannot be found.
 
 ### update()
 
-> **update**(`id`, `encodingFormat`?, `fileExtension`?, `metadata`?, `userIdentity`?, `nodeIdentity`?): `Promise`\<`void`\>
+> **update**(`id`, `encodingFormat?`, `fileExtension?`, `metadata?`, `userIdentity?`, `nodeIdentity?`): `Promise`\<`void`\>
 
 Update the blob with metadata.
 
@@ -168,7 +206,7 @@ Not found error if the blob cannot be found.
 
 ### remove()
 
-> **remove**(`id`, `userIdentity`?, `nodeIdentity`?): `Promise`\<`void`\>
+> **remove**(`id`, `userIdentity?`, `nodeIdentity?`): `Promise`\<`void`\>
 
 Remove the blob.
 
@@ -206,7 +244,7 @@ Not found error if the blob cannot be found.
 
 ### query()
 
-> **query**(`conditions`?, `orderBy`?, `orderByDirection`?, `cursor`?, `pageSize`?, `userIdentity`?, `nodeIdentity`?): `Promise`\<[`IBlobStorageEntryList`](IBlobStorageEntryList.md)\>
+> **query**(`conditions?`, `orderBy?`, `orderByDirection?`, `cursor?`, `pageSize?`, `userIdentity?`, `nodeIdentity?`): `Promise`\<[`IBlobStorageEntryList`](IBlobStorageEntryList.md)\>
 
 Query all the blob storage entries which match the conditions.
 

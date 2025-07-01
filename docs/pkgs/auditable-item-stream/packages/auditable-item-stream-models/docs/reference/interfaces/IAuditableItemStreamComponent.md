@@ -1,6 +1,6 @@
 # Interface: IAuditableItemStreamComponent
 
-Interface describing an auditable item stream contract.
+Interface describing an auditable item stream component.
 
 ## Extends
 
@@ -10,7 +10,7 @@ Interface describing an auditable item stream contract.
 
 ### create()
 
-> **create**(`stream`, `options`?, `userIdentity`?, `nodeIdentity`?): `Promise`\<`string`\>
+> **create**(`stream`, `options?`, `userIdentity?`, `nodeIdentity?`): `Promise`\<`string`\>
 
 Create a new stream.
 
@@ -65,7 +65,7 @@ The id of the new stream item.
 
 ### update()
 
-> **update**(`stream`, `userIdentity`?, `nodeIdentity`?): `Promise`\<`void`\>
+> **update**(`stream`, `userIdentity?`, `nodeIdentity?`): `Promise`\<`void`\>
 
 Update a stream.
 
@@ -109,7 +109,7 @@ Nothing.
 
 ### get()
 
-> **get**(`id`, `options`?): `Promise`\<[`IAuditableItemStream`](IAuditableItemStream.md)\>
+> **get**(`id`, `options?`): `Promise`\<[`IAuditableItemStream`](IAuditableItemStream.md)\>
 
 Get a stream header without the entries.
 
@@ -163,7 +163,7 @@ NotFoundError if the stream is not found.
 
 ### remove()
 
-> **remove**(`id`, `userIdentity`?, `nodeIdentity`?): `Promise`\<`void`\>
+> **remove**(`id`, `userIdentity?`, `nodeIdentity?`): `Promise`\<`void`\>
 
 Delete the stream.
 
@@ -197,7 +197,7 @@ Nothing.
 
 ### query()
 
-> **query**(`conditions`?, `orderBy`?, `orderByDirection`?, `properties`?, `cursor`?, `pageSize`?): `Promise`\<[`IAuditableItemStreamList`](IAuditableItemStreamList.md)\>
+> **query**(`conditions?`, `orderBy?`, `orderByDirection?`, `properties?`, `cursor?`, `pageSize?`): `Promise`\<[`IAuditableItemStreamList`](IAuditableItemStreamList.md)\>
 
 Query all the streams, will not return entries.
 
@@ -249,7 +249,7 @@ The entities, which can be partial if a limited keys list was provided.
 
 ### createEntry()
 
-> **createEntry**(`streamId`, `entryObject`, `userIdentity`?, `nodeIdentity`?): `Promise`\<`string`\>
+> **createEntry**(`streamId`, `entryObject`, `userIdentity?`, `nodeIdentity?`): `Promise`\<`string`\>
 
 Create an entry in the stream.
 
@@ -289,7 +289,7 @@ The id of the created entry, if not provided.
 
 ### getEntry()
 
-> **getEntry**(`streamId`, `entryId`, `options`?): `Promise`\<[`IAuditableItemStreamEntry`](IAuditableItemStreamEntry.md)\>
+> **getEntry**(`streamId`, `entryId`, `options?`): `Promise`\<[`IAuditableItemStreamEntry`](IAuditableItemStreamEntry.md)\>
 
 Get the entry from the stream.
 
@@ -363,7 +363,7 @@ NotFoundError if the stream is not found.
 
 ### updateEntry()
 
-> **updateEntry**(`streamId`, `entryId`, `entryObject`, `userIdentity`?, `nodeIdentity`?): `Promise`\<`void`\>
+> **updateEntry**(`streamId`, `entryId`, `entryObject`, `userIdentity?`, `nodeIdentity?`): `Promise`\<`void`\>
 
 Update an entry in the stream.
 
@@ -409,7 +409,7 @@ Nothing.
 
 ### removeEntry()
 
-> **removeEntry**(`streamId`, `entryId`, `userIdentity`?, `nodeIdentity`?): `Promise`\<`void`\>
+> **removeEntry**(`streamId`, `entryId`, `userIdentity?`, `nodeIdentity?`): `Promise`\<`void`\>
 
 Remove from the stream.
 
@@ -449,7 +449,7 @@ Nothing.
 
 ### getEntries()
 
-> **getEntries**(`streamId`, `options`?): `Promise`\<[`IAuditableItemStreamEntryList`](IAuditableItemStreamEntryList.md)\>
+> **getEntries**(`streamId`, `options?`): `Promise`\<[`IAuditableItemStreamEntryList`](IAuditableItemStreamEntryList.md)\>
 
 Get the entries for the stream.
 
@@ -483,12 +483,6 @@ Whether to include deleted entries, defaults to false.
 
 Should the entries be verified, defaults to false.
 
-###### entryObjects?
-
-`boolean`
-
-Return just the embedded entry objects, defaults to false.
-
 ###### pageSize?
 
 `number`
@@ -521,7 +515,7 @@ NotFoundError if the stream is not found.
 
 ### getEntryObjects()
 
-> **getEntryObjects**(`streamId`, `options`?): `Promise`\<[`IAuditableItemStreamEntryObjectList`](IAuditableItemStreamEntryObjectList.md)\>
+> **getEntryObjects**(`streamId`, `options?`): `Promise`\<[`IAuditableItemStreamEntryObjectList`](IAuditableItemStreamEntryObjectList.md)\>
 
 Get the entry objects for the stream.
 
@@ -581,7 +575,7 @@ NotFoundError if the stream is not found.
 
 ### removeVerifiable()
 
-> **removeVerifiable**(`streamId`, `nodeIdentity`?): `Promise`\<`void`\>
+> **removeVerifiable**(`streamId`, `nodeIdentity?`): `Promise`\<`void`\>
 
 Remove the verifiable storage for the stream and entries.
 

@@ -22,7 +22,7 @@ JSON-LD Type.
 
 ### patchOperation
 
-> **patchOperation**: `"replace"` \| `"add"` \| `"remove"` \| `"copy"` \| `"move"` \| `"test"`
+> **patchOperation**: `"add"` \| `"remove"` \| `"replace"` \| `"move"` \| `"copy"` \| `"test"`
 
 The operation that was performed on the item.
 

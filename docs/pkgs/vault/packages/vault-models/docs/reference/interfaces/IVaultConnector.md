@@ -38,7 +38,7 @@ The public key for the key pair.
 
 ### addKey()
 
-> **addKey**(`name`, `type`, `privateKey`, `publicKey`?): `Promise`\<`void`\>
+> **addKey**(`name`, `type`, `privateKey`, `publicKey?`): `Promise`\<`void`\>
 
 Add an existing key to the vault.
 
@@ -78,7 +78,7 @@ Nothing.
 
 ### getKey()
 
-> **getKey**(`name`): `Promise`\<\{ `type`: [`VaultKeyType`](../type-aliases/VaultKeyType.md); `privateKey`: `Uint8Array`; `publicKey`: `Uint8Array`\<`ArrayBufferLike`\>; \}\>
+> **getKey**(`name`): `Promise`\<\{ `type`: [`VaultKeyType`](../type-aliases/VaultKeyType.md); `privateKey`: `Uint8Array`; `publicKey?`: `Uint8Array`\<`ArrayBufferLike`\>; \}\>
 
 Get a key from the vault.
 
@@ -92,7 +92,7 @@ The name of the key to get from the vault.
 
 #### Returns
 
-`Promise`\<\{ `type`: [`VaultKeyType`](../type-aliases/VaultKeyType.md); `privateKey`: `Uint8Array`; `publicKey`: `Uint8Array`\<`ArrayBufferLike`\>; \}\>
+`Promise`\<\{ `type`: [`VaultKeyType`](../type-aliases/VaultKeyType.md); `privateKey`: `Uint8Array`; `publicKey?`: `Uint8Array`\<`ArrayBufferLike`\>; \}\>
 
 The key, publicKey can be undefined if key is symmetric.
 
@@ -286,7 +286,9 @@ Store a secret in the vault.
 
 #### Type Parameters
 
-• **T**
+##### T
+
+`T`
 
 #### Parameters
 
@@ -318,7 +320,9 @@ Get a secret from the vault.
 
 #### Type Parameters
 
-• **T**
+##### T
+
+`T`
 
 #### Parameters
 

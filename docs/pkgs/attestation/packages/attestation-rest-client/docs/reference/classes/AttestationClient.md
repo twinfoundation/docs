@@ -12,9 +12,9 @@ Client for performing attestation through to REST endpoints.
 
 ## Constructors
 
-### new AttestationClient()
+### Constructor
 
-> **new AttestationClient**(`config`): [`AttestationClient`](AttestationClient.md)
+> **new AttestationClient**(`config`): `AttestationClient`
 
 Create a new instance of AttestationClient.
 
@@ -28,7 +28,7 @@ The configuration for the client.
 
 #### Returns
 
-[`AttestationClient`](AttestationClient.md)
+`AttestationClient`
 
 #### Overrides
 
@@ -50,7 +50,7 @@ Runtime name for the class.
 
 ### create()
 
-> **create**(`attestationObject`, `namespace`?): `Promise`\<`string`\>
+> **create**(`attestationObject`, `namespace?`): `Promise`\<`string`\>
 
 Attest the data and return the collated information.
 

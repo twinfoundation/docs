@@ -1,6 +1,6 @@
 # Interface: IVerifiableStorageComponent
 
-Interface describing an Verifiable Storage component.
+Interface describing a Verifiable Storage component.
 
 ## Extends
 
@@ -10,7 +10,7 @@ Interface describing an Verifiable Storage component.
 
 ### create()
 
-> **create**(`data`, `identity`?, `namespace`?): `Promise`\<\{ `id`: `string`; `receipt`: `IJsonLdNodeObject`; \}\>
+> **create**(`data`, `identity?`, `namespace?`): `Promise`\<\{ `id`: `string`; `receipt`: `IJsonLdNodeObject`; \}\>
 
 Create an item in verifiable storage.
 
@@ -44,7 +44,7 @@ The id of the stored verifiable item in urn format and the receipt.
 
 ### update()
 
-> **update**(`id`, `data`, `identity`?): `Promise`\<`IJsonLdNodeObject`\>
+> **update**(`id`, `data`, `identity?`): `Promise`\<`IJsonLdNodeObject`\>
 
 Update an item in verifiable storage.
 
@@ -78,7 +78,7 @@ The updated receipt.
 
 ### get()
 
-> **get**(`id`, `options`?): `Promise`\<\{ `data`: `Uint8Array`\<`ArrayBufferLike`\>; `receipt`: `IJsonLdNodeObject`; \}\>
+> **get**(`id`, `options?`): `Promise`\<\{ `data`: `Uint8Array`\<`ArrayBufferLike`\>; `receipt`: `IJsonLdNodeObject`; \}\>
 
 Get an verifiable item.
 
@@ -110,7 +110,7 @@ The data for the item and the receipt.
 
 ### remove()
 
-> **remove**(`id`, `controllerIdentity`?): `Promise`\<`void`\>
+> **remove**(`id`, `controllerIdentity?`): `Promise`\<`void`\>
 
 Remove the item from verifiable storage.
 

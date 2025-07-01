@@ -8,9 +8,9 @@ Class for performing faucet operations on IOTA Stardust.
 
 ## Constructors
 
-### new IotaStardustFaucetConnector()
+### Constructor
 
-> **new IotaStardustFaucetConnector**(`options`): [`IotaStardustFaucetConnector`](IotaStardustFaucetConnector.md)
+> **new IotaStardustFaucetConnector**(`options`): `IotaStardustFaucetConnector`
 
 Create a new instance of IotaFaucetConnector.
 
@@ -24,7 +24,7 @@ The options for the connector.
 
 #### Returns
 
-[`IotaStardustFaucetConnector`](IotaStardustFaucetConnector.md)
+`IotaStardustFaucetConnector`
 
 ## Properties
 

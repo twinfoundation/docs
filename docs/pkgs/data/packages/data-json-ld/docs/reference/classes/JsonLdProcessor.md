@@ -4,43 +4,139 @@ JSON-LD Processor.
 
 ## Constructors
 
-### new JsonLdProcessor()
+### Constructor
 
-> **new JsonLdProcessor**(): [`JsonLdProcessor`](JsonLdProcessor.md)
+> **new JsonLdProcessor**(): `JsonLdProcessor`
 
 #### Returns
 
-[`JsonLdProcessor`](JsonLdProcessor.md)
+`JsonLdProcessor`
 
 ## Methods
 
-### DOCUMENT\_LOADER()
+### setDocumentLoader()
 
-> `static` **DOCUMENT\_LOADER**(`url`): `Promise`\<`RemoteDocument`\>
+> `static` **setDocumentLoader**(`documentLoader`): `void`
 
 The document loader to use.
 
 #### Parameters
 
-##### url
+##### documentLoader
+
+(`url`) => `Promise`\<`RemoteDocument`\>
+
+The document loader to use.
+
+#### Returns
+
+`void`
+
+***
+
+### getDocumentLoader()
+
+> `static` **getDocumentLoader**(): (`url`) => `Promise`\<`RemoteDocument`\>
+
+The document loader to use for retrieving JSON-LD documents.
+
+#### Returns
+
+The document loader.
+
+> (`url`): `Promise`\<`RemoteDocument`\>
+
+##### Parameters
+
+###### url
 
 `string`
 
-#### Returns
+##### Returns
 
 `Promise`\<`RemoteDocument`\>
 
 ***
 
+### setCacheLimit()
+
+> `static` **setCacheLimit**(`cacheLimitMs`): `void`
+
+Set the cache time limit for documents.
+
+#### Parameters
+
+##### cacheLimitMs
+
+`number`
+
+The cache limit in milliseconds.
+
+#### Returns
+
+`void`
+
+***
+
+### getCacheLimit()
+
+> `static` **getCacheLimit**(): `number`
+
+Get the cache limit for documents.
+
+#### Returns
+
+`number`
+
+The document loader.
+
+***
+
+### setRedirects()
+
+> `static` **setRedirects**(`redirects`): `void`
+
+Set the global redirects for JSON-LD, use addRedirect for default handling.
+
+#### Parameters
+
+##### redirects
+
+`object`[]
+
+The redirects to use.
+
+#### Returns
+
+`void`
+
+***
+
+### getRedirects()
+
+> `static` **getRedirects**(): `object`[]
+
+Get the global redirects for JSON-LD.
+
+#### Returns
+
+`object`[]
+
+The registered redirects.
+
+***
+
 ### compact()
 
-> `static` **compact**\<`T`\>(`document`, `context`?): `Promise`\<`T`\>
+> `static` **compact**\<`T`\>(`document`, `context?`, `options?`): `Promise`\<`T`\>
 
 Compact a document according to a particular context.
 
 #### Type Parameters
 
-• **T**
+##### T
+
+`T`
 
 #### Parameters
 
@@ -54,7 +150,17 @@ The JSON-LD document to compact.
 
 [`IJsonLdContextDefinitionRoot`](../type-aliases/IJsonLdContextDefinitionRoot.md)
 
-The context to compact the document to, if not provided will try and gather from the object.
+The context to compact the document to, if not provided will use the one in the document.
+
+##### options?
+
+The options for compacting the document.
+
+###### itemListOverride
+
+`boolean`
+
+Whether to override the itemListElement context with a set, defaults to true.
 
 #### Returns
 
@@ -72,7 +178,9 @@ Expand a document, removing its context.
 
 #### Type Parameters
 
-• **T**
+##### T
+
+`T`
 
 #### Parameters
 
@@ -92,13 +200,15 @@ The expanded JSON-LD document.
 
 ### canonize()
 
-> `static` **canonize**\<`T`\>(`document`, `options`?): `Promise`\<`string`\>
+> `static` **canonize**\<`T`\>(`document`, `options?`): `Promise`\<`string`\>
 
 Canonize a document.
 
 #### Type Parameters
 
-• **T** *extends* [`IJsonLdNodeObject`](../interfaces/IJsonLdNodeObject.md)
+##### T
+
+`T` *extends* [`IJsonLdNodeObject`](../interfaces/IJsonLdNodeObject.md)
 
 #### Parameters
 
@@ -182,13 +292,15 @@ The combined context.
 
 ### gatherContexts()
 
-> `static` **gatherContexts**\<`T`\>(`element`, `initial`?): `undefined` \| [`IJsonLdContextDefinitionRoot`](../type-aliases/IJsonLdContextDefinitionRoot.md)
+> `static` **gatherContexts**\<`T`\>(`element`, `initial?`): `undefined` \| [`IJsonLdContextDefinitionRoot`](../type-aliases/IJsonLdContextDefinitionRoot.md)
 
 Gather all the contexts from the element and it's children.
 
 #### Type Parameters
 
-• **T**
+##### T
+
+`T`
 
 #### Parameters
 
@@ -214,7 +326,7 @@ The combined contexts.
 
 ### removeContexts()
 
-> `static` **removeContexts**(`context`, `match`?): `undefined` \| [`IJsonLdContextDefinitionRoot`](../type-aliases/IJsonLdContextDefinitionRoot.md)
+> `static` **removeContexts**(`context`, `match?`): `undefined` \| [`IJsonLdContextDefinitionRoot`](../type-aliases/IJsonLdContextDefinitionRoot.md)
 
 Remove all the contexts that match the pattern.
 
@@ -237,3 +349,53 @@ The element to try and match.
 `undefined` \| [`IJsonLdContextDefinitionRoot`](../type-aliases/IJsonLdContextDefinitionRoot.md)
 
 The updated contexts.
+
+***
+
+### documentCacheAdd()
+
+> `static` **documentCacheAdd**(`url`, `ldContext`): `Promise`\<`void`\>
+
+Add a context directly to the document loader cache.
+
+#### Parameters
+
+##### url
+
+`string`
+
+The url the ld context is for.
+
+##### ldContext
+
+`unknown`
+
+The context to add.
+
+#### Returns
+
+`Promise`\<`void`\>
+
+Nothing.
+
+***
+
+### documentCacheRemove()
+
+> `static` **documentCacheRemove**(`url`): `Promise`\<`void`\>
+
+Remove a context from the document loader cache.
+
+#### Parameters
+
+##### url
+
+`string`
+
+The url the ld context is for.
+
+#### Returns
+
+`Promise`\<`void`\>
+
+Nothing.

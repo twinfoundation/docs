@@ -8,9 +8,9 @@ Class for processing data from a source.
 
 ## Constructors
 
-### new DataProcessingService()
+### Constructor
 
-> **new DataProcessingService**(`options`?): [`DataProcessingService`](DataProcessingService.md)
+> **new DataProcessingService**(`options?`): `DataProcessingService`
 
 Create a new instance of DataExtractionService.
 
@@ -24,7 +24,7 @@ The options for the connector.
 
 #### Returns
 
-[`DataProcessingService`](DataProcessingService.md)
+`DataProcessingService`
 
 ## Properties
 
@@ -128,7 +128,7 @@ Nothing.
 
 ### extract()
 
-> **extract**(`ruleGroupId`, `data`, `overrideExtractorType`?): `Promise`\<`unknown`\>
+> **extract**(`ruleGroupId`, `data`, `overrideExtractorType?`, `overrideMimeType?`): `Promise`\<`unknown`\>
 
 Extracts data from the from the provided input.
 
@@ -152,6 +152,12 @@ The data to extract from.
 
 An optional override for the extractor type.
 
+##### overrideMimeType?
+
+`string`
+
+An optional override for the mime type for conversion, will auto detect if not provided.
+
 #### Returns
 
 `Promise`\<`unknown`\>
@@ -166,7 +172,7 @@ The extracted data.
 
 ### convert()
 
-> **convert**(`data`, `overrideMimeType`?): `Promise`\<`unknown`\>
+> **convert**(`data`, `overrideMimeType?`): `Promise`\<`unknown`\>
 
 Converts data from the provided input to a structured JSON document.
 
@@ -198,7 +204,7 @@ The converted data.
 
 ### query()
 
-> **query**(`cursor`?, `pageSize`?): `Promise`\<\{ `entities`: `IRuleGroup`[]; `cursor`: `string`; \}\>
+> **query**(`cursor?`, `pageSize?`): `Promise`\<\{ `entities`: `IRuleGroup`[]; `cursor?`: `string`; \}\>
 
 Query the rule group entries.
 
@@ -218,7 +224,7 @@ The maximum number of entities in a page.
 
 #### Returns
 
-`Promise`\<\{ `entities`: `IRuleGroup`[]; `cursor`: `string`; \}\>
+`Promise`\<\{ `entities`: `IRuleGroup`[]; `cursor?`: `string`; \}\>
 
 All the entities for the storage matching the conditions,
 and a cursor which can be used to request more entities.

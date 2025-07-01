@@ -42,7 +42,7 @@
 								"$ref": "#/components/schemas/VerifiableStorageCreateRequest"
 							},
 							"examples": {
-								"verifiableStorageCreateExample": {
+								"verifiableStorageCreateRequestExample": {
 									"value": {
 										"data": "SGVsbG8gd29ybGQ="
 									}
@@ -175,7 +175,7 @@
 								"$ref": "#/components/schemas/VerifiableStorageUpdateRequest"
 							},
 							"examples": {
-								"verifiableStorageUpdateExample": {
+								"verifiableStorageUpdateRequestExample": {
 									"value": {
 										"data": "SGVsbG8gd29ybGQ="
 									}

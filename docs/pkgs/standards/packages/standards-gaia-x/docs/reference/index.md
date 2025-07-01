@@ -1,5 +1,9 @@
 # @twin.org/standards-gaia-x
 
+## Classes
+
+- [GaiaXDataTypes](classes/GaiaXDataTypes.md)
+
 ## Interfaces
 
 - [IAddress](interfaces/IAddress.md)
@@ -12,6 +16,7 @@
 
 ## Type Aliases
 
+- [GaiaXContextType](type-aliases/GaiaXContextType.md)
 - [GaiaXContexts](type-aliases/GaiaXContexts.md)
 - [GaiaXTypes](type-aliases/GaiaXTypes.md)
 
