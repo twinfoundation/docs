@@ -136,7 +136,7 @@ const config: Config = {
 								to: "/docs/pkgs"
 							},
 							{
-								label: "TWIN White Paper",
+								label: "White Paper",
 								href: "/pdf/twin-whitepaper.pdf",
 								target: "_blank"
 							}
