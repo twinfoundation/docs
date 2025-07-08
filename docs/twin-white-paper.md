@@ -10,7 +10,7 @@ TWIN is an ongoing effort based on more than four years of research and developm
 
  TWIN offers:
 
-- **Interoperabilty by Design**: Works with existing systems without vendor lock-in
+- **Interoperability by Design**: Works with existing systems without vendor lock-in
 - **Data Sovereignty**: Organizations maintain full control over their data
 - **Scalability & Security**: Built on blockchain technology for trust and transparency
 - **Open Standards**: Based on W3C, UN/CEFACT, and other global standards
