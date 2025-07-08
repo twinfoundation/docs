@@ -8,7 +8,7 @@ TWIN is an ongoing effort based on more than four years of research and developm
 
 ## Key Benefits
 
- TWIN offers:
+TWIN offers:
 
 - **Interoperability by Design**: Works with existing systems without vendor lock-in
 - **Data Sovereignty**: Organizations maintain full control over their data
