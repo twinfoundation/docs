@@ -41,7 +41,7 @@ const SecondRowFeatures: FeatureItem[] = [
 		title: 'Roadmap',
 		svg: '/img/logo.svg',
 		description: 'Development progress and future milestones.',
-		href: '/docs/roadmap'
+		href: '/docs/category/roadmap'
 	}
 ];
 
