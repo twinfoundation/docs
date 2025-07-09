@@ -23,7 +23,8 @@ const sidebars: SidebarsConfig = {
 			type: "category",
 			label: "Roadmap",
 			link: {
-				type: "generated-index"
+				type: "generated-index",
+				slug: "roadmap"
 			},
 			collapsed: false,
 			items: ["roadmap-overview", "q2-2025-progress"]
