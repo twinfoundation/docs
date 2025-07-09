@@ -20,4 +20,4 @@ TWIN is an ongoing effort based on more than four years of research and developm
 
 This comprehensive technical report outlines TWIN's reference architecture, covering the main architectural design principles, the fundamental software layers, services and their interactions. Software architects, solution designers, and engineers will find detailed guidance on building interoperable trade solutions that leverage TWIN's modular, standards-based approach.
 
-📄 [Download the TWIN White Paper (PDF)](/pdf/Reference Architecture_TWIN Whitepaper-Draft4-July-2025.pdf)
+📄 [Download the TWIN White Paper (PDF)](/pdf/TWIN_Whitepaper_Reference_Architecture-Draft4-July-2025.pdf)
