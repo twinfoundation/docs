@@ -12,4 +12,4 @@ Join us for an in-depth discussion of the TWIN white paper, covering the core co
 
 ### Next Webinar
 
-September 25th 2025 10:30 - 12:30 CEST
+September 24th 2025 10:30 - 12:30 CEST
