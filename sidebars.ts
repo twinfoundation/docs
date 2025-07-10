@@ -18,7 +18,18 @@ const sidebars: SidebarsConfig = {
 	appsSidebar: ["apps", ...buildPkgs("apps")],
 	packagesSidebar: ["pkgs", ...buildPkgs("packages")],
 	mediaSidebar: ["media"],
-	roadmapSidebar: ["roadmap"]
+	roadmapSidebar: [
+		{
+			type: "category",
+			label: "Roadmap",
+			link: {
+				type: "generated-index",
+				slug: "roadmap"
+			},
+			collapsed: false,
+			items: ["roadmap-overview", "q2-2025-progress"]
+		}
+	]
 };
 
 function buildPkgs(packageType): any {
