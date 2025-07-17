@@ -11,3 +11,9 @@ The LD Contexts concerning Gaia-X.
 > `readonly` **ContextRoot**: `"https://w3id.org/gaia-x/development"` = `"https://w3id.org/gaia-x/development"`
 
 The Gaia-X LD Context
+
+### TwinContext
+
+> `readonly` **TwinContext**: `"https://schema.twindev.org/gaia-x"` = `"https://schema.twindev.org/gaia-x"`
+
+The Gaia-X custom context.

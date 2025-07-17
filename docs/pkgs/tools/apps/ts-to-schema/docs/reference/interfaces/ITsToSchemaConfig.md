@@ -24,7 +24,7 @@ The source files to generate the types from.
 
 > `optional` **externalReferences**: `object`
 
-External type references
+External type references.
 
 #### Index Signature
 
@@ -41,3 +41,11 @@ Override for specific types, to be used when the type cannot be generated automa
 #### Index Signature
 
 \[`id`: `string`\]: `AnySchemaObject`
+
+***
+
+### autoExpandTypes?
+
+> `optional` **autoExpandTypes**: `string`[]
+
+The types to automatically expand inline in type definitions, reg ex string matches.

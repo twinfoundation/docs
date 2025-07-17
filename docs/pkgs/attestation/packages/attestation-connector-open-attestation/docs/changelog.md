@@ -1,5 +1,20 @@
 # @twin.org/attestation-connector-open-attestation - Changelog
 
+## 0.0.1 (2025-07-09)
+
+
+### Features
+
+* release to production ([aa69a08](https://github.com/twinfoundation/attestation/commit/aa69a08fbd3897c8d72b0d32ec730f104ad31b33))
+* release to production ([89ca987](https://github.com/twinfoundation/attestation/commit/89ca987963d9090abcfc1b62bc997e2c521944ec))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/attestation-models bumped from ^0.0.0 to ^0.0.1
+
 ## [0.0.1-next.30](https://github.com/twinfoundation/attestation/compare/attestation-connector-open-attestation-v0.0.1-next.29...attestation-connector-open-attestation-v0.0.1-next.30) (2025-06-12)
 
 

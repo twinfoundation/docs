@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/attestation-service",
-	"version": "0.0.1-next.30",
+	"version": "0.0.2-next.0",
 	"description": "Attestation contract implementation and REST endpoint definitions",
 	"repository": {
 		"type": "git",

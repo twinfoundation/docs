@@ -522,7 +522,9 @@
 					{
 						"type": "array",
 						"minItems": 2,
-						"items": [
+						"items": false,
+						"maxItems": 2,
+						"prefixItems": [
 							{
 								"type": "string",
 								"const": "@graph"
@@ -531,13 +533,14 @@
 								"type": "string",
 								"const": "@id"
 							}
-						],
-						"maxItems": 2
+						]
 					},
 					{
 						"type": "array",
 						"minItems": 2,
-						"items": [
+						"items": false,
+						"maxItems": 2,
+						"prefixItems": [
 							{
 								"type": "string",
 								"const": "@id"
@@ -546,13 +549,14 @@
 								"type": "string",
 								"const": "@graph"
 							}
-						],
-						"maxItems": 2
+						]
 					},
 					{
 						"type": "array",
 						"minItems": 3,
-						"items": [
+						"items": false,
+						"maxItems": 3,
+						"prefixItems": [
 							{
 								"type": "string",
 								"const": "@set"
@@ -565,13 +569,14 @@
 								"type": "string",
 								"const": "@id"
 							}
-						],
-						"maxItems": 3
+						]
 					},
 					{
 						"type": "array",
 						"minItems": 3,
-						"items": [
+						"items": false,
+						"maxItems": 3,
+						"prefixItems": [
 							{
 								"type": "string",
 								"const": "@set"
@@ -584,13 +589,14 @@
 								"type": "string",
 								"const": "@graph"
 							}
-						],
-						"maxItems": 3
+						]
 					},
 					{
 						"type": "array",
 						"minItems": 3,
-						"items": [
+						"items": false,
+						"maxItems": 3,
+						"prefixItems": [
 							{
 								"type": "string",
 								"const": "@graph"
@@ -603,13 +609,14 @@
 								"type": "string",
 								"const": "@id"
 							}
-						],
-						"maxItems": 3
+						]
 					},
 					{
 						"type": "array",
 						"minItems": 3,
-						"items": [
+						"items": false,
+						"maxItems": 3,
+						"prefixItems": [
 							{
 								"type": "string",
 								"const": "@id"
@@ -622,13 +629,14 @@
 								"type": "string",
 								"const": "@graph"
 							}
-						],
-						"maxItems": 3
+						]
 					},
 					{
 						"type": "array",
 						"minItems": 3,
-						"items": [
+						"items": false,
+						"maxItems": 3,
+						"prefixItems": [
 							{
 								"type": "string",
 								"const": "@graph"
@@ -641,13 +649,14 @@
 								"type": "string",
 								"const": "@set"
 							}
-						],
-						"maxItems": 3
+						]
 					},
 					{
 						"type": "array",
 						"minItems": 3,
-						"items": [
+						"items": false,
+						"maxItems": 3,
+						"prefixItems": [
 							{
 								"type": "string",
 								"const": "@id"
@@ -660,13 +669,14 @@
 								"type": "string",
 								"const": "@set"
 							}
-						],
-						"maxItems": 3
+						]
 					},
 					{
 						"type": "array",
 						"minItems": 2,
-						"items": [
+						"items": false,
+						"maxItems": 2,
+						"prefixItems": [
 							{
 								"type": "string",
 								"const": "@set"
@@ -674,13 +684,14 @@
 							{
 								"$ref": "#/components/schemas/JsonLdContainerType"
 							}
-						],
-						"maxItems": 2
+						]
 					},
 					{
 						"type": "array",
 						"minItems": 2,
-						"items": [
+						"items": false,
+						"maxItems": 2,
+						"prefixItems": [
 							{
 								"$ref": "#/components/schemas/JsonLdContainerType"
 							},
@@ -688,8 +699,7 @@
 								"type": "string",
 								"const": "@set"
 							}
-						],
-						"maxItems": 2
+						]
 					}
 				],
 				"description": "JSON-LD container type array."
@@ -789,9 +799,12 @@
 					},
 					{
 						"type": "array",
-						"items": {
-							"$ref": "#/components/schemas/JsonLdContextDefinitionElement"
-						}
+						"items": false,
+						"prefixItems": [
+							{
+								"$ref": "#/components/schemas/JsonLdContextDefinitionElement"
+							}
+						]
 					}
 				],
 				"description": "A context definition root is used to define the root of a context definition."
@@ -809,9 +822,12 @@
 									},
 									{
 										"type": "array",
-										"items": {
-											"type": "string"
-										}
+										"items": false,
+										"prefixItems": [
+											{
+												"type": "string"
+											}
+										]
 									},
 									{
 										"type": "null"
@@ -836,21 +852,24 @@
 									},
 									{
 										"type": "array",
-										"items": {
-											"anyOf": [
-												{
-													"type": "string",
-													"const": "@list"
-												},
-												{
-													"type": "string",
-													"const": "@set"
-												},
-												{
-													"$ref": "#/components/schemas/JsonLdContainerType"
-												}
-											]
-										}
+										"items": false,
+										"prefixItems": [
+											{
+												"anyOf": [
+													{
+														"type": "string",
+														"const": "@list"
+													},
+													{
+														"type": "string",
+														"const": "@set"
+													},
+													{
+														"$ref": "#/components/schemas/JsonLdContainerType"
+													}
+												]
+											}
+										]
 									},
 									{
 										"$ref": "#/components/schemas/JsonLdContainerTypeArray"
@@ -940,9 +959,12 @@
 							},
 							{
 								"type": "array",
-								"items": {
-									"$ref": "#/components/schemas/JsonLdNodeObject"
-								}
+								"items": false,
+								"prefixItems": [
+									{
+										"$ref": "#/components/schemas/JsonLdNodeObject"
+									}
+								]
 							}
 						]
 					},
@@ -956,9 +978,12 @@
 							},
 							{
 								"type": "array",
-								"items": {
-									"type": "string"
-								}
+								"items": false,
+								"prefixItems": [
+									{
+										"type": "string"
+									}
+								]
 							}
 						]
 					},
@@ -986,9 +1011,12 @@
 					},
 					{
 						"type": "array",
-						"items": {
-							"$ref": "#/components/schemas/JsonLdNodeObject"
-						}
+						"items": false,
+						"prefixItems": [
+							{
+								"$ref": "#/components/schemas/JsonLdNodeObject"
+							}
+						]
 					}
 				],
 				"description": "An included block is used to provide a set of node objects."
@@ -1002,9 +1030,12 @@
 						},
 						{
 							"type": "array",
-							"items": {
-								"$ref": "#/components/schemas/JsonLdIndexMapItem"
-							}
+							"items": false,
+							"prefixItems": [
+								{
+									"$ref": "#/components/schemas/JsonLdIndexMapItem"
+								}
+							]
 						}
 					]
 				},
@@ -1041,10 +1072,13 @@
 			},
 			"JsonLdJsonArray": {
 				"type": "array",
-				"items": {
-					"$ref": "#/components/schemas/JsonLdJsonValue"
-				},
-				"description": "JSON Type for array."
+				"items": false,
+				"description": "JSON Type for array.",
+				"prefixItems": [
+					{
+						"$ref": "#/components/schemas/JsonLdJsonValue"
+					}
+				]
 			},
 			"JsonLdJsonObject": {
 				"type": "object",
@@ -1095,9 +1129,12 @@
 						},
 						{
 							"type": "array",
-							"items": {
-								"type": "string"
-							}
+							"items": false,
+							"prefixItems": [
+								{
+									"type": "string"
+								}
+							]
 						}
 					]
 				},
@@ -1113,9 +1150,12 @@
 							},
 							{
 								"type": "array",
-								"items": {
-									"$ref": "#/components/schemas/JsonLdListOrSetItem"
-								}
+								"items": false,
+								"prefixItems": [
+									{
+										"$ref": "#/components/schemas/JsonLdListOrSetItem"
+									}
+								]
 							}
 						]
 					},
@@ -1190,9 +1230,12 @@
 							},
 							{
 								"type": "array",
-								"items": {
-									"type": "string"
-								}
+								"items": false,
+								"prefixItems": [
+									{
+										"type": "string"
+									}
+								]
 							}
 						]
 					},
@@ -1206,9 +1249,12 @@
 							},
 							{
 								"type": "array",
-								"items": {
-									"$ref": "#/components/schemas/JsonLdNodeObject"
-								}
+								"items": false,
+								"prefixItems": [
+									{
+										"$ref": "#/components/schemas/JsonLdNodeObject"
+									}
+								]
 							}
 						]
 					},
@@ -1219,9 +1265,12 @@
 							},
 							{
 								"type": "array",
-								"items": {
-									"$ref": "#/components/schemas/JsonLdJsonObject"
-								}
+								"items": false,
+								"prefixItems": [
+									{
+										"$ref": "#/components/schemas/JsonLdJsonObject"
+									}
+								]
 							}
 						]
 					},
@@ -1232,9 +1281,12 @@
 							},
 							{
 								"type": "array",
-								"items": {
-									"type": "string"
-								}
+								"items": false,
+								"prefixItems": [
+									{
+										"type": "string"
+									}
+								]
 							}
 						]
 					},
@@ -1292,9 +1344,12 @@
 							},
 							{
 								"type": "array",
-								"items": {
-									"$ref": "#/components/schemas/JsonLdListOrSetItem"
-								}
+								"items": false,
+								"prefixItems": [
+									{
+										"$ref": "#/components/schemas/JsonLdListOrSetItem"
+									}
+								]
 							}
 						]
 					},
@@ -1442,10 +1497,13 @@
 					},
 					"allowList": {
 						"type": "array",
-						"items": {
-							"type": "string"
-						},
-						"description": "The list of identities that are allowed to modify the item."
+						"items": false,
+						"description": "The list of identities that are allowed to modify the item.",
+						"prefixItems": [
+							{
+								"type": "string"
+							}
+						]
 					},
 					"maxAllowListSize": {
 						"type": "number",
@@ -1510,10 +1568,13 @@
 					},
 					"allowList": {
 						"type": "array",
-						"items": {
-							"type": "string"
-						},
-						"description": "The list of identities that are allowed to modify the item."
+						"items": false,
+						"description": "The list of identities that are allowed to modify the item.",
+						"prefixItems": [
+							{
+								"type": "string"
+							}
+						]
 					}
 				},
 				"required": [
@@ -1531,10 +1592,13 @@
 					},
 					"allowList": {
 						"type": "array",
-						"items": {
-							"type": "string"
-						},
-						"description": "An updated list of identities that are allowed to modify the item, send an empty list to remove all entries."
+						"items": false,
+						"description": "An updated list of identities that are allowed to modify the item, send an empty list to remove all entries.",
+						"prefixItems": [
+							{
+								"type": "string"
+							}
+						]
 					}
 				},
 				"additionalProperties": false,

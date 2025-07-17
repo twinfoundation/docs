@@ -19,7 +19,7 @@ Point (PEP) will execute any registered actions.
 Evaluate requests from a Policy Enforcement Point (PEP).
 Uses the Policy Management Point (PMP) to retrieve the policies and the
 Policy Information Point (PIP) to retrieve additional information.
-Executes any actions on the Policy Execution Point (PEP) when the decision is made.
+Executes any actions on the Policy Execution Point (PXP) when the decision is made.
 
 #### Type Parameters
 

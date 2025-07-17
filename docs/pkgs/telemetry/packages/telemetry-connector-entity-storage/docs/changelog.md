@@ -1,5 +1,19 @@
 # @twin.org/telemetry-connector-entity-storage - Changelog
 
+## 0.0.1 (2025-07-04)
+
+
+### Features
+
+* release to production ([df2151d](https://github.com/twinfoundation/telemetry/commit/df2151d24844fd2c3e6092ce3a6f888ac16219a0))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/telemetry-models bumped from ^0.0.0 to ^0.0.1
+
 ## [0.0.1-next.18](https://github.com/twinfoundation/telemetry/compare/telemetry-connector-entity-storage-v0.0.1-next.17...telemetry-connector-entity-storage-v0.0.1-next.18) (2025-06-20)
 
 

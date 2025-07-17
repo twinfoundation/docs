@@ -1,5 +1,21 @@
 # @twin.org/standards-unece - Changelog
 
+## [0.0.2-next.1](https://github.com/twinfoundation/standards/compare/standards-unece-v0.0.2-next.0...standards-unece-v0.0.2-next.1) (2025-07-14)
+
+
+### Features
+
+* data types registered with full qualified names ([d64bd08](https://github.com/twinfoundation/standards/commit/d64bd082084172da543e9bfaffb78cdc34e6641d))
+* update to latest JSON schema spec ([7a23930](https://github.com/twinfoundation/standards/commit/7a2393032d7f48bfb20d3a484f981fb6dd83a92c))
+* use shared store mechanism ([#11](https://github.com/twinfoundation/standards/issues/11)) ([96fa237](https://github.com/twinfoundation/standards/commit/96fa23735f69c1fc7e3d0019b527634fa0a042d9))
+
+## 0.0.1 (2025-07-03)
+
+
+### Features
+
+* release to production ([2ae4125](https://github.com/twinfoundation/standards/commit/2ae4125f305d4714b50036eb8a0bd47e4100a7be))
+
 ## [0.0.1-next.49](https://github.com/twinfoundation/standards/compare/standards-unece-v0.0.1-next.48...standards-unece-v0.0.1-next.49) (2025-06-18)
 
 

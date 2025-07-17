@@ -1,5 +1,69 @@
 # @twin.org/background-task-connector-entity-storage - Changelog
 
+## [0.0.2-next.2](https://github.com/twinfoundation/background-task/compare/background-task-connector-entity-storage-v0.0.2-next.1...background-task-connector-entity-storage-v0.0.2-next.2) (2025-07-09)
+
+
+### Features
+
+* add task scheduler ([754d973](https://github.com/twinfoundation/background-task/commit/754d973e7c8483e5e54e887c157661867d5a0375))
+* only run tasks from your own thread ([c7d305b](https://github.com/twinfoundation/background-task/commit/c7d305b9807e65b8b1af6d0c2ca59e74190cab69))
+* status callback for processing state ([91581d2](https://github.com/twinfoundation/background-task/commit/91581d2b84e8fedf5973a147694187632ad43df8))
+* status callback for processing state ([72e87f5](https://github.com/twinfoundation/background-task/commit/72e87f58203145fc686b35c566fb4195e8b491cd))
+* update dependencies ([8e65767](https://github.com/twinfoundation/background-task/commit/8e657679f5e4305dbcb15ac7bcb3ab8a4613a60b))
+* use shared store mechanism ([#6](https://github.com/twinfoundation/background-task/issues/6)) ([27ed203](https://github.com/twinfoundation/background-task/commit/27ed20367d5ace7257bfa7a82b59ad70e5b5d209))
+
+
+### Bug Fixes
+
+* make sure tasks are processed deterministically ([#4](https://github.com/twinfoundation/background-task/issues/4)) ([63d3487](https://github.com/twinfoundation/background-task/commit/63d3487c85fc199e45499951331cfdcb28973e97))
+* **schema:** change `retainUntil` column to BIGINT ([#10](https://github.com/twinfoundation/background-task/issues/10)) ([77f7a14](https://github.com/twinfoundation/background-task/commit/77f7a1473d530008cb9abe1380e13ce845425663))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/background-task-models bumped from 0.0.2-next.1 to 0.0.2-next.2
+
+## [0.0.2-next.1](https://github.com/twinfoundation/background-task/compare/background-task-connector-entity-storage-v0.0.2-next.0...background-task-connector-entity-storage-v0.0.2-next.1) (2025-07-09)
+
+
+### Features
+
+* add task scheduler ([754d973](https://github.com/twinfoundation/background-task/commit/754d973e7c8483e5e54e887c157661867d5a0375))
+* only run tasks from your own thread ([c7d305b](https://github.com/twinfoundation/background-task/commit/c7d305b9807e65b8b1af6d0c2ca59e74190cab69))
+* status callback for processing state ([91581d2](https://github.com/twinfoundation/background-task/commit/91581d2b84e8fedf5973a147694187632ad43df8))
+* status callback for processing state ([72e87f5](https://github.com/twinfoundation/background-task/commit/72e87f58203145fc686b35c566fb4195e8b491cd))
+* update dependencies ([8e65767](https://github.com/twinfoundation/background-task/commit/8e657679f5e4305dbcb15ac7bcb3ab8a4613a60b))
+* use shared store mechanism ([#6](https://github.com/twinfoundation/background-task/issues/6)) ([27ed203](https://github.com/twinfoundation/background-task/commit/27ed20367d5ace7257bfa7a82b59ad70e5b5d209))
+
+
+### Bug Fixes
+
+* make sure tasks are processed deterministically ([#4](https://github.com/twinfoundation/background-task/issues/4)) ([63d3487](https://github.com/twinfoundation/background-task/commit/63d3487c85fc199e45499951331cfdcb28973e97))
+* **schema:** change `retainUntil` column to BIGINT ([#10](https://github.com/twinfoundation/background-task/issues/10)) ([77f7a14](https://github.com/twinfoundation/background-task/commit/77f7a1473d530008cb9abe1380e13ce845425663))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/background-task-models bumped from 0.0.2-next.0 to 0.0.2-next.1
+
+## 0.0.1 (2025-07-07)
+
+
+### Features
+
+* release to production ([7ce9896](https://github.com/twinfoundation/background-task/commit/7ce989659e6819f05655c86b1bda2a265af5d281))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/background-task-models bumped from ^0.0.0 to ^0.0.1
+
 ## [0.0.1-next.21](https://github.com/twinfoundation/background-task/compare/background-task-connector-entity-storage-v0.0.1-next.20...background-task-connector-entity-storage-v0.0.1-next.21) (2025-06-23)
 
 

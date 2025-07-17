@@ -2,7 +2,7 @@
 
 Interface describing a Policy Execution Point (PXP) contract.
 When a decision is made by the Policy Decision Point (PDP),
-the Policy Execution Point (PEP) will execute any
+the Policy Execution Point (PXP) will execute any
 registered actions based on the decision.
 
 ## Extends
@@ -13,7 +13,7 @@ registered actions based on the decision.
 
 ### executeActions()
 
-> **executeActions**\<`T`\>(`assetType`, `action`, `data`, `userIdentity`, `nodeIdentity`, `policies`): `Promise`\<`void`\>
+> **executeActions**\<`T`\>(`stage`, `assetType`, `action`, `data`, `userIdentity`, `nodeIdentity`, `policies`): `Promise`\<`void`\>
 
 Execute actions based on the PDP's decisions.
 
@@ -24,6 +24,12 @@ Execute actions based on the PDP's decisions.
 `T` = `unknown`
 
 #### Parameters
+
+##### stage
+
+[`PolicyDecisionStage`](../type-aliases/PolicyDecisionStage.md)
+
+The stage at which the PXP is executed in the PDP.
 
 ##### assetType
 
@@ -71,7 +77,7 @@ Nothing.
 
 ### registerAction()
 
-> **registerAction**\<`T`\>(`actionId`, `action`): `Promise`\<`void`\>
+> **registerAction**\<`T`\>(`actionId`, `stage`, `action`): `Promise`\<`void`\>
 
 Register an action to be executed.
 
@@ -88,6 +94,12 @@ Register an action to be executed.
 `string`
 
 The id of the action to register.
+
+##### stage
+
+[`PolicyDecisionStage`](../type-aliases/PolicyDecisionStage.md)
+
+The stage at which the action should be executed.
 
 ##### action
 

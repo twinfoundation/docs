@@ -1,5 +1,30 @@
 # @twin.org/standards-gaia-x - Changelog
 
+## [0.0.2-next.1](https://github.com/twinfoundation/standards/compare/standards-gaia-x-v0.0.2-next.0...standards-gaia-x-v0.0.2-next.1) (2025-07-14)
+
+
+### Features
+
+* add gaia-x schemas ([54c48df](https://github.com/twinfoundation/standards/commit/54c48df8c3eb0ce74d9b9a887ea81c10110fce76))
+* align Data Resource and Service Offering definition (ODRL polic… ([#27](https://github.com/twinfoundation/standards/issues/27)) ([20797be](https://github.com/twinfoundation/standards/commit/20797beff059c6fb253401d49b654cd7a57762d5))
+* Extend Gaia-X types to support Participant specification variants ([#9](https://github.com/twinfoundation/standards/issues/9)) ([2df9641](https://github.com/twinfoundation/standards/commit/2df9641946fe27f916721978ca807002398c4199))
+* normalise type outputs ([0b3aed7](https://github.com/twinfoundation/standards/commit/0b3aed7df0802cd609423bbd7fda6bde601d3ceb))
+* update to latest JSON schema spec ([7a23930](https://github.com/twinfoundation/standards/commit/7a2393032d7f48bfb20d3a484f981fb6dd83a92c))
+* use shared store mechanism ([#11](https://github.com/twinfoundation/standards/issues/11)) ([96fa237](https://github.com/twinfoundation/standards/commit/96fa23735f69c1fc7e3d0019b527634fa0a042d9))
+
+
+### Bug Fixes
+
+* gaia-X Legal Person. Removal of Participant ([#42](https://github.com/twinfoundation/standards/issues/42)) ([71e3b48](https://github.com/twinfoundation/standards/commit/71e3b48be2917ad58b55eb25c86cdcfa17d1291f))
+* refine the LD Context of Gaia-X entities ([#24](https://github.com/twinfoundation/standards/issues/24)) ([151c7f9](https://github.com/twinfoundation/standards/commit/151c7f940c900daac6c98a6f89ea5f708b25a1bd))
+
+## 0.0.1 (2025-07-03)
+
+
+### Features
+
+* release to production ([2ae4125](https://github.com/twinfoundation/standards/commit/2ae4125f305d4714b50036eb8a0bd47e4100a7be))
+
 ## [0.0.1-next.49](https://github.com/twinfoundation/standards/compare/standards-gaia-x-v0.0.1-next.48...standards-gaia-x-v0.0.1-next.49) (2025-06-18)
 
 

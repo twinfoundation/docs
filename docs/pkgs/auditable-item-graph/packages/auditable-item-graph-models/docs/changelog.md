@@ -1,5 +1,12 @@
 # @twin.org/auditable-item-graph-models - Changelog
 
+## 0.0.1 (2025-07-09)
+
+
+### Features
+
+* release to production ([0ce06f7](https://github.com/twinfoundation/auditable-item-graph/commit/0ce06f7825aa72d04b7a2ffd8c98cb56290b9d16))
+
 ## [0.0.1-next.44](https://github.com/twinfoundation/auditable-item-graph/compare/auditable-item-graph-models-v0.0.1-next.43...auditable-item-graph-models-v0.0.1-next.44) (2025-06-20)
 
 

@@ -22,7 +22,8 @@
 		"packages/standards-unece",
 		"packages/standards-vda",
 		"packages/standards-gaia-x",
-		"packages/standards-ld-contexts"
+		"packages/standards-ld-contexts",
+		"packages/standards-w3c-activity-streams"
 	],
 	"type": "module"
 }

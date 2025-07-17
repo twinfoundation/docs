@@ -10,7 +10,7 @@
 - [IDataExchangeComponent](interfaces/IDataExchangeComponent.md)
 - [IDataResource](interfaces/IDataResource.md)
 - [IEndpoint](interfaces/IEndpoint.md)
-- [IParticipant](interfaces/IParticipant.md)
+- [ILegalPerson](interfaces/ILegalPerson.md)
 - [IRegistrationNumber](interfaces/IRegistrationNumber.md)
 - [IServiceOffering](interfaces/IServiceOffering.md)
 

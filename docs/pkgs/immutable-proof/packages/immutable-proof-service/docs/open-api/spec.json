@@ -494,15 +494,15 @@
 							{
 								"type": "array",
 								"minItems": 1,
-								"items": [
+								"items": {
+									"$ref": "https://schema.twindev.org/json-ld/JsonLdContextDefinitionElement"
+								},
+								"prefixItems": [
 									{
 										"type": "string",
 										"const": "https://www.w3.org/ns/credentials/v2"
 									}
-								],
-								"additionalItems": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdContextDefinitionElement"
-								}
+								]
 							}
 						],
 						"description": "JSON-LD Context."
@@ -554,9 +554,12 @@
 							},
 							{
 								"type": "array",
-								"items": {
-									"type": "string"
-								}
+								"items": false,
+								"prefixItems": [
+									{
+										"type": "string"
+									}
+								]
 							}
 						],
 						"description": "One or more security domains in which the proof is meant to be used."
@@ -568,9 +571,12 @@
 							},
 							{
 								"type": "array",
-								"items": {
-									"type": "string"
-								}
+								"items": false,
+								"prefixItems": [
+									{
+										"type": "string"
+									}
+								]
 							}
 						],
 						"description": "Provided to mitigate replay attacks on domains."

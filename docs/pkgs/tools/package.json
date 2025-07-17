@@ -13,10 +13,7 @@
 		"node": ">=20.0.0"
 	},
 	"workspaces": [
-		"packages/nameof-transformer",
-		"packages/nameof-vitest-plugin",
-		"packages/nameof",
-		"apps/merge-locales",
+		"packages/tools-core",
 		"apps/ts-to-openapi",
 		"apps/ts-to-schema"
 	],

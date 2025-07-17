@@ -1,5 +1,45 @@
 # @twin.org/nft-connector-iota - Changelog
 
+## [0.0.2-next.1](https://github.com/twinfoundation/nft/compare/nft-connector-iota-v0.0.2-next.0...nft-connector-iota-v0.0.2-next.1) (2025-07-16)
+
+
+### Features
+
+* github action simplification and readme update ([#26](https://github.com/twinfoundation/nft/issues/26)) ([4182787](https://github.com/twinfoundation/nft/commit/4182787203c00fc760ec43c9d4198e4da20adfb7))
+* improve components state for deployments based on contract id ([20d69b0](https://github.com/twinfoundation/nft/commit/20d69b0084ba6932ef53e1eceec0506526b08ba6))
+* iota rebased release ([8d05d1f](https://github.com/twinfoundation/nft/commit/8d05d1f58c1aacac983c100697ab40a314ad34ea))
+* update connector config and tests for gas station ([#24](https://github.com/twinfoundation/nft/issues/24)) ([c74eccc](https://github.com/twinfoundation/nft/commit/c74eccc3ca79b676ef21de7b7e69fcf9941ea43e))
+* update dependencies ([8660f76](https://github.com/twinfoundation/nft/commit/8660f76ca324b0f476e45544cac6bee4b3146c3b))
+* update dlt packages ([12c4966](https://github.com/twinfoundation/nft/commit/12c4966bceb926b7cdcf1449165bee09187a426c))
+* use latest dlt packages with latency fix ([#14](https://github.com/twinfoundation/nft/issues/14)) ([c8c20ed](https://github.com/twinfoundation/nft/commit/c8c20edd74daf4610125f4abc0fd613d42b6a195))
+* use shared store mechanism ([#16](https://github.com/twinfoundation/nft/issues/16)) ([897bc78](https://github.com/twinfoundation/nft/commit/897bc7805248ba1388b2dd03df24c33f1633f344))
+
+
+### Bug Fixes
+
+* return if package already deployed ([bf09fa1](https://github.com/twinfoundation/nft/commit/bf09fa15818f968d7c0f2ddbc29a5566511607d2))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/nft-models bumped from 0.0.2-next.0 to 0.0.2-next.1
+
+## 0.0.1 (2025-07-09)
+
+
+### Features
+
+* release to production ([4d338b3](https://github.com/twinfoundation/nft/commit/4d338b3e8a4dbccc61a1d1da3c470ba86cefe535))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/nft-models bumped from ^0.0.0 to ^0.0.1
+
 ## [0.0.1-next.32](https://github.com/twinfoundation/nft/compare/nft-connector-iota-v0.0.1-next.31...nft-connector-iota-v0.0.1-next.32) (2025-06-24)
 
 

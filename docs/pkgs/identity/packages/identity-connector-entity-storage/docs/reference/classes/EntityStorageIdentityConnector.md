@@ -74,6 +74,38 @@ The created document.
 
 ***
 
+### removeDocument()
+
+> **removeDocument**(`controller`, `documentId`): `Promise`\<`void`\>
+
+Remove a document.
+
+#### Parameters
+
+##### controller
+
+`string`
+
+The controller of the identity who can make changes.
+
+##### documentId
+
+`string`
+
+The id of the document to remove.
+
+#### Returns
+
+`Promise`\<`void`\>
+
+Nothing.
+
+#### Implementation of
+
+`IIdentityConnector.removeDocument`
+
+***
+
 ### addVerificationMethod()
 
 > **addVerificationMethod**(`controller`, `documentId`, `verificationMethodType`, `verificationMethodId?`): `Promise`\<`IDidDocumentVerificationMethod`\>

@@ -1,5 +1,12 @@
 # @twin.org/telemetry-models - Changelog
 
+## 0.0.1 (2025-07-04)
+
+
+### Features
+
+* release to production ([df2151d](https://github.com/twinfoundation/telemetry/commit/df2151d24844fd2c3e6092ce3a6f888ac16219a0))
+
 ## [0.0.1-next.18](https://github.com/twinfoundation/telemetry/compare/telemetry-models-v0.0.1-next.17...telemetry-models-v0.0.1-next.18) (2025-06-20)
 
 

@@ -547,7 +547,11 @@
 					"@context": {
 						"type": "array",
 						"minItems": 3,
-						"items": [
+						"items": {
+							"$ref": "https://schema.twindev.org/json-ld/JsonLdContextDefinitionElement"
+						},
+						"description": "JSON-LD Context.",
+						"prefixItems": [
 							{
 								"type": "string",
 								"const": "https://schema.twindev.org/attestation/"
@@ -560,11 +564,7 @@
 								"type": "string",
 								"const": "https://schema.org"
 							}
-						],
-						"additionalItems": {
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdContextDefinitionElement"
-						},
-						"description": "JSON-LD Context."
+						]
 					},
 					"type": {
 						"type": "string",

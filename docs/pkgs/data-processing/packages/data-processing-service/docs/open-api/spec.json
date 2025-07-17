@@ -765,10 +765,13 @@
 				"properties": {
 					"entities": {
 						"type": "array",
-						"items": {
-							"$ref": "#/components/schemas/RuleGroup"
-						},
-						"description": "The entities, which can be partial if a limited keys list was provided."
+						"items": false,
+						"description": "The entities, which can be partial if a limited keys list was provided.",
+						"prefixItems": [
+							{
+								"$ref": "#/components/schemas/RuleGroup"
+							}
+						]
 					},
 					"cursor": {
 						"type": "string",
@@ -790,10 +793,13 @@
 					},
 					"rules": {
 						"type": "array",
-						"items": {
-							"$ref": "#/components/schemas/Rule"
-						},
-						"description": "The rules."
+						"items": false,
+						"description": "The rules.",
+						"prefixItems": [
+							{
+								"$ref": "#/components/schemas/Rule"
+							}
+						]
 					}
 				},
 				"required": [
@@ -877,10 +883,13 @@
 					},
 					"rules": {
 						"type": "array",
-						"items": {
-							"$ref": "#/components/schemas/Rule"
-						},
-						"description": "The rules."
+						"items": false,
+						"description": "The rules.",
+						"prefixItems": [
+							{
+								"$ref": "#/components/schemas/Rule"
+							}
+						]
 					}
 				},
 				"required": [

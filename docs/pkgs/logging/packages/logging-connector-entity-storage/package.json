@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/logging-connector-entity-storage",
-	"version": "0.0.1-next.16",
+	"version": "0.0.2-next.0",
 	"description": "Logging connector implementation using entity storage",
 	"repository": {
 		"type": "git",

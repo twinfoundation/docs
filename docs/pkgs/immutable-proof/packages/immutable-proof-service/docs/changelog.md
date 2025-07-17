@@ -1,5 +1,20 @@
 # @twin.org/immutable-proof-service - Changelog
 
+## 0.0.1 (2025-07-09)
+
+
+### Features
+
+* release to production ([cb7ecff](https://github.com/twinfoundation/immutable-proof/commit/cb7ecff3e9a1ec8b4391d7efea4a58057b8b66c6))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/immutable-proof-models bumped from ^0.0.0 to ^0.0.1
+    * @twin.org/immutable-proof-task bumped from ^0.0.0 to ^0.0.1
+
 ## [0.0.1-next.35](https://github.com/twinfoundation/immutable-proof/compare/immutable-proof-service-v0.0.1-next.34...immutable-proof-service-v0.0.1-next.35) (2025-06-12)
 
 

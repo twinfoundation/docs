@@ -26,7 +26,7 @@ The identity of the user to access the vault keys.
 
 `string`
 
-The bech32 encoded address of the address to fund.
+The hex encoded address of the address to fund.
 
 ##### timeoutInSeconds?
 

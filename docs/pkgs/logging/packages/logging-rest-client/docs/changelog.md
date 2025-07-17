@@ -1,5 +1,19 @@
 # @twin.org/logging-rest-client - Changelog
 
+## 0.0.1 (2025-07-03)
+
+
+### Features
+
+* release to production ([3458161](https://github.com/twinfoundation/logging/commit/3458161b4bb530f86e4d1fe06123d885cdcb114d))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/logging-models bumped from ^0.0.0 to ^0.0.1
+
 ## [0.0.1-next.16](https://github.com/twinfoundation/logging/compare/logging-rest-client-v0.0.1-next.15...logging-rest-client-v0.0.1-next.16) (2025-06-20)
 
 

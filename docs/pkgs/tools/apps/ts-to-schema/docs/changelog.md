@@ -1,5 +1,58 @@
 # @twin.org/ts-to-schema - Changelog
 
+## [0.0.2-next.2](https://github.com/twinfoundation/tools/compare/ts-to-schema-v0.0.2-next.1...ts-to-schema-v0.0.2-next.2) (2025-07-17)
+
+
+### Features
+
+* improve auto expand types ([6181d1d](https://github.com/twinfoundation/tools/commit/6181d1daded1f91323195cf7efbc2f1881f38b41))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/tools-core bumped from 0.0.2-next.1 to 0.0.2-next.2
+
+## [0.0.2-next.1](https://github.com/twinfoundation/tools/compare/ts-to-schema-v0.0.2-next.0...ts-to-schema-v0.0.2-next.1) (2025-07-14)
+
+
+### Features
+
+* add support for auto expand types ([dd1e10a](https://github.com/twinfoundation/tools/commit/dd1e10a5b2fea6f80890ff6f3971f48e239cb4c1))
+* add ts-to-schema overrides ([3c54504](https://github.com/twinfoundation/tools/commit/3c5450468eb998204a75576b7791a7ca4027da62))
+* generate schemas as individual entities ([9f372ab](https://github.com/twinfoundation/tools/commit/9f372abdfc27aba93b303c7b214991919c0c18c3))
+* improve schema type name normalisation ([1a18b26](https://github.com/twinfoundation/tools/commit/1a18b267d87e9179bda01b396b256c450ae2889e))
+* move package to framework repo ([4490bda](https://github.com/twinfoundation/tools/commit/4490bda472d4dc8ddfe931e2fce81f3411de9ab3))
+* use most recent JSON schema specs ([4598cbf](https://github.com/twinfoundation/tools/commit/4598cbf29f7b82dba4a9f3b19f81dfe66f5a6060))
+* use shared store mechanism ([#31](https://github.com/twinfoundation/tools/issues/31)) ([d9fe68b](https://github.com/twinfoundation/tools/commit/d9fe68b903d1268c7cb3c64772df5cb78fd63667))
+
+
+### Bug Fixes
+
+* remove debugging ([4def3d1](https://github.com/twinfoundation/tools/commit/4def3d1ef6a41a3b3358f864214e6a7ec3f9c638))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/tools-core bumped from 0.0.2-next.0 to 0.0.2-next.1
+
+## 0.0.1 (2025-07-03)
+
+
+### Features
+
+* release to production ([ad24b7e](https://github.com/twinfoundation/tools/commit/ad24b7eb16784165b6c93b5c48788199f0e17526))
+
+## [0.0.1-next.29](https://github.com/twinfoundation/tools/compare/ts-to-schema-v0.0.1-next.28...ts-to-schema-v0.0.1-next.29) (2025-07-02)
+
+
+### Features
+
+* move package to framework repo ([4490bda](https://github.com/twinfoundation/tools/commit/4490bda472d4dc8ddfe931e2fce81f3411de9ab3))
+
 ## [0.0.1-next.28](https://github.com/twinfoundation/tools/compare/ts-to-schema-v0.0.1-next.27...ts-to-schema-v0.0.1-next.28) (2025-06-18)
 
 
