@@ -19,6 +19,7 @@
 - [IIdentityProofCreateResponse](interfaces/IIdentityProofCreateResponse.md)
 - [IIdentityProofVerifyRequest](interfaces/IIdentityProofVerifyRequest.md)
 - [IIdentityProofVerifyResponse](interfaces/IIdentityProofVerifyResponse.md)
+- [IIdentityRemoveRequest](interfaces/IIdentityRemoveRequest.md)
 - [IIdentityServiceCreateRequest](interfaces/IIdentityServiceCreateRequest.md)
 - [IIdentityServiceCreateResponse](interfaces/IIdentityServiceCreateResponse.md)
 - [IIdentityServiceRemoveRequest](interfaces/IIdentityServiceRemoveRequest.md)

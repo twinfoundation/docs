@@ -5,11 +5,11 @@ See also W3C DCAT Dataset https://www.w3.org/TR/vocab-dcat-3/.
 
 ## Extends
 
-- `IJsonLdNodeObject`
+- `IGaiaXEntity`
 
 ## Indexable
 
-\[`key`: `string`\]: `undefined` \| `null` \| `string` \| `number` \| `boolean` \| `string`[] \| `IJsonLdContextDefinition` \| `IJsonLdNodeObject` \| `IJsonLdGraphObject` \| `object` & `object` \| `object` & `object` \| `object` & `object` \| `IJsonLdListObject` \| `IJsonLdSetObject` \| `IJsonLdNodePrimitive`[] \| `IJsonLdLanguageMap` \| `IJsonLdIndexMap` \| `IJsonLdNodeObject`[] \| `IJsonLdIdMap` \| `IJsonLdTypeMap` \| `IJsonLdContextDefinitionElement`[] \| `IJsonLdJsonObject` \| `IJsonLdJsonObject`[] \| \{[`key`: `string`]: `string`; \}
+\[`key`: `string`\]: `undefined` \| `null` \| `string` \| `number` \| `boolean` \| `IJsonLdContextDefinition` \| `string`[] \| `IJsonLdNodeObject` \| `IJsonLdGraphObject` \| `object` & `object` \| `object` & `object` \| `object` & `object` \| `IJsonLdListObject` \| `IJsonLdSetObject` \| `IJsonLdNodePrimitive`[] \| `IJsonLdLanguageMap` \| `IJsonLdIndexMap` \| `IJsonLdNodeObject`[] \| `IJsonLdIdMap` \| `IJsonLdTypeMap` \| `IJsonLdContextDefinitionElement`[] \| `IJsonLdJsonObject` \| `IJsonLdJsonObject`[] \| \{[`key`: `string`]: `string`; \}
 
 ## Properties
 
@@ -21,7 +21,7 @@ The LD Context
 
 #### Overrides
 
-`IJsonLdNodeObject.@context`
+`IGaiaXEntity.@context`
 
 ***
 
@@ -30,6 +30,10 @@ The LD Context
 > **id**: `string`
 
 Subject Id
+
+#### Overrides
+
+`IGaiaXEntity.id`
 
 ***
 
@@ -41,19 +45,15 @@ Subject type
 
 ***
 
-### description?
-
-> `optional` **description**: `string`
-
-Description
-
-***
-
 ### name
 
 > **name**: `string`
 
 The Resource Name
+
+#### Overrides
+
+`IGaiaXEntity.name`
 
 ***
 
@@ -69,7 +69,7 @@ the third case covers the idiom where a JSON-LD Node is supplied with id and typ
 
 ### producedBy
 
-> **producedBy**: `string` \| [`IParticipant`](IParticipant.md)
+> **producedBy**: `string` \| [`ILegalPerson`](ILegalPerson.md)
 
 Who is the data producer
 
@@ -85,7 +85,7 @@ Pointer (URL) to the license
 
 ### copyrightOwnedBy
 
-> **copyrightOwnedBy**: `string` \| [`IParticipant`](IParticipant.md)
+> **copyrightOwnedBy**: `string` \| [`ILegalPerson`](ILegalPerson.md)
 
 Copyright owner
 
@@ -96,3 +96,15 @@ Copyright owner
 > **resourcePolicy**: `ObjectOrArray`\<`IJsonLdNodeObject`\>
 
 ODRL Policy
+
+***
+
+### description?
+
+> `optional` **description**: `string`
+
+Description of the Gaia-X entity.
+
+#### Inherited from
+
+`IGaiaXEntity.description`

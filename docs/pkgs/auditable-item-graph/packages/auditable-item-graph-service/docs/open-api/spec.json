@@ -861,6 +861,7 @@
 					},
 					"aliases": {
 						"type": "array",
+						"items": false,
 						"description": "Alternative aliases that can be used to identify the vertex.",
 						"prefixItems": [
 							{
@@ -885,6 +886,7 @@
 					},
 					"resources": {
 						"type": "array",
+						"items": false,
 						"description": "The resources attached to the vertex.",
 						"prefixItems": [
 							{
@@ -903,6 +905,7 @@
 					},
 					"edges": {
 						"type": "array",
+						"items": false,
 						"description": "The edges connected to the vertex.",
 						"prefixItems": [
 							{
@@ -941,6 +944,7 @@
 					},
 					"aliases": {
 						"type": "array",
+						"items": false,
 						"description": "Alternative aliases that can be used to identify the vertex.",
 						"prefixItems": [
 							{
@@ -965,6 +969,7 @@
 					},
 					"resources": {
 						"type": "array",
+						"items": false,
 						"description": "The resources attached to the vertex.",
 						"prefixItems": [
 							{
@@ -983,6 +988,7 @@
 					},
 					"edges": {
 						"type": "array",
+						"items": false,
 						"description": "The edges connected to the vertex.",
 						"prefixItems": [
 							{

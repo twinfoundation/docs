@@ -1,5 +1,97 @@
 # @twin.org/verifiable-storage-connector-iota - Changelog
 
+## [0.0.2-next.2](https://github.com/twinfoundation/verifiable-storage/compare/verifiable-storage-connector-iota-v0.0.2-next.1...verifiable-storage-connector-iota-v0.0.2-next.2) (2025-07-16)
+
+
+### Features
+
+* add data types ([d9ad58a](https://github.com/twinfoundation/verifiable-storage/commit/d9ad58afb0c86b80bcb1229d87d2d7f522b20fcd))
+* add epoch and digest to receipt ([#12](https://github.com/twinfoundation/verifiable-storage/issues/12)) ([cd4cfa6](https://github.com/twinfoundation/verifiable-storage/commit/cd4cfa6bee19ee9b9896447d0b773bffd57fddf1))
+* add support for allowlist ([#17](https://github.com/twinfoundation/verifiable-storage/issues/17)) ([9341ea6](https://github.com/twinfoundation/verifiable-storage/commit/9341ea6b95dfbf2a5dc70a53e5979d7d0e8b2de6))
+* improve components state for deployments based on contract id ([ce1dadd](https://github.com/twinfoundation/verifiable-storage/commit/ce1daddeda4a37d5becd49803475ece2a5c01a07))
+* iota rebased release ([fb37cfe](https://github.com/twinfoundation/verifiable-storage/commit/fb37cfec62abe862bcb9b2285564b8ee6e59849b))
+* iota rebased release ([e8fa9dd](https://github.com/twinfoundation/verifiable-storage/commit/e8fa9dd2a8a9c375ffc465f9b5c2048f6b0dca47))
+* update allow list name case ([278a787](https://github.com/twinfoundation/verifiable-storage/commit/278a787e96864c95438f87adaac6f2fc8b6bebcd))
+* update connector config and tests for gas station ([#25](https://github.com/twinfoundation/verifiable-storage/issues/25)) ([e0997ff](https://github.com/twinfoundation/verifiable-storage/commit/e0997ffb0f4869dca11f248a9886acdd22c7dcc2))
+* update dependencies ([a16a772](https://github.com/twinfoundation/verifiable-storage/commit/a16a77244cb1d312ea5ee74232bcdadd25f2b330))
+* update ts-to-schema generation ([cd41401](https://github.com/twinfoundation/verifiable-storage/commit/cd41401dd4e91f111ddf8ae68eb7b40a976fb232))
+* use new dlt packages with latency fix ([#6](https://github.com/twinfoundation/verifiable-storage/issues/6)) ([d81c45b](https://github.com/twinfoundation/verifiable-storage/commit/d81c45bce035864a41bbd498815169d7257fbcb8))
+* use shared store mechanism ([#8](https://github.com/twinfoundation/verifiable-storage/issues/8)) ([8c8ecb8](https://github.com/twinfoundation/verifiable-storage/commit/8c8ecb83d32431952c594ea23d37040991f5b4d3))
+
+
+### Bug Fixes
+
+* add missing iota receipt data ([#10](https://github.com/twinfoundation/verifiable-storage/issues/10)) ([b83c79f](https://github.com/twinfoundation/verifiable-storage/commit/b83c79fb453bb45af7c347dd7688eddbafdb442e))
+* iota get digest to match last update ([53690a0](https://github.com/twinfoundation/verifiable-storage/commit/53690a0ffa9d38a69d184c90f975cc67199a5808))
+* return if package already deployed ([dd859ca](https://github.com/twinfoundation/verifiable-storage/commit/dd859caadb7fa8323e214f6920e61e96202b4039))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/verifiable-storage-models bumped from 0.0.2-next.0 to 0.0.2-next.2
+
+## [0.0.2-next.0](https://github.com/twinfoundation/verifiable-storage/compare/verifiable-storage-connector-iota-v0.0.2-next.0...verifiable-storage-connector-iota-v0.0.2-next.0) (2025-07-16)
+
+
+### Features
+
+* add data types ([d9ad58a](https://github.com/twinfoundation/verifiable-storage/commit/d9ad58afb0c86b80bcb1229d87d2d7f522b20fcd))
+* add epoch and digest to receipt ([#12](https://github.com/twinfoundation/verifiable-storage/issues/12)) ([cd4cfa6](https://github.com/twinfoundation/verifiable-storage/commit/cd4cfa6bee19ee9b9896447d0b773bffd57fddf1))
+* add support for allowlist ([#17](https://github.com/twinfoundation/verifiable-storage/issues/17)) ([9341ea6](https://github.com/twinfoundation/verifiable-storage/commit/9341ea6b95dfbf2a5dc70a53e5979d7d0e8b2de6))
+* improve components state for deployments based on contract id ([ce1dadd](https://github.com/twinfoundation/verifiable-storage/commit/ce1daddeda4a37d5becd49803475ece2a5c01a07))
+* iota rebased release ([fb37cfe](https://github.com/twinfoundation/verifiable-storage/commit/fb37cfec62abe862bcb9b2285564b8ee6e59849b))
+* iota rebased release ([e8fa9dd](https://github.com/twinfoundation/verifiable-storage/commit/e8fa9dd2a8a9c375ffc465f9b5c2048f6b0dca47))
+* update allow list name case ([278a787](https://github.com/twinfoundation/verifiable-storage/commit/278a787e96864c95438f87adaac6f2fc8b6bebcd))
+* update connector config and tests for gas station ([#25](https://github.com/twinfoundation/verifiable-storage/issues/25)) ([e0997ff](https://github.com/twinfoundation/verifiable-storage/commit/e0997ffb0f4869dca11f248a9886acdd22c7dcc2))
+* update dependencies ([a16a772](https://github.com/twinfoundation/verifiable-storage/commit/a16a77244cb1d312ea5ee74232bcdadd25f2b330))
+* update ts-to-schema generation ([cd41401](https://github.com/twinfoundation/verifiable-storage/commit/cd41401dd4e91f111ddf8ae68eb7b40a976fb232))
+* use new dlt packages with latency fix ([#6](https://github.com/twinfoundation/verifiable-storage/issues/6)) ([d81c45b](https://github.com/twinfoundation/verifiable-storage/commit/d81c45bce035864a41bbd498815169d7257fbcb8))
+* use shared store mechanism ([#8](https://github.com/twinfoundation/verifiable-storage/issues/8)) ([8c8ecb8](https://github.com/twinfoundation/verifiable-storage/commit/8c8ecb83d32431952c594ea23d37040991f5b4d3))
+
+
+### Bug Fixes
+
+* add missing iota receipt data ([#10](https://github.com/twinfoundation/verifiable-storage/issues/10)) ([b83c79f](https://github.com/twinfoundation/verifiable-storage/commit/b83c79fb453bb45af7c347dd7688eddbafdb442e))
+* iota get digest to match last update ([53690a0](https://github.com/twinfoundation/verifiable-storage/commit/53690a0ffa9d38a69d184c90f975cc67199a5808))
+* return if package already deployed ([dd859ca](https://github.com/twinfoundation/verifiable-storage/commit/dd859caadb7fa8323e214f6920e61e96202b4039))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/verifiable-storage-models bumped from 0.0.2-next.0 to 0.0.2-next.0
+
+## 0.0.1 (2025-07-09)
+
+
+### Features
+
+* release to production ([6ce6744](https://github.com/twinfoundation/verifiable-storage/commit/6ce6744c124cca586c1ef0552624378d1207578d))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/verifiable-storage-models bumped from ^0.0.0 to ^0.0.1
+
+## [0.0.1-next.17](https://github.com/twinfoundation/verifiable-storage/compare/verifiable-storage-connector-iota-v0.0.1-next.16...verifiable-storage-connector-iota-v0.0.1-next.17) (2025-06-25)
+
+
+### Features
+
+* update connector config and tests for gas station ([#25](https://github.com/twinfoundation/verifiable-storage/issues/25)) ([e0997ff](https://github.com/twinfoundation/verifiable-storage/commit/e0997ffb0f4869dca11f248a9886acdd22c7dcc2))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/verifiable-storage-models bumped from 0.0.1-next.16 to 0.0.1-next.17
+
 ## [0.0.1-next.16](https://github.com/twinfoundation/verifiable-storage/compare/verifiable-storage-connector-iota-v0.0.1-next.15...verifiable-storage-connector-iota-v0.0.1-next.16) (2025-06-12)
 
 

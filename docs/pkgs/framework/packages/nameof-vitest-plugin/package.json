@@ -1,0 +1,32 @@
+{
+	"name": "@twin.org/nameof-vitest-plugin",
+	"version": "0.0.2-next.0",
+	"description": "A Vitest plugin which perform the nameof transformation",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/twinfoundation/framework.git",
+		"directory": "packages/nameof-vitest-plugin"
+	},
+	"author": "martyn.janes@iota.org",
+	"license": "Apache-2.0",
+	"type": "module",
+	"engines": {
+		"node": ">=20.0.0"
+	},
+	"main": "./dist/cjs/index.cjs",
+	"module": "./dist/esm/index.mjs",
+	"exports": {
+		".": {
+			"types": "./dist/types/index.d.ts",
+			"require": "./dist/cjs/index.cjs",
+			"import": "./dist/esm/index.mjs"
+		}
+	},
+	"files": [
+		"dist/cjs",
+		"dist/esm",
+		"dist/types",
+		"locales",
+		"docs"
+	]
+}

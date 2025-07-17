@@ -1,5 +1,12 @@
 # @twin.org/logging-models - Changelog
 
+## 0.0.1 (2025-07-03)
+
+
+### Features
+
+* release to production ([3458161](https://github.com/twinfoundation/logging/commit/3458161b4bb530f86e4d1fe06123d885cdcb114d))
+
 ## [0.0.1-next.16](https://github.com/twinfoundation/logging/compare/logging-models-v0.0.1-next.15...logging-models-v0.0.1-next.16) (2025-06-20)
 
 

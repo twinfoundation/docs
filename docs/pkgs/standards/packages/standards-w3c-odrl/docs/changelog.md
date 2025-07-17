@@ -1,5 +1,45 @@
 # @twin.org/standards-w3c-odrl - Changelog
 
+## [0.0.2-next.1](https://github.com/twinfoundation/standards/compare/standards-w3c-odrl-v0.0.2-next.0...standards-w3c-odrl-v0.0.2-next.1) (2025-07-14)
+
+
+### Features
+
+* improve LD Context definition for ODRL ([#28](https://github.com/twinfoundation/standards/issues/28)) ([3362fb0](https://github.com/twinfoundation/standards/commit/3362fb0fe301bef56f4d67955f21e44b9119b8ef))
+* normalise type outputs ([0b3aed7](https://github.com/twinfoundation/standards/commit/0b3aed7df0802cd609423bbd7fda6bde601d3ceb))
+* update ODRL data types and context definitions ([#31](https://github.com/twinfoundation/standards/issues/31)) ([ade0169](https://github.com/twinfoundation/standards/commit/ade0169d1049e7812bfc128ce5c16512548714fa))
+* update to latest JSON schema spec ([7a23930](https://github.com/twinfoundation/standards/commit/7a2393032d7f48bfb20d3a484f981fb6dd83a92c))
+* update ts-to-schema generation ([0905daa](https://github.com/twinfoundation/standards/commit/0905daa4a344ed35fc37b7f12fcf9ce9d34e4bd6))
+* use shared store mechanism ([#11](https://github.com/twinfoundation/standards/issues/11)) ([96fa237](https://github.com/twinfoundation/standards/commit/96fa23735f69c1fc7e3d0019b527634fa0a042d9))
+
+
+### Bug Fixes
+
+* incorrect base url for JSON-LD references in ODRL ([f66db7e](https://github.com/twinfoundation/standards/commit/f66db7ee8f3deaae96fe64bc67e3c93b593e9b8c))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/standards-w3c-vcard bumped from 0.0.2-next.0 to 0.0.2-next.1
+    * @twin.org/standards-dublin-core bumped from 0.0.2-next.0 to 0.0.2-next.1
+
+## 0.0.1 (2025-07-03)
+
+
+### Features
+
+* release to production ([2ae4125](https://github.com/twinfoundation/standards/commit/2ae4125f305d4714b50036eb8a0bd47e4100a7be))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/standards-w3c-vcard bumped from ^0.0.0 to ^0.0.1
+    * @twin.org/standards-dublin-core bumped from ^0.0.0 to ^0.0.1
+
 ## [0.0.1-next.49](https://github.com/twinfoundation/standards/compare/standards-w3c-odrl-v0.0.1-next.48...standards-w3c-odrl-v0.0.1-next.49) (2025-06-18)
 
 

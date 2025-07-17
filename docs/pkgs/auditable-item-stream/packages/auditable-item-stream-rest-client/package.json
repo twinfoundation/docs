@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/auditable-item-stream-rest-client",
-	"version": "0.0.1-next.37",
+	"version": "0.0.2-next.0",
 	"description": "Auditable Item Stream contract implementation which can connect to REST endpoints",
 	"repository": {
 		"type": "git",

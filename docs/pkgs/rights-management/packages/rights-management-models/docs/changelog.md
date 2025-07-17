@@ -1,5 +1,24 @@
 # @twin.org/rights-management-models - Changelog
 
+## 0.0.1 (2025-07-08)
+
+
+### Features
+
+* release to production ([947f85a](https://github.com/twinfoundation/rights-management/commit/947f85ab9e23c117135dba7008a75c2d85435259))
+
+## [0.0.1-next.12](https://github.com/twinfoundation/rights-management/compare/rights-management-models-v0.0.1-next.11...rights-management-models-v0.0.1-next.12) (2025-06-26)
+
+
+### Features
+
+* add policy decision stage ([b3eb5a9](https://github.com/twinfoundation/rights-management/commit/b3eb5a96f6270247d198b57c07deca4eeb5cc0bb))
+
+
+### Bug Fixes
+
+* correct PXP naming in comments ([1cd9053](https://github.com/twinfoundation/rights-management/commit/1cd9053eaa1c56a53d3cc52e75ea4d242bbe2654))
+
 ## [0.0.1-next.11](https://github.com/twinfoundation/rights-management/compare/rights-management-models-v0.0.1-next.10...rights-management-models-v0.0.1-next.11) (2025-06-20)
 
 

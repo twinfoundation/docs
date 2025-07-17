@@ -74,6 +74,32 @@ The created identity document.
 
 ***
 
+### identityRemove()
+
+> **identityRemove**(`identity`): `Promise`\<`void`\>
+
+Remove an identity.
+
+#### Parameters
+
+##### identity
+
+`string`
+
+The id of the document to remove.
+
+#### Returns
+
+`Promise`\<`void`\>
+
+Nothing.
+
+#### Implementation of
+
+`IIdentityComponent.identityRemove`
+
+***
+
 ### verificationMethodCreate()
 
 > **verificationMethodCreate**(`identity`, `verificationMethodType`, `verificationMethodId?`): `Promise`\<`IDidDocumentVerificationMethod`\>

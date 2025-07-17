@@ -1,5 +1,29 @@
 # @twin.org/standards-ld-contexts - Changelog
 
+## [0.0.2-next.1](https://github.com/twinfoundation/standards/compare/standards-ld-contexts-v0.0.2-next.0...standards-ld-contexts-v0.0.2-next.1) (2025-07-14)
+
+
+### Features
+
+* add extra ld contexts needed ([#17](https://github.com/twinfoundation/standards/issues/17)) ([d9f1be2](https://github.com/twinfoundation/standards/commit/d9f1be2a852f776cb3a8f00bb4dd631da0fe848e))
+* add ld-contexts package ([c361354](https://github.com/twinfoundation/standards/commit/c3613542c3dab5c37cc3d9869ea72eef86bc1ba1))
+* normalise type outputs ([0b3aed7](https://github.com/twinfoundation/standards/commit/0b3aed7df0802cd609423bbd7fda6bde601d3ceb))
+* update to latest JSON schema spec ([7a23930](https://github.com/twinfoundation/standards/commit/7a2393032d7f48bfb20d3a484f981fb6dd83a92c))
+* use shared store mechanism ([#11](https://github.com/twinfoundation/standards/issues/11)) ([96fa237](https://github.com/twinfoundation/standards/commit/96fa23735f69c1fc7e3d0019b527634fa0a042d9))
+
+
+### Bug Fixes
+
+* add extra ld contexts associated to URLs. cache ([#21](https://github.com/twinfoundation/standards/issues/21)) ([05f7bba](https://github.com/twinfoundation/standards/commit/05f7bbafd0efbff445b878ccc2709975e50a7773))
+* federated catalogue terms ld context last version copied ([#26](https://github.com/twinfoundation/standards/issues/26)) ([37f4ff0](https://github.com/twinfoundation/standards/commit/37f4ff00664e8b5efc7d24f1e2417061fd2bda56))
+
+## 0.0.1 (2025-07-03)
+
+
+### Features
+
+* release to production ([2ae4125](https://github.com/twinfoundation/standards/commit/2ae4125f305d4714b50036eb8a0bd47e4100a7be))
+
 ## [0.0.1-next.49](https://github.com/twinfoundation/standards/compare/standards-ld-contexts-v0.0.1-next.48...standards-ld-contexts-v0.0.1-next.49) (2025-06-18)
 
 

@@ -1,5 +1,34 @@
 # @twin.org/background-task-models - Changelog
 
+## [0.0.2-next.2](https://github.com/twinfoundation/background-task/compare/background-task-models-v0.0.2-next.1...background-task-models-v0.0.2-next.2) (2025-07-09)
+
+
+### Features
+
+* add task scheduler ([754d973](https://github.com/twinfoundation/background-task/commit/754d973e7c8483e5e54e887c157661867d5a0375))
+* improve comment ([f2b4ac2](https://github.com/twinfoundation/background-task/commit/f2b4ac22fb8f735d2bf4ce28583cf7c54acdf272))
+* only run tasks from your own thread ([c7d305b](https://github.com/twinfoundation/background-task/commit/c7d305b9807e65b8b1af6d0c2ca59e74190cab69))
+* update dependencies ([8e65767](https://github.com/twinfoundation/background-task/commit/8e657679f5e4305dbcb15ac7bcb3ab8a4613a60b))
+* use shared store mechanism ([#6](https://github.com/twinfoundation/background-task/issues/6)) ([27ed203](https://github.com/twinfoundation/background-task/commit/27ed20367d5ace7257bfa7a82b59ad70e5b5d209))
+
+## [0.0.2-next.1](https://github.com/twinfoundation/background-task/compare/background-task-models-v0.0.2-next.0...background-task-models-v0.0.2-next.1) (2025-07-09)
+
+
+### Features
+
+* add task scheduler ([754d973](https://github.com/twinfoundation/background-task/commit/754d973e7c8483e5e54e887c157661867d5a0375))
+* improve comment ([f2b4ac2](https://github.com/twinfoundation/background-task/commit/f2b4ac22fb8f735d2bf4ce28583cf7c54acdf272))
+* only run tasks from your own thread ([c7d305b](https://github.com/twinfoundation/background-task/commit/c7d305b9807e65b8b1af6d0c2ca59e74190cab69))
+* update dependencies ([8e65767](https://github.com/twinfoundation/background-task/commit/8e657679f5e4305dbcb15ac7bcb3ab8a4613a60b))
+* use shared store mechanism ([#6](https://github.com/twinfoundation/background-task/issues/6)) ([27ed203](https://github.com/twinfoundation/background-task/commit/27ed20367d5ace7257bfa7a82b59ad70e5b5d209))
+
+## 0.0.1 (2025-07-07)
+
+
+### Features
+
+* release to production ([7ce9896](https://github.com/twinfoundation/background-task/commit/7ce989659e6819f05655c86b1bda2a265af5d281))
+
 ## [0.0.1-next.21](https://github.com/twinfoundation/background-task/compare/background-task-models-v0.0.1-next.20...background-task-models-v0.0.1-next.21) (2025-06-23)
 
 

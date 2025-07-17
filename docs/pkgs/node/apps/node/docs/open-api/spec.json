@@ -1,5 +1,5 @@
 {
-	"openapi": "3.1.0",
+	"openapi": "3.1.1",
 	"info": {
 		"title": "TWIN TWIN Node Server",
 		"description": "REST API for TWIN - API Server.",
@@ -608,6 +608,115 @@
 				}
 			}
 		},
+		"/authentication/{email}/password": {
+			"put": {
+				"operationId": "authenticationUpdatePassword",
+				"summary": "Update the user's password",
+				"tags": [
+					"Authentication"
+				],
+				"parameters": [
+					{
+						"name": "email",
+						"description": "The user email.",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "john:example.com"
+					}
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"requestBody": {
+					"description": "Update a users password.",
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/UpdatePasswordRequest"
+							},
+							"examples": {
+								"updatePasswordRequestExample": {
+									"summary": "The request to update the user's password.",
+									"value": {
+										"currentPassword": "MyNewPassword123!",
+										"newPassword": "MyNewPassword123!"
+									}
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"204": {
+						"description": "The rest request ended in success with no data."
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
 		"/identity/{identity}": {
 			"get": {
 				"operationId": "identityResolve",
@@ -634,7 +743,7 @@
 						"content": {
 							"application/json": {
 								"schema": {
-									"$ref": "https://schema.twindev.org/did/DidDocument"
+									"$ref": "https://schema.twindev.org/w3c-did/DidDocument"
 								},
 								"examples": {
 									"identityResolveResponseExample": {
@@ -725,7 +834,7 @@
 						"content": {
 							"application/json": {
 								"schema": {
-									"$ref": "https://schema.twindev.org/did/DidDocument"
+									"$ref": "https://schema.twindev.org/w3c-did/DidDocument"
 								},
 								"examples": {
 									"identityCreateResponseExample": {
@@ -855,7 +964,7 @@
 						"content": {
 							"application/json": {
 								"schema": {
-									"$ref": "https://schema.twindev.org/did/DidDocumentVerificationMethod"
+									"$ref": "https://schema.twindev.org/w3c-did/DidDocumentVerificationMethod"
 								},
 								"examples": {
 									"identityVerificationMethodCreateResponseExample": {
@@ -1087,7 +1196,7 @@
 						"content": {
 							"application/json": {
 								"schema": {
-									"$ref": "https://schema.twindev.org/did/DidService"
+									"$ref": "https://schema.twindev.org/w3c-did/DidService"
 								},
 								"examples": {
 									"identityServiceCreateResponseExample": {
@@ -2013,7 +2122,7 @@
 						"content": {
 							"application/json": {
 								"schema": {
-									"$ref": "https://schema.twindev.org/did/Proof"
+									"$ref": "https://schema.twindev.org/w3c-did/Proof"
 								},
 								"examples": {
 									"identityProofCreateResponseExample": {
@@ -2852,7 +2961,10 @@
 						"in": "query",
 						"required": false,
 						"schema": {
-							"type": "number"
+							"type": [
+								"number",
+								"string"
+							]
 						}
 					}
 				],
@@ -3100,7 +3212,10 @@
 						"in": "query",
 						"required": false,
 						"schema": {
-							"type": "number"
+							"type": [
+								"number",
+								"string"
+							]
 						}
 					},
 					{
@@ -3317,17 +3432,23 @@
 						"in": "query",
 						"required": false,
 						"schema": {
-							"type": "string"
+							"type": [
+								"boolean",
+								"string"
+							]
 						},
 						"example": "true"
 					},
 					{
-						"name": "disableDecryption",
-						"description": "Disables decryption if enabled by default.",
+						"name": "decompress",
+						"description": "If the content should be decompressed, if it was compressed when stored, defaults to true.",
 						"in": "query",
 						"required": false,
 						"schema": {
-							"type": "string"
+							"type": [
+								"boolean",
+								"string"
+							]
 						}
 					},
 					{
@@ -3976,7 +4097,10 @@
 						"in": "query",
 						"required": false,
 						"schema": {
-							"type": "number"
+							"type": [
+								"number",
+								"string"
+							]
 						}
 					}
 				],
@@ -4526,7 +4650,10 @@
 						"in": "query",
 						"required": false,
 						"schema": {
-							"type": "number"
+							"type": [
+								"number",
+								"string"
+							]
 						}
 					},
 					{
@@ -4535,7 +4662,10 @@
 						"in": "query",
 						"required": false,
 						"schema": {
-							"type": "number"
+							"type": [
+								"number",
+								"string"
+							]
 						}
 					},
 					{
@@ -4553,7 +4683,10 @@
 						"in": "query",
 						"required": false,
 						"schema": {
-							"type": "number"
+							"type": [
+								"number",
+								"string"
+							]
 						}
 					}
 				],
@@ -4801,7 +4934,10 @@
 						"in": "query",
 						"required": false,
 						"schema": {
-							"type": "number"
+							"type": [
+								"number",
+								"string"
+							]
 						}
 					},
 					{
@@ -4810,7 +4946,10 @@
 						"in": "query",
 						"required": false,
 						"schema": {
-							"type": "number"
+							"type": [
+								"number",
+								"string"
+							]
 						}
 					},
 					{
@@ -4828,7 +4967,10 @@
 						"in": "query",
 						"required": false,
 						"schema": {
-							"type": "number"
+							"type": [
+								"number",
+								"string"
+							]
 						}
 					}
 				],
@@ -8613,7 +8755,10 @@
 						"in": "query",
 						"required": false,
 						"schema": {
-							"type": "number"
+							"type": [
+								"number",
+								"string"
+							]
 						}
 					},
 					{
@@ -8820,7 +8965,10 @@
 						"in": "query",
 						"required": false,
 						"schema": {
-							"type": "boolean"
+							"type": [
+								"boolean",
+								"string"
+							]
 						}
 					},
 					{
@@ -8829,7 +8977,10 @@
 						"in": "query",
 						"required": false,
 						"schema": {
-							"type": "boolean"
+							"type": [
+								"boolean",
+								"string"
+							]
 						}
 					},
 					{
@@ -9351,7 +9502,10 @@
 						"in": "query",
 						"required": false,
 						"schema": {
-							"type": "number"
+							"type": [
+								"number",
+								"string"
+							]
 						}
 					},
 					{
@@ -9573,7 +9727,10 @@
 						"in": "query",
 						"required": false,
 						"schema": {
-							"type": "boolean"
+							"type": [
+								"boolean",
+								"string"
+							]
 						}
 					},
 					{
@@ -9582,7 +9739,10 @@
 						"in": "query",
 						"required": false,
 						"schema": {
-							"type": "boolean"
+							"type": [
+								"boolean",
+								"string"
+							]
 						}
 					},
 					{
@@ -9591,7 +9751,10 @@
 						"in": "query",
 						"required": false,
 						"schema": {
-							"type": "boolean"
+							"type": [
+								"boolean",
+								"string"
+							]
 						}
 					},
 					{
@@ -9600,7 +9763,10 @@
 						"in": "query",
 						"required": false,
 						"schema": {
-							"type": "boolean"
+							"type": [
+								"boolean",
+								"string"
+							]
 						}
 					},
 					{
@@ -10200,7 +10366,10 @@
 						"in": "query",
 						"required": false,
 						"schema": {
-							"type": "boolean"
+							"type": [
+								"boolean",
+								"string"
+							]
 						}
 					},
 					{
@@ -10797,7 +10966,10 @@
 						"in": "query",
 						"required": false,
 						"schema": {
-							"type": "boolean"
+							"type": [
+								"boolean",
+								"string"
+							]
 						}
 					},
 					{
@@ -10806,7 +10978,10 @@
 						"in": "query",
 						"required": false,
 						"schema": {
-							"type": "boolean"
+							"type": [
+								"boolean",
+								"string"
+							]
 						}
 					},
 					{
@@ -10824,7 +10999,10 @@
 						"in": "query",
 						"required": false,
 						"schema": {
-							"type": "number"
+							"type": [
+								"boolean",
+								"string"
+							]
 						}
 					},
 					{
@@ -11060,7 +11238,10 @@
 						"in": "query",
 						"required": false,
 						"schema": {
-							"type": "boolean"
+							"type": [
+								"boolean",
+								"string"
+							]
 						}
 					},
 					{
@@ -11078,7 +11259,10 @@
 						"in": "query",
 						"required": false,
 						"schema": {
-							"type": "number"
+							"type": [
+								"number",
+								"string"
+							]
 						}
 					},
 					{
@@ -11712,7 +11896,10 @@
 						"in": "query",
 						"required": false,
 						"schema": {
-							"type": "number"
+							"type": [
+								"number",
+								"string"
+							]
 						}
 					},
 					{
@@ -12016,7 +12203,10 @@
 						"in": "query",
 						"required": false,
 						"schema": {
-							"type": "number"
+							"type": [
+								"number",
+								"string"
+							]
 						}
 					},
 					{
@@ -12066,7 +12256,7 @@
 															"@context": [
 																"https://www.w3.org/ns/odrl/2/",
 																{
-																	"twin": "https://schema.twindev.org/odrl/",
+																	"twin": "https://schema.twindev.org/w3c-odrl/",
 																	"jsonPathSelector": "twin:jsonPathSelector"
 																}
 															],
@@ -12221,7 +12411,7 @@
 													"@context": [
 														"https://www.w3.org/ns/odrl/2/",
 														{
-															"twin": "https://schema.twindev.org/odrl/",
+															"twin": "https://schema.twindev.org/w3c-odrl/",
 															"jsonPathSelector": "twin:jsonPathSelector"
 														}
 													],
@@ -12367,7 +12557,10 @@
 						"in": "query",
 						"required": false,
 						"schema": {
-							"type": "number"
+							"type": [
+								"number",
+								"string"
+							]
 						}
 					},
 					{
@@ -12686,7 +12879,10 @@
 						"in": "query",
 						"required": false,
 						"schema": {
-							"type": "number"
+							"type": [
+								"number",
+								"string"
+							]
 						}
 					},
 					{
@@ -13016,6 +13212,7 @@
 					},
 					"aliases": {
 						"type": "array",
+						"items": false,
 						"description": "Alternative aliases that can be used to identify the vertex.",
 						"prefixItems": [
 							{
@@ -13040,6 +13237,7 @@
 					},
 					"resources": {
 						"type": "array",
+						"items": false,
 						"description": "The resources attached to the vertex.",
 						"prefixItems": [
 							{
@@ -13058,6 +13256,7 @@
 					},
 					"edges": {
 						"type": "array",
+						"items": false,
 						"description": "The edges connected to the vertex.",
 						"prefixItems": [
 							{
@@ -13096,6 +13295,7 @@
 					},
 					"aliases": {
 						"type": "array",
+						"items": false,
 						"description": "Alternative aliases that can be used to identify the vertex.",
 						"prefixItems": [
 							{
@@ -13120,6 +13320,7 @@
 					},
 					"resources": {
 						"type": "array",
+						"items": false,
 						"description": "The resources attached to the vertex.",
 						"prefixItems": [
 							{
@@ -13138,6 +13339,7 @@
 					},
 					"edges": {
 						"type": "array",
+						"items": false,
 						"description": "The edges connected to the vertex.",
 						"prefixItems": [
 							{
@@ -13189,6 +13391,7 @@
 					},
 					"entries": {
 						"type": "array",
+						"items": false,
 						"description": "The entries for the stream.",
 						"prefixItems": [
 							{
@@ -13259,6 +13462,9 @@
 						"description": "Disables encryption if enabled by default.",
 						"default": false
 					},
+					"compress": {
+						"$ref": "https://schema.twindev.org/blob-storage/BlobStorageCompressionType"
+					},
 					"overrideVaultKeyId": {
 						"type": "string",
 						"description": "Use a different vault key id for encryption, if not provided the default vault key id will be used.",
@@ -13288,16 +13494,6 @@
 					},
 					"metadata": {
 						"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-					},
-					"disableEncryption": {
-						"type": "boolean",
-						"description": "Disables encryption if enabled by default.",
-						"default": false
-					},
-					"overrideVaultKeyId": {
-						"type": "string",
-						"description": "Use a different vault key id for encryption, if not provided the default vault key id will be used.",
-						"default": "undefined"
 					}
 				},
 				"additionalProperties": false,
@@ -13368,6 +13564,7 @@
 				"properties": {
 					"conflicts": {
 						"type": "array",
+						"items": false,
 						"description": "The conflicting items.",
 						"prefixItems": [
 							{
@@ -13463,6 +13660,7 @@
 				"properties": {
 					"entities": {
 						"type": "array",
+						"items": false,
 						"description": "The entities, which can be partial if a limited keys list was provided.",
 						"prefixItems": [
 							{
@@ -13490,6 +13688,7 @@
 					},
 					"rules": {
 						"type": "array",
+						"items": false,
 						"description": "The rules.",
 						"prefixItems": [
 							{
@@ -13528,6 +13727,7 @@
 					},
 					"auditableItemGraphEdges": {
 						"type": "array",
+						"items": false,
 						"description": "The auditable item graph vertices to connect the document to.",
 						"prefixItems": [
 							{
@@ -13582,6 +13782,7 @@
 					},
 					"auditableItemGraphEdges": {
 						"type": "array",
+						"items": false,
 						"description": "The auditable item graph vertices to connect the document to.",
 						"prefixItems": [
 							{
@@ -13651,6 +13852,7 @@
 					},
 					"components": {
 						"type": "array",
+						"items": false,
 						"description": "The status of the components.",
 						"prefixItems": [
 							{
@@ -13752,6 +13954,7 @@
 				"properties": {
 					"items": {
 						"type": "array",
+						"items": false,
 						"description": "The identities.",
 						"prefixItems": [
 							{
@@ -13800,7 +14003,7 @@
 				"type": "object",
 				"properties": {
 					"proofType": {
-						"$ref": "https://schema.twindev.org/did/ProofTypes"
+						"$ref": "https://schema.twindev.org/w3c-did/ProofTypes"
 					},
 					"document": {
 						"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
@@ -13820,7 +14023,7 @@
 						"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
 					},
 					"proof": {
-						"$ref": "https://schema.twindev.org/did/Proof"
+						"$ref": "https://schema.twindev.org/w3c-did/Proof"
 					}
 				},
 				"required": [
@@ -13857,6 +14060,7 @@
 							},
 							{
 								"type": "array",
+								"items": false,
 								"prefixItems": [
 									{
 										"type": "string"
@@ -13873,6 +14077,7 @@
 							},
 							{
 								"type": "array",
+								"items": false,
 								"prefixItems": [
 									{
 										"type": "string"
@@ -13916,7 +14121,7 @@
 				"type": "object",
 				"properties": {
 					"verifiableCredential": {
-						"$ref": "https://schema.twindev.org/did/DidVerifiableCredential"
+						"$ref": "https://schema.twindev.org/w3c-did/DidVerifiableCredential"
 					},
 					"jwt": {
 						"type": "string",
@@ -13938,7 +14143,7 @@
 						"description": "Has the credential been revoked."
 					},
 					"verifiableCredential": {
-						"$ref": "https://schema.twindev.org/did/DidVerifiableCredential"
+						"$ref": "https://schema.twindev.org/w3c-did/DidVerifiableCredential"
 					}
 				},
 				"required": [
@@ -13964,6 +14169,7 @@
 							},
 							{
 								"type": "array",
+								"items": false,
 								"prefixItems": [
 									{
 										"type": "string"
@@ -13975,6 +14181,7 @@
 					},
 					"verifiableCredentials": {
 						"type": "array",
+						"items": false,
 						"description": "The verifiable credentials to include in the presentation.",
 						"prefixItems": [
 							{
@@ -13983,7 +14190,7 @@
 										"type": "string"
 									},
 									{
-										"$ref": "https://schema.twindev.org/did/DidVerifiableCredential"
+										"$ref": "https://schema.twindev.org/w3c-did/DidVerifiableCredential"
 									}
 								]
 							}
@@ -14004,7 +14211,7 @@
 				"type": "object",
 				"properties": {
 					"verifiablePresentation": {
-						"$ref": "https://schema.twindev.org/did/DidVerifiablePresentation"
+						"$ref": "https://schema.twindev.org/w3c-did/DidVerifiablePresentation"
 					},
 					"jwt": {
 						"type": "string",
@@ -14026,14 +14233,15 @@
 						"description": "Has the presentation been revoked."
 					},
 					"verifiablePresentation": {
-						"$ref": "https://schema.twindev.org/did/DidVerifiablePresentation"
+						"$ref": "https://schema.twindev.org/w3c-did/DidVerifiablePresentation"
 					},
 					"issuers": {
 						"type": "array",
+						"items": false,
 						"description": "The issuers of the presentation.",
 						"prefixItems": [
 							{
-								"$ref": "https://schema.twindev.org/did/DidDocument"
+								"$ref": "https://schema.twindev.org/w3c-did/DidDocument"
 							}
 						]
 					}
@@ -14048,7 +14256,7 @@
 				"type": "object",
 				"properties": {
 					"verificationMethodType": {
-						"$ref": "https://schema.twindev.org/did/DidVerificationMethodType"
+						"$ref": "https://schema.twindev.org/w3c-did/DidVerificationMethodType"
 					},
 					"verificationMethodId": {
 						"type": "string",
@@ -14125,6 +14333,7 @@
 				"properties": {
 					"entities": {
 						"type": "array",
+						"items": false,
 						"description": "The entities, which can be partial if a limited keys list was provided.",
 						"prefixItems": [
 							{
@@ -14382,6 +14591,7 @@
 					},
 					"rules": {
 						"type": "array",
+						"items": false,
 						"description": "The rules.",
 						"prefixItems": [
 							{
@@ -14488,6 +14698,7 @@
 				"properties": {
 					"entities": {
 						"type": "array",
+						"items": false,
 						"description": "The metrics.",
 						"prefixItems": [
 							{
@@ -14596,6 +14807,7 @@
 					},
 					"entities": {
 						"type": "array",
+						"items": false,
 						"description": "The metric values.",
 						"prefixItems": [
 							{
@@ -17832,6 +18044,25 @@
 				],
 				"description": "A character string denoting the type of a document. [Reference United Nations Code List (UNCL) 1001] https://vocabulary.uncefact.org/DocumentCodeList https://github.com/uncefact/vocabulary-outputs/blob/main/_data/documentcodelist.json"
 			},
+			"UpdatePasswordRequest": {
+				"type": "object",
+				"properties": {
+					"currentPassword": {
+						"type": "string",
+						"description": "The current password for the user."
+					},
+					"newPassword": {
+						"type": "string",
+						"description": "The new password for the user."
+					}
+				},
+				"required": [
+					"currentPassword",
+					"newPassword"
+				],
+				"additionalProperties": false,
+				"description": "The body of the request."
+			},
 			"VerifiableStorageCreateRequest": {
 				"type": "object",
 				"properties": {
@@ -17841,6 +18072,7 @@
 					},
 					"allowList": {
 						"type": "array",
+						"items": false,
 						"description": "The list of identities that are allowed to modify the item.",
 						"prefixItems": [
 							{
@@ -17911,6 +18143,7 @@
 					},
 					"allowList": {
 						"type": "array",
+						"items": false,
 						"description": "The list of identities that are allowed to modify the item.",
 						"prefixItems": [
 							{
@@ -17934,6 +18167,7 @@
 					},
 					"allowList": {
 						"type": "array",
+						"items": false,
 						"description": "An updated list of identities that are allowed to modify the item, send an empty list to remove all entries.",
 						"prefixItems": [
 							{

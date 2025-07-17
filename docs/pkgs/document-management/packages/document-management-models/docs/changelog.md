@@ -1,5 +1,12 @@
 # @twin.org/document-management-models - Changelog
 
+## 0.0.1 (2025-07-09)
+
+
+### Features
+
+* release to production ([a009526](https://github.com/twinfoundation/document-management/commit/a009526032a0ee6e6b74f476a01fbe5f4c7fd4da))
+
 ## [0.0.1-next.20](https://github.com/twinfoundation/document-management/compare/document-management-models-v0.0.1-next.19...document-management-models-v0.0.1-next.20) (2025-06-20)
 
 

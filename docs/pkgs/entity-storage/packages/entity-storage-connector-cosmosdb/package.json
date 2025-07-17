@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/entity-storage-connector-cosmosdb",
-	"version": "0.0.1-next.31",
+	"version": "0.0.2-next.0",
 	"description": "Entity Storage connector implementation using CosmosDB storage",
 	"repository": {
 		"type": "git",

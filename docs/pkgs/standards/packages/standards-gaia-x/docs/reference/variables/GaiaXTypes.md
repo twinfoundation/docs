@@ -18,11 +18,11 @@ Data Resource
 
 Service Offering Type
 
-### Participant
+### LegalPerson
 
-> `readonly` **Participant**: `"LegalPerson"` = `"LegalPerson"`
+> `readonly` **LegalPerson**: `"LegalPerson"` = `"LegalPerson"`
 
-Participant
+Legal Person
 
 ### DataExchangeComponent
 

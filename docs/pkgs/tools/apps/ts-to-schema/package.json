@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/ts-to-schema",
-	"version": "0.0.1-next.28",
+	"version": "0.0.2-next.2",
 	"description": "Tool to convert TypeScript definitions to JSON schemas",
 	"repository": {
 		"type": "git",

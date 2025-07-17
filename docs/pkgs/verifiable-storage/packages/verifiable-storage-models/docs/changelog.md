@@ -1,5 +1,43 @@
 # @twin.org/verifiable-storage-models - Changelog
 
+## [0.0.2-next.2](https://github.com/twinfoundation/verifiable-storage/compare/verifiable-storage-models-v0.0.2-next.1...verifiable-storage-models-v0.0.2-next.2) (2025-07-16)
+
+
+### Features
+
+* add support for allowlist ([#17](https://github.com/twinfoundation/verifiable-storage/issues/17)) ([9341ea6](https://github.com/twinfoundation/verifiable-storage/commit/9341ea6b95dfbf2a5dc70a53e5979d7d0e8b2de6))
+* update allow list name case ([278a787](https://github.com/twinfoundation/verifiable-storage/commit/278a787e96864c95438f87adaac6f2fc8b6bebcd))
+* update dependencies ([a16a772](https://github.com/twinfoundation/verifiable-storage/commit/a16a77244cb1d312ea5ee74232bcdadd25f2b330))
+* update descriptions ([696be4d](https://github.com/twinfoundation/verifiable-storage/commit/696be4d253183375d4c96e5b74eca0c814fe2fd1))
+* use new dlt packages with latency fix ([#6](https://github.com/twinfoundation/verifiable-storage/issues/6)) ([d81c45b](https://github.com/twinfoundation/verifiable-storage/commit/d81c45bce035864a41bbd498815169d7257fbcb8))
+* use shared store mechanism ([#8](https://github.com/twinfoundation/verifiable-storage/issues/8)) ([8c8ecb8](https://github.com/twinfoundation/verifiable-storage/commit/8c8ecb83d32431952c594ea23d37040991f5b4d3))
+
+## [0.0.2-next.0](https://github.com/twinfoundation/verifiable-storage/compare/verifiable-storage-models-v0.0.2-next.0...verifiable-storage-models-v0.0.2-next.0) (2025-07-16)
+
+
+### Features
+
+* add support for allowlist ([#17](https://github.com/twinfoundation/verifiable-storage/issues/17)) ([9341ea6](https://github.com/twinfoundation/verifiable-storage/commit/9341ea6b95dfbf2a5dc70a53e5979d7d0e8b2de6))
+* update allow list name case ([278a787](https://github.com/twinfoundation/verifiable-storage/commit/278a787e96864c95438f87adaac6f2fc8b6bebcd))
+* update dependencies ([a16a772](https://github.com/twinfoundation/verifiable-storage/commit/a16a77244cb1d312ea5ee74232bcdadd25f2b330))
+* update descriptions ([696be4d](https://github.com/twinfoundation/verifiable-storage/commit/696be4d253183375d4c96e5b74eca0c814fe2fd1))
+* use new dlt packages with latency fix ([#6](https://github.com/twinfoundation/verifiable-storage/issues/6)) ([d81c45b](https://github.com/twinfoundation/verifiable-storage/commit/d81c45bce035864a41bbd498815169d7257fbcb8))
+* use shared store mechanism ([#8](https://github.com/twinfoundation/verifiable-storage/issues/8)) ([8c8ecb8](https://github.com/twinfoundation/verifiable-storage/commit/8c8ecb83d32431952c594ea23d37040991f5b4d3))
+
+## 0.0.1 (2025-07-09)
+
+
+### Features
+
+* release to production ([6ce6744](https://github.com/twinfoundation/verifiable-storage/commit/6ce6744c124cca586c1ef0552624378d1207578d))
+
+## [0.0.1-next.17](https://github.com/twinfoundation/verifiable-storage/compare/verifiable-storage-models-v0.0.1-next.16...verifiable-storage-models-v0.0.1-next.17) (2025-06-25)
+
+
+### Miscellaneous Chores
+
+* **verifiable-storage-models:** Synchronize repo versions
+
 ## [0.0.1-next.16](https://github.com/twinfoundation/verifiable-storage/compare/verifiable-storage-models-v0.0.1-next.15...verifiable-storage-models-v0.0.1-next.16) (2025-06-12)
 
 

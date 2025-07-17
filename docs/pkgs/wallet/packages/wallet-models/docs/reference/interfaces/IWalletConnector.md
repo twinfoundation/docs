@@ -88,7 +88,7 @@ The identity of the user to access the vault keys.
 
 `string`
 
-The bech32 encoded address.
+The hex encoded address.
 
 #### Returns
 
@@ -116,7 +116,7 @@ The identity of the user to access the vault keys.
 
 `string`
 
-The bech32 encoded address.
+The hex encoded address.
 
 ##### ensureBalance
 
@@ -156,13 +156,13 @@ The identity of the user to access the vault keys.
 
 `string`
 
-The bech32 encoded address to send the funds from.
+The hex encoded address to send the funds from.
 
 ##### addressDest
 
 `string`
 
-The bech32 encoded address to send the funds to.
+The hex encoded address to send the funds to.
 
 ##### amount
 

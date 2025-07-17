@@ -384,10 +384,13 @@
 				"properties": {
 					"entities": {
 						"type": "array",
-						"items": {
-							"$ref": "#/components/schemas/LogEntry"
-						},
-						"description": "The entities, which can be partial if a limited keys list was provided."
+						"items": false,
+						"description": "The entities, which can be partial if a limited keys list was provided.",
+						"prefixItems": [
+							{
+								"$ref": "#/components/schemas/LogEntry"
+							}
+						]
 					},
 					"cursor": {
 						"type": "string",
