@@ -10,12 +10,12 @@ npm install @twin.org/nft-connector-iota
 
 ## Testing
 
-The tests developed are functional tests and need the following components to be running:
+The tests developed are functional tests and need instances of the Test IOTA Gas Station, and Universal Resolver up and running. To run these services locally using Docker:
 
 ### Prerequisites
 
 1. **IOTA Testnet Access**: Tests run against the IOTA testnet
-2. **Gas Station Service**: Required for gas station integration tests (20 comprehensive tests)
+2. **Gas Station Service**: Required for gas station integration tests
 3. **Test Mnemonics**: Required for wallet operations
 
 ### Gas Station Setup
@@ -32,30 +32,28 @@ This starts:
 - Port 9527: Gas Station API endpoint
 - Port 9184: Admin interface
 
-### Environment Configuration
+### Environment Variables
 
-The tests require environment variables to be configured. Create a `.env.dev` file in the `tests` directory with your test mnemonics:
+The tests require the following environment variables to be set:
 
-```env
-TEST_MNEMONIC="your test mnemonic phrase here"
-TEST_2_MNEMONIC="second test mnemonic phrase here"
-TEST_NODE_MNEMONIC="node mnemonic phrase here"
+```shell
+# Required for all tests
+export TEST_MNEMONIC="abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon about"
+export TEST_NODE_ENDPOINT="https://api.testnet.iota.cafe"
+export TEST_FAUCET_ENDPOINT="https://faucet.testnet.iota.cafe/gas"
+export TEST_NETWORK="testnet"
+
+# Required for gas station integration tests
+export TEST_GAS_STATION_URL="http://localhost:9527"
+export TEST_GAS_STATION_AUTH_TOKEN="qEyCL6d9BKKFl/tfDGAKeGFkhUlf7FkqiGV7Xw4JUsI="
 ```
 
-### Running Tests
-
-After setting up the gas station and environment variables, you can run the tests:
-
-```sh
-npm run test
-```
+### Test Coverage
 
 The test suite includes:
 
-- **13 standard NFT tests**: Basic NFT operations (mint, transfer, update, burn)
-- **20 gas station tests**: Comprehensive sponsored transaction testing
-
-### Test Coverage
+- Basic NFT operations (mint, transfer, update, burn)
+- Comprehensive sponsored transaction testing
 
 The gas station integration tests validate:
 

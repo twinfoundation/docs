@@ -30,6 +30,14 @@ The type of the task.
 
 ***
 
+### threadId
+
+> **threadId**: `string`
+
+The thread id for the task.
+
+***
+
 ### retryInterval?
 
 > `optional` **retryInterval**: `number`

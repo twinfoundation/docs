@@ -1,5 +1,20 @@
 # @twin.org/event-bus-connector-local - Changelog
 
+## 0.0.1 (2025-07-04)
+
+
+### Features
+
+* update dependencies ([a313000](https://github.com/twinfoundation/event-bus/commit/a313000b9c3264e8ed2602622219be2cefcf0474))
+* use shared store mechanism ([#2](https://github.com/twinfoundation/event-bus/issues/2)) ([1ded106](https://github.com/twinfoundation/event-bus/commit/1ded10684e8fab4a5138231e9f2ab49e43590f00))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/event-bus-models bumped from ^0.0.0 to ^0.0.1
+
 ## [0.0.1-next.11](https://github.com/twinfoundation/event-bus/compare/event-bus-connector-local-v0.0.1-next.10...event-bus-connector-local-v0.0.1-next.11) (2025-06-12)
 
 

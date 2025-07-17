@@ -20,3 +20,8 @@
 ## Type Aliases
 
 - [PolicyActionCallback](type-aliases/PolicyActionCallback.md)
+- [PolicyDecisionStage](type-aliases/PolicyDecisionStage.md)
+
+## Variables
+
+- [PolicyDecisionStage](variables/PolicyDecisionStage.md)

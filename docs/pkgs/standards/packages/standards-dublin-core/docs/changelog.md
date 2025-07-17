@@ -1,5 +1,24 @@
 # @twin.org/standards-dublin-core - Changelog
 
+## [0.0.2-next.1](https://github.com/twinfoundation/standards/compare/standards-dublin-core-v0.0.2-next.0...standards-dublin-core-v0.0.2-next.1) (2025-07-14)
+
+
+### Features
+
+* add Collection and hasPart to Dublin Core ([#13](https://github.com/twinfoundation/standards/issues/13)) ([867ddbc](https://github.com/twinfoundation/standards/commit/867ddbcad0c4afec3c112b113eb97ab431cf84b1))
+* dublin core refactor ([548db75](https://github.com/twinfoundation/standards/commit/548db75600d44a0ab8f7bff2f07261552dc2b0b1))
+* update to latest JSON schema spec ([7a23930](https://github.com/twinfoundation/standards/commit/7a2393032d7f48bfb20d3a484f981fb6dd83a92c))
+* update ts-to-schema generation ([ba4e76d](https://github.com/twinfoundation/standards/commit/ba4e76d677556a1817092f8079d4cce67dee94bc))
+* update ts-to-schema generation ([0905daa](https://github.com/twinfoundation/standards/commit/0905daa4a344ed35fc37b7f12fcf9ce9d34e4bd6))
+* use shared store mechanism ([#11](https://github.com/twinfoundation/standards/issues/11)) ([96fa237](https://github.com/twinfoundation/standards/commit/96fa23735f69c1fc7e3d0019b527634fa0a042d9))
+
+## 0.0.1 (2025-07-03)
+
+
+### Features
+
+* release to production ([2ae4125](https://github.com/twinfoundation/standards/commit/2ae4125f305d4714b50036eb8a0bd47e4100a7be))
+
 ## [0.0.1-next.49](https://github.com/twinfoundation/standards/compare/standards-dublin-core-v0.0.1-next.48...standards-dublin-core-v0.0.1-next.49) (2025-06-18)
 
 

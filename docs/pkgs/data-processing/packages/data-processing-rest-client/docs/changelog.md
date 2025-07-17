@@ -1,5 +1,28 @@
 # @twin.org/data-processing-rest-client - Changelog
 
+## 0.0.1 (2025-07-08)
+
+
+### Features
+
+* Add rule group query functionality ([#2](https://github.com/twinfoundation/data-processing/issues/2)) ([0fbbfb0](https://github.com/twinfoundation/data-processing/commit/0fbbfb065b6ecc293920b25f97ba011743105486))
+* pass the mimeTypeOverride through the component extract method ([#9](https://github.com/twinfoundation/data-processing/issues/9)) ([a2b36de](https://github.com/twinfoundation/data-processing/commit/a2b36de5c19c56e4172d3f22b176aa83e1df84c8))
+* release to production ([531ba89](https://github.com/twinfoundation/data-processing/commit/531ba89dea2deb2810870b72851dca3081f9d2ce))
+* update dependencies ([21b8e80](https://github.com/twinfoundation/data-processing/commit/21b8e8007c87136a09f0a8e35ffde13a07ff4711))
+* use shared store mechanism ([#6](https://github.com/twinfoundation/data-processing/issues/6)) ([6009228](https://github.com/twinfoundation/data-processing/commit/600922880acef07cc2f818dee7645c342929108b))
+
+
+### Bug Fixes
+
+* Update endpoint for fetching rule group list ([#3](https://github.com/twinfoundation/data-processing/issues/3)) ([919c1b4](https://github.com/twinfoundation/data-processing/commit/919c1b435e760251ca57f96ed9f701b08542f318))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/data-processing-models bumped from ^0.0.0 to ^0.0.1
+
 ## [0.0.1-next.16](https://github.com/twinfoundation/data-processing/compare/data-processing-rest-client-v0.0.1-next.15...data-processing-rest-client-v0.0.1-next.16) (2025-06-20)
 
 

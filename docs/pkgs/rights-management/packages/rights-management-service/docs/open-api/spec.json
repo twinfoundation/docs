@@ -39,7 +39,7 @@
 					"content": {
 						"application/json": {
 							"schema": {
-								"$ref": "https://schema.twindev.org/odrl/OdrlPolicy"
+								"$ref": "https://schema.twindev.org/w3c-odrl/OdrlPolicy"
 							},
 							"examples": {
 								"papCreateExample": {
@@ -161,7 +161,7 @@
 					"content": {
 						"application/json": {
 							"schema": {
-								"$ref": "https://schema.twindev.org/odrl/OdrlPolicy"
+								"$ref": "https://schema.twindev.org/w3c-odrl/OdrlPolicy"
 							},
 							"examples": {
 								"papUpdateExample": {
@@ -274,7 +274,7 @@
 						"content": {
 							"application/json": {
 								"schema": {
-									"$ref": "https://schema.twindev.org/odrl/OdrlPolicy"
+									"$ref": "https://schema.twindev.org/w3c-odrl/OdrlPolicy"
 								},
 								"examples": {
 									"papRetrieveResponseExample": {
@@ -624,10 +624,13 @@
 					},
 					"policies": {
 						"type": "array",
-						"items": {
-							"$ref": "https://schema.twindev.org/odrl/OdrlPolicy"
-						},
-						"description": "The policies matching the query."
+						"items": false,
+						"description": "The policies matching the query.",
+						"prefixItems": [
+							{
+								"$ref": "https://schema.twindev.org/w3c-odrl/OdrlPolicy"
+							}
+						]
 					}
 				},
 				"required": [

@@ -17,12 +17,13 @@ This is the overview of the packages.
 
 ## Tools
 
-- [@twin.org/nameof-transformer](pkgs/tools/packages/nameof-transformer/index.md) - A TypeScript transformer which converts types and properties to their actual name for use at runtime
-- [@twin.org/nameof-vitest-plugin](pkgs/tools/packages/nameof-vitest-plugin/index.md) - A Vitest plugin which perform the nameof transformation
-- [@twin.org/nameof](pkgs/tools/packages/nameof/index.md) - Provides the definitions for the methods which are processed by the nameof-transformer
+- [@twin.org/tools-core](pkgs/tools/packages/tools-core/index.md) - Shared components for the tools
 
 ## Framework
 
+- [@twin.org/nameof-transformer](pkgs/framework/packages/nameof-transformer/index.md) - A TypeScript transformer which converts types and properties to their actual name for use at runtime
+- [@twin.org/nameof-vitest-plugin](pkgs/framework/packages/nameof-vitest-plugin/index.md) - A Vitest plugin which perform the nameof transformation
+- [@twin.org/nameof](pkgs/framework/packages/nameof/index.md) - Provides the definitions for the methods which are processed by the nameof-transformer
 - [@twin.org/core](pkgs/framework/packages/core/index.md) - Helper methods/classes for data type checking/validation/guarding/error handling
 - [@twin.org/entity](pkgs/framework/packages/entity/index.md) - Helpers for defining and working with entities
 - [@twin.org/crypto](pkgs/framework/packages/crypto/index.md) - Contains helper methods and classes which implement cryptographic functions
@@ -44,6 +45,7 @@ This is the overview of the packages.
 - [@twin.org/standards-vda](pkgs/standards/packages/standards-vda/index.md) - Models which define the structure of VDA JAIF Standard
 - [@twin.org/standards-gaia-x](pkgs/standards/packages/standards-gaia-x/index.md) - Models which define the structure of Gaia-x
 - [@twin.org/standards-ld-contexts](pkgs/standards/packages/standards-ld-contexts/index.md) - Local copies of standard LD contexts which can be used for offline development
+- [@twin.org/standards-w3c-activity-streams](pkgs/standards/packages/standards-w3c-activity-streams/index.md) - Models which define the structure of W3C Activity Streams Standard
 
 ## Data
 

@@ -32,11 +32,11 @@ The coin type.
 
 ***
 
-### bech32Hrp?
+### networkName?
 
-> `optional` **bech32Hrp**: `string`
+> `optional` **networkName**: `string`
 
-The bech32 human readable part for the addresses.
+The network name part for the addresses.
 
 #### Default
 

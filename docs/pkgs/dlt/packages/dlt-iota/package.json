@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/dlt-iota",
-	"version": "0.0.1-next.28",
+	"version": "0.0.2-next.1",
 	"description": "DLT helpers for use with IOTA",
 	"repository": {
 		"type": "git",

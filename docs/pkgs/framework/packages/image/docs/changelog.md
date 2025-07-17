@@ -1,5 +1,110 @@
 # @twin.org/image - Changelog
 
+## 0.0.1 (2025-07-03)
+
+
+### Features
+
+* release to production ([829d53d](https://github.com/twinfoundation/framework/commit/829d53d3953b1e1b40b0243c04cfdfd3842aac7b))
+* release to production ([5cf3a76](https://github.com/twinfoundation/framework/commit/5cf3a76a09eff2e6414d0cba846c7c37400a11d6))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/core bumped from ^0.0.0 to ^0.0.1
+    * @twin.org/nameof bumped from ^0.0.0 to ^0.0.1
+  * devDependencies
+    * @twin.org/nameof-transformer bumped from ^0.0.0 to ^0.0.1
+    * @twin.org/nameof-vitest-plugin bumped from ^0.0.0 to ^0.0.1
+
+## [0.0.1-next.70](https://github.com/twinfoundation/framework/compare/image-v0.0.1-next.69...image-v0.0.1-next.70) (2025-07-02)
+
+
+### Features
+
+* add guards arrayEndsWith and arrayStartsWith ([95d875e](https://github.com/twinfoundation/framework/commit/95d875ec8ccb4713c145fdde941d4cfedcec2ed3))
+* relocate core packages from tools ([bcab8f3](https://github.com/twinfoundation/framework/commit/bcab8f3160442ea4fcaf442947462504f3d6a17d))
+* use new shared store mechanism ([#131](https://github.com/twinfoundation/framework/issues/131)) ([934385b](https://github.com/twinfoundation/framework/commit/934385b2fbaf9f5c00a505ebf9d093bd5a425f55))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/core bumped from 0.0.1-next.69 to 0.0.1-next.70
+    * @twin.org/nameof bumped from 0.0.1-next.69 to 0.0.1-next.70
+  * devDependencies
+    * @twin.org/nameof-transformer bumped from 0.0.1-next.69 to 0.0.1-next.70
+    * @twin.org/nameof-vitest-plugin bumped from 0.0.1-next.69 to 0.0.1-next.70
+
+## [0.0.1-next.69](https://github.com/twinfoundation/framework/compare/image-v0.0.1-next.68...image-v0.0.1-next.69) (2025-07-02)
+
+
+### Features
+
+* add guards arrayEndsWith and arrayStartsWith ([95d875e](https://github.com/twinfoundation/framework/commit/95d875ec8ccb4713c145fdde941d4cfedcec2ed3))
+* relocate core packages from tools ([bcab8f3](https://github.com/twinfoundation/framework/commit/bcab8f3160442ea4fcaf442947462504f3d6a17d))
+* use new shared store mechanism ([#131](https://github.com/twinfoundation/framework/issues/131)) ([934385b](https://github.com/twinfoundation/framework/commit/934385b2fbaf9f5c00a505ebf9d093bd5a425f55))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/core bumped from 0.0.1-next.68 to 0.0.1-next.69
+    * @twin.org/nameof bumped from 0.0.1-next.68 to 0.0.1-next.69
+  * devDependencies
+    * @twin.org/nameof-transformer bumped from 0.0.1-next.68 to 0.0.1-next.69
+    * @twin.org/nameof-vitest-plugin bumped from 0.0.1-next.68 to 0.0.1-next.69
+
+## [0.0.1-next.68](https://github.com/twinfoundation/framework/compare/image-v0.0.1-next.67...image-v0.0.1-next.68) (2025-07-02)
+
+
+### Features
+
+* relocate core packages from tools ([bcab8f3](https://github.com/twinfoundation/framework/commit/bcab8f3160442ea4fcaf442947462504f3d6a17d))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/core bumped from 0.0.1-next.67 to 0.0.1-next.68
+    * @twin.org/nameof bumped from 0.0.1-next.67 to 0.0.1-next.68
+  * devDependencies
+    * @twin.org/nameof-transformer bumped from 0.0.1-next.67 to 0.0.1-next.68
+    * @twin.org/nameof-vitest-plugin bumped from 0.0.1-next.67 to 0.0.1-next.68
+
+## [0.0.1-next.67](https://github.com/twinfoundation/framework/compare/image-v0.0.1-next.66...image-v0.0.1-next.67) (2025-06-26)
+
+
+### Miscellaneous Chores
+
+* **image:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/core bumped from 0.0.1-next.66 to 0.0.1-next.67
+
+## [0.0.1-next.66](https://github.com/twinfoundation/framework/compare/image-v0.0.1-next.65...image-v0.0.1-next.66) (2025-06-26)
+
+
+### Miscellaneous Chores
+
+* **image:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/core bumped from 0.0.1-next.65 to 0.0.1-next.66
+
 ## [0.0.1-next.65](https://github.com/twinfoundation/framework/compare/image-v0.0.1-next.64...image-v0.0.1-next.65) (2025-06-19)
 
 

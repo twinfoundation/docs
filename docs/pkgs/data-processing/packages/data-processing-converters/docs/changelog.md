@@ -1,5 +1,22 @@
 # @twin.org/data-processing-converters - Changelog
 
+## 0.0.1 (2025-07-08)
+
+
+### Features
+
+* Add rule group query functionality ([#2](https://github.com/twinfoundation/data-processing/issues/2)) ([0fbbfb0](https://github.com/twinfoundation/data-processing/commit/0fbbfb065b6ecc293920b25f97ba011743105486))
+* release to production ([531ba89](https://github.com/twinfoundation/data-processing/commit/531ba89dea2deb2810870b72851dca3081f9d2ce))
+* update dependencies ([21b8e80](https://github.com/twinfoundation/data-processing/commit/21b8e8007c87136a09f0a8e35ffde13a07ff4711))
+* use shared store mechanism ([#6](https://github.com/twinfoundation/data-processing/issues/6)) ([6009228](https://github.com/twinfoundation/data-processing/commit/600922880acef07cc2f818dee7645c342929108b))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/data-processing-models bumped from ^0.0.0 to ^0.0.1
+
 ## [0.0.1-next.16](https://github.com/twinfoundation/data-processing/compare/data-processing-converters-v0.0.1-next.15...data-processing-converters-v0.0.1-next.16) (2025-06-20)
 
 

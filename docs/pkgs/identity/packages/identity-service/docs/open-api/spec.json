@@ -51,7 +51,7 @@
 						"content": {
 							"application/json": {
 								"schema": {
-									"$ref": "https://schema.twindev.org/did/DidDocument"
+									"$ref": "https://schema.twindev.org/w3c-did/DidDocument"
 								},
 								"examples": {
 									"identityResolveResponseExample": {
@@ -111,6 +111,93 @@
 						}
 					}
 				}
+			},
+			"delete": {
+				"operationId": "identityRemove",
+				"summary": "Remove an identity",
+				"tags": [
+					"Identity"
+				],
+				"parameters": [
+					{
+						"name": "identity",
+						"description": "The identity to remove.",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "did:iota:tst:0xe3088ba9aa8c28e1d139708a14e8c0fdff11ee8223baac4aa5bcf3321e4bfc6a"
+					}
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"responses": {
+					"204": {
+						"description": "The rest request ended in success with no data."
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
 			}
 		},
 		"/identity": {
@@ -142,7 +229,7 @@
 						"content": {
 							"application/json": {
 								"schema": {
-									"$ref": "https://schema.twindev.org/did/DidDocument"
+									"$ref": "https://schema.twindev.org/w3c-did/DidDocument"
 								},
 								"examples": {
 									"identityCreateResponseExample": {
@@ -272,7 +359,7 @@
 						"content": {
 							"application/json": {
 								"schema": {
-									"$ref": "https://schema.twindev.org/did/DidDocumentVerificationMethod"
+									"$ref": "https://schema.twindev.org/w3c-did/DidDocumentVerificationMethod"
 								},
 								"examples": {
 									"identityVerificationMethodCreateResponseExample": {
@@ -504,7 +591,7 @@
 						"content": {
 							"application/json": {
 								"schema": {
-									"$ref": "https://schema.twindev.org/did/DidService"
+									"$ref": "https://schema.twindev.org/w3c-did/DidService"
 								},
 								"examples": {
 									"identityServiceCreateResponseExample": {
@@ -1430,7 +1517,7 @@
 						"content": {
 							"application/json": {
 								"schema": {
-									"$ref": "https://schema.twindev.org/did/Proof"
+									"$ref": "https://schema.twindev.org/w3c-did/Proof"
 								},
 								"examples": {
 									"identityProofCreateResponseExample": {
@@ -2379,6 +2466,7 @@
 				"properties": {
 					"conflicts": {
 						"type": "array",
+						"items": false,
 						"description": "The conflicting items.",
 						"prefixItems": [
 							{
@@ -2502,6 +2590,7 @@
 				"properties": {
 					"items": {
 						"type": "array",
+						"items": false,
 						"description": "The identities.",
 						"prefixItems": [
 							{
@@ -2550,7 +2639,7 @@
 				"type": "object",
 				"properties": {
 					"proofType": {
-						"$ref": "https://schema.twindev.org/did/ProofTypes"
+						"$ref": "https://schema.twindev.org/w3c-did/ProofTypes"
 					},
 					"document": {
 						"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
@@ -2570,7 +2659,7 @@
 						"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
 					},
 					"proof": {
-						"$ref": "https://schema.twindev.org/did/Proof"
+						"$ref": "https://schema.twindev.org/w3c-did/Proof"
 					}
 				},
 				"required": [
@@ -2607,6 +2696,7 @@
 							},
 							{
 								"type": "array",
+								"items": false,
 								"prefixItems": [
 									{
 										"type": "string"
@@ -2623,6 +2713,7 @@
 							},
 							{
 								"type": "array",
+								"items": false,
 								"prefixItems": [
 									{
 										"type": "string"
@@ -2666,7 +2757,7 @@
 				"type": "object",
 				"properties": {
 					"verifiableCredential": {
-						"$ref": "https://schema.twindev.org/did/DidVerifiableCredential"
+						"$ref": "https://schema.twindev.org/w3c-did/DidVerifiableCredential"
 					},
 					"jwt": {
 						"type": "string",
@@ -2688,7 +2779,7 @@
 						"description": "Has the credential been revoked."
 					},
 					"verifiableCredential": {
-						"$ref": "https://schema.twindev.org/did/DidVerifiableCredential"
+						"$ref": "https://schema.twindev.org/w3c-did/DidVerifiableCredential"
 					}
 				},
 				"required": [
@@ -2714,6 +2805,7 @@
 							},
 							{
 								"type": "array",
+								"items": false,
 								"prefixItems": [
 									{
 										"type": "string"
@@ -2725,6 +2817,7 @@
 					},
 					"verifiableCredentials": {
 						"type": "array",
+						"items": false,
 						"description": "The verifiable credentials to include in the presentation.",
 						"prefixItems": [
 							{
@@ -2733,7 +2826,7 @@
 										"type": "string"
 									},
 									{
-										"$ref": "https://schema.twindev.org/did/DidVerifiableCredential"
+										"$ref": "https://schema.twindev.org/w3c-did/DidVerifiableCredential"
 									}
 								]
 							}
@@ -2754,7 +2847,7 @@
 				"type": "object",
 				"properties": {
 					"verifiablePresentation": {
-						"$ref": "https://schema.twindev.org/did/DidVerifiablePresentation"
+						"$ref": "https://schema.twindev.org/w3c-did/DidVerifiablePresentation"
 					},
 					"jwt": {
 						"type": "string",
@@ -2776,14 +2869,15 @@
 						"description": "Has the presentation been revoked."
 					},
 					"verifiablePresentation": {
-						"$ref": "https://schema.twindev.org/did/DidVerifiablePresentation"
+						"$ref": "https://schema.twindev.org/w3c-did/DidVerifiablePresentation"
 					},
 					"issuers": {
 						"type": "array",
+						"items": false,
 						"description": "The issuers of the presentation.",
 						"prefixItems": [
 							{
-								"$ref": "https://schema.twindev.org/did/DidDocument"
+								"$ref": "https://schema.twindev.org/w3c-did/DidDocument"
 							}
 						]
 					}
@@ -2798,7 +2892,7 @@
 				"type": "object",
 				"properties": {
 					"verificationMethodType": {
-						"$ref": "https://schema.twindev.org/did/DidVerificationMethodType"
+						"$ref": "https://schema.twindev.org/w3c-did/DidVerificationMethodType"
 					},
 					"verificationMethodId": {
 						"type": "string",
@@ -2849,6 +2943,11 @@
 					"name"
 				],
 				"description": "The body which contains the error."
+			},
+			"ProofSignerVerifier": {
+				"type": "object",
+				"additionalProperties": false,
+				"description": "Interface describing a proof signer and verifier."
 			}
 		},
 		"securitySchemes": {

@@ -1,5 +1,19 @@
 # @twin.org/auditable-item-graph-rest-client - Changelog
 
+## 0.0.1 (2025-07-09)
+
+
+### Features
+
+* release to production ([0ce06f7](https://github.com/twinfoundation/auditable-item-graph/commit/0ce06f7825aa72d04b7a2ffd8c98cb56290b9d16))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/auditable-item-graph-models bumped from ^0.0.0 to ^0.0.1
+
 ## [0.0.1-next.44](https://github.com/twinfoundation/auditable-item-graph/compare/auditable-item-graph-rest-client-v0.0.1-next.43...auditable-item-graph-rest-client-v0.0.1-next.44) (2025-06-20)
 
 

@@ -1,5 +1,12 @@
 # @twin.org/blob-storage-models - Changelog
 
+## 0.0.1 (2025-07-04)
+
+
+### Features
+
+* release to production ([eacfe75](https://github.com/twinfoundation/blob-storage/commit/eacfe754a0dcd9243d9e13d86422327d0a605164))
+
 ## [0.0.1-next.37](https://github.com/twinfoundation/blob-storage/compare/blob-storage-models-v0.0.1-next.36...blob-storage-models-v0.0.1-next.37) (2025-06-20)
 
 

@@ -13,6 +13,9 @@
 		"node": ">=20.0.0"
 	},
 	"workspaces": [
+		"packages/nameof-transformer",
+		"packages/nameof-vitest-plugin",
+		"packages/nameof",
 		"packages/core",
 		"packages/entity",
 		"packages/crypto",
@@ -21,6 +24,7 @@
 		"packages/web",
 		"packages/modules",
 		"packages/cli-core",
+		"apps/merge-locales",
 		"apps/crypto-cli"
 	],
 	"type": "module"
