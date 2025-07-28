@@ -137,7 +137,7 @@ const config: Config = {
 							},
 							{
 								label: "White Paper",
-								href: "/pdf/twin-whitepaper.pdf",
+								href: "/pdf/TWIN_Whitepaper_Reference_Architecture-Draft4-July-2025.pdf",
 								target: "_blank"
 							}
 						]
