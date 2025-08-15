@@ -46,14 +46,6 @@ Name for the engine logger.
 
 ***
 
-### CLASS\_NAME
-
-> `readonly` **CLASS\_NAME**: `string`
-
-Runtime name for the class.
-
-***
-
 ### \_context
 
 > `protected` **\_context**: `IEngineCoreContext`\<`C`, `S`\>
@@ -224,21 +216,89 @@ The state of the engine.
 
 ***
 
-### getDefaultTypes()
+### getRegisteredInstances()
 
-> **getDefaultTypes**(): `object`
+> **getRegisteredInstances**(): `object`
 
-Get the types for the component.
+Get all the registered instances.
 
 #### Returns
 
 `object`
 
-The default types.
+The registered instances.
 
 #### Implementation of
 
-`IEngineCore.getDefaultTypes`
+`IEngineCore.getRegisteredInstances`
+
+***
+
+### getRegisteredInstanceType()
+
+> **getRegisteredInstanceType**(`componentConnectorType`, `features?`): `string`
+
+Get the registered instance type for the component/connector.
+
+#### Parameters
+
+##### componentConnectorType
+
+`string`
+
+The type of the component/connector.
+
+##### features?
+
+`string`[]
+
+The requested features of the component, if not specified the default entry will be retrieved.
+
+#### Returns
+
+`string`
+
+The instance type matching the criteria if one is registered.
+
+#### Throws
+
+If a matching instance was not found.
+
+#### Implementation of
+
+`IEngineCore.getRegisteredInstanceType`
+
+***
+
+### getRegisteredInstanceTypeOptional()
+
+> **getRegisteredInstanceTypeOptional**(`componentConnectorType`, `features?`): `undefined` \| `string`
+
+Get the registered instance type for the component/connector if it exists.
+
+#### Parameters
+
+##### componentConnectorType
+
+`string`
+
+The type of the component/connector.
+
+##### features?
+
+`string`[]
+
+The requested features of the component, if not specified the default entry will be retrieved.
+
+#### Returns
+
+`undefined` \| `string`
+
+The instance type matching the criteria if one is registered.
+
+#### Implementation of
+
+`IEngineCore.getRegisteredInstanceTypeOptional`
 
 ***
 

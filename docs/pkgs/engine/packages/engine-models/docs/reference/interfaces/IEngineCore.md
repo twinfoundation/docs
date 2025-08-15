@@ -148,17 +148,77 @@ The state of the engine.
 
 ***
 
-### getDefaultTypes()
+### getRegisteredInstances()
 
-> **getDefaultTypes**(): `object`
+> **getRegisteredInstances**(): `object`
 
-Get the types for the component.
+Get all the registered instances.
 
 #### Returns
 
 `object`
 
-The default types.
+The registered instances.
+
+***
+
+### getRegisteredInstanceType()
+
+> **getRegisteredInstanceType**(`componentConnectorType`, `features?`): `string`
+
+Get the registered instance type for the component/connector.
+
+#### Parameters
+
+##### componentConnectorType
+
+`string`
+
+The type of the component/connector.
+
+##### features?
+
+`string`[]
+
+The requested features of the component, if not specified the default entry will be retrieved.
+
+#### Returns
+
+`string`
+
+The instance type matching the criteria if one is registered.
+
+#### Throws
+
+If a matching instance was not found.
+
+***
+
+### getRegisteredInstanceTypeOptional()
+
+> **getRegisteredInstanceTypeOptional**(`componentConnectorType`, `features?`): `undefined` \| `string`
+
+Get the registered instance type for the component/connector.
+
+#### Parameters
+
+##### componentConnectorType
+
+`string`
+
+The type of the component/connector.
+
+##### features?
+
+`string`[]
+
+The requested features of the component, if not specified the default entry will be retrieved.
+
+#### Returns
+
+`undefined` \| `string`
+
+The instance type matching the criteria if one is registered.
 
 ***
 

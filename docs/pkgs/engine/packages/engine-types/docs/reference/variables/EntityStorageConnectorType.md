@@ -59,3 +59,9 @@ MongoDb.
 > `readonly` **PostgreSql**: `"postgresql"` = `"postgresql"`
 
 Postgre SQL.
+
+### Synchronised
+
+> `readonly` **Synchronised**: `"synchronised"` = `"synchronised"`
+
+Synchronised.

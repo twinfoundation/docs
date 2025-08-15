@@ -28,14 +28,6 @@ Options for the processor.
 
 ## Properties
 
-### NAMESPACE
-
-> `readonly` `static` **NAMESPACE**: `string` = `"auth-header"`
-
-The namespace supported by the processor.
-
-***
-
 ### CLASS\_NAME
 
 > `readonly` **CLASS\_NAME**: `string`

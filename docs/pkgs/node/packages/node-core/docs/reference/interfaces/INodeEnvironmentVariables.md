@@ -48,11 +48,24 @@ The name of the state file.
 
 > `optional` **entityStorageConnectorType**: `string`
 
-The type of the default entity storage: file, memory, aws-dynamodb, azure-cosmosdb, gcp-firestoredb, scylladb, mysql, mongodb, postgresql.
+The type of the entity storage to create, comma separate for more than one connector.
+values: file, memory, aws-dynamodb, azure-cosmosdb, gcp-firestoredb, scylladb, mysql, mongodb, postgresql
 
 #### Inherited from
 
 [`IEngineEnvironmentVariables`](IEngineEnvironmentVariables.md).[`entityStorageConnectorType`](IEngineEnvironmentVariables.md#entitystorageconnectortype)
+
+***
+
+### entityStorageConnectorDefault?
+
+> `optional` **entityStorageConnectorDefault**: `string`
+
+The default entity storage connector to use, defaults to the first one in the list.
+
+#### Inherited from
+
+[`IEngineEnvironmentVariables`](IEngineEnvironmentVariables.md).[`entityStorageConnectorDefault`](IEngineEnvironmentVariables.md#entitystorageconnectordefault)
 
 ***
 
@@ -65,30 +78,6 @@ A prefix for all the table in entity-storage, can be empty.
 #### Inherited from
 
 [`IEngineEnvironmentVariables`](IEngineEnvironmentVariables.md).[`entityStorageTablePrefix`](IEngineEnvironmentVariables.md#entitystoragetableprefix)
-
-***
-
-### entityFileEnable?
-
-> `optional` **entityFileEnable**: `string`
-
-Enable the file entity storage connector.
-
-#### Inherited from
-
-[`IEngineEnvironmentVariables`](IEngineEnvironmentVariables.md).[`entityFileEnable`](IEngineEnvironmentVariables.md#entityfileenable)
-
-***
-
-### entityMemoryEnable?
-
-> `optional` **entityMemoryEnable**: `string`
-
-Enable the memory entity storage connector.
-
-#### Inherited from
-
-[`IEngineEnvironmentVariables`](IEngineEnvironmentVariables.md).[`entityMemoryEnable`](IEngineEnvironmentVariables.md#entitymemoryenable)
 
 ***
 
@@ -281,6 +270,18 @@ ScyllaDB local data center.
 #### Inherited from
 
 [`IEngineEnvironmentVariables`](IEngineEnvironmentVariables.md).[`scylladbLocalDataCenter`](IEngineEnvironmentVariables.md#scylladblocaldatacenter)
+
+***
+
+### scylladbPort?
+
+> `optional` **scylladbPort**: `string`
+
+ScyllaDB port.
+
+#### Inherited from
+
+[`IEngineEnvironmentVariables`](IEngineEnvironmentVariables.md).[`scylladbPort`](IEngineEnvironmentVariables.md#scylladbport)
 
 ***
 
@@ -492,11 +493,36 @@ The url for accessing IPFS API.
 
 > `optional` **blobStorageConnectorType**: `string`
 
-The type of the default blob storage: memory, file, ipfs, aws-s3, azure-storage, gcp-storage.
+The type of the entity storage to create, comma separate for more than one connector.
+values: memory, file, ipfs, aws-s3, azure-storage, gcp-storage.
 
 #### Inherited from
 
 [`IEngineEnvironmentVariables`](IEngineEnvironmentVariables.md).[`blobStorageConnectorType`](IEngineEnvironmentVariables.md#blobstorageconnectortype)
+
+***
+
+### blobStorageConnectorDefault?
+
+> `optional` **blobStorageConnectorDefault**: `string`
+
+The default blob storage connector to use, defaults to the first one in the list.
+
+#### Inherited from
+
+[`IEngineEnvironmentVariables`](IEngineEnvironmentVariables.md).[`blobStorageConnectorDefault`](IEngineEnvironmentVariables.md#blobstorageconnectordefault)
+
+***
+
+### blobStorageConnectorPublic?
+
+> `optional` **blobStorageConnectorPublic**: `string`
+
+Blog storage connector which has public access.
+
+#### Inherited from
+
+[`IEngineEnvironmentVariables`](IEngineEnvironmentVariables.md).[`blobStorageConnectorPublic`](IEngineEnvironmentVariables.md#blobstorageconnectorpublic)
 
 ***
 
@@ -512,15 +538,28 @@ Enable encryption for the blob storage.
 
 ***
 
-### blobStorageEncryptionKey?
+### blobStorageEncryptionKeyId?
 
-> `optional` **blobStorageEncryptionKey**: `string`
+> `optional` **blobStorageEncryptionKeyId**: `string`
 
-The encryption key for the blob storage.
+The id of the encryption key for the blob storage.
 
 #### Inherited from
 
-[`IEngineEnvironmentVariables`](IEngineEnvironmentVariables.md).[`blobStorageEncryptionKey`](IEngineEnvironmentVariables.md#blobstorageencryptionkey)
+[`IEngineEnvironmentVariables`](IEngineEnvironmentVariables.md).[`blobStorageEncryptionKeyId`](IEngineEnvironmentVariables.md#blobstorageencryptionkeyid)
+
+***
+
+### blobStorageSymmetricEncryptionKey?
+
+> `optional` **blobStorageSymmetricEncryptionKey**: `string`
+
+A symmetric encryption key for the blob storage, should be ChaCha20Poly1305 in base64 format.
+If encryption is enabled but a key is not provided one will be generated.
+
+#### Inherited from
+
+[`IEngineEnvironmentVariables`](IEngineEnvironmentVariables.md).[`blobStorageSymmetricEncryptionKey`](IEngineEnvironmentVariables.md#blobstoragesymmetricencryptionkey)
 
 ***
 
@@ -533,30 +572,6 @@ A prefix for all the blobs in blob-storage, can be empty.
 #### Inherited from
 
 [`IEngineEnvironmentVariables`](IEngineEnvironmentVariables.md).[`blobStoragePrefix`](IEngineEnvironmentVariables.md#blobstorageprefix)
-
-***
-
-### blobFileEnable?
-
-> `optional` **blobFileEnable**: `string`
-
-Enable the file blob storage connector.
-
-#### Inherited from
-
-[`IEngineEnvironmentVariables`](IEngineEnvironmentVariables.md).[`blobFileEnable`](IEngineEnvironmentVariables.md#blobfileenable)
-
-***
-
-### blobMemoryEnable?
-
-> `optional` **blobMemoryEnable**: `string`
-
-Enable the memory blob storage connector.
-
-#### Inherited from
-
-[`IEngineEnvironmentVariables`](IEngineEnvironmentVariables.md).[`blobMemoryEnable`](IEngineEnvironmentVariables.md#blobmemoryenable)
 
 ***
 
@@ -1112,6 +1127,180 @@ The type of the default data extractor, can be a comma separated list: json-path
 
 ***
 
+### synchronisedStorageEnabled?
+
+> `optional` **synchronisedStorageEnabled**: `string`
+
+Is the synchronised storage enabled, defaults to false.
+
+#### Inherited from
+
+[`IEngineEnvironmentVariables`](IEngineEnvironmentVariables.md).[`synchronisedStorageEnabled`](IEngineEnvironmentVariables.md#synchronisedstorageenabled)
+
+***
+
+### synchronisedStorageTrustedUrl?
+
+> `optional` **synchronisedStorageTrustedUrl**: `string`
+
+Url which points to the api for a trusted synchronised storage node, not required if this is a trusted node.
+
+#### Inherited from
+
+[`IEngineEnvironmentVariables`](IEngineEnvironmentVariables.md).[`synchronisedStorageTrustedUrl`](IEngineEnvironmentVariables.md#synchronisedstoragetrustedurl)
+
+***
+
+### synchronisedStorageVerifiableStorageKeyId?
+
+> `optional` **synchronisedStorageVerifiableStorageKeyId**: `string`
+
+The key for the smart contract which contains the verifiable storage pointer store for synchronised storage.
+This only required if using a custom verifiable storage item, otherwise it will default the the network name.
+
+#### Inherited from
+
+[`IEngineEnvironmentVariables`](IEngineEnvironmentVariables.md).[`synchronisedStorageVerifiableStorageKeyId`](IEngineEnvironmentVariables.md#synchronisedstorageverifiablestoragekeyid)
+
+***
+
+### synchronisedStorageVerificationMethodId?
+
+> `optional` **synchronisedStorageVerificationMethodId**: `string`
+
+The identity verification method id to use with synchronised storage for signing/verifying changesets.
+Defaults to synchronised-storage-assertion.
+
+#### Inherited from
+
+[`IEngineEnvironmentVariables`](IEngineEnvironmentVariables.md).[`synchronisedStorageVerificationMethodId`](IEngineEnvironmentVariables.md#synchronisedstorageverificationmethodid)
+
+***
+
+### synchronisedStorageBlobStorageEncryptionKeyId?
+
+> `optional` **synchronisedStorageBlobStorageEncryptionKeyId**: `string`
+
+The key from the vault which is used to encrypt the synchronised storage blobs.
+Only required for trusted nodes, as regular nodes will request from the trusted nodes.
+Defaults to synchronised-storage-blob-encryption
+
+#### Inherited from
+
+[`IEngineEnvironmentVariables`](IEngineEnvironmentVariables.md).[`synchronisedStorageBlobStorageEncryptionKeyId`](IEngineEnvironmentVariables.md#synchronisedstorageblobstorageencryptionkeyid)
+
+***
+
+### synchronisedStorageBlobStoragePrivateKey?
+
+> `optional` **synchronisedStorageBlobStoragePrivateKey**: `string`
+
+The private key used for blob encryption, should be RSA-2048 DER format encoded as base64.
+Only required for trusted nodes, as regular nodes will not write encrypted data.
+
+#### Inherited from
+
+[`IEngineEnvironmentVariables`](IEngineEnvironmentVariables.md).[`synchronisedStorageBlobStoragePrivateKey`](IEngineEnvironmentVariables.md#synchronisedstorageblobstorageprivatekey)
+
+***
+
+### synchronisedStorageBlobStoragePublicKey?
+
+> `optional` **synchronisedStorageBlobStoragePublicKey**: `string`
+
+The public key used for blob decryption, should be RSA-2048 DER format encoded as base64.
+Only required for trusted nodes, as regular nodes will request the key from trusted nodes.
+
+#### Inherited from
+
+[`IEngineEnvironmentVariables`](IEngineEnvironmentVariables.md).[`synchronisedStorageBlobStoragePublicKey`](IEngineEnvironmentVariables.md#synchronisedstorageblobstoragepublickey)
+
+***
+
+### synchronisedStorageEntityUpdateIntervalMinutes?
+
+> `optional` **synchronisedStorageEntityUpdateIntervalMinutes**: `string`
+
+How often to check for entity updates in minutes.
+
+#### Default
+
+```ts
+5
+```
+
+#### Inherited from
+
+[`IEngineEnvironmentVariables`](IEngineEnvironmentVariables.md).[`synchronisedStorageEntityUpdateIntervalMinutes`](IEngineEnvironmentVariables.md#synchronisedstorageentityupdateintervalminutes)
+
+***
+
+### synchronisedStorageConsolidationIntervalMinutes?
+
+> `optional` **synchronisedStorageConsolidationIntervalMinutes**: `string`
+
+Interval to perform consolidation of changesets, only used if this is a trusted node.
+
+#### Default
+
+```ts
+60
+```
+
+#### Inherited from
+
+[`IEngineEnvironmentVariables`](IEngineEnvironmentVariables.md).[`synchronisedStorageConsolidationIntervalMinutes`](IEngineEnvironmentVariables.md#synchronisedstorageconsolidationintervalminutes)
+
+***
+
+### synchronisedStorageConsolidationBatchSize?
+
+> `optional` **synchronisedStorageConsolidationBatchSize**: `string`
+
+The number of entities to process in a single consolidation batch, only used if this is a trusted node.
+
+#### Default
+
+```ts
+1000
+```
+
+#### Inherited from
+
+[`IEngineEnvironmentVariables`](IEngineEnvironmentVariables.md).[`synchronisedStorageConsolidationBatchSize`](IEngineEnvironmentVariables.md#synchronisedstorageconsolidationbatchsize)
+
+***
+
+### synchronisedStorageMaxConsolidations?
+
+> `optional` **synchronisedStorageMaxConsolidations**: `string`
+
+The maximum number of consolidations to keep in storage, only used if this is a trusted node.
+
+#### Default
+
+```ts
+5
+```
+
+#### Inherited from
+
+[`IEngineEnvironmentVariables`](IEngineEnvironmentVariables.md).[`synchronisedStorageMaxConsolidations`](IEngineEnvironmentVariables.md#synchronisedstoragemaxconsolidations)
+
+***
+
+### federatedCatalogueEnabled?
+
+> `optional` **federatedCatalogueEnabled**: `string`
+
+Is the federated catalogue enabled, defaults to false.
+
+#### Inherited from
+
+[`IEngineEnvironmentVariables`](IEngineEnvironmentVariables.md).[`federatedCatalogueEnabled`](IEngineEnvironmentVariables.md#federatedcatalogueenabled)
+
+***
+
 ### federatedCatalogueCacheTtlMs?
 
 > `optional` **federatedCatalogueCacheTtlMs**: `number`
@@ -1152,7 +1341,7 @@ Is the rights management enabled, defaults to false.
 
 > `optional` **taskSchedulerEnabled**: `string`
 
-Is the task scheduler enabled, defaults to true.
+Is the task scheduler enabled, defaults to false.
 
 #### Inherited from
 

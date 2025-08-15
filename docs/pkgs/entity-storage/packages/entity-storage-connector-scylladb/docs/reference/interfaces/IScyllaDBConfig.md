@@ -29,3 +29,17 @@ The local data center.
 > **keyspace**: `string`
 
 The keyspace to use.
+
+***
+
+### port?
+
+> `optional` **port**: `number`
+
+The port to connect to.
+
+#### Default
+
+```ts
+9042
+```

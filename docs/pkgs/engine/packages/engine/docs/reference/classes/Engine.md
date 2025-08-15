@@ -48,10 +48,6 @@ The options for the engine.
 
 Runtime name for the class.
 
-#### Overrides
-
-`EngineCore.CLASS_NAME`
-
 ***
 
 ### LOGGER\_TYPE\_NAME
@@ -240,21 +236,89 @@ The state of the engine.
 
 ***
 
-### getDefaultTypes()
+### getRegisteredInstances()
 
-> **getDefaultTypes**(): `object`
+> **getRegisteredInstances**(): `object`
 
-Get the types for the component.
+Get all the registered instances.
 
 #### Returns
 
 `object`
 
-The default types.
+The registered instances.
 
 #### Inherited from
 
-`EngineCore.getDefaultTypes`
+`EngineCore.getRegisteredInstances`
+
+***
+
+### getRegisteredInstanceType()
+
+> **getRegisteredInstanceType**(`componentConnectorType`, `features?`): `string`
+
+Get the registered instance type for the component/connector.
+
+#### Parameters
+
+##### componentConnectorType
+
+`string`
+
+The type of the component/connector.
+
+##### features?
+
+`string`[]
+
+The requested features of the component, if not specified the default entry will be retrieved.
+
+#### Returns
+
+`string`
+
+The instance type matching the criteria if one is registered.
+
+#### Throws
+
+If a matching instance was not found.
+
+#### Inherited from
+
+`EngineCore.getRegisteredInstanceType`
+
+***
+
+### getRegisteredInstanceTypeOptional()
+
+> **getRegisteredInstanceTypeOptional**(`componentConnectorType`, `features?`): `undefined` \| `string`
+
+Get the registered instance type for the component/connector if it exists.
+
+#### Parameters
+
+##### componentConnectorType
+
+`string`
+
+The type of the component/connector.
+
+##### features?
+
+`string`[]
+
+The requested features of the component, if not specified the default entry will be retrieved.
+
+#### Returns
+
+`undefined` \| `string`
+
+The instance type matching the criteria if one is registered.
+
+#### Inherited from
+
+`EngineCore.getRegisteredInstanceTypeOptional`
 
 ***
 

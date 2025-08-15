@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/blob-storage-connector-ipfs",
-	"version": "0.0.2-next.0",
+	"version": "0.0.2-next.1",
 	"description": "Blob Storage connector implementation using IPFS",
 	"repository": {
 		"type": "git",

@@ -17,3 +17,9 @@ NodeIdentity - generates an identity for the node if not provided in config.
 > `readonly` **NodeUser**: `"node-user"` = `"node-user"`
 
 NodeUser - generates a user for the node if not provided in config.
+
+### NodeWallet
+
+> `readonly` **NodeWallet**: `"node-wallet"` = `"node-wallet"`
+
+NodeWallet - generates a wallet for the node and funds it when there is a faucet available.

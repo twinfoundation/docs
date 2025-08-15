@@ -13,7 +13,7 @@ npm install @twin.org/entity-storage-connector-mongodb
 The tests developed are functional tests and need an instance of MongoDb up and running. To run MongoDb locally:
 
 ```sh
-docker run -p 27017:27017 --name twin-entity-storage-mongodb --hostname mongo -d mongo
+docker run -p 27500:27017 --name twin-entity-storage-mongodb --hostname mongo -d mongo
 ```
 
 Afterwards you can run the tests as follows:

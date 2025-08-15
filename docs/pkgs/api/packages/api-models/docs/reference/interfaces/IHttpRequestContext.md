@@ -6,6 +6,10 @@ Context data from the HTTP request.
 
 - [`IHttpRequestIdentity`](IHttpRequestIdentity.md)
 
+## Extended by
+
+- [`ISocketRequestContext`](ISocketRequestContext.md)
+
 ## Properties
 
 ### serverRequest
@@ -25,6 +29,14 @@ The state handed through the processors.
 #### Index Signature
 
 \[`id`: `string`\]: `unknown`
+
+***
+
+### loggingComponentType?
+
+> `optional` **loggingComponentType**: `string`
+
+Logging component type for the request.
 
 ***
 

@@ -56,15 +56,15 @@ Skips the authentication for this route.
 
 ### handler()
 
-> **handler**: (`httpRequestContext`, `request`, `emit`) => `void`
+> **handler**: (`socketRequestContext`, `request`, `emit`) => `void`
 
 The handler module.
 
 #### Parameters
 
-##### httpRequestContext
+##### socketRequestContext
 
-[`IHttpRequestContext`](IHttpRequestContext.md)
+[`ISocketRequestContext`](ISocketRequestContext.md)
 
 The request context.
 
@@ -79,6 +79,46 @@ The request object.
 (`event`, `response`) => `Promise`\<`void`\>
 
 The function to emit an event.
+
+#### Returns
+
+`void`
+
+***
+
+### connected()?
+
+> `optional` **connected**: (`socketRequestContext`) => `void`
+
+The connected handler.
+
+#### Parameters
+
+##### socketRequestContext
+
+[`ISocketRequestContext`](ISocketRequestContext.md)
+
+The request context.
+
+#### Returns
+
+`void`
+
+***
+
+### disconnected()?
+
+> `optional` **disconnected**: (`socketRequestContext`) => `void`
+
+The disconnected handler.
+
+#### Parameters
+
+##### socketRequestContext
+
+[`ISocketRequestContext`](ISocketRequestContext.md)
+
+The request context.
 
 #### Returns
 

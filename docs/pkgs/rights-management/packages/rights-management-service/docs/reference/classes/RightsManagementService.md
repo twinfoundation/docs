@@ -29,14 +29,6 @@ The options for the service.
 
 ## Properties
 
-### NAMESPACE
-
-> `readonly` `static` **NAMESPACE**: `string` = `"rights-management"`
-
-The namespace supported by the Rights Management service.
-
-***
-
 ### CLASS\_NAME
 
 > `readonly` **CLASS\_NAME**: `string`

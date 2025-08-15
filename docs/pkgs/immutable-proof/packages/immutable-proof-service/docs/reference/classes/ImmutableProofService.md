@@ -28,14 +28,6 @@ The dependencies for the immutable proof connector.
 
 ## Properties
 
-### NAMESPACE
-
-> `readonly` `static` **NAMESPACE**: `string` = `"immutable-proof"`
-
-The namespace for the service.
-
-***
-
 ### CLASS\_NAME
 
 > `readonly` **CLASS\_NAME**: `string`

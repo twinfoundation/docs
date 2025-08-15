@@ -4,13 +4,13 @@ The definition for a processor for handling socket routes.
 
 ## Extends
 
-- [`IBaseRouteProcessor`](IBaseRouteProcessor.md)\<[`ISocketRoute`](ISocketRoute.md)\>
+- [`IBaseRouteProcessor`](IBaseRouteProcessor.md)\<[`ISocketRoute`](ISocketRoute.md), [`ISocketServerRequest`](ISocketServerRequest.md)\>
 
 ## Methods
 
 ### pre()?
 
-> `optional` **pre**(`request`, `response`, `route`, `requestIdentity`, `processorState`): `Promise`\<`void`\>
+> `optional` **pre**(`request`, `response`, `route`, `requestIdentity`, `processorState`, `loggingComponentType?`): `Promise`\<`void`\>
 
 Pre process the REST request for the specified route.
 
@@ -18,7 +18,7 @@ Pre process the REST request for the specified route.
 
 ##### request
 
-[`IHttpServerRequest`](IHttpServerRequest.md)
+[`ISocketServerRequest`](ISocketServerRequest.md)
 
 The request to handle.
 
@@ -43,6 +43,12 @@ The identity context for the request.
 ##### processorState
 
 The state handed through the processors.
+
+##### loggingComponentType?
+
+`string`
+
+The logging component type for the request.
 
 #### Returns
 
@@ -58,7 +64,7 @@ Promise that resolves when the request is processed.
 
 ### post()?
 
-> `optional` **post**(`request`, `response`, `route`, `requestIdentity`, `processorState`): `Promise`\<`void`\>
+> `optional` **post**(`request`, `response`, `route`, `requestIdentity`, `processorState`, `loggingComponentType?`): `Promise`\<`void`\>
 
 Post process the REST request for the specified route.
 
@@ -66,7 +72,7 @@ Post process the REST request for the specified route.
 
 ##### request
 
-[`IHttpServerRequest`](IHttpServerRequest.md)
+[`ISocketServerRequest`](ISocketServerRequest.md)
 
 The request to handle.
 
@@ -92,6 +98,12 @@ The identity context for the request.
 
 The state handed through the processors.
 
+##### loggingComponentType?
+
+`string`
+
+The logging component type for the request.
+
 #### Returns
 
 `Promise`\<`void`\>
@@ -106,7 +118,7 @@ Promise that resolves when the request is processed.
 
 ### connected()?
 
-> `optional` **connected**(`request`, `route`, `processorState`): `Promise`\<`void`\>
+> `optional` **connected**(`request`, `route`, `loggingComponentType?`): `Promise`\<`void`\>
 
 Process the connected event.
 
@@ -114,9 +126,9 @@ Process the connected event.
 
 ##### request
 
-[`IHttpServerRequest`](IHttpServerRequest.md)
+[`ISocketServerRequest`](ISocketServerRequest.md)
 
-The request to handle.
+The server request object containing the socket id and other parameters.
 
 ##### route
 
@@ -124,9 +136,11 @@ The route being requested, if a matching one was found.
 
 `undefined` | [`ISocketRoute`](ISocketRoute.md)\<`any`, `any`\>
 
-##### processorState
+##### loggingComponentType?
 
-The state handed through the processors.
+`string`
+
+The logging component type for the request.
 
 #### Returns
 
@@ -138,7 +152,7 @@ Promise that resolves when the request is processed.
 
 ### disconnected()?
 
-> `optional` **disconnected**(`request`, `route`, `processorState`): `Promise`\<`void`\>
+> `optional` **disconnected**(`request`, `route`, `loggingComponentType?`): `Promise`\<`void`\>
 
 Process the disconnected event.
 
@@ -146,9 +160,9 @@ Process the disconnected event.
 
 ##### request
 
-[`IHttpServerRequest`](IHttpServerRequest.md)
+[`ISocketServerRequest`](ISocketServerRequest.md)
 
-The request to handle.
+The server request object containing the socket id and other parameters.
 
 ##### route
 
@@ -156,9 +170,11 @@ The route being requested, if a matching one was found.
 
 `undefined` | [`ISocketRoute`](ISocketRoute.md)\<`any`, `any`\>
 
-##### processorState
+##### loggingComponentType?
 
-The state handed through the processors.
+`string`
+
+The logging component type for the request.
 
 #### Returns
 
@@ -170,7 +186,7 @@ Promise that resolves when the request is processed.
 
 ### process()?
 
-> `optional` **process**(`request`, `response`, `route`, `requestIdentity`, `processorState`, `responseEmitter`): `Promise`\<`void`\>
+> `optional` **process**(`request`, `response`, `route`, `requestIdentity`, `processorState`, `responseEmitter`, `loggingComponentType?`): `Promise`\<`void`\>
 
 Process the REST request for the specified route.
 
@@ -178,9 +194,9 @@ Process the REST request for the specified route.
 
 ##### request
 
-[`IHttpServerRequest`](IHttpServerRequest.md)
+[`ISocketServerRequest`](ISocketServerRequest.md)
 
-The request to handle.
+The server request object containing the socket id and other parameters.
 
 ##### response
 
@@ -209,6 +225,12 @@ The state handed through the processors.
 (`topic`, `response`) => `Promise`\<`void`\>
 
 The function to emit a response.
+
+##### loggingComponentType?
+
+`string`
+
+The logging component type for the request.
 
 #### Returns
 

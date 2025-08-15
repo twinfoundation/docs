@@ -202,6 +202,36 @@ Nothing.
 
 ***
 
+### removeVerifiable()
+
+> **removeVerifiable**(`id`): `Promise`\<`void`\>
+
+Remove the verifiable storage for an item, not supported on client.
+
+#### Parameters
+
+##### id
+
+`string`
+
+The id of the vertex to get.
+
+#### Returns
+
+`Promise`\<`void`\>
+
+Nothing.
+
+#### Throws
+
+NotFoundError if the vertex is not found.
+
+#### Implementation of
+
+`IAuditableItemGraphComponent.removeVerifiable`
+
+***
+
 ### query()
 
 > **query**(`options?`, `conditions?`, `orderBy?`, `orderByDirection?`, `properties?`, `cursor?`, `pageSize?`): `Promise`\<`IAuditableItemGraphVertexList`\>

@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/nft-connector-iota",
-	"version": "0.0.2-next.1",
+	"version": "0.0.2-next.2",
 	"description": "Implementation of the NFT connector using Iota",
 	"repository": {
 		"type": "git",

@@ -1,6 +1,6 @@
 # Function: initialiseEntityStorageConnector()
 
-> **initialiseEntityStorageConnector**(`engineCore`, `context`, `typeCustom`, `schema`): `void`
+> **initialiseEntityStorageConnector**(`engineCore`, `context`, `typeCustom`, `schema`): `string`
 
 Initialise the entity storage connector.
 
@@ -32,7 +32,9 @@ The schema for the entity storage.
 
 ## Returns
 
-`void`
+`string`
+
+The name of the instance type that was created.
 
 ## Throws
 

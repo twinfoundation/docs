@@ -1,5 +1,22 @@
 # @twin.org/blob-storage-connector-aws-s3 - Changelog
 
+## [0.0.2-next.1](https://github.com/twinfoundation/blob-storage/compare/blob-storage-connector-aws-s3-v0.0.2-next.0...blob-storage-connector-aws-s3-v0.0.2-next.1) (2025-07-24)
+
+
+### Features
+
+* Blob storage connector for AWS S3 ([#7](https://github.com/twinfoundation/blob-storage/issues/7)) ([1d7f1e7](https://github.com/twinfoundation/blob-storage/commit/1d7f1e7d323926f7f31229d38eb5de429f6e1554))
+* update dependencies ([56f0094](https://github.com/twinfoundation/blob-storage/commit/56f0094b68d8bd22864cd899ac1b61d95540f719))
+* update to support fully qualified data type names ([3297d69](https://github.com/twinfoundation/blob-storage/commit/3297d69d332058b0f0141002087f56ba230620e1))
+* use shared store mechanism ([#12](https://github.com/twinfoundation/blob-storage/issues/12)) ([cae8110](https://github.com/twinfoundation/blob-storage/commit/cae8110681847a1ac4fcac968b8196694e49c320))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/blob-storage-models bumped from 0.0.2-next.0 to 0.0.2-next.1
+
 ## 0.0.1 (2025-07-04)
 
 

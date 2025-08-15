@@ -14,6 +14,10 @@ Configuration for the engine core type.
 
 > `optional` **isDefault**: `boolean`
 
+### features?
+
+> `optional` **features**: `string`[]
+
 ## Type Parameters
 
 ### T

@@ -1,14 +1,14 @@
 # Function: eventBusUnsubscribe()
 
-> **eventBusUnsubscribe**(`httpRequestContext`, `componentName`, `request`, `emitter`): `Promise`\<`void`\>
+> **eventBusUnsubscribe**(`socketRequestContext`, `componentName`, `request`, `emitter`): `Promise`\<`void`\>
 
 Unsubscribe from a topic.
 
 ## Parameters
 
-### httpRequestContext
+### socketRequestContext
 
-`IHttpRequestContext`
+`ISocketRequestContext`
 
 The request context for the API.
 

@@ -6,6 +6,10 @@ Model for the standard parameters for an http request.
 
 - [`IHttpRequest`](IHttpRequest.md)\<`T`\>
 
+## Extended by
+
+- [`ISocketServerRequest`](ISocketServerRequest.md)
+
 ## Type Parameters
 
 ### T

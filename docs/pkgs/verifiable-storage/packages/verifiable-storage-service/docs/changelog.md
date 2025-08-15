@@ -1,5 +1,22 @@
 # @twin.org/verifiable-storage-service - Changelog
 
+## [0.0.2-next.3](https://github.com/twinfoundation/verifiable-storage/compare/verifiable-storage-service-v0.0.2-next.2...verifiable-storage-service-v0.0.2-next.3) (2025-07-28)
+
+
+### Features
+
+* remove unused namespace ([e95b332](https://github.com/twinfoundation/verifiable-storage/commit/e95b33251950bb2f04bff0cb643ed8bcdb2897d3))
+* update IOTA verifiable storage connector to use the updated move-to-json cli ([#33](https://github.com/twinfoundation/verifiable-storage/issues/33)) ([7c8d0d2](https://github.com/twinfoundation/verifiable-storage/commit/7c8d0d2e0418333ab1f897f744326c5c72857932))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/verifiable-storage-models bumped from 0.0.2-next.2 to 0.0.2-next.3
+  * devDependencies
+    * @twin.org/verifiable-storage-connector-entity-storage bumped from 0.0.2-next.2 to 0.0.2-next.3
+
 ## [0.0.2-next.2](https://github.com/twinfoundation/verifiable-storage/compare/verifiable-storage-service-v0.0.2-next.1...verifiable-storage-service-v0.0.2-next.2) (2025-07-16)
 
 

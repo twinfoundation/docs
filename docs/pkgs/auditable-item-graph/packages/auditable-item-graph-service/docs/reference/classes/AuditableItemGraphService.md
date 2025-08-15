@@ -28,14 +28,6 @@ The dependencies for the auditable item graph connector.
 
 ## Properties
 
-### NAMESPACE
-
-> `readonly` `static` **NAMESPACE**: `string` = `"aig"`
-
-The namespace for the service.
-
-***
-
 ### NAMESPACE\_CHANGESET
 
 > `readonly` `static` **NAMESPACE\_CHANGESET**: `string` = `"changeset"`

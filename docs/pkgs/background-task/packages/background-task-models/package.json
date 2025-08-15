@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/background-task-models",
-	"version": "0.0.2-next.2",
+	"version": "0.0.2-next.4",
 	"description": "Models which define the structure of the background task contracts and connectors",
 	"repository": {
 		"type": "git",

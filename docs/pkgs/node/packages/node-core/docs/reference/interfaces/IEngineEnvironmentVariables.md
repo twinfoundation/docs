@@ -36,7 +36,16 @@ The name of the state file.
 
 > `optional` **entityStorageConnectorType**: `string`
 
-The type of the default entity storage: file, memory, aws-dynamodb, azure-cosmosdb, gcp-firestoredb, scylladb, mysql, mongodb, postgresql.
+The type of the entity storage to create, comma separate for more than one connector.
+values: file, memory, aws-dynamodb, azure-cosmosdb, gcp-firestoredb, scylladb, mysql, mongodb, postgresql
+
+***
+
+### entityStorageConnectorDefault?
+
+> `optional` **entityStorageConnectorDefault**: `string`
+
+The default entity storage connector to use, defaults to the first one in the list.
 
 ***
 
@@ -45,22 +54,6 @@ The type of the default entity storage: file, memory, aws-dynamodb, azure-cosmos
 > `optional` **entityStorageTablePrefix**: `string`
 
 A prefix for all the table in entity-storage, can be empty.
-
-***
-
-### entityFileEnable?
-
-> `optional` **entityFileEnable**: `string`
-
-Enable the file entity storage connector.
-
-***
-
-### entityMemoryEnable?
-
-> `optional` **entityMemoryEnable**: `string`
-
-Enable the memory entity storage connector.
 
 ***
 
@@ -189,6 +182,14 @@ ScyllaDB keyspace.
 > `optional` **scylladbLocalDataCenter**: `string`
 
 ScyllaDB local data center.
+
+***
+
+### scylladbPort?
+
+> `optional` **scylladbPort**: `string`
+
+ScyllaDB port.
 
 ***
 
@@ -332,7 +333,24 @@ The url for accessing IPFS API.
 
 > `optional` **blobStorageConnectorType**: `string`
 
-The type of the default blob storage: memory, file, ipfs, aws-s3, azure-storage, gcp-storage.
+The type of the entity storage to create, comma separate for more than one connector.
+values: memory, file, ipfs, aws-s3, azure-storage, gcp-storage.
+
+***
+
+### blobStorageConnectorDefault?
+
+> `optional` **blobStorageConnectorDefault**: `string`
+
+The default blob storage connector to use, defaults to the first one in the list.
+
+***
+
+### blobStorageConnectorPublic?
+
+> `optional` **blobStorageConnectorPublic**: `string`
+
+Blog storage connector which has public access.
 
 ***
 
@@ -344,11 +362,20 @@ Enable encryption for the blob storage.
 
 ***
 
-### blobStorageEncryptionKey?
+### blobStorageEncryptionKeyId?
 
-> `optional` **blobStorageEncryptionKey**: `string`
+> `optional` **blobStorageEncryptionKeyId**: `string`
 
-The encryption key for the blob storage.
+The id of the encryption key for the blob storage.
+
+***
+
+### blobStorageSymmetricEncryptionKey?
+
+> `optional` **blobStorageSymmetricEncryptionKey**: `string`
+
+A symmetric encryption key for the blob storage, should be ChaCha20Poly1305 in base64 format.
+If encryption is enabled but a key is not provided one will be generated.
 
 ***
 
@@ -357,22 +384,6 @@ The encryption key for the blob storage.
 > `optional` **blobStoragePrefix**: `string`
 
 A prefix for all the blobs in blob-storage, can be empty.
-
-***
-
-### blobFileEnable?
-
-> `optional` **blobFileEnable**: `string`
-
-Enable the file blob storage connector.
-
-***
-
-### blobMemoryEnable?
-
-> `optional` **blobMemoryEnable**: `string`
-
-Enable the memory blob storage connector.
 
 ***
 
@@ -744,6 +755,132 @@ The type of the default data extractor, can be a comma separated list: json-path
 
 ***
 
+### synchronisedStorageEnabled?
+
+> `optional` **synchronisedStorageEnabled**: `string`
+
+Is the synchronised storage enabled, defaults to false.
+
+***
+
+### synchronisedStorageTrustedUrl?
+
+> `optional` **synchronisedStorageTrustedUrl**: `string`
+
+Url which points to the api for a trusted synchronised storage node, not required if this is a trusted node.
+
+***
+
+### synchronisedStorageVerifiableStorageKeyId?
+
+> `optional` **synchronisedStorageVerifiableStorageKeyId**: `string`
+
+The key for the smart contract which contains the verifiable storage pointer store for synchronised storage.
+This only required if using a custom verifiable storage item, otherwise it will default the the network name.
+
+***
+
+### synchronisedStorageVerificationMethodId?
+
+> `optional` **synchronisedStorageVerificationMethodId**: `string`
+
+The identity verification method id to use with synchronised storage for signing/verifying changesets.
+Defaults to synchronised-storage-assertion.
+
+***
+
+### synchronisedStorageBlobStorageEncryptionKeyId?
+
+> `optional` **synchronisedStorageBlobStorageEncryptionKeyId**: `string`
+
+The key from the vault which is used to encrypt the synchronised storage blobs.
+Only required for trusted nodes, as regular nodes will request from the trusted nodes.
+Defaults to synchronised-storage-blob-encryption
+
+***
+
+### synchronisedStorageBlobStoragePrivateKey?
+
+> `optional` **synchronisedStorageBlobStoragePrivateKey**: `string`
+
+The private key used for blob encryption, should be RSA-2048 DER format encoded as base64.
+Only required for trusted nodes, as regular nodes will not write encrypted data.
+
+***
+
+### synchronisedStorageBlobStoragePublicKey?
+
+> `optional` **synchronisedStorageBlobStoragePublicKey**: `string`
+
+The public key used for blob decryption, should be RSA-2048 DER format encoded as base64.
+Only required for trusted nodes, as regular nodes will request the key from trusted nodes.
+
+***
+
+### synchronisedStorageEntityUpdateIntervalMinutes?
+
+> `optional` **synchronisedStorageEntityUpdateIntervalMinutes**: `string`
+
+How often to check for entity updates in minutes.
+
+#### Default
+
+```ts
+5
+```
+
+***
+
+### synchronisedStorageConsolidationIntervalMinutes?
+
+> `optional` **synchronisedStorageConsolidationIntervalMinutes**: `string`
+
+Interval to perform consolidation of changesets, only used if this is a trusted node.
+
+#### Default
+
+```ts
+60
+```
+
+***
+
+### synchronisedStorageConsolidationBatchSize?
+
+> `optional` **synchronisedStorageConsolidationBatchSize**: `string`
+
+The number of entities to process in a single consolidation batch, only used if this is a trusted node.
+
+#### Default
+
+```ts
+1000
+```
+
+***
+
+### synchronisedStorageMaxConsolidations?
+
+> `optional` **synchronisedStorageMaxConsolidations**: `string`
+
+The maximum number of consolidations to keep in storage, only used if this is a trusted node.
+
+#### Default
+
+```ts
+5
+```
+
+***
+
+### federatedCatalogueEnabled?
+
+> `optional` **federatedCatalogueEnabled**: `string`
+
+Is the federated catalogue enabled, defaults to false.
+
+***
+
 ### federatedCatalogueCacheTtlMs?
 
 > `optional` **federatedCatalogueCacheTtlMs**: `number`
@@ -772,4 +909,4 @@ Is the rights management enabled, defaults to false.
 
 > `optional` **taskSchedulerEnabled**: `string`
 
-Is the task scheduler enabled, defaults to true.
+Is the task scheduler enabled, defaults to false.

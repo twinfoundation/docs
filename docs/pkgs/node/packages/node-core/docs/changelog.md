@@ -1,5 +1,26 @@
 # @twin.org/node-core - Changelog
 
+## [0.0.2-next.4](https://github.com/twinfoundation/node/compare/node-core-v0.0.2-next.3...node-core-v0.0.2-next.4) (2025-08-14)
+
+
+### Features
+
+* add synchronised storage config ([e315869](https://github.com/twinfoundation/node/commit/e315869adbffcd7fe5d3ce151dd35f662f6134a9))
+
+## [0.0.2-next.3](https://github.com/twinfoundation/node/compare/node-core-v0.0.2-next.2...node-core-v0.0.2-next.3) (2025-07-21)
+
+
+### Features
+
+* update to latest engine config ([347386c](https://github.com/twinfoundation/node/commit/347386c0609e717dc20c456ad2264c83df793c59))
+
+## [0.0.2-next.2](https://github.com/twinfoundation/node/compare/node-core-v0.0.2-next.1...node-core-v0.0.2-next.2) (2025-07-17)
+
+
+### Features
+
+* support multiple entity and blob storage connectors ([a489f79](https://github.com/twinfoundation/node/commit/a489f7907544aef5708d5111e9f72985e1377bae))
+
 ## [0.0.2-next.1](https://github.com/twinfoundation/node/compare/node-core-v0.0.2-next.0...node-core-v0.0.2-next.1) (2025-07-15)
 
 

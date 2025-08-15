@@ -1,6 +1,6 @@
-# Class: TaskSchedulerComponent
+# Class: TaskSchedulerService
 
-Class for performing task operations in entity storage.
+Class for scheduling tasks.
 
 ## Implements
 
@@ -10,7 +10,7 @@ Class for performing task operations in entity storage.
 
 ### Constructor
 
-> **new TaskSchedulerComponent**(`options?`): `TaskSchedulerComponent`
+> **new TaskSchedulerService**(`options?`): `TaskSchedulerService`
 
 Create a new instance of TaskSchedulerComponent.
 
@@ -24,17 +24,9 @@ The options for the scheduler.
 
 #### Returns
 
-`TaskSchedulerComponent`
+`TaskSchedulerService`
 
 ## Properties
-
-### NAMESPACE
-
-> `readonly` `static` **NAMESPACE**: `string` = `"task-scheduler"`
-
-The namespace supported by the task scheduler.
-
-***
 
 ### CLASS\_NAME
 

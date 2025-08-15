@@ -1,5 +1,63 @@
 # @twin.org/api-service - Changelog
 
+## [0.0.2-next.5](https://github.com/twinfoundation/api/compare/api-service-v0.0.2-next.4...api-service-v0.0.2-next.5) (2025-07-25)
+
+
+### Features
+
+* remove unused namespace ([08478f2](https://github.com/twinfoundation/api/commit/08478f27efda9beb0271fdb22f6972e918361965))
+* update dependencies ([1171dc4](https://github.com/twinfoundation/api/commit/1171dc416a9481737f6a640e3cf30145768f37e9))
+* use shared store mechanism ([#19](https://github.com/twinfoundation/api/issues/19)) ([32116df](https://github.com/twinfoundation/api/commit/32116df3b4380a30137f5056f242a5c99afa2df9))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/api-models bumped from 0.0.2-next.4 to 0.0.2-next.5
+
+## [0.0.2-next.4](https://github.com/twinfoundation/api/compare/api-service-v0.0.2-next.3...api-service-v0.0.2-next.4) (2025-07-25)
+
+
+### Miscellaneous Chores
+
+* **api-service:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/api-models bumped from 0.0.2-next.3 to 0.0.2-next.4
+
+## [0.0.2-next.3](https://github.com/twinfoundation/api/compare/api-service-v0.0.2-next.2...api-service-v0.0.2-next.3) (2025-07-24)
+
+
+### Features
+
+* remove unused namespace ([08478f2](https://github.com/twinfoundation/api/commit/08478f27efda9beb0271fdb22f6972e918361965))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/api-models bumped from 0.0.2-next.2 to 0.0.2-next.3
+
+## [0.0.2-next.2](https://github.com/twinfoundation/api/compare/api-service-v0.0.2-next.1...api-service-v0.0.2-next.2) (2025-07-17)
+
+
+### Miscellaneous Chores
+
+* **api-service:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/api-models bumped from 0.0.2-next.1 to 0.0.2-next.2
+
 ## [0.0.2-next.1](https://github.com/twinfoundation/api/compare/api-service-v0.0.2-next.0...api-service-v0.0.2-next.1) (2025-07-08)
 
 
