@@ -102,7 +102,13 @@ function generatePackageItems(packageGroup: string, packageType: string, package
 		label: packageName,
 		items: [
 			packageFileExists(packageGroup, packageType, packageName, "index", "Overview"),
-			packageFileExists(packageGroup, packageType, packageName, "docs/architecture", "Architecture"),
+			packageFileExists(
+				packageGroup,
+				packageType,
+				packageName,
+				"docs/architecture",
+				"Architecture"
+			),
 			packageFileExists(packageGroup, packageType, packageName, "docs/examples", "Examples"),
 			packageFileExists(
 				packageGroup,
