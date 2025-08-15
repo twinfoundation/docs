@@ -1,5 +1,22 @@
 # @twin.org/blob-storage-rest-client - Changelog
 
+## [0.0.2-next.1](https://github.com/twinfoundation/blob-storage/compare/blob-storage-rest-client-v0.0.2-next.0...blob-storage-rest-client-v0.0.2-next.1) (2025-07-24)
+
+
+### Features
+
+* add compression support ([67d239b](https://github.com/twinfoundation/blob-storage/commit/67d239bca8321bd90bf4ff93167c564130309730))
+* additional encryption options on per item basis ([4b95a65](https://github.com/twinfoundation/blob-storage/commit/4b95a656d19e3b571cea905e36f29b679b13e1e8))
+* update dependencies ([56f0094](https://github.com/twinfoundation/blob-storage/commit/56f0094b68d8bd22864cd899ac1b61d95540f719))
+* use shared store mechanism ([#12](https://github.com/twinfoundation/blob-storage/issues/12)) ([cae8110](https://github.com/twinfoundation/blob-storage/commit/cae8110681847a1ac4fcac968b8196694e49c320))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/blob-storage-models bumped from 0.0.2-next.0 to 0.0.2-next.1
+
 ## 0.0.1 (2025-07-04)
 
 

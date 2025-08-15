@@ -1,5 +1,92 @@
 # @twin.org/entity-storage-connector-mongodb - Changelog
 
+## [0.0.2-next.5](https://github.com/twinfoundation/entity-storage/compare/entity-storage-connector-mongodb-v0.0.2-next.4...entity-storage-connector-mongodb-v0.0.2-next.5) (2025-08-11)
+
+
+### Miscellaneous Chores
+
+* **entity-storage-connector-mongodb:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/entity-storage-models bumped from 0.0.2-next.4 to 0.0.2-next.5
+  * devDependencies
+    * @twin.org/entity-storage-connector-memory bumped from 0.0.2-next.4 to 0.0.2-next.5
+
+## [0.0.2-next.4](https://github.com/twinfoundation/entity-storage/compare/entity-storage-connector-mongodb-v0.0.2-next.3...entity-storage-connector-mongodb-v0.0.2-next.4) (2025-08-08)
+
+
+### Miscellaneous Chores
+
+* **entity-storage-connector-mongodb:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/entity-storage-models bumped from 0.0.2-next.3 to 0.0.2-next.4
+  * devDependencies
+    * @twin.org/entity-storage-connector-memory bumped from 0.0.2-next.3 to 0.0.2-next.4
+
+## [0.0.2-next.3](https://github.com/twinfoundation/entity-storage/compare/entity-storage-connector-mongodb-v0.0.2-next.2...entity-storage-connector-mongodb-v0.0.2-next.3) (2025-07-25)
+
+
+### Miscellaneous Chores
+
+* **entity-storage-connector-mongodb:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/entity-storage-models bumped from 0.0.2-next.2 to 0.0.2-next.3
+  * devDependencies
+    * @twin.org/entity-storage-connector-memory bumped from 0.0.2-next.2 to 0.0.2-next.3
+
+## [0.0.2-next.2](https://github.com/twinfoundation/entity-storage/compare/entity-storage-connector-mongodb-v0.0.2-next.1...entity-storage-connector-mongodb-v0.0.2-next.2) (2025-07-24)
+
+
+### Features
+
+* synchronised storage ([#44](https://github.com/twinfoundation/entity-storage/issues/44)) ([94e10e2](https://github.com/twinfoundation/entity-storage/commit/94e10e26d1feec801449dc04af7a9757ac7495ff))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/entity-storage-models bumped from 0.0.2-next.1 to 0.0.2-next.2
+  * devDependencies
+    * @twin.org/entity-storage-connector-memory bumped from 0.0.2-next.1 to 0.0.2-next.2
+
+## [0.0.2-next.1](https://github.com/twinfoundation/entity-storage/compare/entity-storage-connector-mongodb-v0.0.2-next.0...entity-storage-connector-mongodb-v0.0.2-next.1) (2025-07-17)
+
+
+### Features
+
+* add production release automation ([1eb4c8e](https://github.com/twinfoundation/entity-storage/commit/1eb4c8ee3eb099defdfc2d063ae44935276dcae8))
+* update dependencies ([7ccc0c4](https://github.com/twinfoundation/entity-storage/commit/7ccc0c429125d073dc60b3de6cf101abc8cc6cba))
+* use shared store mechanism ([#34](https://github.com/twinfoundation/entity-storage/issues/34)) ([68b6b71](https://github.com/twinfoundation/entity-storage/commit/68b6b71e7a96d7d016cd57bfff36775b56bf3f93))
+
+
+### Bug Fixes
+
+* query params force coercion ([dd6aa87](https://github.com/twinfoundation/entity-storage/commit/dd6aa87efdfb60bab7d6756a86888863c45c51a7))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/entity-storage-models bumped from 0.0.2-next.0 to 0.0.2-next.1
+  * devDependencies
+    * @twin.org/entity-storage-connector-memory bumped from 0.0.2-next.0 to 0.0.2-next.1
+
 ## 0.0.1 (2025-07-04)
 
 

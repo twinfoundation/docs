@@ -28,14 +28,6 @@ The dependencies for the identity connector.
 
 ## Properties
 
-### NAMESPACE
-
-> `readonly` `static` **NAMESPACE**: `string` = `"authentication-admin-entity-storage"`
-
-The namespace supported by the authentication service.
-
-***
-
 ### CLASS\_NAME
 
 > `readonly` **CLASS\_NAME**: `string`

@@ -10,7 +10,7 @@ The definition for a processor for handling REST routes.
 
 ### pre()?
 
-> `optional` **pre**(`request`, `response`, `route`, `requestIdentity`, `processorState`): `Promise`\<`void`\>
+> `optional` **pre**(`request`, `response`, `route`, `requestIdentity`, `processorState`, `loggingComponentType?`): `Promise`\<`void`\>
 
 Pre process the REST request for the specified route.
 
@@ -44,6 +44,12 @@ The identity context for the request.
 
 The state handed through the processors.
 
+##### loggingComponentType?
+
+`string`
+
+The logging component type for the request.
+
 #### Returns
 
 `Promise`\<`void`\>
@@ -58,7 +64,7 @@ Promise that resolves when the request is processed.
 
 ### post()?
 
-> `optional` **post**(`request`, `response`, `route`, `requestIdentity`, `processorState`): `Promise`\<`void`\>
+> `optional` **post**(`request`, `response`, `route`, `requestIdentity`, `processorState`, `loggingComponentType?`): `Promise`\<`void`\>
 
 Post process the REST request for the specified route.
 
@@ -92,6 +98,12 @@ The identity context for the request.
 
 The state handed through the processors.
 
+##### loggingComponentType?
+
+`string`
+
+The logging component type for the request.
+
 #### Returns
 
 `Promise`\<`void`\>
@@ -106,7 +118,7 @@ Promise that resolves when the request is processed.
 
 ### process()?
 
-> `optional` **process**(`request`, `response`, `route`, `requestIdentity`, `processorState`): `Promise`\<`void`\>
+> `optional` **process**(`request`, `response`, `route`, `requestIdentity`, `processorState`, `loggingComponentType?`): `Promise`\<`void`\>
 
 Process the REST request for the specified route.
 
@@ -139,6 +151,12 @@ The identity context for the request.
 ##### processorState
 
 The state handed through the processors.
+
+##### loggingComponentType?
+
+`string`
+
+The logging component type for the request.
 
 #### Returns
 

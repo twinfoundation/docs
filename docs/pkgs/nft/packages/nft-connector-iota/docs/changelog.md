@@ -1,5 +1,19 @@
 # @twin.org/nft-connector-iota - Changelog
 
+## [0.0.2-next.2](https://github.com/twinfoundation/nft/compare/nft-connector-iota-v0.0.2-next.1...nft-connector-iota-v0.0.2-next.2) (2025-07-25)
+
+
+### Features
+
+* move to json integration ([#31](https://github.com/twinfoundation/nft/issues/31)) ([89944ba](https://github.com/twinfoundation/nft/commit/89944ba05b955944f84419224c3ae63fef28cc23))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/nft-models bumped from 0.0.2-next.1 to 0.0.2-next.2
+
 ## [0.0.2-next.1](https://github.com/twinfoundation/nft/compare/nft-connector-iota-v0.0.2-next.0...nft-connector-iota-v0.0.2-next.1) (2025-07-16)
 
 

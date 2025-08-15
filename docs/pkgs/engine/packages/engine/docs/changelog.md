@@ -1,5 +1,65 @@
 # @twin.org/engine - Changelog
 
+## [0.0.2-next.5](https://github.com/twinfoundation/engine/compare/engine-v0.0.2-next.4...engine-v0.0.2-next.5) (2025-08-14)
+
+
+### Features
+
+* add synchronised storage support ([5142e34](https://github.com/twinfoundation/engine/commit/5142e3488f09195cf9f48a9c6c6d1014231a4c2c))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/engine-core bumped from 0.0.2-next.4 to 0.0.2-next.5
+    * @twin.org/engine-types bumped from 0.0.2-next.4 to 0.0.2-next.5
+
+## [0.0.2-next.4](https://github.com/twinfoundation/engine/compare/engine-v0.0.2-next.3...engine-v0.0.2-next.4) (2025-07-25)
+
+
+### Features
+
+* add default logging component for web server ([8ad94f0](https://github.com/twinfoundation/engine/commit/8ad94f0d2d9a5241a8854b1e59fb9a55ce310142))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/engine-core bumped from 0.0.2-next.3 to 0.0.2-next.4
+    * @twin.org/engine-types bumped from 0.0.2-next.3 to 0.0.2-next.4
+
+## [0.0.2-next.3](https://github.com/twinfoundation/engine/compare/engine-v0.0.2-next.2...engine-v0.0.2-next.3) (2025-07-24)
+
+
+### Features
+
+* update includeUserIdentity usage ([d34f597](https://github.com/twinfoundation/engine/commit/d34f597a61f9645a029411d2911bbda20ddc9eb9))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/engine-core bumped from 0.0.2-next.2 to 0.0.2-next.3
+    * @twin.org/engine-types bumped from 0.0.2-next.2 to 0.0.2-next.3
+
+## [0.0.2-next.2](https://github.com/twinfoundation/engine/compare/engine-v0.0.2-next.1...engine-v0.0.2-next.2) (2025-07-21)
+
+
+### Features
+
+* add rest clients as components ([c6f956a](https://github.com/twinfoundation/engine/commit/c6f956afe4fc22cd552174539c92a109448dc242))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/engine-core bumped from 0.0.2-next.1 to 0.0.2-next.2
+    * @twin.org/engine-types bumped from 0.0.2-next.1 to 0.0.2-next.2
+
 ## [0.0.2-next.1](https://github.com/twinfoundation/engine/compare/engine-v0.0.2-next.0...engine-v0.0.2-next.1) (2025-07-11)
 
 

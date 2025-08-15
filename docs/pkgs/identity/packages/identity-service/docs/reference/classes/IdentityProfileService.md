@@ -38,14 +38,6 @@ The dependencies for the identity profile service.
 
 ## Properties
 
-### NAMESPACE
-
-> `readonly` `static` **NAMESPACE**: `string` = `"identity-profile"`
-
-The namespace supported by the identity profile service.
-
-***
-
 ### CLASS\_NAME
 
 > `readonly` **CLASS\_NAME**: `string`

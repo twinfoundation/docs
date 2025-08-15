@@ -1,5 +1,31 @@
 # @twin.org/auditable-item-graph-service - Changelog
 
+## [0.0.2-next.1](https://github.com/twinfoundation/auditable-item-graph/compare/auditable-item-graph-service-v0.0.2-next.0...auditable-item-graph-service-v0.0.2-next.1) (2025-07-21)
+
+
+### Features
+
+* add data types with fully qualified name ([93e1ee7](https://github.com/twinfoundation/auditable-item-graph/commit/93e1ee7c0f7bad81f003787f797f363864e201af))
+* improve JSON schemas ([bec8dc1](https://github.com/twinfoundation/auditable-item-graph/commit/bec8dc1f270c6c9710623a192b984cf46f8a5613))
+* only set dateModified after update ([#4](https://github.com/twinfoundation/auditable-item-graph/issues/4)) ([43ea6e5](https://github.com/twinfoundation/auditable-item-graph/commit/43ea6e5f2d0b9181a80f0bf2935db64b3263839a))
+* update dependencies ([6986689](https://github.com/twinfoundation/auditable-item-graph/commit/698668957a1fcb7f85ce2f117914d5980043924f))
+* use shared store mechanism ([#10](https://github.com/twinfoundation/auditable-item-graph/issues/10)) ([da035e5](https://github.com/twinfoundation/auditable-item-graph/commit/da035e5eb8f157482b4eb2bdbc689c6c0647ff7d))
+* use standard list json ld types ([8f53836](https://github.com/twinfoundation/auditable-item-graph/commit/8f53836d4c83a98d64d7f5fe0531bb9af09464ae))
+
+
+### Bug Fixes
+
+* only include alias in index if not deleted ([#6](https://github.com/twinfoundation/auditable-item-graph/issues/6)) ([5da3c41](https://github.com/twinfoundation/auditable-item-graph/commit/5da3c419fafa2afefd34b1c570d103012b888a75))
+* query params force coercion ([2dd9afe](https://github.com/twinfoundation/auditable-item-graph/commit/2dd9afe9ec37e2a91c110317fe289f7495c187a0))
+* update tests with new deterministic background tasks ([#8](https://github.com/twinfoundation/auditable-item-graph/issues/8)) ([a96721c](https://github.com/twinfoundation/auditable-item-graph/commit/a96721c28128781f9cbd983d013dcf4c5542158c))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/auditable-item-graph-models bumped from 0.0.2-next.0 to 0.0.2-next.1
+
 ## 0.0.1 (2025-07-09)
 
 

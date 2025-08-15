@@ -28,14 +28,6 @@ The dependencies for the auditable item stream connector.
 
 ## Properties
 
-### NAMESPACE
-
-> `readonly` `static` **NAMESPACE**: `string` = `"ais"`
-
-The namespace for the service.
-
-***
-
 ### CLASS\_NAME
 
 > `readonly` **CLASS\_NAME**: `string`

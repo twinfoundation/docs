@@ -1,5 +1,67 @@
 # @twin.org/api-processors - Changelog
 
+## [0.0.2-next.5](https://github.com/twinfoundation/api/compare/api-processors-v0.0.2-next.4...api-processors-v0.0.2-next.5) (2025-07-25)
+
+
+### Features
+
+* add json-ld mime type processor and auth admin component ([8861791](https://github.com/twinfoundation/api/commit/88617916e23bfbca023dbae1976fe421983a02ff))
+* add logging component type to request contexts ([210de1b](https://github.com/twinfoundation/api/commit/210de1b9e1c91079b59a2b90ddd57569668d647d))
+* add socket id, connect and disconnect ([20b0d0e](https://github.com/twinfoundation/api/commit/20b0d0ec279cab46141fee09de2c4a7087cdce16))
+* remove unused namespace ([08478f2](https://github.com/twinfoundation/api/commit/08478f27efda9beb0271fdb22f6972e918361965))
+* update dependencies ([1171dc4](https://github.com/twinfoundation/api/commit/1171dc416a9481737f6a640e3cf30145768f37e9))
+* use shared store mechanism ([#19](https://github.com/twinfoundation/api/issues/19)) ([32116df](https://github.com/twinfoundation/api/commit/32116df3b4380a30137f5056f242a5c99afa2df9))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/api-models bumped from 0.0.2-next.4 to 0.0.2-next.5
+
+## [0.0.2-next.4](https://github.com/twinfoundation/api/compare/api-processors-v0.0.2-next.3...api-processors-v0.0.2-next.4) (2025-07-25)
+
+
+### Features
+
+* add logging component type to request contexts ([210de1b](https://github.com/twinfoundation/api/commit/210de1b9e1c91079b59a2b90ddd57569668d647d))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/api-models bumped from 0.0.2-next.3 to 0.0.2-next.4
+
+## [0.0.2-next.3](https://github.com/twinfoundation/api/compare/api-processors-v0.0.2-next.2...api-processors-v0.0.2-next.3) (2025-07-24)
+
+
+### Features
+
+* add socket id, connect and disconnect ([20b0d0e](https://github.com/twinfoundation/api/commit/20b0d0ec279cab46141fee09de2c4a7087cdce16))
+* remove unused namespace ([08478f2](https://github.com/twinfoundation/api/commit/08478f27efda9beb0271fdb22f6972e918361965))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/api-models bumped from 0.0.2-next.2 to 0.0.2-next.3
+
+## [0.0.2-next.2](https://github.com/twinfoundation/api/compare/api-processors-v0.0.2-next.1...api-processors-v0.0.2-next.2) (2025-07-17)
+
+
+### Miscellaneous Chores
+
+* **api-processors:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/api-models bumped from 0.0.2-next.1 to 0.0.2-next.2
+
 ## [0.0.2-next.1](https://github.com/twinfoundation/api/compare/api-processors-v0.0.2-next.0...api-processors-v0.0.2-next.1) (2025-07-08)
 
 

@@ -18,14 +18,6 @@ Process the JWT mime type.
 
 ## Properties
 
-### NAMESPACE
-
-> `readonly` `static` **NAMESPACE**: `string` = `"jwt"`
-
-The namespace supported by the processor.
-
-***
-
 ### CLASS\_NAME
 
 > `readonly` **CLASS\_NAME**: `string`

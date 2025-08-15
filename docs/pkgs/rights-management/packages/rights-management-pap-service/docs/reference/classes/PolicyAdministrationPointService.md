@@ -28,14 +28,6 @@ The options for the component.
 
 ## Properties
 
-### NAMESPACE
-
-> `readonly` `static` **NAMESPACE**: `string` = `"pap"`
-
-The namespace supported by the Policy Administration Point entity storage implementation.
-
-***
-
 ### CLASS\_NAME
 
 > `readonly` **CLASS\_NAME**: `string`

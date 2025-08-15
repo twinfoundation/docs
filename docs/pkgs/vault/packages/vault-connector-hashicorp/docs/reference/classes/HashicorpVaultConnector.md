@@ -424,7 +424,7 @@ The name of the key to use.
 
 ##### encryptionType
 
-`0`
+`VaultEncryptionType`
 
 The type of encryption to use.
 
@@ -462,7 +462,7 @@ The name of the key to use.
 
 ##### encryptionType
 
-`0`
+`VaultEncryptionType`
 
 The type of encryption to use.
 
@@ -599,6 +599,44 @@ Nothing.
 #### Throws
 
 Error if the key cannot be restored.
+
+***
+
+### importKey()
+
+> **importKey**(`name`, `type`, `privateKeyPem`): `Promise`\<`void`\>
+
+Import a key to the vault.
+
+#### Parameters
+
+##### name
+
+`string`
+
+The name of the key to import.
+
+##### type
+
+`string`
+
+The type of key to import, e.g. "rsa", "ed25519", etc.
+
+##### privateKeyPem
+
+`string`
+
+The PEM bundle of the key to import.
+
+#### Returns
+
+`Promise`\<`void`\>
+
+Nothing.
+
+#### Throws
+
+Error if the key cannot be imported.
 
 ***
 

@@ -4,16 +4,14 @@ Configuration for the entity storage service.
 
 ## Properties
 
-### includeNodeIdentity?
+### partitionPerUser?
 
-> `optional` **includeNodeIdentity**: `boolean`
+> `optional` **partitionPerUser**: `boolean`
 
-Include the node identity when performing storage operations, defaults to true.
+Include the user identity when performing storage operations, this allow separation of data per user.
 
-***
+#### Default
 
-### includeUserIdentity?
-
-> `optional` **includeUserIdentity**: `boolean`
-
-Include the user identity when performing storage operations, defaults to true.
+```ts
+false
+```

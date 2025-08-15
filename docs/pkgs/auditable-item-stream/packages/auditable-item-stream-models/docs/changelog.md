@@ -1,5 +1,24 @@
 # @twin.org/auditable-item-stream-models - Changelog
 
+## [0.0.2-next.1](https://github.com/twinfoundation/auditable-item-stream/compare/auditable-item-stream-models-v0.0.2-next.0...auditable-item-stream-models-v0.0.2-next.1) (2025-07-21)
+
+
+### Features
+
+* data types registered with fully qualified names ([3bcd927](https://github.com/twinfoundation/auditable-item-stream/commit/3bcd92788bfe4976bc88caf230501f5bbf8637f9))
+* improve description ([6ab6ce7](https://github.com/twinfoundation/auditable-item-stream/commit/6ab6ce7a70d409319ab44658d331933358c78d91))
+* improve schemas ([a658264](https://github.com/twinfoundation/auditable-item-stream/commit/a65826423f57ca18d9de44e7e75cb06ab9dd12cb))
+* improve schemas ([b253580](https://github.com/twinfoundation/auditable-item-stream/commit/b2535806321f39c7c02db0e04f65fb04c0595dd0))
+* update dependencies ([9ff038b](https://github.com/twinfoundation/auditable-item-stream/commit/9ff038b7e76e9fb586be4f2321231f04258ef794))
+* update ts-to-schema generation ([91a7790](https://github.com/twinfoundation/auditable-item-stream/commit/91a779029dbefeb4af640a9aa54880493521bb7c))
+* use shared store mechanism ([#7](https://github.com/twinfoundation/auditable-item-stream/issues/7)) ([2aca4b8](https://github.com/twinfoundation/auditable-item-stream/commit/2aca4b85b0102f91c90619f02b116541786cf539))
+* use standard list json ld types ([54ee4d7](https://github.com/twinfoundation/auditable-item-stream/commit/54ee4d78c42cfd39745ee7d93903334c398ec8c8))
+
+
+### Bug Fixes
+
+* query params force coercion ([fcdd52c](https://github.com/twinfoundation/auditable-item-stream/commit/fcdd52cf8262a3bc19f6e7e9e6ef145890a9c8aa))
+
 ## 0.0.1 (2025-07-09)
 
 

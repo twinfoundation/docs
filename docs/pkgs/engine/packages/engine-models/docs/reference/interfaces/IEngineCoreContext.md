@@ -38,15 +38,16 @@ The state dirty flag, which flags that the state needs saving.
 
 ***
 
-### defaultTypes
+### registeredInstances
 
-> **defaultTypes**: `object`
+> **registeredInstances**: `object`
 
-The default types to use when components don't have custom types.
+The registered instances to use when components don't have custom types.
+The default entry will be the first in the list.
 
 #### Index Signature
 
-\[`type`: `string`\]: `string`
+\[`name`: `string`\]: `object`[]
 
 ***
 

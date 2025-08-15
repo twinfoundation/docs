@@ -1,5 +1,21 @@
 # @twin.org/blob-storage-connector-gcp - Changelog
 
+## [0.0.2-next.1](https://github.com/twinfoundation/blob-storage/compare/blob-storage-connector-gcp-v0.0.2-next.0...blob-storage-connector-gcp-v0.0.2-next.1) (2025-07-24)
+
+
+### Features
+
+* Add GCP blob storage connector ([#8](https://github.com/twinfoundation/blob-storage/issues/8)) ([4f6d579](https://github.com/twinfoundation/blob-storage/commit/4f6d579c01b3ae13ebcd9029b279da62e4fde859))
+* update dependencies ([56f0094](https://github.com/twinfoundation/blob-storage/commit/56f0094b68d8bd22864cd899ac1b61d95540f719))
+* use shared store mechanism ([#12](https://github.com/twinfoundation/blob-storage/issues/12)) ([cae8110](https://github.com/twinfoundation/blob-storage/commit/cae8110681847a1ac4fcac968b8196694e49c320))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/blob-storage-models bumped from 0.0.2-next.0 to 0.0.2-next.1
+
 ## 0.0.1 (2025-07-04)
 
 

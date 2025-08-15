@@ -1,14 +1,14 @@
 # Function: eventBusSubscribe()
 
-> **eventBusSubscribe**(`httpRequestContext`, `componentName`, `request`, `emitter`): `Promise`\<`void`\>
+> **eventBusSubscribe**(`socketRequestContext`, `componentName`, `request`, `emitter`): `Promise`\<`void`\>
 
 Subscribe to a topic.
 
 ## Parameters
 
-### httpRequestContext
+### socketRequestContext
 
-`IHttpRequestContext`
+`ISocketRequestContext`
 
 The request context for the API.
 

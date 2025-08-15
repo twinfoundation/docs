@@ -28,14 +28,6 @@ Options for the processor.
 
 ## Properties
 
-### NAMESPACE
-
-> `readonly` `static` **NAMESPACE**: `string` = `"rest-route"`
-
-The namespace supported by the processor.
-
-***
-
 ### CLASS\_NAME
 
 > `readonly` **CLASS\_NAME**: `string`
@@ -50,7 +42,7 @@ Runtime name for the class.
 
 ### process()
 
-> **process**(`request`, `response`, `route`, `requestIdentity`, `processorState`): `Promise`\<`void`\>
+> **process**(`request`, `response`, `route`, `requestIdentity`, `processorState`, `loggingComponentType?`): `Promise`\<`void`\>
 
 Process the REST request for the specified route.
 
@@ -83,6 +75,12 @@ The identity context for the request.
 ##### processorState
 
 The state handed through the processors.
+
+##### loggingComponentType?
+
+`string`
+
+The logging component type for the request.
 
 #### Returns
 

@@ -13,7 +13,7 @@ npm install @twin.org/entity-storage-connector-postgresql
 The tests developed are functional tests and need an instance of PostgreSql up and running. To run PostgreSql locally:
 
 ```sh
-docker run -p 5432:5432 --name twin-entity-storage-postgresql --hostname postgres -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=password -d postgres
+docker run -p 5444:5432 --name twin-entity-storage-postgresql --hostname postgres -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=password -d postgres
 ```
 
 Afterwards you can run the tests as follows:

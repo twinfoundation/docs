@@ -1,5 +1,24 @@
 # @twin.org/event-bus-service - Changelog
 
+## [0.0.2-next.1](https://github.com/twinfoundation/event-bus/compare/event-bus-service-v0.0.2-next.0...event-bus-service-v0.0.2-next.1) (2025-07-24)
+
+
+### Features
+
+* remove unused namespace ([e6d3897](https://github.com/twinfoundation/event-bus/commit/e6d38976f66b7a91b28ad8d0fc02ee06c62dd805))
+* update dependencies ([a313000](https://github.com/twinfoundation/event-bus/commit/a313000b9c3264e8ed2602622219be2cefcf0474))
+* use new socket route types ([899d031](https://github.com/twinfoundation/event-bus/commit/899d031ea4a503289198517994100e30480f2e49))
+* use shared store mechanism ([#2](https://github.com/twinfoundation/event-bus/issues/2)) ([1ded106](https://github.com/twinfoundation/event-bus/commit/1ded10684e8fab4a5138231e9f2ab49e43590f00))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/event-bus-models bumped from 0.0.2-next.0 to 0.0.2-next.1
+  * devDependencies
+    * @twin.org/event-bus-connector-local bumped from 0.0.2-next.0 to 0.0.2-next.1
+
 ## 0.0.1 (2025-07-04)
 
 

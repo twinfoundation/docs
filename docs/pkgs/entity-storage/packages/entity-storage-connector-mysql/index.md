@@ -13,7 +13,7 @@ npm install @twin.org/entity-storage-connector-mysql
 The tests developed are functional tests and need an instance of MySql up and running. To run MySql locally:
 
 ```sh
-docker run -p 3306:3306 --name twin-entity-storage-mysql --hostname mysql -e MYSQL_ROOT_PASSWORD=password -d mysql:latest
+docker run -p 3400:3306 --name twin-entity-storage-mysql --hostname mysql -e MYSQL_ROOT_PASSWORD=password -d mysql:latest
 ```
 
 Afterwards you can run the tests as follows:

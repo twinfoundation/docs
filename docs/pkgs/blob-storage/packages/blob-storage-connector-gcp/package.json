@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/blob-storage-connector-gcp",
-	"version": "0.0.2-next.0",
+	"version": "0.0.2-next.1",
 	"description": "Blob Storage connector implementation using Google Cloud Storage",
 	"repository": {
 		"type": "git",

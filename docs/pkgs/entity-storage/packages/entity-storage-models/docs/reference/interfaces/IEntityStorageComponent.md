@@ -16,7 +16,7 @@ Interface describing an entity storage component.
 
 ### set()
 
-> **set**(`entity`, `userIdentity?`, `nodeIdentity?`): `Promise`\<`void`\>
+> **set**(`entity`, `userIdentity?`): `Promise`\<`void`\>
 
 Set an entity.
 
@@ -34,12 +34,6 @@ The entity to set.
 
 The user identity to use with storage operations.
 
-##### nodeIdentity?
-
-`string`
-
-The node identity to use with storage operations.
-
 #### Returns
 
 `Promise`\<`void`\>
@@ -50,7 +44,7 @@ The id of the entity.
 
 ### get()
 
-> **get**(`id`, `secondaryIndex?`, `userIdentity?`, `nodeIdentity?`): `Promise`\<`undefined` \| `T`\>
+> **get**(`id`, `secondaryIndex?`, `userIdentity?`): `Promise`\<`undefined` \| `T`\>
 
 Get an entity.
 
@@ -74,12 +68,6 @@ Get the item using a secondary index.
 
 The user identity to use with storage operations.
 
-##### nodeIdentity?
-
-`string`
-
-The node identity to use with storage operations.
-
 #### Returns
 
 `Promise`\<`undefined` \| `T`\>
@@ -90,7 +78,7 @@ The object if it can be found or undefined.
 
 ### remove()
 
-> **remove**(`id`, `userIdentity?`, `nodeIdentity?`): `Promise`\<`void`\>
+> **remove**(`id`, `userIdentity?`): `Promise`\<`void`\>
 
 Remove the entity.
 
@@ -108,12 +96,6 @@ The id of the entity to remove.
 
 The user identity to use with storage operations.
 
-##### nodeIdentity?
-
-`string`
-
-The node identity to use with storage operations.
-
 #### Returns
 
 `Promise`\<`void`\>
@@ -124,7 +106,7 @@ Nothing.
 
 ### query()
 
-> **query**(`conditions?`, `orderBy?`, `orderByDirection?`, `properties?`, `cursor?`, `pageSize?`, `userIdentity?`, `nodeIdentity?`): `Promise`\<\{ `entities`: `Partial`\<`T`\>[]; `cursor?`: `string`; \}\>
+> **query**(`conditions?`, `orderBy?`, `orderByDirection?`, `properties?`, `cursor?`, `pageSize?`, `userIdentity?`): `Promise`\<\{ `entities`: `Partial`\<`T`\>[]; `cursor?`: `string`; \}\>
 
 Query all the entities which match the conditions.
 
@@ -171,12 +153,6 @@ The suggested number of entities to return in each chunk, in some scenarios can 
 `string`
 
 The user identity to use with storage operations.
-
-##### nodeIdentity?
-
-`string`
-
-The node identity to use with storage operations.
 
 #### Returns
 

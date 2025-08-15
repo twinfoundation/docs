@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.2-next.3](https://github.com/twinfoundation/tools/compare/tools-core-v0.0.2-next.2...tools-core-v0.0.2-next.3) (2025-08-05)
+
+
+### Features
+
+* improve type name normalisation ([1fe28e5](https://github.com/twinfoundation/tools/commit/1fe28e567593e46a41a833fbba95fe4cd958f525))
+
 ## [0.0.2-next.2](https://github.com/twinfoundation/tools/compare/tools-core-v0.0.2-next.1...tools-core-v0.0.2-next.2) (2025-07-17)
 
 

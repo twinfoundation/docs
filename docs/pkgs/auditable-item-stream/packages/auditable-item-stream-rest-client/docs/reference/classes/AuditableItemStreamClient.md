@@ -586,3 +586,33 @@ NotFoundError if the stream is not found.
 #### Implementation of
 
 `IAuditableItemStreamComponent.getEntryObjects`
+
+***
+
+### removeVerifiable()
+
+> **removeVerifiable**(`id`): `Promise`\<`void`\>
+
+Remove the verifiable storage for the stream and entries, not supported on client.
+
+#### Parameters
+
+##### id
+
+`string`
+
+The id of the stream to remove the storage from.
+
+#### Returns
+
+`Promise`\<`void`\>
+
+Nothing.
+
+#### Throws
+
+NotFoundError if the vertex is not found.
+
+#### Implementation of
+
+`IAuditableItemStreamComponent.removeVerifiable`

@@ -13,7 +13,7 @@ npm install @twin.org/identity-connector-universal
 To test the universal resolver you will need to run the docker image.
 
 ```shell
-docker run -d --name twin-identity-universal -e NETWORK=testnet -p 8080:8080 iotaledger/uni-resolver-driver-iota:v0.2.0-alpha
+docker run -d --name twin-identity-universal -e NETWORK=testnet -p 8180:8080 iotaledger/uni-resolver-driver-iota:v0.2.0-alpha
 ```
 
 ## Examples

@@ -1,5 +1,27 @@
 # @twin.org/auditable-item-graph-rest-client - Changelog
 
+## [0.0.2-next.1](https://github.com/twinfoundation/auditable-item-graph/compare/auditable-item-graph-rest-client-v0.0.2-next.0...auditable-item-graph-rest-client-v0.0.2-next.1) (2025-07-21)
+
+
+### Features
+
+* rest client expose remove verifiable ([a22a743](https://github.com/twinfoundation/auditable-item-graph/commit/a22a743ddc39377630ea0a51ca3f6e97890832c9))
+* update dependencies ([6986689](https://github.com/twinfoundation/auditable-item-graph/commit/698668957a1fcb7f85ce2f117914d5980043924f))
+* use shared store mechanism ([#10](https://github.com/twinfoundation/auditable-item-graph/issues/10)) ([da035e5](https://github.com/twinfoundation/auditable-item-graph/commit/da035e5eb8f157482b4eb2bdbc689c6c0647ff7d))
+
+
+### Bug Fixes
+
+* only include alias in index if not deleted ([#6](https://github.com/twinfoundation/auditable-item-graph/issues/6)) ([5da3c41](https://github.com/twinfoundation/auditable-item-graph/commit/5da3c419fafa2afefd34b1c570d103012b888a75))
+* query params force coercion ([2dd9afe](https://github.com/twinfoundation/auditable-item-graph/commit/2dd9afe9ec37e2a91c110317fe289f7495c187a0))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/auditable-item-graph-models bumped from 0.0.2-next.0 to 0.0.2-next.1
+
 ## 0.0.1 (2025-07-09)
 
 

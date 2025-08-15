@@ -17,6 +17,7 @@
 		"packages/entity-storage-connector-memory",
 		"packages/entity-storage-service",
 		"packages/entity-storage-rest-client",
+		"packages/entity-storage-connector-synchronised",
 		"packages/entity-storage-connector-file",
 		"packages/entity-storage-connector-scylladb",
 		"packages/entity-storage-connector-dynamodb",

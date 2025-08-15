@@ -40,4 +40,4 @@ The name of the table for the storage.
 
 > `optional` **endpoint**: `string`
 
-AWS endpoint, not usually required but could be used for local DynamoDB instance e.g. http://localhost:8000.
+AWS endpoint, not usually required but could be used for local DynamoDB instance e.g. http://localhost:8500.

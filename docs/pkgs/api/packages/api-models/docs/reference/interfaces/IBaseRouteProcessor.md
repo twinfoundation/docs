@@ -1,4 +1,4 @@
-# Interface: IBaseRouteProcessor\<T\>
+# Interface: IBaseRouteProcessor\<T, R\>
 
 The definition for a base processor for handling REST routes.
 
@@ -17,11 +17,15 @@ The definition for a base processor for handling REST routes.
 
 `T` = [`IBaseRoute`](IBaseRoute.md)
 
+### R
+
+`R` = [`IHttpServerRequest`](IHttpServerRequest.md)
+
 ## Methods
 
 ### pre()?
 
-> `optional` **pre**(`request`, `response`, `route`, `requestIdentity`, `processorState`): `Promise`\<`void`\>
+> `optional` **pre**(`request`, `response`, `route`, `requestIdentity`, `processorState`, `loggingComponentType?`): `Promise`\<`void`\>
 
 Pre process the REST request for the specified route.
 
@@ -29,7 +33,7 @@ Pre process the REST request for the specified route.
 
 ##### request
 
-[`IHttpServerRequest`](IHttpServerRequest.md)
+`R`
 
 The request to handle.
 
@@ -54,6 +58,12 @@ The identity context for the request.
 ##### processorState
 
 The state handed through the processors.
+
+##### loggingComponentType?
+
+`string`
+
+The logging component type for the request.
 
 #### Returns
 
@@ -65,7 +75,7 @@ Promise that resolves when the request is processed.
 
 ### post()?
 
-> `optional` **post**(`request`, `response`, `route`, `requestIdentity`, `processorState`): `Promise`\<`void`\>
+> `optional` **post**(`request`, `response`, `route`, `requestIdentity`, `processorState`, `loggingComponentType?`): `Promise`\<`void`\>
 
 Post process the REST request for the specified route.
 
@@ -73,7 +83,7 @@ Post process the REST request for the specified route.
 
 ##### request
 
-[`IHttpServerRequest`](IHttpServerRequest.md)
+`R`
 
 The request to handle.
 
@@ -98,6 +108,12 @@ The identity context for the request.
 ##### processorState
 
 The state handed through the processors.
+
+##### loggingComponentType?
+
+`string`
+
+The logging component type for the request.
 
 #### Returns
 
