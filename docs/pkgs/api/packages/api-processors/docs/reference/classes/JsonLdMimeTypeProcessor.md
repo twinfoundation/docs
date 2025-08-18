@@ -18,14 +18,6 @@ Process the JSON-LD mime type.
 
 ## Properties
 
-### NAMESPACE
-
-> `readonly` `static` **NAMESPACE**: `string` = `"json-ld"`
-
-The namespace supported by the processor.
-
-***
-
 ### CLASS\_NAME
 
 > `readonly` **CLASS\_NAME**: `string`

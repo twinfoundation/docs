@@ -28,14 +28,6 @@ The options for the service.
 
 ## Properties
 
-### NAMESPACE
-
-> `readonly` `static` **NAMESPACE**: `string` = `"verifiable"`
-
-The namespace supported by the verifiableStorage service.
-
-***
-
 ### CLASS\_NAME
 
 > `readonly` **CLASS\_NAME**: `string`

@@ -28,14 +28,6 @@ The options for the service.
 
 ## Properties
 
-### NAMESPACE
-
-> `readonly` `static` **NAMESPACE**: `string` = `"documents"`
-
-The namespace supported by the document management service.
-
-***
-
 ### CLASS\_NAME
 
 > `readonly` **CLASS\_NAME**: `string`

@@ -13,7 +13,7 @@ npm install @twin.org/entity-storage-connector-dynamodb
 The tests developed are functional tests and need an instance of DynamoDB up and running. To run DynamoDB locally:
 
 ```sh
-docker run -p 8000:8000 --name twin-entity-storage-dynamodb --hostname dynamodb -d amazon/dynamodb-local
+docker run -p 8500:8000 --name twin-entity-storage-dynamodb --hostname dynamodb -d amazon/dynamodb-local
 ```
 
 Afterwards you can run the tests as follows:

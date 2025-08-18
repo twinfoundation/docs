@@ -1,5 +1,115 @@
 # @twin.org/core - Changelog
 
+## [0.0.2-next.4](https://github.com/twinfoundation/framework/compare/core-v0.0.2-next.3...core-v0.0.2-next.4) (2025-08-15)
+
+
+### Features
+
+* additional RSA methods and async ([1fceee2](https://github.com/twinfoundation/framework/commit/1fceee2d1248a24a7620846025fcf906495c07f4))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/nameof bumped from 0.0.2-next.3 to 0.0.2-next.4
+  * devDependencies
+    * @twin.org/nameof-transformer bumped from 0.0.2-next.3 to 0.0.2-next.4
+    * @twin.org/nameof-vitest-plugin bumped from 0.0.2-next.3 to 0.0.2-next.4
+
+## [0.0.2-next.3](https://github.com/twinfoundation/framework/compare/core-v0.0.2-next.2...core-v0.0.2-next.3) (2025-08-06)
+
+
+### Features
+
+* add guards arrayEndsWith and arrayStartsWith ([95d875e](https://github.com/twinfoundation/framework/commit/95d875ec8ccb4713c145fdde941d4cfedcec2ed3))
+* add ObjectOrArray and ArrayHelper methods ([0ac9077](https://github.com/twinfoundation/framework/commit/0ac907764d64b38ad1b04b0e9c3027055b527559))
+* add rsa cipher support ([7af6cc6](https://github.com/twinfoundation/framework/commit/7af6cc67512d3363bd4a2f2e87bd7733c2800147))
+* add set method for async caches ([ba34b55](https://github.com/twinfoundation/framework/commit/ba34b55e651ad56ab8fc59e139e4af631c19cda0))
+* add zlib/deflate mime types detection ([72c472b](https://github.com/twinfoundation/framework/commit/72c472b5a35a973e7109336f5b6cdd84dbb8bbcb))
+* async cache don't cache failures unless requested ([658ec4b](https://github.com/twinfoundation/framework/commit/658ec4b67a58a075de4702a3886d151e25ad3ddc))
+* improve base error data extraction ([dccc933](https://github.com/twinfoundation/framework/commit/dccc93361a1544b41db0e7c126ff90e858d87960))
+* improve error display in CLI ([94b6ca8](https://github.com/twinfoundation/framework/commit/94b6ca8bdcfe3ca7671c4095b436ea7bddaae98e))
+* propagate includeStackTrace on error conversion ([8471cbb](https://github.com/twinfoundation/framework/commit/8471cbb71f8fc98247a0e92126c438c1a8b04d9b))
+* propagate includeStackTrace on error conversion ([818337d](https://github.com/twinfoundation/framework/commit/818337d50d14bf5a7e8b3204649aa7527115cca9))
+* relocate core packages from tools ([bcab8f3](https://github.com/twinfoundation/framework/commit/bcab8f3160442ea4fcaf442947462504f3d6a17d))
+* simplify async set ([#121](https://github.com/twinfoundation/framework/issues/121)) ([2693c32](https://github.com/twinfoundation/framework/commit/2693c325266fd1a0aede6f1336c8b254c981a9ca))
+* support indexed properties set in objects ([b9c001d](https://github.com/twinfoundation/framework/commit/b9c001dc4614f6ff7486f4370735a553613d823a))
+* update dependencies ([f3bd015](https://github.com/twinfoundation/framework/commit/f3bd015efd169196b7e0335f5cab876ba6ca1d75))
+* use new shared store mechanism ([#131](https://github.com/twinfoundation/framework/issues/131)) ([934385b](https://github.com/twinfoundation/framework/commit/934385b2fbaf9f5c00a505ebf9d093bd5a425f55))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/nameof bumped from 0.0.2-next.2 to 0.0.2-next.3
+  * devDependencies
+    * @twin.org/nameof-transformer bumped from 0.0.2-next.2 to 0.0.2-next.3
+    * @twin.org/nameof-vitest-plugin bumped from 0.0.2-next.2 to 0.0.2-next.3
+
+## [0.0.2-next.2](https://github.com/twinfoundation/framework/compare/core-v0.0.2-next.1...core-v0.0.2-next.2) (2025-08-06)
+
+
+### Features
+
+* add guards arrayEndsWith and arrayStartsWith ([95d875e](https://github.com/twinfoundation/framework/commit/95d875ec8ccb4713c145fdde941d4cfedcec2ed3))
+* add ObjectOrArray and ArrayHelper methods ([0ac9077](https://github.com/twinfoundation/framework/commit/0ac907764d64b38ad1b04b0e9c3027055b527559))
+* add rsa cipher support ([7af6cc6](https://github.com/twinfoundation/framework/commit/7af6cc67512d3363bd4a2f2e87bd7733c2800147))
+* add set method for async caches ([ba34b55](https://github.com/twinfoundation/framework/commit/ba34b55e651ad56ab8fc59e139e4af631c19cda0))
+* add zlib/deflate mime types detection ([72c472b](https://github.com/twinfoundation/framework/commit/72c472b5a35a973e7109336f5b6cdd84dbb8bbcb))
+* async cache don't cache failures unless requested ([658ec4b](https://github.com/twinfoundation/framework/commit/658ec4b67a58a075de4702a3886d151e25ad3ddc))
+* improve base error data extraction ([dccc933](https://github.com/twinfoundation/framework/commit/dccc93361a1544b41db0e7c126ff90e858d87960))
+* improve error display in CLI ([94b6ca8](https://github.com/twinfoundation/framework/commit/94b6ca8bdcfe3ca7671c4095b436ea7bddaae98e))
+* propagate includeStackTrace on error conversion ([8471cbb](https://github.com/twinfoundation/framework/commit/8471cbb71f8fc98247a0e92126c438c1a8b04d9b))
+* propagate includeStackTrace on error conversion ([818337d](https://github.com/twinfoundation/framework/commit/818337d50d14bf5a7e8b3204649aa7527115cca9))
+* relocate core packages from tools ([bcab8f3](https://github.com/twinfoundation/framework/commit/bcab8f3160442ea4fcaf442947462504f3d6a17d))
+* simplify async set ([#121](https://github.com/twinfoundation/framework/issues/121)) ([2693c32](https://github.com/twinfoundation/framework/commit/2693c325266fd1a0aede6f1336c8b254c981a9ca))
+* support indexed properties set in objects ([b9c001d](https://github.com/twinfoundation/framework/commit/b9c001dc4614f6ff7486f4370735a553613d823a))
+* update dependencies ([f3bd015](https://github.com/twinfoundation/framework/commit/f3bd015efd169196b7e0335f5cab876ba6ca1d75))
+* use new shared store mechanism ([#131](https://github.com/twinfoundation/framework/issues/131)) ([934385b](https://github.com/twinfoundation/framework/commit/934385b2fbaf9f5c00a505ebf9d093bd5a425f55))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/nameof bumped from 0.0.2-next.1 to 0.0.2-next.2
+  * devDependencies
+    * @twin.org/nameof-transformer bumped from 0.0.2-next.1 to 0.0.2-next.2
+    * @twin.org/nameof-vitest-plugin bumped from 0.0.2-next.1 to 0.0.2-next.2
+
+## [0.0.2-next.1](https://github.com/twinfoundation/framework/compare/core-v0.0.2-next.0...core-v0.0.2-next.1) (2025-08-06)
+
+
+### Features
+
+* add guards arrayEndsWith and arrayStartsWith ([95d875e](https://github.com/twinfoundation/framework/commit/95d875ec8ccb4713c145fdde941d4cfedcec2ed3))
+* add ObjectOrArray and ArrayHelper methods ([0ac9077](https://github.com/twinfoundation/framework/commit/0ac907764d64b38ad1b04b0e9c3027055b527559))
+* add rsa cipher support ([7af6cc6](https://github.com/twinfoundation/framework/commit/7af6cc67512d3363bd4a2f2e87bd7733c2800147))
+* add set method for async caches ([ba34b55](https://github.com/twinfoundation/framework/commit/ba34b55e651ad56ab8fc59e139e4af631c19cda0))
+* add zlib/deflate mime types detection ([72c472b](https://github.com/twinfoundation/framework/commit/72c472b5a35a973e7109336f5b6cdd84dbb8bbcb))
+* async cache don't cache failures unless requested ([658ec4b](https://github.com/twinfoundation/framework/commit/658ec4b67a58a075de4702a3886d151e25ad3ddc))
+* improve base error data extraction ([dccc933](https://github.com/twinfoundation/framework/commit/dccc93361a1544b41db0e7c126ff90e858d87960))
+* improve error display in CLI ([94b6ca8](https://github.com/twinfoundation/framework/commit/94b6ca8bdcfe3ca7671c4095b436ea7bddaae98e))
+* propagate includeStackTrace on error conversion ([8471cbb](https://github.com/twinfoundation/framework/commit/8471cbb71f8fc98247a0e92126c438c1a8b04d9b))
+* propagate includeStackTrace on error conversion ([818337d](https://github.com/twinfoundation/framework/commit/818337d50d14bf5a7e8b3204649aa7527115cca9))
+* relocate core packages from tools ([bcab8f3](https://github.com/twinfoundation/framework/commit/bcab8f3160442ea4fcaf442947462504f3d6a17d))
+* simplify async set ([#121](https://github.com/twinfoundation/framework/issues/121)) ([2693c32](https://github.com/twinfoundation/framework/commit/2693c325266fd1a0aede6f1336c8b254c981a9ca))
+* support indexed properties set in objects ([b9c001d](https://github.com/twinfoundation/framework/commit/b9c001dc4614f6ff7486f4370735a553613d823a))
+* update dependencies ([f3bd015](https://github.com/twinfoundation/framework/commit/f3bd015efd169196b7e0335f5cab876ba6ca1d75))
+* use new shared store mechanism ([#131](https://github.com/twinfoundation/framework/issues/131)) ([934385b](https://github.com/twinfoundation/framework/commit/934385b2fbaf9f5c00a505ebf9d093bd5a425f55))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/nameof bumped from 0.0.2-next.0 to 0.0.2-next.1
+  * devDependencies
+    * @twin.org/nameof-transformer bumped from 0.0.2-next.0 to 0.0.2-next.1
+    * @twin.org/nameof-vitest-plugin bumped from 0.0.2-next.0 to 0.0.2-next.1
+
 ## 0.0.1 (2025-07-03)
 
 

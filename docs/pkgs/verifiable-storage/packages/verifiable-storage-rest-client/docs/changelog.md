@@ -1,5 +1,19 @@
 # @twin.org/verifiable-storage-rest-client - Changelog
 
+## [0.0.2-next.3](https://github.com/twinfoundation/verifiable-storage/compare/verifiable-storage-rest-client-v0.0.2-next.2...verifiable-storage-rest-client-v0.0.2-next.3) (2025-07-28)
+
+
+### Miscellaneous Chores
+
+* **verifiable-storage-rest-client:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/verifiable-storage-models bumped from 0.0.2-next.2 to 0.0.2-next.3
+
 ## [0.0.2-next.2](https://github.com/twinfoundation/verifiable-storage/compare/verifiable-storage-rest-client-v0.0.2-next.1...verifiable-storage-rest-client-v0.0.2-next.2) (2025-07-16)
 
 

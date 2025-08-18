@@ -28,14 +28,6 @@ The options to create the service.
 
 ## Properties
 
-### NAMESPACE
-
-> `readonly` `static` **NAMESPACE**: `string` = `"information"`
-
-The namespace supported by the information service.
-
-***
-
 ### CLASS\_NAME
 
 > `readonly` **CLASS\_NAME**: `string`

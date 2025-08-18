@@ -288,12 +288,6 @@ Date processing options which can be overridden by individual components by spec
 
 Document management options which can be overridden by individual components by specifying types other than default.
 
-#### federatedCatalogueComponent?
-
-> `optional` **federatedCatalogueComponent**: `IEngineCoreTypeConfig`\<[`FederatedCatalogueComponentConfig`](../type-aliases/FederatedCatalogueComponentConfig.md)\>[]
-
-Federated catalogue options which can be overridden by individual components by specifying types other than default.
-
 #### rightsManagementComponent?
 
 > `optional` **rightsManagementComponent**: `IEngineCoreTypeConfig`\<[`RightsManagementComponentConfig`](../type-aliases/RightsManagementComponentConfig.md)\>[]
@@ -305,6 +299,18 @@ Rights management options which can be overridden by individual components by sp
 > `optional` **rightsManagementPapComponent**: `IEngineCoreTypeConfig`\<[`RightsManagementPapComponentConfig`](../type-aliases/RightsManagementPapComponentConfig.md)\>[]
 
 Rights management PAP options which can be overridden by individual components by specifying types other than default.
+
+#### synchronisedStorageComponent?
+
+> `optional` **synchronisedStorageComponent**: `IEngineCoreTypeConfig`\<[`SynchronisedStorageComponentConfig`](../type-aliases/SynchronisedStorageComponentConfig.md)\>[]
+
+Synchronised storage options which can be overridden by individual components by specifying types other than default.
+
+#### federatedCatalogueComponent?
+
+> `optional` **federatedCatalogueComponent**: `IEngineCoreTypeConfig`\<[`FederatedCatalogueComponentConfig`](../type-aliases/FederatedCatalogueComponentConfig.md)\>[]
+
+Federated catalogue options which can be overridden by individual components by specifying types other than default.
 
 #### Overrides
 

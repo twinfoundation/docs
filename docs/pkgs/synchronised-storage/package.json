@@ -1,0 +1,21 @@
+{
+	"name": "@twin.org/synchronised-storage",
+	"version": "0.0.0",
+	"description": "Synchronised Storage",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/twinfoundation/synchronised-storage.git"
+	},
+	"author": "martyn.janes@iota.org",
+	"license": "Apache-2.0",
+	"private": true,
+	"engines": {
+		"node": ">=20.0.0"
+	},
+	"workspaces": [
+		"packages/synchronised-storage-models",
+		"packages/synchronised-storage-service",
+		"packages/synchronised-storage-rest-client"
+	],
+	"type": "module"
+}

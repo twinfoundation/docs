@@ -81,6 +81,9 @@
 		"name": "document-management"
 	},
 	{
+		"name": "synchronised-storage"
+	},
+	{
 		"name": "federated-catalogue",
 		"ignore": ["apps/federated-catalogue-rest-server"]
 	},

@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/api-auth-entity-storage-rest-client",
-	"version": "0.0.2-next.1",
+	"version": "0.0.2-next.5",
 	"description": "Perform REST authentication using entity storage.",
 	"repository": {
 		"type": "git",

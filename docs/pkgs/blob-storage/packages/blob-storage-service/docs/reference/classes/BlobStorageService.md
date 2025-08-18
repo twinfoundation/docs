@@ -28,14 +28,6 @@ The options for the service.
 
 ## Properties
 
-### NAMESPACE
-
-> `readonly` `static` **NAMESPACE**: `string` = `"blob"`
-
-The namespace supported by the blob storage service.
-
-***
-
 ### CLASS\_NAME
 
 > `readonly` **CLASS\_NAME**: `string`
@@ -198,7 +190,7 @@ Not found error if the blob cannot be found.
 
 ### update()
 
-> **update**(`id`, `encodingFormat?`, `fileExtension?`, `metadata?`, `userIdentity?`, `nodeIdentity?`): `Promise`\<`void`\>
+> **update**(`id`, `encodingFormat?`, `fileExtension?`, `metadata?`, `userIdentity?`): `Promise`\<`void`\>
 
 Update the blob with metadata.
 
@@ -234,12 +226,6 @@ Data for the custom metadata as JSON-LD.
 
 The user identity to use with storage operations.
 
-##### nodeIdentity?
-
-`string`
-
-The node identity to use with storage operations.
-
 #### Returns
 
 `Promise`\<`void`\>
@@ -258,7 +244,7 @@ Not found error if the blob cannot be found.
 
 ### remove()
 
-> **remove**(`id`, `userIdentity?`, `nodeIdentity?`): `Promise`\<`void`\>
+> **remove**(`id`, `userIdentity?`): `Promise`\<`void`\>
 
 Remove the blob.
 
@@ -276,12 +262,6 @@ The id of the blob to remove in urn format.
 
 The user identity to use with storage operations.
 
-##### nodeIdentity?
-
-`string`
-
-The node identity to use with storage operations.
-
 #### Returns
 
 `Promise`\<`void`\>
@@ -296,7 +276,7 @@ Nothing.
 
 ### query()
 
-> **query**(`conditions?`, `orderBy?`, `orderByDirection?`, `cursor?`, `pageSize?`, `userIdentity?`, `nodeIdentity?`): `Promise`\<`IBlobStorageEntryList`\>
+> **query**(`conditions?`, `orderBy?`, `orderByDirection?`, `cursor?`, `pageSize?`, `userIdentity?`): `Promise`\<`IBlobStorageEntryList`\>
 
 Query all the blob storage entries which match the conditions.
 
@@ -337,12 +317,6 @@ The suggested number of entries to return in each chunk, in some scenarios can r
 `string`
 
 The user identity to use with storage operations.
-
-##### nodeIdentity?
-
-`string`
-
-The node identity to use with storage operations.
 
 #### Returns
 

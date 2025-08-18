@@ -23,3 +23,9 @@ Secp256k1. (asymmetric)
 > `readonly` **ChaCha20Poly1305**: `2` = `2`
 
 The ChaCha20Poly1305. (symmetric)
+
+### Rsa2048
+
+> `readonly` **Rsa2048**: `3` = `3`
+
+The RSA 2048. (asymmetric)

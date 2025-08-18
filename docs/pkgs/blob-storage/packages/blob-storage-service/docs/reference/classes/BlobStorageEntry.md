@@ -99,11 +99,3 @@ Is the entry compressed.
 > `optional` **userIdentity**: `string`
 
 The user identity that created the blob.
-
-***
-
-### nodeIdentity?
-
-> `optional` **nodeIdentity**: `string`
-
-The node identity that created the blob.

@@ -4,20 +4,16 @@ Options for the LoggingProcessor constructor.
 
 ## Properties
 
-### loggingConnectorType?
+### loggingComponentType?
 
-> `optional` **loggingConnectorType**: `string`
+> `optional` **loggingComponentType**: `string`
 
-The type for the logging connector.
-
-#### Default
-
-```ts
-logging
-```
+The type for the logging component.
 
 ***
 
 ### config?
 
 > `optional` **config**: [`ILoggingProcessorConfig`](ILoggingProcessorConfig.md)
+
+The configuration for the logging processor.

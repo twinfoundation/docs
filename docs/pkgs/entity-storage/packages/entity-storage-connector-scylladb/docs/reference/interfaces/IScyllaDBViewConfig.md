@@ -44,6 +44,24 @@ The keyspace to use.
 
 ***
 
+### port?
+
+> `optional` **port**: `number`
+
+The port to connect to.
+
+#### Default
+
+```ts
+9042
+```
+
+#### Inherited from
+
+[`IScyllaDBTableConfig`](IScyllaDBTableConfig.md).[`port`](IScyllaDBTableConfig.md#port)
+
+***
+
 ### tableName?
 
 > `optional` **tableName**: `string`

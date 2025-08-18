@@ -1,5 +1,22 @@
 # @twin.org/nft-service - Changelog
 
+## [0.0.2-next.2](https://github.com/twinfoundation/nft/compare/nft-service-v0.0.2-next.1...nft-service-v0.0.2-next.2) (2025-07-25)
+
+
+### Features
+
+* move to json integration ([#31](https://github.com/twinfoundation/nft/issues/31)) ([89944ba](https://github.com/twinfoundation/nft/commit/89944ba05b955944f84419224c3ae63fef28cc23))
+* remove unused namespace ([48d2a92](https://github.com/twinfoundation/nft/commit/48d2a926d610fad0b0407311e71a215d15a99aa5))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/nft-models bumped from 0.0.2-next.1 to 0.0.2-next.2
+  * devDependencies
+    * @twin.org/nft-connector-entity-storage bumped from 0.0.2-next.1 to 0.0.2-next.2
+
 ## [0.0.2-next.1](https://github.com/twinfoundation/nft/compare/nft-service-v0.0.2-next.0...nft-service-v0.0.2-next.1) (2025-07-16)
 
 

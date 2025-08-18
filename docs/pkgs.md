@@ -71,6 +71,7 @@ This is the overview of the packages.
 - [@twin.org/entity-storage-connector-memory](pkgs/entity-storage/packages/entity-storage-connector-memory/index.md) - Entity Storage connector implementation using in-memory storage
 - [@twin.org/entity-storage-service](pkgs/entity-storage/packages/entity-storage-service/index.md) - Entity Storage contract implementation and REST endpoint definitions
 - [@twin.org/entity-storage-rest-client](pkgs/entity-storage/packages/entity-storage-rest-client/index.md) - Entity Storage contract implementation which can connect to REST endpoints
+- [@twin.org/entity-storage-connector-synchronised](pkgs/entity-storage/packages/entity-storage-connector-synchronised/index.md) - Entity Storage connector implementation using synchronised storage
 - [@twin.org/entity-storage-connector-file](pkgs/entity-storage/packages/entity-storage-connector-file/index.md) - Entity Storage connector implementation using file storage
 - [@twin.org/entity-storage-connector-scylladb](pkgs/entity-storage/packages/entity-storage-connector-scylladb/index.md) - Entity Storage connector implementation using ScyllaDB
 - [@twin.org/entity-storage-connector-dynamodb](pkgs/entity-storage/packages/entity-storage-connector-dynamodb/index.md) - Entity Storage connector implementation using DynamoDb storage
@@ -208,6 +209,12 @@ This is the overview of the packages.
 - [@twin.org/document-management-models](pkgs/document-management/packages/document-management-models/index.md) - Models which define the structure of the document management connectors and services
 - [@twin.org/document-management-service](pkgs/document-management/packages/document-management-service/index.md) - Document management contract implementation and REST endpoint definitions
 - [@twin.org/document-management-rest-client](pkgs/document-management/packages/document-management-rest-client/index.md) - Document management contract implementation which can connect to REST endpoints
+
+## Synchronised Storage
+
+- [@twin.org/synchronised-storage-models](pkgs/synchronised-storage/packages/synchronised-storage-models/index.md) - Models which define the structure of the synchronised storage connectors and services
+- [@twin.org/synchronised-storage-service](pkgs/synchronised-storage/packages/synchronised-storage-service/index.md) - Synchronised storage contract implementation and REST endpoint definitions
+- [@twin.org/synchronised-storage-rest-client](pkgs/synchronised-storage/packages/synchronised-storage-rest-client/index.md) - Synchronised storage contract implementation which can connect to REST endpoints
 
 ## Federated Catalogue
 

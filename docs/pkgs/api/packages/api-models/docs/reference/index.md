@@ -19,6 +19,8 @@
 - [IHttpRequestQuery](interfaces/IHttpRequestQuery.md)
 - [IHttpResponse](interfaces/IHttpResponse.md)
 - [IHttpServerRequest](interfaces/IHttpServerRequest.md)
+- [ISocketRequestContext](interfaces/ISocketRequestContext.md)
+- [ISocketServerRequest](interfaces/ISocketServerRequest.md)
 - [INoContentRequest](interfaces/INoContentRequest.md)
 - [IBadRequestResponse](interfaces/IBadRequestResponse.md)
 - [IConflictResponse](interfaces/IConflictResponse.md)

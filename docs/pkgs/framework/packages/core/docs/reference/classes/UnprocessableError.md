@@ -398,6 +398,32 @@ True if the error has the name.
 
 ***
 
+### isEmpty()
+
+> `static` **isEmpty**(`err`): `boolean`
+
+Is the error empty.
+
+#### Parameters
+
+##### err
+
+[`IError`](../interfaces/IError.md)
+
+The error to check for being empty.
+
+#### Returns
+
+`boolean`
+
+True if the error is empty.
+
+#### Inherited from
+
+[`BaseError`](BaseError.md).[`isEmpty`](BaseError.md#isempty)
+
+***
+
 ### toJsonObject()
 
 > **toJsonObject**(`includeStackTrace?`): [`IError`](../interfaces/IError.md)

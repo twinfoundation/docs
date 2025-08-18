@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/vault-connector-hashicorp",
-	"version": "0.0.2-next.0",
+	"version": "0.0.2-next.2",
 	"description": "Vault connector implementation using Hashicorp storage",
 	"repository": {
 		"type": "git",

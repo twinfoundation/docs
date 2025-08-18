@@ -1,5 +1,92 @@
 # @twin.org/crypto - Changelog
 
+## [0.0.2-next.4](https://github.com/twinfoundation/framework/compare/crypto-v0.0.2-next.3...crypto-v0.0.2-next.4) (2025-08-15)
+
+
+### Features
+
+* additional RSA methods and async ([1fceee2](https://github.com/twinfoundation/framework/commit/1fceee2d1248a24a7620846025fcf906495c07f4))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/core bumped from 0.0.2-next.3 to 0.0.2-next.4
+    * @twin.org/nameof bumped from 0.0.2-next.3 to 0.0.2-next.4
+  * devDependencies
+    * @twin.org/nameof-transformer bumped from 0.0.2-next.3 to 0.0.2-next.4
+    * @twin.org/nameof-vitest-plugin bumped from 0.0.2-next.3 to 0.0.2-next.4
+
+## [0.0.2-next.3](https://github.com/twinfoundation/framework/compare/crypto-v0.0.2-next.2...crypto-v0.0.2-next.3) (2025-08-06)
+
+
+### Features
+
+* add guards arrayEndsWith and arrayStartsWith ([95d875e](https://github.com/twinfoundation/framework/commit/95d875ec8ccb4713c145fdde941d4cfedcec2ed3))
+* add rsa cipher support ([7af6cc6](https://github.com/twinfoundation/framework/commit/7af6cc67512d3363bd4a2f2e87bd7733c2800147))
+* add RSA support for public key components ([7126259](https://github.com/twinfoundation/framework/commit/7126259103b758c291e52a8a03818eb822d1aad1))
+* change method accessibility ([c1b77fc](https://github.com/twinfoundation/framework/commit/c1b77fcfb61c092a01c97aebb2fe2dc2bbaa221b))
+* relocate core packages from tools ([bcab8f3](https://github.com/twinfoundation/framework/commit/bcab8f3160442ea4fcaf442947462504f3d6a17d))
+* update dependencies ([f3bd015](https://github.com/twinfoundation/framework/commit/f3bd015efd169196b7e0335f5cab876ba6ca1d75))
+* use new shared store mechanism ([#131](https://github.com/twinfoundation/framework/issues/131)) ([934385b](https://github.com/twinfoundation/framework/commit/934385b2fbaf9f5c00a505ebf9d093bd5a425f55))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/core bumped from 0.0.2-next.2 to 0.0.2-next.3
+    * @twin.org/nameof bumped from 0.0.2-next.2 to 0.0.2-next.3
+  * devDependencies
+    * @twin.org/nameof-transformer bumped from 0.0.2-next.2 to 0.0.2-next.3
+    * @twin.org/nameof-vitest-plugin bumped from 0.0.2-next.2 to 0.0.2-next.3
+
+## [0.0.2-next.2](https://github.com/twinfoundation/framework/compare/crypto-v0.0.2-next.1...crypto-v0.0.2-next.2) (2025-08-06)
+
+
+### Features
+
+* add guards arrayEndsWith and arrayStartsWith ([95d875e](https://github.com/twinfoundation/framework/commit/95d875ec8ccb4713c145fdde941d4cfedcec2ed3))
+* add rsa cipher support ([7af6cc6](https://github.com/twinfoundation/framework/commit/7af6cc67512d3363bd4a2f2e87bd7733c2800147))
+* change method accessibility ([c1b77fc](https://github.com/twinfoundation/framework/commit/c1b77fcfb61c092a01c97aebb2fe2dc2bbaa221b))
+* relocate core packages from tools ([bcab8f3](https://github.com/twinfoundation/framework/commit/bcab8f3160442ea4fcaf442947462504f3d6a17d))
+* update dependencies ([f3bd015](https://github.com/twinfoundation/framework/commit/f3bd015efd169196b7e0335f5cab876ba6ca1d75))
+* use new shared store mechanism ([#131](https://github.com/twinfoundation/framework/issues/131)) ([934385b](https://github.com/twinfoundation/framework/commit/934385b2fbaf9f5c00a505ebf9d093bd5a425f55))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/core bumped from 0.0.2-next.1 to 0.0.2-next.2
+    * @twin.org/nameof bumped from 0.0.2-next.1 to 0.0.2-next.2
+  * devDependencies
+    * @twin.org/nameof-transformer bumped from 0.0.2-next.1 to 0.0.2-next.2
+    * @twin.org/nameof-vitest-plugin bumped from 0.0.2-next.1 to 0.0.2-next.2
+
+## [0.0.2-next.1](https://github.com/twinfoundation/framework/compare/crypto-v0.0.2-next.0...crypto-v0.0.2-next.1) (2025-08-06)
+
+
+### Features
+
+* add guards arrayEndsWith and arrayStartsWith ([95d875e](https://github.com/twinfoundation/framework/commit/95d875ec8ccb4713c145fdde941d4cfedcec2ed3))
+* add rsa cipher support ([7af6cc6](https://github.com/twinfoundation/framework/commit/7af6cc67512d3363bd4a2f2e87bd7733c2800147))
+* relocate core packages from tools ([bcab8f3](https://github.com/twinfoundation/framework/commit/bcab8f3160442ea4fcaf442947462504f3d6a17d))
+* update dependencies ([f3bd015](https://github.com/twinfoundation/framework/commit/f3bd015efd169196b7e0335f5cab876ba6ca1d75))
+* use new shared store mechanism ([#131](https://github.com/twinfoundation/framework/issues/131)) ([934385b](https://github.com/twinfoundation/framework/commit/934385b2fbaf9f5c00a505ebf9d093bd5a425f55))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/core bumped from 0.0.2-next.0 to 0.0.2-next.1
+    * @twin.org/nameof bumped from 0.0.2-next.0 to 0.0.2-next.1
+  * devDependencies
+    * @twin.org/nameof-transformer bumped from 0.0.2-next.0 to 0.0.2-next.1
+    * @twin.org/nameof-vitest-plugin bumped from 0.0.2-next.0 to 0.0.2-next.1
+
 ## 0.0.1 (2025-07-03)
 
 

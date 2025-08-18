@@ -1,8 +1,8 @@
-# Function: bootstrapAttestationMethod()
+# Function: bootstrapSynchronisedStorage()
 
-> **bootstrapAttestationMethod**(`engineCore`, `context`, `envVars`, `features`): `Promise`\<`void`\>
+> **bootstrapSynchronisedStorage**(`engineCore`, `context`, `envVars`, `features`): `Promise`\<`void`\>
 
-Bootstrap the attestation verification methods.
+Bootstrap the synchronised storage blob encryption and verification methods.
 
 ## Parameters
 

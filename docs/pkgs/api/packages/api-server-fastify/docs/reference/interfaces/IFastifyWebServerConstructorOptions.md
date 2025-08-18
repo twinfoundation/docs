@@ -4,11 +4,11 @@ The options for the Fastify web server constructor.
 
 ## Properties
 
-### loggingConnectorType?
+### loggingComponentType?
 
-> `optional` **loggingConnectorType**: `string`
+> `optional` **loggingComponentType**: `string`
 
-The type of the logging connector to use, if undefined, no logging will happen.
+The type of the logging component to use, if undefined, no logging will happen.
 
 ***
 

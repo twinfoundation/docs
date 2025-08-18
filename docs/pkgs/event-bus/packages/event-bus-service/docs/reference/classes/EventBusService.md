@@ -28,14 +28,6 @@ The options for the connector.
 
 ## Properties
 
-### NAMESPACE
-
-> `readonly` `static` **NAMESPACE**: `string` = `"event-bus"`
-
-The namespace supported by the event bus connector.
-
-***
-
 ### CLASS\_NAME
 
 > `readonly` **CLASS\_NAME**: `string`

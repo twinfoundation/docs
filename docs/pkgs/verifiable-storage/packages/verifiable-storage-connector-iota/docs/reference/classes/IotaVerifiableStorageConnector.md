@@ -50,7 +50,7 @@ Runtime name for the class.
 
 ### start()
 
-> **start**(`nodeIdentity`, `nodeLoggingConnectorType?`, `componentState?`): `Promise`\<`void`\>
+> **start**(`nodeIdentity`, `nodeLoggingConnectorType?`): `Promise`\<`void`\>
 
 Bootstrap the Verifiable Storage contract.
 
@@ -67,16 +67,6 @@ The identity of the node.
 `string`
 
 The node logging connector type, defaults to "node-logging".
-
-##### componentState?
-
-The component state.
-
-###### contractDeployments?
-
-\{[`id`: `string`]: `string`; \}
-
-The contract deployments.
 
 #### Returns
 

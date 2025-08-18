@@ -2,7 +2,7 @@
 
 ## Classes
 
-- [TaskSchedulerComponent](classes/TaskSchedulerComponent.md)
+- [TaskSchedulerService](classes/TaskSchedulerService.md)
 
 ## Interfaces
 

@@ -18,14 +18,6 @@ Adds a node identity to the request identity.
 
 ## Properties
 
-### NAMESPACE
-
-> `readonly` `static` **NAMESPACE**: `string` = `"node-identity"`
-
-The namespace supported by the processor.
-
-***
-
 ### CLASS\_NAME
 
 > `readonly` **CLASS\_NAME**: `string`
