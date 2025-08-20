@@ -20,7 +20,6 @@ jobs:
 
       # Install commitlint globally
       - name: Install dependencies
-        if: steps.cache.outputs.cache-hit != 'true'
         run: |
           npm install @commitlint/config-conventional @commitlint/cli -g
 
