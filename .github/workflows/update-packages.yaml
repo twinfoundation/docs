@@ -21,17 +21,18 @@ jobs:
         with:
           ref: ${{ github.ref_name }}
 
+      # Read the repos.json file and store it for later use
       - name: Read repos.json
         id: get-repos-json
         run: |
           REPOS_JSON=$(cat repos.json | jq -c .)
           echo "repos_json=$REPOS_JSON" >> $GITHUB_OUTPUT
 
-      # Read the repos.json file to get the list of repos and store it in a variable
+      # Use the repos.json stored to get the list of repos and store it in a variable
       - name: Get list of repos
         id: get-repos
         run: |
-          REPOS=$(jq -c '[.[] | .name]' ${{ needs.get-repos.outputs.repos_json }})
+          REPOS=$(jq -c '[.[] | .name]' "${{ needs.get-repos.outputs.repos_json }}")
           echo "Found repos: $REPOS"
           # Set the output for use in the matrix strategy
           echo "repos=$REPOS" >> $GITHUB_OUTPUT
@@ -75,7 +76,7 @@ jobs:
       # Copy the updated docs from the repo to the docs directory
       - name: Copy to Docs
         run: |
-          IGNORE_LIST=$(jq -r --arg repo "${{ matrix.repo }}" '.[] | select(.name == $repo) | .ignore[]?' ${{ needs.get-repos.outputs.repos_json }})
+          IGNORE_LIST=$(jq -r --arg repo "${{ matrix.repo }}" '.[] | select(.name == $repo) | .ignore[]?' "${{ needs.get-repos.outputs.repos_json }}")
 
           jq -r '.workspaces[]' import-packages/${{ matrix.repo }}/package.json | while read pkg; do
             for ignore in $IGNORE_LIST; do
