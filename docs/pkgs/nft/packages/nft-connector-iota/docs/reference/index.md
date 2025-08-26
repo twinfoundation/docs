@@ -9,3 +9,5 @@
 
 - [IIotaNftConnectorConfig](interfaces/IIotaNftConnectorConfig.md)
 - [IIotaNftConnectorConstructorOptions](interfaces/IIotaNftConnectorConstructorOptions.md)
+- [IMigrationStateFields](interfaces/IMigrationStateFields.md)
+- [INftFields](interfaces/INftFields.md)

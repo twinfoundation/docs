@@ -186,7 +186,7 @@ GeneralError if no item exists to get.
 
 ### getIfExists()
 
-> **getIfExists**\<`U`\>(`name`): `undefined` \| `U`
+> **getIfExists**\<`U`\>(`name?`): `undefined` \| `U`
 
 Get a generator instance with no exceptions.
 
@@ -198,7 +198,7 @@ Get a generator instance with no exceptions.
 
 #### Parameters
 
-##### name
+##### name?
 
 `string`
 

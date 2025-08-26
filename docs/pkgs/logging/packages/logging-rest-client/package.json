@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/logging-rest-client",
-	"version": "0.0.2-next.0",
+	"version": "0.0.2-next.1",
 	"description": "Logging contract implementation which can connect to REST endpoints",
 	"repository": {
 		"type": "git",

@@ -88,6 +88,10 @@
 		"ignore": ["apps/federated-catalogue-rest-server"]
 	},
 	{
+		"name": "data-space-connector",
+		"ignore": ["apps/data-space-connector-rest-server"]
+	},
+	{
 		"name": "ui"
 	}
 ]

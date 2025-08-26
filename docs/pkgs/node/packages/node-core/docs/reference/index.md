@@ -32,5 +32,6 @@
 - [initialiseLocales](functions/initialiseLocales.md)
 - [getExecutionDirectory](functions/getExecutionDirectory.md)
 - [fileExists](functions/fileExists.md)
+- [loadTextFile](functions/loadTextFile.md)
 - [loadJsonFile](functions/loadJsonFile.md)
 - [getFeatures](functions/getFeatures.md)

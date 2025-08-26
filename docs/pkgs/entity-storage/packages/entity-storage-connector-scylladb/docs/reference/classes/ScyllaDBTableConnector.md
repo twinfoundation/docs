@@ -179,17 +179,17 @@ and a cursor which can be used to request more entities.
 
 ### bootstrap()
 
-> **bootstrap**(`nodeLoggingConnectorType?`): `Promise`\<`boolean`\>
+> **bootstrap**(`nodeLoggingComponentType?`): `Promise`\<`boolean`\>
 
 Bootstrap the component by creating and initializing any resources it needs.
 
 #### Parameters
 
-##### nodeLoggingConnectorType?
+##### nodeLoggingComponentType?
 
 `string`
 
-The node logging connector type, defaults to "node-logging".
+The node logging component type.
 
 #### Returns
 

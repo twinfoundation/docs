@@ -1,5 +1,27 @@
 # @twin.org/logging-connector-entity-storage - Changelog
 
+## [0.0.2-next.1](https://github.com/twinfoundation/logging/compare/logging-connector-entity-storage-v0.0.2-next.0...logging-connector-entity-storage-v0.0.2-next.1) (2025-08-19)
+
+
+### Features
+
+* update dependencies ([976fc06](https://github.com/twinfoundation/logging/commit/976fc06976c4899769486b7cb2e827c407d7fc89))
+* update framework core ([aac823c](https://github.com/twinfoundation/logging/commit/aac823c2ead88843618b8a82b308d5a793411764))
+* use shared store mechanism ([#20](https://github.com/twinfoundation/logging/issues/20)) ([bbacd31](https://github.com/twinfoundation/logging/commit/bbacd31af991d82d84294ad432a40830692880ca))
+
+
+### Bug Fixes
+
+* Adding format to the LogEntry ts number ([#18](https://github.com/twinfoundation/logging/issues/18)) ([d914b8f](https://github.com/twinfoundation/logging/commit/d914b8f58e382a44cc9dbdac2c4f607342f3a49c))
+* peer dependencies ([5a53d7d](https://github.com/twinfoundation/logging/commit/5a53d7ddc1bf749705ef6f64abc46728b3f2be26))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/logging-models bumped from 0.0.2-next.0 to 0.0.2-next.1
+
 ## 0.0.1 (2025-07-03)
 
 

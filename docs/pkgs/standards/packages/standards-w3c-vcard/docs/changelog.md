@@ -1,5 +1,12 @@
 # @twin.org/standards-w3c-vcard - Changelog
 
+## [0.0.2-next.2](https://github.com/twinfoundation/standards/compare/standards-w3c-vcard-v0.0.2-next.1...standards-w3c-vcard-v0.0.2-next.2) (2025-08-19)
+
+
+### Features
+
+* update framework core ([58c0c3d](https://github.com/twinfoundation/standards/commit/58c0c3dd6cea0e4c2393dc0e3e1eb33a6d06f617))
+
 ## [0.0.2-next.1](https://github.com/twinfoundation/standards/compare/standards-w3c-vcard-v0.0.2-next.0...standards-w3c-vcard-v0.0.2-next.1) (2025-07-14)
 
 

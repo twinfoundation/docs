@@ -40,14 +40,29 @@ The wallet connector type to use.
 
 ***
 
-### loggingConnectorType?
+### loggingComponentType?
 
-> `optional` **loggingConnectorType**: `string`
+> `optional` **loggingComponentType**: `string`
 
-The logging connector type.
+The logging component type.
 
 #### Default
 
 ```ts
 logging
+```
+
+***
+
+### deploymentConfig?
+
+> `optional` **deploymentConfig**: `ISmartContractDeployments`
+
+Optional deployment configuration to use instead of the default compiled configuration.
+This allows tests and other scenarios to use different contract deployments.
+
+#### Default
+
+```ts
+Uses compiled smart-contract-deployments.json
 ```

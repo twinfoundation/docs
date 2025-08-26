@@ -7,8 +7,10 @@
 
 ## Interfaces
 
+- [IServerFavIconResponse](interfaces/IServerFavIconResponse.md)
 - [IServerHealthResponse](interfaces/IServerHealthResponse.md)
 - [IServerInfoResponse](interfaces/IServerInfoResponse.md)
+- [IServerRootResponse](interfaces/IServerRootResponse.md)
 - [IServerSpecResponse](interfaces/IServerSpecResponse.md)
 - [IBaseRestClientConfig](interfaces/IBaseRestClientConfig.md)
 - [IBaseSocketClientConfig](interfaces/IBaseSocketClientConfig.md)

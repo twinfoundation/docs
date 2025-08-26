@@ -4,14 +4,28 @@ The constructor options for the RightsManagementService.
 
 ## Properties
 
-### papComponentType?
+### policyAdministrationPointComponentType?
 
-> `optional` **papComponentType**: `string`
+> `optional` **policyAdministrationPointComponentType**: `string`
 
 The type of the Policy Administration Point (PAP) component.
 
 #### Default
 
 ```ts
-pap
+policy-administration-point
+```
+
+***
+
+### policyEnforcementPointComponentType?
+
+> `optional` **policyEnforcementPointComponentType**: `string`
+
+The type of the Policy Enforcement Point (PEP) component.
+
+#### Default
+
+```ts
+policy-enforcement-point
 ```

@@ -14,6 +14,7 @@ jobs:
     outputs:
       # This output will be consumed by the update-docs job's matrix
       repos: ${{ steps.get-repos.outputs.repos }}
+      repos_json: ${{ steps.get-repos-json.outputs.repos_json }}
 
     steps:
       - name: Checkout Docs
@@ -21,18 +22,23 @@ jobs:
         with:
           ref: ${{ github.ref_name }}
 
-      # Read the repos.json file to get the list of repos and store it in a variable
+      # Read the repos.json file and store it for later use
+      - name: Read repos.json
+        id: get-repos-json
+        run: |
+          REPOS_JSON=$(cat repos.json | jq -c .)
+          echo "repos_json=$REPOS_JSON" >> $GITHUB_OUTPUT
+
+      # Use the repos.json stored to get the list of repos and store it in a variable
       - name: Get list of repos
         id: get-repos
         run: |
-          # Use Node.js to read the workspaces array from package.json
-          REPOS=$(node -e '
-            const repos = JSON.parse(require("fs").readFileSync("./repos.json", "utf8"));
-            console.log(JSON.stringify(repos.map(r => r.name)));
-          ')
+          REPOS=$(echo "$REPOS_JSON" | jq -c '[.[] | .name]')
           echo "Found repos: $REPOS"
           # Set the output for use in the matrix strategy
           echo "repos=$REPOS" >> $GITHUB_OUTPUT
+        env:
+          REPOS_JSON: ${{ steps.get-repos-json.outputs.repos_json }}
 
       # Create an artifact for the docs directory so we can update it in each matrix job
       - name: Create docs/pkgs Artifact
@@ -73,7 +79,19 @@ jobs:
       # Copy the updated docs from the repo to the docs directory
       - name: Copy to Docs
         run: |
+          IGNORE_LIST=$(echo "$REPOS_JSON" | jq -r --arg repo "${{ matrix.repo }}" '.[] | select(.name == $repo) | .ignore[]?')
+          echo "Ignore packages: $IGNORE_LIST"
+
           jq -r '.workspaces[]' import-packages/${{ matrix.repo }}/package.json | while read pkg; do
+            # Check if package is in ignore list
+            for ignore in $IGNORE_LIST; do
+              if [[ "$pkg" == "$ignore" ]]; then
+                echo "Skipping package $pkg (in ignore list)"
+                continue 2
+              fi
+            done
+           
+            # Create directory structure
             rm -rf docs/pkgs/${{ matrix.repo }}/$pkg
             mkdir -p docs/pkgs/${{ matrix.repo }}/$pkg
             mkdir -p docs/pkgs/${{ matrix.repo }}/$pkg/docs
@@ -92,6 +110,8 @@ jobs:
           npm pkg delete devDependencies --prefix docs/pkgs/${{ matrix.repo }}/
           npm pkg delete dependencies --prefix docs/pkgs/${{ matrix.repo }}/
           npm pkg delete peerDependencies --prefix docs/pkgs/${{ matrix.repo }}/
+        env:
+          REPOS_JSON: ${{ needs.get-repos.outputs.repos_json }}
 
       # Update the artifact for the docs directory so we can update it in each matrix job
       - name: Update docs/pkgs Artifact

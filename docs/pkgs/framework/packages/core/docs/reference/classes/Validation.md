@@ -670,7 +670,7 @@ Is the property an object.
 
 ##### T
 
-`T` = \{[`id`: `string`]: `unknown`; \}
+`T` = \{\[`id`: `string`\]: `unknown`; \}
 
 #### Parameters
 

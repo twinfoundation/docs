@@ -17,3 +17,11 @@ The server information.
 > `optional` **openApiSpecPath**: `string`
 
 The path to the OpenAPI Spec.
+
+***
+
+### favIconPath?
+
+> `optional` **favIconPath**: `string`
+
+The path to the favicon.

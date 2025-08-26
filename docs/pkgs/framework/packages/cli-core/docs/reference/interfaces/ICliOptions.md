@@ -57,3 +57,11 @@ Supports the loading of env files.
 > `optional` **overrideOutputWidth**: `number`
 
 Override the default output width.
+
+***
+
+### showDevToolWarning?
+
+> `optional` **showDevToolWarning**: `boolean`
+
+Show a warning that this is a dev tool and not for production use.

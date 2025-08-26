@@ -17,6 +17,8 @@
 ## Functions
 
 - [generateRestRoutesInformation](functions/generateRestRoutesInformation.md)
+- [serverRoot](functions/serverRoot.md)
 - [serverInfo](functions/serverInfo.md)
 - [serverHealth](functions/serverHealth.md)
+- [serverFavIcon](functions/serverFavIcon.md)
 - [serverSpec](functions/serverSpec.md)

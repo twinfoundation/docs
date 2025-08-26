@@ -1,5 +1,24 @@
 # @twin.org/data-framework - Changelog
 
+## [0.0.2-next.1](https://github.com/twinfoundation/data/compare/data-framework-v0.0.2-next.0...data-framework-v0.0.2-next.1) (2025-08-19)
+
+
+### Features
+
+* add document cache access methods ([dbf1e36](https://github.com/twinfoundation/data/commit/dbf1e36d176c5f428f8c52628fb5a1ff7a6a174a))
+* expand Json LD Keyword ([70632d1](https://github.com/twinfoundation/data/commit/70632d1e11ad85cf3c57e118476b125a673f1681))
+* update framework core ([c077b8c](https://github.com/twinfoundation/data/commit/c077b8c07e7ee66b5482254eab6f2a52cd911270))
+* use fully qualified names for data type lookups ([b7b5c74](https://github.com/twinfoundation/data/commit/b7b5c746b0180a87baa976f6a7a76cedd53d8ff7))
+* use shared store mechanism ([#3](https://github.com/twinfoundation/data/issues/3)) ([33eb221](https://github.com/twinfoundation/data/commit/33eb221ccec2b4a79549c06e9a04225009b93a46))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/data-core bumped from 0.0.2-next.0 to 0.0.2-next.1
+    * @twin.org/data-json-ld bumped from 0.0.2-next.0 to 0.0.2-next.1
+
 ## 0.0.1 (2025-07-03)
 
 

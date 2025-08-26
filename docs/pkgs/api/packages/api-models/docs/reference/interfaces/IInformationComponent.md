@@ -8,6 +8,20 @@ The information component for the server.
 
 ## Methods
 
+### root()
+
+> **root**(): `Promise`\<`string`\>
+
+Get the root information.
+
+#### Returns
+
+`Promise`\<`string`\>
+
+The root information.
+
+***
+
 ### info()
 
 > **info**(): `Promise`\<[`IServerInfo`](IServerInfo.md)\>
@@ -19,6 +33,20 @@ Get the server information.
 `Promise`\<[`IServerInfo`](IServerInfo.md)\>
 
 The service information.
+
+***
+
+### favicon()
+
+> **favicon**(): `Promise`\<`undefined` \| `Uint8Array`\<`ArrayBufferLike`\>\>
+
+Get the favicon.
+
+#### Returns
+
+`Promise`\<`undefined` \| `Uint8Array`\<`ArrayBufferLike`\>\>
+
+The favicon.
 
 ***
 

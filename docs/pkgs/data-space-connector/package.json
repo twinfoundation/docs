@@ -1,0 +1,25 @@
+{
+	"name": "@twin.org/data-space-connector",
+	"version": "0.0.0",
+	"description": "Data Space Connector",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/twinfoundation/data-space-connector.git"
+	},
+	"author": "jose.cantera@iota.org",
+	"license": "Apache-2.0",
+	"private": false,
+	"engines": {
+		"node": ">=20.0.0"
+	},
+	"workspaces": [
+		"packages/data-space-connector-models",
+		"packages/data-space-connector-app-runner",
+		"packages/data-space-connector-test-app",
+		"packages/data-space-connector-service",
+		"packages/data-space-connector-rest-client",
+		"packages/data-space-connector-socket-client",
+		"apps/data-space-connector-rest-server"
+	],
+	"type": "module"
+}

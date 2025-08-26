@@ -45,15 +45,15 @@ The data to process.
 
 ##### userIdentity
 
-`string`
-
 The user identity to use in the decision making.
+
+`undefined` | `string`
 
 ##### nodeIdentity
 
-`string`
-
 The node identity to use in the decision making.
+
+`undefined` | `string`
 
 #### Returns
 

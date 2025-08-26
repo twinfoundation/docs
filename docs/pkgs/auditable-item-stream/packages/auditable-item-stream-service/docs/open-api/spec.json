@@ -1,5 +1,5 @@
 {
-	"openapi": "3.1.0",
+	"openapi": "3.1.1",
 	"info": {
 		"title": "TWIN - Test Endpoints",
 		"description": "REST API for TWIN - Test Endpoints.",
@@ -2197,7 +2197,7 @@
 						"type": "string",
 						"description": "The stack trace for the error."
 					},
-					"inner": {
+					"cause": {
 						"$ref": "#/components/schemas/Error"
 					}
 				},
@@ -2237,7 +2237,7 @@
 						"type": "string",
 						"description": "The stack trace for the error."
 					},
-					"inner": {
+					"cause": {
 						"$ref": "#/components/schemas/Error"
 					}
 				},

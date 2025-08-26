@@ -46,7 +46,6 @@ jobs:
 
       # Install dependencies with retry (only if cache miss)
       - name: Install dependencies
-        if: steps.cache.outputs.cache-hit != 'true'
         run: |
           for i in {1..3}; do
             npm ci && break || {

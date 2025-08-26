@@ -234,6 +234,26 @@ The object to display.
 
 ***
 
+### warning()
+
+> `static` **warning**(`label`): `void`
+
+Display a warning.
+
+#### Parameters
+
+##### label
+
+`string`
+
+The label for the warning.
+
+#### Returns
+
+`void`
+
+***
+
 ### done()
 
 > `static` **done**(): `void`

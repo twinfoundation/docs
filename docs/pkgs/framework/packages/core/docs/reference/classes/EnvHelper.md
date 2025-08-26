@@ -24,7 +24,7 @@ Get the environment variable as an object with camel cased names.
 
 ##### T
 
-`T` = \{[`id`: `string`]: `string`; \}
+`T` = \{\[`id`: `string`\]: `string`; \}
 
 #### Parameters
 

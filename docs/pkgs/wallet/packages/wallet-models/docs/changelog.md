@@ -1,5 +1,19 @@
 # @twin.org/wallet-models - Changelog
 
+## [0.0.2-next.3](https://github.com/twinfoundation/wallet/compare/wallet-models-v0.0.2-next.2...wallet-models-v0.0.2-next.3) (2025-08-20)
+
+
+### Miscellaneous Chores
+
+* **wallet-models:** Synchronize repo versions
+
+## [0.0.2-next.2](https://github.com/twinfoundation/wallet/compare/wallet-models-v0.0.2-next.1...wallet-models-v0.0.2-next.2) (2025-08-20)
+
+
+### Features
+
+* update framework core ([1c8a381](https://github.com/twinfoundation/wallet/commit/1c8a381e3c0544803a98db5560d87087fd095c23))
+
 ## [0.0.2-next.1](https://github.com/twinfoundation/wallet/compare/wallet-models-v0.0.2-next.0...wallet-models-v0.0.2-next.1) (2025-07-16)
 
 

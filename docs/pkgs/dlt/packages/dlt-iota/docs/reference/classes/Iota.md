@@ -204,7 +204,7 @@ The key pair containing private key and public key.
 
 ### prepareAndPostValueTransaction()
 
-> `static` **prepareAndPostValueTransaction**(`config`, `vaultConnector`, `loggingConnector`, `identity`, `client`, `source`, `amount`, `recipient`, `options?`): `Promise`\<`IotaTransactionBlockResponse`\>
+> `static` **prepareAndPostValueTransaction**(`config`, `vaultConnector`, `logging`, `identity`, `client`, `source`, `amount`, `recipient`, `options?`): `Promise`\<`IotaTransactionBlockResponse`\>
 
 Prepare and post a transaction.
 
@@ -222,11 +222,11 @@ The configuration.
 
 The vault connector.
 
-##### loggingConnector
+##### logging
 
-The logging connector.
+The logging component.
 
-`undefined` | `ILoggingConnector`
+`undefined` | `ILoggingComponent`
 
 ##### identity
 
@@ -274,7 +274,7 @@ The transaction result.
 
 ### prepareAndPostTransaction()
 
-> `static` **prepareAndPostTransaction**(`config`, `vaultConnector`, `loggingConnector`, `identity`, `client`, `owner`, `transaction`, `options?`): `Promise`\<`IotaTransactionBlockResponse`\>
+> `static` **prepareAndPostTransaction**(`config`, `vaultConnector`, `logging`, `identity`, `client`, `owner`, `transaction`, `options?`): `Promise`\<`IotaTransactionBlockResponse`\>
 
 Prepare and post a transaction.
 
@@ -292,11 +292,11 @@ The configuration.
 
 The vault connector.
 
-##### loggingConnector
+##### logging
 
-The logging connector.
+The logging component.
 
-`undefined` | `ILoggingConnector`
+`undefined` | `ILoggingComponent`
 
 ##### identity
 
@@ -549,9 +549,9 @@ The IOTA client.
 
 ##### logging
 
-The logging connector.
+The logging component.
 
-`undefined` | `ILoggingConnector`
+`undefined` | `ILoggingComponent`
 
 ##### txb
 

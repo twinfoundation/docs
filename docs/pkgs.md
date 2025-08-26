@@ -131,6 +131,11 @@ This is the overview of the packages.
 
 - [@twin.org/rights-management-models](pkgs/rights-management/packages/rights-management-models/index.md) - Models which define the structure of the rights management connectors and services
 - [@twin.org/rights-management-pap-service](pkgs/rights-management/packages/rights-management-pap-service/index.md) - Policy administration point implementation
+- [@twin.org/rights-management-pmp-service](pkgs/rights-management/packages/rights-management-pmp-service/index.md) - Policy management point implementation
+- [@twin.org/rights-management-pip-service](pkgs/rights-management/packages/rights-management-pip-service/index.md) - Policy information point implementation
+- [@twin.org/rights-management-pxp-service](pkgs/rights-management/packages/rights-management-pxp-service/index.md) - Policy execution point implementation
+- [@twin.org/rights-management-pdp-service](pkgs/rights-management/packages/rights-management-pdp-service/index.md) - Policy decision point implementation
+- [@twin.org/rights-management-pep-service](pkgs/rights-management/packages/rights-management-pep-service/index.md) - Policy enforcement point implementation
 - [@twin.org/rights-management-service](pkgs/rights-management/packages/rights-management-service/index.md) - Rights Management service implementation and REST endpoint definitions
 - [@twin.org/rights-management-rest-client](pkgs/rights-management/packages/rights-management-rest-client/index.md) - Rights management implementation which can connect to REST endpoints
 
@@ -221,6 +226,15 @@ This is the overview of the packages.
 - [@twin.org/federated-catalogue-models](pkgs/federated-catalogue/packages/federated-catalogue-models/index.md) - Models which define the structure of the Federated Catalogue Service
 - [@twin.org/federated-catalogue-service](pkgs/federated-catalogue/packages/federated-catalogue-service/index.md) - Federated Catalogue contract implementation and REST endpoint definitions
 - [@twin.org/federated-catalogue-rest-client](pkgs/federated-catalogue/packages/federated-catalogue-rest-client/index.md) - Federated Catalogue contract implementation which can connect to REST endpoints
+
+## Data Space Connector
+
+- [@twin.org/data-space-connector-models](pkgs/data-space-connector/packages/data-space-connector-models/index.md) - Models which define the structure of the Data Space Connector Service
+- [@twin.org/data-space-connector-app-runner](pkgs/data-space-connector/packages/data-space-connector-app-runner/index.md) - Data Space Connector App Runner
+- [@twin.org/data-space-connector-test-app](pkgs/data-space-connector/packages/data-space-connector-test-app/index.md) - Data Space Connector Test App
+- [@twin.org/data-space-connector-service](pkgs/data-space-connector/packages/data-space-connector-service/index.md) - Data Space Connector contract implementation and REST endpoint definitions
+- [@twin.org/data-space-connector-rest-client](pkgs/data-space-connector/packages/data-space-connector-rest-client/index.md) - Data space connector contract implementation which can connect to REST endpoints
+- [@twin.org/data-space-connector-socket-client](pkgs/data-space-connector/packages/data-space-connector-socket-client/index.md) - Data space connector component implementation which can connect to socket endpoints
 
 ## UI
 

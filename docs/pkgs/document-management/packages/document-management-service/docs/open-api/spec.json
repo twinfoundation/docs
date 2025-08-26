@@ -1203,6 +1203,20 @@
 				"additionalProperties": false,
 				"description": "Interface describing a list of document entries."
 			},
+			"DocumentManagementComponent": {
+				"type": "object",
+				"additionalProperties": false,
+				"properties": {
+					"CLASS_NAME": {
+						"type": "string",
+						"description": "The name of the component."
+					}
+				},
+				"required": [
+					"CLASS_NAME"
+				],
+				"description": "Interface describing an document management contract."
+			},
 			"DocumentManagementCreateRequest": {
 				"type": "object",
 				"properties": {
@@ -1269,6 +1283,41 @@
 				"additionalProperties": false,
 				"description": "The body parameters."
 			},
+			"DocumentManagementServiceConfig": {
+				"type": "object",
+				"additionalProperties": false,
+				"description": "Configuration for the document management service."
+			},
+			"DocumentManagementServiceConstructorOptions": {
+				"type": "object",
+				"properties": {
+					"auditableItemGraphComponentType": {
+						"type": "string",
+						"description": "The type of the auditable item graph component.",
+						"default": "auditable-item-graph"
+					},
+					"blobStorageComponentType": {
+						"type": "string",
+						"description": "The type of the blob storage component.",
+						"default": "blob-storage"
+					},
+					"attestationComponentType": {
+						"type": "string",
+						"description": "The type of the attestation component.",
+						"default": "attestation"
+					},
+					"dataProcessingComponentType": {
+						"type": "string",
+						"description": "The type of the data processing component.",
+						"default": "data-processing"
+					},
+					"config": {
+						"$ref": "#/components/schemas/DocumentManagementServiceConfig"
+					}
+				},
+				"additionalProperties": false,
+				"description": "Options for the document management Service constructor."
+			},
 			"DocumentManagementUpdateRequest": {
 				"type": "object",
 				"properties": {
@@ -1332,7 +1381,7 @@
 						"type": "string",
 						"description": "The stack trace for the error."
 					},
-					"inner": {
+					"cause": {
 						"$ref": "#/components/schemas/Error"
 					}
 				},
@@ -1372,7 +1421,7 @@
 						"type": "string",
 						"description": "The stack trace for the error."
 					},
-					"inner": {
+					"cause": {
 						"$ref": "#/components/schemas/Error"
 					}
 				},
