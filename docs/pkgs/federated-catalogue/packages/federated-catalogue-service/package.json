@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/federated-catalogue-service",
-	"version": "0.0.2-next.1",
+	"version": "0.0.2-next.2",
 	"description": "Federated Catalogue contract implementation and REST endpoint definitions",
 	"repository": {
 		"type": "git",
