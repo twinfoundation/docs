@@ -132,6 +132,60 @@ Nothing.
 
 ***
 
+### isStarted()
+
+> **isStarted**(): `boolean`
+
+Is the engine started.
+
+#### Returns
+
+`boolean`
+
+True if the engine is started.
+
+#### Implementation of
+
+`IEngineCore.isStarted`
+
+***
+
+### isPrimary()
+
+> **isPrimary**(): `boolean`
+
+Is this the primary engine instance.
+
+#### Returns
+
+`boolean`
+
+True if the engine is the primary instance.
+
+#### Implementation of
+
+`IEngineCore.isPrimary`
+
+***
+
+### isClone()
+
+> **isClone**(): `boolean`
+
+Is this engine instance a clone.
+
+#### Returns
+
+`boolean`
+
+True if the engine instance is a clone.
+
+#### Implementation of
+
+`IEngineCore.isClone`
+
+***
+
 ### logInfo()
 
 > **logInfo**(`message`): `void`

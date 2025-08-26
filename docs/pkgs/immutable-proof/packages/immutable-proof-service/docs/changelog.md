@@ -1,5 +1,29 @@
 # @twin.org/immutable-proof-service - Changelog
 
+## [0.0.2-next.1](https://github.com/twinfoundation/immutable-proof/compare/immutable-proof-service-v0.0.2-next.0...immutable-proof-service-v0.0.2-next.1) (2025-08-20)
+
+
+### Features
+
+* remove unused namespace ([a39864c](https://github.com/twinfoundation/immutable-proof/commit/a39864c0b2ca8753334a34028b8e5823a14162b4))
+* update data types to use fully qualified names ([e94d0f5](https://github.com/twinfoundation/immutable-proof/commit/e94d0f5db93856b5b59cfd34e55252fa13a7f4e0))
+* update dependencies ([7d6b321](https://github.com/twinfoundation/immutable-proof/commit/7d6b321928ca0434ee530816b1440f1687b94a6e))
+* update framework core ([e708d4d](https://github.com/twinfoundation/immutable-proof/commit/e708d4dd3febcfbcd64663d5be004eab1d26c0fb))
+* use shared store mechanism ([#3](https://github.com/twinfoundation/immutable-proof/issues/3)) ([7042a40](https://github.com/twinfoundation/immutable-proof/commit/7042a40f0ef8b01463f07aeb1efae4f417162fa1))
+
+
+### Bug Fixes
+
+* Missing user and node identity on create ([#1](https://github.com/twinfoundation/immutable-proof/issues/1)) ([80ea2f9](https://github.com/twinfoundation/immutable-proof/commit/80ea2f901afc7531f4a522227a61e6fa1482484d))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/immutable-proof-models bumped from 0.0.2-next.0 to 0.0.2-next.1
+    * @twin.org/immutable-proof-task bumped from 0.0.2-next.0 to 0.0.2-next.1
+
 ## 0.0.1 (2025-07-09)
 
 

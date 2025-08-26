@@ -18,7 +18,7 @@ Path to compiled modules JSON.
 
 #### network?
 
-[`NetworkTypes`](../type-aliases/NetworkTypes.md)
+`NetworkTypes`
 
 Network identifier - optional if NETWORK env var is set.
 

@@ -1,4 +1,4 @@
-# Class: `abstract` BaseRestClient
+# Abstract Class: BaseRestClient
 
 Abstract client class for common REST processing.
 

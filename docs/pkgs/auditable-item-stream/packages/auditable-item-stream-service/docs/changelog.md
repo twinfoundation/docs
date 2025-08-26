@@ -1,5 +1,20 @@
 # @twin.org/auditable-item-stream-service - Changelog
 
+## [0.0.2-next.2](https://github.com/twinfoundation/auditable-item-stream/compare/auditable-item-stream-service-v0.0.2-next.1...auditable-item-stream-service-v0.0.2-next.2) (2025-08-20)
+
+
+### Features
+
+* remove unused namespace ([6085988](https://github.com/twinfoundation/auditable-item-stream/commit/608598812ac2f1d0f6d73f5efcc6a169b0f3b38a))
+* update framework core ([5621601](https://github.com/twinfoundation/auditable-item-stream/commit/562160167c5082b9dae1b0bf68482ce2af1e7dce))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/auditable-item-stream-models bumped from 0.0.2-next.1 to 0.0.2-next.2
+
 ## [0.0.2-next.1](https://github.com/twinfoundation/auditable-item-stream/compare/auditable-item-stream-service-v0.0.2-next.0...auditable-item-stream-service-v0.0.2-next.1) (2025-07-21)
 
 

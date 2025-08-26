@@ -1,5 +1,12 @@
 # @twin.org/auditable-item-stream-models - Changelog
 
+## [0.0.2-next.2](https://github.com/twinfoundation/auditable-item-stream/compare/auditable-item-stream-models-v0.0.2-next.1...auditable-item-stream-models-v0.0.2-next.2) (2025-08-20)
+
+
+### Features
+
+* update framework core ([5621601](https://github.com/twinfoundation/auditable-item-stream/commit/562160167c5082b9dae1b0bf68482ce2af1e7dce))
+
 ## [0.0.2-next.1](https://github.com/twinfoundation/auditable-item-stream/compare/auditable-item-stream-models-v0.0.2-next.0...auditable-item-stream-models-v0.0.2-next.1) (2025-07-21)
 
 

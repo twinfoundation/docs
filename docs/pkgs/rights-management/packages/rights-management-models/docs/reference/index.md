@@ -16,6 +16,8 @@
 - [IPapRetrieveRequest](interfaces/IPapRetrieveRequest.md)
 - [IPapRetrieveResponse](interfaces/IPapRetrieveResponse.md)
 - [IPapUpdateRequest](interfaces/IPapUpdateRequest.md)
+- [IPepInterceptRequest](interfaces/IPepInterceptRequest.md)
+- [IPepInterceptResponse](interfaces/IPepInterceptResponse.md)
 
 ## Type Aliases
 

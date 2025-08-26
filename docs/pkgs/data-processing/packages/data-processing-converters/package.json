@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/data-processing-converters",
-	"version": "0.0.2-next.0",
+	"version": "0.0.2-next.1",
 	"description": "Data converter connector implementations",
 	"repository": {
 		"type": "git",

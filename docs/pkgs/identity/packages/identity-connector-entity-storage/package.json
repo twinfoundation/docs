@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/identity-connector-entity-storage",
-	"version": "0.0.2-next.0",
+	"version": "0.0.2-next.2",
 	"description": "Identity connector implementation using entity storage",
 	"repository": {
 		"type": "git",

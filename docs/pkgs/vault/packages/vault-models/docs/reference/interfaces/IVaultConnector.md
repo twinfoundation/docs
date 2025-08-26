@@ -226,7 +226,7 @@ The name of the key to use for encryption.
 
 ##### encryptionType
 
-[`VaultEncryptionType`](../type-aliases/VaultEncryptionType.md)
+`0`
 
 The type of encryption to use.
 
@@ -260,7 +260,7 @@ The name of the key to use for decryption.
 
 ##### encryptionType
 
-[`VaultEncryptionType`](../type-aliases/VaultEncryptionType.md)
+`0`
 
 The type of encryption to use.
 

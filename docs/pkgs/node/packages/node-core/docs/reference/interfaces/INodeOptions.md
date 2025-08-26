@@ -85,6 +85,14 @@ The path to the OpenAPI spec file, defaults to docs/open-api/spec.json.
 
 ***
 
+### favIconFile?
+
+> `optional` **favIconFile**: `string`
+
+The path to the favicon, defaults to static/favicon.png.
+
+***
+
 ### extendEnvVars()?
 
 > `optional` **extendEnvVars**: (`envVars`) => `Promise`\<`void`\>

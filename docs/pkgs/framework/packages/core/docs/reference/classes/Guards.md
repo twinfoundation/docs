@@ -618,7 +618,7 @@ Is the property an object.
 
 ##### T
 
-`T` = \{[`id`: `string`]: `unknown`; \}
+`T` = \{\[`id`: `string`\]: `unknown`; \}
 
 #### Parameters
 
@@ -660,7 +660,7 @@ Is the property is an object with at least one property.
 
 ##### T
 
-`T` = \{[`id`: `string`]: `unknown`; \}
+`T` = \{\[`id`: `string`\]: `unknown`; \}
 
 #### Parameters
 

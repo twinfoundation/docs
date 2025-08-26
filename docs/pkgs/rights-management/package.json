@@ -15,6 +15,11 @@
 	"workspaces": [
 		"packages/rights-management-models",
 		"packages/rights-management-pap-service",
+		"packages/rights-management-pmp-service",
+		"packages/rights-management-pip-service",
+		"packages/rights-management-pxp-service",
+		"packages/rights-management-pdp-service",
+		"packages/rights-management-pep-service",
 		"packages/rights-management-service",
 		"packages/rights-management-rest-client"
 	],

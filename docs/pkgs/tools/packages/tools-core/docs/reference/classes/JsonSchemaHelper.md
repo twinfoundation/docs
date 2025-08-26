@@ -1,6 +1,6 @@
 # Class: JsonSchemaHelper
 
-Helper class for JSON Schema processing. It provides methods to process arrays and clean up type names.
+Helper class for JSON Schema processing.
 
 ## Constructors
 
@@ -144,7 +144,7 @@ All the known schemas.
 
 ##### requiredTypes
 
-(`string` \| `RegExp`)[]
+`string`[]
 
 The required types.
 
@@ -209,3 +209,25 @@ The types to expand.
 #### Returns
 
 `void`
+
+***
+
+### autoExpandToRegEx()
+
+> `static` **autoExpandToRegEx**(`autoExpand`): `RegExp`
+
+Convert a string auto expand pattern to a regular expression.
+
+#### Parameters
+
+##### autoExpand
+
+`string`
+
+The auto expand pattern.
+
+#### Returns
+
+`RegExp`
+
+The regular expression.

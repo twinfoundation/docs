@@ -1,5 +1,20 @@
 # @twin.org/auditable-item-graph-service - Changelog
 
+## [0.0.2-next.2](https://github.com/twinfoundation/auditable-item-graph/compare/auditable-item-graph-service-v0.0.2-next.1...auditable-item-graph-service-v0.0.2-next.2) (2025-08-20)
+
+
+### Features
+
+* remove unused namespace ([ff1a3b4](https://github.com/twinfoundation/auditable-item-graph/commit/ff1a3b4e414fe2ee311a03027456ee40fbb580d7))
+* update framework core ([88ad4e6](https://github.com/twinfoundation/auditable-item-graph/commit/88ad4e6421132c3c6c45579b078d982a26f16990))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/auditable-item-graph-models bumped from 0.0.2-next.1 to 0.0.2-next.2
+
 ## [0.0.2-next.1](https://github.com/twinfoundation/auditable-item-graph/compare/auditable-item-graph-service-v0.0.2-next.0...auditable-item-graph-service-v0.0.2-next.1) (2025-07-21)
 
 

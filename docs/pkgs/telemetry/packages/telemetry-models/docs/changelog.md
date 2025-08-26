@@ -1,5 +1,19 @@
 # @twin.org/telemetry-models - Changelog
 
+## [0.0.2-next.1](https://github.com/twinfoundation/telemetry/compare/telemetry-models-v0.0.2-next.0...telemetry-models-v0.0.2-next.1) (2025-08-20)
+
+
+### Features
+
+* update dependencies ([0e55c48](https://github.com/twinfoundation/telemetry/commit/0e55c48de4139c6fe66b823101ca17973e60847c))
+* update framework core ([4b10bcd](https://github.com/twinfoundation/telemetry/commit/4b10bcd4d3101151671bdcf9aef7c54f5937fc2a))
+* use shared store mechanism ([#7](https://github.com/twinfoundation/telemetry/issues/7)) ([806fe2c](https://github.com/twinfoundation/telemetry/commit/806fe2c2b7653d6b949c27ebf57bd13c3e040242))
+
+
+### Bug Fixes
+
+* query params force coercion ([ec7999e](https://github.com/twinfoundation/telemetry/commit/ec7999eadb66c65585efa19f3ce4cabb50eed761))
+
 ## 0.0.1 (2025-07-04)
 
 

@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/event-bus-connector-local",
-	"version": "0.0.2-next.1",
+	"version": "0.0.2-next.4",
 	"description": "Event bus connector implementation local communication",
 	"repository": {
 		"type": "git",

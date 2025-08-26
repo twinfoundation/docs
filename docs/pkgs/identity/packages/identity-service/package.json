@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/identity-service",
-	"version": "0.0.2-next.0",
+	"version": "0.0.2-next.2",
 	"description": "Identity contract implementation and REST endpoint definitions",
 	"repository": {
 		"type": "git",

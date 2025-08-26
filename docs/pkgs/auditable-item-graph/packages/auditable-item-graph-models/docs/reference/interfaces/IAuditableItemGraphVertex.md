@@ -16,7 +16,7 @@ The date/time of when the element was created.
 
 #### Inherited from
 
-`Omit.dateCreated`
+[`IAuditableItemGraphAuditedElement`](IAuditableItemGraphAuditedElement.md).[`dateCreated`](IAuditableItemGraphAuditedElement.md#datecreated)
 
 ***
 
@@ -28,7 +28,7 @@ The date/time of when the element was modified.
 
 #### Inherited from
 
-`Omit.dateModified`
+[`IAuditableItemGraphAuditedElement`](IAuditableItemGraphAuditedElement.md).[`dateModified`](IAuditableItemGraphAuditedElement.md#datemodified)
 
 ***
 
@@ -40,7 +40,7 @@ The date/time of when the element was deleted, as we never actually remove items
 
 #### Inherited from
 
-`Omit.dateDeleted`
+[`IAuditableItemGraphAuditedElement`](IAuditableItemGraphAuditedElement.md).[`dateDeleted`](IAuditableItemGraphAuditedElement.md#datedeleted)
 
 ***
 
@@ -60,7 +60,7 @@ The id of the element.
 
 #### Overrides
 
-`Omit.id`
+[`IAuditableItemGraphAuditedElement`](IAuditableItemGraphAuditedElement.md).[`id`](IAuditableItemGraphAuditedElement.md#id)
 
 ***
 

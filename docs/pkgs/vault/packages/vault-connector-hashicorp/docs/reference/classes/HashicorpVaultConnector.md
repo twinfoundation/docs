@@ -50,17 +50,17 @@ Runtime name for the class.
 
 ### bootstrap()
 
-> **bootstrap**(`nodeLoggingConnectorType?`): `Promise`\<`boolean`\>
+> **bootstrap**(`nodeLoggingComponentType?`): `Promise`\<`boolean`\>
 
 Bootstrap the vault connector and ensure connectivity.
 
 #### Parameters
 
-##### nodeLoggingConnectorType?
+##### nodeLoggingComponentType?
 
 `string`
 
-The node logging connector type, defaults to "node-logging".
+The node logging component type.
 
 #### Returns
 
@@ -424,7 +424,7 @@ The name of the key to use.
 
 ##### encryptionType
 
-`VaultEncryptionType`
+`0`
 
 The type of encryption to use.
 
@@ -462,7 +462,7 @@ The name of the key to use.
 
 ##### encryptionType
 
-`VaultEncryptionType`
+`0`
 
 The type of encryption to use.
 
@@ -620,7 +620,7 @@ The name of the key to import.
 
 `string`
 
-The type of key to import, e.g. "rsa", "ed25519", etc.
+The type of key to import, e.g. "ed25519", etc.
 
 ##### privateKeyPem
 

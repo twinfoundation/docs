@@ -1,5 +1,13 @@
 # @twin.org/standards-dublin-core - Changelog
 
+## [0.0.2-next.2](https://github.com/twinfoundation/standards/compare/standards-dublin-core-v0.0.2-next.1...standards-dublin-core-v0.0.2-next.2) (2025-08-19)
+
+
+### Features
+
+* export unece schemas ([ef9af8d](https://github.com/twinfoundation/standards/commit/ef9af8db9931d1b7ca3a77c15b17bba6a3e7badc))
+* update framework core ([58c0c3d](https://github.com/twinfoundation/standards/commit/58c0c3dd6cea0e4c2393dc0e3e1eb33a6d06f617))
+
 ## [0.0.2-next.1](https://github.com/twinfoundation/standards/compare/standards-dublin-core-v0.0.2-next.0...standards-dublin-core-v0.0.2-next.1) (2025-07-14)
 
 

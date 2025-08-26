@@ -9,15 +9,3 @@ The state of the engine.
 > `optional` **nodeIdentity**: `string`
 
 The identity for the node.
-
-***
-
-### componentStates
-
-> **componentStates**: `object`
-
-The component states.
-
-#### Index Signature
-
-\[`component`: `string`\]: `object`

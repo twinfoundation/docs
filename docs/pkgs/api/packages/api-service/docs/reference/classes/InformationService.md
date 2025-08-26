@@ -58,6 +58,24 @@ Nothing.
 
 ***
 
+### root()
+
+> **root**(): `Promise`\<`string`\>
+
+Get the root information.
+
+#### Returns
+
+`Promise`\<`string`\>
+
+The root information.
+
+#### Implementation of
+
+`IInformationComponent.root`
+
+***
+
 ### info()
 
 > **info**(): `Promise`\<`IServerInfo`\>
@@ -73,6 +91,24 @@ The service information.
 #### Implementation of
 
 `IInformationComponent.info`
+
+***
+
+### favicon()
+
+> **favicon**(): `Promise`\<`undefined` \| `Uint8Array`\<`ArrayBufferLike`\>\>
+
+Get the favicon.
+
+#### Returns
+
+`Promise`\<`undefined` \| `Uint8Array`\<`ArrayBufferLike`\>\>
+
+The favicon.
+
+#### Implementation of
+
+`IInformationComponent.favicon`
 
 ***
 

@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/cli-core",
-	"version": "0.0.2-next.4",
+	"version": "0.0.2-next.5",
 	"description": "Core classes for building a CLI",
 	"repository": {
 		"type": "git",

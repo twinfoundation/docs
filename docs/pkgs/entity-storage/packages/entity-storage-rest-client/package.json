@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/entity-storage-rest-client",
-	"version": "0.0.2-next.5",
+	"version": "0.0.2-next.7",
 	"description": "Entity Storage contract implementation which can connect to REST endpoints",
 	"repository": {
 		"type": "git",

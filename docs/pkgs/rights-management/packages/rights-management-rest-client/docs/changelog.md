@@ -1,5 +1,36 @@
 # @twin.org/rights-management-rest-client - Changelog
 
+## [0.0.2-next.2](https://github.com/twinfoundation/rights-management/compare/rights-management-rest-client-v0.0.2-next.1...rights-management-rest-client-v0.0.2-next.2) (2025-08-22)
+
+
+### Features
+
+* add scaffold for other services ([de25f34](https://github.com/twinfoundation/rights-management/commit/de25f34c40fb65b6d73df98965ea4e368019da84))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/rights-management-models bumped from 0.0.2-next.1 to 0.0.2-next.2
+
+## [0.0.2-next.1](https://github.com/twinfoundation/rights-management/compare/rights-management-rest-client-v0.0.2-next.0...rights-management-rest-client-v0.0.2-next.1) (2025-08-20)
+
+
+### Features
+
+* pap create, update methods ([#13](https://github.com/twinfoundation/rights-management/issues/13)) ([edb6c9e](https://github.com/twinfoundation/rights-management/commit/edb6c9efcfda55ac96f7594253bf831b4f0e5993))
+* rights management pap ([#4](https://github.com/twinfoundation/rights-management/issues/4)) ([d1165a9](https://github.com/twinfoundation/rights-management/commit/d1165a92f57128731cfb308d977832e28cf33493))
+* update dependencies ([dd0a553](https://github.com/twinfoundation/rights-management/commit/dd0a553020b0dc5c41fb6865a2e36bd26045b0b9))
+* update framework core ([d0ffcba](https://github.com/twinfoundation/rights-management/commit/d0ffcba9cf1dc2b562193ee298f099612d100ce8))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/rights-management-models bumped from 0.0.2-next.0 to 0.0.2-next.1
+
 ## 0.0.1 (2025-07-08)
 
 

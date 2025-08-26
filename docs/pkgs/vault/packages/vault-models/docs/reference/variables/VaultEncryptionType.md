@@ -11,9 +11,3 @@ The names of the vault encryption types.
 > `readonly` **ChaCha20Poly1305**: `0` = `0`
 
 The ChaCha20Poly1305. (symmetric)
-
-### Rsa2048
-
-> `readonly` **Rsa2048**: `1` = `1`
-
-The RSA 2048. (asymmetric)

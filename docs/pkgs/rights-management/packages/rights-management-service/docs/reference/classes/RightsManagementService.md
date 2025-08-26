@@ -180,3 +180,59 @@ Cursor for next page of results and the policies matching the query.
 #### Implementation of
 
 `IRightsManagementComponent.papQuery`
+
+***
+
+### pepIntercept()
+
+> **pepIntercept**\<`T`\>(`assetType`, `action`, `data`, `userIdentity`, `nodeIdentity`): `Promise`\<`undefined` \| `T`\>
+
+PEP: Process the data using Policy Decision Point (PDP) and return the manipulated data.
+
+#### Type Parameters
+
+##### T
+
+`T` = `unknown`
+
+#### Parameters
+
+##### assetType
+
+`string`
+
+The type of asset being processed.
+
+##### action
+
+`string`
+
+The action being performed on the asset.
+
+##### data
+
+The data to process.
+
+`undefined` | `T`
+
+##### userIdentity
+
+The user identity to use in the decision making.
+
+`undefined` | `string`
+
+##### nodeIdentity
+
+The node identity to use in the decision making.
+
+`undefined` | `string`
+
+#### Returns
+
+`Promise`\<`undefined` \| `T`\>
+
+The manipulated data with any policies applied.
+
+#### Implementation of
+
+`IRightsManagementComponent.pepIntercept`

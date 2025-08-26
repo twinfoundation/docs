@@ -4,11 +4,11 @@ The options for the local event bus connector.
 
 ## Properties
 
-### loggingConnectorType?
+### loggingComponentType?
 
-> `optional` **loggingConnectorType**: `string`
+> `optional` **loggingComponentType**: `string`
 
-The logging connector type.
+The logging component type.
 
 #### Default
 

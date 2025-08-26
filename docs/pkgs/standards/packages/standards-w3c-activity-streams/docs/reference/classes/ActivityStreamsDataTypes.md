@@ -1,4 +1,4 @@
-# Class: `abstract` ActivityStreamsDataTypes
+# Abstract Class: ActivityStreamsDataTypes
 
 Data Type registration for the Data Space Connector
 

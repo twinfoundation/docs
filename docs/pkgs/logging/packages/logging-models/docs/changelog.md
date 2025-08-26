@@ -1,5 +1,19 @@
 # @twin.org/logging-models - Changelog
 
+## [0.0.2-next.1](https://github.com/twinfoundation/logging/compare/logging-models-v0.0.2-next.0...logging-models-v0.0.2-next.1) (2025-08-19)
+
+
+### Features
+
+* update dependencies ([976fc06](https://github.com/twinfoundation/logging/commit/976fc06976c4899769486b7cb2e827c407d7fc89))
+* update framework core ([aac823c](https://github.com/twinfoundation/logging/commit/aac823c2ead88843618b8a82b308d5a793411764))
+* use shared store mechanism ([#20](https://github.com/twinfoundation/logging/issues/20)) ([bbacd31](https://github.com/twinfoundation/logging/commit/bbacd31af991d82d84294ad432a40830692880ca))
+
+
+### Bug Fixes
+
+* query params force coercion ([71c5329](https://github.com/twinfoundation/logging/commit/71c53292d300acae0369bd7937c5ca3ab5430689))
+
 ## 0.0.1 (2025-07-03)
 
 

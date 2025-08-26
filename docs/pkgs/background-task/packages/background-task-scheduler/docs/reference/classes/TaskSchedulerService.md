@@ -42,7 +42,7 @@ Runtime name for the class.
 
 ### stop()
 
-> **stop**(`nodeIdentity`, `nodeLoggingConnectorType`, `componentState?`): `Promise`\<`void`\>
+> **stop**(`nodeIdentity`, `nodeLoggingComponentType`): `Promise`\<`void`\>
 
 The component needs to be stopped when the node is closed.
 
@@ -54,15 +54,11 @@ The component needs to be stopped when the node is closed.
 
 The identity of the node stopping the component.
 
-##### nodeLoggingConnectorType
+##### nodeLoggingComponentType
 
-The node logging connector type, defaults to "node-logging".
+The node logging component type.
 
 `undefined` | `string`
-
-##### componentState?
-
-A persistent state which can be modified by the method.
 
 #### Returns
 
