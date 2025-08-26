@@ -1,21 +1,5 @@
 # @twin.org/verifiable-storage-service - Changelog
 
-## [0.0.2-next.4](https://github.com/twinfoundation/verifiable-storage/compare/verifiable-storage-service-v0.0.2-next.3...verifiable-storage-service-v0.0.2-next.4) (2025-08-20)
-
-
-### Features
-
-* update framework core ([efa612e](https://github.com/twinfoundation/verifiable-storage/commit/efa612e54dbe2d8f223f27ff9e315e08a2fed04b))
-
-
-### Dependencies
-
-* The following workspace dependencies were updated
-  * dependencies
-    * @twin.org/verifiable-storage-models bumped from 0.0.2-next.3 to 0.0.2-next.4
-  * devDependencies
-    * @twin.org/verifiable-storage-connector-entity-storage bumped from 0.0.2-next.3 to 0.0.2-next.4
-
 ## [0.0.2-next.3](https://github.com/twinfoundation/verifiable-storage/compare/verifiable-storage-service-v0.0.2-next.2...verifiable-storage-service-v0.0.2-next.3) (2025-07-28)
 
 

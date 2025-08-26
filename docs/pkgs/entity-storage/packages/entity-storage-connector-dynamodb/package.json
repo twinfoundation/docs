@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/entity-storage-connector-dynamodb",
-	"version": "0.0.2-next.7",
+	"version": "0.0.2-next.5",
 	"description": "Entity Storage connector implementation using DynamoDb storage",
 	"repository": {
 		"type": "git",

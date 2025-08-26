@@ -10,7 +10,7 @@ Class to handle errors which are triggered by data not being found.
 
 ### Constructor
 
-> **new NotFoundError**(`source`, `message`, `notFoundId?`, `cause?`): `NotFoundError`
+> **new NotFoundError**(`source`, `message`, `notFoundId?`, `inner?`): `NotFoundError`
 
 Create a new instance of NotFoundError.
 
@@ -34,11 +34,11 @@ The message as a code.
 
 The id for the item.
 
-##### cause?
+##### inner?
 
 `unknown`
 
-The cause of the error if we have wrapped another error.
+The inner error if we have wrapped another error.
 
 #### Returns
 
@@ -78,15 +78,15 @@ Any additional information for the error.
 
 ***
 
-### cause?
+### inner?
 
-> `optional` **cause**: [`IError`](../interfaces/IError.md)
+> `optional` **inner**: [`IError`](../interfaces/IError.md)
 
-The cause of the error.
+The inner error if there was one.
 
 #### Inherited from
 
-[`BaseError`](BaseError.md).[`cause`](BaseError.md#cause)
+[`BaseError`](BaseError.md).[`inner`](BaseError.md#inner)
 
 ***
 
@@ -404,7 +404,7 @@ True if the error has the name.
 
 > `static` **isEmpty**(`err`): `boolean`
 
-Is the error empty, i.e. does it have no message, source, properties, or cause?
+Is the error empty.
 
 #### Parameters
 
@@ -423,64 +423,6 @@ True if the error is empty.
 #### Inherited from
 
 [`BaseError`](BaseError.md).[`isEmpty`](BaseError.md#isempty)
-
-***
-
-### isAggregateError()
-
-> `static` **isAggregateError**(`err`): `err is AggregateError`
-
-Is the error an aggregate error.
-
-#### Parameters
-
-##### err
-
-`unknown`
-
-The error to check for being an aggregate error.
-
-#### Returns
-
-`err is AggregateError`
-
-True if the error is an aggregate error.
-
-#### Inherited from
-
-[`BaseError`](BaseError.md).[`isAggregateError`](BaseError.md#isaggregateerror)
-
-***
-
-### fromAggregate()
-
-> `static` **fromAggregate**(`err`, `includeStackTrace?`): [`IError`](../interfaces/IError.md)[]
-
-Convert the aggregate error to an array of errors.
-
-#### Parameters
-
-##### err
-
-`unknown`
-
-The error to convert.
-
-##### includeStackTrace?
-
-`boolean`
-
-Whether to include the error stack in the model, defaults to false.
-
-#### Returns
-
-[`IError`](../interfaces/IError.md)[]
-
-The array of errors.
-
-#### Inherited from
-
-[`BaseError`](BaseError.md).[`fromAggregate`](BaseError.md#fromaggregate)
 
 ***
 

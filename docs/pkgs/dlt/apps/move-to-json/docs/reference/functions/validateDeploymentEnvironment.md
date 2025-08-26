@@ -8,7 +8,7 @@ Validate that required environment variables are set for deployment.
 
 ### network
 
-`NetworkTypes`
+[`NetworkTypes`](../type-aliases/NetworkTypes.md)
 
 The target network.
 

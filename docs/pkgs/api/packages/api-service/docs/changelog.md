@@ -1,47 +1,5 @@
 # @twin.org/api-service - Changelog
 
-## [0.0.2-next.8](https://github.com/twinfoundation/api/compare/api-service-v0.0.2-next.7...api-service-v0.0.2-next.8) (2025-08-21)
-
-
-### Features
-
-* add root, favicon routes ([71da1c3](https://github.com/twinfoundation/api/commit/71da1c3a93c349588aff7084d1d8d6a29a277da8))
-
-
-### Dependencies
-
-* The following workspace dependencies were updated
-  * dependencies
-    * @twin.org/api-models bumped from 0.0.2-next.7 to 0.0.2-next.8
-
-## [0.0.2-next.7](https://github.com/twinfoundation/api/compare/api-service-v0.0.2-next.6...api-service-v0.0.2-next.7) (2025-08-20)
-
-
-### Miscellaneous Chores
-
-* **api-service:** Synchronize repo versions
-
-
-### Dependencies
-
-* The following workspace dependencies were updated
-  * dependencies
-    * @twin.org/api-models bumped from 0.0.2-next.6 to 0.0.2-next.7
-
-## [0.0.2-next.6](https://github.com/twinfoundation/api/compare/api-service-v0.0.2-next.5...api-service-v0.0.2-next.6) (2025-08-19)
-
-
-### Features
-
-* update framework core ([d8eebf2](https://github.com/twinfoundation/api/commit/d8eebf267fa2a0abaa84e58590496e9d20490cfa))
-
-
-### Dependencies
-
-* The following workspace dependencies were updated
-  * dependencies
-    * @twin.org/api-models bumped from 0.0.2-next.5 to 0.0.2-next.6
-
 ## [0.0.2-next.5](https://github.com/twinfoundation/api/compare/api-service-v0.0.2-next.4...api-service-v0.0.2-next.5) (2025-07-25)
 
 

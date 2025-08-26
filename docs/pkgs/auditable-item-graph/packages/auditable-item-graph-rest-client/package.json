@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/auditable-item-graph-rest-client",
-	"version": "0.0.2-next.2",
+	"version": "0.0.2-next.1",
 	"description": "Auditable Item Graph contract implementation which can connect to REST endpoints",
 	"repository": {
 		"type": "git",

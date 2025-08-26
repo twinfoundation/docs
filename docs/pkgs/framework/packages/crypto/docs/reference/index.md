@@ -5,6 +5,7 @@
 - [Bech32](classes/Bech32.md)
 - [Bip44](classes/Bip44.md)
 - [ChaCha20Poly1305](classes/ChaCha20Poly1305.md)
+- [RSA](classes/RSA.md)
 - [Ed25519](classes/Ed25519.md)
 - [Secp256k1](classes/Secp256k1.md)
 - [X25519](classes/X25519.md)

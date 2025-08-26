@@ -1,12 +1,5 @@
 # @twin.org/nameof-transformer - Changelog
 
-## [0.0.2-next.5](https://github.com/twinfoundation/framework/compare/nameof-transformer-v0.0.2-next.4...nameof-transformer-v0.0.2-next.5) (2025-08-19)
-
-
-### Features
-
-* use cause instead of inner for errors ([1f4acc4](https://github.com/twinfoundation/framework/commit/1f4acc4d7a6b71a134d9547da9bf40de1e1e49da))
-
 ## [0.0.2-next.4](https://github.com/twinfoundation/framework/compare/nameof-transformer-v0.0.2-next.3...nameof-transformer-v0.0.2-next.4) (2025-08-15)
 
 

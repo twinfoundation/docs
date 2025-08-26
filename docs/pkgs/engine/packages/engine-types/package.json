@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/engine-types",
-	"version": "0.0.2-next.10",
+	"version": "0.0.2-next.5",
 	"description": "Types to use in an engine.",
 	"repository": {
 		"type": "git",

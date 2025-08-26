@@ -1,12 +1,5 @@
 # @twin.org/nft-models - Changelog
 
-## [0.0.2-next.3](https://github.com/twinfoundation/nft/compare/nft-models-v0.0.2-next.2...nft-models-v0.0.2-next.3) (2025-08-20)
-
-
-### Features
-
-* update framework core ([f3496b6](https://github.com/twinfoundation/nft/commit/f3496b61bfebbb3479bb92df39ecfa9ac8d90b9b))
-
 ## [0.0.2-next.2](https://github.com/twinfoundation/nft/compare/nft-models-v0.0.2-next.1...nft-models-v0.0.2-next.2) (2025-07-25)
 
 

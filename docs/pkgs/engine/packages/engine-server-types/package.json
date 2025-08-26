@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/engine-server-types",
-	"version": "0.0.2-next.10",
+	"version": "0.0.2-next.5",
 	"description": "Server types to use in an engine server.",
 	"repository": {
 		"type": "git",

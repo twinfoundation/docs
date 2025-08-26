@@ -18,7 +18,7 @@ Additional options.
 
 #### network?
 
-`NetworkTypes`
+[`NetworkTypes`](../type-aliases/NetworkTypes.md)
 
 Target network (testnet/devnet/mainnet) - optional if NETWORK env var is set.
 

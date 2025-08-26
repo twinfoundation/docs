@@ -1,29 +1,5 @@
 # @twin.org/node-core - Changelog
 
-## [0.0.2-next.7](https://github.com/twinfoundation/node/compare/node-core-v0.0.2-next.6...node-core-v0.0.2-next.7) (2025-08-26)
-
-
-### Features
-
-* add data space connector ([5a57087](https://github.com/twinfoundation/node/commit/5a57087d938265d3a4a812ff7c83d130ea4e103c))
-* add data space connector ([f7a3644](https://github.com/twinfoundation/node/commit/f7a364477ec664e333e5ad018795acec6ee61edc))
-* add data space connector ([157e8b0](https://github.com/twinfoundation/node/commit/157e8b0a76e3a8a63c1991924f7f963eb83e27ae))
-
-## [0.0.2-next.6](https://github.com/twinfoundation/node/compare/node-core-v0.0.2-next.5...node-core-v0.0.2-next.6) (2025-08-22)
-
-
-### Features
-
-* add rights management ([78fba62](https://github.com/twinfoundation/node/commit/78fba62f82afdbe615d55dd90eca8ee70ea62fc0))
-* remove unused properties ([d8344b5](https://github.com/twinfoundation/node/commit/d8344b5aee5dc1c8104d75fad5093097f6530168))
-
-## [0.0.2-next.5](https://github.com/twinfoundation/node/compare/node-core-v0.0.2-next.4...node-core-v0.0.2-next.5) (2025-08-21)
-
-
-### Features
-
-* update framework core ([8bd769a](https://github.com/twinfoundation/node/commit/8bd769a4451f5f1f6be3f115a5e94eeb05bce7f1))
-
 ## [0.0.2-next.4](https://github.com/twinfoundation/node/compare/node-core-v0.0.2-next.3...node-core-v0.0.2-next.4) (2025-08-14)
 
 

@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/vault-models",
-	"version": "0.0.2-next.3",
+	"version": "0.0.2-next.2",
 	"description": "Models which define the structure of the vault contracts and connectors",
 	"repository": {
 		"type": "git",

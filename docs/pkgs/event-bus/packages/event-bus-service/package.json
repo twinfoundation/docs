@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/event-bus-service",
-	"version": "0.0.2-next.4",
+	"version": "0.0.2-next.1",
 	"description": "Event bus service implementation using web sockets",
 	"repository": {
 		"type": "git",

@@ -1,21 +1,5 @@
 # @twin.org/blob-storage-service - Changelog
 
-## [0.0.2-next.2](https://github.com/twinfoundation/blob-storage/compare/blob-storage-service-v0.0.2-next.1...blob-storage-service-v0.0.2-next.2) (2025-08-20)
-
-
-### Features
-
-* update framework core ([ff339fe](https://github.com/twinfoundation/blob-storage/commit/ff339fe7e3f09ddff429907834bdf43617e9c05e))
-
-
-### Dependencies
-
-* The following workspace dependencies were updated
-  * dependencies
-    * @twin.org/blob-storage-models bumped from 0.0.2-next.1 to 0.0.2-next.2
-  * devDependencies
-    * @twin.org/blob-storage-connector-memory bumped from 0.0.2-next.1 to 0.0.2-next.2
-
 ## [0.0.2-next.1](https://github.com/twinfoundation/blob-storage/compare/blob-storage-service-v0.0.2-next.0...blob-storage-service-v0.0.2-next.1) (2025-07-24)
 
 

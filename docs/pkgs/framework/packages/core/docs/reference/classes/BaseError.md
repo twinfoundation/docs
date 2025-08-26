@@ -27,7 +27,7 @@ Class to handle errors.
 
 ### Constructor
 
-> **new BaseError**(`name`, `source`, `message`, `properties?`, `cause?`): `BaseError`
+> **new BaseError**(`name`, `source`, `message`, `properties?`, `inner?`): `BaseError`
 
 Create a new instance of BaseError.
 
@@ -55,11 +55,11 @@ The message as a code.
 
 Any additional information for the error.
 
-##### cause?
+##### inner?
 
 `unknown`
 
-The cause of error if we have wrapped another error.
+The inner error if we have wrapped another error.
 
 #### Returns
 
@@ -99,19 +99,15 @@ Any additional information for the error.
 
 ***
 
-### cause?
+### inner?
 
-> `optional` **cause**: [`IError`](../interfaces/IError.md)
+> `optional` **inner**: [`IError`](../interfaces/IError.md)
 
-The cause of the error.
+The inner error if there was one.
 
 #### Implementation of
 
-[`IError`](../interfaces/IError.md).[`cause`](../interfaces/IError.md#cause)
-
-#### Overrides
-
-`Error.cause`
+[`IError`](../interfaces/IError.md).[`inner`](../interfaces/IError.md#inner)
 
 ## Methods
 
@@ -381,7 +377,7 @@ True if the error has the name.
 
 > `static` **isEmpty**(`err`): `boolean`
 
-Is the error empty, i.e. does it have no message, source, properties, or cause?
+Is the error empty.
 
 #### Parameters
 
@@ -396,56 +392,6 @@ The error to check for being empty.
 `boolean`
 
 True if the error is empty.
-
-***
-
-### isAggregateError()
-
-> `static` **isAggregateError**(`err`): `err is AggregateError`
-
-Is the error an aggregate error.
-
-#### Parameters
-
-##### err
-
-`unknown`
-
-The error to check for being an aggregate error.
-
-#### Returns
-
-`err is AggregateError`
-
-True if the error is an aggregate error.
-
-***
-
-### fromAggregate()
-
-> `static` **fromAggregate**(`err`, `includeStackTrace?`): [`IError`](../interfaces/IError.md)[]
-
-Convert the aggregate error to an array of errors.
-
-#### Parameters
-
-##### err
-
-`unknown`
-
-The error to convert.
-
-##### includeStackTrace?
-
-`boolean`
-
-Whether to include the error stack in the model, defaults to false.
-
-#### Returns
-
-[`IError`](../interfaces/IError.md)[]
-
-The array of errors.
 
 ***
 

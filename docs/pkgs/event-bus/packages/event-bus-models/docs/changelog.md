@@ -1,26 +1,5 @@
 # @twin.org/event-bus-models - Changelog
 
-## [0.0.2-next.4](https://github.com/twinfoundation/event-bus/compare/event-bus-models-v0.0.2-next.3...event-bus-models-v0.0.2-next.4) (2025-08-25)
-
-
-### Miscellaneous Chores
-
-* **event-bus-models:** Synchronize repo versions
-
-## [0.0.2-next.3](https://github.com/twinfoundation/event-bus/compare/event-bus-models-v0.0.2-next.2...event-bus-models-v0.0.2-next.3) (2025-08-20)
-
-
-### Miscellaneous Chores
-
-* **event-bus-models:** Synchronize repo versions
-
-## [0.0.2-next.2](https://github.com/twinfoundation/event-bus/compare/event-bus-models-v0.0.2-next.1...event-bus-models-v0.0.2-next.2) (2025-08-19)
-
-
-### Features
-
-* update framework core ([e5e5f89](https://github.com/twinfoundation/event-bus/commit/e5e5f89bed3f615182de0f7ef76a1629d45d4152))
-
 ## [0.0.2-next.1](https://github.com/twinfoundation/event-bus/compare/event-bus-models-v0.0.2-next.0...event-bus-models-v0.0.2-next.1) (2025-07-24)
 
 

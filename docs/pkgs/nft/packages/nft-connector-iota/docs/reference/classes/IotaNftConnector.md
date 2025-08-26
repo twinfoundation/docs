@@ -50,7 +50,7 @@ Runtime name for the class.
 
 ### start()
 
-> **start**(`nodeIdentity`, `nodeLoggingComponentType?`): `Promise`\<`void`\>
+> **start**(`nodeIdentity`, `nodeLoggingConnectorType?`): `Promise`\<`void`\>
 
 Bootstrap the NFT contract.
 
@@ -62,11 +62,11 @@ Bootstrap the NFT contract.
 
 The identity of the node.
 
-##### nodeLoggingComponentType?
+##### nodeLoggingConnectorType?
 
 `string`
 
-The node logging component type.
+The node logging connector type, defaults to "node-logging".
 
 #### Returns
 
@@ -299,148 +299,3 @@ void.
 #### Implementation of
 
 `INftConnector.update`
-
-***
-
-### migrateNft()
-
-> **migrateNft**(`controllerIdentity`, `nftId`): `Promise`\<`void`\>
-
-Migrate an NFT to the current version using admin privileges.
-
-#### Parameters
-
-##### controllerIdentity
-
-`string`
-
-The identity of the controller with AdminCap privileges.
-
-##### nftId
-
-`string`
-
-The id of the NFT to migrate.
-
-#### Returns
-
-`Promise`\<`void`\>
-
-void.
-
-***
-
-### enableMigration()
-
-> **enableMigration**(`controllerIdentity`): `Promise`\<`void`\>
-
-Enable migration operations using admin privileges.
-
-#### Parameters
-
-##### controllerIdentity
-
-`string`
-
-The identity of the controller with AdminCap privileges.
-
-#### Returns
-
-`Promise`\<`void`\>
-
-void.
-
-***
-
-### disableMigration()
-
-> **disableMigration**(`controllerIdentity`): `Promise`\<`void`\>
-
-Disable migration operations using admin privileges.
-
-#### Parameters
-
-##### controllerIdentity
-
-`string`
-
-The identity of the controller with AdminCap privileges.
-
-#### Returns
-
-`Promise`\<`void`\>
-
-void.
-
-***
-
-### isMigrationActive()
-
-> **isMigrationActive**(): `Promise`\<`boolean`\>
-
-Check if migration is currently active.
-
-#### Returns
-
-`Promise`\<`boolean`\>
-
-True if migration is enabled, false otherwise.
-
-***
-
-### validateNftVersion()
-
-> **validateNftVersion**(`nftId`): `Promise`\<`boolean`\>
-
-Validate that an NFT version is compatible with the current contract.
-
-#### Parameters
-
-##### nftId
-
-`string`
-
-The id of the NFT to validate.
-
-#### Returns
-
-`Promise`\<`boolean`\>
-
-True if the NFT version is compatible, false otherwise.
-
-***
-
-### getNftContractVersion()
-
-> **getNftContractVersion**(`nftId`): `Promise`\<`number`\>
-
-Get the smart contract version of a specific NFT.
-This version indicates which contract version was used to create/migrate the NFT.
-
-#### Parameters
-
-##### nftId
-
-`string`
-
-The id of the NFT to get the contract version for.
-
-#### Returns
-
-`Promise`\<`number`\>
-
-The contract version number of the NFT.
-
-***
-
-### getCurrentContractVersion()
-
-> **getCurrentContractVersion**(): `Promise`\<`number`\>
-
-Get the current contract version from the deployed smart contract.
-
-#### Returns
-
-`Promise`\<`number`\>
-
-The current version number of the contract.

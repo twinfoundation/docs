@@ -1,52 +1,5 @@
 # @twin.org/move-to-json - Changelog
 
-## [0.0.2-next.5](https://github.com/twinfoundation/dlt/compare/move-to-json-v0.0.2-next.4...move-to-json-v0.0.2-next.5) (2025-08-25)
-
-
-### Bug Fixes
-
-* modifying logging type param ([#36](https://github.com/twinfoundation/dlt/issues/36)) ([b884fcc](https://github.com/twinfoundation/dlt/commit/b884fccef5bea5c6818cf8bfa8af197d3622cac6))
-
-
-### Dependencies
-
-* The following workspace dependencies were updated
-  * dependencies
-    * @twin.org/dlt-iota bumped from 0.0.2-next.4 to 0.0.2-next.5
-
-## [0.0.2-next.4](https://github.com/twinfoundation/dlt/compare/move-to-json-v0.0.2-next.3...move-to-json-v0.0.2-next.4) (2025-08-22)
-
-
-### Features
-
-* upgrade capabilities ([#32](https://github.com/twinfoundation/dlt/issues/32)) ([437219f](https://github.com/twinfoundation/dlt/commit/437219f0f784ec38353c01e1c8ce6bfba3b1b530))
-
-
-### Dependencies
-
-* The following workspace dependencies were updated
-  * dependencies
-    * @twin.org/dlt-iota bumped from 0.0.2-next.3 to 0.0.2-next.4
-
-## [0.0.2-next.3](https://github.com/twinfoundation/dlt/compare/move-to-json-v0.0.2-next.2...move-to-json-v0.0.2-next.3) (2025-08-20)
-
-
-### Features
-
-* update framework core ([79fc4b9](https://github.com/twinfoundation/dlt/commit/79fc4b961bd755437cad98d733ca9e25476bc03f))
-
-
-### Bug Fixes
-
-* docs ([cade544](https://github.com/twinfoundation/dlt/commit/cade5443a4b955d592c1622f07499ad8a3d554b6))
-
-
-### Dependencies
-
-* The following workspace dependencies were updated
-  * dependencies
-    * @twin.org/dlt-iota bumped from 0.0.2-next.2 to 0.0.2-next.3
-
 ## [0.0.2-next.2](https://github.com/twinfoundation/dlt/compare/move-to-json-v0.0.2-next.1...move-to-json-v0.0.2-next.2) (2025-07-25)
 
 

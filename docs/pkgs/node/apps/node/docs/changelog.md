@@ -1,47 +1,5 @@
 # @twin.org/node - Changelog
 
-## [0.0.2-next.7](https://github.com/twinfoundation/node/compare/node-v0.0.2-next.6...node-v0.0.2-next.7) (2025-08-26)
-
-
-### Features
-
-* add data space connector ([157e8b0](https://github.com/twinfoundation/node/commit/157e8b0a76e3a8a63c1991924f7f963eb83e27ae))
-
-
-### Dependencies
-
-* The following workspace dependencies were updated
-  * dependencies
-    * @twin.org/node-core bumped from 0.0.2-next.6 to 0.0.2-next.7
-
-## [0.0.2-next.6](https://github.com/twinfoundation/node/compare/node-v0.0.2-next.5...node-v0.0.2-next.6) (2025-08-22)
-
-
-### Miscellaneous Chores
-
-* **node:** Synchronize repo versions
-
-
-### Dependencies
-
-* The following workspace dependencies were updated
-  * dependencies
-    * @twin.org/node-core bumped from 0.0.2-next.5 to 0.0.2-next.6
-
-## [0.0.2-next.5](https://github.com/twinfoundation/node/compare/node-v0.0.2-next.4...node-v0.0.2-next.5) (2025-08-21)
-
-
-### Features
-
-* update framework core ([8bd769a](https://github.com/twinfoundation/node/commit/8bd769a4451f5f1f6be3f115a5e94eeb05bce7f1))
-
-
-### Dependencies
-
-* The following workspace dependencies were updated
-  * dependencies
-    * @twin.org/node-core bumped from 0.0.2-next.4 to 0.0.2-next.5
-
 ## [0.0.2-next.4](https://github.com/twinfoundation/node/compare/node-v0.0.2-next.3...node-v0.0.2-next.4) (2025-08-14)
 
 
