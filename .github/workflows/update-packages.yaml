@@ -25,11 +25,7 @@ jobs:
       - name: Get list of repos
         id: get-repos
         run: |
-          # Use Node.js to read the workspaces array from package.json
-          REPOS=$(node -e '
-            const repos = JSON.parse(require("fs").readFileSync("./repos.json", "utf8"));
-            console.log(JSON.stringify(repos.map(r => r.name)));
-          ')
+          REPOS=$(jq -c '[.[] | .name]' repos.json)
           echo "Found repos: $REPOS"
           # Set the output for use in the matrix strategy
           echo "repos=$REPOS" >> $GITHUB_OUTPUT
@@ -73,7 +69,16 @@ jobs:
       # Copy the updated docs from the repo to the docs directory
       - name: Copy to Docs
         run: |
+          IGNORE_LIST=$(jq -r --arg repo "${{ matrix.repo }}" '.[] | select(.name == $repo) | .ignore[]?' repos.json)
+
           jq -r '.workspaces[]' import-packages/${{ matrix.repo }}/package.json | while read pkg; do
+            for ignore in $IGNORE_LIST; do
+              if [[ "$pkg" == "$ignore" ]]; then
+                # Skip this package
+                echo "Skipping package $pkg (in ignore list)"
+                continue 2
+              fi
+            done
             rm -rf docs/pkgs/${{ matrix.repo }}/$pkg
             mkdir -p docs/pkgs/${{ matrix.repo }}/$pkg
             mkdir -p docs/pkgs/${{ matrix.repo }}/$pkg/docs
