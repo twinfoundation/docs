@@ -32,10 +32,12 @@ jobs:
       - name: Get list of repos
         id: get-repos
         run: |
-          REPOS=$(jq -c '[.[] | .name]' "${{ needs.get-repos.outputs.repos_json }}")
+          REPOS=$(echo "$REPOS_JSON" | jq -c '[.[] | .name]')
           echo "Found repos: $REPOS"
           # Set the output for use in the matrix strategy
           echo "repos=$REPOS" >> $GITHUB_OUTPUT
+        env:
+          REPOS_JSON: ${{ steps.get-repos-json.outputs.repos_json }}
 
       # Create an artifact for the docs directory so we can update it in each matrix job
       - name: Create docs/pkgs Artifact
@@ -76,7 +78,7 @@ jobs:
       # Copy the updated docs from the repo to the docs directory
       - name: Copy to Docs
         run: |
-          IGNORE_LIST=$(jq -r --arg repo "${{ matrix.repo }}" '.[] | select(.name == $repo) | .ignore[]?' "${{ needs.get-repos.outputs.repos_json }}")
+          IGNORE_LIST=$(echo "$REPOS_JSON" | jq -r --arg repo "${{ matrix.repo }}" '.[] | select(.name == $repo) | .ignore[]?')
 
           jq -r '.workspaces[]' import-packages/${{ matrix.repo }}/package.json | while read pkg; do
             for ignore in $IGNORE_LIST; do
@@ -104,6 +106,8 @@ jobs:
           npm pkg delete devDependencies --prefix docs/pkgs/${{ matrix.repo }}/
           npm pkg delete dependencies --prefix docs/pkgs/${{ matrix.repo }}/
           npm pkg delete peerDependencies --prefix docs/pkgs/${{ matrix.repo }}/
+        env:
+          REPOS_JSON: ${{ steps.get-repos-json.outputs.repos_json }}
 
       # Update the artifact for the docs directory so we can update it in each matrix job
       - name: Update docs/pkgs Artifact
