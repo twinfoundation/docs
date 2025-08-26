@@ -4,11 +4,11 @@ Base interface for Federated Catalogue Get Requests
 
 ## Extended by
 
+- [`ICatalogueEntryGetRequest`](ICatalogueEntryGetRequest.md)
+- [`IDataResourceListRequest`](IDataResourceListRequest.md)
+- [`IDataSpaceConnectorListRequest`](IDataSpaceConnectorListRequest.md)
 - [`IParticipantListRequest`](IParticipantListRequest.md)
 - [`IServiceOfferingListRequest`](IServiceOfferingListRequest.md)
-- [`IDataResourceListRequest`](IDataResourceListRequest.md)
-- [`ICatalogueEntryGetRequest`](ICatalogueEntryGetRequest.md)
-- [`IDataSpaceConnectorListRequest`](IDataSpaceConnectorListRequest.md)
 
 ## Properties
 

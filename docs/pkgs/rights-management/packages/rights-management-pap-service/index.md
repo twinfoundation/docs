@@ -1,6 +1,6 @@
 # TWIN Rights Management Policy Administration Service
 
-Policy administration point implementation implementation.
+Policy administration point implementation.
 
 ## Installation
 

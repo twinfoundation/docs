@@ -12,11 +12,11 @@ The schema for the entity.
 
 ***
 
-### loggingConnectorType?
+### loggingComponentType?
 
-> `optional` **loggingConnectorType**: `string`
+> `optional` **loggingComponentType**: `string`
 
-The type of logging connector to use.
+The type of logging component to use.
 
 #### Default
 

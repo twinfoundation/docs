@@ -8,11 +8,11 @@ A credential with subject.
 
 ## Extended by
 
-- [`IParticipantCredential`](IParticipantCredential.md)
 - [`IDataResourceCredential`](IDataResourceCredential.md)
-- [`IServiceOfferingCredential`](IServiceOfferingCredential.md)
 - [`IDataSpaceConnectorCredential`](IDataSpaceConnectorCredential.md)
 - [`IComplianceCredential`](IComplianceCredential.md)
+- [`IParticipantCredential`](IParticipantCredential.md)
+- [`IServiceOfferingCredential`](IServiceOfferingCredential.md)
 
 ## Properties
 

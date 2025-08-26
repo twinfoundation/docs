@@ -1,0 +1,33 @@
+{
+	"name": "@twin.org/data-space-connector-rest-client",
+	"version": "0.0.1-next.3",
+	"description": "Data space connector contract implementation which can connect to REST endpoints",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/twinfoundation/data-space-connector.git",
+		"directory": "packages/data-space-connector-rest-client"
+	},
+	"author": "martyn.janes@iota.org",
+	"license": "Apache-2.0",
+	"type": "module",
+	"engines": {
+		"node": ">=20.0.0"
+	},
+	"main": "./dist/cjs/index.cjs",
+	"module": "./dist/esm/index.mjs",
+	"types": "./dist/types/index.d.ts",
+	"exports": {
+		".": {
+			"types": "./dist/types/index.d.ts",
+			"require": "./dist/cjs/index.cjs",
+			"import": "./dist/esm/index.mjs"
+		}
+	},
+	"files": [
+		"dist/cjs",
+		"dist/esm",
+		"dist/types",
+		"locales",
+		"docs"
+	]
+}

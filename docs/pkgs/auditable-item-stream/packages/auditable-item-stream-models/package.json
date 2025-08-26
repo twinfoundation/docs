@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/auditable-item-stream-models",
-	"version": "0.0.2-next.1",
+	"version": "0.0.2-next.2",
 	"description": "Models which define the structure of the auditable item stream connectors and services",
 	"repository": {
 		"type": "git",

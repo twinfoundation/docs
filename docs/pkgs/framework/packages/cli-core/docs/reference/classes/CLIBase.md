@@ -1,4 +1,4 @@
-# Class: `abstract` CLIBase
+# Abstract Class: CLIBase
 
 The main entry point for the CLI.
 

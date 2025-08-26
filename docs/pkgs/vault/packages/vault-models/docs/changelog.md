@@ -1,5 +1,12 @@
 # @twin.org/vault-models - Changelog
 
+## [0.0.2-next.3](https://github.com/twinfoundation/vault/compare/vault-models-v0.0.2-next.2...vault-models-v0.0.2-next.3) (2025-08-19)
+
+
+### Features
+
+* update framework core ([00d0dc0](https://github.com/twinfoundation/vault/commit/00d0dc0d9a23fd6cb8a006723cdaeffbf6c93f91))
+
 ## [0.0.2-next.2](https://github.com/twinfoundation/vault/compare/vault-models-v0.0.2-next.1...vault-models-v0.0.2-next.2) (2025-08-15)
 
 

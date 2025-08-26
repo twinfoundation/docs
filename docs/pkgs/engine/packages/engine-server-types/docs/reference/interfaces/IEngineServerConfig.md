@@ -306,6 +306,36 @@ Rights management options which can be overridden by individual components by sp
 
 Rights management PAP options which can be overridden by individual components by specifying types other than default.
 
+##### rightsManagementPdpComponent?
+
+> `optional` **rightsManagementPdpComponent**: `IEngineCoreTypeConfig`\<`RightsManagementPdpComponentConfig`\>[]
+
+Rights management PDP options which can be overridden by individual components by specifying types other than default.
+
+##### rightsManagementPepComponent?
+
+> `optional` **rightsManagementPepComponent**: `IEngineCoreTypeConfig`\<`RightsManagementPepComponentConfig`\>[]
+
+Rights management PEP options which can be overridden by individual components by specifying types other than default.
+
+##### rightsManagementPipComponent?
+
+> `optional` **rightsManagementPipComponent**: `IEngineCoreTypeConfig`\<`RightsManagementPipComponentConfig`\>[]
+
+Rights management PIP options which can be overridden by individual components by specifying types other than default.
+
+##### rightsManagementPmpComponent?
+
+> `optional` **rightsManagementPmpComponent**: `IEngineCoreTypeConfig`\<`RightsManagementPmpComponentConfig`\>[]
+
+Rights management PMP options which can be overridden by individual components by specifying types other than default.
+
+##### rightsManagementPxpComponent?
+
+> `optional` **rightsManagementPxpComponent**: `IEngineCoreTypeConfig`\<`RightsManagementPxpComponentConfig`\>[]
+
+Rights management PXP options which can be overridden by individual components by specifying types other than default.
+
 ##### synchronisedStorageComponent?
 
 > `optional` **synchronisedStorageComponent**: `IEngineCoreTypeConfig`\<`SynchronisedStorageComponentConfig`\>[]
@@ -317,6 +347,12 @@ Synchronised storage options which can be overridden by individual components by
 > `optional` **federatedCatalogueComponent**: `IEngineCoreTypeConfig`\<`FederatedCatalogueComponentConfig`\>[]
 
 Federated catalogue options which can be overridden by individual components by specifying types other than default.
+
+##### dataSpaceConnectorComponent?
+
+> `optional` **dataSpaceConnectorComponent**: `IEngineCoreTypeConfig`\<`DataSpaceConnectorComponentConfig`\>[]
+
+Data space connector options which can be overridden by individual components by specifying types other than default.
 
 #### Type declaration
 

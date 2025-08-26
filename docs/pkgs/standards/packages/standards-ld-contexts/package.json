@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/standards-ld-contexts",
-	"version": "0.0.2-next.1",
+	"version": "0.0.2-next.2",
 	"description": "Local copies of standard LD contexts which can be used for offline development",
 	"repository": {
 		"type": "git",

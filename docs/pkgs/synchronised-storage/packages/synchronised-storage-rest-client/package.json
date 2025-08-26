@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/synchronised-storage-rest-client",
-	"version": "0.0.1-next.10",
+	"version": "0.0.1-next.12",
 	"description": "Synchronised storage contract implementation which can connect to REST endpoints",
 	"repository": {
 		"type": "git",

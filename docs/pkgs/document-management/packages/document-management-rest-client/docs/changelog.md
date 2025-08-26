@@ -1,5 +1,28 @@
 # @twin.org/document-management-rest-client - Changelog
 
+## [0.0.2-next.1](https://github.com/twinfoundation/document-management/compare/document-management-rest-client-v0.0.2-next.0...document-management-rest-client-v0.0.2-next.1) (2025-08-21)
+
+
+### Features
+
+* document get can perform extraction ([#6](https://github.com/twinfoundation/document-management/issues/6)) ([5ce6d37](https://github.com/twinfoundation/document-management/commit/5ce6d37432ad271ca5783f422846f4be98ec2215))
+* get document revision ([080eddc](https://github.com/twinfoundation/document-management/commit/080eddcc024c622dda6bb36f60f5fa80a86cf5bb))
+* store document as a vertex ([#2](https://github.com/twinfoundation/document-management/issues/2)) ([7febedc](https://github.com/twinfoundation/document-management/commit/7febedc3fb31de9c19565d6326341046834f2c74))
+* update dependencies ([f9d8641](https://github.com/twinfoundation/document-management/commit/f9d86417dba24027699225ec7473296e361dcb00))
+* update framework core ([f991a59](https://github.com/twinfoundation/document-management/commit/f991a59d25ec228bcdd7a5b6bd55578985b55a84))
+
+
+### Bug Fixes
+
+* adding missing route for the document management ([#4](https://github.com/twinfoundation/document-management/issues/4)) ([fd3292e](https://github.com/twinfoundation/document-management/commit/fd3292ede5014847ae2f2bcadb174b6552486154))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/document-management-models bumped from 0.0.2-next.0 to 0.0.2-next.1
+
 ## 0.0.1 (2025-07-09)
 
 

@@ -294,7 +294,7 @@ The name of the key to use for encryption.
 
 ##### encryptionType
 
-`VaultEncryptionType`
+`0`
 
 The type of encryption to use.
 
@@ -332,7 +332,7 @@ The name of the key to use for decryption.
 
 ##### encryptionType
 
-`VaultEncryptionType`
+`0`
 
 The type of encryption to use.
 

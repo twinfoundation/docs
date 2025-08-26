@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.0.1-next.12](https://github.com/twinfoundation/synchronised-storage/compare/synchronised-storage-models-v0.0.1-next.11...synchronised-storage-models-v0.0.1-next.12) (2025-08-21)
+
+
+### Features
+
+* update framework core ([99f09cc](https://github.com/twinfoundation/synchronised-storage/commit/99f09cc94cfb9fff6b3a345775eeae2ab3192ed2))
+
+## [0.0.1-next.11](https://github.com/twinfoundation/synchronised-storage/compare/synchronised-storage-models-v0.0.1-next.10...synchronised-storage-models-v0.0.1-next.11) (2025-08-15)
+
+
+### Miscellaneous Chores
+
+* **synchronised-storage-models:** Synchronize repo versions
+
 ## [0.0.1-next.10](https://github.com/twinfoundation/synchronised-storage/compare/synchronised-storage-models-v0.0.1-next.9...synchronised-storage-models-v0.0.1-next.10) (2025-08-15)
 
 

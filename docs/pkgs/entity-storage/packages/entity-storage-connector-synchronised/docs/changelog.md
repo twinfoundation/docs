@@ -1,5 +1,37 @@
 # Changelog
 
+## [0.0.2-next.7](https://github.com/twinfoundation/entity-storage/compare/entity-storage-connector-synchronised-v0.0.2-next.6...entity-storage-connector-synchronised-v0.0.2-next.7) (2025-08-20)
+
+
+### Miscellaneous Chores
+
+* **entity-storage-connector-synchronised:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/entity-storage-models bumped from 0.0.2-next.6 to 0.0.2-next.7
+  * devDependencies
+    * @twin.org/entity-storage-connector-memory bumped from 0.0.2-next.6 to 0.0.2-next.7
+
+## [0.0.2-next.6](https://github.com/twinfoundation/entity-storage/compare/entity-storage-connector-synchronised-v0.0.2-next.5...entity-storage-connector-synchronised-v0.0.2-next.6) (2025-08-19)
+
+
+### Features
+
+* update framework core ([b59a380](https://github.com/twinfoundation/entity-storage/commit/b59a380bb7fba2b43610f69074dcdee24a4737da))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/entity-storage-models bumped from 0.0.2-next.5 to 0.0.2-next.6
+  * devDependencies
+    * @twin.org/entity-storage-connector-memory bumped from 0.0.2-next.5 to 0.0.2-next.6
+
 ## [0.0.2-next.5](https://github.com/twinfoundation/entity-storage/compare/entity-storage-connector-synchronised-v0.0.2-next.4...entity-storage-connector-synchronised-v0.0.2-next.5) (2025-08-11)
 
 

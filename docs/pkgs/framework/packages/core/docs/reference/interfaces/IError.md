@@ -48,8 +48,8 @@ The stack trace for the error.
 
 ***
 
-### inner?
+### cause?
 
-> `optional` **inner**: `IError`
+> `optional` **cause**: `IError`
 
-The inner error if there was one.
+The cause of the error if there was one.

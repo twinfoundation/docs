@@ -8,7 +8,7 @@ Get the deployment mnemonic for a network.
 
 ### network
 
-[`NetworkTypes`](../type-aliases/NetworkTypes.md)
+`NetworkTypes`
 
 The target network.
 

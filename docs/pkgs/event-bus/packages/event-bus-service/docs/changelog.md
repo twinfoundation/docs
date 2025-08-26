@@ -1,5 +1,53 @@
 # @twin.org/event-bus-service - Changelog
 
+## [0.0.2-next.4](https://github.com/twinfoundation/event-bus/compare/event-bus-service-v0.0.2-next.3...event-bus-service-v0.0.2-next.4) (2025-08-25)
+
+
+### Features
+
+* correct event-bus route naming ([68216fc](https://github.com/twinfoundation/event-bus/commit/68216fc80ddb0f5ec8e18ab3e222e65791843bb2))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/event-bus-models bumped from 0.0.2-next.3 to 0.0.2-next.4
+  * devDependencies
+    * @twin.org/event-bus-connector-local bumped from 0.0.2-next.3 to 0.0.2-next.4
+
+## [0.0.2-next.3](https://github.com/twinfoundation/event-bus/compare/event-bus-service-v0.0.2-next.2...event-bus-service-v0.0.2-next.3) (2025-08-20)
+
+
+### Miscellaneous Chores
+
+* **event-bus-service:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/event-bus-models bumped from 0.0.2-next.2 to 0.0.2-next.3
+  * devDependencies
+    * @twin.org/event-bus-connector-local bumped from 0.0.2-next.2 to 0.0.2-next.3
+
+## [0.0.2-next.2](https://github.com/twinfoundation/event-bus/compare/event-bus-service-v0.0.2-next.1...event-bus-service-v0.0.2-next.2) (2025-08-19)
+
+
+### Features
+
+* update framework core ([e5e5f89](https://github.com/twinfoundation/event-bus/commit/e5e5f89bed3f615182de0f7ef76a1629d45d4152))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/event-bus-models bumped from 0.0.2-next.1 to 0.0.2-next.2
+  * devDependencies
+    * @twin.org/event-bus-connector-local bumped from 0.0.2-next.1 to 0.0.2-next.2
+
 ## [0.0.2-next.1](https://github.com/twinfoundation/event-bus/compare/event-bus-service-v0.0.2-next.0...event-bus-service-v0.0.2-next.1) (2025-07-24)
 
 

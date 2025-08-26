@@ -80,6 +80,48 @@ Nothing.
 
 ***
 
+### isStarted()
+
+> **isStarted**(): `boolean`
+
+Is the engine started.
+
+#### Returns
+
+`boolean`
+
+True if the engine is started.
+
+***
+
+### isPrimary()
+
+> **isPrimary**(): `boolean`
+
+Is this the primary engine instance.
+
+#### Returns
+
+`boolean`
+
+True if the engine is the primary instance.
+
+***
+
+### isClone()
+
+> **isClone**(): `boolean`
+
+Is this engine instance a clone.
+
+#### Returns
+
+`boolean`
+
+True if the engine instance is a clone.
+
+***
+
 ### logInfo()
 
 > **logInfo**(`message`): `void`

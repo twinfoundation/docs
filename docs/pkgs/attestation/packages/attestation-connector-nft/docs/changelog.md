@@ -1,5 +1,23 @@
 # @twin.org/attestation-connector-nft - Changelog
 
+## [0.0.2-next.1](https://github.com/twinfoundation/attestation/compare/attestation-connector-nft-v0.0.2-next.0...attestation-connector-nft-v0.0.2-next.1) (2025-08-20)
+
+
+### Features
+
+* release to production ([aa69a08](https://github.com/twinfoundation/attestation/commit/aa69a08fbd3897c8d72b0d32ec730f104ad31b33))
+* release to production ([89ca987](https://github.com/twinfoundation/attestation/commit/89ca987963d9090abcfc1b62bc997e2c521944ec))
+* update dependencies ([1d96d2e](https://github.com/twinfoundation/attestation/commit/1d96d2ee6e81a30396980f6f5e16e9658710d32d))
+* update framework core ([02326d4](https://github.com/twinfoundation/attestation/commit/02326d41238862c13587c19bb3d04c1cb3b606d8))
+* use shared store mechanism ([#5](https://github.com/twinfoundation/attestation/issues/5)) ([3768cf7](https://github.com/twinfoundation/attestation/commit/3768cf7214d30a5429b7b08190539b517d7fafa0))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/attestation-models bumped from 0.0.2-next.0 to 0.0.2-next.1
+
 ## 0.0.1 (2025-07-09)
 
 

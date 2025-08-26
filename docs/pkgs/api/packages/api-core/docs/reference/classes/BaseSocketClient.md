@@ -1,4 +1,4 @@
-# Class: `abstract` BaseSocketClient
+# Abstract Class: BaseSocketClient
 
 Event bus which publishes using web-sockets.
 

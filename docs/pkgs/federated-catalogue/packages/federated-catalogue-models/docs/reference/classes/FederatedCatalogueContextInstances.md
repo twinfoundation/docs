@@ -1,4 +1,4 @@
-# Class: `abstract` FederatedCatalogueContextInstances
+# Abstract Class: FederatedCatalogueContextInstances
 
 The LD context instances concerning the Federated Catalogue.
 

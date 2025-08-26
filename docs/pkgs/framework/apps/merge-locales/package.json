@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/merge-locales",
-	"version": "0.0.2-next.4",
+	"version": "0.0.2-next.5",
 	"description": "Tool to merge locale files from all dependencies",
 	"repository": {
 		"type": "git",

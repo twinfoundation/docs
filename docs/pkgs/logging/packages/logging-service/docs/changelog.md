@@ -1,5 +1,28 @@
 # @twin.org/logging-service - Changelog
 
+## [0.0.2-next.1](https://github.com/twinfoundation/logging/compare/logging-service-v0.0.2-next.0...logging-service-v0.0.2-next.1) (2025-08-19)
+
+
+### Features
+
+* add production release automation ([5dbcad8](https://github.com/twinfoundation/logging/commit/5dbcad8b105d749947c4fda19c814373cee2a172))
+* remove unused namespace ([7eb6575](https://github.com/twinfoundation/logging/commit/7eb65758fbdc9a42f68d149702ba03c000556325))
+* update dependencies ([976fc06](https://github.com/twinfoundation/logging/commit/976fc06976c4899769486b7cb2e827c407d7fc89))
+* update framework core ([aac823c](https://github.com/twinfoundation/logging/commit/aac823c2ead88843618b8a82b308d5a793411764))
+* use shared store mechanism ([#20](https://github.com/twinfoundation/logging/issues/20)) ([bbacd31](https://github.com/twinfoundation/logging/commit/bbacd31af991d82d84294ad432a40830692880ca))
+
+
+### Bug Fixes
+
+* query params force coercion ([71c5329](https://github.com/twinfoundation/logging/commit/71c53292d300acae0369bd7937c5ca3ab5430689))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/logging-models bumped from 0.0.2-next.0 to 0.0.2-next.1
+
 ## 0.0.1 (2025-07-03)
 
 

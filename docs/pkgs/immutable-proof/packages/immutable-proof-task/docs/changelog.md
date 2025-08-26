@@ -1,5 +1,14 @@
 # @twin.org/immutable-proof-task - Changelog
 
+## [0.0.2-next.1](https://github.com/twinfoundation/immutable-proof/compare/immutable-proof-task-v0.0.2-next.0...immutable-proof-task-v0.0.2-next.1) (2025-08-20)
+
+
+### Features
+
+* update dependencies ([7d6b321](https://github.com/twinfoundation/immutable-proof/commit/7d6b321928ca0434ee530816b1440f1687b94a6e))
+* update framework core ([e708d4d](https://github.com/twinfoundation/immutable-proof/commit/e708d4dd3febcfbcd64663d5be004eab1d26c0fb))
+* use shared store mechanism ([#3](https://github.com/twinfoundation/immutable-proof/issues/3)) ([7042a40](https://github.com/twinfoundation/immutable-proof/commit/7042a40f0ef8b01463f07aeb1efae4f417162fa1))
+
 ## 0.0.1 (2025-07-09)
 
 

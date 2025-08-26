@@ -21,3 +21,4 @@
 - [papRetrieve](functions/papRetrieve.md)
 - [papRemove](functions/papRemove.md)
 - [papQuery](functions/papQuery.md)
+- [pepIntercept](functions/pepIntercept.md)

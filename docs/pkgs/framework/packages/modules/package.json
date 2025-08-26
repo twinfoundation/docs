@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/modules",
-	"version": "0.0.2-next.4",
+	"version": "0.0.2-next.5",
 	"description": "Helper classes for loading and executing from modules",
 	"repository": {
 		"type": "git",

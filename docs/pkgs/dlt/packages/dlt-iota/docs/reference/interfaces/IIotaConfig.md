@@ -110,3 +110,17 @@ The default gas budget for all transactions (including sponsored and direct).
 ```ts
 50000000
 ```
+
+***
+
+### enableCostLogging?
+
+> `optional` **enableCostLogging**: `boolean`
+
+Enable cost logging for transactions.
+
+#### Default
+
+```ts
+false
+```

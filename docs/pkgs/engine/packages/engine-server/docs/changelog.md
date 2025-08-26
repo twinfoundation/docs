@@ -1,5 +1,95 @@
 # @twin.org/engine-server - Changelog
 
+## [0.0.2-next.10](https://github.com/twinfoundation/engine/compare/engine-server-v0.0.2-next.9...engine-server-v0.0.2-next.10) (2025-08-26)
+
+
+### Features
+
+* add data space connector ([a824d99](https://github.com/twinfoundation/engine/commit/a824d9931faeaa8115e01f8e7545b802d0e7ac70))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/engine-core bumped from 0.0.2-next.9 to 0.0.2-next.10
+    * @twin.org/engine-models bumped from 0.0.2-next.9 to 0.0.2-next.10
+    * @twin.org/engine-server-types bumped from 0.0.2-next.9 to 0.0.2-next.10
+  * devDependencies
+    * @twin.org/engine bumped from 0.0.2-next.9 to 0.0.2-next.10
+
+## [0.0.2-next.9](https://github.com/twinfoundation/engine/compare/engine-server-v0.0.2-next.8...engine-server-v0.0.2-next.9) (2025-08-25)
+
+
+### Features
+
+* add isPrimary and isClone methods ([a7c63e9](https://github.com/twinfoundation/engine/commit/a7c63e97f54c95b104cc81e66d3fa42c6607bdc1))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/engine-core bumped from 0.0.2-next.8 to 0.0.2-next.9
+    * @twin.org/engine-models bumped from 0.0.2-next.8 to 0.0.2-next.9
+    * @twin.org/engine-server-types bumped from 0.0.2-next.8 to 0.0.2-next.9
+  * devDependencies
+    * @twin.org/engine bumped from 0.0.2-next.8 to 0.0.2-next.9
+
+## [0.0.2-next.8](https://github.com/twinfoundation/engine/compare/engine-server-v0.0.2-next.7...engine-server-v0.0.2-next.8) (2025-08-22)
+
+
+### Features
+
+* add rights management modules ([e02cadc](https://github.com/twinfoundation/engine/commit/e02cadc840d242fe16a73ab41ba61376c7467e50))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/engine-core bumped from 0.0.2-next.7 to 0.0.2-next.8
+    * @twin.org/engine-models bumped from 0.0.2-next.7 to 0.0.2-next.8
+    * @twin.org/engine-server-types bumped from 0.0.2-next.7 to 0.0.2-next.8
+  * devDependencies
+    * @twin.org/engine bumped from 0.0.2-next.7 to 0.0.2-next.8
+
+## [0.0.2-next.7](https://github.com/twinfoundation/engine/compare/engine-server-v0.0.2-next.6...engine-server-v0.0.2-next.7) (2025-08-22)
+
+
+### Miscellaneous Chores
+
+* **engine-server:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/engine-core bumped from 0.0.2-next.6 to 0.0.2-next.7
+    * @twin.org/engine-models bumped from 0.0.2-next.6 to 0.0.2-next.7
+    * @twin.org/engine-server-types bumped from 0.0.2-next.6 to 0.0.2-next.7
+  * devDependencies
+    * @twin.org/engine bumped from 0.0.2-next.6 to 0.0.2-next.7
+
+## [0.0.2-next.6](https://github.com/twinfoundation/engine/compare/engine-server-v0.0.2-next.5...engine-server-v0.0.2-next.6) (2025-08-21)
+
+
+### Features
+
+* update framework core ([acc0f8d](https://github.com/twinfoundation/engine/commit/acc0f8d455a4b8ec47f1da643139fa0f07775fa6))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/engine-core bumped from 0.0.2-next.5 to 0.0.2-next.6
+    * @twin.org/engine-models bumped from 0.0.2-next.5 to 0.0.2-next.6
+    * @twin.org/engine-server-types bumped from 0.0.2-next.5 to 0.0.2-next.6
+  * devDependencies
+    * @twin.org/engine bumped from 0.0.2-next.5 to 0.0.2-next.6
+
 ## [0.0.2-next.5](https://github.com/twinfoundation/engine/compare/engine-server-v0.0.2-next.4...engine-server-v0.0.2-next.5) (2025-08-14)
 
 

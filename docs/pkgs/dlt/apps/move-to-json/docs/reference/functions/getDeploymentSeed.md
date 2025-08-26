@@ -8,7 +8,7 @@ Get the deployment seed for a network (if available).
 
 ### network
 
-[`NetworkTypes`](../type-aliases/NetworkTypes.md)
+`NetworkTypes`
 
 The target network.
 

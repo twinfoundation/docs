@@ -32,8 +32,8 @@ telemetry-metric-value
 
 ***
 
-### loggingConnectorType?
+### loggingComponentType?
 
-> `optional` **loggingConnectorType**: `string`
+> `optional` **loggingComponentType**: `string`
 
-The type of the logging connector to use, can be undefined for no logging.
+The type of the logging component to use, can be undefined for no logging.

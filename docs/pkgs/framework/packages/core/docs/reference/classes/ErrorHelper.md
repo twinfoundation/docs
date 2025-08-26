@@ -38,7 +38,7 @@ Whether to include error details, defaults to false.
 
 `string`[]
 
-The error formatted including any inner errors.
+The error formatted including any causes errors.
 
 ***
 
@@ -46,7 +46,7 @@ The error formatted including any inner errors.
 
 > `static` **localizeErrors**(`error`): [`IError`](../interfaces/IError.md)[]
 
-Localize the content of an error and any inner errors.
+Localize the content of an error and any causes.
 
 #### Parameters
 
@@ -68,7 +68,7 @@ The localized version of the errors flattened.
 
 > `static` **formatValidationErrors**(`error`): `undefined` \| `string`
 
-Localize the content of an error and any inner errors.
+Localize the content of an error and any causes.
 
 #### Parameters
 

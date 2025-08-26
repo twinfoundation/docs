@@ -1,5 +1,49 @@
 # @twin.org/identity-cli - Changelog
 
+## [0.0.2-next.2](https://github.com/twinfoundation/identity/compare/identity-cli-v0.0.2-next.1...identity-cli-v0.0.2-next.2) (2025-08-20)
+
+
+### Features
+
+* update framework core ([c824497](https://github.com/twinfoundation/identity/commit/c82449709af0215eb7af496cf687c93fb30b5ae0))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/identity-models bumped from 0.0.2-next.1 to 0.0.2-next.2
+    * @twin.org/identity-connector-iota bumped from 0.0.2-next.1 to 0.0.2-next.2
+
+## [0.0.2-next.1](https://github.com/twinfoundation/identity/compare/identity-cli-v0.0.2-next.0...identity-cli-v0.0.2-next.1) (2025-08-18)
+
+
+### Features
+
+* add mainnet support ([af56a38](https://github.com/twinfoundation/identity/commit/af56a382837896cd4e13d5814c0924c46658b99c))
+* identity key separator use slash ([1319d0d](https://github.com/twinfoundation/identity/commit/1319d0d07164a36b3ec279e6421b8835ffefc3d3))
+* iota rebased release ([5d14674](https://github.com/twinfoundation/identity/commit/5d146744ca9eed622ef7eb34a7fa935216f9e975))
+* support mainnet for alias extraction ([1114e0f](https://github.com/twinfoundation/identity/commit/1114e0f518070ef930d7d6ed73a616cce647206c))
+* use new generateKid method ([f0fe779](https://github.com/twinfoundation/identity/commit/f0fe779323b675575bb9f80aa74f1957dc57a094))
+* use shared store mechanism ([#27](https://github.com/twinfoundation/identity/issues/27)) ([ce41f3f](https://github.com/twinfoundation/identity/commit/ce41f3fc3da1b206ec06da7ea5b2c968f788804d))
+* verification method output JWK and hex on CLI ([49db9da](https://github.com/twinfoundation/identity/commit/49db9da2371eafdcd7176ce44303961b9b8b8380))
+
+
+### Bug Fixes
+
+* correctly display mainnet explorer urls ([45a9f3c](https://github.com/twinfoundation/identity/commit/45a9f3cc041cce7b40a86e98df306931a95f48ea))
+* explorer urls in CLI ([82a745d](https://github.com/twinfoundation/identity/commit/82a745d536e8fe42554e7ad92a7468a653fc0cfb))
+* Import path and bump version ([#21](https://github.com/twinfoundation/identity/issues/21)) ([ccea845](https://github.com/twinfoundation/identity/commit/ccea845bf32562267280bc1b3dde1c9af1a00360))
+* Install sdk-wasm ([#20](https://github.com/twinfoundation/identity/issues/20)) ([75ec14e](https://github.com/twinfoundation/identity/commit/75ec14e072f8c219863a1c028a3b0783802086e9))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/identity-models bumped from 0.0.2-next.0 to 0.0.2-next.1
+    * @twin.org/identity-connector-iota bumped from 0.0.2-next.0 to 0.0.2-next.1
+
 ## 0.0.1 (2025-07-08)
 
 

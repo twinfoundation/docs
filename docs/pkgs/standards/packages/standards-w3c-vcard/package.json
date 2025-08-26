@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/standards-w3c-vcard",
-	"version": "0.0.2-next.1",
+	"version": "0.0.2-next.2",
 	"description": "Models which define the structure of W3C VCard Standard",
 	"repository": {
 		"type": "git",
