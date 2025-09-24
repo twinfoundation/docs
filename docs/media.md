@@ -16,7 +16,7 @@ This Webinar is an in-depth discussion of the TWIN RA White Paper, covering the 
 
 ### Building with TWIN - 2025/09/24
 
-This Webinar recaps on the TWIN Architecture, the main use cases (including Digital Product Passports), explains in detail the Data Exchange architecture (with the [Federated catalogue](https://github.com/twinfoundation/federated-catalogue) and the [Data Space Connector](https://github.com/twinfoundation/data-space-connector) as key components) and discuss an educational case ("3-way document sharing"). Finally, deployment aspects are covered using Docker and AWS.
+This Webinar recaps the TWIN Architecture, the main use cases (including Digital Product Passports), explains in detail the Data Exchange architecture (with the [Federated catalogue](https://github.com/twinfoundation/federated-catalogue) and the [Data Space Connector](https://github.com/twinfoundation/data-space-connector) as key components) and discusses an educational case ("3-way document sharing"). Finally, deployment aspects are covered using Docker and AWS.
 
 🎥 [Watch TWIN Webinar - September 2025](https://youtu.be/i-KkG9NsHJg)
 
