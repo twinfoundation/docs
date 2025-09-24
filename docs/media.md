@@ -20,7 +20,7 @@ This Webinar recaps the TWIN Architecture, the main use cases (including Digital
 
 🎥 [Watch TWIN Webinar - September 2025](https://youtu.be/i-KkG9NsHJg)
 
-Additionally there is a screencast that explains the "3-way document sharing" educational case from a development perspective and shows a demo of two actors sharing trade document's metadata through the Data Space Connector.
+Additionally, a screencast explains the "3-way document sharing" educational case from a development perspective and shows a demo of two actors sharing trade document's metadata through the Data Space Connector.
 
 🎥 [Watch Screencast TWIN Webinar - September 2025](https://youtu.be/EWvEPuEX5Ng)
 
