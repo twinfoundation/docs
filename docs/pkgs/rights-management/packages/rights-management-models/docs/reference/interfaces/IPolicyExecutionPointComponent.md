@@ -13,15 +13,15 @@ registered actions based on the decision.
 
 ### executeActions()
 
-> **executeActions**\<`T`\>(`stage`, `assetType`, `action`, `data`, `userIdentity`, `nodeIdentity`, `policies`): `Promise`\<`void`\>
+> **executeActions**\<`D`\>(`stage`, `locator`, `policies?`, `decisions?`, `data?`): `Promise`\<`void`\>
 
 Execute actions based on the PDP's decisions.
 
 #### Type Parameters
 
-##### T
+##### D
 
-`T` = `unknown`
+`D` = `unknown`
 
 #### Parameters
 
@@ -31,41 +31,29 @@ Execute actions based on the PDP's decisions.
 
 The stage at which the PXP is executed in the PDP.
 
-##### assetType
+##### locator
 
-`string`
+[`IPolicyLocator`](IPolicyLocator.md)
 
-The type of asset being processed.
+The locator to find relevant policies.
 
-##### action
-
-`string`
-
-The action being performed on the asset.
-
-##### data
-
-The data used in the decision by the PDP.
-
-`undefined` | `T`
-
-##### userIdentity
-
-`string`
-
-The user identity to use in the decision making.
-
-##### nodeIdentity
-
-`string`
-
-The node identity to use in the decision making.
-
-##### policies
+##### policies?
 
 `IOdrlPolicy`[]
 
 The policies that apply to the data.
+
+##### decisions?
+
+[`IPolicyDecision`](IPolicyDecision.md)[]
+
+The decisions made by the PDP.
+
+##### data?
+
+`D`
+
+The data used in the decision by the PDP.
 
 #### Returns
 
@@ -77,15 +65,9 @@ Nothing.
 
 ### registerAction()
 
-> **registerAction**\<`T`\>(`actionId`, `stage`, `action`): `Promise`\<`void`\>
+> **registerAction**(`actionId`, `stage`, `action`): `Promise`\<`void`\>
 
 Register an action to be executed.
-
-#### Type Parameters
-
-##### T
-
-`T` = `unknown`
 
 #### Parameters
 
@@ -103,7 +85,7 @@ The stage at which the action should be executed.
 
 ##### action
 
-[`PolicyActionCallback`](../type-aliases/PolicyActionCallback.md)\<`T`\>
+[`IPolicyExecutionAction`](IPolicyExecutionAction.md)
 
 The action to execute.
 
@@ -117,7 +99,7 @@ Nothing.
 
 ### unregisterAction()
 
-> **unregisterAction**(`actionId`): `Promise`\<`void`\>
+> **unregisterAction**(`actionId`, `stage`): `Promise`\<`void`\>
 
 Unregister an action from the execution point.
 
@@ -128,6 +110,12 @@ Unregister an action from the execution point.
 `string`
 
 The id of the action to unregister.
+
+##### stage
+
+[`PolicyDecisionStage`](../type-aliases/PolicyDecisionStage.md)
+
+The stage at which the action was executed.
 
 #### Returns
 

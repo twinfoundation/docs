@@ -4,7 +4,7 @@
 
 EPCIS 2.0 event types.
 
-## Type declaration
+## Type Declaration
 
 ### ObjectEvent
 

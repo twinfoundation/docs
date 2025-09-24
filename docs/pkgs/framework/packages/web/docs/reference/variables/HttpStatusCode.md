@@ -4,7 +4,7 @@
 
 Standard HTTP status codes.
 
-## Type declaration
+## Type Declaration
 
 ### continue
 

@@ -4,7 +4,7 @@
 
 Authentication admin component types.
 
-## Type declaration
+## Type Declaration
 
 ### EntityStorage
 

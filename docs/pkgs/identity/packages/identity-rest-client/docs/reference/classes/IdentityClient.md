@@ -260,7 +260,7 @@ NotFoundError if the id can not be resolved.
 
 ### verifiableCredentialCreate()
 
-> **verifiableCredentialCreate**(`verificationMethodId`, `id`, `subject`, `revocationIndex?`): `Promise`\<\{ `verifiableCredential`: `IDidVerifiableCredential`; `jwt`: `string`; \}\>
+> **verifiableCredentialCreate**(`verificationMethodId`, `id`, `subject`, `options?`): `Promise`\<\{ `verifiableCredential`: `IDidVerifiableCredential`; `jwt`: `string`; \}\>
 
 Create a verifiable credential for a verification method.
 
@@ -284,11 +284,21 @@ The id of the credential.
 
 The credential subject to store in the verifiable credential.
 
-##### revocationIndex?
+##### options?
+
+Additional options for creating the verifiable credential.
+
+###### revocationIndex?
 
 `number`
 
 The bitmap revocation index of the credential, if undefined will not have revocation status.
+
+###### expirationDate?
+
+`Date`
+
+The date the verifiable credential is valid until.
 
 #### Returns
 

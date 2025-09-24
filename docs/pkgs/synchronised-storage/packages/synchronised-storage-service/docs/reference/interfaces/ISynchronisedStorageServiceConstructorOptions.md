@@ -70,20 +70,6 @@ verifiable-storage
 
 ***
 
-### identityConnectorType?
-
-> `optional` **identityConnectorType**: `string`
-
-The identity connector.
-
-#### Default
-
-```ts
-identity
-```
-
-***
-
 ### taskSchedulerComponentType?
 
 > `optional` **taskSchedulerComponentType**: `string`
@@ -94,6 +80,21 @@ The task scheduler component.
 
 ```ts
 task-scheduler
+```
+
+***
+
+### policyEnforcementPointComponentType?
+
+> `optional` **policyEnforcementPointComponentType**: `string`
+
+The rights management enforcement component to use for verifying untrusted node access.
+Only required on a trusted node to enforce access control.
+
+#### Default
+
+```ts
+policy-enforcement-point
 ```
 
 ***

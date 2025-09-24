@@ -1,12 +1,6 @@
-# Interface: ISyncBatchResponse\<T\>
+# Interface: ISyncBatchResponse
 
 Response for a local batch.
-
-## Type Parameters
-
-### T
-
-`T` *extends* [`ISynchronisedEntity`](ISynchronisedEntity.md)
 
 ## Properties
 
@@ -20,7 +14,7 @@ The key of the storage for the entities in the batch.
 
 ### entities
 
-> **entities**: `T`[]
+> **entities**: [`ISynchronisedEntity`](ISynchronisedEntity.md)[]
 
 The entities in the batch.
 

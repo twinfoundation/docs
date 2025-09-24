@@ -4,7 +4,7 @@
 
 The types of UNECE contexts.
 
-## Type declaration
+## Type Declaration
 
 ### ContextRoot
 

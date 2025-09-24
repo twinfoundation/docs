@@ -4,7 +4,7 @@
 
 The types of document management objects.
 
-## Type declaration
+## Type Declaration
 
 ### Document
 

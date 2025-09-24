@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/standards-schema-org",
-	"version": "0.0.2-next.2",
+	"version": "0.0.2-next.13",
 	"description": "Models which define the structure of schema.org Standard",
 	"repository": {
 		"type": "git",

@@ -1,5 +1,12 @@
 # @twin.org/attestation-models - Changelog
 
+## [0.0.2-next.2](https://github.com/twinfoundation/attestation/compare/attestation-models-v0.0.2-next.1...attestation-models-v0.0.2-next.2) (2025-08-29)
+
+
+### Features
+
+* eslint migration to flat config ([7c768ff](https://github.com/twinfoundation/attestation/commit/7c768ffae02456d60fd62ba8b4b488c307ceff32))
+
 ## [0.0.2-next.1](https://github.com/twinfoundation/attestation/compare/attestation-models-v0.0.2-next.0...attestation-models-v0.0.2-next.1) (2025-08-20)
 
 

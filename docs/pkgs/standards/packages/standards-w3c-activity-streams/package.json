@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/standards-w3c-activity-streams",
-	"version": "0.0.2-next.2",
+	"version": "0.0.2-next.13",
 	"description": "Models which define the structure of W3C Activity Streams Standard",
 	"repository": {
 		"type": "git",

@@ -4,7 +4,7 @@
 
 Logging connector types.
 
-## Type declaration
+## Type Declaration
 
 ### EntityStorage
 

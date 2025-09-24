@@ -4,7 +4,7 @@
 
 The types of GS1 data.
 
-## Type declaration
+## Type Declaration
 
 ### LocationMasterData
 

@@ -4,7 +4,7 @@
 
 The contexts of auditable item graph data.
 
-## Type declaration
+## Type Declaration
 
 ### ContextRoot
 

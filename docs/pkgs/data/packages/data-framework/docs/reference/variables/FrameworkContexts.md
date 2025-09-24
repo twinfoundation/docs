@@ -4,7 +4,7 @@
 
 The contexts of framework data.
 
-## Type declaration
+## Type Declaration
 
 ### ContextRoot
 

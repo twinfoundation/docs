@@ -6,7 +6,7 @@ A character string to identify and distinguish uniquely, one instance of a count
 https://vocabulary.uncefact.org/CountryId
 https://github.com/uncefact/vocabulary-outputs/blob/main/_data/countryid.json
 
-## Type declaration
+## Type Declaration
 
 ### AD
 

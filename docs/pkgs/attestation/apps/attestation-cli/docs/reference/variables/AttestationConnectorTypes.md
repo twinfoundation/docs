@@ -4,7 +4,7 @@
 
 The attestation connector types.
 
-## Type declaration
+## Type Declaration
 
 ### Iota
 

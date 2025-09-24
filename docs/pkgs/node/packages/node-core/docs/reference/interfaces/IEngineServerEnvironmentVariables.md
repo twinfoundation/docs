@@ -88,6 +88,14 @@ Additional MIME type processors to include, comma separated.
 
 ***
 
+### enableVerifiableCredentialRouteProcessors?
+
+> `optional` **enableVerifiableCredentialRouteProcessors**: `string`
+
+Enable to the route processor for verifiable credentials.
+
+***
+
 ### disableNodeIdentity?
 
 > `optional` **disableNodeIdentity**: `string`

@@ -4,7 +4,7 @@
 
 The types for ODRL Logical Constraints.
 
-## Type declaration
+## Type Declaration
 
 ### And
 

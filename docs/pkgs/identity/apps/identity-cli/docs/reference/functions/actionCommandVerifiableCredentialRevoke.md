@@ -28,6 +28,12 @@ The id of the document to revoke the index.
 
 The revocation index for the credential.
 
+#### addressIndex?
+
+`string`
+
+The address index to use for key derivation (if applicable).
+
 #### connector?
 
 `"iota"`

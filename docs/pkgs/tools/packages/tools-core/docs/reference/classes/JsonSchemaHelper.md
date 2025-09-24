@@ -212,19 +212,19 @@ The types to expand.
 
 ***
 
-### autoExpandToRegEx()
+### stringToRegEx()
 
-> `static` **autoExpandToRegEx**(`autoExpand`): `RegExp`
+> `static` **stringToRegEx**(`matchPattern`): `RegExp`
 
-Convert a string auto expand pattern to a regular expression.
+Convert a string pattern to a regular expression.
 
 #### Parameters
 
-##### autoExpand
+##### matchPattern
 
 `string`
 
-The auto expand pattern.
+The pattern to convert.
 
 #### Returns
 

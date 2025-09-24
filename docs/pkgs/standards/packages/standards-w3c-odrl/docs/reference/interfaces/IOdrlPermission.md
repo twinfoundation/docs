@@ -3,6 +3,7 @@
 Interface for Permission Rules.
 A Permission allows an action to be exercised on an Asset
 if all constraints are satisfied and if all duties are fulfilled.
+https://www.w3.org/TR/odrl-model/#permission
 
 ## Extends
 
@@ -37,7 +38,7 @@ Optional unique identifier for the rule.
 
 ### action?
 
-> `optional` **action**: [`ActionType`](../type-aliases/ActionType.md) \| [`IOdrlAction`](IOdrlAction.md) \| ActionType \| IOdrlAction[]
+> `optional` **action**: `string` \| [`IOdrlAction`](IOdrlAction.md) \| (`string` \| [`IOdrlAction`](IOdrlAction.md))[]
 
 The action associated with the rule.
 

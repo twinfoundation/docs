@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/attestation-connector-open-attestation",
-	"version": "0.0.2-next.1",
+	"version": "0.0.2-next.2",
 	"description": "Attestation connector implementation using OpenAttestation",
 	"repository": {
 		"type": "git",

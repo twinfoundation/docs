@@ -4,13 +4,19 @@
 
 Socket route processor types.
 
-## Type declaration
+## Type Declaration
 
 ### AuthHeader
 
 > `readonly` **AuthHeader**: `"auth-header"` = `"auth-header"`
 
 Auth header.
+
+### AuthVerifiableCredential
+
+> `readonly` **AuthVerifiableCredential**: `"auth-verifiable-credential"` = `"auth-verifiable-credential"`
+
+Auth verifiable credential.
 
 ### Logging
 

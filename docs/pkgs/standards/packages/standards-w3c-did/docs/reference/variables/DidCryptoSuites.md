@@ -4,7 +4,7 @@
 
 The types for DID Proof crypto suites.
 
-## Type declaration
+## Type Declaration
 
 ### EdDSAJcs2022
 

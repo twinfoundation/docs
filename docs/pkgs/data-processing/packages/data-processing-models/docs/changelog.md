@@ -1,5 +1,12 @@
 # @twin.org/data-processing-models - Changelog
 
+## [0.0.2-next.2](https://github.com/twinfoundation/data-processing/compare/data-processing-models-v0.0.2-next.1...data-processing-models-v0.0.2-next.2) (2025-08-29)
+
+
+### Features
+
+* eslint migration to flat config ([a8138b0](https://github.com/twinfoundation/data-processing/commit/a8138b020ed58baeff162a822d4df207a6aeadc4))
+
 ## [0.0.2-next.1](https://github.com/twinfoundation/data-processing/compare/data-processing-models-v0.0.2-next.0...data-processing-models-v0.0.2-next.1) (2025-08-20)
 
 

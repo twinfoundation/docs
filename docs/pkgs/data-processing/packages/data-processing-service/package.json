@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/data-processing-service",
-	"version": "0.0.2-next.1",
+	"version": "0.0.2-next.2",
 	"description": "Data extractor connector implementations",
 	"repository": {
 		"type": "git",

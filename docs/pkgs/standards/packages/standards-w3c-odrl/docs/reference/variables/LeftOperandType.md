@@ -4,7 +4,7 @@
 
 The types for ODRL Data Types.
 
-## Type declaration
+## Type Declaration
 
 ### AbsolutePosition
 

@@ -18,7 +18,6 @@
 - [IOdrlPartyCollection](interfaces/IOdrlPartyCollection.md)
 - [IOdrlPermission](interfaces/IOdrlPermission.md)
 - [IOdrlPolicy](interfaces/IOdrlPolicy.md)
-- [IOdrlPolicyMetadata](interfaces/IOdrlPolicyMetadata.md)
 - [IOdrlProhibition](interfaces/IOdrlProhibition.md)
 - [IOdrlRule](interfaces/IOdrlRule.md)
 - [IOdrlSet](interfaces/IOdrlSet.md)
@@ -37,7 +36,6 @@
 - [RightOperandType](type-aliases/RightOperandType.md)
 - [RuleType](type-aliases/RuleType.md)
 - [StatusType](type-aliases/StatusType.md)
-- [UriActionType](type-aliases/UriActionType.md)
 
 ## Variables
 
@@ -52,4 +50,3 @@
 - [RightOperandType](variables/RightOperandType.md)
 - [RuleType](variables/RuleType.md)
 - [StatusType](variables/StatusType.md)
-- [UriActionType](variables/UriActionType.md)

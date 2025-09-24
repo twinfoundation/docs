@@ -4,7 +4,7 @@
 
 Common mime types.
 
-## Type declaration
+## Type Declaration
 
 ### PlainText
 

@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/entity-storage-connector-synchronised",
-	"version": "0.0.2-next.5",
+	"version": "0.0.2-next.8",
 	"description": "Entity Storage connector implementation using synchronised storage",
 	"repository": {
 		"type": "git",

@@ -28,6 +28,14 @@ Package ID from actual deployment
 
 ***
 
+### lastDeployedPackageId?
+
+> `optional` **lastDeployedPackageId**: `string`
+
+Previous deployed package ID for upgrade chain tracking
+
+***
+
 ### upgradeCapabilityId?
 
 > `optional` **upgradeCapabilityId**: `string`

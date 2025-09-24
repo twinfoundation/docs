@@ -18,7 +18,7 @@ Create a new policy with auto-generated UID.
 
 ##### policy
 
-`Omit`\<`IOdrlPolicy`, `"uid"`\>
+`Omit`\<`IOdrlPolicy`, `"uid"`\> & `object`
 
 The policy to create (uid will be auto-generated).
 
@@ -52,11 +52,11 @@ Nothing.
 
 ***
 
-### retrieve()
+### get()
 
-> **retrieve**(`policyId`): `Promise`\<`IOdrlPolicy`\>
+> **get**(`policyId`): `Promise`\<`IOdrlPolicy`\>
 
-Retrieve a policy.
+Get a policy.
 
 #### Parameters
 
@@ -64,7 +64,7 @@ Retrieve a policy.
 
 `string`
 
-The id of the policy to retrieve.
+The id of the policy to get.
 
 #### Returns
 

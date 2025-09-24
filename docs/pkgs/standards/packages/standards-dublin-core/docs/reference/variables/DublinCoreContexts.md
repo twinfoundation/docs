@@ -4,7 +4,7 @@
 
 The contexts for Dublin Core.
 
-## Type declaration
+## Type Declaration
 
 ### ContextTerms
 

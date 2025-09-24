@@ -23,7 +23,8 @@
 		"packages/standards-vda",
 		"packages/standards-gaia-x",
 		"packages/standards-ld-contexts",
-		"packages/standards-w3c-activity-streams"
+		"packages/standards-w3c-activity-streams",
+		"packages/standards-ids-contract-negotiation"
 	],
 	"type": "module"
 }

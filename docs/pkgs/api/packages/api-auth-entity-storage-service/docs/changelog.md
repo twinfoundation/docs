@@ -1,5 +1,86 @@
 # @twin.org/api-auth-entity-storage-service - Changelog
 
+## [0.0.2-next.10](https://github.com/twinfoundation/api/compare/api-auth-entity-storage-service-v0.0.2-next.9...api-auth-entity-storage-service-v0.0.2-next.10) (2025-09-23)
+
+
+### Features
+
+* use new extractBearer method ([3e0cc54](https://github.com/twinfoundation/api/commit/3e0cc5462c06f59a6b744386eeff8326e5abbc95))
+* use new extractBearerToken method ([df654e9](https://github.com/twinfoundation/api/commit/df654e9caee5bd62f0be36f7be9902c8fab6ead6))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/api-auth-entity-storage-models bumped from 0.0.2-next.9 to 0.0.2-next.10
+    * @twin.org/api-core bumped from 0.0.2-next.9 to 0.0.2-next.10
+    * @twin.org/api-models bumped from 0.0.2-next.9 to 0.0.2-next.10
+
+## [0.0.2-next.9](https://github.com/twinfoundation/api/compare/api-auth-entity-storage-service-v0.0.2-next.8...api-auth-entity-storage-service-v0.0.2-next.9) (2025-08-29)
+
+
+### Features
+
+* eslint migration to flat config ([0dd5820](https://github.com/twinfoundation/api/commit/0dd5820e3af97350fd08b8d226f4a6c1a9246805))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/api-auth-entity-storage-models bumped from 0.0.2-next.8 to 0.0.2-next.9
+    * @twin.org/api-core bumped from 0.0.2-next.8 to 0.0.2-next.9
+    * @twin.org/api-models bumped from 0.0.2-next.8 to 0.0.2-next.9
+
+## [0.0.2-next.8](https://github.com/twinfoundation/api/compare/api-auth-entity-storage-service-v0.0.2-next.7...api-auth-entity-storage-service-v0.0.2-next.8) (2025-08-21)
+
+
+### Miscellaneous Chores
+
+* **api-auth-entity-storage-service:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/api-auth-entity-storage-models bumped from 0.0.2-next.7 to 0.0.2-next.8
+    * @twin.org/api-core bumped from 0.0.2-next.7 to 0.0.2-next.8
+    * @twin.org/api-models bumped from 0.0.2-next.7 to 0.0.2-next.8
+
+## [0.0.2-next.7](https://github.com/twinfoundation/api/compare/api-auth-entity-storage-service-v0.0.2-next.6...api-auth-entity-storage-service-v0.0.2-next.7) (2025-08-20)
+
+
+### Miscellaneous Chores
+
+* **api-auth-entity-storage-service:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/api-auth-entity-storage-models bumped from 0.0.2-next.6 to 0.0.2-next.7
+    * @twin.org/api-core bumped from 0.0.2-next.6 to 0.0.2-next.7
+    * @twin.org/api-models bumped from 0.0.2-next.6 to 0.0.2-next.7
+
+## [0.0.2-next.6](https://github.com/twinfoundation/api/compare/api-auth-entity-storage-service-v0.0.2-next.5...api-auth-entity-storage-service-v0.0.2-next.6) (2025-08-19)
+
+
+### Features
+
+* update framework core ([d8eebf2](https://github.com/twinfoundation/api/commit/d8eebf267fa2a0abaa84e58590496e9d20490cfa))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/api-auth-entity-storage-models bumped from 0.0.2-next.5 to 0.0.2-next.6
+    * @twin.org/api-core bumped from 0.0.2-next.5 to 0.0.2-next.6
+    * @twin.org/api-models bumped from 0.0.2-next.5 to 0.0.2-next.6
+
 ## [0.0.2-next.5](https://github.com/twinfoundation/api/compare/api-auth-entity-storage-service-v0.0.2-next.4...api-auth-entity-storage-service-v0.0.2-next.5) (2025-07-25)
 
 

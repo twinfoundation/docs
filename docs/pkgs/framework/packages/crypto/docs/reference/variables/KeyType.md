@@ -4,7 +4,7 @@
 
 The names of the key types.
 
-## Type declaration
+## Type Declaration
 
 ### Ed25519
 

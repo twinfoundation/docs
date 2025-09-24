@@ -4,7 +4,7 @@
 
 The types of UNECE data.
 
-## Type declaration
+## Type Declaration
 
 ### Document
 

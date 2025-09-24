@@ -1,5 +1,12 @@
 # @twin.org/document-management-models - Changelog
 
+## [0.0.2-next.2](https://github.com/twinfoundation/document-management/compare/document-management-models-v0.0.2-next.1...document-management-models-v0.0.2-next.2) (2025-08-29)
+
+
+### Features
+
+* eslint migration to flat config ([98635aa](https://github.com/twinfoundation/document-management/commit/98635aa24ebafba265e989e461fe98104f683191))
+
 ## [0.0.2-next.1](https://github.com/twinfoundation/document-management/compare/document-management-models-v0.0.2-next.0...document-management-models-v0.0.2-next.1) (2025-08-21)
 
 

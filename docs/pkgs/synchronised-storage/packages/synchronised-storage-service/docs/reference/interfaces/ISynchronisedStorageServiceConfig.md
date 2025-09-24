@@ -4,20 +4,6 @@ Configuration for the Synchronised Storage Service.
 
 ## Properties
 
-### synchronisedStorageMethodId?
-
-> `optional` **synchronisedStorageMethodId**: `string`
-
-The id of the identity method to use when signing/verifying requests and changesets.
-
-#### Default
-
-```ts
-synchronised-storage-assertion
-```
-
-***
-
 ### entityUpdateIntervalMinutes?
 
 > `optional` **entityUpdateIntervalMinutes**: `number`

@@ -6,7 +6,7 @@ EPCIS 2.0 disposition types.
 
 See EPCIS CVB for more details.
 
-## Type declaration
+## Type Declaration
 
 ### Active
 

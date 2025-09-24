@@ -4,7 +4,7 @@
 
 How deep to verify the signatures.
 
-## Type declaration
+## Type Declaration
 
 ### None
 

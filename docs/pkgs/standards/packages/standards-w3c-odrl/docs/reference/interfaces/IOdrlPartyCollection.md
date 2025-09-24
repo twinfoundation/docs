@@ -2,6 +2,7 @@
 
 Interface for ODRL Party Collections.
 A PartyCollection identifies a collection of entities and is a subclass of Party.
+https://www.w3.org/TR/odrl-model/#party
 
 ## Extends
 

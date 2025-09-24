@@ -4,7 +4,7 @@
 
 Validation modes for validating data types.
 
-## Type declaration
+## Type Declaration
 
 ### Validate
 

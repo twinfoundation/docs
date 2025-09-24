@@ -217,6 +217,15 @@
 						}
 					},
 					{
+						"name": "idExact",
+						"description": "Find only exact matches, default to false meaning partial matching.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "boolean"
+						}
+					},
+					{
 						"name": "resourceTypes",
 						"description": "Include vertices with specific resource types, comma separated.",
 						"in": "query",

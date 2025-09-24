@@ -4,7 +4,7 @@
 
 Rights management PIP component types.
 
-## Type declaration
+## Type Declaration
 
 ### Service
 

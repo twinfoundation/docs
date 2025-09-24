@@ -4,7 +4,7 @@
 
 The contexts for DIDs.
 
-## Type declaration
+## Type Declaration
 
 ### Context
 

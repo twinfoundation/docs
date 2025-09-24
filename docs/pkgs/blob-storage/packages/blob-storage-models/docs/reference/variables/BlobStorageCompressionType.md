@@ -4,7 +4,7 @@
 
 The types of compression for blob storage data.
 
-## Type declaration
+## Type Declaration
 
 ### Gzip
 

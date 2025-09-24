@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/ui-components-svelte",
-	"version": "0.0.2-next.0",
+	"version": "0.0.2-next.1",
 	"description": "UI components for svelte",
 	"repository": {
 		"type": "git",

@@ -14,4 +14,10 @@ Rights management PEP component config types.
 
 ### options?
 
-> `optional` **options**: `IPolicyEnforcementPointServiceOptions`
+> `optional` **options**: `IPolicyEnforcementPointServiceConstructorOptions` & `object`
+
+#### Type Declaration
+
+##### processorModulesConfig?
+
+> `optional` **processorModulesConfig**: `IEngineModuleConfig`[]

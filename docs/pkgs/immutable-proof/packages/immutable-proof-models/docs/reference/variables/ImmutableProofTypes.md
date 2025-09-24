@@ -4,7 +4,7 @@
 
 The types of immutable proof data.
 
-## Type declaration
+## Type Declaration
 
 ### ImmutableProof
 

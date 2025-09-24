@@ -4,7 +4,7 @@
 
 The types for ODRL Conflict Resolution Strategies.
 
-## Type declaration
+## Type Declaration
 
 ### Perm
 

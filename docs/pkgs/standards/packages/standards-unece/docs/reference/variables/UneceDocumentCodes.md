@@ -6,7 +6,7 @@ A character string denoting the type of a document. [Reference United Nations Co
 https://vocabulary.uncefact.org/DocumentCodeList
 https://github.com/uncefact/vocabulary-outputs/blob/main/_data/documentcodelist.json
 
-## Type declaration
+## Type Declaration
 
 ### CertificateOfAnalysis
 

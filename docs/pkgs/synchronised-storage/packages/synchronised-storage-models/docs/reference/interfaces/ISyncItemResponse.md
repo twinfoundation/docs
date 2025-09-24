@@ -1,12 +1,6 @@
-# Interface: ISyncItemResponse\<T\>
+# Interface: ISyncItemResponse
 
 Response for a sync item request.
-
-## Type Parameters
-
-### T
-
-`T` *extends* [`ISynchronisedEntity`](ISynchronisedEntity.md)
 
 ## Properties
 
@@ -28,6 +22,6 @@ The id of the entity in the sync item response.
 
 ### entity?
 
-> `optional` **entity**: `T`
+> `optional` **entity**: [`ISynchronisedEntity`](ISynchronisedEntity.md)
 
 The entity in the sync item response, undefined if not found.

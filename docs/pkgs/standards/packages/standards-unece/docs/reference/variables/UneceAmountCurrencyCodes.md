@@ -6,7 +6,7 @@ RDF Class for AmountType amount type to define currency codes.
 https://vocabulary.uncefact.org/AmountCurrency
 https://github.com/uncefact/vocabulary-outputs/blob/main/_data/amountcurrency.json
 
-## Type declaration
+## Type Declaration
 
 ### AED
 

@@ -4,20 +4,24 @@ Request for the decryption key for the synchronised storage.
 
 ## Properties
 
-### body
+### headers?
 
-> **body**: `object`
+> `optional` **headers**: `object`
 
-The body of the request.
+The headers which can be used to determine the response data type.
 
-#### nodeIdentity
+#### accept?
 
-> **nodeIdentity**: `string`
+> `optional` **accept**: `"application/ld+json"` \| `"application/json"`
 
-The identity of the node making the request.
+#### authorization?
 
-#### proof
+> `optional` **authorization**: `string`
 
-> **proof**: `IProof`
+***
 
-The proof of the request.
+### authentication
+
+> **authentication**: `IIdentityAuthenticationActionRequest`
+
+The action request used in the verifiable credential.

@@ -4,7 +4,7 @@
 
 The contexts of attestation data.
 
-## Type declaration
+## Type Declaration
 
 ### ContextRoot
 

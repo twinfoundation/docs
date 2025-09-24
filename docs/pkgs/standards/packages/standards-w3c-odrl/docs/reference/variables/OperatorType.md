@@ -4,7 +4,7 @@
 
 The types for ODRL Operators.
 
-## Type declaration
+## Type Declaration
 
 ### Eq
 

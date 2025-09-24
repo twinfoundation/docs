@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/crypto-cli",
-	"version": "0.0.2-next.4",
+	"version": "0.0.2-next.15",
 	"description": "A command line interface for interacting with the crypto tools",
 	"repository": {
 		"type": "git",

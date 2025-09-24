@@ -1,5 +1,19 @@
 # @twin.org/wallet-connector-entity-storage - Changelog
 
+## [0.0.2-next.4](https://github.com/twinfoundation/wallet/compare/wallet-connector-entity-storage-v0.0.2-next.3...wallet-connector-entity-storage-v0.0.2-next.4) (2025-08-29)
+
+
+### Features
+
+* eslint migration to flat config ([7068485](https://github.com/twinfoundation/wallet/commit/7068485f7c10121b76b6219798fdea4d3e91648a))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/wallet-models bumped from 0.0.2-next.3 to 0.0.2-next.4
+
 ## [0.0.2-next.3](https://github.com/twinfoundation/wallet/compare/wallet-connector-entity-storage-v0.0.2-next.2...wallet-connector-entity-storage-v0.0.2-next.3) (2025-08-20)
 
 

@@ -1,17 +1,5 @@
 # Type Alias: RightsManagementPapComponentConfig
 
-> **RightsManagementPapComponentConfig** = `object`
+> **RightsManagementPapComponentConfig** = \{ `type`: *typeof* [`Service`](../variables/RightsManagementPapComponentType.md#service); `options?`: `IPolicyAdministrationPointServiceConstructorOptions`; \} \| \{ `type`: *typeof* [`RestClient`](../variables/RightsManagementPapComponentType.md#restclient); `options`: `IBaseRestClientConfig`; \}
 
 Rights management PAP component config types.
-
-## Properties
-
-### type
-
-> **type**: *typeof* [`Service`](../variables/RightsManagementPapComponentType.md#service)
-
-***
-
-### options?
-
-> `optional` **options**: `IPolicyAdministrationPointServiceOptions`

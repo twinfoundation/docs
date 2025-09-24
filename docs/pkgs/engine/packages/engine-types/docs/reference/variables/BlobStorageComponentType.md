@@ -4,7 +4,7 @@
 
 Blob storage component types.
 
-## Type declaration
+## Type Declaration
 
 ### Service
 

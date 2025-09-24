@@ -6,7 +6,7 @@ A character string used to represent a reference.
 https://vocabulary.uncefact.org/ReferenceCodeList
 https://github.com/uncefact/vocabulary-outputs/blob/main/_data/referencecodelist.json
 
-## Type declaration
+## Type Declaration
 
 ### AAA
 

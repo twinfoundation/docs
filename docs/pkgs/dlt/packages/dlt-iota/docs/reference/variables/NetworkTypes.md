@@ -4,7 +4,7 @@
 
 Network types supported for deployment
 
-## Type declaration
+## Type Declaration
 
 ### Testnet
 

@@ -6,4 +6,5 @@
 
 ## Interfaces
 
-- [IPolicyEnforcementPointServiceOptions](interfaces/IPolicyEnforcementPointServiceOptions.md)
+- [IPolicyEnforcementPointServiceConfig](interfaces/IPolicyEnforcementPointServiceConfig.md)
+- [IPolicyEnforcementPointServiceConstructorOptions](interfaces/IPolicyEnforcementPointServiceConstructorOptions.md)

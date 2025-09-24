@@ -39,6 +39,9 @@ The tests require the following environment variables to be set:
 ```shell
 # Required for all tests
 export TEST_MNEMONIC="abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon about"
+export TEST_2_MNEMONIC="abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon about"
+export TEST_NODE_MNEMONIC="abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon about"
+export TEST_DEPLOYER_MNEMONIC="abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon about"
 export TEST_NODE_ENDPOINT="https://api.testnet.iota.cafe"
 export TEST_FAUCET_ENDPOINT="https://faucet.testnet.iota.cafe/gas"
 export TEST_NETWORK="testnet"
@@ -47,6 +50,54 @@ export TEST_NETWORK="testnet"
 export TEST_GAS_STATION_URL="http://localhost:9527"
 export TEST_GAS_STATION_AUTH_TOKEN="qEyCL6d9BKKFl/tfDGAKeGFkhUlf7FkqiGV7Xw4JUsI="
 ```
+
+#### Test Mnemonics
+
+The code will automatically generate random mnemonics if not provided, but for development consistency, it's recommended to set your own.
+
+**Setup Steps:**
+
+1. Create a `./tests/.env.dev` file:
+
+```shell
+# Test Network Configuration
+TEST_NETWORK=testnet
+TEST_NODE_ENDPOINT=https://api.testnet.iota.cafe
+TEST_FAUCET_ENDPOINT=https://faucet.testnet.iota.cafe/gas
+
+# Test Mnemonics - Replace with generated values
+TEST_MNEMONIC=your_generated_mnemonic_here
+TEST_2_MNEMONIC=your_generated_mnemonic_here
+TEST_NODE_MNEMONIC=your_generated_mnemonic_here
+TEST_DEPLOYER_MNEMONIC=your_generated_mnemonic_here
+
+# Gas Station Configuration
+TEST_GAS_STATION_URL=http://localhost:9527
+TEST_GAS_STATION_AUTH_TOKEN=qEyCL6d9BKKFl/tfDGAKeGFkhUlf7FkqiGV7Xw4JUsI=
+```
+
+2. Generate secure mnemonics for each variable:
+
+```shell
+# Generate TEST_MNEMONIC
+npx "@twin.org/crypto-cli" mnemonic --env ./tests/.env.dev --env-prefix TEST_
+
+# Generate TEST_2_MNEMONIC
+npx "@twin.org/crypto-cli" mnemonic --env ./tests/.env.dev --env-prefix TEST_2_
+
+# Generate TEST_NODE_MNEMONIC
+npx "@twin.org/crypto-cli" mnemonic --env ./tests/.env.dev --env-prefix TEST_NODE_
+
+# Generate TEST_DEPLOYER_MNEMONIC
+npx "@twin.org/crypto-cli" mnemonic --env ./tests/.env.dev --env-prefix TEST_DEPLOYER_
+```
+
+**Required Mnemonics:**
+
+- `TEST_MNEMONIC`: Primary test user wallet
+- `TEST_2_MNEMONIC`: Secondary test user wallet (for transfer tests)
+- `TEST_NODE_MNEMONIC`: Node operator wallet (for unauthorized access tests)
+- `TEST_DEPLOYER_MNEMONIC`: Contract deployment wallet
 
 ### Test Coverage
 

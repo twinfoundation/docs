@@ -1,12 +1,6 @@
-# Class: SynchronisedStorageService\<T\>
+# Class: SynchronisedStorageService
 
 Class for performing synchronised storage operations.
-
-## Type Parameters
-
-### T
-
-`T` *extends* `ISynchronisedEntity` = `ISynchronisedEntity`
 
 ## Implements
 
@@ -16,7 +10,7 @@ Class for performing synchronised storage operations.
 
 ### Constructor
 
-> **new SynchronisedStorageService**\<`T`\>(`options`): `SynchronisedStorageService`\<`T`\>
+> **new SynchronisedStorageService**(`options`): `SynchronisedStorageService`
 
 Create a new instance of SynchronisedStorageService.
 
@@ -30,7 +24,7 @@ The options for the service.
 
 #### Returns
 
-`SynchronisedStorageService`\<`T`\>
+`SynchronisedStorageService`
 
 ## Properties
 
@@ -48,7 +42,7 @@ Runtime name for the class.
 
 ### start()
 
-> **start**(`nodeIdentity`, `nodeLoggingConnectorType`, `componentState?`): `Promise`\<`void`\>
+> **start**(`nodeIdentity`, `nodeLoggingComponentType`): `Promise`\<`void`\>
 
 The component needs to be started when the node is initialized.
 
@@ -60,15 +54,11 @@ The component needs to be started when the node is initialized.
 
 The identity of the node starting the component.
 
-##### nodeLoggingConnectorType
+##### nodeLoggingComponentType
 
-The node logging connector type, defaults to "node-logging".
+The node logging component type.
 
 `undefined` | `string`
-
-##### componentState?
-
-A persistent state which can be modified by the method.
 
 #### Returns
 
@@ -84,7 +74,7 @@ Nothing.
 
 ### stop()
 
-> **stop**(`nodeIdentity`, `nodeLoggingConnectorType`, `componentState?`): `Promise`\<`void`\>
+> **stop**(`nodeIdentity`, `nodeLoggingComponentType`): `Promise`\<`void`\>
 
 The component needs to be stopped when the node is closed.
 
@@ -96,15 +86,11 @@ The component needs to be stopped when the node is closed.
 
 The identity of the node stopping the component.
 
-##### nodeLoggingConnectorType
+##### nodeLoggingComponentType
 
-The node logging connector type, defaults to "node-logging".
+The node logging component type.
 
 `undefined` | `string`
-
-##### componentState?
-
-A persistent state which can be modified by the method.
 
 #### Returns
 
@@ -120,24 +106,18 @@ Nothing.
 
 ### getDecryptionKey()
 
-> **getDecryptionKey**(`nodeIdentity`, `proof`): `Promise`\<`string`\>
+> **getDecryptionKey**(`actionRequest`): `Promise`\<`string`\>
 
 Get the decryption key for the synchronised storage.
 This is used to decrypt the data stored in the synchronised storage.
 
 #### Parameters
 
-##### nodeIdentity
+##### actionRequest
 
-`string`
+`IIdentityAuthenticationActionRequest`
 
-The identity of the node requesting the decryption key.
-
-##### proof
-
-`IProof`
-
-The proof of the request so we know the request is from the specified node.
+The action request used in the verifiable credential.
 
 #### Returns
 
@@ -153,7 +133,7 @@ The decryption key.
 
 ### syncChangeSet()
 
-> **syncChangeSet**(`syncChangeSet`): `Promise`\<`void`\>
+> **syncChangeSet**(`syncChangeSet`, `actionRequest`): `Promise`\<`void`\>
 
 Synchronise a set of changes from an untrusted node, assumes this is a trusted node.
 
@@ -161,9 +141,15 @@ Synchronise a set of changes from an untrusted node, assumes this is a trusted n
 
 ##### syncChangeSet
 
-`ISyncChangeSet`\<`T`\>
+`ISyncChangeSet`
 
 The change set to synchronise.
+
+##### actionRequest
+
+`IIdentityAuthenticationActionRequest`
+
+The action request used in the verifiable credential.
 
 #### Returns
 

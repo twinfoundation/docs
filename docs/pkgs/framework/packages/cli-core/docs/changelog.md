@@ -1,5 +1,214 @@
 # @twin.org/cli-core - Changelog
 
+## [0.0.2-next.15](https://github.com/twinfoundation/framework/compare/cli-core-v0.0.2-next.14...cli-core-v0.0.2-next.15) (2025-09-22)
+
+
+### Miscellaneous Chores
+
+* **cli-core:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/core bumped from 0.0.2-next.14 to 0.0.2-next.15
+    * @twin.org/crypto bumped from 0.0.2-next.14 to 0.0.2-next.15
+    * @twin.org/nameof bumped from 0.0.2-next.14 to 0.0.2-next.15
+  * devDependencies
+    * @twin.org/nameof-transformer bumped from 0.0.2-next.14 to 0.0.2-next.15
+    * @twin.org/nameof-vitest-plugin bumped from 0.0.2-next.14 to 0.0.2-next.15
+
+## [0.0.2-next.14](https://github.com/twinfoundation/framework/compare/cli-core-v0.0.2-next.13...cli-core-v0.0.2-next.14) (2025-09-22)
+
+
+### Miscellaneous Chores
+
+* **cli-core:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/core bumped from 0.0.2-next.13 to 0.0.2-next.14
+    * @twin.org/crypto bumped from 0.0.2-next.13 to 0.0.2-next.14
+    * @twin.org/nameof bumped from 0.0.2-next.13 to 0.0.2-next.14
+  * devDependencies
+    * @twin.org/nameof-transformer bumped from 0.0.2-next.13 to 0.0.2-next.14
+    * @twin.org/nameof-vitest-plugin bumped from 0.0.2-next.13 to 0.0.2-next.14
+
+## [0.0.2-next.13](https://github.com/twinfoundation/framework/compare/cli-core-v0.0.2-next.12...cli-core-v0.0.2-next.13) (2025-09-22)
+
+
+### Miscellaneous Chores
+
+* **cli-core:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/core bumped from 0.0.2-next.12 to 0.0.2-next.13
+    * @twin.org/crypto bumped from 0.0.2-next.12 to 0.0.2-next.13
+    * @twin.org/nameof bumped from 0.0.2-next.12 to 0.0.2-next.13
+  * devDependencies
+    * @twin.org/nameof-transformer bumped from 0.0.2-next.12 to 0.0.2-next.13
+    * @twin.org/nameof-vitest-plugin bumped from 0.0.2-next.12 to 0.0.2-next.13
+
+## [0.0.2-next.12](https://github.com/twinfoundation/framework/compare/cli-core-v0.0.2-next.11...cli-core-v0.0.2-next.12) (2025-09-15)
+
+
+### Miscellaneous Chores
+
+* **cli-core:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/core bumped from 0.0.2-next.11 to 0.0.2-next.12
+    * @twin.org/crypto bumped from 0.0.2-next.11 to 0.0.2-next.12
+    * @twin.org/nameof bumped from 0.0.2-next.11 to 0.0.2-next.12
+  * devDependencies
+    * @twin.org/nameof-transformer bumped from 0.0.2-next.11 to 0.0.2-next.12
+    * @twin.org/nameof-vitest-plugin bumped from 0.0.2-next.11 to 0.0.2-next.12
+
+## [0.0.2-next.11](https://github.com/twinfoundation/framework/compare/cli-core-v0.0.2-next.10...cli-core-v0.0.2-next.11) (2025-09-15)
+
+
+### Bug Fixes
+
+* cli display output for JSON to allow infinite depth ([2a06f52](https://github.com/twinfoundation/framework/commit/2a06f52c92dbc51a4969d651486a0c3548529929))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/core bumped from 0.0.2-next.10 to 0.0.2-next.11
+    * @twin.org/crypto bumped from 0.0.2-next.10 to 0.0.2-next.11
+    * @twin.org/nameof bumped from 0.0.2-next.10 to 0.0.2-next.11
+  * devDependencies
+    * @twin.org/nameof-transformer bumped from 0.0.2-next.10 to 0.0.2-next.11
+    * @twin.org/nameof-vitest-plugin bumped from 0.0.2-next.10 to 0.0.2-next.11
+
+## [0.0.2-next.10](https://github.com/twinfoundation/framework/compare/cli-core-v0.0.2-next.9...cli-core-v0.0.2-next.10) (2025-09-11)
+
+
+### Features
+
+* add CLIParam.arrayOneOf ([18f0815](https://github.com/twinfoundation/framework/commit/18f08157e5305cddf65d09b36a51a91a0873e396))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/core bumped from 0.0.2-next.9 to 0.0.2-next.10
+    * @twin.org/crypto bumped from 0.0.2-next.9 to 0.0.2-next.10
+    * @twin.org/nameof bumped from 0.0.2-next.9 to 0.0.2-next.10
+  * devDependencies
+    * @twin.org/nameof-transformer bumped from 0.0.2-next.9 to 0.0.2-next.10
+    * @twin.org/nameof-vitest-plugin bumped from 0.0.2-next.9 to 0.0.2-next.10
+
+## [0.0.2-next.9](https://github.com/twinfoundation/framework/compare/cli-core-v0.0.2-next.8...cli-core-v0.0.2-next.9) (2025-09-08)
+
+
+### Miscellaneous Chores
+
+* **cli-core:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/core bumped from 0.0.2-next.8 to 0.0.2-next.9
+    * @twin.org/crypto bumped from 0.0.2-next.8 to 0.0.2-next.9
+    * @twin.org/nameof bumped from 0.0.2-next.8 to 0.0.2-next.9
+  * devDependencies
+    * @twin.org/nameof-transformer bumped from 0.0.2-next.8 to 0.0.2-next.9
+    * @twin.org/nameof-vitest-plugin bumped from 0.0.2-next.8 to 0.0.2-next.9
+
+## [0.0.2-next.8](https://github.com/twinfoundation/framework/compare/cli-core-v0.0.2-next.7...cli-core-v0.0.2-next.8) (2025-09-05)
+
+
+### Miscellaneous Chores
+
+* **cli-core:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/core bumped from 0.0.2-next.7 to 0.0.2-next.8
+    * @twin.org/crypto bumped from 0.0.2-next.7 to 0.0.2-next.8
+    * @twin.org/nameof bumped from 0.0.2-next.7 to 0.0.2-next.8
+  * devDependencies
+    * @twin.org/nameof-transformer bumped from 0.0.2-next.7 to 0.0.2-next.8
+    * @twin.org/nameof-vitest-plugin bumped from 0.0.2-next.7 to 0.0.2-next.8
+
+## [0.0.2-next.7](https://github.com/twinfoundation/framework/compare/cli-core-v0.0.2-next.6...cli-core-v0.0.2-next.7) (2025-08-29)
+
+
+### Features
+
+* eslint migration to flat config ([74427d7](https://github.com/twinfoundation/framework/commit/74427d78d342167f7850e49ab87269326355befe))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/core bumped from 0.0.2-next.6 to 0.0.2-next.7
+    * @twin.org/crypto bumped from 0.0.2-next.6 to 0.0.2-next.7
+    * @twin.org/nameof bumped from 0.0.2-next.6 to 0.0.2-next.7
+  * devDependencies
+    * @twin.org/nameof-transformer bumped from 0.0.2-next.6 to 0.0.2-next.7
+    * @twin.org/nameof-vitest-plugin bumped from 0.0.2-next.6 to 0.0.2-next.7
+
+## [0.0.2-next.6](https://github.com/twinfoundation/framework/compare/cli-core-v0.0.2-next.5...cli-core-v0.0.2-next.6) (2025-08-27)
+
+
+### Miscellaneous Chores
+
+* **cli-core:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/core bumped from 0.0.2-next.5 to 0.0.2-next.6
+    * @twin.org/crypto bumped from 0.0.2-next.5 to 0.0.2-next.6
+    * @twin.org/nameof bumped from 0.0.2-next.5 to 0.0.2-next.6
+  * devDependencies
+    * @twin.org/nameof-transformer bumped from 0.0.2-next.5 to 0.0.2-next.6
+    * @twin.org/nameof-vitest-plugin bumped from 0.0.2-next.5 to 0.0.2-next.6
+
+## [0.0.2-next.5](https://github.com/twinfoundation/framework/compare/cli-core-v0.0.2-next.4...cli-core-v0.0.2-next.5) (2025-08-19)
+
+
+### Features
+
+* use cause instead of inner for errors ([1f4acc4](https://github.com/twinfoundation/framework/commit/1f4acc4d7a6b71a134d9547da9bf40de1e1e49da))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/core bumped from 0.0.2-next.4 to 0.0.2-next.5
+    * @twin.org/crypto bumped from 0.0.2-next.4 to 0.0.2-next.5
+    * @twin.org/nameof bumped from 0.0.2-next.4 to 0.0.2-next.5
+  * devDependencies
+    * @twin.org/nameof-transformer bumped from 0.0.2-next.4 to 0.0.2-next.5
+    * @twin.org/nameof-vitest-plugin bumped from 0.0.2-next.4 to 0.0.2-next.5
+
 ## [0.0.2-next.4](https://github.com/twinfoundation/framework/compare/cli-core-v0.0.2-next.3...cli-core-v0.0.2-next.4) (2025-08-15)
 
 

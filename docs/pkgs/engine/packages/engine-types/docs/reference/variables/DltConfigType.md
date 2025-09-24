@@ -4,7 +4,7 @@
 
 DLT config types.
 
-## Type declaration
+## Type Declaration
 
 ### Iota
 

@@ -4,7 +4,7 @@
 
 The topics for immutable proof event bus notifications.
 
-## Type declaration
+## Type Declaration
 
 ### ProofCreated
 
