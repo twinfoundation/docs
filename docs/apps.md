@@ -1,6 +1,6 @@
 # Overview
 
-This is the overview of the applications.
+TWIN consists of a range of applications to help you get started building and deploying solutions.
 
 ## TWIN Node
 

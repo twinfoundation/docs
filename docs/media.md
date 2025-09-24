@@ -20,7 +20,7 @@ This Webinar recaps the TWIN Architecture, the main use cases (including Digital
 
 🎥 [Watch TWIN Webinar - September 2025](https://youtu.be/i-KkG9NsHJg)
 
-Additionally, a screencast explains the "3-way document sharing" educational case from a development perspective and shows a demo of two actors sharing trade document's metadata through the Data Space Connector.
+A screencast explaining the "3-way document sharing" educational case from a development perspective. Also includes a demo of two actors sharing trade document's metadata through the Data Space Connector.
 
 🎥 [Watch Screencast TWIN Webinar - September 2025](https://youtu.be/EWvEPuEX5Ng)
 
@@ -28,4 +28,4 @@ Additionally, a screencast explains the "3-way document sharing" educational cas
 
 ### Next Webinar
 
-Mid January 2026. Potential topics: DPP Educational Case, TWIN Identity, Data Verifiability with IOTA and TWIN, Tokenization and Trade Finance use cases with TWIN, Rights Management and ODRL in depth, ...
+Mid January 2026. Potential topics: DPP Educational Case, TWIN Identity, Data Verifiability with IOTA and TWIN, Tokenization and Trade Finance use cases with TWIN, Rights Management and ODRL in depth.

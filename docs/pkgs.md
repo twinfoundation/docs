@@ -1,6 +1,6 @@
 # Overview
 
-This is the overview of the packages.
+The code components that make up TWIN.
 
 ## TWIN Node
 

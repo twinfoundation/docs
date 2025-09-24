@@ -125,8 +125,12 @@ module.exports = async function packageIndexPlugin() {
 	return {
 		name: "appsAndPackages",
 		async loadContent() {
-			buildOverview("apps", "apps.md", "This is the overview of the applications.");
-			buildOverview("packages", "pkgs.md", "This is the overview of the packages.");
+			buildOverview(
+				"apps",
+				"apps.md",
+				"TWIN consists of a range of applications to help you get started building and deploying solutions."
+			);
+			buildOverview("packages", "pkgs.md", "The code components that make up TWIN.");
 		}
 	};
 };
