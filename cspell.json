@@ -1,7 +1,7 @@
 {
 	"language": "en-GB",
 	"ignorePaths": ["**/node_modules/**", "docs/pkgs/**/*", "docs/pkgs.md"],
-	"words": ["TWIN", "nameof", "Stiftung", "IDSA", "ODRL", "IPFS", "CEFACT"],
+	"words": ["TWIN", "nameof", "Stiftung", "IDSA", "ODRL", "IPFS", "CEFACT", "screencast"],
 	"ignoreRegExpList": [
 		"/from\\s+(['\"]).*\\1/",
 		"/eslint-disable.*/",
