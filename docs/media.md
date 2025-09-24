@@ -10,7 +10,7 @@ The slides used during TWIN Webinars are available under this license: [![Licens
 
 This Webinar is an in-depth discussion of the TWIN RA White Paper, covering the core concepts, architecture, and implementation strategies of the Trade Worldwide Information Network.
 
-🎥 [Watch TWIN Webinar - March 2025](https://youtu.be/2eFvuq0upqY?si=QS4SI356Mq5eO-sy)
+🎥 [Watch TWIN Webinar - March 2025](https://youtu.be/2eFvuq0upqY)
 
 📘 [Download Slides - March 2025 (Updated July 2025)](/pdf/TWIN_Slides_Webinar_Q1_2025_Final_with_updates_July_2025.pdf)
 
