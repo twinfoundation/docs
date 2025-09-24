@@ -4,7 +4,7 @@
 
 Logging component types.
 
-## Type declaration
+## Type Declaration
 
 ### Service
 

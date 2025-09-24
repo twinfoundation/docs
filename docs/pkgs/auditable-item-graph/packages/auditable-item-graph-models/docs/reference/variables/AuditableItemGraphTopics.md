@@ -4,7 +4,7 @@
 
 The topics for auditable item graph event bus notifications.
 
-## Type declaration
+## Type Declaration
 
 ### VertexCreated
 

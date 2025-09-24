@@ -135,3 +135,37 @@ The entropy.
 #### Throws
 
 Error if the number of words is not a multiple of 3.
+
+***
+
+### validateMnemonic()
+
+> `static` **validateMnemonic**(`mnemonic`, `wordCount`, `words`): `boolean`
+
+Validate the mnemonic.
+
+#### Parameters
+
+##### mnemonic
+
+`string`
+
+The mnemonic to validate.
+
+##### wordCount
+
+`number` = `24`
+
+The expected number of words in the mnemonic, defaults to 24.
+
+##### words
+
+`string`[] = `wordlist`
+
+The wordlist to use, defaults to the English wordlist.
+
+#### Returns
+
+`boolean`
+
+True if the mnemonic is valid.

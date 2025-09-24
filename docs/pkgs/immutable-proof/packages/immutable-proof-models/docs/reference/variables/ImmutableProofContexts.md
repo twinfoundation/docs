@@ -4,7 +4,7 @@
 
 The contexts of immutable proof data.
 
-## Type declaration
+## Type Declaration
 
 ### ContextRoot
 

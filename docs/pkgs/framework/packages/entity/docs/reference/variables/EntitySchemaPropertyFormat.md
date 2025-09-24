@@ -4,7 +4,7 @@
 
 Definition of the entity property format.
 
-## Type declaration
+## Type Declaration
 
 ### Uuid
 

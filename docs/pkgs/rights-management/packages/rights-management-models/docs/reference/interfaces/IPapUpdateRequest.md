@@ -22,4 +22,4 @@ The ID of the policy to update.
 
 > **body**: `IOdrlPolicy`
 
-The body of the request - the policy to update (must include uid).
+The body of the request.

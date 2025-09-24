@@ -290,7 +290,7 @@ NotFoundError if the id can not be resolved.
 
 ### createVerifiableCredential()
 
-> **createVerifiableCredential**(`controller`, `verificationMethodId`, `id`, `subject`, `revocationIndex?`): `Promise`\<\{ `verifiableCredential`: `IDidVerifiableCredential`; `jwt`: `string`; \}\>
+> **createVerifiableCredential**(`controller`, `verificationMethodId`, `id`, `subject`, `options?`): `Promise`\<\{ `verifiableCredential`: `IDidVerifiableCredentialV1`; `jwt`: `string`; \}\>
 
 Create a verifiable credential for a verification method.
 
@@ -320,15 +320,25 @@ The id of the credential.
 
 The credential subject to store in the verifiable credential.
 
-##### revocationIndex?
+##### options?
+
+Additional options for creating the verifiable credential.
+
+###### revocationIndex?
 
 `number`
 
 The bitmap revocation index of the credential, if undefined will not have revocation status.
 
+###### expirationDate?
+
+`Date`
+
+The date the verifiable credential is valid until.
+
 #### Returns
 
-`Promise`\<\{ `verifiableCredential`: `IDidVerifiableCredential`; `jwt`: `string`; \}\>
+`Promise`\<\{ `verifiableCredential`: `IDidVerifiableCredentialV1`; `jwt`: `string`; \}\>
 
 The created verifiable credential and its token.
 
@@ -344,7 +354,7 @@ NotFoundError if the id can not be resolved.
 
 ### checkVerifiableCredential()
 
-> **checkVerifiableCredential**(`credentialJwt`): `Promise`\<\{ `revoked`: `boolean`; `verifiableCredential?`: `IDidVerifiableCredential`; \}\>
+> **checkVerifiableCredential**(`credentialJwt`): `Promise`\<\{ `revoked`: `boolean`; `verifiableCredential?`: `IDidVerifiableCredentialV1`; \}\>
 
 Check a verifiable credential is valid.
 
@@ -358,7 +368,7 @@ The credential to verify.
 
 #### Returns
 
-`Promise`\<\{ `revoked`: `boolean`; `verifiableCredential?`: `IDidVerifiableCredential`; \}\>
+`Promise`\<\{ `revoked`: `boolean`; `verifiableCredential?`: `IDidVerifiableCredentialV1`; \}\>
 
 The credential stored in the jwt and the revocation status.
 
@@ -446,7 +456,7 @@ Nothing.
 
 ### createVerifiablePresentation()
 
-> **createVerifiablePresentation**(`controller`, `verificationMethodId`, `presentationId`, `contexts`, `types`, `verifiableCredentials`, `expiresInMinutes?`): `Promise`\<\{ `verifiablePresentation`: `IDidVerifiablePresentation`; `jwt`: `string`; \}\>
+> **createVerifiablePresentation**(`controller`, `verificationMethodId`, `presentationId`, `contexts`, `types`, `verifiableCredentials`, `expiresInMinutes?`): `Promise`\<\{ `verifiablePresentation`: `IDidVerifiablePresentationV1`; `jwt`: `string`; \}\>
 
 Create a verifiable presentation from the supplied verifiable credentials.
 
@@ -484,7 +494,7 @@ The types for the data stored in the verifiable credential.
 
 ##### verifiableCredentials
 
-(`string` \| `IDidVerifiableCredential`)[]
+(`string` \| `IDidVerifiableCredentialV1`)[]
 
 The credentials to use for creating the presentation in jwt format.
 
@@ -496,7 +506,7 @@ The time in minutes for the presentation to expire.
 
 #### Returns
 
-`Promise`\<\{ `verifiablePresentation`: `IDidVerifiablePresentation`; `jwt`: `string`; \}\>
+`Promise`\<\{ `verifiablePresentation`: `IDidVerifiablePresentationV1`; `jwt`: `string`; \}\>
 
 The created verifiable presentation and its token.
 
@@ -512,7 +522,7 @@ NotFoundError if the id can not be resolved.
 
 ### checkVerifiablePresentation()
 
-> **checkVerifiablePresentation**(`presentationJwt`): `Promise`\<\{ `revoked`: `boolean`; `verifiablePresentation?`: `IDidVerifiablePresentation`; `issuers?`: `IDidDocument`[]; \}\>
+> **checkVerifiablePresentation**(`presentationJwt`): `Promise`\<\{ `revoked`: `boolean`; `verifiablePresentation?`: `IDidVerifiablePresentationV1`; `issuers?`: `IDidDocument`[]; \}\>
 
 Check a verifiable presentation is valid.
 
@@ -526,7 +536,7 @@ The presentation to verify.
 
 #### Returns
 
-`Promise`\<\{ `revoked`: `boolean`; `verifiablePresentation?`: `IDidVerifiablePresentation`; `issuers?`: `IDidDocument`[]; \}\>
+`Promise`\<\{ `revoked`: `boolean`; `verifiablePresentation?`: `IDidVerifiablePresentationV1`; `issuers?`: `IDidDocument`[]; \}\>
 
 The presentation stored in the jwt and the revocation status.
 

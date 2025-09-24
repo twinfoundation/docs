@@ -1,5 +1,19 @@
 # @twin.org/logging-connector-entity-storage - Changelog
 
+## [0.0.2-next.2](https://github.com/twinfoundation/logging/compare/logging-connector-entity-storage-v0.0.2-next.1...logging-connector-entity-storage-v0.0.2-next.2) (2025-08-29)
+
+
+### Features
+
+* eslint migration to flat config ([1f9fdde](https://github.com/twinfoundation/logging/commit/1f9fddedfdcce9942afed431d9460a0f22092744))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/logging-models bumped from 0.0.2-next.1 to 0.0.2-next.2
+
 ## [0.0.2-next.1](https://github.com/twinfoundation/logging/compare/logging-connector-entity-storage-v0.0.2-next.0...logging-connector-entity-storage-v0.0.2-next.1) (2025-08-19)
 
 

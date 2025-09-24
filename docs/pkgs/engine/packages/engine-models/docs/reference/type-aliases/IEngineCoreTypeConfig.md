@@ -4,7 +4,7 @@
 
 Configuration for the engine core type.
 
-## Type declaration
+## Type Declaration
 
 ### overrideInstanceType?
 

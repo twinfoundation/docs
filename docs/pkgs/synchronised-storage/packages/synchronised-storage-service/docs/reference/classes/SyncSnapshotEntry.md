@@ -1,22 +1,16 @@
-# Class: SyncSnapshotEntry\<T\>
+# Class: SyncSnapshotEntry
 
 Class representing an entry for the sync snapshot.
-
-## Type Parameters
-
-### T
-
-`T` *extends* `ISynchronisedEntity` = `ISynchronisedEntity`
 
 ## Constructors
 
 ### Constructor
 
-> **new SyncSnapshotEntry**\<`T`\>(): `SyncSnapshotEntry`\<`T`\>
+> **new SyncSnapshotEntry**(): `SyncSnapshotEntry`
 
 #### Returns
 
-`SyncSnapshotEntry`\<`T`\>
+`SyncSnapshotEntry`
 
 ## Properties
 
@@ -94,6 +88,6 @@ The ids of the storage for the change sets in the snapshot, if this is not a loc
 
 ### changes?
 
-> `optional` **changes**: `ISyncChange`\<`T`\>[]
+> `optional` **changes**: `ISyncChange`[]
 
 The changes that were made in this snapshot, if this is a local snapshot.

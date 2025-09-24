@@ -4,7 +4,7 @@
 
 Event bus connector types.
 
-## Type declaration
+## Type Declaration
 
 ### Local
 

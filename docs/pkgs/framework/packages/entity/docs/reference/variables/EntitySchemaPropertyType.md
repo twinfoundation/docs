@@ -4,7 +4,7 @@
 
 Definition of the entity property types.
 
-## Type declaration
+## Type Declaration
 
 ### String
 

@@ -4,7 +4,7 @@
 
 VDA URI Packages License Plates identifiers.
 
-## Type declaration
+## Type Declaration
 
 ### RfidProductTagging
 

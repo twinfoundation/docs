@@ -4,7 +4,7 @@
 
 The types of blob storage data.
 
-## Type declaration
+## Type Declaration
 
 ### Entry
 

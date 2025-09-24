@@ -4,7 +4,7 @@
 
 Verifiable storage connector types.
 
-## Type declaration
+## Type Declaration
 
 ### EntityStorage
 

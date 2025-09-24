@@ -4,7 +4,7 @@
 
 The NFT connector types.
 
-## Type declaration
+## Type Declaration
 
 ### Iota
 

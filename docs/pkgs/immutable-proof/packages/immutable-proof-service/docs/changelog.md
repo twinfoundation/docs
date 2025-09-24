@@ -1,5 +1,20 @@
 # @twin.org/immutable-proof-service - Changelog
 
+## [0.0.2-next.2](https://github.com/twinfoundation/immutable-proof/compare/immutable-proof-service-v0.0.2-next.1...immutable-proof-service-v0.0.2-next.2) (2025-08-29)
+
+
+### Features
+
+* eslint migration to flat config ([c8536f2](https://github.com/twinfoundation/immutable-proof/commit/c8536f219c7709c6c08b9266e537831f9054dda9))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/immutable-proof-models bumped from 0.0.2-next.1 to 0.0.2-next.2
+    * @twin.org/immutable-proof-task bumped from 0.0.2-next.1 to 0.0.2-next.2
+
 ## [0.0.2-next.1](https://github.com/twinfoundation/immutable-proof/compare/immutable-proof-service-v0.0.2-next.0...immutable-proof-service-v0.0.2-next.1) (2025-08-20)
 
 

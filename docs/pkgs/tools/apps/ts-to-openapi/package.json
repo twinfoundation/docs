@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/ts-to-openapi",
-	"version": "0.0.2-next.3",
+	"version": "0.0.2-next.9",
 	"description": "Tool to convert TypeScript REST route definitions to OpenAPI Specifications",
 	"repository": {
 		"type": "git",

@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/identity-connector-iota",
-	"version": "0.0.2-next.2",
+	"version": "0.0.2-next.7",
 	"description": "Identity connector implementation using IOTA",
 	"repository": {
 		"type": "git",

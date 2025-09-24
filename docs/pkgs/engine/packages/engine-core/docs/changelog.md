@@ -1,5 +1,145 @@
 # @twin.org/engine-core - Changelog
 
+## [0.0.2-next.15](https://github.com/twinfoundation/engine/compare/engine-core-v0.0.2-next.14...engine-core-v0.0.2-next.15) (2025-09-24)
+
+
+### Miscellaneous Chores
+
+* **engine-core:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/engine-models bumped from 0.0.2-next.14 to 0.0.2-next.15
+
+## [0.0.2-next.14](https://github.com/twinfoundation/engine/compare/engine-core-v0.0.2-next.13...engine-core-v0.0.2-next.14) (2025-09-19)
+
+
+### Miscellaneous Chores
+
+* **engine-core:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/engine-models bumped from 0.0.2-next.13 to 0.0.2-next.14
+
+## [0.0.2-next.13](https://github.com/twinfoundation/engine/compare/engine-core-v0.0.2-next.12...engine-core-v0.0.2-next.13) (2025-09-08)
+
+
+### Miscellaneous Chores
+
+* **engine-core:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/engine-models bumped from 0.0.2-next.12 to 0.0.2-next.13
+
+## [0.0.2-next.12](https://github.com/twinfoundation/engine/compare/engine-core-v0.0.2-next.11...engine-core-v0.0.2-next.12) (2025-09-05)
+
+
+### Features
+
+* add rights management negotiation ([84ef46b](https://github.com/twinfoundation/engine/commit/84ef46bff110611a19512793425c8c873ee2a590))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/engine-models bumped from 0.0.2-next.11 to 0.0.2-next.12
+
+## [0.0.2-next.11](https://github.com/twinfoundation/engine/compare/engine-core-v0.0.2-next.10...engine-core-v0.0.2-next.11) (2025-08-29)
+
+
+### Features
+
+* eslint migration to flat config ([6b978da](https://github.com/twinfoundation/engine/commit/6b978daf777a615d7758b63c3df57d5a376f6dfb))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/engine-models bumped from 0.0.2-next.10 to 0.0.2-next.11
+
+## [0.0.2-next.10](https://github.com/twinfoundation/engine/compare/engine-core-v0.0.2-next.9...engine-core-v0.0.2-next.10) (2025-08-26)
+
+
+### Miscellaneous Chores
+
+* **engine-core:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/engine-models bumped from 0.0.2-next.9 to 0.0.2-next.10
+
+## [0.0.2-next.9](https://github.com/twinfoundation/engine/compare/engine-core-v0.0.2-next.8...engine-core-v0.0.2-next.9) (2025-08-25)
+
+
+### Features
+
+* add isPrimary and isClone methods ([a7c63e9](https://github.com/twinfoundation/engine/commit/a7c63e97f54c95b104cc81e66d3fa42c6607bdc1))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/engine-models bumped from 0.0.2-next.8 to 0.0.2-next.9
+
+## [0.0.2-next.8](https://github.com/twinfoundation/engine/compare/engine-core-v0.0.2-next.7...engine-core-v0.0.2-next.8) (2025-08-22)
+
+
+### Miscellaneous Chores
+
+* **engine-core:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/engine-models bumped from 0.0.2-next.7 to 0.0.2-next.8
+
+## [0.0.2-next.7](https://github.com/twinfoundation/engine/compare/engine-core-v0.0.2-next.6...engine-core-v0.0.2-next.7) (2025-08-22)
+
+
+### Features
+
+* remove unused component states ([d56d648](https://github.com/twinfoundation/engine/commit/d56d6486119ea8b8501a33f9e3a3101a08b826ed))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/engine-models bumped from 0.0.2-next.6 to 0.0.2-next.7
+
+## [0.0.2-next.6](https://github.com/twinfoundation/engine/compare/engine-core-v0.0.2-next.5...engine-core-v0.0.2-next.6) (2025-08-21)
+
+
+### Features
+
+* update framework core ([acc0f8d](https://github.com/twinfoundation/engine/commit/acc0f8d455a4b8ec47f1da643139fa0f07775fa6))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/engine-models bumped from 0.0.2-next.5 to 0.0.2-next.6
+
 ## [0.0.2-next.5](https://github.com/twinfoundation/engine/compare/engine-core-v0.0.2-next.4...engine-core-v0.0.2-next.5) (2025-08-14)
 
 

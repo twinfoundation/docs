@@ -7,7 +7,7 @@
 
 ## Interfaces
 
-- [IPolicyAdministrationPointServiceOptions](interfaces/IPolicyAdministrationPointServiceOptions.md)
+- [IPolicyAdministrationPointServiceConstructorOptions](interfaces/IPolicyAdministrationPointServiceConstructorOptions.md)
 
 ## Functions
 

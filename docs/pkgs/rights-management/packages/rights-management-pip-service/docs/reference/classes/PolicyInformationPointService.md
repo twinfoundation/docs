@@ -18,7 +18,7 @@ Create a new instance of PolicyInformationPointService (PIP).
 
 ##### options?
 
-[`IPolicyInformationPointServiceOptions`](../interfaces/IPolicyInformationPointServiceOptions.md)
+[`IPolicyInformationPointServiceConstructorOptions`](../interfaces/IPolicyInformationPointServiceConstructorOptions.md)
 
 The options for the component.
 
@@ -42,54 +42,106 @@ The class name of the Policy Information Point Service.
 
 ### retrieve()
 
-> **retrieve**\<`T`\>(`assetType`, `action`, `data`, `userIdentity`, `nodeIdentity`): `Promise`\<`IJsonLdNodeObject`[]\>
+> **retrieve**\<`D`\>(`locator`, `accessMode`, `policies?`, `data?`): `Promise`\<`IPolicyInformation`\>
 
 Retrieve additional information which is relevant in the PDP decision making.
 
 #### Type Parameters
 
-##### T
+##### D
 
-`T` = `unknown`
+`D` = `unknown`
 
 #### Parameters
 
-##### assetType
+##### locator
 
-`string`
+`IPolicyLocator`
 
-The type of asset being processed.
+The locator to find relevant policies.
 
-##### action
+##### accessMode
 
-`string`
+`PolicyInformationAccessMode`
 
-The action being performed on the asset.
+The access mode to use for the retrieval.
 
-##### data
+##### policies?
+
+`IOdrlPolicy`[]
+
+The policies that apply to the data.
+
+##### data?
+
+`D`
 
 The data to get any additional information for.
 
-`undefined` | `T`
-
-##### userIdentity
-
-`string`
-
-The user identity to get additional information for.
-
-##### nodeIdentity
-
-`string`
-
-The node identity to get additional information for.
-
 #### Returns
 
-`Promise`\<`IJsonLdNodeObject`[]\>
+`Promise`\<`IPolicyInformation`\>
 
 Returns additional information based on the data and identities.
 
 #### Implementation of
 
 `IPolicyInformationPointComponent.retrieve`
+
+***
+
+### registerSource()
+
+> **registerSource**(`sourceId`, `source`): `Promise`\<`void`\>
+
+Register a source to use for retrieval.
+
+#### Parameters
+
+##### sourceId
+
+`string`
+
+The id of the source to register.
+
+##### source
+
+`IPolicyInformationSource`
+
+The source to register.
+
+#### Returns
+
+`Promise`\<`void`\>
+
+Nothing.
+
+#### Implementation of
+
+`IPolicyInformationPointComponent.registerSource`
+
+***
+
+### unregisterSource()
+
+> **unregisterSource**(`sourceId`): `Promise`\<`void`\>
+
+Unregister a source from the retrieval.
+
+#### Parameters
+
+##### sourceId
+
+`string`
+
+The id of the source to unregister.
+
+#### Returns
+
+`Promise`\<`void`\>
+
+Nothing.
+
+#### Implementation of
+
+`IPolicyInformationPointComponent.unregisterSource`

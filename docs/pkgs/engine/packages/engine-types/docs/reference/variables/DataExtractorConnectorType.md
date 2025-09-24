@@ -4,7 +4,7 @@
 
 Data extractor connector types.
 
-## Type declaration
+## Type Declaration
 
 ### JsonPath
 

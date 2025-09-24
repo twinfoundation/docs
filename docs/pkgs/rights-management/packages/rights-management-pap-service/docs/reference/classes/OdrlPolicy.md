@@ -64,9 +64,17 @@ The target asset for the rule.
 
 ### action?
 
-> `optional` **action**: `ActionType` \| `IOdrlAction` \| ActionType \| IOdrlAction[]
+> `optional` **action**: `string` \| `IOdrlAction` \| (`string` \| `IOdrlAction`)[]
 
 The action associated with the rule.
+
+***
+
+### inheritFrom?
+
+> `optional` **inheritFrom**: `string` \| `string`[]
+
+The parent policy(ies) this policy inherits from.
 
 ***
 

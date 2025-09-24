@@ -4,7 +4,7 @@
 
 Compression types.
 
-## Type declaration
+## Type Declaration
 
 ### Gzip
 

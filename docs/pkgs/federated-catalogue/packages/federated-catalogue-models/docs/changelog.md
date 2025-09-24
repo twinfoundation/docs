@@ -1,5 +1,12 @@
 # @twin.org/federated-catalogue-models - Changelog
 
+## [0.0.2-next.3](https://github.com/twinfoundation/federated-catalogue/compare/federated-catalogue-models-v0.0.2-next.2...federated-catalogue-models-v0.0.2-next.3) (2025-08-29)
+
+
+### Features
+
+* eslint migration to flat config ([b5990d9](https://github.com/twinfoundation/federated-catalogue/commit/b5990d9ebdf403ac999da456052bee72787745de))
+
 ## [0.0.2-next.2](https://github.com/twinfoundation/federated-catalogue/compare/federated-catalogue-models-v0.0.2-next.1...federated-catalogue-models-v0.0.2-next.2) (2025-08-21)
 
 

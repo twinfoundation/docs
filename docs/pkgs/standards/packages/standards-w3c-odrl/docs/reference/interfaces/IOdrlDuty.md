@@ -3,6 +3,7 @@
 Interface for Duty Rules.
 A Duty is the obligation to exercise an action, with all refinements satisfied.
 A Duty is fulfilled if all constraints are satisfied and if its action has been exercised.
+https://www.w3.org/TR/odrl-model/#duty
 
 ## Extends
 
@@ -73,7 +74,7 @@ Optional unique identifier for the rule.
 
 ### action?
 
-> `optional` **action**: [`ActionType`](../type-aliases/ActionType.md) \| [`IOdrlAction`](IOdrlAction.md) \| ActionType \| IOdrlAction[]
+> `optional` **action**: `string` \| [`IOdrlAction`](IOdrlAction.md) \| (`string` \| [`IOdrlAction`](IOdrlAction.md))[]
 
 The action associated with the rule.
 

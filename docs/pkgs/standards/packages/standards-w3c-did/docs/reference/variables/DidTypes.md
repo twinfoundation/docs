@@ -4,7 +4,7 @@
 
 The types for DIDs.
 
-## Type declaration
+## Type Declaration
 
 ### VerifiableCredential
 

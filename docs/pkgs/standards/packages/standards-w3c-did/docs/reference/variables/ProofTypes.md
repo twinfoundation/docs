@@ -4,7 +4,7 @@
 
 The types for proofs.
 
-## Type declaration
+## Type Declaration
 
 ### DataIntegrityProof
 

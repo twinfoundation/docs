@@ -6,7 +6,7 @@ A character string used to represent a transport mode.
 https://vocabulary.uncefact.org/TransportModeCodeList
 https://github.com/uncefact/vocabulary-outputs/blob/main/_data/transportmodecodelist.json
 
-## Type declaration
+## Type Declaration
 
 ### TransportModeNotSpecified
 

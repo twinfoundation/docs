@@ -4,7 +4,7 @@
 
 Data space connector component types.
 
-## Type declaration
+## Type Declaration
 
 ### Service
 

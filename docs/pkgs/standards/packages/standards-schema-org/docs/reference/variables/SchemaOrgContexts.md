@@ -4,7 +4,7 @@
 
 The contexts of schema.org data.
 
-## Type declaration
+## Type Declaration
 
 ### ContextRoot
 

@@ -14,4 +14,10 @@ Rights management PXP component config types.
 
 ### options?
 
-> `optional` **options**: `IPolicyExecutionPointServiceOptions`
+> `optional` **options**: `IPolicyExecutionPointServiceConstructorOptions` & `object`
+
+#### Type Declaration
+
+##### actionModulesConfig?
+
+> `optional` **actionModulesConfig**: `IEngineModuleConfig`[]

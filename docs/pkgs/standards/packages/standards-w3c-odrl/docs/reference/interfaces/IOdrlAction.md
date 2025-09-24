@@ -1,6 +1,7 @@
 # Interface: IOdrlAction
 
 Interface for ODRL Actions.
+https://www.w3.org/TR/odrl-model/#action
 
 ## Extends
 
@@ -48,7 +49,7 @@ Refinements applied to the action.
 
 ### includedIn?
 
-> `optional` **includedIn**: [`ActionType`](../type-aliases/ActionType.md)
+> `optional` **includedIn**: `string`
 
 Reference to the action this action is included in.
 
@@ -56,6 +57,6 @@ Reference to the action this action is included in.
 
 ### implies?
 
-> `optional` **implies**: [`ActionType`](../type-aliases/ActionType.md)[]
+> `optional` **implies**: `string`[]
 
 References to actions this action implies.

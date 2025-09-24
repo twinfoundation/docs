@@ -1,5 +1,77 @@
 # Changelog
 
+## [0.0.1-next.15](https://github.com/twinfoundation/synchronised-storage/compare/synchronised-storage-service-v0.0.1-next.14...synchronised-storage-service-v0.0.1-next.15) (2025-09-23)
+
+
+### Features
+
+* add rights management integration ([56fff6b](https://github.com/twinfoundation/synchronised-storage/commit/56fff6b4074f7ffaa40920e0c1e9fc98ca669111))
+* update to in built vc auth mechanism ([411a371](https://github.com/twinfoundation/synchronised-storage/commit/411a3716830195ebf54755a1633b05d5c3f96754))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/synchronised-storage-models bumped from 0.0.1-next.14 to 0.0.1-next.15
+
+## [0.0.1-next.14](https://github.com/twinfoundation/synchronised-storage/compare/synchronised-storage-service-v0.0.1-next.13...synchronised-storage-service-v0.0.1-next.14) (2025-09-22)
+
+
+### Features
+
+* add rights management integration ([d003d33](https://github.com/twinfoundation/synchronised-storage/commit/d003d33d2d2b4a4aa1379071eed71a707ebcb4de))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/synchronised-storage-models bumped from 0.0.1-next.13 to 0.0.1-next.14
+
+## [0.0.1-next.13](https://github.com/twinfoundation/synchronised-storage/compare/synchronised-storage-service-v0.0.1-next.12...synchronised-storage-service-v0.0.1-next.13) (2025-08-29)
+
+
+### Features
+
+* eslint migration to flat config ([f601c14](https://github.com/twinfoundation/synchronised-storage/commit/f601c14f6adef3290554dc7df6e6b3528aa0dc2b))
+* removed unused properties ([7d4e916](https://github.com/twinfoundation/synchronised-storage/commit/7d4e9169e923142cd767c8830f2c009675484df8))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/synchronised-storage-models bumped from 0.0.1-next.12 to 0.0.1-next.13
+
+## [0.0.1-next.12](https://github.com/twinfoundation/synchronised-storage/compare/synchronised-storage-service-v0.0.1-next.11...synchronised-storage-service-v0.0.1-next.12) (2025-08-21)
+
+
+### Features
+
+* update framework core ([99f09cc](https://github.com/twinfoundation/synchronised-storage/commit/99f09cc94cfb9fff6b3a345775eeae2ab3192ed2))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/synchronised-storage-models bumped from 0.0.1-next.11 to 0.0.1-next.12
+
+## [0.0.1-next.11](https://github.com/twinfoundation/synchronised-storage/compare/synchronised-storage-service-v0.0.1-next.10...synchronised-storage-service-v0.0.1-next.11) (2025-08-15)
+
+
+### Features
+
+* switch to chacha20poly1305 for encryption ([ecc7137](https://github.com/twinfoundation/synchronised-storage/commit/ecc713775bc958c15453729aa1d6dacafd789906))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/synchronised-storage-models bumped from 0.0.1-next.10 to 0.0.1-next.11
+
 ## [0.0.1-next.10](https://github.com/twinfoundation/synchronised-storage/compare/synchronised-storage-service-v0.0.1-next.9...synchronised-storage-service-v0.0.1-next.10) (2025-08-15)
 
 

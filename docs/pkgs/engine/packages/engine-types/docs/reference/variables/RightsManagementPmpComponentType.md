@@ -4,7 +4,7 @@
 
 Rights management PMP component types.
 
-## Type declaration
+## Type Declaration
 
 ### Service
 

@@ -8,6 +8,18 @@ A REST request with no input parameters.
 
 ## Properties
 
+### authentication?
+
+> `optional` **authentication**: `unknown`
+
+Used to authenticate and will be passed to the configured authentication provider for the request.
+
+#### Inherited from
+
+[`IHttpRequest`](IHttpRequest.md).[`authentication`](IHttpRequest.md#authentication)
+
+***
+
 ### headers?
 
 > `optional` **headers**: `undefined`

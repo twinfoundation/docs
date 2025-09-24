@@ -1,5 +1,19 @@
 # @twin.org/auditable-item-stream-models - Changelog
 
+## [0.0.2-next.3](https://github.com/twinfoundation/auditable-item-stream/compare/auditable-item-stream-models-v0.0.2-next.2...auditable-item-stream-models-v0.0.2-next.3) (2025-08-29)
+
+
+### Features
+
+* eslint migration to flat config ([bd9cb2e](https://github.com/twinfoundation/auditable-item-stream/commit/bd9cb2ea2599300332c76a9c738a6ff437a5cc5b))
+
+## [0.0.2-next.2](https://github.com/twinfoundation/auditable-item-stream/compare/auditable-item-stream-models-v0.0.2-next.1...auditable-item-stream-models-v0.0.2-next.2) (2025-08-20)
+
+
+### Features
+
+* update framework core ([5621601](https://github.com/twinfoundation/auditable-item-stream/commit/562160167c5082b9dae1b0bf68482ce2af1e7dce))
+
 ## [0.0.2-next.1](https://github.com/twinfoundation/auditable-item-stream/compare/auditable-item-stream-models-v0.0.2-next.0...auditable-item-stream-models-v0.0.2-next.1) (2025-07-21)
 
 

@@ -23,6 +23,22 @@ The definition for a base processor for handling REST routes.
 
 ## Methods
 
+### features()?
+
+> `optional` **features**(): `string`[]
+
+Features supported by this processor.
+If a route has any of these features listed, this processor will be run for that route.
+If this is not implemented, the processor will run for all routes.
+
+#### Returns
+
+`string`[]
+
+The features supported by this processor.
+
+***
+
 ### pre()?
 
 > `optional` **pre**(`request`, `response`, `route`, `requestIdentity`, `processorState`, `loggingComponentType?`): `Promise`\<`void`\>

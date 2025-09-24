@@ -1,5 +1,82 @@
 # @twin.org/standards-dublin-core - Changelog
 
+## [0.0.2-next.13](https://github.com/twinfoundation/standards/compare/standards-dublin-core-v0.0.2-next.12...standards-dublin-core-v0.0.2-next.13) (2025-09-22)
+
+
+### Miscellaneous Chores
+
+* **standards-dublin-core:** Synchronize repo versions
+
+## [0.0.2-next.12](https://github.com/twinfoundation/standards/compare/standards-dublin-core-v0.0.2-next.11...standards-dublin-core-v0.0.2-next.12) (2025-09-16)
+
+
+### Miscellaneous Chores
+
+* **standards-dublin-core:** Synchronize repo versions
+
+## [0.0.2-next.11](https://github.com/twinfoundation/standards/compare/standards-dublin-core-v0.0.2-next.10...standards-dublin-core-v0.0.2-next.11) (2025-09-16)
+
+
+### Miscellaneous Chores
+
+* **standards-dublin-core:** Synchronize repo versions
+
+## [0.0.2-next.10](https://github.com/twinfoundation/standards/compare/standards-dublin-core-v0.0.2-next.9...standards-dublin-core-v0.0.2-next.10) (2025-09-16)
+
+
+### Miscellaneous Chores
+
+* **standards-dublin-core:** Synchronize repo versions
+
+## [0.0.2-next.9](https://github.com/twinfoundation/standards/compare/standards-dublin-core-v0.0.2-next.8...standards-dublin-core-v0.0.2-next.9) (2025-09-15)
+
+
+### Miscellaneous Chores
+
+* **standards-dublin-core:** Synchronize repo versions
+
+## [0.0.2-next.8](https://github.com/twinfoundation/standards/compare/standards-dublin-core-v0.0.2-next.7...standards-dublin-core-v0.0.2-next.8) (2025-09-15)
+
+
+### Miscellaneous Chores
+
+* **standards-dublin-core:** Synchronize repo versions
+
+## [0.0.2-next.7](https://github.com/twinfoundation/standards/compare/standards-dublin-core-v0.0.2-next.6...standards-dublin-core-v0.0.2-next.7) (2025-09-15)
+
+
+### Miscellaneous Chores
+
+* **standards-dublin-core:** Synchronize repo versions
+
+## [0.0.2-next.6](https://github.com/twinfoundation/standards/compare/standards-dublin-core-v0.0.2-next.5...standards-dublin-core-v0.0.2-next.6) (2025-09-12)
+
+
+### Miscellaneous Chores
+
+* **standards-dublin-core:** Synchronize repo versions
+
+## [0.0.2-next.5](https://github.com/twinfoundation/standards/compare/standards-dublin-core-v0.0.2-next.4...standards-dublin-core-v0.0.2-next.5) (2025-09-12)
+
+
+### Miscellaneous Chores
+
+* **standards-dublin-core:** Synchronize repo versions
+
+## [0.0.2-next.4](https://github.com/twinfoundation/standards/compare/standards-dublin-core-v0.0.2-next.3...standards-dublin-core-v0.0.2-next.4) (2025-09-12)
+
+
+### Miscellaneous Chores
+
+* **standards-dublin-core:** Synchronize repo versions
+
+## [0.0.2-next.3](https://github.com/twinfoundation/standards/compare/standards-dublin-core-v0.0.2-next.2...standards-dublin-core-v0.0.2-next.3) (2025-08-29)
+
+
+### Features
+
+* eslint migration to flat config ([648c1a1](https://github.com/twinfoundation/standards/commit/648c1a1e69d99b6b0cf69358ec6bdeecdbe3a5ea))
+
 ## [0.0.2-next.2](https://github.com/twinfoundation/standards/compare/standards-dublin-core-v0.0.2-next.1...standards-dublin-core-v0.0.2-next.2) (2025-08-19)
 
 

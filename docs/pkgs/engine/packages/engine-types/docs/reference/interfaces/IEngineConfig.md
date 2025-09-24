@@ -288,17 +288,71 @@ Date processing options which can be overridden by individual components by spec
 
 Document management options which can be overridden by individual components by specifying types other than default.
 
-#### rightsManagementComponent?
+#### authenticationGeneratorComponent?
 
-> `optional` **rightsManagementComponent**: `IEngineCoreTypeConfig`\<[`RightsManagementComponentConfig`](../type-aliases/RightsManagementComponentConfig.md)\>[]
+> `optional` **authenticationGeneratorComponent**: `IEngineCoreTypeConfig`\<[`AuthenticationGeneratorComponentConfig`](../type-aliases/AuthenticationGeneratorComponentConfig.md)\>[]
 
-Rights management options which can be overridden by individual components by specifying types other than default.
+Authentication generator options which can be overridden by individual components by specifying types other than default.
 
 #### rightsManagementPapComponent?
 
 > `optional` **rightsManagementPapComponent**: `IEngineCoreTypeConfig`\<[`RightsManagementPapComponentConfig`](../type-aliases/RightsManagementPapComponentConfig.md)\>[]
 
 Rights management PAP options which can be overridden by individual components by specifying types other than default.
+
+#### rightsManagementPdpComponent?
+
+> `optional` **rightsManagementPdpComponent**: `IEngineCoreTypeConfig`\<[`RightsManagementPdpComponentConfig`](../type-aliases/RightsManagementPdpComponentConfig.md)\>[]
+
+Rights management PDP options which can be overridden by individual components by specifying types other than default.
+
+#### rightsManagementPepComponent?
+
+> `optional` **rightsManagementPepComponent**: `IEngineCoreTypeConfig`\<[`RightsManagementPepComponentConfig`](../type-aliases/RightsManagementPepComponentConfig.md)\>[]
+
+Rights management PEP options which can be overridden by individual components by specifying types other than default.
+
+#### rightsManagementPipComponent?
+
+> `optional` **rightsManagementPipComponent**: `IEngineCoreTypeConfig`\<[`RightsManagementPipComponentConfig`](../type-aliases/RightsManagementPipComponentConfig.md)\>[]
+
+Rights management PIP options which can be overridden by individual components by specifying types other than default.
+
+#### rightsManagementPmpComponent?
+
+> `optional` **rightsManagementPmpComponent**: `IEngineCoreTypeConfig`\<[`RightsManagementPmpComponentConfig`](../type-aliases/RightsManagementPmpComponentConfig.md)\>[]
+
+Rights management PMP options which can be overridden by individual components by specifying types other than default.
+
+#### rightsManagementPxpComponent?
+
+> `optional` **rightsManagementPxpComponent**: `IEngineCoreTypeConfig`\<[`RightsManagementPxpComponentConfig`](../type-aliases/RightsManagementPxpComponentConfig.md)\>[]
+
+Rights management PXP options which can be overridden by individual components by specifying types other than default.
+
+#### rightsManagementPnpComponent?
+
+> `optional` **rightsManagementPnpComponent**: `IEngineCoreTypeConfig`\<[`RightsManagementPnpComponentConfig`](../type-aliases/RightsManagementPnpComponentConfig.md)\>[]
+
+Rights management PNP options which can be overridden by individual components by specifying types other than default.
+
+#### rightsManagementPnapComponent?
+
+> `optional` **rightsManagementPnapComponent**: `IEngineCoreTypeConfig`\<[`RightsManagementPnapComponentConfig`](../type-aliases/RightsManagementPnapComponentConfig.md)\>[]
+
+Rights management PNAP options which can be overridden by individual components by specifying types other than default.
+
+#### rightsManagementDapComponent?
+
+> `optional` **rightsManagementDapComponent**: `IEngineCoreTypeConfig`\<[`RightsManagementDapComponentConfig`](../type-aliases/RightsManagementDapComponentConfig.md)\>[]
+
+Rights management DAP options which can be overridden by individual components by specifying types other than default.
+
+#### rightsManagementDarpComponent?
+
+> `optional` **rightsManagementDarpComponent**: `IEngineCoreTypeConfig`\<[`RightsManagementDarpComponentConfig`](../type-aliases/RightsManagementDarpComponentConfig.md)\>[]
+
+Rights management DARP options which can be overridden by individual components by specifying types other than default.
 
 #### synchronisedStorageComponent?
 
@@ -311,6 +365,12 @@ Synchronised storage options which can be overridden by individual components by
 > `optional` **federatedCatalogueComponent**: `IEngineCoreTypeConfig`\<[`FederatedCatalogueComponentConfig`](../type-aliases/FederatedCatalogueComponentConfig.md)\>[]
 
 Federated catalogue options which can be overridden by individual components by specifying types other than default.
+
+#### dataSpaceConnectorComponent?
+
+> `optional` **dataSpaceConnectorComponent**: `IEngineCoreTypeConfig`\<[`DataSpaceConnectorComponentConfig`](../type-aliases/DataSpaceConnectorComponentConfig.md)\>[]
+
+Data space connector options which can be overridden by individual components by specifying types other than default.
 
 #### Overrides
 

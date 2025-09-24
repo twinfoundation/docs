@@ -19,6 +19,7 @@
 		"packages/identity-rest-client",
 		"packages/identity-connector-iota",
 		"packages/identity-connector-universal",
+		"packages/identity-authentication",
 		"apps/identity-cli"
 	],
 	"type": "module"

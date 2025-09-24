@@ -30,3 +30,11 @@ The path to use for routing.
 > `optional` **skipAuth**: `boolean`
 
 Skips the authentication for this route.
+
+***
+
+### processorFeatures?
+
+> `optional` **processorFeatures**: `string`[]
+
+The features supported by additional processors to run for this route.

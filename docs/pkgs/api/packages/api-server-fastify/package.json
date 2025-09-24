@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/api-server-fastify",
-	"version": "0.0.2-next.5",
+	"version": "0.0.2-next.10",
 	"description": "Use Fastify as the core web server for APIs",
 	"repository": {
 		"type": "git",

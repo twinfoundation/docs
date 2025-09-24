@@ -5,7 +5,7 @@
 Common VCard property types.
 Based on http://www.w3.org/2006/vcard/ns#
 
-## Type declaration
+## Type Declaration
 
 ### FormattedName
 

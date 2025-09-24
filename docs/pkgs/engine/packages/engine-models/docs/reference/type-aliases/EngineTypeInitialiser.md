@@ -1,6 +1,6 @@
 # Type Alias: EngineTypeInitialiser()\<T\>
 
-> **EngineTypeInitialiser**\<`T`\> = (`engineCore`, `context`, `instanceConfig`, `overrideInstanceType?`) => `string` \| `undefined`
+> **EngineTypeInitialiser**\<`T`\> = (`engineCore`, `context`, `instanceConfig`, `overrideInstanceType?`) => `Promise`\<`string` \| `undefined`\>
 
 Method definition for the engine type initialiser.
 
@@ -30,4 +30,4 @@ Method definition for the engine type initialiser.
 
 ## Returns
 
-`string` \| `undefined`
+`Promise`\<`string` \| `undefined`\>

@@ -1,5 +1,26 @@
 # @twin.org/background-task-models - Changelog
 
+## [0.0.2-next.7](https://github.com/twinfoundation/background-task/compare/background-task-models-v0.0.2-next.6...background-task-models-v0.0.2-next.7) (2025-08-29)
+
+
+### Features
+
+* eslint migration to flat config ([6c9136c](https://github.com/twinfoundation/background-task/commit/6c9136c37bccdbbd109892d1503660aab7080d49))
+
+## [0.0.2-next.6](https://github.com/twinfoundation/background-task/compare/background-task-models-v0.0.2-next.5...background-task-models-v0.0.2-next.6) (2025-08-22)
+
+
+### Miscellaneous Chores
+
+* **background-task-models:** Synchronize repo versions
+
+## [0.0.2-next.5](https://github.com/twinfoundation/background-task/compare/background-task-models-v0.0.2-next.4...background-task-models-v0.0.2-next.5) (2025-08-20)
+
+
+### Features
+
+* update framework core ([a068098](https://github.com/twinfoundation/background-task/commit/a0680983d7923a1bfb980a67879019bb870ccc5d))
+
 ## [0.0.2-next.4](https://github.com/twinfoundation/background-task/compare/background-task-models-v0.0.2-next.3...background-task-models-v0.0.2-next.4) (2025-07-23)
 
 

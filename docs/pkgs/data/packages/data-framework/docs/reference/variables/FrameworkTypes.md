@@ -4,7 +4,7 @@
 
 The types of framework data.
 
-## Type declaration
+## Type Declaration
 
 ### Urn
 

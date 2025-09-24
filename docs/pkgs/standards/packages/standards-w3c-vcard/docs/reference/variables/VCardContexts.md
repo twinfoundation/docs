@@ -4,7 +4,7 @@
 
 The contexts for VCard.
 
-## Type declaration
+## Type Declaration
 
 ### Context
 

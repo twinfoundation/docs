@@ -1,6 +1,7 @@
 # Interface: IOdrlConstraint
 
 Interface for ODRL Constraints.
+https://www.w3.org/TR/odrl-model/#constraint
 
 ## Extends
 

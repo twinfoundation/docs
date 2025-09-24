@@ -4,7 +4,7 @@
 
 Mime type route processor types.
 
-## Type declaration
+## Type Declaration
 
 ### Jwt
 

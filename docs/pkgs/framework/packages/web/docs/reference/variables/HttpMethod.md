@@ -4,7 +4,7 @@
 
 The names of the HTTP Methods.
 
-## Type declaration
+## Type Declaration
 
 ### GET
 

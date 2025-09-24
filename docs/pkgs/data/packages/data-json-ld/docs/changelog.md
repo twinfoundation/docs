@@ -1,5 +1,19 @@
 # @twin.org/data-json-ld - Changelog
 
+## [0.0.2-next.2](https://github.com/twinfoundation/data/compare/data-json-ld-v0.0.2-next.1...data-json-ld-v0.0.2-next.2) (2025-08-29)
+
+
+### Features
+
+* eslint migration to flat config ([b0db6e6](https://github.com/twinfoundation/data/commit/b0db6e69a90046fc60d29e4273fcdfee13c16088))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/data-core bumped from 0.0.2-next.1 to 0.0.2-next.2
+
 ## [0.0.2-next.1](https://github.com/twinfoundation/data/compare/data-json-ld-v0.0.2-next.0...data-json-ld-v0.0.2-next.1) (2025-08-19)
 
 

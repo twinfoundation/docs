@@ -4,7 +4,7 @@
 
 The topics for synchronised storage event bus notifications.
 
-## Type declaration
+## Type Declaration
 
 ### RegisterStorageKey
 

@@ -4,7 +4,7 @@
 
 GS1 EPC Identifiers.
 
-## Type declaration
+## Type Declaration
 
 ### Gtin
 

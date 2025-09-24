@@ -4,7 +4,7 @@
 
 Right operand types for ODRL constraints
 
-## Type declaration
+## Type Declaration
 
 ### PolicyUsage
 

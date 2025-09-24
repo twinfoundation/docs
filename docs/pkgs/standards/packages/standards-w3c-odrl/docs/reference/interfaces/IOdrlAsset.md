@@ -1,6 +1,7 @@
 # Interface: IOdrlAsset
 
 Interface for ODRL Assets.
+https://www.w3.org/TR/odrl-model/#asset
 
 ## Extends
 

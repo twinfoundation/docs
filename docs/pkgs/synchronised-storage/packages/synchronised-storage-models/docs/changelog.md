@@ -1,5 +1,41 @@
 # Changelog
 
+## [0.0.1-next.15](https://github.com/twinfoundation/synchronised-storage/compare/synchronised-storage-models-v0.0.1-next.14...synchronised-storage-models-v0.0.1-next.15) (2025-09-23)
+
+
+### Features
+
+* add rights management integration ([56fff6b](https://github.com/twinfoundation/synchronised-storage/commit/56fff6b4074f7ffaa40920e0c1e9fc98ca669111))
+* update to in built vc auth mechanism ([411a371](https://github.com/twinfoundation/synchronised-storage/commit/411a3716830195ebf54755a1633b05d5c3f96754))
+
+## [0.0.1-next.14](https://github.com/twinfoundation/synchronised-storage/compare/synchronised-storage-models-v0.0.1-next.13...synchronised-storage-models-v0.0.1-next.14) (2025-09-22)
+
+
+### Features
+
+* add rights management integration ([d003d33](https://github.com/twinfoundation/synchronised-storage/commit/d003d33d2d2b4a4aa1379071eed71a707ebcb4de))
+
+## [0.0.1-next.13](https://github.com/twinfoundation/synchronised-storage/compare/synchronised-storage-models-v0.0.1-next.12...synchronised-storage-models-v0.0.1-next.13) (2025-08-29)
+
+
+### Features
+
+* eslint migration to flat config ([f601c14](https://github.com/twinfoundation/synchronised-storage/commit/f601c14f6adef3290554dc7df6e6b3528aa0dc2b))
+
+## [0.0.1-next.12](https://github.com/twinfoundation/synchronised-storage/compare/synchronised-storage-models-v0.0.1-next.11...synchronised-storage-models-v0.0.1-next.12) (2025-08-21)
+
+
+### Features
+
+* update framework core ([99f09cc](https://github.com/twinfoundation/synchronised-storage/commit/99f09cc94cfb9fff6b3a345775eeae2ab3192ed2))
+
+## [0.0.1-next.11](https://github.com/twinfoundation/synchronised-storage/compare/synchronised-storage-models-v0.0.1-next.10...synchronised-storage-models-v0.0.1-next.11) (2025-08-15)
+
+
+### Miscellaneous Chores
+
+* **synchronised-storage-models:** Synchronize repo versions
+
 ## [0.0.1-next.10](https://github.com/twinfoundation/synchronised-storage/compare/synchronised-storage-models-v0.0.1-next.9...synchronised-storage-models-v0.0.1-next.10) (2025-08-15)
 
 

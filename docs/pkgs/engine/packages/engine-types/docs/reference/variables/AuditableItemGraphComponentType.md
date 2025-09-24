@@ -4,7 +4,7 @@
 
 Auditable item graph component types.
 
-## Type declaration
+## Type Declaration
 
 ### Service
 

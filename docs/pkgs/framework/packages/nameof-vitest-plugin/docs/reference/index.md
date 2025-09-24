@@ -3,3 +3,7 @@
 ## Variables
 
 - [NameOfPlugin](variables/NameOfPlugin.md)
+
+## Functions
+
+- [nameOfPluginTransform](functions/nameOfPluginTransform.md)

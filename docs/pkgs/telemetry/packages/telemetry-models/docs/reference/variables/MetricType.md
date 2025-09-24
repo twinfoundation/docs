@@ -4,7 +4,7 @@
 
 The types of metrics.
 
-## Type declaration
+## Type Declaration
 
 ### Counter
 

@@ -46,6 +46,7 @@ This is the overview of the packages.
 - [@twin.org/standards-gaia-x](pkgs/standards/packages/standards-gaia-x/index.md) - Models which define the structure of Gaia-x
 - [@twin.org/standards-ld-contexts](pkgs/standards/packages/standards-ld-contexts/index.md) - Local copies of standard LD contexts which can be used for offline development
 - [@twin.org/standards-w3c-activity-streams](pkgs/standards/packages/standards-w3c-activity-streams/index.md) - Models which define the structure of W3C Activity Streams Standard
+- [@twin.org/standards-ids-contract-negotiation](pkgs/standards/packages/standards-ids-contract-negotiation/index.md) - Models which define the structure of W3C IDS Contract Negotiation Protocol
 
 ## Data
 
@@ -136,6 +137,8 @@ This is the overview of the packages.
 - [@twin.org/rights-management-pxp-service](pkgs/rights-management/packages/rights-management-pxp-service/index.md) - Policy execution point implementation
 - [@twin.org/rights-management-pdp-service](pkgs/rights-management/packages/rights-management-pdp-service/index.md) - Policy decision point implementation
 - [@twin.org/rights-management-pep-service](pkgs/rights-management/packages/rights-management-pep-service/index.md) - Policy enforcement point implementation
+- [@twin.org/rights-management-pnp-service](pkgs/rights-management/packages/rights-management-pnp-service/index.md) - Policy negotiation point implementation
+- [@twin.org/rights-management-dap-service](pkgs/rights-management/packages/rights-management-dap-service/index.md) - Data access point implementation
 - [@twin.org/rights-management-service](pkgs/rights-management/packages/rights-management-service/index.md) - Rights Management service implementation and REST endpoint definitions
 - [@twin.org/rights-management-rest-client](pkgs/rights-management/packages/rights-management-rest-client/index.md) - Rights management implementation which can connect to REST endpoints
 
@@ -157,6 +160,7 @@ This is the overview of the packages.
 - [@twin.org/identity-rest-client](pkgs/identity/packages/identity-rest-client/index.md) - Identity contract implementation which can connect to REST endpoints
 - [@twin.org/identity-connector-iota](pkgs/identity/packages/identity-connector-iota/index.md) - Identity connector implementation using IOTA
 - [@twin.org/identity-connector-universal](pkgs/identity/packages/identity-connector-universal/index.md) - Identity connector implementation using universal resolver
+- [@twin.org/identity-authentication](pkgs/identity/packages/identity-authentication/index.md) - Authentication components implemented using identity
 
 ## NFT
 

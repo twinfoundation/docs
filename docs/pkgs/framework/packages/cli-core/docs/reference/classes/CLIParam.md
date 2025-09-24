@@ -90,6 +90,56 @@ An error if the option is invalid.
 
 ***
 
+### arrayOneOf()
+
+> `static` **arrayOneOf**\<`T`\>(`optionName`, `optionValue`, `validValues`, `allowEnvVar`): `T`
+
+Check the option to see if the value exists in the specific array.
+
+#### Type Parameters
+
+##### T
+
+`T` = `string`
+
+#### Parameters
+
+##### optionName
+
+`string`
+
+The name of the option.
+
+##### optionValue
+
+The option value.
+
+`undefined` | `string`
+
+##### validValues
+
+`T`[]
+
+The valid values.
+
+##### allowEnvVar
+
+`boolean` = `true`
+
+Allow the option to be read from an env var.
+
+#### Returns
+
+`T`
+
+The final option value.
+
+#### Throws
+
+An error if the option is invalid.
+
+***
+
 ### url()
 
 > `static` **url**(`optionName`, `optionValue`, `allowEnvVar`): `string`

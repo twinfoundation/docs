@@ -1,5 +1,47 @@
 # Changelog
 
+## [0.0.2-next.9](https://github.com/twinfoundation/tools/compare/tools-core-v0.0.2-next.8...tools-core-v0.0.2-next.9) (2025-09-23)
+
+
+### Miscellaneous Chores
+
+* **tools-core:** Synchronize repo versions
+
+## [0.0.2-next.8](https://github.com/twinfoundation/tools/compare/tools-core-v0.0.2-next.7...tools-core-v0.0.2-next.8) (2025-09-05)
+
+
+### Features
+
+* tighten the types included with the regex matching ([e54909b](https://github.com/twinfoundation/tools/commit/e54909bded4a19d00560dd3ec783e9146580bda3))
+
+## [0.0.2-next.7](https://github.com/twinfoundation/tools/compare/tools-core-v0.0.2-next.6...tools-core-v0.0.2-next.7) (2025-08-29)
+
+
+### Features
+
+* eslint migration to flat config ([25acfcf](https://github.com/twinfoundation/tools/commit/25acfcf4c4e0c496fffeaf67659fe171bc15199a))
+
+## [0.0.2-next.6](https://github.com/twinfoundation/tools/compare/tools-core-v0.0.2-next.5...tools-core-v0.0.2-next.6) (2025-08-21)
+
+
+### Features
+
+* remove auto expanded types from final output ([18e05dc](https://github.com/twinfoundation/tools/commit/18e05dc88f71a0a27b79d1d076b1261b42d2c4c2))
+
+## [0.0.2-next.5](https://github.com/twinfoundation/tools/compare/tools-core-v0.0.2-next.4...tools-core-v0.0.2-next.5) (2025-08-19)
+
+
+### Features
+
+* correctly handle auto expand types ([57fce0f](https://github.com/twinfoundation/tools/commit/57fce0f9ec4a0876665d70adc6e885f6feb3caf7))
+
+## [0.0.2-next.4](https://github.com/twinfoundation/tools/compare/tools-core-v0.0.2-next.3...tools-core-v0.0.2-next.4) (2025-08-19)
+
+
+### Features
+
+* update framework core ([559cb98](https://github.com/twinfoundation/tools/commit/559cb98612c05a05458b37462cda806b9591b18a))
+
 ## [0.0.2-next.3](https://github.com/twinfoundation/tools/compare/tools-core-v0.0.2-next.2...tools-core-v0.0.2-next.3) (2025-08-05)
 
 
