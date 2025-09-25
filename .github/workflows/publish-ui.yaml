@@ -55,12 +55,13 @@ jobs:
 
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: ${{ steps.set-branch.outputs.branch }} # Checkout the calculated branch
 
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          ref: ${{ steps.set-branch.outputs.branch }} # Checkout the calculated branch
 
       - name: Install Vercel CLI
         run: npm install -g vercel
