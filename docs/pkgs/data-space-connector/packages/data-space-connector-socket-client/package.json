@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/data-space-connector-socket-client",
-	"version": "0.0.1-next.3",
+	"version": "0.0.1-next.4",
 	"description": "Data space connector component implementation which can connect to socket endpoints",
 	"repository": {
 		"type": "git",

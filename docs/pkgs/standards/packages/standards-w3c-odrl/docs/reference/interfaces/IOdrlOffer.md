@@ -2,6 +2,7 @@
 
 Interface representing an ODRL Offer.
 An Offer requires an assigner (the party making the offer).
+https://www.w3.org/TR/odrl-model/#policy-offer
 
 ## Extends
 
@@ -104,7 +105,7 @@ The target asset for the rule.
 
 ### action?
 
-> `optional` **action**: [`ActionType`](../type-aliases/ActionType.md) \| [`IOdrlAction`](IOdrlAction.md) \| ActionType \| IOdrlAction[]
+> `optional` **action**: `string` \| [`IOdrlAction`](IOdrlAction.md) \| (`string` \| [`IOdrlAction`](IOdrlAction.md))[]
 
 The action associated with the rule.
 

@@ -4,7 +4,7 @@
 
 The types of GS1 Identifier data.
 
-## Type declaration
+## Type Declaration
 
 ### EpcId
 

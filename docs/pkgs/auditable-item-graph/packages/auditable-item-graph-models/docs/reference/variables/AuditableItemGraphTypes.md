@@ -4,7 +4,7 @@
 
 The types of auditable item graph data.
 
-## Type declaration
+## Type Declaration
 
 ### Vertex
 

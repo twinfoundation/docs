@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/rights-management-pmp-service",
-	"version": "0.0.2-next.2",
+	"version": "0.0.2-next.13",
 	"description": "Policy management point implementation",
 	"repository": {
 		"type": "git",

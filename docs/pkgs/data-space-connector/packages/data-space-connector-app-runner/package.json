@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/data-space-connector-app-runner",
-	"version": "0.0.1-next.3",
+	"version": "0.0.1-next.4",
 	"description": "Data Space Connector App Runner",
 	"repository": {
 		"type": "git",

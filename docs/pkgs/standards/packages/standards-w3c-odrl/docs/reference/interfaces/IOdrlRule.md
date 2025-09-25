@@ -1,6 +1,7 @@
 # Interface: IOdrlRule
 
 Base interface for ODRL Rules.
+https://www.w3.org/TR/odrl-model/#rule
 
 ## Extends
 
@@ -28,7 +29,7 @@ Optional unique identifier for the rule.
 
 ### action?
 
-> `optional` **action**: [`ActionType`](../type-aliases/ActionType.md) \| [`IOdrlAction`](IOdrlAction.md) \| ActionType \| IOdrlAction[]
+> `optional` **action**: `string` \| [`IOdrlAction`](IOdrlAction.md) \| (`string` \| [`IOdrlAction`](IOdrlAction.md))[]
 
 The action associated with the rule.
 

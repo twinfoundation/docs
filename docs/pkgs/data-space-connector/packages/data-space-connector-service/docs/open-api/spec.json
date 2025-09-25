@@ -266,7 +266,38 @@
 				"type": "object",
 				"properties": {
 					"@context": {
-						"$ref": "#/components/schemas/ActivityStreamsContextType"
+						"description": "The Activity Streams JSON-LD context type.",
+						"anyOf": [
+							{
+								"type": "string",
+								"const": "https://www.w3.org/ns/activitystreams"
+							},
+							{
+								"type": "array",
+								"items": false,
+								"minItems": 1,
+								"maxItems": 1,
+								"prefixItems": [
+									{
+										"type": "string",
+										"const": "https://www.w3.org/ns/activitystreams"
+									}
+								]
+							},
+							{
+								"type": "array",
+								"minItems": 1,
+								"items": {
+									"$ref": "https://schema.twindev.org/json-ld/JsonLdContextDefinitionElement"
+								},
+								"prefixItems": [
+									{
+										"type": "string",
+										"const": "https://www.w3.org/ns/activitystreams"
+									}
+								]
+							}
+						]
 					},
 					"@id": {
 						"anyOf": [
@@ -285,19 +316,19 @@
 						]
 					},
 					"@included": {
-						"$ref": "#/components/schemas/JsonLdIncludedBlock"
+						"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
 					},
 					"@graph": {
 						"anyOf": [
 							{
-								"$ref": "#/components/schemas/JsonLdNodeObject"
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
 							},
 							{
 								"type": "array",
 								"items": false,
 								"prefixItems": [
 									{
-										"$ref": "#/components/schemas/JsonLdNodeObject"
+										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
 									}
 								]
 							}
@@ -306,14 +337,14 @@
 					"@nest": {
 						"anyOf": [
 							{
-								"$ref": "#/components/schemas/JsonLdJsonObject"
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdJsonObject"
 							},
 							{
 								"type": "array",
 								"items": false,
 								"prefixItems": [
 									{
-										"$ref": "#/components/schemas/JsonLdJsonObject"
+										"$ref": "https://schema.twindev.org/json-ld/JsonLdJsonObject"
 									}
 								]
 							}
@@ -348,7 +379,7 @@
 						"description": "Object or array data type",
 						"anyOf": [
 							{
-								"$ref": "#/components/schemas/ActivityStreamsTypes"
+								"$ref": "https://schema.twindev.org/w3c-activity-streams/ActivityStreamsTypes"
 							},
 							{
 								"type": "string"
@@ -360,7 +391,7 @@
 									{
 										"anyOf": [
 											{
-												"$ref": "#/components/schemas/ActivityStreamsTypes"
+												"$ref": "https://schema.twindev.org/w3c-activity-streams/ActivityStreamsTypes"
 											},
 											{
 												"type": "string"
@@ -386,7 +417,7 @@
 								]
 							},
 							{
-								"$ref": "#/components/schemas/JsonLdNodeObject"
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
 							}
 						],
 						"description": "The generator of the Activity."
@@ -406,16 +437,16 @@
 								]
 							},
 							{
-								"$ref": "#/components/schemas/JsonLdNodeObject"
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
 							}
 						],
 						"description": "The Actor behind the Activity."
 					},
 					"object": {
-						"$ref": "#/components/schemas/JsonLdNodeObject"
+						"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
 					},
 					"target": {
-						"$ref": "#/components/schemas/JsonLdNodeObject"
+						"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
 					},
 					"summary": {
 						"anyOf": [
@@ -423,13 +454,13 @@
 								"type": "string"
 							},
 							{
-								"$ref": "#/components/schemas/JsonLdLanguageMap"
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"
 							}
 						],
 						"description": "Summary of the Activity."
 					},
 					"result": {
-						"$ref": "#/components/schemas/JsonLdNodeObject"
+						"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
 					},
 					"origin": {
 						"anyOf": [
@@ -446,7 +477,7 @@
 								]
 							},
 							{
-								"$ref": "#/components/schemas/JsonLdNodeObject"
+								"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
 							}
 						],
 						"description": "Activity's origin."
@@ -465,22 +496,22 @@
 				"additionalProperties": {
 					"anyOf": [
 						{
-							"$ref": "#/components/schemas/JsonLdNodePrimitive"
+							"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
 						},
 						{
-							"$ref": "#/components/schemas/JsonLdLanguageMap"
+							"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"
 						},
 						{
-							"$ref": "#/components/schemas/JsonLdIndexMap"
+							"$ref": "https://schema.twindev.org/json-ld/JsonLdIndexMap"
 						},
 						{
-							"$ref": "#/components/schemas/JsonLdIncludedBlock"
+							"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
 						},
 						{
-							"$ref": "#/components/schemas/JsonLdIdMap"
+							"$ref": "https://schema.twindev.org/json-ld/JsonLdIdMap"
 						},
 						{
-							"$ref": "#/components/schemas/JsonLdTypeMap"
+							"$ref": "https://schema.twindev.org/json-ld/JsonLdTypeMap"
 						},
 						{
 							"type": "array"
@@ -488,62 +519,6 @@
 					]
 				},
 				"description": "A W3C Activity from Activity Streams"
-			},
-			"ActivityHandler": {
-				"type": "object",
-				"additionalProperties": false,
-				"description": "Activity Handler."
-			},
-			"ActivityLogDates": {
-				"type": "object",
-				"properties": {
-					"startDate": {
-						"type": "string",
-						"description": "Task processing start timestamp"
-					},
-					"endDate": {
-						"type": "string",
-						"description": "Task processing end timestamp"
-					}
-				},
-				"required": [
-					"startDate"
-				],
-				"additionalProperties": false,
-				"description": "Activity log dates."
-			},
-			"ActivityLogDetails": {
-				"type": "object",
-				"properties": {
-					"id": {
-						"type": "string",
-						"description": "The Id of the Activity Log entry."
-					},
-					"activityId": {
-						"type": "string",
-						"description": "The activity Id that this entry refers to."
-					},
-					"generator": {
-						"type": "string",
-						"description": "The identity of the Activity's generator."
-					},
-					"dateCreated": {
-						"type": "string",
-						"description": "The creation date of this object."
-					},
-					"dateModified": {
-						"type": "string",
-						"description": "The last update date of this object."
-					}
-				},
-				"required": [
-					"id",
-					"generator",
-					"dateCreated",
-					"dateModified"
-				],
-				"additionalProperties": false,
-				"description": "The details related to the processing of an Activity"
 			},
 			"ActivityLogEntry": {
 				"type": "object",
@@ -694,84 +669,6 @@
 				"additionalProperties": false,
 				"description": "The details related to the processing of an Activity"
 			},
-			"ActivityLogStatusNotification": {
-				"type": "object",
-				"properties": {
-					"activityLogEntryId": {
-						"type": "string",
-						"description": "The activity log entry id."
-					},
-					"activityId": {
-						"type": "string",
-						"description": "The activity Id."
-					},
-					"taskProcessingStatus": {
-						"type": "object",
-						"properties": {
-							"taskId": {
-								"type": "string",
-								"description": "The task reported."
-							},
-							"dataSpaceConnectorAppId": {
-								"type": "string",
-								"description": "The Data Space Connector App."
-							},
-							"taskStatus": {
-								"$ref": "#/components/schemas/TaskStatus"
-							}
-						},
-						"required": [
-							"taskId",
-							"dataSpaceConnectorAppId",
-							"taskStatus"
-						],
-						"additionalProperties": false,
-						"description": "The activity processing status through the associated tasks."
-					}
-				},
-				"required": [
-					"activityLogEntryId",
-					"taskProcessingStatus"
-				],
-				"additionalProperties": false,
-				"description": "The status supplied to clients of the Data Space Connector"
-			},
-			"ActivityLogStatusNotificationPayload": {
-				"type": "object",
-				"properties": {
-					"body": {
-						"$ref": "#/components/schemas/ActivityLogStatusNotification"
-					}
-				},
-				"required": [
-					"body"
-				],
-				"additionalProperties": false,
-				"description": "The status supplied to clients of the Data Space Connector"
-			},
-			"ActivityLogStatusRequest": {
-				"type": "object",
-				"properties": {
-					"operation": {
-						"type": "string",
-						"enum": [
-							"subscribe",
-							"unsubscribe"
-						],
-						"description": "The operation to perform."
-					},
-					"subscriptionId": {
-						"type": "string",
-						"description": "The subscription Id."
-					}
-				},
-				"required": [
-					"operation",
-					"subscriptionId"
-				],
-				"additionalProperties": false,
-				"description": "Empty body."
-			},
 			"ActivityProcessingStatus": {
 				"anyOf": [
 					{
@@ -801,122 +698,6 @@
 					}
 				],
 				"description": "Activity processing statuses.   The type exported."
-			},
-			"ActivityQuery": {
-				"type": "object",
-				"properties": {
-					"activityType": {
-						"type": "string",
-						"description": "FQN of the Activity type."
-					},
-					"objectType": {
-						"type": "string",
-						"description": "FQN of the Object Type."
-					},
-					"targetType": {
-						"type": "string",
-						"description": "FQN of the target type."
-					}
-				},
-				"required": [
-					"objectType"
-				],
-				"additionalProperties": false,
-				"description": "(Activity,Object,Target) query for denoting combinations to be handled by a DS Connector App."
-			},
-			"ActivityStreamsContextType": {
-				"anyOf": [
-					{
-						"type": "string",
-						"const": "https://www.w3.org/ns/activitystreams"
-					},
-					{
-						"type": "array",
-						"items": false,
-						"minItems": 1,
-						"maxItems": 1,
-						"prefixItems": [
-							{
-								"type": "string",
-								"const": "https://www.w3.org/ns/activitystreams"
-							}
-						]
-					},
-					{
-						"type": "array",
-						"minItems": 1,
-						"items": {
-							"$ref": "#/components/schemas/JsonLdContextDefinitionElement"
-						},
-						"prefixItems": [
-							{
-								"type": "string",
-								"const": "https://www.w3.org/ns/activitystreams"
-							}
-						]
-					}
-				],
-				"description": "The Activity Streams JSON-LD context type."
-			},
-			"ActivityStreamsTypes": {
-				"anyOf": [
-					{
-						"type": "string",
-						"const": "Activity",
-						"description": "Activity base class"
-					},
-					{
-						"type": "string",
-						"const": "Create",
-						"description": "Activity Create"
-					},
-					{
-						"type": "string",
-						"const": "Add",
-						"description": "Activity Add"
-					},
-					{
-						"type": "string",
-						"const": "Update",
-						"description": "Activity Update"
-					},
-					{
-						"type": "string",
-						"const": "Remove",
-						"description": "Activity Remove"
-					},
-					{
-						"type": "string",
-						"const": "Delete",
-						"description": "Activity Delete"
-					}
-				],
-				"description": "The types concerning Activity Streams.   The types concerning Activity."
-			},
-			"ActivityTask": {
-				"type": "object",
-				"properties": {
-					"activityLogEntryId": {
-						"type": "string",
-						"description": "The activity log entry."
-					},
-					"associatedTasks": {
-						"type": "array",
-						"items": false,
-						"description": "The associated tasks",
-						"prefixItems": [
-							{
-								"$ref": "#/components/schemas/TaskApp"
-							}
-						]
-					}
-				},
-				"required": [
-					"activityLogEntryId",
-					"associatedTasks"
-				],
-				"additionalProperties": false,
-				"description": "Denotes a task associated with an Activity"
 			},
 			"Error": {
 				"type": "object",
@@ -953,988 +734,6 @@
 				"additionalProperties": false,
 				"description": "Model to describe serialized error."
 			},
-			"JsonLdContainerType": {
-				"type": "string",
-				"enum": [
-					"@language",
-					"@index",
-					"@id",
-					"@graph",
-					"@type"
-				],
-				"description": "JSON-LD container types."
-			},
-			"JsonLdContainerTypeArray": {
-				"anyOf": [
-					{
-						"type": "array",
-						"minItems": 2,
-						"items": false,
-						"maxItems": 2,
-						"prefixItems": [
-							{
-								"type": "string",
-								"const": "@graph"
-							},
-							{
-								"type": "string",
-								"const": "@id"
-							}
-						]
-					},
-					{
-						"type": "array",
-						"minItems": 2,
-						"items": false,
-						"maxItems": 2,
-						"prefixItems": [
-							{
-								"type": "string",
-								"const": "@id"
-							},
-							{
-								"type": "string",
-								"const": "@graph"
-							}
-						]
-					},
-					{
-						"type": "array",
-						"minItems": 3,
-						"items": false,
-						"maxItems": 3,
-						"prefixItems": [
-							{
-								"type": "string",
-								"const": "@set"
-							},
-							{
-								"type": "string",
-								"const": "@graph"
-							},
-							{
-								"type": "string",
-								"const": "@id"
-							}
-						]
-					},
-					{
-						"type": "array",
-						"minItems": 3,
-						"items": false,
-						"maxItems": 3,
-						"prefixItems": [
-							{
-								"type": "string",
-								"const": "@set"
-							},
-							{
-								"type": "string",
-								"const": "@id"
-							},
-							{
-								"type": "string",
-								"const": "@graph"
-							}
-						]
-					},
-					{
-						"type": "array",
-						"minItems": 3,
-						"items": false,
-						"maxItems": 3,
-						"prefixItems": [
-							{
-								"type": "string",
-								"const": "@graph"
-							},
-							{
-								"type": "string",
-								"const": "@set"
-							},
-							{
-								"type": "string",
-								"const": "@id"
-							}
-						]
-					},
-					{
-						"type": "array",
-						"minItems": 3,
-						"items": false,
-						"maxItems": 3,
-						"prefixItems": [
-							{
-								"type": "string",
-								"const": "@id"
-							},
-							{
-								"type": "string",
-								"const": "@set"
-							},
-							{
-								"type": "string",
-								"const": "@graph"
-							}
-						]
-					},
-					{
-						"type": "array",
-						"minItems": 3,
-						"items": false,
-						"maxItems": 3,
-						"prefixItems": [
-							{
-								"type": "string",
-								"const": "@graph"
-							},
-							{
-								"type": "string",
-								"const": "@id"
-							},
-							{
-								"type": "string",
-								"const": "@set"
-							}
-						]
-					},
-					{
-						"type": "array",
-						"minItems": 3,
-						"items": false,
-						"maxItems": 3,
-						"prefixItems": [
-							{
-								"type": "string",
-								"const": "@id"
-							},
-							{
-								"type": "string",
-								"const": "@graph"
-							},
-							{
-								"type": "string",
-								"const": "@set"
-							}
-						]
-					},
-					{
-						"type": "array",
-						"minItems": 2,
-						"items": false,
-						"maxItems": 2,
-						"prefixItems": [
-							{
-								"type": "string",
-								"const": "@set"
-							},
-							{
-								"$ref": "#/components/schemas/JsonLdContainerType"
-							}
-						]
-					},
-					{
-						"type": "array",
-						"minItems": 2,
-						"items": false,
-						"maxItems": 2,
-						"prefixItems": [
-							{
-								"$ref": "#/components/schemas/JsonLdContainerType"
-							},
-							{
-								"type": "string",
-								"const": "@set"
-							}
-						]
-					}
-				],
-				"description": "JSON-LD container type array."
-			},
-			"JsonLdContextDefinition": {
-				"type": "object",
-				"properties": {
-					"@base": {
-						"type": [
-							"string",
-							"null"
-						]
-					},
-					"@direction": {
-						"type": [
-							"string",
-							"null"
-						],
-						"enum": [
-							"ltr",
-							"rtl",
-							null
-						]
-					},
-					"@import": {
-						"type": "string"
-					},
-					"@language": {
-						"type": "string"
-					},
-					"@propagate": {
-						"type": "boolean"
-					},
-					"@protected": {
-						"type": "boolean"
-					},
-					"@type": {
-						"type": "object",
-						"properties": {
-							"@container": {
-								"type": "string",
-								"const": "@set"
-							},
-							"@protected": {
-								"type": "boolean"
-							}
-						},
-						"required": [
-							"@container"
-						],
-						"additionalProperties": false
-					},
-					"@version": {
-						"type": "string",
-						"const": "1.1"
-					},
-					"@vocab": {
-						"type": [
-							"string",
-							"null"
-						]
-					}
-				},
-				"additionalProperties": {
-					"anyOf": [
-						{
-							"type": "null"
-						},
-						{
-							"type": "string"
-						},
-						{
-							"$ref": "#/components/schemas/JsonLdExpandedTermDefinition"
-						}
-					]
-				},
-				"description": "A context definition defines a local context in a node object."
-			},
-			"JsonLdContextDefinitionElement": {
-				"anyOf": [
-					{
-						"type": "null"
-					},
-					{
-						"type": "string"
-					},
-					{
-						"$ref": "#/components/schemas/JsonLdContextDefinition"
-					}
-				],
-				"description": "A context definition element is used to define the types of a context definition."
-			},
-			"JsonLdContextDefinitionRoot": {
-				"anyOf": [
-					{
-						"$ref": "#/components/schemas/JsonLdContextDefinitionElement"
-					},
-					{
-						"type": "array",
-						"items": false,
-						"prefixItems": [
-							{
-								"$ref": "#/components/schemas/JsonLdContextDefinitionElement"
-							}
-						]
-					}
-				],
-				"description": "A context definition root is used to define the root of a context definition."
-			},
-			"JsonLdExpandedTermDefinition": {
-				"anyOf": [
-					{
-						"type": "object",
-						"additionalProperties": false,
-						"properties": {
-							"@id": {
-								"anyOf": [
-									{
-										"type": "string"
-									},
-									{
-										"type": "array",
-										"items": false,
-										"prefixItems": [
-											{
-												"type": "string"
-											}
-										]
-									},
-									{
-										"type": "null"
-									}
-								]
-							},
-							"@nest": {
-								"type": "string"
-							},
-							"@container": {
-								"anyOf": [
-									{
-										"type": "string",
-										"const": "@list"
-									},
-									{
-										"type": "string",
-										"const": "@set"
-									},
-									{
-										"$ref": "#/components/schemas/JsonLdContainerType"
-									},
-									{
-										"type": "array",
-										"items": false,
-										"prefixItems": [
-											{
-												"anyOf": [
-													{
-														"type": "string",
-														"const": "@list"
-													},
-													{
-														"type": "string",
-														"const": "@set"
-													},
-													{
-														"$ref": "#/components/schemas/JsonLdContainerType"
-													}
-												]
-											}
-										]
-									},
-									{
-										"$ref": "#/components/schemas/JsonLdContainerTypeArray"
-									},
-									{
-										"type": "null"
-									}
-								]
-							},
-							"@type": {
-								"type": "string"
-							},
-							"@language": {
-								"type": "string"
-							},
-							"@index": {
-								"type": "string"
-							},
-							"@context": {
-								"$ref": "#/components/schemas/JsonLdContextDefinition"
-							},
-							"@prefix": {
-								"type": "boolean"
-							},
-							"@propagate": {
-								"type": "boolean"
-							},
-							"@protected": {
-								"type": "boolean"
-							}
-						}
-					},
-					{
-						"type": "object",
-						"additionalProperties": false,
-						"properties": {
-							"@reverse": {
-								"type": "string"
-							},
-							"@container": {
-								"type": [
-									"string",
-									"null"
-								],
-								"enum": [
-									"@set",
-									"@index",
-									null
-								]
-							},
-							"@type": {
-								"type": "string"
-							},
-							"@language": {
-								"type": "string"
-							},
-							"@index": {
-								"type": "string"
-							},
-							"@context": {
-								"$ref": "#/components/schemas/JsonLdContextDefinition"
-							},
-							"@prefix": {
-								"type": "boolean"
-							},
-							"@propagate": {
-								"type": "boolean"
-							},
-							"@protected": {
-								"type": "boolean"
-							}
-						},
-						"required": [
-							"@reverse"
-						]
-					}
-				],
-				"description": "An expanded term definition is used to describe the mapping between a term and its expanded identifier, as well as other properties of the value associated with the term when it is used as key in a node object."
-			},
-			"JsonLdGraphObject": {
-				"type": "object",
-				"properties": {
-					"@graph": {
-						"anyOf": [
-							{
-								"$ref": "#/components/schemas/JsonLdNodeObject"
-							},
-							{
-								"type": "array",
-								"items": false,
-								"prefixItems": [
-									{
-										"$ref": "#/components/schemas/JsonLdNodeObject"
-									}
-								]
-							}
-						]
-					},
-					"@index": {
-						"type": "string"
-					},
-					"@id": {
-						"anyOf": [
-							{
-								"type": "string"
-							},
-							{
-								"type": "array",
-								"items": false,
-								"prefixItems": [
-									{
-										"type": "string"
-									}
-								]
-							}
-						]
-					},
-					"@context": {
-						"$ref": "#/components/schemas/JsonLdContextDefinitionRoot"
-					}
-				},
-				"required": [
-					"@graph"
-				],
-				"additionalProperties": false,
-				"description": "A graph object represents a named graph, which MAY include an explicit graph name."
-			},
-			"JsonLdIdMap": {
-				"type": "object",
-				"additionalProperties": {
-					"$ref": "#/components/schemas/JsonLdNodeObject"
-				},
-				"description": "An id map is used to associate an IRI with a value that allows easy programmatic access."
-			},
-			"JsonLdIncludedBlock": {
-				"anyOf": [
-					{
-						"$ref": "#/components/schemas/JsonLdNodeObject"
-					},
-					{
-						"type": "array",
-						"items": false,
-						"prefixItems": [
-							{
-								"$ref": "#/components/schemas/JsonLdNodeObject"
-							}
-						]
-					}
-				],
-				"description": "An included block is used to provide a set of node objects."
-			},
-			"JsonLdIndexMap": {
-				"type": "object",
-				"additionalProperties": {
-					"anyOf": [
-						{
-							"$ref": "#/components/schemas/JsonLdIndexMapItem"
-						},
-						{
-							"type": "array",
-							"items": false,
-							"prefixItems": [
-								{
-									"$ref": "#/components/schemas/JsonLdIndexMapItem"
-								}
-							]
-						}
-					]
-				},
-				"description": "An index map allows keys that have no semantic meaning, but should be preserved regardless, to be used in JSON-LD documents."
-			},
-			"JsonLdIndexMapItem": {
-				"anyOf": [
-					{
-						"type": "null"
-					},
-					{
-						"type": "boolean"
-					},
-					{
-						"type": "number"
-					},
-					{
-						"type": "string"
-					},
-					{
-						"$ref": "#/components/schemas/JsonLdNodeObject"
-					},
-					{
-						"$ref": "#/components/schemas/JsonLdValueObject"
-					},
-					{
-						"$ref": "#/components/schemas/JsonLdListObject"
-					},
-					{
-						"$ref": "#/components/schemas/JsonLdSetObject"
-					}
-				],
-				"description": "The items that can be stored in an index map."
-			},
-			"JsonLdJsonArray": {
-				"type": "array",
-				"items": false,
-				"description": "JSON Type for array.",
-				"prefixItems": [
-					{
-						"$ref": "#/components/schemas/JsonLdJsonValue"
-					}
-				]
-			},
-			"JsonLdJsonObject": {
-				"type": "object",
-				"additionalProperties": {
-					"anyOf": [
-						{
-							"$ref": "#/components/schemas/JsonLdJsonValue"
-						},
-						{
-							"not": {}
-						}
-					]
-				},
-				"description": "JSON Type for object."
-			},
-			"JsonLdJsonPrimitive": {
-				"type": [
-					"string",
-					"number",
-					"boolean",
-					"null"
-				],
-				"description": "JSON Primitive."
-			},
-			"JsonLdJsonValue": {
-				"anyOf": [
-					{
-						"$ref": "#/components/schemas/JsonLdJsonPrimitive"
-					},
-					{
-						"$ref": "#/components/schemas/JsonLdJsonArray"
-					},
-					{
-						"$ref": "#/components/schemas/JsonLdJsonObject"
-					}
-				],
-				"description": "JSON Value."
-			},
-			"JsonLdLanguageMap": {
-				"type": "object",
-				"additionalProperties": {
-					"anyOf": [
-						{
-							"type": "null"
-						},
-						{
-							"type": "string"
-						},
-						{
-							"type": "array",
-							"items": false,
-							"prefixItems": [
-								{
-									"type": "string"
-								}
-							]
-						}
-					]
-				},
-				"description": "A language map is used to associate a language with a value in a way that allows easy programmatic access."
-			},
-			"JsonLdListObject": {
-				"type": "object",
-				"properties": {
-					"@list": {
-						"anyOf": [
-							{
-								"$ref": "#/components/schemas/JsonLdListOrSetItem"
-							},
-							{
-								"type": "array",
-								"items": false,
-								"prefixItems": [
-									{
-										"$ref": "#/components/schemas/JsonLdListOrSetItem"
-									}
-								]
-							}
-						]
-					},
-					"@index": {
-						"type": "string"
-					}
-				},
-				"required": [
-					"@list"
-				],
-				"additionalProperties": false,
-				"description": "A list represents an ordered set of values."
-			},
-			"JsonLdListOrSetItem": {
-				"anyOf": [
-					{
-						"type": "null"
-					},
-					{
-						"type": "boolean"
-					},
-					{
-						"type": "number"
-					},
-					{
-						"type": "string"
-					},
-					{
-						"$ref": "#/components/schemas/JsonLdNodeObject"
-					},
-					{
-						"$ref": "#/components/schemas/JsonLdValueObject"
-					}
-				],
-				"description": "A list or set item can be a null, boolean, number, string, node object, or value object."
-			},
-			"JsonLdNodeObject": {
-				"type": "object",
-				"additionalProperties": {
-					"anyOf": [
-						{
-							"$ref": "#/components/schemas/JsonLdNodePrimitive"
-						},
-						{
-							"$ref": "#/components/schemas/JsonLdLanguageMap"
-						},
-						{
-							"$ref": "#/components/schemas/JsonLdIndexMap"
-						},
-						{
-							"$ref": "#/components/schemas/JsonLdIncludedBlock"
-						},
-						{
-							"$ref": "#/components/schemas/JsonLdIdMap"
-						},
-						{
-							"$ref": "#/components/schemas/JsonLdTypeMap"
-						},
-						{
-							"type": "array"
-						}
-					]
-				},
-				"properties": {
-					"@context": {
-						"$ref": "#/components/schemas/JsonLdContextDefinitionRoot"
-					},
-					"@id": {
-						"anyOf": [
-							{
-								"type": "string"
-							},
-							{
-								"type": "array",
-								"items": false,
-								"prefixItems": [
-									{
-										"type": "string"
-									}
-								]
-							}
-						]
-					},
-					"@included": {
-						"$ref": "#/components/schemas/JsonLdIncludedBlock"
-					},
-					"@graph": {
-						"anyOf": [
-							{
-								"$ref": "#/components/schemas/JsonLdNodeObject"
-							},
-							{
-								"type": "array",
-								"items": false,
-								"prefixItems": [
-									{
-										"$ref": "#/components/schemas/JsonLdNodeObject"
-									}
-								]
-							}
-						]
-					},
-					"@nest": {
-						"anyOf": [
-							{
-								"$ref": "#/components/schemas/JsonLdJsonObject"
-							},
-							{
-								"type": "array",
-								"items": false,
-								"prefixItems": [
-									{
-										"$ref": "#/components/schemas/JsonLdJsonObject"
-									}
-								]
-							}
-						]
-					},
-					"@type": {
-						"anyOf": [
-							{
-								"type": "string"
-							},
-							{
-								"type": "array",
-								"items": false,
-								"prefixItems": [
-									{
-										"type": "string"
-									}
-								]
-							}
-						]
-					},
-					"@reverse": {
-						"type": "object",
-						"additionalProperties": {
-							"type": "string"
-						}
-					},
-					"@index": {
-						"type": "string"
-					}
-				},
-				"description": "A node object represents zero or more properties of a node in the graph serialized by the JSON-LD document."
-			},
-			"JsonLdNodePrimitive": {
-				"anyOf": [
-					{
-						"type": "null"
-					},
-					{
-						"type": "boolean"
-					},
-					{
-						"type": "number"
-					},
-					{
-						"type": "string"
-					},
-					{
-						"$ref": "#/components/schemas/JsonLdNodeObject"
-					},
-					{
-						"$ref": "#/components/schemas/JsonLdGraphObject"
-					},
-					{
-						"$ref": "#/components/schemas/JsonLdValueObject"
-					},
-					{
-						"$ref": "#/components/schemas/JsonLdListObject"
-					},
-					{
-						"$ref": "#/components/schemas/JsonLdSetObject"
-					}
-				],
-				"description": "A node primitive is a JSON-LD value which is not one of the defined NodeObject properties."
-			},
-			"JsonLdSetObject": {
-				"type": "object",
-				"properties": {
-					"@set": {
-						"anyOf": [
-							{
-								"$ref": "#/components/schemas/JsonLdListOrSetItem"
-							},
-							{
-								"type": "array",
-								"items": false,
-								"prefixItems": [
-									{
-										"$ref": "#/components/schemas/JsonLdListOrSetItem"
-									}
-								]
-							}
-						]
-					},
-					"@index": {
-						"type": "string"
-					}
-				},
-				"required": [
-					"@set"
-				],
-				"additionalProperties": false,
-				"description": "A set represents an unordered set of values."
-			},
-			"JsonLdTypeMap": {
-				"type": "object",
-				"additionalProperties": {
-					"anyOf": [
-						{
-							"type": "string"
-						},
-						{
-							"$ref": "#/components/schemas/JsonLdNodeObject"
-						}
-					]
-				},
-				"description": "A type map is used to associate an IRI with a value that allows easy programmatic access."
-			},
-			"JsonLdValueObject": {
-				"anyOf": [
-					{
-						"type": "object",
-						"additionalProperties": false,
-						"properties": {
-							"@value": {
-								"type": [
-									"null",
-									"boolean",
-									"number",
-									"string"
-								]
-							},
-							"@language": {
-								"type": "string"
-							},
-							"@direction": {
-								"type": [
-									"string",
-									"null"
-								],
-								"enum": [
-									"ltr",
-									"rtl",
-									null
-								]
-							},
-							"@index": {
-								"type": "string"
-							},
-							"@context": {
-								"$ref": "#/components/schemas/JsonLdContextDefinitionRoot"
-							}
-						},
-						"required": [
-							"@value"
-						]
-					},
-					{
-						"type": "object",
-						"additionalProperties": false,
-						"properties": {
-							"@value": {
-								"type": [
-									"null",
-									"boolean",
-									"number",
-									"string"
-								]
-							},
-							"@type": {
-								"type": "string"
-							},
-							"@index": {
-								"type": "string"
-							},
-							"@context": {
-								"$ref": "#/components/schemas/JsonLdContextDefinitionRoot"
-							}
-						},
-						"required": [
-							"@type",
-							"@value"
-						]
-					},
-					{
-						"type": "object",
-						"additionalProperties": false,
-						"properties": {
-							"@value": {
-								"anyOf": [
-									{
-										"type": "null"
-									},
-									{
-										"type": "boolean"
-									},
-									{
-										"type": "number"
-									},
-									{
-										"type": "string"
-									},
-									{
-										"$ref": "#/components/schemas/JsonLdJsonObject"
-									},
-									{
-										"$ref": "#/components/schemas/JsonLdJsonArray"
-									}
-								]
-							},
-							"@type": {
-								"type": "string",
-								"const": "@json"
-							},
-							"@index": {
-								"type": "string"
-							},
-							"@context": {
-								"$ref": "#/components/schemas/JsonLdContextDefinitionRoot"
-							}
-						},
-						"required": [
-							"@type",
-							"@value"
-						]
-					}
-				],
-				"description": "A value object is used to explicitly associate a type or a language with a value to create a typed value or a language-tagged string and possibly associate a base direction."
-			},
 			"TaskApp": {
 				"type": "object",
 				"properties": {
@@ -1953,36 +752,6 @@
 				],
 				"additionalProperties": false,
 				"description": "Denotes a task associated with a Data Space Connector App"
-			},
-			"TaskStatus": {
-				"anyOf": [
-					{
-						"type": "string",
-						"const": "pending",
-						"description": "Pending."
-					},
-					{
-						"type": "string",
-						"const": "processing",
-						"description": "Processing."
-					},
-					{
-						"type": "string",
-						"const": "success",
-						"description": "Success."
-					},
-					{
-						"type": "string",
-						"const": "failed",
-						"description": "Failed."
-					},
-					{
-						"type": "string",
-						"const": "cancelled",
-						"description": "Cancelled."
-					}
-				],
-				"description": "Task statuses."
 			}
 		},
 		"securitySchemes": {

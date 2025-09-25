@@ -1,6 +1,6 @@
 # Function: initialiseRightsManagementPipComponent()
 
-> **initialiseRightsManagementPipComponent**(`engineCore`, `context`, `instanceConfig`, `overrideInstanceType?`): `undefined` \| `string`
+> **initialiseRightsManagementPipComponent**(`engineCore`, `context`, `instanceConfig`, `overrideInstanceType?`): `Promise`\<`undefined` \| `string`\>
 
 Initialise the rights management PIP component.
 
@@ -32,7 +32,7 @@ The instance type to override the default.
 
 ## Returns
 
-`undefined` \| `string`
+`Promise`\<`undefined` \| `string`\>
 
 The name of the instance created.
 

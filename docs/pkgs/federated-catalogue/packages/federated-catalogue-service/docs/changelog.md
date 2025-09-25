@@ -1,5 +1,19 @@
 # @twin.org/federated-catalogue-service - Changelog
 
+## [0.0.2-next.3](https://github.com/twinfoundation/federated-catalogue/compare/federated-catalogue-service-v0.0.2-next.2...federated-catalogue-service-v0.0.2-next.3) (2025-08-29)
+
+
+### Features
+
+* eslint migration to flat config ([b5990d9](https://github.com/twinfoundation/federated-catalogue/commit/b5990d9ebdf403ac999da456052bee72787745de))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/federated-catalogue-models bumped from 0.0.2-next.2 to 0.0.2-next.3
+
 ## [0.0.2-next.2](https://github.com/twinfoundation/federated-catalogue/compare/federated-catalogue-service-v0.0.2-next.1...federated-catalogue-service-v0.0.2-next.2) (2025-08-21)
 
 

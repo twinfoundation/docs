@@ -4,7 +4,7 @@
 
 The sort directions.
 
-## Type declaration
+## Type Declaration
 
 ### Ascending
 

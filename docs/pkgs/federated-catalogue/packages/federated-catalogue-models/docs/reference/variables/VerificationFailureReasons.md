@@ -4,7 +4,7 @@
 
 The verification failure reasons.
 
-## Type declaration
+## Type Declaration
 
 ### InvalidCredentialType
 

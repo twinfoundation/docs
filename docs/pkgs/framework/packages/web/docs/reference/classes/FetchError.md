@@ -10,7 +10,7 @@ Class to represent errors from fetch.
 
 ### Constructor
 
-> **new FetchError**(`source`, `message`, `httpStatus`, `properties?`, `inner?`): `FetchError`
+> **new FetchError**(`source`, `message`, `httpStatus`, `properties?`, `cause?`): `FetchError`
 
 Create a new instance of FetchError.
 
@@ -38,11 +38,11 @@ The http status code.
 
 Any additional information for the error.
 
-##### inner?
+##### cause?
 
 `unknown`
 
-The inner error if we have wrapped another error.
+The cause of the error if we have wrapped another error.
 
 #### Returns
 
@@ -82,15 +82,15 @@ Any additional information for the error.
 
 ***
 
-### inner?
+### cause?
 
-> `optional` **inner**: `IError`
+> `optional` **cause**: `IError`
 
-The inner error if there was one.
+The cause of the error.
 
 #### Inherited from
 
-`BaseError.inner`
+`BaseError.cause`
 
 ***
 
@@ -408,7 +408,7 @@ True if the error has the name.
 
 > `static` **isEmpty**(`err`): `boolean`
 
-Is the error empty.
+Is the error empty, i.e. does it have no message, source, properties, or cause?
 
 #### Parameters
 
@@ -427,6 +427,64 @@ True if the error is empty.
 #### Inherited from
 
 `BaseError.isEmpty`
+
+***
+
+### isAggregateError()
+
+> `static` **isAggregateError**(`err`): `err is AggregateError`
+
+Is the error an aggregate error.
+
+#### Parameters
+
+##### err
+
+`unknown`
+
+The error to check for being an aggregate error.
+
+#### Returns
+
+`err is AggregateError`
+
+True if the error is an aggregate error.
+
+#### Inherited from
+
+`BaseError.isAggregateError`
+
+***
+
+### fromAggregate()
+
+> `static` **fromAggregate**(`err`, `includeStackTrace?`): `IError`[]
+
+Convert the aggregate error to an array of errors.
+
+#### Parameters
+
+##### err
+
+`unknown`
+
+The error to convert.
+
+##### includeStackTrace?
+
+`boolean`
+
+Whether to include the error stack in the model, defaults to false.
+
+#### Returns
+
+`IError`[]
+
+The array of errors.
+
+#### Inherited from
+
+`BaseError.fromAggregate`
 
 ***
 

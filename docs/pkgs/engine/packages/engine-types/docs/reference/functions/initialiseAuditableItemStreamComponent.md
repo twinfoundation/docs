@@ -1,6 +1,6 @@
 # Function: initialiseAuditableItemStreamComponent()
 
-> **initialiseAuditableItemStreamComponent**(`engineCore`, `context`, `instanceConfig`, `overrideInstanceType?`): `undefined` \| `string`
+> **initialiseAuditableItemStreamComponent**(`engineCore`, `context`, `instanceConfig`, `overrideInstanceType?`): `Promise`\<`undefined` \| `string`\>
 
 Initialise the auditable item stream component.
 
@@ -32,7 +32,7 @@ The instance type to override the default.
 
 ## Returns
 
-`undefined` \| `string`
+`Promise`\<`undefined` \| `string`\>
 
 The name of the instance created.
 

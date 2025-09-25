@@ -1,5 +1,12 @@
 # @twin.org/telemetry-models - Changelog
 
+## [0.0.2-next.2](https://github.com/twinfoundation/telemetry/compare/telemetry-models-v0.0.2-next.1...telemetry-models-v0.0.2-next.2) (2025-08-29)
+
+
+### Features
+
+* eslint migration to flat config ([69ac91a](https://github.com/twinfoundation/telemetry/commit/69ac91a89d0b5bc63374a0bd314f770b557dabb4))
+
 ## [0.0.2-next.1](https://github.com/twinfoundation/telemetry/compare/telemetry-models-v0.0.2-next.0...telemetry-models-v0.0.2-next.1) (2025-08-20)
 
 

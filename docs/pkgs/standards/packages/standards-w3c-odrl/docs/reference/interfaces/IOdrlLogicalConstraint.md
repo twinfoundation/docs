@@ -3,6 +3,7 @@
 Interface for ODRL Logical Constraints.
 A Logical Constraint compares two or more existing Constraints by one logical operator.
 If the comparison returns a logical match, then the Logical Constraint is satisfied.
+https://www.w3.org/TR/odrl-model/#constraint-logical
 
 ## Extends
 

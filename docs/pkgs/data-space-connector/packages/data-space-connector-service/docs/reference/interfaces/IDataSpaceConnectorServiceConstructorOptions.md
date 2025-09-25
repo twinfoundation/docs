@@ -1,6 +1,6 @@
 # Interface: IDataSpaceConnectorServiceConstructorOptions
 
-Federated Catalogue service options
+Data Space Connector service options
 
 ## Properties
 
@@ -28,6 +28,20 @@ Background task connector.
 
 ```ts
 background-task
+```
+
+***
+
+### taskSchedulerComponentType?
+
+> `optional` **taskSchedulerComponentType**: `string`
+
+Task Scheduler Component Type.
+
+#### Default
+
+```ts
+task-scheduler
 ```
 
 ***

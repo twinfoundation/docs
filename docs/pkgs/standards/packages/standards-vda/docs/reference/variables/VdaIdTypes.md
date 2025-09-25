@@ -4,7 +4,7 @@
 
 VDA identifiers.
 
-## Type declaration
+## Type Declaration
 
 ### Obj
 

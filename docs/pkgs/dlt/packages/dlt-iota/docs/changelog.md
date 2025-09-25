@@ -1,5 +1,55 @@
 # @twin.org/dlt-iota - Changelog
 
+## [0.0.2-next.9](https://github.com/twinfoundation/dlt/compare/dlt-iota-v0.0.2-next.8...dlt-iota-v0.0.2-next.9) (2025-09-22)
+
+
+### Features
+
+* bytecode change detection ([#43](https://github.com/twinfoundation/dlt/issues/43)) ([528469c](https://github.com/twinfoundation/dlt/commit/528469c1e4f032c6a936a9724a692abe403d92f6))
+
+## [0.0.2-next.8](https://github.com/twinfoundation/dlt/compare/dlt-iota-v0.0.2-next.7...dlt-iota-v0.0.2-next.8) (2025-09-10)
+
+
+### Features
+
+* consolidate environment management ([#41](https://github.com/twinfoundation/dlt/issues/41)) ([add1618](https://github.com/twinfoundation/dlt/commit/add161828e5dc42880fb0a5f9d3e61e611cf92bb))
+
+## [0.0.2-next.7](https://github.com/twinfoundation/dlt/compare/dlt-iota-v0.0.2-next.6...dlt-iota-v0.0.2-next.7) (2025-08-29)
+
+
+### Features
+
+* eslint migration to flat config ([da1d12d](https://github.com/twinfoundation/dlt/commit/da1d12dcf5b24e7ba6204f540c27de191bca098e))
+
+## [0.0.2-next.6](https://github.com/twinfoundation/dlt/compare/dlt-iota-v0.0.2-next.5...dlt-iota-v0.0.2-next.6) (2025-08-27)
+
+
+### Miscellaneous Chores
+
+* **dlt-iota:** Synchronize repo versions
+
+## [0.0.2-next.5](https://github.com/twinfoundation/dlt/compare/dlt-iota-v0.0.2-next.4...dlt-iota-v0.0.2-next.5) (2025-08-25)
+
+
+### Bug Fixes
+
+* added missing dependency ([#35](https://github.com/twinfoundation/dlt/issues/35)) ([c280e8a](https://github.com/twinfoundation/dlt/commit/c280e8aba583a957f89929dbe5105352e59c4c3f))
+* modifying logging type param ([#36](https://github.com/twinfoundation/dlt/issues/36)) ([b884fcc](https://github.com/twinfoundation/dlt/commit/b884fccef5bea5c6818cf8bfa8af197d3622cac6))
+
+## [0.0.2-next.4](https://github.com/twinfoundation/dlt/compare/dlt-iota-v0.0.2-next.3...dlt-iota-v0.0.2-next.4) (2025-08-22)
+
+
+### Features
+
+* upgrade capabilities ([#32](https://github.com/twinfoundation/dlt/issues/32)) ([437219f](https://github.com/twinfoundation/dlt/commit/437219f0f784ec38353c01e1c8ce6bfba3b1b530))
+
+## [0.0.2-next.3](https://github.com/twinfoundation/dlt/compare/dlt-iota-v0.0.2-next.2...dlt-iota-v0.0.2-next.3) (2025-08-20)
+
+
+### Features
+
+* update framework core ([79fc4b9](https://github.com/twinfoundation/dlt/commit/79fc4b961bd755437cad98d733ca9e25476bc03f))
+
 ## [0.0.2-next.2](https://github.com/twinfoundation/dlt/compare/dlt-iota-v0.0.2-next.1...dlt-iota-v0.0.2-next.2) (2025-07-25)
 
 

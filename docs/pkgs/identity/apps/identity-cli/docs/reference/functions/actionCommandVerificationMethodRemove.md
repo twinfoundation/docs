@@ -22,6 +22,12 @@ The private key for the controller.
 
 The id of the verification method to remove.
 
+#### addressIndex?
+
+`string`
+
+The address index to use for key derivation (if applicable).
+
 #### connector?
 
 `"iota"`

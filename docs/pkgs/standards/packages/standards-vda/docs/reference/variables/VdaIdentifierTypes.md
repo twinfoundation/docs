@@ -4,7 +4,7 @@
 
 The types of VDA Identifier data.
 
-## Type declaration
+## Type Declaration
 
 ### JaifId
 

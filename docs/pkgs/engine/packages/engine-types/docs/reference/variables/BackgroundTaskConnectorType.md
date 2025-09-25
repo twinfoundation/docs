@@ -4,7 +4,7 @@
 
 Background task connector types.
 
-## Type declaration
+## Type Declaration
 
 ### EntityStorage
 

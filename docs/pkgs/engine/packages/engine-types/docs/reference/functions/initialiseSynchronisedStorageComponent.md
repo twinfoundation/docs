@@ -1,6 +1,6 @@
 # Function: initialiseSynchronisedStorageComponent()
 
-> **initialiseSynchronisedStorageComponent**(`engineCore`, `context`, `instanceConfig`, `overrideInstanceType?`): `undefined` \| `string`
+> **initialiseSynchronisedStorageComponent**(`engineCore`, `context`, `instanceConfig`, `overrideInstanceType?`): `Promise`\<`undefined` \| `string`\>
 
 Initialise the synchronised storage component.
 
@@ -32,7 +32,7 @@ The instance type to override the default.
 
 ## Returns
 
-`undefined` \| `string`
+`Promise`\<`undefined` \| `string`\>
 
 The name of the instance created.
 

@@ -6,13 +6,13 @@
 
 - The **architectural vision** has been updated and refined based on feedback from development and partners. The TWIN Data Apps concept has been further developed and captured in [Draft #4 of the TWIN RA Whitepaper](twin-white-paper.md).
 
-- DLT Connector for **IOTA Rebased** (last version of IOTA) completed, enabling the [IOTA mainnet](https://explorer.iota.org) to be used as a verifiable registry for decentralized identities, Catalogue sync points, data commitments, etc.
+- DLT Connector for the rebased **IOTA** Protocol completed, enabling the [IOTA mainnet](https://explorer.iota.org) to be used as a verifiable registry for decentralized identities, catalogue sync points, data commitments, etc.
 
 - **TWIN Engine** developed as main Component Manager enabling **extensibility** through TWIN Data Apps. It serves as the main enabler of the **TWIN Node** as a container of both TWIN Core Components and **TWIN Data Apps**. See [https://github.com/twinfoundation/engine](https://github.com/twinfoundation/engine).
 
 - First version of the **TWIN Federated Catalogue** aligned with the Gaia-X Ontology. Four types of entries are supported: _Participants, Service Offerings, Data Resources and Data Space Connectors_ (Data Exchange Components). See [https://github.com/twinfoundation/federated-catalogue](https://github.com/twinfoundation/federated-catalogue)
 
-- The first version of the **decentralized storage component** has been developed. It will be key to maintaining multiple synchronized copies of a Federated Catalogue or any Registry across a network of TWIN Nodes. Based on IPFS and IOTA Rebased.
+- The first version of the **decentralized storage component** has been developed. It will be key to maintaining multiple synchronized copies of a Federated Catalogue or any Registry across a network of TWIN Nodes. Based on IPFS and IOTA.
 
 - The **Documents Management component** has been consolidated and now every document is also an Auditable Item.
 
@@ -22,7 +22,7 @@
 
 - The first major design of **TWIN ID** is now ready. This milestone sets up the fundamental systems for onboarding organizations in TWIN ecosystems. In addition, advanced features such as _verifiable credential_ template creation and issuance management can now be utilized in TWIN ID v0.5 as end-to-end flows.
 
-- Next increment of the **TWIN Playground** to support usage examples of the _Auditable Item Stream_, document management and data extraction, policy creation for the _rights management_ and full IOTA Rebased integration.
+- Next increment of the **TWIN Playground** to support usage examples of the _Auditable Item Stream_, document management and data extraction, policy creation for the _rights management_ and full IOTA integration.
 
 ## Other Refinements
 
@@ -33,8 +33,6 @@
 
 ## Next Steps
 
-Please join us at the next TWIN Tech Webinar where we will provide additional details about our progress. You will have the opportunity to see the technology in action and to ask questions to the main developers.
-
-**When:** September 24th 2025 10:30 - 12:30 CEST
+Mid January 2026. Potential topics: DPP Educational Case, TWIN Identity, Data Verifiability with IOTA and TWIN, Tokenization and Trade Finance use cases with TWIN, Rights Management and ODRL in depth.
 
 🚀 _More quarterly updates and roadmap details coming soon..._

@@ -18,7 +18,7 @@ Response status code.
 
 The body which contains the error.
 
-#### Type declaration
+#### Type Declaration
 
 ##### conflicts
 

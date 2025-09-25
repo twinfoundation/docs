@@ -12,7 +12,7 @@ Data Space Connector Service.
 
 > **new DataSpaceConnectorService**(`options`): `DataSpaceConnectorService`
 
-Create a new instance of FederatedCatalogue service.
+Create a new instance of DataSpaceConnector.
 
 #### Parameters
 

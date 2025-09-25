@@ -4,7 +4,7 @@
 
 The topics for auditable item stream event bus notifications.
 
-## Type declaration
+## Type Declaration
 
 ### StreamCreated
 

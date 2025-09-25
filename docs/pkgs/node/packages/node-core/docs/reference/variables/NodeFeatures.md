@@ -4,7 +4,7 @@
 
 The features that can be enabled on the node.
 
-## Type declaration
+## Type Declaration
 
 ### NodeIdentity
 

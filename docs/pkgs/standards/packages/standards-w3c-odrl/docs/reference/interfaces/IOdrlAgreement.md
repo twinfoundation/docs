@@ -2,6 +2,7 @@
 
 Interface representing an ODRL Agreement.
 An Agreement requires both an assigner and assignee (both agreeing parties).
+https://www.w3.org/TR/odrl-model/#policy-agreement
 
 ## Extends
 
@@ -104,7 +105,7 @@ The target asset for the rule.
 
 ### action?
 
-> `optional` **action**: [`ActionType`](../type-aliases/ActionType.md) \| [`IOdrlAction`](IOdrlAction.md) \| ActionType \| IOdrlAction[]
+> `optional` **action**: `string` \| [`IOdrlAction`](IOdrlAction.md) \| (`string` \| [`IOdrlAction`](IOdrlAction.md))[]
 
 The action associated with the rule.
 

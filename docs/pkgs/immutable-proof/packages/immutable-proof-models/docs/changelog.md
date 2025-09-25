@@ -1,5 +1,12 @@
 # @twin.org/immutable-proof-models - Changelog
 
+## [0.0.2-next.2](https://github.com/twinfoundation/immutable-proof/compare/immutable-proof-models-v0.0.2-next.1...immutable-proof-models-v0.0.2-next.2) (2025-08-29)
+
+
+### Features
+
+* eslint migration to flat config ([c8536f2](https://github.com/twinfoundation/immutable-proof/commit/c8536f219c7709c6c08b9266e537831f9054dda9))
+
 ## [0.0.2-next.1](https://github.com/twinfoundation/immutable-proof/compare/immutable-proof-models-v0.0.2-next.0...immutable-proof-models-v0.0.2-next.1) (2025-08-20)
 
 

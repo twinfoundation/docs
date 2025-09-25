@@ -1,5 +1,19 @@
 # @twin.org/attestation-cli - Changelog
 
+## [0.0.2-next.2](https://github.com/twinfoundation/attestation/compare/attestation-cli-v0.0.2-next.1...attestation-cli-v0.0.2-next.2) (2025-08-29)
+
+
+### Features
+
+* eslint migration to flat config ([7c768ff](https://github.com/twinfoundation/attestation/commit/7c768ffae02456d60fd62ba8b4b488c307ceff32))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/attestation-connector-nft bumped from 0.0.2-next.1 to 0.0.2-next.2
+
 ## [0.0.2-next.1](https://github.com/twinfoundation/attestation/compare/attestation-cli-v0.0.2-next.0...attestation-cli-v0.0.2-next.1) (2025-08-20)
 
 

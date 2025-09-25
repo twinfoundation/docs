@@ -2,7 +2,7 @@
 
 > **generateRestRoutesDataSpaceConnector**(`baseRouteName`, `factoryServiceName`): `IRestRoute`\<`any`, `any`\>[]
 
-The REST routes for Federated Catalogue.
+The REST routes for Data Space Connector.
 
 ## Parameters
 

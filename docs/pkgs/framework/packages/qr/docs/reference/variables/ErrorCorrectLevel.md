@@ -5,7 +5,7 @@
 Error correction level to use for the QR Code.
 Based on https://github.com/kazuhikoarase/qrcode-generator/ .
 
-## Type declaration
+## Type Declaration
 
 ### L
 

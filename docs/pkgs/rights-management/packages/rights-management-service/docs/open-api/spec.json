@@ -18,10 +18,22 @@
 		{
 			"name": "Policy Administration Point",
 			"description": "Endpoints for managing ODRL policies in the Policy Administration Point"
+		},
+		{
+			"name": "Policy Negotiation Point",
+			"description": "Endpoints for managing ODRL policies in the Policy Negotiation Point"
+		},
+		{
+			"name": "Policy Negotiation Administration Point",
+			"description": "Endpoints for managing ODRL policies in the Policy Negotiation Administration Point"
+		},
+		{
+			"name": "Data Access Point",
+			"description": "Endpoints for providing access to the Rights Management Data Access Point"
 		}
 	],
 	"paths": {
-		"/rights-management/pap": {
+		"/rights-management/policy/admin": {
 			"post": {
 				"operationId": "papCreate",
 				"summary": "Create a policy",
@@ -39,10 +51,10 @@
 					"content": {
 						"application/json": {
 							"schema": {
-								"$ref": "https://schema.twindev.org/w3c-odrl/OdrlPolicy"
+								"$ref": "#/components/schemas/PapCreateRequest"
 							},
 							"examples": {
-								"papCreateExample": {
+								"papCreateRequestExample": {
 									"value": {
 										"@context": "https://www.w3.org/ns/odrl/2/",
 										"@type": "Set",
@@ -128,9 +140,143 @@
 						}
 					}
 				}
+			},
+			"get": {
+				"operationId": "papQuery",
+				"summary": "Query policies",
+				"tags": [
+					"Policy Administration Point"
+				],
+				"parameters": [
+					{
+						"name": "conditions",
+						"description": "The condition for the query.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"name": "pageSize",
+						"description": "The number of entries to return per page.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": [
+								"number",
+								"string"
+							]
+						}
+					},
+					{
+						"name": "cursor",
+						"description": "The cursor to get next chunk of data, returned in previous response.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string"
+						},
+						"example": "optional-pagination-cursor"
+					}
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "The response structure for querying policies.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/PapQueryResponse"
+								},
+								"examples": {
+									"papQueryResponseExample": {
+										"value": {
+											"cursor": "next-page-cursor",
+											"policies": [
+												{
+													"@context": "https://www.w3.org/ns/odrl/2/",
+													"@type": "Set",
+													"uid": "urn:rights-management:abc123def456",
+													"permission": [
+														{
+															"target": "http://example.com/asset/1",
+															"action": "use"
+														}
+													]
+												}
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
 			}
 		},
-		"/rights-management/pap/{id}": {
+		"/rights-management/policy/admin/{id}": {
 			"put": {
 				"operationId": "papUpdate",
 				"summary": "Update a policy",
@@ -164,7 +310,7 @@
 								"$ref": "https://schema.twindev.org/w3c-odrl/OdrlPolicy"
 							},
 							"examples": {
-								"papUpdateExample": {
+								"papUpdateRequestExample": {
 									"value": {
 										"@context": "https://www.w3.org/ns/odrl/2/",
 										"@type": "Set",
@@ -245,15 +391,15 @@
 				}
 			},
 			"get": {
-				"operationId": "papRetrieve",
-				"summary": "Retrieve a policy",
+				"operationId": "papGet",
+				"summary": "Get a policy",
 				"tags": [
 					"Policy Administration Point"
 				],
 				"parameters": [
 					{
 						"name": "id",
-						"description": "The ID of the policy to retrieve.",
+						"description": "The ID of the policy to get.",
 						"in": "path",
 						"required": true,
 						"schema": {
@@ -270,14 +416,14 @@
 				],
 				"responses": {
 					"200": {
-						"description": "The response structure for retrieving a policy.",
+						"description": "The response structure for getting a policy.",
 						"content": {
 							"application/json": {
 								"schema": {
 									"$ref": "https://schema.twindev.org/w3c-odrl/OdrlPolicy"
 								},
 								"examples": {
-									"papRetrieveResponseExample": {
+									"papGetResponseExample": {
 										"value": {
 											"@context": "https://www.w3.org/ns/odrl/2/",
 											"@type": "Set",
@@ -441,44 +587,1039 @@
 				}
 			}
 		},
-		"/rights-management/pap/query": {
+		"/rights-management/negotiations/{id}": {
 			"get": {
-				"operationId": "papQuery",
-				"summary": "Query policies",
+				"operationId": "pnpGetNegotiation",
+				"summary": "Get a negotiation",
 				"tags": [
-					"Policy Administration Point"
+					"Policy Negotiation Point"
 				],
 				"parameters": [
 					{
-						"name": "conditions",
-						"description": "The condition for the query.",
-						"in": "query",
-						"required": false,
-						"schema": {
-							"type": "string"
-						}
-					},
-					{
-						"name": "pageSize",
-						"description": "The number of entries to return per page.",
-						"in": "query",
-						"required": false,
-						"schema": {
-							"type": [
-								"number",
-								"string"
-							]
-						}
-					},
-					{
-						"name": "cursor",
-						"description": "The cursor to get next chunk of data, returned in previous response.",
-						"in": "query",
-						"required": false,
+						"name": "id",
+						"description": "The identifier of the contract negotiation to be retrieved.",
+						"in": "path",
+						"required": true,
 						"schema": {
 							"type": "string"
 						},
-						"example": "optional-pagination-cursor"
+						"style": "simple",
+						"example": "urn:contract-negotiation:00aa11bb.......ffff"
+					},
+					{
+						"name": "accept",
+						"in": "header",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "application/ld+json"
+					},
+					{
+						"name": "authorization",
+						"in": "header",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "z3Vcuh2BP9ShC.z3Vcuh2BP9ShC.z3Vcuh2BP9ShC"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "The response structure for negotiating a policy.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/PnpContractNegotiationResponse"
+								},
+								"examples": {
+									"pnpGetNegotiationResponseExample": {
+										"value": {
+											"@context": "https://w3id.org/dspace/2024/1/context.json",
+											"@type": "ContractNegotiation",
+											"providerPid": "urn:contract-negotiation:002aa11bb.......ffff",
+											"consumerPid": "urn:contract-negotiation:22aa11bb.......ffff",
+											"state": "REQUESTED"
+										}
+									}
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/rights-management/negotiations/request": {
+			"post": {
+				"operationId": "pnpNegotiationRequest",
+				"summary": "Negotiate a policy",
+				"tags": [
+					"Policy Negotiation Point"
+				],
+				"parameters": [
+					{
+						"name": "accept",
+						"in": "header",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "application/ld+json"
+					},
+					{
+						"name": "authorization",
+						"in": "header",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "z3Vcuh2BP9ShC.z3Vcuh2BP9ShC.z3Vcuh2BP9ShC"
+					}
+				],
+				"requestBody": {
+					"description": "The request structure for requesting a contract negotiation.",
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "https://schema.twindev.org/ids-contract-negotiation/IdsContractRequestMessage"
+							},
+							"examples": {
+								"pnpNegotiationRequestExample": {
+									"value": {
+										"@context": "https://w3id.org/dspace/2024/1/context.json",
+										"@type": "ContractRequestMessage",
+										"consumerPid": "urn:contract-negotiation:22aa11bb.......ffff",
+										"offer": {
+											"@context": "https://www.w3.org/ns/odrl/2/",
+											"@type": "Offer",
+											"uid": "urn:offer-1",
+											"assigner": "urn:provider:node:1"
+										}
+									}
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": "The response structure for negotiating a policy.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/PnpContractNegotiationResponse"
+								},
+								"examples": {
+									"IPnpNegotiationRequestResponseExample": {
+										"value": {
+											"@context": "https://w3id.org/dspace/2024/1/context.json",
+											"@type": "ContractNegotiation",
+											"providerPid": "urn:contract-negotiation:00aa11bb.......ffff",
+											"consumerPid": "urn:contract-negotiation:22aa11bb.......ffff",
+											"state": "REQUESTED"
+										}
+									}
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/rights-management/negotiations/{id}/request": {
+			"post": {
+				"operationId": "pnpNegotiationProviderRequest",
+				"summary": "Negotiate a policy with an existing provider id",
+				"tags": [
+					"Policy Negotiation Point"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"description": "",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "urn:contract-negotiation:00aa11bb.......ffff"
+					}
+				],
+				"requestBody": {
+					"description": "The request structure for requesting a contract negotiation.",
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "https://schema.twindev.org/ids-contract-negotiation/IdsContractRequestMessage"
+							},
+							"examples": {
+								"pnpNegotiationProviderRequestExample": {
+									"value": {
+										"@context": "https://w3id.org/dspace/2024/1/context.json",
+										"@type": "ContractRequestMessage",
+										"consumerPid": "urn:contract-negotiation:22aa11bb.......ffff",
+										"offer": {
+											"@context": "https://www.w3.org/ns/odrl/2/",
+											"@type": "Offer",
+											"uid": "urn:offer-1",
+											"assigner": "urn:provider:node:1"
+										}
+									}
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": "The response structure for negotiating a policy.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "https://schema.twindev.org/ids-contract-negotiation/IdsContractNegotiationError"
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/rights-management/negotiations/{id}/events": {
+			"post": {
+				"operationId": "pnpNegotiationEvents",
+				"summary": "Update the state of the negotiation",
+				"tags": [
+					"Policy Negotiation Point"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"description": "The identifier of the negotiation to target.",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "urn:contract-negotiation:00aa11bb.......ffff"
+					},
+					{
+						"name": "accept",
+						"in": "header",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "application/ld+json"
+					},
+					{
+						"name": "authorization",
+						"in": "header",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "z3Vcuh2BP9ShC.z3Vcuh2BP9ShC.z3Vcuh2BP9ShC"
+					}
+				],
+				"requestBody": {
+					"description": "The request structure for requesting a contract negotiation event.",
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "https://schema.twindev.org/ids-contract-negotiation/IdsContractNegotiationEventMessage"
+							},
+							"examples": {
+								"pnpNegotiationEventsRequestExample": {
+									"value": {
+										"@context": "https://w3id.org/dspace/2024/1/context.json",
+										"@type": "ContractRequestMessage",
+										"providerPid": "urn:contract-negotiation:00aa11bb.......ffff",
+										"consumerPid": "urn:contract-negotiation:22aa11bb.......ffff",
+										"event": "ACCEPTED"
+									}
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": "The response structure for negotiating a policy.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "https://schema.twindev.org/ids-contract-negotiation/IdsContractNegotiationError"
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/rights-management/negotiations/{id}/agreement/verification": {
+			"post": {
+				"operationId": "pnpNegotiationAgreementVerification",
+				"summary": "Set the agreement to verified",
+				"tags": [
+					"Policy Negotiation Point"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"description": "The identifier of the contract negotiation to be retrieved.",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "urn:contract-negotiation:00aa11bb.......ffff"
+					},
+					{
+						"name": "accept",
+						"in": "header",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "application/ld+json"
+					},
+					{
+						"name": "authorization",
+						"in": "header",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "z3Vcuh2BP9ShC.z3Vcuh2BP9ShC.z3Vcuh2BP9ShC"
+					}
+				],
+				"requestBody": {
+					"description": "The request structure for sending a contract negotiation agreement verification.",
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "https://schema.twindev.org/ids-contract-negotiation/IdsContractAgreementVerificationMessage"
+							},
+							"examples": {
+								"pnpNegotiationAgreementVerificationRequestExample": {
+									"value": {
+										"@context": "https://w3id.org/dspace/2024/1/context.json",
+										"@type": "ContractRequestMessage",
+										"providerPid": "urn:contract-negotiation:00aa11bb.......ffff",
+										"consumerPid": "urn:contract-negotiation:22aa11bb.......ffff"
+									}
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": "The response structure for negotiating a policy.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "https://schema.twindev.org/ids-contract-negotiation/IdsContractNegotiationError"
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/rights-management/negotiations/{id}/termination": {
+			"post": {
+				"operationId": "pnpNegotiationTermination",
+				"summary": "Set the agreement to terminated",
+				"tags": [
+					"Policy Negotiation Point"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"description": "The identifier of the negotiation to target.",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "urn:contract-negotiation:00aa11bb.......ffff"
+					},
+					{
+						"name": "accept",
+						"in": "header",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "application/ld+json"
+					},
+					{
+						"name": "authorization",
+						"in": "header",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "z3Vcuh2BP9ShC.z3Vcuh2BP9ShC.z3Vcuh2BP9ShC"
+					}
+				],
+				"requestBody": {
+					"description": "The request structure for requesting a contract negotiation termination.",
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "https://schema.twindev.org/ids-contract-negotiation/IdsContractNegotiationTerminationMessage"
+							},
+							"examples": {
+								"pnpNegotiationTerminationRequestExample": {
+									"value": {
+										"@context": "https://w3id.org/dspace/2024/1/context.json",
+										"@type": "ContractRequestMessage",
+										"providerPid": "urn:contract-negotiation:00aa11bb.......ffff",
+										"consumerPid": "urn:contract-negotiation:22aa11bb.......ffff"
+									}
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": "The response structure for negotiating a policy.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "https://schema.twindev.org/ids-contract-negotiation/IdsContractNegotiationError"
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/rights-management/negotiations/offers": {
+			"post": {
+				"operationId": "pnpNegotiationOffer",
+				"summary": "Send the offer to the consumer",
+				"tags": [
+					"Policy Negotiation Point"
+				],
+				"parameters": [
+					{
+						"name": "accept",
+						"in": "header",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "application/ld+json"
+					},
+					{
+						"name": "authorization",
+						"in": "header",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "z3Vcuh2BP9ShC.z3Vcuh2BP9ShC.z3Vcuh2BP9ShC"
+					}
+				],
+				"requestBody": {
+					"description": "The request structure for sending a contract negotiation offer.",
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "https://schema.twindev.org/ids-contract-negotiation/IdsContractOfferMessage"
+							},
+							"examples": {
+								"pnpNegotiationOfferRequestExample": {
+									"value": {
+										"@context": "https://w3id.org/dspace/2024/1/context.json",
+										"@type": "ContractRequestMessage",
+										"providerPid": "urn:contract-negotiation:00aa11bb.......ffff",
+										"consumerPid": "urn:contract-negotiation:22aa11bb.......ffff",
+										"offer": {
+											"@context": "https://www.w3.org/ns/odrl/2/",
+											"@type": "Offer",
+											"uid": "urn:offer-1",
+											"assigner": "urn:provider:node:1"
+										}
+									}
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": "The response structure for negotiating a policy.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "https://schema.twindev.org/ids-contract-negotiation/IdsContractNegotiationError"
+								},
+								"examples": {
+									"pnpNegotiationOfferResponseExample": {
+										"value": {
+											"@context": "https://w3id.org/dspace/2024/1/context.json",
+											"@type": "ContractRequestMessage",
+											"providerPid": "urn:contract-negotiation:00aa11bb.......ffff",
+											"consumerPid": "urn:contract-negotiation:22aa11bb.......ffff"
+										}
+									}
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/rights-management/negotiations/{id}/offers": {
+			"post": {
+				"operationId": "pnpNegotiationConsumerOffer",
+				"summary": "Send the offer to the consumer with existing id",
+				"tags": [
+					"Policy Negotiation Point"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"description": "",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "urn:contract-negotiation:22aa11bb.......ffff"
+					}
+				],
+				"requestBody": {
+					"description": "The request structure for sending a contract negotiation offer.",
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "https://schema.twindev.org/ids-contract-negotiation/IdsContractOfferMessage"
+							},
+							"examples": {
+								"pnpNegotiationConsumerOfferRequestExample": {
+									"value": {
+										"@context": "https://w3id.org/dspace/2024/1/context.json",
+										"@type": "ContractRequestMessage",
+										"providerPid": "urn:contract-negotiation:00aa11bb.......ffff",
+										"consumerPid": "urn:contract-negotiation:22aa11bb.......ffff",
+										"offer": {
+											"@context": "https://www.w3.org/ns/odrl/2/",
+											"@type": "Offer",
+											"uid": "urn:offer-1",
+											"assigner": "urn:provider:node:1"
+										}
+									}
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": "The response structure for negotiating a policy.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "https://schema.twindev.org/ids-contract-negotiation/IdsContractNegotiationError"
+								},
+								"examples": {
+									"pnpNegotiationConsumerOfferResponseExample": {
+										"value": {
+											"@context": "https://w3id.org/dspace/2024/1/context.json",
+											"@type": "ContractNegotiation",
+											"providerPid": "urn:contract-negotiation:00aa11bb.......ffff",
+											"consumerPid": "urn:contract-negotiation:22aa11bb.......ffff"
+										}
+									}
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/rights-management/negotiations/{id}/agreement": {
+			"post": {
+				"operationId": "pnpNegotiationAgreement",
+				"summary": "Send the agreement to the consumer",
+				"tags": [
+					"Policy Negotiation Point"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"description": "The identifier of the negotiation to target.",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "urn:contract-negotiation:22aa11bb.......ffff"
+					},
+					{
+						"name": "accept",
+						"in": "header",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "application/ld+json"
+					},
+					{
+						"name": "authorization",
+						"in": "header",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "z3Vcuh2BP9ShC.z3Vcuh2BP9ShC.z3Vcuh2BP9ShC"
+					}
+				],
+				"requestBody": {
+					"description": "The request structure for sending a contract negotiation agreement.",
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "https://schema.twindev.org/ids-contract-negotiation/IdsContractAgreementMessage"
+							},
+							"examples": {
+								"pnpNegotiationAgreementRequestExample": {
+									"value": {
+										"@context": "https://w3id.org/dspace/2024/1/context.json",
+										"@type": "ContractRequestMessage",
+										"providerPid": "urn:contract-negotiation:00aa11bb.......ffff",
+										"consumerPid": "urn:contract-negotiation:22aa11bb.......ffff",
+										"agreement": {
+											"@context": "https://www.w3.org/ns/odrl/2/",
+											"@type": "Agreement",
+											"uid": "urn:offer-1",
+											"assigner": "urn:provider:node:1",
+											"assignee": "urn:consumer:node:1"
+										}
+									}
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": "The response structure for negotiating a policy.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "https://schema.twindev.org/ids-contract-negotiation/IdsContractNegotiationError"
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/rights-management/negotiations/admin/{policyId}": {
+			"get": {
+				"operationId": "pnapGet",
+				"summary": "Get a policy negotiation",
+				"tags": [
+					"Policy Negotiation Administration Point"
+				],
+				"parameters": [
+					{
+						"name": "policyId",
+						"description": "The ID of the policy being requested.",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "policy-1"
 					}
 				],
 				"security": [
@@ -488,29 +1629,334 @@
 				],
 				"responses": {
 					"200": {
-						"description": "The response structure for querying policies.",
+						"description": "The response structure for policy negotiation request.",
 						"content": {
 							"application/json": {
 								"schema": {
-									"$ref": "#/components/schemas/PapQueryResponse"
+									"$ref": "#/components/schemas/PolicyNegotiation"
 								},
 								"examples": {
-									"papQueryResponseExample": {
+									"pnapGetResponseExample": {
 										"value": {
-											"cursor": "next-page-cursor",
-											"policies": [
+											"id": "pid",
+											"correlationId": "cid",
+											"dateCreated": "2025-09-03T00:00:00.000Z",
+											"state": "REQUESTED"
+										}
+									}
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			"put": {
+				"operationId": "pnapSet",
+				"summary": "Set a policy negotiation",
+				"tags": [
+					"Policy Negotiation Administration Point"
+				],
+				"parameters": [
+					{
+						"name": "policyId",
+						"description": "The ID of the policy being requested.",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "policy-1"
+					}
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"requestBody": {
+					"description": "The request structure for setting a policy negotiation.",
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/PolicyNegotiation"
+							},
+							"examples": {
+								"pnapSetRequestExample": {
+									"value": {
+										"id": "pid",
+										"correlationId": "cid",
+										"dateCreated": "2025-09-03T00:00:00.000Z",
+										"state": "REQUESTED"
+									}
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"204": {
+						"description": "The rest request ended in success with no data."
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			"delete": {
+				"operationId": "pnapRemove",
+				"summary": "Remove a policy negotiation",
+				"tags": [
+					"Policy Negotiation Administration Point"
+				],
+				"parameters": [
+					{
+						"name": "policyId",
+						"description": "The ID of the policy being removed.",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "policy-1"
+					}
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"responses": {
+					"204": {
+						"description": "The rest request ended in success with no data."
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "UnauthorizedError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/rights-management/negotiations/admin": {
+			"get": {
+				"operationId": "pnapQuery",
+				"summary": "Query policy negotiations",
+				"tags": [
+					"Policy Negotiation Administration Point"
+				],
+				"parameters": [
+					{
+						"name": "state",
+						"description": "The state of the policy negotiations.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"$ref": "https://schema.twindev.org/ids-contract-negotiation/IdsContractNegotiationStateType"
+						},
+						"example": "ACCEPTED"
+					},
+					{
+						"name": "cursor",
+						"description": "The cursor for pagination.",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string"
+						},
+						"example": "next-cursor"
+					}
+				],
+				"security": [
+					{
+						"jwtBearerAuthScheme": []
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "The response structure for querying manual policy negotiations.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/PnapQueryResponse"
+								},
+								"examples": {
+									"pnapQueryResponseExample": {
+										"value": {
+											"items": [
 												{
-													"@context": "https://www.w3.org/ns/odrl/2/",
-													"@type": "Set",
-													"uid": "urn:rights-management:abc123def456",
-													"permission": [
-														{
-															"target": "http://example.com/asset/1",
-															"action": "use"
-														}
-													]
+													"id": "pid",
+													"correlationId": "cid",
+													"dateCreated": "2025-09-03T00:00:00.000Z",
+													"state": "REQUESTED"
 												}
-											]
+											],
+											"cursor": "next-cursor"
 										}
 									}
 								}
@@ -577,35 +2023,64 @@
 				}
 			}
 		},
-		"/rights-management/pep/intercept": {
+		"/rights-management/data/{assetType}": {
 			"post": {
-				"operationId": "pepIntercept",
-				"summary": "Intercept a request",
+				"operationId": "dapCreate",
+				"summary": "Create a new item",
 				"tags": [
-					"Policy Administration Point"
+					"Data Access Point"
 				],
-				"security": [
+				"parameters": [
 					{
-						"jwtBearerAuthScheme": []
+						"name": "assetType",
+						"description": "The type of the item being created.",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "contacts"
+					},
+					{
+						"name": "accept",
+						"in": "header",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "application/ld+json"
+					},
+					{
+						"name": "authorization",
+						"in": "header",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "z3Vcuh2BP9ShC.z3Vcuh2BP9ShC.z3Vcuh2BP9ShC"
 					}
 				],
 				"requestBody": {
-					"description": "The request structure for intercepting a request and enforcing a policy.",
+					"description": "The request structure for creating an item with the DAP.",
 					"required": true,
 					"content": {
 						"application/json": {
 							"schema": {
-								"$ref": "#/components/schemas/PepInterceptRequest"
+								"$ref": "https://schema.twindev.org/rights-management/DataAccessQueryRequestWithObject"
 							},
 							"examples": {
-								"pepInterceptExample": {
+								"dapCreateRequestExample": {
 									"value": {
-										"assetType": "document",
-										"action": "view",
-										"data": {
-											"id": "document-1",
-											"param1": 1,
-											"param2": 2
+										"@context": "https://schema.twindev.org/rights-management",
+										"type": "DataAccessRequestWithObject",
+										"assetType": "contacts",
+										"object": {
+											"@context": "https://schema.org",
+											"type": "Person",
+											"name": "Jane Doe"
 										}
 									}
 								}
@@ -614,18 +2089,124 @@
 					}
 				},
 				"responses": {
-					"200": {
-						"description": "The response structure for intercepting a request and enforcing a policy.",
+					"201": {
+						"description": "The rest request ended in created response.",
+						"headers": {
+							"location": {
+								"schema": {
+									"type": "string"
+								},
+								"description": "e.g. urn:contacts:abc123def456"
+							}
+						}
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
 						"content": {
 							"application/json": {
 								"schema": {
-									"$ref": "#/components/schemas/PepInterceptResponse"
+									"$ref": "#/components/schemas/Error"
 								},
 								"examples": {
-									"pepInterceptResponseExample": {
+									"exampleResponse": {
 										"value": {
-											"id": "document-1",
-											"param1": 1
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/rights-management/data/{assetType}/{id}": {
+			"get": {
+				"operationId": "dapGet",
+				"summary": "Get an existing item",
+				"tags": [
+					"Data Access Point"
+				],
+				"parameters": [
+					{
+						"name": "assetType",
+						"description": "The type of the item being requested.",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "contacts"
+					},
+					{
+						"name": "id",
+						"description": "The id of the item being requested.",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "urn:contacts:abc123def456"
+					},
+					{
+						"name": "accept",
+						"in": "header",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "application/ld+json"
+					},
+					{
+						"name": "authorization",
+						"in": "header",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "z3Vcuh2BP9ShC.z3Vcuh2BP9ShC.z3Vcuh2BP9ShC"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "The response structure for getting an item with the DAP.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
+								},
+								"examples": {
+									"IDapGetResponseExample": {
+										"value": {
+											"@context": "https://schema.org",
+											"type": "Person",
+											"name": "Jane Doe"
 										}
 									}
 								}
@@ -653,8 +2234,8 @@
 							}
 						}
 					},
-					"401": {
-						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
 						"content": {
 							"application/json": {
 								"schema": {
@@ -663,8 +2244,333 @@
 								"examples": {
 									"exampleResponse": {
 										"value": {
-											"name": "UnauthorizedError",
+											"name": "InternalServerError",
 											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			"put": {
+				"operationId": "dapUpdate",
+				"summary": "Update an existing item",
+				"tags": [
+					"Data Access Point"
+				],
+				"parameters": [
+					{
+						"name": "assetType",
+						"description": "The type of the item being updated.",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "contacts"
+					},
+					{
+						"name": "id",
+						"description": "The id of the item being updated.",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "urn:contacts:abc123def456"
+					},
+					{
+						"name": "accept",
+						"in": "header",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "application/ld+json"
+					},
+					{
+						"name": "authorization",
+						"in": "header",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "z3Vcuh2BP9ShC.z3Vcuh2BP9ShC.z3Vcuh2BP9ShC"
+					}
+				],
+				"requestBody": {
+					"description": "The request structure for updating an item with the DAP.",
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "https://schema.twindev.org/rights-management/DataAccessQueryRequestWithObject"
+							},
+							"examples": {
+								"dapUpdateRequestExample": {
+									"value": {
+										"@context": "https://schema.twindev.org/rights-management",
+										"type": "DataAccessRequestWithObject",
+										"assetType": "contacts",
+										"object": {
+											"@context": "https://schema.org",
+											"type": "Person",
+											"name": "Jane Doe"
+										}
+									}
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"204": {
+						"description": "The rest request ended in success with no data."
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			"delete": {
+				"operationId": "dapRemove",
+				"summary": "Remove an existing item",
+				"tags": [
+					"Data Access Point"
+				],
+				"parameters": [
+					{
+						"name": "assetType",
+						"description": "The type of the item being removed.",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "contacts"
+					},
+					{
+						"name": "id",
+						"description": "The id of the item being removed.",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "urn:contacts:abc123def456"
+					},
+					{
+						"name": "accept",
+						"in": "header",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "application/ld+json"
+					},
+					{
+						"name": "authorization",
+						"in": "header",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "z3Vcuh2BP9ShC.z3Vcuh2BP9ShC.z3Vcuh2BP9ShC"
+					}
+				],
+				"responses": {
+					"204": {
+						"description": "The rest request ended in success with no data."
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "InternalServerError",
+											"message": "component.error"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/rights-management/data/{assetType}/query": {
+			"post": {
+				"operationId": "dapQuery",
+				"summary": "Query items",
+				"tags": [
+					"Data Access Point"
+				],
+				"parameters": [
+					{
+						"name": "assetType",
+						"description": "The type of the item being requested.",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "contacts"
+					},
+					{
+						"name": "accept",
+						"in": "header",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "application/ld+json"
+					},
+					{
+						"name": "authorization",
+						"in": "header",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "z3Vcuh2BP9ShC.z3Vcuh2BP9ShC.z3Vcuh2BP9ShC"
+					}
+				],
+				"requestBody": {
+					"description": "The request structure for querying items with the DAP.",
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "https://schema.twindev.org/rights-management/DataAccessQueryQuery"
+							},
+							"examples": {
+								"dapQueryRequestExample": {
+									"value": {
+										"@context": "https://schema.twindev.org/rights-management",
+										"type": "DataAccessQuery",
+										"assetType": "contacts"
+									}
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": "The response structure for querying item with the DAP.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/DataAccessQueryResponse"
+								},
+								"examples": {
+									"IDapQueryResponseExample": {
+										"value": {
+											"@context": "https://schema.twindev.org/rights-management",
+											"type": "DataAccessQueryResponse",
+											"items": [
+												{
+													"@context": "https://schema.org",
+													"type": "Person",
+													"name": "Jane Doe"
+												}
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "The server cannot process the request, see the content for more details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								},
+								"examples": {
+									"exampleResponse": {
+										"value": {
+											"name": "GeneralError",
+											"message": "component.error",
+											"properties": {
+												"foo": "bar"
+											}
 										}
 									}
 								}
@@ -695,6 +2601,112 @@
 	},
 	"components": {
 		"schemas": {
+			"Comparator": {
+				"type": "object",
+				"properties": {
+					"property": {
+						"type": "string",
+						"description": "The name of the property in the object to check."
+					},
+					"value": {
+						"description": "The value of the property to check."
+					},
+					"comparison": {
+						"$ref": "#/components/schemas/ComparisonOperator"
+					}
+				},
+				"required": [
+					"property",
+					"value",
+					"comparison"
+				],
+				"additionalProperties": false,
+				"description": "Interface defining comparator operator."
+			},
+			"ComparatorGroup<JsonLdNodeObject>": {
+				"type": "object",
+				"properties": {
+					"conditions": {
+						"type": "array",
+						"items": false,
+						"description": "The conditions to join in a group.",
+						"prefixItems": [
+							{
+								"$ref": "#/components/schemas/EntityCondition<JsonLdNodeObject>"
+							}
+						]
+					},
+					"logicalOperator": {
+						"$ref": "#/components/schemas/LogicalOperator"
+					}
+				},
+				"required": [
+					"conditions"
+				],
+				"additionalProperties": false,
+				"description": "Interface defining condition group operator."
+			},
+			"ComparisonOperator": {
+				"anyOf": [
+					{
+						"type": "string",
+						"const": "equals",
+						"description": "Equals."
+					},
+					{
+						"type": "string",
+						"const": "not-equals",
+						"description": "Not Equals."
+					},
+					{
+						"type": "string",
+						"const": "greater-than",
+						"description": "Greater Than."
+					},
+					{
+						"type": "string",
+						"const": "greater-than-or-equal",
+						"description": "Greater Than Or Equal."
+					},
+					{
+						"type": "string",
+						"const": "less-than",
+						"description": "Less Than."
+					},
+					{
+						"type": "string",
+						"const": "less-than-or-equal",
+						"description": "Less Than Or Equal."
+					},
+					{
+						"type": "string",
+						"const": "includes",
+						"description": "Includes. A string in a substring. A set contains an element. A list contains an element."
+					},
+					{
+						"type": "string",
+						"const": "not-includes",
+						"description": "Not Includes. A string not in a substring. A set does not contain an element. A list does not contain an element."
+					},
+					{
+						"type": "string",
+						"const": "in",
+						"description": "In. A element is in a set."
+					}
+				],
+				"description": "The types of comparisons."
+			},
+			"EntityCondition<JsonLdNodeObject>": {
+				"anyOf": [
+					{
+						"$ref": "#/components/schemas/Comparator"
+					},
+					{
+						"$ref": "#/components/schemas/ComparatorGroup<JsonLdNodeObject>"
+					}
+				],
+				"description": "Type defining condition for entities filtering."
+			},
 			"Error": {
 				"type": "object",
 				"properties": {
@@ -730,9 +2742,28 @@
 				"additionalProperties": false,
 				"description": "Model to describe serialized error."
 			},
-			"OdrlPolicy": {
+			"LogicalOperator": {
+				"anyOf": [
+					{
+						"type": "string",
+						"const": "and",
+						"description": "Logical operator AND."
+					},
+					{
+						"type": "string",
+						"const": "or",
+						"description": "Logical operator OR."
+					}
+				],
+				"description": "The logical operators for condition combining."
+			},
+			"PapCreateRequest": {
 				"type": "object",
+				"additionalProperties": false,
 				"properties": {
+					"uid": {
+						"type": "string"
+					},
 					"@context": {
 						"$ref": "https://schema.twindev.org/w3c-odrl/OdrlContextType"
 					},
@@ -811,6 +2842,9 @@
 								"$ref": "https://schema.twindev.org/w3c-odrl/ActionType"
 							},
 							{
+								"type": "string"
+							},
+							{
 								"$ref": "https://schema.twindev.org/w3c-odrl/OdrlAction"
 							},
 							{
@@ -821,6 +2855,9 @@
 										"anyOf": [
 											{
 												"$ref": "https://schema.twindev.org/w3c-odrl/ActionType"
+											},
+											{
+												"type": "string"
 											},
 											{
 												"$ref": "https://schema.twindev.org/w3c-odrl/OdrlAction"
@@ -1071,15 +3108,15 @@
 				},
 				"required": [
 					"@context",
-					"@type",
+					"@graph",
 					"@id",
 					"@included",
-					"@graph",
+					"@index",
 					"@nest",
 					"@reverse",
-					"@index"
+					"@type"
 				],
-				"additionalProperties": false
+				"description": "The body of the request - the policy to create (uid will be auto-generated)."
 			},
 			"PapQueryResponse": {
 				"type": "object",
@@ -1105,31 +3142,178 @@
 				"additionalProperties": false,
 				"description": "The body of the response."
 			},
-			"PepInterceptRequest": {
+			"PnapQueryResponse": {
 				"type": "object",
 				"properties": {
-					"assetType": {
-						"type": "string",
-						"description": "The type of the asset to enforce the policy on."
+					"items": {
+						"type": "array",
+						"items": false,
+						"description": "The list of policy negotiations.",
+						"prefixItems": [
+							{
+								"$ref": "#/components/schemas/PolicyNegotiation"
+							}
+						]
 					},
-					"action": {
+					"cursor": {
 						"type": "string",
-						"description": "The action to perform on the asset."
-					},
-					"data": {
-						"description": "The data to include in the request."
+						"description": "The cursor for pagination."
 					}
 				},
 				"required": [
-					"assetType",
-					"action",
-					"data"
+					"items"
 				],
 				"additionalProperties": false,
-				"description": "The body parameters of the request."
+				"description": "The body of the response."
 			},
-			"PepInterceptResponse": {
-				"description": "The manipulated data with any policies applied."
+			"PnpContractNegotiationResponse": {
+				"anyOf": [
+					{
+						"$ref": "https://schema.twindev.org/ids-contract-negotiation/IdsContractNegotiation"
+					},
+					{
+						"$ref": "https://schema.twindev.org/ids-contract-negotiation/IdsContractNegotiationError"
+					}
+				],
+				"description": "The state of the policy or an error."
+			},
+			"PolicyInformation": {
+				"type": "object",
+				"additionalProperties": {
+					"$ref": "#/components/schemas/PolicyInformationItems"
+				},
+				"description": "Interface describing a Policy Information."
+			},
+			"PolicyInformationItems": {
+				"type": "array",
+				"items": false,
+				"description": "Interface describing a Policy Information.",
+				"prefixItems": [
+					{
+						"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
+					}
+				]
+			},
+			"PolicyNegotiation": {
+				"type": "object",
+				"properties": {
+					"assignee": {
+						"type": "string",
+						"description": "The assignee for the locator."
+					},
+					"action": {
+						"type": "string",
+						"description": "The action for the locator."
+					},
+					"assetType": {
+						"type": "string",
+						"description": "The asset type for the locator."
+					},
+					"resourceId": {
+						"type": "string",
+						"description": "A resource identifier for the locator."
+					},
+					"id": {
+						"type": "string",
+						"description": "The primary id used by the provider."
+					},
+					"correlationId": {
+						"type": "string",
+						"description": "This is used by the other side of the negotiation."
+					},
+					"policyId": {
+						"type": "string",
+						"description": "The unique identifier for the policy."
+					},
+					"dateCreated": {
+						"type": "string",
+						"description": "The date and time when the negotiation was created."
+					},
+					"expires": {
+						"type": "number",
+						"description": "The expiration time for the policy negotiation if it's a manual process."
+					},
+					"state": {
+						"$ref": "https://schema.twindev.org/ids-contract-negotiation/IdsContractNegotiationStateType"
+					},
+					"callbackAddress": {
+						"type": "string",
+						"description": "The callback address to send updates to the requester."
+					},
+					"offer": {
+						"$ref": "https://schema.twindev.org/w3c-odrl/OdrlOffer"
+					},
+					"agreement": {
+						"$ref": "https://schema.twindev.org/w3c-odrl/OdrlAgreement"
+					},
+					"information": {
+						"$ref": "#/components/schemas/PolicyInformation"
+					},
+					"code": {
+						"type": "string",
+						"description": "A reason code for when the negotiation errors."
+					},
+					"reason": {
+						"type": "array",
+						"items": false,
+						"description": "A more detailed reason for the negotiation error.",
+						"prefixItems": [
+							{
+								"type": "object",
+								"properties": {
+									"@value": {
+										"type": "string"
+									},
+									"@language": {
+										"type": "string"
+									}
+								},
+								"required": [
+									"@value"
+								],
+								"additionalProperties": false
+							}
+						]
+					},
+					"description": {
+						"type": "array",
+						"items": false,
+						"description": "A more detailed reason for the negotiation error.",
+						"prefixItems": [
+							{
+								"type": "object",
+								"properties": {
+									"@value": {
+										"type": "string"
+									},
+									"@language": {
+										"type": "string"
+									}
+								},
+								"required": [
+									"@value"
+								],
+								"additionalProperties": false
+							}
+						]
+					},
+					"handlerId": {
+						"type": "string",
+						"description": "The id of the handler, on provider side this is the negotiator, on consumer side this is the requester."
+					},
+					"interventionRequired": {
+						"type": "boolean",
+						"description": "Is manual intervention required to complete the negotiation?"
+					}
+				},
+				"required": [
+					"id",
+					"correlationId",
+					"dateCreated",
+					"state"
+				],
+				"additionalProperties": false,
+				"description": "Interface describing a rights management policy negotiation."
 			}
 		},
 		"securitySchemes": {

@@ -4,7 +4,7 @@
 
 The types concerning Gaia-X.
 
-## Type declaration
+## Type Declaration
 
 ### DataResource
 

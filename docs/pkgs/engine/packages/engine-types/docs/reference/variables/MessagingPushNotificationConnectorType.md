@@ -4,7 +4,7 @@
 
 Messaging push notification connector types.
 
-## Type declaration
+## Type Declaration
 
 ### EntityStorage
 

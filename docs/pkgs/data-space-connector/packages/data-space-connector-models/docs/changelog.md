@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.1-next.4](https://github.com/twinfoundation/data-space-connector/compare/data-space-connector-models-v0.0.1-next.3...data-space-connector-models-v0.0.1-next.4) (2025-08-29)
+
+
+### Features
+
+* eslint migration to flat config ([b84e875](https://github.com/twinfoundation/data-space-connector/commit/b84e87530aa249891618096ab6e072b21ff9f63a))
+
 ## [0.0.1-next.3](https://github.com/twinfoundation/data-space-connector/compare/data-space-connector-models-v0.0.1-next.2...data-space-connector-models-v0.0.1-next.3) (2025-08-25)
 
 

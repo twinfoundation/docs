@@ -4,7 +4,7 @@
 
 The failure reason of the proof.
 
-## Type declaration
+## Type Declaration
 
 ### NotIssued
 

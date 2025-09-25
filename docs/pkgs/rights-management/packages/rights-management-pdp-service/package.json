@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/rights-management-pdp-service",
-	"version": "0.0.2-next.2",
+	"version": "0.0.2-next.13",
 	"description": "Policy decision point implementation",
 	"repository": {
 		"type": "git",

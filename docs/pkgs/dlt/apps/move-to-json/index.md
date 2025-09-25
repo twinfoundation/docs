@@ -335,3 +335,53 @@ iota client call --package 0x2 --module package --function upgrade \
   --args 0xfd6269c28e3931e41aa9d9e08ffabb8162cf1fd0baaef14094b4442e6c743edf \
   --gas-budget 50000000
 ```
+
+## Known Issues
+
+### Windows
+
+#### Long Path Limitation Error
+
+**Error Symptoms:**
+
+- Build commands fail with `Failed to reset to latest Git state 'mainnet'`
+- Tests timeout during Move compilation
+- Git dependency resolution failures
+
+**Root Cause:**
+Windows has a default file path length limitation of 260 characters. The IOTA framework repository contains files with very long paths (especially in test directories) that exceed this limit, causing Git operations to fail during dependency resolution.
+
+**Solution:**
+Enable long path support in both Git and Windows:
+
+1. **Enable Git Long Paths:**
+
+   ```bash
+   git config --global core.longpaths true
+   ```
+
+2. **Enable Windows Long Path Support (requires Administrator privileges):**
+
+   ```powershell
+   # Run PowerShell as Administrator
+   Set-ItemProperty -Path 'HKLM:SYSTEM\CurrentControlSet\Control\FileSystem' -Name 'LongPathsEnabled' -Value 1
+   ```
+
+3. **Restart your computer** for Windows registry changes to take effect.
+
+**Verification:**
+After applying the fix, you should see successful Git dependency updates:
+
+```bash
+UPDATING GIT DEPENDENCY https://github.com/iotaledger/iota.git
+INCLUDING DEPENDENCY Iota
+INCLUDING DEPENDENCY MoveStdlib
+BUILDING nft
+```
+
+**Alternative Workaround:**
+If you cannot enable long path support system-wide, you can use the `--skip-fetch-latest-git-deps` flag as a workaround, though this will use cached dependencies instead of the latest versions:
+
+```bash
+iota move build --skip-fetch-latest-git-deps
+```

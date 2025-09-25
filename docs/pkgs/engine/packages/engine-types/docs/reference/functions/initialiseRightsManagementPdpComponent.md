@@ -1,6 +1,6 @@
 # Function: initialiseRightsManagementPdpComponent()
 
-> **initialiseRightsManagementPdpComponent**(`engineCore`, `context`, `instanceConfig`, `overrideInstanceType?`): `undefined` \| `string`
+> **initialiseRightsManagementPdpComponent**(`engineCore`, `context`, `instanceConfig`, `overrideInstanceType?`): `Promise`\<`undefined` \| `string`\>
 
 Initialise the rights management PDP component.
 
@@ -32,7 +32,7 @@ The instance type to override the default.
 
 ## Returns
 
-`undefined` \| `string`
+`Promise`\<`undefined` \| `string`\>
 
 The name of the instance created.
 

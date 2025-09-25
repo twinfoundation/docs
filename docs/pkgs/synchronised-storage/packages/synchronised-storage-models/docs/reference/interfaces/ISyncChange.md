@@ -1,12 +1,6 @@
-# Interface: ISyncChange\<T\>
+# Interface: ISyncChange
 
 The object definition for a sync change.
-
-## Type Parameters
-
-### T
-
-`T` *extends* [`ISynchronisedEntity`](ISynchronisedEntity.md) = [`ISynchronisedEntity`](ISynchronisedEntity.md)
 
 ## Properties
 
@@ -28,6 +22,6 @@ The item id.
 
 ### entity?
 
-> `optional` **entity**: `Omit`\<`T`, `"id"` \| `"nodeIdentity"`\>
+> `optional` **entity**: [`ISynchronisedEntityCore`](ISynchronisedEntityCore.md)
 
 The entity to set.

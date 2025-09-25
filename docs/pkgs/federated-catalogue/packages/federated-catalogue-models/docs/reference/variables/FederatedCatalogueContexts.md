@@ -4,7 +4,7 @@
 
 The LD context concerning the Federated Catalogue.
 
-## Type declaration
+## Type Declaration
 
 ### ContextRoot
 

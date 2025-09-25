@@ -4,7 +4,7 @@
 
 The mode to determine how node identities are matched.
 
-## Type declaration
+## Type Declaration
 
 ### Local
 

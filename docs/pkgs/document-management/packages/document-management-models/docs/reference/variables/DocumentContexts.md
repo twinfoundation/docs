@@ -4,7 +4,7 @@
 
 The contexts of document management objects.
 
-## Type declaration
+## Type Declaration
 
 ### ContextRoot
 

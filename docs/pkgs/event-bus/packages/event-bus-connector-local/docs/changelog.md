@@ -1,5 +1,61 @@
 # @twin.org/event-bus-connector-local - Changelog
 
+## [0.0.2-next.5](https://github.com/twinfoundation/event-bus/compare/event-bus-connector-local-v0.0.2-next.4...event-bus-connector-local-v0.0.2-next.5) (2025-08-29)
+
+
+### Features
+
+* eslint migration to flat config ([92f95f4](https://github.com/twinfoundation/event-bus/commit/92f95f40971ee50069de6615fc1cb73a8e755dc4))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/event-bus-models bumped from 0.0.2-next.4 to 0.0.2-next.5
+
+## [0.0.2-next.4](https://github.com/twinfoundation/event-bus/compare/event-bus-connector-local-v0.0.2-next.3...event-bus-connector-local-v0.0.2-next.4) (2025-08-25)
+
+
+### Miscellaneous Chores
+
+* **event-bus-connector-local:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/event-bus-models bumped from 0.0.2-next.3 to 0.0.2-next.4
+
+## [0.0.2-next.3](https://github.com/twinfoundation/event-bus/compare/event-bus-connector-local-v0.0.2-next.2...event-bus-connector-local-v0.0.2-next.3) (2025-08-20)
+
+
+### Miscellaneous Chores
+
+* **event-bus-connector-local:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/event-bus-models bumped from 0.0.2-next.2 to 0.0.2-next.3
+
+## [0.0.2-next.2](https://github.com/twinfoundation/event-bus/compare/event-bus-connector-local-v0.0.2-next.1...event-bus-connector-local-v0.0.2-next.2) (2025-08-19)
+
+
+### Features
+
+* update framework core ([e5e5f89](https://github.com/twinfoundation/event-bus/commit/e5e5f89bed3f615182de0f7ef76a1629d45d4152))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/event-bus-models bumped from 0.0.2-next.1 to 0.0.2-next.2
+
 ## [0.0.2-next.1](https://github.com/twinfoundation/event-bus/compare/event-bus-connector-local-v0.0.2-next.0...event-bus-connector-local-v0.0.2-next.1) (2025-07-24)
 
 

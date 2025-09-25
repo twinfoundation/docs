@@ -4,7 +4,7 @@
 
 The types for ODRL Status.
 
-## Type declaration
+## Type Declaration
 
 ### Active
 

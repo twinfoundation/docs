@@ -1,6 +1,6 @@
 # Function: initialiseEventBusComponent()
 
-> **initialiseEventBusComponent**(`engineCore`, `context`, `instanceConfig`, `overrideInstanceType?`): `undefined` \| `string`
+> **initialiseEventBusComponent**(`engineCore`, `context`, `instanceConfig`, `overrideInstanceType?`): `Promise`\<`undefined` \| `string`\>
 
 Initialise the event bus component.
 
@@ -32,7 +32,7 @@ The instance type to override the default.
 
 ## Returns
 
-`undefined` \| `string`
+`Promise`\<`undefined` \| `string`\>
 
 The name of the instance created.
 

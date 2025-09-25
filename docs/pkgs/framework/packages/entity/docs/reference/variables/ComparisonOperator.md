@@ -4,7 +4,7 @@
 
 The types of comparisons.
 
-## Type declaration
+## Type Declaration
 
 ### Equals
 

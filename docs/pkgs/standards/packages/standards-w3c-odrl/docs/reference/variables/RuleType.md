@@ -4,7 +4,7 @@
 
 The types for ODRL Rules.
 
-## Type declaration
+## Type Declaration
 
 ### Permission
 

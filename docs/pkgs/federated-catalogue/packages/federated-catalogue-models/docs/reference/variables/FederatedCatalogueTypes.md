@@ -4,7 +4,7 @@
 
 The types concerning the Federated Catalogue.
 
-## Type declaration
+## Type Declaration
 
 ### CompliantCredential
 

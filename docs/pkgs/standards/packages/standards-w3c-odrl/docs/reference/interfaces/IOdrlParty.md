@@ -1,6 +1,7 @@
 # Interface: IOdrlParty
 
 Interface for ODRL Parties.
+https://www.w3.org/TR/odrl-model/#party
 
 ## Extends
 

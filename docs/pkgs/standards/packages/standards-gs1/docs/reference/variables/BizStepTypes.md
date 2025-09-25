@@ -6,7 +6,7 @@ Supported EPCIS 2.0 bizStep.
 
 See EPCIS CVB specification for details.
 
-## Type declaration
+## Type Declaration
 
 ### Accepting
 

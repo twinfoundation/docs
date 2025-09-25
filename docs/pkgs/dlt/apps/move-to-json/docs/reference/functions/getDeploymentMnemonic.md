@@ -1,6 +1,6 @@
 # Function: getDeploymentMnemonic()
 
-> **getDeploymentMnemonic**(`network`): `Promise`\<`string`\>
+> **getDeploymentMnemonic**(`network`, `deployerMnemonic?`): `Promise`\<`string`\>
 
 Get the deployment mnemonic for a network.
 
@@ -8,9 +8,15 @@ Get the deployment mnemonic for a network.
 
 ### network
 
-[`NetworkTypes`](../type-aliases/NetworkTypes.md)
+`NetworkTypes`
 
 The target network.
+
+### deployerMnemonic?
+
+`string`
+
+The deployer mnemonic from environment variables.
 
 ## Returns
 

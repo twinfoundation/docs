@@ -4,7 +4,7 @@
 
 EPCIS Error types.
 
-## Type declaration
+## Type Declaration
 
 ### ValidationFailed
 

@@ -5,7 +5,7 @@
 Dublin Core classes.
 Based on http://purl.org/dc/dcmitype
 
-## Type declaration
+## Type Declaration
 
 ### Collection
 

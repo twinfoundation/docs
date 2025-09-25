@@ -1,6 +1,6 @@
 # Function: validateDeploymentEnvironment()
 
-> **validateDeploymentEnvironment**(`network`): `Promise`\<`void`\>
+> **validateDeploymentEnvironment**(`network`, `deployerMnemonic`): `Promise`\<`void`\>
 
 Validate that required environment variables are set for deployment.
 
@@ -8,9 +8,15 @@ Validate that required environment variables are set for deployment.
 
 ### network
 
-[`NetworkTypes`](../type-aliases/NetworkTypes.md)
+`NetworkTypes`
 
 The target network.
+
+### deployerMnemonic
+
+`string`
+
+The deployer mnemonic to validate.
 
 ## Returns
 

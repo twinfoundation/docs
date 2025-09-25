@@ -44,7 +44,7 @@ The crypto key.
 
 ### fromEd25519Private()
 
-> `static` **fromEd25519Private**(`privateKey`): `Promise`\<[`IJwk`](../interfaces/IJwk.md)\>
+> `static` **fromEd25519Private**(`privateKey`, `overrideUse?`): `Promise`\<[`IJwk`](../interfaces/IJwk.md)\>
 
 Convert the Ed25519 private key to a crypto key.
 
@@ -56,6 +56,12 @@ Convert the Ed25519 private key to a crypto key.
 
 The private key to use.
 
+##### overrideUse?
+
+`string`
+
+Optional override for the use property, defaults to "sig".
+
 #### Returns
 
 `Promise`\<[`IJwk`](../interfaces/IJwk.md)\>
@@ -66,7 +72,7 @@ The crypto key.
 
 ### fromEd25519Public()
 
-> `static` **fromEd25519Public**(`publicKey`): `Promise`\<[`IJwk`](../interfaces/IJwk.md)\>
+> `static` **fromEd25519Public**(`publicKey`, `overrideUse?`): `Promise`\<[`IJwk`](../interfaces/IJwk.md)\>
 
 Convert the Ed25519 public key to a crypto key.
 
@@ -77,6 +83,12 @@ Convert the Ed25519 public key to a crypto key.
 `Uint8Array`
 
 The private key to use.
+
+##### overrideUse?
+
+`string`
+
+Optional override for the use property, defaults to "sig".
 
 #### Returns
 

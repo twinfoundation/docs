@@ -18,7 +18,7 @@ Path to compiled modules JSON.
 
 #### network?
 
-[`NetworkTypes`](../type-aliases/NetworkTypes.md)
+`NetworkTypes`
 
 Network identifier - optional if NETWORK env var is set.
 
@@ -33,6 +33,54 @@ Simulate deployment without executing.
 `boolean`
 
 Force redeployment of existing packages.
+
+#### rpcUrl?
+
+`string`
+
+RPC endpoint URL for the network.
+
+#### addressIndex?
+
+`string`
+
+Address index for key derivation.
+
+#### rpcTimeout?
+
+`string`
+
+RPC request timeout in milliseconds.
+
+#### gasBudget?
+
+`string`
+
+Gas budget for transactions.
+
+#### confirmationTimeout?
+
+`string`
+
+Transaction confirmation timeout in milliseconds.
+
+#### faucetUrl?
+
+`string`
+
+Faucet URL for requesting test tokens.
+
+#### deployerMnemonic?
+
+`string`
+
+Deployer wallet mnemonic phrase.
+
+#### deployerSeed?
+
+`string`
+
+Deployer wallet seed (alternative to mnemonic).
 
 ## Returns
 

@@ -4,7 +4,7 @@
 
 Data converter connector types.
 
-## Type declaration
+## Type Declaration
 
 ### Json
 

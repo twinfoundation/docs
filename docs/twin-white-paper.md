@@ -6,7 +6,7 @@ TWIN (_Trade Worldwide Information Network_) is an open-source data pipeline tha
 
 Leveraging on distributed ledger technology (DLT), Data Spaces, and Verifiable Credentials, TWIN is a foundational layer for secure, transparent, and decentralized digital ecosystems. More specifically, TWIN technology is the connecting backbone of all actors involved in international trade and global supply chains, improving transparency, data exchange, compliance with ESG regulations, or trade finance operations.
 
-TWIN is an ongoing effort based on more than four years of research and development performed by the [IOTA Foundation](https://iota.org), with support from [Trademark Africa](https://www.trademarkafrica.com/), [UK Chartered Institute of Export & International Trade](https://www.export.org.uk/), [EU Horizon programs](https://research-and-innovation.ec.europa.eu/funding/funding-opportunities/funding-programmes-and-open-calls/horizon-europe_en), the [World Economic Forum](https://www.weforum.org/) and the [Tony Blair Institute for global change](https://institute.global/).
+TWIN is an ongoing effort based on more than four years of research and development performed by the [IOTA Foundation](https://iota.org), with support from [Trademark Africa](https://www.trademarkafrica.com/), [UK Chartered Institute of Export & International Trade](https://www.export.org.uk/), [EU Horizon programs](https://research-and-innovation.ec.europa.eu/funding/funding-opportunities/funding-programmes-and-open-calls/horizon-europe_en), the [World Economic Forum](https://www.weforum.org/) and the [Tony Blair Institute for Global Change](https://institute.global/).
 
 ## Key Benefits
 
@@ -18,6 +18,6 @@ TWIN is an ongoing effort based on more than four years of research and developm
 
 ## What's Inside This Whitepaper
 
-This comprehensive technical report outlines TWIN's reference architecture, covering the main architectural design principles, the fundamental software layers, services and their interactions. Software architects, solution designers, and engineers will find detailed guidance on building interoperable trade solutions that leverage TWIN's modular, standards-based approach.
+This comprehensive report outlines TWIN's reference architecture, covering the main architectural design principles, the fundamental software layers, services and their interactions. Software architects, solution designers, and engineers will find detailed guidance on building interoperable trade solutions that leverage TWIN's modular, standards-based approach.
 
 📄 [Download the TWIN White Paper (PDF)](/pdf/TWIN_Whitepaper_Reference_Architecture-Draft4-July-2025.pdf)

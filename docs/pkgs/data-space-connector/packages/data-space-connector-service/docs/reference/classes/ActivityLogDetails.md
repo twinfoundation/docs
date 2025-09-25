@@ -51,3 +51,11 @@ The creation date.
 > **dateModified**: `string`
 
 The last update date.
+
+***
+
+### retainUntil?
+
+> `optional` **retainUntil**: `number`
+
+The timestamp of when to retain the entry until.

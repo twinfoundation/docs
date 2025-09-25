@@ -18,7 +18,7 @@ Create a new instance of PolicyEnforcementPointService (PEP).
 
 ##### options?
 
-[`IPolicyEnforcementPointServiceOptions`](../interfaces/IPolicyEnforcementPointServiceOptions.md)
+[`IPolicyEnforcementPointServiceConstructorOptions`](../interfaces/IPolicyEnforcementPointServiceConstructorOptions.md)
 
 The options for the component.
 
@@ -42,54 +42,98 @@ The class name of the Policy Enforcement Point Service.
 
 ### intercept()
 
-> **intercept**\<`T`\>(`assetType`, `action`, `data`, `userIdentity`, `nodeIdentity`): `Promise`\<`undefined` \| `T`\>
+> **intercept**\<`D`, `R`\>(`locator`, `data?`): `Promise`\<`R`\>
 
 Process the data using Policy Decision Point (PDP) and return the manipulated data.
 
 #### Type Parameters
 
-##### T
+##### D
 
-`T` = `unknown`
+`D` = `unknown`
+
+##### R
+
+`R` = `D`
 
 #### Parameters
 
-##### assetType
+##### locator
 
-`string`
+`IPolicyLocator`
 
-The type of asset being processed.
+The locator to find relevant policies.
 
-##### action
+##### data?
 
-`string`
-
-The action being performed on the asset.
-
-##### data
+`D`
 
 The data to process.
 
-`undefined` | `T`
-
-##### userIdentity
-
-The user identity to use in the decision making.
-
-`undefined` | `string`
-
-##### nodeIdentity
-
-The node identity to use in the decision making.
-
-`undefined` | `string`
-
 #### Returns
 
-`Promise`\<`undefined` \| `T`\>
+`Promise`\<`R`\>
 
 The manipulated data with any policies applied.
 
 #### Implementation of
 
 `IPolicyEnforcementPointComponent.intercept`
+
+***
+
+### registerProcessor()
+
+> **registerProcessor**(`processorId`, `processor`): `Promise`\<`void`\>
+
+Register a processor to use for handling data.
+
+#### Parameters
+
+##### processorId
+
+`string`
+
+The id of the processor to register.
+
+##### processor
+
+`IPolicyEnforcementProcessor`
+
+The processor to register.
+
+#### Returns
+
+`Promise`\<`void`\>
+
+Nothing.
+
+#### Implementation of
+
+`IPolicyEnforcementPointComponent.registerProcessor`
+
+***
+
+### unregisterProcessor()
+
+> **unregisterProcessor**(`processorId`): `Promise`\<`void`\>
+
+Unregister a processor from the handling.
+
+#### Parameters
+
+##### processorId
+
+`string`
+
+The id of the processor to unregister.
+
+#### Returns
+
+`Promise`\<`void`\>
+
+Nothing.
+
+#### Implementation of
+
+`IPolicyEnforcementPointComponent.unregisterProcessor`

@@ -4,7 +4,7 @@
 
 The contexts of verifiable storage data.
 
-## Type declaration
+## Type Declaration
 
 ### ContextRoot
 

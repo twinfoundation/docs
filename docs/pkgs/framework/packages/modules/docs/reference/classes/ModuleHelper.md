@@ -22,6 +22,26 @@ Runtime name for the class.
 
 ## Methods
 
+### overrideImport()
+
+> `static` **overrideImport**(`overrideImport`): `void`
+
+Override the import function for modules.
+
+#### Parameters
+
+##### overrideImport
+
+(`moduleName`) => `Promise`\<\{ `module?`: `unknown`; `useDefault`: `boolean`; \}\>
+
+The override import function.
+
+#### Returns
+
+`void`
+
+***
+
 ### getModuleEntry()
 
 > `static` **getModuleEntry**\<`T`\>(`module`, `entry`): `Promise`\<`T`\>
@@ -183,3 +203,47 @@ The result of the method execution.
 #### Throws
 
 GeneralError if executing the module entry failed.
+
+***
+
+### isLocalModule()
+
+> `static` **isLocalModule**(`name`): `boolean`
+
+Check if a module is a local module.
+
+#### Parameters
+
+##### name
+
+`string`
+
+The name of the module.
+
+#### Returns
+
+`boolean`
+
+True if the module is local, false otherwise.
+
+***
+
+### isRelativeModule()
+
+> `static` **isRelativeModule**(`name`): `boolean`
+
+Check if a module is a relative module.
+
+#### Parameters
+
+##### name
+
+`string`
+
+The name of the module.
+
+#### Returns
+
+`boolean`
+
+True if the module is relative, false otherwise.

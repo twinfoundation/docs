@@ -1,5 +1,82 @@
 # @twin.org/standards-w3c-did - Changelog
 
+## [0.0.2-next.13](https://github.com/twinfoundation/standards/compare/standards-w3c-did-v0.0.2-next.12...standards-w3c-did-v0.0.2-next.13) (2025-09-22)
+
+
+### Miscellaneous Chores
+
+* **standards-w3c-did:** Synchronize repo versions
+
+## [0.0.2-next.12](https://github.com/twinfoundation/standards/compare/standards-w3c-did-v0.0.2-next.11...standards-w3c-did-v0.0.2-next.12) (2025-09-16)
+
+
+### Miscellaneous Chores
+
+* **standards-w3c-did:** Synchronize repo versions
+
+## [0.0.2-next.11](https://github.com/twinfoundation/standards/compare/standards-w3c-did-v0.0.2-next.10...standards-w3c-did-v0.0.2-next.11) (2025-09-16)
+
+
+### Miscellaneous Chores
+
+* **standards-w3c-did:** Synchronize repo versions
+
+## [0.0.2-next.10](https://github.com/twinfoundation/standards/compare/standards-w3c-did-v0.0.2-next.9...standards-w3c-did-v0.0.2-next.10) (2025-09-16)
+
+
+### Miscellaneous Chores
+
+* **standards-w3c-did:** Synchronize repo versions
+
+## [0.0.2-next.9](https://github.com/twinfoundation/standards/compare/standards-w3c-did-v0.0.2-next.8...standards-w3c-did-v0.0.2-next.9) (2025-09-15)
+
+
+### Miscellaneous Chores
+
+* **standards-w3c-did:** Synchronize repo versions
+
+## [0.0.2-next.8](https://github.com/twinfoundation/standards/compare/standards-w3c-did-v0.0.2-next.7...standards-w3c-did-v0.0.2-next.8) (2025-09-15)
+
+
+### Miscellaneous Chores
+
+* **standards-w3c-did:** Synchronize repo versions
+
+## [0.0.2-next.7](https://github.com/twinfoundation/standards/compare/standards-w3c-did-v0.0.2-next.6...standards-w3c-did-v0.0.2-next.7) (2025-09-15)
+
+
+### Miscellaneous Chores
+
+* **standards-w3c-did:** Synchronize repo versions
+
+## [0.0.2-next.6](https://github.com/twinfoundation/standards/compare/standards-w3c-did-v0.0.2-next.5...standards-w3c-did-v0.0.2-next.6) (2025-09-12)
+
+
+### Miscellaneous Chores
+
+* **standards-w3c-did:** Synchronize repo versions
+
+## [0.0.2-next.5](https://github.com/twinfoundation/standards/compare/standards-w3c-did-v0.0.2-next.4...standards-w3c-did-v0.0.2-next.5) (2025-09-12)
+
+
+### Features
+
+* separate DID VP v1 and v2 properties ([335a3c2](https://github.com/twinfoundation/standards/commit/335a3c2543ca5dbaae785568617ea85c0a8269ad))
+
+## [0.0.2-next.4](https://github.com/twinfoundation/standards/compare/standards-w3c-did-v0.0.2-next.3...standards-w3c-did-v0.0.2-next.4) (2025-09-12)
+
+
+### Features
+
+* separate DID VC v1 and v2 properties ([935cf0a](https://github.com/twinfoundation/standards/commit/935cf0a9cdee28c6f2d5480f1f2de126c838caf5))
+
+## [0.0.2-next.3](https://github.com/twinfoundation/standards/compare/standards-w3c-did-v0.0.2-next.2...standards-w3c-did-v0.0.2-next.3) (2025-08-29)
+
+
+### Features
+
+* eslint migration to flat config ([648c1a1](https://github.com/twinfoundation/standards/commit/648c1a1e69d99b6b0cf69358ec6bdeecdbe3a5ea))
+
 ## [0.0.2-next.2](https://github.com/twinfoundation/standards/compare/standards-w3c-did-v0.0.2-next.1...standards-w3c-did-v0.0.2-next.2) (2025-08-19)
 
 

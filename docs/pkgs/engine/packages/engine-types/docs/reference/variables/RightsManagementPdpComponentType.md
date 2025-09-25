@@ -4,7 +4,7 @@
 
 Rights management PDP component types.
 
-## Type declaration
+## Type Declaration
 
 ### Service
 

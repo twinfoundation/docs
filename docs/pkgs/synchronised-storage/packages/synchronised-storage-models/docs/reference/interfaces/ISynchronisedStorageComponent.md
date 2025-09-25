@@ -10,24 +10,18 @@ Class for performing synchronised storage operations.
 
 ### getDecryptionKey()
 
-> **getDecryptionKey**(`nodeIdentity`, `proof`): `Promise`\<`string`\>
+> **getDecryptionKey**(`actionRequest`): `Promise`\<`string`\>
 
 Get the decryption key for the synchronised storage.
 This is used to decrypt the data stored in the synchronised storage.
 
 #### Parameters
 
-##### nodeIdentity
+##### actionRequest
 
-`string`
+`IIdentityAuthenticationActionRequest`
 
-The identity of the node requesting the decryption key.
-
-##### proof
-
-`IProof`
-
-The proof of the request so we know the request is from the specified node.
+The action request used in the verifiable credential.
 
 #### Returns
 
@@ -39,7 +33,7 @@ The decryption key.
 
 ### syncChangeSet()
 
-> **syncChangeSet**(`syncChangeSet`): `Promise`\<`void`\>
+> **syncChangeSet**(`syncChangeSet`, `actionRequest`): `Promise`\<`void`\>
 
 Synchronise a set of changes from an untrusted node, assumes this is a trusted node.
 
@@ -50,6 +44,12 @@ Synchronise a set of changes from an untrusted node, assumes this is a trusted n
 [`ISyncChangeSet`](ISyncChangeSet.md)
 
 The change set to synchronise.
+
+##### actionRequest
+
+`IIdentityAuthenticationActionRequest`
+
+The action request used in the verifiable credential.
 
 #### Returns
 
