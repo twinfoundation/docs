@@ -26,6 +26,6 @@ The request.
 
 ## Returns
 
-`Promise`\<`IServerFavIconResponse`\>
+`Promise`\<`ICreatedResponse`\>
 
 The response object with additional http response properties.
