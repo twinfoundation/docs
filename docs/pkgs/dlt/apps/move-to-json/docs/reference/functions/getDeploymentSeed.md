@@ -1,6 +1,6 @@
 # Function: getDeploymentSeed()
 
-> **getDeploymentSeed**(`network`): `Promise`\<`undefined` \| `string`\>
+> **getDeploymentSeed**(`network`, `deployerSeed?`): `Promise`\<`undefined` \| `string`\>
 
 Get the deployment seed for a network (if available).
 
@@ -8,9 +8,15 @@ Get the deployment seed for a network (if available).
 
 ### network
 
-[`NetworkTypes`](../type-aliases/NetworkTypes.md)
+`NetworkTypes`
 
 The target network.
+
+### deployerSeed?
+
+`string`
+
+The deployer seed from environment variables (optional).
 
 ## Returns
 

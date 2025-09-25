@@ -28,6 +28,7 @@
 - [buildEngineServerConfiguration](functions/buildEngineServerConfiguration.md)
 - [run](functions/run.md)
 - [buildConfiguration](functions/buildConfiguration.md)
+- [overrideModuleImport](functions/overrideModuleImport.md)
 - [start](functions/start.md)
 - [initialiseLocales](functions/initialiseLocales.md)
 - [getExecutionDirectory](functions/getExecutionDirectory.md)

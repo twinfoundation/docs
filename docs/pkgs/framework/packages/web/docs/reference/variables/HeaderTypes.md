@@ -4,7 +4,7 @@
 
 Common http header types.
 
-## Type declaration
+## Type Declaration
 
 ### ContentType
 

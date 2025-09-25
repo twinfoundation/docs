@@ -1,14 +1,24 @@
-# Interface: ISyncChangeSet\<T\>
+# Interface: ISyncChangeSet
 
 The object definition for a sync change set.
 
-## Type Parameters
-
-### T
-
-`T` *extends* [`ISynchronisedEntity`](ISynchronisedEntity.md) = [`ISynchronisedEntity`](ISynchronisedEntity.md)
-
 ## Properties
+
+### @context
+
+> **@context**: `"https://schema.twindev.org/synchronised-storage"`
+
+The LD Context for the change set.
+
+***
+
+### type
+
+> **type**: `"ChangeSet"`
+
+The LD Type for the change set.
+
+***
 
 ### id
 
@@ -42,14 +52,6 @@ The date the change set was last modified.
 
 ***
 
-### changes
-
-> **changes**: [`ISyncChange`](ISyncChange.md)\<`T`\>[]
-
-The changes to apply after a snapshot.
-
-***
-
 ### nodeIdentity
 
 > **nodeIdentity**: `string`
@@ -58,8 +60,8 @@ The identity of the node that created the change set.
 
 ***
 
-### proof?
+### changes
 
-> `optional` **proof**: `IProof`
+> **changes**: [`ISyncChange`](ISyncChange.md)[]
 
-The proof for the change set.
+The changes to apply after a snapshot.

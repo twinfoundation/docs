@@ -4,7 +4,7 @@
 
 The stage at which a PXP is executed in the PDP.
 
-## Type declaration
+## Type Declaration
 
 ### Before
 

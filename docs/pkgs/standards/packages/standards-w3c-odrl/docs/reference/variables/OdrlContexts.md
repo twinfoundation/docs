@@ -4,7 +4,7 @@
 
 The contexts for ODRL.
 
-## Type declaration
+## Type Declaration
 
 ### ContextRoot
 

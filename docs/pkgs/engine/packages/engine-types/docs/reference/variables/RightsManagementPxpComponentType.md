@@ -4,7 +4,7 @@
 
 Rights management PXP component types.
 
-## Type declaration
+## Type Declaration
 
 ### Service
 

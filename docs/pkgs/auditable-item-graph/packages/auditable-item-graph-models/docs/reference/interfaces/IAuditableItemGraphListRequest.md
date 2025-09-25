@@ -34,6 +34,12 @@ The id or alias to try and find.
 
 Which field to look in with the id, defaults to both.
 
+#### idExact?
+
+> `optional` **idExact**: `boolean`
+
+Find only exact matches, default to false meaning partial matching.
+
 #### resourceTypes?
 
 > `optional` **resourceTypes**: `string`

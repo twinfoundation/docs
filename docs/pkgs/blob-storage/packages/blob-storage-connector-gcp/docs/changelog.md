@@ -1,5 +1,33 @@
 # @twin.org/blob-storage-connector-gcp - Changelog
 
+## [0.0.2-next.3](https://github.com/twinfoundation/blob-storage/compare/blob-storage-connector-gcp-v0.0.2-next.2...blob-storage-connector-gcp-v0.0.2-next.3) (2025-08-29)
+
+
+### Features
+
+* eslint migration to flat config ([e4239dd](https://github.com/twinfoundation/blob-storage/commit/e4239dd1c721955cff7f0357255d2bba15319972))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/blob-storage-models bumped from 0.0.2-next.2 to 0.0.2-next.3
+
+## [0.0.2-next.2](https://github.com/twinfoundation/blob-storage/compare/blob-storage-connector-gcp-v0.0.2-next.1...blob-storage-connector-gcp-v0.0.2-next.2) (2025-08-20)
+
+
+### Features
+
+* update framework core ([ff339fe](https://github.com/twinfoundation/blob-storage/commit/ff339fe7e3f09ddff429907834bdf43617e9c05e))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/blob-storage-models bumped from 0.0.2-next.1 to 0.0.2-next.2
+
 ## [0.0.2-next.1](https://github.com/twinfoundation/blob-storage/compare/blob-storage-connector-gcp-v0.0.2-next.0...blob-storage-connector-gcp-v0.0.2-next.1) (2025-07-24)
 
 

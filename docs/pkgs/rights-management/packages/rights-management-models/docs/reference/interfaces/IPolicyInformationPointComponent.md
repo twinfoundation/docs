@@ -12,50 +12,94 @@ it is making decisions.
 
 ### retrieve()
 
-> **retrieve**\<`T`\>(`assetType`, `action`, `data`, `userIdentity`, `nodeIdentity`): `Promise`\<`IJsonLdNodeObject`[]\>
+> **retrieve**\<`D`\>(`locator`, `accessMode`, `policies?`, `data?`): `Promise`\<[`IPolicyInformation`](IPolicyInformation.md)\>
 
 Retrieve additional information which is relevant in the PDP decision making.
 
 #### Type Parameters
 
-##### T
+##### D
 
-`T` = `unknown`
+`D` = `unknown`
 
 #### Parameters
 
-##### assetType
+##### locator
 
-`string`
+[`IPolicyLocator`](IPolicyLocator.md)
 
-The type of asset being processed.
+The locator to find relevant policies.
 
-##### action
+##### accessMode
 
-`string`
+[`PolicyInformationAccessMode`](../type-aliases/PolicyInformationAccessMode.md)
 
-The action being performed on the asset.
+The access mode to use for the retrieval.
 
-##### data
+##### policies?
+
+`IOdrlPolicy`[]
+
+The policies that apply to the data.
+
+##### data?
+
+`D`
 
 The data to get any additional information for.
 
-`undefined` | `T`
+#### Returns
 
-##### userIdentity
+`Promise`\<[`IPolicyInformation`](IPolicyInformation.md)\>
+
+Returns additional information based on the data and identities.
+
+***
+
+### registerSource()
+
+> **registerSource**(`sourceId`, `source`): `Promise`\<`void`\>
+
+Register a source to use for retrieval.
+
+#### Parameters
+
+##### sourceId
 
 `string`
 
-The user identity to get additional information for.
+The id of the source to register.
 
-##### nodeIdentity
+##### source
 
-`string`
+[`IPolicyInformationSource`](IPolicyInformationSource.md)
 
-The node identity to get additional information for.
+The source to register.
 
 #### Returns
 
-`Promise`\<`IJsonLdNodeObject`[]\>
+`Promise`\<`void`\>
 
-Returns additional information based on the data and identities.
+Nothing.
+
+***
+
+### unregisterSource()
+
+> **unregisterSource**(`sourceId`): `Promise`\<`void`\>
+
+Unregister a source from the retrieval.
+
+#### Parameters
+
+##### sourceId
+
+`string`
+
+The id of the source to unregister.
+
+#### Returns
+
+`Promise`\<`void`\>
+
+Nothing.

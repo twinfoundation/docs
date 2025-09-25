@@ -4,7 +4,7 @@
 
 The operations for a change.
 
-## Type declaration
+## Type Declaration
 
 ### Set
 

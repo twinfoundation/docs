@@ -1,5 +1,82 @@
 # @twin.org/standards-gaia-x - Changelog
 
+## [0.0.2-next.13](https://github.com/twinfoundation/standards/compare/standards-gaia-x-v0.0.2-next.12...standards-gaia-x-v0.0.2-next.13) (2025-09-22)
+
+
+### Bug Fixes
+
+* service offering endpoint is optional ([#56](https://github.com/twinfoundation/standards/issues/56)) ([788ae71](https://github.com/twinfoundation/standards/commit/788ae716052782f1e5361ba9e81c326b1b982494))
+
+## [0.0.2-next.12](https://github.com/twinfoundation/standards/compare/standards-gaia-x-v0.0.2-next.11...standards-gaia-x-v0.0.2-next.12) (2025-09-16)
+
+
+### Features
+
+* inline context types in schemas ([11f8377](https://github.com/twinfoundation/standards/commit/11f8377b129d459a4596ff30a86651beacd7f743))
+
+## [0.0.2-next.11](https://github.com/twinfoundation/standards/compare/standards-gaia-x-v0.0.2-next.10...standards-gaia-x-v0.0.2-next.11) (2025-09-16)
+
+
+### Miscellaneous Chores
+
+* **standards-gaia-x:** Synchronize repo versions
+
+## [0.0.2-next.10](https://github.com/twinfoundation/standards/compare/standards-gaia-x-v0.0.2-next.9...standards-gaia-x-v0.0.2-next.10) (2025-09-16)
+
+
+### Miscellaneous Chores
+
+* **standards-gaia-x:** Synchronize repo versions
+
+## [0.0.2-next.9](https://github.com/twinfoundation/standards/compare/standards-gaia-x-v0.0.2-next.8...standards-gaia-x-v0.0.2-next.9) (2025-09-15)
+
+
+### Miscellaneous Chores
+
+* **standards-gaia-x:** Synchronize repo versions
+
+## [0.0.2-next.8](https://github.com/twinfoundation/standards/compare/standards-gaia-x-v0.0.2-next.7...standards-gaia-x-v0.0.2-next.8) (2025-09-15)
+
+
+### Miscellaneous Chores
+
+* **standards-gaia-x:** Synchronize repo versions
+
+## [0.0.2-next.7](https://github.com/twinfoundation/standards/compare/standards-gaia-x-v0.0.2-next.6...standards-gaia-x-v0.0.2-next.7) (2025-09-15)
+
+
+### Miscellaneous Chores
+
+* **standards-gaia-x:** Synchronize repo versions
+
+## [0.0.2-next.6](https://github.com/twinfoundation/standards/compare/standards-gaia-x-v0.0.2-next.5...standards-gaia-x-v0.0.2-next.6) (2025-09-12)
+
+
+### Miscellaneous Chores
+
+* **standards-gaia-x:** Synchronize repo versions
+
+## [0.0.2-next.5](https://github.com/twinfoundation/standards/compare/standards-gaia-x-v0.0.2-next.4...standards-gaia-x-v0.0.2-next.5) (2025-09-12)
+
+
+### Miscellaneous Chores
+
+* **standards-gaia-x:** Synchronize repo versions
+
+## [0.0.2-next.4](https://github.com/twinfoundation/standards/compare/standards-gaia-x-v0.0.2-next.3...standards-gaia-x-v0.0.2-next.4) (2025-09-12)
+
+
+### Miscellaneous Chores
+
+* **standards-gaia-x:** Synchronize repo versions
+
+## [0.0.2-next.3](https://github.com/twinfoundation/standards/compare/standards-gaia-x-v0.0.2-next.2...standards-gaia-x-v0.0.2-next.3) (2025-08-29)
+
+
+### Features
+
+* eslint migration to flat config ([648c1a1](https://github.com/twinfoundation/standards/commit/648c1a1e69d99b6b0cf69358ec6bdeecdbe3a5ea))
+
 ## [0.0.2-next.2](https://github.com/twinfoundation/standards/compare/standards-gaia-x-v0.0.2-next.1...standards-gaia-x-v0.0.2-next.2) (2025-08-19)
 
 

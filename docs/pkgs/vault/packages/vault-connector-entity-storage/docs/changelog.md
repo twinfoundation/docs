@@ -1,5 +1,47 @@
 # @twin.org/vault-connector-entity-storage - Changelog
 
+## [0.0.2-next.5](https://github.com/twinfoundation/vault/compare/vault-connector-entity-storage-v0.0.2-next.4...vault-connector-entity-storage-v0.0.2-next.5) (2025-09-22)
+
+
+### Miscellaneous Chores
+
+* **vault-connector-entity-storage:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/vault-models bumped from 0.0.2-next.4 to 0.0.2-next.5
+
+## [0.0.2-next.4](https://github.com/twinfoundation/vault/compare/vault-connector-entity-storage-v0.0.2-next.3...vault-connector-entity-storage-v0.0.2-next.4) (2025-08-29)
+
+
+### Features
+
+* eslint migration to flat config ([66415a8](https://github.com/twinfoundation/vault/commit/66415a87caded04bcaefa853fe134cb54b3d0d99))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/vault-models bumped from 0.0.2-next.3 to 0.0.2-next.4
+
+## [0.0.2-next.3](https://github.com/twinfoundation/vault/compare/vault-connector-entity-storage-v0.0.2-next.2...vault-connector-entity-storage-v0.0.2-next.3) (2025-08-19)
+
+
+### Features
+
+* update framework core ([00d0dc0](https://github.com/twinfoundation/vault/commit/00d0dc0d9a23fd6cb8a006723cdaeffbf6c93f91))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/vault-models bumped from 0.0.2-next.2 to 0.0.2-next.3
+
 ## [0.0.2-next.2](https://github.com/twinfoundation/vault/compare/vault-connector-entity-storage-v0.0.2-next.1...vault-connector-entity-storage-v0.0.2-next.2) (2025-08-15)
 
 

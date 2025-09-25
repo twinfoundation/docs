@@ -4,7 +4,7 @@
 
 Auditable item stream component types.
 
-## Type declaration
+## Type Declaration
 
 ### Service
 

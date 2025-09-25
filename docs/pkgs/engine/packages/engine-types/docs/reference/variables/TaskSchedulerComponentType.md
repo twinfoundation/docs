@@ -4,7 +4,7 @@
 
 Task scheduler component types.
 
-## Type declaration
+## Type Declaration
 
 ### Service
 

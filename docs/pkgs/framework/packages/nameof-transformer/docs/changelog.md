@@ -1,5 +1,82 @@
 # @twin.org/nameof-transformer - Changelog
 
+## [0.0.2-next.15](https://github.com/twinfoundation/framework/compare/nameof-transformer-v0.0.2-next.14...nameof-transformer-v0.0.2-next.15) (2025-09-22)
+
+
+### Miscellaneous Chores
+
+* **nameof-transformer:** Synchronize repo versions
+
+## [0.0.2-next.14](https://github.com/twinfoundation/framework/compare/nameof-transformer-v0.0.2-next.13...nameof-transformer-v0.0.2-next.14) (2025-09-22)
+
+
+### Features
+
+* add header helper for common bearer support ([0c940b2](https://github.com/twinfoundation/framework/commit/0c940b29cccf0c3bb5b4aa8a01f1998010e44d51))
+
+## [0.0.2-next.13](https://github.com/twinfoundation/framework/compare/nameof-transformer-v0.0.2-next.12...nameof-transformer-v0.0.2-next.13) (2025-09-22)
+
+
+### Miscellaneous Chores
+
+* **nameof-transformer:** Synchronize repo versions
+
+## [0.0.2-next.12](https://github.com/twinfoundation/framework/compare/nameof-transformer-v0.0.2-next.11...nameof-transformer-v0.0.2-next.12) (2025-09-15)
+
+
+### Features
+
+* add jwk enc property overrides ([18b6309](https://github.com/twinfoundation/framework/commit/18b63092a386b56ea7fcd7e12865ac6e1b47cc1e))
+
+## [0.0.2-next.11](https://github.com/twinfoundation/framework/compare/nameof-transformer-v0.0.2-next.10...nameof-transformer-v0.0.2-next.11) (2025-09-15)
+
+
+### Miscellaneous Chores
+
+* **nameof-transformer:** Synchronize repo versions
+
+## [0.0.2-next.10](https://github.com/twinfoundation/framework/compare/nameof-transformer-v0.0.2-next.9...nameof-transformer-v0.0.2-next.10) (2025-09-11)
+
+
+### Miscellaneous Chores
+
+* **nameof-transformer:** Synchronize repo versions
+
+## [0.0.2-next.9](https://github.com/twinfoundation/framework/compare/nameof-transformer-v0.0.2-next.8...nameof-transformer-v0.0.2-next.9) (2025-09-08)
+
+
+### Features
+
+* add mnemonic validation ([4b43491](https://github.com/twinfoundation/framework/commit/4b43491cf04bb626c27faea66e5c74b3971b111d))
+
+## [0.0.2-next.8](https://github.com/twinfoundation/framework/compare/nameof-transformer-v0.0.2-next.7...nameof-transformer-v0.0.2-next.8) (2025-09-05)
+
+
+### Features
+
+* add Is.class method ([4988205](https://github.com/twinfoundation/framework/commit/498820543e256a130b4888c958fe1d87ca865d7f))
+
+## [0.0.2-next.7](https://github.com/twinfoundation/framework/compare/nameof-transformer-v0.0.2-next.6...nameof-transformer-v0.0.2-next.7) (2025-08-29)
+
+
+### Features
+
+* eslint migration to flat config ([74427d7](https://github.com/twinfoundation/framework/commit/74427d78d342167f7850e49ab87269326355befe))
+
+## [0.0.2-next.6](https://github.com/twinfoundation/framework/compare/nameof-transformer-v0.0.2-next.5...nameof-transformer-v0.0.2-next.6) (2025-08-27)
+
+
+### Features
+
+* provide module helper override ([e998a64](https://github.com/twinfoundation/framework/commit/e998a64842cfd18693a14444be33b084fef2bb90))
+
+## [0.0.2-next.5](https://github.com/twinfoundation/framework/compare/nameof-transformer-v0.0.2-next.4...nameof-transformer-v0.0.2-next.5) (2025-08-19)
+
+
+### Features
+
+* use cause instead of inner for errors ([1f4acc4](https://github.com/twinfoundation/framework/commit/1f4acc4d7a6b71a134d9547da9bf40de1e1e49da))
+
 ## [0.0.2-next.4](https://github.com/twinfoundation/framework/compare/nameof-transformer-v0.0.2-next.3...nameof-transformer-v0.0.2-next.4) (2025-08-15)
 
 

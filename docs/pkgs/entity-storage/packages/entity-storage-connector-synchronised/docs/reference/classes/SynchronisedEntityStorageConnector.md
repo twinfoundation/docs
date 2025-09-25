@@ -66,7 +66,7 @@ The schema for the entities.
 
 ### start()
 
-> **start**(`nodeIdentity`, `nodeLoggingConnectorType`, `componentState?`): `Promise`\<`void`\>
+> **start**(`nodeIdentity`, `nodeLoggingComponentType`): `Promise`\<`void`\>
 
 The component needs to be started when the node is initialized.
 
@@ -78,15 +78,11 @@ The component needs to be started when the node is initialized.
 
 The identity of the node starting the component.
 
-##### nodeLoggingConnectorType
+##### nodeLoggingComponentType
 
-The node logging connector type, defaults to "node-logging".
+The node logging component type.
 
 `undefined` | `string`
-
-##### componentState?
-
-A persistent state which can be modified by the method.
 
 #### Returns
 
@@ -204,7 +200,7 @@ Nothing.
 
 ### query()
 
-> **query**(`conditions?`, `sortProperties?`, `properties?`, `cursor?`, `pageSize?`): `Promise`\<\{ `entities`: `Partial`\<`T`\>[]; `cursor`: `string`; \}\>
+> **query**(`conditions?`, `sortProperties?`, `properties?`, `cursor?`, `pageSize?`): `Promise`\<\{ `entities`: `Partial`\<`T`\>[]; `cursor?`: `string`; \}\>
 
 Find all the entities which match the conditions.
 
@@ -242,7 +238,7 @@ The suggested number of entities to return in each chunk, in some scenarios can 
 
 #### Returns
 
-`Promise`\<\{ `entities`: `Partial`\<`T`\>[]; `cursor`: `string`; \}\>
+`Promise`\<\{ `entities`: `Partial`\<`T`\>[]; `cursor?`: `string`; \}\>
 
 All the entities for the storage matching the conditions,
 and a cursor which can be used to request more entities.

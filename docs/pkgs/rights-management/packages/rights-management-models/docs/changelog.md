@@ -1,5 +1,103 @@
 # @twin.org/rights-management-models - Changelog
 
+## [0.0.2-next.13](https://github.com/twinfoundation/rights-management/compare/rights-management-models-v0.0.2-next.12...rights-management-models-v0.0.2-next.13) (2025-09-23)
+
+
+### Features
+
+* update to use built in vc authentication ([f982b86](https://github.com/twinfoundation/rights-management/commit/f982b8676a7d21add85195c73558ef4f0fd9be29))
+
+## [0.0.2-next.12](https://github.com/twinfoundation/rights-management/compare/rights-management-models-v0.0.2-next.11...rights-management-models-v0.0.2-next.12) (2025-09-22)
+
+
+### Miscellaneous Chores
+
+* **rights-management-models:** Synchronize repo versions
+
+## [0.0.2-next.11](https://github.com/twinfoundation/rights-management/compare/rights-management-models-v0.0.2-next.10...rights-management-models-v0.0.2-next.11) (2025-09-19)
+
+
+### Features
+
+* engine compatibility updates ([490e015](https://github.com/twinfoundation/rights-management/commit/490e015901d6a5ac6563da484a18fc5f285556b1))
+
+## [0.0.2-next.10](https://github.com/twinfoundation/rights-management/compare/rights-management-models-v0.0.2-next.9...rights-management-models-v0.0.2-next.10) (2025-09-19)
+
+
+### Features
+
+* add DAP (Data Access Point) ([#40](https://github.com/twinfoundation/rights-management/issues/40)) ([f3e684b](https://github.com/twinfoundation/rights-management/commit/f3e684ba1f9a934394c64635f393fbb6709ff480))
+* add policy management point PMP ([#38](https://github.com/twinfoundation/rights-management/issues/38)) ([f7b55f7](https://github.com/twinfoundation/rights-management/commit/f7b55f728336a0cacb1aa0ed7866242962915d0e))
+* international dataspaces contract negotiation ([#41](https://github.com/twinfoundation/rights-management/issues/41)) ([41ed515](https://github.com/twinfoundation/rights-management/commit/41ed5154d6cef48bc99db3158dbde6ec88523a0b))
+* move create and verify proofs to helper ([a4e1f4a](https://github.com/twinfoundation/rights-management/commit/a4e1f4afe01ea12c36f29672197128e65819c875))
+* pdp add ([#39](https://github.com/twinfoundation/rights-management/issues/39)) ([68b9a8a](https://github.com/twinfoundation/rights-management/commit/68b9a8a7a3cf2902f9eecb590ca3316c6b1671f0))
+* refactor models structure ([a19faba](https://github.com/twinfoundation/rights-management/commit/a19faba2580d65a9348ae7107e3e930ec37ce48f))
+* update generated schema external references ([7069a5f](https://github.com/twinfoundation/rights-management/commit/7069a5fa517cc1161773a727131a91a79432e26c))
+* update generated schema external references ([8df169f](https://github.com/twinfoundation/rights-management/commit/8df169f7008abfd572d866f228f260344bf01a78))
+
+
+### Bug Fixes
+
+* typos ([a969249](https://github.com/twinfoundation/rights-management/commit/a969249cc3c8d9680880be4379a4bb546c48e935))
+
+## [0.0.2-next.9](https://github.com/twinfoundation/rights-management/compare/rights-management-models-v0.0.2-next.8...rights-management-models-v0.0.2-next.9) (2025-09-08)
+
+
+### Features
+
+* add JSON-LD types for negotiation ([6be61f8](https://github.com/twinfoundation/rights-management/commit/6be61f890537cb9d22d4fad90092b858de2c9c2d))
+
+## [0.0.2-next.8](https://github.com/twinfoundation/rights-management/compare/rights-management-models-v0.0.2-next.7...rights-management-models-v0.0.2-next.8) (2025-09-05)
+
+
+### Miscellaneous Chores
+
+* **rights-management-models:** Synchronize repo versions
+
+## [0.0.2-next.7](https://github.com/twinfoundation/rights-management/compare/rights-management-models-v0.0.2-next.6...rights-management-models-v0.0.2-next.7) (2025-09-05)
+
+
+### Miscellaneous Chores
+
+* **rights-management-models:** Synchronize repo versions
+
+## [0.0.2-next.6](https://github.com/twinfoundation/rights-management/compare/rights-management-models-v0.0.2-next.5...rights-management-models-v0.0.2-next.6) (2025-09-05)
+
+
+### Features
+
+* separate rest routes ([538b86b](https://github.com/twinfoundation/rights-management/commit/538b86be26b46711279101aa01fec119419d8149))
+
+## [0.0.2-next.5](https://github.com/twinfoundation/rights-management/compare/rights-management-models-v0.0.2-next.4...rights-management-models-v0.0.2-next.5) (2025-09-05)
+
+
+### Features
+
+* add PEP ([#31](https://github.com/twinfoundation/rights-management/issues/31)) ([34c7c29](https://github.com/twinfoundation/rights-management/commit/34c7c2965e5c0c2be24460628f83cdae0aa7f0d6))
+* add PIP static source ([#30](https://github.com/twinfoundation/rights-management/issues/30)) ([ace4150](https://github.com/twinfoundation/rights-management/commit/ace4150df9b529b03e8a3d66a0ce4cbc35744bc4))
+* add policy negotiation point PNP, PNAP and PNRP ([#32](https://github.com/twinfoundation/rights-management/issues/32)) ([90f0659](https://github.com/twinfoundation/rights-management/commit/90f06593a1126df3c2f4ca23cf95a08260fd6415))
+* introduce context for additional environment input ([e1d0392](https://github.com/twinfoundation/rights-management/commit/e1d0392622e5a018b695644f423c5b23cc40d3b7))
+* remove element factories ([8cb4af8](https://github.com/twinfoundation/rights-management/commit/8cb4af85a5c9c01e3b68ecc7109cf701b914ea9a))
+
+## [0.0.2-next.4](https://github.com/twinfoundation/rights-management/compare/rights-management-models-v0.0.2-next.3...rights-management-models-v0.0.2-next.4) (2025-08-29)
+
+
+### Miscellaneous Chores
+
+* **rights-management-models:** Synchronize repo versions
+
+## [0.0.2-next.3](https://github.com/twinfoundation/rights-management/compare/rights-management-models-v0.0.2-next.2...rights-management-models-v0.0.2-next.3) (2025-08-29)
+
+
+### Features
+
+* add policy information point ([#27](https://github.com/twinfoundation/rights-management/issues/27)) ([61a1cd1](https://github.com/twinfoundation/rights-management/commit/61a1cd18f0c2c4a847c0a30da70de6814c777e29))
+* eslint migration to flat config ([23a0c08](https://github.com/twinfoundation/rights-management/commit/23a0c085e7fc2e522c8d85d325dc5844b9c3fd8e))
+* policy execution point ([#26](https://github.com/twinfoundation/rights-management/issues/26)) ([d930f10](https://github.com/twinfoundation/rights-management/commit/d930f104006a0d815cdf222b87d11d749351fb84))
+* switch execution callback to class/factory pattern ([60db8cf](https://github.com/twinfoundation/rights-management/commit/60db8cfa213d7d4432396b196442d592a5dab6a6))
+* switch execution callback to class/factory pattern ([a6b5660](https://github.com/twinfoundation/rights-management/commit/a6b56602aad98652de06961c436c76d52bf42665))
+* switch execution callback to class/factory pattern ([8294daf](https://github.com/twinfoundation/rights-management/commit/8294daf933b74a1f90f1a34f206b215e59d76810))
+
 ## [0.0.2-next.2](https://github.com/twinfoundation/rights-management/compare/rights-management-models-v0.0.2-next.1...rights-management-models-v0.0.2-next.2) (2025-08-22)
 
 

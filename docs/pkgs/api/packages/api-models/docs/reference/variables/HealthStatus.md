@@ -4,7 +4,7 @@
 
 The health status of the component.
 
-## Type declaration
+## Type Declaration
 
 ### Ok
 

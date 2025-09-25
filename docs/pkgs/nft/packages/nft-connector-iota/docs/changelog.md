@@ -1,5 +1,54 @@
 # @twin.org/nft-connector-iota - Changelog
 
+## [0.0.2-next.5](https://github.com/twinfoundation/nft/compare/nft-connector-iota-v0.0.2-next.4...nft-connector-iota-v0.0.2-next.5) (2025-09-22)
+
+
+### Features
+
+* update IOTA CLI version and remove redundant upgrade tests ([#39](https://github.com/twinfoundation/nft/issues/39)) ([e6355a8](https://github.com/twinfoundation/nft/commit/e6355a89038f52df20f24f64727c62e581b71d8a))
+* wallet only required for write operations ([d3f3522](https://github.com/twinfoundation/nft/commit/d3f3522919e205aaeff83c1f13bbea9a68c5bf5c))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/nft-models bumped from 0.0.2-next.4 to 0.0.2-next.5
+
+## [0.0.2-next.4](https://github.com/twinfoundation/nft/compare/nft-connector-iota-v0.0.2-next.3...nft-connector-iota-v0.0.2-next.4) (2025-09-10)
+
+
+### Features
+
+* eslint migration to flat config ([0e6fc12](https://github.com/twinfoundation/nft/commit/0e6fc128c3c8f6cd34db793787437dd4af2c9994))
+* smart contract upgrade and versioning ([#33](https://github.com/twinfoundation/nft/issues/33)) ([49bf1a0](https://github.com/twinfoundation/nft/commit/49bf1a0ea891f9ef4f9b86ee6448bfd9ffc2d092))
+
+
+### Bug Fixes
+
+* contract independent tests ([#35](https://github.com/twinfoundation/nft/issues/35)) ([b54ad6e](https://github.com/twinfoundation/nft/commit/b54ad6e1727284230f21db0032dc8ff437444812))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/nft-models bumped from 0.0.2-next.3 to 0.0.2-next.4
+
+## [0.0.2-next.3](https://github.com/twinfoundation/nft/compare/nft-connector-iota-v0.0.2-next.2...nft-connector-iota-v0.0.2-next.3) (2025-08-20)
+
+
+### Features
+
+* update framework core ([f3496b6](https://github.com/twinfoundation/nft/commit/f3496b61bfebbb3479bb92df39ecfa9ac8d90b9b))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/nft-models bumped from 0.0.2-next.2 to 0.0.2-next.3
+
 ## [0.0.2-next.2](https://github.com/twinfoundation/nft/compare/nft-connector-iota-v0.0.2-next.1...nft-connector-iota-v0.0.2-next.2) (2025-07-25)
 
 

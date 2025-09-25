@@ -4,7 +4,7 @@
 
 Identity profile component types.
 
-## Type declaration
+## Type Declaration
 
 ### Service
 

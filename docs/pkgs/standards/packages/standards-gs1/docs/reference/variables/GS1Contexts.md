@@ -4,7 +4,7 @@
 
 The contexts of GS1.
 
-## Type declaration
+## Type Declaration
 
 ### ContextRoot
 

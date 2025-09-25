@@ -4,7 +4,7 @@
 
 The types of JSON-LD data.
 
-## Type declaration
+## Type Declaration
 
 ### Document
 

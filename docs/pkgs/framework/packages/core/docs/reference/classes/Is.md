@@ -819,3 +819,31 @@ The value to test.
 `value is RegExp`
 
 True if the value is a regexp.
+
+***
+
+### class()
+
+> `static` **class**\<`T`\>(`obj`): `obj is (args: any[]) => T`
+
+Is the provided object a class constructor.
+
+#### Type Parameters
+
+##### T
+
+`T` = `unknown`
+
+#### Parameters
+
+##### obj
+
+`unknown`
+
+The object to check.
+
+#### Returns
+
+`obj is (args: any[]) => T`
+
+True if the object is a class, false otherwise.

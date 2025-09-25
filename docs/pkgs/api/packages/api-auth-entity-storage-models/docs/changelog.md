@@ -1,5 +1,40 @@
 # @twin.org/api-auth-entity-storage-models - Changelog
 
+## [0.0.2-next.10](https://github.com/twinfoundation/api/compare/api-auth-entity-storage-models-v0.0.2-next.9...api-auth-entity-storage-models-v0.0.2-next.10) (2025-09-23)
+
+
+### Miscellaneous Chores
+
+* **api-auth-entity-storage-models:** Synchronize repo versions
+
+## [0.0.2-next.9](https://github.com/twinfoundation/api/compare/api-auth-entity-storage-models-v0.0.2-next.8...api-auth-entity-storage-models-v0.0.2-next.9) (2025-08-29)
+
+
+### Features
+
+* eslint migration to flat config ([0dd5820](https://github.com/twinfoundation/api/commit/0dd5820e3af97350fd08b8d226f4a6c1a9246805))
+
+## [0.0.2-next.8](https://github.com/twinfoundation/api/compare/api-auth-entity-storage-models-v0.0.2-next.7...api-auth-entity-storage-models-v0.0.2-next.8) (2025-08-21)
+
+
+### Miscellaneous Chores
+
+* **api-auth-entity-storage-models:** Synchronize repo versions
+
+## [0.0.2-next.7](https://github.com/twinfoundation/api/compare/api-auth-entity-storage-models-v0.0.2-next.6...api-auth-entity-storage-models-v0.0.2-next.7) (2025-08-20)
+
+
+### Miscellaneous Chores
+
+* **api-auth-entity-storage-models:** Synchronize repo versions
+
+## [0.0.2-next.6](https://github.com/twinfoundation/api/compare/api-auth-entity-storage-models-v0.0.2-next.5...api-auth-entity-storage-models-v0.0.2-next.6) (2025-08-19)
+
+
+### Features
+
+* update framework core ([d8eebf2](https://github.com/twinfoundation/api/commit/d8eebf267fa2a0abaa84e58590496e9d20490cfa))
+
 ## [0.0.2-next.5](https://github.com/twinfoundation/api/compare/api-auth-entity-storage-models-v0.0.2-next.4...api-auth-entity-storage-models-v0.0.2-next.5) (2025-07-25)
 
 

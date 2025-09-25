@@ -4,7 +4,7 @@
 
 Messaging email connector types.
 
-## Type declaration
+## Type Declaration
 
 ### EntityStorage
 

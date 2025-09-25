@@ -4,7 +4,7 @@
 
 The types the extracted data can be coerced to.
 
-## Type declaration
+## Type Declaration
 
 ### String
 

@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/ui-tailwind",
-	"version": "0.0.2-next.0",
+	"version": "0.0.2-next.1",
 	"description": "UI package for tailwind",
 	"repository": {
 		"type": "git",
@@ -14,10 +14,10 @@
 		"node": ">=20.0.0"
 	},
 	"optionalDependencies": {
-		"@rollup/rollup-linux-x64-gnu": "^4.40.0"
+		"@rollup/rollup-linux-x64-gnu": "4.49.0"
 	},
 	"resolutions": {
-		"rollup": "^4.40.0"
+		"rollup": "4.40.0"
 	},
 	"exports": {
 		".": {

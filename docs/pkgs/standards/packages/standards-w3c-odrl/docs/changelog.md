@@ -1,5 +1,170 @@
 # @twin.org/standards-w3c-odrl - Changelog
 
+## [0.0.2-next.13](https://github.com/twinfoundation/standards/compare/standards-w3c-odrl-v0.0.2-next.12...standards-w3c-odrl-v0.0.2-next.13) (2025-09-22)
+
+
+### Miscellaneous Chores
+
+* **standards-w3c-odrl:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/standards-w3c-vcard bumped from 0.0.2-next.12 to 0.0.2-next.13
+    * @twin.org/standards-dublin-core bumped from 0.0.2-next.12 to 0.0.2-next.13
+
+## [0.0.2-next.12](https://github.com/twinfoundation/standards/compare/standards-w3c-odrl-v0.0.2-next.11...standards-w3c-odrl-v0.0.2-next.12) (2025-09-16)
+
+
+### Features
+
+* inline context types in schemas ([11f8377](https://github.com/twinfoundation/standards/commit/11f8377b129d459a4596ff30a86651beacd7f743))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/standards-w3c-vcard bumped from 0.0.2-next.11 to 0.0.2-next.12
+    * @twin.org/standards-dublin-core bumped from 0.0.2-next.11 to 0.0.2-next.12
+
+## [0.0.2-next.11](https://github.com/twinfoundation/standards/compare/standards-w3c-odrl-v0.0.2-next.10...standards-w3c-odrl-v0.0.2-next.11) (2025-09-16)
+
+
+### Miscellaneous Chores
+
+* **standards-w3c-odrl:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/standards-w3c-vcard bumped from 0.0.2-next.10 to 0.0.2-next.11
+    * @twin.org/standards-dublin-core bumped from 0.0.2-next.10 to 0.0.2-next.11
+
+## [0.0.2-next.10](https://github.com/twinfoundation/standards/compare/standards-w3c-odrl-v0.0.2-next.9...standards-w3c-odrl-v0.0.2-next.10) (2025-09-16)
+
+
+### Miscellaneous Chores
+
+* **standards-w3c-odrl:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/standards-w3c-vcard bumped from 0.0.2-next.9 to 0.0.2-next.10
+    * @twin.org/standards-dublin-core bumped from 0.0.2-next.9 to 0.0.2-next.10
+
+## [0.0.2-next.9](https://github.com/twinfoundation/standards/compare/standards-w3c-odrl-v0.0.2-next.8...standards-w3c-odrl-v0.0.2-next.9) (2025-09-15)
+
+
+### Miscellaneous Chores
+
+* **standards-w3c-odrl:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/standards-w3c-vcard bumped from 0.0.2-next.8 to 0.0.2-next.9
+    * @twin.org/standards-dublin-core bumped from 0.0.2-next.8 to 0.0.2-next.9
+
+## [0.0.2-next.8](https://github.com/twinfoundation/standards/compare/standards-w3c-odrl-v0.0.2-next.7...standards-w3c-odrl-v0.0.2-next.8) (2025-09-15)
+
+
+### Miscellaneous Chores
+
+* **standards-w3c-odrl:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/standards-w3c-vcard bumped from 0.0.2-next.7 to 0.0.2-next.8
+    * @twin.org/standards-dublin-core bumped from 0.0.2-next.7 to 0.0.2-next.8
+
+## [0.0.2-next.7](https://github.com/twinfoundation/standards/compare/standards-w3c-odrl-v0.0.2-next.6...standards-w3c-odrl-v0.0.2-next.7) (2025-09-15)
+
+
+### Miscellaneous Chores
+
+* **standards-w3c-odrl:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/standards-w3c-vcard bumped from 0.0.2-next.6 to 0.0.2-next.7
+    * @twin.org/standards-dublin-core bumped from 0.0.2-next.6 to 0.0.2-next.7
+
+## [0.0.2-next.6](https://github.com/twinfoundation/standards/compare/standards-w3c-odrl-v0.0.2-next.5...standards-w3c-odrl-v0.0.2-next.6) (2025-09-12)
+
+
+### Features
+
+* update ODRL actions and allow custom actions ([c517dad](https://github.com/twinfoundation/standards/commit/c517dad09d68f5dee9117c6cb142f75caad098c4))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/standards-w3c-vcard bumped from 0.0.2-next.5 to 0.0.2-next.6
+    * @twin.org/standards-dublin-core bumped from 0.0.2-next.5 to 0.0.2-next.6
+
+## [0.0.2-next.5](https://github.com/twinfoundation/standards/compare/standards-w3c-odrl-v0.0.2-next.4...standards-w3c-odrl-v0.0.2-next.5) (2025-09-12)
+
+
+### Miscellaneous Chores
+
+* **standards-w3c-odrl:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/standards-w3c-vcard bumped from 0.0.2-next.4 to 0.0.2-next.5
+    * @twin.org/standards-dublin-core bumped from 0.0.2-next.4 to 0.0.2-next.5
+
+## [0.0.2-next.4](https://github.com/twinfoundation/standards/compare/standards-w3c-odrl-v0.0.2-next.3...standards-w3c-odrl-v0.0.2-next.4) (2025-09-12)
+
+
+### Miscellaneous Chores
+
+* **standards-w3c-odrl:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/standards-w3c-vcard bumped from 0.0.2-next.3 to 0.0.2-next.4
+    * @twin.org/standards-dublin-core bumped from 0.0.2-next.3 to 0.0.2-next.4
+
+## [0.0.2-next.3](https://github.com/twinfoundation/standards/compare/standards-w3c-odrl-v0.0.2-next.2...standards-w3c-odrl-v0.0.2-next.3) (2025-08-29)
+
+
+### Features
+
+* eslint migration to flat config ([648c1a1](https://github.com/twinfoundation/standards/commit/648c1a1e69d99b6b0cf69358ec6bdeecdbe3a5ea))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/standards-w3c-vcard bumped from 0.0.2-next.2 to 0.0.2-next.3
+    * @twin.org/standards-dublin-core bumped from 0.0.2-next.2 to 0.0.2-next.3
+
 ## [0.0.2-next.2](https://github.com/twinfoundation/standards/compare/standards-w3c-odrl-v0.0.2-next.1...standards-w3c-odrl-v0.0.2-next.2) (2025-08-19)
 
 

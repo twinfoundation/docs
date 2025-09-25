@@ -1,5 +1,159 @@
 # @twin.org/nameof-vitest-plugin - Changelog
 
+## [0.0.2-next.15](https://github.com/twinfoundation/framework/compare/nameof-vitest-plugin-v0.0.2-next.14...nameof-vitest-plugin-v0.0.2-next.15) (2025-09-22)
+
+
+### Miscellaneous Chores
+
+* **nameof-vitest-plugin:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/nameof-transformer bumped from 0.0.2-next.14 to 0.0.2-next.15
+
+## [0.0.2-next.14](https://github.com/twinfoundation/framework/compare/nameof-vitest-plugin-v0.0.2-next.13...nameof-vitest-plugin-v0.0.2-next.14) (2025-09-22)
+
+
+### Miscellaneous Chores
+
+* **nameof-vitest-plugin:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/nameof-transformer bumped from 0.0.2-next.13 to 0.0.2-next.14
+
+## [0.0.2-next.13](https://github.com/twinfoundation/framework/compare/nameof-vitest-plugin-v0.0.2-next.12...nameof-vitest-plugin-v0.0.2-next.13) (2025-09-22)
+
+
+### Miscellaneous Chores
+
+* **nameof-vitest-plugin:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/nameof-transformer bumped from 0.0.2-next.12 to 0.0.2-next.13
+
+## [0.0.2-next.12](https://github.com/twinfoundation/framework/compare/nameof-vitest-plugin-v0.0.2-next.11...nameof-vitest-plugin-v0.0.2-next.12) (2025-09-15)
+
+
+### Miscellaneous Chores
+
+* **nameof-vitest-plugin:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/nameof-transformer bumped from 0.0.2-next.11 to 0.0.2-next.12
+
+## [0.0.2-next.11](https://github.com/twinfoundation/framework/compare/nameof-vitest-plugin-v0.0.2-next.10...nameof-vitest-plugin-v0.0.2-next.11) (2025-09-15)
+
+
+### Miscellaneous Chores
+
+* **nameof-vitest-plugin:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/nameof-transformer bumped from 0.0.2-next.10 to 0.0.2-next.11
+
+## [0.0.2-next.10](https://github.com/twinfoundation/framework/compare/nameof-vitest-plugin-v0.0.2-next.9...nameof-vitest-plugin-v0.0.2-next.10) (2025-09-11)
+
+
+### Miscellaneous Chores
+
+* **nameof-vitest-plugin:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/nameof-transformer bumped from 0.0.2-next.9 to 0.0.2-next.10
+
+## [0.0.2-next.9](https://github.com/twinfoundation/framework/compare/nameof-vitest-plugin-v0.0.2-next.8...nameof-vitest-plugin-v0.0.2-next.9) (2025-09-08)
+
+
+### Miscellaneous Chores
+
+* **nameof-vitest-plugin:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/nameof-transformer bumped from 0.0.2-next.8 to 0.0.2-next.9
+
+## [0.0.2-next.8](https://github.com/twinfoundation/framework/compare/nameof-vitest-plugin-v0.0.2-next.7...nameof-vitest-plugin-v0.0.2-next.8) (2025-09-05)
+
+
+### Miscellaneous Chores
+
+* **nameof-vitest-plugin:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/nameof-transformer bumped from 0.0.2-next.7 to 0.0.2-next.8
+
+## [0.0.2-next.7](https://github.com/twinfoundation/framework/compare/nameof-vitest-plugin-v0.0.2-next.6...nameof-vitest-plugin-v0.0.2-next.7) (2025-08-29)
+
+
+### Features
+
+* eslint migration to flat config ([74427d7](https://github.com/twinfoundation/framework/commit/74427d78d342167f7850e49ab87269326355befe))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/nameof-transformer bumped from 0.0.2-next.6 to 0.0.2-next.7
+
+## [0.0.2-next.6](https://github.com/twinfoundation/framework/compare/nameof-vitest-plugin-v0.0.2-next.5...nameof-vitest-plugin-v0.0.2-next.6) (2025-08-27)
+
+
+### Miscellaneous Chores
+
+* **nameof-vitest-plugin:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/nameof-transformer bumped from 0.0.2-next.5 to 0.0.2-next.6
+
+## [0.0.2-next.5](https://github.com/twinfoundation/framework/compare/nameof-vitest-plugin-v0.0.2-next.4...nameof-vitest-plugin-v0.0.2-next.5) (2025-08-19)
+
+
+### Features
+
+* use cause instead of inner for errors ([1f4acc4](https://github.com/twinfoundation/framework/commit/1f4acc4d7a6b71a134d9547da9bf40de1e1e49da))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/nameof-transformer bumped from 0.0.2-next.4 to 0.0.2-next.5
+
 ## [0.0.2-next.4](https://github.com/twinfoundation/framework/compare/nameof-vitest-plugin-v0.0.2-next.3...nameof-vitest-plugin-v0.0.2-next.4) (2025-08-15)
 
 

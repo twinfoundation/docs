@@ -4,7 +4,7 @@
 
 EPCIS 2.0 action types.
 
-## Type declaration
+## Type Declaration
 
 ### Add
 

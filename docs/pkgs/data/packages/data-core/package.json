@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/data-core",
-	"version": "0.0.2-next.1",
+	"version": "0.0.2-next.2",
 	"description": "Definitions and helpers for using with data and schemas",
 	"repository": {
 		"type": "git",

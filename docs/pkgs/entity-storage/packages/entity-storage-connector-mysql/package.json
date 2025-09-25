@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/entity-storage-connector-mysql",
-	"version": "0.0.2-next.5",
+	"version": "0.0.2-next.8",
 	"description": "Entity Storage connector implementation using MySQL storage",
 	"repository": {
 		"type": "git",

@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/node",
-	"version": "0.0.2-next.4",
+	"version": "0.0.2-next.13",
 	"description": "TWIN Node serving APIs using the specified configuration",
 	"private": true,
 	"repository": {

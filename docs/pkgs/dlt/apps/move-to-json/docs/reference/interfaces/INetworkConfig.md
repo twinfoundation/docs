@@ -6,7 +6,7 @@ Network configuration interface
 
 ### network
 
-> **network**: [`NetworkTypes`](../type-aliases/NetworkTypes.md)
+> **network**: `NetworkTypes`
 
 The network type
 

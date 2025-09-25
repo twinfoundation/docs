@@ -4,6 +4,7 @@
 
 - [FetchError](classes/FetchError.md)
 - [FetchHelper](classes/FetchHelper.md)
+- [HeaderHelper](classes/HeaderHelper.md)
 - [Jwk](classes/Jwk.md)
 - [Jws](classes/Jws.md)
 - [Jwt](classes/Jwt.md)

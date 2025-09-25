@@ -1,5 +1,19 @@
 # @twin.org/telemetry-connector-entity-storage - Changelog
 
+## [0.0.2-next.2](https://github.com/twinfoundation/telemetry/compare/telemetry-connector-entity-storage-v0.0.2-next.1...telemetry-connector-entity-storage-v0.0.2-next.2) (2025-08-29)
+
+
+### Features
+
+* eslint migration to flat config ([69ac91a](https://github.com/twinfoundation/telemetry/commit/69ac91a89d0b5bc63374a0bd314f770b557dabb4))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/telemetry-models bumped from 0.0.2-next.1 to 0.0.2-next.2
+
 ## [0.0.2-next.1](https://github.com/twinfoundation/telemetry/compare/telemetry-connector-entity-storage-v0.0.2-next.0...telemetry-connector-entity-storage-v0.0.2-next.1) (2025-08-20)
 
 

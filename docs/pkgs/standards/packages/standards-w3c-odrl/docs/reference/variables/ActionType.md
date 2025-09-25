@@ -5,310 +5,337 @@
 The types for ODRL Actions.
 Simple action types (for direct string usage)
 
-## Type declaration
+## Type Declaration
 
 ### Use
 
 > `readonly` **Use**: `"use"` = `"use"`
 
-To use the Asset - actions that involve general usage by parties.
+The act of using an asset, covering any general usage where ownership does not change.
+This is the parent term for most permissions and prohibitions.
 
 ### Transfer
 
 > `readonly` **Transfer**: `"transfer"` = `"transfer"`
 
-To transfer the ownership to third parties.
-
-### AcceptTracking
-
-> `readonly` **AcceptTracking**: `"acceptTracking"` = `"acceptTracking"`
-
-To accept that the use of the Asset may be tracked.
+The act of transferring the ownership of an asset in perpetuity to a third party.
 
 ### Aggregate
 
 > `readonly` **Aggregate**: `"aggregate"` = `"aggregate"`
 
-To use the Asset or parts of it as part of a composite collection.
+The act of using an asset (or parts of it) as part of a composite collection.
 
 ### Annotate
 
 > `readonly` **Annotate**: `"annotate"` = `"annotate"`
 
-To add explanatory notations/commentaries to the Asset without modifying the Asset in any other way.
+The act of adding explanatory notations/commentaries to the asset.
 
 ### Anonymize
 
 > `readonly` **Anonymize**: `"anonymize"` = `"anonymize"`
 
-To anonymize all or parts of the Asset.
+The act of anonymising all or parts of the asset, for example, to remove identifying particulars.
 
 ### Archive
 
 > `readonly` **Archive**: `"archive"` = `"archive"`
 
-To store the Asset (in a non-transient form).
-
-### Attribute
-
-> `readonly` **Attribute**: `"attribute"` = `"attribute"`
-
-To attribute the use of the Asset.
-
-### Attribution
-
-> `readonly` **Attribution**: `"attribution"` = `"attribution"`
-
-Credit be given to copyright holder and/or author.
-
-### CommercialUse
-
-> `readonly` **CommercialUse**: `"commercialUse"` = `"commercialUse"`
-
-Exercising rights for commercial purposes.
-
-### Compensate
-
-> `readonly` **Compensate**: `"compensate"` = `"compensate"`
-
-To compensate by transfer of some amount of value for using or selling the Asset.
+The act of persistently storing the asset in a non-transient form.
 
 ### ConcurrentUse
 
 > `readonly` **ConcurrentUse**: `"concurrentUse"` = `"concurrentUse"`
 
-To create multiple copies of the Asset that are being concurrently used.
+The act of multiple concurrent use of the asset.
 
-### Delete
+### Commercialize
 
-> `readonly` **Delete**: `"delete"` = `"delete"`
+> `readonly` **Commercialize**: `"commercialize"` = `"commercialize"`
 
-To permanently remove all copies of the Asset after it has been used.
+The act of using the asset in a business environment where it may be traded for profit.
+
+### Copy
+
+> `readonly` **Copy**: `"copy"` = `"copy"`
+
+The act of making an exact reproduction of the asset. Also identified as `reproduce`.
 
 ### Derive
 
 > `readonly` **Derive**: `"derive"` = `"derive"`
 
-To create a new derivative Asset from this Asset and to edit or modify the derivative.
-
-### DerivativeWorks
-
-> `readonly` **DerivativeWorks**: `"derivativeWorks"` = `"derivativeWorks"`
-
-Distribution of derivative works.
+The act of creating a new derivative asset from the original and editing or modifying it.
 
 ### Digitize
 
 > `readonly` **Digitize**: `"digitize"` = `"digitize"`
 
-To produce a digital copy of (or otherwise digitize) the Asset from its analogue form.
+The act of producing a digital copy of an asset from its analogue form.
 
 ### Display
 
 > `readonly` **Display**: `"display"` = `"display"`
 
-To create a static and transient rendition of an Asset.
+The act of making a transient visible rendering of the asset, such as displaying an image on a screen.
+Also identified as `present` in earlier versions.
 
 ### Distribute
 
 > `readonly` **Distribute**: `"distribute"` = `"distribute"`
 
-To supply the Asset to third-parties.
-
-### Distribution
-
-> `readonly` **Distribution**: `"distribution"` = `"distribution"`
-
-Distribution, public display, and publicly performance.
-
-### EnsureExclusivity
-
-> `readonly` **EnsureExclusivity**: `"ensureExclusivity"` = `"ensureExclusivity"`
-
-To ensure that the Rule on the Asset is exclusive.
+The act of publicly distributing, displaying, or performing the asset.
 
 ### Execute
 
 > `readonly` **Execute**: `"execute"` = `"execute"`
 
-To run the computer program Asset.
+The act of executing the asset, such as running a program or application.
 
 ### Extract
 
 > `readonly` **Extract**: `"extract"` = `"extract"`
 
-To extract parts of the Asset and to use it as a new Asset.
+The act of extracting (replicating) unchanged parts of the asset for reuse.
 
-### Give
+### ExtractChar
 
-> `readonly` **Give**: `"give"` = `"give"`
+> `readonly` **ExtractChar**: `"extractChar"` = `"extractChar"`
 
-To transfer the ownership without compensation and while deleting the original asset.
+The act of extracting unchanged character(s) from the asset.
 
-### GrantUse
+### ExtractWord
 
-> `readonly` **GrantUse**: `"grantUse"` = `"grantUse"`
+> `readonly` **ExtractWord**: `"extractWord"` = `"extractWord"`
 
-To grant the use of the Asset to third parties.
+The act of extracting unchanged word(s) from the asset.
 
-### Include
+### ExtractPage
 
-> `readonly` **Include**: `"include"` = `"include"`
+> `readonly` **ExtractPage**: `"extractPage"` = `"extractPage"`
 
-To include other related assets in the Asset.
+The act of extracting unchanged page(s) from the asset.
 
 ### Index
 
 > `readonly` **Index**: `"index"` = `"index"`
 
-To record the Asset in an index.
-
-### Inform
-
-> `readonly` **Inform**: `"inform"` = `"inform"`
-
-To inform that an action has been performed on or in relation to the Asset.
+The act of recording the asset in an index, for example, a search engine database.
 
 ### Install
 
 > `readonly` **Install**: `"install"` = `"install"`
 
-To load the computer program Asset onto a storage device.
+The act of loading the asset onto a storage device ready for operation.
+
+### License
+
+> `readonly` **License**: `"license"` = `"license"`
+
+The act of granting the use of the asset to third parties. Also identified as `sublicense` in earlier versions.
+
+### Lease
+
+> `readonly` **Lease**: `"lease"` = `"lease"`
+
+The act of making the asset available to a third-party for a fixed period with exchange of value.
+
+### Lend
+
+> `readonly` **Lend**: `"lend"` = `"lend"`
+
+The act of making the asset available to a third-party for a fixed period without exchange of value.
 
 ### Modify
 
 > `readonly` **Modify**: `"modify"` = `"modify"`
 
-To change existing content of the Asset without creating a new asset.
+The act of updating existing content of the asset without creating a new one.
 
 ### Move
 
 > `readonly` **Move**: `"move"` = `"move"`
 
-To move the Asset from one digital location to another including deleting the original copy.
-
-### NextPolicy
-
-> `readonly` **NextPolicy**: `"nextPolicy"` = `"nextPolicy"`
-
-To grant the specified Policy to a third party for their use of the Asset.
-
-### Notice
-
-> `readonly` **Notice**: `"notice"` = `"notice"`
-
-Copyright and license notices be kept intact.
-
-### ObtainConsent
-
-> `readonly` **ObtainConsent**: `"obtainConsent"` = `"obtainConsent"`
-
-To obtain verifiable consent to perform the requested action.
+The act of moving the asset from one digital location to another and deleting the original.
 
 ### Play
 
 > `readonly` **Play**: `"play"` = `"play"`
 
-To create a sequential and transient rendition of an Asset.
+The act of rendering the asset into audio and/or video form.
 
-### Present
+### Preview
 
-> `readonly` **Present**: `"present"` = `"present"`
+> `readonly` **Preview**: `"preview"` = `"preview"`
 
-To publicly perform the Asset.
+The act of providing a short preview of the asset.
 
 ### Print
 
 > `readonly` **Print**: `"print"` = `"print"`
 
-To create a tangible and permanent rendition of an Asset.
+The act of rendering the asset onto paper or hard copy form.
 
 ### Read
 
 > `readonly` **Read**: `"read"` = `"read"`
 
-To obtain data from the Asset.
+The act of obtaining data from the asset, such as a database record.
 
-### Reproduce
+### SecondaryUse
 
-> `readonly` **Reproduce**: `"reproduce"` = `"reproduce"`
+> `readonly` **SecondaryUse**: `"secondaryUse"` = `"secondaryUse"`
 
-To make duplicate copies of the Asset in any material form.
+The act of using the asset for a purpose other than its intended purpose.
 
-### Reproduction
+### Share
 
-> `readonly` **Reproduction**: `"reproduction"` = `"reproduction"`
+> `readonly` **Share**: `"share"` = `"share"`
 
-Making multiple copies.
+The act of non-commercial reproduction and distribution of the asset to third-parties.
 
-### ReviewPolicy
+### AdhocShare
 
-> `readonly` **ReviewPolicy**: `"reviewPolicy"` = `"reviewPolicy"`
+> `readonly` **AdhocShare**: `"adhocShare"` = `"adhocShare"`
 
-To review the Policy applicable to the Asset.
-
-### Sell
-
-> `readonly` **Sell**: `"sell"` = `"sell"`
-
-To transfer the ownership with compensation and while deleting the original asset.
+The act of sharing the asset to parties in close proximity to the owner.
 
 ### ShareAlike
 
 > `readonly` **ShareAlike**: `"shareAlike"` = `"shareAlike"`
 
-Derivative works be licensed under the same terms or compatible terms.
-
-### Sharing
-
-> `readonly` **Sharing**: `"sharing"` = `"sharing"`
-
-Permits commercial derivatives, but only non-commercial distribution.
-
-### SourceCode
-
-> `readonly` **SourceCode**: `"sourceCode"` = `"sourceCode"`
-
-Source code must be provided when exercising some rights.
-
-### Stream
-
-> `readonly` **Stream**: `"stream"` = `"stream"`
-
-To deliver the Asset in real-time.
-
-### Synchronize
-
-> `readonly` **Synchronize**: `"synchronize"` = `"synchronize"`
-
-To use the Asset in timed relations with media elements of another Asset.
+The act of distributing any derivative asset under the same terms as the original.
 
 ### TextToSpeech
 
 > `readonly` **TextToSpeech**: `"textToSpeech"` = `"textToSpeech"`
 
-To have a text Asset read out loud.
-
-### Transform
-
-> `readonly` **Transform**: `"transform"` = `"transform"`
-
-To convert the Asset into a different format.
+The act of a system reading the text of the asset out loud.
 
 ### Translate
 
 > `readonly` **Translate**: `"translate"` = `"translate"`
 
-To translate the Asset into another natural language.
+The act of translating the asset's original language into another, creating a new derivative asset.
+
+### Transform
+
+> `readonly` **Transform**: `"transform"` = `"transform"`
+
+The act of transforming the asset into a different digital format.
 
 ### Uninstall
 
 > `readonly` **Uninstall**: `"uninstall"` = `"uninstall"`
 
-To unload and delete the computer program Asset.
+The act of unloading the asset from a storage device, making it no longer accessible.
 
 ### Watermark
 
 > `readonly` **Watermark**: `"watermark"` = `"watermark"`
 
-To apply a watermark to the Asset.
+The act of applying a watermark to the asset.
+
+### Write
+
+> `readonly` **Write**: `"write"` = `"write"`
+
+The act of writing to or modifying the asset.
+
+### Append
+
+> `readonly` **Append**: `"append"` = `"append"`
+
+The act of adding to the end of an asset, for example, a database record.
+Also identified as `appendTo`.
+
+### Give
+
+> `readonly` **Give**: `"give"` = `"give"`
+
+The act of giving away the asset in perpetuity without exchange of value, requiring the original to be deleted.
+
+### Sell
+
+> `readonly` **Sell**: `"sell"` = `"sell"`
+
+The act of trading the asset in exchange for compensation, requiring the original to be deleted.
+
+### AcceptTracking
+
+> `readonly` **AcceptTracking**: `"acceptTracking"` = `"acceptTracking"`
+
+The act of accepting that the use of the asset may be tracked by a specified party.
+
+### AttachPolicy
+
+> `readonly` **AttachPolicy**: `"attachPolicy"` = `"attachPolicy"`
+
+The act of keeping a policy notice attached to the asset.
+
+### AttachSource
+
+> `readonly` **AttachSource**: `"attachSource"` = `"attachSource"`
+
+The act of attaching the source of the asset and its derivatives.
+
+### Attribute
+
+> `readonly` **Attribute**: `"attribute"` = `"attribute"`
+
+The act of attributing the asset to a specified party.
+
+### Compensate
+
+> `readonly` **Compensate**: `"compensate"` = `"compensate"`
+
+The act of compensating a specified party by some amount for use of the asset.
+
+### Delete
+
+> `readonly` **Delete**: `"delete"` = `"delete"`
+
+The act of permanently removing all copies of the asset.
+
+### EnsureExclusivity
+
+> `readonly` **EnsureExclusivity**: `"ensureExclusivity"` = `"ensureExclusivity"`
+
+The act of requiring the assigner to ensure a permission is exclusive to the assignee.
+
+### Include
+
+> `readonly` **Include**: `"include"` = `"include"`
+
+The act of including other related assets to fulfil the function.
+
+### Inform
+
+> `readonly` **Inform**: `"inform"` = `"inform"`
+
+The act of informing a party that an action has been performed on the asset.
+
+### NextPolicy
+
+> `readonly` **NextPolicy**: `"nextPolicy"` = `"nextPolicy"`
+
+The act of specifying a policy for third-party use of the asset.
+
+### ObtainConsent
+
+> `readonly` **ObtainConsent**: `"obtainConsent"` = `"obtainConsent"`
+
+The act of requiring explicit consent from a party to perform an action.
+
+### Pay
+
+> `readonly` **Pay**: `"pay"` = `"pay"`
+
+The act of paying a financial amount to a party for use of the asset.
+
+### ReviewPolicy
+
+> `readonly` **ReviewPolicy**: `"reviewPolicy"` = `"reviewPolicy"`
+
+The act of performing a manual review of the terms associated with the asset.

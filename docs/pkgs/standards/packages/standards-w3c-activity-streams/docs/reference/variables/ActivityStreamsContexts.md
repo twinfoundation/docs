@@ -4,7 +4,7 @@
 
 The LD Contexts concerning Activity Streams.
 
-## Type declaration
+## Type Declaration
 
 ### ContextRoot
 

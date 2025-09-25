@@ -4,7 +4,7 @@
 
 The types of schema.org data.
 
-## Type declaration
+## Type Declaration
 
 ### Text
 

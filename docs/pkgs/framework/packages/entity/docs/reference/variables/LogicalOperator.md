@@ -4,7 +4,7 @@
 
 The logical operators for condition combining.
 
-## Type declaration
+## Type Declaration
 
 ### And
 

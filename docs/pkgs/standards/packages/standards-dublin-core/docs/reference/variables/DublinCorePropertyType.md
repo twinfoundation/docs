@@ -5,7 +5,7 @@
 Common Dublin Core property types for ODRL Policy Metadata.
 Based on http://purl.org/dc/terms/
 
-## Type declaration
+## Type Declaration
 
 ### Creator
 

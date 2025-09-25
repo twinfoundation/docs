@@ -256,6 +256,12 @@ The optional id to look for.
 
 Look in id, alias or both, defaults to both.
 
+###### idExact?
+
+`boolean`
+
+Find only exact matches, default to false meaning partial matching.
+
 ###### resourceTypes?
 
 `string`[]

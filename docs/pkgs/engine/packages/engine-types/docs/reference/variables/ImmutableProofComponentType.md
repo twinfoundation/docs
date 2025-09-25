@@ -4,7 +4,7 @@
 
 Immutable proof component types.
 
-## Type declaration
+## Type Declaration
 
 ### Service
 

@@ -14,4 +14,10 @@ Rights management PDP component config types.
 
 ### options?
 
-> `optional` **options**: `IPolicyDecisionPointServiceOptions`
+> `optional` **options**: `IPolicyDecisionPointServiceConstructorOptions` & `object`
+
+#### Type Declaration
+
+##### arbiterModulesConfig?
+
+> `optional` **arbiterModulesConfig**: `IEngineModuleConfig`[]

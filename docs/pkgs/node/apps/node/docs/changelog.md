@@ -1,5 +1,131 @@
 # @twin.org/node - Changelog
 
+## [0.0.2-next.13](https://github.com/twinfoundation/node/compare/node-v0.0.2-next.12...node-v0.0.2-next.13) (2025-09-24)
+
+
+### Features
+
+* update to latest engine ([00d4974](https://github.com/twinfoundation/node/commit/00d4974f9cfb02bf48505cfb4af4a7aba1df4b3d))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/node-core bumped from 0.0.2-next.12 to 0.0.2-next.13
+
+## [0.0.2-next.12](https://github.com/twinfoundation/node/compare/node-v0.0.2-next.11...node-v0.0.2-next.12) (2025-09-19)
+
+
+### Features
+
+* update rights management components ([176a0d6](https://github.com/twinfoundation/node/commit/176a0d611f88360fc845ae233b26ee0b43d7cb23))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/node-core bumped from 0.0.2-next.11 to 0.0.2-next.12
+
+## [0.0.2-next.11](https://github.com/twinfoundation/node/compare/node-v0.0.2-next.10...node-v0.0.2-next.11) (2025-09-08)
+
+
+### Miscellaneous Chores
+
+* **node:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/node-core bumped from 0.0.2-next.10 to 0.0.2-next.11
+
+## [0.0.2-next.10](https://github.com/twinfoundation/node/compare/node-v0.0.2-next.9...node-v0.0.2-next.10) (2025-09-05)
+
+
+### Features
+
+* add rights management components ([0fc6293](https://github.com/twinfoundation/node/commit/0fc629332db24494bd73003625c7bf3f939a2597))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/node-core bumped from 0.0.2-next.9 to 0.0.2-next.10
+
+## [0.0.2-next.9](https://github.com/twinfoundation/node/compare/node-v0.0.2-next.8...node-v0.0.2-next.9) (2025-08-31)
+
+
+### Features
+
+* eslint migration to flat config ([080db74](https://github.com/twinfoundation/node/commit/080db746390230f78725d214bc957da2efee9eb1))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/node-core bumped from 0.0.2-next.8 to 0.0.2-next.9
+
+## [0.0.2-next.8](https://github.com/twinfoundation/node/compare/node-v0.0.2-next.7...node-v0.0.2-next.8) (2025-08-27)
+
+
+### Miscellaneous Chores
+
+* **node:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/node-core bumped from 0.0.2-next.7 to 0.0.2-next.8
+
+## [0.0.2-next.7](https://github.com/twinfoundation/node/compare/node-v0.0.2-next.6...node-v0.0.2-next.7) (2025-08-26)
+
+
+### Features
+
+* add data space connector ([157e8b0](https://github.com/twinfoundation/node/commit/157e8b0a76e3a8a63c1991924f7f963eb83e27ae))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/node-core bumped from 0.0.2-next.6 to 0.0.2-next.7
+
+## [0.0.2-next.6](https://github.com/twinfoundation/node/compare/node-v0.0.2-next.5...node-v0.0.2-next.6) (2025-08-22)
+
+
+### Miscellaneous Chores
+
+* **node:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/node-core bumped from 0.0.2-next.5 to 0.0.2-next.6
+
+## [0.0.2-next.5](https://github.com/twinfoundation/node/compare/node-v0.0.2-next.4...node-v0.0.2-next.5) (2025-08-21)
+
+
+### Features
+
+* update framework core ([8bd769a](https://github.com/twinfoundation/node/commit/8bd769a4451f5f1f6be3f115a5e94eeb05bce7f1))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/node-core bumped from 0.0.2-next.4 to 0.0.2-next.5
+
 ## [0.0.2-next.4](https://github.com/twinfoundation/node/compare/node-v0.0.2-next.3...node-v0.0.2-next.4) (2025-08-14)
 
 

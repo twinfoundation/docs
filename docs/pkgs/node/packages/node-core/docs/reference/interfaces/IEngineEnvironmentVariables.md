@@ -780,15 +780,6 @@ This only required if using a custom verifiable storage item, otherwise it will 
 
 ***
 
-### synchronisedStorageVerificationMethodId?
-
-> `optional` **synchronisedStorageVerificationMethodId**: `string`
-
-The identity verification method id to use with synchronised storage for signing/verifying changesets.
-Defaults to synchronised-storage-assertion.
-
-***
-
 ### synchronisedStorageBlobStorageEncryptionKeyId?
 
 > `optional` **synchronisedStorageBlobStorageEncryptionKeyId**: `string`
@@ -799,21 +790,12 @@ Defaults to synchronised-storage-blob-encryption
 
 ***
 
-### synchronisedStorageBlobStoragePrivateKey?
+### synchronisedStorageBlobStorageKey?
 
-> `optional` **synchronisedStorageBlobStoragePrivateKey**: `string`
+> `optional` **synchronisedStorageBlobStorageKey**: `string`
 
-The private key used for blob encryption, should be RSA-2048 DER format encoded as base64.
+The key used for blob encryption, should be ChaCha20Poly1305 encoded as base64.
 Only required for trusted nodes, as regular nodes will not write encrypted data.
-
-***
-
-### synchronisedStorageBlobStoragePublicKey?
-
-> `optional` **synchronisedStorageBlobStoragePublicKey**: `string`
-
-The public key used for blob decryption, should be RSA-2048 DER format encoded as base64.
-Only required for trusted nodes, as regular nodes will request the key from trusted nodes.
 
 ***
 
@@ -905,8 +887,105 @@ Is the rights management enabled, defaults to false.
 
 ***
 
+### rightsManagementBaseCallbackUrl?
+
+> `optional` **rightsManagementBaseCallbackUrl**: `string`
+
+What is the base callback url for rights management negotiations e.g. https://my-node/rights-management.
+
+***
+
+### rightsManagementInformationSources?
+
+> `optional` **rightsManagementInformationSources**: `string`
+
+The rights management configuration which includes the information sources modules to load.
+Use the @json: prefix to specify the path to the JSON configuration file.
+
+***
+
+### rightsManagementNegotiators?
+
+> `optional` **rightsManagementNegotiators**: `string`
+
+The rights management configuration which includes the negotiator modules to load.
+Use the @json: prefix to specify the path to the JSON configuration file.
+
+***
+
+### rightsManagementRequesters?
+
+> `optional` **rightsManagementRequesters**: `string`
+
+The rights management configuration which includes the requester modules to load.
+Use the @json: prefix to specify the path to the JSON configuration file.
+
+***
+
+### rightsManagementExecutionActions?
+
+> `optional` **rightsManagementExecutionActions**: `string`
+
+The rights management configuration which includes the execution actions modules to load.
+Use the @json: prefix to specify the path to the JSON configuration file.
+
+***
+
+### rightsManagementEnforcementProcessors?
+
+> `optional` **rightsManagementEnforcementProcessors**: `string`
+
+The rights management configuration which includes the enforcement processor modules to load.
+Use the @json: prefix to specify the path to the JSON configuration file.
+
+***
+
+### rightsManagementArbiters?
+
+> `optional` **rightsManagementArbiters**: `string`
+
+The rights management configuration which includes the arbiter modules to load.
+Use the @json: prefix to specify the path to the JSON configuration file.
+
+***
+
+### rightsManagementOffers?
+
+> `optional` **rightsManagementOffers**: `string`
+
+The rights management configuration which includes the offer modules to load.
+Use the @json: prefix to specify the path to the JSON configuration file.
+
+***
+
 ### taskSchedulerEnabled?
 
 > `optional` **taskSchedulerEnabled**: `string`
 
 Is the task scheduler enabled, defaults to false.
+
+***
+
+### dataSpaceConnectorEnabled?
+
+> `optional` **dataSpaceConnectorEnabled**: `string`
+
+Is the data space connector enabled, defaults to false.
+
+***
+
+### dataSpaceConnectorApps?
+
+> `optional` **dataSpaceConnectorApps**: `string`
+
+The application configuration for the data space connector.
+Use the @json: prefix to specify the path to the JSON configuration file.
+
+***
+
+### vcAuthenticationVerificationMethodId?
+
+> `optional` **vcAuthenticationVerificationMethodId**: `string`
+
+Verifiable credential assertion for node to node communication.
+Defaults to node-authentication-assertion.

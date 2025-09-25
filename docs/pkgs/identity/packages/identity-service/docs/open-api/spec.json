@@ -828,7 +828,7 @@
 										"value": {
 											"verifiableCredential": {
 												"@context": [
-													"https://www.w3.org/ns/credentials/v2",
+													"https://www.w3.org/2018/credentials/v1",
 													"https://schema.org"
 												],
 												"id": "https://example.com/credentials/3732",
@@ -948,7 +948,7 @@
 											"revoked": false,
 											"verifiableCredential": {
 												"@context": [
-													"https://www.w3.org/ns/credentials/v2",
+													"https://www.w3.org/2018/credentials/v1",
 													"https://schema.org"
 												],
 												"id": "https://example.com/credentials/3732",
@@ -1275,7 +1275,7 @@
 										"value": {
 											"verifiablePresentation": {
 												"@context": [
-													"https://www.w3.org/ns/credentials/v2",
+													"https://www.w3.org/2018/credentials/v1",
 													"https://schema.org"
 												],
 												"id": "presentationId",
@@ -1388,7 +1388,7 @@
 											"revoked": false,
 											"verifiablePresentation": {
 												"@context": [
-													"https://www.w3.org/ns/credentials/v2",
+													"https://www.w3.org/2018/credentials/v1",
 													"https://schema.org"
 												],
 												"id": "presentationId",
@@ -1488,8 +1488,8 @@
 										"proofType": "DataIntegrityProof",
 										"document": {
 											"@context": [
-												"https://www.w3.org/ns/credentials/v2",
-												"https://www.w3.org/ns/credentials/examples/v2"
+												"https://www.w3.org/2018/credentials/v1",
+												"https://www.w3.org/2018/credentials/examples/v1"
 											],
 											"id": "urn:uuid:58172aac-d8ba-11ed-83dd-0b3aef56cc33",
 											"type": [
@@ -1618,8 +1618,8 @@
 									"value": {
 										"document": {
 											"@context": [
-												"https://www.w3.org/ns/credentials/v2",
-												"https://www.w3.org/ns/credentials/examples/v2"
+												"https://www.w3.org/2018/credentials/v1",
+												"https://www.w3.org/2018/credentials/examples/v1"
 											],
 											"id": "urn:uuid:58172aac-d8ba-11ed-83dd-0b3aef56cc33",
 											"type": [
@@ -2745,6 +2745,10 @@
 					"revocationIndex": {
 						"type": "number",
 						"description": "The bitmap revocation index of the credential, if undefined will not have revocation status."
+					},
+					"expirationDate": {
+						"type": "string",
+						"description": "The date the verifiable credential is valid until."
 					}
 				},
 				"required": [
@@ -3222,11 +3226,6 @@
 					"name"
 				],
 				"description": "The body which contains the error."
-			},
-			"ProofSignerVerifier": {
-				"type": "object",
-				"additionalProperties": false,
-				"description": "Interface describing a proof signer and verifier."
 			}
 		},
 		"securitySchemes": {

@@ -4,7 +4,7 @@
 
 Entity storage connector types.
 
-## Type declaration
+## Type Declaration
 
 ### File
 

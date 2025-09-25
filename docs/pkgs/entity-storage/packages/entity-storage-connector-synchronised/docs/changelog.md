@@ -1,5 +1,54 @@
 # Changelog
 
+## [0.0.2-next.8](https://github.com/twinfoundation/entity-storage/compare/entity-storage-connector-synchronised-v0.0.2-next.7...entity-storage-connector-synchronised-v0.0.2-next.8) (2025-08-29)
+
+
+### Features
+
+* eslint migration to flat config ([f033b64](https://github.com/twinfoundation/entity-storage/commit/f033b64984c0e6a8129d929c9dd816dcc1b8dab0))
+* remove unused property ([459e859](https://github.com/twinfoundation/entity-storage/commit/459e859ebfdb8e74d0f063601e6075300e37d7f8))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/entity-storage-models bumped from 0.0.2-next.7 to 0.0.2-next.8
+  * devDependencies
+    * @twin.org/entity-storage-connector-memory bumped from 0.0.2-next.7 to 0.0.2-next.8
+
+## [0.0.2-next.7](https://github.com/twinfoundation/entity-storage/compare/entity-storage-connector-synchronised-v0.0.2-next.6...entity-storage-connector-synchronised-v0.0.2-next.7) (2025-08-20)
+
+
+### Miscellaneous Chores
+
+* **entity-storage-connector-synchronised:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/entity-storage-models bumped from 0.0.2-next.6 to 0.0.2-next.7
+  * devDependencies
+    * @twin.org/entity-storage-connector-memory bumped from 0.0.2-next.6 to 0.0.2-next.7
+
+## [0.0.2-next.6](https://github.com/twinfoundation/entity-storage/compare/entity-storage-connector-synchronised-v0.0.2-next.5...entity-storage-connector-synchronised-v0.0.2-next.6) (2025-08-19)
+
+
+### Features
+
+* update framework core ([b59a380](https://github.com/twinfoundation/entity-storage/commit/b59a380bb7fba2b43610f69074dcdee24a4737da))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/entity-storage-models bumped from 0.0.2-next.5 to 0.0.2-next.6
+  * devDependencies
+    * @twin.org/entity-storage-connector-memory bumped from 0.0.2-next.5 to 0.0.2-next.6
+
 ## [0.0.2-next.5](https://github.com/twinfoundation/entity-storage/compare/entity-storage-connector-synchronised-v0.0.2-next.4...entity-storage-connector-synchronised-v0.0.2-next.5) (2025-08-11)
 
 

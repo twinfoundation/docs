@@ -4,7 +4,7 @@
 
 Authentication component types.
 
-## Type declaration
+## Type Declaration
 
 ### EntityStorage
 

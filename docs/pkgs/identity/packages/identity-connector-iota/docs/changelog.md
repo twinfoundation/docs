@@ -1,5 +1,75 @@
 # @twin.org/identity-connector-iota - Changelog
 
+## [0.0.2-next.7](https://github.com/twinfoundation/identity/compare/identity-connector-iota-v0.0.2-next.6...identity-connector-iota-v0.0.2-next.7) (2025-09-23)
+
+
+### Miscellaneous Chores
+
+* **identity-connector-iota:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/identity-models bumped from 0.0.2-next.6 to 0.0.2-next.7
+
+## [0.0.2-next.6](https://github.com/twinfoundation/identity/compare/identity-connector-iota-v0.0.2-next.5...identity-connector-iota-v0.0.2-next.6) (2025-09-23)
+
+
+### Miscellaneous Chores
+
+* **identity-connector-iota:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/identity-models bumped from 0.0.2-next.5 to 0.0.2-next.6
+
+## [0.0.2-next.5](https://github.com/twinfoundation/identity/compare/identity-connector-iota-v0.0.2-next.4...identity-connector-iota-v0.0.2-next.5) (2025-09-15)
+
+
+### Features
+
+* add addressIndex option to all commands ([a644674](https://github.com/twinfoundation/identity/commit/a644674017d1a8fe5d8685950316bec922a9b195))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/identity-models bumped from 0.0.2-next.4 to 0.0.2-next.5
+
+## [0.0.2-next.4](https://github.com/twinfoundation/identity/compare/identity-connector-iota-v0.0.2-next.3...identity-connector-iota-v0.0.2-next.4) (2025-09-12)
+
+
+### Features
+
+* add expiration date option to vc creation ([73e05e1](https://github.com/twinfoundation/identity/commit/73e05e1ae61112c7e056889969751f4ff82d9f29))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/identity-models bumped from 0.0.2-next.3 to 0.0.2-next.4
+
+## [0.0.2-next.3](https://github.com/twinfoundation/identity/compare/identity-connector-iota-v0.0.2-next.2...identity-connector-iota-v0.0.2-next.3) (2025-08-29)
+
+
+### Features
+
+* eslint migration to flat config ([fd6246d](https://github.com/twinfoundation/identity/commit/fd6246d566280b6d5d10a108eb1e92c4b510f2f2))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/identity-models bumped from 0.0.2-next.2 to 0.0.2-next.3
+
 ## [0.0.2-next.2](https://github.com/twinfoundation/identity/compare/identity-connector-iota-v0.0.2-next.1...identity-connector-iota-v0.0.2-next.2) (2025-08-20)
 
 

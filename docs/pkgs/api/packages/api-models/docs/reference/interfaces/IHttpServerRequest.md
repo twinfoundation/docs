@@ -66,6 +66,18 @@ Data to return send as the body.
 
 ***
 
+### authentication?
+
+> `optional` **authentication**: `unknown`
+
+Used to authenticate and will be passed to the configured authentication provider for the request.
+
+#### Inherited from
+
+[`IHttpRequest`](IHttpRequest.md).[`authentication`](IHttpRequest.md#authentication)
+
+***
+
 ### method?
 
 > `optional` **method**: `HttpMethod`

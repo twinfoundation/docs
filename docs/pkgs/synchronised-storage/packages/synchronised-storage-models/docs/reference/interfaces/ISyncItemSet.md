@@ -1,12 +1,6 @@
-# Interface: ISyncItemSet\<T\>
+# Interface: ISyncItemSet
 
 The payload for an item set.
-
-## Type Parameters
-
-### T
-
-`T` *extends* [`ISynchronisedEntity`](ISynchronisedEntity.md) = [`ISynchronisedEntity`](ISynchronisedEntity.md)
 
 ## Properties
 
@@ -20,6 +14,6 @@ The key of the storage being set.
 
 ### entity
 
-> **entity**: `T`
+> **entity**: [`ISynchronisedEntity`](ISynchronisedEntity.md)
 
 The entity being set in the item set.

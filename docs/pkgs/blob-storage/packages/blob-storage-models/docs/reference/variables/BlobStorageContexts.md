@@ -4,7 +4,7 @@
 
 The contexts of blob storage data.
 
-## Type declaration
+## Type Declaration
 
 ### ContextRoot
 
