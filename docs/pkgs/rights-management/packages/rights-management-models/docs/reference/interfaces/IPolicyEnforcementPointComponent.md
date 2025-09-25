@@ -69,8 +69,6 @@ The id of the processor to register.
 
 The processor to register.
 
-`undefined` | `string`
-
 #### Returns
 
 `Promise`\<`void`\>
