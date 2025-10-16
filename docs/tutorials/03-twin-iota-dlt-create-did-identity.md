@@ -2,6 +2,8 @@
 
 These steps describe the manual process for creating a Decentralized Identifier (DID) on the IOTA network. Future versions will include API automation.
 
+Note: This tutorial is conducted on the IOTA testnet. Users can modify NETWORK="testnet" in the config.env file for other networks.
+
 ### Step 1: Create a New Wallet
 
 This command generates a mnemonic and a seed, saving them to a **`wallet.env`** file.
@@ -48,8 +50,6 @@ You can verify the transaction using the explorer link provided in the command's
 Now, create the DID. This command will generate an **`identity.env`** file containing the new DID.
 
 ```sh
-source ./config.env
-source ./wallet.env
 npx "@twin.org/identity-cli@next" identity-create --load-env config.env wallet.env --seed $SEED --address-index 0 --env identity.env
 ```
 
@@ -58,7 +58,6 @@ npx "@twin.org/identity-cli@next" identity-create --load-env config.env wallet.e
 This step adds a cryptographic key to your DID, which can be used for signing and verifying credentials.
 
 ```sh
-source ./identity.env
 npx "@twin.org/identity-cli@next" verification-method-add --load-env config.env wallet.env identity.env --seed '!SEED' --did '!DID' --type verificationMethod --env verification-method.env
 ```
 
