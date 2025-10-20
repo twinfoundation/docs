@@ -86,5 +86,5 @@ curl --location --request PUT 'https://workbench-api.twindev.org/attestation/YOU
 
 ## Additional Materials
 
-- **Full OpenAPI Specification**: [View on Swagger Editor](https://editor-next.swagger.io/?url=https://raw.githubusercontent.com/twinfoundation/workbench/refs/heads/next/apps/workbench-server/docs/open-api/spec.json) .
+- **Full OpenAPI Specification**: [View on Swagger Editor](https://editor-next.swagger.io/?url=https://raw.githubusercontent.com/twinfoundation/playground/refs/heads/next/apps/playground-node/docs/open-api/spec.json) .
 - **More Examples**: See the [TWIN Foundation Gist](https://gist.github.com/sadick254/92a76349ef8741391e4bf044aed0ad2d) for more information.
