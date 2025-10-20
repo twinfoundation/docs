@@ -14,6 +14,13 @@ import fs from "fs";
  */
 const sidebars: SidebarsConfig = {
 	introductionSidebar: ["intro"],
+	tutorialsSidebar: [
+		{
+			type: "category",
+			label: "Getting Started",
+			items: ["tutorials/01-twin-iota-dlt-identity-howto"]
+		}
+	],
 	twinWhitePaperSidebar: ["twin-white-paper"],
 	appsSidebar: ["apps", ...buildPkgs("apps")],
 	packagesSidebar: ["pkgs", ...buildPkgs("packages")],
