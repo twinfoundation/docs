@@ -108,6 +108,12 @@ npx "@twin.org/identity-cli@next" identity-create --load-env config.env wallet.e
 #### Create Identity - Windows (PowerShell)
 
 ```powershell
+# Load environment variables from wallet.env
+Get-Content .\wallet.env | ForEach-Object {
+    if ($_ -match '^([^=]+)=(.*)$') {
+        [Environment]::SetEnvironmentVariable($matches[1], $matches[2])
+    }
+}
 npx "@twin.org/identity-cli@next" identity-create --load-env config.env wallet.env --seed $env:SEED --address-index 0 --env identity.env
 ```
 
