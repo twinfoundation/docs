@@ -27,7 +27,7 @@ See [How to Obtain a Token](02-twin-iota-dlt-obtain-token.md) for detailed instr
 
 Attestation links a digital object to the DLT. This process uses Subresource Integrity (SRI) and Schema.org vocabulary.
 
-### 1\. Generate SRI Hash
+### 1. Generate SRI Hash
 
 Before you can attest an object, you must generate its SRI hash. For a file named `document.pdf`, run the following command:
 
@@ -35,7 +35,7 @@ Before you can attest an object, you must generate its SRI hash. For a file name
 openssl dgst -sha384 -binary document.pdf | openssl base64 -A | xargs -I {} echo "sha384-{}"
 ```
 
-### 2\. Attest the Document
+### 2. Attest the Document
 
 Once you have the SRI hash and an access token, make the following API call, replacing `YOUR_TOKEN_HERE` and `YOUR_SRI_HASH_HERE` with your actual token and hash.
 
@@ -76,7 +76,7 @@ To transfer an attested NFT to a new owner, make a `PUT` request to the attestat
 curl --location --request PUT 'https://playground-api.twindev.org/attestation/YOUR_ATTESTATION_ID/transfer' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer YOUR_TOKEN_HERE' \
---data '{
+--data-raw '{
     "holderIdentity": "did:iota:...",
     "holderAddress": "0x..."
 }'

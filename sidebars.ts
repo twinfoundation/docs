@@ -19,7 +19,11 @@ const sidebars: SidebarsConfig = {
 		{
 			type: "category",
 			label: "Getting Started",
-			items: ["tutorials/twin-iota-dlt-identity-howto"]
+			items: [
+				"tutorials/twin-iota-dlt-identity-howto",
+				"tutorials/twin-iota-dlt-obtain-token",
+				"tutorials/twin-iota-dlt-create-did-identity"
+			]
 		}
 	],
 	appsSidebar: ["apps", ...buildPkgs("apps")],

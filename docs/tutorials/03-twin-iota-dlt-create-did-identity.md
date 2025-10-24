@@ -18,14 +18,14 @@ npx "@twin.org/identity-cli@next" mnemonic --env wallet.env
 
 Use the mnemonic and seed from the previous step to generate wallet addresses. This command adds `ADDRESS_0`, `ADDRESS_1`, etc., to your **`wallet.env`** file.
 
-#### Linux/macOS (Bash)
+#### Generate Wallet Addresses - Linux/macOS (Bash)
 
 ```bash
 source ./wallet.env
 npx "@twin.org/identity-cli@next" address --load-env wallet.env --seed $SEED --count 2 --env wallet.env --merge-env
 ```
 
-#### Windows (PowerShell)
+#### Generate Wallet Addresses - Windows (PowerShell)
 
 ```powershell
 # Load environment variables from wallet.env
@@ -41,7 +41,7 @@ npx "@twin.org/identity-cli@next" address --load-env wallet.env --seed $env:SEED
 
 You need to fund your primary wallet address using a faucet. First, create a **`config.env`** file for the IOTA testnet.
 
-#### Linux/macOS (Bash)
+#### Create Config File - Linux/macOS (Bash)
 
 ```bash
 cat > config.env << EOF
@@ -53,7 +53,7 @@ EXPLORER_URL="https://explorer.iota.org/"
 EOF
 ```
 
-#### Windows (PowerShell)
+#### Create Config File - Windows (PowerShell)
 
 ```powershell
 @"
@@ -67,7 +67,7 @@ EXPLORER_URL="https://explorer.iota.org/"
 
 Next, source your environment files and run the faucet command:
 
-#### Linux/macOS (Bash)
+#### Fund Address - Linux/macOS (Bash)
 
 ```bash
 source ./config.env
@@ -75,7 +75,7 @@ source ./wallet.env
 npx "@twin.org/identity-cli@next" faucet --load-env config.env wallet.env --address $ADDRESS_0 --network $NETWORK
 ```
 
-#### Windows (PowerShell)
+#### Fund Address - Windows (PowerShell)
 
 ```powershell
 # Load environment variables from config.env and wallet.env
@@ -98,13 +98,13 @@ You can verify the transaction using the explorer link provided in the command's
 
 Now, create the DID. This command will generate an **`identity.env`** file containing the new DID.
 
-#### Linux/macOS (Bash)
+#### Create Identity - Linux/macOS (Bash)
 
 ```bash
 npx "@twin.org/identity-cli@next" identity-create --load-env config.env wallet.env --seed $SEED --address-index 0 --env identity.env
 ```
 
-#### Windows (PowerShell)
+#### Create Identity - Windows (PowerShell)
 
 ```powershell
 npx "@twin.org/identity-cli@next" identity-create --load-env config.env wallet.env --seed $env:SEED --address-index 0 --env identity.env
@@ -114,13 +114,13 @@ npx "@twin.org/identity-cli@next" identity-create --load-env config.env wallet.e
 
 This step adds a cryptographic key to your DID, which can be used for signing and verifying credentials.
 
-#### Linux/macOS (Bash)
+#### Add Verification Method - Linux/macOS (Bash)
 
 ```bash
 npx "@twin.org/identity-cli@next" verification-method-add --load-env config.env wallet.env identity.env --seed $SEED --did $DID --type verificationMethod --env verification-method.env
 ```
 
-#### Windows (PowerShell)
+#### Add Verification Method - Windows (PowerShell)
 
 ```powershell
 # Load environment variables from identity.env
