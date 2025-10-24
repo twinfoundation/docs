@@ -20,9 +20,9 @@ const sidebars: SidebarsConfig = {
 			type: "category",
 			label: "Getting Started",
 			items: [
-				"tutorials/twin-iota-dlt-identity-howto",
-				"tutorials/twin-iota-dlt-obtain-token",
-				"tutorials/twin-iota-dlt-create-did-identity"
+				"tutorials/01-twin-iota-dlt-identity-howto",
+				"tutorials/02-twin-iota-dlt-obtain-token",
+				"tutorials/03-twin-iota-dlt-create-did-identity"
 			]
 		}
 	],
