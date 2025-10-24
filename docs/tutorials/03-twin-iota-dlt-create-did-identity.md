@@ -124,6 +124,8 @@ This step adds a cryptographic key to your DID, which can be used for signing an
 #### Add Verification Method - Linux/macOS (Bash)
 
 ```bash
+source ./wallet.env
+source ./identity.env
 npx "@twin.org/identity-cli@next" verification-method-add --load-env config.env wallet.env identity.env --seed $SEED --did $DID --type verificationMethod --env verification-method.env
 ```
 
