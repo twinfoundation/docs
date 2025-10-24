@@ -101,6 +101,7 @@ Now, create the DID. This command will generate an **`identity.env`** file conta
 #### Create Identity - Linux/macOS (Bash)
 
 ```bash
+source ./wallet.env
 npx "@twin.org/identity-cli@next" identity-create --load-env config.env wallet.env --seed $SEED --address-index 0 --env identity.env
 ```
 
