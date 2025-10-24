@@ -132,7 +132,12 @@ npx "@twin.org/identity-cli@next" verification-method-add --load-env config.env 
 #### Add Verification Method - Windows (PowerShell)
 
 ```powershell
-# Load environment variables from identity.env
+# Load environment variables from wallet.env and identity.env
+Get-Content .\wallet.env | ForEach-Object {
+    if ($_ -match '^([^=]+)=(.*)$') {
+        [Environment]::SetEnvironmentVariable($matches[1], $matches[2])
+    }
+}
 Get-Content .\identity.env | ForEach-Object {
     if ($_ -match '^([^=]+)=(.*)$') {
         [Environment]::SetEnvironmentVariable($matches[1], $matches[2])
