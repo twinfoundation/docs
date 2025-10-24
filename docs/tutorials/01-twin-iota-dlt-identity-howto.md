@@ -55,7 +55,7 @@ curl --location 'https://playground-api.twindev.org/attestation' \
 }'
 ```
 
-A successful request will return the attestation ID in the `location` header (e.g., `attestation:nft:...`). You can decode the Base64 portion of this ID to get the NFT ID.
+A successful request will return the attestation ID in the `location` header (e.g., `attestation:iota:...`). You can decode the Base64-encoded part of this ID (the string that follows `attestation:iota:`) to get the underlying NFT ID.
 
 ### Troubleshooting Attestation
 
