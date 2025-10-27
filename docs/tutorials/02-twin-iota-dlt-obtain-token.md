@@ -1,4 +1,4 @@
-## How to Obtain a Token
+# How to Obtain a Token
 
 First, you need to authenticate with the API to get an access token. The token is returned in the `set-cookie` header of the response.
 
@@ -28,7 +28,7 @@ curl -i --location 'https://playground-aws-api.twindev.org/authentication/login'
 
 After running the command, extract the `access_token` from the `set-cookie` header for use in subsequent requests.
 
-### Troubleshooting Token Acquisition
+## Troubleshooting Token Acquisition
 
 - If you don't see a token, make sure your `curl` command includes the `-i` flag to show response headers.
 - Tokens expire, so you may need to re-authenticate to get a new one.
