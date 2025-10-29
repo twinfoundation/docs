@@ -1,3 +1,7 @@
+---
+id: twin-iota-dlt-obtain-token
+---
+
 # How to Obtain a Token
 
 First, you need to authenticate with the API to get an access token. The token is returned in the `set-cookie` header of the response.

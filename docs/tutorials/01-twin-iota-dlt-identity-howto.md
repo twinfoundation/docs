@@ -1,3 +1,7 @@
+---
+id: twin-iota-dlt-identity-howto
+---
+
 # TWIN-IOTA: DLT & Identity How To
 
 This guide provides instructions on how to use the TWIN Playground for identity and asset attestation on the IOTA Distributed Ledger Technology (DLT).

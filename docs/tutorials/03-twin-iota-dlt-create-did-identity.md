@@ -1,3 +1,7 @@
+---
+id: twin-iota-dlt-create-did-identity
+---
+
 # How to Create a DID IOTA Identity
 
 These steps describe the manual process for creating a Decentralized Identifier (DID) on the IOTA network. Future versions will include API automation.
