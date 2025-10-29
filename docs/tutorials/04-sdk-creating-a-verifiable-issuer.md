@@ -71,7 +71,7 @@ First, you must import and register the necessary connectors. This example uses 
 
 ## Step 2: Create a Wallet Identity (The Controller)
 
-You do not create a DID directly. You first create a secure "controller" identity in the vault. This controller will own and manage your public DID. Treat the controller as a vault key identifier — do not extract or pass mnemonics around.
+You do not create a DID directly. You first create a secure "controller" identity in the vault. This controller will own and manage your public DID. Treat the controller as a vault key identifier — **never extract or share the mnemonic.**
 
 1. **Define a unique ID** for your new identity in the vault.
 
