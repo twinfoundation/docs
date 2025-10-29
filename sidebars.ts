@@ -15,6 +15,13 @@ import fs from "fs";
 const sidebars: SidebarsConfig = {
 	introductionSidebar: ["intro"],
 	twinWhitePaperSidebar: ["twin-white-paper"],
+	tutorialsSidebar: [
+		{
+			type: "category",
+			label: "Getting Started",
+			items: buildTutorials()
+		}
+	],
 	appsSidebar: ["apps", ...buildPkgs("apps")],
 	packagesSidebar: ["pkgs", ...buildPkgs("packages")],
 	mediaSidebar: ["media"],
@@ -31,6 +38,92 @@ const sidebars: SidebarsConfig = {
 		}
 	]
 };
+
+function buildTutorials(): any[] {
+	try {
+		const tutorialsDir = path.join(__dirname, "docs", "tutorials");
+		return getMarkdownFiles(tutorialsDir).map((filename) => {
+			const docId = toDocId(filename);
+			const label =
+				readTutorialLabel(path.join(tutorialsDir, filename)) ??
+				formatFallbackLabel(docId.split("/").pop() ?? "");
+
+			return {
+				type: "doc",
+				id: docId,
+				label
+			};
+		});
+	} catch (error) {
+		console.debug(error);
+	}
+
+	return [];
+}
+
+function getMarkdownFiles(dir: string): string[] {
+	return fs
+		.readdirSync(dir, { withFileTypes: true })
+		.filter((entry) => entry.isFile() && entry.name.endsWith(".md"))
+		.map((entry) => entry.name)
+		.sort();
+}
+
+function toDocId(filename: string): string {
+	return `tutorials/${filename.replace(/\.md$/, "").replace(/^[0-9]+-/, "")}`;
+}
+
+function readTutorialLabel(filePath: string): string | undefined {
+	try {
+		const content = fs.readFileSync(filePath, "utf-8");
+		const { frontmatter, body } = splitFrontmatter(content);
+
+		if (frontmatter) {
+			const sidebarLabel = extractFrontmatterValue(frontmatter, "sidebar_label");
+			if (sidebarLabel) {
+				return sidebarLabel;
+			}
+
+			const title = extractFrontmatterValue(frontmatter, "title");
+			if (title) {
+				return title;
+			}
+		}
+
+		const headingMatch = body.match(/^#{1,6}\s+(.+)$/m);
+		if (headingMatch) {
+			return headingMatch[1].trim();
+		}
+	} catch (error) {
+		console.debug(error);
+	}
+}
+
+function splitFrontmatter(content: string): { frontmatter?: string; body: string } {
+	const match = content.match(/^---\s*\n([\s\S]*?)\n---\s*\n/);
+
+	if (match) {
+		return {
+			frontmatter: match[1],
+			body: content.slice(match[0].length)
+		};
+	}
+
+	return { body: content };
+}
+
+function extractFrontmatterValue(frontmatter: string, key: string): string | undefined {
+	const regex = new RegExp(`^${key}:\s*(.+)$`, "m");
+	const match = frontmatter.match(regex);
+
+	if (match) {
+		return match[1].trim().replace(/^['"]|['"]$/g, "");
+	}
+}
+
+function formatFallbackLabel(name: string): string {
+	return name.replace(/-/g, " ").replace(/\b\w/g, (char) => char.toUpperCase());
+}
 
 function buildPkgs(packageType): any {
 	try {

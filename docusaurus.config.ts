@@ -89,6 +89,12 @@ const config: Config = {
 					},
 					{
 						type: "docSidebar",
+						sidebarId: "tutorialsSidebar",
+						position: "left",
+						label: "Tutorials"
+					},
+					{
+						type: "docSidebar",
 						sidebarId: "appsSidebar",
 						position: "left",
 						label: "Applications"
