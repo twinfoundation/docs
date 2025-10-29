@@ -6,6 +6,22 @@ Note: This tutorial is conducted on the IOTA testnet. Users can modify NETWORK="
 
 This tutorial provides instructions for both Linux/macOS (using bash) and Windows (using PowerShell).
 
+## Windows PowerShell Setup (Optional)
+
+If you're using Windows PowerShell, create a reusable function to load environment variables. Add this function to your PowerShell session:
+
+```powershell
+function Source-Env($Path) {
+    Get-Content $Path | ForEach-Object {
+        if ($_ -match '^([^=]+)=(.*)$') {
+            [Environment]::SetEnvironmentVariable($matches[1], $matches[2])
+        }
+    }
+}
+```
+
+This function will be used throughout the tutorial to load environment files, making the commands cleaner and easier to follow.
+
 ## Step 1: Create a New Wallet
 
 This command generates a mnemonic and a seed, saving them to a **`wallet.env`** file.
@@ -28,12 +44,7 @@ npx "@twin.org/identity-cli@next" address --load-env wallet.env --seed $SEED --c
 ### Generate Wallet Addresses - Windows (PowerShell)
 
 ```powershell
-# Load environment variables from wallet.env
-Get-Content .\wallet.env | ForEach-Object {
-    if ($_ -match '^([^=]+)=(.*)$') {
-        [Environment]::SetEnvironmentVariable($matches[1], $matches[2])
-    }
-}
+Source-Env .\wallet.env
 npx "@twin.org/identity-cli@next" address --load-env wallet.env --seed $env:SEED --count 2 --env wallet.env --merge-env
 ```
 
@@ -78,17 +89,8 @@ npx "@twin.org/identity-cli@next" faucet --load-env config.env wallet.env --addr
 ### Fund Address - Windows (PowerShell)
 
 ```powershell
-# Load environment variables from config.env and wallet.env
-Get-Content .\config.env | ForEach-Object {
-    if ($_ -match '^([^=]+)=(.*)$') {
-        [Environment]::SetEnvironmentVariable($matches[1], $matches[2])
-    }
-}
-Get-Content .\wallet.env | ForEach-Object {
-    if ($_ -match '^([^=]+)=(.*)$') {
-        [Environment]::SetEnvironmentVariable($matches[1], $matches[2])
-    }
-}
+Source-Env .\config.env
+Source-Env .\wallet.env
 npx "@twin.org/identity-cli@next" faucet --load-env config.env wallet.env --address $env:ADDRESS_0 --network $env:NETWORK
 ```
 
@@ -108,12 +110,7 @@ npx "@twin.org/identity-cli@next" identity-create --load-env config.env wallet.e
 ### Create Identity - Windows (PowerShell)
 
 ```powershell
-# Load environment variables from wallet.env
-Get-Content .\wallet.env | ForEach-Object {
-    if ($_ -match '^([^=]+)=(.*)$') {
-        [Environment]::SetEnvironmentVariable($matches[1], $matches[2])
-    }
-}
+Source-Env .\wallet.env
 npx "@twin.org/identity-cli@next" identity-create --load-env config.env wallet.env --seed $env:SEED --address-index 0 --env identity.env
 ```
 
@@ -132,17 +129,8 @@ npx "@twin.org/identity-cli@next" verification-method-add --load-env config.env 
 ### Add Verification Method - Windows (PowerShell)
 
 ```powershell
-# Load environment variables from wallet.env and identity.env
-Get-Content .\wallet.env | ForEach-Object {
-    if ($_ -match '^([^=]+)=(.*)$') {
-        [Environment]::SetEnvironmentVariable($matches[1], $matches[2])
-    }
-}
-Get-Content .\identity.env | ForEach-Object {
-    if ($_ -match '^([^=]+)=(.*)$') {
-        [Environment]::SetEnvironmentVariable($matches[1], $matches[2])
-    }
-}
+Source-Env .\wallet.env
+Source-Env .\identity.env
 npx "@twin.org/identity-cli@next" verification-method-add --load-env config.env wallet.env identity.env --seed $env:SEED --did $env:DID --type verificationMethod --env verification-method.env
 ```
 
