@@ -3,12 +3,14 @@ name: Publish UI to Vercel
 on:
   workflow_dispatch:
     inputs:
-      environment:
+      # Allow the user to choose which type of release to prepare
+      releaseType:
+        description: 'Which type of release to create'
+        required: true
         type: choice
-        description: Environment
         options:
-          - dev
-          - prod
+          - '🚧 prerelease (next branch)' # For development releases (e.g., 0.1.0-next.1) - uses 'next' branch
+          - '🚀 major (main branch)' # For breaking changes (e.g., 1.0.0) - uses 'main' branch
 
 permissions:
   contents: read
@@ -23,12 +25,38 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
 
-    # Only allow main branch to deploy to production and next branch to deploy to development
-    if: (github.ref == 'refs/heads/main' && github.event.inputs.environment == 'prod') || (github.ref == 'refs/heads/next' && github.event.inputs.environment == 'dev')
-
     steps:
+      # Set branch variable based on release type
+      - name: Set target branch
+        id: set-branch
+        run: |
+          INPUT="${{ github.event.inputs.releaseType }}"
+
+          if [[ "$INPUT" == *"patch"* ]]; then
+            BRANCH="main"
+            SEMVER_TYPE="patch"
+          elif [[ "$INPUT" == *"minor"* ]]; then
+            BRANCH="main"
+            SEMVER_TYPE="minor"
+          elif [[ "$INPUT" == *"major"* ]]; then
+            BRANCH="main"
+            SEMVER_TYPE="major"
+          elif [[ "$INPUT" == *"prerelease"* ]]; then
+            BRANCH="next"
+            SEMVER_TYPE="prerelease"
+          else
+            echo "Error: Unrecognized release type: $INPUT"
+            exit 1
+          fi
+          echo "branch=$BRANCH" >> $GITHUB_OUTPUT
+          echo "semver_type=$SEMVER_TYPE" >> $GITHUB_OUTPUT
+          echo "Using branch: $BRANCH"
+          echo "Using semver type: $SEMVER_TYPE"
+
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: ${{ steps.set-branch.outputs.branch }} # Checkout the calculated branch
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -45,7 +73,7 @@ jobs:
           DEPLOYMENT_URL=$(vercel deploy \
           --token=${{ secrets.VERCEL_TOKEN }} \
           --scope=${{ secrets.VERCEL_SCOPE }} \
-          --target=${{ github.event.inputs.environment == 'prod' && 'production' || 'dev' }} \
+          --target=${{ steps.set-branch.outputs.branch == 'main' && 'production' || 'dev' }} \
           --force)
           echo "deployment-url=$DEPLOYMENT_URL" >> $GITHUB_OUTPUT
 
@@ -54,6 +82,6 @@ jobs:
         run: |
           vercel alias set \
           ${{ steps.deploy.outputs.deployment-url }} \
-          ${{ github.event.inputs.environment == 'prod' && secrets.DOMAIN_DOCS_PROD || secrets.DOMAIN_DOCS_DEV }} \
+          ${{ steps.set-branch.outputs.branch == 'main' && secrets.DOMAIN_DOCS_PROD || secrets.DOMAIN_DOCS_DEV }} \
           --token=${{ secrets.VERCEL_TOKEN }} \
           --scope=${{ secrets.VERCEL_SCOPE }}
