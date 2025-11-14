@@ -52,6 +52,14 @@ Default scan range.
 
 Default inclusion timeout.
 
+***
+
+### CLASS\_NAME
+
+> `readonly` `static` **CLASS\_NAME**: `string`
+
+Runtime name for the class.
+
 ## Methods
 
 ### createClient()
@@ -226,7 +234,7 @@ The vault connector.
 
 The logging component.
 
-`undefined` | `ILoggingComponent`
+`ILoggingComponent` | `undefined`
 
 ##### identity
 
@@ -296,7 +304,7 @@ The vault connector.
 
 The logging component.
 
-`undefined` | `ILoggingComponent`
+`ILoggingComponent` | `undefined`
 
 ##### identity
 
@@ -551,7 +559,7 @@ The IOTA client.
 
 The logging component.
 
-`undefined` | `ILoggingComponent`
+`ILoggingComponent` | `undefined`
 
 ##### txb
 

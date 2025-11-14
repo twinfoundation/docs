@@ -64,7 +64,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "GeneralError",
-											"message": "component.error",
+											"message": "errorMessage",
 											"properties": {
 												"foo": "bar"
 											}
@@ -85,7 +85,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "UnauthorizedError",
-											"message": "component.error"
+											"message": "errorMessage"
 										}
 									}
 								}
@@ -103,7 +103,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "UnprocessableError",
-											"message": "component.error"
+											"message": "errorMessage"
 										}
 									}
 								}
@@ -121,7 +121,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "InternalServerError",
-											"message": "component.error"
+											"message": "errorMessage"
 										}
 									}
 								}
@@ -174,7 +174,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "GeneralError",
-											"message": "component.error",
+											"message": "errorMessage",
 											"properties": {
 												"foo": "bar"
 											}
@@ -195,7 +195,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "UnauthorizedError",
-											"message": "component.error"
+											"message": "errorMessage"
 										}
 									}
 								}
@@ -213,7 +213,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "UnprocessableError",
-											"message": "component.error"
+											"message": "errorMessage"
 										}
 									}
 								}
@@ -231,7 +231,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "InternalServerError",
-											"message": "component.error"
+											"message": "errorMessage"
 										}
 									}
 								}
@@ -284,7 +284,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "GeneralError",
-											"message": "component.error",
+											"message": "errorMessage",
 											"properties": {
 												"foo": "bar"
 											}
@@ -305,7 +305,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "UnauthorizedError",
-											"message": "component.error"
+											"message": "errorMessage"
 										}
 									}
 								}
@@ -323,7 +323,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "UnprocessableError",
-											"message": "component.error"
+											"message": "errorMessage"
 										}
 									}
 								}
@@ -341,7 +341,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "InternalServerError",
-											"message": "component.error"
+											"message": "errorMessage"
 										}
 									}
 								}
@@ -394,7 +394,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "GeneralError",
-											"message": "component.error",
+											"message": "errorMessage",
 											"properties": {
 												"foo": "bar"
 											}
@@ -415,7 +415,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "UnauthorizedError",
-											"message": "component.error"
+											"message": "errorMessage"
 										}
 									}
 								}
@@ -433,7 +433,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "UnprocessableError",
-											"message": "component.error"
+											"message": "errorMessage"
 										}
 									}
 								}
@@ -451,7 +451,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "InternalServerError",
-											"message": "component.error"
+											"message": "errorMessage"
 										}
 									}
 								}
@@ -507,15 +507,12 @@
 						}
 					},
 					{
-						"name": "pageSize",
-						"description": "The maximum number of entities in a page.",
+						"name": "limit",
+						"description": "Limit the number of entities to return.",
 						"in": "query",
 						"required": false,
 						"schema": {
-							"type": [
-								"number",
-								"string"
-							]
+							"type": "string"
 						}
 					},
 					{
@@ -546,7 +543,7 @@
 										"value": {
 											"@context": [
 												"https://schema.org",
-												"https://w3id.org/gaia-x/development",
+												"https://schema.twindev.org/gaia-x-loire/",
 												"https://schema.twindev.org/federated-catalogue/"
 											],
 											"type": "ItemList",
@@ -554,7 +551,7 @@
 												{
 													"@context": [
 														"https://schema.org",
-														"https://w3id.org/gaia-x/development",
+														"https://schema.twindev.org/gaia-x-loire/",
 														"https://schema.twindev.org/federated-catalogue/"
 													],
 													"id": "did:iota:xxx",
@@ -594,7 +591,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "GeneralError",
-											"message": "component.error",
+											"message": "errorMessage",
 											"properties": {
 												"foo": "bar"
 											}
@@ -615,7 +612,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "UnauthorizedError",
-											"message": "component.error"
+											"message": "errorMessage"
 										}
 									}
 								}
@@ -633,7 +630,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "InternalServerError",
-											"message": "component.error"
+											"message": "errorMessage"
 										}
 									}
 								}
@@ -690,7 +687,7 @@
 										"value": {
 											"@context": [
 												"https://schema.org",
-												"https://w3id.org/gaia-x/development",
+												"https://schema.twindev.org/gaia-x-loire/",
 												"https://schema.twindev.org/federated-catalogue/"
 											],
 											"id": "did:iota:xxx",
@@ -728,7 +725,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "GeneralError",
-											"message": "component.error",
+											"message": "errorMessage",
 											"properties": {
 												"foo": "bar"
 											}
@@ -749,7 +746,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "UnauthorizedError",
-											"message": "component.error"
+											"message": "errorMessage"
 										}
 									}
 								}
@@ -767,7 +764,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "InternalServerError",
-											"message": "component.error"
+											"message": "errorMessage"
 										}
 									}
 								}
@@ -814,15 +811,12 @@
 						}
 					},
 					{
-						"name": "pageSize",
-						"description": "The maximum number of entities in a page.",
+						"name": "limit",
+						"description": "Limit the number of entities to return.",
 						"in": "query",
 						"required": false,
 						"schema": {
-							"type": [
-								"number",
-								"string"
-							]
+							"type": "string"
 						}
 					},
 					{
@@ -853,7 +847,7 @@
 										"value": {
 											"@context": [
 												"https://schema.org",
-												"https://w3id.org/gaia-x/development",
+												"https://schema.twindev.org/gaia-x-loire/",
 												"https://schema.twindev.org/federated-catalogue/"
 											],
 											"type": "ItemList",
@@ -861,7 +855,7 @@
 												{
 													"@context": [
 														"https://schema.org",
-														"https://w3id.org/gaia-x/development",
+														"https://schema.twindev.org/gaia-x-loire/",
 														"https://schema.twindev.org/federated-catalogue/"
 													],
 													"id": "http://example.org/is123456",
@@ -929,7 +923,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "GeneralError",
-											"message": "component.error",
+											"message": "errorMessage",
 											"properties": {
 												"foo": "bar"
 											}
@@ -950,7 +944,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "UnauthorizedError",
-											"message": "component.error"
+											"message": "errorMessage"
 										}
 									}
 								}
@@ -968,7 +962,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "InternalServerError",
-											"message": "component.error"
+											"message": "errorMessage"
 										}
 									}
 								}
@@ -1016,7 +1010,7 @@
 										"value": {
 											"@context": [
 												"https://schema.org",
-												"https://w3id.org/gaia-x/development",
+												"https://schema.twindev.org/gaia-x-loire/",
 												"https://schema.twindev.org/federated-catalogue/"
 											],
 											"id": "http://example.org/is123456",
@@ -1082,7 +1076,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "GeneralError",
-											"message": "component.error",
+											"message": "errorMessage",
 											"properties": {
 												"foo": "bar"
 											}
@@ -1103,7 +1097,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "UnauthorizedError",
-											"message": "component.error"
+											"message": "errorMessage"
 										}
 									}
 								}
@@ -1121,7 +1115,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "InternalServerError",
-											"message": "component.error"
+											"message": "errorMessage"
 										}
 									}
 								}
@@ -1168,15 +1162,12 @@
 						}
 					},
 					{
-						"name": "pageSize",
-						"description": "The maximum number of entities in a page.",
+						"name": "limit",
+						"description": "Limit the number of entities to return.",
 						"in": "query",
 						"required": false,
 						"schema": {
-							"type": [
-								"number",
-								"string"
-							]
+							"type": "string"
 						}
 					},
 					{
@@ -1207,7 +1198,7 @@
 										"value": {
 											"@context": [
 												"https://schema.org",
-												"https://w3id.org/gaia-x/development",
+												"https://schema.twindev.org/gaia-x-loire/",
 												"https://schema.twindev.org/federated-catalogue/"
 											],
 											"type": "ItemList",
@@ -1215,7 +1206,7 @@
 												{
 													"@context": [
 														"https://schema.org",
-														"https://w3id.org/gaia-x/development",
+														"https://schema.twindev.org/gaia-x-loire/",
 														"https://schema.twindev.org/federated-catalogue/"
 													],
 													"id": "http://example.org/is123456",
@@ -1267,7 +1258,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "GeneralError",
-											"message": "component.error",
+											"message": "errorMessage",
 											"properties": {
 												"foo": "bar"
 											}
@@ -1288,7 +1279,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "UnauthorizedError",
-											"message": "component.error"
+											"message": "errorMessage"
 										}
 									}
 								}
@@ -1306,7 +1297,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "InternalServerError",
-											"message": "component.error"
+											"message": "errorMessage"
 										}
 									}
 								}
@@ -1354,7 +1345,7 @@
 										"value": {
 											"@context": [
 												"https://schema.org",
-												"https://w3id.org/gaia-x/development",
+												"https://schema.twindev.org/gaia-x-loire/",
 												"https://schema.twindev.org/federated-catalogue/"
 											],
 											"id": "http://example.org/is123456",
@@ -1404,7 +1395,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "GeneralError",
-											"message": "component.error",
+											"message": "errorMessage",
 											"properties": {
 												"foo": "bar"
 											}
@@ -1425,7 +1416,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "UnauthorizedError",
-											"message": "component.error"
+											"message": "errorMessage"
 										}
 									}
 								}
@@ -1443,7 +1434,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "InternalServerError",
-											"message": "component.error"
+											"message": "errorMessage"
 										}
 									}
 								}
@@ -1490,15 +1481,12 @@
 						}
 					},
 					{
-						"name": "pageSize",
-						"description": "The maximum number of entities in a page.",
+						"name": "limit",
+						"description": "Limit the number of entities to return.",
 						"in": "query",
 						"required": false,
 						"schema": {
-							"type": [
-								"number",
-								"string"
-							]
+							"type": "string"
 						}
 					},
 					{
@@ -1529,7 +1517,7 @@
 										"value": {
 											"@context": [
 												"https://schema.org",
-												"https://w3id.org/gaia-x/development",
+												"https://schema.twindev.org/gaia-x-loire/",
 												"https://schema.twindev.org/federated-catalogue/"
 											],
 											"type": "ItemList",
@@ -1537,7 +1525,7 @@
 												{
 													"@context": [
 														"https://schema.org",
-														"https://w3id.org/gaia-x/development",
+														"https://schema.twindev.org/gaia-x-loire/",
 														"https://schema.twindev.org/federated-catalogue/"
 													],
 													"id": "https://my-ds-connectors.example.org/ds-connector-ABCD",
@@ -1592,7 +1580,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "GeneralError",
-											"message": "component.error",
+											"message": "errorMessage",
 											"properties": {
 												"foo": "bar"
 											}
@@ -1613,7 +1601,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "UnauthorizedError",
-											"message": "component.error"
+											"message": "errorMessage"
 										}
 									}
 								}
@@ -1631,7 +1619,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "InternalServerError",
-											"message": "component.error"
+											"message": "errorMessage"
 										}
 									}
 								}
@@ -1679,7 +1667,7 @@
 										"value": {
 											"@context": [
 												"https://schema.org",
-												"https://w3id.org/gaia-x/development",
+												"https://schema.twindev.org/gaia-x-loire/",
 												"https://schema.twindev.org/federated-catalogue/"
 											],
 											"id": "https://my-ds-connectors.example.org/ds-connector-ABCD",
@@ -1732,7 +1720,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "GeneralError",
-											"message": "component.error",
+											"message": "errorMessage",
 											"properties": {
 												"foo": "bar"
 											}
@@ -1753,7 +1741,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "UnauthorizedError",
-											"message": "component.error"
+											"message": "errorMessage"
 										}
 									}
 								}
@@ -1771,7 +1759,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "InternalServerError",
-											"message": "component.error"
+											"message": "errorMessage"
 										}
 									}
 								}
@@ -1801,12 +1789,9 @@
 							},
 							{
 								"type": "array",
-								"items": false,
-								"prefixItems": [
-									{
-										"type": "string"
-									}
-								]
+								"items": {
+									"type": "string"
+								}
 							}
 						]
 					},
@@ -1820,12 +1805,9 @@
 							},
 							{
 								"type": "array",
-								"items": false,
-								"prefixItems": [
-									{
-										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-									}
-								]
+								"items": {
+									"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
+								}
 							}
 						]
 					},
@@ -1836,12 +1818,9 @@
 							},
 							{
 								"type": "array",
-								"items": false,
-								"prefixItems": [
-									{
-										"$ref": "https://schema.twindev.org/json-ld/JsonLdJsonObject"
-									}
-								]
+								"items": {
+									"$ref": "https://schema.twindev.org/json-ld/JsonLdJsonObject"
+								}
 							}
 						]
 					},
@@ -1852,12 +1831,9 @@
 							},
 							{
 								"type": "array",
-								"items": false,
-								"prefixItems": [
-									{
-										"type": "string"
-									}
-								]
+								"items": {
+									"type": "string"
+								}
 							}
 						]
 					},
@@ -1905,13 +1881,10 @@
 					},
 					"resourcePolicy": {
 						"type": "array",
-						"items": false,
-						"description": "Overwriting to ensure always an array is stored",
-						"prefixItems": [
-							{
-								"$ref": "https://schema.twindev.org/w3c-odrl/OdrlPolicy"
-							}
-						]
+						"items": {
+							"$ref": "https://schema.twindev.org/w3c-odrl/OdrlPolicy"
+						},
+						"description": "Overwriting to ensure always an array is stored"
 					},
 					"issuer": {
 						"type": "string",
@@ -1931,13 +1904,10 @@
 					},
 					"evidence": {
 						"type": "array",
-						"items": false,
-						"description": "The evidences concerning the data resource.",
-						"prefixItems": [
-							{
-								"type": "string"
-							}
-						]
+						"items": {
+							"type": "string"
+						},
+						"description": "The evidences concerning the data resource."
 					}
 				},
 				"required": [
@@ -1996,13 +1966,10 @@
 					},
 					"itemListElement": {
 						"type": "array",
-						"items": false,
-						"description": "The components of the Collection",
-						"prefixItems": [
-							{
-								"$ref": "#/components/schemas/DataResourceEntry"
-							}
-						]
+						"items": {
+							"$ref": "#/components/schemas/DataResourceEntry"
+						},
+						"description": "The components of the Collection"
 					},
 					"nextItem": {
 						"type": "string",
@@ -2038,13 +2005,10 @@
 					},
 					"evidence": {
 						"type": "array",
-						"items": false,
-						"description": "The evidences concerning the data resource.",
-						"prefixItems": [
-							{
-								"type": "string"
-							}
-						]
+						"items": {
+							"type": "string"
+						},
+						"description": "The evidences concerning the data resource."
 					},
 					"@context": {
 						"$ref": "#/components/schemas/FederatedCatalogueContextType"
@@ -2056,12 +2020,9 @@
 							},
 							{
 								"type": "array",
-								"items": false,
-								"prefixItems": [
-									{
-										"type": "string"
-									}
-								]
+								"items": {
+									"type": "string"
+								}
 							}
 						]
 					},
@@ -2075,12 +2036,9 @@
 							},
 							{
 								"type": "array",
-								"items": false,
-								"prefixItems": [
-									{
-										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-									}
-								]
+								"items": {
+									"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
+								}
 							}
 						]
 					},
@@ -2091,12 +2049,9 @@
 							},
 							{
 								"type": "array",
-								"items": false,
-								"prefixItems": [
-									{
-										"$ref": "https://schema.twindev.org/json-ld/JsonLdJsonObject"
-									}
-								]
+								"items": {
+									"$ref": "https://schema.twindev.org/json-ld/JsonLdJsonObject"
+								}
 							}
 						]
 					},
@@ -2107,12 +2062,9 @@
 							},
 							{
 								"type": "array",
-								"items": false,
-								"prefixItems": [
-									{
-										"type": "string"
-									}
-								]
+								"items": {
+									"type": "string"
+								}
 							}
 						]
 					},
@@ -2128,9 +2080,6 @@
 					"type": {
 						"type": "array",
 						"minItems": 2,
-						"items": {
-							"type": "string"
-						},
 						"description": "A Connector is a Data Exchange Component",
 						"prefixItems": [
 							{
@@ -2141,7 +2090,10 @@
 								"type": "string",
 								"const": "DataSpaceConnector"
 							}
-						]
+						],
+						"items": {
+							"type": "string"
+						}
 					},
 					"id": {
 						"type": "string",
@@ -2177,13 +2129,10 @@
 					},
 					"offeredResource": {
 						"type": "array",
-						"items": false,
-						"description": "Offered resources. Probably in the future this wll be separated in a different entry so that a  Data Space Connector entry does not need to be modified when a new Data Resource is offered.",
-						"prefixItems": [
-							{
-								"type": "string"
-							}
-						]
+						"items": {
+							"type": "string"
+						},
+						"description": "Offered resources. Probably in the future this wll be separated in a different entry so that a  Data Space Connector entry does not need to be modified when a new Data Resource is offered."
 					}
 				},
 				"required": [
@@ -2242,13 +2191,10 @@
 					},
 					"itemListElement": {
 						"type": "array",
-						"items": false,
-						"description": "The components of the Collection",
-						"prefixItems": [
-							{
-								"$ref": "#/components/schemas/DataSpaceConnectorEntry"
-							}
-						]
+						"items": {
+							"$ref": "#/components/schemas/DataSpaceConnectorEntry"
+						},
+						"description": "The components of the Collection"
 					},
 					"nextItem": {
 						"type": "string",
@@ -2300,24 +2246,23 @@
 			},
 			"FederatedCatalogueContextType": {
 				"type": "array",
-				"minItems": 3,
-				"items": false,
-				"maxItems": 3,
-				"description": "Type that defines the LD Context for the Federated Catalogue entities and entries.",
-				"prefixItems": [
-					{
-						"type": "string",
-						"const": "https://schema.org"
-					},
-					{
-						"type": "string",
-						"const": "https://w3id.org/gaia-x/development"
-					},
-					{
-						"type": "string",
-						"const": "https://schema.twindev.org/federated-catalogue/"
-					}
-				]
+				"items": {
+					"allOf": [
+						{
+							"type": "string",
+							"const": "https://schema.org"
+						},
+						{
+							"type": "string",
+							"const": "https://schema.twindev.org/gaia-x-loire/"
+						},
+						{
+							"type": "string",
+							"const": "https://schema.twindev.org/federated-catalogue/"
+						}
+					]
+				},
+				"description": "Type that defines the LD Context for the Federated Catalogue entities and entries."
 			},
 			"ParticipantEntry": {
 				"type": "object",
@@ -2340,13 +2285,10 @@
 					},
 					"evidence": {
 						"type": "array",
-						"items": false,
-						"description": "The evidences concerning the data resource.",
-						"prefixItems": [
-							{
-								"type": "string"
-							}
-						]
+						"items": {
+							"type": "string"
+						},
+						"description": "The evidences concerning the data resource."
 					},
 					"@context": {
 						"$ref": "#/components/schemas/FederatedCatalogueContextType"
@@ -2358,12 +2300,9 @@
 							},
 							{
 								"type": "array",
-								"items": false,
-								"prefixItems": [
-									{
-										"type": "string"
-									}
-								]
+								"items": {
+									"type": "string"
+								}
 							}
 						]
 					},
@@ -2377,12 +2316,9 @@
 							},
 							{
 								"type": "array",
-								"items": false,
-								"prefixItems": [
-									{
-										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-									}
-								]
+								"items": {
+									"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
+								}
 							}
 						]
 					},
@@ -2393,12 +2329,9 @@
 							},
 							{
 								"type": "array",
-								"items": false,
-								"prefixItems": [
-									{
-										"$ref": "https://schema.twindev.org/json-ld/JsonLdJsonObject"
-									}
-								]
+								"items": {
+									"$ref": "https://schema.twindev.org/json-ld/JsonLdJsonObject"
+								}
 							}
 						]
 					},
@@ -2409,12 +2342,9 @@
 							},
 							{
 								"type": "array",
-								"items": false,
-								"prefixItems": [
-									{
-										"type": "string"
-									}
-								]
+								"items": {
+									"type": "string"
+								}
 							}
 						]
 					},
@@ -2459,233 +2389,227 @@
 					},
 					"parentOrganizationOf": {
 						"type": "array",
-						"items": false,
-						"description": "Parent organization.",
-						"prefixItems": [
-							{
-								"type": "object",
-								"additionalProperties": {
+						"items": {
+							"type": "object",
+							"additionalProperties": {
+								"anyOf": [
+									{
+										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+									},
+									{
+										"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"
+									},
+									{
+										"$ref": "https://schema.twindev.org/json-ld/JsonLdIndexMap"
+									},
+									{
+										"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
+									},
+									{
+										"$ref": "https://schema.twindev.org/json-ld/JsonLdIdMap"
+									},
+									{
+										"$ref": "https://schema.twindev.org/json-ld/JsonLdTypeMap"
+									},
+									{
+										"type": "array"
+									}
+								]
+							},
+							"properties": {
+								"id": {
+									"type": "string"
+								},
+								"type": {
+									"type": "string",
+									"const": "LegalPerson"
+								},
+								"@context": {
+									"$ref": "https://schema.twindev.org/json-ld/JsonLdContextDefinitionRoot"
+								},
+								"@id": {
 									"anyOf": [
 										{
-											"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+											"type": "string"
 										},
 										{
-											"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"
-										},
-										{
-											"$ref": "https://schema.twindev.org/json-ld/JsonLdIndexMap"
-										},
-										{
-											"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
-										},
-										{
-											"$ref": "https://schema.twindev.org/json-ld/JsonLdIdMap"
-										},
-										{
-											"$ref": "https://schema.twindev.org/json-ld/JsonLdTypeMap"
-										},
-										{
-											"type": "array"
+											"type": "array",
+											"items": {
+												"type": "string"
+											}
 										}
 									]
 								},
-								"properties": {
-									"id": {
-										"type": "string"
-									},
-									"type": {
-										"type": "string",
-										"const": "LegalPerson"
-									},
-									"@context": {
-										"$ref": "https://schema.twindev.org/json-ld/JsonLdContextDefinitionRoot"
-									},
-									"@id": {
-										"anyOf": [
-											{
-												"type": "string"
-											},
-											{
-												"type": "array",
-												"items": {
-													"type": "string"
-												}
-											}
-										]
-									},
-									"@included": {
-										"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
-									},
-									"@graph": {
-										"anyOf": [
-											{
+								"@included": {
+									"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
+								},
+								"@graph": {
+									"anyOf": [
+										{
+											"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
+										},
+										{
+											"type": "array",
+											"items": {
 												"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-											},
-											{
-												"type": "array",
-												"items": {
-													"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-												}
 											}
-										]
-									},
-									"@nest": {
-										"anyOf": [
-											{
-												"$ref": "https://schema.twindev.org/json-ld/JsonLdJsonObject"
-											},
-											{
-												"type": "array",
-												"items": {
-													"$ref": "https://schema.twindev.org/json-ld/JsonLdJsonObject"
-												}
-											}
-										]
-									},
-									"@type": {
-										"anyOf": [
-											{
-												"type": "string"
-											},
-											{
-												"type": "array",
-												"items": {
-													"type": "string"
-												}
-											}
-										]
-									},
-									"@reverse": {
-										"type": "object",
-										"additionalProperties": {
-											"type": "string"
 										}
-									},
-									"@index": {
+									]
+								},
+								"@nest": {
+									"anyOf": [
+										{
+											"$ref": "https://schema.twindev.org/json-ld/JsonLdJsonObject"
+										},
+										{
+											"type": "array",
+											"items": {
+												"$ref": "https://schema.twindev.org/json-ld/JsonLdJsonObject"
+											}
+										}
+									]
+								},
+								"@type": {
+									"anyOf": [
+										{
+											"type": "string"
+										},
+										{
+											"type": "array",
+											"items": {
+												"type": "string"
+											}
+										}
+									]
+								},
+								"@reverse": {
+									"type": "object",
+									"additionalProperties": {
 										"type": "string"
 									}
 								},
-								"required": [
-									"id",
-									"type"
-								]
-							}
-						]
+								"@index": {
+									"type": "string"
+								}
+							},
+							"required": [
+								"id",
+								"type"
+							]
+						},
+						"description": "Parent organization."
 					},
 					"subOrganizationOf": {
 						"type": "array",
-						"items": false,
-						"description": "Sub organization of.",
-						"prefixItems": [
-							{
-								"type": "object",
-								"additionalProperties": {
+						"items": {
+							"type": "object",
+							"additionalProperties": {
+								"anyOf": [
+									{
+										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+									},
+									{
+										"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"
+									},
+									{
+										"$ref": "https://schema.twindev.org/json-ld/JsonLdIndexMap"
+									},
+									{
+										"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
+									},
+									{
+										"$ref": "https://schema.twindev.org/json-ld/JsonLdIdMap"
+									},
+									{
+										"$ref": "https://schema.twindev.org/json-ld/JsonLdTypeMap"
+									},
+									{
+										"type": "array"
+									}
+								]
+							},
+							"properties": {
+								"id": {
+									"type": "string"
+								},
+								"type": {
+									"type": "string",
+									"const": "LegalPerson"
+								},
+								"@context": {
+									"$ref": "https://schema.twindev.org/json-ld/JsonLdContextDefinitionRoot"
+								},
+								"@id": {
 									"anyOf": [
 										{
-											"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+											"type": "string"
 										},
 										{
-											"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"
-										},
-										{
-											"$ref": "https://schema.twindev.org/json-ld/JsonLdIndexMap"
-										},
-										{
-											"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
-										},
-										{
-											"$ref": "https://schema.twindev.org/json-ld/JsonLdIdMap"
-										},
-										{
-											"$ref": "https://schema.twindev.org/json-ld/JsonLdTypeMap"
-										},
-										{
-											"type": "array"
+											"type": "array",
+											"items": {
+												"type": "string"
+											}
 										}
 									]
 								},
-								"properties": {
-									"id": {
-										"type": "string"
-									},
-									"type": {
-										"type": "string",
-										"const": "LegalPerson"
-									},
-									"@context": {
-										"$ref": "https://schema.twindev.org/json-ld/JsonLdContextDefinitionRoot"
-									},
-									"@id": {
-										"anyOf": [
-											{
-												"type": "string"
-											},
-											{
-												"type": "array",
-												"items": {
-													"type": "string"
-												}
-											}
-										]
-									},
-									"@included": {
-										"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
-									},
-									"@graph": {
-										"anyOf": [
-											{
+								"@included": {
+									"$ref": "https://schema.twindev.org/json-ld/JsonLdIncludedBlock"
+								},
+								"@graph": {
+									"anyOf": [
+										{
+											"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
+										},
+										{
+											"type": "array",
+											"items": {
 												"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-											},
-											{
-												"type": "array",
-												"items": {
-													"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-												}
 											}
-										]
-									},
-									"@nest": {
-										"anyOf": [
-											{
-												"$ref": "https://schema.twindev.org/json-ld/JsonLdJsonObject"
-											},
-											{
-												"type": "array",
-												"items": {
-													"$ref": "https://schema.twindev.org/json-ld/JsonLdJsonObject"
-												}
-											}
-										]
-									},
-									"@type": {
-										"anyOf": [
-											{
-												"type": "string"
-											},
-											{
-												"type": "array",
-												"items": {
-													"type": "string"
-												}
-											}
-										]
-									},
-									"@reverse": {
-										"type": "object",
-										"additionalProperties": {
-											"type": "string"
 										}
-									},
-									"@index": {
+									]
+								},
+								"@nest": {
+									"anyOf": [
+										{
+											"$ref": "https://schema.twindev.org/json-ld/JsonLdJsonObject"
+										},
+										{
+											"type": "array",
+											"items": {
+												"$ref": "https://schema.twindev.org/json-ld/JsonLdJsonObject"
+											}
+										}
+									]
+								},
+								"@type": {
+									"anyOf": [
+										{
+											"type": "string"
+										},
+										{
+											"type": "array",
+											"items": {
+												"type": "string"
+											}
+										}
+									]
+								},
+								"@reverse": {
+									"type": "object",
+									"additionalProperties": {
 										"type": "string"
 									}
 								},
-								"required": [
-									"id",
-									"type"
-								]
-							}
-						]
+								"@index": {
+									"type": "string"
+								}
+							},
+							"required": [
+								"id",
+								"type"
+							]
+						},
+						"description": "Sub organization of."
 					}
 				},
 				"required": [
@@ -2741,13 +2665,10 @@
 					},
 					"itemListElement": {
 						"type": "array",
-						"items": false,
-						"description": "The components of the Collection",
-						"prefixItems": [
-							{
-								"$ref": "#/components/schemas/ParticipantEntry"
-							}
-						]
+						"items": {
+							"$ref": "#/components/schemas/ParticipantEntry"
+						},
+						"description": "The components of the Collection"
 					},
 					"nextItem": {
 						"type": "string",
@@ -2775,12 +2696,9 @@
 							},
 							{
 								"type": "array",
-								"items": false,
-								"prefixItems": [
-									{
-										"type": "string"
-									}
-								]
+								"items": {
+									"type": "string"
+								}
 							}
 						]
 					},
@@ -2794,12 +2712,9 @@
 							},
 							{
 								"type": "array",
-								"items": false,
-								"prefixItems": [
-									{
-										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-									}
-								]
+								"items": {
+									"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
+								}
 							}
 						]
 					},
@@ -2810,12 +2725,9 @@
 							},
 							{
 								"type": "array",
-								"items": false,
-								"prefixItems": [
-									{
-										"$ref": "https://schema.twindev.org/json-ld/JsonLdJsonObject"
-									}
-								]
+								"items": {
+									"$ref": "https://schema.twindev.org/json-ld/JsonLdJsonObject"
+								}
 							}
 						]
 					},
@@ -2826,12 +2738,9 @@
 							},
 							{
 								"type": "array",
-								"items": false,
-								"prefixItems": [
-									{
-										"type": "string"
-									}
-								]
+								"items": {
+									"type": "string"
+								}
 							}
 						]
 					},
@@ -2867,23 +2776,17 @@
 					},
 					"servicePolicy": {
 						"type": "array",
-						"items": false,
-						"description": "The service policy is always stored as an array",
-						"prefixItems": [
-							{
-								"$ref": "https://schema.twindev.org/w3c-odrl/OdrlPolicy"
-							}
-						]
+						"items": {
+							"$ref": "https://schema.twindev.org/w3c-odrl/OdrlPolicy"
+						},
+						"description": "The service policy is always stored as an array"
 					},
 					"aggregationOfResources": {
 						"type": "array",
-						"items": false,
-						"description": "Overwrites aggregationOfResources as we only store identifier as string",
-						"prefixItems": [
-							{
-								"type": "string"
-							}
-						]
+						"items": {
+							"type": "string"
+						},
+						"description": "Overwrites aggregationOfResources as we only store identifier as string"
 					},
 					"endpoint": {
 						"$ref": "https://schema.twindev.org/gaia-x/Endpoint"
@@ -2906,19 +2809,15 @@
 					},
 					"evidence": {
 						"type": "array",
-						"items": false,
-						"description": "The evidences concerning the data resource.",
-						"prefixItems": [
-							{
-								"type": "string"
-							}
-						]
+						"items": {
+							"type": "string"
+						},
+						"description": "The evidences concerning the data resource."
 					}
 				},
 				"required": [
 					"@context",
 					"dateCreated",
-					"endpoint",
 					"evidence",
 					"id",
 					"issuer",
@@ -2969,13 +2868,10 @@
 					},
 					"itemListElement": {
 						"type": "array",
-						"items": false,
-						"description": "The components of the Collection",
-						"prefixItems": [
-							{
-								"$ref": "#/components/schemas/ServiceOfferingEntry"
-							}
-						]
+						"items": {
+							"$ref": "#/components/schemas/ServiceOfferingEntry"
+						},
+						"description": "The components of the Collection"
 					},
 					"nextItem": {
 						"type": "string",

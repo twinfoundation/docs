@@ -138,7 +138,7 @@ The id of the created task.
 
 ### get()
 
-> **get**\<`T`, `U`\>(`taskId`): `Promise`\<`undefined` \| [`IBackgroundTask`](IBackgroundTask.md)\<`T`, `U`\>\>
+> **get**\<`T`, `U`\>(`taskId`): `Promise`\<[`IBackgroundTask`](IBackgroundTask.md)\<`T`, `U`\> \| `undefined`\>
 
 Get the task details.
 
@@ -162,7 +162,7 @@ The id of the task to get the details for.
 
 #### Returns
 
-`Promise`\<`undefined` \| [`IBackgroundTask`](IBackgroundTask.md)\<`T`, `U`\>\>
+`Promise`\<[`IBackgroundTask`](IBackgroundTask.md)\<`T`, `U`\> \| `undefined`\>
 
 The details of the task.
 
@@ -236,7 +236,7 @@ Nothing.
 
 ### query()
 
-> **query**(`taskType?`, `taskStatus?`, `sortProperty?`, `sortDirection?`, `cursor?`, `pageSize?`): `Promise`\<\{ `entities`: [`IBackgroundTask`](IBackgroundTask.md)\<`any`, `any`\>[]; `cursor?`: `string`; \}\>
+> **query**(`taskType?`, `taskStatus?`, `sortProperty?`, `sortDirection?`, `cursor?`, `limit?`): `Promise`\<\{ `entities`: [`IBackgroundTask`](IBackgroundTask.md)\<`any`, `any`\>[]; `cursor?`: `string`; \}\>
 
 Get a list of tasks.
 
@@ -272,11 +272,11 @@ The order to sort by, defaults to ascending.
 
 The cursor to get the next page of tasks.
 
-##### pageSize?
+##### limit?
 
 `number`
 
-The maximum number of entities in a page.
+Limit the number of entities to return.
 
 #### Returns
 

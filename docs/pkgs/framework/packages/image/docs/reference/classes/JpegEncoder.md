@@ -15,6 +15,14 @@ Create a new instance of JpegEncoder.
 
 `JpegEncoder`
 
+## Properties
+
+### CLASS\_NAME
+
+> `readonly` `static` **CLASS\_NAME**: `string`
+
+Runtime name for the class.
+
 ## Methods
 
 ### encode()

@@ -87,7 +87,7 @@
 										],
 										"edges": [
 											{
-												"id": "edge1",
+												"targetId": "aig:1234567890",
 												"edgeRelationships": [
 													"frenemy"
 												],
@@ -98,7 +98,7 @@
 												}
 											},
 											{
-												"id": "edge2",
+												"targetId": "aig:45678901234",
 												"edgeRelationships": [
 													"end"
 												],
@@ -138,7 +138,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "GeneralError",
-											"message": "component.error",
+											"message": "errorMessage",
 											"properties": {
 												"foo": "bar"
 											}
@@ -159,7 +159,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "UnauthorizedError",
-											"message": "component.error"
+											"message": "errorMessage"
 										}
 									}
 								}
@@ -177,7 +177,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "InternalServerError",
-											"message": "component.error"
+											"message": "errorMessage"
 										}
 									}
 								}
@@ -284,15 +284,12 @@
 						}
 					},
 					{
-						"name": "pageSize",
-						"description": "The maximum number of entities in a page.",
+						"name": "limit",
+						"description": "Limit the number of entities to return.",
 						"in": "query",
 						"required": false,
 						"schema": {
-							"type": [
-								"number",
-								"string"
-							]
+							"type": "string"
 						}
 					},
 					{
@@ -425,7 +422,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "GeneralError",
-											"message": "component.error",
+											"message": "errorMessage",
 											"properties": {
 												"foo": "bar"
 											}
@@ -446,7 +443,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "UnauthorizedError",
-											"message": "component.error"
+											"message": "errorMessage"
 										}
 									}
 								}
@@ -464,7 +461,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "InternalServerError",
-											"message": "component.error"
+											"message": "errorMessage"
 										}
 									}
 								}
@@ -641,7 +638,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "GeneralError",
-											"message": "component.error",
+											"message": "errorMessage",
 											"properties": {
 												"foo": "bar"
 											}
@@ -662,7 +659,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "UnauthorizedError",
-											"message": "component.error"
+											"message": "errorMessage"
 										}
 									}
 								}
@@ -680,7 +677,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "InternalServerError",
-											"message": "component.error"
+											"message": "errorMessage"
 										}
 									}
 								}
@@ -768,6 +765,7 @@
 										"edges": [
 											{
 												"id": "edge1",
+												"targetId": "aig:1234567890",
 												"edgeRelationships": [
 													"frenemy"
 												],
@@ -779,6 +777,7 @@
 											},
 											{
 												"id": "edge2",
+												"targetId": "aig:45678901234",
 												"edgeRelationships": [
 													"end"
 												],
@@ -810,7 +809,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "GeneralError",
-											"message": "component.error",
+											"message": "errorMessage",
 											"properties": {
 												"foo": "bar"
 											}
@@ -831,7 +830,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "UnauthorizedError",
-											"message": "component.error"
+											"message": "errorMessage"
 										}
 									}
 								}
@@ -849,7 +848,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "InternalServerError",
-											"message": "component.error"
+											"message": "errorMessage"
 										}
 									}
 								}
@@ -870,76 +869,70 @@
 					},
 					"aliases": {
 						"type": "array",
-						"items": false,
-						"description": "Alternative aliases that can be used to identify the vertex.",
-						"prefixItems": [
-							{
-								"type": "object",
-								"properties": {
-									"id": {
-										"type": "string"
-									},
-									"aliasFormat": {
-										"type": "string"
-									},
-									"annotationObject": {
-										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-									}
+						"items": {
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string"
 								},
-								"required": [
-									"id"
-								],
-								"additionalProperties": false
-							}
-						]
+								"aliasFormat": {
+									"type": "string"
+								},
+								"unique": {
+									"type": "boolean"
+								},
+								"annotationObject": {
+									"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
+								}
+							},
+							"required": [
+								"id"
+							],
+							"additionalProperties": false
+						},
+						"description": "Alternative aliases that can be used to identify the vertex."
 					},
 					"resources": {
 						"type": "array",
-						"items": false,
-						"description": "The resources attached to the vertex.",
-						"prefixItems": [
-							{
-								"type": "object",
-								"properties": {
-									"id": {
-										"type": "string"
-									},
-									"resourceObject": {
-										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-									}
+						"items": {
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string"
 								},
-								"additionalProperties": false
-							}
-						]
+								"resourceObject": {
+									"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
+								}
+							},
+							"additionalProperties": false
+						},
+						"description": "The resources attached to the vertex."
 					},
 					"edges": {
 						"type": "array",
-						"items": false,
-						"description": "The edges connected to the vertex.",
-						"prefixItems": [
-							{
-								"type": "object",
-								"properties": {
-									"id": {
+						"items": {
+							"type": "object",
+							"properties": {
+								"targetId": {
+									"type": "string"
+								},
+								"edgeRelationships": {
+									"type": "array",
+									"items": {
 										"type": "string"
-									},
-									"edgeRelationships": {
-										"type": "array",
-										"items": {
-											"type": "string"
-										}
-									},
-									"annotationObject": {
-										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
 									}
 								},
-								"required": [
-									"id",
-									"edgeRelationships"
-								],
-								"additionalProperties": false
-							}
-						]
+								"annotationObject": {
+									"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
+								}
+							},
+							"required": [
+								"targetId",
+								"edgeRelationships"
+							],
+							"additionalProperties": false
+						},
+						"description": "The edges connected to the vertex."
 					}
 				},
 				"additionalProperties": false,
@@ -953,76 +946,73 @@
 					},
 					"aliases": {
 						"type": "array",
-						"items": false,
-						"description": "Alternative aliases that can be used to identify the vertex.",
-						"prefixItems": [
-							{
-								"type": "object",
-								"properties": {
-									"id": {
-										"type": "string"
-									},
-									"aliasFormat": {
-										"type": "string"
-									},
-									"annotationObject": {
-										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-									}
+						"items": {
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string"
 								},
-								"required": [
-									"id"
-								],
-								"additionalProperties": false
-							}
-						]
+								"aliasFormat": {
+									"type": "string"
+								},
+								"unique": {
+									"type": "boolean"
+								},
+								"annotationObject": {
+									"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
+								}
+							},
+							"required": [
+								"id"
+							],
+							"additionalProperties": false
+						},
+						"description": "Alternative aliases that can be used to identify the vertex."
 					},
 					"resources": {
 						"type": "array",
-						"items": false,
-						"description": "The resources attached to the vertex.",
-						"prefixItems": [
-							{
-								"type": "object",
-								"properties": {
-									"id": {
-										"type": "string"
-									},
-									"resourceObject": {
-										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-									}
+						"items": {
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string"
 								},
-								"additionalProperties": false
-							}
-						]
+								"resourceObject": {
+									"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
+								}
+							},
+							"additionalProperties": false
+						},
+						"description": "The resources attached to the vertex."
 					},
 					"edges": {
 						"type": "array",
-						"items": false,
-						"description": "The edges connected to the vertex.",
-						"prefixItems": [
-							{
-								"type": "object",
-								"properties": {
-									"id": {
+						"items": {
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string"
+								},
+								"targetId": {
+									"type": "string"
+								},
+								"edgeRelationships": {
+									"type": "array",
+									"items": {
 										"type": "string"
-									},
-									"edgeRelationships": {
-										"type": "array",
-										"items": {
-											"type": "string"
-										}
-									},
-									"annotationObject": {
-										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
 									}
 								},
-								"required": [
-									"id",
-									"edgeRelationships"
-								],
-								"additionalProperties": false
-							}
-						]
+								"annotationObject": {
+									"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
+								}
+							},
+							"required": [
+								"targetId",
+								"edgeRelationships"
+							],
+							"additionalProperties": false
+						},
+						"description": "The edges connected to the vertex."
 					}
 				},
 				"additionalProperties": false,

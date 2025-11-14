@@ -18,5 +18,9 @@
 		"packages/event-bus-service",
 		"packages/event-bus-socket-client"
 	],
-	"type": "module"
+	"type": "module",
+	"bugs": {
+		"url": "git+https://github.com/twinfoundation/event-bus/issues"
+	},
+	"homepage": "https://twindev.org"
 }

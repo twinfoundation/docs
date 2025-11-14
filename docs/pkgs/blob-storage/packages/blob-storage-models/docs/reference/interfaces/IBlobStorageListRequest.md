@@ -40,11 +40,11 @@ The order for the results, default to created.
 
 The direction for the order, defaults to desc.
 
-#### pageSize?
+#### limit?
 
-> `optional` **pageSize**: `string` \| `number`
+> `optional` **limit**: `string`
 
-The number of entries to return per page.
+Limit the number of entities to return.
 
 #### cursor?
 

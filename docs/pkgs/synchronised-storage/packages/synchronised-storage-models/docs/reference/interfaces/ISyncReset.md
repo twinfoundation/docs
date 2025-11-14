@@ -14,6 +14,6 @@ The key of the storage for the entities in the batch.
 
 ### resetMode
 
-> **resetMode**: [`SyncNodeIdentityMode`](../type-aliases/SyncNodeIdentityMode.md)
+> **resetMode**: [`SyncNodeIdMode`](../type-aliases/SyncNodeIdMode.md)
 
-Reset mode, this will use the nodeIdentity in the entities to determine which are local/remote.
+Reset mode, this will use the nodeId in the entities to determine which are local/remote.

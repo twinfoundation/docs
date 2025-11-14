@@ -32,11 +32,11 @@ Verified the JWT.
 
 ##### T
 
-`T` *extends* `IJwtHeader`
+`T` *extends* `JWTHeaderParameters`
 
 ##### U
 
-`U` *extends* `IJwtPayload`
+`U` *extends* `JWTPayload`
 
 #### Parameters
 

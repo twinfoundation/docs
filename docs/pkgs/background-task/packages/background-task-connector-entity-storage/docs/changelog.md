@@ -1,5 +1,64 @@
 # @twin.org/background-task-connector-entity-storage - Changelog
 
+## [0.0.3-next.1](https://github.com/twinfoundation/background-task/compare/background-task-connector-entity-storage-v0.0.3-next.0...background-task-connector-entity-storage-v0.0.3-next.1) (2025-11-11)
+
+
+### Features
+
+* add context id features ([#29](https://github.com/twinfoundation/background-task/issues/29)) ([46ede49](https://github.com/twinfoundation/background-task/commit/46ede49a51a4955fe1530e645a66f0073db9a1fd))
+* add task scheduler ([754d973](https://github.com/twinfoundation/background-task/commit/754d973e7c8483e5e54e887c157661867d5a0375))
+* add validate-locales ([968cbf9](https://github.com/twinfoundation/background-task/commit/968cbf966fffb5060305e8b221fecc0b6c8105b9))
+* eslint migration to flat config ([6c9136c](https://github.com/twinfoundation/background-task/commit/6c9136c37bccdbbd109892d1503660aab7080d49))
+* only run tasks from your own thread ([c7d305b](https://github.com/twinfoundation/background-task/commit/c7d305b9807e65b8b1af6d0c2ca59e74190cab69))
+* remove unused parameters ([1028b3c](https://github.com/twinfoundation/background-task/commit/1028b3cc147c25da22a8ba8d7207acfb34f89cdb))
+* status callback for processing state ([91581d2](https://github.com/twinfoundation/background-task/commit/91581d2b84e8fedf5973a147694187632ad43df8))
+* status callback for processing state ([72e87f5](https://github.com/twinfoundation/background-task/commit/72e87f58203145fc686b35c566fb4195e8b491cd))
+* update dependencies ([8e65767](https://github.com/twinfoundation/background-task/commit/8e657679f5e4305dbcb15ac7bcb3ab8a4613a60b))
+* update framework core ([a068098](https://github.com/twinfoundation/background-task/commit/a0680983d7923a1bfb980a67879019bb870ccc5d))
+* update IComponent signatures ([e1a79bc](https://github.com/twinfoundation/background-task/commit/e1a79bc4dd813435c56e376f231a4b4ecd2276bf))
+* use shared store mechanism ([#6](https://github.com/twinfoundation/background-task/issues/6)) ([27ed203](https://github.com/twinfoundation/background-task/commit/27ed20367d5ace7257bfa7a82b59ad70e5b5d209))
+
+
+### Bug Fixes
+
+* make sure tasks are processed deterministically ([#4](https://github.com/twinfoundation/background-task/issues/4)) ([63d3487](https://github.com/twinfoundation/background-task/commit/63d3487c85fc199e45499951331cfdcb28973e97))
+* **schema:** change `retainUntil` column to BIGINT ([#10](https://github.com/twinfoundation/background-task/issues/10)) ([77f7a14](https://github.com/twinfoundation/background-task/commit/77f7a1473d530008cb9abe1380e13ce845425663))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/background-task-models bumped from 0.0.3-next.0 to 0.0.3-next.1
+
+## [0.0.2-next.9](https://github.com/twinfoundation/background-task/compare/background-task-connector-entity-storage-v0.0.2-next.8...background-task-connector-entity-storage-v0.0.2-next.9) (2025-10-09)
+
+
+### Features
+
+* add validate-locales ([968cbf9](https://github.com/twinfoundation/background-task/commit/968cbf966fffb5060305e8b221fecc0b6c8105b9))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/background-task-models bumped from 0.0.2-next.8 to 0.0.2-next.9
+
+## [0.0.2-next.8](https://github.com/twinfoundation/background-task/compare/background-task-connector-entity-storage-v0.0.2-next.7...background-task-connector-entity-storage-v0.0.2-next.8) (2025-09-29)
+
+
+### Features
+
+* update IComponent signatures ([e1a79bc](https://github.com/twinfoundation/background-task/commit/e1a79bc4dd813435c56e376f231a4b4ecd2276bf))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/background-task-models bumped from 0.0.2-next.7 to 0.0.2-next.8
+
 ## [0.0.2-next.7](https://github.com/twinfoundation/background-task/compare/background-task-connector-entity-storage-v0.0.2-next.6...background-task-connector-entity-storage-v0.0.2-next.7) (2025-08-29)
 
 

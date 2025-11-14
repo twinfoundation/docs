@@ -248,7 +248,7 @@ The verification method id to use.
 
 The id of the credential.
 
-`undefined` | `string`
+`string` | `undefined`
 
 ##### subject
 
@@ -398,19 +398,19 @@ The method to associate with the presentation.
 
 The id of the presentation.
 
-`undefined` | `string`
+`string` | `undefined`
 
 ##### contexts
 
 The contexts for the data stored in the verifiable credential.
 
-`undefined` | `IJsonLdContextDefinitionRoot`
+`IJsonLdContextDefinitionRoot` | `undefined`
 
 ##### types
 
 The types for the data stored in the verifiable credential.
 
-`undefined` | `string` | `string`[]
+`string` | `string`[] | `undefined`
 
 ##### verifiableCredentials
 

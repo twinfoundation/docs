@@ -54,9 +54,9 @@ The date/time of when the entry was deleted, as we never actually remove items.
 
 ***
 
-### userIdentity
+### userIdentity?
 
-> **userIdentity**: `string`
+> `optional` **userIdentity**: `string`
 
 The identity of the user that added the entry.
 

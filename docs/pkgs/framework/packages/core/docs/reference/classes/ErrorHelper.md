@@ -66,7 +66,7 @@ The localized version of the errors flattened.
 
 ### formatValidationErrors()
 
-> `static` **formatValidationErrors**(`error`): `undefined` \| `string`
+> `static` **formatValidationErrors**(`error`): `string` \| `undefined`
 
 Localize the content of an error and any causes.
 
@@ -80,6 +80,6 @@ The error to format.
 
 #### Returns
 
-`undefined` \| `string`
+`string` \| `undefined`
 
 The localized version of the errors flattened.

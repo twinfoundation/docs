@@ -17,5 +17,9 @@
 		"packages/vault-connector-entity-storage",
 		"packages/vault-connector-hashicorp"
 	],
-	"type": "module"
+	"type": "module",
+	"bugs": {
+		"url": "git+https://github.com/twinfoundation/vault/issues"
+	},
+	"homepage": "https://twindev.org"
 }

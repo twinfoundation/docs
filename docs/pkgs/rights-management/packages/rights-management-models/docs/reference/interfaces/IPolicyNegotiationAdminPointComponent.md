@@ -2,7 +2,7 @@
 
 Interface describing a Policy Negotiation Admin Point (PNAP) contract.
 Components performs administration tasks on the policy negotiations.
-https://docs.internationaldataspaces.org/ids-knowledgebase/dataspace-protocol/contract-negotiation/contract.negotiation.protocol
+https://eclipse-dataspace-protocol-base.github.io/DataspaceProtocol/2025-1/#negotiation-protocol
 
 ## Extends
 
@@ -86,7 +86,7 @@ Get a list of the negotiations.
 
 ##### status?
 
-`IdsContractNegotiationStateType`
+`ContractNegotiationStateType`
 
 The state of the negotiations to retrieve.
 

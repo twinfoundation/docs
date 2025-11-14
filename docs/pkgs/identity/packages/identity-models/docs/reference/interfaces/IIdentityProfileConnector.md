@@ -144,7 +144,7 @@ Nothing.
 
 ### list()
 
-> **list**(`publicFilters?`, `privateFilters?`, `publicPropertyNames?`, `privatePropertyNames?`, `cursor?`, `pageSize?`): `Promise`\<\{ `items`: `object`[]; `cursor?`: `string`; \}\>
+> **list**(`publicFilters?`, `privateFilters?`, `publicPropertyNames?`, `privatePropertyNames?`, `cursor?`, `limit?`): `Promise`\<\{ `items`: `object`[]; `cursor?`: `string`; \}\>
 
 Get a list of the requested identities.
 
@@ -180,7 +180,7 @@ The private properties to get for the profile, defaults to all.
 
 The cursor for paged requests.
 
-##### pageSize?
+##### limit?
 
 `number`
 

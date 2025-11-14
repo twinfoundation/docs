@@ -19,5 +19,9 @@
 		"packages/verifiable-storage-service",
 		"packages/verifiable-storage-rest-client"
 	],
-	"type": "module"
+	"type": "module",
+	"bugs": {
+		"url": "git+https://github.com/twinfoundation/verifiable-storage/issues"
+	},
+	"homepage": "https://twindev.org"
 }

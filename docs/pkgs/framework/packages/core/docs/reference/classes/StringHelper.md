@@ -18,21 +18,21 @@ Class to help with string.
 
 > `static` **trimTrailingSlashes**(`value`): `string`
 
-Trim trailing slashes from a string.
+Implementation signature for trimTrailingSlashes.
 
 #### Parameters
 
 ##### value
 
-The value to trim.
+`string`
 
-`undefined` | `string`
+The value to trim.
 
 #### Returns
 
 `string`
 
-The trimmed value.
+The trimmed string or the original.
 
 ***
 
@@ -40,21 +40,21 @@ The trimmed value.
 
 > `static` **trimLeadingSlashes**(`value`): `string`
 
-Trim leading slashes from a string.
+Implementation signature for trimLeadingSlashes.
 
 #### Parameters
 
 ##### value
 
-The value to trim.
+`string`
 
-`undefined` | `string`
+The value to trim.
 
 #### Returns
 
 `string`
 
-The trimmed value.
+The trimmed string or the original.
 
 ***
 

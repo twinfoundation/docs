@@ -6,20 +6,20 @@ The features that can be enabled on the node.
 
 ## Type Declaration
 
-### NodeIdentity
+### NodeId
 
-> `readonly` **NodeIdentity**: `"node-identity"` = `"node-identity"`
+> `readonly` **NodeId**: `"node-identity"` = `"node-identity"`
 
-NodeIdentity - generates an identity for the node if not provided in config.
+NodeId - generates an identity for the node if not provided in config.
 
-### NodeUser
+### NodeAdminUser
 
-> `readonly` **NodeUser**: `"node-user"` = `"node-user"`
+> `readonly` **NodeAdminUser**: `"node-admin-user"` = `"node-admin-user"`
 
-NodeUser - generates a user for the node if not provided in config.
+NodeAdminUser - generates an admin user for the node if not provided in config.
 
 ### NodeWallet
 
 > `readonly` **NodeWallet**: `"node-wallet"` = `"node-wallet"`
 
-NodeWallet - generates a wallet for the node and funds it when there is a faucet available.
+NodeWallet - generates wallets for any identities that need them.

@@ -144,7 +144,7 @@ The converted data.
 
 ### query()
 
-> **query**(`cursor?`, `pageSize?`): `Promise`\<\{ `entities`: [`IRuleGroup`](IRuleGroup.md)[]; `cursor?`: `string`; \}\>
+> **query**(`cursor?`, `limit?`): `Promise`\<\{ `entities`: [`IRuleGroup`](IRuleGroup.md)[]; `cursor?`: `string`; \}\>
 
 Query the rule group entries.
 
@@ -154,13 +154,13 @@ Query the rule group entries.
 
 `string`
 
-The cursor to request the next page of entities.
+The cursor to request the next chunk of entities.
 
-##### pageSize?
+##### limit?
 
 `number`
 
-The maximum number of entities in a page.
+Limit the number of entities to return.
 
 #### Returns
 

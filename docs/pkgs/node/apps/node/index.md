@@ -24,6 +24,12 @@ Once you have performed a full build you can run the server in development mode,
 npm run dev
 ```
 
+## Extensions
+
+The TWIN Node supports dynamic extension loading from multiple sources (local files, npm packages, HTTPS URLs).
+
+For complete extension documentation, including syntax, lifecycle hooks, and configuration options, see [Extension Loading](docs/configuration.md#extension-loading).
+
 ## Configuration
 
 There are various options you can set through configuration, these can be found in [docs/configuration.md](docs/configuration.md)

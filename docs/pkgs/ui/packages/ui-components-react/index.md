@@ -8,6 +8,21 @@ This package contains the react UI components.
 npm install @twin.org/ui-components-react
 ```
 
+## Testing
+
+This package uses [Vitest](https://vitest.dev/) for testing. The following test commands are available:
+
+```shell
+# Run tests
+npm test
+
+# Run tests with UI interface
+npm run test:ui
+
+# Run tests with coverage report
+npm run test:coverage
+```
+
 ## Documentation
 
 - [TypeScript React Best Practices](docs/typescript-react-best-practices.md) - Guidelines for TypeScript React component development

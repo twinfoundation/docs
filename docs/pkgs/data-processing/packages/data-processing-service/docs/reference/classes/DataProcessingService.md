@@ -30,15 +30,29 @@ The options for the connector.
 
 ### CLASS\_NAME
 
-> `readonly` **CLASS\_NAME**: `string`
+> `readonly` `static` **CLASS\_NAME**: `string`
 
 Runtime name for the class.
 
+## Methods
+
+### className()
+
+> **className**(): `string`
+
+Returns the class name of the component.
+
+#### Returns
+
+`string`
+
+The class name of the component.
+
 #### Implementation of
 
-`IDataProcessingComponent.CLASS_NAME`
+`IDataProcessingComponent.className`
 
-## Methods
+***
 
 ### ruleGroupSet()
 
@@ -196,7 +210,7 @@ The converted data.
 
 ### query()
 
-> **query**(`cursor?`, `pageSize?`): `Promise`\<\{ `entities`: `IRuleGroup`[]; `cursor?`: `string`; \}\>
+> **query**(`cursor?`, `limit?`): `Promise`\<\{ `entities`: `IRuleGroup`[]; `cursor?`: `string`; \}\>
 
 Query the rule group entries.
 
@@ -206,13 +220,13 @@ Query the rule group entries.
 
 `string`
 
-The cursor to request the next page of entities.
+The cursor to request the next chunk of entities.
 
-##### pageSize?
+##### limit?
 
 `number`
 
-The maximum number of entities in a page.
+Limit the number of entities to return.
 
 #### Returns
 

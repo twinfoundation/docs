@@ -1,5 +1,76 @@
 # @twin.org/federated-catalogue-rest-client - Changelog
 
+## [0.0.3-next.1](https://github.com/twinfoundation/federated-catalogue/compare/federated-catalogue-rest-client-v0.0.3-next.0...federated-catalogue-rest-client-v0.0.3-next.1) (2025-11-12)
+
+
+### Features
+
+* add context id features ([#32](https://github.com/twinfoundation/federated-catalogue/issues/32)) ([277e64b](https://github.com/twinfoundation/federated-catalogue/commit/277e64bb507db0948e83c44e8282e09f1865fe0b))
+* add data types with fully qualified names ([993eb09](https://github.com/twinfoundation/federated-catalogue/commit/993eb09e25f6caad5d82a3908a2ba648900f5ca7))
+* add validate-locales ([3d8d60d](https://github.com/twinfoundation/federated-catalogue/commit/3d8d60d9291e5a6f8c6d4562d6a862456a9917bc))
+* consistent component naming with other repos ([83fc03d](https://github.com/twinfoundation/federated-catalogue/commit/83fc03dee3846600ae6a45d710248a0ae60af570))
+* eslint migration to flat config ([b5990d9](https://github.com/twinfoundation/federated-catalogue/commit/b5990d9ebdf403ac999da456052bee72787745de))
+* synchronise with gaia-x types ([3e0d7f2](https://github.com/twinfoundation/federated-catalogue/commit/3e0d7f2f277ec0adef79d71165b6db778e15e315))
+* update dependencies ([24ff3d7](https://github.com/twinfoundation/federated-catalogue/commit/24ff3d772cf7bd7f60547c5b314355e75ba55424))
+* update framework core ([68293b6](https://github.com/twinfoundation/federated-catalogue/commit/68293b68aaf594d51431b942fa91e7cf7020a8d7))
+* update to latest framework components ([aa30543](https://github.com/twinfoundation/federated-catalogue/commit/aa30543cef1309769d359d64fba0a85db490d69b))
+* version 0 federated catalogue ([#2](https://github.com/twinfoundation/federated-catalogue/issues/2)) ([93fb8bd](https://github.com/twinfoundation/federated-catalogue/commit/93fb8bdbb03aa781ef9e8dc4053beea1b397cc36))
+
+
+### Bug Fixes
+
+* broken docs ([4588d86](https://github.com/twinfoundation/federated-catalogue/commit/4588d861575522da5374291167d57bacd1b21867))
+* parameters not encoded in REST client ([#31](https://github.com/twinfoundation/federated-catalogue/issues/31)) ([554dc8c](https://github.com/twinfoundation/federated-catalogue/commit/554dc8c2941ef691445be6deec418d626b71e59d))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/federated-catalogue-models bumped from 0.0.3-next.0 to 0.0.3-next.1
+
+## [0.0.2-next.6](https://github.com/twinfoundation/federated-catalogue/compare/federated-catalogue-rest-client-v0.0.2-next.5...federated-catalogue-rest-client-v0.0.2-next.6) (2025-10-10)
+
+
+### Miscellaneous Chores
+
+* **federated-catalogue-rest-client:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/federated-catalogue-models bumped from 0.0.2-next.5 to 0.0.2-next.6
+
+## [0.0.2-next.5](https://github.com/twinfoundation/federated-catalogue/compare/federated-catalogue-rest-client-v0.0.2-next.4...federated-catalogue-rest-client-v0.0.2-next.5) (2025-10-09)
+
+
+### Features
+
+* add validate-locales ([3d8d60d](https://github.com/twinfoundation/federated-catalogue/commit/3d8d60d9291e5a6f8c6d4562d6a862456a9917bc))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/federated-catalogue-models bumped from 0.0.2-next.4 to 0.0.2-next.5
+
+## [0.0.2-next.4](https://github.com/twinfoundation/federated-catalogue/compare/federated-catalogue-rest-client-v0.0.2-next.3...federated-catalogue-rest-client-v0.0.2-next.4) (2025-09-29)
+
+
+### Features
+
+* update to latest framework components ([aa30543](https://github.com/twinfoundation/federated-catalogue/commit/aa30543cef1309769d359d64fba0a85db490d69b))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/federated-catalogue-models bumped from 0.0.2-next.3 to 0.0.2-next.4
+
 ## [0.0.2-next.3](https://github.com/twinfoundation/federated-catalogue/compare/federated-catalogue-rest-client-v0.0.2-next.2...federated-catalogue-rest-client-v0.0.2-next.3) (2025-08-29)
 
 

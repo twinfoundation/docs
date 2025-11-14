@@ -16,7 +16,7 @@ Coerce an object from one type to another.
 
 ### string()
 
-> `static` **string**(`value`): `undefined` \| `string`
+> `static` **string**(`value`): `string` \| `undefined`
 
 Coerce the value to a string.
 
@@ -30,7 +30,7 @@ The value to coerce.
 
 #### Returns
 
-`undefined` \| `string`
+`string` \| `undefined`
 
 The value if it can be coerced.
 
@@ -42,7 +42,7 @@ TypeError If the value can not be coerced.
 
 ### number()
 
-> `static` **number**(`value`): `undefined` \| `number`
+> `static` **number**(`value`): `number` \| `undefined`
 
 Coerce the value to a number.
 
@@ -56,7 +56,7 @@ The value to coerce.
 
 #### Returns
 
-`undefined` \| `number`
+`number` \| `undefined`
 
 The value if it can be coerced.
 
@@ -68,7 +68,7 @@ TypeError If the value can not be coerced.
 
 ### integer()
 
-> `static` **integer**(`value`): `undefined` \| `number`
+> `static` **integer**(`value`): `number` \| `undefined`
 
 Coerce the value to an integer.
 
@@ -82,7 +82,7 @@ The value to coerce.
 
 #### Returns
 
-`undefined` \| `number`
+`number` \| `undefined`
 
 The value if it can be coerced.
 
@@ -94,7 +94,7 @@ TypeError If the value can not be coerced.
 
 ### bigint()
 
-> `static` **bigint**(`value`): `undefined` \| `bigint`
+> `static` **bigint**(`value`): `bigint` \| `undefined`
 
 Coerce the value to a bigint.
 
@@ -108,7 +108,7 @@ The value to coerce.
 
 #### Returns
 
-`undefined` \| `bigint`
+`bigint` \| `undefined`
 
 The value if it can be coerced.
 
@@ -120,7 +120,7 @@ TypeError If the value can not be coerced.
 
 ### boolean()
 
-> `static` **boolean**(`value`): `undefined` \| `boolean`
+> `static` **boolean**(`value`): `boolean` \| `undefined`
 
 Coerce the value to a boolean.
 
@@ -134,7 +134,7 @@ The value to coerce.
 
 #### Returns
 
-`undefined` \| `boolean`
+`boolean` \| `undefined`
 
 The value if it can be coerced.
 
@@ -146,7 +146,7 @@ TypeError If the value can not be coerced.
 
 ### date()
 
-> `static` **date**(`value`): `undefined` \| `Date`
+> `static` **date**(`value`): `Date` \| `undefined`
 
 Coerce the value to a date.
 
@@ -160,7 +160,7 @@ The value to coerce.
 
 #### Returns
 
-`undefined` \| `Date`
+`Date` \| `undefined`
 
 The value if it can be coerced.
 
@@ -172,7 +172,7 @@ TypeError If the value can not be coerced.
 
 ### dateTime()
 
-> `static` **dateTime**(`value`): `undefined` \| `Date`
+> `static` **dateTime**(`value`): `Date` \| `undefined`
 
 Coerce the value to a date/time.
 
@@ -186,7 +186,7 @@ The value to coerce.
 
 #### Returns
 
-`undefined` \| `Date`
+`Date` \| `undefined`
 
 The value if it can be coerced.
 
@@ -198,7 +198,7 @@ TypeError If the value can not be coerced.
 
 ### time()
 
-> `static` **time**(`value`): `undefined` \| `Date`
+> `static` **time**(`value`): `Date` \| `undefined`
 
 Coerce the value to a time.
 
@@ -212,7 +212,7 @@ The value to coerce.
 
 #### Returns
 
-`undefined` \| `Date`
+`Date` \| `undefined`
 
 The value if it can be coerced.
 
@@ -224,7 +224,7 @@ TypeError If the value can not be coerced.
 
 ### object()
 
-> `static` **object**\<`T`\>(`value`): `undefined` \| `T`
+> `static` **object**\<`T`\>(`value`): `T` \| `undefined`
 
 Coerce the value to an object.
 
@@ -244,7 +244,7 @@ The value to coerce.
 
 #### Returns
 
-`undefined` \| `T`
+`T` \| `undefined`
 
 The value if it can be coerced.
 
@@ -256,7 +256,7 @@ TypeError If the value can not be coerced.
 
 ### uint8Array()
 
-> `static` **uint8Array**(`value`): `undefined` \| `Uint8Array`\<`ArrayBufferLike`\>
+> `static` **uint8Array**(`value`): `Uint8Array`\<`ArrayBufferLike`\> \| `undefined`
 
 Coerce the value to a Uint8Array.
 
@@ -270,7 +270,7 @@ The value to coerce.
 
 #### Returns
 
-`undefined` \| `Uint8Array`\<`ArrayBufferLike`\>
+`Uint8Array`\<`ArrayBufferLike`\> \| `undefined`
 
 The value if it can be coerced.
 

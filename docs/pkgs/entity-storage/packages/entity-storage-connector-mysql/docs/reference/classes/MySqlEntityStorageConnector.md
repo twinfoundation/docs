@@ -36,15 +36,47 @@ The options for the connector.
 
 ### CLASS\_NAME
 
-> `readonly` **CLASS\_NAME**: `string`
+> `readonly` `static` **CLASS\_NAME**: `string`
 
 Runtime name for the class.
 
+## Methods
+
+### className()
+
+> **className**(): `string`
+
+Returns the class name of the component.
+
+#### Returns
+
+`string`
+
+The class name of the component.
+
 #### Implementation of
 
-`IEntityStorageConnector.CLASS_NAME`
+`IEntityStorageConnector.className`
 
-## Methods
+***
+
+### getSchema()
+
+> **getSchema**(): `IEntitySchema`
+
+Get the schema for the entities.
+
+#### Returns
+
+`IEntitySchema`
+
+The schema for the entities.
+
+#### Implementation of
+
+`IEntityStorageConnector.getSchema`
+
+***
 
 ### bootstrap()
 
@@ -72,27 +104,9 @@ A promise that resolves to a boolean indicating success.
 
 ***
 
-### getSchema()
-
-> **getSchema**(): `IEntitySchema`
-
-Get the schema for the entities.
-
-#### Returns
-
-`IEntitySchema`
-
-The schema for the entities.
-
-#### Implementation of
-
-`IEntityStorageConnector.getSchema`
-
-***
-
 ### get()
 
-> **get**(`id`, `secondaryIndex?`, `conditions?`): `Promise`\<`undefined` \| `T`\>
+> **get**(`id`, `secondaryIndex?`, `conditions?`): `Promise`\<`T` \| `undefined`\>
 
 Get an entity from MySql.
 
@@ -118,7 +132,7 @@ The optional conditions to match for the entities.
 
 #### Returns
 
-`Promise`\<`undefined` \| `T`\>
+`Promise`\<`T` \| `undefined`\>
 
 The object if it can be found or undefined.
 
@@ -194,7 +208,7 @@ Nothing.
 
 ### query()
 
-> **query**(`conditions?`, `sortProperties?`, `properties?`, `cursor?`, `pageSize?`): `Promise`\<\{ `entities`: `Partial`\<`T`\>[]; `cursor?`: `string`; \}\>
+> **query**(`conditions?`, `sortProperties?`, `properties?`, `cursor?`, `limit?`): `Promise`\<\{ `entities`: `Partial`\<`T`\>[]; `cursor?`: `string`; \}\>
 
 Find all the entities which match the conditions.
 
@@ -222,9 +236,9 @@ The optional properties to return, defaults to all.
 
 `string`
 
-The cursor to request the next page of entities.
+The cursor to request the next chunk of entities.
 
-##### pageSize?
+##### limit?
 
 `number`
 
@@ -254,3 +268,31 @@ Drop the table.
 `Promise`\<`void`\>
 
 Nothing.
+
+***
+
+### tableEmpty()
+
+> **tableEmpty**(): `Promise`\<`void`\>
+
+Empty the table.
+
+#### Returns
+
+`Promise`\<`void`\>
+
+Nothing.
+
+***
+
+### databaseExists()
+
+> **databaseExists**(): `Promise`\<`boolean`\>
+
+Check if the database exists.
+
+#### Returns
+
+`Promise`\<`boolean`\>
+
+True if the database exists, false otherwise.

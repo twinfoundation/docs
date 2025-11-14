@@ -8,6 +8,14 @@ Factory for creating implementation of generic types.
 
 `T`
 
+## Properties
+
+### CLASS\_NAME
+
+> `readonly` `static` **CLASS\_NAME**: `string`
+
+Runtime name for the class.
+
 ## Methods
 
 ### createFactory()
@@ -38,7 +46,7 @@ Automatically create an instance when registered.
 
 ##### matcher?
 
-(`names`, `name`) => `undefined` \| `string`
+(`names`, `name`) => `string` \| `undefined`
 
 Match the name of the instance.
 
@@ -186,7 +194,7 @@ GeneralError if no item exists to get.
 
 ### getIfExists()
 
-> **getIfExists**\<`U`\>(`name?`): `undefined` \| `U`
+> **getIfExists**\<`U`\>(`name?`): `U` \| `undefined`
 
 Get a generator instance with no exceptions.
 
@@ -206,7 +214,7 @@ The name of the instance to generate.
 
 #### Returns
 
-`undefined` \| `U`
+`U` \| `undefined`
 
 An instance of the item or undefined if it does not exist.
 

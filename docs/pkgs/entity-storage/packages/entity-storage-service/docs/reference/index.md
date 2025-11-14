@@ -6,8 +6,8 @@
 
 ## Interfaces
 
-- [IEntityStorageConfig](interfaces/IEntityStorageConfig.md)
 - [IEntityStorageRoutesExamples](interfaces/IEntityStorageRoutesExamples.md)
+- [IEntityStorageServiceConfig](interfaces/IEntityStorageServiceConfig.md)
 - [IEntityStorageServiceConstructorOptions](interfaces/IEntityStorageServiceConstructorOptions.md)
 
 ## Variables

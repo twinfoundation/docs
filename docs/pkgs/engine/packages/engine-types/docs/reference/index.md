@@ -1,5 +1,9 @@
 # @twin.org/engine-types
 
+## Classes
+
+- [EngineTypeHelper](classes/EngineTypeHelper.md)
+
 ## Interfaces
 
 - [IEngineConfig](interfaces/IEngineConfig.md)
@@ -35,6 +39,7 @@
 - [ImmutableProofComponentConfig](type-aliases/ImmutableProofComponentConfig.md)
 - [LoggingComponentConfig](type-aliases/LoggingComponentConfig.md)
 - [LoggingConnectorConfig](type-aliases/LoggingConnectorConfig.md)
+- [MessagingAdminComponentConfig](type-aliases/MessagingAdminComponentConfig.md)
 - [MessagingComponentConfig](type-aliases/MessagingComponentConfig.md)
 - [MessagingEmailConnectorConfig](type-aliases/MessagingEmailConnectorConfig.md)
 - [MessagingPushNotificationConnectorConfig](type-aliases/MessagingPushNotificationConnectorConfig.md)
@@ -55,6 +60,7 @@
 - [TaskSchedulerComponentConfig](type-aliases/TaskSchedulerComponentConfig.md)
 - [TelemetryComponentConfig](type-aliases/TelemetryComponentConfig.md)
 - [TelemetryConnectorConfig](type-aliases/TelemetryConnectorConfig.md)
+- [TenantAdminComponentConfig](type-aliases/TenantAdminComponentConfig.md)
 - [VaultConnectorConfig](type-aliases/VaultConnectorConfig.md)
 - [VerifiableStorageComponentConfig](type-aliases/VerifiableStorageComponentConfig.md)
 - [VerifiableStorageConnectorConfig](type-aliases/VerifiableStorageConnectorConfig.md)
@@ -88,6 +94,7 @@
 - [IImmutableProofComponentType](type-aliases/IImmutableProofComponentType.md)
 - [LoggingComponentType](type-aliases/LoggingComponentType.md)
 - [LoggingConnectorType](type-aliases/LoggingConnectorType.md)
+- [MessagingAdminComponentType](type-aliases/MessagingAdminComponentType.md)
 - [MessagingComponentType](type-aliases/MessagingComponentType.md)
 - [MessagingEmailConnectorType](type-aliases/MessagingEmailConnectorType.md)
 - [MessagingPushNotificationConnectorType](type-aliases/MessagingPushNotificationConnectorType.md)
@@ -108,6 +115,7 @@
 - [TaskSchedulerComponentType](type-aliases/TaskSchedulerComponentType.md)
 - [TelemetryComponentType](type-aliases/TelemetryComponentType.md)
 - [TelemetryConnectorType](type-aliases/TelemetryConnectorType.md)
+- [TenantAdminComponentType](type-aliases/TenantAdminComponentType.md)
 - [VaultConnectorType](type-aliases/VaultConnectorType.md)
 - [IVerifiableStorageComponentType](type-aliases/IVerifiableStorageComponentType.md)
 - [VerifiableStorageConnectorType](type-aliases/VerifiableStorageConnectorType.md)
@@ -144,6 +152,7 @@
 - [ImmutableProofComponentType](variables/ImmutableProofComponentType.md)
 - [LoggingComponentType](variables/LoggingComponentType.md)
 - [LoggingConnectorType](variables/LoggingConnectorType.md)
+- [MessagingAdminComponentType](variables/MessagingAdminComponentType.md)
 - [MessagingComponentType](variables/MessagingComponentType.md)
 - [MessagingEmailConnectorType](variables/MessagingEmailConnectorType.md)
 - [MessagingPushNotificationConnectorType](variables/MessagingPushNotificationConnectorType.md)
@@ -164,6 +173,7 @@
 - [TaskSchedulerComponentType](variables/TaskSchedulerComponentType.md)
 - [TelemetryComponentType](variables/TelemetryComponentType.md)
 - [TelemetryConnectorType](variables/TelemetryConnectorType.md)
+- [TenantAdminComponentType](variables/TenantAdminComponentType.md)
 - [VaultConnectorType](variables/VaultConnectorType.md)
 - [VerifiableStorageComponentType](variables/VerifiableStorageComponentType.md)
 - [VerifiableStorageConnectorType](variables/VerifiableStorageConnectorType.md)
@@ -203,6 +213,7 @@
 - [initialiseMessagingSmsConnector](functions/initialiseMessagingSmsConnector.md)
 - [initialiseMessagingPushNotificationConnector](functions/initialiseMessagingPushNotificationConnector.md)
 - [initialiseMessagingComponent](functions/initialiseMessagingComponent.md)
+- [initialiseMessagingAdminComponent](functions/initialiseMessagingAdminComponent.md)
 - [initialiseNftConnector](functions/initialiseNftConnector.md)
 - [initialiseNftComponent](functions/initialiseNftComponent.md)
 - [initialiseRightsManagementDapComponent](functions/initialiseRightsManagementDapComponent.md)
@@ -219,8 +230,8 @@
 - [initialiseTaskSchedulerComponent](functions/initialiseTaskSchedulerComponent.md)
 - [initialiseTelemetryConnector](functions/initialiseTelemetryConnector.md)
 - [initialiseTelemetryComponent](functions/initialiseTelemetryComponent.md)
+- [initialiseTenantAdminComponent](functions/initialiseTenantAdminComponent.md)
 - [initialiseVaultConnector](functions/initialiseVaultConnector.md)
 - [initialiseVerifiableStorageConnector](functions/initialiseVerifiableStorageConnector.md)
 - [initialiseVerifiableStorageComponent](functions/initialiseVerifiableStorageComponent.md)
 - [initialiseWalletConnector](functions/initialiseWalletConnector.md)
-- [initialiseWalletStorage](functions/initialiseWalletStorage.md)

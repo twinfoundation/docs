@@ -1,6 +1,6 @@
 # Function: initialiseWalletConnector()
 
-> **initialiseWalletConnector**(`engineCore`, `context`, `instanceConfig`, `overrideInstanceType?`): `Promise`\<`undefined` \| `string`\>
+> **initialiseWalletConnector**(`engineCore`, `context`, `instanceConfig`): `Promise`\<\{ `instanceType?`: `string`; `factory?`: `Factory`\<`IWalletConnector`\>; `component?`: `IComponent`; \}\>
 
 Initialise a wallet connector.
 
@@ -24,18 +24,8 @@ The context for the node.
 
 The instance config.
 
-### overrideInstanceType?
-
-`string`
-
-The instance type to override the default.
-
 ## Returns
 
-`Promise`\<`undefined` \| `string`\>
+`Promise`\<\{ `instanceType?`: `string`; `factory?`: `Factory`\<`IWalletConnector`\>; `component?`: `IComponent`; \}\>
 
-The name of the instance created.
-
-## Throws
-
-GeneralError if the connector type is unknown.
+The instance created and the factory for it.

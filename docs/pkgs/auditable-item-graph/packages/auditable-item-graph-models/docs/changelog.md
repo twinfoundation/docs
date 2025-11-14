@@ -1,5 +1,33 @@
 # @twin.org/auditable-item-graph-models - Changelog
 
+## [0.0.2-next.8](https://github.com/twinfoundation/auditable-item-graph/compare/auditable-item-graph-models-v0.0.2-next.7...auditable-item-graph-models-v0.0.2-next.8) (2025-10-09)
+
+
+### Features
+
+* add validate-locales ([e76e6f6](https://github.com/twinfoundation/auditable-item-graph/commit/e76e6f6b3ec9c447a04315d353442e32233601d3))
+
+## [0.0.2-next.7](https://github.com/twinfoundation/auditable-item-graph/compare/auditable-item-graph-models-v0.0.2-next.6...auditable-item-graph-models-v0.0.2-next.7) (2025-09-29)
+
+
+### Features
+
+* id optional in edge updates ([6b63fe3](https://github.com/twinfoundation/auditable-item-graph/commit/6b63fe34553104843ae15aa5066775f5872859e9))
+
+## [0.0.2-next.6](https://github.com/twinfoundation/auditable-item-graph/compare/auditable-item-graph-models-v0.0.2-next.5...auditable-item-graph-models-v0.0.2-next.6) (2025-09-29)
+
+
+### Features
+
+* use new nameof operators ([3921c4c](https://github.com/twinfoundation/auditable-item-graph/commit/3921c4c9ac53e42459e45f10d9e702afb2797a23))
+
+## [0.0.2-next.5](https://github.com/twinfoundation/auditable-item-graph/compare/auditable-item-graph-models-v0.0.2-next.4...auditable-item-graph-models-v0.0.2-next.5) (2025-09-26)
+
+
+### Features
+
+* update edges to use targetId instead of id ([6c5d0e3](https://github.com/twinfoundation/auditable-item-graph/commit/6c5d0e31b6e2ea74bfa2f3344e4be628e5f237af))
+
 ## [0.0.2-next.4](https://github.com/twinfoundation/auditable-item-graph/compare/auditable-item-graph-models-v0.0.2-next.3...auditable-item-graph-models-v0.0.2-next.4) (2025-09-24)
 
 

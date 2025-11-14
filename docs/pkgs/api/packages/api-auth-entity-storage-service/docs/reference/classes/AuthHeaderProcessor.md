@@ -30,29 +30,37 @@ Options for the processor.
 
 ### CLASS\_NAME
 
-> `readonly` **CLASS\_NAME**: `string`
+> `readonly` `static` **CLASS\_NAME**: `string`
 
 Runtime name for the class.
 
+## Methods
+
+### className()
+
+> **className**(): `string`
+
+Returns the class name of the component.
+
+#### Returns
+
+`string`
+
+The class name of the component.
+
 #### Implementation of
 
-`IBaseRouteProcessor.CLASS_NAME`
+`IBaseRouteProcessor.className`
 
-## Methods
+***
 
 ### start()
 
-> **start**(`nodeIdentity`, `nodeLoggingComponentType?`): `Promise`\<`void`\>
+> **start**(`nodeLoggingComponentType?`): `Promise`\<`void`\>
 
 The service needs to be started when the application is initialized.
 
 #### Parameters
-
-##### nodeIdentity
-
-`string`
-
-The identity of the node.
 
 ##### nodeLoggingComponentType?
 
@@ -74,7 +82,7 @@ Nothing.
 
 ### pre()
 
-> **pre**(`request`, `response`, `route`, `requestIdentity`, `processorState`): `Promise`\<`void`\>
+> **pre**(`request`, `response`, `route`, `contextIds`, `processorState`): `Promise`\<`void`\>
 
 Pre process the REST request for the specified route.
 
@@ -96,13 +104,13 @@ The outgoing response.
 
 The route to process.
 
-`undefined` | `IBaseRoute`
+`IBaseRoute` | `undefined`
 
-##### requestIdentity
+##### contextIds
 
-`IHttpRequestIdentity`
+`IContextIds`
 
-The identity context for the request.
+The context IDs of the request.
 
 ##### processorState
 
@@ -120,7 +128,7 @@ The state handed through the processors.
 
 ### post()
 
-> **post**(`request`, `response`, `route`, `requestIdentity`, `processorState`): `Promise`\<`void`\>
+> **post**(`request`, `response`, `route`, `contextIds`, `processorState`): `Promise`\<`void`\>
 
 Post process the REST request for the specified route.
 
@@ -142,13 +150,13 @@ The outgoing response.
 
 The route to process.
 
-`undefined` | `IBaseRoute`
+`IBaseRoute` | `undefined`
 
-##### requestIdentity
+##### contextIds
 
-`IHttpRequestIdentity`
+`IContextIds`
 
-The identity context for the request.
+The context IDs of the request.
 
 ##### processorState
 

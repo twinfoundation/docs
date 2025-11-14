@@ -10,7 +10,7 @@ Interface describing an auditable item stream component.
 
 ### create()
 
-> **create**(`stream`, `options?`, `userIdentity?`, `nodeIdentity?`): `Promise`\<`string`\>
+> **create**(`stream`, `options?`): `Promise`\<`string`\>
 
 Create a new stream.
 
@@ -43,18 +43,6 @@ Options for creating the stream.
 After how many entries do we add immutable checks, defaults to service configured value.
 A value of 0 will disable immutable checks, 1 will be every item, or any other integer for an interval.
 
-##### userIdentity?
-
-`string`
-
-The identity to create the auditable item stream operation with.
-
-##### nodeIdentity?
-
-`string`
-
-The node identity to use for vault operations.
-
 #### Returns
 
 `Promise`\<`string`\>
@@ -65,7 +53,7 @@ The id of the new stream item.
 
 ### update()
 
-> **update**(`stream`, `userIdentity?`, `nodeIdentity?`): `Promise`\<`void`\>
+> **update**(`stream`): `Promise`\<`void`\>
 
 Update a stream.
 
@@ -86,18 +74,6 @@ The id of the stream to update.
 `IJsonLdNodeObject`
 
 The object for the stream as JSON-LD.
-
-##### userIdentity?
-
-`string`
-
-The identity to create the auditable item stream operation with.
-
-##### nodeIdentity?
-
-`string`
-
-The node identity to use for vault operations.
 
 #### Returns
 
@@ -163,7 +139,7 @@ NotFoundError if the stream is not found.
 
 ### remove()
 
-> **remove**(`id`, `userIdentity?`, `nodeIdentity?`): `Promise`\<`void`\>
+> **remove**(`id`): `Promise`\<`void`\>
 
 Delete the stream.
 
@@ -175,18 +151,6 @@ Delete the stream.
 
 The id of the stream to remove.
 
-##### userIdentity?
-
-`string`
-
-The identity to create the auditable item stream operation with.
-
-##### nodeIdentity?
-
-`string`
-
-The node identity to use for vault operations.
-
 #### Returns
 
 `Promise`\<`void`\>
@@ -197,7 +161,7 @@ Nothing.
 
 ### query()
 
-> **query**(`conditions?`, `orderBy?`, `orderByDirection?`, `properties?`, `cursor?`, `pageSize?`): `Promise`\<[`IAuditableItemStreamList`](IAuditableItemStreamList.md)\>
+> **query**(`conditions?`, `orderBy?`, `orderByDirection?`, `properties?`, `cursor?`, `limit?`): `Promise`\<[`IAuditableItemStreamList`](IAuditableItemStreamList.md)\>
 
 Query all the streams, will not return entries.
 
@@ -231,13 +195,13 @@ The properties to return, if not provided defaults to id, dateCreated, dateModif
 
 `string`
 
-The cursor to request the next page of entities.
+The cursor to request the next chunk of entities.
 
-##### pageSize?
+##### limit?
 
 `number`
 
-The maximum number of entities in a page.
+Limit the number of entities to return.
 
 #### Returns
 
@@ -249,7 +213,7 @@ The entities, which can be partial if a limited keys list was provided.
 
 ### createEntry()
 
-> **createEntry**(`streamId`, `entryObject`, `userIdentity?`, `nodeIdentity?`): `Promise`\<`string`\>
+> **createEntry**(`streamId`, `entryObject`): `Promise`\<`string`\>
 
 Create an entry in the stream.
 
@@ -266,18 +230,6 @@ The id of the stream to create the entry in.
 `IJsonLdNodeObject`
 
 The object for the stream as JSON-LD.
-
-##### userIdentity?
-
-`string`
-
-The identity to create the auditable item stream operation with.
-
-##### nodeIdentity?
-
-`string`
-
-The node identity to use for vault operations.
 
 #### Returns
 
@@ -363,7 +315,7 @@ NotFoundError if the stream is not found.
 
 ### updateEntry()
 
-> **updateEntry**(`streamId`, `entryId`, `entryObject`, `userIdentity?`, `nodeIdentity?`): `Promise`\<`void`\>
+> **updateEntry**(`streamId`, `entryId`, `entryObject`): `Promise`\<`void`\>
 
 Update an entry in the stream.
 
@@ -387,18 +339,6 @@ The id of the entry to update.
 
 The object for the entry as JSON-LD.
 
-##### userIdentity?
-
-`string`
-
-The identity to create the auditable item stream operation with.
-
-##### nodeIdentity?
-
-`string`
-
-The node identity to use for vault operations.
-
 #### Returns
 
 `Promise`\<`void`\>
@@ -409,7 +349,7 @@ Nothing.
 
 ### removeEntry()
 
-> **removeEntry**(`streamId`, `entryId`, `userIdentity?`, `nodeIdentity?`): `Promise`\<`void`\>
+> **removeEntry**(`streamId`, `entryId`): `Promise`\<`void`\>
 
 Remove from the stream.
 
@@ -426,18 +366,6 @@ The id of the stream to remove from.
 `string`
 
 The id of the entry to delete.
-
-##### userIdentity?
-
-`string`
-
-The identity to create the auditable item stream operation with.
-
-##### nodeIdentity?
-
-`string`
-
-The node identity to use for vault operations.
 
 #### Returns
 
@@ -483,7 +411,7 @@ Whether to include deleted entries, defaults to false.
 
 Should the entries be verified, defaults to false.
 
-###### pageSize?
+###### limit?
 
 `number`
 
@@ -543,7 +471,7 @@ The conditions to filter the stream.
 
 Whether to include deleted entries, defaults to false.
 
-###### pageSize?
+###### limit?
 
 `number`
 
@@ -575,7 +503,7 @@ NotFoundError if the stream is not found.
 
 ### removeVerifiable()
 
-> **removeVerifiable**(`streamId`, `nodeIdentity?`): `Promise`\<`void`\>
+> **removeVerifiable**(`streamId`): `Promise`\<`void`\>
 
 Remove the verifiable storage for the stream and entries.
 
@@ -586,12 +514,6 @@ Remove the verifiable storage for the stream and entries.
 `string`
 
 The id of the stream to remove the storage from.
-
-##### nodeIdentity?
-
-`string`
-
-The node identity to use for vault operations.
 
 #### Returns
 

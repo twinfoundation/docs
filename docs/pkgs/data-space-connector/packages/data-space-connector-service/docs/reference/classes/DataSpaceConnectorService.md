@@ -10,13 +10,13 @@ Data Space Connector Service.
 
 ### Constructor
 
-> **new DataSpaceConnectorService**(`options`): `DataSpaceConnectorService`
+> **new DataSpaceConnectorService**(`options?`): `DataSpaceConnectorService`
 
 Create a new instance of DataSpaceConnector.
 
 #### Parameters
 
-##### options
+##### options?
 
 [`IDataSpaceConnectorServiceConstructorOptions`](../interfaces/IDataSpaceConnectorServiceConstructorOptions.md)
 
@@ -30,35 +30,43 @@ The options for the connector.
 
 ### CLASS\_NAME
 
-> `readonly` **CLASS\_NAME**: `string`
+> `readonly` `static` **CLASS\_NAME**: `string`
 
 Runtime name for the class.
 
-#### Implementation of
-
-`IDataSpaceConnector.CLASS_NAME`
-
 ## Methods
 
-### start()
+### className()
 
-> **start**(`nodeIdentity`, `nodeLoggingComponentType?`): `Promise`\<`void`\>
+> **className**(): `string`
 
-Start step. It just registers the Data Space Connector Apps initial descriptors.
+Returns the class name of the component.
 
-#### Parameters
-
-##### nodeIdentity
+#### Returns
 
 `string`
 
-Node Identity
+The class name of the component.
+
+#### Implementation of
+
+`IDataSpaceConnector.className`
+
+***
+
+### start()
+
+> **start**(`nodeLoggingComponentType?`): `Promise`\<`void`\>
+
+The service needs to be started when the application is initialized.
+
+#### Parameters
 
 ##### nodeLoggingComponentType?
 
 `string`
 
-Node Logging Component type.
+The node logging component type.
 
 #### Returns
 
@@ -182,17 +190,111 @@ NotFoundError if activity log entry is not known.
 
 ***
 
-### registerDataSpaceConnectorApp()
+### getDataAssetEntities()
 
-> **registerDataSpaceConnectorApp**(`app`): `Promise`\<`void`\>
+> **getDataAssetEntities**(`dataAsset`, `entitySet`, `cursor?`, `limit?`): `Promise`\<`IDataAssetItemList`\>
+
+Get Data Asset entities. Allows to retrieve entities by their type or id.
+
+#### Parameters
+
+##### dataAsset
+
+`IDataAssetDescription`
+
+The data asset being referred. It can be left empty and let the system to locate a proper one.
+
+##### entitySet
+
+`IEntitySet` & `object`
+
+The set of entities to be retrieved.
+
+##### cursor?
+
+`string`
+
+Pagination details - cursor.
+
+##### limit?
+
+`number`
+
+Pagination details - max number of entities.
+
+#### Returns
+
+`Promise`\<`IDataAssetItemList`\>
+
+The entities requested as a JSON-LD Document.
+
+#### Implementation of
+
+`IDataSpaceConnector.getDataAssetEntities`
+
+***
+
+### queryDataAsset()
+
+> **queryDataAsset**(`dataAsset`, `query`, `cursor?`, `limit?`): `Promise`\<`IDataAssetItemList`\>
+
+Queries a data asset controlled by this DS Connector App.
+
+#### Parameters
+
+##### dataAsset
+
+`IDataAssetDescription`
+
+The data asset being referred.
+
+##### query
+
+`IFilteringQuery`
+
+The filtering query.
+
+##### cursor?
+
+`string`
+
+Pagination details - cursor.
+
+##### limit?
+
+`number`
+
+Pagination details - max number of entities.
+
+#### Returns
+
+`Promise`\<`IDataAssetItemList`\>
+
+The entities requested as a JSON-LD Document.
+
+#### Implementation of
+
+`IDataSpaceConnector.queryDataAsset`
+
+***
+
+### registerApp()
+
+> **registerApp**(`appId`, `app`): `Promise`\<`void`\>
 
 Registers a Data Space Connector App.
 
 #### Parameters
 
+##### appId
+
+`string`
+
+The Id of the App to be registered.
+
 ##### app
 
-`IDataSpaceConnectorAppDescriptor`
+`IDataSpaceConnectorApp`
 
 The App to be registered.
 
@@ -202,4 +304,30 @@ The App to be registered.
 
 #### Implementation of
 
-`IDataSpaceConnector.registerDataSpaceConnectorApp`
+`IDataSpaceConnector.registerApp`
+
+***
+
+### unregisterApp()
+
+> **unregisterApp**(`appId`): `Promise`\<`void`\>
+
+Un-registers a Data Space Connector App.
+
+#### Parameters
+
+##### appId
+
+`string`
+
+The Id of the App to be registered.
+
+#### Returns
+
+`Promise`\<`void`\>
+
+Nothing.
+
+#### Implementation of
+
+`IDataSpaceConnector.unregisterApp`

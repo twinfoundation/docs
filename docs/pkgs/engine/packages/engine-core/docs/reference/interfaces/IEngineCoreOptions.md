@@ -79,17 +79,3 @@ Custom bootstrap method for the engine.
 #### Returns
 
 `Promise`\<`void`\>
-
-***
-
-### loggerTypeName?
-
-> `optional` **loggerTypeName**: `string`
-
-The name of the logger to use in the engine.
-
-#### Default
-
-```ts
-engine
-```

@@ -60,7 +60,7 @@ True if the value is a empty.
 
 ### empty()
 
-> `static` **empty**(`value`): value is undefined \| null
+> `static` **empty**(`value`): value is null \| undefined
 
 Is the property null or undefined.
 
@@ -74,7 +74,7 @@ The value to test.
 
 #### Returns
 
-value is undefined \| null
+value is null \| undefined
 
 True if the value is a empty.
 
@@ -730,9 +730,15 @@ True if the value is a TypedArray.
 
 ### function()
 
-> `static` **function**(`value`): `value is (args: unknown[]) => unknown`
+> `static` **function**\<`T`\>(`value`): `value is T`
 
 Is the property a function.
+
+#### Type Parameters
+
+##### T
+
+`T` *extends* (...`args`) => `any` = (...`args`) => `any`
 
 #### Parameters
 
@@ -744,7 +750,7 @@ The value to test.
 
 #### Returns
 
-`value is (args: unknown[]) => unknown`
+`value is T`
 
 True if the value is a function.
 

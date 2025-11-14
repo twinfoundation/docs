@@ -24,7 +24,11 @@
 		"packages/standards-gaia-x",
 		"packages/standards-ld-contexts",
 		"packages/standards-w3c-activity-streams",
-		"packages/standards-ids-contract-negotiation"
+		"packages/standards-dataspace-protocol"
 	],
-	"type": "module"
+	"type": "module",
+	"bugs": {
+		"url": "git+https://github.com/twinfoundation/standards/issues"
+	},
+	"homepage": "https://twindev.org"
 }

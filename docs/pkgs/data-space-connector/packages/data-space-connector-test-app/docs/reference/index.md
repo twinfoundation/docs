@@ -4,15 +4,14 @@
 
 - [TestDataSpaceConnectorApp](classes/TestDataSpaceConnectorApp.md)
 
-## Type Aliases
+## Interfaces
 
-- [ITestAppConstructorOptions](type-aliases/ITestAppConstructorOptions.md)
-
-## Variables
-
-- [TestAppDescriptor](variables/TestAppDescriptor.md)
+- [ITestAppConstructorOptions](interfaces/ITestAppConstructorOptions.md)
 
 ## Functions
 
-- [appInitialiser](functions/appInitialiser.md)
+- [extensionInitialise](functions/extensionInitialise.md)
+- [extensionInitialiseEngine](functions/extensionInitialiseEngine.md)
+- [extensionInitialiseEngineServer](functions/extensionInitialiseEngineServer.md)
+- [testAppInitialiser](functions/testAppInitialiser.md)
 - [generateRestRoutes](functions/generateRestRoutes.md)

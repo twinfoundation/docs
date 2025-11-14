@@ -18,7 +18,7 @@ The document id to create.
 
 #### documentIdFormat
 
-> **documentIdFormat**: `undefined` \| `string`
+> **documentIdFormat**: `string` \| `undefined`
 
 The format of the document identifier.
 

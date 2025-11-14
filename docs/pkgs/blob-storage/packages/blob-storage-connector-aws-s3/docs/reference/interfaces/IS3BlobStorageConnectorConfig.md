@@ -20,17 +20,33 @@ The S3 bucket name.
 
 ***
 
-### accessKeyId
+### authMode?
 
-> **accessKeyId**: `string`
+> `optional` **authMode**: `"credentials"` \| `"pod"`
+
+The authentication mode.
+- "credentials": Use access key ID and secret access key.
+- "pod": Use IAM role attached to the pod (e.g., in EKS).
+
+#### Default
+
+```ts
+credentials
+```
+
+***
+
+### accessKeyId?
+
+> `optional` **accessKeyId**: `string`
 
 The AWS access key ID.
 
 ***
 
-### secretAccessKey
+### secretAccessKey?
 
-> **secretAccessKey**: `string`
+> `optional` **secretAccessKey**: `string`
 
 The AWS secret access key.
 

@@ -38,25 +38,39 @@ The namespace supported by the verifiable storage connector.
 
 ### CLASS\_NAME
 
-> `readonly` **CLASS\_NAME**: `string`
+> `readonly` `static` **CLASS\_NAME**: `string`
 
 Runtime name for the class.
 
+## Methods
+
+### className()
+
+> **className**(): `string`
+
+Returns the class name of the component.
+
+#### Returns
+
+`string`
+
+The class name of the component.
+
 #### Implementation of
 
-`IVerifiableStorageConnector.CLASS_NAME`
+`IVerifiableStorageConnector.className`
 
-## Methods
+***
 
 ### create()
 
-> **create**(`controller`, `data`, `allowList?`, `options?`): `Promise`\<\{ `id`: `string`; `receipt`: `IJsonLdNodeObject`; \}\>
+> **create**(`controllerIdentity`, `data`, `allowList?`, `options?`): `Promise`\<\{ `id`: `string`; `receipt`: `IJsonLdNodeObject`; \}\>
 
 Create an item in verifiable storage.
 
 #### Parameters
 
-##### controller
+##### controllerIdentity
 
 `string`
 
@@ -98,13 +112,13 @@ The id of the stored verifiable item in URN format and the receipt.
 
 ### update()
 
-> **update**(`controller`, `id`, `data?`, `allowList?`): `Promise`\<`IJsonLdNodeObject`\>
+> **update**(`controllerIdentity`, `id`, `data?`, `allowList?`): `Promise`\<`IJsonLdNodeObject`\>
 
 Update an item in verifiable storage.
 
 #### Parameters
 
-##### controller
+##### controllerIdentity
 
 `string`
 
@@ -184,13 +198,13 @@ The data for the item, the receipt and the allow list.
 
 ### remove()
 
-> **remove**(`controller`, `id`): `Promise`\<`void`\>
+> **remove**(`controllerIdentity`, `id`): `Promise`\<`void`\>
 
 Remove the item from verifiable storage.
 
 #### Parameters
 
-##### controller
+##### controllerIdentity
 
 `string`
 

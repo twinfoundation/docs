@@ -1,0 +1,46 @@
+{
+	"name": "@twin.org/standards-dataspace-protocol",
+	"version": "0.0.3-next.2",
+	"description": "Models which define the structure of Dataspace Protocol",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/twinfoundation/standards.git",
+		"directory": "packages/standards-dataspace-protocol"
+	},
+	"author": "martyn.janes@iota.org",
+	"license": "Apache-2.0",
+	"type": "module",
+	"engines": {
+		"node": ">=20.0.0"
+	},
+	"main": "./dist/es/index.js",
+	"types": "./dist/types/index.d.ts",
+	"exports": {
+		".": {
+			"types": "./dist/types/index.d.ts",
+			"import": "./dist/es/index.js",
+			"default": "./dist/es/index.js"
+		},
+		"./locales/*.json": "./locales/*.json"
+	},
+	"files": [
+		"dist/es",
+		"dist/types",
+		"locales",
+		"docs"
+	],
+	"keywords": [
+		"twin",
+		"trade",
+		"iota",
+		"framework",
+		"blockchain",
+		"standards",
+		"schema",
+		"specification"
+	],
+	"bugs": {
+		"url": "git+https://github.com/twinfoundation/standards/issues"
+	},
+	"homepage": "https://twindev.org"
+}

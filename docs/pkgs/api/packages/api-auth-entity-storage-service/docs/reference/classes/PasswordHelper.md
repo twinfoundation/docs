@@ -12,6 +12,14 @@ Helper class for password operations.
 
 `PasswordHelper`
 
+## Properties
+
+### CLASS\_NAME
+
+> `readonly` `static` **CLASS\_NAME**: `string`
+
+Runtime name for the class.
+
 ## Methods
 
 ### hashPassword()

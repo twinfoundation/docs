@@ -1,5 +1,70 @@
 # @twin.org/move-to-json - Changelog
 
+## [0.0.3-next.1](https://github.com/twinfoundation/dlt/compare/move-to-json-v0.0.3-next.0...move-to-json-v0.0.3-next.1) (2025-11-11)
+
+
+### Features
+
+* add context id features ([#51](https://github.com/twinfoundation/dlt/issues/51)) ([fb68498](https://github.com/twinfoundation/dlt/commit/fb6849897957904ec90cf6368153aeff3bef261a))
+* add header for CLI check ([#8](https://github.com/twinfoundation/dlt/issues/8)) ([0b9f271](https://github.com/twinfoundation/dlt/commit/0b9f2711fb3a9eb859e481725bfa1e2139e14053))
+* add validate-locales ([8465099](https://github.com/twinfoundation/dlt/commit/8465099626ab1891d419a35870fae447efc3008d))
+* bytecode change detection ([#43](https://github.com/twinfoundation/dlt/issues/43)) ([528469c](https://github.com/twinfoundation/dlt/commit/528469c1e4f032c6a936a9724a692abe403d92f6))
+* consolidate environment management ([#41](https://github.com/twinfoundation/dlt/issues/41)) ([add1618](https://github.com/twinfoundation/dlt/commit/add161828e5dc42880fb0a5f9d3e61e611cf92bb))
+* eslint migration to flat config ([83b56f0](https://github.com/twinfoundation/dlt/commit/83b56f02b1483f77c5f4cb9d7a1c345c56631333))
+* eslint migration to flat config ([da1d12d](https://github.com/twinfoundation/dlt/commit/da1d12dcf5b24e7ba6204f540c27de191bca098e))
+* methods for alias handling and tests ([#38](https://github.com/twinfoundation/dlt/issues/38)) ([43e0062](https://github.com/twinfoundation/dlt/commit/43e006220b4cf3df1aceb52b62178be0395ede00))
+* move to json build deploy commands ([#30](https://github.com/twinfoundation/dlt/issues/30)) ([91aa00a](https://github.com/twinfoundation/dlt/commit/91aa00a29a8d7e3a99a46cea89e879a12dffc188))
+* remove local error handling as CLI base already handles this ([fc5a083](https://github.com/twinfoundation/dlt/commit/fc5a083303f8c92cc264f782a2d292436da18031))
+* update dependencies ([f7b71c2](https://github.com/twinfoundation/dlt/commit/f7b71c24274b71e2d37c26c4a7e5e6d9df1dc9b7))
+* update framework core ([79fc4b9](https://github.com/twinfoundation/dlt/commit/79fc4b961bd755437cad98d733ca9e25476bc03f))
+* upgrade capabilities ([#32](https://github.com/twinfoundation/dlt/issues/32)) ([437219f](https://github.com/twinfoundation/dlt/commit/437219f0f784ec38353c01e1c8ce6bfba3b1b530))
+* use new CLIParam.arrayOnOf ([1f6458a](https://github.com/twinfoundation/dlt/commit/1f6458a44486dfa5ddbf61bd63b85a98ec561728))
+* use shared store mechanism ([#10](https://github.com/twinfoundation/dlt/issues/10)) ([ce36214](https://github.com/twinfoundation/dlt/commit/ce36214577f02cbb9642f831cb2c21335c31cc9a))
+
+
+### Bug Fixes
+
+* adding dependencies ([#45](https://github.com/twinfoundation/dlt/issues/45)) ([969f598](https://github.com/twinfoundation/dlt/commit/969f59807a0a0585dfe7d078b2cb38f197afb5d6))
+* docs ([cade544](https://github.com/twinfoundation/dlt/commit/cade5443a4b955d592c1622f07499ad8a3d554b6))
+* i18n messages ([4b61495](https://github.com/twinfoundation/dlt/commit/4b614957ea84d8af43345892cae3256dfa457483))
+* modifying logging type param ([#36](https://github.com/twinfoundation/dlt/issues/36)) ([b884fcc](https://github.com/twinfoundation/dlt/commit/b884fccef5bea5c6818cf8bfa8af197d3622cac6))
+* update console output ([8cb193e](https://github.com/twinfoundation/dlt/commit/8cb193e2704e1e391d4c3c5899b765ca12471ef3))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/dlt-iota bumped from 0.0.3-next.0 to 0.0.3-next.1
+
+## [0.0.2-next.11](https://github.com/twinfoundation/dlt/compare/move-to-json-v0.0.2-next.10...move-to-json-v0.0.2-next.11) (2025-10-09)
+
+
+### Features
+
+* add validate-locales ([8465099](https://github.com/twinfoundation/dlt/commit/8465099626ab1891d419a35870fae447efc3008d))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/dlt-iota bumped from 0.0.2-next.10 to 0.0.2-next.11
+
+## [0.0.2-next.10](https://github.com/twinfoundation/dlt/compare/move-to-json-v0.0.2-next.9...move-to-json-v0.0.2-next.10) (2025-09-29)
+
+
+### Bug Fixes
+
+* adding dependencies ([#45](https://github.com/twinfoundation/dlt/issues/45)) ([969f598](https://github.com/twinfoundation/dlt/commit/969f59807a0a0585dfe7d078b2cb38f197afb5d6))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/dlt-iota bumped from 0.0.2-next.9 to 0.0.2-next.10
+
 ## [0.0.2-next.9](https://github.com/twinfoundation/dlt/compare/move-to-json-v0.0.2-next.8...move-to-json-v0.0.2-next.9) (2025-09-22)
 
 

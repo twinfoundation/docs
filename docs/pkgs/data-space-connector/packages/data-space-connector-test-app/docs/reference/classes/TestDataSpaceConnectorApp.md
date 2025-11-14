@@ -10,15 +10,15 @@ Test App Activity Handler.
 
 ### Constructor
 
-> **new TestDataSpaceConnectorApp**(`options`): `TestDataSpaceConnectorApp`
+> **new TestDataSpaceConnectorApp**(`options?`): `TestDataSpaceConnectorApp`
 
-Constructor options.
+Create a new instance of TestDataSpaceConnectorApp.
 
 #### Parameters
 
-##### options
+##### options?
 
-`IDataSpaceConnectorAppConstructorOptions`
+[`ITestAppConstructorOptions`](../interfaces/ITestAppConstructorOptions.md)
 
 The constructor options.
 
@@ -28,17 +28,117 @@ The constructor options.
 
 ## Properties
 
+### APP\_ID
+
+> `readonly` `static` **APP\_ID**: `"https://twin.example.org/app1"` = `"https://twin.example.org/app1"`
+
+App Name.
+
+***
+
 ### CLASS\_NAME
 
-> `readonly` **CLASS\_NAME**: `string`
+> `readonly` `static` **CLASS\_NAME**: `string`
 
 Runtime name for the class.
 
+## Methods
+
+### className()
+
+> **className**(): `string`
+
+Returns the class name of the component.
+
+#### Returns
+
+`string`
+
+The class name of the component.
+
 #### Implementation of
 
-`IDataSpaceConnectorApp.CLASS_NAME`
+`IDataSpaceConnectorApp.className`
 
-## Methods
+***
+
+### dataServicesHandled()
+
+> **dataServicesHandled**(): `IDataAssetQuery`[]
+
+Data Services handled.
+
+#### Returns
+
+`IDataAssetQuery`[]
+
+Ids.
+
+#### Implementation of
+
+`IDataSpaceConnectorApp.dataServicesHandled`
+
+***
+
+### supportedQueryTypes()
+
+> **supportedQueryTypes**(): `string`[]
+
+Supported query types.
+
+#### Returns
+
+`string`[]
+
+Types.
+
+#### Implementation of
+
+`IDataSpaceConnectorApp.supportedQueryTypes`
+
+***
+
+### start()
+
+> **start**(`nodeLoggingComponentType?`): `Promise`\<`void`\>
+
+Start method.
+
+#### Parameters
+
+##### nodeLoggingComponentType?
+
+`string`
+
+the logging component type of such a node.
+
+#### Returns
+
+`Promise`\<`void`\>
+
+#### Implementation of
+
+`IDataSpaceConnectorApp.start`
+
+***
+
+### activitiesHandled()
+
+> **activitiesHandled**(): `IActivityQuery`[]
+
+The activities handled by the App.
+
+#### Returns
+
+`IActivityQuery`[]
+
+The activities handled by the App.
+
+#### Implementation of
+
+`IDataSpaceConnectorApp.activitiesHandled`
+
+***
 
 ### handleActivity()
 
@@ -69,3 +169,29 @@ Activity processing result
 #### Implementation of
 
 `IDataSpaceConnectorApp.handleActivity`
+
+***
+
+### handleDataRequest()
+
+> **handleDataRequest**(`dataRequest`): `Promise`\<\{ `data`: `IJsonLdDocument`; `cursor?`: `string`; \}\>
+
+Handles the Data Request.
+
+#### Parameters
+
+##### dataRequest
+
+`IDataRequest`
+
+The data request
+
+#### Returns
+
+`Promise`\<\{ `data`: `IJsonLdDocument`; `cursor?`: `string`; \}\>
+
+the Data.
+
+#### Implementation of
+
+`IDataSpaceConnectorApp.handleDataRequest`

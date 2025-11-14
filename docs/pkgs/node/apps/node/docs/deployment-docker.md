@@ -6,7 +6,7 @@ To run the API server in the docker environment there is an example dockerfile i
 
 ```shell
 # Set the base image
-FROM node:20
+FROM node:22
 
 # Create the app directory
 WORKDIR /app
@@ -14,95 +14,100 @@ WORKDIR /app
 # Copy the package.json
 COPY package.json .
 
-# Install only the production dependencies
-RUN npm install --omit=dev --ignore-scripts
+# Install dependencies including dev dependencies needed for merge-locales
+RUN npm install --ignore-scripts
 
 # Copy the rest of the files to the image
 COPY . .
+
+# Compile translation messages
+RUN npm run merge-locales
+
+# Remove dev dependencies to reduce image size
+RUN npm prune --omit=dev
 
 # Expose the port the app runs on
 EXPOSE 3000
 
 # Set the environment variables that will override the .env file in the package
-ENV TWIN_NODE_HOST=0.0.0.0
-ENV TWIN_NODE_PORT=3000
-ENV TWIN_NODE_STORAGE_FILE_ROOT=/twin-node/data
+ENV TWIN_HOST=0.0.0.0
+ENV TWIN_PORT=3000
+ENV TWIN_STORAGE_FILE_ROOT=/twin-node/data
 
 # Start the server
-CMD ["node", "dist/es/index.js"]
+CMD ["node", "src/index.mjs"]
 ```
 
 You can build and execute this using docker from the root of the package with the following command.
 
 ```shell
-docker build -t twin-node -f deploy/dockerfile .
+docker build -t twin-node -f deploy/dockerfile . --load
 ```
 
-This will build and deploy an image called `twin-node` to your docker server.
+> **Note**: The `--load` flag is required when using Docker Buildx to ensure the image is loaded into your local Docker registry. Without it, the image will only exist in the build cache.
+
+This will build and deploy an image called `twin-node` to your local docker server.
 
 ## Bootstrapping
 
-Whenever the server starts it bootstraps all the components. Components can store state during the bootstrap process so they can determine if they need to bootstrap elements or not. If you have any entity storage configured to use `file` storage you should map a directory on the local host to contain the data, so that it remains persistent.
+Whenever the server starts it bootstraps all the components. If you have any entity storage configured to use `file` storage you should map a directory on the local host to contain the data, so that it remains persistent.
 
 ```shell
 docker run -t -i -v /home/twin-node/data:/twin-node/data -p 3000:3000 twin-node
 ```
 
-This example will map the local directory `/home/twin-node/data` and make it available in the docker container as `/twin-node/data` which is used to configure file entity storage using the environment variable `TWIN_NODE_STORAGE_FILE_ROOT`.
+This example will map the local directory `/home/twin-node/data` and make it available in the docker container as `/twin-node/data` which is used to configure file entity storage using the environment variable `TWIN_STORAGE_FILE_ROOT`.
 
 The output from the docker container should be something like the following.
 
 ```shell
-🌩️ TWIN Node Server v1.0.0
+🌩️  TWIN Node Server v1.0.0
 
-.....
+Execution Directory: /app
+Locales Directory: /app/dist/locales
+Locales File: /app/dist/locales/en.json
+OpenAPI Spec File: /app/docs/open-api/spec.json
+Favicon File: /app/static/favicon.ico
+Environment Variable Prefix: TWIN_
+Default Environment File: /app/.env
 
-➡️  Starting bootstrap process
-
-INFO [2024-08-08T06:36:15.925Z] Bootstrap FileEntityStorageConnector
-INFO [2024-08-08T06:36:15.926Z] Creating directory "/twin-node/data/vault-key"
-INFO [2024-08-08T06:36:15.927Z] Created directory "/twin-node/data/vault-key"
-INFO [2024-08-08T06:36:15.928Z] Bootstrap FileEntityStorageConnector
-INFO [2024-08-08T06:36:15.928Z] Creating directory "/twin-node/data/vault-secret"
-INFO [2024-08-08T06:36:15.928Z] Created directory "/twin-node/data/vault-secret"
-INFO [2024-08-08T06:36:15.929Z] Bootstrap FileEntityStorageConnector
-INFO [2024-08-08T06:36:15.929Z] Creating directory "/twin-node/data/wallet-address"
-INFO [2024-08-08T06:36:15.929Z] Created directory "/twin-node/data/wallet-address"
-INFO [2024-08-08T06:36:15.930Z] Bootstrap FileEntityStorageConnector
-INFO [2024-08-08T06:36:15.930Z] Creating directory "/twin-node/data/identity-document"
-INFO [2024-08-08T06:36:15.930Z] Created directory "/twin-node/data/identity-document"
-INFO [2024-08-08T06:36:15.930Z] Bootstrap FileEntityStorageConnector
-INFO [2024-08-08T06:36:15.931Z] Creating directory "/twin-node/data/identity-profile"
-INFO [2024-08-08T06:36:15.932Z] Created directory "/twin-node/data/identity-profile"
-INFO [2024-08-08T06:36:15.932Z] Bootstrap FileEntityStorageConnector
-INFO [2024-08-08T06:36:15.932Z] Creating directory "/twin-node/data/log-entry"
-INFO [2024-08-08T06:36:15.932Z] Created directory "/twin-node/data/log-entry"
-INFO [2024-08-08T06:36:15.933Z] Bootstrap FileEntityStorageConnector
-INFO [2024-08-08T06:36:15.933Z] Creating directory "/twin-node/data/telemetry-metric"
-INFO [2024-08-08T06:36:15.933Z] Created directory "/twin-node/data/telemetry-metric"
-INFO [2024-08-08T06:36:15.934Z] Bootstrap FileEntityStorageConnector
-INFO [2024-08-08T06:36:15.934Z] Creating directory "/twin-node/data/telemetry-metric-value"
-INFO [2024-08-08T06:36:15.934Z] Created directory "/twin-node/data/telemetry-metric-value"
-INFO [2024-08-08T06:36:15.935Z] Bootstrap FileBlobStorageConnector
-INFO [2024-08-08T06:36:15.935Z] Creating directory "/twin-node/data/blob-storage"
-INFO [2024-08-08T06:36:15.935Z] Created directory "/twin-node/data/blob-storage"
-INFO [2024-08-08T06:36:15.935Z] Bootstrap FileEntityStorageConnector
-INFO [2024-08-08T06:36:15.936Z] Creating directory "/twin-node/data/nft"
-INFO [2024-08-08T06:36:15.936Z] Created directory "/twin-node/data/nft"
-INFO [2024-08-08T06:36:15.936Z] Bootstrap FileEntityStorageConnector
-INFO [2024-08-08T06:36:15.936Z] Creating directory "/twin-node/data/authentication-user"
-INFO [2024-08-08T06:36:15.937Z] Created directory "/twin-node/data/authentication-user"
-INFO [2024-08-08T06:36:15.938Z] Generating and storing mnemonic "educate short size soup enact faculty brother move purity robust dose toy crumble jazz lunar hospital response pepper nice ice movie post used icon"
-INFO [2024-08-08T06:36:16.016Z] Funding wallet "ent1qqc8saacg65385catgeke7ph36z05cdmwuatekkuqp9n0u5rmzjkq7exhrg"
-INFO [2024-08-08T06:36:16.017Z] Generating node identity
-INFO [2024-08-08T06:36:16.050Z] Adding attestation verification method
-INFO [2024-08-08T06:36:16.075Z] Node identity "did:entity-storage:0xad375455c60b6e6df5f0fbf42d1224732756484dd64758dc9b3d71aa9c6478ed"
-INFO [2024-08-08T06:36:16.085Z] Node User Email "admin@node"
-INFO [2024-08-08T06:36:16.085Z] Node User Password "MFCUApWEdgr0R4&C"
-INFO [2024-08-08T06:36:16.087Z] Node configuration created in "engine-state.json", some of these details will not be shown again, please record them
-
-➡️  Writing JSON file: /twin-node/data/engine-state.json
-➡️  Bootstrap process complete, some of the details logged will not be shown again, please record them
+INFO [2025-10-03T01:23:42.634Z] EngineCore Engine is starting
+INFO [2025-10-03T01:23:42.635Z] EngineCore Debugging is enabled
+INFO [2025-10-03T01:23:42.636Z] EngineCore Loading state from file storage with filename "twin-node/data/engine-state.json"
+INFO [2025-10-03T01:23:42.637Z] EngineCore Configuring loggingConnector: console
+INFO [2025-10-03T01:23:42.637Z] EngineCore Configuring loggingConnector: entity-storage
+INFO [2025-10-03T01:23:42.638Z] EngineCore Configuring Entity Storage with name "log-entry" using "file" connector
+INFO [2025-10-03T01:23:42.638Z] EngineCore Configuring loggingConnector: multi
+INFO [2025-10-03T01:23:42.638Z] EngineCore Configuring loggingComponent: service
+...
+INFO [2025-10-03T01:23:42.655Z] EngineCore Bootstrap started
+...
+INFO [2025-10-03T01:23:42.662Z] EngineCore Generating mnemonic "weird focus prevent jewel enemy reveal supply dove then swallow topple goose case over endless garage width panic learn ask close fault immune shadow"
+INFO [2025-10-03T01:23:42.662Z] EngineCore Storing mnemonic
+INFO [2025-10-03T01:23:43.912Z] EngineCore Funding wallet "https://explorer.iota.org/address/0x69d531810657960fa07d346cb9bb7003e016e38c0b7486607002a10990ea0dd9?network=testnet"
+INFO [2025-10-03T01:23:46.547Z] EngineCore Generating node identity
+INFO [2025-10-03T01:23:49.584Z] EngineCore Node identity created "did:iota:testnet:0xc7aa88cd54c8c90fc1cbe5927b3e2fe33d478ca7b6b058020c0d87e8f88fac82"
+INFO [2025-10-03T01:23:49.585Z] EngineCore Identity explorer "https://explorer.iota.org/object/0xc7aa88cd54c8c90fc1cbe5927b3e2fe33d478ca7b6b058020c0d87e8f88fac82?network=testnet"
+INFO [2025-10-03T01:23:49.595Z] EngineCore Node identity "did:iota:testnet:0xc7aa88cd54c8c90fc1cbe5927b3e2fe33d478ca7b6b058020c0d87e8f88fac82"
+INFO [2025-10-03T01:23:49.596Z] EngineCore Creating node user "admin@node"
+INFO [2025-10-03T01:23:49.597Z] EngineCore Node Admin User Email "admin@node"
+INFO [2025-10-03T01:23:49.597Z] EngineCore Node Admin User Password "ayc^YC31TF%BVshQ"
+INFO [2025-10-03T01:23:49.600Z] EngineCore Creating user profile "did:iota:testnet:0xc7aa88cd54c8c90fc1cbe5927b3e2fe33d478ca7b6b058020c0d87e8f88fac82"
+INFO [2025-10-03T01:23:49.601Z] EngineCore Creating authentication key "did:iota:testnet:0xc7aa88cd54c8c90fc1cbe5927b3e2fe33d478ca7b6b058020c0d87e8f88fac82/auth-signing"
+INFO [2025-10-03T01:23:49.617Z] EngineCore Creating blob encryption key "did:iota:testnet:0xc7aa88cd54c8c90fc1cbe5927b3e2fe33d478ca7b6b058020c0d87e8f88fac82/blob-encryption"
+INFO [2025-10-03T01:23:49.624Z] EngineCore Created blob encryption key "did:iota:testnet:0xc7aa88cd54c8c90fc1cbe5927b3e2fe33d478ca7b6b058020c0d87e8f88fac82/blob-encryption" with value "4+S7bupEk/vLVhGxjKJ3jWw3uKo+3JsF8wYoB5B59bc="
+INFO [2025-10-03T01:23:50.314Z] EngineCore Adding attestation verification method "did:iota:testnet:0xc7aa88cd54c8c90fc1cbe5927b3e2fe33d478ca7b6b058020c0d87e8f88fac82#attestation-assertion"
+INFO [2025-10-03T01:23:56.408Z] EngineCore Adding immutable proof verification method "did:iota:testnet:0xc7aa88cd54c8c90fc1cbe5927b3e2fe33d478ca7b6b058020c0d87e8f88fac82#immutable-proof-assertion"
+INFO [2025-10-03T01:24:01.772Z] EngineCore Bootstrap complete
+INFO [2025-10-03T01:24:01.773Z] EngineCore Components are starting
+...
+INFO [2025-10-03T01:24:02.476Z] EngineCore Components have started
+INFO [2025-10-03T01:24:02.476Z] EngineCore Engine has started
+INFO [2025-10-03T01:24:02.477Z] EngineCore Saving state to file storage with filename "twin-node/data/engine-state.json"
+INFO [2025-10-03T01:24:02.496Z] FastifyWebServer Building Web Server
+...
+INFO [2025-10-03T01:24:03.111Z] FastifyWebServer Starting Web Server at address "0.0.0.0" on port "3000"
+INFO [2025-10-03T01:24:03.128Z] FastifyWebServer The Web Server started on http://0.0.0.0:3000
 ```
 
 You will see it generated a node admin user with password for future use, these should be recorded as they will not be made visible again.
@@ -120,36 +125,47 @@ docker run -t -i -v /home/twin-node/data:/twin-node/data -p 3000:3000 twin-node
 You should now see output similar to the following:
 
 ```shell
-🌩️ TWIN Node Server v1.0.0
+🌩️  TWIN Node Server v1.0.0
 
-Debugging Enabled: true
+Execution Directory: /app
+Locales Directory: /app/dist/locales
+Locales File: /app/dist/locales/en.json
+OpenAPI Spec File: /app/docs/open-api/spec.json
+Favicon File: /app/static/favicon.ico
+Environment Variable Prefix: TWIN_
+Default Environment File: /app/.env
 
-INFO [2024-07-24T08:43:02.989Z] Configuring Information Service
-INFO [2024-07-24T08:43:02.992Z] Configuring Vault Connector Factory
-INFO [2024-07-24T08:43:02.993Z] Configuring Entity Storage with name "vault-key" using "file" connector
-INFO [2024-07-24T08:43:02.993Z] Configuring Entity Storage with name "vault-secret" using "file" connector
-INFO [2024-07-24T08:43:02.993Z] Configuring Identity Connector Factory
-INFO [2024-07-24T08:43:02.994Z] Configuring Entity Storage with name "identity-document" using "file" connector
-INFO [2024-07-24T08:43:02.994Z] Configuring Identity Service
-INFO [2024-07-24T08:43:02.994Z] Configuring Entity Storage with name "identity-profile" using "file" connector
-INFO [2024-07-24T08:43:02.995Z] Configuring Entity Storage with name "authentication-user" using "file" connector
-INFO [2024-07-24T08:43:02.995Z] Starting InformationService
-INFO [2024-07-24T08:43:02.997Z] Starting EntityStorageAuthenticationService
-INFO [2024-07-24T08:43:02.998Z] Starting EntityStorageAuthenticationProcessor
-INFO [2024-07-24T08:43:03.002Z] Building Web Server
-INFO [2024-07-24T08:43:03.008Z] Added REST route "/" "GET"
-INFO [2024-07-24T08:43:03.009Z] Added REST route "/info" "GET"
-INFO [2024-07-24T08:43:03.009Z] Added REST route "/health" "GET"
-INFO [2024-07-24T08:43:03.010Z] Added REST route "/spec" "GET"
-INFO [2024-07-24T08:43:03.010Z] Added REST route "/authentication/login" "POST"
-INFO [2024-07-24T08:43:03.010Z] Added REST route "/identity" "POST"
-INFO [2024-07-24T08:43:03.011Z] Added REST route "/identity/profile" "POST"
-INFO [2024-07-24T08:43:03.011Z] Added REST route "/identity/profile/:identity" "GET"
-INFO [2024-07-24T08:43:03.012Z] Added REST route "/identity/profile/:identity" "PUT"
-INFO [2024-07-24T08:43:03.012Z] Added REST route "/identity/profile/:identity" "DELETE"
-INFO [2024-07-24T08:43:03.013Z] Added REST route "/identity/profile" "GET"
-INFO [2024-07-24T08:43:03.013Z] Starting Web Server at address "0.0.0.0" on port "3000"
-INFO [2024-07-24T08:43:03.017Z] The Web Server started on http://0.0.0.0:3000
+INFO [2025-10-03T01:23:42.634Z] EngineCore Engine is starting
+INFO [2025-10-03T01:23:42.635Z] EngineCore Debugging is enabled
+INFO [2025-10-03T01:23:42.636Z] EngineCore Loading state from file storage with filename "twin-node/data/engine-state.json"
+INFO [2025-10-03T01:23:42.637Z] EngineCore Configuring loggingConnector: console
+INFO [2025-10-03T01:23:42.637Z] EngineCore Configuring loggingConnector: entity-storage
+INFO [2025-10-03T01:23:42.638Z] EngineCore Configuring Entity Storage with name "log-entry" using "file" connector
+INFO [2025-10-03T01:23:42.638Z] EngineCore Configuring loggingConnector: multi
+INFO [2025-10-03T01:23:42.638Z] EngineCore Configuring loggingComponent: service
+...
+INFO [2025-10-03T01:23:42.655Z] EngineCore Bootstrap started
+...
+INFO [2025-10-03T01:27:34.331Z] EngineCore Wallet already funded
+INFO [2025-10-03T01:27:35.064Z] EngineCore Node identity already exists "did:iota:testnet:0xc7aa88cd54c8c90fc1cbe5927b3e2fe33d478ca7b6b058020c0d87e8f88fac82"
+INFO [2025-10-03T01:27:35.065Z] EngineCore Identity explorer "https://explorer.iota.org/object/0xc7aa88cd54c8c90fc1cbe5927b3e2fe33d478ca7b6b058020c0d87e8f88fac82?network=testnet"
+INFO [2025-10-03T01:27:35.065Z] EngineCore Node identity "did:iota:testnet:0xc7aa88cd54c8c90fc1cbe5927b3e2fe33d478ca7b6b058020c0d87e8f88fac82"
+INFO [2025-10-03T01:27:35.066Z] EngineCore Node user already exists "admin@node"
+INFO [2025-10-03T01:27:35.066Z] EngineCore User profile already exists "did:iota:testnet:0xc7aa88cd54c8c90fc1cbe5927b3e2fe33d478ca7b6b058020c0d87e8f88fac82"
+INFO [2025-10-03T01:27:35.067Z] EngineCore Authentication key already exists "did:iota:testnet:0xc7aa88cd54c8c90fc1cbe5927b3e2fe33d478ca7b6b058020c0d87e8f88fac82/auth-signing"
+INFO [2025-10-03T01:27:35.067Z] EngineCore Blob encryption key already exists "did:iota:testnet:0xc7aa88cd54c8c90fc1cbe5927b3e2fe33d478ca7b6b058020c0d87e8f88fac82/blob-encryption"
+INFO [2025-10-03T01:27:35.807Z] EngineCore Verification method for attestation already exists "did:iota:testnet:0xc7aa88cd54c8c90fc1cbe5927b3e2fe33d478ca7b6b058020c0d87e8f88fac82#attestation-assertion"
+INFO [2025-10-03T01:27:36.512Z] EngineCore Verification method for immutable proof already exists "did:iota:testnet:0xc7aa88cd54c8c90fc1cbe5927b3e2fe33d478ca7b6b058020c0d87e8f88fac82#immutable-proof-assertion"
+INFO [2025-10-03T01:27:36.512Z] EngineCore Bootstrap complete
+INFO [2025-10-03T01:24:01.773Z] EngineCore Components are starting
+...
+INFO [2025-10-03T01:24:02.476Z] EngineCore Components have started
+INFO [2025-10-03T01:24:02.476Z] EngineCore Engine has started
+INFO [2025-10-03T01:24:02.477Z] EngineCore Saving state to file storage with filename "twin-node/data/engine-state.json"
+INFO [2025-10-03T01:24:02.496Z] FastifyWebServer Building Web Server
+...
+INFO [2025-10-03T01:24:03.111Z] FastifyWebServer Starting Web Server at address "0.0.0.0" on port "3000"
+INFO [2025-10-03T01:24:03.128Z] FastifyWebServer The Web Server started on http://0.0.0.0:3000
 ```
 
 You should now be able to access the server in the browser [http://localhost:3000/info](http://localhost:3000/info).

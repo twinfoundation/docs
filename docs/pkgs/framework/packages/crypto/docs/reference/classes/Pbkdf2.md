@@ -12,6 +12,14 @@ Implementation of the password based key derivation function 2.
 
 `Pbkdf2`
 
+## Properties
+
+### CLASS\_NAME
+
+> `readonly` `static` **CLASS\_NAME**: `string`
+
+Runtime name for the class.
+
 ## Methods
 
 ### sha256()

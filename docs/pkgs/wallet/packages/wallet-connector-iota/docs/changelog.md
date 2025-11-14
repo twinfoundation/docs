@@ -1,5 +1,48 @@
 # @twin.org/wallet-connector-iota - Changelog
 
+## [0.0.3-next.1](https://github.com/twinfoundation/wallet/compare/wallet-connector-iota-v0.0.3-next.0...wallet-connector-iota-v0.0.3-next.1) (2025-11-11)
+
+
+### Features
+
+* add context id features ([#46](https://github.com/twinfoundation/wallet/issues/46)) ([9389c28](https://github.com/twinfoundation/wallet/commit/9389c28084656666d04ed82575cbc8d3fa9f0d88))
+* add validate-locales ([e5200c2](https://github.com/twinfoundation/wallet/commit/e5200c279de60592b64eeb64279fa8ed289a677f))
+* eslint migration to flat config ([7068485](https://github.com/twinfoundation/wallet/commit/7068485f7c10121b76b6219798fdea4d3e91648a))
+* github action simplification, readme update and tests inclution ([#33](https://github.com/twinfoundation/wallet/issues/33)) ([685bf01](https://github.com/twinfoundation/wallet/commit/685bf010c4276a37cb85c22762cbdbe3fe7cdc1a))
+* iota rebased release ([d0c617d](https://github.com/twinfoundation/wallet/commit/d0c617d894f3663f7c80f7d53d2da858a0bd64f0))
+* remove bech32 encoding for addresses ([869ef88](https://github.com/twinfoundation/wallet/commit/869ef8830eab0bcea6bc748f3bc637fc311e0709))
+* update dependencies ([4b47a7d](https://github.com/twinfoundation/wallet/commit/4b47a7d900d72d1502d6db54cb391a954818478b))
+* update framework core ([1c8a381](https://github.com/twinfoundation/wallet/commit/1c8a381e3c0544803a98db5560d87087fd095c23))
+* use new dlt features ([8c2433d](https://github.com/twinfoundation/wallet/commit/8c2433dff71a8b49861d21809808abebb724ad4a))
+* use shared store mechanism ([#27](https://github.com/twinfoundation/wallet/issues/27)) ([2ba7861](https://github.com/twinfoundation/wallet/commit/2ba7861a2a610cf83396a3285c7bbaebe5a31551))
+
+
+### Bug Fixes
+
+* improve handling of faucet rate limit errors in tests ([bcb241c](https://github.com/twinfoundation/wallet/commit/bcb241ca50679263f7c894a421a279b368bd0eeb))
+* missing env on gha ([#35](https://github.com/twinfoundation/wallet/issues/35)) ([4667d0d](https://github.com/twinfoundation/wallet/commit/4667d0d09d3af8b5bb29beca718fa6fad4ab9ed0))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/wallet-models bumped from 0.0.3-next.0 to 0.0.3-next.1
+
+## [0.0.2-next.5](https://github.com/twinfoundation/wallet/compare/wallet-connector-iota-v0.0.2-next.4...wallet-connector-iota-v0.0.2-next.5) (2025-10-09)
+
+
+### Features
+
+* add validate-locales ([e5200c2](https://github.com/twinfoundation/wallet/commit/e5200c279de60592b64eeb64279fa8ed289a677f))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/wallet-models bumped from 0.0.2-next.4 to 0.0.2-next.5
+
 ## [0.0.2-next.4](https://github.com/twinfoundation/wallet/compare/wallet-connector-iota-v0.0.2-next.3...wallet-connector-iota-v0.0.2-next.4) (2025-08-29)
 
 

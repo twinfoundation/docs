@@ -1,5 +1,58 @@
 # @twin.org/data-processing-extractors - Changelog
 
+## [0.0.3-next.1](https://github.com/twinfoundation/data-processing/compare/data-processing-extractors-v0.0.3-next.0...data-processing-extractors-v0.0.3-next.1) (2025-11-11)
+
+
+### Features
+
+* add context id features ([#25](https://github.com/twinfoundation/data-processing/issues/25)) ([2a2a955](https://github.com/twinfoundation/data-processing/commit/2a2a9559d54e8c703e97e2c05996e678416ef560))
+* Add rule group query functionality ([#2](https://github.com/twinfoundation/data-processing/issues/2)) ([0fbbfb0](https://github.com/twinfoundation/data-processing/commit/0fbbfb065b6ecc293920b25f97ba011743105486))
+* add validate-locales ([9af0874](https://github.com/twinfoundation/data-processing/commit/9af0874cd3f44a4cfca514dde8380f002e62337e))
+* eslint migration to flat config ([a8138b0](https://github.com/twinfoundation/data-processing/commit/a8138b020ed58baeff162a822d4df207a6aeadc4))
+* update dependencies ([21b8e80](https://github.com/twinfoundation/data-processing/commit/21b8e8007c87136a09f0a8e35ffde13a07ff4711))
+* update framework core ([96f6e80](https://github.com/twinfoundation/data-processing/commit/96f6e8016a4ef0fb873f6775e750b4ab42e9f491))
+* use shared store mechanism ([#6](https://github.com/twinfoundation/data-processing/issues/6)) ([6009228](https://github.com/twinfoundation/data-processing/commit/600922880acef07cc2f818dee7645c342929108b))
+
+
+### Bug Fixes
+
+* supporting array usage ([#20](https://github.com/twinfoundation/data-processing/issues/20)) ([d2c68cd](https://github.com/twinfoundation/data-processing/commit/d2c68cd3983622586cc073377545d6416b87a827))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/data-processing-models bumped from 0.0.3-next.0 to 0.0.3-next.1
+
+## [0.0.2-next.4](https://github.com/twinfoundation/data-processing/compare/data-processing-extractors-v0.0.2-next.3...data-processing-extractors-v0.0.2-next.4) (2025-10-22)
+
+
+### Bug Fixes
+
+* supporting array usage ([#20](https://github.com/twinfoundation/data-processing/issues/20)) ([d2c68cd](https://github.com/twinfoundation/data-processing/commit/d2c68cd3983622586cc073377545d6416b87a827))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/data-processing-models bumped from 0.0.2-next.3 to 0.0.2-next.4
+
+## [0.0.2-next.3](https://github.com/twinfoundation/data-processing/compare/data-processing-extractors-v0.0.2-next.2...data-processing-extractors-v0.0.2-next.3) (2025-10-09)
+
+
+### Features
+
+* add validate-locales ([9af0874](https://github.com/twinfoundation/data-processing/commit/9af0874cd3f44a4cfca514dde8380f002e62337e))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/data-processing-models bumped from 0.0.2-next.2 to 0.0.2-next.3
+
 ## [0.0.2-next.2](https://github.com/twinfoundation/data-processing/compare/data-processing-extractors-v0.0.2-next.1...data-processing-extractors-v0.0.2-next.2) (2025-08-29)
 
 

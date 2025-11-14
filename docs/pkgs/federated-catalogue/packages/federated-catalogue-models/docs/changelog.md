@@ -1,5 +1,52 @@
 # @twin.org/federated-catalogue-models - Changelog
 
+## [0.0.3-next.1](https://github.com/twinfoundation/federated-catalogue/compare/federated-catalogue-models-v0.0.3-next.0...federated-catalogue-models-v0.0.3-next.1) (2025-11-12)
+
+
+### Features
+
+* add context id features ([#32](https://github.com/twinfoundation/federated-catalogue/issues/32)) ([277e64b](https://github.com/twinfoundation/federated-catalogue/commit/277e64bb507db0948e83c44e8282e09f1865fe0b))
+* add data types with fully qualified names ([993eb09](https://github.com/twinfoundation/federated-catalogue/commit/993eb09e25f6caad5d82a3908a2ba648900f5ca7))
+* add validate-locales ([3d8d60d](https://github.com/twinfoundation/federated-catalogue/commit/3d8d60d9291e5a6f8c6d4562d6a862456a9917bc))
+* consistent component naming with other repos ([83fc03d](https://github.com/twinfoundation/federated-catalogue/commit/83fc03dee3846600ae6a45d710248a0ae60af570))
+* eslint migration to flat config ([b5990d9](https://github.com/twinfoundation/federated-catalogue/commit/b5990d9ebdf403ac999da456052bee72787745de))
+* simplify node ([e80db0e](https://github.com/twinfoundation/federated-catalogue/commit/e80db0e1b4935daaa7ff7d4343280efaa6250bf8))
+* synchronise with gaia-x types ([3e0d7f2](https://github.com/twinfoundation/federated-catalogue/commit/3e0d7f2f277ec0adef79d71165b6db778e15e315))
+* update dependencies ([24ff3d7](https://github.com/twinfoundation/federated-catalogue/commit/24ff3d772cf7bd7f60547c5b314355e75ba55424))
+* update framework core ([68293b6](https://github.com/twinfoundation/federated-catalogue/commit/68293b68aaf594d51431b942fa91e7cf7020a8d7))
+* update schemas ([58d8581](https://github.com/twinfoundation/federated-catalogue/commit/58d85813231f6576490937d4394e7be0f6d8c58d))
+* update to latest framework components ([aa30543](https://github.com/twinfoundation/federated-catalogue/commit/aa30543cef1309769d359d64fba0a85db490d69b))
+* update ts-to-schema generation ([41bdde7](https://github.com/twinfoundation/federated-catalogue/commit/41bdde7ff9f0cfa1ea4376b7a952bbaed9988d0a))
+* version 0 federated catalogue ([#2](https://github.com/twinfoundation/federated-catalogue/issues/2)) ([93fb8bd](https://github.com/twinfoundation/federated-catalogue/commit/93fb8bdbb03aa781ef9e8dc4053beea1b397cc36))
+
+
+### Bug Fixes
+
+* broken docs ([4588d86](https://github.com/twinfoundation/federated-catalogue/commit/4588d861575522da5374291167d57bacd1b21867))
+* query params force coercion ([a532329](https://github.com/twinfoundation/federated-catalogue/commit/a532329089b2b95c7f18cd8bd56ee47482755dc0))
+
+## [0.0.2-next.6](https://github.com/twinfoundation/federated-catalogue/compare/federated-catalogue-models-v0.0.2-next.5...federated-catalogue-models-v0.0.2-next.6) (2025-10-10)
+
+
+### Miscellaneous Chores
+
+* **federated-catalogue-models:** Synchronize repo versions
+
+## [0.0.2-next.5](https://github.com/twinfoundation/federated-catalogue/compare/federated-catalogue-models-v0.0.2-next.4...federated-catalogue-models-v0.0.2-next.5) (2025-10-09)
+
+
+### Features
+
+* add validate-locales ([3d8d60d](https://github.com/twinfoundation/federated-catalogue/commit/3d8d60d9291e5a6f8c6d4562d6a862456a9917bc))
+* simplify node ([e80db0e](https://github.com/twinfoundation/federated-catalogue/commit/e80db0e1b4935daaa7ff7d4343280efaa6250bf8))
+
+## [0.0.2-next.4](https://github.com/twinfoundation/federated-catalogue/compare/federated-catalogue-models-v0.0.2-next.3...federated-catalogue-models-v0.0.2-next.4) (2025-09-29)
+
+
+### Features
+
+* update to latest framework components ([aa30543](https://github.com/twinfoundation/federated-catalogue/commit/aa30543cef1309769d359d64fba0a85db490d69b))
+
 ## [0.0.2-next.3](https://github.com/twinfoundation/federated-catalogue/compare/federated-catalogue-models-v0.0.2-next.2...federated-catalogue-models-v0.0.2-next.3) (2025-08-29)
 
 

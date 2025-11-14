@@ -139,3 +139,11 @@ The result of the execution.
 > `optional` **error**: `IError`
 
 The error at last execution.
+
+***
+
+### contextIds?
+
+> `optional` **contextIds**: `IContextIds`
+
+The context ids that were set at the point the task was created.

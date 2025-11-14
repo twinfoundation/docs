@@ -24,7 +24,7 @@ Runtime name for the class.
 
 ### toJwk()
 
-> `static` **toJwk**(`multikey`): `IJwk`
+> `static` **toJwk**(`multikey`): `JWK`
 
 Convert a multikey to a JWK.
 
@@ -38,7 +38,7 @@ The multikey to convert.
 
 #### Returns
 
-`IJwk`
+`JWK`
 
 The JWK.
 
@@ -70,7 +70,7 @@ The id of the multikey.
 
 ##### jwk
 
-`IJwk`
+`JWK`
 
 The jwk to convert.
 

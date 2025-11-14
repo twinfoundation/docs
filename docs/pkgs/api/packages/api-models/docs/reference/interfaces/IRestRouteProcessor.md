@@ -30,7 +30,7 @@ The features supported by this processor.
 
 ### pre()?
 
-> `optional` **pre**(`request`, `response`, `route`, `requestIdentity`, `processorState`, `loggingComponentType?`): `Promise`\<`void`\>
+> `optional` **pre**(`request`, `response`, `route`, `contextIds`, `processorState`, `loggingComponentType?`): `Promise`\<`void`\>
 
 Pre process the REST request for the specified route.
 
@@ -52,13 +52,13 @@ The response data to send if any.
 
 The route being requested, if a matching one was found.
 
-`undefined` | [`IRestRoute`](IRestRoute.md)\<`any`, `any`\>
+[`IRestRoute`](IRestRoute.md)\<`any`, `any`\> | `undefined`
 
-##### requestIdentity
+##### contextIds
 
-[`IHttpRequestIdentity`](IHttpRequestIdentity.md)
+`IContextIds`
 
-The identity context for the request.
+The context IDs of the request.
 
 ##### processorState
 
@@ -84,7 +84,7 @@ Promise that resolves when the request is processed.
 
 ### post()?
 
-> `optional` **post**(`request`, `response`, `route`, `requestIdentity`, `processorState`, `loggingComponentType?`): `Promise`\<`void`\>
+> `optional` **post**(`request`, `response`, `route`, `contextIds`, `processorState`, `loggingComponentType?`): `Promise`\<`void`\>
 
 Post process the REST request for the specified route.
 
@@ -106,13 +106,13 @@ The response data to send if any.
 
 The route being requested, if a matching one was found.
 
-`undefined` | [`IRestRoute`](IRestRoute.md)\<`any`, `any`\>
+[`IRestRoute`](IRestRoute.md)\<`any`, `any`\> | `undefined`
 
-##### requestIdentity
+##### contextIds
 
-[`IHttpRequestIdentity`](IHttpRequestIdentity.md)
+`IContextIds`
 
-The identity context for the request.
+The context IDs of the request.
 
 ##### processorState
 
@@ -138,7 +138,7 @@ Promise that resolves when the request is processed.
 
 ### process()?
 
-> `optional` **process**(`request`, `response`, `route`, `requestIdentity`, `processorState`, `loggingComponentType?`): `Promise`\<`void`\>
+> `optional` **process**(`request`, `response`, `route`, `processorState`, `loggingComponentType?`): `Promise`\<`void`\>
 
 Process the REST request for the specified route.
 
@@ -160,13 +160,7 @@ The response data to send if any.
 
 The route being requested, if a matching one was found.
 
-`undefined` | [`IRestRoute`](IRestRoute.md)\<`any`, `any`\>
-
-##### requestIdentity
-
-[`IHttpRequestIdentity`](IHttpRequestIdentity.md)
-
-The identity context for the request.
+[`IRestRoute`](IRestRoute.md)\<`any`, `any`\> | `undefined`
 
 ##### processorState
 

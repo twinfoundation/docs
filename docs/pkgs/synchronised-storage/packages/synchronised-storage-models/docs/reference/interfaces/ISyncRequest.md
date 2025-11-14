@@ -20,8 +20,8 @@ The LD Type for the request.
 
 ***
 
-### nodeIdentity
+### nodeId
 
-> **nodeIdentity**: `string`
+> **nodeId**: `string`
 
 The identity of the node that created the request.

@@ -2,7 +2,7 @@
 
 > **addDefaultRestPaths**(`serverConfig`): `void`
 
-Adds the rest paths to the server config.
+Adds the rest paths to the server config if not already set.
 
 ## Parameters
 

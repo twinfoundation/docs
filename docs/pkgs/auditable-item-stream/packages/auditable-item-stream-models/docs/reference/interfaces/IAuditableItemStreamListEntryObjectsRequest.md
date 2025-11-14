@@ -54,9 +54,9 @@ Whether to include deleted entries, defaults to false.
 
 Retrieve the entries in ascending/descending time order, defaults to Ascending.
 
-#### pageSize?
+#### limit?
 
-> `optional` **pageSize**: `string` \| `number`
+> `optional` **limit**: `string`
 
 How many entries to return.
 

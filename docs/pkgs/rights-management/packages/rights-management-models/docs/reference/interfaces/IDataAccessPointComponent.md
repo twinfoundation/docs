@@ -165,13 +165,13 @@ The type of the item to query.
 
 The conditions to apply to the query.
 
-`undefined` | `EntityCondition`\<`IJsonLdNodeObject`\>
+`EntityCondition`\<`IJsonLdNodeObject`\> | `undefined`
 
 ##### cursor
 
 The cursor for pagination.
 
-`undefined` | `string`
+`string` | `undefined`
 
 ##### options
 

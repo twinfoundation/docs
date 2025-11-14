@@ -16,7 +16,7 @@ Parameter utilities for the CLI.
 
 ### env()
 
-> `static` **env**(`optionName`, `optionValue`, `allowEnvVar`): `undefined` \| `string`
+> `static` **env**(`optionName`, `optionValue`, `allowEnvVar`): `string` \| `undefined`
 
 Check the option to see if it exists.
 
@@ -32,7 +32,7 @@ The name of the option.
 
 The option value.
 
-`undefined` | `string`
+`string` | `undefined`
 
 ##### allowEnvVar
 
@@ -42,7 +42,7 @@ Allow the option to be read from an env var.
 
 #### Returns
 
-`undefined` \| `string`
+`string` \| `undefined`
 
 The final option value.
 
@@ -70,7 +70,7 @@ The name of the option.
 
 The option value.
 
-`undefined` | `string`
+`string` | `undefined`
 
 ##### allowEnvVar
 
@@ -114,7 +114,7 @@ The name of the option.
 
 The option value.
 
-`undefined` | `string`
+`string` | `undefined`
 
 ##### validValues
 
@@ -158,7 +158,7 @@ The name of the option.
 
 The option value.
 
-`undefined` | `string`
+`string` | `undefined`
 
 ##### allowEnvVar
 
@@ -196,7 +196,7 @@ The name of the option.
 
 The option value.
 
-`undefined` | `string`
+`string` | `undefined`
 
 ##### allowEnvVar
 
@@ -246,7 +246,7 @@ The name of the option.
 
 The option value.
 
-`undefined` | `string`
+`string` | `undefined`
 
 ##### allowEnvVar
 
@@ -296,7 +296,7 @@ The name of the option.
 
 The option value.
 
-`undefined` | `string`
+`string` | `undefined`
 
 ##### allowEnvVar
 
@@ -346,7 +346,7 @@ The name of the option.
 
 The option value.
 
-`undefined` | `string`
+`string` | `undefined`
 
 ##### allowEnvVar
 
@@ -384,7 +384,7 @@ The name of the option.
 
 The option value.
 
-`undefined` | `string`
+`string` | `undefined`
 
 ##### allowEnvVar
 
@@ -422,7 +422,7 @@ The name of the option.
 
 The option value.
 
-`undefined` | `string`
+`string` | `undefined`
 
 ##### allowEnvVar
 
@@ -460,7 +460,7 @@ The name of the option.
 
 The option value.
 
-`undefined` | `string`
+`string` | `undefined`
 
 ##### allowEnvVar
 
@@ -471,44 +471,6 @@ Allow the option to be read from an env var.
 #### Returns
 
 `Uint8Array`
-
-The final option value.
-
-#### Throws
-
-An error if the option is invalid.
-
-***
-
-### bech32()
-
-> `static` **bech32**(`optionName`, `optionValue`, `allowEnvVar`): `string`
-
-Check the option to see if it exists and is bech32.
-
-#### Parameters
-
-##### optionName
-
-`string`
-
-The name of the option.
-
-##### optionValue
-
-The option value.
-
-`undefined` | `string`
-
-##### allowEnvVar
-
-`boolean` = `true`
-
-Allow the option to be read from an env var.
-
-#### Returns
-
-`string`
 
 The final option value.
 

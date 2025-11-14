@@ -18,5 +18,9 @@
 		"packages/federated-catalogue-rest-client",
 		"apps/federated-catalogue-rest-server"
 	],
-	"type": "module"
+	"type": "module",
+	"bugs": {
+		"url": "git+https://github.com/twinfoundation/federated-catalogue/issues"
+	},
+	"homepage": "https://twindev.org"
 }

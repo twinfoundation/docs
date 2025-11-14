@@ -12,6 +12,14 @@ Implementation of Bip39 for mnemonic generation.
 
 `Bip39`
 
+## Properties
+
+### CLASS\_NAME
+
+> `readonly` `static` **CLASS\_NAME**: `string`
+
+Runtime name for the class.
+
 ## Methods
 
 ### randomMnemonic()

@@ -16,7 +16,7 @@ Helper class for log entry operations.
 
 ### translate()
 
-> `static` **translate**(`logEntry`): `undefined` \| `string`
+> `static` **translate**(`logEntry`): `string` \| `undefined`
 
 Translate the log entry.
 
@@ -30,6 +30,6 @@ The log entry.
 
 #### Returns
 
-`undefined` \| `string`
+`string` \| `undefined`
 
 The translated log entry if a translation can be found.

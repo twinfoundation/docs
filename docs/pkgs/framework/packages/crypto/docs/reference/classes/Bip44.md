@@ -12,6 +12,14 @@ Implementation of Bip44 for address generation.
 
 `Bip44`
 
+## Properties
+
+### CLASS\_NAME
+
+> `readonly` `static` **CLASS\_NAME**: `string`
+
+Runtime name for the class.
+
 ## Methods
 
 ### keyPair()

@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/ui-storybook-react",
-	"version": "0.0.2-next.1",
+	"version": "0.0.3-next.1",
 	"description": "Demonstrate the React UI Components",
 	"private": true,
 	"repository": {
@@ -18,5 +18,9 @@
 		"extends": [
 			"plugin:storybook/recommended"
 		]
-	}
+	},
+	"bugs": {
+		"url": "git+https://github.com/twinfoundation/ui/issues"
+	},
+	"homepage": "https://twindev.org"
 }

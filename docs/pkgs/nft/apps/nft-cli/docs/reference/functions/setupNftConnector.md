@@ -1,6 +1,6 @@
 # Function: setupNftConnector()
 
-> **setupNftConnector**(`options`, `connector?`): `INftConnector`
+> **setupNftConnector**(`options`): `INftConnector`
 
 Setup the NFT connector for use in the CLI commands.
 
@@ -33,12 +33,6 @@ The vault seed ID.
 `number`
 
 The wallet address index.
-
-### connector?
-
-`"iota"`
-
-The connector to use.
 
 ## Returns
 

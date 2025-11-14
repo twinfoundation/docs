@@ -12,17 +12,33 @@ The region for the AWS connection.
 
 ***
 
-### accessKeyId
+### authMode?
 
-> **accessKeyId**: `string`
+> `optional` **authMode**: `"credentials"` \| `"pod"`
 
-The AWS access key.
+The authentication mode.
+- "credentials": Use access key ID and secret access key.
+- "pod": Use IAM role attached to the pod (e.g., in EKS).
+
+#### Default
+
+```ts
+credentials
+```
 
 ***
 
-### secretAccessKey
+### accessKeyId?
 
-> **secretAccessKey**: `string`
+> `optional` **accessKeyId**: `string`
+
+The AWS access key ID.
+
+***
+
+### secretAccessKey?
+
+> `optional` **secretAccessKey**: `string`
 
 The AWS secret access key.
 
@@ -40,4 +56,4 @@ The name of the table for the storage.
 
 > `optional` **endpoint**: `string`
 
-AWS endpoint, not usually required but could be used for local DynamoDB instance e.g. http://localhost:8500.
+AWS endpoint, not usually required but could be used for local DynamoDB instance e.g. http://localhost:10000.

@@ -2,4 +2,4 @@
 
 ## Classes
 
-- [AuditableItemGraphClient](classes/AuditableItemGraphClient.md)
+- [AuditableItemGraphRestClient](classes/AuditableItemGraphRestClient.md)

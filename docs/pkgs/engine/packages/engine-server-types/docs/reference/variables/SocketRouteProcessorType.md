@@ -24,17 +24,23 @@ Auth verifiable credential.
 
 Logging.
 
-### NodeIdentity
+### ContextId
 
-> `readonly` **NodeIdentity**: `"node-identity"` = `"node-identity"`
+> `readonly` **ContextId**: `"context-id"` = `"context-id"`
 
-Node Identity.
+Context ID.
 
-### StaticUserIdentity
+### StaticContextId
 
-> `readonly` **StaticUserIdentity**: `"static-user-identity"` = `"static-user-identity"`
+> `readonly` **StaticContextId**: `"static-context-id"` = `"static-context-id"`
 
-Static User Identity.
+Static Context ID.
+
+### Tenant
+
+> `readonly` **Tenant**: `"tenant"` = `"tenant"`
+
+Tenant.
 
 ### SocketRoute
 

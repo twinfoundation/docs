@@ -1,5 +1,5 @@
 # Type Alias: IJsonSchema
 
-> **IJsonSchema** = `SchemaObject`
+> **IJsonSchema** = `Ajv.SchemaObject`
 
 Default schema type.

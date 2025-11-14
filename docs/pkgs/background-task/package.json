@@ -17,5 +17,9 @@
 		"packages/background-task-connector-entity-storage",
 		"packages/background-task-scheduler"
 	],
-	"type": "module"
+	"type": "module",
+	"bugs": {
+		"url": "git+https://github.com/twinfoundation/background-task/issues"
+	},
+	"homepage": "https://twindev.org"
 }

@@ -16,7 +16,7 @@ Class to help with mime types.
 
 ### detect()
 
-> `static` **detect**(`data`): `Promise`\<`undefined` \| `string`\>
+> `static` **detect**(`data`): `Promise`\<`string` \| `undefined`\>
 
 Detect the mime type from a byte array.
 
@@ -30,7 +30,7 @@ The data to test.
 
 #### Returns
 
-`Promise`\<`undefined` \| `string`\>
+`Promise`\<`string` \| `undefined`\>
 
 The mime type if detected.
 
@@ -38,7 +38,7 @@ The mime type if detected.
 
 ### defaultExtension()
 
-> `static` **defaultExtension**(`mimeType`): `undefined` \| `string`
+> `static` **defaultExtension**(`mimeType`): `string` \| `undefined`
 
 Return the default extension for a mime type.
 
@@ -48,10 +48,10 @@ Return the default extension for a mime type.
 
 The mimetype to get the extension for.
 
-`undefined` | `string`
+`string` | `undefined`
 
 #### Returns
 
-`undefined` \| `string`
+`string` \| `undefined`
 
 The extension for the mime type.

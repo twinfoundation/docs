@@ -105,7 +105,7 @@ cp .env.example-entity-storage .env
 The .env file can be modified to suit your own use case. For example to set the location for the storage.
 
 ```shell
-TWIN_NODE_STORAGE_FILE_ROOT="/home/ec2-user/twin-node/"
+TWIN_STORAGE_FILE_ROOT="/home/ec2-user/twin-node/"
 ```
 
 ## Bootstrapping the server

@@ -40,7 +40,7 @@ The GCP credentials, a base64 encoded version of the JWTInput data type.
 
 > `optional` **endpoint**: `string`
 
-It's usually only used with an emulator (e.g., "localhost:8580").
+It's usually only used with an emulator (e.g., "localhost:20200").
 
 ***
 

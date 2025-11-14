@@ -52,9 +52,9 @@ The date the change set was last modified.
 
 ***
 
-### nodeIdentity
+### nodeId
 
-> **nodeIdentity**: `string`
+> **nodeId**: `string`
 
 The identity of the node that created the change set.
 

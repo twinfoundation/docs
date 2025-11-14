@@ -70,45 +70,6 @@
 								}
 							}
 						}
-					},
-					"400": {
-						"description": "The server cannot process the request, see the content for more details.",
-						"content": {
-							"application/json": {
-								"schema": {
-									"$ref": "#/components/schemas/Error"
-								},
-								"examples": {
-									"exampleResponse": {
-										"value": {
-											"name": "GeneralError",
-											"message": "component.error",
-											"properties": {
-												"foo": "bar"
-											}
-										}
-									}
-								}
-							}
-						}
-					},
-					"500": {
-						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
-						"content": {
-							"application/json": {
-								"schema": {
-									"$ref": "#/components/schemas/Error"
-								},
-								"examples": {
-									"exampleResponse": {
-										"value": {
-											"name": "InternalServerError",
-											"message": "component.error"
-										}
-									}
-								}
-							}
-						}
 					}
 				}
 			},
@@ -137,62 +98,12 @@
 					}
 				],
 				"responses": {
-					"204": {
-						"description": "The rest request ended in success with no data."
-					},
-					"400": {
-						"description": "The server cannot process the request, see the content for more details.",
+					"200": {
+						"description": "The rest request ended in success with no data.",
 						"content": {
-							"application/json": {
+							"text/plain": {
 								"schema": {
-									"$ref": "#/components/schemas/Error"
-								},
-								"examples": {
-									"exampleResponse": {
-										"value": {
-											"name": "GeneralError",
-											"message": "component.error",
-											"properties": {
-												"foo": "bar"
-											}
-										}
-									}
-								}
-							}
-						}
-					},
-					"401": {
-						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
-						"content": {
-							"application/json": {
-								"schema": {
-									"$ref": "#/components/schemas/Error"
-								},
-								"examples": {
-									"exampleResponse": {
-										"value": {
-											"name": "UnauthorizedError",
-											"message": "component.error"
-										}
-									}
-								}
-							}
-						}
-					},
-					"500": {
-						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
-						"content": {
-							"application/json": {
-								"schema": {
-									"$ref": "#/components/schemas/Error"
-								},
-								"examples": {
-									"exampleResponse": {
-										"value": {
-											"name": "InternalServerError",
-											"message": "component.error"
-										}
-									}
+									"$ref": "#/components/schemas/NoContentResponse"
 								}
 							}
 						}
@@ -243,63 +154,6 @@
 													"serviceEndpoint": "data:application/octet-stream;base64,eJyzMmAAAwABr"
 												}
 											]
-										}
-									}
-								}
-							}
-						}
-					},
-					"400": {
-						"description": "The server cannot process the request, see the content for more details.",
-						"content": {
-							"application/json": {
-								"schema": {
-									"$ref": "#/components/schemas/Error"
-								},
-								"examples": {
-									"exampleResponse": {
-										"value": {
-											"name": "GeneralError",
-											"message": "component.error",
-											"properties": {
-												"foo": "bar"
-											}
-										}
-									}
-								}
-							}
-						}
-					},
-					"401": {
-						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
-						"content": {
-							"application/json": {
-								"schema": {
-									"$ref": "#/components/schemas/Error"
-								},
-								"examples": {
-									"exampleResponse": {
-										"value": {
-											"name": "UnauthorizedError",
-											"message": "component.error"
-										}
-									}
-								}
-							}
-						}
-					},
-					"500": {
-						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
-						"content": {
-							"application/json": {
-								"schema": {
-									"$ref": "#/components/schemas/Error"
-								},
-								"examples": {
-									"exampleResponse": {
-										"value": {
-											"name": "InternalServerError",
-											"message": "component.error"
 										}
 									}
 								}
@@ -379,63 +233,6 @@
 								}
 							}
 						}
-					},
-					"400": {
-						"description": "The server cannot process the request, see the content for more details.",
-						"content": {
-							"application/json": {
-								"schema": {
-									"$ref": "#/components/schemas/Error"
-								},
-								"examples": {
-									"exampleResponse": {
-										"value": {
-											"name": "GeneralError",
-											"message": "component.error",
-											"properties": {
-												"foo": "bar"
-											}
-										}
-									}
-								}
-							}
-						}
-					},
-					"401": {
-						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
-						"content": {
-							"application/json": {
-								"schema": {
-									"$ref": "#/components/schemas/Error"
-								},
-								"examples": {
-									"exampleResponse": {
-										"value": {
-											"name": "UnauthorizedError",
-											"message": "component.error"
-										}
-									}
-								}
-							}
-						}
-					},
-					"500": {
-						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
-						"content": {
-							"application/json": {
-								"schema": {
-									"$ref": "#/components/schemas/Error"
-								},
-								"examples": {
-									"exampleResponse": {
-										"value": {
-											"name": "InternalServerError",
-											"message": "component.error"
-										}
-									}
-								}
-							}
-						}
 					}
 				}
 			}
@@ -477,62 +274,12 @@
 					}
 				],
 				"responses": {
-					"204": {
-						"description": "The rest request ended in success with no data."
-					},
-					"400": {
-						"description": "The server cannot process the request, see the content for more details.",
+					"200": {
+						"description": "The rest request ended in success with no data.",
 						"content": {
-							"application/json": {
+							"text/plain": {
 								"schema": {
-									"$ref": "#/components/schemas/Error"
-								},
-								"examples": {
-									"exampleResponse": {
-										"value": {
-											"name": "GeneralError",
-											"message": "component.error",
-											"properties": {
-												"foo": "bar"
-											}
-										}
-									}
-								}
-							}
-						}
-					},
-					"401": {
-						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
-						"content": {
-							"application/json": {
-								"schema": {
-									"$ref": "#/components/schemas/Error"
-								},
-								"examples": {
-									"exampleResponse": {
-										"value": {
-											"name": "UnauthorizedError",
-											"message": "component.error"
-										}
-									}
-								}
-							}
-						}
-					},
-					"500": {
-						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
-						"content": {
-							"application/json": {
-								"schema": {
-									"$ref": "#/components/schemas/Error"
-								},
-								"examples": {
-									"exampleResponse": {
-										"value": {
-											"name": "InternalServerError",
-											"message": "component.error"
-										}
-									}
+									"$ref": "#/components/schemas/NoContentResponse"
 								}
 							}
 						}
@@ -604,63 +351,6 @@
 								}
 							}
 						}
-					},
-					"400": {
-						"description": "The server cannot process the request, see the content for more details.",
-						"content": {
-							"application/json": {
-								"schema": {
-									"$ref": "#/components/schemas/Error"
-								},
-								"examples": {
-									"exampleResponse": {
-										"value": {
-											"name": "GeneralError",
-											"message": "component.error",
-											"properties": {
-												"foo": "bar"
-											}
-										}
-									}
-								}
-							}
-						}
-					},
-					"401": {
-						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
-						"content": {
-							"application/json": {
-								"schema": {
-									"$ref": "#/components/schemas/Error"
-								},
-								"examples": {
-									"exampleResponse": {
-										"value": {
-											"name": "UnauthorizedError",
-											"message": "component.error"
-										}
-									}
-								}
-							}
-						}
-					},
-					"500": {
-						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
-						"content": {
-							"application/json": {
-								"schema": {
-									"$ref": "#/components/schemas/Error"
-								},
-								"examples": {
-									"exampleResponse": {
-										"value": {
-											"name": "InternalServerError",
-											"message": "component.error"
-										}
-									}
-								}
-							}
-						}
 					}
 				}
 			}
@@ -702,62 +392,12 @@
 					}
 				],
 				"responses": {
-					"204": {
-						"description": "The rest request ended in success with no data."
-					},
-					"400": {
-						"description": "The server cannot process the request, see the content for more details.",
+					"200": {
+						"description": "The rest request ended in success with no data.",
 						"content": {
-							"application/json": {
+							"text/plain": {
 								"schema": {
-									"$ref": "#/components/schemas/Error"
-								},
-								"examples": {
-									"exampleResponse": {
-										"value": {
-											"name": "GeneralError",
-											"message": "component.error",
-											"properties": {
-												"foo": "bar"
-											}
-										}
-									}
-								}
-							}
-						}
-					},
-					"401": {
-						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
-						"content": {
-							"application/json": {
-								"schema": {
-									"$ref": "#/components/schemas/Error"
-								},
-								"examples": {
-									"exampleResponse": {
-										"value": {
-											"name": "UnauthorizedError",
-											"message": "component.error"
-										}
-									}
-								}
-							}
-						}
-					},
-					"500": {
-						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
-						"content": {
-							"application/json": {
-								"schema": {
-									"$ref": "#/components/schemas/Error"
-								},
-								"examples": {
-									"exampleResponse": {
-										"value": {
-											"name": "InternalServerError",
-											"message": "component.error"
-										}
-									}
+									"$ref": "#/components/schemas/NoContentResponse"
 								}
 							}
 						}
@@ -765,7 +405,7 @@
 				}
 			}
 		},
-		"/identity/{identity}/verifiable-credential": {
+		"/identity/{identity}/verifiable-credential/{verificationMethodId}": {
 			"post": {
 				"operationId": "identityVerifiableCredentialCreate",
 				"summary": "Create an identity verifiable credential",
@@ -783,6 +423,17 @@
 						},
 						"style": "simple",
 						"example": "did:entity-storage:0x879c31386f992cfa29b77fe31e37256d69f6a57653cee4eb60ad4c4613c5515a"
+					},
+					{
+						"name": "verificationMethodId",
+						"description": "The verification method id to use.",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "my-assertion"
 					}
 				],
 				"security": [
@@ -854,63 +505,6 @@
 								}
 							}
 						}
-					},
-					"400": {
-						"description": "The server cannot process the request, see the content for more details.",
-						"content": {
-							"application/json": {
-								"schema": {
-									"$ref": "#/components/schemas/Error"
-								},
-								"examples": {
-									"exampleResponse": {
-										"value": {
-											"name": "GeneralError",
-											"message": "component.error",
-											"properties": {
-												"foo": "bar"
-											}
-										}
-									}
-								}
-							}
-						}
-					},
-					"401": {
-						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
-						"content": {
-							"application/json": {
-								"schema": {
-									"$ref": "#/components/schemas/Error"
-								},
-								"examples": {
-									"exampleResponse": {
-										"value": {
-											"name": "UnauthorizedError",
-											"message": "component.error"
-										}
-									}
-								}
-							}
-						}
-					},
-					"500": {
-						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
-						"content": {
-							"application/json": {
-								"schema": {
-									"$ref": "#/components/schemas/Error"
-								},
-								"examples": {
-									"exampleResponse": {
-										"value": {
-											"name": "InternalServerError",
-											"message": "component.error"
-										}
-									}
-								}
-							}
-						}
 					}
 				}
 			}
@@ -973,45 +567,6 @@
 								}
 							}
 						}
-					},
-					"400": {
-						"description": "The server cannot process the request, see the content for more details.",
-						"content": {
-							"application/json": {
-								"schema": {
-									"$ref": "#/components/schemas/Error"
-								},
-								"examples": {
-									"exampleResponse": {
-										"value": {
-											"name": "GeneralError",
-											"message": "component.error",
-											"properties": {
-												"foo": "bar"
-											}
-										}
-									}
-								}
-							}
-						}
-					},
-					"500": {
-						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
-						"content": {
-							"application/json": {
-								"schema": {
-									"$ref": "#/components/schemas/Error"
-								},
-								"examples": {
-									"exampleResponse": {
-										"value": {
-											"name": "InternalServerError",
-											"message": "component.error"
-										}
-									}
-								}
-							}
-						}
 					}
 				}
 			}
@@ -1053,62 +608,12 @@
 					}
 				],
 				"responses": {
-					"204": {
-						"description": "The rest request ended in success with no data."
-					},
-					"400": {
-						"description": "The server cannot process the request, see the content for more details.",
+					"200": {
+						"description": "The rest request ended in success with no data.",
 						"content": {
-							"application/json": {
+							"text/plain": {
 								"schema": {
-									"$ref": "#/components/schemas/Error"
-								},
-								"examples": {
-									"exampleResponse": {
-										"value": {
-											"name": "GeneralError",
-											"message": "component.error",
-											"properties": {
-												"foo": "bar"
-											}
-										}
-									}
-								}
-							}
-						}
-					},
-					"401": {
-						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
-						"content": {
-							"application/json": {
-								"schema": {
-									"$ref": "#/components/schemas/Error"
-								},
-								"examples": {
-									"exampleResponse": {
-										"value": {
-											"name": "UnauthorizedError",
-											"message": "component.error"
-										}
-									}
-								}
-							}
-						}
-					},
-					"500": {
-						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
-						"content": {
-							"application/json": {
-								"schema": {
-									"$ref": "#/components/schemas/Error"
-								},
-								"examples": {
-									"exampleResponse": {
-										"value": {
-											"name": "InternalServerError",
-											"message": "component.error"
-										}
-									}
+									"$ref": "#/components/schemas/NoContentResponse"
 								}
 							}
 						}
@@ -1153,62 +658,12 @@
 					}
 				],
 				"responses": {
-					"204": {
-						"description": "The rest request ended in success with no data."
-					},
-					"400": {
-						"description": "The server cannot process the request, see the content for more details.",
+					"200": {
+						"description": "The rest request ended in success with no data.",
 						"content": {
-							"application/json": {
+							"text/plain": {
 								"schema": {
-									"$ref": "#/components/schemas/Error"
-								},
-								"examples": {
-									"exampleResponse": {
-										"value": {
-											"name": "GeneralError",
-											"message": "component.error",
-											"properties": {
-												"foo": "bar"
-											}
-										}
-									}
-								}
-							}
-						}
-					},
-					"401": {
-						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
-						"content": {
-							"application/json": {
-								"schema": {
-									"$ref": "#/components/schemas/Error"
-								},
-								"examples": {
-									"exampleResponse": {
-										"value": {
-											"name": "UnauthorizedError",
-											"message": "component.error"
-										}
-									}
-								}
-							}
-						}
-					},
-					"500": {
-						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
-						"content": {
-							"application/json": {
-								"schema": {
-									"$ref": "#/components/schemas/Error"
-								},
-								"examples": {
-									"exampleResponse": {
-										"value": {
-											"name": "InternalServerError",
-											"message": "component.error"
-										}
-									}
+									"$ref": "#/components/schemas/NoContentResponse"
 								}
 							}
 						}
@@ -1216,7 +671,7 @@
 				}
 			}
 		},
-		"/identity/{identity}/verifiable-presentation": {
+		"/identity/{identity}/verifiable-presentation/{verificationMethodId}": {
 			"post": {
 				"operationId": "identityVerifiablePresentationCreate",
 				"summary": "Create an identity verifiable presentation",
@@ -1234,6 +689,17 @@
 						},
 						"style": "simple",
 						"example": "did:entity-storage:0x879c31386f992cfa29b77fe31e37256d69f6a57653cee4eb60ad4c4613c5515a"
+					},
+					{
+						"name": "verificationMethodId",
+						"description": "The verification method id to use.",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "my-assertion"
 					}
 				],
 				"security": [
@@ -1294,63 +760,6 @@
 								}
 							}
 						}
-					},
-					"400": {
-						"description": "The server cannot process the request, see the content for more details.",
-						"content": {
-							"application/json": {
-								"schema": {
-									"$ref": "#/components/schemas/Error"
-								},
-								"examples": {
-									"exampleResponse": {
-										"value": {
-											"name": "GeneralError",
-											"message": "component.error",
-											"properties": {
-												"foo": "bar"
-											}
-										}
-									}
-								}
-							}
-						}
-					},
-					"401": {
-						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
-						"content": {
-							"application/json": {
-								"schema": {
-									"$ref": "#/components/schemas/Error"
-								},
-								"examples": {
-									"exampleResponse": {
-										"value": {
-											"name": "UnauthorizedError",
-											"message": "component.error"
-										}
-									}
-								}
-							}
-						}
-					},
-					"500": {
-						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
-						"content": {
-							"application/json": {
-								"schema": {
-									"$ref": "#/components/schemas/Error"
-								},
-								"examples": {
-									"exampleResponse": {
-										"value": {
-											"name": "InternalServerError",
-											"message": "component.error"
-										}
-									}
-								}
-							}
-						}
 					}
 				}
 			}
@@ -1406,50 +815,11 @@
 								}
 							}
 						}
-					},
-					"400": {
-						"description": "The server cannot process the request, see the content for more details.",
-						"content": {
-							"application/json": {
-								"schema": {
-									"$ref": "#/components/schemas/Error"
-								},
-								"examples": {
-									"exampleResponse": {
-										"value": {
-											"name": "GeneralError",
-											"message": "component.error",
-											"properties": {
-												"foo": "bar"
-											}
-										}
-									}
-								}
-							}
-						}
-					},
-					"500": {
-						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
-						"content": {
-							"application/json": {
-								"schema": {
-									"$ref": "#/components/schemas/Error"
-								},
-								"examples": {
-									"exampleResponse": {
-										"value": {
-											"name": "InternalServerError",
-											"message": "component.error"
-										}
-									}
-								}
-							}
-						}
 					}
 				}
 			}
 		},
-		"/identity/{identity}/proof": {
+		"/identity/{identity}/proof/{verificationMethodId}": {
 			"post": {
 				"operationId": "identityProofCreate",
 				"summary": "Create an identity proof",
@@ -1467,6 +837,17 @@
 						},
 						"style": "simple",
 						"example": "did:entity-storage:0xda2df3ebc91ee0d5229d6532ffd0f4426952a94f34988b0ca906694dfd366a6a"
+					},
+					{
+						"name": "verificationMethodId",
+						"description": "The verification method id to use.",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple",
+						"example": "my-verification-id"
 					}
 				],
 				"security": [
@@ -1532,63 +913,6 @@
 											"verificationMethod": "did:entity-storage:0x0101010101010101010101010101010101010101010101010101010101010101#my-verification-id",
 											"proofPurpose": "assertionMethod",
 											"proofValue": "z2zGoejwpX6HH2T11BZaniEVZrqRKDpwbQSvPcL7eL9M7hV5P9zQQZxs85n6qyDzkkXCL8aFUWfwQD5bxVGqDK1fa"
-										}
-									}
-								}
-							}
-						}
-					},
-					"400": {
-						"description": "The server cannot process the request, see the content for more details.",
-						"content": {
-							"application/json": {
-								"schema": {
-									"$ref": "#/components/schemas/Error"
-								},
-								"examples": {
-									"exampleResponse": {
-										"value": {
-											"name": "GeneralError",
-											"message": "component.error",
-											"properties": {
-												"foo": "bar"
-											}
-										}
-									}
-								}
-							}
-						}
-					},
-					"401": {
-						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
-						"content": {
-							"application/json": {
-								"schema": {
-									"$ref": "#/components/schemas/Error"
-								},
-								"examples": {
-									"exampleResponse": {
-										"value": {
-											"name": "UnauthorizedError",
-											"message": "component.error"
-										}
-									}
-								}
-							}
-						}
-					},
-					"500": {
-						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
-						"content": {
-							"application/json": {
-								"schema": {
-									"$ref": "#/components/schemas/Error"
-								},
-								"examples": {
-									"exampleResponse": {
-										"value": {
-											"name": "InternalServerError",
-											"message": "component.error"
 										}
 									}
 								}
@@ -1667,45 +991,6 @@
 								}
 							}
 						}
-					},
-					"400": {
-						"description": "The server cannot process the request, see the content for more details.",
-						"content": {
-							"application/json": {
-								"schema": {
-									"$ref": "#/components/schemas/Error"
-								},
-								"examples": {
-									"exampleResponse": {
-										"value": {
-											"name": "GeneralError",
-											"message": "component.error",
-											"properties": {
-												"foo": "bar"
-											}
-										}
-									}
-								}
-							}
-						}
-					},
-					"500": {
-						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
-						"content": {
-							"application/json": {
-								"schema": {
-									"$ref": "#/components/schemas/Error"
-								},
-								"examples": {
-									"exampleResponse": {
-										"value": {
-											"name": "InternalServerError",
-											"message": "component.error"
-										}
-									}
-								}
-							}
-						}
 					}
 				}
 			}
@@ -1752,85 +1037,17 @@
 					}
 				},
 				"responses": {
-					"204": {
-						"description": "The rest request ended in success with no data."
-					},
-					"400": {
-						"description": "The server cannot process the request, see the content for more details.",
-						"content": {
-							"application/json": {
-								"schema": {
-									"$ref": "#/components/schemas/Error"
-								},
-								"examples": {
-									"exampleResponse": {
-										"value": {
-											"name": "GeneralError",
-											"message": "component.error",
-											"properties": {
-												"foo": "bar"
-											}
-										}
-									}
-								}
-							}
-						}
-					},
-					"401": {
-						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
-						"content": {
-							"application/json": {
-								"schema": {
-									"$ref": "#/components/schemas/Error"
-								},
-								"examples": {
-									"exampleResponse": {
-										"value": {
-											"name": "UnauthorizedError",
-											"message": "component.error"
-										}
-									}
-								}
-							}
-						}
-					},
-					"409": {
+					"200": {
 						"description": "The request resulted in a conflicting operation, see the content for more details.",
 						"content": {
+							"text/plain": {
+								"schema": {
+									"$ref": "#/components/schemas/NoContentResponse"
+								}
+							},
 							"application/json": {
 								"schema": {
 									"$ref": "#/components/schemas/ConflictResponse"
-								},
-								"examples": {
-									"exampleResponse": {
-										"value": {
-											"name": "ConflictError",
-											"message": "component.error",
-											"properties": {
-												"conflicts": [
-													"1"
-												]
-											}
-										}
-									}
-								}
-							}
-						}
-					},
-					"500": {
-						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
-						"content": {
-							"application/json": {
-								"schema": {
-									"$ref": "#/components/schemas/Error"
-								},
-								"examples": {
-									"exampleResponse": {
-										"value": {
-											"name": "InternalServerError",
-											"message": "component.error"
-										}
-									}
 								}
 							}
 						}
@@ -1871,102 +1088,11 @@
 				],
 				"responses": {
 					"200": {
-						"description": "Response to get an identity details.",
-						"content": {
-							"application/json": {
-								"schema": {
-									"$ref": "#/components/schemas/IdentityProfileGetResponse"
-								},
-								"examples": {
-									"identityGetResponseExample": {
-										"value": {
-											"identity": "did:iota:tst:0xc57d94b088f4c6d2cb32ded014813d0c786aa00134c8ee22f84b1e2545602a70",
-											"publicProfile": {
-												"@context": "https://schema.org",
-												"@type": "Person",
-												"jobTitle": "Professor",
-												"name": "Jane Doe"
-											}
-										}
-									}
-								}
-							}
-						}
-					},
-					"400": {
-						"description": "The server cannot process the request, see the content for more details.",
-						"content": {
-							"application/json": {
-								"schema": {
-									"$ref": "#/components/schemas/Error"
-								},
-								"examples": {
-									"exampleResponse": {
-										"value": {
-											"name": "GeneralError",
-											"message": "component.error",
-											"properties": {
-												"foo": "bar"
-											}
-										}
-									}
-								}
-							}
-						}
-					},
-					"401": {
-						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
-						"content": {
-							"application/json": {
-								"schema": {
-									"$ref": "#/components/schemas/Error"
-								},
-								"examples": {
-									"exampleResponse": {
-										"value": {
-											"name": "UnauthorizedError",
-											"message": "component.error"
-										}
-									}
-								}
-							}
-						}
-					},
-					"404": {
 						"description": "The resource you tried to access does not exist, see the content for more details.",
 						"content": {
 							"application/json": {
 								"schema": {
 									"$ref": "#/components/schemas/NotFoundResponse"
-								},
-								"examples": {
-									"exampleResponse": {
-										"value": {
-											"name": "NotFoundError",
-											"message": "component.error",
-											"properties": {
-												"notFoundId": "1"
-											}
-										}
-									}
-								}
-							}
-						}
-					},
-					"500": {
-						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
-						"content": {
-							"application/json": {
-								"schema": {
-									"$ref": "#/components/schemas/Error"
-								},
-								"examples": {
-									"exampleResponse": {
-										"value": {
-											"name": "InternalServerError",
-											"message": "component.error"
-										}
-									}
 								}
 							}
 						}
@@ -2014,83 +1140,17 @@
 					}
 				},
 				"responses": {
-					"204": {
-						"description": "The rest request ended in success with no data."
-					},
-					"400": {
-						"description": "The server cannot process the request, see the content for more details.",
-						"content": {
-							"application/json": {
-								"schema": {
-									"$ref": "#/components/schemas/Error"
-								},
-								"examples": {
-									"exampleResponse": {
-										"value": {
-											"name": "GeneralError",
-											"message": "component.error",
-											"properties": {
-												"foo": "bar"
-											}
-										}
-									}
-								}
-							}
-						}
-					},
-					"401": {
-						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
-						"content": {
-							"application/json": {
-								"schema": {
-									"$ref": "#/components/schemas/Error"
-								},
-								"examples": {
-									"exampleResponse": {
-										"value": {
-											"name": "UnauthorizedError",
-											"message": "component.error"
-										}
-									}
-								}
-							}
-						}
-					},
-					"404": {
+					"200": {
 						"description": "The resource you tried to access does not exist, see the content for more details.",
 						"content": {
+							"text/plain": {
+								"schema": {
+									"$ref": "#/components/schemas/NoContentResponse"
+								}
+							},
 							"application/json": {
 								"schema": {
 									"$ref": "#/components/schemas/NotFoundResponse"
-								},
-								"examples": {
-									"exampleResponse": {
-										"value": {
-											"name": "NotFoundError",
-											"message": "component.error",
-											"properties": {
-												"notFoundId": "1"
-											}
-										}
-									}
-								}
-							}
-						}
-					},
-					"500": {
-						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
-						"content": {
-							"application/json": {
-								"schema": {
-									"$ref": "#/components/schemas/Error"
-								},
-								"examples": {
-									"exampleResponse": {
-										"value": {
-											"name": "InternalServerError",
-											"message": "component.error"
-										}
-									}
 								}
 							}
 						}
@@ -2109,83 +1169,17 @@
 					}
 				],
 				"responses": {
-					"204": {
-						"description": "The rest request ended in success with no data."
-					},
-					"400": {
-						"description": "The server cannot process the request, see the content for more details.",
-						"content": {
-							"application/json": {
-								"schema": {
-									"$ref": "#/components/schemas/Error"
-								},
-								"examples": {
-									"exampleResponse": {
-										"value": {
-											"name": "GeneralError",
-											"message": "component.error",
-											"properties": {
-												"foo": "bar"
-											}
-										}
-									}
-								}
-							}
-						}
-					},
-					"401": {
-						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
-						"content": {
-							"application/json": {
-								"schema": {
-									"$ref": "#/components/schemas/Error"
-								},
-								"examples": {
-									"exampleResponse": {
-										"value": {
-											"name": "UnauthorizedError",
-											"message": "component.error"
-										}
-									}
-								}
-							}
-						}
-					},
-					"404": {
+					"200": {
 						"description": "The resource you tried to access does not exist, see the content for more details.",
 						"content": {
+							"text/plain": {
+								"schema": {
+									"$ref": "#/components/schemas/NoContentResponse"
+								}
+							},
 							"application/json": {
 								"schema": {
 									"$ref": "#/components/schemas/NotFoundResponse"
-								},
-								"examples": {
-									"exampleResponse": {
-										"value": {
-											"name": "NotFoundError",
-											"message": "component.error",
-											"properties": {
-												"notFoundId": "1"
-											}
-										}
-									}
-								}
-							}
-						}
-					},
-					"500": {
-						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
-						"content": {
-							"application/json": {
-								"schema": {
-									"$ref": "#/components/schemas/Error"
-								},
-								"examples": {
-									"exampleResponse": {
-										"value": {
-											"name": "InternalServerError",
-											"message": "component.error"
-										}
-									}
 								}
 							}
 						}
@@ -2225,7 +1219,7 @@
 				],
 				"responses": {
 					"200": {
-						"description": "Response to get an identity public profile.",
+						"description": "The resource you tried to access does not exist, see the content for more details.",
 						"content": {
 							"application/ld+json": {
 								"schema": {
@@ -2241,73 +1235,10 @@
 										}
 									}
 								}
-							}
-						},
-						"headers": {
-							"content-type": {
-								"schema": {
-									"type": "string"
-								},
-								"description": "e.g. application/ld+json"
-							}
-						}
-					},
-					"400": {
-						"description": "The server cannot process the request, see the content for more details.",
-						"content": {
-							"application/json": {
-								"schema": {
-									"$ref": "#/components/schemas/Error"
-								},
-								"examples": {
-									"exampleResponse": {
-										"value": {
-											"name": "GeneralError",
-											"message": "component.error",
-											"properties": {
-												"foo": "bar"
-											}
-										}
-									}
-								}
-							}
-						}
-					},
-					"404": {
-						"description": "The resource you tried to access does not exist, see the content for more details.",
-						"content": {
+							},
 							"application/json": {
 								"schema": {
 									"$ref": "#/components/schemas/NotFoundResponse"
-								},
-								"examples": {
-									"exampleResponse": {
-										"value": {
-											"name": "NotFoundError",
-											"message": "component.error",
-											"properties": {
-												"notFoundId": "1"
-											}
-										}
-									}
-								}
-							}
-						}
-					},
-					"500": {
-						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
-						"content": {
-							"application/json": {
-								"schema": {
-									"$ref": "#/components/schemas/Error"
-								},
-								"examples": {
-									"exampleResponse": {
-										"value": {
-											"name": "InternalServerError",
-											"message": "component.error"
-										}
-									}
 								}
 							}
 						}
@@ -2351,15 +1282,12 @@
 						}
 					},
 					{
-						"name": "pageSize",
+						"name": "limit",
 						"description": "Number of items to return.",
 						"in": "query",
 						"required": false,
 						"schema": {
-							"type": [
-								"number",
-								"string"
-							]
+							"type": "string"
 						}
 					}
 				],
@@ -2396,63 +1324,6 @@
 								}
 							}
 						}
-					},
-					"400": {
-						"description": "The server cannot process the request, see the content for more details.",
-						"content": {
-							"application/json": {
-								"schema": {
-									"$ref": "#/components/schemas/Error"
-								},
-								"examples": {
-									"exampleResponse": {
-										"value": {
-											"name": "GeneralError",
-											"message": "component.error",
-											"properties": {
-												"foo": "bar"
-											}
-										}
-									}
-								}
-							}
-						}
-					},
-					"401": {
-						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
-						"content": {
-							"application/json": {
-								"schema": {
-									"$ref": "#/components/schemas/Error"
-								},
-								"examples": {
-									"exampleResponse": {
-										"value": {
-											"name": "UnauthorizedError",
-											"message": "component.error"
-										}
-									}
-								}
-							}
-						}
-					},
-					"500": {
-						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
-						"content": {
-							"application/json": {
-								"schema": {
-									"$ref": "#/components/schemas/Error"
-								},
-								"examples": {
-									"exampleResponse": {
-										"value": {
-											"name": "InternalServerError",
-											"message": "component.error"
-										}
-									}
-								}
-							}
-						}
 					}
 				}
 			}
@@ -2466,13 +1337,10 @@
 				"properties": {
 					"conflicts": {
 						"type": "array",
-						"items": false,
-						"description": "The conflicting items.",
-						"prefixItems": [
-							{
-								"type": "string"
-							}
-						]
+						"items": {
+							"type": "string"
+						},
+						"description": "The conflicting items."
 					},
 					"name": {
 						"type": "string",
@@ -2590,26 +1458,23 @@
 				"properties": {
 					"items": {
 						"type": "array",
-						"items": false,
-						"description": "The identities.",
-						"prefixItems": [
-							{
-								"type": "object",
-								"properties": {
-									"identity": {
-										"type": "string",
-										"description": "The identity."
-									},
-									"publicProfile": {
-										"$ref": "https://schema.twindev.org/json-ld/JsonLdDocument"
-									}
+						"items": {
+							"type": "object",
+							"properties": {
+								"identity": {
+									"type": "string",
+									"description": "The identity."
 								},
-								"required": [
-									"identity"
-								],
-								"additionalProperties": false
-							}
-						]
+								"publicProfile": {
+									"$ref": "https://schema.twindev.org/json-ld/JsonLdDocument"
+								}
+							},
+							"required": [
+								"identity"
+							],
+							"additionalProperties": false
+						},
+						"description": "The identities."
 					},
 					"cursor": {
 						"type": "string",
@@ -2696,12 +1561,9 @@
 							},
 							{
 								"type": "array",
-								"items": false,
-								"prefixItems": [
-									{
-										"type": "string"
-									}
-								]
+								"items": {
+									"type": "string"
+								}
 							}
 						],
 						"description": "The type of the service."
@@ -2713,12 +1575,9 @@
 							},
 							{
 								"type": "array",
-								"items": false,
-								"prefixItems": [
-									{
-										"type": "string"
-									}
-								]
+								"items": {
+									"type": "string"
+								}
 							}
 						],
 						"description": "The endpoint for the service."
@@ -2809,32 +1668,26 @@
 							},
 							{
 								"type": "array",
-								"items": false,
-								"prefixItems": [
-									{
-										"type": "string"
-									}
-								]
+								"items": {
+									"type": "string"
+								}
 							}
 						],
 						"description": "The types of the presentation."
 					},
 					"verifiableCredentials": {
 						"type": "array",
-						"items": false,
-						"description": "The verifiable credentials to include in the presentation.",
-						"prefixItems": [
-							{
-								"anyOf": [
-									{
-										"type": "string"
-									},
-									{
-										"$ref": "https://schema.twindev.org/w3c-did/DidVerifiableCredential"
-									}
-								]
-							}
-						]
+						"items": {
+							"anyOf": [
+								{
+									"type": "string"
+								},
+								{
+									"$ref": "https://schema.twindev.org/w3c-did/DidVerifiableCredential"
+								}
+							]
+						},
+						"description": "The verifiable credentials to include in the presentation."
 					},
 					"expiresInMinutes": {
 						"type": "number",
@@ -2877,13 +1730,10 @@
 					},
 					"issuers": {
 						"type": "array",
-						"items": false,
-						"description": "The issuers of the presentation.",
-						"prefixItems": [
-							{
-								"$ref": "https://schema.twindev.org/w3c-did/DidDocument"
-							}
-						]
+						"items": {
+							"$ref": "https://schema.twindev.org/w3c-did/DidDocument"
+						},
+						"description": "The issuers of the presentation."
 					}
 				},
 				"required": [
@@ -2919,12 +1769,9 @@
 							},
 							{
 								"type": "array",
-								"items": false,
-								"prefixItems": [
-									{
-										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
-									}
-								]
+								"items": {
+									"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+								}
 							},
 							{
 								"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"
@@ -2953,12 +1800,9 @@
 							},
 							{
 								"type": "array",
-								"items": false,
-								"prefixItems": [
-									{
-										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
-									}
-								]
+								"items": {
+									"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+								}
 							},
 							{
 								"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"
@@ -2984,12 +1828,9 @@
 							},
 							{
 								"type": "array",
-								"items": false,
-								"prefixItems": [
-									{
-										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
-									}
-								]
+								"items": {
+									"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+								}
 							},
 							{
 								"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"
@@ -3015,12 +1856,9 @@
 							},
 							{
 								"type": "array",
-								"items": false,
-								"prefixItems": [
-									{
-										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
-									}
-								]
+								"items": {
+									"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+								}
 							},
 							{
 								"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"
@@ -3045,19 +1883,16 @@
 							},
 							{
 								"type": "array",
-								"items": false,
-								"prefixItems": [
-									{
-										"anyOf": [
-											{
-												"$ref": "https://schema.twindev.org/json-ld/JsonLdValueObject"
-											},
-											{
-												"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-											}
-										]
-									}
-								]
+								"items": {
+									"anyOf": [
+										{
+											"$ref": "https://schema.twindev.org/json-ld/JsonLdValueObject"
+										},
+										{
+											"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
+										}
+									]
+								}
 							}
 						]
 					},
@@ -3068,12 +1903,9 @@
 							},
 							{
 								"type": "array",
-								"items": false,
-								"prefixItems": [
-									{
-										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
-									}
-								]
+								"items": {
+									"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+								}
 							},
 							{
 								"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"
@@ -3099,12 +1931,9 @@
 							},
 							{
 								"type": "array",
-								"items": false,
-								"prefixItems": [
-									{
-										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
-									}
-								]
+								"items": {
+									"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+								}
 							},
 							{
 								"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"
@@ -3130,12 +1959,9 @@
 							},
 							{
 								"type": "array",
-								"items": false,
-								"prefixItems": [
-									{
-										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
-									}
-								]
+								"items": {
+									"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+								}
 							},
 							{
 								"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"
@@ -3161,12 +1987,9 @@
 							},
 							{
 								"type": "array",
-								"items": false,
-								"prefixItems": [
-									{
-										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
-									}
-								]
+								"items": {
+									"$ref": "https://schema.twindev.org/json-ld/JsonLdNodePrimitive"
+								}
 							},
 							{
 								"$ref": "https://schema.twindev.org/json-ld/JsonLdLanguageMap"

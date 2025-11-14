@@ -1,0 +1,51 @@
+{
+	"name": "@twin.org/entity-storage-connector-synchronised",
+	"version": "0.0.3-next.1",
+	"description": "Entity Storage connector implementation using synchronised storage",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/twinfoundation/synchronised-storage.git",
+		"directory": "packages/entity-storage-connector-synchronised"
+	},
+	"author": "martyn.janes@iota.org",
+	"license": "Apache-2.0",
+	"type": "module",
+	"engines": {
+		"node": ">=20.0.0"
+	},
+	"main": "./dist/es/index.js",
+	"types": "./dist/types/index.d.ts",
+	"exports": {
+		".": {
+			"types": "./dist/types/index.d.ts",
+			"import": "./dist/es/index.js",
+			"default": "./dist/es/index.js"
+		},
+		"./locales/*.json": "./locales/*.json"
+	},
+	"files": [
+		"dist/es",
+		"dist/types",
+		"locales",
+		"docs"
+	],
+	"keywords": [
+		"twin",
+		"trade",
+		"iota",
+		"framework",
+		"blockchain",
+		"entity-storage",
+		"entity",
+		"storage",
+		"persistence",
+		"database",
+		"connector",
+		"adapter",
+		"integration"
+	],
+	"bugs": {
+		"url": "git+https://github.com/twinfoundation/synchronised-storage/issues"
+	},
+	"homepage": "https://twindev.org"
+}

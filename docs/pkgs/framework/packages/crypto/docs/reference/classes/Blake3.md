@@ -44,6 +44,14 @@ Blake3 256.
 
 Blake3 512.
 
+***
+
+### CLASS\_NAME
+
+> `readonly` `static` **CLASS\_NAME**: `string`
+
+Runtime name for the class.
+
 ## Methods
 
 ### sum256()

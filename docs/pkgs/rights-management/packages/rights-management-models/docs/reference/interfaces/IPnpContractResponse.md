@@ -26,6 +26,6 @@ Response status code.
 
 ### body?
 
-> `optional` **body**: `IIdsContractNegotiationError`
+> `optional` **body**: `IContractNegotiationError`
 
 The error if there was one.

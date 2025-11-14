@@ -16,9 +16,9 @@ The id of the entry.
 
 ***
 
-### nodeIdentity
+### nodeId?
 
-> **nodeIdentity**: `string`
+> `optional` **nodeId**: `string`
 
 The identity of the node that owns the entry.
 

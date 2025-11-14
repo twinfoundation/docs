@@ -10,7 +10,7 @@ Contract definition for authentication admin component.
 
 ### create()
 
-> **create**(`email`, `password`, `identity`): `Promise`\<`void`\>
+> **create**(`email`, `password`, `userIdentity`, `organizationIdentity`): `Promise`\<`void`\>
 
 Create a login for the user.
 
@@ -28,11 +28,17 @@ The email address for the user.
 
 The password for the user.
 
-##### identity
+##### userIdentity
 
 `string`
 
 The DID to associate with the account.
+
+##### organizationIdentity
+
+`string`
+
+The organization of the user.
 
 #### Returns
 

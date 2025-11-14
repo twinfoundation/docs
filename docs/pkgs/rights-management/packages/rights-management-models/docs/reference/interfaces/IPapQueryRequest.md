@@ -16,11 +16,11 @@ The query parameters of the request.
 
 The condition for the query.
 
-#### pageSize?
+#### limit?
 
-> `optional` **pageSize**: `string` \| `number`
+> `optional` **limit**: `string`
 
-The number of entries to return per page.
+Limit the number of entities to return.
 
 #### cursor?
 

@@ -66,6 +66,22 @@ The features supported by additional processors to run for this route.
 
 ***
 
+### processorData?
+
+> `optional` **processorData**: `object`
+
+The data for additional processors to run for this route.
+
+#### Index Signature
+
+\[`key`: `string`\]: `unknown`
+
+#### Inherited from
+
+[`IBaseRoute`](IBaseRoute.md).[`processorData`](IBaseRoute.md#processordata)
+
+***
+
 ### summary
 
 > **summary**: `string`

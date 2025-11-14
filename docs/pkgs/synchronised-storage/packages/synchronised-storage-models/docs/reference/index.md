@@ -24,7 +24,7 @@
 ## Type Aliases
 
 - [SyncChangeOperation](type-aliases/SyncChangeOperation.md)
-- [SyncNodeIdentityMode](type-aliases/SyncNodeIdentityMode.md)
+- [SyncNodeIdMode](type-aliases/SyncNodeIdMode.md)
 - [SynchronisedStorageAssetTypes](type-aliases/SynchronisedStorageAssetTypes.md)
 - [SynchronisedStorageContexts](type-aliases/SynchronisedStorageContexts.md)
 - [SynchronisedStorageTopics](type-aliases/SynchronisedStorageTopics.md)
@@ -33,7 +33,7 @@
 ## Variables
 
 - [SyncChangeOperation](variables/SyncChangeOperation.md)
-- [SyncNodeIdentityMode](variables/SyncNodeIdentityMode.md)
+- [SyncNodeIdMode](variables/SyncNodeIdMode.md)
 - [SynchronisedStorageAssetTypes](variables/SynchronisedStorageAssetTypes.md)
 - [SynchronisedStorageContexts](variables/SynchronisedStorageContexts.md)
 - [SynchronisedStorageTopics](variables/SynchronisedStorageTopics.md)

@@ -10,7 +10,7 @@ Interface describing an immutable proof contract.
 
 ### create()
 
-> **create**(`document`, `userIdentity?`, `nodeIdentity?`): `Promise`\<`string`\>
+> **create**(`document`): `Promise`\<`string`\>
 
 Create a new proof.
 
@@ -21,18 +21,6 @@ Create a new proof.
 `IJsonLdNodeObject`
 
 The document to create the proof for.
-
-##### userIdentity?
-
-`string`
-
-The identity to create the immutable proof operation with.
-
-##### nodeIdentity?
-
-`string`
-
-The node identity to use for vault operations.
 
 #### Returns
 
@@ -96,7 +84,7 @@ NotFoundError if the proof is not found.
 
 ### removeVerifiable()
 
-> **removeVerifiable**(`id`, `nodeIdentity?`): `Promise`\<`void`\>
+> **removeVerifiable**(`id`): `Promise`\<`void`\>
 
 Remove the verifiable storage for the proof.
 
@@ -107,12 +95,6 @@ Remove the verifiable storage for the proof.
 `string`
 
 The id of the proof to remove the storage from.
-
-##### nodeIdentity?
-
-`string`
-
-The node identity to use for vault operations.
 
 #### Returns
 

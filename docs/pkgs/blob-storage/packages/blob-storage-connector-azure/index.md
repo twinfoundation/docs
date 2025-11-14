@@ -13,7 +13,7 @@ npm install @twin.org/blob-storage-connector-azure
 The tests developed are functional tests and need an instance of Azure up and running. To run Azure locally using azurite as microsoft container:
 
 ```shell
-docker run -p 10000:10000 --name twin-blob-azure -d -e AZURITE_ACCOUNTS=testAccount:testKey mcr.microsoft.com/azure-storage/azurite azurite-blob --blobHost 0.0.0.0
+docker run -p 20610:10000 --name twin-blob-azure -d -e AZURITE_ACCOUNTS=testAccount:testKey mcr.microsoft.com/azure-storage/azurite azurite-blob --blobHost 0.0.0.0
 ```
 
 Afterwards you can run the tests as follows:

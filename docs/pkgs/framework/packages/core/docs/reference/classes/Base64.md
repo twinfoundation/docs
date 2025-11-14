@@ -13,6 +13,14 @@ Sourced from https://github.com/beatgammit/base64-js.
 
 `Base64`
 
+## Properties
+
+### CLASS\_NAME
+
+> `readonly` `static` **CLASS\_NAME**: `string`
+
+Runtime name for the class.
+
 ## Methods
 
 ### byteLength()

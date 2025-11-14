@@ -19,6 +19,7 @@ TWIN consists of a range of applications to help you get started building and de
 ## Framework
 
 - [@twin.org/merge-locales](pkgs/framework/apps/merge-locales/index.md) - Tool to merge locale files from all dependencies
+- [@twin.org/validate-locales](pkgs/framework/apps/validate-locales/index.md) - Tool to validate source files against the locales
 - [@twin.org/crypto-cli](pkgs/framework/apps/crypto-cli/index.md) - A command line interface for interacting with the crypto tools
 
 ## Distributed Ledger

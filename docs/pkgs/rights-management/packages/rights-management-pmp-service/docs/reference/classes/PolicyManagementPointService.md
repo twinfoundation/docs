@@ -30,15 +30,29 @@ The options for the component.
 
 ### CLASS\_NAME
 
-> `readonly` **CLASS\_NAME**: `string`
+> `readonly` `static` **CLASS\_NAME**: `string`
 
 The class name of the Policy Management Point Service.
 
+## Methods
+
+### className()
+
+> **className**(): `string`
+
+Returns the class name of the component.
+
+#### Returns
+
+`string`
+
+The class name of the component.
+
 #### Implementation of
 
-`IPolicyManagementPointComponent.CLASS_NAME`
+`IPolicyManagementPointComponent.className`
 
-## Methods
+***
 
 ### retrieve()
 

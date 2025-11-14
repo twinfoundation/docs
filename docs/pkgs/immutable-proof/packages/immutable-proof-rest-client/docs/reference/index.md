@@ -2,4 +2,4 @@
 
 ## Classes
 
-- [ImmutableProofClient](classes/ImmutableProofClient.md)
+- [ImmutableProofRestClient](classes/ImmutableProofRestClient.md)

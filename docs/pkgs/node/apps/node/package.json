@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/node",
-	"version": "0.0.2-next.13",
+	"version": "0.0.3-next.2",
 	"description": "TWIN Node serving APIs using the specified configuration",
 	"private": true,
 	"repository": {
@@ -13,5 +13,9 @@
 	"type": "module",
 	"engines": {
 		"node": ">=20.0.0"
-	}
+	},
+	"bugs": {
+		"url": "git+https://github.com/twinfoundation/node/issues"
+	},
+	"homepage": "https://twindev.org"
 }

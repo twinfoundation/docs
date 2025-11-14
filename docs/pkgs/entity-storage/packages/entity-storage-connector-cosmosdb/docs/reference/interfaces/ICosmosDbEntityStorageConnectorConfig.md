@@ -33,3 +33,11 @@ The ID of the database to be used.
 > **containerId**: `string`
 
 The ID of the container for the storage.
+
+***
+
+### offerThroughput?
+
+> `optional` **offerThroughput**: `number`
+
+The offer throughput for the container.

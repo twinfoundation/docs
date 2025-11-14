@@ -30,19 +30,33 @@ The dependencies for the identity connector.
 
 ### CLASS\_NAME
 
-> `readonly` **CLASS\_NAME**: `string`
+> `readonly` `static` **CLASS\_NAME**: `string`
 
 Runtime name for the class.
 
+## Methods
+
+### className()
+
+> **className**(): `string`
+
+Returns the class name of the component.
+
+#### Returns
+
+`string`
+
+The class name of the component.
+
 #### Implementation of
 
-`IAuthenticationAdminComponent.CLASS_NAME`
+`IAuthenticationAdminComponent.className`
 
-## Methods
+***
 
 ### create()
 
-> **create**(`email`, `password`, `identity`): `Promise`\<`void`\>
+> **create**(`email`, `password`, `userIdentity`, `organizationIdentity`): `Promise`\<`void`\>
 
 Create a login for the user.
 
@@ -60,11 +74,17 @@ The email address for the user.
 
 The password for the user.
 
-##### identity
+##### userIdentity
 
 `string`
 
 The DID to associate with the account.
+
+##### organizationIdentity
+
+`string`
+
+The organization of the user.
 
 #### Returns
 

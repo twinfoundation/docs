@@ -17,5 +17,9 @@
 		"packages/auditable-item-graph-service",
 		"packages/auditable-item-graph-rest-client"
 	],
-	"type": "module"
+	"type": "module",
+	"bugs": {
+		"url": "git+https://github.com/twinfoundation/auditable-item-graph/issues"
+	},
+	"homepage": "https://twindev.org"
 }

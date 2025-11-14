@@ -38,15 +38,29 @@ The namespace for the logging connector.
 
 ### CLASS\_NAME
 
-> `readonly` **CLASS\_NAME**: `string`
+> `readonly` `static` **CLASS\_NAME**: `string`
 
 Runtime name for the class.
 
+## Methods
+
+### className()
+
+> **className**(): `string`
+
+Returns the class name of the component.
+
+#### Returns
+
+`string`
+
+The class name of the component.
+
 #### Implementation of
 
-`ILoggingConnector.CLASS_NAME`
+`ILoggingConnector.className`
 
-## Methods
+***
 
 ### log()
 
@@ -76,7 +90,7 @@ Nothing.
 
 ### query()
 
-> **query**(`conditions?`, `sortProperties?`, `properties?`, `cursor?`, `pageSize?`): `Promise`\<\{ `entities`: `Partial`\<`ILogEntry`\>[]; `cursor?`: `string`; \}\>
+> **query**(`conditions?`, `sortProperties?`, `properties?`, `cursor?`, `limit?`): `Promise`\<\{ `entities`: `Partial`\<`ILogEntry`\>[]; `cursor?`: `string`; \}\>
 
 Query the log entries.
 
@@ -104,13 +118,13 @@ The optional keys to return, defaults to all.
 
 `string`
 
-The cursor to request the next page of entities.
+The cursor to request the next chunk of entities.
 
-##### pageSize?
+##### limit?
 
 `number`
 
-The maximum number of entities in a page.
+Limit the number of entities to return.
 
 #### Returns
 

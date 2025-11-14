@@ -2,4 +2,4 @@
 
 ## Classes
 
-- [DocumentManagementClient](classes/DocumentManagementClient.md)
+- [DocumentManagementRestClient](classes/DocumentManagementRestClient.md)

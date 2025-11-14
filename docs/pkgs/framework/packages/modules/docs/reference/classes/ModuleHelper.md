@@ -82,7 +82,7 @@ GeneralError if getting the module entry failed.
 
 ### getModuleMethod()
 
-> `static` **getModuleMethod**\<`T`\>(`module`, `method`): `Promise`\<(...`args`) => `T`\>
+> `static` **getModuleMethod**\<`T`\>(`module`, `method`): `Promise`\<`T`\>
 
 Get the method from a module.
 
@@ -90,7 +90,7 @@ Get the method from a module.
 
 ##### T
 
-`T`
+`T` *extends* (...`args`) => `any` = (...`args`) => `any`
 
 #### Parameters
 
@@ -108,7 +108,7 @@ The method to execute from the module, use dot notation to get a static class me
 
 #### Returns
 
-`Promise`\<(...`args`) => `T`\>
+`Promise`\<`T`\>
 
 The result of the method execution.
 

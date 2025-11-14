@@ -36,14 +36,6 @@ The identifier of the contract negotiation to be retrieved, can be undefined.
 
 ### body
 
-> **body**: `IIdsContractRequestMessage`
+> **body**: `IContractRequestMessage`
 
 The body parameters of the request.
-
-***
-
-### authentication
-
-> **authentication**: `IIdentityAuthenticationActionRequest`
-
-The action request used in the verifiable credential.

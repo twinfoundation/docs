@@ -40,10 +40,6 @@ The type initialisers for the engine.
 
 > **type**: `string`
 
-#### typeConfig
-
-> **typeConfig**: [`IEngineCoreTypeConfig`](../type-aliases/IEngineCoreTypeConfig.md)[]
-
 #### module
 
 > **module**: `string`
@@ -66,8 +62,8 @@ The entity schemas for the engine.
 
 ***
 
-### loggerTypeName
+### contextIdKeys
 
-> **loggerTypeName**: `string`
+> **contextIdKeys**: `string`[]
 
-The logger type name.
+The context ID keys.

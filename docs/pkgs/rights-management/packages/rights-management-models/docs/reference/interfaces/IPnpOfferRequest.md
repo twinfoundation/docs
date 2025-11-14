@@ -36,14 +36,6 @@ The identifier of the consumer being offered, this can be undefined.
 
 ### body
 
-> **body**: `IIdsContractOfferMessage`
+> **body**: `IContractOfferMessage`
 
 The body parameters of the request.
-
-***
-
-### authentication
-
-> **authentication**: `IIdentityAuthenticationActionRequest`
-
-The action request used in the verifiable credential.

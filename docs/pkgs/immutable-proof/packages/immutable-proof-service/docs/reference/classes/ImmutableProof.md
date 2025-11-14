@@ -22,22 +22,6 @@ The id of the proof.
 
 ***
 
-### nodeIdentity
-
-> **nodeIdentity**: `string`
-
-The identity of the node which controls the proof.
-
-***
-
-### userIdentity
-
-> **userIdentity**: `string`
-
-The identity of the user which created the proof.
-
-***
-
 ### dateCreated
 
 > **dateCreated**: `string`

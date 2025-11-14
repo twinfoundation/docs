@@ -24,6 +24,7 @@
 - [FilenameHelper](classes/FilenameHelper.md)
 - [HexHelper](classes/HexHelper.md)
 - [JsonHelper](classes/JsonHelper.md)
+- [NumberHelper](classes/NumberHelper.md)
 - [ObjectHelper](classes/ObjectHelper.md)
 - [RandomHelper](classes/RandomHelper.md)
 - [StringHelper](classes/StringHelper.md)

@@ -91,11 +91,3 @@ Is the entry encrypted.
 > `optional` **compression**: `BlobStorageCompressionType`
 
 Is the entry compressed.
-
-***
-
-### userIdentity?
-
-> `optional` **userIdentity**: `string`
-
-The user identity that created the blob.

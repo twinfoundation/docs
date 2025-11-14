@@ -2,4 +2,4 @@
 
 ## Classes
 
-- [FederatedCatalogueClient](classes/FederatedCatalogueClient.md)
+- [FederatedCatalogueRestClient](classes/FederatedCatalogueRestClient.md)

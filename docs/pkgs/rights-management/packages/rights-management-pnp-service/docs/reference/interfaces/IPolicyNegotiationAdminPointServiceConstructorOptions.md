@@ -60,6 +60,14 @@ policy-information-point
 
 ***
 
+### partitionContextIds?
+
+> `optional` **partitionContextIds**: `string`[]
+
+The keys to use from the context ids to cleanup partitions.
+
+***
+
 ### config?
 
 > `optional` **config**: [`IPolicyNegotiationAdminPointServiceConfig`](IPolicyNegotiationAdminPointServiceConfig.md)

@@ -16,5 +16,9 @@
 		"apps/playground-node",
 		"apps/playground-ui"
 	],
-	"type": "module"
+	"type": "module",
+	"bugs": {
+		"url": "git+https://github.com/twinfoundation/playground/issues"
+	},
+	"homepage": "https://twindev.org"
 }

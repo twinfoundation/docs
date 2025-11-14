@@ -28,25 +28,39 @@ The options for the logging connector.
 
 ## Properties
 
+### CLASS\_NAME
+
+> `readonly` `static` **CLASS\_NAME**: `string`
+
+Runtime name for the class.
+
+***
+
 ### NAMESPACE
 
 > `readonly` `static` **NAMESPACE**: `string` = `"console"`
 
 The namespace for the logging connector.
 
-***
+## Methods
 
-### CLASS\_NAME
+### className()
 
-> `readonly` **CLASS\_NAME**: `string`
+> **className**(): `string`
 
-Runtime name for the class.
+Returns the class name of the component.
+
+#### Returns
+
+`string`
+
+The class name of the component.
 
 #### Implementation of
 
-`ILoggingConnector.CLASS_NAME`
+`ILoggingConnector.className`
 
-## Methods
+***
 
 ### log()
 

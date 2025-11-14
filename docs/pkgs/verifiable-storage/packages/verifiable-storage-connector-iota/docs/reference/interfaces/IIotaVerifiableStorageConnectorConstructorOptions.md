@@ -37,3 +37,18 @@ The logging component type.
 ```ts
 logging
 ```
+
+***
+
+### deploymentConfig?
+
+> `optional` **deploymentConfig**: `ISmartContractDeployments`
+
+Optional deployment configuration to use instead of the default compiled configuration.
+This allows tests and other scenarios to use different contract deployments.
+
+#### Default
+
+```ts
+Uses compiled smart-contract-deployments.json
+```

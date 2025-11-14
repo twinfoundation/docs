@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/data-space-connector-app-runner",
-	"version": "0.0.1-next.4",
+	"version": "0.0.3-next.1",
 	"description": "Data Space Connector App Runner",
 	"repository": {
 		"type": "git",
@@ -13,22 +13,35 @@
 	"engines": {
 		"node": ">=20.0.0"
 	},
-	"main": "./dist/cjs/index.cjs",
-	"module": "./dist/esm/index.mjs",
+	"main": "./dist/es/index.js",
 	"types": "./dist/types/index.d.ts",
 	"exports": {
 		".": {
 			"types": "./dist/types/index.d.ts",
-			"require": "./dist/cjs/index.cjs",
-			"import": "./dist/esm/index.mjs"
+			"import": "./dist/es/index.js",
+			"default": "./dist/es/index.js"
 		},
 		"./locales/*.json": "./locales/*.json"
 	},
 	"files": [
-		"dist/cjs",
-		"dist/esm",
+		"dist/es",
 		"dist/types",
 		"locales",
 		"docs"
-	]
+	],
+	"keywords": [
+		"twin",
+		"trade",
+		"iota",
+		"framework",
+		"blockchain",
+		"data-space-connector",
+		"connector",
+		"adapter",
+		"integration"
+	],
+	"bugs": {
+		"url": "git+https://github.com/twinfoundation/data-space-connector/issues"
+	},
+	"homepage": "https://twindev.org"
 }

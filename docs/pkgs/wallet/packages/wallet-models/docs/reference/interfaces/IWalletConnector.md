@@ -140,7 +140,7 @@ True if the balance has been ensured.
 
 ### transfer()
 
-> **transfer**(`identity`, `addressSource`, `addressDest`, `amount`): `Promise`\<`undefined` \| `string`\>
+> **transfer**(`identity`, `addressSource`, `addressDest`, `amount`): `Promise`\<`string` \| `undefined`\>
 
 Transfer funds to an address.
 
@@ -172,6 +172,6 @@ The amount to transfer.
 
 #### Returns
 
-`Promise`\<`undefined` \| `string`\>
+`Promise`\<`string` \| `undefined`\>
 
 An identifier for the transfer if there was one.
