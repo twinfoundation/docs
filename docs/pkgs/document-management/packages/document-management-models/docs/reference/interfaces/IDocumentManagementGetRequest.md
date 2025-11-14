@@ -96,11 +96,11 @@ If provided will extract data from the document using the specified rule group i
 
 By default extraction will auto detect the mime type of the document, this can be used to override the detection.
 
-#### pageSize?
+#### limit?
 
-> `optional` **pageSize**: `string` \| `number`
+> `optional` **limit**: `string`
 
-Page size of items to return, defaults to 1 so only most recent is returned.
+PLimit the number of items to return, defaults to 1 so only most recent is returned.
 
 ##### Default
 

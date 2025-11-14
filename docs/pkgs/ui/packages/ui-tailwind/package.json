@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/ui-tailwind",
-	"version": "0.0.2-next.1",
+	"version": "0.0.3-next.1",
 	"description": "UI package for tailwind",
 	"repository": {
 		"type": "git",
@@ -31,5 +31,20 @@
 		"dist",
 		"docs",
 		"locales"
-	]
+	],
+	"keywords": [
+		"twin",
+		"trade",
+		"iota",
+		"framework",
+		"blockchain",
+		"ui",
+		"components",
+		"react",
+		"frontend"
+	],
+	"bugs": {
+		"url": "git+https://github.com/twinfoundation/ui/issues"
+	},
+	"homepage": "https://twindev.org"
 }

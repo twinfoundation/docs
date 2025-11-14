@@ -44,6 +44,14 @@ Sha256 256.
 
 Sha256 224.
 
+***
+
+### CLASS\_NAME
+
+> `readonly` `static` **CLASS\_NAME**: `string`
+
+Runtime name for the class.
+
 ## Methods
 
 ### sum224()

@@ -36,14 +36,6 @@ The identifier of the negotiation to target.
 
 ### body
 
-> **body**: `IIdsContractNegotiationEventMessage`
+> **body**: `IContractNegotiationEventMessage`
 
 The body parameters of the request.
-
-***
-
-### authentication
-
-> **authentication**: `IIdentityAuthenticationActionRequest`
-
-The action request used in the verifiable credential.

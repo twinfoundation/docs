@@ -78,7 +78,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "GeneralError",
-											"message": "component.error",
+											"message": "errorMessage",
 											"properties": {
 												"foo": "bar"
 											}
@@ -99,7 +99,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "UnauthorizedError",
-											"message": "component.error"
+											"message": "errorMessage"
 										}
 									}
 								}
@@ -117,7 +117,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "NotFoundError",
-											"message": "component.error",
+											"message": "errorMessage",
 											"properties": {
 												"notFoundId": "1"
 											}
@@ -138,7 +138,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "InternalServerError",
-											"message": "component.error"
+											"message": "errorMessage"
 										}
 									}
 								}
@@ -200,8 +200,6 @@
 											],
 											"type": "ImmutableProof",
 											"id": "ais:1234567890",
-											"nodeIdentity": "node-1",
-											"userIdentity": "user-1",
 											"proofObjectId": "test:1234567890",
 											"proofObjectHash": "EAOKyDN0mYQbBh91eMdVeroxQx1H4GfnRbmt6n/2L/Y=",
 											"proof": {
@@ -229,8 +227,6 @@
 											],
 											"type": "ImmutableProof",
 											"id": "ais:1234567890",
-											"nodeIdentity": "node-1",
-											"userIdentity": "user-1",
 											"proofObjectId": "test:1234567890",
 											"proofObjectHash": "EAOKyDN0mYQbBh91eMdVeroxQx1H4GfnRbmt6n/2L/Y=",
 											"proof": {
@@ -266,7 +262,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "GeneralError",
-											"message": "component.error",
+											"message": "errorMessage",
 											"properties": {
 												"foo": "bar"
 											}
@@ -287,7 +283,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "UnauthorizedError",
-											"message": "component.error"
+											"message": "errorMessage"
 										}
 									}
 								}
@@ -305,7 +301,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "NotFoundError",
-											"message": "component.error",
+											"message": "errorMessage",
 											"properties": {
 												"notFoundId": "1"
 											}
@@ -326,7 +322,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "InternalServerError",
-											"message": "component.error"
+											"message": "errorMessage"
 										}
 									}
 								}
@@ -409,7 +405,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "GeneralError",
-											"message": "component.error",
+											"message": "errorMessage",
 											"properties": {
 												"foo": "bar"
 											}
@@ -430,7 +426,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "UnauthorizedError",
-											"message": "component.error"
+											"message": "errorMessage"
 										}
 									}
 								}
@@ -448,7 +444,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "NotFoundError",
-											"message": "component.error",
+											"message": "errorMessage",
 											"properties": {
 												"notFoundId": "1"
 											}
@@ -469,7 +465,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "InternalServerError",
-											"message": "component.error"
+											"message": "errorMessage"
 										}
 									}
 								}
@@ -494,15 +490,15 @@
 							{
 								"type": "array",
 								"minItems": 1,
-								"items": {
-									"$ref": "https://schema.twindev.org/json-ld/JsonLdContextDefinitionElement"
-								},
 								"prefixItems": [
 									{
 										"type": "string",
 										"const": "https://www.w3.org/ns/credentials/v2"
 									}
-								]
+								],
+								"items": {
+									"$ref": "https://schema.twindev.org/json-ld/JsonLdContextDefinitionElement"
+								}
 							}
 						],
 						"description": "JSON-LD Context."
@@ -554,12 +550,9 @@
 							},
 							{
 								"type": "array",
-								"items": false,
-								"prefixItems": [
-									{
-										"type": "string"
-									}
-								]
+								"items": {
+									"type": "string"
+								}
 							}
 						],
 						"description": "One or more security domains in which the proof is meant to be used."
@@ -571,12 +564,9 @@
 							},
 							{
 								"type": "array",
-								"items": false,
-								"prefixItems": [
-									{
-										"type": "string"
-									}
-								]
+								"items": {
+									"type": "string"
+								}
 							}
 						],
 						"description": "Provided to mitigate replay attacks on domains."

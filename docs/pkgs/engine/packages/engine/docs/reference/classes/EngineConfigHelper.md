@@ -24,7 +24,7 @@ Runtime name for the class.
 
 ### addCustomEntityStorage()
 
-> `static` **addCustomEntityStorage**\<`T`\>(`engineConfig`, `entityTypeName`, `entitySchema`, `restPath?`, `options?`): `void`
+> `static` **addCustomEntityStorage**\<`T`\>(`engineConfig`, `entityTypeName`, `entitySchema`, `restPath?`, `partitionContextIds?`): `void`
 
 Add a custom entity storage to the engine configuration.
 
@@ -60,15 +60,11 @@ The entity schema.
 
 The rest path to serve the entity storage from, leave undefined for no endpoints.
 
-##### options?
+##### partitionContextIds?
 
-Additional options.
+`string`[]
 
-###### partitionPerUser?
-
-`boolean`
-
-Whether to partition the user identity in the data, defaults to false.
+The context ids to use for partitioning.
 
 #### Returns
 

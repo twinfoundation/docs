@@ -52,7 +52,7 @@ The endpoint with namespace prefix attached.
 
 ### fetch()
 
-> **fetch**\<`T`, `U`\>(`route`, `method`, `request?`): `Promise`\<`U`\>
+> **fetch**\<`T`, `U`\>(`route`, `method`, `request?`, `options?`): `Promise`\<`U`\>
 
 Perform a request in json format.
 
@@ -85,6 +85,22 @@ The http method.
 `T`
 
 Request to send to the endpoint.
+
+##### options?
+
+Additional options for the request.
+
+###### authenticationGeneratorType?
+
+`string`
+
+Use a custom authentication type for the request.
+
+###### authenticationData?
+
+`unknown`
+
+Used to authenticate and will be passed to the configured authentication provider for the request.
 
 #### Returns
 

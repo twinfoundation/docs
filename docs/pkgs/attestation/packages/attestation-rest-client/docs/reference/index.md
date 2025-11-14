@@ -2,4 +2,4 @@
 
 ## Classes
 
-- [AttestationClient](classes/AttestationClient.md)
+- [AttestationRestClient](classes/AttestationRestClient.md)

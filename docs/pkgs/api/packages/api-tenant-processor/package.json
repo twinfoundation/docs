@@ -1,0 +1,47 @@
+{
+	"name": "@twin.org/api-tenant-processor",
+	"version": "0.0.3-next.5",
+	"description": "API Tenant Processor for converting and api key to a tenant id.",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/twinfoundation/api.git",
+		"directory": "packages/api-tenant-processor"
+	},
+	"author": "martyn.janes@iota.org",
+	"license": "Apache-2.0",
+	"type": "module",
+	"engines": {
+		"node": ">=20.0.0"
+	},
+	"main": "./dist/es/index.js",
+	"types": "./dist/types/index.d.ts",
+	"exports": {
+		".": {
+			"types": "./dist/types/index.d.ts",
+			"import": "./dist/es/index.js",
+			"default": "./dist/es/index.js"
+		},
+		"./locales/*.json": "./locales/*.json"
+	},
+	"files": [
+		"dist/es",
+		"dist/types",
+		"locales",
+		"docs"
+	],
+	"keywords": [
+		"twin",
+		"trade",
+		"iota",
+		"framework",
+		"blockchain",
+		"node",
+		"tenant",
+		"foundation",
+		"utilities"
+	],
+	"bugs": {
+		"url": "git+https://github.com/twinfoundation/api/issues"
+	},
+	"homepage": "https://twindev.org"
+}

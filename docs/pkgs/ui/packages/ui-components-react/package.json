@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/ui-components-react",
-	"version": "0.0.2-next.1",
+	"version": "0.0.3-next.1",
 	"description": "UI components for react",
 	"repository": {
 		"type": "git",
@@ -506,11 +506,31 @@
 			"types": "./dist/types/tooltip/tooltip.d.ts",
 			"import": "./dist/es/tooltip/tooltip.mjs",
 			"require": "./dist/cjs/tooltip/tooltip.js"
+		},
+		"./ui-table": {
+			"types": "./dist/types/ui-table/ui-table.d.ts",
+			"import": "./dist/es/ui-table/ui-table.mjs",
+			"require": "./dist/cjs/ui-table/ui-table.js"
 		}
 	},
 	"files": [
 		"dist",
 		"docs",
 		"locales"
-	]
+	],
+	"keywords": [
+		"twin",
+		"trade",
+		"iota",
+		"framework",
+		"blockchain",
+		"ui",
+		"components",
+		"react",
+		"frontend"
+	],
+	"bugs": {
+		"url": "git+https://github.com/twinfoundation/ui/issues"
+	},
+	"homepage": "https://twindev.org"
 }

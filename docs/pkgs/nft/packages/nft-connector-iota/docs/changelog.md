@@ -1,5 +1,90 @@
 # @twin.org/nft-connector-iota - Changelog
 
+## [0.0.3-next.1](https://github.com/twinfoundation/nft/compare/nft-connector-iota-v0.0.3-next.0...nft-connector-iota-v0.0.3-next.1) (2025-11-12)
+
+
+### Features
+
+* add context id features ([#50](https://github.com/twinfoundation/nft/issues/50)) ([56c31c7](https://github.com/twinfoundation/nft/commit/56c31c7ba10e3ef8ad44f6463153f90888e64711))
+* add validate-locales ([0055a56](https://github.com/twinfoundation/nft/commit/0055a56ed166946f1db860aa0725ad53248b3427))
+* eslint migration to flat config ([0e6fc12](https://github.com/twinfoundation/nft/commit/0e6fc128c3c8f6cd34db793787437dd4af2c9994))
+* github action simplification and readme update ([#26](https://github.com/twinfoundation/nft/issues/26)) ([4182787](https://github.com/twinfoundation/nft/commit/4182787203c00fc760ec43c9d4198e4da20adfb7))
+* improve components state for deployments based on contract id ([20d69b0](https://github.com/twinfoundation/nft/commit/20d69b0084ba6932ef53e1eceec0506526b08ba6))
+* iota rebased release ([8d05d1f](https://github.com/twinfoundation/nft/commit/8d05d1f58c1aacac983c100697ab40a314ad34ea))
+* move to json integration ([#31](https://github.com/twinfoundation/nft/issues/31)) ([89944ba](https://github.com/twinfoundation/nft/commit/89944ba05b955944f84419224c3ae63fef28cc23))
+* remove NFT migration and version validation methods from IotaNftConnector ([#46](https://github.com/twinfoundation/nft/issues/46)) ([2b15d8c](https://github.com/twinfoundation/nft/commit/2b15d8c9b83f461feee03fa5a0f1e90304762461))
+* smart contract upgrade and versioning ([#33](https://github.com/twinfoundation/nft/issues/33)) ([49bf1a0](https://github.com/twinfoundation/nft/commit/49bf1a0ea891f9ef4f9b86ee6448bfd9ffc2d092))
+* update connector config and tests for gas station ([#24](https://github.com/twinfoundation/nft/issues/24)) ([c74eccc](https://github.com/twinfoundation/nft/commit/c74eccc3ca79b676ef21de7b7e69fcf9941ea43e))
+* update contracts file ([a341feb](https://github.com/twinfoundation/nft/commit/a341feb311063e889553d7ee995ed0d5093718c2))
+* update dependencies ([8660f76](https://github.com/twinfoundation/nft/commit/8660f76ca324b0f476e45544cac6bee4b3146c3b))
+* update dlt packages ([12c4966](https://github.com/twinfoundation/nft/commit/12c4966bceb926b7cdcf1449165bee09187a426c))
+* update framework core ([f3496b6](https://github.com/twinfoundation/nft/commit/f3496b61bfebbb3479bb92df39ecfa9ac8d90b9b))
+* update IOTA CLI version and remove redundant upgrade tests ([#39](https://github.com/twinfoundation/nft/issues/39)) ([e6355a8](https://github.com/twinfoundation/nft/commit/e6355a89038f52df20f24f64727c62e581b71d8a))
+* use latest dlt packages with latency fix ([#14](https://github.com/twinfoundation/nft/issues/14)) ([c8c20ed](https://github.com/twinfoundation/nft/commit/c8c20edd74daf4610125f4abc0fd613d42b6a195))
+* use shared store mechanism ([#16](https://github.com/twinfoundation/nft/issues/16)) ([897bc78](https://github.com/twinfoundation/nft/commit/897bc7805248ba1388b2dd03df24c33f1633f344))
+* wallet only required for write operations ([d3f3522](https://github.com/twinfoundation/nft/commit/d3f3522919e205aaeff83c1f13bbea9a68c5bf5c))
+
+
+### Bug Fixes
+
+* contract independent tests ([#35](https://github.com/twinfoundation/nft/issues/35)) ([b54ad6e](https://github.com/twinfoundation/nft/commit/b54ad6e1727284230f21db0032dc8ff437444812))
+* min change for new version ([#44](https://github.com/twinfoundation/nft/issues/44)) ([8976aae](https://github.com/twinfoundation/nft/commit/8976aae3356b5c1e47305bd45c66288211f2fba7))
+* return if package already deployed ([bf09fa1](https://github.com/twinfoundation/nft/commit/bf09fa15818f968d7c0f2ddbc29a5566511607d2))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/nft-models bumped from 0.0.3-next.0 to 0.0.3-next.1
+
+## [0.0.2-next.8](https://github.com/twinfoundation/nft/compare/nft-connector-iota-v0.0.2-next.7...nft-connector-iota-v0.0.2-next.8) (2025-10-09)
+
+
+### Features
+
+* add validate-locales ([0055a56](https://github.com/twinfoundation/nft/commit/0055a56ed166946f1db860aa0725ad53248b3427))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/nft-models bumped from 0.0.2-next.7 to 0.0.2-next.8
+
+## [0.0.2-next.7](https://github.com/twinfoundation/nft/compare/nft-connector-iota-v0.0.2-next.6...nft-connector-iota-v0.0.2-next.7) (2025-09-26)
+
+
+### Features
+
+* remove NFT migration and version validation methods from IotaNftConnector ([#46](https://github.com/twinfoundation/nft/issues/46)) ([2b15d8c](https://github.com/twinfoundation/nft/commit/2b15d8c9b83f461feee03fa5a0f1e90304762461))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/nft-models bumped from 0.0.2-next.6 to 0.0.2-next.7
+
+## [0.0.2-next.6](https://github.com/twinfoundation/nft/compare/nft-connector-iota-v0.0.2-next.5...nft-connector-iota-v0.0.2-next.6) (2025-09-25)
+
+
+### Features
+
+* update contracts file ([a341feb](https://github.com/twinfoundation/nft/commit/a341feb311063e889553d7ee995ed0d5093718c2))
+
+
+### Bug Fixes
+
+* min change for new version ([#44](https://github.com/twinfoundation/nft/issues/44)) ([8976aae](https://github.com/twinfoundation/nft/commit/8976aae3356b5c1e47305bd45c66288211f2fba7))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/nft-models bumped from 0.0.2-next.5 to 0.0.2-next.6
+
 ## [0.0.2-next.5](https://github.com/twinfoundation/nft/compare/nft-connector-iota-v0.0.2-next.4...nft-connector-iota-v0.0.2-next.5) (2025-09-22)
 
 

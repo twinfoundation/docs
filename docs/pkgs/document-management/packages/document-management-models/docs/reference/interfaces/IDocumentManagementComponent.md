@@ -10,7 +10,7 @@ Interface describing an document management contract.
 
 ### create()
 
-> **create**(`documentId`, `documentIdFormat`, `documentCode`, `blob`, `annotationObject?`, `auditableItemGraphEdges?`, `options?`, `userIdentity?`, `nodeIdentity?`): `Promise`\<`string`\>
+> **create**(`documentId`, `documentIdFormat`, `documentCode`, `blob`, `annotationObject?`, `auditableItemGraphEdges?`, `options?`): `Promise`\<`string`\>
 
 Create a document as an auditable item graph vertex and add its content to blob storage.
 If the document id already exists and the blob data is different a new revision will be created.
@@ -28,7 +28,7 @@ The document id to create.
 
 The format of the document identifier.
 
-`undefined` | `string`
+`string` | `undefined`
 
 ##### documentCode
 
@@ -76,18 +76,6 @@ Flag to add the document id as an alias to the aig vertex, defaults to true.
 
 Annotation object for the alias.
 
-##### userIdentity?
-
-`string`
-
-The identity to perform the auditable item graph operation with.
-
-##### nodeIdentity?
-
-`string`
-
-The node identity to use for vault operations.
-
 #### Returns
 
 `Promise`\<`string`\>
@@ -98,7 +86,7 @@ The auditable item graph vertex created for the document including its revision.
 
 ### update()
 
-> **update**(`auditableItemGraphDocumentId`, `blob?`, `annotationObject?`, `auditableItemGraphEdges?`, `userIdentity?`, `nodeIdentity?`): `Promise`\<`void`\>
+> **update**(`auditableItemGraphDocumentId`, `blob?`, `annotationObject?`, `auditableItemGraphEdges?`): `Promise`\<`void`\>
 
 Update a document as an auditable item graph vertex and add its content to blob storage.
 If the blob data is different a new revision will be created.
@@ -130,18 +118,6 @@ Additional information to associate with the document.
 
 The auditable item graph vertices to connect the document to, if undefined retains current connections.
 
-##### userIdentity?
-
-`string`
-
-The identity to perform the auditable item graph operation with.
-
-##### nodeIdentity?
-
-`string`
-
-The node identity to use for vault operations.
-
 #### Returns
 
 `Promise`\<`void`\>
@@ -152,7 +128,7 @@ Nothing.
 
 ### get()
 
-> **get**(`auditableItemGraphDocumentId`, `options?`, `cursor?`, `pageSize?`, `userIdentity?`, `nodeIdentity?`): `Promise`\<[`IDocumentList`](IDocumentList.md)\>
+> **get**(`auditableItemGraphDocumentId`, `options?`, `cursor?`, `limit?`): `Promise`\<[`IDocumentList`](IDocumentList.md)\>
 
 Get a document using it's auditable item graph vertex id and optional revision.
 
@@ -210,23 +186,11 @@ By default extraction will auto detect the mime type of the document, this can b
 
 The cursor to get the next chunk of revisions.
 
-##### pageSize?
+##### limit?
 
 `number`
 
-Page size of items to return, defaults to 1 so only most recent is returned.
-
-##### userIdentity?
-
-`string`
-
-The identity to perform the auditable item graph operation with.
-
-##### nodeIdentity?
-
-`string`
-
-The node identity to use for vault operations.
+Limit the number of items to return, defaults to 1 so only most recent is returned.
 
 #### Returns
 
@@ -238,7 +202,7 @@ The documents and revisions if requested, ordered by revision descending, cursor
 
 ### getRevision()
 
-> **getRevision**(`auditableItemGraphDocumentId`, `revision`, `options?`, `userIdentity?`, `nodeIdentity?`): `Promise`\<[`IDocument`](IDocument.md)\>
+> **getRevision**(`auditableItemGraphDocumentId`, `revision`, `options?`): `Promise`\<[`IDocument`](IDocument.md)\>
 
 Get a document revision using it's auditable item graph vertex id.
 
@@ -290,18 +254,6 @@ If provided will extract data from the document using the specified rule group i
 
 By default extraction will auto detect the mime type of the document, this can be used to override the detection.
 
-##### userIdentity?
-
-`string`
-
-The identity to perform the auditable item graph operation with.
-
-##### nodeIdentity?
-
-`string`
-
-The node identity to use for vault operations.
-
 #### Returns
 
 `Promise`\<[`IDocument`](IDocument.md)\>
@@ -312,7 +264,7 @@ The documents and revisions if requested, ordered by revision descending, cursor
 
 ### removeRevision()
 
-> **removeRevision**(`auditableItemGraphDocumentId`, `revision`, `userIdentity?`, `nodeIdentity?`): `Promise`\<`void`\>
+> **removeRevision**(`auditableItemGraphDocumentId`, `revision`): `Promise`\<`void`\>
 
 Remove an auditable item graph vertex using it's id.
 The document dateDeleted will be set, but can still be queried with the includeRemoved flag.
@@ -331,18 +283,6 @@ The auditable item graph vertex id which contains the document.
 
 The revision of the document to remove.
 
-##### userIdentity?
-
-`string`
-
-The identity to perform the auditable item graph operation with.
-
-##### nodeIdentity?
-
-`string`
-
-The node identity to use for vault operations.
-
 #### Returns
 
 `Promise`\<`void`\>
@@ -353,7 +293,7 @@ Nothing.
 
 ### query()
 
-> **query**(`documentId`, `cursor?`, `pageSize?`, `userIdentity?`, `nodeIdentity?`): `Promise`\<`IAuditableItemGraphVertexList`\>
+> **query**(`documentId`, `cursor?`, `limit?`): `Promise`\<`IAuditableItemGraphVertexList`\>
 
 Find all the document with a specific id.
 
@@ -371,23 +311,11 @@ The document id to find in the graph.
 
 The cursor to get the next chunk of documents.
 
-##### pageSize?
+##### limit?
 
 `number`
 
-The page size to get the next chunk of documents.
-
-##### userIdentity?
-
-`string`
-
-The identity to perform the auditable item graph operation with.
-
-##### nodeIdentity?
-
-`string`
-
-The node identity to use for vault operations.
+The limit to get the next chunk of documents.
 
 #### Returns
 

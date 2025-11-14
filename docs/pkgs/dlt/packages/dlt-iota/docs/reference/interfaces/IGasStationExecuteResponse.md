@@ -28,6 +28,6 @@ The transaction digest.
 
 ### error?
 
-> `optional` **error**: `null` \| `string`
+> `optional` **error**: `string` \| `null`
 
 Error message if the request failed.

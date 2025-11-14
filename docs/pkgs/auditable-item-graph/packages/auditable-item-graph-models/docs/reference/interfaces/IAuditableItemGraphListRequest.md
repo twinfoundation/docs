@@ -76,8 +76,8 @@ The properties to return as a comma separated list, defaults to "id,dateCreated,
 
 The optional cursor to get next chunk.
 
-#### pageSize?
+#### limit?
 
-> `optional` **pageSize**: `string` \| `number`
+> `optional` **limit**: `string`
 
-The maximum number of entities in a page.
+Limit the number of entities to return.

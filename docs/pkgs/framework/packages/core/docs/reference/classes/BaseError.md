@@ -161,7 +161,7 @@ The list of all internal errors.
 
 ### expand()
 
-> `static` **expand**(`errors`): `undefined` \| [`IError`](../interfaces/IError.md)
+> `static` **expand**(`errors`): [`IError`](../interfaces/IError.md) \| `undefined`
 
 Expand an error tree.
 
@@ -171,11 +171,11 @@ Expand an error tree.
 
 The list of errors to expand.
 
-`undefined` | [`IError`](../interfaces/IError.md)[]
+[`IError`](../interfaces/IError.md)[] | `undefined`
 
 #### Returns
 
-`undefined` \| [`IError`](../interfaces/IError.md)
+[`IError`](../interfaces/IError.md) \| `undefined`
 
 The first level error.
 

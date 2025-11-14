@@ -15,7 +15,12 @@
 	"workspaces": [
 		"packages/data-core",
 		"packages/data-json-ld",
-		"packages/data-framework"
+		"packages/data-framework",
+		"packages/data-json-path"
 	],
-	"type": "module"
+	"type": "module",
+	"bugs": {
+		"url": "git+https://github.com/twinfoundation/data/issues"
+	},
+	"homepage": "https://twindev.org"
 }

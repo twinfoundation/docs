@@ -12,7 +12,7 @@ Definition for an entity schema.
 
 ### type
 
-> **type**: `undefined` \| `string`
+> **type**: `string` \| `undefined`
 
 The type of the entity.
 

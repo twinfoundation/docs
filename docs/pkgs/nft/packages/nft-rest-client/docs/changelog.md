@@ -1,5 +1,66 @@
 # @twin.org/nft-rest-client - Changelog
 
+## [0.0.3-next.1](https://github.com/twinfoundation/nft/compare/nft-rest-client-v0.0.3-next.0...nft-rest-client-v0.0.3-next.1) (2025-11-12)
+
+
+### Features
+
+* add context id features ([#50](https://github.com/twinfoundation/nft/issues/50)) ([56c31c7](https://github.com/twinfoundation/nft/commit/56c31c7ba10e3ef8ad44f6463153f90888e64711))
+* add validate-locales ([0055a56](https://github.com/twinfoundation/nft/commit/0055a56ed166946f1db860aa0725ad53248b3427))
+* eslint migration to flat config ([0e6fc12](https://github.com/twinfoundation/nft/commit/0e6fc128c3c8f6cd34db793787437dd4af2c9994))
+* update dependencies ([8660f76](https://github.com/twinfoundation/nft/commit/8660f76ca324b0f476e45544cac6bee4b3146c3b))
+* update framework core ([f3496b6](https://github.com/twinfoundation/nft/commit/f3496b61bfebbb3479bb92df39ecfa9ac8d90b9b))
+* use shared store mechanism ([#16](https://github.com/twinfoundation/nft/issues/16)) ([897bc78](https://github.com/twinfoundation/nft/commit/897bc7805248ba1388b2dd03df24c33f1633f344))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/nft-models bumped from 0.0.3-next.0 to 0.0.3-next.1
+
+## [0.0.2-next.8](https://github.com/twinfoundation/nft/compare/nft-rest-client-v0.0.2-next.7...nft-rest-client-v0.0.2-next.8) (2025-10-09)
+
+
+### Features
+
+* add validate-locales ([0055a56](https://github.com/twinfoundation/nft/commit/0055a56ed166946f1db860aa0725ad53248b3427))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/nft-models bumped from 0.0.2-next.7 to 0.0.2-next.8
+
+## [0.0.2-next.7](https://github.com/twinfoundation/nft/compare/nft-rest-client-v0.0.2-next.6...nft-rest-client-v0.0.2-next.7) (2025-09-26)
+
+
+### Miscellaneous Chores
+
+* **nft-rest-client:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/nft-models bumped from 0.0.2-next.6 to 0.0.2-next.7
+
+## [0.0.2-next.6](https://github.com/twinfoundation/nft/compare/nft-rest-client-v0.0.2-next.5...nft-rest-client-v0.0.2-next.6) (2025-09-25)
+
+
+### Miscellaneous Chores
+
+* **nft-rest-client:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/nft-models bumped from 0.0.2-next.5 to 0.0.2-next.6
+
 ## [0.0.2-next.5](https://github.com/twinfoundation/nft/compare/nft-rest-client-v0.0.2-next.4...nft-rest-client-v0.0.2-next.5) (2025-09-22)
 
 

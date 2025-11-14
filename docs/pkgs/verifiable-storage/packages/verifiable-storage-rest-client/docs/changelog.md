@@ -1,5 +1,54 @@
 # @twin.org/verifiable-storage-rest-client - Changelog
 
+## [0.0.3-next.1](https://github.com/twinfoundation/verifiable-storage/compare/verifiable-storage-rest-client-v0.0.3-next.0...verifiable-storage-rest-client-v0.0.3-next.1) (2025-11-12)
+
+
+### Features
+
+* add context id features ([#40](https://github.com/twinfoundation/verifiable-storage/issues/40)) ([260b96a](https://github.com/twinfoundation/verifiable-storage/commit/260b96a8b7d1a26c6c415f2de12e09671ee70220))
+* add support for allowlist ([#17](https://github.com/twinfoundation/verifiable-storage/issues/17)) ([9341ea6](https://github.com/twinfoundation/verifiable-storage/commit/9341ea6b95dfbf2a5dc70a53e5979d7d0e8b2de6))
+* add validate-locales ([326384f](https://github.com/twinfoundation/verifiable-storage/commit/326384fe867604e7cd450460a6a56c6c7bdc8f98))
+* eslint migration to flat config ([b0a0b85](https://github.com/twinfoundation/verifiable-storage/commit/b0a0b8585a77c1e541531d60b432916b9dc0867e))
+* update dependencies ([a16a772](https://github.com/twinfoundation/verifiable-storage/commit/a16a77244cb1d312ea5ee74232bcdadd25f2b330))
+* update framework core ([efa612e](https://github.com/twinfoundation/verifiable-storage/commit/efa612e54dbe2d8f223f27ff9e315e08a2fed04b))
+* use new dlt packages with latency fix ([#6](https://github.com/twinfoundation/verifiable-storage/issues/6)) ([d81c45b](https://github.com/twinfoundation/verifiable-storage/commit/d81c45bce035864a41bbd498815169d7257fbcb8))
+* use shared store mechanism ([#8](https://github.com/twinfoundation/verifiable-storage/issues/8)) ([8c8ecb8](https://github.com/twinfoundation/verifiable-storage/commit/8c8ecb83d32431952c594ea23d37040991f5b4d3))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/verifiable-storage-models bumped from 0.0.3-next.0 to 0.0.3-next.1
+
+## [0.0.2-next.6](https://github.com/twinfoundation/verifiable-storage/compare/verifiable-storage-rest-client-v0.0.2-next.5...verifiable-storage-rest-client-v0.0.2-next.6) (2025-10-09)
+
+
+### Features
+
+* add validate-locales ([326384f](https://github.com/twinfoundation/verifiable-storage/commit/326384fe867604e7cd450460a6a56c6c7bdc8f98))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/verifiable-storage-models bumped from 0.0.2-next.5 to 0.0.2-next.6
+
+## [0.0.2-next.5](https://github.com/twinfoundation/verifiable-storage/compare/verifiable-storage-rest-client-v0.0.2-next.4...verifiable-storage-rest-client-v0.0.2-next.5) (2025-09-26)
+
+
+### Features
+
+* eslint migration to flat config ([b0a0b85](https://github.com/twinfoundation/verifiable-storage/commit/b0a0b8585a77c1e541531d60b432916b9dc0867e))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/verifiable-storage-models bumped from 0.0.2-next.4 to 0.0.2-next.5
+
 ## [0.0.2-next.4](https://github.com/twinfoundation/verifiable-storage/compare/verifiable-storage-rest-client-v0.0.2-next.3...verifiable-storage-rest-client-v0.0.2-next.4) (2025-08-20)
 
 

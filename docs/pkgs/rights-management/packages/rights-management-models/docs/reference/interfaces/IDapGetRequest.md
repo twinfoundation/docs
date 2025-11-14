@@ -37,11 +37,3 @@ The type of the item being requested.
 > **id**: `string`
 
 The id of the item being requested.
-
-***
-
-### authentication
-
-> **authentication**: `IIdentityAuthenticationActionRequest`
-
-The action request used in the verifiable credential.

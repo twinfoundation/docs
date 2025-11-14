@@ -12,11 +12,11 @@ The proof id.
 
 ***
 
-### nodeIdentity
+### identity
 
-> **nodeIdentity**: `string`
+> **identity**: `string`
 
-The node identity.
+The identity to create the proof for.
 
 ***
 

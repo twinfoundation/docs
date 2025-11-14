@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/ui-components-svelte",
-	"version": "0.0.2-next.1",
+	"version": "0.0.3-next.1",
 	"description": "UI components for svelte",
 	"repository": {
 		"type": "git",
@@ -25,5 +25,20 @@
 		"dist",
 		"docs",
 		"locales"
-	]
+	],
+	"keywords": [
+		"twin",
+		"trade",
+		"iota",
+		"framework",
+		"blockchain",
+		"ui",
+		"components",
+		"react",
+		"frontend"
+	],
+	"bugs": {
+		"url": "git+https://github.com/twinfoundation/ui/issues"
+	},
+	"homepage": "https://twindev.org"
 }

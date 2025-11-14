@@ -106,22 +106,130 @@ NotFoundError if activity log entry is not known.
 
 ***
 
-### registerDataSpaceConnectorApp()
+### registerApp()
 
-> **registerDataSpaceConnectorApp**(`app`): `Promise`\<`void`\>
+> **registerApp**(`appId`, `app`): `Promise`\<`void`\>
 
 Registers a Data Space Connector App.
 
 #### Parameters
 
+##### appId
+
+`string`
+
+The Id of the App to be registered.
+
 ##### app
 
-[`IDataSpaceConnectorAppDescriptor`](IDataSpaceConnectorAppDescriptor.md)
+[`IDataSpaceConnectorApp`](IDataSpaceConnectorApp.md)
 
-The descriptor of the App to be registered.
+The app to be registered.
 
 #### Returns
 
 `Promise`\<`void`\>
 
-nothing.
+Nothing.
+
+***
+
+### unregisterApp()
+
+> **unregisterApp**(`appId`): `Promise`\<`void`\>
+
+Un-registers a Data Space Connector App.
+
+#### Parameters
+
+##### appId
+
+`string`
+
+The Id of the App to be registered.
+
+#### Returns
+
+`Promise`\<`void`\>
+
+Nothing.
+
+***
+
+### getDataAssetEntities()
+
+> **getDataAssetEntities**(`dataAsset`, `entitySet`, `cursor`, `limit`): `Promise`\<[`IDataAssetItemList`](IDataAssetItemList.md)\>
+
+Get Data Asset entities. Allows to retrieve entities by their type or id
+
+#### Parameters
+
+##### dataAsset
+
+[`IDataAssetDescription`](IDataAssetDescription.md)
+
+The data asset being referred. It can be left empty and let the system to locate a proper one.
+
+##### entitySet
+
+[`IEntitySet`](IEntitySet.md) & `object`
+
+The set of entities to be retrieved.
+
+##### cursor
+
+Pagination details - cursor.
+
+`string` | `undefined`
+
+##### limit
+
+Pagination details - max number of entities.
+
+`number` | `undefined`
+
+#### Returns
+
+`Promise`\<[`IDataAssetItemList`](IDataAssetItemList.md)\>
+
+The entities requested as a JSON-LD Document.
+
+***
+
+### queryDataAsset()
+
+> **queryDataAsset**(`dataAsset`, `query`, `cursor`, `limit`): `Promise`\<[`IDataAssetItemList`](IDataAssetItemList.md)\>
+
+Queries a data asset controlled by this DS Connector App.
+
+#### Parameters
+
+##### dataAsset
+
+[`IDataAssetDescription`](IDataAssetDescription.md)
+
+The data asset being referred.
+
+##### query
+
+[`IFilteringQuery`](IFilteringQuery.md)
+
+The filtering query.
+
+##### cursor
+
+Pagination details - cursor.
+
+`string` | `undefined`
+
+##### limit
+
+Pagination details - max number of entities.
+
+`number` | `undefined`
+
+#### Returns
+
+`Promise`\<[`IDataAssetItemList`](IDataAssetItemList.md)\>
+
+The entities requested as a JSON-LD Document.

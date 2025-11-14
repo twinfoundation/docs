@@ -16,5 +16,9 @@
 		"packages/node-core",
 		"apps/node"
 	],
-	"type": "module"
+	"type": "module",
+	"bugs": {
+		"url": "git+https://github.com/twinfoundation/node/issues"
+	},
+	"homepage": "https://twindev.org"
 }

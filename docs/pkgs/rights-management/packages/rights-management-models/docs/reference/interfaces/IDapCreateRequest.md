@@ -39,11 +39,3 @@ The type of the item being created.
 > **body**: [`IDataAccessRequestWithObject`](IDataAccessRequestWithObject.md)
 
 The body parameters of the request.
-
-***
-
-### authentication
-
-> **authentication**: `IIdentityAuthenticationActionRequest`
-
-The action request used in the verifiable credential.

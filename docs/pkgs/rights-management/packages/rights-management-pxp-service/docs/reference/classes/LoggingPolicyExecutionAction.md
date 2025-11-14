@@ -31,15 +31,29 @@ The options for the logging policy execution action.
 
 ### CLASS\_NAME
 
-> `readonly` **CLASS\_NAME**: `string`
+> `readonly` `static` **CLASS\_NAME**: `string`
 
 The class name of the Policy Execution Point Service.
 
+## Methods
+
+### className()
+
+> **className**(): `string`
+
+Returns the class name of the component.
+
+#### Returns
+
+`string`
+
+The class name of the component.
+
 #### Implementation of
 
-`IComponent.CLASS_NAME`
+`IComponent.className`
 
-## Methods
+***
 
 ### supportedStages()
 

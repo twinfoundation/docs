@@ -12,9 +12,9 @@ The key of the storage being removed.
 
 ***
 
-### nodeIdentity
+### nodeId
 
-> **nodeIdentity**: `string`
+> **nodeId**: `string`
 
 The node identity of the entity being removed.
 

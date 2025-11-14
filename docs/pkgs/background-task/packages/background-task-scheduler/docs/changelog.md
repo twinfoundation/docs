@@ -1,5 +1,61 @@
 # Changelog
 
+## [0.0.3-next.1](https://github.com/twinfoundation/background-task/compare/background-task-scheduler-v0.0.3-next.0...background-task-scheduler-v0.0.3-next.1) (2025-11-11)
+
+
+### Features
+
+* add context id features ([#29](https://github.com/twinfoundation/background-task/issues/29)) ([46ede49](https://github.com/twinfoundation/background-task/commit/46ede49a51a4955fe1530e645a66f0073db9a1fd))
+* add task scheduler ([754d973](https://github.com/twinfoundation/background-task/commit/754d973e7c8483e5e54e887c157661867d5a0375))
+* add validate-locales ([968cbf9](https://github.com/twinfoundation/background-task/commit/968cbf966fffb5060305e8b221fecc0b6c8105b9))
+* background tasks immediately trigger ([a0a847b](https://github.com/twinfoundation/background-task/commit/a0a847ba9686adcd0460e810540959f87dcaeab1))
+* eslint migration to flat config ([6c9136c](https://github.com/twinfoundation/background-task/commit/6c9136c37bccdbbd109892d1503660aab7080d49))
+* remove unused parameters ([1028b3c](https://github.com/twinfoundation/background-task/commit/1028b3cc147c25da22a8ba8d7207acfb34f89cdb))
+* rename task scheduler component ([2f8aa59](https://github.com/twinfoundation/background-task/commit/2f8aa59c069055ff020a3c0c149601f20c656022))
+* rename task scheduler component to service ([f097a98](https://github.com/twinfoundation/background-task/commit/f097a988c9ee0795aa55d74deda616365ec4ffb1))
+* update framework core ([a068098](https://github.com/twinfoundation/background-task/commit/a0680983d7923a1bfb980a67879019bb870ccc5d))
+* update IComponent signatures ([e1a79bc](https://github.com/twinfoundation/background-task/commit/e1a79bc4dd813435c56e376f231a4b4ecd2276bf))
+
+
+### Bug Fixes
+
+* models import ([c830b0d](https://github.com/twinfoundation/background-task/commit/c830b0da4deb06f8aeca6fec8988be4da877e73b))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/background-task-models bumped from 0.0.3-next.0 to 0.0.3-next.1
+
+## [0.0.2-next.9](https://github.com/twinfoundation/background-task/compare/background-task-scheduler-v0.0.2-next.8...background-task-scheduler-v0.0.2-next.9) (2025-10-09)
+
+
+### Features
+
+* add validate-locales ([968cbf9](https://github.com/twinfoundation/background-task/commit/968cbf966fffb5060305e8b221fecc0b6c8105b9))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/background-task-models bumped from 0.0.2-next.8 to 0.0.2-next.9
+
+## [0.0.2-next.8](https://github.com/twinfoundation/background-task/compare/background-task-scheduler-v0.0.2-next.7...background-task-scheduler-v0.0.2-next.8) (2025-09-29)
+
+
+### Features
+
+* update IComponent signatures ([e1a79bc](https://github.com/twinfoundation/background-task/commit/e1a79bc4dd813435c56e376f231a4b4ecd2276bf))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/background-task-models bumped from 0.0.2-next.7 to 0.0.2-next.8
+
 ## [0.0.2-next.7](https://github.com/twinfoundation/background-task/compare/background-task-scheduler-v0.0.2-next.6...background-task-scheduler-v0.0.2-next.7) (2025-08-29)
 
 

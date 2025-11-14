@@ -52,15 +52,23 @@ JSON-LD Context.
 
 ***
 
-### id
+### id?
 
-> **id**: `string`
+> `optional` **id**: `string`
 
 The id of the element.
 
 #### Overrides
 
 [`IAuditableItemGraphAuditedElement`](IAuditableItemGraphAuditedElement.md).[`id`](IAuditableItemGraphAuditedElement.md#id)
+
+***
+
+### targetId
+
+> **targetId**: `string`
+
+The target vertex id the edge connects to.
 
 ***
 

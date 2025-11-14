@@ -40,6 +40,14 @@ The blue element of the color.
 
 `Color`
 
+## Properties
+
+### CLASS\_NAME
+
+> `readonly` `static` **CLASS\_NAME**: `string`
+
+Runtime name for the class.
+
 ## Methods
 
 ### fromHex()
@@ -70,7 +78,7 @@ Error if the format is incorrect.
 
 ### coerce()
 
-> `static` **coerce**(`value`): `undefined` \| `Color`
+> `static` **coerce**(`value`): `Color` \| `undefined`
 
 Coerce an unknown type to a color.
 
@@ -84,7 +92,7 @@ The value to try and convert.
 
 #### Returns
 
-`undefined` \| `Color`
+`Color` \| `undefined`
 
 The color if one can be created.
 

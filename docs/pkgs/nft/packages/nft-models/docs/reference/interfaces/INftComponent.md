@@ -54,7 +54,7 @@ The namespace of the connector to use for the NFT, defaults to component configu
 
 `string`
 
-The identity to perform the nft operation on.
+The identity to perform the nft operation with.
 
 #### Returns
 
@@ -92,7 +92,7 @@ The id of the NFT to resolve.
 
 `string`
 
-The identity to perform the nft operation on.
+The identity to perform the nft operation with.
 
 #### Returns
 
@@ -120,7 +120,7 @@ The id of the NFT to burn in urn format.
 
 `string`
 
-The identity to perform the nft operation on.
+The identity to perform the nft operation with.
 
 #### Returns
 
@@ -172,7 +172,7 @@ Optional mutable data to include during the transfer.
 
 `string`
 
-The identity to perform the nft operation on.
+The identity to perform the nft operation with.
 
 #### Returns
 
@@ -212,7 +212,7 @@ The mutable data to update.
 
 `string`
 
-The identity to perform the nft operation on.
+The identity to perform the nft operation with.
 
 #### Returns
 

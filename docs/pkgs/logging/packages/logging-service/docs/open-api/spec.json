@@ -70,62 +70,12 @@
 					}
 				},
 				"responses": {
-					"204": {
-						"description": "The rest request ended in success with no data."
-					},
-					"400": {
-						"description": "The server cannot process the request, see the content for more details.",
+					"200": {
+						"description": "The rest request ended in success with no data.",
 						"content": {
-							"application/json": {
+							"text/plain": {
 								"schema": {
-									"$ref": "#/components/schemas/Error"
-								},
-								"examples": {
-									"exampleResponse": {
-										"value": {
-											"name": "GeneralError",
-											"message": "component.error",
-											"properties": {
-												"foo": "bar"
-											}
-										}
-									}
-								}
-							}
-						}
-					},
-					"401": {
-						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
-						"content": {
-							"application/json": {
-								"schema": {
-									"$ref": "#/components/schemas/Error"
-								},
-								"examples": {
-									"exampleResponse": {
-										"value": {
-											"name": "UnauthorizedError",
-											"message": "component.error"
-										}
-									}
-								}
-							}
-						}
-					},
-					"500": {
-						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
-						"content": {
-							"application/json": {
-								"schema": {
-									"$ref": "#/components/schemas/Error"
-								},
-								"examples": {
-									"exampleResponse": {
-										"value": {
-											"name": "InternalServerError",
-											"message": "component.error"
-										}
-									}
+									"$ref": "#/components/schemas/NoContentResponse"
 								}
 							}
 						}
@@ -192,15 +142,12 @@
 						}
 					},
 					{
-						"name": "pageSize",
-						"description": "The maximum number of entities in a page.",
+						"name": "limit",
+						"description": "Limit the number of entities to return.",
 						"in": "query",
 						"required": false,
 						"schema": {
-							"type": [
-								"number",
-								"string"
-							]
+							"type": "string"
 						}
 					}
 				],
@@ -229,63 +176,6 @@
 												}
 											],
 											"cursor": "1"
-										}
-									}
-								}
-							}
-						}
-					},
-					"400": {
-						"description": "The server cannot process the request, see the content for more details.",
-						"content": {
-							"application/json": {
-								"schema": {
-									"$ref": "#/components/schemas/Error"
-								},
-								"examples": {
-									"exampleResponse": {
-										"value": {
-											"name": "GeneralError",
-											"message": "component.error",
-											"properties": {
-												"foo": "bar"
-											}
-										}
-									}
-								}
-							}
-						}
-					},
-					"401": {
-						"description": "You are not authorized to use the API or no credentials were supplied, see the content for more details.",
-						"content": {
-							"application/json": {
-								"schema": {
-									"$ref": "#/components/schemas/Error"
-								},
-								"examples": {
-									"exampleResponse": {
-										"value": {
-											"name": "UnauthorizedError",
-											"message": "component.error"
-										}
-									}
-								}
-							}
-						}
-					},
-					"500": {
-						"description": "The server has encountered a situation it does not know how to handle, see the content for more details.",
-						"content": {
-							"application/json": {
-								"schema": {
-									"$ref": "#/components/schemas/Error"
-								},
-								"examples": {
-									"exampleResponse": {
-										"value": {
-											"name": "InternalServerError",
-											"message": "component.error"
 										}
 									}
 								}
@@ -369,28 +259,44 @@
 				"description": "Interface describing a log entry."
 			},
 			"LogLevel": {
-				"type": "string",
-				"enum": [
-					"info",
-					"error",
-					"warn",
-					"trace",
-					"debug"
+				"anyOf": [
+					{
+						"type": "string",
+						"const": "info",
+						"description": "Info."
+					},
+					{
+						"type": "string",
+						"const": "error",
+						"description": "Error."
+					},
+					{
+						"type": "string",
+						"const": "warn",
+						"description": "Warn."
+					},
+					{
+						"type": "string",
+						"const": "trace",
+						"description": "Trace."
+					},
+					{
+						"type": "string",
+						"const": "debug",
+						"description": "Debug."
+					}
 				],
-				"description": "Log level."
+				"description": "The log levels."
 			},
 			"LoggingListResponse": {
 				"type": "object",
 				"properties": {
 					"entities": {
 						"type": "array",
-						"items": false,
-						"description": "The entities, which can be partial if a limited keys list was provided.",
-						"prefixItems": [
-							{
-								"$ref": "#/components/schemas/LogEntry"
-							}
-						]
+						"items": {
+							"$ref": "#/components/schemas/LogEntry"
+						},
+						"description": "The entities, which can be partial if a limited keys list was provided."
 					},
 					"cursor": {
 						"type": "string",

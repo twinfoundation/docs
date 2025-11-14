@@ -10,13 +10,13 @@ Interface describing a verifiable storage connector.
 
 ### create()
 
-> **create**(`controller`, `data`, `allowList?`, `options?`): `Promise`\<\{ `id`: `string`; `receipt`: `IJsonLdNodeObject`; \}\>
+> **create**(`controllerIdentity`, `data`, `allowList?`, `options?`): `Promise`\<\{ `id`: `string`; `receipt`: `IJsonLdNodeObject`; \}\>
 
 Create an item in verifiable storage.
 
 #### Parameters
 
-##### controller
+##### controllerIdentity
 
 `string`
 
@@ -54,13 +54,13 @@ The id of the stored verifiable item in urn format and the receipt.
 
 ### update()
 
-> **update**(`controller`, `id`, `data?`, `allowList?`): `Promise`\<`IJsonLdNodeObject`\>
+> **update**(`controllerIdentity`, `id`, `data?`, `allowList?`): `Promise`\<`IJsonLdNodeObject`\>
 
 Update an item in verifiable storage.
 
 #### Parameters
 
-##### controller
+##### controllerIdentity
 
 `string`
 
@@ -132,13 +132,13 @@ The data for the item, the receipt and the allow list.
 
 ### remove()
 
-> **remove**(`controller`, `id`): `Promise`\<`void`\>
+> **remove**(`controllerIdentity`, `id`): `Promise`\<`void`\>
 
 Remove the item from verifiable storage.
 
 #### Parameters
 
-##### controller
+##### controllerIdentity
 
 `string`
 

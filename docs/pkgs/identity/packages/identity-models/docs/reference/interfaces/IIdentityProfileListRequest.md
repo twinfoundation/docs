@@ -28,8 +28,8 @@ The public properties to get for the profile, defaults to all, should be a comma
 
 The cursor for paged requests.
 
-#### pageSize?
+#### limit?
 
-> `optional` **pageSize**: `string` \| `number`
+> `optional` **limit**: `string`
 
 Number of items to return.

@@ -8,4 +8,4 @@ https://www.w3.org/TR/json-ld11/#language-maps
 
 ## Indexable
 
-\[`key`: `string`\]: `null` \| `string` \| `string`[]
+\[`key`: `string`\]: `string` \| `string`[] \| `null`

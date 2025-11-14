@@ -254,7 +254,7 @@ The generated `output.json` should be:
             }
           },
           {
-            "name": "pageSize",
+            "name": "limit",
             "description": "The maximum number of entities in a page.",
             "in": "query",
             "required": false,

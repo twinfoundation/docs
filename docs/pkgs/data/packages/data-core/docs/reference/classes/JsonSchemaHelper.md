@@ -62,7 +62,7 @@ Result containing errors if there are any.
 
 ### getPropertyType()
 
-> `static` **getPropertyType**(`schema`, `propertyName`): `undefined` \| `string`
+> `static` **getPropertyType**(`schema`, `propertyName`): `string` \| `undefined`
 
 Get the property type from a schema.
 
@@ -82,7 +82,7 @@ The name of the property to get the type for.
 
 #### Returns
 
-`undefined` \| `string`
+`string` \| `undefined`
 
 The types of the property.
 
@@ -100,7 +100,7 @@ Convert an entity schema to JSON schema e.g https://example.com/schemas/.
 
 The entity schema to convert.
 
-`undefined` | `IEntitySchema`\<`unknown`\>
+`IEntitySchema`\<`unknown`\> | `undefined`
 
 ##### baseDomain?
 

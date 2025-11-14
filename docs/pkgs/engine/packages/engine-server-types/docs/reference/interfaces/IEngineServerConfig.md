@@ -126,6 +126,12 @@ Messaging SMS connector options which can be overridden by individual components
 
 Messaging push notification connector options which can be overridden by individual components by specifying types other than default.
 
+##### messagingAdminComponent?
+
+> `optional` **messagingAdminComponent**: `IEngineCoreTypeConfig`\<`MessagingAdminComponentConfig`\>[]
+
+Messaging admin component options which can be overridden by individual components by specifying types other than default.
+
 ##### messagingComponent?
 
 > `optional` **messagingComponent**: `IEngineCoreTypeConfig`\<`MessagingComponentConfig`\>[]
@@ -377,6 +383,12 @@ Federated catalogue options which can be overridden by individual components by 
 > `optional` **dataSpaceConnectorComponent**: `IEngineCoreTypeConfig`\<`DataSpaceConnectorComponentConfig`\>[]
 
 Data space connector options which can be overridden by individual components by specifying types other than default.
+
+##### tenantAdminComponent?
+
+> `optional` **tenantAdminComponent**: `IEngineCoreTypeConfig`\<`TenantAdminComponentConfig`\>[]
+
+Tenant admin component options which can be overridden by individual components by specifying types other than default.
 
 #### Type Declaration
 

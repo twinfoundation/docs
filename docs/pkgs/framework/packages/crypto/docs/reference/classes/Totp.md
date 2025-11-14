@@ -51,7 +51,7 @@ The one time password.
 
 ### verify()
 
-> `static` **verify**(`token`, `key`, `window`, `interval`, `timestamp`): `undefined` \| `number`
+> `static` **verify**(`token`, `key`, `window`, `interval`, `timestamp`): `number` \| `undefined`
 
 Check a One Time Password based on a timer.
 
@@ -90,7 +90,7 @@ The timestamp now.
 
 #### Returns
 
-`undefined` \| `number`
+`number` \| `undefined`
 
 Undefined if failure, delta on success
 

@@ -1,5 +1,45 @@
 # @twin.org/event-bus-service - Changelog
 
+## [0.0.3-next.1](https://github.com/twinfoundation/event-bus/compare/event-bus-service-v0.0.3-next.0...event-bus-service-v0.0.3-next.1) (2025-11-10)
+
+
+### Features
+
+* add context id features ([#26](https://github.com/twinfoundation/event-bus/issues/26)) ([19deea3](https://github.com/twinfoundation/event-bus/commit/19deea3d6bf116fbf0dd39976e5ec8eb51bfd7eb))
+* add validate-locales ([4e11826](https://github.com/twinfoundation/event-bus/commit/4e1182615e6911c8cd0a1a520f703289571f170d))
+* correct event-bus route naming ([68216fc](https://github.com/twinfoundation/event-bus/commit/68216fc80ddb0f5ec8e18ab3e222e65791843bb2))
+* eslint migration to flat config ([92f95f4](https://github.com/twinfoundation/event-bus/commit/92f95f40971ee50069de6615fc1cb73a8e755dc4))
+* remove unused namespace ([e6d3897](https://github.com/twinfoundation/event-bus/commit/e6d38976f66b7a91b28ad8d0fc02ee06c62dd805))
+* update dependencies ([a313000](https://github.com/twinfoundation/event-bus/commit/a313000b9c3264e8ed2602622219be2cefcf0474))
+* update framework core ([e5e5f89](https://github.com/twinfoundation/event-bus/commit/e5e5f89bed3f615182de0f7ef76a1629d45d4152))
+* use new socket route types ([899d031](https://github.com/twinfoundation/event-bus/commit/899d031ea4a503289198517994100e30480f2e49))
+* use shared store mechanism ([#2](https://github.com/twinfoundation/event-bus/issues/2)) ([1ded106](https://github.com/twinfoundation/event-bus/commit/1ded10684e8fab4a5138231e9f2ab49e43590f00))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/event-bus-models bumped from 0.0.3-next.0 to 0.0.3-next.1
+  * devDependencies
+    * @twin.org/event-bus-connector-local bumped from 0.0.3-next.0 to 0.0.3-next.1
+
+## [0.0.2-next.6](https://github.com/twinfoundation/event-bus/compare/event-bus-service-v0.0.2-next.5...event-bus-service-v0.0.2-next.6) (2025-10-09)
+
+
+### Features
+
+* add validate-locales ([4e11826](https://github.com/twinfoundation/event-bus/commit/4e1182615e6911c8cd0a1a520f703289571f170d))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/event-bus-models bumped from 0.0.2-next.5 to 0.0.2-next.6
+  * devDependencies
+    * @twin.org/event-bus-connector-local bumped from 0.0.2-next.5 to 0.0.2-next.6
+
 ## [0.0.2-next.5](https://github.com/twinfoundation/event-bus/compare/event-bus-service-v0.0.2-next.4...event-bus-service-v0.0.2-next.5) (2025-08-29)
 
 

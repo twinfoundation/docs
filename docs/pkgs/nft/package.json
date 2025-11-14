@@ -20,5 +20,9 @@
 		"packages/nft-rest-client",
 		"apps/nft-cli"
 	],
-	"type": "module"
+	"type": "module",
+	"bugs": {
+		"url": "git+https://github.com/twinfoundation/nft/issues"
+	},
+	"homepage": "https://twindev.org"
 }

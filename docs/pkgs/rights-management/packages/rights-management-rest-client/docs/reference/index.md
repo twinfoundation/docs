@@ -2,7 +2,7 @@
 
 ## Classes
 
-- [DataAccessPointClient](classes/DataAccessPointClient.md)
-- [PolicyAdministrationPointClient](classes/PolicyAdministrationPointClient.md)
-- [PolicyNegotiationAdminPointClient](classes/PolicyNegotiationAdminPointClient.md)
-- [PolicyNegotiationPointClient](classes/PolicyNegotiationPointClient.md)
+- [DataAccessPointRestClient](classes/DataAccessPointRestClient.md)
+- [PolicyAdministrationPointRestClient](classes/PolicyAdministrationPointRestClient.md)
+- [PolicyNegotiationAdminPointRestClient](classes/PolicyNegotiationAdminPointRestClient.md)
+- [PolicyNegotiationPointRestClient](classes/PolicyNegotiationPointRestClient.md)

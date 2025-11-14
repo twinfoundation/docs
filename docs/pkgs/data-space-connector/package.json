@@ -21,5 +21,17 @@
 		"packages/data-space-connector-socket-client",
 		"apps/data-space-connector-rest-server"
 	],
-	"type": "module"
+	"type": "module",
+	"keywords": [
+		"twin",
+		"trade",
+		"iota",
+		"framework",
+		"blockchain",
+		"data-space-connector"
+	],
+	"bugs": {
+		"url": "git+https://github.com/twinfoundation/data-space-connector/issues"
+	},
+	"homepage": "https://twindev.org"
 }

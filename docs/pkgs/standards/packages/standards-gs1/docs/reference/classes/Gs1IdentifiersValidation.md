@@ -152,7 +152,7 @@ True if the value is valid epc.
 
 ### extractEpcIdGtin()
 
-> `static` **extractEpcIdGtin**(`epc`): `undefined` \| `string`
+> `static` **extractEpcIdGtin**(`epc`): `string` \| `undefined`
 
 Extract the EPC gtin from the URI.
 
@@ -166,7 +166,7 @@ The uri to extract from.
 
 #### Returns
 
-`undefined` \| `string`
+`string` \| `undefined`
 
 The extracted data or undefined.
 
@@ -174,7 +174,7 @@ The extracted data or undefined.
 
 ### extractEpcIdGln()
 
-> `static` **extractEpcIdGln**(`epc`): `undefined` \| `string`
+> `static` **extractEpcIdGln**(`epc`): `string` \| `undefined`
 
 Extract the EPC gln from the URI.
 
@@ -188,7 +188,7 @@ The uri to extract from.
 
 #### Returns
 
-`undefined` \| `string`
+`string` \| `undefined`
 
 The extracted data or undefined.
 
@@ -196,7 +196,7 @@ The extracted data or undefined.
 
 ### extractEpcClassUri()
 
-> `static` **extractEpcClassUri**(`epc`): `undefined` \| [`IEPCClassUri`](../interfaces/IEPCClassUri.md)
+> `static` **extractEpcClassUri**(`epc`): [`IEPCClassUri`](../interfaces/IEPCClassUri.md) \| `undefined`
 
 Extract The EPC Class from the URI.
 
@@ -210,6 +210,6 @@ The uri to extract from.
 
 #### Returns
 
-`undefined` \| [`IEPCClassUri`](../interfaces/IEPCClassUri.md)
+[`IEPCClassUri`](../interfaces/IEPCClassUri.md) \| `undefined`
 
 The extracted data or undefined.

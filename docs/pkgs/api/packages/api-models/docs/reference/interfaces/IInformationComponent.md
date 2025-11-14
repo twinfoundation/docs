@@ -38,13 +38,13 @@ The service information.
 
 ### favicon()
 
-> **favicon**(): `Promise`\<`undefined` \| `Uint8Array`\<`ArrayBufferLike`\>\>
+> **favicon**(): `Promise`\<`Uint8Array`\<`ArrayBufferLike`\> \| `undefined`\>
 
 Get the favicon.
 
 #### Returns
 
-`Promise`\<`undefined` \| `Uint8Array`\<`ArrayBufferLike`\>\>
+`Promise`\<`Uint8Array`\<`ArrayBufferLike`\> \| `undefined`\>
 
 The favicon.
 

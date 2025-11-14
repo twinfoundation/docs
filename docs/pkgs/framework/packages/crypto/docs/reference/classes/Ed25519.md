@@ -28,6 +28,14 @@ Private Key Size is the size, in bytes, of private keys as used in this package.
 
 Public Key Size is the size, in bytes, of public keys as used in this package.
 
+***
+
+### CLASS\_NAME
+
+> `readonly` `static` **CLASS\_NAME**: `string`
+
+Runtime name for the class.
+
 ## Methods
 
 ### publicKeyFromPrivateKey()

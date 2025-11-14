@@ -12,6 +12,14 @@ Helpers methods for JSON objects.
 
 `JsonHelper`
 
+## Properties
+
+### CLASS\_NAME
+
+> `readonly` `static` **CLASS\_NAME**: `string`
+
+Runtime name for the class.
+
 ## Methods
 
 ### canonicalize()

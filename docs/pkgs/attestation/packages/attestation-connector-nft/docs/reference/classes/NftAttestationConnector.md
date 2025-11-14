@@ -28,25 +28,39 @@ The options for the attestation connector.
 
 ## Properties
 
+### CLASS\_NAME
+
+> `readonly` `static` **CLASS\_NAME**: `string`
+
+Runtime name for the class.
+
+***
+
 ### NAMESPACE
 
 > `readonly` `static` **NAMESPACE**: `string` = `"nft"`
 
 The namespace for the entities.
 
-***
+## Methods
 
-### CLASS\_NAME
+### className()
 
-> `readonly` **CLASS\_NAME**: `string`
+> **className**(): `string`
 
-Runtime name for the class.
+Returns the class name of the component.
+
+#### Returns
+
+`string`
+
+The class name of the component.
 
 #### Implementation of
 
-`IAttestationConnector.CLASS_NAME`
+`IAttestationConnector.className`
 
-## Methods
+***
 
 ### create()
 

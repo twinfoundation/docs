@@ -18,5 +18,9 @@
 		"packages/immutable-proof-service",
 		"packages/immutable-proof-rest-client"
 	],
-	"type": "module"
+	"type": "module",
+	"bugs": {
+		"url": "git+https://github.com/twinfoundation/immutable-proof/issues"
+	},
+	"homepage": "https://twindev.org"
 }

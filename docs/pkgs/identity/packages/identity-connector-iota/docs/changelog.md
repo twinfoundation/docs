@@ -1,5 +1,100 @@
 # @twin.org/identity-connector-iota - Changelog
 
+## [0.0.3-next.2](https://github.com/twinfoundation/identity/compare/identity-connector-iota-v0.0.3-next.1...identity-connector-iota-v0.0.3-next.2) (2025-11-14)
+
+
+### Miscellaneous Chores
+
+* **identity-connector-iota:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/identity-models bumped from 0.0.3-next.1 to 0.0.3-next.2
+
+## [0.0.3-next.1](https://github.com/twinfoundation/identity/compare/identity-connector-iota-v0.0.3-next.0...identity-connector-iota-v0.0.3-next.1) (2025-11-11)
+
+
+### Features
+
+* add addressIndex option to all commands ([a644674](https://github.com/twinfoundation/identity/commit/a644674017d1a8fe5d8685950316bec922a9b195))
+* add context id features ([#62](https://github.com/twinfoundation/identity/issues/62)) ([e02ecca](https://github.com/twinfoundation/identity/commit/e02ecca9c45a849104bfbf7bc18a1f44e6eea8a1))
+* add expiration date option to vc creation ([73e05e1](https://github.com/twinfoundation/identity/commit/73e05e1ae61112c7e056889969751f4ff82d9f29))
+* add identity remove ([eebc13f](https://github.com/twinfoundation/identity/commit/eebc13f4c2cd994d2d9cce4da2128fb346c80ba7))
+* add idHelper class ([57c8bdb](https://github.com/twinfoundation/identity/commit/57c8bdb81efaa163b5e83f8a7f16f3764d12fd75))
+* add mainnet support ([af56a38](https://github.com/twinfoundation/identity/commit/af56a382837896cd4e13d5814c0924c46658b99c))
+* add validate-locales ([04d74b4](https://github.com/twinfoundation/identity/commit/04d74b4d1ebe42672e8ca75a7bdb8e3556afd0be))
+* create vc validate subject id ([#30](https://github.com/twinfoundation/identity/issues/30)) ([6dccee9](https://github.com/twinfoundation/identity/commit/6dccee94cc83e537d46814f4051d3f30a0c1b509))
+* eslint migration to flat config ([fd6246d](https://github.com/twinfoundation/identity/commit/fd6246d566280b6d5d10a108eb1e92c4b510f2f2))
+* gas station integration ([#39](https://github.com/twinfoundation/identity/issues/39)) ([fc579cf](https://github.com/twinfoundation/identity/commit/fc579cf33519455f2cd6423a5153fb052bddc231))
+* identity key separator use slash ([1319d0d](https://github.com/twinfoundation/identity/commit/1319d0d07164a36b3ec279e6421b8835ffefc3d3))
+* improve vc data quality ([c9f52ff](https://github.com/twinfoundation/identity/commit/c9f52ffb8cca903c066773a2921ebd308f67ed72))
+* iota rebased release ([5d14674](https://github.com/twinfoundation/identity/commit/5d146744ca9eed622ef7eb34a7fa935216f9e975))
+* re-use vault keys if available ([5a848d7](https://github.com/twinfoundation/identity/commit/5a848d7520829d9c891ec889fd773fbc0ee77ba5))
+* remove hardcoded package ids ([e5f4ce7](https://github.com/twinfoundation/identity/commit/e5f4ce7e7b9be62d993c5df5466e292bbc3e899f))
+* support mainnet for alias extraction ([1114e0f](https://github.com/twinfoundation/identity/commit/1114e0f518070ef930d7d6ed73a616cce647206c))
+* update framework core ([c824497](https://github.com/twinfoundation/identity/commit/c82449709af0215eb7af496cf687c93fb30b5ae0))
+* use new generateKid method ([f0fe779](https://github.com/twinfoundation/identity/commit/f0fe779323b675575bb9f80aa74f1957dc57a094))
+* use shared store mechanism ([#27](https://github.com/twinfoundation/identity/issues/27)) ([ce41f3f](https://github.com/twinfoundation/identity/commit/ce41f3fc3da1b206ec06da7ea5b2c968f788804d))
+
+
+### Bug Fixes
+
+* correctly display mainnet explorer urls ([45a9f3c](https://github.com/twinfoundation/identity/commit/45a9f3cc041cce7b40a86e98df306931a95f48ea))
+* Import path and bump version ([#21](https://github.com/twinfoundation/identity/issues/21)) ([ccea845](https://github.com/twinfoundation/identity/commit/ccea845bf32562267280bc1b3dde1c9af1a00360))
+* Install sdk-wasm ([#20](https://github.com/twinfoundation/identity/issues/20)) ([75ec14e](https://github.com/twinfoundation/identity/commit/75ec14e072f8c219863a1c028a3b0783802086e9))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/identity-models bumped from 0.0.3-next.0 to 0.0.3-next.1
+
+## [0.0.2-next.10](https://github.com/twinfoundation/identity/compare/identity-connector-iota-v0.0.2-next.9...identity-connector-iota-v0.0.2-next.10) (2025-10-27)
+
+
+### Miscellaneous Chores
+
+* **identity-connector-iota:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/identity-models bumped from 0.0.2-next.9 to 0.0.2-next.10
+
+## [0.0.2-next.9](https://github.com/twinfoundation/identity/compare/identity-connector-iota-v0.0.2-next.8...identity-connector-iota-v0.0.2-next.9) (2025-10-09)
+
+
+### Features
+
+* add validate-locales ([04d74b4](https://github.com/twinfoundation/identity/commit/04d74b4d1ebe42672e8ca75a7bdb8e3556afd0be))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/identity-models bumped from 0.0.2-next.8 to 0.0.2-next.9
+
+## [0.0.2-next.8](https://github.com/twinfoundation/identity/compare/identity-connector-iota-v0.0.2-next.7...identity-connector-iota-v0.0.2-next.8) (2025-09-25)
+
+
+### Features
+
+* add idHelper class ([57c8bdb](https://github.com/twinfoundation/identity/commit/57c8bdb81efaa163b5e83f8a7f16f3764d12fd75))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/identity-models bumped from 0.0.2-next.7 to 0.0.2-next.8
+
 ## [0.0.2-next.7](https://github.com/twinfoundation/identity/compare/identity-connector-iota-v0.0.2-next.6...identity-connector-iota-v0.0.2-next.7) (2025-09-23)
 
 

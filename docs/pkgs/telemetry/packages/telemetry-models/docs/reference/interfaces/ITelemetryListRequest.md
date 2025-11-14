@@ -22,8 +22,8 @@ The type of the metric.
 
 The optional cursor to get next chunk.
 
-#### pageSize?
+#### limit?
 
-> `optional` **pageSize**: `string` \| `number`
+> `optional` **limit**: `string`
 
-The maximum number of entities in a page.
+Limit the number of entities to return.

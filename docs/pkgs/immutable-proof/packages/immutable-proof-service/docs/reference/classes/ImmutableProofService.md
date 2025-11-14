@@ -30,19 +30,59 @@ The dependencies for the immutable proof connector.
 
 ### CLASS\_NAME
 
-> `readonly` **CLASS\_NAME**: `string`
+> `readonly` `static` **CLASS\_NAME**: `string`
 
 Runtime name for the class.
 
+## Methods
+
+### className()
+
+> **className**(): `string`
+
+Returns the class name of the component.
+
+#### Returns
+
+`string`
+
+The class name of the component.
+
 #### Implementation of
 
-`IImmutableProofComponent.CLASS_NAME`
+`IImmutableProofComponent.className`
 
-## Methods
+***
+
+### start()
+
+> **start**(`nodeLoggingComponentType?`): `Promise`\<`void`\>
+
+The component needs to be started when the node is initialized.
+
+#### Parameters
+
+##### nodeLoggingComponentType?
+
+`string`
+
+The node logging component type.
+
+#### Returns
+
+`Promise`\<`void`\>
+
+Nothing.
+
+#### Implementation of
+
+`IImmutableProofComponent.start`
+
+***
 
 ### create()
 
-> **create**(`document`, `userIdentity?`, `nodeIdentity?`): `Promise`\<`string`\>
+> **create**(`document`): `Promise`\<`string`\>
 
 Create a new proof.
 
@@ -53,18 +93,6 @@ Create a new proof.
 `IJsonLdNodeObject`
 
 The document to create the proof for.
-
-##### userIdentity?
-
-`string`
-
-The identity to create the immutable proof operation with.
-
-##### nodeIdentity?
-
-`string`
-
-The node identity to use for vault operations.
 
 #### Returns
 
@@ -140,7 +168,7 @@ NotFoundError if the proof is not found.
 
 ### removeVerifiable()
 
-> **removeVerifiable**(`id`, `nodeIdentity?`): `Promise`\<`void`\>
+> **removeVerifiable**(`id`): `Promise`\<`void`\>
 
 Remove the verifiable storage for the proof.
 
@@ -151,12 +179,6 @@ Remove the verifiable storage for the proof.
 `string`
 
 The id of the proof to remove the storage from.
-
-##### nodeIdentity?
-
-`string`
-
-The node identity to use for vault operations.
 
 #### Returns
 

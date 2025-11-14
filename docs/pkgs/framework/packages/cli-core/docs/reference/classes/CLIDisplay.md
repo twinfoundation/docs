@@ -124,6 +124,26 @@ Whether to add a line break after the error.
 
 ***
 
+### errorMessage()
+
+> `static` **errorMessage**(`error`): `void`
+
+Display an error message in simple form.
+
+#### Parameters
+
+##### error
+
+`string`
+
+The error to display.
+
+#### Returns
+
+`void`
+
+***
+
 ### section()
 
 > `static` **section**(`label`): `void`

@@ -16,7 +16,7 @@ Cache the results from asynchronous requests.
 
 ### exec()
 
-> `static` **exec**\<`T`\>(`key`, `ttlMs`, `requestMethod`, `cacheFailures?`): `undefined` \| `Promise`\<`T`\>
+> `static` **exec**\<`T`\>(`key`, `ttlMs`, `requestMethod`, `cacheFailures?`): `Promise`\<`T`\> \| `undefined`
 
 Execute an async request and cache the result.
 
@@ -38,7 +38,7 @@ The key for the entry in the cache.
 
 The TTL of the entry in the cache.
 
-`undefined` | `number`
+`number` | `undefined`
 
 ##### requestMethod
 
@@ -54,7 +54,7 @@ Cache failure results, defaults to false.
 
 #### Returns
 
-`undefined` \| `Promise`\<`T`\>
+`Promise`\<`T`\> \| `undefined`
 
 The response.
 
@@ -62,7 +62,7 @@ The response.
 
 ### get()
 
-> `static` **get**\<`T`\>(`key`): `Promise`\<`undefined` \| `T`\>
+> `static` **get**\<`T`\>(`key`): `Promise`\<`T` \| `undefined`\>
 
 Get an entry from the cache.
 
@@ -82,7 +82,7 @@ The key to get from the cache.
 
 #### Returns
 
-`Promise`\<`undefined` \| `T`\>
+`Promise`\<`T` \| `undefined`\>
 
 The item from the cache if it exists.
 

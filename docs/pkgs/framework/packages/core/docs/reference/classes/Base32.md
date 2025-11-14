@@ -12,6 +12,14 @@ Class to help with base63 Encoding/Decoding.
 
 `Base32`
 
+## Properties
+
+### CLASS\_NAME
+
+> `readonly` `static` **CLASS\_NAME**: `string`
+
+Runtime name for the class.
+
 ## Methods
 
 ### decode()

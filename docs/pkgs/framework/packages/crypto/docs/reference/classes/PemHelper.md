@@ -12,6 +12,14 @@ Helper class for working with PEM (Privacy-Enhanced Mail) formatted data.
 
 `PemHelper`
 
+## Properties
+
+### CLASS\_NAME
+
+> `readonly` `static` **CLASS\_NAME**: `string`
+
+Runtime name for the class.
+
 ## Methods
 
 ### stripPemMarkers()

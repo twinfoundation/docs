@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/nft-models",
-	"version": "0.0.2-next.5",
+	"version": "0.0.3-next.1",
 	"description": "Contains models and classes for use with NFTs",
 	"repository": {
 		"type": "git",
@@ -13,21 +13,37 @@
 	"engines": {
 		"node": ">=20.0.0"
 	},
-	"main": "./dist/cjs/index.cjs",
-	"module": "./dist/esm/index.mjs",
+	"main": "./dist/es/index.js",
 	"types": "./dist/types/index.d.ts",
 	"exports": {
 		".": {
 			"types": "./dist/types/index.d.ts",
-			"require": "./dist/cjs/index.cjs",
-			"import": "./dist/esm/index.mjs"
+			"import": "./dist/es/index.js",
+			"default": "./dist/es/index.js"
 		}
 	},
 	"files": [
-		"dist/cjs",
-		"dist/esm",
+		"dist/es",
 		"dist/types",
 		"locales",
 		"docs"
-	]
+	],
+	"keywords": [
+		"twin",
+		"trade",
+		"iota",
+		"framework",
+		"blockchain",
+		"nft",
+		"tokens",
+		"non-fungible",
+		"assets",
+		"models",
+		"types",
+		"schemas"
+	],
+	"bugs": {
+		"url": "git+https://github.com/twinfoundation/nft/issues"
+	},
+	"homepage": "https://twindev.org"
 }

@@ -2,4 +2,4 @@
 
 ## Classes
 
-- [DataSpaceConnectorClient](classes/DataSpaceConnectorClient.md)
+- [DataSpaceConnectorRestClient](classes/DataSpaceConnectorRestClient.md)

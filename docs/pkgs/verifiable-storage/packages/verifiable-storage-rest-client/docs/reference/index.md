@@ -2,4 +2,4 @@
 
 ## Classes
 
-- [VerifiableStorageClient](classes/VerifiableStorageClient.md)
+- [VerifiableStorageRestClient](classes/VerifiableStorageRestClient.md)

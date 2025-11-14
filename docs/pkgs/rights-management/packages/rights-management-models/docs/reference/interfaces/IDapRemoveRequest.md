@@ -37,11 +37,3 @@ The type of the item being removed.
 > **id**: `string`
 
 The id of the item being removed.
-
-***
-
-### authentication
-
-> **authentication**: `IIdentityAuthenticationActionRequest`
-
-The action request used in the verifiable credential.

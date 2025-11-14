@@ -14,7 +14,7 @@ The engine core for the node.
 
 ### context
 
-`IEngineCoreContext`\<`IEngineServerConfig`, `IEngineState`\>
+`IEngineCoreContext`\<`IEngineServerConfig`, [`INodeEngineState`](../interfaces/INodeEngineState.md)\>
 
 The context for the node.
 

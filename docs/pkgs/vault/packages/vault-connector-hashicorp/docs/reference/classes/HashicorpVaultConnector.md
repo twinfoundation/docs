@@ -28,25 +28,39 @@ The options for the vault connector.
 
 ## Properties
 
+### CLASS\_NAME
+
+> `readonly` `static` **CLASS\_NAME**: `string`
+
+Runtime name for the class.
+
+***
+
 ### NAMESPACE
 
 > `readonly` `static` **NAMESPACE**: `string` = `"hashicorp"`
 
 The namespace supported by the vault connector.
 
-***
+## Methods
 
-### CLASS\_NAME
+### className()
 
-> `readonly` **CLASS\_NAME**: `string`
+> **className**(): `string`
 
-Runtime name for the class.
+Returns the class name of the component.
+
+#### Returns
+
+`string`
+
+The class name of the component.
 
 #### Implementation of
 
-`IVaultConnector.CLASS_NAME`
+`IVaultConnector.className`
 
-## Methods
+***
 
 ### bootstrap()
 

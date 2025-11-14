@@ -10,7 +10,7 @@ Interface describing a Verifiable Storage component.
 
 ### create()
 
-> **create**(`data`, `allowList?`, `options?`, `identity?`, `namespace?`): `Promise`\<\{ `id`: `string`; `receipt`: `IJsonLdNodeObject`; \}\>
+> **create**(`data`, `allowList?`, `options?`, `namespace?`, `controller?`): `Promise`\<\{ `id`: `string`; `receipt`: `IJsonLdNodeObject`; \}\>
 
 Create an item in verifiable storage.
 
@@ -38,17 +38,17 @@ Additional options for creating the item.
 
 The maximum size of the allow list.
 
-##### identity?
-
-`string`
-
-The identity of the user to access the vault keys.
-
 ##### namespace?
 
 `string`
 
 The namespace to store the item in.
+
+##### controller?
+
+`string`
+
+The identity of the controller to access the vault keys.
 
 #### Returns
 
@@ -60,7 +60,7 @@ The id of the stored verifiable item in urn format and the receipt.
 
 ### update()
 
-> **update**(`id`, `data?`, `allowList?`, `identity?`): `Promise`\<`IJsonLdNodeObject`\>
+> **update**(`id`, `data?`, `allowList?`, `controller?`): `Promise`\<`IJsonLdNodeObject`\>
 
 Update an item in verifiable storage.
 
@@ -84,11 +84,11 @@ The data to store, optional if updating the allow list.
 
 Updated list of identities that are allowed to modify the item.
 
-##### identity?
+##### controller?
 
 `string`
 
-The identity of the user to access the vault keys.
+The identity of the controller to access the vault keys.
 
 #### Returns
 
@@ -138,7 +138,7 @@ The data for the item and the receipt.
 
 ### remove()
 
-> **remove**(`id`, `controllerIdentity?`): `Promise`\<`void`\>
+> **remove**(`id`, `controller?`): `Promise`\<`void`\>
 
 Remove the item from verifiable storage.
 
@@ -150,7 +150,7 @@ Remove the item from verifiable storage.
 
 The id of the verifiable item to remove in urn format.
 
-##### controllerIdentity?
+##### controller?
 
 `string`
 

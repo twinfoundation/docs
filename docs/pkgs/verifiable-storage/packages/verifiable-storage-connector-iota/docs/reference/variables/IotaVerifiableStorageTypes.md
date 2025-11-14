@@ -4,7 +4,7 @@
 
 The types of IOTA verifiable storage data.
 
-## Type declaration
+## Type Declaration
 
 ### IotaReceipt
 

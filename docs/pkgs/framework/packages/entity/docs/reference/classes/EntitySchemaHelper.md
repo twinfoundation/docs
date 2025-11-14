@@ -12,6 +12,14 @@ Class to help with entity schema operations.
 
 `EntitySchemaHelper`
 
+## Properties
+
+### CLASS\_NAME
+
+> `readonly` `static` **CLASS\_NAME**: `string`
+
+Runtime name for the class.
+
 ## Methods
 
 ### getSchema()
@@ -76,7 +84,7 @@ If no primary key was found, or more than one.
 
 ### getSortProperties()
 
-> `static` **getSortProperties**\<`T`\>(`entitySchema`): `undefined` \| [`IEntitySort`](../interfaces/IEntitySort.md)\<`T`\>[]
+> `static` **getSortProperties**\<`T`\>(`entitySchema`): [`IEntitySort`](../interfaces/IEntitySort.md)\<`T`\>[] \| `undefined`
 
 Get the sort properties from the schema.
 
@@ -96,7 +104,7 @@ The entity schema to find the primary key from.
 
 #### Returns
 
-`undefined` \| [`IEntitySort`](../interfaces/IEntitySort.md)\<`T`\>[]
+[`IEntitySort`](../interfaces/IEntitySort.md)\<`T`\>[] \| `undefined`
 
 The sort keys from the schema or undefined if there are none.
 
@@ -104,7 +112,7 @@ The sort keys from the schema or undefined if there are none.
 
 ### buildSortProperties()
 
-> `static` **buildSortProperties**\<`T`\>(`entitySchema`, `overrideSortKeys?`): `undefined` \| [`IEntitySort`](../interfaces/IEntitySort.md)\<`T`\>[]
+> `static` **buildSortProperties**\<`T`\>(`entitySchema`, `overrideSortKeys?`): [`IEntitySort`](../interfaces/IEntitySort.md)\<`T`\>[] \| `undefined`
 
 Build sort properties from the schema and override if necessary.
 
@@ -130,7 +138,7 @@ The override sort keys.
 
 #### Returns
 
-`undefined` \| [`IEntitySort`](../interfaces/IEntitySort.md)\<`T`\>[]
+[`IEntitySort`](../interfaces/IEntitySort.md)\<`T`\>[] \| `undefined`
 
 The finalised sort keys.
 

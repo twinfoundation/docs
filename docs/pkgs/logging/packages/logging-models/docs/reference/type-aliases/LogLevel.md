@@ -1,5 +1,5 @@
 # Type Alias: LogLevel
 
-> **LogLevel** = `"info"` \| `"error"` \| `"warn"` \| `"trace"` \| `"debug"`
+> **LogLevel** = *typeof* [`LogLevel`](../variables/LogLevel.md)\[keyof *typeof* [`LogLevel`](../variables/LogLevel.md)\]
 
-Log level.
+The log levels.

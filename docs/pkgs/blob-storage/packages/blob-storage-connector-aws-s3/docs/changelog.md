@@ -1,5 +1,55 @@
 # @twin.org/blob-storage-connector-aws-s3 - Changelog
 
+## [0.0.3-next.1](https://github.com/twinfoundation/blob-storage/compare/blob-storage-connector-aws-s3-v0.0.3-next.0...blob-storage-connector-aws-s3-v0.0.3-next.1) (2025-11-11)
+
+
+### Features
+
+* add AWS pod authentication mode ([c34b11c](https://github.com/twinfoundation/blob-storage/commit/c34b11cb32d3310a9e59840341a2b0b4221bc780))
+* add context id features ([#30](https://github.com/twinfoundation/blob-storage/issues/30)) ([fbf1c92](https://github.com/twinfoundation/blob-storage/commit/fbf1c9276424c841ef5ef3f4de8469ab3fba7e9c))
+* add validate-locales ([f20fcec](https://github.com/twinfoundation/blob-storage/commit/f20fceced91e39a0c9edb770b2e43ce944c92f3c))
+* Blob storage connector for AWS S3 ([#7](https://github.com/twinfoundation/blob-storage/issues/7)) ([1d7f1e7](https://github.com/twinfoundation/blob-storage/commit/1d7f1e7d323926f7f31229d38eb5de429f6e1554))
+* eslint migration to flat config ([e4239dd](https://github.com/twinfoundation/blob-storage/commit/e4239dd1c721955cff7f0357255d2bba15319972))
+* update dependencies ([56f0094](https://github.com/twinfoundation/blob-storage/commit/56f0094b68d8bd22864cd899ac1b61d95540f719))
+* update framework core ([ff339fe](https://github.com/twinfoundation/blob-storage/commit/ff339fe7e3f09ddff429907834bdf43617e9c05e))
+* update to support fully qualified data type names ([3297d69](https://github.com/twinfoundation/blob-storage/commit/3297d69d332058b0f0141002087f56ba230620e1))
+* use shared store mechanism ([#12](https://github.com/twinfoundation/blob-storage/issues/12)) ([cae8110](https://github.com/twinfoundation/blob-storage/commit/cae8110681847a1ac4fcac968b8196694e49c320))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/blob-storage-models bumped from 0.0.3-next.0 to 0.0.3-next.1
+
+## [0.0.2-next.5](https://github.com/twinfoundation/blob-storage/compare/blob-storage-connector-aws-s3-v0.0.2-next.4...blob-storage-connector-aws-s3-v0.0.2-next.5) (2025-10-09)
+
+
+### Features
+
+* add validate-locales ([f20fcec](https://github.com/twinfoundation/blob-storage/commit/f20fceced91e39a0c9edb770b2e43ce944c92f3c))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/blob-storage-models bumped from 0.0.2-next.4 to 0.0.2-next.5
+
+## [0.0.2-next.4](https://github.com/twinfoundation/blob-storage/compare/blob-storage-connector-aws-s3-v0.0.2-next.3...blob-storage-connector-aws-s3-v0.0.2-next.4) (2025-10-02)
+
+
+### Features
+
+* add AWS pod authentication mode ([c34b11c](https://github.com/twinfoundation/blob-storage/commit/c34b11cb32d3310a9e59840341a2b0b4221bc780))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/blob-storage-models bumped from 0.0.2-next.3 to 0.0.2-next.4
+
 ## [0.0.2-next.3](https://github.com/twinfoundation/blob-storage/compare/blob-storage-connector-aws-s3-v0.0.2-next.2...blob-storage-connector-aws-s3-v0.0.2-next.3) (2025-08-29)
 
 

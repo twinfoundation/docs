@@ -36,19 +36,33 @@ The dependencies for the entity storage service.
 
 ### CLASS\_NAME
 
-> `readonly` **CLASS\_NAME**: `string`
+> `readonly` `static` **CLASS\_NAME**: `string`
 
 Runtime name for the class.
 
+## Methods
+
+### className()
+
+> **className**(): `string`
+
+Returns the class name of the component.
+
+#### Returns
+
+`string`
+
+The class name of the component.
+
 #### Implementation of
 
-`IEntityStorageComponent.CLASS_NAME`
+`IEntityStorageComponent.className`
 
-## Methods
+***
 
 ### set()
 
-> **set**(`entity`, `userIdentity?`): `Promise`\<`void`\>
+> **set**(`entity`): `Promise`\<`void`\>
 
 Set an entity.
 
@@ -59,12 +73,6 @@ Set an entity.
 `T`
 
 The entity to set.
-
-##### userIdentity?
-
-`string`
-
-The user identity to use with storage operations.
 
 #### Returns
 
@@ -80,7 +88,7 @@ The id of the entity.
 
 ### get()
 
-> **get**(`id`, `secondaryIndex?`, `userIdentity?`): `Promise`\<`undefined` \| `T`\>
+> **get**(`id`, `secondaryIndex?`): `Promise`\<`T` \| `undefined`\>
 
 Get an entity.
 
@@ -98,15 +106,9 @@ keyof `T`
 
 Get the item using a secondary index.
 
-##### userIdentity?
-
-`string`
-
-The user identity to use with storage operations.
-
 #### Returns
 
-`Promise`\<`undefined` \| `T`\>
+`Promise`\<`T` \| `undefined`\>
 
 The object if it can be found or undefined.
 
@@ -118,7 +120,7 @@ The object if it can be found or undefined.
 
 ### remove()
 
-> **remove**(`id`, `userIdentity?`): `Promise`\<`void`\>
+> **remove**(`id`): `Promise`\<`void`\>
 
 Remove the entity.
 
@@ -129,12 +131,6 @@ Remove the entity.
 `string`
 
 The id of the entity to remove.
-
-##### userIdentity?
-
-`string`
-
-The user identity to use with storage operations.
 
 #### Returns
 
@@ -150,7 +146,7 @@ Nothing.
 
 ### query()
 
-> **query**(`conditions?`, `orderBy?`, `orderByDirection?`, `properties?`, `cursor?`, `pageSize?`, `userIdentity?`): `Promise`\<\{ `entities`: `Partial`\<`T`\>[]; `cursor?`: `string`; \}\>
+> **query**(`conditions?`, `orderBy?`, `orderByDirection?`, `properties?`, `cursor?`, `limit?`): `Promise`\<\{ `entities`: `Partial`\<`T`\>[]; `cursor?`: `string`; \}\>
 
 Query all the entities which match the conditions.
 
@@ -184,19 +180,13 @@ The optional properties to return, defaults to all.
 
 `string`
 
-The cursor to request the next page of entities.
+The cursor to request the next chunk of entities.
 
-##### pageSize?
+##### limit?
 
 `number`
 
 The suggested number of entities to return in each chunk, in some scenarios can return a different amount.
-
-##### userIdentity?
-
-`string`
-
-The user identity to use with storage operations.
 
 #### Returns
 

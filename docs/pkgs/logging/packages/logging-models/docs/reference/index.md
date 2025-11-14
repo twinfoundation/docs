@@ -24,3 +24,4 @@
 ## Variables
 
 - [LoggingConnectorFactory](variables/LoggingConnectorFactory.md)
+- [LogLevel](variables/LogLevel.md)

@@ -18,11 +18,3 @@ The name of the vault key to use for encryption, if not configured no encryption
 
 The namespace of the default storage connector to use.
 Defaults to the first entry in the factory if not provided.
-
-***
-
-### partitionPerUser?
-
-> `optional` **partitionPerUser**: `boolean`
-
-Include the user identity when performing storage operations, allow partitioning per user, defaults to false.

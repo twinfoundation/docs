@@ -1,6 +1,6 @@
 # Function: buildConfiguration()
 
-> **buildConfiguration**(`processEnv`, `options`, `serverInfo`): `Promise`\<\{ `nodeEnvVars`: [`INodeEnvironmentVariables`](../interfaces/INodeEnvironmentVariables.md) & `object`; `engineServerConfig`: `IEngineServerConfig`; \}\>
+> **buildConfiguration**(`processEnv`, `options`, `serverInfo`): `Promise`\<\{ `nodeEnvVars`: [`INodeEnvironmentVariables`](../interfaces/INodeEnvironmentVariables.md) & `object`; `nodeEngineConfig`: [`INodeEngineConfig`](../interfaces/INodeEngineConfig.md); `contextIdKeys`: `string`[]; \}\>
 
 Build the configuration for the TWIN Node server.
 
@@ -24,7 +24,7 @@ The server information.
 
 ## Returns
 
-`Promise`\<\{ `nodeEnvVars`: [`INodeEnvironmentVariables`](../interfaces/INodeEnvironmentVariables.md) & `object`; `engineServerConfig`: `IEngineServerConfig`; \}\>
+`Promise`\<\{ `nodeEnvVars`: [`INodeEnvironmentVariables`](../interfaces/INodeEnvironmentVariables.md) & `object`; `nodeEngineConfig`: [`INodeEngineConfig`](../interfaces/INodeEngineConfig.md); `contextIdKeys`: `string`[]; \}\>
 
 A promise that resolves to the engine server configuration, environment prefix, environment variables,
 and options.

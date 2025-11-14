@@ -34,8 +34,8 @@ The id of the document id we are trying to find.
 
 The cursor to get the next chunk of documents.
 
-#### pageSize?
+#### limit?
 
-> `optional` **pageSize**: `string` \| `number`
+> `optional` **limit**: `string`
 
 The number of documents to return.

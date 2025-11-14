@@ -48,30 +48,6 @@ Logging component type for the request.
 
 ***
 
-### nodeIdentity?
-
-> `optional` **nodeIdentity**: `string`
-
-The identity of the node the request is being performed on.
-
-#### Inherited from
-
-[`IHttpRequestContext`](IHttpRequestContext.md).[`nodeIdentity`](IHttpRequestContext.md#nodeidentity)
-
-***
-
-### userIdentity?
-
-> `optional` **userIdentity**: `string`
-
-The identity of the requestor if there is an authenticated user.
-
-#### Inherited from
-
-[`IHttpRequestContext`](IHttpRequestContext.md).[`userIdentity`](IHttpRequestContext.md#useridentity)
-
-***
-
 ### socketId
 
 > **socketId**: `string`

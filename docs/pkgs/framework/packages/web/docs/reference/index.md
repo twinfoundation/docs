@@ -14,12 +14,12 @@
 
 - [IFetchOptions](interfaces/IFetchOptions.md)
 - [IHttpHeaders](interfaces/IHttpHeaders.md)
-- [IJwk](interfaces/IJwk.md)
-- [IJwtHeader](interfaces/IJwtHeader.md)
-- [IJwtPayload](interfaces/IJwtPayload.md)
 
 ## Type Aliases
 
+- [IJwk](type-aliases/IJwk.md)
+- [IJwtHeader](type-aliases/IJwtHeader.md)
+- [IJwtPayload](type-aliases/IJwtPayload.md)
 - [HeaderTypes](type-aliases/HeaderTypes.md)
 - [HttpMethod](type-aliases/HttpMethod.md)
 - [HttpStatusCode](type-aliases/HttpStatusCode.md)

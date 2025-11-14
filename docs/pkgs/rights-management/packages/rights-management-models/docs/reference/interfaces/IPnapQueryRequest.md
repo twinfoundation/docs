@@ -12,7 +12,7 @@ The query parameters of the request.
 
 #### state?
 
-> `optional` **state**: `IdsContractNegotiationStateType`
+> `optional` **state**: `ContractNegotiationStateType`
 
 The state of the policy negotiations.
 

@@ -4,14 +4,6 @@ Data Space Connector service configuration
 
 ## Properties
 
-### dataSpaceConnectorAppDescriptors?
-
-> `optional` **dataSpaceConnectorAppDescriptors**: `IDataSpaceConnectorAppDescriptor`[]
-
-Data Space Connector App Descriptors to be registered initially
-
-***
-
 ### retainActivityLogsFor?
 
 > `optional` **retainActivityLogsFor**: `number`
@@ -21,7 +13,7 @@ The amount of time in minutes to retain activity log entries until removal, set 
 #### Default
 
 ```ts
--1
+10
 ```
 
 ***

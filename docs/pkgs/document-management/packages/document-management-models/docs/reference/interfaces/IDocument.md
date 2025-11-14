@@ -140,16 +140,16 @@ The date/time of when the document was deleted, as we never actually remove item
 
 ***
 
-### nodeIdentity
+### organizationIdentity?
 
-> **nodeIdentity**: `string`
+> `optional` **organizationIdentity**: `string`
 
-The node which added the document to the graph.
+The organization which added the document to the graph.
 
 ***
 
-### userIdentity
+### userIdentity?
 
-> **userIdentity**: `string`
+> `optional` **userIdentity**: `string`
 
 The user who added the document to the graph.

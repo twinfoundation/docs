@@ -30,15 +30,29 @@ The options for the component.
 
 ### CLASS\_NAME
 
-> `readonly` **CLASS\_NAME**: `string`
+> `readonly` `static` **CLASS\_NAME**: `string`
 
 The class name of the Data Access Point Service.
 
+## Methods
+
+### className()
+
+> **className**(): `string`
+
+Returns the class name of the component.
+
+#### Returns
+
+`string`
+
+The class name of the component.
+
 #### Implementation of
 
-`IDataAccessPointComponent.CLASS_NAME`
+`IDataAccessPointComponent.className`
 
-## Methods
+***
 
 ### create()
 
@@ -210,13 +224,13 @@ The type of the item to query.
 
 The conditions to apply to the query.
 
-`undefined` | `EntityCondition`\<`IJsonLdNodeObject`\>
+`EntityCondition`\<`IJsonLdNodeObject`\> | `undefined`
 
 ##### cursor
 
 The cursor for pagination.
 
-`undefined` | `string`
+`string` | `undefined`
 
 ##### options
 

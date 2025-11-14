@@ -12,6 +12,14 @@ Class to handle JSON Web Signatures.
 
 `Jws`
 
+## Properties
+
+### CLASS\_NAME
+
+> `readonly` `static` **CLASS\_NAME**: `string`
+
+Runtime name for the class.
+
 ## Methods
 
 ### create()

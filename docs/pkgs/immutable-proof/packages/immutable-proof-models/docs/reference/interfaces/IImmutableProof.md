@@ -28,22 +28,6 @@ The id of the proof.
 
 ***
 
-### nodeIdentity
-
-> **nodeIdentity**: `string`
-
-The id of the node who created the proof.
-
-***
-
-### userIdentity
-
-> **userIdentity**: `string`
-
-The id of the user who created the proof.
-
-***
-
 ### proofObjectId?
 
 > `optional` **proofObjectId**: `string`

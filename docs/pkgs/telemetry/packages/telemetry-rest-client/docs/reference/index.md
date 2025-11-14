@@ -2,4 +2,4 @@
 
 ## Classes
 
-- [TelemetryClient](classes/TelemetryClient.md)
+- [TelemetryRestClient](classes/TelemetryRestClient.md)

@@ -18,6 +18,20 @@ The time-to-live (TTL) for token in seconds.
 
 ***
 
+### contextId?
+
+> `optional` **contextId**: `string`
+
+The context id to use as the base for the verification method e.g. node/organization.
+
+#### Default
+
+```ts
+node
+```
+
+***
+
 ### verificationMethodId
 
 > **verificationMethodId**: `string`

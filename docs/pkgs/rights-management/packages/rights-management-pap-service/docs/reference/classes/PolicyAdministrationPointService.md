@@ -30,15 +30,29 @@ The options for the component.
 
 ### CLASS\_NAME
 
-> `readonly` **CLASS\_NAME**: `string`
+> `readonly` `static` **CLASS\_NAME**: `string`
 
 The class name of the Policy Administration Point Service.
 
+## Methods
+
+### className()
+
+> **className**(): `string`
+
+Returns the class name of the component.
+
+#### Returns
+
+`string`
+
+The class name of the component.
+
 #### Implementation of
 
-`IPolicyAdministrationPointComponent.CLASS_NAME`
+`IPolicyAdministrationPointComponent.className`
 
-## Methods
+***
 
 ### create()
 
@@ -144,7 +158,7 @@ The ID of the policy to remove.
 
 ### query()
 
-> **query**(`conditions?`, `cursor?`, `pageSize?`): `Promise`\<\{ `cursor?`: `string`; `policies`: `IOdrlPolicy`[]; \}\>
+> **query**(`conditions?`, `cursor?`, `limit?`): `Promise`\<\{ `cursor?`: `string`; `policies`: `IOdrlPolicy`[]; \}\>
 
 Query the entity storage for policies.
 
@@ -162,7 +176,7 @@ The conditions to query the entity storage with.
 
 The cursor to use for pagination.
 
-##### pageSize?
+##### limit?
 
 `number`
 

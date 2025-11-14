@@ -2,4 +2,4 @@
 
 ## Classes
 
-- [LoggingClient](classes/LoggingClient.md)
+- [LoggingRestClient](classes/LoggingRestClient.md)

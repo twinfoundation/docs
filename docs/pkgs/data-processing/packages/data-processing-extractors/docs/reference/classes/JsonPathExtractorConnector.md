@@ -28,15 +28,29 @@ The namespace supported by the data extractor connector.
 
 ### CLASS\_NAME
 
-> `readonly` **CLASS\_NAME**: `string`
+> `readonly` `static` **CLASS\_NAME**: `string`
 
 Runtime name for the class.
 
+## Methods
+
+### className()
+
+> **className**(): `string`
+
+Returns the class name of the component.
+
+#### Returns
+
+`string`
+
+The class name of the component.
+
 #### Implementation of
 
-`IDataExtractorConnector.CLASS_NAME`
+`IDataExtractorConnector.className`
 
-## Methods
+***
 
 ### extract()
 

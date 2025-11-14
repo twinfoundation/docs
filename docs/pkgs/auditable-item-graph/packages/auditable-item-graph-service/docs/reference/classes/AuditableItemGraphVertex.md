@@ -22,11 +22,11 @@ The id of the vertex.
 
 ***
 
-### nodeIdentity?
+### organizationIdentity?
 
-> `optional` **nodeIdentity**: `string`
+> `optional` **organizationIdentity**: `string`
 
-The identity of the node which controls the vertex.
+The identity of the organization which controls the vertex.
 
 ***
 

@@ -25,13 +25,14 @@ The code components that make up TWIN.
 - [@twin.org/nameof-vitest-plugin](pkgs/framework/packages/nameof-vitest-plugin/index.md) - A Vitest plugin which perform the nameof transformation
 - [@twin.org/nameof](pkgs/framework/packages/nameof/index.md) - Provides the definitions for the methods which are processed by the nameof-transformer
 - [@twin.org/core](pkgs/framework/packages/core/index.md) - Helper methods/classes for data type checking/validation/guarding/error handling
+- [@twin.org/cli-core](pkgs/framework/packages/cli-core/index.md) - Core classes for building a CLI
 - [@twin.org/entity](pkgs/framework/packages/entity/index.md) - Helpers for defining and working with entities
 - [@twin.org/crypto](pkgs/framework/packages/crypto/index.md) - Contains helper methods and classes which implement cryptographic functions
 - [@twin.org/image](pkgs/framework/packages/image/index.md) - Classes for image manipulation
 - [@twin.org/qr](pkgs/framework/packages/qr/index.md) - Package for creating QR codes
 - [@twin.org/web](pkgs/framework/packages/web/index.md) - Contains classes for use with web operations
 - [@twin.org/modules](pkgs/framework/packages/modules/index.md) - Helper classes for loading and executing from modules
-- [@twin.org/cli-core](pkgs/framework/packages/cli-core/index.md) - Core classes for building a CLI
+- [@twin.org/context](pkgs/framework/packages/context/index.md) - Helper methods/classes for context handling
 
 ## Standards
 
@@ -46,13 +47,14 @@ The code components that make up TWIN.
 - [@twin.org/standards-gaia-x](pkgs/standards/packages/standards-gaia-x/index.md) - Models which define the structure of Gaia-x
 - [@twin.org/standards-ld-contexts](pkgs/standards/packages/standards-ld-contexts/index.md) - Local copies of standard LD contexts which can be used for offline development
 - [@twin.org/standards-w3c-activity-streams](pkgs/standards/packages/standards-w3c-activity-streams/index.md) - Models which define the structure of W3C Activity Streams Standard
-- [@twin.org/standards-ids-contract-negotiation](pkgs/standards/packages/standards-ids-contract-negotiation/index.md) - Models which define the structure of W3C IDS Contract Negotiation Protocol
+- [@twin.org/standards-dataspace-protocol](pkgs/standards/packages/standards-dataspace-protocol/index.md) - Models which define the structure of Dataspace Protocol
 
 ## Data
 
 - [@twin.org/data-core](pkgs/data/packages/data-core/index.md) - Definitions and helpers for using with data and schemas
 - [@twin.org/data-json-ld](pkgs/data/packages/data-json-ld/index.md) - Models which define the structure of JSON LD
 - [@twin.org/data-framework](pkgs/data/packages/data-framework/index.md) - Models which define the structure of framework types
+- [@twin.org/data-json-path](pkgs/data/packages/data-json-path/index.md) - JSONPath abstraction layer for TWIN platform
 
 ## API
 
@@ -65,6 +67,7 @@ The code components that make up TWIN.
 - [@twin.org/api-auth-entity-storage-models](pkgs/api/packages/api-auth-entity-storage-models/index.md) - Models which define the structure of the Auth Entity Storage contracts.
 - [@twin.org/api-auth-entity-storage-service](pkgs/api/packages/api-auth-entity-storage-service/index.md) - Auth Entity Storage contract implementation and REST endpoint definitions
 - [@twin.org/api-auth-entity-storage-rest-client](pkgs/api/packages/api-auth-entity-storage-rest-client/index.md) - Perform REST authentication using entity storage.
+- [@twin.org/api-tenant-processor](pkgs/api/packages/api-tenant-processor/index.md) - API Tenant Processor for converting and api key to a tenant id.
 
 ## Entity Storage
 
@@ -72,7 +75,6 @@ The code components that make up TWIN.
 - [@twin.org/entity-storage-connector-memory](pkgs/entity-storage/packages/entity-storage-connector-memory/index.md) - Entity Storage connector implementation using in-memory storage
 - [@twin.org/entity-storage-service](pkgs/entity-storage/packages/entity-storage-service/index.md) - Entity Storage contract implementation and REST endpoint definitions
 - [@twin.org/entity-storage-rest-client](pkgs/entity-storage/packages/entity-storage-rest-client/index.md) - Entity Storage contract implementation which can connect to REST endpoints
-- [@twin.org/entity-storage-connector-synchronised](pkgs/entity-storage/packages/entity-storage-connector-synchronised/index.md) - Entity Storage connector implementation using synchronised storage
 - [@twin.org/entity-storage-connector-file](pkgs/entity-storage/packages/entity-storage-connector-file/index.md) - Entity Storage connector implementation using file storage
 - [@twin.org/entity-storage-connector-scylladb](pkgs/entity-storage/packages/entity-storage-connector-scylladb/index.md) - Entity Storage connector implementation using ScyllaDB
 - [@twin.org/entity-storage-connector-dynamodb](pkgs/entity-storage/packages/entity-storage-connector-dynamodb/index.md) - Entity Storage connector implementation using DynamoDb storage
@@ -224,6 +226,7 @@ The code components that make up TWIN.
 - [@twin.org/synchronised-storage-models](pkgs/synchronised-storage/packages/synchronised-storage-models/index.md) - Models which define the structure of the synchronised storage connectors and services
 - [@twin.org/synchronised-storage-service](pkgs/synchronised-storage/packages/synchronised-storage-service/index.md) - Synchronised storage contract implementation and REST endpoint definitions
 - [@twin.org/synchronised-storage-rest-client](pkgs/synchronised-storage/packages/synchronised-storage-rest-client/index.md) - Synchronised storage contract implementation which can connect to REST endpoints
+- [@twin.org/entity-storage-connector-synchronised](pkgs/synchronised-storage/packages/entity-storage-connector-synchronised/index.md) - Entity Storage connector implementation using synchronised storage
 
 ## Federated Catalogue
 

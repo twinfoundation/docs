@@ -16,5 +16,9 @@
 		"packages/dlt-iota",
 		"apps/move-to-json"
 	],
-	"type": "module"
+	"type": "module",
+	"bugs": {
+		"url": "git+https://github.com/twinfoundation/dlt/issues"
+	},
+	"homepage": "https://twindev.org"
 }

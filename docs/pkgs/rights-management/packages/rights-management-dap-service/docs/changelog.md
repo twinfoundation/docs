@@ -1,5 +1,48 @@
 # Changelog
 
+## [0.0.3-next.1](https://github.com/twinfoundation/rights-management/compare/rights-management-dap-service-v0.0.3-next.0...rights-management-dap-service-v0.0.3-next.1) (2025-11-11)
+
+
+### Features
+
+* add context id features ([#51](https://github.com/twinfoundation/rights-management/issues/51)) ([239922c](https://github.com/twinfoundation/rights-management/commit/239922c82a7fa94b66c8ee0e924bc58ddaaba395))
+* add DAP (Data Access Point) ([#40](https://github.com/twinfoundation/rights-management/issues/40)) ([f3e684b](https://github.com/twinfoundation/rights-management/commit/f3e684ba1f9a934394c64635f393fbb6709ff480))
+* add validate-locales ([78f30cf](https://github.com/twinfoundation/rights-management/commit/78f30cf61054655c815e5fc42972ee39502e3687))
+* engine compatibility updates ([490e015](https://github.com/twinfoundation/rights-management/commit/490e015901d6a5ac6563da484a18fc5f285556b1))
+* update to use built in vc authentication ([f982b86](https://github.com/twinfoundation/rights-management/commit/f982b8676a7d21add85195c73558ef4f0fd9be29))
+
+
+### Bug Fixes
+
+* typos ([a969249](https://github.com/twinfoundation/rights-management/commit/a969249cc3c8d9680880be4379a4bb546c48e935))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/rights-management-models bumped from 0.0.3-next.0 to 0.0.3-next.1
+  * devDependencies
+    * @twin.org/rights-management-pap-service bumped from 0.0.3-next.0 to 0.0.3-next.1
+    * @twin.org/rights-management-pip-service bumped from 0.0.3-next.0 to 0.0.3-next.1
+
+## [0.0.2-next.14](https://github.com/twinfoundation/rights-management/compare/rights-management-dap-service-v0.0.2-next.13...rights-management-dap-service-v0.0.2-next.14) (2025-10-09)
+
+
+### Features
+
+* add validate-locales ([78f30cf](https://github.com/twinfoundation/rights-management/commit/78f30cf61054655c815e5fc42972ee39502e3687))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/rights-management-models bumped from 0.0.2-next.13 to 0.0.2-next.14
+  * devDependencies
+    * @twin.org/rights-management-pap-service bumped from 0.0.2-next.13 to 0.0.2-next.14
+    * @twin.org/rights-management-pip-service bumped from 0.0.2-next.13 to 0.0.2-next.14
+
 ## [0.0.2-next.13](https://github.com/twinfoundation/rights-management/compare/rights-management-dap-service-v0.0.2-next.12...rights-management-dap-service-v0.0.2-next.13) (2025-09-23)
 
 

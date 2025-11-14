@@ -17,11 +17,3 @@ The headers which can be used to determine the response data type.
 #### authorization?
 
 > `optional` **authorization**: `string`
-
-***
-
-### authentication
-
-> **authentication**: `IIdentityAuthenticationActionRequest`
-
-The action request used in the verifiable credential.

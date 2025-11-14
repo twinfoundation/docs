@@ -54,6 +54,14 @@ Sha3 384.
 
 Sha3 512.
 
+***
+
+### CLASS\_NAME
+
+> `readonly` `static` **CLASS\_NAME**: `string`
+
+Runtime name for the class.
+
 ## Methods
 
 ### sum256()

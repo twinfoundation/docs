@@ -52,6 +52,14 @@ Blake2b 256.
 
 Blake2b 512.
 
+***
+
+### CLASS\_NAME
+
+> `readonly` `static` **CLASS\_NAME**: `string`
+
+Runtime name for the class.
+
 ## Methods
 
 ### sum160()

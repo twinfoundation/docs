@@ -30,13 +30,13 @@ The default value for the item to use when constructing a new object.
 
 ### jsonSchema()?
 
-> `optional` **jsonSchema**(): `Promise`\<`undefined` \| `SchemaObject`\>
+> `optional` **jsonSchema**(): `Promise`\<`SchemaObject` \| `undefined`\>
 
 Get the JSON schema for the data type.
 
 #### Returns
 
-`Promise`\<`undefined` \| `SchemaObject`\>
+`Promise`\<`SchemaObject` \| `undefined`\>
 
 The JSON schema for the data type.
 

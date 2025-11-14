@@ -14,6 +14,14 @@ Create a new instance of Sha1.
 
 `Sha1`
 
+## Properties
+
+### CLASS\_NAME
+
+> `readonly` `static` **CLASS\_NAME**: `string`
+
+Runtime name for the class.
+
 ## Methods
 
 ### sum()

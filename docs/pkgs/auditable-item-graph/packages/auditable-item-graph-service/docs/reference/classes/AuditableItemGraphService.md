@@ -28,6 +28,14 @@ The dependencies for the auditable item graph connector.
 
 ## Properties
 
+### CLASS\_NAME
+
+> `readonly` `static` **CLASS\_NAME**: `string`
+
+Runtime name for the class.
+
+***
+
 ### NAMESPACE\_CHANGESET
 
 > `readonly` `static` **NAMESPACE\_CHANGESET**: `string` = `"changeset"`
@@ -36,21 +44,35 @@ The namespace for the service changeset.
 
 ***
 
-### CLASS\_NAME
+### NAMESPACE\_EDGE
 
-> `readonly` **CLASS\_NAME**: `string`
+> `readonly` `static` **NAMESPACE\_EDGE**: `string` = `"edge"`
 
-Runtime name for the class.
-
-#### Implementation of
-
-`IAuditableItemGraphComponent.CLASS_NAME`
+The namespace for the service edge.
 
 ## Methods
 
+### className()
+
+> **className**(): `string`
+
+Returns the class name of the component.
+
+#### Returns
+
+`string`
+
+The class name of the component.
+
+#### Implementation of
+
+`IAuditableItemGraphComponent.className`
+
+***
+
 ### create()
 
-> **create**(`vertex`, `userIdentity?`, `nodeIdentity?`): `Promise`\<`string`\>
+> **create**(`vertex`): `Promise`\<`string`\>
 
 Create a new graph vertex.
 
@@ -83,18 +105,6 @@ The resources attached to the vertex.
 `object`[]
 
 The edges connected to the vertex.
-
-##### userIdentity?
-
-`string`
-
-The identity to create the auditable item graph operation with.
-
-##### nodeIdentity?
-
-`string`
-
-The node identity to include in the auditable item graph.
 
 #### Returns
 
@@ -162,7 +172,7 @@ NotFoundError if the vertex is not found.
 
 ### update()
 
-> **update**(`vertex`, `userIdentity?`, `nodeIdentity?`): `Promise`\<`void`\>
+> **update**(`vertex`): `Promise`\<`void`\>
 
 Update a graph vertex.
 
@@ -202,18 +212,6 @@ The resources attached to the vertex.
 
 The edges connected to the vertex.
 
-##### userIdentity?
-
-`string`
-
-The identity to create the auditable item graph operation with.
-
-##### nodeIdentity?
-
-`string`
-
-The node identity to include in the auditable item graph.
-
 #### Returns
 
 `Promise`\<`void`\>
@@ -228,7 +226,7 @@ Nothing.
 
 ### removeVerifiable()
 
-> **removeVerifiable**(`id`, `nodeIdentity?`): `Promise`\<`void`\>
+> **removeVerifiable**(`id`): `Promise`\<`void`\>
 
 Remove the verifiable storage for an item.
 
@@ -239,12 +237,6 @@ Remove the verifiable storage for an item.
 `string`
 
 The id of the vertex to get.
-
-##### nodeIdentity?
-
-`string`
-
-The node identity to use for vault operations.
 
 #### Returns
 
@@ -264,7 +256,7 @@ NotFoundError if the vertex is not found.
 
 ### query()
 
-> **query**(`options?`, `conditions?`, `orderBy?`, `orderByDirection?`, `properties?`, `cursor?`, `pageSize?`): `Promise`\<`IAuditableItemGraphVertexList`\>
+> **query**(`options?`, `conditions?`, `orderBy?`, `orderByDirection?`, `properties?`, `cursor?`, `limit?`): `Promise`\<`IAuditableItemGraphVertexList`\>
 
 Query the graph for vertices.
 
@@ -326,13 +318,13 @@ The properties to return, if not provided defaults to id, created, aliases and o
 
 `string`
 
-The cursor to request the next page of entities.
+The cursor to request the next chunk of entities.
 
-##### pageSize?
+##### limit?
 
 `number`
 
-The maximum number of entities in a page.
+Limit the number of entities to return.
 
 #### Returns
 

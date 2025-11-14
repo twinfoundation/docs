@@ -131,3 +131,11 @@ Date created
 > **evidence**: `string`[]
 
 Evidences
+
+***
+
+### extraData?
+
+> `optional` **extraData**: `IJsonLdNodeObject`
+
+Extended data of a DS Connector entry.

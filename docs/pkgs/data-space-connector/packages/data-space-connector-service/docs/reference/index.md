@@ -23,6 +23,8 @@
 - [generateRestRoutesDataSpaceConnector](functions/generateRestRoutesDataSpaceConnector.md)
 - [activityStreamNotify](functions/activityStreamNotify.md)
 - [activityLogEntryGet](functions/activityLogEntryGet.md)
+- [getDataAssetEntities](functions/getDataAssetEntities.md)
+- [queryDataAsset](functions/queryDataAsset.md)
 - [generateSocketRoutesDataSpaceConnector](functions/generateSocketRoutesDataSpaceConnector.md)
 - [activityLogStatusUpdate](functions/activityLogStatusUpdate.md)
 - [activityLogStatusDisconnected](functions/activityLogStatusDisconnected.md)

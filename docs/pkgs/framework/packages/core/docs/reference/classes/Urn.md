@@ -28,6 +28,14 @@ The specific part of the namespace.
 
 `Urn`
 
+## Properties
+
+### CLASS\_NAME
+
+> `readonly` `static` **CLASS\_NAME**: `string`
+
+Runtime name for the class.
+
 ## Methods
 
 ### generateRandom()
@@ -82,7 +90,7 @@ True if the namespace matches.
 
 ### tryParseExact()
 
-> `static` **tryParseExact**(`urn`): `undefined` \| `Urn`
+> `static` **tryParseExact**(`urn`): `Urn` \| `undefined`
 
 Try and parse a string into the urn parts.
 
@@ -96,7 +104,7 @@ The urn to parse.
 
 #### Returns
 
-`undefined` \| `Urn`
+`Urn` \| `undefined`
 
 The formatted urn or undefined if the value is not a urn.
 
@@ -126,7 +134,7 @@ The formatted urn.
 
 ### addPrefix()
 
-> `static` **addPrefix**(`urn`): `undefined` \| `string`
+> `static` **addPrefix**(`urn`): `string` \| `undefined`
 
 Add a urn: prefix if there isn't one already.
 
@@ -140,7 +148,7 @@ The urn string to add a prefix to.
 
 #### Returns
 
-`undefined` \| `string`
+`string` \| `undefined`
 
 The urn with a prefix.
 
@@ -184,7 +192,7 @@ GuardError If the value does not match the assertion.
 
 ### validate()
 
-> `static` **validate**(`property`, `value`, `failures`): `value is string`
+> `static` **validate**(`property`, `value`, `failures`, `fieldNameResource?`): `value is string`
 
 Validate a string as a Urn.
 
@@ -207,6 +215,12 @@ The urn to parse.
 [`IValidationFailure`](../interfaces/IValidationFailure.md)[]
 
 The list of failures to add to.
+
+##### fieldNameResource?
+
+`string`
+
+The optional human readable name for the field as an i18 resource.
 
 #### Returns
 

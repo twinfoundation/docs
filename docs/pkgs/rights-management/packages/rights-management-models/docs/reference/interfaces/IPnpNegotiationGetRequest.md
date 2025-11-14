@@ -31,11 +31,3 @@ The path parameters of the request.
 > **id**: `string`
 
 The identifier of the contract negotiation to be retrieved.
-
-***
-
-### authentication
-
-> **authentication**: `IIdentityAuthenticationActionRequest`
-
-The action request used in the verifiable credential.

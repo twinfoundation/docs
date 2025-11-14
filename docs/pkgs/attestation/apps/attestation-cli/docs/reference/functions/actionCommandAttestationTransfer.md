@@ -34,12 +34,6 @@ The new holder identity of the attestation.
 
 The new holder address of the attestation.
 
-#### connector?
-
-`"iota"`
-
-The connector to perform the operations with.
-
 #### node
 
 `string`

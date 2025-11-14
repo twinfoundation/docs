@@ -2,4 +2,4 @@
 
 ## Classes
 
-- [NftClient](classes/NftClient.md)
+- [NftRestClient](classes/NftRestClient.md)

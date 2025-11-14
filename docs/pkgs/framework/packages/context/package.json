@@ -1,0 +1,46 @@
+{
+	"name": "@twin.org/context",
+	"version": "0.0.3-next.4",
+	"description": "Helper methods/classes for context handling",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/twinfoundation/framework.git",
+		"directory": "packages/context"
+	},
+	"author": "martyn.janes@iota.org",
+	"license": "Apache-2.0",
+	"type": "module",
+	"engines": {
+		"node": ">=20.0.0"
+	},
+	"main": "./dist/es/index.js",
+	"types": "./dist/types/index.d.ts",
+	"exports": {
+		".": {
+			"types": "./dist/types/index.d.ts",
+			"import": "./dist/es/index.js",
+			"default": "./dist/es/index.js"
+		},
+		"./locales/*.json": "./locales/*.json"
+	},
+	"files": [
+		"dist/es",
+		"dist/types",
+		"locales",
+		"docs"
+	],
+	"keywords": [
+		"twin",
+		"trade",
+		"iota",
+		"framework",
+		"blockchain",
+		"context",
+		"foundation",
+		"utilities"
+	],
+	"bugs": {
+		"url": "git+https://github.com/twinfoundation/framework/issues"
+	},
+	"homepage": "https://twindev.org"
+}

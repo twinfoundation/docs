@@ -21,7 +21,12 @@
 		"packages/api-rest-client",
 		"packages/api-auth-entity-storage-models",
 		"packages/api-auth-entity-storage-service",
-		"packages/api-auth-entity-storage-rest-client"
+		"packages/api-auth-entity-storage-rest-client",
+		"packages/api-tenant-processor"
 	],
-	"type": "module"
+	"type": "module",
+	"bugs": {
+		"url": "git+https://github.com/twinfoundation/api/issues"
+	},
+	"homepage": "https://twindev.org"
 }
