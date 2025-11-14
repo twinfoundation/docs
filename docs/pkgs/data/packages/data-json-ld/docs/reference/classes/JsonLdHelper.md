@@ -61,3 +61,31 @@ If true, will fail validation if the data type is missing, defaults to false.
 `Promise`\<`boolean`\>
 
 True if the document was valid.
+
+***
+
+### isType()
+
+> `static` **isType**(`document`, `type`): `Promise`\<`boolean`\>
+
+Expand the JSON-LD document and check if it is of a specific type.
+
+#### Parameters
+
+##### document
+
+[`IJsonLdDocument`](../type-aliases/IJsonLdDocument.md)
+
+The JSON-LD document to check.
+
+##### type
+
+`string`[]
+
+The type to check for.
+
+#### Returns
+
+`Promise`\<`boolean`\>
+
+True if the document is of the specified type.

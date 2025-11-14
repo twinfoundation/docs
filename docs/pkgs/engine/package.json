@@ -20,5 +20,9 @@
 		"packages/engine",
 		"packages/engine-server"
 	],
-	"type": "module"
+	"type": "module",
+	"bugs": {
+		"url": "git+https://github.com/twinfoundation/engine/issues"
+	},
+	"homepage": "https://twindev.org"
 }

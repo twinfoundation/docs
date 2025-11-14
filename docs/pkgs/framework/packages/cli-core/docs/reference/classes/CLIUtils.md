@@ -104,7 +104,7 @@ True if the dir exists.
 
 ### readJsonFile()
 
-> `static` **readJsonFile**\<`T`\>(`filename`): `Promise`\<`undefined` \| `T`\>
+> `static` **readJsonFile**\<`T`\>(`filename`): `Promise`\<`T` \| `undefined`\>
 
 Read a JSON file and parse it.
 
@@ -124,7 +124,7 @@ The filename to read.
 
 #### Returns
 
-`Promise`\<`undefined` \| `T`\>
+`Promise`\<`T` \| `undefined`\>
 
 The parsed JSON.
 
@@ -132,7 +132,7 @@ The parsed JSON.
 
 ### readJsonFileSync()
 
-> `static` **readJsonFileSync**\<`T`\>(`filename`): `undefined` \| `T`
+> `static` **readJsonFileSync**\<`T`\>(`filename`): `T` \| `undefined`
 
 Read a JSON file and parse it, synchronously.
 
@@ -152,7 +152,7 @@ The filename to read.
 
 #### Returns
 
-`undefined` \| `T`
+`T` \| `undefined`
 
 The parsed JSON.
 
@@ -160,7 +160,7 @@ The parsed JSON.
 
 ### readLinesFile()
 
-> `static` **readLinesFile**(`filename`): `Promise`\<`undefined` \| `string`[]\>
+> `static` **readLinesFile**(`filename`): `Promise`\<`string`[] \| `undefined`\>
 
 Read a file as lines.
 
@@ -174,7 +174,7 @@ The filename to read.
 
 #### Returns
 
-`Promise`\<`undefined` \| `string`[]\>
+`Promise`\<`string`[] \| `undefined`\>
 
 The lines.
 
@@ -182,7 +182,7 @@ The lines.
 
 ### readLinesFileSync()
 
-> `static` **readLinesFileSync**(`filename`): `undefined` \| `string`[]
+> `static` **readLinesFileSync**(`filename`): `string`[] \| `undefined`
 
 Read a file as lines, synchronously.
 
@@ -196,7 +196,7 @@ The filename to read.
 
 #### Returns
 
-`undefined` \| `string`[]
+`string`[] \| `undefined`
 
 The lines.
 
@@ -310,7 +310,7 @@ Write a JSON file.
 
 The filename to write.
 
-`undefined` | `string`
+`string` | `undefined`
 
 ##### data
 
@@ -342,7 +342,7 @@ Write an env file.
 
 The filename to write.
 
-`undefined` | `string`
+`string` | `undefined`
 
 ##### data
 

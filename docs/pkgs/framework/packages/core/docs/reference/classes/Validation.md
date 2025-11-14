@@ -16,7 +16,7 @@ Class to handle validation operations.
 
 ### empty()
 
-> `static` **empty**(`property`, `value`, `failures`, `fieldNameResource?`): value is undefined \| null
+> `static` **empty**(`property`, `value`, `failures`, `fieldNameResource?`): value is null \| undefined
 
 Is the property null or undefined.
 
@@ -48,7 +48,7 @@ Optional i18n resource of the field name to display in the message.
 
 #### Returns
 
-value is undefined \| null
+value is null \| undefined
 
 True if the value is a empty.
 

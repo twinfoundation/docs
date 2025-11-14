@@ -20,9 +20,9 @@ The operation being performed on the item.
 
 ***
 
-### nodeIdentity
+### nodeId
 
-> **nodeIdentity**: `string`
+> **nodeId**: `string`
 
 The node performing the operation.
 

@@ -1,5 +1,45 @@
 # @twin.org/entity-storage-models - Changelog
 
+## [0.0.3-next.2](https://github.com/twinfoundation/entity-storage/compare/entity-storage-models-v0.0.3-next.1...entity-storage-models-v0.0.3-next.2) (2025-11-13)
+
+
+### Miscellaneous Chores
+
+* **entity-storage-models:** Synchronize repo versions
+
+## [0.0.3-next.1](https://github.com/twinfoundation/entity-storage/compare/entity-storage-models-v0.0.3-next.0...entity-storage-models-v0.0.3-next.1) (2025-11-10)
+
+
+### Features
+
+* add context id features ([#55](https://github.com/twinfoundation/entity-storage/issues/55)) ([99c15a2](https://github.com/twinfoundation/entity-storage/commit/99c15a257539b61d9da63649ce573ebf47699fc9))
+* add production release automation ([1eb4c8e](https://github.com/twinfoundation/entity-storage/commit/1eb4c8ee3eb099defdfc2d063ae44935276dcae8))
+* add validate-locales ([e66ef0d](https://github.com/twinfoundation/entity-storage/commit/e66ef0de26ca2f82b3fe89bb5c7a15a0978a9644))
+* eslint migration to flat config ([f033b64](https://github.com/twinfoundation/entity-storage/commit/f033b64984c0e6a8129d929c9dd816dcc1b8dab0))
+* remove includeNodeIdentity flag ([d88d1d0](https://github.com/twinfoundation/entity-storage/commit/d88d1d0694419b795dc860e0b712a0051c9a1c9e))
+* update dependencies ([7ccc0c4](https://github.com/twinfoundation/entity-storage/commit/7ccc0c429125d073dc60b3de6cf101abc8cc6cba))
+* update framework core ([b59a380](https://github.com/twinfoundation/entity-storage/commit/b59a380bb7fba2b43610f69074dcdee24a4737da))
+* use shared store mechanism ([#34](https://github.com/twinfoundation/entity-storage/issues/34)) ([68b6b71](https://github.com/twinfoundation/entity-storage/commit/68b6b71e7a96d7d016cd57bfff36775b56bf3f93))
+
+
+### Bug Fixes
+
+* query params force coercion ([dd6aa87](https://github.com/twinfoundation/entity-storage/commit/dd6aa87efdfb60bab7d6756a86888863c45c51a7))
+
+## [0.0.2-next.10](https://github.com/twinfoundation/entity-storage/compare/entity-storage-models-v0.0.2-next.9...entity-storage-models-v0.0.2-next.10) (2025-10-09)
+
+
+### Features
+
+* add validate-locales ([e66ef0d](https://github.com/twinfoundation/entity-storage/commit/e66ef0de26ca2f82b3fe89bb5c7a15a0978a9644))
+
+## [0.0.2-next.9](https://github.com/twinfoundation/entity-storage/compare/entity-storage-models-v0.0.2-next.8...entity-storage-models-v0.0.2-next.9) (2025-10-02)
+
+
+### Miscellaneous Chores
+
+* **entity-storage-models:** Synchronize repo versions
+
 ## [0.0.2-next.8](https://github.com/twinfoundation/entity-storage/compare/entity-storage-models-v0.0.2-next.7...entity-storage-models-v0.0.2-next.8) (2025-08-29)
 
 

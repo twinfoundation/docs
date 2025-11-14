@@ -38,15 +38,29 @@ Options for the client.
 
 ### CLASS\_NAME
 
-> `readonly` **CLASS\_NAME**: `string`
+> `readonly` `static` **CLASS\_NAME**: `string`
 
 Runtime name for the class.
 
+## Methods
+
+### className()
+
+> **className**(): `string`
+
+Returns the class name of the component.
+
+#### Returns
+
+`string`
+
+The class name of the component.
+
 #### Implementation of
 
-`IDataSpaceConnector.CLASS_NAME`
+`IDataSpaceConnector.className`
 
-## Methods
+***
 
 ### notifyActivity()
 
@@ -162,19 +176,25 @@ NotFoundError if activity log entry is not known.
 
 ***
 
-### registerDataSpaceConnectorApp()
+### registerApp()
 
-> **registerDataSpaceConnectorApp**(`app`): `Promise`\<`void`\>
+> **registerApp**(`appId`, `app`): `Promise`\<`void`\>
 
-Registers a Data Space Connector App - Not available from client.
+Registers a Data Space Connector App.
 
 #### Parameters
 
+##### appId
+
+`string`
+
+The Id of the App to be registered.
+
 ##### app
 
-`IDataSpaceConnectorAppDescriptor`
+`IDataSpaceConnectorApp`
 
-The descriptor of the App to be registered.
+The app to be registered.
 
 #### Returns
 
@@ -184,7 +204,121 @@ nothing.
 
 #### Implementation of
 
-`IDataSpaceConnector.registerDataSpaceConnectorApp`
+`IDataSpaceConnector.registerApp`
+
+***
+
+### unregisterApp()
+
+> **unregisterApp**(`appId`): `Promise`\<`void`\>
+
+Un-registers a Data Space Connector App.
+
+#### Parameters
+
+##### appId
+
+`string`
+
+The Id of the App to be registered.
+
+#### Returns
+
+`Promise`\<`void`\>
+
+Nothing.
+
+#### Implementation of
+
+`IDataSpaceConnector.unregisterApp`
+
+***
+
+### getDataAssetEntities()
+
+> **getDataAssetEntities**(`dataAsset`, `entitySet`, `cursor?`, `limit?`): `Promise`\<`IDataAssetItemList`\>
+
+Get Data Asset entities. Allows to retrieve entities by their type or id.
+
+#### Parameters
+
+##### dataAsset
+
+`IDataAssetDescription`
+
+The data asset being referred. It can be left empty and let the system to locate a proper one.
+
+##### entitySet
+
+`IEntitySet` & `object`
+
+The set of entities to be retrieved.
+
+##### cursor?
+
+`string`
+
+Pagination details - cursor.
+
+##### limit?
+
+`number`
+
+Pagination details - max number of entities.
+
+#### Returns
+
+`Promise`\<`IDataAssetItemList`\>
+
+The entities requested as a JSON-LD Document.
+
+#### Implementation of
+
+`IDataSpaceConnector.getDataAssetEntities`
+
+***
+
+### queryDataAsset()
+
+> **queryDataAsset**(`dataAsset`, `query`, `cursor?`, `limit?`): `Promise`\<`IDataAssetItemList`\>
+
+Queries a data asset controlled by this DS Connector App.
+
+#### Parameters
+
+##### dataAsset
+
+`IDataAssetDescription`
+
+The data asset being referred.
+
+##### query
+
+`IFilteringQuery`
+
+The filtering query.
+
+##### cursor?
+
+`string`
+
+Pagination details - cursor.
+
+##### limit?
+
+`number`
+
+Pagination details - max number of entities.
+
+#### Returns
+
+`Promise`\<`IDataAssetItemList`\>
+
+The entities requested as a JSON-LD Document.
+
+#### Implementation of
+
+`IDataSpaceConnector.queryDataAsset`
 
 ***
 

@@ -12,11 +12,19 @@ Helper class for token operations.
 
 `TokenHelper`
 
+## Properties
+
+### CLASS\_NAME
+
+> `readonly` `static` **CLASS\_NAME**: `string`
+
+Runtime name for the class.
+
 ## Methods
 
 ### createToken()
 
-> `static` **createToken**(`vaultConnector`, `signingKeyName`, `subject`, `ttlMinutes`): `Promise`\<\{ `token`: `string`; `expiry`: `number`; \}\>
+> `static` **createToken**(`vaultConnector`, `signingKeyName`, `userIdentity`, `organizationIdentity`, `ttlMinutes`): `Promise`\<\{ `token`: `string`; `expiry`: `number`; \}\>
 
 Create a new token.
 
@@ -34,11 +42,17 @@ The vault connector.
 
 The signing key name.
 
-##### subject
+##### userIdentity
 
 `string`
 
 The subject for the token.
+
+##### organizationIdentity
+
+The organization for the token.
+
+`string` | `undefined`
 
 ##### ttlMinutes
 
@@ -56,7 +70,7 @@ The new token and its expiry date.
 
 ### verify()
 
-> `static` **verify**(`vaultConnector`, `signingKeyName`, `token`): `Promise`\<\{ `header`: `IJwtHeader`; `payload`: `IJwtPayload`; \}\>
+> `static` **verify**(`vaultConnector`, `signingKeyName`, `token`): `Promise`\<\{ `header`: `JWTHeaderParameters`; `payload`: `JWTPayload`; \}\>
 
 Verify the token.
 
@@ -78,11 +92,11 @@ The signing key name.
 
 The token to verify.
 
-`undefined` | `string`
+`string` | `undefined`
 
 #### Returns
 
-`Promise`\<\{ `header`: `IJwtHeader`; `payload`: `IJwtPayload`; \}\>
+`Promise`\<\{ `header`: `JWTHeaderParameters`; `payload`: `JWTPayload`; \}\>
 
 The verified details.
 
@@ -94,7 +108,7 @@ UnauthorizedError if the token is missing, invalid or expired.
 
 ### extractTokenFromHeaders()
 
-> `static` **extractTokenFromHeaders**(`headers?`, `cookieName?`): `undefined` \| \{ `token`: `string`; `location`: `"authorization"` \| `"cookie"`; \}
+> `static` **extractTokenFromHeaders**(`headers?`, `cookieName?`): \{ `token`: `string`; `location`: `"authorization"` \| `"cookie"`; \} \| `undefined`
 
 Extract the auth token from the headers, either from the authorization header or the cookie header.
 
@@ -114,6 +128,6 @@ The name of the cookie to extract the token from.
 
 #### Returns
 
-`undefined` \| \{ `token`: `string`; `location`: `"authorization"` \| `"cookie"`; \}
+\{ `token`: `string`; `location`: `"authorization"` \| `"cookie"`; \} \| `undefined`
 
 The token if found.

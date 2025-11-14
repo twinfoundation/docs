@@ -4,7 +4,7 @@ A credential with subject.
 
 ## Extends
 
-- `IDidVerifiableCredential`
+- `IDidVerifiableCredentialV2`
 
 ## Extended by
 
@@ -24,7 +24,7 @@ The Id of the credential, it is mandatory.
 
 #### Overrides
 
-`IDidVerifiableCredential.id`
+`IDidVerifiableCredentialV2.id`
 
 ***
 
@@ -36,7 +36,7 @@ The issuer of the credential, it is mandatory.
 
 #### Overrides
 
-`IDidVerifiableCredential.issuer`
+`IDidVerifiableCredentialV2.issuer`
 
 ***
 
@@ -48,4 +48,4 @@ Credential subject must always include id and type
 
 #### Overrides
 
-`IDidVerifiableCredential.credentialSubject`
+`IDidVerifiableCredentialV2.credentialSubject`

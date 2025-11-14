@@ -1,5 +1,85 @@
 # @twin.org/api-models - Changelog
 
+## [0.0.3-next.5](https://github.com/twinfoundation/api/compare/api-models-v0.0.3-next.4...api-models-v0.0.3-next.5) (2025-11-14)
+
+
+### Features
+
+* decodeURIComponent for query and path params ([ead68a2](https://github.com/twinfoundation/api/commit/ead68a257425c10dd912497f7edd473c469ca132))
+
+## [0.0.3-next.4](https://github.com/twinfoundation/api/compare/api-models-v0.0.3-next.3...api-models-v0.0.3-next.4) (2025-11-14)
+
+
+### Features
+
+* add authentication generators and process features option ([a67edf1](https://github.com/twinfoundation/api/commit/a67edf1df212bd8ab94a40cddf5338551155696f))
+* add context id features ([#42](https://github.com/twinfoundation/api/issues/42)) ([0186055](https://github.com/twinfoundation/api/commit/0186055c48afde842a4254b4df9ac9249c40fe40))
+* add logging component type to request contexts ([210de1b](https://github.com/twinfoundation/api/commit/210de1b9e1c91079b59a2b90ddd57569668d647d))
+* add root, favicon routes ([71da1c3](https://github.com/twinfoundation/api/commit/71da1c3a93c349588aff7084d1d8d6a29a277da8))
+* add socket id, connect and disconnect ([20b0d0e](https://github.com/twinfoundation/api/commit/20b0d0ec279cab46141fee09de2c4a7087cdce16))
+* add validate-locales ([cdba610](https://github.com/twinfoundation/api/commit/cdba610a0acb5022d2e3ce729732e6646a297e5e))
+* eslint migration to flat config ([0dd5820](https://github.com/twinfoundation/api/commit/0dd5820e3af97350fd08b8d226f4a6c1a9246805))
+* update dependencies ([1171dc4](https://github.com/twinfoundation/api/commit/1171dc416a9481737f6a640e3cf30145768f37e9))
+* update framework core ([d8eebf2](https://github.com/twinfoundation/api/commit/d8eebf267fa2a0abaa84e58590496e9d20490cfa))
+* update IComponent signatures ([915ce37](https://github.com/twinfoundation/api/commit/915ce37712326ab4aa6869c350eabaa4622e8430))
+* use new includeStackTrace flag for toJsonObject ([6452b15](https://github.com/twinfoundation/api/commit/6452b153af786eee14b21152420f8a2578b70593))
+* use shared store mechanism ([#19](https://github.com/twinfoundation/api/issues/19)) ([32116df](https://github.com/twinfoundation/api/commit/32116df3b4380a30137f5056f242a5c99afa2df9))
+* validationError mapped to http status badrequest ([adc5eb1](https://github.com/twinfoundation/api/commit/adc5eb11d987abb0ab9f7e0dc8e1fdae207e436e))
+
+## [0.0.3-next.3](https://github.com/twinfoundation/api/compare/api-models-v0.0.3-next.2...api-models-v0.0.3-next.3) (2025-11-14)
+
+
+### Miscellaneous Chores
+
+* **api-models:** Synchronize repo versions
+
+## [0.0.3-next.2](https://github.com/twinfoundation/api/compare/api-models-v0.0.3-next.1...api-models-v0.0.3-next.2) (2025-11-12)
+
+
+### Miscellaneous Chores
+
+* **api-models:** Synchronize repo versions
+
+## [0.0.3-next.1](https://github.com/twinfoundation/api/compare/api-models-v0.0.3-next.0...api-models-v0.0.3-next.1) (2025-11-10)
+
+
+### Features
+
+* add authentication generators and process features option ([a67edf1](https://github.com/twinfoundation/api/commit/a67edf1df212bd8ab94a40cddf5338551155696f))
+* add context id features ([#42](https://github.com/twinfoundation/api/issues/42)) ([0186055](https://github.com/twinfoundation/api/commit/0186055c48afde842a4254b4df9ac9249c40fe40))
+* add logging component type to request contexts ([210de1b](https://github.com/twinfoundation/api/commit/210de1b9e1c91079b59a2b90ddd57569668d647d))
+* add root, favicon routes ([71da1c3](https://github.com/twinfoundation/api/commit/71da1c3a93c349588aff7084d1d8d6a29a277da8))
+* add socket id, connect and disconnect ([20b0d0e](https://github.com/twinfoundation/api/commit/20b0d0ec279cab46141fee09de2c4a7087cdce16))
+* add validate-locales ([cdba610](https://github.com/twinfoundation/api/commit/cdba610a0acb5022d2e3ce729732e6646a297e5e))
+* eslint migration to flat config ([0dd5820](https://github.com/twinfoundation/api/commit/0dd5820e3af97350fd08b8d226f4a6c1a9246805))
+* update dependencies ([1171dc4](https://github.com/twinfoundation/api/commit/1171dc416a9481737f6a640e3cf30145768f37e9))
+* update framework core ([d8eebf2](https://github.com/twinfoundation/api/commit/d8eebf267fa2a0abaa84e58590496e9d20490cfa))
+* update IComponent signatures ([915ce37](https://github.com/twinfoundation/api/commit/915ce37712326ab4aa6869c350eabaa4622e8430))
+* use new includeStackTrace flag for toJsonObject ([6452b15](https://github.com/twinfoundation/api/commit/6452b153af786eee14b21152420f8a2578b70593))
+* use shared store mechanism ([#19](https://github.com/twinfoundation/api/issues/19)) ([32116df](https://github.com/twinfoundation/api/commit/32116df3b4380a30137f5056f242a5c99afa2df9))
+* validationError mapped to http status badrequest ([adc5eb1](https://github.com/twinfoundation/api/commit/adc5eb11d987abb0ab9f7e0dc8e1fdae207e436e))
+
+## [0.0.2-next.13](https://github.com/twinfoundation/api/compare/api-models-v0.0.2-next.12...api-models-v0.0.2-next.13) (2025-10-09)
+
+
+### Miscellaneous Chores
+
+* **api-models:** Synchronize repo versions
+
+## [0.0.2-next.12](https://github.com/twinfoundation/api/compare/api-models-v0.0.2-next.11...api-models-v0.0.2-next.12) (2025-10-09)
+
+
+### Features
+
+* add validate-locales ([cdba610](https://github.com/twinfoundation/api/commit/cdba610a0acb5022d2e3ce729732e6646a297e5e))
+
+## [0.0.2-next.11](https://github.com/twinfoundation/api/compare/api-models-v0.0.2-next.10...api-models-v0.0.2-next.11) (2025-09-29)
+
+
+### Features
+
+* update IComponent signatures ([915ce37](https://github.com/twinfoundation/api/commit/915ce37712326ab4aa6869c350eabaa4622e8430))
+
 ## [0.0.2-next.10](https://github.com/twinfoundation/api/compare/api-models-v0.0.2-next.9...api-models-v0.0.2-next.10) (2025-09-23)
 
 

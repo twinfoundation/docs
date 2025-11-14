@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/playground-node",
-	"version": "0.0.2-next.0",
+	"version": "0.0.3-next.0",
 	"description": "Serve APIs using the specified configuration",
 	"private": true,
 	"repository": {
@@ -13,5 +13,9 @@
 	"type": "module",
 	"engines": {
 		"node": ">=20.0.0"
-	}
+	},
+	"bugs": {
+		"url": "git+https://github.com/twinfoundation/playground/issues"
+	},
+	"homepage": "https://twindev.org"
 }

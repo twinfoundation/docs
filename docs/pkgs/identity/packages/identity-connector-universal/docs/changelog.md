@@ -1,5 +1,90 @@
 # @twin.org/identity-connector-Universal - Changelog
 
+## [0.0.3-next.2](https://github.com/twinfoundation/identity/compare/identity-connector-universal-v0.0.3-next.1...identity-connector-universal-v0.0.3-next.2) (2025-11-14)
+
+
+### Miscellaneous Chores
+
+* **identity-connector-universal:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/identity-models bumped from 0.0.3-next.1 to 0.0.3-next.2
+
+## [0.0.3-next.1](https://github.com/twinfoundation/identity/compare/identity-connector-universal-v0.0.3-next.0...identity-connector-universal-v0.0.3-next.1) (2025-11-11)
+
+
+### Features
+
+* add context id features ([#62](https://github.com/twinfoundation/identity/issues/62)) ([e02ecca](https://github.com/twinfoundation/identity/commit/e02ecca9c45a849104bfbf7bc18a1f44e6eea8a1))
+* add mainnet support ([af56a38](https://github.com/twinfoundation/identity/commit/af56a382837896cd4e13d5814c0924c46658b99c))
+* add validate-locales ([04d74b4](https://github.com/twinfoundation/identity/commit/04d74b4d1ebe42672e8ca75a7bdb8e3556afd0be))
+* eslint migration to flat config ([fd6246d](https://github.com/twinfoundation/identity/commit/fd6246d566280b6d5d10a108eb1e92c4b510f2f2))
+* identity key separator use slash ([1319d0d](https://github.com/twinfoundation/identity/commit/1319d0d07164a36b3ec279e6421b8835ffefc3d3))
+* improve url construction ([544a435](https://github.com/twinfoundation/identity/commit/544a435dadb90b9e29533f4a4ce09725268d04bd))
+* re-use vault keys if available ([5a848d7](https://github.com/twinfoundation/identity/commit/5a848d7520829d9c891ec889fd773fbc0ee77ba5))
+* update comment ([436e030](https://github.com/twinfoundation/identity/commit/436e030e9480bdc4e35b44ad7199a5ccc7a7b31e))
+* update framework core ([c824497](https://github.com/twinfoundation/identity/commit/c82449709af0215eb7af496cf687c93fb30b5ae0))
+* use shared store mechanism ([#27](https://github.com/twinfoundation/identity/issues/27)) ([ce41f3f](https://github.com/twinfoundation/identity/commit/ce41f3fc3da1b206ec06da7ea5b2c968f788804d))
+
+
+### Bug Fixes
+
+* Import path and bump version ([#21](https://github.com/twinfoundation/identity/issues/21)) ([ccea845](https://github.com/twinfoundation/identity/commit/ccea845bf32562267280bc1b3dde1c9af1a00360))
+* Install sdk-wasm ([#20](https://github.com/twinfoundation/identity/issues/20)) ([75ec14e](https://github.com/twinfoundation/identity/commit/75ec14e072f8c219863a1c028a3b0783802086e9))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/identity-models bumped from 0.0.3-next.0 to 0.0.3-next.1
+
+## [0.0.2-next.10](https://github.com/twinfoundation/identity/compare/identity-connector-universal-v0.0.2-next.9...identity-connector-universal-v0.0.2-next.10) (2025-10-27)
+
+
+### Miscellaneous Chores
+
+* **identity-connector-universal:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/identity-models bumped from 0.0.2-next.9 to 0.0.2-next.10
+
+## [0.0.2-next.9](https://github.com/twinfoundation/identity/compare/identity-connector-universal-v0.0.2-next.8...identity-connector-universal-v0.0.2-next.9) (2025-10-09)
+
+
+### Features
+
+* add validate-locales ([04d74b4](https://github.com/twinfoundation/identity/commit/04d74b4d1ebe42672e8ca75a7bdb8e3556afd0be))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/identity-models bumped from 0.0.2-next.8 to 0.0.2-next.9
+
+## [0.0.2-next.8](https://github.com/twinfoundation/identity/compare/identity-connector-universal-v0.0.2-next.7...identity-connector-universal-v0.0.2-next.8) (2025-09-25)
+
+
+### Miscellaneous Chores
+
+* **identity-connector-universal:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/identity-models bumped from 0.0.2-next.7 to 0.0.2-next.8
+
 ## [0.0.2-next.7](https://github.com/twinfoundation/identity/compare/identity-connector-universal-v0.0.2-next.6...identity-connector-universal-v0.0.2-next.7) (2025-09-23)
 
 

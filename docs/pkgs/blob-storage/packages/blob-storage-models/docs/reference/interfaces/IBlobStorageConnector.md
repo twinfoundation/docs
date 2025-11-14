@@ -32,7 +32,7 @@ The id of the stored blob in urn format.
 
 ### get()
 
-> **get**(`id`): `Promise`\<`undefined` \| `Uint8Array`\<`ArrayBufferLike`\>\>
+> **get**(`id`): `Promise`\<`Uint8Array`\<`ArrayBufferLike`\> \| `undefined`\>
 
 Get the blob.
 
@@ -46,7 +46,7 @@ The id of the blob to get in urn format.
 
 #### Returns
 
-`Promise`\<`undefined` \| `Uint8Array`\<`ArrayBufferLike`\>\>
+`Promise`\<`Uint8Array`\<`ArrayBufferLike`\> \| `undefined`\>
 
 The data for the blob if it can be found or undefined.
 

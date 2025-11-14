@@ -152,7 +152,7 @@ True if the value is valid epc.
 
 ### extractReadPoint()
 
-> `static` **extractReadPoint**(`urn`): `undefined` \| [`IVdaReadPoint`](../interfaces/IVdaReadPoint.md)
+> `static` **extractReadPoint**(`urn`): [`IVdaReadPoint`](../interfaces/IVdaReadPoint.md) \| `undefined`
 
 Function to validate and extract RFID read points URNs.
 
@@ -166,7 +166,7 @@ The URN to validate.
 
 #### Returns
 
-`undefined` \| [`IVdaReadPoint`](../interfaces/IVdaReadPoint.md)
+[`IVdaReadPoint`](../interfaces/IVdaReadPoint.md) \| `undefined`
 
 The extracted read point object or undefined.
 
@@ -174,7 +174,7 @@ The extracted read point object or undefined.
 
 ### extractBizLocation()
 
-> `static` **extractBizLocation**(`urn`): `undefined` \| [`IVdaBizLocation`](../interfaces/IVdaBizLocation.md)
+> `static` **extractBizLocation**(`urn`): [`IVdaBizLocation`](../interfaces/IVdaBizLocation.md) \| `undefined`
 
 Function to validate and extract Biz Location URN.
 
@@ -188,7 +188,7 @@ The URN to validate.
 
 #### Returns
 
-`undefined` \| [`IVdaBizLocation`](../interfaces/IVdaBizLocation.md)
+[`IVdaBizLocation`](../interfaces/IVdaBizLocation.md) \| `undefined`
 
 The extracted biz location object or undefined.
 
@@ -196,7 +196,7 @@ The extracted biz location object or undefined.
 
 ### extractUriPlp()
 
-> `static` **extractUriPlp**(`id`): `undefined` \| [`IVdaUriPlates`](../interfaces/IVdaUriPlates.md)
+> `static` **extractUriPlp**(`id`): [`IVdaUriPlates`](../interfaces/IVdaUriPlates.md) \| `undefined`
 
 Function to validate VDA URI Packages License Plates.
 
@@ -210,7 +210,7 @@ The VDA URI to validate.
 
 #### Returns
 
-`undefined` \| [`IVdaUriPlates`](../interfaces/IVdaUriPlates.md)
+[`IVdaUriPlates`](../interfaces/IVdaUriPlates.md) \| `undefined`
 
 The VDA URI object or undefined.
 
@@ -218,7 +218,7 @@ The VDA URI object or undefined.
 
 ### extractIdentifier()
 
-> `static` **extractIdentifier**(`epc`): `undefined` \| [`IVdaObjectIdentifier`](../interfaces/IVdaObjectIdentifier.md)
+> `static` **extractIdentifier**(`epc`): [`IVdaObjectIdentifier`](../interfaces/IVdaObjectIdentifier.md) \| `undefined`
 
 VDA object identifier verifier function.
 
@@ -232,6 +232,6 @@ The epc to validate.
 
 #### Returns
 
-`undefined` \| [`IVdaObjectIdentifier`](../interfaces/IVdaObjectIdentifier.md)
+[`IVdaObjectIdentifier`](../interfaces/IVdaObjectIdentifier.md) \| `undefined`
 
 The VDA object or undefined.

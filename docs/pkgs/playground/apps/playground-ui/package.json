@@ -1,7 +1,11 @@
 {
 	"name": "@twin.org/playground-ui",
-	"version": "0.0.2-next.0",
+	"version": "0.0.3-next.0",
 	"description": "UI to demonstrate the APIs",
 	"private": true,
-	"type": "module"
+	"type": "module",
+	"bugs": {
+		"url": "git+https://github.com/twinfoundation/playground/issues"
+	},
+	"homepage": "https://twindev.org"
 }

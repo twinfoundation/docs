@@ -1,0 +1,51 @@
+{
+	"name": "@twin.org/validate-locales",
+	"version": "0.0.3-next.4",
+	"description": "Tool to validate source files against the locales",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/twinfoundation/framework.git",
+		"directory": "apps/validate-locales"
+	},
+	"author": "martyn.janes@iota.org",
+	"license": "Apache-2.0",
+	"type": "module",
+	"engines": {
+		"node": ">=20.0.0"
+	},
+	"main": "./dist/es/index.js",
+	"types": "./dist/types/index.d.ts",
+	"exports": {
+		".": {
+			"types": "./dist/types/index.d.ts",
+			"import": "./dist/es/index.js",
+			"default": "./dist/es/index.js"
+		}
+	},
+	"files": [
+		"bin",
+		"dist/es",
+		"dist/locales",
+		"dist/types",
+		"locales",
+		"docs"
+	],
+	"bin": {
+		"validate-locales": "bin/index.js"
+	},
+	"directories": {
+		"doc": "docs",
+		"test": "tests"
+	},
+	"bugs": {
+		"url": "git+https://github.com/twinfoundation/framework/issues"
+	},
+	"homepage": "https://twindev.org",
+	"keywords": [
+		"twin",
+		"trade",
+		"iota",
+		"framework",
+		"blockchain"
+	]
+}

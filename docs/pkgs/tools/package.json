@@ -17,5 +17,9 @@
 		"apps/ts-to-openapi",
 		"apps/ts-to-schema"
 	],
-	"type": "module"
+	"type": "module",
+	"bugs": {
+		"url": "git+https://github.com/twinfoundation/tools/issues"
+	},
+	"homepage": "https://twindev.org"
 }

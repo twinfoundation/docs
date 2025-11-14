@@ -61,3 +61,7 @@ Enable cost logging.
 ```ts
 false
 ```
+
+#### Overrides
+
+`IIotaConfig.enableCostLogging`

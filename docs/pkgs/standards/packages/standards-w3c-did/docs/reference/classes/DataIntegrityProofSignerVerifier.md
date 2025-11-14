@@ -21,7 +21,7 @@ https://www.w3.org/TR/vc-di-eddsa/#eddsa-jcs-2022
 
 ### CLASS\_NAME
 
-> `readonly` **CLASS\_NAME**: `string`
+> `readonly` `static` **CLASS\_NAME**: `string`
 
 Runtime name for the class.
 
@@ -49,7 +49,7 @@ The proof options.
 
 ##### signKey
 
-`IJwk`
+`JWK`
 
 The key to sign the proof with.
 
@@ -87,7 +87,7 @@ The proof to verify.
 
 ##### verifyKey
 
-`IJwk`
+`JWK`
 
 The public key to verify the proof with.
 

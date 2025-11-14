@@ -1,6 +1,6 @@
 # Function: activityLogStatusConnected()
 
-> **activityLogStatusConnected**(`socketRequestContext`): `void`
+> **activityLogStatusConnected**(`socketRequestContext`): `Promise`\<`void`\>
 
 Executes when there is a disconnection.
 
@@ -14,4 +14,4 @@ Socket Request Context
 
 ## Returns
 
-`void`
+`Promise`\<`void`\>

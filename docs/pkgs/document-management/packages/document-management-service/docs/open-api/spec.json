@@ -83,7 +83,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "GeneralError",
-											"message": "component.error",
+											"message": "errorMessage",
 											"properties": {
 												"foo": "bar"
 											}
@@ -104,7 +104,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "UnauthorizedError",
-											"message": "component.error"
+											"message": "errorMessage"
 										}
 									}
 								}
@@ -122,7 +122,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "InternalServerError",
-											"message": "component.error"
+											"message": "errorMessage"
 										}
 									}
 								}
@@ -158,15 +158,12 @@
 						}
 					},
 					{
-						"name": "pageSize",
+						"name": "limit",
 						"description": "The number of documents to return.",
 						"in": "query",
 						"required": false,
 						"schema": {
-							"type": [
-								"number",
-								"string"
-							]
+							"type": "string"
 						}
 					},
 					{
@@ -246,7 +243,7 @@
 																"blobHash": "sha256:E3Duqrp6bHojSx+CzDttAToAiP1eFkCDAPBbKLABVGM=",
 																"blobStorageId": "blob:memory:1370eeaaba7a6c7a234b1f82cc3b6d013a0088fd5e16408300f05b28b0015463",
 																"dateCreated": "2024-08-22T04:13:20.000Z",
-																"nodeIdentity": "did:entity-storage:0x0101010101010101010101010101010101010101010101010101010101010101",
+																"organizationIdentity": "did:entity-storage:0x0101010101010101010101010101010101010101010101010101010101010101",
 																"userIdentity": "did:entity-storage:0x0404040404040404040404040404040404040404040404040404040404040404"
 															}
 														}
@@ -270,7 +267,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "GeneralError",
-											"message": "component.error",
+											"message": "errorMessage",
 											"properties": {
 												"foo": "bar"
 											}
@@ -291,7 +288,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "UnauthorizedError",
-											"message": "component.error"
+											"message": "errorMessage"
 										}
 									}
 								}
@@ -309,7 +306,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "InternalServerError",
-											"message": "component.error"
+											"message": "errorMessage"
 										}
 									}
 								}
@@ -382,7 +379,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "GeneralError",
-											"message": "component.error",
+											"message": "errorMessage",
 											"properties": {
 												"foo": "bar"
 											}
@@ -403,7 +400,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "UnauthorizedError",
-											"message": "component.error"
+											"message": "errorMessage"
 										}
 									}
 								}
@@ -421,7 +418,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "InternalServerError",
-											"message": "component.error"
+											"message": "errorMessage"
 										}
 									}
 								}
@@ -515,15 +512,12 @@
 						}
 					},
 					{
-						"name": "pageSize",
-						"description": "Page size of items to return, defaults to 1 so only most recent is returned.",
+						"name": "limit",
+						"description": "PLimit the number of items to return, defaults to 1 so only most recent is returned.",
 						"in": "query",
 						"required": false,
 						"schema": {
-							"type": [
-								"number",
-								"string"
-							]
+							"type": "string"
 						}
 					},
 					{
@@ -588,7 +582,7 @@
 														"@type": "DigitalDocument",
 														"name": "myfile.pdf"
 													},
-													"nodeIdentity": "did:entity-storage:0x6363636363636363636363636363636363636363636363636363636363636363",
+													"organizationIdentity": "did:entity-storage:0x6363636363636363636363636363636363636363636363636363636363636363",
 													"userIdentity": "did:entity-storage:0x6363636363636363636363636363636363636363636363636363636363636363"
 												}
 											]
@@ -630,7 +624,7 @@
 														"@type": "DigitalDocument",
 														"name": "myfile.pdf"
 													},
-													"nodeIdentity": "did:entity-storage:0x6363636363636363636363636363636363636363636363636363636363636363",
+													"organizationIdentity": "did:entity-storage:0x6363636363636363636363636363636363636363636363636363636363636363",
 													"userIdentity": "did:entity-storage:0x6363636363636363636363636363636363636363636363636363636363636363"
 												}
 											]
@@ -651,7 +645,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "GeneralError",
-											"message": "component.error",
+											"message": "errorMessage",
 											"properties": {
 												"foo": "bar"
 											}
@@ -672,7 +666,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "UnauthorizedError",
-											"message": "component.error"
+											"message": "errorMessage"
 										}
 									}
 								}
@@ -690,7 +684,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "NotFoundError",
-											"message": "component.error",
+											"message": "errorMessage",
 											"properties": {
 												"notFoundId": "1"
 											}
@@ -711,7 +705,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "InternalServerError",
-											"message": "component.error"
+											"message": "errorMessage"
 										}
 									}
 								}
@@ -787,7 +781,7 @@
 												"@type": "DigitalDocument",
 												"name": "myfile.pdf"
 											},
-											"nodeIdentity": "did:entity-storage:0x6363636363636363636363636363636363636363636363636363636363636363",
+											"organizationIdentity": "did:entity-storage:0x6363636363636363636363636363636363636363636363636363636363636363",
 											"userIdentity": "did:entity-storage:0x6363636363636363636363636363636363636363636363636363636363636363"
 										}
 									}
@@ -819,7 +813,7 @@
 												"@type": "DigitalDocument",
 												"name": "myfile.pdf"
 											},
-											"nodeIdentity": "did:entity-storage:0x6363636363636363636363636363636363636363636363636363636363636363",
+											"organizationIdentity": "did:entity-storage:0x6363636363636363636363636363636363636363636363636363636363636363",
 											"userIdentity": "did:entity-storage:0x6363636363636363636363636363636363636363636363636363636363636363"
 										}
 									}
@@ -838,7 +832,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "GeneralError",
-											"message": "component.error",
+											"message": "errorMessage",
 											"properties": {
 												"foo": "bar"
 											}
@@ -859,7 +853,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "UnauthorizedError",
-											"message": "component.error"
+											"message": "errorMessage"
 										}
 									}
 								}
@@ -877,7 +871,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "NotFoundError",
-											"message": "component.error",
+											"message": "errorMessage",
 											"properties": {
 												"notFoundId": "1"
 											}
@@ -898,7 +892,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "InternalServerError",
-											"message": "component.error"
+											"message": "errorMessage"
 										}
 									}
 								}
@@ -957,7 +951,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "GeneralError",
-											"message": "component.error",
+											"message": "errorMessage",
 											"properties": {
 												"foo": "bar"
 											}
@@ -978,7 +972,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "UnauthorizedError",
-											"message": "component.error"
+											"message": "errorMessage"
 										}
 									}
 								}
@@ -996,7 +990,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "NotFoundError",
-											"message": "component.error",
+											"message": "errorMessage",
 											"properties": {
 												"notFoundId": "1"
 											}
@@ -1017,7 +1011,7 @@
 									"exampleResponse": {
 										"value": {
 											"name": "InternalServerError",
-											"message": "component.error"
+											"message": "errorMessage"
 										}
 									}
 								}
@@ -1036,9 +1030,6 @@
 					"@context": {
 						"type": "array",
 						"minItems": 3,
-						"items": {
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdContextDefinitionElement"
-						},
 						"description": "JSON-LD Context.",
 						"prefixItems": [
 							{
@@ -1053,7 +1044,10 @@
 								"type": "string",
 								"const": "https://schema.org"
 							}
-						]
+						],
+						"items": {
+							"$ref": "https://schema.twindev.org/json-ld/JsonLdContextDefinitionElement"
+						}
 					},
 					"type": {
 						"type": "string",
@@ -1115,9 +1109,9 @@
 						"type": "string",
 						"description": "The date/time of when the document was deleted, as we never actually remove items."
 					},
-					"nodeIdentity": {
+					"organizationIdentity": {
 						"type": "string",
-						"description": "The node which added the document to the graph."
+						"description": "The organization which added the document to the graph."
 					},
 					"userIdentity": {
 						"type": "string",
@@ -1133,9 +1127,7 @@
 					"documentRevision",
 					"blobStorageId",
 					"blobHash",
-					"dateCreated",
-					"nodeIdentity",
-					"userIdentity"
+					"dateCreated"
 				],
 				"additionalProperties": false,
 				"description": "Interface describing a document."
@@ -1146,9 +1138,6 @@
 					"@context": {
 						"type": "array",
 						"minItems": 3,
-						"items": {
-							"$ref": "https://schema.twindev.org/json-ld/JsonLdContextDefinitionElement"
-						},
 						"description": "JSON-LD Context.",
 						"prefixItems": [
 							{
@@ -1163,7 +1152,10 @@
 								"type": "string",
 								"const": "https://schema.twindev.org/common/"
 							}
-						]
+						],
+						"items": {
+							"$ref": "https://schema.twindev.org/json-ld/JsonLdContextDefinitionElement"
+						}
 					},
 					"type": {
 						"type": "string",
@@ -1172,23 +1164,17 @@
 					},
 					"itemListElement": {
 						"type": "array",
-						"items": false,
-						"description": "The list of documents.",
-						"prefixItems": [
-							{
-								"$ref": "#/components/schemas/Document"
-							}
-						]
+						"items": {
+							"$ref": "#/components/schemas/Document"
+						},
+						"description": "The list of documents."
 					},
 					"edges": {
 						"type": "array",
-						"items": false,
-						"description": "The ids of the other vertices which are connected to the document.",
-						"prefixItems": [
-							{
-								"type": "string"
-							}
-						]
+						"items": {
+							"type": "string"
+						},
+						"description": "The ids of the other vertices which are connected to the document."
 					},
 					"nextItem": {
 						"type": "string",
@@ -1202,20 +1188,6 @@
 				],
 				"additionalProperties": false,
 				"description": "Interface describing a list of document entries."
-			},
-			"DocumentManagementComponent": {
-				"type": "object",
-				"additionalProperties": false,
-				"properties": {
-					"CLASS_NAME": {
-						"type": "string",
-						"description": "The name of the component."
-					}
-				},
-				"required": [
-					"CLASS_NAME"
-				],
-				"description": "Interface describing an document management contract."
 			},
 			"DocumentManagementCreateRequest": {
 				"type": "object",
@@ -1240,28 +1212,25 @@
 					},
 					"auditableItemGraphEdges": {
 						"type": "array",
-						"items": false,
-						"description": "The auditable item graph vertices to connect the document to.",
-						"prefixItems": [
-							{
-								"type": "object",
-								"properties": {
-									"id": {
-										"type": "string"
-									},
-									"addAlias": {
-										"type": "boolean"
-									},
-									"aliasAnnotationObject": {
-										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-									}
+						"items": {
+							"type": "object",
+							"properties": {
+								"targetId": {
+									"type": "string"
 								},
-								"required": [
-									"id"
-								],
-								"additionalProperties": false
-							}
-						]
+								"addAlias": {
+									"type": "boolean"
+								},
+								"aliasAnnotationObject": {
+									"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
+								}
+							},
+							"required": [
+								"targetId"
+							],
+							"additionalProperties": false
+						},
+						"description": "The auditable item graph vertices to connect the document to."
 					},
 					"createAttestation": {
 						"type": "boolean",
@@ -1283,41 +1252,6 @@
 				"additionalProperties": false,
 				"description": "The body parameters."
 			},
-			"DocumentManagementServiceConfig": {
-				"type": "object",
-				"additionalProperties": false,
-				"description": "Configuration for the document management service."
-			},
-			"DocumentManagementServiceConstructorOptions": {
-				"type": "object",
-				"properties": {
-					"auditableItemGraphComponentType": {
-						"type": "string",
-						"description": "The type of the auditable item graph component.",
-						"default": "auditable-item-graph"
-					},
-					"blobStorageComponentType": {
-						"type": "string",
-						"description": "The type of the blob storage component.",
-						"default": "blob-storage"
-					},
-					"attestationComponentType": {
-						"type": "string",
-						"description": "The type of the attestation component.",
-						"default": "attestation"
-					},
-					"dataProcessingComponentType": {
-						"type": "string",
-						"description": "The type of the data processing component.",
-						"default": "data-processing"
-					},
-					"config": {
-						"$ref": "#/components/schemas/DocumentManagementServiceConfig"
-					}
-				},
-				"additionalProperties": false,
-				"description": "Options for the document management Service constructor."
-			},
 			"DocumentManagementUpdateRequest": {
 				"type": "object",
 				"properties": {
@@ -1330,28 +1264,25 @@
 					},
 					"auditableItemGraphEdges": {
 						"type": "array",
-						"items": false,
-						"description": "The auditable item graph vertices to connect the document to.",
-						"prefixItems": [
-							{
-								"type": "object",
-								"properties": {
-									"id": {
-										"type": "string"
-									},
-									"addAlias": {
-										"type": "boolean"
-									},
-									"aliasAnnotationObject": {
-										"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
-									}
+						"items": {
+							"type": "object",
+							"properties": {
+								"targetId": {
+									"type": "string"
 								},
-								"required": [
-									"id"
-								],
-								"additionalProperties": false
-							}
-						]
+								"addAlias": {
+									"type": "boolean"
+								},
+								"aliasAnnotationObject": {
+									"$ref": "https://schema.twindev.org/json-ld/JsonLdNodeObject"
+								}
+							},
+							"required": [
+								"targetId"
+							],
+							"additionalProperties": false
+						},
+						"description": "The auditable item graph vertices to connect the document to."
 					}
 				},
 				"additionalProperties": false,

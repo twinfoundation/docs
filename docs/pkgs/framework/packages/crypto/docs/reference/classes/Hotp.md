@@ -13,6 +13,14 @@ Implementation of https://datatracker.ietf.org/doc/html/rfc4226 .
 
 `Hotp`
 
+## Properties
+
+### CLASS\_NAME
+
+> `readonly` `static` **CLASS\_NAME**: `string`
+
+Runtime name for the class.
+
 ## Methods
 
 ### generate()

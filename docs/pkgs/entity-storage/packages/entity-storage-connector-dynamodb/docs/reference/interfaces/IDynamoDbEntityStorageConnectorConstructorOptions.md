@@ -12,6 +12,14 @@ The schema for the entity
 
 ***
 
+### partitionContextIds?
+
+> `optional` **partitionContextIds**: `string`[]
+
+The keys to use from the context ids to create partitions.
+
+***
+
 ### loggingComponentType?
 
 > `optional` **loggingComponentType**: `string`

@@ -2,4 +2,4 @@
 
 ## Classes
 
-- [SynchronisedStorageClient](classes/SynchronisedStorageClient.md)
+- [SynchronisedStorageRestClient](classes/SynchronisedStorageRestClient.md)

@@ -1,6 +1,6 @@
 # Function: initialiseAttestationConnector()
 
-> **initialiseAttestationConnector**(`engineCore`, `context`, `instanceConfig`, `overrideInstanceType?`): `Promise`\<`undefined` \| `string`\>
+> **initialiseAttestationConnector**(`engineCore`, `context`, `instanceConfig`): `Promise`\<\{ `instanceType?`: `string`; `factory?`: `Factory`\<`IAttestationConnector`\>; `component?`: `IComponent`; \}\>
 
 Initialise the attestation connector.
 
@@ -24,18 +24,8 @@ The context for the engine.
 
 The instance config.
 
-### overrideInstanceType?
-
-`string`
-
-The instance type to override the default.
-
 ## Returns
 
-`Promise`\<`undefined` \| `string`\>
+`Promise`\<\{ `instanceType?`: `string`; `factory?`: `Factory`\<`IAttestationConnector`\>; `component?`: `IComponent`; \}\>
 
-The name of the instance created.
-
-## Throws
-
-GeneralError if the connector type is unknown.
+The instance created and the factory for it.

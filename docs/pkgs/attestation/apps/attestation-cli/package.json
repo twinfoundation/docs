@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/attestation-cli",
-	"version": "0.0.2-next.2",
+	"version": "0.0.3-next.1",
 	"description": "A command line interface for interacting with the attestation connectors",
 	"repository": {
 		"type": "git",
@@ -13,20 +13,18 @@
 	"engines": {
 		"node": ">=20.0.0"
 	},
-	"main": "./dist/cjs/index.cjs",
-	"module": "./dist/esm/index.mjs",
+	"main": "./dist/es/index.js",
 	"types": "./dist/types/index.d.ts",
 	"exports": {
 		".": {
 			"types": "./dist/types/index.d.ts",
-			"require": "./dist/cjs/index.cjs",
-			"import": "./dist/esm/index.mjs"
+			"import": "./dist/es/index.js",
+			"default": "./dist/es/index.js"
 		}
 	},
 	"files": [
 		"bin",
-		"dist/cjs",
-		"dist/esm",
+		"dist/es",
 		"dist/types",
 		"dist/locales",
 		"locales",
@@ -34,5 +32,20 @@
 	],
 	"bin": {
 		"twin-attestation": "bin/index.js"
-	}
+	},
+	"keywords": [
+		"twin",
+		"trade",
+		"iota",
+		"framework",
+		"blockchain",
+		"attestation",
+		"verification",
+		"claims",
+		"trust"
+	],
+	"bugs": {
+		"url": "git+https://github.com/twinfoundation/attestation/issues"
+	},
+	"homepage": "https://twindev.org"
 }

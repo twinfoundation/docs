@@ -2,10 +2,6 @@
 
 Context data from the HTTP request.
 
-## Extends
-
-- [`IHttpRequestIdentity`](IHttpRequestIdentity.md)
-
 ## Extended by
 
 - [`ISocketRequestContext`](ISocketRequestContext.md)
@@ -37,27 +33,3 @@ The state handed through the processors.
 > `optional` **loggingComponentType**: `string`
 
 Logging component type for the request.
-
-***
-
-### nodeIdentity?
-
-> `optional` **nodeIdentity**: `string`
-
-The identity of the node the request is being performed on.
-
-#### Inherited from
-
-[`IHttpRequestIdentity`](IHttpRequestIdentity.md).[`nodeIdentity`](IHttpRequestIdentity.md#nodeidentity)
-
-***
-
-### userIdentity?
-
-> `optional` **userIdentity**: `string`
-
-The identity of the requestor if there is an authenticated user.
-
-#### Inherited from
-
-[`IHttpRequestIdentity`](IHttpRequestIdentity.md).[`userIdentity`](IHttpRequestIdentity.md#useridentity)

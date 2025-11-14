@@ -1,5 +1,45 @@
 # @twin.org/logging-service - Changelog
 
+## [0.0.3-next.1](https://github.com/twinfoundation/logging/compare/logging-service-v0.0.3-next.0...logging-service-v0.0.3-next.1) (2025-11-10)
+
+
+### Features
+
+* add context id features ([#33](https://github.com/twinfoundation/logging/issues/33)) ([38e982c](https://github.com/twinfoundation/logging/commit/38e982c9f009019fc02b67d919444b52657c9021))
+* add production release automation ([5dbcad8](https://github.com/twinfoundation/logging/commit/5dbcad8b105d749947c4fda19c814373cee2a172))
+* add validate-locales ([df53f13](https://github.com/twinfoundation/logging/commit/df53f1331394f2f9333e91e4995a88dded90e484))
+* eslint migration to flat config ([1f9fdde](https://github.com/twinfoundation/logging/commit/1f9fddedfdcce9942afed431d9460a0f22092744))
+* remove unused namespace ([7eb6575](https://github.com/twinfoundation/logging/commit/7eb65758fbdc9a42f68d149702ba03c000556325))
+* update dependencies ([976fc06](https://github.com/twinfoundation/logging/commit/976fc06976c4899769486b7cb2e827c407d7fc89))
+* update framework core ([aac823c](https://github.com/twinfoundation/logging/commit/aac823c2ead88843618b8a82b308d5a793411764))
+* use shared store mechanism ([#20](https://github.com/twinfoundation/logging/issues/20)) ([bbacd31](https://github.com/twinfoundation/logging/commit/bbacd31af991d82d84294ad432a40830692880ca))
+
+
+### Bug Fixes
+
+* query params force coercion ([71c5329](https://github.com/twinfoundation/logging/commit/71c53292d300acae0369bd7937c5ca3ab5430689))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/logging-models bumped from 0.0.3-next.0 to 0.0.3-next.1
+
+## [0.0.2-next.3](https://github.com/twinfoundation/logging/compare/logging-service-v0.0.2-next.2...logging-service-v0.0.2-next.3) (2025-10-09)
+
+
+### Features
+
+* add validate-locales ([df53f13](https://github.com/twinfoundation/logging/commit/df53f1331394f2f9333e91e4995a88dded90e484))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/logging-models bumped from 0.0.2-next.2 to 0.0.2-next.3
+
 ## [0.0.2-next.2](https://github.com/twinfoundation/logging/compare/logging-service-v0.0.2-next.1...logging-service-v0.0.2-next.2) (2025-08-29)
 
 

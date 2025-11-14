@@ -22,6 +22,6 @@ The size of the batch.
 
 ### requestMode
 
-> **requestMode**: [`SyncNodeIdentityMode`](../type-aliases/SyncNodeIdentityMode.md)
+> **requestMode**: [`SyncNodeIdMode`](../type-aliases/SyncNodeIdMode.md)
 
-Determines which entries are required, for local it will match the nodeIdentity, for remote it will not include matching nodeIdentity, for all it will include all entries.
+Determines which entries are required, for local it will match the nodeId, for remote it will not include matching nodeId, for all it will include all entries.

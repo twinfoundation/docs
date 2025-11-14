@@ -45,11 +45,3 @@ The id of the item being updated.
 > **body**: [`IDataAccessRequestWithObject`](IDataAccessRequestWithObject.md)
 
 The body parameters of the updated.
-
-***
-
-### authentication
-
-> **authentication**: `IIdentityAuthenticationActionRequest`
-
-The action request used in the verifiable credential.

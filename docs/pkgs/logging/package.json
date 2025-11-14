@@ -19,5 +19,9 @@
 		"packages/logging-service",
 		"packages/logging-rest-client"
 	],
-	"type": "module"
+	"type": "module",
+	"bugs": {
+		"url": "git+https://github.com/twinfoundation/logging/issues"
+	},
+	"homepage": "https://twindev.org"
 }

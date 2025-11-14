@@ -1,5 +1,103 @@
 # @twin.org/identity-service - Changelog
 
+## [0.0.3-next.2](https://github.com/twinfoundation/identity/compare/identity-service-v0.0.3-next.1...identity-service-v0.0.3-next.2) (2025-11-14)
+
+
+### Miscellaneous Chores
+
+* **identity-service:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/identity-models bumped from 0.0.3-next.1 to 0.0.3-next.2
+  * devDependencies
+    * @twin.org/identity-connector-entity-storage bumped from 0.0.3-next.1 to 0.0.3-next.2
+
+## [0.0.3-next.1](https://github.com/twinfoundation/identity/compare/identity-service-v0.0.3-next.0...identity-service-v0.0.3-next.1) (2025-11-11)
+
+
+### Features
+
+* add context id features ([#62](https://github.com/twinfoundation/identity/issues/62)) ([e02ecca](https://github.com/twinfoundation/identity/commit/e02ecca9c45a849104bfbf7bc18a1f44e6eea8a1))
+* add expiration date option to vc creation ([73e05e1](https://github.com/twinfoundation/identity/commit/73e05e1ae61112c7e056889969751f4ff82d9f29))
+* add identity remove ([eebc13f](https://github.com/twinfoundation/identity/commit/eebc13f4c2cd994d2d9cce4da2128fb346c80ba7))
+* add validate-locales ([04d74b4](https://github.com/twinfoundation/identity/commit/04d74b4d1ebe42672e8ca75a7bdb8e3556afd0be))
+* eslint migration to flat config ([fd6246d](https://github.com/twinfoundation/identity/commit/fd6246d566280b6d5d10a108eb1e92c4b510f2f2))
+* identity key separator use slash ([1319d0d](https://github.com/twinfoundation/identity/commit/1319d0d07164a36b3ec279e6421b8835ffefc3d3))
+* remove unused namespace ([1987f72](https://github.com/twinfoundation/identity/commit/1987f72089be5ece10aa96b1fb9c386221c95c75))
+* update framework core ([c824497](https://github.com/twinfoundation/identity/commit/c82449709af0215eb7af496cf687c93fb30b5ae0))
+* update twindev schemas ([f5b2735](https://github.com/twinfoundation/identity/commit/f5b273561b52fa75e654e074927c164a465aa510))
+* use new generateKid method ([f0fe779](https://github.com/twinfoundation/identity/commit/f0fe779323b675575bb9f80aa74f1957dc57a094))
+* use shared store mechanism ([#27](https://github.com/twinfoundation/identity/issues/27)) ([ce41f3f](https://github.com/twinfoundation/identity/commit/ce41f3fc3da1b206ec06da7ea5b2c968f788804d))
+
+
+### Bug Fixes
+
+* Import path and bump version ([#21](https://github.com/twinfoundation/identity/issues/21)) ([ccea845](https://github.com/twinfoundation/identity/commit/ccea845bf32562267280bc1b3dde1c9af1a00360))
+* Install sdk-wasm ([#20](https://github.com/twinfoundation/identity/issues/20)) ([75ec14e](https://github.com/twinfoundation/identity/commit/75ec14e072f8c219863a1c028a3b0783802086e9))
+* missing path params ([02acbde](https://github.com/twinfoundation/identity/commit/02acbde3033bf5d5435dca0bd8187cabad8f3028))
+* query params force coercion ([d9347d2](https://github.com/twinfoundation/identity/commit/d9347d29d4a9cc58759f30f5d8526de864ea7522))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/identity-models bumped from 0.0.3-next.0 to 0.0.3-next.1
+  * devDependencies
+    * @twin.org/identity-connector-entity-storage bumped from 0.0.3-next.0 to 0.0.3-next.1
+
+## [0.0.2-next.10](https://github.com/twinfoundation/identity/compare/identity-service-v0.0.2-next.9...identity-service-v0.0.2-next.10) (2025-10-27)
+
+
+### Bug Fixes
+
+* missing path params ([02acbde](https://github.com/twinfoundation/identity/commit/02acbde3033bf5d5435dca0bd8187cabad8f3028))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/identity-models bumped from 0.0.2-next.9 to 0.0.2-next.10
+  * devDependencies
+    * @twin.org/identity-connector-entity-storage bumped from 0.0.2-next.9 to 0.0.2-next.10
+
+## [0.0.2-next.9](https://github.com/twinfoundation/identity/compare/identity-service-v0.0.2-next.8...identity-service-v0.0.2-next.9) (2025-10-09)
+
+
+### Features
+
+* add validate-locales ([04d74b4](https://github.com/twinfoundation/identity/commit/04d74b4d1ebe42672e8ca75a7bdb8e3556afd0be))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/identity-models bumped from 0.0.2-next.8 to 0.0.2-next.9
+  * devDependencies
+    * @twin.org/identity-connector-entity-storage bumped from 0.0.2-next.8 to 0.0.2-next.9
+
+## [0.0.2-next.8](https://github.com/twinfoundation/identity/compare/identity-service-v0.0.2-next.7...identity-service-v0.0.2-next.8) (2025-09-25)
+
+
+### Miscellaneous Chores
+
+* **identity-service:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/identity-models bumped from 0.0.2-next.7 to 0.0.2-next.8
+  * devDependencies
+    * @twin.org/identity-connector-entity-storage bumped from 0.0.2-next.7 to 0.0.2-next.8
+
 ## [0.0.2-next.7](https://github.com/twinfoundation/identity/compare/identity-service-v0.0.2-next.6...identity-service-v0.0.2-next.7) (2025-09-23)
 
 

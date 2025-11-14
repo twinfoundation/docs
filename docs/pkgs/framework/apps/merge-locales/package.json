@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/merge-locales",
-	"version": "0.0.2-next.15",
+	"version": "0.0.3-next.4",
 	"description": "Tool to merge locale files from all dependencies",
 	"repository": {
 		"type": "git",
@@ -13,20 +13,18 @@
 	"engines": {
 		"node": ">=20.0.0"
 	},
-	"main": "./dist/cjs/index.cjs",
-	"module": "./dist/esm/index.mjs",
+	"main": "./dist/es/index.js",
 	"types": "./dist/types/index.d.ts",
 	"exports": {
 		".": {
 			"types": "./dist/types/index.d.ts",
-			"require": "./dist/cjs/index.cjs",
-			"import": "./dist/esm/index.mjs"
+			"import": "./dist/es/index.js",
+			"default": "./dist/es/index.js"
 		}
 	},
 	"files": [
 		"bin",
-		"dist/cjs",
-		"dist/esm",
+		"dist/es",
 		"dist/locales",
 		"dist/types",
 		"locales",
@@ -40,7 +38,14 @@
 		"test": "tests"
 	},
 	"bugs": {
-		"url": "git+https://github.com/twinfoundation/tools/issues"
+		"url": "git+https://github.com/twinfoundation/framework/issues"
 	},
-	"homepage": "https://github.com/twinfoundation/tools#readme"
+	"homepage": "https://twindev.org",
+	"keywords": [
+		"twin",
+		"trade",
+		"iota",
+		"framework",
+		"blockchain"
+	]
 }

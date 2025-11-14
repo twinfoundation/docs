@@ -34,12 +34,6 @@ The recipient address of the NFT.
 
 The recipient address of the NFT.
 
-#### connector?
-
-`"iota"`
-
-The connector to perform the operations with.
-
 #### node
 
 `string`

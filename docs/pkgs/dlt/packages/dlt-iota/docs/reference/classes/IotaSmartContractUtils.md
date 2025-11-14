@@ -60,7 +60,7 @@ The wallet connector for address generation.
 
 Optional logging component.
 
-`undefined` | `ILoggingComponent`
+`ILoggingComponent` | `undefined`
 
 ##### gasBudget
 
@@ -148,7 +148,7 @@ The wallet connector for address generation.
 
 Optional logging component.
 
-`undefined` | `ILoggingComponent`
+`ILoggingComponent` | `undefined`
 
 ##### gasBudget
 
@@ -230,7 +230,7 @@ The wallet connector for address generation.
 
 Optional logging component.
 
-`undefined` | `ILoggingComponent`
+`ILoggingComponent` | `undefined`
 
 ##### gasBudget
 

@@ -1,5 +1,46 @@
 # @twin.org/standards-gs1 - Changelog
 
+## [0.0.3-next.2](https://github.com/twinfoundation/standards/compare/standards-gs1-v0.0.3-next.1...standards-gs1-v0.0.3-next.2) (2025-11-11)
+
+
+### Miscellaneous Chores
+
+* **standards-gs1:** Synchronize repo versions
+
+## [0.0.3-next.1](https://github.com/twinfoundation/standards/compare/standards-gs1-v0.0.3-next.0...standards-gs1-v0.0.3-next.1) (2025-11-10)
+
+
+### Features
+
+* add context id features ([#64](https://github.com/twinfoundation/standards/issues/64)) ([e68bb87](https://github.com/twinfoundation/standards/commit/e68bb87a215f3c3956cfd6400a5e1e2a16256085))
+* add validate-locales ([838389c](https://github.com/twinfoundation/standards/commit/838389c1daf62ed42397d5758d267c3d1a37fa4d))
+* data types registered with full qualified names ([d64bd08](https://github.com/twinfoundation/standards/commit/d64bd082084172da543e9bfaffb78cdc34e6641d))
+* eslint migration to flat config ([648c1a1](https://github.com/twinfoundation/standards/commit/648c1a1e69d99b6b0cf69358ec6bdeecdbe3a5ea))
+* update framework core ([58c0c3d](https://github.com/twinfoundation/standards/commit/58c0c3dd6cea0e4c2393dc0e3e1eb33a6d06f617))
+* update to latest JSON schema spec ([7a23930](https://github.com/twinfoundation/standards/commit/7a2393032d7f48bfb20d3a484f981fb6dd83a92c))
+* use shared store mechanism ([#11](https://github.com/twinfoundation/standards/issues/11)) ([96fa237](https://github.com/twinfoundation/standards/commit/96fa23735f69c1fc7e3d0019b527634fa0a042d9))
+
+## [0.0.2-next.16](https://github.com/twinfoundation/standards/compare/standards-gs1-v0.0.2-next.15...standards-gs1-v0.0.2-next.16) (2025-10-09)
+
+
+### Miscellaneous Chores
+
+* **standards-gs1:** Synchronize repo versions
+
+## [0.0.2-next.15](https://github.com/twinfoundation/standards/compare/standards-gs1-v0.0.2-next.14...standards-gs1-v0.0.2-next.15) (2025-10-09)
+
+
+### Features
+
+* add validate-locales ([838389c](https://github.com/twinfoundation/standards/commit/838389c1daf62ed42397d5758d267c3d1a37fa4d))
+
+## [0.0.2-next.14](https://github.com/twinfoundation/standards/compare/standards-gs1-v0.0.2-next.13...standards-gs1-v0.0.2-next.14) (2025-10-02)
+
+
+### Miscellaneous Chores
+
+* **standards-gs1:** Synchronize repo versions
+
 ## [0.0.2-next.13](https://github.com/twinfoundation/standards/compare/standards-gs1-v0.0.2-next.12...standards-gs1-v0.0.2-next.13) (2025-09-22)
 
 

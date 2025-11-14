@@ -2,4 +2,4 @@
 
 ## Classes
 
-- [DataProcessingClient](classes/DataProcessingClient.md)
+- [DataProcessingRestClient](classes/DataProcessingRestClient.md)

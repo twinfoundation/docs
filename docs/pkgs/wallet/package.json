@@ -18,5 +18,9 @@
 		"packages/wallet-connector-iota",
 		"apps/wallet-cli"
 	],
-	"type": "module"
+	"type": "module",
+	"bugs": {
+		"url": "git+https://github.com/twinfoundation/wallet/issues"
+	},
+	"homepage": "https://twindev.org"
 }

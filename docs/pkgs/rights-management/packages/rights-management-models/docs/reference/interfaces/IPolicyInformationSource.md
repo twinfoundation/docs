@@ -6,7 +6,7 @@ Interface for policy information sources.
 
 ### retrieve()
 
-> **retrieve**\<`D`\>(`locator`, `accessMode`, `policies?`, `data?`): `Promise`\<`undefined` \| [`IPolicyInformationItems`](../type-aliases/IPolicyInformationItems.md)\>
+> **retrieve**\<`D`\>(`locator`, `accessMode`, `policies?`, `data?`): `Promise`\<[`IPolicyInformationItems`](../type-aliases/IPolicyInformationItems.md) \| `undefined`\>
 
 Retrieve information from the sources.
 
@@ -44,6 +44,6 @@ The data to process.
 
 #### Returns
 
-`Promise`\<`undefined` \| [`IPolicyInformationItems`](../type-aliases/IPolicyInformationItems.md)\>
+`Promise`\<[`IPolicyInformationItems`](../type-aliases/IPolicyInformationItems.md) \| `undefined`\>
 
 The objects containing relevant information or undefined if nothing relevant is found.

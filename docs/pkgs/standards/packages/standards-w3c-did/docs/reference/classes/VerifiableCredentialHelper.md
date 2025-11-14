@@ -24,7 +24,7 @@ Runtime name for the class.
 
 ### getValidUntil()
 
-> `static` **getValidUntil**(`verifiableCredential`): `undefined` \| `string`
+> `static` **getValidUntil**(`verifiableCredential`): `string` \| `undefined`
 
 Get the valid until date from a verifiable credential.
 
@@ -38,7 +38,7 @@ The verifiable credential to extract the expiration date from.
 
 #### Returns
 
-`undefined` \| `string`
+`string` \| `undefined`
 
 The expiration date, if available.
 
@@ -46,7 +46,7 @@ The expiration date, if available.
 
 ### getValidFrom()
 
-> `static` **getValidFrom**(`verifiableCredential`): `undefined` \| `string`
+> `static` **getValidFrom**(`verifiableCredential`): `string` \| `undefined`
 
 Get the valid from from a verifiable credential.
 
@@ -60,6 +60,6 @@ The verifiable credential to extract the issuance date from.
 
 #### Returns
 
-`undefined` \| `string`
+`string` \| `undefined`
 
 The issuance date, if available.

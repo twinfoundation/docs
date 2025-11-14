@@ -33,6 +33,14 @@ Create a new instance of QR.
 
 Error if the typeNumber is invalid.
 
+## Properties
+
+### CLASS\_NAME
+
+> `readonly` `static` **CLASS\_NAME**: `string`
+
+Runtime name for the class.
+
 ## Methods
 
 ### addText()

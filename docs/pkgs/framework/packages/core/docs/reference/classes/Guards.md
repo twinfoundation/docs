@@ -958,9 +958,15 @@ GuardError If the value does not match the assertion.
 
 ### function()
 
-> `static` **function**(`source`, `property`, `value`): `boolean`
+> `static` **function**\<`T`\>(`source`, `property`, `value`): `asserts value is T`
 
 Is the property a function.
+
+#### Type Parameters
+
+##### T
+
+`T` *extends* (...`args`) => `any` = (...`args`) => `any`
 
 #### Parameters
 
@@ -984,9 +990,7 @@ The value to test.
 
 #### Returns
 
-`boolean`
-
-True if the value is a function.
+`asserts value is T`
 
 #### Throws
 

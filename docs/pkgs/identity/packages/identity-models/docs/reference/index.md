@@ -2,6 +2,8 @@
 
 ## Classes
 
+- [DidContextIdHandler](classes/DidContextIdHandler.md)
+- [Did](classes/Did.md)
 - [DocumentHelper](classes/DocumentHelper.md)
 - [VerificationHelper](classes/VerificationHelper.md)
 

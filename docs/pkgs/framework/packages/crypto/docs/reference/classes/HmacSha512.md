@@ -60,6 +60,14 @@ Sha512 384.
 
 Sha512 512.
 
+***
+
+### CLASS\_NAME
+
+> `readonly` `static` **CLASS\_NAME**: `string`
+
+Runtime name for the class.
+
 ## Methods
 
 ### sum512()

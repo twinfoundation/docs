@@ -1,5 +1,96 @@
 # @twin.org/standards-w3c-odrl - Changelog
 
+## [0.0.3-next.2](https://github.com/twinfoundation/standards/compare/standards-w3c-odrl-v0.0.3-next.1...standards-w3c-odrl-v0.0.3-next.2) (2025-11-11)
+
+
+### Features
+
+* update schemas ([c3c11e0](https://github.com/twinfoundation/standards/commit/c3c11e07da6c0d3eac5ea4a68e3ad57f022b2351))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/standards-w3c-vcard bumped from 0.0.3-next.1 to 0.0.3-next.2
+    * @twin.org/standards-dublin-core bumped from 0.0.3-next.1 to 0.0.3-next.2
+
+## [0.0.3-next.1](https://github.com/twinfoundation/standards/compare/standards-w3c-odrl-v0.0.3-next.0...standards-w3c-odrl-v0.0.3-next.1) (2025-11-10)
+
+
+### Features
+
+* add context id features ([#64](https://github.com/twinfoundation/standards/issues/64)) ([e68bb87](https://github.com/twinfoundation/standards/commit/e68bb87a215f3c3956cfd6400a5e1e2a16256085))
+* add validate-locales ([838389c](https://github.com/twinfoundation/standards/commit/838389c1daf62ed42397d5758d267c3d1a37fa4d))
+* eslint migration to flat config ([648c1a1](https://github.com/twinfoundation/standards/commit/648c1a1e69d99b6b0cf69358ec6bdeecdbe3a5ea))
+* improve LD Context definition for ODRL ([#28](https://github.com/twinfoundation/standards/issues/28)) ([3362fb0](https://github.com/twinfoundation/standards/commit/3362fb0fe301bef56f4d67955f21e44b9119b8ef))
+* inline context types in schemas ([11f8377](https://github.com/twinfoundation/standards/commit/11f8377b129d459a4596ff30a86651beacd7f743))
+* normalise type outputs ([0b3aed7](https://github.com/twinfoundation/standards/commit/0b3aed7df0802cd609423bbd7fda6bde601d3ceb))
+* update framework core ([58c0c3d](https://github.com/twinfoundation/standards/commit/58c0c3dd6cea0e4c2393dc0e3e1eb33a6d06f617))
+* update ODRL actions and allow custom actions ([c517dad](https://github.com/twinfoundation/standards/commit/c517dad09d68f5dee9117c6cb142f75caad098c4))
+* update ODRL data types and context definitions ([#31](https://github.com/twinfoundation/standards/issues/31)) ([ade0169](https://github.com/twinfoundation/standards/commit/ade0169d1049e7812bfc128ce5c16512548714fa))
+* update to latest JSON schema spec ([7a23930](https://github.com/twinfoundation/standards/commit/7a2393032d7f48bfb20d3a484f981fb6dd83a92c))
+* update ts-to-schema generation ([0905daa](https://github.com/twinfoundation/standards/commit/0905daa4a344ed35fc37b7f12fcf9ce9d34e4bd6))
+* use shared store mechanism ([#11](https://github.com/twinfoundation/standards/issues/11)) ([96fa237](https://github.com/twinfoundation/standards/commit/96fa23735f69c1fc7e3d0019b527634fa0a042d9))
+
+
+### Bug Fixes
+
+* incorrect base url for JSON-LD references in ODRL ([f66db7e](https://github.com/twinfoundation/standards/commit/f66db7ee8f3deaae96fe64bc67e3c93b593e9b8c))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/standards-w3c-vcard bumped from 0.0.3-next.0 to 0.0.3-next.1
+    * @twin.org/standards-dublin-core bumped from 0.0.3-next.0 to 0.0.3-next.1
+
+## [0.0.2-next.16](https://github.com/twinfoundation/standards/compare/standards-w3c-odrl-v0.0.2-next.15...standards-w3c-odrl-v0.0.2-next.16) (2025-10-09)
+
+
+### Miscellaneous Chores
+
+* **standards-w3c-odrl:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/standards-w3c-vcard bumped from 0.0.2-next.15 to 0.0.2-next.16
+    * @twin.org/standards-dublin-core bumped from 0.0.2-next.15 to 0.0.2-next.16
+
+## [0.0.2-next.15](https://github.com/twinfoundation/standards/compare/standards-w3c-odrl-v0.0.2-next.14...standards-w3c-odrl-v0.0.2-next.15) (2025-10-09)
+
+
+### Features
+
+* add validate-locales ([838389c](https://github.com/twinfoundation/standards/commit/838389c1daf62ed42397d5758d267c3d1a37fa4d))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/standards-w3c-vcard bumped from 0.0.2-next.14 to 0.0.2-next.15
+    * @twin.org/standards-dublin-core bumped from 0.0.2-next.14 to 0.0.2-next.15
+
+## [0.0.2-next.14](https://github.com/twinfoundation/standards/compare/standards-w3c-odrl-v0.0.2-next.13...standards-w3c-odrl-v0.0.2-next.14) (2025-10-02)
+
+
+### Miscellaneous Chores
+
+* **standards-w3c-odrl:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/standards-w3c-vcard bumped from 0.0.2-next.13 to 0.0.2-next.14
+    * @twin.org/standards-dublin-core bumped from 0.0.2-next.13 to 0.0.2-next.14
+
 ## [0.0.2-next.13](https://github.com/twinfoundation/standards/compare/standards-w3c-odrl-v0.0.2-next.12...standards-w3c-odrl-v0.0.2-next.13) (2025-09-22)
 
 

@@ -32,7 +32,7 @@ The name of the property being validated to use in error messages.
 
 The data type to validate.
 
-`undefined` | `string`
+`string` | `undefined`
 
 ##### data
 

@@ -2,30 +2,53 @@
 
 ## Interfaces
 
+- [ICacheMetadata](interfaces/ICacheMetadata.md)
 - [IEngineEnvironmentVariables](interfaces/IEngineEnvironmentVariables.md)
 - [IEngineServerEnvironmentVariables](interfaces/IEngineServerEnvironmentVariables.md)
+- [IModuleProtocol](interfaces/IModuleProtocol.md)
+- [INodeEngineConfig](interfaces/INodeEngineConfig.md)
+- [INodeEngineState](interfaces/INodeEngineState.md)
 - [INodeEnvironmentVariables](interfaces/INodeEnvironmentVariables.md)
 - [INodeOptions](interfaces/INodeOptions.md)
+- [IProtocolHandlerResult](interfaces/IProtocolHandlerResult.md)
 
 ## Type Aliases
 
+- [ModuleProtocol](type-aliases/ModuleProtocol.md)
+- [NodeExtensionInitialiseMethod](type-aliases/NodeExtensionInitialiseMethod.md)
+- [NodeExtensionInitialiseEngineMethod](type-aliases/NodeExtensionInitialiseEngineMethod.md)
+- [NodeExtensionInitialiseEngineServerMethod](type-aliases/NodeExtensionInitialiseEngineServerMethod.md)
+- [NodeExtensionShutdownMethod](type-aliases/NodeExtensionShutdownMethod.md)
 - [NodeFeatures](type-aliases/NodeFeatures.md)
 
 ## Variables
 
+- [ATTESTATION\_VERIFICATION\_METHOD\_ID](variables/ATTESTATION_VERIFICATION_METHOD_ID.md)
+- [IMMUTABLE\_PROOF\_VERIFICATION\_METHOD\_ID](variables/IMMUTABLE_PROOF_VERIFICATION_METHOD_ID.md)
+- [BLOB\_STORAGE\_ENCRYPTION\_KEY\_ID](variables/BLOB_STORAGE_ENCRYPTION_KEY_ID.md)
+- [SYNCHRONISED\_STORAGE\_BLOB\_STORAGE\_ENCRYPTION\_KEY\_ID](variables/SYNCHRONISED_STORAGE_BLOB_STORAGE_ENCRYPTION_KEY_ID.md)
+- [VC\_AUTHENTICATION\_VERIFICATION\_METHOD\_ID](variables/VC_AUTHENTICATION_VERIFICATION_METHOD_ID.md)
+- [AUTH\_SIGNING\_KEY\_ID](variables/AUTH_SIGNING_KEY_ID.md)
+- [ModuleProtocol](variables/ModuleProtocol.md)
 - [NodeFeatures](variables/NodeFeatures.md)
 
 ## Functions
 
 - [bootstrap](functions/bootstrap.md)
-- [bootstrapNodeIdentity](functions/bootstrapNodeIdentity.md)
-- [bootstrapNodeUser](functions/bootstrapNodeUser.md)
+- [bootstrapContextIdHandlers](functions/bootstrapContextIdHandlers.md)
+- [bootstrapNodeId](functions/bootstrapNodeId.md)
+- [bootstrapTenantId](functions/bootstrapTenantId.md)
+- [bootstrapNodeAdminUser](functions/bootstrapNodeAdminUser.md)
 - [bootstrapImmutableProofMethod](functions/bootstrapImmutableProofMethod.md)
 - [bootstrapBlobEncryption](functions/bootstrapBlobEncryption.md)
 - [bootstrapAuth](functions/bootstrapAuth.md)
 - [bootstrapSynchronisedStorage](functions/bootstrapSynchronisedStorage.md)
 - [buildEngineConfiguration](functions/buildEngineConfiguration.md)
 - [buildEngineServerConfiguration](functions/buildEngineServerConfiguration.md)
+- [extensionsConfiguration](functions/extensionsConfiguration.md)
+- [extensionsInitialiseEngine](functions/extensionsInitialiseEngine.md)
+- [extensionsInitialiseEngineServer](functions/extensionsInitialiseEngineServer.md)
+- [shutdownExtensions](functions/shutdownExtensions.md)
 - [run](functions/run.md)
 - [buildConfiguration](functions/buildConfiguration.md)
 - [overrideModuleImport](functions/overrideModuleImport.md)
@@ -33,6 +56,17 @@
 - [initialiseLocales](functions/initialiseLocales.md)
 - [getExecutionDirectory](functions/getExecutionDirectory.md)
 - [fileExists](functions/fileExists.md)
+- [directoryExists](functions/directoryExists.md)
+- [getSubFolders](functions/getSubFolders.md)
+- [getFiles](functions/getFiles.md)
 - [loadTextFile](functions/loadTextFile.md)
 - [loadJsonFile](functions/loadJsonFile.md)
 - [getFeatures](functions/getFeatures.md)
+- [parseModuleProtocol](functions/parseModuleProtocol.md)
+- [hashUrl](functions/hashUrl.md)
+- [getExtensionsCacheDir](functions/getExtensionsCacheDir.md)
+- [handleNpmProtocol](functions/handleNpmProtocol.md)
+- [isCacheExpired](functions/isCacheExpired.md)
+- [handleHttpsProtocol](functions/handleHttpsProtocol.md)
+- [resolvePackageEntryPoint](functions/resolvePackageEntryPoint.md)
+- [createModuleImportUrl](functions/createModuleImportUrl.md)

@@ -20,6 +20,14 @@ The name of the entity schema.
 
 ***
 
+### partitionContextIds?
+
+> `optional` **partitionContextIds**: `string`[]
+
+The keys to use from the context ids to create partitions.
+
+***
+
 ### config
 
 > **config**: [`IScyllaDBTableConfig`](IScyllaDBTableConfig.md)

@@ -46,6 +46,20 @@ task-scheduler
 
 ***
 
+### federatedCatalogueComponentType?
+
+> `optional` **federatedCatalogueComponentType**: `string`
+
+The Federated Catalogue Component type.
+
+#### Default
+
+```ts
+federated-catalogue
+```
+
+***
+
 ### activityLogEntityStorageType?
 
 > `optional` **activityLogEntityStorageType**: `string`
@@ -71,6 +85,14 @@ The entity storage for the association between Activities and Tasks.
 ```ts
 activity-task
 ```
+
+***
+
+### partitionContextIds?
+
+> `optional` **partitionContextIds**: `string`[]
+
+The keys to use from the context ids to cleanup partitions.
 
 ***
 

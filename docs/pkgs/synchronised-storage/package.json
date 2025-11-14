@@ -15,7 +15,12 @@
 	"workspaces": [
 		"packages/synchronised-storage-models",
 		"packages/synchronised-storage-service",
-		"packages/synchronised-storage-rest-client"
+		"packages/synchronised-storage-rest-client",
+		"packages/entity-storage-connector-synchronised"
 	],
-	"type": "module"
+	"type": "module",
+	"bugs": {
+		"url": "git+https://github.com/twinfoundation/synchronised-storage/issues"
+	},
+	"homepage": "https://twindev.org"
 }

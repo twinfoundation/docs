@@ -38,15 +38,29 @@ The namespace supported by the wallet connector.
 
 ### CLASS\_NAME
 
-> `readonly` **CLASS\_NAME**: `string`
+> `readonly` `static` **CLASS\_NAME**: `string`
 
 Runtime name for the class.
 
+## Methods
+
+### className()
+
+> **className**(): `string`
+
+Returns the class name of the component.
+
+#### Returns
+
+`string`
+
+The class name of the component.
+
 #### Implementation of
 
-`IWalletConnector.CLASS_NAME`
+`IWalletConnector.className`
 
-## Methods
+***
 
 ### create()
 
@@ -202,7 +216,7 @@ True if the balance is at least the given amount, false otherwise.
 
 ### transfer()
 
-> **transfer**(`identity`, `addressSource`, `addressDest`, `amount`): `Promise`\<`undefined` \| `string`\>
+> **transfer**(`identity`, `addressSource`, `addressDest`, `amount`): `Promise`\<`string` \| `undefined`\>
 
 Transfer an amount from one address to another.
 
@@ -234,7 +248,7 @@ The amount to transfer.
 
 #### Returns
 
-`Promise`\<`undefined` \| `string`\>
+`Promise`\<`string` \| `undefined`\>
 
 The transaction digest.
 

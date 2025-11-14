@@ -4,7 +4,7 @@ The engine core environment variables.
 
 ## Extended by
 
-- [`INodeEnvironmentVariables`](INodeEnvironmentVariables.md)
+- [`IEngineServerEnvironmentVariables`](IEngineServerEnvironmentVariables.md)
 
 ## Properties
 
@@ -32,6 +32,30 @@ The name of the state file.
 
 ***
 
+### tenantEnabled?
+
+> `optional` **tenantEnabled**: `string`
+
+Is multi-tenant support enabled, defaults to false.
+
+***
+
+### tenantId?
+
+> `optional` **tenantId**: `string`
+
+A tenant id to use as a default for the node.
+
+***
+
+### tenantApiKey?
+
+> `optional` **tenantApiKey**: `string`
+
+A tenant api key to use as a default for the node.
+
+***
+
 ### entityStorageConnectorType?
 
 > `optional` **entityStorageConnectorType**: `string`
@@ -54,6 +78,14 @@ The default entity storage connector to use, defaults to the first one in the li
 > `optional` **entityStorageTablePrefix**: `string`
 
 A prefix for all the table in entity-storage, can be empty.
+
+***
+
+### awsDynamodbAuthMode?
+
+> `optional` **awsDynamodbAuthMode**: `string`
+
+AWS DynamoDB auth mode, either credentials or pod.
 
 ***
 
@@ -387,11 +419,11 @@ A prefix for all the blobs in blob-storage, can be empty.
 
 ***
 
-### awsS3AccessKeyId?
+### awsS3Region?
 
-> `optional` **awsS3AccessKeyId**: `string`
+> `optional` **awsS3Region**: `string`
 
-AWS S3 access key id.
+AWS S3 region.
 
 ***
 
@@ -403,19 +435,19 @@ AWS S3 bucket name.
 
 ***
 
-### awsS3Endpoint?
+### awsS3AuthMode?
 
-> `optional` **awsS3Endpoint**: `string`
+> `optional` **awsS3AuthMode**: `string`
 
-AWS S3 endpoint.
+AWS S3 auth mode, either credentials or pod, defaults to credentials.
 
 ***
 
-### awsS3Region?
+### awsS3AccessKeyId?
 
-> `optional` **awsS3Region**: `string`
+> `optional` **awsS3AccessKeyId**: `string`
 
-AWS S3 region.
+AWS S3 access key id.
 
 ***
 
@@ -424,6 +456,14 @@ AWS S3 region.
 > `optional` **awsS3SecretAccessKey**: `string`
 
 AWS S3 secret access key.
+
+***
+
+### awsS3Endpoint?
+
+> `optional` **awsS3Endpoint**: `string`
+
+AWS S3 endpoint.
 
 ***
 
@@ -519,7 +559,7 @@ Hashicorp Vault endpoint.
 
 > `optional` **loggingConnector**: `string`
 
-The type of background task connector, can be a comma separated list: console, entity-storage.
+The type of logging task connector, can be a comma separated list: console, entity-storage.
 
 ***
 
@@ -547,6 +587,62 @@ The type of event bus component: service.
 
 ***
 
+### messagingEnabled?
+
+> `optional` **messagingEnabled**: `string`
+
+Are the messaging components enabled, defaults to false.
+
+***
+
+### awsSesRegion?
+
+> `optional` **awsSesRegion**: `string`
+
+AWS SES region.
+
+***
+
+### awsSesAuthMode?
+
+> `optional` **awsSesAuthMode**: `string`
+
+AWS SES auth mode, either credentials or pod, defaults to credentials.
+
+***
+
+### awsSesSecretAccessKey?
+
+> `optional` **awsSesSecretAccessKey**: `string`
+
+AWS SES secret access key.
+
+***
+
+### awsSesAccessKeyId?
+
+> `optional` **awsSesAccessKeyId**: `string`
+
+AWS SES access key id.
+
+***
+
+### awsSesEndpoint?
+
+> `optional` **awsSesEndpoint**: `string`
+
+AWS SES endpoint.
+
+***
+
+### awsMessagingPushNotificationApplications?
+
+> `optional` **awsMessagingPushNotificationApplications**: `string`
+
+The applications for the push notifications JSON stringified array of IAwsApplicationSettings.
+
+***
+
 ### messagingEmailConnector?
 
 > `optional` **messagingEmailConnector**: `string`
@@ -568,22 +664,6 @@ The type of messaging sms connector: entity-storage, aws.
 > `optional` **messagingPushNotificationConnector**: `string`
 
 The type of messaging push notification connector: entity-storage, aws.
-
-***
-
-### awsMessagingPushNotificationApplications?
-
-> `optional` **awsMessagingPushNotificationApplications**: `string`
-
-The applications for the push notifications JSON stringified array of IAwsApplicationSettings.
-
-***
-
-### messagingComponent?
-
-> `optional` **messagingComponent**: `string`
-
-The type of messaging component: service.
 
 ***
 
@@ -739,6 +819,14 @@ The identity verification method id to use with attestation.
 
 ***
 
+### dataProcessingEnabled?
+
+> `optional` **dataProcessingEnabled**: `string`
+
+Is the data processing enabled, defaults to false.
+
+***
+
 ### dataConverterConnectors?
 
 > `optional` **dataConverterConnectors**: `string`
@@ -752,6 +840,30 @@ The type of the default data converters, can be a comma separated list: json, xm
 > `optional` **dataExtractorConnectors**: `string`
 
 The type of the default data extractor, can be a comma separated list: json-path.
+
+***
+
+### auditableItemGraphEnabled?
+
+> `optional` **auditableItemGraphEnabled**: `string`
+
+Is the auditable item graph enabled, defaults to false.
+
+***
+
+### auditableItemStreamEnabled?
+
+> `optional` **auditableItemStreamEnabled**: `string`
+
+Is the auditable item stream enabled, defaults to false.
+
+***
+
+### documentManagementEnabled?
+
+> `optional` **documentManagementEnabled**: `string`
+
+Is the document management enabled, defaults to false.
 
 ***
 
@@ -776,7 +888,7 @@ Url which points to the api for a trusted synchronised storage node, not require
 > `optional` **synchronisedStorageVerifiableStorageKeyId**: `string`
 
 The key for the smart contract which contains the verifiable storage pointer store for synchronised storage.
-This only required if using a custom verifiable storage item, otherwise it will default the the network name.
+This only required if using a custom verifiable storage item, otherwise it will default to the network name.
 
 ***
 
@@ -974,12 +1086,39 @@ Is the data space connector enabled, defaults to false.
 
 ***
 
-### dataSpaceConnectorApps?
+### dataSpaceConnectorRetainActivityLogsFor?
 
-> `optional` **dataSpaceConnectorApps**: `string`
+> `optional` **dataSpaceConnectorRetainActivityLogsFor**: `string`
 
-The application configuration for the data space connector.
-Use the @json: prefix to specify the path to the JSON configuration file.
+The length of time to retain the activity logs for in minutes, set to -1 to keep forever.
+
+#### Default
+
+```ts
+10
+```
+
+***
+
+### dataSpaceConnectorActivityLogsCleanUpInterval?
+
+> `optional` **dataSpaceConnectorActivityLogsCleanUpInterval**: `string`
+
+The interval for cleaning up the activity logs.
+
+#### Default
+
+```ts
+60
+```
+
+***
+
+### vcAuthenticationEnabled?
+
+> `optional` **vcAuthenticationEnabled**: `string`
+
+Enable verifiable credential authentication for the API.
 
 ***
 
@@ -989,3 +1128,11 @@ Use the @json: prefix to specify the path to the JSON configuration file.
 
 Verifiable credential assertion for node to node communication.
 Defaults to node-authentication-assertion.
+
+***
+
+### extensions?
+
+> `optional` **extensions**: `string`
+
+A comma separated list of additional node extensions to load, the initialiseExtension method will be called for each extension.

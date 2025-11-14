@@ -48,7 +48,7 @@ The parsed document id.
 
 ##### fragment
 
-> **fragment**: `undefined` \| `string`
+> **fragment**: `string` \| `undefined`
 
 ***
 
@@ -120,7 +120,7 @@ Error if the method is not found.
 
 ### getJwk()
 
-> `static` **getJwk**(`didDocument`, `methodName`, `methodType?`): `IJwk`
+> `static` **getJwk**(`didDocument`, `methodName`, `methodType?`): `JWK`
 
 Gets a JWK from a DID document verification method.
 
@@ -146,7 +146,7 @@ The type of the method, defaults to verificationMethod.
 
 #### Returns
 
-`IJwk`
+`JWK`
 
 The JWK if found.
 

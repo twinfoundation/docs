@@ -1,5 +1,67 @@
 # @twin.org/auditable-item-stream-service - Changelog
 
+## [0.0.3-next.1](https://github.com/twinfoundation/auditable-item-stream/compare/auditable-item-stream-service-v0.0.3-next.0...auditable-item-stream-service-v0.0.3-next.1) (2025-11-12)
+
+
+### Features
+
+* add context id features ([#28](https://github.com/twinfoundation/auditable-item-stream/issues/28)) ([10d788a](https://github.com/twinfoundation/auditable-item-stream/commit/10d788abfd73fdafe40b9218b399c4d652be2370))
+* add validate-locales ([4babc73](https://github.com/twinfoundation/auditable-item-stream/commit/4babc7331f7fed61450fe2e2d8eccee52367f2be))
+* data types registered with fully qualified names ([3bcd927](https://github.com/twinfoundation/auditable-item-stream/commit/3bcd92788bfe4976bc88caf230501f5bbf8637f9))
+* eslint migration to flat config ([bd9cb2e](https://github.com/twinfoundation/auditable-item-stream/commit/bd9cb2ea2599300332c76a9c738a6ff437a5cc5b))
+* improve schemas ([a658264](https://github.com/twinfoundation/auditable-item-stream/commit/a65826423f57ca18d9de44e7e75cb06ab9dd12cb))
+* improve schemas ([b253580](https://github.com/twinfoundation/auditable-item-stream/commit/b2535806321f39c7c02db0e04f65fb04c0595dd0))
+* remove unused namespace ([6085988](https://github.com/twinfoundation/auditable-item-stream/commit/608598812ac2f1d0f6d73f5efcc6a169b0f3b38a))
+* update dependencies ([9ff038b](https://github.com/twinfoundation/auditable-item-stream/commit/9ff038b7e76e9fb586be4f2321231f04258ef794))
+* update framework core ([5621601](https://github.com/twinfoundation/auditable-item-stream/commit/562160167c5082b9dae1b0bf68482ce2af1e7dce))
+* use new nameof operators ([d1a3bf8](https://github.com/twinfoundation/auditable-item-stream/commit/d1a3bf8369f899fff8fd9d7b3b068f270fd8603d))
+* use shared store mechanism ([#7](https://github.com/twinfoundation/auditable-item-stream/issues/7)) ([2aca4b8](https://github.com/twinfoundation/auditable-item-stream/commit/2aca4b85b0102f91c90619f02b116541786cf539))
+* use standard list json ld types ([54ee4d7](https://github.com/twinfoundation/auditable-item-stream/commit/54ee4d78c42cfd39745ee7d93903334c398ec8c8))
+
+
+### Bug Fixes
+
+* immutable remove parameter order ([19f60d6](https://github.com/twinfoundation/auditable-item-stream/commit/19f60d6c7b9f926694e91f4fbf348a4a4eb34c5a))
+* query params force coercion ([fcdd52c](https://github.com/twinfoundation/auditable-item-stream/commit/fcdd52cf8262a3bc19f6e7e9e6ef145890a9c8aa))
+* remove misses removing entries ([a58bc09](https://github.com/twinfoundation/auditable-item-stream/commit/a58bc0943ea6e77ca7c854b2f41cfaba3fb9b10b))
+* update entry use correct deconstructed object ([801e857](https://github.com/twinfoundation/auditable-item-stream/commit/801e857d71289672b9c6010f302b33c9d8ea9860))
+* update tests for deterministic background tasks ([#5](https://github.com/twinfoundation/auditable-item-stream/issues/5)) ([75d844e](https://github.com/twinfoundation/auditable-item-stream/commit/75d844eb98d0af63a089105379f9859def47e92a))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/auditable-item-stream-models bumped from 0.0.3-next.0 to 0.0.3-next.1
+
+## [0.0.2-next.5](https://github.com/twinfoundation/auditable-item-stream/compare/auditable-item-stream-service-v0.0.2-next.4...auditable-item-stream-service-v0.0.2-next.5) (2025-10-09)
+
+
+### Features
+
+* add validate-locales ([4babc73](https://github.com/twinfoundation/auditable-item-stream/commit/4babc7331f7fed61450fe2e2d8eccee52367f2be))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/auditable-item-stream-models bumped from 0.0.2-next.4 to 0.0.2-next.5
+
+## [0.0.2-next.4](https://github.com/twinfoundation/auditable-item-stream/compare/auditable-item-stream-service-v0.0.2-next.3...auditable-item-stream-service-v0.0.2-next.4) (2025-09-29)
+
+
+### Features
+
+* use new nameof operators ([d1a3bf8](https://github.com/twinfoundation/auditable-item-stream/commit/d1a3bf8369f899fff8fd9d7b3b068f270fd8603d))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/auditable-item-stream-models bumped from 0.0.2-next.3 to 0.0.2-next.4
+
 ## [0.0.2-next.3](https://github.com/twinfoundation/auditable-item-stream/compare/auditable-item-stream-service-v0.0.2-next.2...auditable-item-stream-service-v0.0.2-next.3) (2025-08-29)
 
 

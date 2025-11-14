@@ -25,5 +25,9 @@
 		"packages/rights-management-service",
 		"packages/rights-management-rest-client"
 	],
-	"type": "module"
+	"type": "module",
+	"bugs": {
+		"url": "git+https://github.com/twinfoundation/rights-management/issues"
+	},
+	"homepage": "https://twindev.org"
 }

@@ -23,5 +23,9 @@
 		"packages/blob-storage-connector-azure",
 		"packages/blob-storage-connector-gcp"
 	],
-	"type": "module"
+	"type": "module",
+	"bugs": {
+		"url": "git+https://github.com/twinfoundation/blob-storage/issues"
+	},
+	"homepage": "https://twindev.org"
 }

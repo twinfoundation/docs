@@ -8,19 +8,19 @@ https://www.w3.org/TR/json-ld11/#context-definitions
 
 ## Indexable
 
-\[`key`: `string`\]: `undefined` \| `null` \| `string` \| `boolean` \| [`IJsonLdExpandedTermDefinition`](../type-aliases/IJsonLdExpandedTermDefinition.md) \| \{ `@container`: `"@set"`; `@protected?`: `boolean`; \}
+\[`key`: `string`\]: `string` \| `boolean` \| [`IJsonLdExpandedTermDefinition`](../type-aliases/IJsonLdExpandedTermDefinition.md) \| \{ `@container`: `"@set"`; `@protected?`: `boolean`; \} \| `null` \| `undefined`
 
 ## Properties
 
 ### @base?
 
-> `optional` **@base**: `null` \| `string`
+> `optional` **@base**: `string` \| `null`
 
 ***
 
 ### @direction?
 
-> `optional` **@direction**: `null` \| `"ltr"` \| `"rtl"`
+> `optional` **@direction**: `"ltr"` \| `"rtl"` \| `null`
 
 ***
 
@@ -70,4 +70,4 @@ https://www.w3.org/TR/json-ld11/#context-definitions
 
 ### @vocab?
 
-> `optional` **@vocab**: `null` \| `string`
+> `optional` **@vocab**: `string` \| `null`

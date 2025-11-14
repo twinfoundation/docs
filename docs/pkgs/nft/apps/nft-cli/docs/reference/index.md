@@ -4,14 +4,6 @@
 
 - [CLI](classes/CLI.md)
 
-## Type Aliases
-
-- [NftConnectorTypes](type-aliases/NftConnectorTypes.md)
-
-## Variables
-
-- [NftConnectorTypes](variables/NftConnectorTypes.md)
-
 ## Functions
 
 - [buildCommandNftBurn](functions/buildCommandNftBurn.md)

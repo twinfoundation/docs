@@ -16,7 +16,7 @@ Helper methods for Odrl Policies.
 
 ### findExpirationDate()
 
-> `static` **findExpirationDate**(`policy`, `assetType?`, `action?`): `undefined` \| `string`
+> `static` **findExpirationDate**(`policy`, `assetType?`, `action?`): `string` \| `undefined`
 
 Find the expiration date of the policy.
 
@@ -42,7 +42,7 @@ The action to check, if undefined will match any action.
 
 #### Returns
 
-`undefined` \| `string`
+`string` \| `undefined`
 
 The expiration date of the policy, or undefined if not found.
 

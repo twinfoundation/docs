@@ -22,12 +22,6 @@ The seed required for signing by the issuer.
 
 The id of the NFT to burn in urn format.
 
-#### connector?
-
-`"iota"`
-
-The connector to perform the operations with.
-
 #### node
 
 `string`

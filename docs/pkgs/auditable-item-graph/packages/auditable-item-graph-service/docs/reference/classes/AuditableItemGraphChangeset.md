@@ -38,9 +38,9 @@ The date/time of when the changeset was created.
 
 ***
 
-### userIdentity
+### userIdentity?
 
-> **userIdentity**: `string`
+> `optional` **userIdentity**: `string`
 
 The identity of the user who made the changeset.
 

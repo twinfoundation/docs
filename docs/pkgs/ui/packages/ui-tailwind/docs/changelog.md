@@ -1,5 +1,73 @@
 # @twin.org/ui-tailwind - Changelog
 
+## [0.0.3-next.1](https://github.com/twinfoundation/ui/compare/ui-tailwind-v0.0.3-next.0...ui-tailwind-v0.0.3-next.1) (2025-11-14)
+
+
+### Features
+
+* **components:** add barrel exports for component directories ([#40](https://github.com/twinfoundation/ui/issues/40)) ([8037480](https://github.com/twinfoundation/ui/commit/8037480358ca7d71da7c8fadd70915496cc402ff))
+* eslint migration to flat config ([9e8c4e3](https://github.com/twinfoundation/ui/commit/9e8c4e3762996a788577ad850ffb0f35d7d54b16))
+* migrate icon system and update types ([#62](https://github.com/twinfoundation/ui/issues/62)) ([ab81824](https://github.com/twinfoundation/ui/commit/ab81824e06cf0f03ed1d888f2db9b642574d8b42))
+* svelte validated form class override ([0444d4b](https://github.com/twinfoundation/ui/commit/0444d4b767459717f7733dd228e1d8641b9009a3))
+* update svelte to v5 ([760678a](https://github.com/twinfoundation/ui/commit/760678ab87f180c6b331c52532e4207f1e9f1007))
+
+
+### Bug Fixes
+
+* **fileInput:** Changed colors ([#36](https://github.com/twinfoundation/ui/issues/36)) ([0d06873](https://github.com/twinfoundation/ui/commit/0d06873ba08dc3d9d481fb909bbe69a1a9df0f6d))
+
+## [0.0.2-next.5](https://github.com/twinfoundation/ui/compare/ui-tailwind-v0.0.2-next.4...ui-tailwind-v0.0.2-next.5) (2025-11-12)
+
+
+### Features
+
+* **components:** add barrel exports for component directories ([#40](https://github.com/twinfoundation/ui/issues/40)) ([8037480](https://github.com/twinfoundation/ui/commit/8037480358ca7d71da7c8fadd70915496cc402ff))
+* eslint migration to flat config ([9e8c4e3](https://github.com/twinfoundation/ui/commit/9e8c4e3762996a788577ad850ffb0f35d7d54b16))
+* migrate icon system and update types ([#62](https://github.com/twinfoundation/ui/issues/62)) ([ab81824](https://github.com/twinfoundation/ui/commit/ab81824e06cf0f03ed1d888f2db9b642574d8b42))
+* svelte validated form class override ([0444d4b](https://github.com/twinfoundation/ui/commit/0444d4b767459717f7733dd228e1d8641b9009a3))
+
+
+### Bug Fixes
+
+* **fileInput:** Changed colors ([#36](https://github.com/twinfoundation/ui/issues/36)) ([0d06873](https://github.com/twinfoundation/ui/commit/0d06873ba08dc3d9d481fb909bbe69a1a9df0f6d))
+
+## [0.0.2-next.4](https://github.com/twinfoundation/ui/compare/ui-tailwind-v0.0.2-next.3...ui-tailwind-v0.0.2-next.4) (2025-11-12)
+
+
+### Features
+
+* **components:** add barrel exports for component directories ([#40](https://github.com/twinfoundation/ui/issues/40)) ([8037480](https://github.com/twinfoundation/ui/commit/8037480358ca7d71da7c8fadd70915496cc402ff))
+* eslint migration to flat config ([9e8c4e3](https://github.com/twinfoundation/ui/commit/9e8c4e3762996a788577ad850ffb0f35d7d54b16))
+* migrate icon system and update types ([#62](https://github.com/twinfoundation/ui/issues/62)) ([ab81824](https://github.com/twinfoundation/ui/commit/ab81824e06cf0f03ed1d888f2db9b642574d8b42))
+* svelte validated form class override ([0444d4b](https://github.com/twinfoundation/ui/commit/0444d4b767459717f7733dd228e1d8641b9009a3))
+
+
+### Bug Fixes
+
+* **fileInput:** Changed colors ([#36](https://github.com/twinfoundation/ui/issues/36)) ([0d06873](https://github.com/twinfoundation/ui/commit/0d06873ba08dc3d9d481fb909bbe69a1a9df0f6d))
+
+## [0.0.2-next.3](https://github.com/twinfoundation/ui/compare/ui-tailwind-v0.0.2-next.2...ui-tailwind-v0.0.2-next.3) (2025-11-12)
+
+
+### Features
+
+* **components:** add barrel exports for component directories ([#40](https://github.com/twinfoundation/ui/issues/40)) ([8037480](https://github.com/twinfoundation/ui/commit/8037480358ca7d71da7c8fadd70915496cc402ff))
+* eslint migration to flat config ([9e8c4e3](https://github.com/twinfoundation/ui/commit/9e8c4e3762996a788577ad850ffb0f35d7d54b16))
+* migrate icon system and update types ([#62](https://github.com/twinfoundation/ui/issues/62)) ([ab81824](https://github.com/twinfoundation/ui/commit/ab81824e06cf0f03ed1d888f2db9b642574d8b42))
+* svelte validated form class override ([0444d4b](https://github.com/twinfoundation/ui/commit/0444d4b767459717f7733dd228e1d8641b9009a3))
+
+
+### Bug Fixes
+
+* **fileInput:** Changed colors ([#36](https://github.com/twinfoundation/ui/issues/36)) ([0d06873](https://github.com/twinfoundation/ui/commit/0d06873ba08dc3d9d481fb909bbe69a1a9df0f6d))
+
+## [0.0.2-next.2](https://github.com/twinfoundation/ui/compare/ui-tailwind-v0.0.2-next.1...ui-tailwind-v0.0.2-next.2) (2025-11-11)
+
+
+### Miscellaneous Chores
+
+* **ui-tailwind:** Synchronize repo versions
+
 ## [0.0.2-next.1](https://github.com/twinfoundation/ui/compare/ui-tailwind-v0.0.2-next.0...ui-tailwind-v0.0.2-next.1) (2025-09-24)
 
 

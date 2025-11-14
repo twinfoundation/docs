@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/standards-w3c-vcard",
-	"version": "0.0.2-next.13",
+	"version": "0.0.3-next.2",
 	"description": "Models which define the structure of W3C VCard Standard",
 	"repository": {
 		"type": "git",
@@ -13,22 +13,34 @@
 	"engines": {
 		"node": ">=20.0.0"
 	},
-	"main": "./dist/cjs/index.cjs",
-	"module": "./dist/esm/index.mjs",
+	"main": "./dist/es/index.js",
 	"types": "./dist/types/index.d.ts",
 	"exports": {
 		".": {
 			"types": "./dist/types/index.d.ts",
-			"require": "./dist/cjs/index.cjs",
-			"import": "./dist/esm/index.mjs"
+			"import": "./dist/es/index.js",
+			"default": "./dist/es/index.js"
 		},
 		"./locales/*.json": "./locales/*.json"
 	},
 	"files": [
-		"dist/cjs",
-		"dist/esm",
+		"dist/es",
 		"dist/types",
 		"locales",
 		"docs"
-	]
+	],
+	"keywords": [
+		"twin",
+		"trade",
+		"iota",
+		"framework",
+		"blockchain",
+		"standards",
+		"schema",
+		"specification"
+	],
+	"bugs": {
+		"url": "git+https://github.com/twinfoundation/standards/issues"
+	},
+	"homepage": "https://twindev.org"
 }

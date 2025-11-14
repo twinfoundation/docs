@@ -1,5 +1,49 @@
 # @twin.org/dlt-iota - Changelog
 
+## [0.0.3-next.1](https://github.com/twinfoundation/dlt/compare/dlt-iota-v0.0.3-next.0...dlt-iota-v0.0.3-next.1) (2025-11-11)
+
+
+### Features
+
+* add context id features ([#51](https://github.com/twinfoundation/dlt/issues/51)) ([fb68498](https://github.com/twinfoundation/dlt/commit/fb6849897957904ec90cf6368153aeff3bef261a))
+* add validate-locales ([8465099](https://github.com/twinfoundation/dlt/commit/8465099626ab1891d419a35870fae447efc3008d))
+* adding gas station docker image config ([#24](https://github.com/twinfoundation/dlt/issues/24)) ([0663303](https://github.com/twinfoundation/dlt/commit/06633039598ccfe5b1cf0d72332327fc151dc5c9))
+* blend transaction methods ([#13](https://github.com/twinfoundation/dlt/issues/13)) ([763a93c](https://github.com/twinfoundation/dlt/commit/763a93cf30eaa3872ac56fa9cef512d58cdb0208))
+* bytecode change detection ([#43](https://github.com/twinfoundation/dlt/issues/43)) ([528469c](https://github.com/twinfoundation/dlt/commit/528469c1e4f032c6a936a9724a692abe403d92f6))
+* consolidate environment management ([#41](https://github.com/twinfoundation/dlt/issues/41)) ([add1618](https://github.com/twinfoundation/dlt/commit/add161828e5dc42880fb0a5f9d3e61e611cf92bb))
+* eslint migration to flat config ([da1d12d](https://github.com/twinfoundation/dlt/commit/da1d12dcf5b24e7ba6204f540c27de191bca098e))
+* gas station integration ([#17](https://github.com/twinfoundation/dlt/issues/17)) ([23c7c96](https://github.com/twinfoundation/dlt/commit/23c7c96858dd6a91d01306983080e1eb8860115a))
+* Get Key Pair method in the iota dlt ([#5](https://github.com/twinfoundation/dlt/issues/5)) ([3179854](https://github.com/twinfoundation/dlt/commit/31798540b9b8be68079ba1696b29a11c84c40fa5))
+* github action simplification and readme update ([#25](https://github.com/twinfoundation/dlt/issues/25)) ([b1a3988](https://github.com/twinfoundation/dlt/commit/b1a3988fd5e8b4bef31208a2da6d0d5fff13758d))
+* improve error handling ([179188d](https://github.com/twinfoundation/dlt/commit/179188dce9bbc6add5f537cb83e50cac817e5cf9))
+* improve prepareAndPostGasStationTransaction with options parameter ([#20](https://github.com/twinfoundation/dlt/issues/20)) ([778365d](https://github.com/twinfoundation/dlt/commit/778365d535965fb67583db93d9611bfbb944b64d))
+* rebased release ([8ce044b](https://github.com/twinfoundation/dlt/commit/8ce044b93a596415852b1f7b75c3e315fe2c6b6f))
+* update dependencies ([f7b71c2](https://github.com/twinfoundation/dlt/commit/f7b71c24274b71e2d37c26c4a7e5e6d9df1dc9b7))
+* update framework core ([79fc4b9](https://github.com/twinfoundation/dlt/commit/79fc4b961bd755437cad98d733ca9e25476bc03f))
+* upgrade capabilities ([#32](https://github.com/twinfoundation/dlt/issues/32)) ([437219f](https://github.com/twinfoundation/dlt/commit/437219f0f784ec38353c01e1c8ce6bfba3b1b530))
+* use shared store mechanism ([#10](https://github.com/twinfoundation/dlt/issues/10)) ([ce36214](https://github.com/twinfoundation/dlt/commit/ce36214577f02cbb9642f831cb2c21335c31cc9a))
+
+
+### Bug Fixes
+
+* added missing dependency ([#35](https://github.com/twinfoundation/dlt/issues/35)) ([c280e8a](https://github.com/twinfoundation/dlt/commit/c280e8aba583a957f89929dbe5105352e59c4c3f))
+* isAbortError static method ([2544c92](https://github.com/twinfoundation/dlt/commit/2544c926a5f0c4505e9f2c23d4380ced368f8470))
+* modifying logging type param ([#36](https://github.com/twinfoundation/dlt/issues/36)) ([b884fcc](https://github.com/twinfoundation/dlt/commit/b884fccef5bea5c6818cf8bfa8af197d3622cac6))
+
+## [0.0.2-next.11](https://github.com/twinfoundation/dlt/compare/dlt-iota-v0.0.2-next.10...dlt-iota-v0.0.2-next.11) (2025-10-09)
+
+
+### Features
+
+* add validate-locales ([8465099](https://github.com/twinfoundation/dlt/commit/8465099626ab1891d419a35870fae447efc3008d))
+
+## [0.0.2-next.10](https://github.com/twinfoundation/dlt/compare/dlt-iota-v0.0.2-next.9...dlt-iota-v0.0.2-next.10) (2025-09-29)
+
+
+### Miscellaneous Chores
+
+* **dlt-iota:** Synchronize repo versions
+
 ## [0.0.2-next.9](https://github.com/twinfoundation/dlt/compare/dlt-iota-v0.0.2-next.8...dlt-iota-v0.0.2-next.9) (2025-09-22)
 
 

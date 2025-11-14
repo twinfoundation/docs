@@ -41,11 +41,3 @@ Timeout for requests in ms.
 > `optional` **includeCredentials**: `boolean`
 
 Include credentials in the request, defaults to true.
-
-***
-
-### authenticationGeneratorType?
-
-> `optional` **authenticationGeneratorType**: `string`
-
-The type of authentication generator to use.

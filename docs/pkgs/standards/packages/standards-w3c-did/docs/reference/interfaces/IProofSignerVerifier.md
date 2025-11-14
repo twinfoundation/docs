@@ -26,7 +26,7 @@ The proof options.
 
 ##### signKey
 
-`IJwk`
+`JWK`
 
 The key to sign the proof with.
 
@@ -60,7 +60,7 @@ The proof to verify.
 
 ##### verifyKey
 
-`IJwk`
+`JWK`
 
 The public key to verify the proof with.
 

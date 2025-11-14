@@ -38,11 +38,27 @@ The options for the engine.
 
 ## Properties
 
-### LOGGER\_TYPE\_NAME
+### LOGGING\_COMPONENT\_TYPE\_NAME
 
-> `readonly` `static` **LOGGER\_TYPE\_NAME**: `string` = `"engine"`
+> `readonly` `static` **LOGGING\_COMPONENT\_TYPE\_NAME**: `string` = `"engine-logging-service"`
 
-Name for the engine logger.
+Name for the engine logger component, used for direct console logging.
+
+***
+
+### LOGGING\_CONNECTOR\_TYPE\_NAME
+
+> `readonly` `static` **LOGGING\_CONNECTOR\_TYPE\_NAME**: `string` = `"engine-logging-connector"`
+
+Name for the engine logger connector, used for direct console logging.
+
+***
+
+### CLASS\_NAME
+
+> `readonly` `static` **CLASS\_NAME**: `string`
+
+Runtime name for the class.
 
 ***
 
@@ -52,11 +68,27 @@ Name for the engine logger.
 
 The core context.
 
+***
+
+### \_contextIdKeys
+
+> `protected` `readonly` **\_contextIdKeys**: `string`[]
+
+The context ID keys.
+
+***
+
+### \_contextIds?
+
+> `protected` `optional` **\_contextIds**: `IContextIds`
+
+The context IDs.
+
 ## Methods
 
 ### addTypeInitialiser()
 
-> **addTypeInitialiser**(`type`, `typeConfig`, `module`, `method`): `void`
+> **addTypeInitialiser**(`type`, `module`, `method`): `void`
 
 Add a type initialiser.
 
@@ -67,12 +99,6 @@ Add a type initialiser.
 `string`
 
 The type to add the initialiser for.
-
-##### typeConfig
-
-The type config.
-
-`undefined` | `IEngineCoreTypeConfig`[]
 
 ##### module
 
@@ -93,6 +119,122 @@ The name of the method to call.
 #### Implementation of
 
 `IEngineCore.addTypeInitialiser`
+
+***
+
+### getTypeConfig()
+
+> **getTypeConfig**(`type`): `undefined` \| `IEngineCoreTypeConfig`[]
+
+Get the type config for a specific type.
+
+#### Parameters
+
+##### type
+
+`string`
+
+The type to get the config for.
+
+#### Returns
+
+`undefined` \| `IEngineCoreTypeConfig`[]
+
+The type config or undefined if not found.
+
+#### Implementation of
+
+`IEngineCore.getTypeConfig`
+
+***
+
+### addContextIdKey()
+
+> **addContextIdKey**(`key`): `void`
+
+Add a context ID key to the engine.
+
+#### Parameters
+
+##### key
+
+`string`
+
+The context ID key.
+
+#### Returns
+
+`void`
+
+#### Implementation of
+
+`IEngineCore.addContextIdKey`
+
+***
+
+### getContextIdKeys()
+
+> **getContextIdKeys**(): `string`[]
+
+Get the context ID keys for the engine.
+
+#### Returns
+
+`string`[]
+
+The context IDs keys.
+
+#### Implementation of
+
+`IEngineCore.getContextIdKeys`
+
+***
+
+### addContextId()
+
+> **addContextId**(`key`, `value`): `void`
+
+Add a context ID to the engine.
+
+#### Parameters
+
+##### key
+
+`string`
+
+The context ID key.
+
+##### value
+
+`string`
+
+The context ID value.
+
+#### Returns
+
+`void`
+
+#### Implementation of
+
+`IEngineCore.addContextId`
+
+***
+
+### getContextIds()
+
+> **getContextIds**(): `undefined` \| `IContextIds`
+
+Get the context IDs for the engine.
+
+#### Returns
+
+`undefined` \| `IContextIds`
+
+The context IDs or undefined if none are set.
+
+#### Implementation of
+
+`IEngineCore.getContextIds`
 
 ***
 
@@ -188,7 +330,7 @@ True if the engine instance is a clone.
 
 ### logInfo()
 
-> **logInfo**(`message`): `void`
+> **logInfo**(`message`): `Promise`\<`void`\>
 
 Log info.
 
@@ -202,7 +344,7 @@ The message to log.
 
 #### Returns
 
-`void`
+`Promise`\<`void`\>
 
 #### Implementation of
 
@@ -212,7 +354,7 @@ The message to log.
 
 ### logError()
 
-> **logError**(`error`): `void`
+> **logError**(`error`): `Promise`\<`void`\>
 
 Log error.
 
@@ -226,7 +368,7 @@ The error to log.
 
 #### Returns
 
-`void`
+`Promise`\<`void`\>
 
 #### Implementation of
 

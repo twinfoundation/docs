@@ -54,9 +54,9 @@ The provider Id
 
 ***
 
-### endpoint
+### endpoint?
 
-> **endpoint**: `IEndpoint`
+> `optional` **endpoint**: `IEndpoint`
 
 The REST endpoint
 
@@ -107,3 +107,11 @@ Date created
 > **evidence**: `string`[]
 
 Evidences
+
+***
+
+### extraData?
+
+> `optional` **extraData**: `IJsonLdNodeObject`
+
+Extended data of a Service Offering entry.

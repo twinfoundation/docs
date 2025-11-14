@@ -12,6 +12,14 @@ A class to handle compression.
 
 `Compression`
 
+## Properties
+
+### CLASS\_NAME
+
+> `readonly` `static` **CLASS\_NAME**: `string`
+
+Runtime name for the class.
+
 ## Methods
 
 ### compress()

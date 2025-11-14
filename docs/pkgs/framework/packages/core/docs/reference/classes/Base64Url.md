@@ -13,6 +13,14 @@ https://www.rfc-editor.org/rfc/rfc4648#section-5.
 
 `Base64Url`
 
+## Properties
+
+### CLASS\_NAME
+
+> `readonly` `static` **CLASS\_NAME**: `string`
+
+Runtime name for the class.
+
 ## Methods
 
 ### decode()

@@ -1,5 +1,59 @@
 # @twin.org/auditable-item-stream-rest-client - Changelog
 
+## [0.0.3-next.1](https://github.com/twinfoundation/auditable-item-stream/compare/auditable-item-stream-rest-client-v0.0.3-next.0...auditable-item-stream-rest-client-v0.0.3-next.1) (2025-11-12)
+
+
+### Features
+
+* add context id features ([#28](https://github.com/twinfoundation/auditable-item-stream/issues/28)) ([10d788a](https://github.com/twinfoundation/auditable-item-stream/commit/10d788abfd73fdafe40b9218b399c4d652be2370))
+* add validate-locales ([4babc73](https://github.com/twinfoundation/auditable-item-stream/commit/4babc7331f7fed61450fe2e2d8eccee52367f2be))
+* eslint migration to flat config ([bd9cb2e](https://github.com/twinfoundation/auditable-item-stream/commit/bd9cb2ea2599300332c76a9c738a6ff437a5cc5b))
+* export remove verifiable on client ([554749b](https://github.com/twinfoundation/auditable-item-stream/commit/554749b8369896a69de6392881171023a70f5cf1))
+* update dependencies ([9ff038b](https://github.com/twinfoundation/auditable-item-stream/commit/9ff038b7e76e9fb586be4f2321231f04258ef794))
+* update framework core ([5621601](https://github.com/twinfoundation/auditable-item-stream/commit/562160167c5082b9dae1b0bf68482ce2af1e7dce))
+* use new nameof operators ([d1a3bf8](https://github.com/twinfoundation/auditable-item-stream/commit/d1a3bf8369f899fff8fd9d7b3b068f270fd8603d))
+* use shared store mechanism ([#7](https://github.com/twinfoundation/auditable-item-stream/issues/7)) ([2aca4b8](https://github.com/twinfoundation/auditable-item-stream/commit/2aca4b85b0102f91c90619f02b116541786cf539))
+
+
+### Bug Fixes
+
+* query params force coercion ([fcdd52c](https://github.com/twinfoundation/auditable-item-stream/commit/fcdd52cf8262a3bc19f6e7e9e6ef145890a9c8aa))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/auditable-item-stream-models bumped from 0.0.3-next.0 to 0.0.3-next.1
+
+## [0.0.2-next.5](https://github.com/twinfoundation/auditable-item-stream/compare/auditable-item-stream-rest-client-v0.0.2-next.4...auditable-item-stream-rest-client-v0.0.2-next.5) (2025-10-09)
+
+
+### Features
+
+* add validate-locales ([4babc73](https://github.com/twinfoundation/auditable-item-stream/commit/4babc7331f7fed61450fe2e2d8eccee52367f2be))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/auditable-item-stream-models bumped from 0.0.2-next.4 to 0.0.2-next.5
+
+## [0.0.2-next.4](https://github.com/twinfoundation/auditable-item-stream/compare/auditable-item-stream-rest-client-v0.0.2-next.3...auditable-item-stream-rest-client-v0.0.2-next.4) (2025-09-29)
+
+
+### Features
+
+* use new nameof operators ([d1a3bf8](https://github.com/twinfoundation/auditable-item-stream/commit/d1a3bf8369f899fff8fd9d7b3b068f270fd8603d))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/auditable-item-stream-models bumped from 0.0.2-next.3 to 0.0.2-next.4
+
 ## [0.0.2-next.3](https://github.com/twinfoundation/auditable-item-stream/compare/auditable-item-stream-rest-client-v0.0.2-next.2...auditable-item-stream-rest-client-v0.0.2-next.3) (2025-08-29)
 
 

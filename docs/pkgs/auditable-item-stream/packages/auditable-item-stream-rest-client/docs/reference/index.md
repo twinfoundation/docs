@@ -2,4 +2,4 @@
 
 ## Classes
 
-- [AuditableItemStreamClient](classes/AuditableItemStreamClient.md)
+- [AuditableItemStreamRestClient](classes/AuditableItemStreamRestClient.md)

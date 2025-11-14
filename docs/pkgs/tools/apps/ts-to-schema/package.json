@@ -1,6 +1,6 @@
 {
 	"name": "@twin.org/ts-to-schema",
-	"version": "0.0.2-next.9",
+	"version": "0.0.3-next.3",
 	"description": "Tool to convert TypeScript definitions to JSON schemas",
 	"repository": {
 		"type": "git",
@@ -13,20 +13,18 @@
 	"engines": {
 		"node": ">=20.0.0"
 	},
-	"main": "./dist/cjs/index.cjs",
-	"module": "./dist/esm/index.mjs",
+	"main": "./dist/es/index.js",
 	"types": "./dist/types/index.d.ts",
 	"exports": {
 		".": {
 			"types": "./dist/types/index.d.ts",
-			"require": "./dist/cjs/index.cjs",
-			"import": "./dist/esm/index.mjs"
+			"import": "./dist/es/index.js",
+			"default": "./dist/es/index.js"
 		}
 	},
 	"files": [
 		"bin",
-		"dist/cjs",
-		"dist/esm",
+		"dist/es",
 		"dist/locales",
 		"dist/types",
 		"locales",
@@ -34,5 +32,17 @@
 	],
 	"bin": {
 		"ts-to-schema": "bin/index.js"
-	}
+	},
+	"keywords": [
+		"twin",
+		"trade",
+		"iota",
+		"framework",
+		"blockchain",
+		"tools"
+	],
+	"bugs": {
+		"url": "git+https://github.com/twinfoundation/tools/issues"
+	},
+	"homepage": "https://twindev.org"
 }

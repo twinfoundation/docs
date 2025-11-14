@@ -17,5 +17,9 @@
 		"packages/document-management-service",
 		"packages/document-management-rest-client"
 	],
-	"type": "module"
+	"type": "module",
+	"bugs": {
+		"url": "git+https://github.com/twinfoundation/document-management/issues"
+	},
+	"homepage": "https://twindev.org"
 }

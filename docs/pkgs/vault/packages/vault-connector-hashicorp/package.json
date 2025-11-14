@@ -1,34 +1,53 @@
 {
 	"name": "@twin.org/vault-connector-hashicorp",
-	"version": "0.0.2-next.5",
+	"version": "0.0.3-next.1",
 	"description": "Vault connector implementation using Hashicorp storage",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/twinfoundation/vault.git",
 		"directory": "packages/vault-connector-hashicorp"
 	},
-	"author": "cornel.filip@iota.org; adrian.sanchez.sequeira@iota.org",
+	"contributors": [
+		"cornel.filip@iota.org",
+		"adrian.sanchez.sequeira@iota.org"
+	],
 	"license": "Apache-2.0",
 	"type": "module",
 	"engines": {
 		"node": ">=20.0.0"
 	},
-	"main": "./dist/cjs/index.cjs",
-	"module": "./dist/esm/index.mjs",
+	"main": "./dist/es/index.js",
 	"types": "./dist/types/index.d.ts",
 	"exports": {
 		".": {
 			"types": "./dist/types/index.d.ts",
-			"require": "./dist/cjs/index.cjs",
-			"import": "./dist/esm/index.mjs"
+			"import": "./dist/es/index.js",
+			"default": "./dist/es/index.js"
 		},
 		"./locales/*.json": "./locales/*.json"
 	},
 	"files": [
-		"dist/cjs",
-		"dist/esm",
+		"dist/es",
 		"dist/types",
 		"locales",
 		"docs"
-	]
+	],
+	"keywords": [
+		"twin",
+		"trade",
+		"iota",
+		"framework",
+		"blockchain",
+		"vault",
+		"encryption",
+		"security",
+		"keys",
+		"connector",
+		"adapter",
+		"integration"
+	],
+	"bugs": {
+		"url": "git+https://github.com/twinfoundation/vault/issues"
+	},
+	"homepage": "https://twindev.org"
 }

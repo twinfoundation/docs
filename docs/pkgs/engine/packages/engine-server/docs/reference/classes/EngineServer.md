@@ -40,7 +40,7 @@ The engine core to serve from.
 
 ### CLASS\_NAME
 
-> `readonly` **CLASS\_NAME**: `string`
+> `readonly` `static` **CLASS\_NAME**: `string`
 
 Runtime name for the class.
 
@@ -48,7 +48,7 @@ Runtime name for the class.
 
 ### addRestRouteGenerator()
 
-> **addRestRouteGenerator**(`type`, `typeConfig`, `module`, `method`): `void`
+> **addRestRouteGenerator**(`type`, `module`, `method`): `void`
 
 Add a REST route generator.
 
@@ -59,12 +59,6 @@ Add a REST route generator.
 `string`
 
 The type to add the generator for.
-
-##### typeConfig
-
-The type config.
-
-`undefined` | `IEngineCoreTypeConfig`[]
 
 ##### module
 
@@ -90,7 +84,7 @@ The method to call on the module.
 
 ### addSocketRouteGenerator()
 
-> **addSocketRouteGenerator**(`type`, `typeConfig`, `module`, `method`): `void`
+> **addSocketRouteGenerator**(`type`, `module`, `method`): `void`
 
 Add a socket route generator.
 
@@ -101,12 +95,6 @@ Add a socket route generator.
 `string`
 
 The type to add the generator for.
-
-##### typeConfig
-
-The type config.
-
-`undefined` | `IEngineCoreTypeConfig`[]
 
 ##### module
 

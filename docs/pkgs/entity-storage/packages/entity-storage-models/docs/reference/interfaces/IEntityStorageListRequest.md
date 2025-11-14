@@ -34,11 +34,11 @@ The direction for the order, defaults to desc.
 
 The properties to return in the response as a comma separated list, by default returns all properties.
 
-#### pageSize?
+#### limit?
 
-> `optional` **pageSize**: `string` \| `number`
+> `optional` **limit**: `string`
 
-The number of entries to return per page.
+Limit the number of entities to return.
 
 #### cursor?
 

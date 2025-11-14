@@ -1,5 +1,77 @@
 # @twin.org/ts-to-schema - Changelog
 
+## [0.0.3-next.3](https://github.com/twinfoundation/tools/compare/ts-to-schema-v0.0.3-next.2...ts-to-schema-v0.0.3-next.3) (2025-11-11)
+
+
+### Miscellaneous Chores
+
+* **ts-to-schema:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/tools-core bumped from 0.0.3-next.2 to 0.0.3-next.3
+
+## [0.0.3-next.2](https://github.com/twinfoundation/tools/compare/ts-to-schema-v0.0.3-next.1...ts-to-schema-v0.0.3-next.2) (2025-11-11)
+
+
+### Miscellaneous Chores
+
+* **ts-to-schema:** Synchronize repo versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/tools-core bumped from 0.0.3-next.1 to 0.0.3-next.2
+
+## [0.0.3-next.1](https://github.com/twinfoundation/tools/compare/ts-to-schema-v0.0.3-next.0...ts-to-schema-v0.0.3-next.1) (2025-11-10)
+
+
+### Features
+
+* add context id features ([#54](https://github.com/twinfoundation/tools/issues/54)) ([41ad65d](https://github.com/twinfoundation/tools/commit/41ad65d5ae33d0533d32a2864cd94e5c35e56c76))
+* add support for auto expand types ([dd1e10a](https://github.com/twinfoundation/tools/commit/dd1e10a5b2fea6f80890ff6f3971f48e239cb4c1))
+* add ts-to-schema overrides ([3c54504](https://github.com/twinfoundation/tools/commit/3c5450468eb998204a75576b7791a7ca4027da62))
+* add validate-locales ([97bb11f](https://github.com/twinfoundation/tools/commit/97bb11fd9e6ed400e7fa69671075ba78f36ca6e6))
+* correctly handle auto expand types ([57fce0f](https://github.com/twinfoundation/tools/commit/57fce0f9ec4a0876665d70adc6e885f6feb3caf7))
+* eslint migration to flat config ([25acfcf](https://github.com/twinfoundation/tools/commit/25acfcf4c4e0c496fffeaf67659fe171bc15199a))
+* generate schemas as individual entities ([9f372ab](https://github.com/twinfoundation/tools/commit/9f372abdfc27aba93b303c7b214991919c0c18c3))
+* improve auto expand types ([6181d1d](https://github.com/twinfoundation/tools/commit/6181d1daded1f91323195cf7efbc2f1881f38b41))
+* improve schema type name normalisation ([1a18b26](https://github.com/twinfoundation/tools/commit/1a18b267d87e9179bda01b396b256c450ae2889e))
+* move package to framework repo ([4490bda](https://github.com/twinfoundation/tools/commit/4490bda472d4dc8ddfe931e2fce81f3411de9ab3))
+* use most recent JSON schema specs ([4598cbf](https://github.com/twinfoundation/tools/commit/4598cbf29f7b82dba4a9f3b19f81dfe66f5a6060))
+* use shared store mechanism ([#31](https://github.com/twinfoundation/tools/issues/31)) ([d9fe68b](https://github.com/twinfoundation/tools/commit/d9fe68b903d1268c7cb3c64772df5cb78fd63667))
+
+
+### Bug Fixes
+
+* remove debugging ([4def3d1](https://github.com/twinfoundation/tools/commit/4def3d1ef6a41a3b3358f864214e6a7ec3f9c638))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/tools-core bumped from 0.0.3-next.0 to 0.0.3-next.1
+
+## [0.0.2-next.10](https://github.com/twinfoundation/tools/compare/ts-to-schema-v0.0.2-next.9...ts-to-schema-v0.0.2-next.10) (2025-10-09)
+
+
+### Features
+
+* add validate-locales ([97bb11f](https://github.com/twinfoundation/tools/commit/97bb11fd9e6ed400e7fa69671075ba78f36ca6e6))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @twin.org/tools-core bumped from 0.0.2-next.9 to 0.0.2-next.10
+
 ## [0.0.2-next.9](https://github.com/twinfoundation/tools/compare/ts-to-schema-v0.0.2-next.8...ts-to-schema-v0.0.2-next.9) (2025-09-23)
 
 

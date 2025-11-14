@@ -1,5 +1,26 @@
 # @twin.org/immutable-proof-task - Changelog
 
+## [0.0.3-next.1](https://github.com/twinfoundation/immutable-proof/compare/immutable-proof-task-v0.0.3-next.0...immutable-proof-task-v0.0.3-next.1) (2025-11-12)
+
+
+### Features
+
+* add context id features ([#14](https://github.com/twinfoundation/immutable-proof/issues/14)) ([ed5a594](https://github.com/twinfoundation/immutable-proof/commit/ed5a594eaa7d50f74b1c09a7a560d48b33a4ecd1))
+* add validate-locales ([d6a7c07](https://github.com/twinfoundation/immutable-proof/commit/d6a7c0794a1922981a42f56cc24724d7cee727f6))
+* eslint migration to flat config ([9e63e42](https://github.com/twinfoundation/immutable-proof/commit/9e63e420ba686db78dca806d111f646c057083d6))
+* eslint migration to flat config ([c8536f2](https://github.com/twinfoundation/immutable-proof/commit/c8536f219c7709c6c08b9266e537831f9054dda9))
+* update dependencies ([7d6b321](https://github.com/twinfoundation/immutable-proof/commit/7d6b321928ca0434ee530816b1440f1687b94a6e))
+* update framework core ([e708d4d](https://github.com/twinfoundation/immutable-proof/commit/e708d4dd3febcfbcd64663d5be004eab1d26c0fb))
+* use shared store mechanism ([#3](https://github.com/twinfoundation/immutable-proof/issues/3)) ([7042a40](https://github.com/twinfoundation/immutable-proof/commit/7042a40f0ef8b01463f07aeb1efae4f417162fa1))
+
+## [0.0.2-next.3](https://github.com/twinfoundation/immutable-proof/compare/immutable-proof-task-v0.0.2-next.2...immutable-proof-task-v0.0.2-next.3) (2025-10-09)
+
+
+### Features
+
+* add validate-locales ([d6a7c07](https://github.com/twinfoundation/immutable-proof/commit/d6a7c0794a1922981a42f56cc24724d7cee727f6))
+* eslint migration to flat config ([9e63e42](https://github.com/twinfoundation/immutable-proof/commit/9e63e420ba686db78dca806d111f646c057083d6))
+
 ## [0.0.2-next.2](https://github.com/twinfoundation/immutable-proof/compare/immutable-proof-task-v0.0.2-next.1...immutable-proof-task-v0.0.2-next.2) (2025-08-29)
 
 

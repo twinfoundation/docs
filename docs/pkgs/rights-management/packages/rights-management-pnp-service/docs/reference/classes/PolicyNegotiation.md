@@ -56,7 +56,7 @@ The expiration time for the policy negotiation.
 
 ### state
 
-> **state**: `IdsContractNegotiationStateType`
+> **state**: `ContractNegotiationStateType`
 
 The status of the negotiation.
 

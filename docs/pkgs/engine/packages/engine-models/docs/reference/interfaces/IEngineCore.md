@@ -16,7 +16,7 @@ Interface describing the engine core methods.
 
 ### addTypeInitialiser()
 
-> **addTypeInitialiser**(`type`, `typeConfig`, `module`, `method`): `void`
+> **addTypeInitialiser**(`type`, `module`, `method`): `void`
 
 Add a type initialiser.
 
@@ -27,12 +27,6 @@ Add a type initialiser.
 `string`
 
 The type to add the initialiser for.
-
-##### typeConfig
-
-The type config.
-
-`undefined` | [`IEngineCoreTypeConfig`](../type-aliases/IEngineCoreTypeConfig.md)[]
 
 ##### module
 
@@ -49,6 +43,102 @@ The name of the method to call.
 #### Returns
 
 `void`
+
+***
+
+### getTypeConfig()
+
+> **getTypeConfig**(`type`): `undefined` \| [`IEngineCoreTypeConfig`](../type-aliases/IEngineCoreTypeConfig.md)[]
+
+Get the type config for a specific type.
+
+#### Parameters
+
+##### type
+
+`string`
+
+The type to get the config for.
+
+#### Returns
+
+`undefined` \| [`IEngineCoreTypeConfig`](../type-aliases/IEngineCoreTypeConfig.md)[]
+
+The type config or undefined if not found.
+
+***
+
+### addContextIdKey()
+
+> **addContextIdKey**(`key`): `void`
+
+Add a context ID key to the engine.
+
+#### Parameters
+
+##### key
+
+`string`
+
+The context ID key.
+
+#### Returns
+
+`void`
+
+***
+
+### getContextIdKeys()
+
+> **getContextIdKeys**(): `string`[]
+
+Get the context ID keys for the engine.
+
+#### Returns
+
+`string`[]
+
+The context IDs keys.
+
+***
+
+### addContextId()
+
+> **addContextId**(`key`, `value`): `void`
+
+Add a context ID to the engine.
+
+#### Parameters
+
+##### key
+
+`string`
+
+The context ID key.
+
+##### value
+
+`string`
+
+The context ID value.
+
+#### Returns
+
+`void`
+
+***
+
+### getContextIds()
+
+> **getContextIds**(): `undefined` \| `IContextIds`
+
+Get the context IDs for the engine.
+
+#### Returns
+
+`undefined` \| `IContextIds`
+
+The context IDs or undefined if none are set.
 
 ***
 

@@ -12,6 +12,14 @@ Class to help with base58 Encoding/Decoding.
 
 `Base58`
 
+## Properties
+
+### CLASS\_NAME
+
+> `readonly` `static` **CLASS\_NAME**: `string`
+
+Runtime name for the class.
+
 ## Methods
 
 ### decode()

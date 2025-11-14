@@ -18,5 +18,9 @@
 		"packages/ui-components-svelte",
 		"apps/ui-storybook-react"
 	],
-	"type": "module"
+	"type": "module",
+	"bugs": {
+		"url": "git+https://github.com/twinfoundation/ui/issues"
+	},
+	"homepage": "https://twindev.org"
 }

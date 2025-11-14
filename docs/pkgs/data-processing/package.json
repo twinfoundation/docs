@@ -19,5 +19,9 @@
 		"packages/data-processing-service",
 		"packages/data-processing-rest-client"
 	],
-	"type": "module"
+	"type": "module",
+	"bugs": {
+		"url": "git+https://github.com/twinfoundation/data-processing/issues"
+	},
+	"homepage": "https://twindev.org"
 }

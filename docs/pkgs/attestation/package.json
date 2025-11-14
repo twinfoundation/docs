@@ -20,5 +20,9 @@
 		"packages/attestation-rest-client",
 		"apps/attestation-cli"
 	],
-	"type": "module"
+	"type": "module",
+	"bugs": {
+		"url": "git+https://github.com/twinfoundation/attestation/issues"
+	},
+	"homepage": "https://twindev.org"
 }

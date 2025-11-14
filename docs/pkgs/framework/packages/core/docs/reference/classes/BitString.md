@@ -22,6 +22,14 @@ The length of the bit string.
 
 `BitString`
 
+## Properties
+
+### CLASS\_NAME
+
+> `readonly` `static` **CLASS\_NAME**: `string`
+
+Runtime name for the class.
+
 ## Methods
 
 ### fromBits()

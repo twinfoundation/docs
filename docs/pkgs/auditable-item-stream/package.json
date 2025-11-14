@@ -17,5 +17,9 @@
 		"packages/auditable-item-stream-service",
 		"packages/auditable-item-stream-rest-client"
 	],
-	"type": "module"
+	"type": "module",
+	"bugs": {
+		"url": "git+https://github.com/twinfoundation/auditable-item-stream/issues"
+	},
+	"homepage": "https://twindev.org"
 }

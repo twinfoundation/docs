@@ -1,5 +1,35 @@
 # @twin.org/background-task-models - Changelog
 
+## [0.0.3-next.1](https://github.com/twinfoundation/background-task/compare/background-task-models-v0.0.3-next.0...background-task-models-v0.0.3-next.1) (2025-11-11)
+
+
+### Features
+
+* add context id features ([#29](https://github.com/twinfoundation/background-task/issues/29)) ([46ede49](https://github.com/twinfoundation/background-task/commit/46ede49a51a4955fe1530e645a66f0073db9a1fd))
+* add task scheduler ([754d973](https://github.com/twinfoundation/background-task/commit/754d973e7c8483e5e54e887c157661867d5a0375))
+* add validate-locales ([968cbf9](https://github.com/twinfoundation/background-task/commit/968cbf966fffb5060305e8b221fecc0b6c8105b9))
+* eslint migration to flat config ([6c9136c](https://github.com/twinfoundation/background-task/commit/6c9136c37bccdbbd109892d1503660aab7080d49))
+* improve comment ([f2b4ac2](https://github.com/twinfoundation/background-task/commit/f2b4ac22fb8f735d2bf4ce28583cf7c54acdf272))
+* only run tasks from your own thread ([c7d305b](https://github.com/twinfoundation/background-task/commit/c7d305b9807e65b8b1af6d0c2ca59e74190cab69))
+* update dependencies ([8e65767](https://github.com/twinfoundation/background-task/commit/8e657679f5e4305dbcb15ac7bcb3ab8a4613a60b))
+* update framework core ([a068098](https://github.com/twinfoundation/background-task/commit/a0680983d7923a1bfb980a67879019bb870ccc5d))
+* update IComponent signatures ([e1a79bc](https://github.com/twinfoundation/background-task/commit/e1a79bc4dd813435c56e376f231a4b4ecd2276bf))
+* use shared store mechanism ([#6](https://github.com/twinfoundation/background-task/issues/6)) ([27ed203](https://github.com/twinfoundation/background-task/commit/27ed20367d5ace7257bfa7a82b59ad70e5b5d209))
+
+## [0.0.2-next.9](https://github.com/twinfoundation/background-task/compare/background-task-models-v0.0.2-next.8...background-task-models-v0.0.2-next.9) (2025-10-09)
+
+
+### Features
+
+* add validate-locales ([968cbf9](https://github.com/twinfoundation/background-task/commit/968cbf966fffb5060305e8b221fecc0b6c8105b9))
+
+## [0.0.2-next.8](https://github.com/twinfoundation/background-task/compare/background-task-models-v0.0.2-next.7...background-task-models-v0.0.2-next.8) (2025-09-29)
+
+
+### Features
+
+* update IComponent signatures ([e1a79bc](https://github.com/twinfoundation/background-task/commit/e1a79bc4dd813435c56e376f231a4b4ecd2276bf))
+
 ## [0.0.2-next.7](https://github.com/twinfoundation/background-task/compare/background-task-models-v0.0.2-next.6...background-task-models-v0.0.2-next.7) (2025-08-29)
 
 

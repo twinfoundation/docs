@@ -43,3 +43,11 @@ The salt for the password.
 > **identity**: `string`
 
 The user identity.
+
+***
+
+### organization
+
+> **organization**: `string`
+
+The users organization.

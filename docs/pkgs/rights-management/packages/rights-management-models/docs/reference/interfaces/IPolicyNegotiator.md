@@ -6,7 +6,7 @@ Interface describing a Policy Negotiator.
 
 ### supportsOffer()
 
-> **supportsOffer**(`offer`): `Promise`\<`boolean`\>
+> **supportsOffer**(`offer`): `boolean`
 
 Determines if the negotiator supports the given offer.
 
@@ -20,7 +20,7 @@ The offer to check.
 
 #### Returns
 
-`Promise`\<`boolean`\>
+`boolean`
 
 Sets the supports flag if it can be offered, and the interventionRequired flag if manual agreement is needed.
 
@@ -56,7 +56,7 @@ Sets the accepted flag if it can be offered, and the interventionRequired flag i
 
 ### createAgreement()
 
-> **createAgreement**(`offer`, `information?`): `Promise`\<`undefined` \| `IOdrlAgreement`\>
+> **createAgreement**(`offer`, `information?`): `Promise`\<`IOdrlAgreement` \| `undefined`\>
 
 Create an agreement based on the offer.
 
@@ -76,6 +76,6 @@ Information provided by the requester to aid in the creation of the agreement.
 
 #### Returns
 
-`Promise`\<`undefined` \| `IOdrlAgreement`\>
+`Promise`\<`IOdrlAgreement` \| `undefined`\>
 
 The agreement created from the offer or undefined if an agreement could not be created.

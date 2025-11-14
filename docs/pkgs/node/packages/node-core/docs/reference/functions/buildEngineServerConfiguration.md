@@ -1,6 +1,6 @@
 # Function: buildEngineServerConfiguration()
 
-> **buildEngineServerConfiguration**(`envVars`, `coreEngineConfig`, `serverInfo`, `openApiSpecPath?`, `favIconPath?`): `IEngineServerConfig`
+> **buildEngineServerConfiguration**(`envVars`, `contextIdKeys`, `coreEngineConfig`, `serverInfo`, `openApiSpecPath?`, `favIconPath?`): `Promise`\<`IEngineServerConfig`\>
 
 Handles the configuration of the server.
 
@@ -11,6 +11,12 @@ Handles the configuration of the server.
 [`IEngineServerEnvironmentVariables`](../interfaces/IEngineServerEnvironmentVariables.md)
 
 The environment variables for the engine server.
+
+### contextIdKeys
+
+`string`[]
+
+The context ID keys.
 
 ### coreEngineConfig
 
@@ -38,6 +44,6 @@ The path to the favicon.
 
 ## Returns
 
-`IEngineServerConfig`
+`Promise`\<`IEngineServerConfig`\>
 
-The the config for the core and the server.
+The config for the core and the server.

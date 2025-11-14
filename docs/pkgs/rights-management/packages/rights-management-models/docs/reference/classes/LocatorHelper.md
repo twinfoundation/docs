@@ -66,7 +66,7 @@ True if the locators match, false otherwise.
 
 ### findMatchingLocator()
 
-> `static` **findMatchingLocator**(`locators`, `targetLocator`): `undefined` \| [`IPolicyLocator`](../interfaces/IPolicyLocator.md)
+> `static` **findMatchingLocator**(`locators`, `targetLocator`): [`IPolicyLocator`](../interfaces/IPolicyLocator.md) \| `undefined`
 
 Finds a matching locator from a list of locators.
 
@@ -76,7 +76,7 @@ Finds a matching locator from a list of locators.
 
 The list of policy locators.
 
-`undefined` | [`IPolicyLocator`](../interfaces/IPolicyLocator.md)[]
+[`IPolicyLocator`](../interfaces/IPolicyLocator.md)[] | `undefined`
 
 ##### targetLocator
 
@@ -86,6 +86,6 @@ The target policy locator to find.
 
 #### Returns
 
-`undefined` \| [`IPolicyLocator`](../interfaces/IPolicyLocator.md)
+[`IPolicyLocator`](../interfaces/IPolicyLocator.md) \| `undefined`
 
 The matching locator if found, undefined otherwise.

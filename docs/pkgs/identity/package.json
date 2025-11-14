@@ -22,5 +22,9 @@
 		"packages/identity-authentication",
 		"apps/identity-cli"
 	],
-	"type": "module"
+	"type": "module",
+	"bugs": {
+		"url": "git+https://github.com/twinfoundation/identity/issues"
+	},
+	"homepage": "https://twindev.org"
 }

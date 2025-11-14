@@ -44,17 +44,17 @@ The date/time of when the stream was modified.
 
 ***
 
-### nodeIdentity
+### organizationIdentity?
 
-> **nodeIdentity**: `string`
+> `optional` **organizationIdentity**: `string`
 
-The identity of the node which controls the stream.
+The identity of the organization which controls the stream.
 
 ***
 
-### userIdentity
+### userIdentity?
 
-> **userIdentity**: `string`
+> `optional` **userIdentity**: `string`
 
 The identity of the user who created the stream.
 

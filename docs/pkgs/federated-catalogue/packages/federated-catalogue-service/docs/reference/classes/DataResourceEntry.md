@@ -116,3 +116,11 @@ Date created
 > **evidence**: `string`[]
 
 Evidences
+
+***
+
+### extraData?
+
+> `optional` **extraData**: `IJsonLdNodeObject`
+
+Extended data of a Data Resource entry.

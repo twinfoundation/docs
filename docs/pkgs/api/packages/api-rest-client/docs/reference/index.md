@@ -2,4 +2,4 @@
 
 ## Classes
 
-- [InformationClient](classes/InformationClient.md)
+- [InformationRestClient](classes/InformationRestClient.md)

@@ -264,7 +264,7 @@ The URL to redirect to.
 
 ### combineContexts()
 
-> `static` **combineContexts**(`context1`, `context2`): `undefined` \| [`IJsonLdContextDefinitionRoot`](../type-aliases/IJsonLdContextDefinitionRoot.md)
+> `static` **combineContexts**(`context1`, `context2`): [`IJsonLdContextDefinitionRoot`](../type-aliases/IJsonLdContextDefinitionRoot.md) \| `undefined`
 
 Combine contexts.
 
@@ -274,17 +274,17 @@ Combine contexts.
 
 The first JSON-LD context to combine.
 
-`undefined` | [`IJsonLdContextDefinitionRoot`](../type-aliases/IJsonLdContextDefinitionRoot.md)
+[`IJsonLdContextDefinitionRoot`](../type-aliases/IJsonLdContextDefinitionRoot.md) | `undefined`
 
 ##### context2
 
 The second JSON-LD context to combine.
 
-`undefined` | [`IJsonLdContextDefinitionRoot`](../type-aliases/IJsonLdContextDefinitionRoot.md)
+[`IJsonLdContextDefinitionRoot`](../type-aliases/IJsonLdContextDefinitionRoot.md) | `undefined`
 
 #### Returns
 
-`undefined` \| [`IJsonLdContextDefinitionRoot`](../type-aliases/IJsonLdContextDefinitionRoot.md)
+[`IJsonLdContextDefinitionRoot`](../type-aliases/IJsonLdContextDefinitionRoot.md) \| `undefined`
 
 The combined context.
 
@@ -292,7 +292,7 @@ The combined context.
 
 ### gatherContexts()
 
-> `static` **gatherContexts**\<`T`\>(`element`, `initial?`): `undefined` \| [`IJsonLdContextDefinitionRoot`](../type-aliases/IJsonLdContextDefinitionRoot.md)
+> `static` **gatherContexts**\<`T`\>(`element`, `initial?`): [`IJsonLdContextDefinitionRoot`](../type-aliases/IJsonLdContextDefinitionRoot.md) \| `undefined`
 
 Gather all the contexts from the element and it's children.
 
@@ -318,7 +318,7 @@ The initial context.
 
 #### Returns
 
-`undefined` \| [`IJsonLdContextDefinitionRoot`](../type-aliases/IJsonLdContextDefinitionRoot.md)
+[`IJsonLdContextDefinitionRoot`](../type-aliases/IJsonLdContextDefinitionRoot.md) \| `undefined`
 
 The combined contexts.
 
@@ -326,7 +326,7 @@ The combined contexts.
 
 ### removeContexts()
 
-> `static` **removeContexts**(`context`, `match?`): `undefined` \| [`IJsonLdContextDefinitionRoot`](../type-aliases/IJsonLdContextDefinitionRoot.md)
+> `static` **removeContexts**(`context`, `match?`): [`IJsonLdContextDefinitionRoot`](../type-aliases/IJsonLdContextDefinitionRoot.md) \| `undefined`
 
 Remove all the contexts that match the pattern.
 
@@ -336,7 +336,7 @@ Remove all the contexts that match the pattern.
 
 The context to remove the entries from.
 
-`undefined` | [`IJsonLdContextDefinitionRoot`](../type-aliases/IJsonLdContextDefinitionRoot.md)
+[`IJsonLdContextDefinitionRoot`](../type-aliases/IJsonLdContextDefinitionRoot.md) | `undefined`
 
 ##### match?
 
@@ -346,7 +346,7 @@ The element to try and match.
 
 #### Returns
 
-`undefined` \| [`IJsonLdContextDefinitionRoot`](../type-aliases/IJsonLdContextDefinitionRoot.md)
+[`IJsonLdContextDefinitionRoot`](../type-aliases/IJsonLdContextDefinitionRoot.md) \| `undefined`
 
 The updated contexts.
 

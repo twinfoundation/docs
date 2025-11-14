@@ -60,9 +60,9 @@ Should the entries be verified, defaults to false.
 
 Retrieve the entries in ascending/descending time order, defaults to Ascending.
 
-#### pageSize?
+#### limit?
 
-> `optional` **pageSize**: `string` \| `boolean`
+> `optional` **limit**: `string` \| `boolean`
 
 How many entries to return.
 

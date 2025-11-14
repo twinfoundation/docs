@@ -4,14 +4,6 @@
 
 - [CLI](classes/CLI.md)
 
-## Type Aliases
-
-- [AttestationConnectorTypes](type-aliases/AttestationConnectorTypes.md)
-
-## Variables
-
-- [AttestationConnectorTypes](variables/AttestationConnectorTypes.md)
-
 ## Functions
 
 - [buildCommandAttestationCreate](functions/buildCommandAttestationCreate.md)

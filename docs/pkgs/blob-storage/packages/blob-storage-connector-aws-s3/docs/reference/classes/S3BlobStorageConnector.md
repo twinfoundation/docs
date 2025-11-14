@@ -39,15 +39,29 @@ The namespace for the items.
 
 ### CLASS\_NAME
 
-> `readonly` **CLASS\_NAME**: `string`
+> `readonly` `static` **CLASS\_NAME**: `string`
 
 Runtime name for the class.
 
+## Methods
+
+### className()
+
+> **className**(): `string`
+
+Returns the class name of the component.
+
+#### Returns
+
+`string`
+
+The class name of the component.
+
 #### Implementation of
 
-`IBlobStorageConnector.CLASS_NAME`
+`IBlobStorageConnector.className`
 
-## Methods
+***
 
 ### bootstrap()
 
@@ -103,7 +117,7 @@ The id of the stored blob in urn format.
 
 ### get()
 
-> **get**(`id`): `Promise`\<`undefined` \| `Uint8Array`\<`ArrayBufferLike`\>\>
+> **get**(`id`): `Promise`\<`Uint8Array`\<`ArrayBufferLike`\> \| `undefined`\>
 
 Get the blob.
 
@@ -117,7 +131,7 @@ The id of the blob to get in urn format.
 
 #### Returns
 
-`Promise`\<`undefined` \| `Uint8Array`\<`ArrayBufferLike`\>\>
+`Promise`\<`Uint8Array`\<`ArrayBufferLike`\> \| `undefined`\>
 
 The data for the blob if it can be found or undefined.
 

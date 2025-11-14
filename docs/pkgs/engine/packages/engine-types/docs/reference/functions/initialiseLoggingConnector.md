@@ -1,6 +1,6 @@
 # Function: initialiseLoggingConnector()
 
-> **initialiseLoggingConnector**(`engineCore`, `context`, `instanceConfig`, `overrideInstanceType?`): `Promise`\<`undefined` \| `string`\>
+> **initialiseLoggingConnector**(`engineCore`, `context`, `instanceConfig`): `Promise`\<\{ `instanceType?`: `string`; `factory?`: `Factory`\<`ILoggingConnector`\>; `component?`: `IComponent`; \}\>
 
 Initialise the logging connector.
 
@@ -24,18 +24,8 @@ The engine core context.
 
 The instance config.
 
-### overrideInstanceType?
-
-`string`
-
-The instance type to override the default.
-
 ## Returns
 
-`Promise`\<`undefined` \| `string`\>
+`Promise`\<\{ `instanceType?`: `string`; `factory?`: `Factory`\<`ILoggingConnector`\>; `component?`: `IComponent`; \}\>
 
-The name of the instance created.
-
-## Throws
-
-GeneralError if the connector type is unknown.
+The instance created and the factory for it.

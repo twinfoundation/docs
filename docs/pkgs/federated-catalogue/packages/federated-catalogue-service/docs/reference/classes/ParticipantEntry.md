@@ -83,3 +83,11 @@ Date created
 > **evidence**: `string`[]
 
 Evidences
+
+***
+
+### extraData?
+
+> `optional` **extraData**: `IJsonLdNodeObject`
+
+Extended data of a Participant entry.

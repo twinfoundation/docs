@@ -1,0 +1,51 @@
+{
+	"name": "@twin.org/data-json-path",
+	"version": "0.0.3-next.1",
+	"description": "JSONPath abstraction layer for TWIN platform",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/twinfoundation/data.git",
+		"directory": "packages/data-json-path"
+	},
+	"contributors": [
+		"adrian.sanchez.sequeira@iota.org",
+		"cornel.filip@iota.org"
+	],
+	"license": "Apache-2.0",
+	"type": "module",
+	"engines": {
+		"node": ">=20.0.0"
+	},
+	"main": "./dist/es/index.js",
+	"types": "./dist/types/index.d.ts",
+	"exports": {
+		".": {
+			"types": "./dist/types/index.d.ts",
+			"import": "./dist/es/index.js",
+			"default": "./dist/es/index.js"
+		},
+		"./locales/*.json": "./locales/*.json"
+	},
+	"files": [
+		"dist/es",
+		"dist/types",
+		"locales",
+		"docs"
+	],
+	"keywords": [
+		"twin",
+		"trade",
+		"iota",
+		"framework",
+		"blockchain",
+		"data-processing",
+		"data",
+		"processing",
+		"transformation",
+		"conversion"
+	],
+	"bugs": {
+		"url": "git+https://github.com/twinfoundation/data/issues"
+	},
+	"homepage": "https://twindev.org"
+}

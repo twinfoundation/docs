@@ -2,4 +2,4 @@
 
 ## Classes
 
-- [BlobStorageClient](classes/BlobStorageClient.md)
+- [BlobStorageRestClient](classes/BlobStorageRestClient.md)

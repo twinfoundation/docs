@@ -1,6 +1,6 @@
 # TWIN Node Core
 
-TWIN Node Core for serving APIs using the specified configuration
+Core components for running TWIN nodes with dynamic extension loading and protocol-based module resolution.
 
 ## Installation
 

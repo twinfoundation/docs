@@ -12,6 +12,14 @@ Class to handle JSON Web Keys.
 
 `Jwk`
 
+## Properties
+
+### CLASS\_NAME
+
+> `readonly` `static` **CLASS\_NAME**: `string`
+
+Runtime name for the class.
+
 ## Methods
 
 ### toCryptoKey()
@@ -24,7 +32,7 @@ Convert the JWK to a crypto key.
 
 ##### jwk
 
-[`IJwk`](../interfaces/IJwk.md)
+`JWK`
 
 The JWK to convert.
 
@@ -44,7 +52,7 @@ The crypto key.
 
 ### fromEd25519Private()
 
-> `static` **fromEd25519Private**(`privateKey`, `overrideUse?`): `Promise`\<[`IJwk`](../interfaces/IJwk.md)\>
+> `static` **fromEd25519Private**(`privateKey`, `overrideUse?`): `Promise`\<`JWK`\>
 
 Convert the Ed25519 private key to a crypto key.
 
@@ -64,7 +72,7 @@ Optional override for the use property, defaults to "sig".
 
 #### Returns
 
-`Promise`\<[`IJwk`](../interfaces/IJwk.md)\>
+`Promise`\<`JWK`\>
 
 The crypto key.
 
@@ -72,7 +80,7 @@ The crypto key.
 
 ### fromEd25519Public()
 
-> `static` **fromEd25519Public**(`publicKey`, `overrideUse?`): `Promise`\<[`IJwk`](../interfaces/IJwk.md)\>
+> `static` **fromEd25519Public**(`publicKey`, `overrideUse?`): `Promise`\<`JWK`\>
 
 Convert the Ed25519 public key to a crypto key.
 
@@ -92,7 +100,7 @@ Optional override for the use property, defaults to "sig".
 
 #### Returns
 
-`Promise`\<[`IJwk`](../interfaces/IJwk.md)\>
+`Promise`\<`JWK`\>
 
 The crypto key.
 
@@ -108,7 +116,7 @@ Convert the JWK to raw keys.
 
 ##### jwk
 
-[`IJwk`](../interfaces/IJwk.md)
+`JWK`
 
 The JWK to convert to raw.
 
@@ -130,7 +138,7 @@ Generate a KID for the JWK.
 
 ##### jwk
 
-[`IJwk`](../interfaces/IJwk.md)
+`JWK`
 
 The JWK to generate a KID for.
 

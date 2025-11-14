@@ -46,6 +46,14 @@ The timestamp of when the edge was deleted, as we never actually remove items.
 
 ***
 
+### targetId
+
+> **targetId**: `string`
+
+The target id of the edge.
+
+***
+
 ### edgeRelationships
 
 > **edgeRelationships**: `string`[]

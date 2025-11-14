@@ -2,4 +2,4 @@
 
 ## Classes
 
-- [EntityStorageClient](classes/EntityStorageClient.md)
+- [EntityStorageRestClient](classes/EntityStorageRestClient.md)
